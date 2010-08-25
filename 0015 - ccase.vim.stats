@@ -1,0 +1,266 @@
+commit cf97f00b2e8c9a3b609f23d72bdde705f0ff350d (HEAD, tag: refs/tags/1.38, refs/heads/master)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Fri Sep 3 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added a Change Checkout comments command, and associated menu item.
+    Added version line to allow for use by GetLatestVimScripts script by Dr. Charles (Chip) Campbell.
+
+ plugin/ccase.vim |  194 +++++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 155 insertions(+), 39 deletions(-)
+
+commit be37248cd237cff05f54e35155897e3e720600fc (tag: refs/tags/1.36)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Tue Dec 9 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    My changes:
+    Add User commands for all the regular cabbrevs used, so that diff commands and others may be issued on the command line with '-c'.
+    
+    Changes from Gary Johnson and WEN Guopeng:
+    Addition of a diff with first version on this branch.
+    
+    Stefan Berglund and WEN Guopeng:
+    Alter 'ctpwv' to not use the $view variable, and instead get it from the system.
+    
+    Changes from WEN Guopeng:
+    Changes to embed the ccase.vim documentation in the .vim file, and automatically install on startup, diff with merged version, and other wonderful addititions that I'm probably forgetting.
+
+ doc/ccase.txt    |  347 ----------------
+ plugin/ccase.vim | 1223 +++++++++++++++++++++++++++++++++++++++++++++++-------
+ 2 files changed, 1070 insertions(+), 500 deletions(-)
+
+commit 1c38ae1afaf6a6366f95992523b5b877e79ea21f (tag: refs/tags/1.35)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Tue Aug 12 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added variable for listing checkouts by anyone, or just 'me'.
+    - Added save of comment text into global var so it is accessable across
+      starts and stops of vim.
+    - Replaces some echo's with echomsg's so they are saved in vim err list.
+    - Moved autocmds around, so buffer-local kemaps aren't lost by the
+      autocmds which automatically refresh the listing upon BufEnter.
+    - Added uncheckout functionality into Vim function instead of relying on
+      shell to do it.
+    - MakeActiv now prompts for an activity comment.
+    - Activity functions no show the activity comment, including the
+      activity list window.
+    - For the activity and checkout list windows, open new files below and
+      to the right of the originating list window.
+    - Added check for maps of <unique><script> already being there so
+      resourcing the plugin doesn't give errors.
+
+ plugin/ccase.vim |  469 ++++++++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 331 insertions(+), 138 deletions(-)
+
+commit e0c67d6b50dd85f112a58e4bab89112c7566c551 (tag: refs/tags/1.31)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Thu Apr 3 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Incorporated Guillaume Lafage's changes for link resolution and
+    improvements for the 'list checkouts' and 'list activities' windows.
+    Now double-click or Enter on a name in the list checkouts window will split-open that file, and double-click or Enter on an activity will set the current activity to be that of the activity under the cursor.
+    Some updates to the help file, added a thanks section to recognize those who have contributed to ccase.vim (thanks
+    everyone, I'm still open to more suggestions).
+
+ doc/ccase.txt    |   63 +++++++++++++++++++++++--
+ plugin/ccase.vim |  134 +++++++++++++++++++++++++++++++++++++++++++++---------
+ 2 files changed, 169 insertions(+), 28 deletions(-)
+
+commit c9ed7fe17e6889b4ec0d08a36308e5931b2912b8 (tag: refs/tags/1.30_bugfi)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Mon Oct 21 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fix from Gary Johnson on cleartool describe, used to determine predecessor
+    version for ctpdif, escaping missing on space in filename, seen on Windows.
+
+ plugin/ccase.vim |    9 ++++++---
+ 1 files changed, 6 insertions(+), 3 deletions(-)
+
+commit 23de910e79e72c42d303ae6e0c21570e52b3aa19 (tag: refs/tags/1.30)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Wed Sep 25 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added buffer local settings to set the current activity, and update the
+    checkout list window on BufEnter.  Also added ability to create an UCM
+    activity (mkactiv).  See updates to the documentation (:h ccase-plugin).
+
+ doc/ccase.txt    |  111 +++++++++++++++++++++++++++++++++++-------------------
+ plugin/ccase.vim |   91 ++++++++++++++++++++++++++++++++++++--------
+ 2 files changed, 147 insertions(+), 55 deletions(-)
+
+commit d62c3017bac53035604b79ab2902d10ee8f1272d (tag: refs/tags/1.29)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Wed Sep 11 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Implemented suggestion (ok, call it enhanced from his patch), such that the
+    ctpdif and ctqdif functions work properly when the filename you were editting
+    was a fully version qualified ClearCase name (ie. filename@@/main/my/version/1).
+    This is likely to happen if you open a specific file version via the ClearCase
+    file browser or version tree browser.
+    
+    Small correction to use of variables local to the function (l:), not local
+    to the script (s:).
+
+ plugin/ccase.vim |  227 ++++++++++++++++++++++++++++++------------------------
+ 1 files changed, 126 insertions(+), 101 deletions(-)
+
+commit 031aa99bd94ca0b76be8c55286bcd8587ae5f98b (tag: refs/tags/1.24.1)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Wed Aug 14 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed goof in 'bd' command for results window, that would 'bd!' the first buffer
+    matching [acelrst] (ccase_results).
+    
+    Please upgrade if you downloaded 1.24.
+    
+    Sorry for the inconvience.
+
+ plugin/ccase.vim |   15 ++++++++-------
+ 1 files changed, 8 insertions(+), 7 deletions(-)
+
+commit b232b0ad93c377d4e129271851b573e4924c4277 (tag: refs/tags/1.25)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Tue Aug 13 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    After several comments on the possible naming collision of the ccase results
+    file, I've changed the implementation so that it uses a generated filename for
+    the temp file that captures command output (via tempname()), and now use a
+    special buffer to display the results.
+    
+    Enjoy.
+
+ doc/ccase.txt    |   26 +++++------
+ plugin/ccase.vim |  119 +++++++++++++++++++++++++++++++++++++++++------------
+ 2 files changed, 104 insertions(+), 41 deletions(-)
+
+commit 5d7e9d697d632aa6fdd488cad6f6dd99a0fa2513 (tag: refs/tags/1.22)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Fri Apr 5 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added checkout of elements as "unreserved" as suggested by Barry Nisly.  Plus some fixes to the documentation.
+
+ doc/ccase.txt    |  130 ++++++++++++++++++------------
+ plugin/ccase.vim |  234 +++++++++++++++++++++++++++++++-----------------------
+ 2 files changed, 215 insertions(+), 149 deletions(-)
+
+commit 72249f5f8f3e925bee7cfbaa10079b1a85870007 (tag: refs/tags/1.17)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Fri Jan 11 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Small bugfix: corrected default setting of g:ccaseUseDialog.  Now checks
+    to see if VIM was compiled with the GUI options.
+    
+    MAIN ADDITION:
+    I finally forced myself to write up some documentation for this beast.
+    Hence it has now become ccase.tgz.
+    
+    Contains:
+    doc/ccase.txt
+    plugin/ccase.vim
+    
+    Don't forget to use :helptags to generate tags for
+    newly downloaded plugin documentation.
+
+ doc/ccase.txt    |  237 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/ccase.vim |   98 ++++++++++++++++------
+ 2 files changed, 308 insertions(+), 27 deletions(-)
+
+commit b6cdbe32eae233a2d0b3db4b823b18c5fee48cfe (tag: refs/tags/1.14)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Thu Nov 1 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Lots of enhancements to prompting, added
+    diff capability utilizing vim diff
+    functionality.  Added more options for
+    checkin/out comments, making an element,
+    etc.  Check it out.
+
+ plugin/ccase.vim |  404 +++++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 312 insertions(+), 92 deletions(-)
+
+commit f6af69d03f12910b0b4d76ae456c1214fd048de0 (tag: refs/tags/1.11)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Tue Oct 30 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Per suggestion by Gerard van Wageningen, added prompt box capability as well as
+    vim console prompt capability for checkin and checkout comments.  If using the
+    GUI version and g:ccaseUseDialog is set to 1 (default) then the gui prompt box
+    will pop up for the comment to be added to the checkin/out.  If g:ccaseUseDialog
+    is set to 0, then prompt will be of the console variety.
+    
+    Continued suggestions are welcome!
+    
+    
+    Note:
+    Script version now matches cvs revision number.
+
+ plugin/ccase.vim |   61 ++++++++++++++++++++++++++++++++++++++++++++++-------
+ 1 files changed, 53 insertions(+), 8 deletions(-)
+
+commit 150b316570478e1d0b4fe7fa77ddacfd99f234dc (tag: refs/tags/1.4)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Mon Oct 1 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug in checking directory back in
+    after making element, in the new make
+    element functionality.
+
+ plugin/ccase.vim |   44 +++++++++-----------------------------------
+ 1 files changed, 9 insertions(+), 35 deletions(-)
+
+commit 660346907a891c37d369ab599bea9618b7979529 (tag: refs/tags/1.3)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Mon Oct 1 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added 'mkelem' functionality.  Function to make current file an element prompts to checkout directory if it is not already checkedout, adds file (not left checkedout), and prompts for whether directory is to be checked in again.
+
+ plugin/ccase.vim |  226 +++++++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 171 insertions(+), 55 deletions(-)
+
+commit b867c9a842e297c4f4072360d7d1b7fea42abb50 (tag: refs/tags/1.2)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Fri Sep 28 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Put in missing OpenIfNew function, that is used
+    to open up a new 'results' buffer if one hasn't already been loaded.
+
+ plugin/ccase.vim |   53 ++++++++++++++++++++++++++++++++++++++++++++++++++---
+ 1 files changed, 50 insertions(+), 3 deletions(-)
+
+commit 6985b0c7ec10786f2555c3f39a001e4fa27046b6 (tag: refs/tags/1.1)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Wed Sep 26 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Cleaned up some things, and tried to make
+    the script more in the style of a Vim 6.0 plugin.
+    Still has a ways to go for setting up mapleader yet.
+
+ plugin/ccase.vim |  Bin 1661 -> 6389 bytes
+ 1 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 9e750b165e44bbe32f7187984d04d495ced8779e (tag: refs/tags/1.0)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Fri Jun 8 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README           |    3 +++
+ plugin/ccase.vim |  Bin 0 -> 1661 bytes
+ 2 files changed, 3 insertions(+), 0 deletions(-)
