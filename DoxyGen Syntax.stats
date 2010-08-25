@@ -1,0 +1,154 @@
+commit cd1237965c9ed2a986548fad0a49c4769805dcc5 (HEAD, tag: refs/tags/1.15, refs/heads/master)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Mon Dec 12 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1.  Words like `Class#Member' is highlighted together as a link in my
+        version.
+    2.  I used `doxygenHyperLink' instead of `doxygenHttpLink' and
+        highlighted http, https, and ftp protocols.
+    3.  I added the missing `doxygenSpecialArgumentWord' to make `\a' (not
+        the word after) appear the same way as `\c'.
+    4.  I made some adjustments in font choosing on non-Windows platforms.
+    5.  The `Last Change' date is not updated in your file.
+    6.  There are some trailing spaces in your file.
+
+ syntax/doxygen.vim |   81 ++++++++++++++++++++++++++++++----------------------
+ 1 files changed, 47 insertions(+), 34 deletions(-)
+
+commit 49586b567fef246f2824d422e6947be49a3e2c45 (tag: refs/tags/1.14)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Thu Oct 27 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed up  \c words ending in )  (Wu Yongwei)
+     - With auto-brief //!< followed by /** shouldn't supress the auto-brief in   the /**. (Reported by Markus Trenkwalder)
+     - Allow numbers in @link linkwords (Reporeted by Wu Yongwei)
+    - Don't treat # preceded by a word-end as a Hash-special (Reported by Wu Yongwei)
+    - include # (@c #include) in the small-specials allowed chars. (Wu  Yongwei)
+     - Highlight http[s] links (Wu Yongwei)
+     - Various (Wu Yongwei)
+
+ doc/doxygen.txt    |   12 ++++++------
+ syntax/doxygen.vim |   38 +++++++++++++++++++++++++-------------
+ 2 files changed, 31 insertions(+), 19 deletions(-)
+
+commit fb9506b27932846ffe38382b6975efb39f1051bb (tag: refs/tags/1.12)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Thu Jan 27 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed up ending of brief lines with respect to line @ commands and  end-comment. Not ending a brief no longer produces an error-comment.
+
+ doc/doxygen.txt    |    2 +-
+ syntax/doxygen.vim |   17 +++++++++++------
+ 2 files changed, 12 insertions(+), 7 deletions(-)
+
+commit 3a9cde3f916b7d75e24b964b604b725eb12331f2 (tag: refs/tags/1.11)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Tue Jan 25 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+       - Allow doxygen comments inside brackets (Suggested by Zygmunt Krynicki)
+       - Restore correct font selection (Wu Yongwei)
+       - Don't end brief when encountering ? or ! as this isn't what happens with doxygen.
+       - Make punctuation an option.
+       - Make short words end with a , eg \c word,  (Wu Yongwei)
+    1.11
+       - Thanks to Joseph Barker for pointing out that I had a syntax error in  1.10
+
+ doc/doxygen.txt    |    2 +
+ syntax/doxygen.vim |   95 +++++++++++++++++++++++++++++-----------------------
+ 2 files changed, 55 insertions(+), 42 deletions(-)
+
+commit 1e8e0570052b25f878525dfd6716447d93ddeeda (tag: refs/tags/1.9)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Fri Jan 7 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Thanks to Toby Allsopp for this version:
+     - Allow javadoc style auto-brief to be disabled
+     - Move various definitions from single to multiline definitions
+    Also added the .txt help file.
+
+ doc/doxygen.txt    |   44 ++++++++++++++++++++++++++++++++++++++++++++
+ syntax/doxygen.vim |   35 ++++++++++++++++++++++++++---------
+ 2 files changed, 70 insertions(+), 9 deletions(-)
+
+commit 23e6b5c9eb1de06c4594d2e91afa406324b21dbe (tag: refs/tags/1.8)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Fri Dec 10 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     - Fix up some regions not marked as contained (code, verbatim, dot being highlighted outside of the doxygen region) (Toby Allsopp) - Only mark recognised HTML tags (Suggested by Mike Anderson)
+
+ syntax/doxygen.vim |  218 +++++++++++++++++++++++++---------------------------
+ 1 files changed, 105 insertions(+), 113 deletions(-)
+
+commit 82e89935207e38cfbe9834133de02e0986d6361b (tag: refs/tags/1.7)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Sun Aug 15 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      - Ignore Errors when loading from idl.
+      - Try and match # and \c &c support to match what really happens. (Reported by Wu Yongwei)
+      - Don't go into doxygen mode for /**/
+      - Fix up syncing of brief after a \def or similar line - character
+        immediately following a leading asterisk were being hilighted long.
+      - Try and work out a better default font for \c
+      - add support for \code \endcode \verbatim \endverbatim (no contained elements) (suggested Yongwei)
+      - add contained support for dot (\dot \enddot)
+      - support html <!-- --> comments.
+      - support for params inside \c \ref brackets (can contain spaces?).
+      - highlight closing */ as error when found inside \code, \verbatim sections as well as \c, \ref sections with
+        unmatched brackets.
+
+ syntax/doxygen.vim |  337 ++++++++++++++++++++++++++++++++-------------------
+ 1 files changed, 211 insertions(+), 126 deletions(-)
+
+commit 730e1ae521cc0a0878dd0b493dfda6a0c70047e6 (tag: refs/tags/1.6)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Tue Aug 10 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     - Fix up # support.
+     - Highlight \\endlink properly.
+     - Don&#039t mark */ as an error where there is no brief, or @{ is used.
+
+ syntax/doxygen.vim |   33 +++++++++++++++++++++++----------
+ 1 files changed, 23 insertions(+), 10 deletions(-)
+
+commit 4802f82e5e824911d91859ab3d3943adacdd6c8c (tag: refs/tags/1.5)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Fri Aug 6 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Make sure @c \c and friends are equivalent for the start of a brief section.- Allow @c \c and friends to cross lines. (Caveat, they can't be hard up  against a continuation '*' - it just gets tooo difficult).- Highlight a missing \endlink as an error.- Fix multiline description without a '*'
+
+ syntax/doxygen.vim |  333 +++++++++++++++++++++++++++++-----------------------
+ 1 files changed, 184 insertions(+), 149 deletions(-)
+
+commit 505f8a46da789a4bb6dafd6aa6ff5c5a0c3adfa7 (tag: refs/tags/1.4)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Mon Aug 2 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Patches from Wu Yongwei
+      * Include '-' in inline \c \e maching.
+      * \see, \return are multiline desc.
+      * \throw can now handle std::alloc (colons were confusing it)
+    - Fixed support for <a href=> links.
+    - Reported by Wu Yongwei
+      * Handle [in,out] in \param.
+      * Handle non-terminating . in a brief description (eg A.B)
+      * allow leading asterix inside HTML marks.
+      * Fix up <a> link hilighting when interupted by new-lines and comment
+      continuations.
+      * Handle the case where \c \ref etc are used at the beginning of a 'brief'
+      line.
+    - Fixed termination of multiline at start of new command.
+    - Include John McGehee's instructions.
+
+ README             |   12 ++
+ syntax/doxygen.vim |  513 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 525 insertions(+), 0 deletions(-)

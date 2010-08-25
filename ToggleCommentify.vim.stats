@@ -1,0 +1,78 @@
+commit 3795bce4a841ea7c5823a6cfe4ca891446a66d4e (HEAD, tag: refs/tags/1.53, refs/heads/master)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Wed Nov 13 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Incorperated Bernhard Wagner's 12-Nov-2002 v1.52 xml changes
+    Will make default mappings to <M-c> only if no map to <Plug>FtcTC and <M-c> is unused.
+    Merged DLAC with this; DLAC = duplicate line and comment, simple mappings that are handy to use to save and comment a line before you mangle it. However this mangles mark z -- <Plug>FtcDlacNormal and <Plug>FtcDlacVisual; default is <S-C-c>
+    Bugfix:	mismatched <Plug> names; This is <Plug>FtcTc (not FbmTc)
+
+ plugin/FeralToggleCommentify.vim |  218 +++++++++-----------------------------
+ 1 files changed, 51 insertions(+), 167 deletions(-)
+
+commit d9bef8f85aa87920bc1e68de4c94312547b45aa0 (tag: refs/tags/1.52)
+Author:     Bernhard Wagner <vimp reside>
+AuthorDate: Tue Nov 12 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added XML file type
+
+ plugin/FeralToggleCommentify.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 8d00ae13221b77ae258410823a0404d8ab8fc569 (tag: refs/tags/1.51)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Tue Nov 5 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    *Hacked in eol comments and added html's <!-- --> comments.
+    * saves cursor position
+    * bugfix for + comment.
+    * See file comments for more details.
+
+ plugin/FeralToggleCommentify.vim |  534 +++++++++++++++++++++++++-------------
+ 1 files changed, 353 insertions(+), 181 deletions(-)
+
+commit 28d57bf94a7aedbb55c09a87e57e23efd1186313 (tag: refs/tags/1.3)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Sun Jul 21 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added :TC, :UC, :CC to toggle, uncomment and comment. Ranges suported as is specifying the comment symbol. Previous maping of <M-c> preserved (still toggles the comment)
+    I've made a mess but it but works quite nicely near as I can tell :) Please see the comments at the head of the file. If my changes meet your aproval I sugest renaming the file back to ToggleCommentify.vim -- only renamed it to avoid colisions and confusion. I was unable to reach Vincent via email so making my changes public here; Hope they are helpful!
+
+ plugin/FeralToggleCommentify.vim |  349 ++++++++++++++++++++++++++++++++++++++
+ plugin/ToggleCommentify.vim      |   59 -------
+ 2 files changed, 349 insertions(+), 59 deletions(-)
+
+commit e077c455c103988223faf3d9719ca4f9a9fb58a0 (tag: refs/tags/1.2)
+Author:     Vincent Nijs <Vincent.Nijs at econ.kuleuven.ac.be>
+AuthorDate: Sat Jun 9 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Resolved problems with comments.
+
+ plugin/ToggleCommentify.vim |   33 ++++++++++++++++++++++++++-------
+ 1 files changed, 26 insertions(+), 7 deletions(-)
+
+commit 89325396daf1747d25dd29da943db5a22bf9b27d (tag: refs/tags/1.1)
+Author:     Vincent Nijs <Vincent.Nijs at econ.kuleuven.ac.be>
+AuthorDate: Tue Jun 5 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This version no longer uses 's:' (i.e., script-variables) as they are not supported in vim5.7 or vim5.8. Thanks to Rex Posadas for pointing this out to me.
+
+ plugin/ToggleCommentify.vim |   17 +++++++++++------
+ 1 files changed, 11 insertions(+), 6 deletions(-)
+
+commit 8eb85919e872851305ad5c5386c1b98a582e2cce (tag: refs/tags/1.0)
+Author:     Vincent Nijs <Vincent.Nijs at econ.kuleuven.ac.be>
+AuthorDate: Tue May 29 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                      |    5 +++++
+ plugin/ToggleCommentify.vim |   35 +++++++++++++++++++++++++++++++++++
+ 2 files changed, 40 insertions(+), 0 deletions(-)
