@@ -1,0 +1,21 @@
+commit 8109dd7ed1cb31a66635789812992fe762705731 (HEAD, tag: refs/tags/2.1, refs/heads/master)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Thu Jun 7 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Allow sourced scripts to have <buffer> tags and <SID>  so that scripts can behave as file-type plugins for vim 6 as well as buffoptions SOURCE scripts for 5.6 and above.
+    Note that the buffoptions_mac.vim will need to be recreated (extract it from the bottom of the file).
+
+ plugin/buffoptions.vim |   12 +++++++-----
+ 1 files changed, 7 insertions(+), 5 deletions(-)
+
+commit f7c9db4464014cdb06b990a87b0d30d0c5e3d916 (tag: refs/tags/2.0)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Mon Jun 4 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                 |   74 ++++++++++
+ plugin/buffoptions.vim |  357 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 431 insertions(+), 0 deletions(-)
