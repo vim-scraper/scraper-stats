@@ -1,0 +1,277 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9.2, refs/heads/master)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Wed Nov 28 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    corrected several bugs when the file path contains some spaces
+    corrected a bug with the TagsWindow
+
+ doc/TagsBase.txt    |   59 ++++++++++++++++++++++++++++++--------------------
+ plugin/TagsBase.vim |   42 +++++++++++++++++++-----------------
+ 2 files changed, 57 insertions(+), 44 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.1)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Mon Nov 12 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    corrected a bug in the current tag lookup when perl is not available
+
+ doc/TagsBase.txt                  |  111 ++++++++--
+ plugin/.tb.TagsBase.vim.tags      |   38 ----
+ plugin/TagsBase.vim               |   16 ++-
+ plugin/perl/TagsBase.pl           |  413 ++++++++++++++++++++++++++++++++++++
+ plugin/perl/TagsBase.vim          |  422 +++++++++++++++++++++++++++++++++++++
+ plugin/perl/VIM.pm                |   61 ++++++
+ plugin/perl/test.pl               |    1 +
+ vimfiles/plugin/perl/TagsBase.pl  |  413 ------------------------------------
+ vimfiles/plugin/perl/TagsBase.vim |  422 -------------------------------------
+ vimfiles/plugin/perl/VIM.pm       |   61 ------
+ vimfiles/plugin/perl/test.pl      |    1 -
+ 11 files changed, 1001 insertions(+), 958 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Sun Nov 11 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    added the TagsWindow command to visualize tags in a buffer.
+    added a menu entry to opent the Tags Buffer.
+    added a toc to the help.
+    corrected the NT ACL bug.
+
+ ftplugin/TagsBase.vim             |   10 +
+ plugin/.tb.TagsBase.vim.tags      |   38 ++++
+ plugin/TagsBase.vim               |   80 ++++++--
+ syntax/TagsBase.vim               |    7 +
+ vimfiles/perl/TagsBase.pl         |  386 ---------------------------------
+ vimfiles/perl/TagsBase.vim        |  411 ------------------------------------
+ vimfiles/perl/VIM.pm              |   60 ------
+ vimfiles/plugin/perl/TagsBase.pl  |  413 ++++++++++++++++++++++++++++++++++++
+ vimfiles/plugin/perl/TagsBase.vim |  422 +++++++++++++++++++++++++++++++++++++
+ vimfiles/plugin/perl/VIM.pm       |   61 ++++++
+ vimfiles/plugin/perl/test.pl      |    1 +
+ 11 files changed, 1016 insertions(+), 873 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.3)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Thu Oct 25 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    greatly enhanced the win32 cascading menus (when perl is available)
+
+ doc/TagsBase.txt             |   23 ++-
+ plugin/.tb.TagsBase.vim.tags |    9 -
+ plugin/TagsBase.vim          |    4 +-
+ plugin/TagsBase.vim~         |  584 ------------------------------------------
+ vimfiles/perl/TagsBase.pl    |   70 +++--
+ vimfiles/perl/TagsBase.vim   |   56 +++--
+ 6 files changed, 102 insertions(+), 644 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.2)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Sun Oct 21 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    bugfix removed some stray timing statements from the perl scripts
+
+ perl/TagsBase.pl             |  372 ---------------------------------------
+ perl/TagsBase.vim            |  395 ------------------------------------------
+ perl/VIM.pm                  |   60 -------
+ plugin/.tb.TagsBase.vim.tags |    9 +
+ vimfiles/perl/TagsBase.pl    |  372 +++++++++++++++++++++++++++++++++++++++
+ vimfiles/perl/TagsBase.vim   |  395 ++++++++++++++++++++++++++++++++++++++++++
+ vimfiles/perl/VIM.pm         |   60 +++++++
+ 7 files changed, 836 insertions(+), 827 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.1)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Sat Oct 20 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    small correction for bug resulting in error message:
+    Uncaught exception from user code:
+    ^ICan't call method "Type" on unblessed reference at perl/TagsBase.vim line 376.
+    
+    ^ITagsBase::GetTagType(391) called at (eval 14) line 1
+    ^Ieval 'TagsBase::GetTagType 391
+    ;' called at (eval 14) line 0
+    Uncaught exception from user code:
+    ^ICan't call method "Name" on unblessed reference at perl/TagsBase.vim line 389.
+    
+    ^ITagsBase::GetTagName(391) called at (eval 15) line 1
+    ^Ieval 'TagsBase::GetTagName 391
+
+ perl/TagsBase.pl     |    2 +
+ perl/TagsBase.vim    |    4 +-
+ plugin/TagsBase.vim~ |  584 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 588 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Fri Oct 19 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Greatly improved the speed when perl is available.  Now almost everything happens in
+    the perl interpreter.   Speed improvement example: on a file with 5408 tags:
+    645 second --> 72 second.  Limited the number of menu items to
+    configurable size both for time reasons and because gtk doesn't like menus which are
+    longer than the screen.
+    Added the TagsBase.pl and VIM.pm file to the distribution, those are not needed for
+    running the scripts but are usefull for debuging the perl parts.
+
+ doc/TagsBase.txt    |   14 ++-
+ perl/TagsBase.pl    |  370 ++++++++++++++++++++++++++++++++++++++++++++++++
+ perl/TagsBase.vim   |  393 +++++++++++++++++++++++++++++++++++++++++++++++---
+ perl/VIM.pm         |   60 ++++++++
+ plugin/TagsBase.vim |  194 ++++++++++++++++----------
+ 5 files changed, 933 insertions(+), 98 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Tue Oct 9 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     "Corrected some bugs regarding the situation when perl is not builtin.
+      Corrected a bug when there is only one tag in the file repeated tag generation would interpret it as being overloaded.
+
+ doc/TagsBase.txt    |    5 +++++
+ perl/TagsBase.vim   |   50 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/TagsBase.vim |   34 +++++++++-------------------------
+ 3 files changed, 64 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Tue Oct 9 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Corrected some bugs regarding paths with spaces.
+    replaced the script local function s:GetTagName by a global function TagsBase_GetTagName.
+    Modified the doc to suggest using this function for displaying the tag name someplace else than the title bar.
+    Corrected a bug regarding the cleanup code and editing read only files.
+
+ doc/TagsBase.txt    |   24 ++++++++++++++++++-
+ plugin/TagsBase.vim |   61 ++++++++++++++++++++++++++++----------------------
+ 2 files changed, 56 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.1)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Fri Oct 5 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Uses the BufEnter autocmd to refresh the menu, this makes the menu work with split windows.
+    Keeps the menu generating command in a buffer variable to avoid the extra work of reparsing if it is not needed.
+    Uses the perl interpreter if available to speed up the tags parsing.
+
+ doc/TagsBase.txt    |   78 +++++-----
+ plugin/TagsBase.vim |  437 +++++++++++++++++++++++++++++----------------------
+ 2 files changed, 288 insertions(+), 227 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Tue Oct 2 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    avoids opening a buffer on the tags file, optionnally destroy the created tags files,
+    changed the name of the g:CatProg variable to g:TagsBase_CatProg.
+    See :help TagsBase for a descriptions of the new options
+
+ doc/TagsBase.txt    |   64 +++++++++++------
+ plugin/TagsBase.vim |  192 ++++++++++++++++++++++++++++++++++++---------------
+ 2 files changed, 179 insertions(+), 77 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.3)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Tue Oct 2 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    added new options to select the name of the tags
+    files. Removed the html files. Changed the
+    license to public domain added the
+    |TagsBase-ChangeLog| and the |TagsBase-Credits|
+    section to the help. Added a warning about the
+    existence of the tags files"
+
+ doc/TagsBase.txt       |   50 ++++++
+ html/TagsBase.html     |  316 --------------------------------------
+ html/TagsBase.vim.html |  395 ------------------------------------------------
+ plugin/TagsBase.vim    |   12 +-
+ 4 files changed, 58 insertions(+), 715 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Tue Oct 2 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    bug fixes in the sorting of the lines array
+
+ plugin/TagsBase.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Tue Oct 2 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    bug correction
+
+ plugin/TagsBase.vim |   28 +++++++++++++++++++++++-----
+ 1 files changed, 23 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Tue Oct 2 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added help, made customization easier, packaged into a zip file.
+    To install unpack in a directory in your runtimepath (see :help runtimepath) and run
+    :helptags $dirUnpacked/doc
+
+ doc/TagsBase.txt       |   75 +++++++++
+ html/TagsBase.html     |  316 ++++++++++++++++++++++++++++++++++++++
+ html/TagsBase.vim.html |  395 ++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/TagsBase.vim    |   37 +++--
+ 4 files changed, 810 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Mon Oct 1 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    reorganized and commented the script, support for the builtin tags stack, support for ordered tag file generation, some bugs corrected.
+
+ plugin/TagsBase.vim |  271 ++++++++++++++++++++++++++-------------------------
+ 1 files changed, 137 insertions(+), 134 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Mon Oct 1 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    added a menu entry to toggle on and off the title string functionality
+
+ plugin/TagsBase.vim |   23 +++++++++++++++++++++--
+ 1 files changed, 21 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Mon Oct 1 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Corrected dependency on a $TMP variable
+    corrected bug when on an ms system the shell used was a unix type shell, this generated problems due to the shell misinterpreting the '&#039 in a path.
+    If you find any other bugs, please report it by mail to me (benoit.cerrina@writeme.com
+
+ plugin/TagsBase.vim |  284 +++++++++++++++++++++++++++------------------------
+ 1 files changed, 149 insertions(+), 135 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Benoit Cerrina <benoit.cerrina at writeme.com>
+AuthorDate: Sun Sep 30 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |   42 +++++++
+ plugin/TagsBase.vim |  338 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 380 insertions(+), 0 deletions(-)

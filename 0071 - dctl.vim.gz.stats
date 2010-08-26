@@ -1,0 +1,98 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2005.09a, refs/heads/master)
+Author:     Paul Zimmer <paulzimmer at zimmerdesignservices.com>
+AuthorDate: Sun Jul 30 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug in previous version caused by some random unprintable characters in Synopsys' html help pages.
+
+ dctl.dict       |    4 ++--
+ plugin/dctl.vim |   10 +++++-----
+ 2 files changed, 7 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2005.09)
+Author:     Paul Zimmer <paulzimmer at zimmerdesignservices.com>
+AuthorDate: Thu Jul 6 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Updated for 2005.09.  Several other small enhancements as well.  Dictionary files now included.  I don't always remember to update on this site, so check my website www.zimmerdesignservices.com for latest.
+
+ dctl.dict       | 2043 +++++++++++++++++++++++++++++++++++
+ doc/README.txt  |   70 +-
+ plugin/dctl.vim | 3209 +++++++++++++++++++++++++++++++++++++++++++------------
+ 3 files changed, 4600 insertions(+), 722 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2004.06)
+Author:     Paul Zimmer <paulzimmer at zimmerdesignservices.com>
+AuthorDate: Wed Aug 4 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Updated for 2004.06.  Changed the script version to match the target dc version (2004.06)
+
+ plugin/dctl.vim |  364 ++++++++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 265 insertions(+), 99 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6.14)
+Author:     Paul Zimmer <paulzimmer at zimmerdesignservices.com>
+AuthorDate: Fri May 7 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    For DC 2003.12 release.  Now also includes a README that show various ways to hook in the file.
+
+ doc/README.txt  |   79 +++++++
+ plugin/dctl.vim |  638 +++++++++++++++++++++++++++++++++++++++++++++----------
+ 2 files changed, 602 insertions(+), 115 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6.12)
+Author:     Paul Zimmer <paulzimmer at zimmerdesignservices.com>
+AuthorDate: Sun Dec 7 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Updated for DC2003.06
+    Also, removed some incorrect syntax matches that occurred when Synopsys added package
+    support.  Haven't tackled the problem of actually parsing the package commands, but I
+    at least removed the incorrect keywords that had resulted from this change
+
+ plugin/dctl.vim |  668 +++++++++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 546 insertions(+), 122 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6.11)
+Author:     Paul Zimmer <paulzimmer at zimmerdesignservices.com>
+AuthorDate: Tue Jul 30 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Updated for dc 2002.05
+
+ plugin/dctl.vim |  886 ++++++++++++++++++++++++++++++++++---------------------
+ 1 files changed, 544 insertions(+), 342 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6.1)
+Author:     Paul Zimmer <paulzimmer at zimmerdesignservices.com>
+AuthorDate: Tue Apr 30 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Compatible with vi 6.1
+
+ plugin/dctl.vim |   10 +++++-----
+ 1 files changed, 5 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.8)
+Author:     Paul Zimmer <paulzimmer at zimmerdesignservices.com>
+AuthorDate: Thu Feb 21 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed problems with 5.8 inter-operation, hilink, etc
+    Works much better now.  Doesn't get "lost" much anymore.
+
+ plugin/dctl.vim |   11 ++++++-----
+ 1 files changed, 6 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.7)
+Author:     Paul Zimmer <paulzimmer at zimmerdesignservices.com>
+AuthorDate: Mon Aug 27 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README          |    7 +
+ plugin/dctl.vim | 2706 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 2713 insertions(+), 0 deletions(-)

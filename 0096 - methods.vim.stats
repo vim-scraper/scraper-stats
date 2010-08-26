@@ -1,0 +1,63 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.13, refs/heads/master)
+Author:     matthias veit <matthias_veit at yahoo.de>
+AuthorDate: Mon Feb 4 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Complete redraw of this script. Featuring:
+    -menudrawing works correctly:
+     now it is possible to tearOff the ClassMenue and jump from
+     buffer to buffer, while the open menu is updated dynamically.
+    -all properties are dynamically changeable
+    -extension points added: multiple parsers and sorters featured
+    -ctags runs in filter mode
+
+ plugin/methods.vim     |  373 -------------------
+ vimmethods/Readme      |  130 +++++++
+ vimmethods/methods.vim |  928 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 1058 insertions(+), 373 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
+Author:     matthias veit <matthias_veit at yahoo.de>
+AuthorDate: Fri Jan 4 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -fixed the filenameexpansion failure
+    -buffer deletion now works correctly
+
+ plugin/methods.vim |   28 +++++++++++++++-------------
+ 1 files changed, 15 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
+Author:     matthias veit <matthias_veit at yahoo.de>
+AuthorDate: Fri Nov 9 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -fixed the "new file" problem (use only valid files)
+    -using currentfile instead of <afile> can make trouble (fixed)
+
+ plugin/methods.vim |   59 +++++++++++++++++++++++++++------------------------
+ 1 files changed, 31 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.9.1)
+Author:     matthias veit <matthias_veit at yahoo.de>
+AuthorDate: Mon Nov 5 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -changed autocommands behaviour (try to read tags for every file type)
+    -changed visibility and names of functions for better readability
+
+ plugin/methods.vim |   79 +++++++++++++++++++++++-----------------------------
+ 1 files changed, 35 insertions(+), 44 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
+Author:     matthias veit <matthias_veit at yahoo.de>
+AuthorDate: Thu Nov 1 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -display method-name in statusline
+    -multisessions enabled
+    -attributes are shown in submenu
+
+ README             |    7 +
+ plugin/methods.vim |  377 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 384 insertions(+), 0 deletions(-)

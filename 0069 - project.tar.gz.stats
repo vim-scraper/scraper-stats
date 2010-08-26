@@ -1,0 +1,142 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.4.1, refs/heads/master)
+Author:     Aric Blumer <aricvim at suddenlink.net>
+AuthorDate: Fri Oct 13 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Bug fixes
+    - Optional use of vimgrep instead of grep
+    - Line numbers in the project window
+    - Window not bound to left side (experimental)
+
+ doc/project.txt    |   42 ++++++++++++++++++++---------
+ plugin/project.vim |   73 +++++++++++++++++++++++++++++++++------------------
+ 2 files changed, 76 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Aric Blumer <aricvim at suddenlink.net>
+AuthorDate: Mon Apr 24 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    After about 2.5 years here is a slightly updated version.
+    
+    -Updated to support 7.0.  The previous version works in 7.0, but there was an annoying redraw when you move into/out of the project window.
+    -Also, 7.0 treats modelines a little bit differently than 6.x. Version 7.0 re-evaluates window-local modelines if you hide and show the project window, and this messes up folds if you have a foldlevel in your project file's modelines.  Modelines are now turned off after the project file is first loaded.
+    -Added \S (Split-load all files at the cursor level) contributed by A. Harrison.
+    -Bug fix with misuse of winnr() when winbufnr() should have been used.
+
+ doc/project.txt    |    6 +++++-
+ plugin/project.vim |   44 ++++++++++++++++++++++++++++++++++++--------
+ 2 files changed, 41 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Aric Blumer <aricvim at suddenlink.net>
+AuthorDate: Fri Oct 25 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -Bug Fixes (thanks Xiangjiang Ma)
+    -Completed suite of % expansions in proj_run
+    -Added mapping to toggle Project Window open/closed.
+    -Added <F5> mapping equivalent to \R
+
+ doc/project.txt    |   51 +++++++++++++++++------
+ plugin/project.vim |  118 ++++++++++++++++++++++++++++++++++++++--------------
+ 2 files changed, 124 insertions(+), 45 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
+Author:     Aric Blumer <aricvim at suddenlink.net>
+AuthorDate: Tue Oct 1 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    --Identical to 1.2 but fixed functionality with netrw
+
+ plugin/project.vim |   10 +++++-----
+ 1 files changed, 5 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Aric Blumer <aricvim at suddenlink.net>
+AuthorDate: Mon Sep 30 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -Environment variables now expanded in paths.
+    -Added 'b' flag to use the browse() function. (Off for Windows--it can't browse for directories.)
+    -Added keep pragma to keep lines when refreshing.
+    -Small tweaks.
+    -Doc: example of using perforce with the plugin.
+    -Doc: example of adding custom launchers.
+    -Can't test on Windows, please let me know of problems.
+
+ doc/project.txt    |   67 ++++++++++++++++++++++++++++++++++++++++++++++-----
+ plugin/project.vim |   42 +++++++++++++++-----------------
+ 2 files changed, 80 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Aric Blumer <aricvim at suddenlink.net>
+AuthorDate: Mon Apr 1 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now accepts spaces in directories. Some bug fixes, too. Added Project_GetFname() for user scripts.
+
+ doc/project.txt    |   39 +++++++-
+ plugin/project.vim |  249 +++++++++++++++++++++++++++++++++-------------------
+ 2 files changed, 191 insertions(+), 97 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Aric Blumer <aricvim at suddenlink.net>
+AuthorDate: Fri Nov 30 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Some Bugfixes, improvements in performance. Added recursive create, explore, filenames with spaces, etc.
+
+ doc/project.txt    |  191 +++++++---
+ plugin/project.vim | 1023 ++++++++++++++++++++++++++-------------------------
+ 2 files changed, 657 insertions(+), 557 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0pre4)
+Author:     Aric Blumer <aricvim at suddenlink.net>
+AuthorDate: Thu Oct 18 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Last pre before 1.0, so please test!
+    - Added project grep, project load, project wipe
+    - Can run commands on all files in a project.
+    - Now supports netrw plugin
+
+ doc/project.txt    |  174 ++++++++++++++++------
+ plugin/project.vim |  425 +++++++++++++++++++++++++++++++++++-----------------
+ 2 files changed, 413 insertions(+), 186 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0pre3)
+Author:     Aric Blumer <aricvim at suddenlink.net>
+AuthorDate: Tue Oct 9 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added flags for sorting of filenames.
+    Added mappings to run external program or Vim script on a file.
+    Fixed a small bug ("internal error").
+
+ doc/project.txt    |   43 ++++++++++++---
+ plugin/project.vim |  149 +++++++++++++++++++++++++++++++++++++++++++++-------
+ 2 files changed, 164 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0pre2)
+Author:     Aric Blumer <aricvim at suddenlink.net>
+AuthorDate: Fri Oct 5 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed absolute path detection for Win32. (Thanks Lawrence!) Fixed small documentation error.
+
+ doc/project.txt    |    5 +++--
+ plugin/project.vim |   38 ++++++++++++++++++++++----------------
+ 2 files changed, 25 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0pre1)
+Author:     Aric Blumer <aricvim at suddenlink.net>
+AuthorDate: Wed Oct 3 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Several new features, most notably: Paths can now be relative in subprojects. Subprojects inherit parameters from parent. New in= and out= directives to run Vim scripts to modify the environment. Added T flag. Added per-fold flags. CTRL-W_o keeps Project Window visible. etc.
+
+ README             |   47 +++
+ doc/project.txt    |  394 ++++++++++++++++++++++++
+ plugin/project.vim |  846 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 1287 insertions(+), 0 deletions(-)

@@ -1,0 +1,33 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2, refs/heads/master)
+Author:     Srinath Avadhanula <srinath at fastmail.fm>
+AuthorDate: Mon Dec 10 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    removed a bug which was causing nested environments to be entered incorrectly.
+    added a few more commands. removed some debugging statements.
+    added a function RunLaTeX() which runs latex on the current file or a master file
+    if one exists. see the file for additional details.
+
+ plugin/tex.vim |  134 ++++++++++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 111 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Srinath Avadhanula <srinath at fastmail.fm>
+AuthorDate: Fri Dec 7 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    added a wrapper function which makes the insert mode mappings emulate the operator pending mode. i.e, the user does not have to type the LHS fast. Even making mistakes and moving around in the file is allowed before coming back and typing the last character (in this case its chosen to be the tab) expands nicely to the RHS.
+
+ plugin/tex.vim |  269 +++++++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 217 insertions(+), 52 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2001-09-24)
+Author:     Srinath Avadhanula <srinath at fastmail.fm>
+AuthorDate: Mon Sep 24 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README         |  131 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/tex.vim |   64 +++++++++++++++++++++++++++
+ 2 files changed, 195 insertions(+), 0 deletions(-)

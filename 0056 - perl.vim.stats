@@ -1,0 +1,22 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     Lukas Zapletal <Lukas.Zapletal at seznam.cz>
+AuthorDate: Thu Aug 9 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I made a mistake so the script didn`t manage errors ending ', near "..."' correctly. Now it is fixed.
+    
+    I know VIM 6.0 has tools/efm_perl.pl - but this is not working under Windows and it is slower (because perl is called twice).
+
+ plugin/perl.vim |   17 ++++++++++++++---
+ 1 files changed, 14 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Lukas Zapletal <Lukas.Zapletal at seznam.cz>
+AuthorDate: Wed Aug 8 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README          |    7 +++++++
+ plugin/perl.vim |   21 +++++++++++++++++++++
+ 2 files changed, 28 insertions(+), 0 deletions(-)

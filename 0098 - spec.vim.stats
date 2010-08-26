@@ -1,0 +1,51 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.0, refs/heads/master)
+Author:     Guillaume Rousse <guillomovitch at zarb.org>
+AuthorDate: Fri Aug 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     - support epoch in revision informations
+     - use rpm to evaluate external macros
+     - add customization options (Gustavo Niemeyer <niemeyer@conectiva.com>)
+     - large code  cleanup
+
+ doc/spec.txt      |   73 ++++++++++++++---
+ ftplugin/spec.vim |  244 +++++++++++++++++++++++++++++------------------------
+ 2 files changed, 194 insertions(+), 123 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
+Author:     Guillaume Rousse <guillomovitch at zarb.org>
+AuthorDate: Sun Jan 18 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fix archive
+
+ doc/spec.txt.gz       |  Bin 691 -> 0 bytes
+ ftplugin/spec.vim     |  176 +++++++++++++++++++++++++++++++++++++++++++++++++
+ ftpplugin/spec.vim    |  176 -------------------------------------------------
+ ftpplugin/spec.vim.gz |  Bin 1547 -> 0 bytes
+ 4 files changed, 176 insertions(+), 176 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Guillaume Rousse <guillomovitch at zarb.org>
+AuthorDate: Sat Jan 10 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - removed line width limit- support for %name style macros- quote patten when calling grep (Luca Berra <bluca@comedia.it>)- navigation through sections (Max Ischenko)- doc file
+
+ doc/spec.txt          |   44 ++++++++++++
+ doc/spec.txt.gz       |  Bin 0 -> 691 bytes
+ ftplugin/spec.vim     |  173 ------------------------------------------------
+ ftpplugin/spec.vim    |  176 +++++++++++++++++++++++++++++++++++++++++++++++++
+ ftpplugin/spec.vim.gz |  Bin 0 -> 1547 bytes
+ 5 files changed, 220 insertions(+), 173 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Guillaume Rousse <guillomovitch at zarb.org>
+AuthorDate: Sat Sep 29 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README            |    3 +
+ ftplugin/spec.vim |  173 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 176 insertions(+), 0 deletions(-)

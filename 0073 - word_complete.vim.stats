@@ -1,0 +1,75 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     Benji Fisher <benji at member.AMS.org>
+AuthorDate: Wed Dec 6 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor change:  I replaced
+      while letter <= "z"
+    with
+      while letter <=# "z"
+    (case-sensitive comparison, regardless of 'ignorecase' option) so that if someone decides to add a loop for "A" to "Z" using the same model, (s)he does not get odd results.
+
+ plugin/word_complete.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Benji Fisher <benji at member.AMS.org>
+AuthorDate: Mon May 15 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Since vim 7.0 supports :smap (mappings that apply only to Select mode) I updated the script to use these.  Now the maps defined by the script for when completion is active will not do anything unexpected in Visual mode.
+    
+    I also updated the installation instructions in the comments at the top of the file.
+
+ plugin/word_complete.vim |   46 +++++++++++++++++++++++-----------------------
+ 1 files changed, 23 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Benji Fisher <benji at member.AMS.org>
+AuthorDate: Sat Aug 9 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I added a configuration section.  You can now change
+    (1) a minimum length of word to be completed
+    (2) the character (default <Tab>) used to accept the completion.
+    
+    I also added some comments and separated a StartAppend() function (which is called twice).
+
+ plugin/word_complete.vim |   84 ++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 62 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Benji Fisher <benji at member.AMS.org>
+AuthorDate: Fri Jun 6 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    better support for keymaps
+
+ plugin/word_complete.vim |   41 +++++++++++++++++++++--------------------
+ 1 files changed, 21 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Benji Fisher <benji at member.AMS.org>
+AuthorDate: Mon Mar 31 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This version tries to treat :lmap's (and keymaps) properly.
+    
+    Minor improvement:  completion is attempted before
+    punctuation, as well as at the end of a line or before white space.
+    
+    This version will probably no longer work with vim 5.x.
+
+ plugin/word_complete.vim |  243 ++++++++++++++++++++++++----------------------
+ 1 files changed, 129 insertions(+), 114 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Benji Fisher <benji at member.AMS.org>
+AuthorDate: Wed Aug 29 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                   |   14 ++++++
+ plugin/word_complete.vim |  114 ++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 128 insertions(+), 0 deletions(-)
