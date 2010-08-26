@@ -5,8 +5,10 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     Fixed a bug with text brushes and ctrl-leftmouse.
 
- DrawIt.vba |   32 +++++++++++++++++---------------
- 1 files changed, 17 insertions(+), 15 deletions(-)
+ autoload/DrawIt.vim     |   20 ++++++++++----------
+ doc/DrawIt.txt          |    4 +++-
+ plugin/DrawItPlugin.vim |    6 +++---
+ 3 files changed, 16 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9)
 Author:     Charles Campbell <drchip at campbellfamily.biz>
@@ -15,8 +17,10 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     Bugfix: Johann-Guenter Simon fixed a bug with s:DrawErase()
 
- DrawIt.vba |   44 ++++++++++++++++++++++++++++++++------------
- 1 files changed, 32 insertions(+), 12 deletions(-)
+ autoload/DrawIt.vim |   11 ++++++-----
+ doc/DrawIt.txt      |    6 +++++-
+ plugin/cecutil.vim  |   21 ++++++++++++++++++---
+ 3 files changed, 29 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/8)
 Author:     Charles Campbell <drchip at campbellfamily.biz>
@@ -30,8 +34,11 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     * DrawIt's maps are now all <buffer> (local) instead of global
     * Bug fixe fixed multi-character user map restoration
 
- DrawIt.vba | 1294 +++++++++++++++++++++++++++++++++++-------------------------
- 1 files changed, 758 insertions(+), 536 deletions(-)
+ autoload/DrawIt.vim     |  868 +++++++++++++++++++++++++++--------------------
+ doc/DrawIt.txt          |  366 ++++++++++++--------
+ plugin/DrawItPlugin.vim |   13 +-
+ plugin/cecutil.vim      |   35 +-
+ 4 files changed, 752 insertions(+), 530 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7)
 Author:     Charles Campbell <drchip at campbellfamily.biz>
@@ -42,10 +49,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     DrawIt now supports brushes: use visual block to select a brush, then use :SetBrush a (for example).  Blanks are transparent.  Use shift-leftmouse to draw with the current brush.
     Various bugfixes.
 
- DrawIt.vba        | 2373 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- doc/DrawIt.txt    |  270 ------
- plugin/DrawIt.vim | 1289 -----------------------------
- 3 files changed, 2373 insertions(+), 1559 deletions(-)
+ autoload/DrawIt.vim     | 1511 +++++++++++++++++++++++++++++++++++++++++++++++
+ doc/DrawIt.txt          |  135 +++--
+ plugin/DrawIt.vim       | 1289 ----------------------------------------
+ plugin/DrawItPlugin.vim |   64 ++
+ plugin/cecutil.vim      |  464 +++++++++++++++
+ 5 files changed, 2133 insertions(+), 1330 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/02242003)
 Author:     Charles Campbell <drchip at campbellfamily.biz>
