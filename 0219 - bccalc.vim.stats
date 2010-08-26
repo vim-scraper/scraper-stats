@@ -1,0 +1,74 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.8, refs/heads/master)
+Author:     scott urban <thomas.scott.urban at gmail.com>
+AuthorDate: Fri Oct 28 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Change to allow chaining of equations, 3 + 4 = <7> - 4 = <3> - see summary
+
+ plugin/bccalc.vim |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
+Author:     scott urban <thomas.scott.urban at gmail.com>
+AuthorDate: Fri Apr 23 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Typo
+
+ plugin/bccalc.vim |    1 -
+ 1 files changed, 0 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     scott urban <thomas.scott.urban at gmail.com>
+AuthorDate: Fri Apr 23 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixes for sin, cos, etc, function substitutions, thanks to C. Campbell.
+    Fixes for multiple substitutions.
+    Fix for :Calculate command
+
+ plugin/bccalc.vim |   63 ++++++++++++++++++++++++++++++++--------------------
+ 1 files changed, 39 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     scott urban <thomas.scott.urban at gmail.com>
+AuthorDate: Thu Apr 22 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added a normal mode mapping for equation on lines by themselves - visual mode mapping can be tedious.  Added a command version, you can do
+    :Calculate 2 + 5 / 2 + 4
+    and 8 will be echoed
+
+ plugin/bccalc.vim |   69 ++++++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 52 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     scott urban <thomas.scott.urban at gmail.com>
+AuthorDate: Mon Feb 18 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    added bccalc_preload global variable - allows specifying file(s) with functions/variables to load  before doing calculations
+
+ plugin/bccalc.vim |    5 ++++-
+ 1 files changed, 4 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     scott urban <thomas.scott.urban at gmail.com>
+AuthorDate: Sat Feb 16 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added "&", "<", ">", and "|" to escape characters that mess up when passed to shell.
+
+ plugin/bccalc.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     scott urban <thomas.scott.urban at gmail.com>
+AuthorDate: Sat Feb 16 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README            |   56 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/bccalc.vim |   34 ++++++++++++++++++++++++++++++++
+ 2 files changed, 90 insertions(+), 0 deletions(-)

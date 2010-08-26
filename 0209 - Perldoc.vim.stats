@@ -1,0 +1,13 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1.1, refs/heads/master)
+Author:     Colin Keith <vim at ckeith.clara.net>
+AuthorDate: Tue Jul 9 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Support for su'ing to non-root user when executing the perldoc command as root. Perl below v5.6x do not support the -U flag to enable "unsecure" mode. See README.txt / vim docs for details.
+
+ README                |    3 +
+ doc/README.txt        |  166 +++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/perl_doc.txt      |  100 +++++++++++++++++++++++++++++
+ ftplugin/perl_doc.vim |  131 ++++++++++++++++++++++++++++++++++++++
+ syntax/podman.vim     |   21 ++++++
+ 5 files changed, 421 insertions(+), 0 deletions(-)

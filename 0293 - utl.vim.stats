@@ -1,0 +1,102 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.0a-ALPHA, refs/heads/master)
+Author:     Stefan Bittner <stb at bf-consulting.de>
+AuthorDate: Thu Jul 31 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The most important changes are:
+    - Added generic media type handler: open .pdf, .doc,
+      .jpg etc without the need to define handler variables.
+    - Added support for footnote references: make "[1]"
+      executable.
+    - Added scheme to open emails, e.g.
+      <mail:///Inbox?26.07.2008 16:01>
+    - Added verbose mode: Better figure out what's going
+    - Added 'copy link/filename to clipboard' function
+    - Changed user interface: Basic Command :Utl instead
+      only mapping \gu
+    - Alternate http access method: open web documents
+      directly in Vim
+    - Support network files (shares, NFS), e.g.
+      <file://127.0.0.1/path/to/file&gt;
+    - Improved jumping back and forth
+    - More versatile scheme handler interface
+    - Fixed Bugs
+
+ autoload/utl_lib.vim |  170 +++
+ doc/utl_ref.txt      |  323 -----
+ doc/utl_usr.txt      | 3570 +++++++++++++++++++++++++++++++-------------------
+ plugin/utl.vim       | 1946 +++++++++++++++++++---------
+ plugin/utl_arr.vim   |  125 --
+ plugin/utl_rc.vim    |  461 +++++--
+ plugin/utl_scm.vim   |  702 ++++++++---
+ plugin/utl_uri.vim   |   36 +-
+ 8 files changed, 4631 insertions(+), 2702 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Stefan Bittner <stb at bf-consulting.de>
+AuthorDate: Sun Mar 27 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Successor of Thlnk.vim with many new features:
+    * Call web browser and email client on URLs (configurable scheme handlers),
+    * Call MS-Word on .doc files, Acrobat Reader on .pdf, IrfanView on .jpg etc.
+      (configurable media type handlers)
+    * New vimscript: protocol for embedding vim commands into text files and source code.
+    * Syntax highlighting of URLs
+    * Support for URL heuristics, e.g. allow www.vim.org, not only http://www.vim.org
+    * Support exeuction of URLs without <URL:...> embedding, e.g. "see www.vim.org"
+    * Support multiline URLs, Smart setup and customization facility, bugs fixed.
+
+ doc/thlnk_README.txt |  168 -----
+ doc/thlnkref.txt     |  224 -------
+ doc/thlnkusr.txt     | 1640 --------------------------------------------------
+ doc/utl_ref.txt      |  323 ++++++++++
+ doc/utl_usr.txt      | 1376 ++++++++++++++++++++++++++++++++++++++++++
+ plugin/thlnk.vim     |  751 -----------------------
+ plugin/thlnkarr.vim  |  135 -----
+ plugin/thlnkscm.vim  |  281 ---------
+ plugin/thlnkuri.vim  |  276 ---------
+ plugin/utl.vim       | 1106 ++++++++++++++++++++++++++++++++++
+ plugin/utl_arr.vim   |  125 ++++
+ plugin/utl_rc.vim    |  162 +++++
+ plugin/utl_scm.vim   |  352 +++++++++++
+ plugin/utl_uri.vim   |  268 ++++++++
+ 14 files changed, 3712 insertions(+), 3475 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
+Author:     Stefan Bittner <stb at bf-consulting.de>
+AuthorDate: Sat Jun 15 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Please see release notes for version 1.2. The reason for this version 1.2.1 is, that I
+    packed the .vim files with the wrong 'fileformats' setting into the .zip file. Sorry!
+
+ doc/thlnk_README.txt |  336 ++++++------
+ plugin/thlnk.vim     | 1502 +++++++++++++++++++++++++-------------------------
+ plugin/thlnkarr.vim  |  270 +++++-----
+ plugin/thlnkscm.vim  |  562 ++++++++++----------
+ plugin/thlnkuri.vim  |  552 +++++++++---------
+ 5 files changed, 1611 insertions(+), 1611 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Stefan Bittner <stb at bf-consulting.de>
+AuthorDate: Sat Jun 15 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New section "Tips and Common Pitfails" added to the docs. Enhanced Documentation.
+    - Enhanced warning and error messages.
+    - Bug fixes:
+      * {Visual}\gu didn't work on Windows gVim without guioptions+=a set.
+      * Klaus Horsten <horsten@gmx.at>: With 'wrapscan' unset, fragment addressing could fail.
+      * Patrik Nyman <patrik.nyman@orient.su.se>: Non existing http: or rcp: URLs made thlnk
+        list the current buffer.
+
+ README               |   60 ++
+ doc/thlnk_README.txt |  168 +++++
+ doc/thlnkref.txt     |  224 +++++++
+ doc/thlnkusr.txt     | 1640 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/thlnk.vim     |  751 +++++++++++++++++++++++
+ plugin/thlnkarr.vim  |  135 +++++
+ plugin/thlnkscm.vim  |  281 +++++++++
+ plugin/thlnkuri.vim  |  276 +++++++++
+ 8 files changed, 3535 insertions(+), 0 deletions(-)

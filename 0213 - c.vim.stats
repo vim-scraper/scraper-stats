@@ -1,0 +1,1255 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/5.11, refs/heads/master)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon May 31 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New tag {CURSOR} to avoid indent problems in a few cases.
+    - Three hotkeys renamed \rg -> \rma , \ri -> \rpa ,  \re -> \rka (better to remember).
+    - 'long long' added to the for-idioms.
+    - Bugfixes: for-idiom shows type as variable name if no variable name was given.
+    - Bugfixes: for-idiom inserts standard types with 2+ words wrong.
+    - Bugfixes: multiline end-of-line comments have wrong position in some cases.
+    - Bugfixes: local installation looks like a system-wide installation in seldom cases.
+
+ README.csupport   |   19 ++++----
+ doc/ChangeLog     |   12 +++++
+ doc/c-hotkeys.pdf |  Bin 40430 -> 40245 bytes
+ doc/c-hotkeys.tex |   12 ++--
+ doc/csupport.txt  |   48 +++++++++++--------
+ ftplugin/c.vim    |   14 +++---
+ plugin/c.vim      |  135 +++++++++++++++++++++++++++--------------------------
+ 7 files changed, 131 insertions(+), 109 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.10)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri Feb 5 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - The plugin now handles different template styles without editing and reloading the main template file.
+    - The number of template styles is not limited.
+    - New hotkey and ex-command to switch template styles.
+    - Template styles can automatically be related to file extensions.
+    - indent(1) errors will be presented in a quickfix error window.
+    - Comment alignment improved.
+    - Minor improvements.
+
+ README.csupport                           |   30 +-
+ c-support/templates/Templates             |    8 +-
+ c-support/templates/c.comments.template   |    2 +-
+ c-support/templates/c.cpp.template        |    2 +-
+ c-support/templates/c.idioms.template     |   34 ++-
+ c-support/templates/c.statements.template |   11 +-
+ c-support/templates/cpp.cpp.template      |    2 -
+ c-support/templates/cpp.idioms.template   |   12 +-
+ doc/ChangeLog                             |    8 +
+ doc/c-hotkeys.pdf                         |  Bin 112774 -> 40430 bytes
+ doc/c-hotkeys.tex                         |   48 ++-
+ doc/csupport.txt                          |   87 ++++-
+ ftplugin/c.vim                            |   68 +++--
+ plugin/c.vim                              |  568 ++++++++++++++---------------
+ 14 files changed, 486 insertions(+), 394 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.9)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed Oct 21 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Two additional hotkeys (+ ex commands) for preprocessor statements.
+    + Compile-link-run: improved error detection.
+    + Menu Run: hardcopy can print any buffer.
+    + Several minor improvements and bugfixes.
+
+ README.csupport                                    |   14 +-
+ c-support/codesnippets/print_array.cc.noindent     |   29 +
+ .../codesnippets/print_double_array.c.noindent     |    6 +-
+ c-support/codesnippets/print_int_array.c.noindent  |    6 +-
+ c-support/rc/customization.ctags                   |    1 +
+ c-support/rc/customization.vimrc                   |   10 +-
+ c-support/templates/c.comments.template            |    2 -
+ c-support/templates/c.cpp.template                 |   12 +-
+ c-support/templates/c.idioms.template              |    2 +
+ c-support/templates/c.statements.template          |   10 +-
+ c-support/templates/cpp.comments.template          |    2 -
+ c-support/templates/cpp.cpp.template               |   12 +-
+ c-support/templates/cpp.idioms.template            |    2 +
+ c-support/templates/cpp.statements.template        |   10 +-
+ doc/ChangeLog                                      |   10 +
+ doc/c-hotkeys.pdf                                  | 1559 ++++++++++++--------
+ doc/c-hotkeys.tex                                  |  128 ++-
+ doc/csupport.txt                                   |   18 +-
+ ftplugin/c.vim                                     |   77 +-
+ plugin/c.vim                                       |  216 ++-
+ 20 files changed, 1319 insertions(+), 807 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.8)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Jun 30 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Hotkeys are shown in the menus.
+    + File browser for code snippets and templates choosable (2 global variables).
+    + Two new hotkeys: include file description (implementation, header).
+    + New menu item: namespace alias
+    + Bugfix: wrapper script for use of a xterm could not handle parameters containing blanks.
+    + Several minor improvements.
+
+ README.csupport                      |   17 +-
+ c-support/scripts/wrapper.sh         |   23 +-
+ c-support/templates/c.cpp.template   |    4 +-
+ c-support/templates/cpp.cpp.template |    4 +-
+ doc/ChangeLog                        |    7 +
+ doc/c-hotkeys.pdf                    |  884 +++++++++++++++++-----------------
+ doc/c-hotkeys.tex                    |   75 ++--
+ doc/csupport.txt                     |   49 ++-
+ ftplugin/c.vim                       |    6 +-
+ plugin/c.vim                         |  779 +++++++++++++++---------------
+ 10 files changed, 947 insertions(+), 901 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.7)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Apr 30 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + 4 new hotkeys : insert file section comments (C/C++/H), special comments,
+      keyword comments.
+    + End-of-line comment adjustment improved.
+
+ README.csupport                      |   12 +-
+ c-support/templates/c.cpp.template   |    8 +-
+ c-support/templates/cpp.cpp.template |    8 +-
+ doc/ChangeLog                        |    9 +
+ doc/c-hotkeys.pdf                    |  597 +++++++++++++++++-----------------
+ doc/c-hotkeys.tex                    |   18 +-
+ doc/csupport.txt                     |  103 +++++-
+ ftplugin/c.vim                       |   27 ++-
+ plugin/c.vim                         |  293 +++++++++++++++---
+ 9 files changed, 704 insertions(+), 371 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.6)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Apr 6 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Jump targets (templates) and mapping Ctrl-j can be switched off.
+    + Yet unused jump targets will be highlighted after a file is opened.
+    + Statements menu: else block (key mapping \se).
+    + Handling of <SPLIT> improved (templates).
+    + Minor improvements.
+
+ README.csupport                             |   19 +-
+ c-support/rc/customization.gvimrc           |   43 ++-
+ c-support/rc/customization.vimrc            |  165 +++++--
+ c-support/templates/c.idioms.template       |    2 +
+ c-support/templates/c.statements.template   |   13 +-
+ c-support/templates/cpp.idioms.template     |    2 +
+ c-support/templates/cpp.statements.template |   13 +-
+ doc/ChangeLog                               |   14 +
+ doc/c-hotkeys.pdf                           |  680 ++++++++++++++------------
+ doc/c-hotkeys.tex                           |   11 +-
+ doc/csupport.txt                            |  118 +++--
+ ftplugin/c.vim                              |   14 +-
+ plugin/c.vim                                |   81 +++-
+ 13 files changed, 695 insertions(+), 480 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.5)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Feb 17 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Additional plugin-tags (jump targets in templates): <+text+>, <-text->.
+    + Additional mapping Ctrl-j : jump to these new targets.
+    + Template-file: additional macro |STYLE| and IF-ENDIF-construct to easily
+      choose between sets of templates.
+    + Additional mapping: auto-complete classical C comment (also multi-line).
+    + Additional mapping: auto-complete open block starting with {<CR> .
+    + Visual mode for date and time insertion (menu 'Comments').
+    + Visual mode for tags (submenu 'Comments->tags (plugin)').
+    + Bugfix: hotkey \ica not working
+    + Bugfix: hotkey Shift-F2 for the alternate-plugin disappeared.
+
+ README.csupport                               |  139 +++----
+ c-support/templates/Templates                 |   28 +-
+ c-support/templates/c.comments.template       |   20 +
+ c-support/templates/c.cpp.template            |   30 +-
+ c-support/templates/c.idioms.template         |   22 +-
+ c-support/templates/c.preprocessor.template   |    6 +-
+ c-support/templates/c.statements.template     |    1 +
+ c-support/templates/cpp.comments.template     |   18 +
+ c-support/templates/cpp.cpp.template          |   30 +-
+ c-support/templates/cpp.idioms.template       |   16 +-
+ c-support/templates/cpp.preprocessor.template |    5 +-
+ c-support/templates/cpp.statements.template   |    1 +
+ doc/ChangeLog                                 |    8 +
+ doc/c-hotkeys.pdf                             |  538 ++++++++++++-------------
+ doc/c-hotkeys.tex                             |   10 +-
+ doc/csupport.txt                              |  369 ++++++++++++++---
+ ftplugin/c.vim                                |   53 ++-
+ plugin/c.vim                                  |  155 ++++++--
+ 18 files changed, 920 insertions(+), 529 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.4)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Dec 15 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + New hotkey \+co inserts ' cout <<  << endl;'
+    + New menu item C++-menu: 'cout' replaces 'cout variable' and 'cout string'.
+    + Hotkey \c/ removed ( \cc does the same).
+    + Bugfix: after an unsuccessful compilation screen sometimes garbled.
+
+ README.csupport                      |   13 +-
+ c-support/templates/c.cpp.template   |    5 +-
+ c-support/templates/cpp.cpp.template |    5 +-
+ doc/ChangeLog                        |    9 +
+ doc/c-hotkeys.pdf                    |  888 +++++++++++++++++++---------------
+ doc/c-hotkeys.tex                    |  111 +++--
+ doc/csupport.txt                     |    9 +-
+ ftplugin/c.vim                       |   11 +-
+ plugin/c.vim                         |   27 +-
+ 9 files changed, 607 insertions(+), 471 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.3)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed Dec 3 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Insertions work properly when folding is used.
+    + Menu items Idioms->for(...) : type declaration for loop variable possible (tab completion).
+    + Specification of command line arguments (Run->cmd. line arg.): filename completion active.
+    + New main menu item 'show manual' (hotkey \hm): read manual for word under cursor.
+    + One hotkey renamed: \h -> \hp (help plugin)
+
+ README.csupport                         |   13 +-
+ c-support/codesnippets/Makefile         |  180 ++++---
+ c-support/rc/customization.ctags        |    2 +-
+ c-support/templates/c.cpp.template      |   45 +-
+ c-support/templates/c.idioms.template   |    2 +-
+ c-support/templates/cpp.cpp.template    |   47 +-
+ c-support/templates/cpp.idioms.template |    2 +-
+ doc/ChangeLog                           |    7 +
+ doc/c-hotkeys.pdf                       |  Bin 25934 -> 73600 bytes
+ doc/c-hotkeys.tex                       |  271 +++++++++++
+ doc/csupport.txt                        |  128 ++++-
+ ftplugin/c.vim                          |  460 +++++++++---------
+ plugin/c.vim                            |  808 ++++++++++++++++++++-----------
+ syntax/c.vim                            |   21 -
+ 14 files changed, 1284 insertions(+), 702 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.2.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Aug 18 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Bugfix: stray characters whith three dialogs
+    + Bugfix: Missing parameter in 2 internal function calls
+    + Menu items 'Snippets->edit local/global templates' start an file browser (convenience).
+
+ README.csupport                      |   15 ++++-----
+ c-support/codesnippets/main.cc       |    1 +
+ c-support/templates/c.cpp.template   |    5 +--
+ c-support/templates/cpp.cpp.template |    5 +--
+ doc/ChangeLog                        |    8 +++++
+ ftplugin/c.vim                       |    8 ++--
+ plugin/c.vim                         |   53 +++++++++++++++++++++++----------
+ 7 files changed, 61 insertions(+), 34 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.2)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Aug 4 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Superfluous control characters for mode switching (menus, hotkeys) removed. Caused beeps.
+    + Template files (local/global) can be opened from the snippet menu.
+    + Three new preprocessor statements.
+    + v-mode for RTTI-entries.
+
+ README.csupport                               |   12 +-
+ c-support/scripts/wrapper.sh                  |    5 +-
+ c-support/templates/c.cpp.template            |   14 +-
+ c-support/templates/c.preprocessor.template   |    9 +
+ c-support/templates/cpp.cpp.template          |   30 +-
+ c-support/templates/cpp.preprocessor.template |    9 +
+ doc/ChangeLog                                 |    8 +
+ doc/c-hotkeys.pdf                             |  Bin 12335 -> 25934 bytes
+ doc/csupport.txt                              |  273 +++++----
+ ftplugin/c.vim                                |  299 +++++----
+ plugin/c.vim                                  |  826 ++++++++++++++++---------
+ 11 files changed, 879 insertions(+), 606 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed Mar 12 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Definition and implementation of classes have now different templates and menu entries.
+    + Accessor methods (get/set) can be generated.
+    + New templates: everything other than language keywords comes from a template (and is user changeable).
+
+ README.csupport                               |   11 +-
+ c-support/templates/Templates                 |   10 +-
+ c-support/templates/c.comments.template       |   55 +-
+ c-support/templates/c.cpp.template            |  179 ++++-
+ c-support/templates/c.idioms.template         |   17 +-
+ c-support/templates/c.preprocessor.template   |    6 +
+ c-support/templates/c.statements.template     |    8 +-
+ c-support/templates/cpp.comments.template     |   55 +-
+ c-support/templates/cpp.cpp.template          |  152 ++++-
+ c-support/templates/cpp.idioms.template       |   17 +-
+ c-support/templates/cpp.preprocessor.template |   20 +-
+ c-support/templates/cpp.statements.template   |    8 +-
+ doc/ChangeLog                                 |    6 +
+ doc/c-hotkeys.pdf                             |  Bin 48296 -> 12335 bytes
+ doc/csupport.txt                              |  205 ++++--
+ ftplugin/c.vim                                |   97 ++--
+ plugin/c.vim                                  |  960 ++++++++++++-------------
+ 17 files changed, 1088 insertions(+), 718 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.0.5)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed Nov 21 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Bugfix: on a few systems doubling of path components in the run command (F9).
+      Skip this upgrade if you do not have this problem.
+
+ README.csupport                         |    8 ++--
+ c-support/wordlists/c-c++-keywords.list |   76 ++++++++++++++++++++++++++++++
+ doc/ChangeLog                           |    6 ++
+ doc/csupport.txt                        |   12 ++--
+ ftplugin/c.vim                          |   10 ++--
+ plugin/c.vim                            |   78 +++++++++++++++---------------
+ 6 files changed, 136 insertions(+), 54 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.0.4)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri Nov 16 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Format for the macros |DATE|, |TIME|, and |YEAR| can be defined by the user.
+    + Help text improved.
+
+ README.csupport  |    8 ++--
+ doc/ChangeLog    |    6 ++
+ doc/csupport.txt |  141 ++++++++++++++++++++++++++++++++----------------------
+ ftplugin/c.vim   |   10 ++--
+ plugin/c.vim     |   43 +++++++++++++----
+ 5 files changed, 131 insertions(+), 77 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.0.3)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Oct 16 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Code snippets can now be used in the console mode (Vim without GUI).
+    + Bugfix: Possible conflict with 'indent' removed when inserting templates.
+
+ README.csupport   |    8 ++--
+ doc/c-hotkeys.pdf |  Bin 47753 -> 48296 bytes
+ doc/csupport.txt  |   10 ++--
+ plugin/c.vim      |  119 +++++++++++++++++++++++++++++++++++++---------------
+ 4 files changed, 93 insertions(+), 44 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.0.2)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed Oct 3 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Bugfix: Prototype picker did not alway delete no longer used prototypes.
+    + Bugfix: Prototype picker removed template specializations from parameter lists.
+
+ README.csupport                           |   12 +++-
+ c-support/scripts/wrapper.sh              |    6 +-
+ c-support/templates/c.comments.template   |    4 +-
+ c-support/templates/cpp.comments.template |    4 +-
+ doc/ChangeLog                             |    6 ++
+ doc/csupport.txt                          |    7 +-
+ plugin/c.vim                              |   95 ++++++++++++++++-------------
+ 7 files changed, 78 insertions(+), 56 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.0.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed Sep 26 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Bugfix: autocmd setting can influence autocmd settings of OTHER plugins.
+
+ README.csupport |    8 ++---
+ doc/ChangeLog   |    5 +++
+ plugin/c.vim    |   76 +++++++++++++++++++++++++++---------------------------
+ 3 files changed, 46 insertions(+), 43 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.0)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Sep 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + New template system. Now every menu item is user definable.
+    + Changes to allow a system-wide installation.
+    + A few hotkeys added and renamed.
+
+ README.csupport                                   |   34 +-
+ c-support/c-templates+comm.zip                    |  Bin 7733 -> 0 bytes
+ c-support/c-templates-comm.zip                    |  Bin 7148 -> 0 bytes
+ c-support/rc/customization.vimrc                  |    8 -
+ c-support/templates/Templates                     |   26 +
+ c-support/templates/c-class                       |   42 -
+ c-support/templates/c-class-description           |    6 -
+ c-support/templates/c-class-using-new             |   81 -
+ c-support/templates/c-error-class                 |   14 -
+ c-support/templates/c-file-header                 |   18 -
+ c-support/templates/c-frame                       |    3 -
+ c-support/templates/c-function-description        |    6 -
+ c-support/templates/c-function-description.long   |   20 -
+ c-support/templates/c-method-description          |    7 -
+ c-support/templates/c-template-class              |   44 -
+ c-support/templates/c-template-class-using-new    |   83 -
+ c-support/templates/c.comments.template           |  147 ++
+ c-support/templates/c.cpp.template                |  353 +++
+ c-support/templates/c.idioms.template             |   98 +
+ c-support/templates/c.preprocessor.template       |   34 +
+ c-support/templates/c.statements.template         |   62 +
+ c-support/templates/cpp-class                     |   39 -
+ c-support/templates/cpp-class-description         |    4 -
+ c-support/templates/cpp-class-using-new           |   72 -
+ c-support/templates/cpp-error-class               |   12 -
+ c-support/templates/cpp-file-header               |   16 -
+ c-support/templates/cpp-frame                     |    3 -
+ c-support/templates/cpp-function-description      |    4 -
+ c-support/templates/cpp-function-description.long |   18 -
+ c-support/templates/cpp-method-description        |    5 -
+ c-support/templates/cpp-template-class            |   41 -
+ c-support/templates/cpp-template-class-using-new  |   76 -
+ c-support/templates/cpp.comments.template         |  139 ++
+ c-support/templates/cpp.cpp.template              |  329 +++
+ c-support/templates/cpp.idioms.template           |   98 +
+ c-support/templates/cpp.preprocessor.template     |   34 +
+ c-support/templates/cpp.statements.template       |   62 +
+ c-support/templates/h-file-header                 |   22 -
+ c-support/templates/hpp-file-header               |   20 -
+ doc/ChangeLog                                     |    7 +
+ doc/c-hotkeys.pdf                                 |  Bin 47600 -> 47753 bytes
+ doc/csupport.txt                                  |  876 ++++----
+ ftplugin/c.vim                                    |  265 ++--
+ plugin/c.vim                                      | 2359 +++++++--------------
+ 44 files changed, 2734 insertions(+), 2853 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.6.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Aug 13 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + New global variable to control the filetype of *.h header files (default is now 'cpp').
+    + Bugfix: properly resetting 'compiler' after using make, splint, and CodeCheck.
+
+ README.csupport                         |    9 ++--
+ c-support/rc/customization.vimrc        |    8 ++--
+ c-support/wordlists/c-c++-keywords.list |   14 ++++++
+ doc/ChangeLog                           |    6 +++
+ doc/csupport.txt                        |   50 ++++++++++++--------
+ plugin/c.vim                            |   76 +++++++++++--------------------
+ 6 files changed, 85 insertions(+), 78 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.6)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri May 25 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + New insert mode mappings (comments, statements, preprocessing, idioms, C++).
+    + Some mappings renamed (easier to remember).
+    + New tag (basename of a file reduced to characters allowed in names).
+
+ README.csupport                                  |   14 +-
+ c-support/templates/c-class-using-new            |    2 +
+ c-support/templates/cpp-class-using-new          |    2 +
+ c-support/templates/cpp-template-class-using-new |    2 +
+ c-support/templates/h-file-header                |    6 +-
+ c-support/templates/hpp-file-header              |    6 +-
+ doc/ChangeLog                                    |    7 +
+ doc/c-hotkeys.pdf                                |  Bin 46682 -> 47600 bytes
+ doc/csupport.txt                                 |  205 ++++++++--------
+ ftplugin/c.vim                                   |  288 +++++++++++++---------
+ plugin/c.vim                                     |  254 ++++++++++---------
+ 11 files changed, 438 insertions(+), 348 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.5)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Apr 24 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + New menu item and hotkey for the (re)alignement of end-of-line comments.
+    + Hotkey \cn removed. Only one menu item for end-of-line comments left.
+    + Changed hotkeys: \ce -> \cl and \cl -> \cs .
+    + Three new tags (giving the basename of a file) for writing template files.
+    + Prototype picker handles template methods.
+    + Bugfix: splint works now under Windows.
+    + Minor improvements.
+
+ README.csupport                                  |   18 +-
+ c-support/rc/customization.gvimrc                |    4 +-
+ c-support/templates/cpp-template-class-using-new |   12 +-
+ c-support/templates/h-file-header                |    4 +
+ c-support/templates/hpp-file-header              |    4 +
+ doc/ChangeLog                                    |   11 +
+ doc/c-hotkeys.pdf                                |  Bin 46096 -> 46682 bytes
+ doc/csupport.txt                                 |  228 ++++++----
+ ftplugin/c.vim                                   |   13 +-
+ plugin/c.vim                                     |  507 +++++++++++++---------
+ 10 files changed, 486 insertions(+), 315 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.4)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed Feb 21 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + PLUGIN DIRECTORIES REARRANGED.
+    + main- and for-idiom have a visual mode now.
+    + Four new commands (command line) to control the comment style.
+    + Comment style (C/C++) can automatically follow the filetype.
+    + Bugfix: empty new file after removing the header template can't be closed.
+    + Bugfix : Tools entry missing when root menu not shown from the start.
+    + Minor improvements.
+
+ ChangeLog                                          |  239 -------
+ README.csupport                                    |   76 +--
+ c-support/c-templates+comm.zip                     |  Bin 0 -> 7733 bytes
+ c-support/c-templates-comm.zip                     |  Bin 0 -> 7148 bytes
+ c-support/codesnippets/Makefile                    |  178 +++++
+ .../codesnippets/Makefile.multi-target.template    |   70 ++
+ c-support/codesnippets/calloc_double_matrix.c      |   36 +
+ c-support/codesnippets/calloc_int_matrix.c         |   35 +
+ c-support/codesnippets/main.c                      |   20 +
+ c-support/codesnippets/main.cc                     |   18 +
+ .../codesnippets/print_double_array.c.noindent     |   30 +
+ c-support/codesnippets/print_int_array.c.noindent  |   30 +
+ c-support/rc/customization.ctags                   |    7 +
+ c-support/rc/customization.gvimrc                  |   44 ++
+ c-support/rc/customization.indent.pro              |    8 +
+ c-support/rc/customization.vimrc                   |  157 +++++
+ c-support/scripts/wrapper.sh                       |   36 +
+ c-support/templates/c-class                        |   42 ++
+ c-support/templates/c-class-description            |    6 +
+ c-support/templates/c-class-using-new              |   79 +++
+ c-support/templates/c-error-class                  |   14 +
+ c-support/templates/c-file-header                  |   18 +
+ c-support/templates/c-frame                        |    3 +
+ c-support/templates/c-function-description         |    6 +
+ c-support/templates/c-function-description.long    |   20 +
+ c-support/templates/c-method-description           |    7 +
+ c-support/templates/c-template-class               |   44 ++
+ c-support/templates/c-template-class-using-new     |   83 +++
+ c-support/templates/cpp-class                      |   39 +
+ c-support/templates/cpp-class-description          |    4 +
+ c-support/templates/cpp-class-using-new            |   70 ++
+ c-support/templates/cpp-error-class                |   12 +
+ c-support/templates/cpp-file-header                |   16 +
+ c-support/templates/cpp-frame                      |    3 +
+ c-support/templates/cpp-function-description       |    4 +
+ c-support/templates/cpp-function-description.long  |   18 +
+ c-support/templates/cpp-method-description         |    5 +
+ c-support/templates/cpp-template-class             |   41 ++
+ c-support/templates/cpp-template-class-using-new   |   74 ++
+ c-support/templates/h-file-header                  |   18 +
+ c-support/templates/hpp-file-header                |   16 +
+ c-support/wordlists/c-c++-keywords.list            |  119 ++++
+ c-support/wordlists/k+r.list                       |  108 +++
+ c-support/wordlists/stl_index.list                 |  202 ++++++
+ c-templates+comm.zip                               |  Bin 7733 -> 0 bytes
+ c-templates-comm.zip                               |  Bin 7148 -> 0 bytes
+ codesnippets-c/Makefile                            |  178 -----
+ codesnippets-c/Makefile.multi-target.template      |   70 --
+ codesnippets-c/calloc_double_matrix.c              |   36 -
+ codesnippets-c/calloc_int_matrix.c                 |   35 -
+ codesnippets-c/main.c                              |   20 -
+ codesnippets-c/main.cc                             |   20 -
+ codesnippets-c/print_double_array.c.noindent       |   30 -
+ codesnippets-c/print_int_array.c.noindent          |   30 -
+ doc/ChangeLog                                      |  250 +++++++
+ doc/c-hotkeys.pdf                                  |  Bin 48715 -> 46096 bytes
+ doc/csupport.txt                                   |   92 ++-
+ ftplugin/c.vim                                     |   51 +-
+ plugin/c.vim                                       |  728 +++++++++++---------
+ plugin/templates/c-class                           |   42 --
+ plugin/templates/c-class-description               |    6 -
+ plugin/templates/c-class-using-new                 |   79 ---
+ plugin/templates/c-error-class                     |   14 -
+ plugin/templates/c-file-header                     |   18 -
+ plugin/templates/c-frame                           |    3 -
+ plugin/templates/c-function-description            |    6 -
+ plugin/templates/c-function-description.long       |   20 -
+ plugin/templates/c-method-description              |    7 -
+ plugin/templates/c-template-class                  |   44 --
+ plugin/templates/c-template-class-using-new        |   83 ---
+ plugin/templates/cpp-class                         |   39 -
+ plugin/templates/cpp-class-description             |    4 -
+ plugin/templates/cpp-class-using-new               |   70 --
+ plugin/templates/cpp-error-class                   |   12 -
+ plugin/templates/cpp-file-header                   |   16 -
+ plugin/templates/cpp-frame                         |    3 -
+ plugin/templates/cpp-function-description          |    4 -
+ plugin/templates/cpp-function-description.long     |   18 -
+ plugin/templates/cpp-method-description            |    5 -
+ plugin/templates/cpp-template-class                |   41 --
+ plugin/templates/cpp-template-class-using-new      |   74 --
+ plugin/templates/h-file-header                     |   18 -
+ plugin/templates/hpp-file-header                   |   16 -
+ plugin/wrapper.sh                                  |   36 -
+ rc/customization.ctags                             |    7 -
+ rc/customization.gvimrc                            |   44 --
+ rc/customization.indent.pro                        |    8 -
+ rc/customization.vimrc                             |  154 ----
+ syntax/c.vim                                       |   21 +
+ wordlists/c-c++-keywords.list                      |  119 ----
+ wordlists/german.list                              |  455 ------------
+ wordlists/k+r.list                                 |  108 ---
+ wordlists/stl_index.list                           |  171 -----
+ 93 files changed, 2557 insertions(+), 2803 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.3)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri Nov 17 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + New key mappings for preprocessor statements.
+    + Source code analysing tool CodeCheck (Trademark) integrated
+    + New preprocessor menu.
+    + Bugfix: indent under Windows.
+    + Minor improvements.
+
+ ChangeLog                                     |    9 +
+ README.csupport                               |   18 +-
+ codesnippets-c/calloc_double_matrix.c         |   21 +-
+ codesnippets-c/calloc_int_matrix.c            |   20 +-
+ codesnippets-c/print_double_array.c.noindent  |   26 +-
+ codesnippets-c/print_int_array.c.noindent     |   26 +-
+ doc/c-hotkeys.pdf                             |  Bin 37720 -> 48715 bytes
+ doc/csupport.txt                              |  248 +++++++----
+ ftplugin/c.vim                                |   31 ++-
+ plugin/c.vim                                  |  596 ++++++++++++++-----------
+ plugin/templates/c-class-using-new            |    3 -
+ plugin/templates/c-template-class-using-new   |    3 -
+ plugin/templates/cpp-class-using-new          |    3 -
+ plugin/templates/cpp-template-class-using-new |    3 -
+ wordlists/c-c++-keywords.list                 |   17 +
+ 15 files changed, 630 insertions(+), 394 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.2.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Sat Aug 26 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Bugfix: change needed for some menu names after patch 7.0.054 .
+
+ ChangeLog        |    5 +++++
+ README.csupport  |    9 +++------
+ doc/csupport.txt |    4 ++--
+ plugin/c.vim     |   32 ++++++++++++++++----------------
+ 4 files changed, 26 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Aug 3 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Setting the starting column for trailing comments improved.
+    + Small bug in block uncommenting fixed.
+    + Mac OS X : circumvent a Vim bug which caused a crash when loading plugin version 4.1
+    + File syntax/c.vim removed (but see help in csupport.txt).
+
+ ChangeLog                        |    8 +++++
+ README.csupport                  |   23 +++++++-------
+ codesnippets-c/Makefile          |   60 ++++++++++++++++++++++++-------------
+ doc/c-hotkeys.pdf                |  Bin 37666 -> 37720 bytes
+ doc/csupport.txt                 |   61 +++++++++++++++++++++++--------------
+ plugin/c.vim                     |   38 +++++++++++++----------
+ plugin/templates/c-file-header   |   26 ++++++++--------
+ plugin/templates/cpp-file-header |   16 +++++-----
+ syntax/c.vim                     |   21 -------------
+ 9 files changed, 139 insertions(+), 114 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Jun 29 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + A complete switch statement can be made from a list of labels.
+    + Additional cases can be made from a list of labels.
+    + Small bug in line end commenting fixed.
+    + Minor improvements.
+
+ ChangeLog                        |    8 +++
+ README.csupport                  |   21 +++----
+ doc/c-hotkeys.pdf                |  Bin 37612 -> 37666 bytes
+ doc/csupport.txt                 |  104 +++++++++++++++++++++++++++----
+ ftplugin/c.vim                   |    7 +-
+ plugin/c.vim                     |  124 ++++++++++++++++++++++++++++++++-----
+ plugin/templates/c-error-class   |   11 +++-
+ plugin/templates/cpp-error-class |    9 ++-
+ rc/customization.vimrc           |    2 +-
+ 9 files changed, 236 insertions(+), 50 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Apr 13 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Kernighan & Ritchie style for block statements can be enabled.
+    + Changes to make plugin compatible with Vim 7.
+    + Set C/C++ file type for source files which should not be preprocessed (*.i, *.ii).
+    + Some minor improvements.
+
+ ChangeLog                     |  209 +++++++++++++++
+ README.csupport               |  200 +-------------
+ codesnippets-c/main.cc        |    3 +-
+ doc/c-hotkeys.pdf             |  Bin 37668 -> 37612 bytes
+ doc/csupport.txt              |   36 +++-
+ ftplugin/c.vim                |   28 +-
+ plugin/c.vim                  |  592 ++++++++++++++++++++++++++++++-----------
+ rc/customization.vimrc        |    8 +-
+ wordlists/c-c++-keywords.list |   11 -
+ 9 files changed, 709 insertions(+), 378 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.11)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Mar 20 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Hotkeys and an accompanying reference card added.
+    + Preparation for syntax based folding.
+    + Some minor improvements.
+
+ README.csupport    |   13 +++-
+ doc/c-hotkeys.pdf  |  Bin 0 -> 37668 bytes
+ doc/csupport.txt   |  178 ++++++++++++++++++++++++++++++++++++++++------
+ ftplugin/c.vim     |  149 ++++++++++++++++++++++++++++++++++++++-
+ plugin/c.vim       |  197 +++++++++++++++++++++++++++------------------------
+ plugin/wrapper.sh  |   34 ++++++----
+ syntax/c.vim       |   21 ++++++
+ wordlists/k+r.list |   40 +++++++++++
+ 8 files changed, 499 insertions(+), 133 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.10)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Jan 26 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Remove "#if 0 ... #endif" from the inside.
+    + Change C comments to C++ comments and vice versa.
+    + try..catch / catch / catch(...)  now can be set surround a marked area.
+    + Prototype picking improved (for C++).
+    + A hardcopy shows the localized date and time in the header line.
+    + New help menu entry in the main menu of this plugin (shows the plugin documentation).
+    + Switch between corresponding source and header files with <S-F2> if the plugin a.vim
+      is present.
+    + Plugin can be used with autocompletion for (, [, and { .
+
+ README.csupport                       |   22 ++-
+ codesnippets-c/Makefile.pro           |   28 ---
+ codesnippets-c/calloc_double_matrix.c |    4 +-
+ codesnippets-c/calloc_int_matrix.c    |   14 +-
+ codesnippets-c/main.c                 |    9 +-
+ codesnippets-c/main.cc                |    9 +-
+ doc/csupport.txt                      |  153 +++++++++++---
+ ftplugin/c.vim                        |   10 +-
+ plugin/c.vim                          |  377 ++++++++++++++++++++++++++------
+ plugin/templates/h-file-header        |   17 +-
+ plugin/templates/hpp-file-header      |   17 +-
+ rc/customization.vimrc                |    6 +
+ wordlists/german.list                 |  286 +++++++++++++++++++++----
+ 13 files changed, 747 insertions(+), 205 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.9.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Sun Dec 4 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Doubling of file header for new c- and h-files under Windows fixed (Thanks to Fabricio C A Oliveira).
+    + Tiny bug in the file open idioms fixed.
+
+ README.csupport                                |   21 ++++-
+ codesnippets-c/Makefile                        |   43 ++++-----
+ doc/csupport.txt                               |   34 ++++----
+ plugin/c.vim                                   |  116 +++++++++++++-----------
+ plugin/templates/c-function-description        |   14 ---
+ plugin/templates/c-function-description.long   |   20 ++++
+ plugin/templates/cpp-function-description      |   14 ---
+ plugin/templates/cpp-function-description.long |   18 ++++
+ wordlists/german.list                          |    1 +
+ 9 files changed, 154 insertions(+), 127 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.9)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Nov 1 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Formatter 'indent' integrated.
+    + Bugfix in the automatic header insertion.
+    + Assert idiom added.
+    + #if 0 ... #endif statement for blocking out code added.
+    + Minor stylistic improvements in some idioms.
+
+ README.csupport                              |   37 ++-
+ codesnippets-c/Makefile                      |    2 +-
+ codesnippets-c/print_double_array.c.noindent |    4 +-
+ codesnippets-c/print_int_array.c.noindent    |    4 +-
+ doc/csupport.txt                             |  169 ++++++++-----
+ ftplugin/c.vim                               |   18 +-
+ plugin/c.vim                                 |  349 ++++++++++++++++----------
+ plugin/templates/c-class-using-new           |    4 +-
+ plugin/templates/cpp-class-using-new         |    4 +-
+ rc/customization.indent.pro                  |    8 +
+ rc/customization.vimrc                       |    9 +-
+ wordlists/c-c++-keywords.list                |   31 +++
+ 12 files changed, 408 insertions(+), 231 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.8.2)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Sep 5 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Screen update problem solved: color inversion under FC4 (Thanks to Bernie Barton).
+    + RTTI menu : additional v-mode.
+    + Statement menu and C++ menu rearranged.
+    + Include guard : name generation improved.
+    + File header templates will be included for additional file extensions (cp, cxx, c++, ...).
+
+ README.csupport  |   14 ++-
+ doc/csupport.txt |   11 ++-
+ plugin/c.vim     |  296 ++++++++++++++++++++++++++++++------------------------
+ 3 files changed, 185 insertions(+), 136 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.8.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Aug 8 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + More C++ output manipulators; manipulator insertion more intuitive.
+    + Output into buffer: cursor goes to top of file.
+    + Makefile template improved (code snippet).
+    + Some minor improvements.
+
+ README.csupport                      |   19 ++++-
+ c-templates+comm.zip                 |  Bin 7740 -> 7733 bytes
+ c-templates-comm.zip                 |  Bin 7156 -> 7148 bytes
+ codesnippets-c/Makefile              |  112 ++++++++++++++++----------
+ doc/csupport.txt                     |   32 ++++----
+ plugin/c.vim                         |  146 +++++++++++++++++++++-------------
+ plugin/templates/c-class-using-new   |    2 +-
+ plugin/templates/cpp-class-using-new |    2 +-
+ rc/customization.gvimrc              |   14 +++
+ rc/customization.vimrc               |   20 +----
+ wordlists/german.list                |   24 +++---
+ 11 files changed, 224 insertions(+), 147 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.8)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue May 31 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Windows support. Most features are available under Windows now.
+
+ README.csupport                               |   20 +++-
+ codesnippets-c/calloc_double_matrix.c         |    4 +-
+ codesnippets-c/calloc_int_matrix.c            |    4 +-
+ codesnippets-c/main.c                         |    2 +-
+ codesnippets-c/main.cc                        |    2 +-
+ doc/csupport.txt                              |   83 ++++++++++++----
+ plugin/c.vim                                  |  133 ++++++++++++++++---------
+ plugin/templates/c-class                      |    3 +-
+ plugin/templates/c-class-using-new            |    3 +-
+ plugin/templates/c-error-class                |    3 +-
+ plugin/templates/c-template-class             |    5 +-
+ plugin/templates/c-template-class-using-new   |   11 +-
+ plugin/templates/cpp-class                    |    3 +-
+ plugin/templates/cpp-class-using-new          |    3 +-
+ plugin/templates/cpp-error-class              |    3 +-
+ plugin/templates/cpp-template-class           |    3 +-
+ plugin/templates/cpp-template-class-using-new |    3 +-
+ rc/customization.vimrc                        |   67 ++++++++-----
+ 18 files changed, 236 insertions(+), 119 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.7.2)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu May 5 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Run buffer through splint (A tool for statically checking C programs; see
+      http://www.splint.org). An error window will be opened; quickfix commands can be used.
+    + Set buffer related command line arguments for splint.
+    + Line end comments start in a fixed column (can be set from the menu).
+    + Spaces in path names and file names are now possible.
+    + Template files and snippet files are no longer kept in the list of alternate files.
+    + Some minor improvements.
+
+ README.csupport                               |   44 +-
+ c-templates+comm.zip                          |  Bin 0 -> 7740 bytes
+ c-templates-comm.zip                          |  Bin 0 -> 7156 bytes
+ codesnippets-c/Makefile                       |   34 +-
+ codesnippets-c/Makefile.multi-target.template |   70 ++
+ codesnippets-c/main.c                         |   17 +
+ codesnippets-c/main.cc                        |   16 +
+ doc/csupport.txt                              |   89 ++-
+ plugin/c.vim                                  |  605 +++++++++++-------
+ plugin/templates/c-class                      |   20 +-
+ plugin/templates/c-class-description          |    9 +-
+ plugin/templates/c-class-using-new            |   71 ++-
+ plugin/templates/c-error-class                |    4 +-
+ plugin/templates/c-method-description         |    4 +-
+ plugin/templates/c-template-class             |   18 +-
+ plugin/templates/c-template-class-using-new   |   55 ++-
+ plugin/templates/cpp-class                    |   17 +-
+ plugin/templates/cpp-class-description        |    9 +-
+ plugin/templates/cpp-class-using-new          |   58 ++-
+ plugin/templates/cpp-method-description       |    4 +-
+ plugin/templates/cpp-template-class           |   17 +-
+ plugin/templates/cpp-template-class-using-new |   56 ++-
+ plugin/wrapper.sh                             |   16 +-
+ rc/customization.gvimrc                       |    9 +-
+ rc/customization.vimrc                        |   17 +-
+ wordlists/xforms.list                         |  855 -------------------------
+ 26 files changed, 832 insertions(+), 1282 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.7.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Dec 21 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Bug fixed (comand line arguments not passed to the executable).
+    + File extension for executables can be set.
+    + Minor improvements.
+
+ README.csupport   |   17 +++++++----
+ doc/csupport.txt  |   35 +++++++++++++++++-------
+ plugin/c.vim      |   79 +++++++++++++++++++++++++++++------------------------
+ plugin/wrapper.sh |    4 ++-
+ 4 files changed, 82 insertions(+), 53 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.7)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri Dec 17 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Running a program:
+      (1) Run program from the gVim command line.
+      (2) Run program and direct the output into a window with name "C-Output".
+      (3) Run program in an xterm.
+    + Command line arguments are now buffer related (each buffer can have its own arguments).
+    + Code snippets can be protected from being indented during insertion.
+    + Picked up prototypes will be deleted after insertion.
+    + A code snippet with the file name extension "ni" or "noindent" will not be
+      indented on insertion.
+    + for- and calloc-/malloc-idioms improved.
+    + Bug fixed (word list handling).
+
+ README.csupport                              |   63 ++-
+ codesnippets-c/print_double_array.c          |   23 -
+ codesnippets-c/print_double_array.c.noindent |   28 +
+ codesnippets-c/print_int_array.c             |   23 -
+ codesnippets-c/print_int_array.c.noindent    |   28 +
+ doc/csupport.txt                             |  100 +++-
+ ftplugin/c.vim                               |   27 +-
+ plugin/c.vim                                 |  749 +++++++++++++++-----------
+ plugin/wrapper.sh                            |   22 +
+ rc/customization.vimrc                       |   60 ++-
+ wordlists/c-c++-keywords.list                |   59 +--
+ wordlists/german.list                        |    9 +-
+ 12 files changed, 715 insertions(+), 476 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.6)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Jul 6 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Installation simplified. + for-loop-idiom asks for control variable, initial value, ...+ malloc-idiom asks for pointer variable and size.+ Toggling the comment style works correct again.+ Empty error windows will be closed.+ Prototype picker removes trailing parts of the function body if marked.+ The dialog windows (GUI) have been replaced by more flexible command line inputs.+ The undocumented and unnecessary hot key F12 has been removed.+ Extension to ctags + taglist shows makefile targets and qmake targets.
+
+ README.csupport                               |  222 ++++++++++
+ README.orig                                   |  481 ---------------------
+ codesnippets-c/Makefile                       |   20 +-
+ codesnippets-c/Makefile.pro                   |   28 ++
+ doc/csupport.txt                              |  177 +++-----
+ install.sh                                    |   97 -----
+ plugin/c.vim                                  |  569 +++++++++++++++----------
+ plugin/templates/cpp-template-class           |    2 +-
+ plugin/templates/cpp-template-class-using-new |   16 +-
+ rc/c.vimrc                                    |   30 --
+ rc/customization.ctags                        |    7 +
+ rc/customization.gvimrc                       |    8 -
+ rc/customization.vimrc                        |   46 +--
+ wordlists/german.list                         |  120 ++++++
+ 14 files changed, 834 insertions(+), 989 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.5)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri Apr 2 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Aligned line end comments for consecutive lines.
+    + Improved prototype picker removes comments.
+    + Picked up prototypes can be shown.
+    + Uncomment more than one block at once.
+    + 3 new idioms.
+    + Help file improved .
+
+ README.orig                                        |  481 +++++++++++
+ c.3.4/README                                       |  469 -----------
+ c.3.4/install.sh                                   |   97 ---
+ c.3.4/plugin/templates/c-class                     |   33 -
+ c.3.4/plugin/templates/c-class-description         |   11 -
+ c.3.4/plugin/templates/c-class-using-new           |   56 --
+ c.3.4/plugin/templates/c-error-class               |    6 -
+ c.3.4/plugin/templates/c-file-header               |   18 -
+ c.3.4/plugin/templates/c-frame                     |    3 -
+ c.3.4/plugin/templates/c-function-description      |   20 -
+ c.3.4/plugin/templates/c-method-description        |    7 -
+ c.3.4/plugin/templates/c-template-class            |   35 -
+ c.3.4/plugin/templates/c-template-class-using-new  |   60 --
+ c.3.4/plugin/templates/cpp-class                   |   33 -
+ c.3.4/plugin/templates/cpp-class-description       |    9 -
+ c.3.4/plugin/templates/cpp-class-using-new         |   56 --
+ c.3.4/plugin/templates/cpp-error-class             |    6 -
+ c.3.4/plugin/templates/cpp-file-header             |   16 -
+ c.3.4/plugin/templates/cpp-frame                   |    3 -
+ c.3.4/plugin/templates/cpp-function-description    |   18 -
+ c.3.4/plugin/templates/cpp-method-description      |    5 -
+ c.3.4/plugin/templates/cpp-template-class          |   35 -
+ .../plugin/templates/cpp-template-class-using-new  |   60 --
+ c.3.4/plugin/templates/h-file-header               |   19 -
+ c.3.4/plugin/templates/hpp-file-header             |   17 -
+ c.3.4/rc/c.vimrc                                   |   31 -
+ c.3.4/rc/customization.gvimrc                      |   33 -
+ c.3.4/rc/customization.vimrc                       |  140 ----
+ c.3.4/wordlists/c-c++-keywords.list                |  109 ---
+ c.3.4/wordlists/german.list                        |  133 ---
+ c.3.4/wordlists/k+r.list                           |   68 --
+ c.3.4/wordlists/stl_index.list                     |  171 ----
+ c.3.4/wordlists/xforms.list                        |  690 ----------------
+ codesnippets-c/Makefile                            |  129 +++
+ codesnippets-c/calloc_double_matrix.c              |   31 +
+ codesnippets-c/calloc_int_matrix.c                 |   31 +
+ codesnippets-c/print_double_array.c                |   23 +
+ codesnippets-c/print_int_array.c                   |   23 +
+ doc/csupport.txt                                   |  450 ++++++++---
+ install.sh                                         |   97 +++
+ plugin/c.vim                                       |  740 +++++++++++-------
+ plugin/templates/c-class                           |   31 +
+ plugin/templates/c-class-description               |   11 +
+ plugin/templates/c-class-using-new                 |   54 ++
+ plugin/templates/c-error-class                     |    6 +
+ plugin/templates/c-file-header                     |   18 +
+ plugin/templates/c-frame                           |    3 +
+ plugin/templates/c-function-description            |   20 +
+ plugin/templates/c-method-description              |    7 +
+ plugin/templates/c-template-class                  |   33 +
+ plugin/templates/c-template-class-using-new        |   58 ++
+ plugin/templates/cpp-class                         |   31 +
+ plugin/templates/cpp-class-description             |    9 +
+ plugin/templates/cpp-class-using-new               |   54 ++
+ plugin/templates/cpp-error-class                   |    6 +
+ plugin/templates/cpp-file-header                   |   16 +
+ plugin/templates/cpp-frame                         |    3 +
+ plugin/templates/cpp-function-description          |   18 +
+ plugin/templates/cpp-method-description            |    5 +
+ plugin/templates/cpp-template-class                |   33 +
+ plugin/templates/cpp-template-class-using-new      |   58 ++
+ plugin/templates/h-file-header                     |   19 +
+ plugin/templates/hpp-file-header                   |   17 +
+ rc/c.vimrc                                         |   30 +
+ rc/customization.gvimrc                            |   33 +
+ rc/customization.vimrc                             |  143 ++++
+ wordlists/c-c++-keywords.list                      |  111 +++
+ wordlists/german.list                              |  137 ++++
+ wordlists/k+r.list                                 |   68 ++
+ wordlists/stl_index.list                           |  171 ++++
+ wordlists/xforms.list                              |  855 ++++++++++++++++++++
+ 71 files changed, 3648 insertions(+), 2882 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.4)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri Dec 26 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + The following constructs are now read as templates from files:    class, class using new, template class, template class using new, error class+ The preprocessor statements #if... and the function idiom include marked lines when invoked in visual mode.+ All hotkeys are only defined for C/C++ files (file type plugin added).+ Only one C/C++ entry in the gVim root menu (can be disabled).+ Two new global variables: C_Dictionary_File, C_MenuHeader .+ Install script added.+ Customization improved. + Documentation improved (help file added).+ Bug fix (template file handling)
+
+ README.orig                                        |  310 ----
+ c.3.4/README                                       |  469 ++++++
+ c.3.4/install.sh                                   |   97 ++
+ c.3.4/plugin/templates/c-class                     |   33 +
+ c.3.4/plugin/templates/c-class-description         |   11 +
+ c.3.4/plugin/templates/c-class-using-new           |   56 +
+ c.3.4/plugin/templates/c-error-class               |    6 +
+ c.3.4/plugin/templates/c-file-header               |   18 +
+ c.3.4/plugin/templates/c-frame                     |    3 +
+ c.3.4/plugin/templates/c-function-description      |   20 +
+ c.3.4/plugin/templates/c-method-description        |    7 +
+ c.3.4/plugin/templates/c-template-class            |   35 +
+ c.3.4/plugin/templates/c-template-class-using-new  |   60 +
+ c.3.4/plugin/templates/cpp-class                   |   33 +
+ c.3.4/plugin/templates/cpp-class-description       |    9 +
+ c.3.4/plugin/templates/cpp-class-using-new         |   56 +
+ c.3.4/plugin/templates/cpp-error-class             |    6 +
+ c.3.4/plugin/templates/cpp-file-header             |   16 +
+ c.3.4/plugin/templates/cpp-frame                   |    3 +
+ c.3.4/plugin/templates/cpp-function-description    |   18 +
+ c.3.4/plugin/templates/cpp-method-description      |    5 +
+ c.3.4/plugin/templates/cpp-template-class          |   35 +
+ .../plugin/templates/cpp-template-class-using-new  |   60 +
+ c.3.4/plugin/templates/h-file-header               |   19 +
+ c.3.4/plugin/templates/hpp-file-header             |   17 +
+ c.3.4/rc/c.vimrc                                   |   31 +
+ c.3.4/rc/customization.gvimrc                      |   33 +
+ c.3.4/rc/customization.vimrc                       |  140 ++
+ c.3.4/wordlists/c-c++-keywords.list                |  109 ++
+ c.3.4/wordlists/german.list                        |  133 ++
+ c.3.4/wordlists/k+r.list                           |   68 +
+ c.3.4/wordlists/stl_index.list                     |  171 +++
+ c.3.4/wordlists/xforms.list                        |  690 +++++++++
+ costumization.gvimrc                               |   25 -
+ doc/csupport.txt                                   |  616 ++++++++
+ ftplugin/c.vim                                     |   41 +
+ plugin/c.vim                                       | 1555 ++++++++++----------
+ plugin/costumization.vimrc                         |  117 --
+ templates/c-class-description                      |   11 -
+ templates/c-file-header                            |   18 -
+ templates/c-frame                                  |    3 -
+ templates/c-function-description                   |   20 -
+ templates/c-method-description                     |    7 -
+ templates/cpp-class-description                    |    9 -
+ templates/cpp-file-header                          |   16 -
+ templates/cpp-frame                                |    3 -
+ templates/cpp-function-description                 |   18 -
+ templates/cpp-method-description                   |    5 -
+ templates/h-file-header                            |   19 -
+ templates/hpp-file-header                          |   17 -
+ word.list                                          |  109 --
+ wordlists.tar.gz                                   |  Bin 5836 -> 0 bytes
+ 52 files changed, 3914 insertions(+), 1472 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Sat May 31 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + When the comment style "C" is active the menu entry "Comments.code->comment"   turns a marked region in one multiline C-comment.+ The menu entry "Comments.comment->code"  turns marked multiline C-comment   back into code.+ A marked region can be surrounded by a for-, if, if-else, while-, do-while-statement  (with indentation).+ The menu entry "Snippets.make prototype" makes a C- or C++-prototype from   the current line or marked region and puts it in an internal buffer.+ The menu entry "Snippets.add prototype" also makes a C- or C++-prototype from   the current line or a marked region and adds it to the internal buffer.+ The menu entry "Snippets.put prototype" inserts all gathered prototypes    below the current line. + Tag substitution rewritten (Some characters in a substitution text for a tag   prevented the tag from being substituted).
+
+ README.orig                |   28 ++++-
+ plugin/c.vim               |  287 ++++++++++++++++++++++++++++++++++++--------
+ plugin/costumization.vimrc |    2 -
+ templates/c-file-header    |    3 +-
+ templates/cpp-file-header  |    3 +-
+ 5 files changed, 267 insertions(+), 56 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Apr 28 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + C-style comments AND C++-style comments are supported now.+ The menu entry 'Comments->Comment style ..' switches the styles (toggle).+ Block comments are now read as templates or skeletons from files:    Frame Block,        Function Description,  Method Description,    Class Description,  H+file header,         C/C++-file header+ These templates can contain tags like |FILENAME|, |AUTHOR| etc. which are replaced  after reading (KDevelop templates can be used without any change).+ indentation: multiline inserts and code snippets will be indented after insertion.+ Most menu entries are now also active in normal mode.+ new menu items:  includes for the C99 header,   includes for the standard C++ header,   includes for the C++ version of the Standard C Library header,  multiline C comment,  vim modeline+ Reading the templates is done in one function which can be called in an autocmd.+ Code cleanup: register z no longer used. Most function calls are silent now.
+
+ README.orig                                      |  286 ++++
+ costumization.gvimrc                             |   25 +
+ plugin/c.vim                                     | 1605 ++++++++++++++++++++++
+ plugin/c.vim.2.8.1/README                        |   99 --
+ plugin/c.vim.2.8.1/c.vim                         | 1365 ------------------
+ plugin/c.vim.2.8.1/costumization.gvimrc          |   27 -
+ plugin/c.vim.2.8.1/costumization.vimrc           |  103 --
+ plugin/c.vim.2.8.1/word.list                     |  109 --
+ plugin/c.vim.2.8.1/wordlists/c-c++-keywords.list |  109 --
+ plugin/c.vim.2.8.1/wordlists/german.list         |  125 --
+ plugin/c.vim.2.8.1/wordlists/k+r.list            |   68 -
+ plugin/c.vim.2.8.1/wordlists/stl_index.list      |  171 ---
+ plugin/c.vim.2.8.1/wordlists/xforms.list         |  690 ----------
+ plugin/costumization.vimrc                       |  119 ++
+ templates/c-class-description                    |   11 +
+ templates/c-file-header                          |   19 +
+ templates/c-frame                                |    3 +
+ templates/c-function-description                 |   20 +
+ templates/c-method-description                   |    7 +
+ templates/cpp-class-description                  |    9 +
+ templates/cpp-file-header                        |   17 +
+ templates/cpp-frame                              |    3 +
+ templates/cpp-function-description               |   18 +
+ templates/cpp-method-description                 |    5 +
+ templates/h-file-header                          |   19 +
+ templates/hpp-file-header                        |   17 +
+ word.list                                        |  109 ++
+ wordlists.tar.gz                                 |  Bin 0 -> 5836 bytes
+ 28 files changed, 2292 insertions(+), 2866 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Mar 6 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - menus appear immediately after loading the plugin- additional word lists for keyword completion (optional):    C/C++ -keywords    German words (for commenting sources)    K&R-Book: Words from the table of content (for commenting sources)    Standard Template Library (STL):  method names and type names    XFORMS library: macro and function names- additional settings for .vimrc and .gvimrc (optional)
+
+ plugin/c.vim                                     | 1365 ----------------------
+ plugin/c.vim.2.8.1/README                        |   99 ++
+ plugin/c.vim.2.8.1/c.vim                         | 1365 ++++++++++++++++++++++
+ plugin/c.vim.2.8.1/costumization.gvimrc          |   27 +
+ plugin/c.vim.2.8.1/costumization.vimrc           |  103 ++
+ plugin/c.vim.2.8.1/word.list                     |  109 ++
+ plugin/c.vim.2.8.1/wordlists/c-c++-keywords.list |  109 ++
+ plugin/c.vim.2.8.1/wordlists/german.list         |  125 ++
+ plugin/c.vim.2.8.1/wordlists/k+r.list            |   68 ++
+ plugin/c.vim.2.8.1/wordlists/stl_index.list      |  171 +++
+ plugin/c.vim.2.8.1/wordlists/xforms.list         |  690 +++++++++++
+ 11 files changed, 2866 insertions(+), 1365 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Feb 17 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - code snippet support: read, write, edit code snippets in a separate directory- specify command line arguments for make- hardcopy: print whole buffer or a highlighted part of it into a file (Postscript)- new menu entry  "fscanf( infile, "", & );"  after code for opening a file with pointer "infile" is inserted- new menu entry  "fprintf( outfile, "\n",  );"  after code for opening a file with pointer "outfile" is inserted
+
+ README.orig                |   80 ----------
+ costumization.gvimrc       |   61 --------
+ plugin/c.vim               |  282 +++++++++++++++++++++++++++---------
+ plugin/costumization.vimrc |   20 ---
+ word.list                  |  348 --------------------------------------------
+ 5 files changed, 215 insertions(+), 576 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Jul 4 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - separation of file section comments in 2 new submenus   'C-File-Sections' and 'H-File-Sections'- class comment- method comment- keyword comments and special comments are now in submenus- new hot key to run make- word list for C/C++ word completion (optional)- some optional vimrc- and gvimrc-entries in two files (optional)- minor improvements and corrections
+
+ README.orig                |   80 +++++
+ costumization.gvimrc       |   61 ++++
+ plugin/c.vim               |  811 +++++++++++++++++++++++---------------------
+ plugin/costumization.vimrc |   20 ++
+ word.list                  |  348 +++++++++++++++++++
+ 5 files changed, 935 insertions(+), 385 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Apr 4 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - include all file section headers at once- insert empty block- 2 additional loops- includes for all Standard C Library header files- minor internal improvements
+
+ plugin/c.vim |  215 +++++++++++++++++++++++++++++++++++-----------------------
+ 1 files changed, 131 insertions(+), 84 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0.3)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Mar 7 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    (1) 4 new keyword comments
+    (2) code->comments does no longer mark  the first character in all lines
+
+ plugin/c.vim |   32 ++++++++++++++++++++------------
+ 1 files changed, 20 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed Feb 13 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README       |   54 +++
+ plugin/c.vim | 1121 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 1175 insertions(+), 0 deletions(-)

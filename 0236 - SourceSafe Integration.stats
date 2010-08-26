@@ -1,0 +1,39 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.16, refs/heads/master)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Wed Jul 30 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Use 'cat' if &shell contains 'sh'
+    - Explain $SSDIR & #include in doco.
+    Fixes for William D. Bartholomew
+    - Add ssDeployFile for the ability to deploy a file by default instead of a directory
+    - Fix space in historybuffer temp name.
+
+ plugin/srcsafe.vim | 2866 ++++++++++++++++++++++++++--------------------------
+ 1 files changed, 1438 insertions(+), 1428 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.14)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Wed Jan 1 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     - Fix up system call with $VIMRUNTIME containing spaces. -Zak Beck
+     - Make Get prompt to overwrite a read-only file.
+     - Remove calls to ShortName where possible. (VSS shortname is not
+       always the same as M$oft shortname anyway!)
+     - Prevent Diff against project - causes wacky behaviour.
+
+ plugin/srcsafe.vim |  110 ++++++++++++++++++++++++++++++++--------------------
+ 1 files changed, 68 insertions(+), 42 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.13)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Sun Nov 3 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add interactive mode for answering multiple questions.
+    Fix up checking of modified status & automatic reloading of status's
+
+ README             |    4 +
+ plugin/srcsafe.vim | 1402 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 1406 insertions(+), 0 deletions(-)

@@ -1,0 +1,77 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     Michael Brailsford <brailsmt at yahoo.com>
+AuthorDate: Fri Jul 19 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Changed a few things and fixed some bugs.  Mainly, I made it so you do not have to move any files to make the plugin work, if you don't want to.  It is still *highly* recommend that you do move the files as suggested in the help file, but you now have the option to not move anything.  Updated the help files, and fixed some typos and other minor things.
+
+ doc/udt_highlight.txt |   57 +++++++++++++++++++------------
+ ftplugin/cpp/udt.vim  |   48 ++++++++++++---------------
+ se_core.rb            |    5 +--
+ udt.rb                |   88 ++++++++++++++++++++++++-------------------------
+ 4 files changed, 101 insertions(+), 97 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.01)
+Author:     Michael Brailsford <brailsmt at yahoo.com>
+AuthorDate: Fri Apr 26 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Very minor bug fix.
+
+ doc/udt_highlight.txt |   14 +++++++-------
+ ftplugin/cpp/udt.vim  |   44 ++++++++++++++++++++++----------------------
+ se_core.rb            |    1 -
+ udt.rb                |    2 --
+ 4 files changed, 29 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Michael Brailsford <brailsmt at yahoo.com>
+AuthorDate: Fri Apr 26 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improved the handling of typedefs.  Now it properly handles something like "typedef long long int llint;".  Added support for user configurable colors, also added documentation.  Anyway, this is a major overhaul of the script.  Install the doc, and you can read all about it.  You should still untar the archive in ~/.vim.  When you start up vim type ":helptags ~/.vim/doc" then ":he udt".
+
+ after/syntax/cpp/usr_include.vim | 6955 ++++++++++++++++++++++++++++++++++++++
+ csyntax_expander.rb              |  180 -
+ doc/udt_highlight.txt            |  165 +
+ ftplugin/cpp/syn_expand.vim      |  290 --
+ ftplugin/cpp/udt.vim             |  203 ++
+ plugin/syn_ext.vim               | 6955 --------------------------------------
+ se_core.rb                       |  161 +
+ udt.rb                           |   76 +
+ 8 files changed, 7560 insertions(+), 7425 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.92)
+Author:     Michael Brailsford <brailsmt at yahoo.com>
+AuthorDate: Sun Apr 21 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Well, just polishing things up.  I am now very confident that it will work.  I ran the command line version on /usr/include and got a syntax highlighting file of 7000 lines.  I included that file in the tar.  I also added some things to aid in expanding this to work with other languages.  For now though it is for C++ only.
+
+ csyntax_expander.rb         |   56 +-
+ ftplugin/cpp/syn_expand.vim |  100 +-
+ plugin/syn_ext.vim          | 6955 +++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 7059 insertions(+), 52 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.91)
+Author:     Michael Brailsford <brailsmt at yahoo.com>
+AuthorDate: Sun Apr 21 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Thanks to Gavin Sinclair for suggesting better packaging.  Now you should untar the file in your ~/.vim directory and it will add the syn_expand.vim to the ftplugins/cpp/ directory.  You should then move the csyntax_expander.rb to whereever you keep scripts.
+
+ ftplugin/cpp/syn_expand.vim |  260 +++++++++++++++++++++++++++++++++++++++++++
+ plugin/syn_expand.vim       |  260 -------------------------------------------
+ 2 files changed, 260 insertions(+), 260 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Michael Brailsford <brailsmt at yahoo.com>
+AuthorDate: Sun Apr 21 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                |    3 +
+ csyntax_expander.rb   |  158 ++++++++++++++++++++++++++++++
+ plugin/syn_expand.vim |  260 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 421 insertions(+), 0 deletions(-)

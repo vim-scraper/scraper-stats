@@ -1,0 +1,63 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1.0, refs/heads/master)
+Author:     Luc Hermitte <hermitte at free.fr>
+AuthorDate: Tue Apr 22 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New functions that implement a topological sort.
+
+ autoload/lh/askvim.vim         |    4 +-
+ autoload/lh/command.vim        |    4 +-
+ autoload/lh/graph/tsort.vim    |  160 ++++++++++++++++++++++++++++++++++++++++
+ autoload/lh/list.vim           |    4 +-
+ autoload/lh/option.vim         |    4 +-
+ doc/lh-vim-lib.txt             |   35 ++++++++-
+ macros/menu-map.vim            |    4 +-
+ tests/lh/test-Fargs2String.vim |    4 +-
+ tests/lh/test-command.vim      |    2 +-
+ tests/lh/test-menu-map.vim     |    4 +-
+ tests/lh/test-toggle-menu.vim  |    2 +-
+ tests/lh/topological-sort.vim  |   65 ++++++++++++++++
+ 12 files changed, 273 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0.7)
+Author:     Luc Hermitte <hermitte at free.fr>
+AuthorDate: Thu Feb 21 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    First release of this collection of VimL functions
+
+ autoload/lh/askvim.vim         |  125 ++++++++
+ autoload/lh/buffer/dialog.vim  |  225 ++++++++++++++
+ autoload/lh/buffer.vim         |   57 ++++
+ autoload/lh/command.vim        |  208 +++++++++++++
+ autoload/lh/common.vim         |   65 ++++
+ autoload/lh/encoding.vim       |   49 +++
+ autoload/lh/event.vim          |   46 +++
+ autoload/lh/list.vim           |   83 +++++
+ autoload/lh/menu.vim           |  322 ++++++++++++++++++++
+ autoload/lh/option.vim         |   83 +++++
+ autoload/lh/path.vim           |  170 +++++++++++
+ autoload/lh/position.vim       |   67 +++++
+ autoload/lh/syntax.vim         |  107 +++++++
+ doc/lh-vim-lib.txt             |  642 ++++++++++++++++++++++++++++++++++++++++
+ macros/menu-map.vim            |   83 +++++
+ plugin/menu-map.vim            |  146 ---------
+ plugin/ui-functions.vim        |  466 +++++++++++++++++++++++++++++
+ plugin/words_tools.vim         |  104 +++++++
+ tests/lh/test-Fargs2String.vim |   83 +++++
+ tests/lh/test-askmenu.vim      |   66 ++++
+ tests/lh/test-command.vim      |   69 +++++
+ tests/lh/test-menu-map.vim     |   54 ++++
+ tests/lh/test-toggle-menu.vim  |   59 ++++
+ 23 files changed, 3233 insertions(+), 146 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Luc Hermitte <hermitte at free.fr>
+AuthorDate: Wed Feb 13 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |    8 +++
+ plugin/menu-map.vim |  146 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 154 insertions(+), 0 deletions(-)

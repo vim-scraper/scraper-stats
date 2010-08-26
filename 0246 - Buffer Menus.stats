@@ -1,0 +1,82 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.9, refs/heads/master)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Wed Apr 10 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added noremenu mappings and <silent> support (thanks Luc).
+    Updated the documentation.
+    Made provision for using <SID> in a mapping  - careful you'll need to read the docs on this one.
+    Added a global option to use menu enable menu disable instead of unmenu.
+    Added <unmenu> and <disable> options to specify explicitly whether to disable or unmenu the mapping.
+
+ plugin/buffermenu.vim |  145 ++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 113 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Wed Apr 3 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix up a bug where spaces are used in the mapping part were causing an error to be reported.
+
+ plugin/buffermenu.vim |   14 ++++++++++----
+ 1 files changed, 10 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Tue Apr 2 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    For some reason when pressing ctrl+^  I was getting two buffer unloads - this was causing menus to be undone twice and lots of errors.  I have now fixed it to make sure it only undoes the menus once.
+
+ plugin/buffermenu.vim |   24 +++++++++++++++++-------
+ 1 files changed, 17 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Tue Apr 2 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Allow menus with spaces to work.
+    Echo errors using echoerr so that they are reported properly
+
+ plugin/buffermenu.vim |   21 ++++++++++++---------
+ 1 files changed, 12 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Thu Mar 21 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Don't add menus to the buffer-list that produce an error when first adding.
+
+ plugin/buffermenu.vim |   18 ++++++++++++++----
+ 1 files changed, 14 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Thu Mar 21 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Enhancements:
+    - <maplocalleader> and <mapleader> now get expanded when adding - this means you can do:
+        Bamenu Test.Test<tab><maplocalleader>aa <maplocalleader>aa
+      And get a menu with the 'help' showing the actual localleader/leader
+    
+    Bugfixes:
+    - Bamenu Bcmenu Bnmenu  now pass the correct parameters and won't give an error
+    - Bunmenuall now works.
+
+ plugin/buffermenu.vim |   23 ++++++++++++++---------
+ 1 files changed, 14 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+AuthorDate: Wed Mar 13 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                |   51 ++++++++++++++++++
+ plugin/buffermenu.vim |  139 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 190 insertions(+), 0 deletions(-)

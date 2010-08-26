@@ -1,0 +1,53 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/12.5, refs/heads/master)
+Author:     Mike Williams <mrw at eandem.co.uk>
+AuthorDate: Sat Jun 24 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Misc updates:
+    o Add support for syntax based folding.
+    o Add VIM7 spell group to comments and strings.
+    o Braces within parentheses no longer highlighted as an error (controllable).
+    o Add missing C99 printf float format specifier F.
+    o Doc updated for new configuration options.
+
+ doc/std_c.txt | 1021 +++++++++++++++++++++++++++++----------------------------
+ syntax/c.vim  |  544 ++++++++++++++++---------------
+ 2 files changed, 795 insertions(+), 770 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/11.2)
+Author:     Mike Williams <mrw at eandem.co.uk>
+AuthorDate: Sun Aug 8 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fixes for nested comments and system header include statements.
+
+ doc/std_c.txt |    6 +++++-
+ syntax/c.vim  |   14 +++++++++-----
+ 2 files changed, 14 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/10.8)
+Author:     Mike Williams <mrw at eandem.co.uk>
+AuthorDate: Wed Sep 3 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Correct highlighting of #pragma and #warn[ing] pp directives. Minor fix to correct handling of '-' in sscanf() scanlists when there are the last character.
+
+ doc/std_c.txt |    6 +++---
+ syntax/c.vim  |   21 ++++++++++++---------
+ 2 files changed, 15 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/10.5)
+Author:     Mike Williams <mrw at eandem.co.uk>
+AuthorDate: Thu Jun 5 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added following:
+    o correct highlighting of digraphs in tokens if enabled
+    o C++ comments can have the line continuation character - \ !!!
+    o Fixed bug in highlighting nested array bracketing, and
+    o Change invalid token ~= from operator highlight to an error.
+
+ README        |   15 +
+ doc/std_c.txt |  502 +++++++++++++++++++++++++
+ syntax/c.vim  | 1157 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 1674 insertions(+), 0 deletions(-)

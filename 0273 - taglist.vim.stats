@@ -1,0 +1,322 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.5, refs/heads/master)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Fri Sep 21 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix an extra space in the check for exctags. Refresh the taglist window
+    folds after entering a tab. Escape special characters like backslash in
+    the tag name when saving a session file. Add an internal function to get
+    and detect file types.
+
+ plugin/taglist.vim |   90 ++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 70 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.4)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Fri May 25 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The following fixes are made in this release:
+    1. If multiple Vim plugins register for the BufEnter autocmd, then sometimes
+        the buffer name supplied to the autocmd is incorrect. Use the buffer number
+        instead of buffer name in the BufEnter autocmd.
+    2. Add the filename to the tags menu only for valid file names.
+
+ doc/taglist.txt    |    9 ++++++++-
+ plugin/taglist.vim |   26 +++++++++++++-------------
+ 2 files changed, 21 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.3)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Thu Feb 22 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. Added support for jumping to a tag/file in a new or existing tab
+       from the taglist window (works only with Vim7 and above).
+    2. Added support for opening a tag in the previous window.
+    3. With the Tlist_File_Fold_Auto_Close variable set, when opening a
+       file from the file explorer window, the folds in the taglist window
+       are not closed correctly.  Fixed this problem.
+
+ doc/taglist.txt    |  265 +++++++++++++++++++++++++++++++++-------------------
+ plugin/taglist.vim |  158 +++++++++++++++++++++++--------
+ 2 files changed, 290 insertions(+), 133 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Tue Nov 14 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. After opening a file with no tags defined in it with the
+       Tlist_Compact_Format option set, if the tags are updated, the folds
+       used for the files following the empty tags file are affected.
+    2. On MS-Windows, use a "taglist.cmd" temporary file to run exuberant
+       ctags. This is to handle space characters in the file names and
+       in the exuberant ctags path name.
+    3. In the taglist window, when a file is re-sorted or updated open the
+       fold for the file.
+    4. When the 'shellxquote' option is set to double quotes, escape
+       double quotes in the command executed for exuberant ctags.
+    5. On FreeBSD, exuberant ctags is installed as exctags, look for
+       exctags in the PATH.
+    6. If two taglist plugins are present (one in the system Vim directory
+       and another in the user's .vim/plugin directory), then the plugin
+       in the users's .vim directory overrides the version in the system
+       vim directory.
+    7. When the :TlistMessages command is issued display the debug
+       messages in a taglist.txt buffer.
+    8. Clear the readonly option for the taglist buffer
+    9. When opening a selected file, don't use the preview window, if
+       present.
+
+ doc/taglist.txt    |   42 ++++++++----
+ plugin/taglist.vim |  196 +++++++++++++++++++++++++++++++++++++++-------------
+ 2 files changed, 177 insertions(+), 61 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Sun Sep 10 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    When the Tlist_File_Fold_Auto_Close variable is set to 1, jumping to the taglist window closes all the folds. Modified the plugin to not close the fold for the currently active file. When the TlistLock and TlistUnlock commands are invoked, an error message is displayed. This problem is fixed.
+
+ plugin/taglist.vim |   67 +++++++++++++++++++++++++++------------------------
+ 1 files changed, 35 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Wed Sep 6 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixes:
+    Fix the problems in using the taglist plugin with Vim7 tabs. When
+    Tlist_File_Fold_Auto_Close is set, close the tag fold when leaving a
+    buffer.  When jumping to a selected tag, if the file is opened in more
+    than one window, use the previous window from which the user entered
+    the taglist window.
+    New features:
+    Support for displaying the tag prototype as a tooltip.  Support for
+    specifying additional commands after the taglist commands using the
+    bar separator.
+
+ doc/taglist.txt    |   70 ++++++++++++++++++++------
+ plugin/taglist.vim |  141 +++++++++++++++++++++++++++++++++++++--------------
+ 2 files changed, 157 insertions(+), 54 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0b4)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Wed Apr 12 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixes:
+    1. When 'Tlist_Show_One_File' is set, after few files are opened,
+       unable to select tags from the taglist window.
+    2. When the taglist plugin is stored in a directory with space characters
+       in the name, the autoloading of taglist plugin fails.
+    New features:
+    1. Support for moving cursor to the taglist window when using the
+       ":TlistToggle" command.
+    2. When all the tags in a file are of the same type, in the taglist
+       menu, don't display the tag type.
+    3. Changed the '?' help key to 'F1' in the taglist window.
+    4. Set the filetype for the taglist buffer to 'taglist'
+    5. In Vim7, set the 'winfixwidth' option for the taglist window.
+    6. When jumping between files using the ]] or <Tab> and [[ or <Backspace>
+       keys, wrap around at the first and last file.
+
+ doc/taglist.txt    |   55 ++++--
+ plugin/taglist.vim |  474 ++++++++++++++++++++++++++++++----------------------
+ 2 files changed, 307 insertions(+), 222 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0b3)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Wed Dec 28 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The following changes are made in this version:
+    
+    1. Delay loading of the taglist plugin to reduce the Vim startup time.
+    2. Support for recursively adding multiples files to the taglist using the
+       ':TlistAddFilesRecursive' command.
+    3. New ':TlistOpen' command to open and jump to the taglist window.
+    4. New ':TlistToggle' command to supersede the ':Tlist' command.
+    5. New 'Tlist_Close_On_Select' option for closing the taglist window
+       when a file is selected.
+    6. New 'Tlist_Auto_Update' option to enable/disable processing of newly
+       edited files.
+    7. New ':TlistLock' and ':TlistUnlock' commands to lock and unlock the
+       taglist.
+    8. New 'Tlist_Highlight_Tag_On_BufEnter' option to enable/disable
+       highlighting of the current tag on entering a buffer.
+    9. When the taglist buffer is created from a Vim session file, update
+       the taglist with the files from the session file.
+    10. Change the background color used for highlighting file names in the
+        taglist window.
+    11. When <Space> is pressed on a file name or a tag type name in the
+        taglist window, display information about the number of tags.
+    12. Set the 'foldlevel' option to a high value in the taglist window.
+    13. When refreshing the taglist window, process all the opened buffers.
+    14. When moving between windows, disable and enable autocommands.
+    15. When a file is selected from the taglist window, use a non-plugin
+        window to edit the file.
+    16. If 'Tlist_Exit_OnlyWindow' is set and when exiting Vim, make sure
+        the '0 mark is set to the previous buffer.
+    17. When using the taglist plugin with the winmanager plugin and
+        'Tlist_Process_File_Always' is set or the taglist menu is enabled,
+        sometimes, it is not possible to jump to other windows from the
+        taglist window using the keyboard. Fixed this problem.
+    18. While opening files in a new window, use filenames instead of buffer
+        numbers.
+
+ doc/taglist.txt    |  860 +++++++++++++++++++-----------
+ plugin/taglist.vim | 1497 ++++++++++++++++++++++++++++++++++------------------
+ 2 files changed, 1529 insertions(+), 828 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0b2)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Mon Aug 1 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. Added the TlistAddFiles command to add multiple files to the taglist window without opening them.
+    2. Maintain the taglist window width and height across Vim window layout changes.
+    3. Restore the Vim window location after the taglist window is closed.
+    4. Use a simpler regular expression for parsing tags output.
+    5. When a closed fold is selected in the taglist window, open the fold and jump to the file.
+    6. When the Tlist_Auto_Open variable is set, open the taglist window only when a supported type of file is opened.
+    7. When displaying tags for a single file, center the current tag line when opening a file.
+    8. When jumping to a tag, add the previous location to the jump list.
+    9. Fixed a problem with recording timestamps in the debug messages on MS-Windows.
+    10. Set the ' mark when jumping to a selected tag.
+
+ doc/taglist.txt    |  473 +++++++++++++++++++++++++++++-----------------------
+ plugin/taglist.vim |  320 ++++++++++++++++++++++++++---------
+ 2 files changed, 501 insertions(+), 292 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0b1)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Tue Apr 5 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for optionally displaying the tags in the drop-down/popup menu. Performance enhancments, various bug fixes and debug support.
+
+ doc/taglist.txt    |  967 +++++++++++++++++++------------
+ plugin/taglist.vim | 1624 +++++++++++++++++++++++++++++++++++++---------------
+ 2 files changed, 1763 insertions(+), 828 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.4)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Mon Aug 16 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. Introduced a new option 'Tlist_Show_One_File" to display the tags for only the current buffer in the taglist window.
+    2. Support for not displaying the tags for a user-deleted file in the taglist window.
+    3. Fix for sharing the mouse single click map with other plugins
+
+ doc/taglist.txt    |   71 +++++++++++----
+ plugin/taglist.vim |  261 ++++++++++++++++++++++++++++++++++++++--------------
+ 2 files changed, 245 insertions(+), 87 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Tue Jun 1 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. If Tlist_Ctags_Cmd variable is not set, on startup, check for the
+       presence of exuberant-ctags or ctags or tags in the PATH and set
+       Tlist_Ctags_Cmd variable accordingly. If none of the executable is
+       found, then the taglist plugin will not be not loaded.
+    2. Added a new configuration variable Tlist_Enable_Fold_Column to
+       enable or disable fold columns in the taglist window.
+    3. Added support for setting the taglist application name used by the
+       winmanager plugin and the cream package.
+    4. Two new key mappings ([[ and ]]) are added to the taglist window to
+       move between files.
+    5. When a file is modified, the taglist window will be automatically
+       updated (after going to some other window or buffer and then coming
+       to the modified buffer).
+    6. Made the Tlist_Update_File_Tags() function as a global function.
+       This function can be used to add or update the tags for a new file.
+    7. Updated the Tlist_Get_Tag_Prototype_By_Line() and the
+       Tlist_Get_Tagname_By_Line() functions to get the tag name and tag
+       prototype for the specified line in a file.
+
+ doc/taglist.txt    |  137 ++++++++++--
+ plugin/taglist.vim |  626 ++++++++++++++++++++++++++++++++--------------------
+ 2 files changed, 501 insertions(+), 262 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Sun Apr 25 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for closing the tags tree for inactive files, removing the tags tree for deleted buffers, processing the tags when the taglist window is not opened, disabling the automatic highlighting of the current tag, displaying name of the current tag.
+
+ doc/taglist.txt    |  130 ++++++++++++++++----
+ plugin/taglist.vim |  350 +++++++++++++++++++++++++++++++++++++++++-----------
+ 2 files changed, 382 insertions(+), 98 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Sun Nov 2 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for saving and restoring taglist sessions. Separated the taglist documentation into a separate file in Vim help format.
+
+ doc/taglist.txt    |  622 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/taglist.vim |  635 ++++++++++++++++++++--------------------------------
+ 2 files changed, 869 insertions(+), 388 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Wed Sep 24 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for displaying tags defined in multiple files.
+
+ plugin/taglist.vim | 1478 +++++++++++++++++++++++++++++++++-------------------
+ 1 files changed, 928 insertions(+), 550 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Sun Sep 14 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added information about the taglist mailing list.
+
+ plugin/taglist.vim |   46 +++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 33 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.7)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Thu Aug 21 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. Added TlistUpdate command to update the taglist window.
+    2. Made the taglist highlight groups user configurable.
+    3. Fixed a problem in the taglist integration with the winmanager plugin
+
+ plugin/taglist.vim |  182 +++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 144 insertions(+), 38 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Mon Jun 9 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. Added support for previewing a tag.
+    2. Added the TlistClose command to close the taglist window
+    3. Added the Tlist_Exit_OnlyWindow option to close the taglist window if only that window is open.
+
+ plugin/taglist.vim |  109 ++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 85 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
+Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+AuthorDate: Fri Apr 25 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for highlighting the tag scope. Added support for displaying namespaces in C++ files. Updated the comments.
+
+ README             |   18 +
+ plugin/taglist.vim | 1954 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 1972 insertions(+), 0 deletions(-)

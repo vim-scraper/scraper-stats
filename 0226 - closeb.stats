@@ -1,0 +1,32 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2a, refs/heads/master)
+Author:     Mark A. Hillebrand <dazzler at users.sf.net>
+AuthorDate: Wed Feb 27 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Commented out some debug code...
+
+ plugin/closeb.vim |   15 +++++++--------
+ 1 files changed, 7 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Mark A. Hillebrand <dazzler at users.sf.net>
+AuthorDate: Fri Feb 22 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This version now supports a new type of close, the "middle close". For XML/SGML, it will close the tag and reopen the same tag (useful for list of tags); for LaTeX, it will insert \item inside of {itemize}, {enumerate}, .. environments, just close otherwise.
+    
+    Middle closes are invoke by the two-key sequence CTRL-\ =
+
+ plugin/closeb.vim |   66 +++++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 51 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Mark A. Hillebrand <dazzler at users.sf.net>
+AuthorDate: Fri Feb 22 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README            |   13 ++++
+ plugin/closeb.vim |  183 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 196 insertions(+), 0 deletions(-)
