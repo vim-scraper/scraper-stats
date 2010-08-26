@@ -1,0 +1,136 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.13, refs/heads/master)
+Author:     Jon Franklin <jvfranklin at gmail.com>
+AuthorDate: Fri Aug 29 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix for bug that prevented multi-line class and function definitions from showing up in the IM-Python menu.  Patch provided by Branden Rolston.
+
+ plugin/python_fn.vim |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
+Author:     Jon Franklin <jvfranklin at gmail.com>
+AuthorDate: Sat May 17 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Changed to ftplugin and renamed to avoid collision with vim's ftplugin/python.vim. Patch provided by Christopher Lambacher
+    * Fixed error opening python buffer with no classes or functions.  Patch provided by Chris Farrow
+    * Removed duplicate ]f key
+    *Fixed block manipulation bugs due to collision on ]], [[ mappings. See menu for new mappings
+
+ plugin/python.vim    |  438 -------------------------------------------------
+ plugin/python_fn.vim |  446 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 446 insertions(+), 438 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
+Author:     Jon Franklin <jvfranklin at gmail.com>
+AuthorDate: Wed Nov 29 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add shortcuts for all remaining menu options.
+
+ plugin/python.vim |   36 ++++++++++++++++++++++++++----------
+ 1 files changed, 26 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
+Author:     Jon Franklin <jvfranklin at gmail.com>
+AuthorDate: Wed Nov 8 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add shortcuts for commenting/uncommenting selections.
+
+ plugin/python.vim |   29 ++++++++++++++++++-----------
+ 1 files changed, 18 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
+Author:     Jon Franklin <jvfranklin at gmail.com>
+AuthorDate: Sat Aug 26 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug in IM-Python menu where function and class names beginning with "_" were not included.
+
+ plugin/python.vim |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
+Author:     Mikael Berthe <bmikael at lists.lilotux.net>
+AuthorDate: Thu Aug 17 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Applied a patch from Jon Franklin: IM-Python menu improvements.
+    Updated copyright and email address.
+
+ plugin/python.vim |  133 +++++++++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 98 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
+Author:     Mikael Berthe <bmikael at lists.lilotux.net>
+AuthorDate: Fri Jul 25 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Use <Down> instead of 'j', so it should work when j is mapped.
+
+ plugin/python.vim |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     Mikael Berthe <bmikael at lists.lilotux.net>
+AuthorDate: Thu Jun 12 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Works better with folding... Many thanks to Guy L. Oliver!
+
+ plugin/python.vim |   41 +++++++++++++++++++++++++++++++++--------
+ 1 files changed, 33 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Mikael Berthe <bmikael at lists.lilotux.net>
+AuthorDate: Thu Jan 16 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Same as 1.4, I just fixed a typo in the comments and my e-mail address...
+
+ plugin/python.vim |   10 +++++-----
+ 1 files changed, 5 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Mikael Berthe <bmikael at lists.lilotux.net>
+AuthorDate: Wed Sep 5 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Entry for Adam's IM-Python menu update in the main script menu; some other minor changes...
+
+ plugin/python.vim |   26 +++++++++++++++-----------
+ 1 files changed, 15 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     adam seyfarth <adam.seyfarth at home.com>
+AuthorDate: Wed Aug 22 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I've added an IM-Python menu that holds the class definitions and function definitions.
+
+ plugin/python.vim |   44 ++++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 44 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Mikael Berthe <bmikael at lists.lilotux.net>
+AuthorDate: Sat Jul 7 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Changed the name of the global variable
+    * Added a new variable; one can choose not to select trailing comments
+
+ plugin/python.vim |   55 +++++++++++++++++++++++++++++++++-------------------
+ 1 files changed, 35 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Mikael Berthe <bmikael at lists.lilotux.net>
+AuthorDate: Sat Jul 7 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README            |   15 +++
+ plugin/python.vim |  264 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 279 insertions(+), 0 deletions(-)
