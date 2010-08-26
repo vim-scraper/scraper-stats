@@ -1,0 +1,63 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/11, refs/heads/master)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue Jun 22 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    supports several escape sequences such as <esc>[m , <esc>[2J, and <esc>[H.
+
+ autoload/AnsiEsc.vim     |  812 ++++++++++++++++++++++++++++++++++++++++++++++
+ doc/AnsiEsc.txt          |    7 +-
+ plugin/AnsiEsc.vim       |  795 ---------------------------------------------
+ plugin/AnsiEscPlugin.vim |   30 ++
+ 4 files changed, 847 insertions(+), 797 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/10)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Apr 7 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    AnsiEsc has 1 and 2 Ansi escape code sequences supported by fixed syntax highlighting rules; it now also builds custom syntax highlighting to support 3 and 4 Ansi Escape code sequences based on your current document.  So  \e[48;5;16m will now cause correct highlighting to follow, for example.
+
+ autoload/AnsiEsc.vim     |  597 ----------------------------------
+ doc/AnsiEsc.txt          |   31 ++-
+ plugin/AnsiEsc.vim       |  795 ++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/AnsiEscPlugin.vim |   22 --
+ plugin/cecutil.vim       |  536 +++++++++++++++++++++++++++++++
+ 5 files changed, 1353 insertions(+), 628 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/9)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Mar 18 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * AnsiEsc comes in plugin + autoload format: faster vim startup, and AnsiEsc only when you want it.
+    * Now provides a :AnsiEsc command totoggle ANSI escape sequence processing.
+    
+    Works with Vince Negri's conceal patch (if your vim supports VN's conceal, then the ansi-escape sequences are suppressed except on the line you're editing).
+
+ autoload/AnsiEsc.vim     |  597 ++++++++++++++++++++++++++++++++++++++++++++++
+ doc/AnsiEsc.txt          |   47 +++-
+ plugin/AnsiEscPlugin.vim |   22 ++
+ 3 files changed, 652 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Aug 16 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Uses vim7.0's undercurl as a substitute for blinking (which Vim doesn't support), contains a small helpfile, and contains directions for getting Vince Negri's conceal patch for vim 7.0.
+
+ doc/AnsiEsc.txt       |   69 ++++++++
+ syntax/AnsiEsc_v2.vim |  411 -------------------------------------------------
+ 2 files changed, 69 insertions(+), 411 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Nov 24 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I mistakenly removed AnsiEsc v2 (which is the version which doesn't use Vince Negri's conceal).  This update restores it!
+
+ README                |   34 ++++
+ syntax/AnsiEsc_v2.vim |  411 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 445 insertions(+), 0 deletions(-)

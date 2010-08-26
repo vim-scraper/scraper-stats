@@ -1,0 +1,84 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7, refs/heads/master)
+Author:     Abhilash Koneri <abhilash_koneri at hotmail.com>
+AuthorDate: Wed Oct 5 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Includes VimLeavePre hook to dump the contents of the scratch buffer to a file before exiting.  Set the global variable g:scratchBackupFile to a file path to enable the feature. See comments in the plugin file.
+    
+    (Once again , Thanks to Hari Krishna Dara (hari_vim at yahoo dot com) for the useful enhancement!)
+
+ plugin/scratch.vim |  222 +++++++++++++++++++++++++++++++---------------------
+ 1 files changed, 134 insertions(+), 88 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Abhilash Koneri <abhilash_koneri at hotmail.com>
+AuthorDate: Sun Jul 17 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixes a bug in the script that does not handle the scratch buffer deleted using :bwipeout!  This version simply re-creates the an empty buffer.
+
+ plugin/scratch.vim |   53 +++++++++++++++++++++++----------------------------
+ 1 files changed, 24 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Abhilash Koneri <abhilash_koneri at hotmail.com>
+AuthorDate: Mon Nov 3 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Included the (yet another) patch sent by Hari Krishna Dara. This patch adds extra escapes when shellslash is set (Unix shells).
+    
+    Thanks Hari!
+
+ plugin/scratch.vim |   49 +++++++++++++++++++++++++++----------------------
+ 1 files changed, 27 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Abhilash Koneri <abhilash_koneri at hotmail.com>
+AuthorDate: Mon Feb 17 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Changed the scratch buffer name to [scratch] (from the ghastly -scratch-). Thanks to Hari Krishna Dara once again!
+
+ plugin/scratch.vim |   47 ++++++++++++++++++++++++-----------------------
+ 1 files changed, 24 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Abhilash Koneri <abhilash_koneri at hotmail.com>
+AuthorDate: Thu Jan 9 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Friendlier key mappings. Hitting F8 should create , hide and navigate to the scratch buffer during a vim session. Thanks to Hari Krishna Dara for enhancing the script.
+
+ plugin/scratch.vim |  110 +++++++++++++++++++++++++--------------------------
+ 1 files changed, 54 insertions(+), 56 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Abhilash Koneri <abhilash_koneri at hotmail.com>
+AuthorDate: Wed Nov 20 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add more friendly mappings. Thanks to Charles E. Campbell for his suggestions. The old mappings were removed. The defaults now use <F8> to open the scratch buffer and <s-F8> to close the buffer
+
+ plugin/scratch.vim |   23 +++++++++++++++++++----
+ 1 files changed, 19 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Abhilash Koneri <abhilash_koneri at hotmail.com>
+AuthorDate: Wed Oct 30 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed the problem with opening scratch buffer -- Thanks to Thomas Regner <regner@dievision.de> for spotting the problem
+
+ plugin/scratch.vim |    4 +++-
+ 1 files changed, 3 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0)
+Author:     Abhilash Koneri <abhilash_koneri at hotmail.com>
+AuthorDate: Sat Aug 17 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README             |   10 +++++++
+ plugin/scratch.vim |   72 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 82 insertions(+), 0 deletions(-)

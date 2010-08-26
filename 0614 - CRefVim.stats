@@ -1,0 +1,64 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.4, refs/heads/master)
+Author:     Christian Habermann <vimonline.20.habi at spamgourmet.com>
+AuthorDate: Sun Nov 28 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - example on how to assign an absolute address to a function pointer added
+    - hint on volatile qualifier added
+    - bad tag corrected
+
+ doc/crefvim.txt    |   53 ++++++++++++++++++++++++++++++++++++++++++++++++---
+ doc/crefvimdoc.txt |   19 ++++++++++++++++-
+ 2 files changed, 66 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.3)
+Author:     Christian Habermann <vimonline.20.habi at spamgourmet.com>
+AuthorDate: Thu Mar 4 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - marker for syntax-highlighting changed from 0xa7 to $   in order to avoid problems with fonts that use          codes > 0x7f as multibyte characters (e.g. Chinese,     Korean, Japanese... fonts)                            - two typos fixed                                       - three bad tags corrected
+
+ crefvim/after/syntax/help.vim |   15 +-
+ doc/crefvim.txt               | 7542 ++++++++++++++++++++--------------------
+ doc/crefvimdoc.txt            |   36 +-
+ 3 files changed, 3809 insertions(+), 3784 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.2)
+Author:     Christian Habermann <vimonline.20.habi at spamgourmet.com>
+AuthorDate: Tue Dec 16 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    some typos fixed
+
+ doc/crefvim.txt    |   20 ++++++++++----------
+ doc/crefvimdoc.txt |   24 +++++++++++++++++++-----
+ 2 files changed, 29 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     Christian Habermann <vimonline.20.habi at spamgourmet.com>
+AuthorDate: Sun Apr 13 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - bug-fix in description of installation:
+      destination of help.vim is after/syntax
+        Unix:    ~/.vim/after/syntax
+        Windows: c:\vimfiles\after\syntax
+       (not syntax/after)
+       affected file: crefvimdoc.txt
+
+ doc/crefvimdoc.txt |   23 ++++++++++++++++++-----
+ 1 files changed, 18 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.0)
+Author:     Christian Habermann <vimonline.20.habi at spamgourmet.com>
+AuthorDate: Sun Apr 6 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                        |   27 +
+ crefvim/after/syntax/help.vim |  109 +
+ doc/crefvim.txt               |14067 +++++++++++++++++++++++++++++++++++++++++
+ doc/crefvimdoc.txt            | 1680 +++++
+ plugin/crefvim.vim            |  356 ++
+ 5 files changed, 16239 insertions(+), 0 deletions(-)

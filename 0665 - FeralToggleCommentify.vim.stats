@@ -1,0 +1,82 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.611, refs/heads/master)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Thu Apr 28 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1.61 - Improved/Fixed cursor restore. Screen should not jump; ever.
+    1.611 - bugfix for above for column jumping about, *sigh*.
+
+ plugin/feraltogglecommentify.vim |  409 +++++++++++++++++++++++++++++++-------
+ 1 files changed, 335 insertions(+), 74 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.58)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Thu Aug 28 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added rebol ';' comment type, contribution by Tim Johnson
+
+ plugin/feraltogglecommentify.vim |   33 ++++++++++++---------------------
+ 1 files changed, 12 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.57)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Tue Aug 19 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added ruby &#039#&#039 comment type, contribution by Brett Williams
+    Added sh &#039#&#039 comment type.
+
+ plugin/feraltogglecommentify.vim |   23 +++++++++++++++++------
+ 1 files changed, 17 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.56)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Mon Jul 21 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    BUG FIX: Fixed silly cursor restore problem, screen no longer jumps on occasion.
+
+ plugin/feraltogglecommentify.vim |   16 +++++++++++-----
+ 1 files changed, 11 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.55)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Wed Jul 16 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Integrating changes from Jörn Horstmann. Changes are marked with "JH:".
+    Improvement:    Added options to determine how this should react.
+    * Optionally does not mess with blank lines.
+    * Change by JH, comment does not have to be in first column
+    * Change by JH, only add comment when not already commented
+    Please see "Customizing:" (in the script file) for details and usage:
+
+ plugin/feraltogglecommentify.vim |  286 +++++++++++++++++++++++++++++++-------
+ 1 files changed, 237 insertions(+), 49 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.54)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Sat Jul 12 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    2 BUG FIXes, 2 Improvements:
+    * BUG FIX: (minor) no longer complains when uncommenting and there are no comment char(s). (aka middle of a range is uncommented already)
+    * BUG FIX: Respects 'hlsearch'; won't mess with highlighting if off, etc. (Previous turned it on at end of script)
+    * Improvement: Can now comment/uncomment a fold without opening it.  (courtesy of normal! zn and normal! zN)
+    * Improvement: Changed DLAC into a proper command (:DLAC) (from mapping); map <Plug>FtcDLAC as desired, defaults to <C-c>. Ranges are supported (default current line) and you can specify the comment chars just as you can with :CC, :TC, :UC.
+
+ plugin/FeralToggleCommentify.vim |  419 -----------------------------------
+ plugin/feraltogglecommentify.vim |  453 ++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 453 insertions(+), 419 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.532)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Wed Jun 4 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                           |   64 ++++++
+ plugin/FeralToggleCommentify.vim |  419 ++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 483 insertions(+), 0 deletions(-)

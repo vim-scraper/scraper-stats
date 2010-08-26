@@ -1,0 +1,28 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.23, refs/heads/master)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Thu Apr 28 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improved/Fixed cursor restore. Screen should not jump; ever.
+
+ plugin/ferallastchange.vim |  128 ++++++++++++++++++++++++++++++++++++--------
+ 1 files changed, 105 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Sat Jul 5 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Thanks to Asier for pointing out messing with undolevels is not at all what I had intended.
+    BUG FIX:
+        * no longer messes with undolevels.
+    Changes:
+        * Changed method used to change the time stamp (now using setline() );
+        * removed RemoveLastHistoryItem()
+    Limitation:
+        * You have to undo twice after just :w now (first time to undo the timestamp
+            change, the second time to undo whatever it was you wanted to undo.)
+
+ README                     |   41 +++++++++
+ plugin/ferallastchange.vim |  205 ++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 246 insertions(+), 0 deletions(-)

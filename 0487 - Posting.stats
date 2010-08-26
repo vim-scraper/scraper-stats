@@ -1,0 +1,54 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2, refs/heads/master)
+Author:     Tim Allen <firstlight at redneck.gacracker.org>
+AuthorDate: Wed May 21 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added highlighting support (Vim's own syntax file mail.vim no longer necessary now - take a look at *posting-highlighting*...)
+    - Scan mode: added commands 'k' (step up), 'd' (delete visually selected area), 'c' (chron.-check to the end), digit (take out to the end) (see also comments to shortcut <C-Space>), slightly improved stepping mechanism
+    - "Take out": Added new feature (see description to shortcut "tt")
+    - Improved attribution handling (attributions may span over up to 4 lines now and may contain empty lines as well)
+    - Added shortcuts ",u" to undo ":Post" and ",s" to save message as draft (see comments)
+    - Modified ",r" (Visual/Normal mode) and "r" (Scan mode) to take indent from second line instead of first (Use this to reformat quotations with embedded lists.)
+    - 'autoindent' works with format_flowed set to 1 too now (Sorry for inconveniences!)
+    - Box section: New shape (see *posting-sections*)
+    - Various minor enhancements/fixups
+
+ plugin/posting.vim | 1058 ++++++++++++++++++++++++++++++----------------------
+ 1 files changed, 616 insertions(+), 442 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Tim Allen <firstlight at redneck.gacracker.org>
+AuthorDate: Mon Apr 7 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added RFC 2646 support (see comment to parameter 'format_flowed' (Settings folder))
+    - Added support for Vim's inbuilt client-server facility (command "Post!", see also *posting-invocation*)
+    - Added Scan mode feature to ease reformatting of quoted text with tables, lists or the like inside (see also comment to shortcut <C-Space>)
+    - Added shortcut ",r" for manual reformatting (see also comment under *posting-commands*)
+    - Added shortcuts <Up>, <Down>, <Home>, <End> to enable navigating with line-wrap turned on (formatoption "t" turned off now per default, use line-wrap instead (resp. "Split" which turns it on automatically))
+    - Modified "Paste" to protect indented structures (tab's are replaced with spaces)
+    - Modified quoting-markup-correction slightly to keep indented structures readable
+    - Modified "Undo" to make it restore the initial state
+    - "Jump" (shortcut <Space>) more intelligent now (narrowed raster)
+    - Box sections with new shape now (flowed-friendly)
+
+ plugin/posting.vim | 1242 +++++++++++++++++++++++++++++----------------------
+ 1 files changed, 706 insertions(+), 536 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Tim Allen <firstlight at redneck.gacracker.org>
+AuthorDate: Mon Mar 10 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Modified "Format" and "final-format" to recognize numbered lists (see also comment to shortcut "ff")
+    - Added shortcut ",a" to slot in attribution lines
+    - Added shortcut ",p" to help fixing up "Plenking" (i. e. space between word and punctuation mark)
+    - Attribution lines: Added shortcuts <M-C-LeftMouse> (manual reformatting/undo-mechanism) and <M-RightMouse> (cutting)
+    - "Take out": changed meaning slightly (<C-t><C-t> reformats whole paragraph only in case that count is given; tables, lists etc. thus remain untouched), code partially rewritten (content check, improved performance)
+    - Added centering support (box-directive "/c" and shortcut ",c")
+    - Modified code for quoting-markup-check (improved performance, covered special cases)
+    - Added shortcuts <Space> and <M-Space> to step through most recent reply text (see also comments to <S-Space> and <C-Space>)
+
+ README             |    3 +
+ plugin/posting.vim | 1772 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 1775 insertions(+), 0 deletions(-)

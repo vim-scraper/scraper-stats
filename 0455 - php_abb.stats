@@ -1,0 +1,123 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     culley harrelson <vim at culley.fastmail.fm>
+AuthorDate: Wed May 28 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added 3 new settings: g:phpNewlineBeforeBrace, g:phpFoldMarkerFunctions, g:phpRequireIncludeParens.  I also added support for the following php functions: is_null, is_numeric, empty
+
+ doc/php_abb.txt      |  138 +++++++++++++++++++++++++++++++++++++++++++-------
+ ftplugin/php_abb.vim |  120 ++++++++++++++++++++++++++++++++-----------
+ 2 files changed, 210 insertions(+), 48 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     culley harrelson <vim at culley.fastmail.fm>
+AuthorDate: Sun May 25 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Complete rewrite.  The theme of this rewrite was: quit polluting the mapping namespace, allow for most everything to be customized, remove all personal stuff from the script and write documentation.  All maps have been wrapped into a function and all abbreviations are now prefixed with g:phpLeader so you can change this variable and change the prefix for every abbreviation.  Abbreviations are now created in a more modular fashion so it should be much easier to maintain the script.  I have bumped the version to 1.0-- the structure should *finally* be mostly set so I can now focus on extending the script to cover additional php functions.
+
+ CHANGELOG            |   27 --
+ INSTALL              |   10 -
+ doc/php_abb.txt      |  564 +++++++++++++++++++++++++++++++++++++++
+ ftplugin/php.vim     |  726 --------------------------------------------------
+ ftplugin/php_abb.vim |  211 +++++++++++++++
+ ftplugin/php_iab.vim |   26 --
+ 6 files changed, 775 insertions(+), 789 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     culley harrelson <vim at culley.fastmail.fm>
+AuthorDate: Sat May 3 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    script version .4
+    Uloaded to vim.org 2003-05-03
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    
+    --------------------------------------------------------------
+    php functions added
+    --------------------------------------------------------------
+    bool array_key_exists ( mixed key, array search)
+    int count ( mixed var)
+    string htmlspecialchars ( string string [, int quote_style [, string charset]])
+    string strstr ( string haystack, string needle)
+    int strcasecmp ( string str1, string str2)
+    string substr ( string string, int start [, int length])
+    void trigger_error ( string error_msg [, int error_type])
+    
+    --------------------------------------------------------------
+    new PEAR DB stuff
+    --------------------------------------------------------------
+    phpgr -- $data = $dbh->getRow($sql);<cursor>
+    phpgcol -- $dbh->getCol($sql);<cursor>
+    phpni -- $<cursor> = $dbh->nextId('php~x', false);
+    
+    --------------------------------------------------------------
+    misc new stuff
+    --------------------------------------------------------------
+    phptodo -- //TODO:
+
+ CHANGELOG            |   27 ++++++++
+ INSTALL              |    8 ++-
+ ftplugin/php.vim     |  172 +++++++++++++++++++++++++++++++++++++++-----------
+ ftplugin/php_iab.vim |   18 +++---
+ 4 files changed, 176 insertions(+), 49 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     culley harrelson <vim at culley.fastmail.fm>
+AuthorDate: Sat Nov 16 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Complete rewrite.  The new format should allow me to continue through the built in php functions till I die.  See the script header for details.
+    
+    New items:
+    
+    echo
+    explode
+    require_once()
+    strlen
+    strcmp
+    str_replace
+    strtolower
+    strtoupper
+    unset
+    wordwrap
+    
+    There are about 6 or 7 other new things that I can't remember...
+
+ INSTALL              |    8 +
+ ftplugin/php.vim     |  953 +++++++++++++++++++++++++++++---------------------
+ ftplugin/php_iab.vim |   28 ++
+ 3 files changed, 581 insertions(+), 408 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     culley harrelson <vim at culley.fastmail.fm>
+AuthorDate: Thu Oct 31 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    new abbreviations:
+    
+    phplv     - look up the last value from a postgresql sequence
+    phpserver - output $_SERVER['<cursor']
+    phpgassoc - output $data = $dbh->getAssoc($sql);
+    phpwhile  - output while structure
+    
+    new maps:
+    
+    <leader>ap  - when on an array variable open a line under cursor and output an array_push function
+    <leader>ae  - when on an array variable open a line under cursor and output the extract function
+    <leader>apr - when on an array variable open a line under cursor and output the print_r function
+
+ ftplugin/php.vim |  156 +++++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 124 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     culley harrelson <vim at culley.fastmail.fm>
+AuthorDate: Mon Oct 21 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README           |   27 ++++
+ ftplugin/php.vim |  397 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 424 insertions(+), 0 deletions(-)

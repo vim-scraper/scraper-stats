@@ -1,0 +1,61 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.3, refs/heads/master)
+Author:     Dan Sharp <dwsharp at hotmail.com>
+AuthorDate: Tue Sep 23 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New mappings:
+    n and N : jump to next / previous match of current ':Search' pattern
+    <Leader>n and <Leader>N : jump to next / previous ':Search'-ed pattern
+    <Leader>* : perform a :Search of the word under the cursor / visually selected region
+    
+    Other changes:
+    Supports Vim 7 autoload mechanism, but will still work under Vim 6
+    Bug fixes to escape characters in the search pattern
+
+ autoload/MultipleSearch.vim |  343 +++++++++++++++++++++++++++++++++++++++++++
+ doc/MultipleSearch.txt      |  106 +++++++++++++
+ plugin/MultipleSearch.vim   |  301 ++++----------------------------------
+ 3 files changed, 478 insertions(+), 272 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
+Author:     Dan Sharp <dwsharp at hotmail.com>
+AuthorDate: Tue Oct 14 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add the :SearchBuffersReset command to clear the highlighting in all buffers from the new :SearchBuffers command.
+
+ plugin/MultipleSearch.vim |   49 ++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 38 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Dan Sharp <dwsharp at hotmail.com>
+AuthorDate: Mon Oct 13 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added the :SearchBuffers command to perform the same search in all open buffers.  This is different than ':bufdo Search' where each buffer will have the match highlighted in a different color.
+
+ plugin/MultipleSearch.vim |   75 +++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 56 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Dan Sharp <dwsharp at hotmail.com>
+AuthorDate: Tue Nov 19 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - :Search command now respects Vim's 'ignorecase' and 'smartcase' settings.
+    - User-defined color sequence can be used for searches.
+    - Maximum number of colors that can be used is limited only by the operating system.
+
+ plugin/MultipleSearch.vim |  213 +++++++++++++++++++++++++++++++++++++--------
+ 1 files changed, 177 insertions(+), 36 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Dan Sharp <dwsharp at hotmail.com>
+AuthorDate: Mon Nov 11 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                    |   36 ++++++++++++++++++
+ plugin/MultipleSearch.vim |   89 +++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 125 insertions(+), 0 deletions(-)

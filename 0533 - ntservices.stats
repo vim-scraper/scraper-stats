@@ -1,0 +1,83 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.7, refs/heads/master)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Jul 23 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Maintenance release. Fixed broken NTSsetHost command.
+
+ plugin/ntservices.vim |   47 ++++++++++++++++++++++-------------------------
+ 1 files changed, 22 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue Jan 27 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor updates:
+    - Fixed the bug in connecting to a remote host, basically it wasn't working.
+    - NtsSetHost is now global, so you don't have to open the window before
+      switching to a remote host.
+    - Check and not load if it is not windows (David Fishburn).
+
+ plugin/ntservices.vim |   43 ++++++++++++++++++++++++++++++-------------
+ 1 files changed, 30 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue Jan 27 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Renamed NTsFields command to NtsFields.
+    - Now genutils.vim plugin is required. Download it from http://www.vim.org/script.php?script_id=197
+    - Fixed a bug with buffer name on solaris.
+    - New feature to connect to a remote host.
+    - q to quit window.
+    - Version dependency check on multvals and genutils plugin. You now get an error message during the Vim startup, if you don't have minimum required versions of these two dependent plugins.
+
+ plugin/ntservices.vim |  303 ++++++++++++++++++++++++++++++------------------
+ 1 files changed, 189 insertions(+), 114 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Feb 14 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    You can select the list of fields that you want to see in the services list. You can specify the field list in your vimrc, but you can always dynamically change them using NTservFields command at runtime. This new feature adds a new dependency on multvals plugin, but others are still optional.
+
+ plugin/ntservices.vim |  324 ++++++++++++++++++++++++++++++++++++++++++++-----
+ 1 files changed, 291 insertions(+), 33 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon Jan 20 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    With the help of David Fishburn, I was able to identify a problem and fix it. I also added a command and <Plug> mapping to activate the window without needing WinManager at all (for those who don't want to install WinManager). Thanks a lot to David for debugging the problem and providing help in other ways too.
+
+ plugin/ntservices.vim |  107 +++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 85 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Sat Jan 18 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Cscript wasn't executing vbscripts on some machines unless the //E:vbscript option is passed. If it still doesn't work for you, please do me a favour by running cscript manually on the temp file created with the .vbs extension in the temp directory like this:
+    
+    cscript //E:vbscript //Nologo <temp file created by plugin>
+    
+    and please report the error that you see. Thank you.
+
+ plugin/ntservices.vim |    8 +++++---
+ 1 files changed, 5 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Jan 17 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                |   27 +++++++
+ plugin/ntservices.vim |  189 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 216 insertions(+), 0 deletions(-)

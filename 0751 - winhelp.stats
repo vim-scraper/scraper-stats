@@ -1,0 +1,21 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0, refs/heads/master)
+Author:     Peter Puck <ptrpck at netscape.net>
+AuthorDate: Fri Sep 5 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed so that help files can be in a path with spaces, thanks to Bob Davis for the bug report. It still does not work properly for .chm files in such paths but the bug is not in the script.
+    Fixed some other bugs and updated the documentation.
+
+ plugin/winhelp.vim |   77 +++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 61 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Peter Puck <ptrpck at netscape.net>
+AuthorDate: Thu Aug 28 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README             |   28 +++++++++
+ plugin/winhelp.vim |  172 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 200 insertions(+), 0 deletions(-)

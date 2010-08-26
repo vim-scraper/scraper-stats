@@ -1,0 +1,72 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.83, refs/heads/master)
+Author:     Michal Vitecek <fuf at mageo.cz>
+AuthorDate: Mon Jan 4 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for the CursorHoldI event so that the class/method/function is recognized also in Insert mode.
+
+ plugin/pythonhelper.vim |   11 +++--------
+ 1 files changed, 3 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.82)
+Author:     Michal Vitecek <fuf at mageo.cz>
+AuthorDate: Fri Jul 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - fixed a bug when nested functions/classes were not properly detected
+
+ plugin/pythonhelper.vim |  396 +++++++++++++++++++++++++++++++----------------
+ 1 files changed, 262 insertions(+), 134 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.81)
+Author:     Michal Vitecek <fuf at mageo.cz>
+AuthorDate: Thu Mar 13 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - fixed a small bug in indent level recognition
+
+ plugin/pythonhelper.vim |   21 ++++++++++++++++-----
+ 1 files changed, 16 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.80)
+Author:     Michal Vitecek <fuf at mageo.cz>
+AuthorDate: Fri Oct 18 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - removed the dependency on exuberant ctags which parsed the python source code wrongly anyways. From now on only VIM with python support is needed. This might greatly help windoze users.
+
+ plugin/pythonhelper.vim |  475 +++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 359 insertions(+), 116 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.72)
+Author:     Michal Vitecek <fuf at mageo.cz>
+AuthorDate: Thu Oct 3 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - fixed problem with parsing ctags output on python files that use tabs
+    - when there is a syntax error in the file and ctags parses it incorrectly a warning is displayed in the command line
+
+ plugin/pythonhelper.vim |   64 ++++++++++++++++++++++++++++++-----------------
+ 1 files changed, 41 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.71)
+Author:     Michal Vitecek <fuf at mageo.cz>
+AuthorDate: Wed Oct 2 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - fixed problem with undefined window-bound variable w:PHStatusLine when a window has been split into two.
+    - unbound event BufWinEnter because it's not needed because of the above change now
+
+ plugin/pythonhelper.vim |   14 ++++++++++----
+ 1 files changed, 10 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Michal Vitecek <fuf at mageo.cz>
+AuthorDate: Wed Oct 2 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                  |    5 +
+ plugin/pythonhelper.vim |  358 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 363 insertions(+), 0 deletions(-)

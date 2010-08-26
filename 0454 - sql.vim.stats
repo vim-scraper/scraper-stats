@@ -1,0 +1,67 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.08, refs/heads/master)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Mon Feb 21 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Missed an = sign, <sigh>
+
+ ftplugin/sql.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.07)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Sun Feb 20 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Very minor update.
+    
+    Changed this line:
+    setlocal cpo&vim
+    
+    To:
+    set cpo
+
+ ftplugin/sql.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.06)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Sat Feb 19 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added some additional visual maps, and now allow the user to customize part of the search strings with this global variable: g:ftplugin_sql_objects
+
+ ftplugin/sql.vim |   82 ++++++++++++++++++++++++++++++++++++-----------------
+ 1 files changed, 56 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.05)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Thu Nov 25 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added additional matchit.vim features.
+    Created additional buffer maps to assist in navigation:
+    ]] - next BEGIN
+    [[ - previous BEGIN
+    ][ - next END
+    [] - previous END
+    
+    ]} - Next CREATE statement
+    [{ - Previous CREATE statement
+    
+    ]" - Next comment
+    [" - End of previous comment
+
+ ftplugin/sql.vim |  143 +++++++++++++++++++++++++++++++++++++++++++++++------
+ 1 files changed, 126 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.04)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Wed Mar 3 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Updated the IF...ELSE...END IF block to correct an error.
+
+ README           |   72 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ ftplugin/sql.vim |   59 ++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 131 insertions(+), 0 deletions(-)

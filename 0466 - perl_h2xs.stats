@@ -1,0 +1,25 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.51, refs/heads/master)
+Author:     Colin Keith <vim at ckeith.clara.net>
+AuthorDate: Sat Nov 2 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Regexp in  substitution when getting module filenamewasn't anchored so it was turning X::Y::Z => X/Y/Z/Y/Z.pm not X/Y/Z/Z.pm
+    
+    If module exists you start editing that rather than not checking if it exists and auto starting h2xs. This means you can create with vim X::Y::Z.pm then use !v to go back and you'll edit the module properly, added new var so you can be prompted before this happens if you want.
+
+ doc/README_perl_h2xs.txt |   32 ++++++++++++++++++++++++++++++++
+ doc/perl_h2xs.txt        |   18 ++++++++++++++++++
+ 2 files changed, 50 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Colin Keith <vim at ckeith.clara.net>
+AuthorDate: Wed Oct 30 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                   |   21 +++++++
+ doc/README_perl_h2xs.txt |   62 ++++++++++++++++++++
+ doc/perl_h2xs.txt        |   88 ++++++++++++++++++++++++++++
+ ftplugin/perl_h2xs.vim   |  143 ++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 314 insertions(+), 0 deletions(-)

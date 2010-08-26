@@ -1,0 +1,74 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.4.1, refs/heads/master)
+Author:     lechee lai <lecheel AT yahoo DOT com>
+AuthorDate: Thu Jul 17 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fix vgrep skip ansi text
+
+ vgrep |  Bin 10826 -> 10682 bytes
+ 1 files changed, 0 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     lechee lai <lecheel AT yahoo DOT com>
+AuthorDate: Wed Jul 16 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    upgrade to vim 7 and use vgrep instead g2w.pl source code is include
+
+ g2w.pl           |   44 ---------
+ plugin/vgrep.vim |   98 ++++++++++++++-------
+ read.me          |   11 +++
+ vgrep            |  Bin 0 -> 10826 bytes
+ vgrep.c          |  262 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 5 files changed, 340 insertions(+), 75 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     lechee lai <lecheel AT yahoo DOT com>
+AuthorDate: Tue Aug 24 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add unix grep support via g2w.pl (included)
+
+ g2w.pl           |   44 ++++++++++++++++++++++++++++++
+ plugin/grp.vim   |   37 ++++++++++++++++++++++++++
+ plugin/vgrep.vim |   77 ++++++++++++++++++++++++++++++++++++++++--------------
+ 3 files changed, 138 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     lechee lai <lecheel AT yahoo DOT com>
+AuthorDate: Mon Sep 29 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor Bugfix
+
+ gnugrep.exe      |  Bin 49664 -> 0 bytes
+ grep20f.dif      |  116 ----------------------------------------------
+ plugin/grp.vim   |   40 ----------------
+ plugin/vgrep.vim |  134 ++++++++++++++++++++++++++++++++++++++---------------
+ 4 files changed, 96 insertions(+), 194 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     lechee lai <lecheel AT yahoo DOT com>
+AuthorDate: Thu Sep 25 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    some bugfix
+    Add TurboGrep support
+    Add OakGrep Support
+
+ gnugrep.exe      |  Bin 0 -> 49664 bytes
+ plugin/grp.vim   |   40 ++++++
+ plugin/vgrep.vim |  367 ++++++++++++++++++++++++++++++++++++++++++++----------
+ 3 files changed, 342 insertions(+), 65 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     lechee lai <lecheel AT yahoo DOT com>
+AuthorDate: Fri Sep 19 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README           |   22 +++++++
+ grep20f.dif      |  116 ++++++++++++++++++++++++++++++++++++++
+ plugin/vgrep.vim |  162 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 300 insertions(+), 0 deletions(-)

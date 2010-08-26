@@ -1,0 +1,181 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.5, refs/heads/master)
+Author:     Srinath Avadhanula <srinath at fastmail.fm>
+AuthorDate: Mon Dec 1 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    A vastly improved and bug-fixed version of latex-suite.
+    
+    See
+    Release Notes: http://vim-latex.sourceforge.net/download/RELEASE-1.5.txt
+    Changelog: http://vim-latex.sourceforge.net/vimfiles/ftplugin/latex-suite/ChangeLog
+    
+    NOTE: The Changelog at this moment suffers from excessive verbosity since it is            automatically generated.
+    
+    Please note that releases are made much more regularly on the vim-latex download page at:
+    
+    http://vim-latex.sourceforge.net/index.php?subject=download&title=Download
+
+ compiler/tex.vim                                   |  123 +-
+ doc/imaps.txt                                      |  116 +
+ doc/latex-suite.txt                                | 3679 +++++++++++++++-----
+ ftplugin/bib_latexSuite.vim                        |   16 +
+ ftplugin/latex-suite/ChangeLog                     |  229 ++
+ ftplugin/latex-suite/bibtex.vim                    |  396 +--
+ ftplugin/latex-suite/compiler.vim                  |  457 +++-
+ ftplugin/latex-suite/custommacros.vim              |  112 +-
+ ftplugin/latex-suite/diacritics.vim                |    3 +-
+ ftplugin/latex-suite/elementmacros.vim             |   36 +-
+ ftplugin/latex-suite/envmacros.vim                 |  885 +++++-
+ ftplugin/latex-suite/folding.vim                   |   98 +-
+ ftplugin/latex-suite/macros/example                |   10 +-
+ ftplugin/latex-suite/main.vim                      |  715 +++--
+ ftplugin/latex-suite/mathmacros-utf.vim            |  729 ++++
+ ftplugin/latex-suite/mathmacros.vim                |  132 +-
+ ftplugin/latex-suite/multicompile.vim              |  232 ++
+ ftplugin/latex-suite/packages/SIunits              |  612 ++--
+ ftplugin/latex-suite/packages/accents              |   23 +
+ ftplugin/latex-suite/packages/acromake             |    5 +
+ ftplugin/latex-suite/packages/afterpage            |    5 +
+ ftplugin/latex-suite/packages/alltt                |    7 +
+ ftplugin/latex-suite/packages/amsmath              |  101 +
+ ftplugin/latex-suite/packages/amsthm               |   16 +
+ ftplugin/latex-suite/packages/amsxtra              |    7 +
+ ftplugin/latex-suite/packages/arabic               |    5 +
+ ftplugin/latex-suite/packages/array                |   12 +
+ ftplugin/latex-suite/packages/babel                |   93 +
+ ftplugin/latex-suite/packages/bar                  |   39 +-
+ ftplugin/latex-suite/packages/bm                   |    5 +
+ ftplugin/latex-suite/packages/bophook              |    7 +
+ ftplugin/latex-suite/packages/boxedminipage        |    5 +
+ ftplugin/latex-suite/packages/caption2             |   38 +
+ ftplugin/latex-suite/packages/cases                |    7 +
+ ftplugin/latex-suite/packages/ccaption             |   15 +
+ ftplugin/latex-suite/packages/changebar            |   52 +-
+ ftplugin/latex-suite/packages/chapterbib           |   19 +
+ ftplugin/latex-suite/packages/cite                 |   29 +-
+ ftplugin/latex-suite/packages/color                |   38 +
+ ftplugin/latex-suite/packages/comma                |    7 +
+ ftplugin/latex-suite/packages/deleq                |   31 +
+ ftplugin/latex-suite/packages/drftcite             |   24 +
+ ftplugin/latex-suite/packages/dropping             |    7 +
+ ftplugin/latex-suite/packages/enumerate            |    5 +
+ ftplugin/latex-suite/packages/eqlist               |   14 +
+ ftplugin/latex-suite/packages/eqparbox             |    7 +
+ ftplugin/latex-suite/packages/everyshi             |    5 +
+ ftplugin/latex-suite/packages/flafter              |    5 +
+ ftplugin/latex-suite/packages/float                |   11 +
+ ftplugin/latex-suite/packages/floatflt             |    7 +
+ ftplugin/latex-suite/packages/fn2end               |    5 +
+ ftplugin/latex-suite/packages/footmisc             |   16 +
+ ftplugin/latex-suite/packages/geometry             |  169 +-
+ ftplugin/latex-suite/packages/german               |    7 +
+ ftplugin/latex-suite/packages/graphicx             |   64 +
+ ftplugin/latex-suite/packages/graphpap             |    5 +
+ ftplugin/latex-suite/packages/harpoon              |   21 +-
+ ftplugin/latex-suite/packages/hhline               |   25 +-
+ ftplugin/latex-suite/packages/histogram            |    8 +
+ ftplugin/latex-suite/packages/hyperref             |  319 +-
+ ftplugin/latex-suite/packages/ifthen               |   16 +
+ ftplugin/latex-suite/packages/inputenc             |   24 +
+ ftplugin/latex-suite/packages/letterspace          |    5 +
+ ftplugin/latex-suite/packages/lineno               |  102 +-
+ ftplugin/latex-suite/packages/longtable            |   52 +-
+ ftplugin/latex-suite/packages/lscape               |    5 +
+ ftplugin/latex-suite/packages/manyfoot             |   16 +-
+ ftplugin/latex-suite/packages/moreverb             |   23 +
+ ftplugin/latex-suite/packages/moreverbatim         |   21 +
+ ftplugin/latex-suite/packages/multibox             |    5 +
+ ftplugin/latex-suite/packages/multicol             |   27 +-
+ ftplugin/latex-suite/packages/newalg               |   21 +
+ ftplugin/latex-suite/packages/ngerman              |    5 +
+ ftplugin/latex-suite/packages/numprint             |   13 +
+ ftplugin/latex-suite/packages/oldstyle             |    7 +
+ ftplugin/latex-suite/packages/outliner             |   14 +
+ ftplugin/latex-suite/packages/overcite             |   29 +
+ ftplugin/latex-suite/packages/parallel             |   10 +
+ ftplugin/latex-suite/packages/plain                |    5 +
+ ftplugin/latex-suite/packages/plates               |   11 +
+ ftplugin/latex-suite/packages/polski               |  181 +-
+ ftplugin/latex-suite/packages/psgo                 |   22 +
+ ftplugin/latex-suite/packages/schedule             |   15 +
+ ftplugin/latex-suite/packages/textfit              |    7 +
+ ftplugin/latex-suite/packages/times                |    5 +
+ ftplugin/latex-suite/packages/tipa                 |  359 ++
+ ftplugin/latex-suite/packages/ulem                 |   24 +-
+ ftplugin/latex-suite/packages/url                  |   16 +
+ ftplugin/latex-suite/packages/verbatim             |   13 +
+ ftplugin/latex-suite/packages/version              |    7 +
+ ftplugin/latex-suite/packages.vim                  |  847 +++--
+ ftplugin/latex-suite/projecttemplate.vim           |   11 +
+ ftplugin/latex-suite/templates/IEEEtran.tex        |  146 +
+ ftplugin/latex-suite/templates/article.tex         |    9 +-
+ ftplugin/latex-suite/templates/report.tex          |    9 +-
+ .../latex-suite/templates/report_two_column.tex    |    9 +-
+ ftplugin/latex-suite/templates.vim                 |   71 +-
+ ftplugin/latex-suite/texmenuconf.vim               |   93 +-
+ ftplugin/latex-suite/texproject.vim                |   73 +
+ ftplugin/latex-suite/texrc                         |  321 ++-
+ ftplugin/latex-suite/wizardfuncs.vim               |  412 +--
+ ftplugin/tex/brackets.vim                          |  161 +
+ ftplugin/tex/smartspace.vim                        |  102 +
+ ftplugin/tex/texviewer.vim                         |  643 ++++
+ ftplugin/tex_latexSuite.vim                        |   13 +-
+ indent/tex.vim                                     |    4 +
+ plugin/filebrowser.vim                             |  245 ++
+ plugin/imaps.vim                                   |  739 +++--
+ plugin/remoteOpen.vim                              |  125 +
+ 109 files changed, 11742 insertions(+), 3221 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Srinath Avadhanula <srinath at fastmail.fm>
+AuthorDate: Thu Nov 7 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                                             |   76 +
+ compiler/tex.vim                                   |  238 ++
+ doc/latex-suite.txt                                |  960 ++++++++
+ doc/latexhelp.txt                                  | 2430 ++++++++++++++++++++
+ ftplugin/latex-suite/bibtex.vim                    |  270 +++
+ ftplugin/latex-suite/compiler.vim                  |  211 ++
+ ftplugin/latex-suite/custommacros.vim              |  137 ++
+ ftplugin/latex-suite/diacritics.vim                |  125 +
+ ftplugin/latex-suite/dictionaries/SIunits          |  289 +++
+ ftplugin/latex-suite/dictionaries/dictionary       |  677 ++++++
+ ftplugin/latex-suite/elementmacros.vim             |  338 +++
+ ftplugin/latex-suite/envmacros.vim                 |  264 +++
+ ftplugin/latex-suite/folding.vim                   |  250 ++
+ ftplugin/latex-suite/macros/example                |   11 +
+ ftplugin/latex-suite/main.vim                      |  484 ++++
+ ftplugin/latex-suite/mathmacros.vim                |  672 ++++++
+ ftplugin/latex-suite/packages/SIunits              |  310 +++
+ ftplugin/latex-suite/packages/bar                  |   19 +
+ ftplugin/latex-suite/packages/changebar            |   28 +
+ ftplugin/latex-suite/packages/cite                 |    2 +
+ ftplugin/latex-suite/packages/exmpl                |   50 +
+ ftplugin/latex-suite/packages/geometry             |   87 +
+ ftplugin/latex-suite/packages/harpoon              |   10 +
+ ftplugin/latex-suite/packages/hhline               |   13 +
+ ftplugin/latex-suite/packages/hyperref             |  163 ++
+ ftplugin/latex-suite/packages/lineno               |   55 +
+ ftplugin/latex-suite/packages/longtable            |   28 +
+ ftplugin/latex-suite/packages/manyfoot             |    6 +
+ ftplugin/latex-suite/packages/multicol             |   13 +
+ ftplugin/latex-suite/packages/polski               |   23 +
+ ftplugin/latex-suite/packages/ulem                 |   14 +
+ ftplugin/latex-suite/packages.vim                  |  368 +++
+ ftplugin/latex-suite/templates/article.tex         |    8 +
+ ftplugin/latex-suite/templates/report.tex          |    8 +
+ .../latex-suite/templates/report_two_column.tex    |    8 +
+ ftplugin/latex-suite/templates.vim                 |   92 +
+ ftplugin/latex-suite/texmenuconf.vim               |  122 +
+ ftplugin/latex-suite/texrc                         |  336 +++
+ ftplugin/latex-suite/wizardfuncs.vim               |  423 ++++
+ ftplugin/tex_latexSuite.vim                        |   12 +
+ indent/tex.vim                                     |  135 ++
+ ltags                                              |   78 +
+ plugin/SyntaxFolds.vim                             |  323 +++
+ plugin/imaps.vim                                   |  575 +++++
+ plugin/libList.vim                                 |  249 ++
+ 45 files changed, 10990 insertions(+), 0 deletions(-)

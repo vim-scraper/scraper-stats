@@ -1,0 +1,36 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.5, refs/heads/master)
+Author:     Timothy Aldrich <tim at aldrichsystems.com>
+AuthorDate: Fri Dec 19 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor fix in the include functionality.
+
+ plugin/snippet.vim        |   23 ++++++++++++++++++-----
+ snippets/c/for.spt        |    3 ---
+ snippets/c/if.spt         |    3 ---
+ snippets/c/ifelse.spt     |    6 ------
+ snippets/c/switch.spt     |    4 ----
+ snippets/cpp/_include.spt |    1 -
+ snippets/cpp/class.spt    |   12 ------------
+ 7 files changed, 18 insertions(+), 34 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Timothy Aldrich <tim at aldrichsystems.com>
+AuthorDate: Fri Aug 9 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    another Vikas improvement :
+    changed visual selection from character wise 'v' to line wise 'V'
+    incorporates all previous fixes see changelog for list
+
+ README                    |   23 +++++
+ doc/snippet.txt           |   84 +++++++++++++++++
+ plugin/snippet.vim        |  217 +++++++++++++++++++++++++++++++++++++++++++++
+ snippets/c/for.spt        |    3 +
+ snippets/c/if.spt         |    3 +
+ snippets/c/ifelse.spt     |    6 ++
+ snippets/c/switch.spt     |    4 +
+ snippets/cpp/_include.spt |    1 +
+ snippets/cpp/class.spt    |   12 +++
+ syntax/snippet.vim        |   20 ++++
+ 10 files changed, 373 insertions(+), 0 deletions(-)

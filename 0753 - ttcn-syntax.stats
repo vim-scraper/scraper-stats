@@ -1,0 +1,20 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     Stefan Karlsson <sssstefan at gmail.com>
+AuthorDate: Wed Aug 10 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added spell checking support (only comments are spell checked) for those who use Vim 7.
+
+ syntax/ttcn.vim |   21 ++++++++++++---------
+ 1 files changed, 12 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Stefan Karlsson <sssstefan at gmail.com>
+AuthorDate: Sat Sep 18 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added variable g:ttcn_minlines. If this variable is set (e.g. let g:ttcn_minlines=100) it will be used to set "minlines" in the syntax synchronization. If it is not set ":syn sync fromstart" will be used. Thanks to John Orr for pointing out a problem that led to this change.
+
+ README          |    8 +++
+ syntax/ttcn.vim |  163 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 171 insertions(+), 0 deletions(-)

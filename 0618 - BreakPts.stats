@@ -1,0 +1,119 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.0, refs/heads/master)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Jan 9 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - The script is now more aligned to Vim 7.0.
+    - It is now autoloaded.
+    - Not dependent on multvals anymore.
+    - Comes with a Vim style help file.
+    - Minor improvements and fixes.
+
+ autoload/breakpts.vim | 1244 +++++++++++++++++++++++++++++++++++++++
+ doc/breakpts.txt      |  475 +++++++++++++++
+ plugin/breakpts.vim   | 1533 ++-----------------------------------------------
+ 3 files changed, 1756 insertions(+), 1496 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon May 8 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Release 3.2 for vim7 compatibility. Thanks to David Fishburn for
+    providing most of the patches for vim7 and testing it.
+
+ plugin/breakpts.vim |   32 +++++++++++++++++++++-----------
+ 1 files changed, 21 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Jul 15 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Just trying to fix a bad upload for version 3.1
+    
+    - Now requires Vim 6.3
+    - More documentation.
+    - The script now works perfectly well for remote debugging. All the Vim bugs
+      were fixed in 6.3 and I have used the plugin for some real debugging this
+      time, and found it to be quite usable.
+    - You can now reload scripts from remote session.
+    - Many new useful commands with command-completions.
+      - Runtime: that completes filenames from 'rtp'
+      - Debug: that completes command and function names (with arguments).
+      - Breakadd/Breakdel: that complete function names/script paths
+      - Where: to see the context at the debug prompt.
+    - Useful BreakPtsSetupBuf command. A few other global commands.
+    - Lots of other misc. and subtle improvements. Read the script header completely
+      for details (you can diff with the old version if you like :)
+
+ plugin/breakpts.vim |  905 ++++++++++++++++++++++++++++++++-------------------
+ 1 files changed, 575 insertions(+), 330 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Dec 17 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    See the function header for details.
+    - Now BreakPts command can take an option to specify the initial view.
+    - New BPOpen command to open a script for editing from the scripts view.
+    - Experimental features to debug scripts from a remote vim using the
+      |clientserver| functionality. It is now possible to view the context and execute the :debug
+      mode commands such as >next >cont from the browser, while debugging
+      remotely. CAUTION: This requires installing a patch to vim and sometimes makes Vim crash (see installation section).
+    - Two global functions BPBreak() and BPBreakIf() to add breakpoints from
+      with in your script. The BPBreak() can also be used while at the
+      :debug prompt (>) to easily add breakpoints without needing to worry
+      about the function name and line number. This requires a patch to be
+      installed to vim (see installation section).
+    - New setting g:brkptsModFuncHeader.
+    - New version dependency check on dependent libraries. You now get an
+      error message during the Vim startup if you don't have the right
+      version of multvals and genutils.
+    - Remember the line number when the browser is closed and reopened.
+    - Fixed a bug in handling function names, such as <SID>Func.
+    - Fixed a bug in browser name on unixy vim.
+    - Plugin reloading now handles some non-standard naming conventions for
+      the loaded_ variable and works better.
+    - Fixed other misc. bugs.
+    - The g:loaded_breakpts variable now contains the version number for any dependency checking (see :help v:version for format information)
+
+ plugin/breakpts.vim |  795 +++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 607 insertions(+), 188 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Jun 18 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Number of improvements, thanks to David Fishburn {fishburn at sybase dot org} for feedback/ideas and help with identifying issues. Note: This version requires Vim 6.2. New features at a glance:
+    
+        - View the list of scripts loaded.
+        - View the script listing and set "file" breakpoints.
+        - Reload a script after unletting the g:loaded_xxx variable.
+        - Mappins to goto next/previous breakpoint.
+        - Fold the contents so that only breakpoints are visible (with some
+          context).
+        - A command to clear all the breakpoints.
+        - A new :BPBrklist command to get the list of breakpoints. You can
+          press <F9> on them to disable/enable them.
+        - :BPSave command to save the current breakpoints in a specified global
+          variable. You can later exec the variable to reinstate the
+          breakpoints. This allows you to save/restore breakpoints across sessions.
+    
+    See description for more information. Please continue to send in your suggestions/bug reports etc.
+
+ plugin/breakpts.vim |  880 ++++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 625 insertions(+), 255 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Apr 11 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |   43 ++++
+ plugin/breakpts.vim |  571 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 614 insertions(+), 0 deletions(-)

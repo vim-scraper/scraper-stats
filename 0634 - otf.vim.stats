@@ -1,0 +1,49 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.31, refs/heads/master)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Tue Jun 15 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Refinement of :OTF -- just bank (with no keyword) will clear the specified group.
+    Improvement: ':[#]OTFG[!] <register>' which will copy contents of specifed group to specified register.This means that you can ":2OTFG y" to copy the search pattern used by highlight group 2 into register y.
+
+ plugin/otf.vim |  217 +++++++++++++++++++++++++++++++++++++++++++++++++++----
+ 1 files changed, 201 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.21)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Wed May 7 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improvement: As per a suggestion from Mathieu CLABAUT the feralotf# highlight groups now use the default keyword, This allows you to override these default colors easily.
+
+ plugin/otf.vim |   59 +++++++++++++++++++++++++++++++++----------------------
+ 1 files changed, 35 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Sat May 3 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Small update: converted :OTF1-8 into :OTF which takes a count (line number position) and takes optional bang to specify string as a keyword (think register)
+    Keywords are:
+        (w) cword,                     expand("<cword>")
+        (W) \<cword\>                  "\\<".expand("<cword>")."\\>"
+        (") unnamed register           @@
+        (/) current search string      @/
+    i.e. ":2OTF! /" (bang) will pull in the current search string and color it in color group2, while ":2OTF /" (no bang) will color '/' in color group2
+    
+    Original :OTF1-8 commands updated to bang style but commented out (just in case anyone liked that method)
+
+ plugin/otf.vim |  122 +++++++++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 94 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Fri May 2 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README         |   43 ++++++++++++++++++
+ plugin/otf.vim |  135 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 178 insertions(+), 0 deletions(-)

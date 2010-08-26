@@ -1,0 +1,54 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.46, refs/heads/master)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Tue Jun 3 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Refined matching declaration prens; should be more resistant to mismatched prens outside of the function declaration. Mismatched prens inside the function declaration (i.e. in comments) will confuse this still.
+    NOTE that I goofed the previous version's number, it was 0.45 NOT 0.55. Oopsie!
+
+ ftplugin/copycppdectoimp.vim |   44 ++++++++++++++++++++---------------------
+ 1 files changed, 21 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.55)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Sun May 4 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Bug fix: more robust handling of comments and prens and things in multi line function declorations.
+    * Small fix to take into account non blank equalprg; thanks to Nathan Dunn for help tracking this down.
+
+ ftplugin/copycppdectoimp.vim |   70 ++++++++++++++++++++++++++++++++++++------
+ 1 files changed, 60 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.43)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Thu Oct 17 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bugfix, The case of filename extension no loger matters during the check for header/source.
+
+ ftplugin/copycppdectoimp.vim |  565 ++++++++++++++++++++++++++++++++----------
+ 1 files changed, 431 insertions(+), 134 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.32)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Wed Oct 9 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * More intelligent/robust checking/finding the class.
+    * Nested classes are now supported.
+    * Normal functions now work.
+
+ ftplugin/copycppdectoimp.vim |   42 ++++++++++++++++++++++++++++++------------
+ 1 files changed, 30 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Robert KellyIV <feral at eclecticwizard.com>
+AuthorDate: Mon Oct 7 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                       |   67 +++++++++
+ ftplugin/copycppdectoimp.vim |  306 ++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 373 insertions(+), 0 deletions(-)

@@ -1,0 +1,76 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.95, refs/heads/master)
+Author:     Guido Van Hoecke <guido at vanhoecke.org>
+AuthorDate: Thu Feb 13 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Replaced s:filename() by call to builtin fnamemodify()
+    2) Added license statement
+    3) Now processes g:timstamp_3 etc by copying them into
+        s:timestamp_3 at the beginning of the script
+        (Thanks to Norihiko Murase)
+    4) Fixed two documentation typos (Thanks to Norihiko Murase)
+
+ doc/timstamp.txt    |   12 ++++++------
+ plugin/timstamp.vim |   31 ++++++++++++++++++++-----------
+ 2 files changed, 26 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.94)
+Author:     Guido Van Hoecke <guido at vanhoecke.org>
+AuthorDate: Thu Aug 15 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Added a missing 'let' in an assignment statement. (reported by Luis Jure)
+    2) Added additional warning in the help file about  '$' value for g:timstamp_modelines.
+    Cfr :h timstamp_modelines
+    3) Corrected s:filename() to also work with dos slashes. (thanks to Richard Bair)
+
+ doc/timstamp.txt    |   11 +++++++----
+ plugin/timstamp.vim |   16 ++++++++++++----
+ 2 files changed, 19 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.93)
+Author:     Guido Van Hoecke <guido at vanhoecke.org>
+AuthorDate: Wed Aug 14 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now only presents the %token part of the spec to strftime(): this seems to provide correct results, even when using %Z to add the timezone followed by '>'
+    The helpfile has been extended with some example specs.
+    (error and help reported/requested by Adrian Nagle)
+
+ doc/timstamp.txt    |   30 +++++++++++++++++++++++-------
+ plugin/timstamp.vim |   25 +++++++++++++++++++++----
+ 2 files changed, 44 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.92)
+Author:     Guido Van Hoecke <guido at vanhoecke.org>
+AuthorDate: Mon Aug 12 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now uses the line("$") function to test for short files and limits the modifications to the specified nr of modelines rather than that number plus one extra line (Thanks to Piet Delport and Rimon Barr)
+
+ doc/timstamp.txt    |    6 +++---
+ plugin/timstamp.vim |   36 ++++++++++++++++++++++++++----------
+ 2 files changed, 29 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.91)
+Author:     Guido Van Hoecke <guido at vanhoecke.org>
+AuthorDate: Sun Aug 11 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    version 0.91 now preserves the cursor location, is silent! about language setting, and does no longer choke on short files
+
+ doc/timstamp.txt    |    4 ++--
+ plugin/timstamp.vim |   23 ++++++++++++++++-------
+ 2 files changed, 18 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Guido Van Hoecke <guido at vanhoecke.org>
+AuthorDate: Sun Aug 11 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |  241 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/timstamp.txt    |  217 ++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/timstamp.vim |  100 +++++++++++++++++++++
+ 3 files changed, 558 insertions(+), 0 deletions(-)

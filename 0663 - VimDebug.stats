@@ -1,0 +1,258 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4, refs/heads/master)
+Author:     eric johnson <vim at iijo.org>
+AuthorDate: Sun Jan 6 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Dramatically improved debug console.  New underlying API makes adding support for new languages simpler.  Added support for Gdb, but this module is not yet tested.  This project is still in beta.
+
+ VimDebug-0.3.5/ACKNOWLEDGEMENTS                    |    9 -
+ VimDebug-0.3.5/ARCHITECTURE                        |   61 -
+ VimDebug-0.3.5/BUGS                                |   14 -
+ VimDebug-0.3.5/DEVELOPER.HOWOTO                    |   50 -
+ VimDebug-0.3.5/INSTALL                             |   65 -
+ VimDebug-0.3.5/MANIFEST                            |   28 -
+ VimDebug-0.3.5/MANIFEST.skip                       |    2 -
+ VimDebug-0.3.5/Makefile.PL                         |   47 -
+ VimDebug-0.3.5/README                              |    8 -
+ VimDebug-0.3.5/TODO                                |   55 -
+ VimDebug-0.3.5/USAGE                               |   25 -
+ VimDebug-0.3.5/VERSION                             |    3 -
+ VimDebug-0.3.5/lib/VimDebug/Debugger/Gdb.pm        |  286 -----
+ VimDebug-0.3.5/lib/VimDebug/Debugger/Perl.pm       |  266 -----
+ VimDebug-0.3.5/lib/VimDebug/Debugger/Python.pm     |  296 -----
+ VimDebug-0.3.5/lib/VimDebug/Debugger/Ruby.pm       |  301 -----
+ VimDebug-0.3.5/lib/VimDebug/Debugger/Test.pm       |  188 ---
+ .../lib/VimDebug/Debugger/TestPerlDebugger.pm      |  157 ---
+ VimDebug-0.3.5/lib/VimDebug/Debugger.pm            |  157 ---
+ VimDebug-0.3.5/lib/VimDebug/TestDebugger.pm        |  214 ----
+ VimDebug-0.3.5/lib/VimDebug/VimDebug.pm            |  347 ------
+ VimDebug-0.3.5/t/00-load.t                         |    7 -
+ VimDebug-0.3.5/t/Gdb.testCode                      |  Bin 7613 -> 0 bytes
+ VimDebug-0.3.5/t/Gdb.testCode.c                    |   22 -
+ VimDebug-0.3.5/t/Perl.testCode                     |   22 -
+ VimDebug-0.3.5/t/Python.testCode                   |   22 -
+ VimDebug-0.3.5/t/Ruby.testCode                     |   21 -
+ VimDebug-0.3.5/t/gdb.t.notready                    |   13 -
+ VimDebug-0.3.5/t/perl.t                            |    5 -
+ VimDebug-0.3.5/t/pod.t                             |    6 -
+ VimDebug-0.3.5/t/python.t                          |   14 -
+ VimDebug-0.3.5/t/ruby.t                            |   13 -
+ VimDebug-0.3.5/vim/plugin/multvals.vim             | 1233 --------------------
+ VimDebug-0.3.5/vim/plugin/vimDebug.vim             |  728 ------------
+ VimDebug-0.4/ACKNOWLEDGEMENTS                      |    9 +
+ VimDebug-0.4/ARCHITECTURE                          |   67 ++
+ VimDebug-0.4/BUGS                                  |    9 +
+ VimDebug-0.4/DEVELOPER.HOWOTO                      |   32 +
+ VimDebug-0.4/INSTALL                               |   65 +
+ VimDebug-0.4/MANIFEST                              |   28 +
+ VimDebug-0.4/MANIFEST.skip                         |    2 +
+ VimDebug-0.4/Makefile.PL                           |   47 +
+ VimDebug-0.4/README                                |   10 +
+ VimDebug-0.4/TODO                                  |   28 +
+ VimDebug-0.4/USAGE                                 |   24 +
+ VimDebug-0.4/VERSION                               |    1 +
+ .../lib/VimDebug/DebuggerInterface/Base.pm         |  303 +++++
+ .../DebuggerInterface/CompilerErrorTest.pm         |   55 +
+ VimDebug-0.4/lib/VimDebug/DebuggerInterface/Gdb.pm |  158 +++
+ .../lib/VimDebug/DebuggerInterface/Perl.pm         |  172 +++
+ .../lib/VimDebug/DebuggerInterface/Python.pm       |  164 +++
+ .../lib/VimDebug/DebuggerInterface/Ruby.pm         |  188 +++
+ .../VimDebug/DebuggerInterface/RuntimeErrorTest.pm |   68 ++
+ .../lib/VimDebug/DebuggerInterface/Test.pm         |  203 ++++
+ VimDebug-0.4/lib/VimDebug/DebuggerInterface.pm     |  187 +++
+ VimDebug-0.4/t/00-load.t                           |    7 +
+ VimDebug-0.4/t/Gdb.testCode                        |  Bin 0 -> 7614 bytes
+ VimDebug-0.4/t/Gdb.testCode.c                      |   22 +
+ VimDebug-0.4/t/Perl.testCode                       |   22 +
+ VimDebug-0.4/t/PerlCompilerError.testCode          |    3 +
+ VimDebug-0.4/t/PerlRuntimeError.testCode           |    3 +
+ VimDebug-0.4/t/Python.testCode                     |   22 +
+ VimDebug-0.4/t/Ruby.testCode                       |   21 +
+ VimDebug-0.4/t/RubyCompilerError.testCode          |    3 +
+ VimDebug-0.4/t/RubyRuntimeError.testCode           |    6 +
+ VimDebug-0.4/t/dynamicTesting.t                    |   29 +
+ VimDebug-0.4/t/gdb.t.notready                      |   13 +
+ VimDebug-0.4/t/pod.t                               |    6 +
+ VimDebug-0.4/vim/plugin/multvals.vim               | 1233 ++++++++++++++++++++
+ VimDebug-0.4/vim/plugin/vimDebug.vim               |  728 ++++++++++++
+ bin/vdd                                            |  166 ++--
+ bin/vddTester                                      |   50 +-
+ 72 files changed, 4044 insertions(+), 4795 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.5)
+Author:     eric johnson <vim at iijo.org>
+AuthorDate: Wed Jan 2 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    added Python, a very basic debug console, and some other gui improvements; still beta
+
+ VimDebug-0.3.5/ACKNOWLEDGEMENTS                    |    9 +
+ VimDebug-0.3.5/ARCHITECTURE                        |   61 +
+ VimDebug-0.3.5/BUGS                                |   14 +
+ VimDebug-0.3.5/DEVELOPER.HOWOTO                    |   50 +
+ VimDebug-0.3.5/INSTALL                             |   65 +
+ VimDebug-0.3.5/MANIFEST                            |   28 +
+ VimDebug-0.3.5/MANIFEST.skip                       |    2 +
+ VimDebug-0.3.5/Makefile.PL                         |   47 +
+ VimDebug-0.3.5/README                              |    8 +
+ VimDebug-0.3.5/TODO                                |   55 +
+ VimDebug-0.3.5/USAGE                               |   25 +
+ VimDebug-0.3.5/VERSION                             |    3 +
+ VimDebug-0.3.5/lib/VimDebug/Debugger/Gdb.pm        |  286 +++++
+ VimDebug-0.3.5/lib/VimDebug/Debugger/Perl.pm       |  266 +++++
+ VimDebug-0.3.5/lib/VimDebug/Debugger/Python.pm     |  296 +++++
+ VimDebug-0.3.5/lib/VimDebug/Debugger/Ruby.pm       |  301 +++++
+ VimDebug-0.3.5/lib/VimDebug/Debugger/Test.pm       |  188 +++
+ .../lib/VimDebug/Debugger/TestPerlDebugger.pm      |  157 +++
+ VimDebug-0.3.5/lib/VimDebug/Debugger.pm            |  157 +++
+ VimDebug-0.3.5/lib/VimDebug/TestDebugger.pm        |  214 ++++
+ VimDebug-0.3.5/lib/VimDebug/VimDebug.pm            |  347 ++++++
+ VimDebug-0.3.5/t/00-load.t                         |    7 +
+ VimDebug-0.3.5/t/Gdb.testCode                      |  Bin 0 -> 7613 bytes
+ VimDebug-0.3.5/t/Gdb.testCode.c                    |   22 +
+ VimDebug-0.3.5/t/Perl.testCode                     |   22 +
+ VimDebug-0.3.5/t/Python.testCode                   |   22 +
+ VimDebug-0.3.5/t/Ruby.testCode                     |   21 +
+ VimDebug-0.3.5/t/gdb.t.notready                    |   13 +
+ VimDebug-0.3.5/t/perl.t                            |    5 +
+ VimDebug-0.3.5/t/pod.t                             |    6 +
+ VimDebug-0.3.5/t/python.t                          |   14 +
+ VimDebug-0.3.5/t/ruby.t                            |   13 +
+ VimDebug-0.3.5/vim/plugin/multvals.vim             | 1233 ++++++++++++++++++++
+ VimDebug-0.3.5/vim/plugin/vimDebug.vim             |  728 ++++++++++++
+ VimDebug/ACKNOWLEDGEMENTS                          |    9 -
+ VimDebug/ARCHITECTURE                              |   61 -
+ VimDebug/BUGS                                      |    6 -
+ VimDebug/DEVELOPER.HOWOTO                          |   50 -
+ VimDebug/INSTALL                                   |   65 -
+ VimDebug/MANIFEST                                  |   28 -
+ VimDebug/MANIFEST.skip                             |    2 -
+ VimDebug/Makefile.PL                               |   45 -
+ VimDebug/Makefile.old                              |  865 --------------
+ VimDebug/README                                    |    8 -
+ VimDebug/TODO                                      |   54 -
+ VimDebug/USAGE                                     |   24 -
+ VimDebug/VERSION                                   |    3 -
+ VimDebug/lib/VimDebug/Debugger/Perl.pm             |  266 -----
+ VimDebug/lib/VimDebug/Debugger/Ruby.pm             |  301 -----
+ VimDebug/lib/VimDebug/Debugger/Test.pm             |  166 ---
+ VimDebug/lib/VimDebug/Debugger/TestPerlDebugger.pm |  157 ---
+ VimDebug/lib/VimDebug/Debugger.pm                  |  157 ---
+ VimDebug/lib/VimDebug/TestDebugger.pm              |  214 ----
+ VimDebug/lib/VimDebug/VimDebug.pm                  |  347 ------
+ VimDebug/t/00-load.t                               |    7 -
+ VimDebug/t/Perl.testCode                           |   22 -
+ VimDebug/t/Ruby.testCode                           |   21 -
+ VimDebug/t/perl.t                                  |    5 -
+ VimDebug/t/pod.t                                   |    6 -
+ VimDebug/t/ruby.t                                  |    5 -
+ VimDebug/vim/plugin/multvals.vim                   | 1233 --------------------
+ VimDebug/vim/plugin/vimDebug.vim                   |  662 -----------
+ 62 files changed, 4685 insertions(+), 4789 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     eric johnson <vim at iijo.org>
+AuthorDate: Sun Dec 30 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    complete rewrite.  much more mature.  this version only supports perl and ruby.
+
+ ARCHITECTURE                                       |   78 --
+ BUGS                                               |   37 -
+ DEVELOPER.HOWOTO                                   |   94 --
+ Debugger.pm                                        |  347 ------
+ Gdb.pm                                             |  279 -----
+ INSTALL                                            |   81 --
+ Jdb.pm                                             |  295 -----
+ Pdb.pm                                             |  279 -----
+ PerlDebugger.pm                                    |  375 ------
+ README.orig                                        |   47 -
+ TODO                                               |   45 -
+ USAGE                                              |   75 --
+ Utils.pm                                           |  103 --
+ VERSION                                            |    1 -
+ VimDebug/ACKNOWLEDGEMENTS                          |    9 +
+ VimDebug/ARCHITECTURE                              |   61 +
+ VimDebug/BUGS                                      |    6 +
+ VimDebug/DEVELOPER.HOWOTO                          |   50 +
+ VimDebug/INSTALL                                   |   65 +
+ VimDebug/MANIFEST                                  |   28 +
+ VimDebug/MANIFEST.skip                             |    2 +
+ VimDebug/Makefile.PL                               |   45 +
+ VimDebug/Makefile.old                              |  865 ++++++++++++++
+ VimDebug/README                                    |    8 +
+ VimDebug/TODO                                      |   54 +
+ VimDebug/USAGE                                     |   24 +
+ VimDebug/VERSION                                   |    3 +
+ VimDebug/lib/VimDebug/Debugger/Perl.pm             |  266 +++++
+ VimDebug/lib/VimDebug/Debugger/Ruby.pm             |  301 +++++
+ VimDebug/lib/VimDebug/Debugger/Test.pm             |  166 +++
+ VimDebug/lib/VimDebug/Debugger/TestPerlDebugger.pm |  157 +++
+ VimDebug/lib/VimDebug/Debugger.pm                  |  157 +++
+ VimDebug/lib/VimDebug/TestDebugger.pm              |  214 ++++
+ VimDebug/lib/VimDebug/VimDebug.pm                  |  347 ++++++
+ VimDebug/t/00-load.t                               |    7 +
+ VimDebug/t/Perl.testCode                           |   22 +
+ VimDebug/t/Ruby.testCode                           |   21 +
+ VimDebug/t/perl.t                                  |    5 +
+ VimDebug/t/pod.t                                   |    6 +
+ VimDebug/t/ruby.t                                  |    5 +
+ VimDebug/vim/plugin/multvals.vim                   | 1233 ++++++++++++++++++++
+ VimDebug/vim/plugin/vimDebug.vim                   |  662 +++++++++++
+ bin/vdd                                            |  254 ++++
+ bin/vddTester                                      |  184 +++
+ killallvd.pl                                       |   20 -
+ plugin/multvals.vim                                | 1233 --------------------
+ plugin/vimDebug.vim                                |  729 ------------
+ vdd.pl                                             |  370 ------
+ 48 files changed, 5227 insertions(+), 4488 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     eric johnson <vim at iijo.org>
+AuthorDate: Tue Jun 24 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fixed some problems with the install process (added multvals.vim)
+    script now works with perl v.5.6+ (instead of v.5.8+)
+    fixed a bug involving arrays and eval() in the perl debugger module
+
+ .PerlDebugger.pm.swp     |  Bin 16384 -> 0 bytes
+ Debugger.pm              |    8 +-
+ INSTALL                  |    7 +-
+ PerlDebugger.pm          |   18 +-
+ README.orig              |    2 +-
+ VERSION                  |    2 +-
+ plugin/.vimDebug.vim.swp |  Bin 16384 -> 0 bytes
+ plugin/multvals.vim      | 1233 ++++++++++++++++++++++++++++++++++++++++++++++
+ tags                     |  148 ------
+ 9 files changed, 1258 insertions(+), 160 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     eric johnson <vim at iijo.org>
+AuthorDate: Tue Jun 3 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ .PerlDebugger.pm.swp     |  Bin 0 -> 16384 bytes
+ ARCHITECTURE             |   78 +++++
+ BUGS                     |   37 +++
+ DEVELOPER.HOWOTO         |   94 ++++++
+ Debugger.pm              |  347 ++++++++++++++++++++++
+ Gdb.pm                   |  279 ++++++++++++++++++
+ INSTALL                  |   80 +++++
+ Jdb.pm                   |  295 +++++++++++++++++++
+ Pdb.pm                   |  279 ++++++++++++++++++
+ PerlDebugger.pm          |  363 +++++++++++++++++++++++
+ README                   |   45 +++
+ README.orig              |   47 +++
+ TODO                     |   45 +++
+ USAGE                    |   75 +++++
+ Utils.pm                 |  103 +++++++
+ VERSION                  |    1 +
+ killallvd.pl             |   20 ++
+ plugin/.vimDebug.vim.swp |  Bin 0 -> 16384 bytes
+ plugin/vimDebug.vim      |  729 ++++++++++++++++++++++++++++++++++++++++++++++
+ tags                     |  148 ++++++++++
+ vdd.pl                   |  370 +++++++++++++++++++++++
+ 21 files changed, 3435 insertions(+), 0 deletions(-)

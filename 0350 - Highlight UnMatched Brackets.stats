@@ -1,0 +1,29 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0, refs/heads/master)
+Author:     Naveen Chandra <ncr_10[at]lycos.com>
+AuthorDate: Tue Oct 15 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added support for defining additional bracket
+    pairs through matchpairs.
+    - Elliminated those irksome errorbells by silent!
+    - Added support for highlighting brackets within the
+    displayed lines i.e. highlighting the brackets is
+    done only in the currently displayed lines
+    eventhough the matching bracket is outside the
+    currently displayed lines.
+    - Elliminated those visual jerks or shifting of
+    editing line.
+
+ plugin/UnMtchBracket.vim |  244 +++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 175 insertions(+), 69 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Naveen Chandra <ncr_10[at]lycos.com>
+AuthorDate: Tue Jul 23 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                   |   30 +++++++++++++++
+ plugin/UnMtchBracket.vim |   93 ++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 123 insertions(+), 0 deletions(-)

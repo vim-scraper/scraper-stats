@@ -1,0 +1,23 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/9, refs/heads/master)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Mon Sep 8 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improved help and more easy-accents!  o' o` o~ etc.  Start it with :EZA, stop it with :EZA .
+
+ doc/EasyAccents.txt    |  122 ++++++++++++++++++++++++++
+ plugin/EasyAccents.vim |  226 +++++++++++++++--------------------------------
+ 2 files changed, 194 insertions(+), 154 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Fri Apr 2 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Normally EasyAccents supports 'a `a ~a :a etc to produce accented characters.
+    Now, putting g:EasyAccents_VowelFirst=0 makes EasyAccents handle a' a` a~ a: .
+    V6 supports even more accents: a@ A@ D@ e@ E@ N~ p@ u@ x@
+
+ README                 |   20 +++
+ plugin/EasyAccents.vim |  364 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 384 insertions(+), 0 deletions(-)

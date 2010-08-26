@@ -1,0 +1,80 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/23, refs/heads/master)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Mon Jan 26 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    ZoomWin has been split into a plugin + autoload portion for faster vim startup.
+    Bug fixes (scrollbind caused the restore to have an incorrect cursor position, retains the search pattern present before zooming, more files than screen rows problem)
+
+ autoload/ZoomWin.vim     |  380 ++++++++++++++++++++++++++++++++
+ doc/ZoomWin.txt          |  121 +++++++++++
+ plugin/ZoomWin.vim       |  540 ----------------------------------------------
+ plugin/ZoomWinPlugin.vim |   49 +++++
+ 4 files changed, 550 insertions(+), 540 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/22)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Mon Apr 10 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * The internally used "only" command was occasionally issuing an "Already one window" message, which is now prevented.
+    * SavePosn() issued an error message when ZoomWin was handling - fixed!
+    * Saves/restores yank registers for every zoom/unzoom.
+
+ plugin/ZoomWin.vim |   92 +++++++++++++++++++++++++++++++++++++++++++++------
+ 1 files changed, 81 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/21)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue May 10 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * For vim version 6.3 or later, but with -mksession, ZoomWin will now do partial zooms
+    * 6.3 or later vim users can now handle more windows
+    * Bugfix - sometimes when zooming in, the wrong positioning was restored.  Fixed!
+
+ plugin/ZoomWin.vim |  264 +++++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 201 insertions(+), 63 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/19)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed May 26 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    bugfix - winmanager's events, such as one to reset bufhidden to delete, caused ZoomWin to occasionally restore empty windows.  ZoomWin now works successfully with winmanager.
+
+ plugin/ZoomWin.vim |   27 ++++++++++++++++-----------
+ 1 files changed, 16 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/18)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue May 25 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    bugfix : a Taglist+minibufexplorer+ZoomWin interaction sometimes caused minibufexplorer to create a new window while ZoomWin was busy restoring the windows.  ZoomWin then issued a complaint that it didn't know how to restore the new window.  ZoomWin now temporarily disables events while it is restoring windows.
+
+ plugin/ZoomWin.vim |   41 +++++++++++++++++++++++++++++++++++------
+ 1 files changed, 35 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/17)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Fri Apr 2 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    ZoomWin now has a command (:ZoomWin, of course!).  Works
+    nicely with taglist:    vim +Tlist +ZoomWin filename
+    This cmd starts the taglist window but maximizes the filename's window
+
+ plugin/ZoomWin.vim |   14 +++++++++-----
+ 1 files changed, 9 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/v16)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Mon Dec 22 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    ZoomWin is both faster and half the size of its v13 and earlier versions.  V16 also allows quickfix windows and handles TagList windows (bh=delete, no buffer listing).
+
+ README             |   31 ++++++
+ plugin/ZoomWin.vim |  294 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 325 insertions(+), 0 deletions(-)

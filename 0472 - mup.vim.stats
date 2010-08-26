@@ -1,0 +1,23 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2, refs/heads/master)
+Author:     Soon Wah Chua <soonwah at qoolife.com>
+AuthorDate: Thu Nov 14 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added the syntax.vim and filetype.vim files for autoloading the syntax when MUP files are used. Take note that if you have existing local copies of syntax.vim and filetype.vim files, you have to append the content of these files to your local copies instead of overwriting them, if you still want your other settings in these files.
+
+ syntax/MUP.VIM        |   78 +++++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/mup.vim        |   77 ------------------------------------------------
+ syntax/syntax.vim     |    2 +
+ vimfiles/filetype.vim |    4 ++
+ 4 files changed, 84 insertions(+), 77 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Soon Wah Chua <soonwah at qoolife.com>
+AuthorDate: Mon Nov 4 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README         |    5 +++
+ syntax/mup.vim |   77 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 82 insertions(+), 0 deletions(-)

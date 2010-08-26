@@ -1,0 +1,25 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.8, refs/heads/master)
+Author:     Ajit Thakkar <ajit at unb.ca>
+AuthorDate: Mon Mar 10 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added popup menu for use with set mousemodel=popup_setpos
+
+ doc/spellchecker.txt    |    9 ++++++++-
+ plugin/SpellChecker.vim |   39 +++++++++++++++++++++++++++++++--------
+ 2 files changed, 39 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
+Author:     Ajit Thakkar <ajit at unb.ca>
+AuthorDate: Mon Feb 17 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added :SPM (\sm) command to modify all occurrences of word under cursor. Bug Fix: Allow for spaces in run-time path.
+
+ README                    |   20 ++
+ dict/english.vim          |   62 +++++
+ dict/english_dialects.vim |   47 ++++
+ dict/english_special.vim  |   48 ++++
+ doc/spellchecker.txt      |  262 ++++++++++++++++++
+ plugin/SpellChecker.vim   |  647 +++++++++++++++++++++++++++++++++++++++++++++
+ 6 files changed, 1086 insertions(+), 0 deletions(-)

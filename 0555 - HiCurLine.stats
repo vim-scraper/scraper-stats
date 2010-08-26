@@ -1,0 +1,22 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/6, refs/heads/master)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue Nov 22 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * \hclt and :HCL now toggles [HiCurLine] mode
+    * Cursorhold/FocusGained update time now set to 200ms
+    * go =~ 'm' now used in test to see if menus are to be generated
+
+ plugin/HiCurLine.vim |  146 +++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 108 insertions(+), 38 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Fri Jul 16 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Several small improvements this time: HiCurLine now uses CursorHold to update its highlighting when the colorscheme has been changed.  More motion support: gg and G.  The highlighting group HL_HiCurLine is used, thereby permitting the user to override it.  The g:HL_HiCurLine variable is "HL_HiCurLine" by default, but the user may change that (ex. let g:HL_HiCurLine="Search").
+
+ README               |   25 +++
+ plugin/HiCurLine.vim |  528 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 553 insertions(+), 0 deletions(-)

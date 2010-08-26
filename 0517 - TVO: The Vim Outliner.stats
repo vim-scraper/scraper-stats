@@ -1,0 +1,93 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/122, refs/heads/master)
+Author:     Ned Konz <ned at bike-nomad.com>
+AuthorDate: Thu May 25 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        * Fixed Viki integration (with fixes from Thomas Link)
+        * Changed email address in ftplugin/otl.vim
+        * Defaulted g:otl_use_viki
+        * Made double-click conditional on having a fold
+        * Added variable g:otl_highlight_extensions to make TODO, XXX, and NOTE highlighting configurable
+        * Improved installation directions in README.otl
+
+ INSTALL                |   90 ++++++--
+ MANIFEST               |   24 ++-
+ README.otl             |   91 +++-----
+ doc/changes.txt        |   18 ++
+ doc/otl.txt            |   57 +++--
+ doc/versions.txt       |   54 +++--
+ doc2otl                |   78 ++++++
+ ftplugin/otl.vim       |   98 +-------
+ install-tvo.bat        |    9 +-
+ macros/vimsettings.vim |   52 ++++
+ makezip                |    8 +
+ otl2html               |  177 +--------------
+ otl2htmlList           |    2 +
+ otl2rtf                |   58 ++---
+ otl2swiki              |  113 +++++++++
+ otl2trac               |   77 ++++++
+ otlParser.rb           |  606 ++++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/otl.vim         |    9 +-
+ 18 files changed, 1187 insertions(+), 434 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/111)
+Author:     Ned Konz <ned at bike-nomad.com>
+AuthorDate: Sun Mar 19 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Made settings work right for the first file!
+    In my prior 2 versions (trying to get the modelines to work) I inadvertently made the settings for the first file broken.
+
+ INSTALL                   |   98 ++++
+ MANIFEST                  |   51 ++
+ README                    |   13 +
+ README.otl                |  391 ++++++++++++++
+ bitmaps/TVO/1.bmp         |  Bin 0 -> 358 bytes
+ bitmaps/TVO/1.xpm         |   30 +
+ bitmaps/TVO/2.bmp         |  Bin 0 -> 358 bytes
+ bitmaps/TVO/2.xpm         |   30 +
+ bitmaps/TVO/3.bmp         |  Bin 0 -> 358 bytes
+ bitmaps/TVO/3.xpm         |   30 +
+ bitmaps/TVO/4.bmp         |  Bin 0 -> 358 bytes
+ bitmaps/TVO/4.xpm         |   30 +
+ bitmaps/TVO/5.bmp         |  Bin 0 -> 358 bytes
+ bitmaps/TVO/5.xpm         |   30 +
+ bitmaps/TVO/6.bmp         |  Bin 0 -> 358 bytes
+ bitmaps/TVO/6.xpm         |   30 +
+ bitmaps/TVO/7.bmp         |  Bin 0 -> 358 bytes
+ bitmaps/TVO/7.xpm         |   30 +
+ bitmaps/TVO/all.bmp       |  Bin 0 -> 358 bytes
+ bitmaps/TVO/all.xpm       |   28 +
+ bitmaps/TVO/bodytext.bmp  |  Bin 0 -> 466 bytes
+ bitmaps/TVO/bodytext.xpm  |   29 +
+ bitmaps/TVO/down.bmp      |  Bin 0 -> 466 bytes
+ bitmaps/TVO/down.xpm      |   29 +
+ bitmaps/TVO/firstline.bmp |  Bin 0 -> 358 bytes
+ bitmaps/TVO/firstline.xpm |   29 +
+ bitmaps/TVO/left.bmp      |  Bin 0 -> 466 bytes
+ bitmaps/TVO/left.xpm      |   29 +
+ bitmaps/TVO/minus.bmp     |  Bin 0 -> 466 bytes
+ bitmaps/TVO/minus.xpm     |   29 +
+ bitmaps/TVO/plus.bmp      |  Bin 0 -> 358 bytes
+ bitmaps/TVO/plus.xpm      |   26 +
+ bitmaps/TVO/right.bmp     |  Bin 0 -> 414 bytes
+ bitmaps/TVO/right.xpm     |   29 +
+ bitmaps/TVO/up.bmp        |  Bin 0 -> 414 bytes
+ bitmaps/TVO/up.xpm        |   29 +
+ doc/FAQ.txt               |   58 ++
+ doc/changes.txt           |   78 +++
+ doc/otl.txt               |  246 +++++++++
+ doc/versions.txt          |  112 ++++
+ easy.gvimrc               |   22 +
+ ftdetect/otl.vim          |    3 +
+ ftplugin/easy.vimrc       |   33 ++
+ ftplugin/otl.vim          | 1311 +++++++++++++++++++++++++++++++++++++++++++++
+ install-tvo.bat           |   23 +
+ opml2otl                  |   51 ++
+ otl2html                  |  175 ++++++
+ otl2pod                   |   60 ++
+ otl2rtf                   |   54 ++
+ pod2otl                   |  107 ++++
+ syntax/otl.vim            |   73 +++
+ tvo.bat                   |   10 +
+ 52 files changed, 3436 insertions(+), 0 deletions(-)

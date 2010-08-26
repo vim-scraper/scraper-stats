@@ -1,0 +1,95 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/6.1, refs/heads/master)
+Author:     Peter Puck <ptrpck at netscape.net>
+AuthorDate: Tue Mar 18 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The script should not affect the search history anymore. Hopefully is it also not so easy fooled by assignments after a } on the line above. Thanks to Colin Dearing and Peter Bengtsson for pointing out the problems.
+
+ plugin/cppcomplete.vim |   11 +++++++++--
+ 1 files changed, 9 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6.0)
+Author:     Peter Puck <ptrpck at netscape.net>
+AuthorDate: Fri Mar 7 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Mostly bug fixes and an attempt to improve performance. Also some other news such as better support for console users with wildmenu.
+    Many thanks to Colin Dearing for bug hunting and his work to improve the script  for console users.
+
+ plugin/cppcomplete.vim | 1071 +++++++++++++++++++++++++++++-------------------
+ 1 files changed, 640 insertions(+), 431 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.5)
+Author:     Peter Puck <ptrpck at netscape.net>
+AuthorDate: Tue Feb 18 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Automatic generation of the browser file for C/C++. The script does not requires grep anymore. Completion of all names in the browser file. Nanny mode for extra help.
+    Some bug fixes.
+
+ plugin/cppcomplete.vim |  993 ++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 741 insertions(+), 252 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.01)
+Author:     Peter Puck <ptrpck at netscape.net>
+AuthorDate: Sat Feb 8 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Discovered some stupid bugs in the linux version. One other bug with templates is also fixed.
+
+ plugin/cppcomplete.vim |   34 +++++++++++++++++++++++++++-------
+ 1 files changed, 27 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.0)
+Author:     Peter Puck <ptrpck at netscape.net>
+AuthorDate: Sat Feb 8 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Works under Windows again also if the shell is command.com with grep from DJGPP.  Java support. Various bugfixes and some other news.
+
+ plugin/cppcomplete.vim | 1081 +++++++++++++++++++++++++++++++++++++++++-------
+ 1 files changed, 936 insertions(+), 145 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
+Author:     Peter Puck <ptrpck at netscape.net>
+AuthorDate: Tue Jan 28 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added GUI stuff such as a popup menu and the script is also depending on gnu grep now. It will not work with windows command.com because long command lines must be supported.
+    Various bugfixes and some other new stuff.
+
+ plugin/cppcomplete.vim |  840 ++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 565 insertions(+), 275 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Peter Puck <ptrpck at netscape.net>
+AuthorDate: Mon Jan 20 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Support for inheritance and various bug fixes.
+
+ plugin/cppcomplete.vim |  344 +++++++++++++++++++++++++++++++++++++++++------
+ 1 files changed, 300 insertions(+), 44 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Peter Puck <ptrpck at netscape.net>
+AuthorDate: Tue Jan 14 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added a new command to reuse last search pattern
+    Changed so that only the preview window will be closed on abort or error
+    Now completes directly if only one match
+
+ plugin/cppcomplete.vim |  285 ++++++++++++++++++++++++++---------------------
+ 1 files changed, 158 insertions(+), 127 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Peter Puck <ptrpck at netscape.net>
+AuthorDate: Mon Jan 13 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                 |   95 +++++++++++++++
+ plugin/cppcomplete.vim |  296 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 391 insertions(+), 0 deletions(-)

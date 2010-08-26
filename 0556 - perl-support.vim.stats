@@ -1,0 +1,1146 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.8, refs/heads/master)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon May 31 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Hotkeys \$x, \@x and \%x renamed (to avoid conflicts when writing references).
+    - Bugfix, Regex-Tester: colouring matches shows an error message in a few cases.
+
+ README.perlsupport            |   10 +++-----
+ autoload/perlsupportgui.vim   |   46 ++++++++++++++++++++++++++--------------
+ autoload/perlsupportregex.vim |   26 ++++++++++++++--------
+ doc/ChangeLog                 |    8 +++++++
+ doc/perl-hot-keys.pdf         |  Bin 53585 -> 53805 bytes
+ doc/perl-hot-keys.tex         |   23 ++++++++++---------
+ doc/perlsupport.txt           |   24 +++++++++++---------
+ ftplugin/perl.vim             |   47 +++++++++++++++++++++++++++-------------
+ plugin/perl-support.vim       |   34 +++++++++++++----------------
+ 9 files changed, 130 insertions(+), 88 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.7.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Apr 12 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Bugfixes: insertion of Posix classes from the menu not working properly.
+    - Bugfixes, Regex Tester: accented characters can be used.
+    - Bugfixes, Regex Tester: embedded Perl code can be used.
+    - Bugfixes: local installation looks like a system-wide installation in seldom cases.
+
+ README.perlsupport            |   11 +++++----
+ autoload/perlsupportgui.vim   |   45 ++++++++++++++++++++++++++-------------
+ autoload/perlsupportregex.vim |   11 +++------
+ doc/ChangeLog                 |    6 +++++
+ doc/perlsupport.txt           |    6 ++--
+ plugin/perl-support.vim       |   46 +++++++++++++++-------------------------
+ 6 files changed, 66 insertions(+), 59 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.7)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Mar 2 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Run make (+arguments) from the 'Run' menu; 2 additional hotkeys.
+    - Bugfix (Windows): syntax check does not catch error message if a closing
+      brace is missing (thanks to Dave DelGreco for fixing this bug).
+
+ README.perlsupport               |    9 ++-
+ autoload/perlsupportgui.vim      |    4 +-
+ doc/perl-hot-keys.pdf            |  Bin 53488 -> 53585 bytes
+ doc/perl-hot-keys.tex            |   88 ++++++++++++++--------------
+ doc/perlsupport.txt              |  120 +++++++++++++++++++-------------------
+ ftplugin/perl.vim                |   10 ++-
+ perl-support/scripts/efm_perl.pl |    7 +--
+ plugin/perl-support.vim          |   90 +++++++++++++++++-----------
+ 8 files changed, 178 insertions(+), 150 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.6.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Jan 25 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Bugfix (Vim, not gVim): screen isn't refreshing properly when using syntax
+      check and a few other commands (thanks to Iain Arnell).
+
+ README.perlsupport          |   23 +++-----
+ autoload/perlsupportgui.vim |    4 +-
+ doc/ChangeLog               |   13 ++++
+ ftplugin/perl.vim           |   38 +++++-------
+ plugin/perl-support.vim     |  128 ++++++++++++++++++++++--------------------
+ 5 files changed, 107 insertions(+), 99 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.6)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Dec 28 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - The profilers Devel::SmallProf and Devel::NYTProf can now be used under Windows.
+    - New profiler menu.
+    - New hotkeys for calling podchecker and the pod2xxx converter.
+    - Pathnames can contain blanks.
+    - Template completion: behavior of Ctrl-j improved.
+    - Template system: new attributes 'indent', 'noindent'
+    - Comment alignment improved.
+    - Bugfix (Windows). snippet directory unreachable.
+    - Minor improvements.
+
+ README.perlsupport                     |   19 +-
+ autoload/perlsupportgui.vim            |  174 ++++++++--------
+ autoload/perlsupportprofiling.vim      |  367 ++++++++++++++++----------------
+ doc/ChangeLog                          |   12 +
+ doc/perl-hot-keys.pdf                  |  Bin 353774 -> 53488 bytes
+ doc/perl-hot-keys.tex                  |   78 +++++---
+ doc/perlsupport.txt                    |   46 +++--
+ ftplugin/perl.vim                      |   41 +++--
+ perl-support/scripts/csv2err.pl        |  222 ++++++++++++++------
+ perl-support/templates/idioms.template |    2 +-
+ plugin/perl-support.vim                |  336 ++++++++++++++++--------------
+ 11 files changed, 743 insertions(+), 554 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.5)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Sun Oct 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Profiler NYTProf: menu item and ex-command to start a html-viewer.
+    - New conversion: Pod to Pdf (if Pod::Pdf is installed).
+    - Perltidy,  v-mode: can be used in non-perl files (for embedded Perl).
+    - Bugfix: hotkey \ifu not working.
+    - Bugfix: running and starting the debugger causes error if working directory is not
+      the directory of the current file.
+    - Bugfix: missing variable Perl_TimestampFormat.
+    - Minor improvements.
+
+ README.perlsupport                |   16 +-
+ autoload/perlsupportgui.vim       |   38 +-
+ autoload/perlsupportprofiling.vim |   42 ++-
+ doc/ChangeLog                     |   10 +
+ doc/perl-hot-keys.pdf             |  951 +++++++++++++++++++------------------
+ doc/perl-hot-keys.tex             |   10 +-
+ doc/perlsupport.txt               |  334 ++++++++------
+ ftplugin/perl.vim                 |   12 +-
+ plugin/perl-support.vim           |   87 ++--
+ 9 files changed, 838 insertions(+), 662 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.4)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri Jul 3 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Hotkeys are shown in the menus.
+    - Four hotkeys renamed.
+    - Hardcopy (run menu) can print any buffer.
+    - Bugfix (Windows only): syntax check for files with pathnames containing blanks not working.
+    - Minor improvements.
+
+ README.perlsupport              |   13 +-
+ autoload/perlsupportgui.vim     |  339 +++++++++---------
+ autoload/perlsupportregex.vim   |   14 +-
+ doc/ChangeLog                   |    7 +
+ doc/perl-hot-keys.pdf           |  784 +++++++++++++++++++--------------------
+ doc/perl-hot-keys.tex           |   56 ++--
+ doc/perlsupport.txt             |   17 +-
+ ftplugin/perl.vim               |   18 +-
+ perl-support/scripts/wrapper.sh |   30 +-
+ plugin/perl-support.vim         |   60 ++--
+ 10 files changed, 677 insertions(+), 661 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.3)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon May 25 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + File browser for code snippets and templates choosable (2 global variables).
+    + Comments menu: adjustment of end-of-line comments further improved.
+    + Bugfix: Error message when opening files and Perl::Tags is not installed.
+
+ README.perlsupport                |   27 ++------
+ doc/ChangeLog                     |   16 +++++
+ doc/perlsupport.txt               |   60 +++++++++++++------
+ ftplugin/perl.vim                 |   16 +++---
+ perl-support/scripts/perltags.vim |   72 ----------------------
+ perl-support/scripts/wrapper.sh   |   15 ++---
+ plugin/perl-support.vim           |  121 +++++++++++++++++++++----------------
+ 7 files changed, 149 insertions(+), 178 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri May 8 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Regex Analyser extended: check several regular expressions against several targets.
+    + Regex Analyser extended: regular expressions with  match-time code evaluation possible.
+    + Regex Analyser extended: g-modifier allowed; all matches will be shown.
+    + Regex Analyser extended: qr/.../ can be picked up.
+    + Comments menu: adjustment of end-of-line comments improved.
+    + Statements menu: else block (key mapping \se).
+    + Regex menu: new special variables (Perl 5.10)
+    + Templates: handling of <SPLIT> improved.
+    + Bugfix: Perl::Tags integration not working.
+    + Minor improvements and bugfixes.
+
+ README.perlsupport                         |   18 +-
+ autoload/perlsupportgui.vim                |   92 +++--
+ autoload/perlsupportregex.vim              |  292 ++++++++++++--
+ doc/perl-hot-keys.pdf                      |  621 ++++++++++++++--------------
+ doc/perl-hot-keys.tex                      |   59 ++--
+ doc/perlsupport.txt                        |  180 +++++++--
+ ftplugin/perl.vim                          |   15 +-
+ perl-support/rc/customization.gvimrc       |    3 +-
+ perl-support/rc/customization.vimrc        |   11 +-
+ perl-support/scripts/perltags.vim          |   36 +-
+ perl-support/templates/idioms.template     |    2 +-
+ perl-support/templates/statements.template |    8 +-
+ plugin/perl-support.vim                    |  105 ++++-
+ 13 files changed, 946 insertions(+), 496 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.1.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed Apr 15 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Bugfix (Windows only): templates will be loaded twice, generating a long list
+      of error messages.
+
+ README.perlsupport      |   14 ++++----------
+ doc/ChangeLog           |   12 ++++++++++++
+ plugin/perl-support.vim |    6 +++---
+ 3 files changed, 19 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Mar 16 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Additional plugin-tags (jump targets in templates): <+text+>, <-text->.
+    + Additional mapping Ctrl-j : jump to these new targets.
+    + Template-file: additional macro |STYLE| and IF-ENDIF-construct to easily
+      choose between sets of templates.
+    + SmallProf integration completely rewritten: hotspot report, report sortable.
+    + FastProf and NYTProf integration.
+    + Command completion for the command CriticSeverity.
+    + Minor improvements and bugfixes.
+
+ README.perlsupport                               |   32 +-
+ autoload/perlsupportgui.vim                      |   54 +-
+ autoload/perlsupportprofiling.vim                |  497 +++++++
+ autoload/perlsupportregex.vim                    |    3 +-
+ doc/ChangeLog                                    |    5 +
+ doc/perl-hot-keys.pdf                            | 1564 +++++++++++++---------
+ doc/perl-hot-keys.tex                            |  231 ++--
+ doc/perlsupport.txt                              |  408 +++++-
+ ftplugin/perl.vim                                |  562 ++++----
+ perl-support/codesnippets/print-hash.pl          |    2 +-
+ perl-support/scripts/csv2err.pl                  |  111 ++
+ perl-support/scripts/perltags.vim                |    8 +-
+ perl-support/templates/Templates                 |  301 +----
+ perl-support/templates/comments.template         |  136 ++
+ perl-support/templates/file-description.template |   91 --
+ perl-support/templates/idioms.template           |   83 ++
+ perl-support/templates/pod.template              |  121 ++
+ perl-support/templates/statements.template       |   50 +
+ plugin/perl-support.vim                          |  280 +++--
+ 19 files changed, 3001 insertions(+), 1538 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0.2)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed Jan 14 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Bugfix: 3 global variables without effect (format for date, time, year).
+
+ README.perlsupport      |    6 +++---
+ doc/ChangeLog           |    5 +++++
+ plugin/perl-support.vim |    7 +++++--
+ 3 files changed, 13 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri Jan 2 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Bugfix: Error message in some functions that issue a prompt.
+
+ README.perlsupport                            |   10 ++----
+ doc/ChangeLog                                 |    9 +++++
+ perl-support/codesnippets/inside-out-class.pl |   44 -------------------------
+ plugin/perl-support.vim                       |    6 ++--
+ 4 files changed, 15 insertions(+), 54 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri Dec 19 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Completely new template system. Most menu items now user definable.
+    + Plugin split into autoloadable modules (makes Vim startup faster).
+    + Submenus for perlcritic severity and verbosity.
+    In consequence there are some obsolete files and global variables, and some new
+    files and hotkeys.
+
+ README.perlsupport                               |   41 +-
+ autoload/perlsupportgui.vim                      |  889 ++++++
+ autoload/perlsupportregex.vim                    |  454 ++++
+ doc/ChangeLog                                    |    6 +
+ doc/perl-hot-keys.pdf                            |  Bin 35132 -> 318048 bytes
+ doc/perl-hot-keys.tex                            |  144 +-
+ doc/perlsupport.txt                              | 1044 +++++---
+ ftplugin/perl.vim                                |  274 +-
+ perl-support/templates/Templates                 |  306 +++
+ perl-support/templates/file-description.template |   91 +
+ perl-support/templates/perl-file-header          |   24 -
+ perl-support/templates/perl-frame                |    3 -
+ perl-support/templates/perl-function-description |   10 -
+ perl-support/templates/perl-method-description   |   10 -
+ perl-support/templates/perl-module-header        |   21 -
+ perl-support/templates/perl-pod                  |  122 -
+ perl-support/templates/perl-test-header          |   23 -
+ plugin/perl-support.vim                          | 3136 +++++++---------------
+ 18 files changed, 3595 insertions(+), 3003 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.9.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Nov 27 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Bugfix: idiom 'open input file' not usable (thanks to Marcus Aßhauer for
+      spotting and fixing it).
+
+ README.perlsupport      |    9 ++++-----
+ doc/ChangeLog           |    7 +++++++
+ plugin/perl-support.vim |    4 ++--
+ 3 files changed, 13 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.9)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Nov 24 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + New item in menu Statements: elsif (shortcut \sei)
+    - Map leader for hotkeys now user definable: new global variable g:BASH_MapLeader
+    + Specification of command line arguments (Run->cmd. line arg.): filename completion active.
+
+ README.perlsupport      |    9 +-
+ doc/ChangeLog           |    6 +
+ doc/perl-hot-keys.pdf   |  Bin 35518 -> 35132 bytes
+ doc/perl-hot-keys.tex   |  233 +++++++++++++++++++++++++++++
+ doc/perlsupport.txt     |   35 ++++-
+ ftplugin/perl.vim       |  373 ++++++++++++++++++++++++-----------------------
+ plugin/perl-support.vim |   50 ++++---
+ 7 files changed, 491 insertions(+), 215 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.8.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Jun 26 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Bugfix:  In insert mode and in non-empty lines.hotkeys beginning like references (e.g. \$ ) are now inactive.
+
+ README.perlsupport      |   14 +++----
+ doc/ChangeLog           |   10 ++++
+ doc/perlsupport.txt     |  108 ++++++++++++++++++++++++----------------------
+ ftplugin/perl.vim       |   38 ++++++++--------
+ plugin/perl-support.vim |   84 ++++++++++++++++++++++++++++---------
+ 5 files changed, 155 insertions(+), 99 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.8)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon May 26 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + New regular expression testing tool.
+    + 'code->comment' and 'comment->code'  are replaced by a toggle: 'toggle comment'
+    + 'explain regex' can use flags now.
+    + 'run->settings'  shows the  Perl interface version.
+    + Superfluous control characters for mode switching (menus, hotkeys) removed. Caused beeps.
+    + Some minor improvements.
+
+ README.perlsupport                     |   15 +-
+ doc/ChangeLog                          |    9 +
+ doc/perl-hot-keys.pdf                  |  Bin 48038 -> 35518 bytes
+ doc/perlsupport.txt                    |  324 ++++++--
+ ftplugin/perl.vim                      |  276 ++++---
+ perl-support/modules/perl-modules.list |    1 +
+ perl-support/rc/customization.gvimrc   |   74 +-
+ perl-support/rc/customization.vimrc    |  222 +++--
+ perl-support/wordlists/perl.list       |   63 ++-
+ plugin/perl-support.vim                | 1479 +++++++++++++++++++++-----------
+ 10 files changed, 1625 insertions(+), 838 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.7)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed Jan 2 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Regex analyser YAPE::Regex::Explain integrated (optional).
+    + Bugfix: use correct pathnames under Cygwin.
+    + Bugfix: always use the right perl executable to list the installed Perl modules.
+    + Minor changes due to ctags, version 5.7.
+    + Global variable g:Perl_PerlTags is no longer needed.
+
+ README.perlsupport                  |   10 +-
+ doc/perl-hot-keys.pdf               |  Bin 46902 -> 48038 bytes
+ doc/perlsupport.txt                 |  133 +++++++++++-------
+ ftplugin/perl.vim                   |   18 ++-
+ perl-support/rc/customization.ctags |   14 +-
+ perl-support/rc/customization.vimrc |    4 +-
+ perl-support/scripts/perltags.vim   |   42 ++++--
+ perl-support/scripts/pmdesc3.pl     |   46 ++----
+ perl-support/scripts/wrapper.sh     |    5 +-
+ perl-support/wordlists/perl.list    |    2 +-
+ plugin/perl-support.vim             |  268 +++++++++++++++++++++++------------
+ 11 files changed, 335 insertions(+), 207 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.6.3)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Jul 31 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Changes to allow a system-wide installation.
+
+ README.perlsupport      |   11 ++++-----
+ doc/ChangeLog           |    5 ++++
+ doc/perlsupport.txt     |   48 ++++++++++++++++++++++++++++++++++++++++++++--
+ ftplugin/perl.vim       |    6 ++--
+ plugin/perl-support.vim |   25 +++++++++++++++++++----
+ 5 files changed, 78 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.6.2)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri Jun 22 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Snippets can now be managed in the console mode.
+    + Three new key mappings for snippets.
+    + Bugfix: quitting the module list buffer no longer terminates the editor.
+    + Documentation: section about optional dependencies added.
+
+ README.perlsupport      |   19 ++++---
+ doc/ChangeLog           |    8 +++
+ doc/perl-hot-keys.pdf   |  Bin 46469 -> 46902 bytes
+ doc/perlsupport.txt     |  137 ++++++++++++++++++++++++++++++++++++----------
+ ftplugin/perl.vim       |   11 +++-
+ plugin/perl-support.vim |   50 +++++++++--------
+ 6 files changed, 160 insertions(+), 65 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.6.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Jun 14 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Support for Perl::Tags added (see the help file).
+
+ README.perlsupport                            |   11 ++---
+ doc/ChangeLog                                 |    5 ++
+ doc/perlsupport.txt                           |   37 +++++++++++++++++-
+ ftplugin/perl.vim                             |   22 +++++++---
+ perl-support/codesnippets/module-interface.pl |    6 +-
+ perl-support/scripts/perltags.vim             |   50 +++++++++++++++++++++++++
+ perl-support/scripts/wrapper.sh               |    3 +-
+ plugin/perl-support.vim                       |    7 ++-
+ 8 files changed, 117 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.6)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed May 30 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + New command enables the alignment of line end comments (menu item, hotkey).
+    + Idioms hotkeys renamed (better to remember).
+    + Lot of new mappings for the insert mode.
+    + The code for opening files or pipes can surround a marked area (v-mode).
+    + Script pmdesc3 removes POD markup sequences now.
+
+ README.perlsupport                                 |   13 +-
+ doc/ChangeLog                                      |    9 +
+ doc/perl-hot-keys.pdf                              |  Bin 47752 -> 46469 bytes
+ doc/perlsupport.txt                                |  299 +++++----
+ doc/pmdesc3.text                                   |    6 +-
+ ftplugin/perl.vim                                  |  289 ++++++---
+ perl-support/codesnippets/inside-out-class.pl      |   44 ++
+ perl-support/codesnippets/module-interface.pl      |   17 +-
+ perl-support/codesnippets/new.pl                   |   16 +-
+ ...process-all-files-in-a-directory-recursively.pl |    4 +-
+ perl-support/rc/customization.gvimrc               |    4 +-
+ perl-support/scripts/pmdesc3.pl                    |  282 +++++----
+ perl-support/templates/perl-function-description   |    5 +-
+ perl-support/templates/perl-method-description     |   10 +
+ plugin/perl-support.vim                            |  703 ++++++++++++--------
+ 15 files changed, 1040 insertions(+), 661 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.4)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Feb 15 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Adaption for 'perlcritic', version 1.03 . Interface improved.
+    + Three new Ex commands to control 'perlcritic'.
+    + Subdirectories rearranged.
+    + Escaping special characters in filenames reworked (Unix,Windows).
+
+ ChangeLog                                          |  240 ----------
+ README.perlsupport                                 |   91 ++--
+ codesnippets-perl/SmallProf-variables.pl           |   10 -
+ codesnippets-perl/dot.SmallProf                    |    8 -
+ codesnippets-perl/free-software-comment            |    8 -
+ codesnippets-perl/module-interface.pl              |   44 --
+ codesnippets-perl/new.pl                           |   10 -
+ codesnippets-perl/pod-template-application.pl      |  124 -----
+ codesnippets-perl/pod-template-module.pl           |  114 -----
+ .../print-data-structure-with-Dumper.pl            |    4 -
+ codesnippets-perl/print-hash-sorted.pl             |   12 -
+ codesnippets-perl/print-hash.pl                    |   12 -
+ ...process-all-files-in-a-directory-recursively.pl |   30 --
+ codesnippets-perl/slurp-file.pl                    |    5 -
+ doc/ChangeLog                                      |  248 +++++++++++
+ doc/perl-hot-keys.pdf                              |  Bin 45506 -> 47752 bytes
+ doc/perlsupport.txt                                |  214 +++++-----
+ ftplugin/perl.vim                                  |    3 +
+ perl-support/codesnippets/SmallProf-variables.pl   |   10 +
+ perl-support/codesnippets/dot.SmallProf            |    8 +
+ perl-support/codesnippets/free-software-comment    |    8 +
+ perl-support/codesnippets/module-interface.pl      |   44 ++
+ perl-support/codesnippets/new.pl                   |   10 +
+ .../codesnippets/pod-template-application.pl       |  124 +++++
+ perl-support/codesnippets/pod-template-module.pl   |  114 +++++
+ .../print-data-structure-with-Dumper.pl            |    4 +
+ perl-support/codesnippets/print-hash-sorted.pl     |   12 +
+ perl-support/codesnippets/print-hash.pl            |   12 +
+ ...process-all-files-in-a-directory-recursively.pl |   30 ++
+ perl-support/codesnippets/slurp-file.pl            |    5 +
+ perl-support/rc/customization.ctags                |   11 +
+ perl-support/rc/customization.gvimrc               |   53 +++
+ perl-support/rc/customization.perltidyrc           |    5 +
+ perl-support/rc/customization.smallprof            |    8 +
+ perl-support/rc/customization.vimrc                |  138 ++++++
+ perl-support/scripts/efm_perl.pl                   |  158 +++++++
+ perl-support/scripts/pmdesc3.pl                    |  374 ++++++++++++++++
+ perl-support/scripts/wrapper.sh                    |   36 ++
+ perl-support/templates/perl-file-header            |   24 +
+ perl-support/templates/perl-frame                  |    3 +
+ perl-support/templates/perl-function-description   |    7 +
+ perl-support/templates/perl-module-header          |   21 +
+ perl-support/templates/perl-pod                    |  122 +++++
+ perl-support/templates/perl-test-header            |   23 +
+ perl-support/wordlists/perl.list                   |  330 ++++++++++++++
+ plugin/efm_perl.pl                                 |  158 -------
+ plugin/perl-support.vim                            |  470 ++++++++++---------
+ plugin/pmdesc3.pl                                  |  374 ----------------
+ plugin/templates/perl-file-header                  |   24 -
+ plugin/templates/perl-frame                        |    3 -
+ plugin/templates/perl-function-description         |    7 -
+ plugin/templates/perl-module-header                |   21 -
+ plugin/templates/perl-pod                          |  122 -----
+ plugin/templates/perl-test-header                  |   23 -
+ plugin/wrapper.sh                                  |   36 --
+ rc/customization.ctags                             |   11 -
+ rc/customization.gvimrc                            |   53 ---
+ rc/customization.perltidyrc                        |    5 -
+ rc/customization.smallprof                         |    8 -
+ rc/customization.vimrc                             |  133 ------
+ wordlists/perl.list                                |  330 --------------
+ 61 files changed, 2341 insertions(+), 2308 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Jan 2 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + One new and two improved mappings (\cs, \co, \cc).
+    + All command mappings can be switched off by a global variable.
+    + Bugfix: empty new file after removing the header template can't be closed.
+    + Bugfix [Windows]: perlcritic messages are sometimes garbled (Thanks to Igor Prischepoff).
+    + Bugfix : Tools entry missing when root menu not shown from the start.
+
+ ChangeLog               |    9 ++
+ README.perlsupport      |   18 ++--
+ doc/perl-hot-keys.pdf   |  Bin 41910 -> 45506 bytes
+ doc/perlsupport.txt     |   35 +++++--
+ ftplugin/perl.vim       |  255 ++++++++++++++++++++++++-----------------------
+ plugin/perl-support.vim |   71 +++++++-------
+ 6 files changed, 212 insertions(+), 176 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2.2)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Dec 19 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Bugfix: wrong position when building regular expressions in visual mode at  the end of a line.
+    + Bugfix [cygwin]: unnecessary error message when starting vim not gvim).
+    + Perl keyword help (S-F1) improved.
+    + Insertion and substitution from the menus protected against  non-plugin mappings.
+
+ ChangeLog                              |    9 +
+ README.perlsupport                     |   22 +-
+ codesnippets-perl/print-hash-sorted.pl |    2 +-
+ codesnippets-perl/print-hash.pl        |    2 +-
+ doc/perlsupport.txt                    |    4 +-
+ ftplugin/perl.vim                      |   72 ++--
+ plugin/perl-support.vim                |  824 ++++++++++++++++----------------
+ rc/customization.vimrc                 |   49 +--
+ 8 files changed, 489 insertions(+), 495 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Aug 29 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Better adaption for 'perlcritic', version 0.19 .
+    + Bugfix: key mappings \cb and \cn are working now.
+
+ ChangeLog               |    6 ++++++
+ README.perlsupport      |   11 ++++-------
+ doc/perlsupport.txt     |   28 ++++++++++++++++++++++------
+ ftplugin/perl.vim       |    7 +++++--
+ plugin/perl-support.vim |   31 ++++++++++++++++++++-----------
+ 5 files changed, 57 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed Aug 2 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + New command and menu entry for commenting/uncommenting larger blocks of code.
+    + Some POD statements now have a visual mode.
+    + Setting the column for the start of line-end comments improved.
+    + Mac OS X : circumvent a Vim bug which caused a crash when loading plugin version 3.1.
+    + File syntax/perl.vim removed (but see help in perlsupport.txt).
+
+ ChangeLog               |    9 +
+ README.perlsupport      |   38 +-
+ doc/perl-hot-keys.pdf   |  Bin 41784 -> 41910 bytes
+ doc/perlsupport.txt     |  151 ++-
+ plugin/perl-support.vim | 4309 +++++++++++++++++++++++++----------------------
+ rc/customization.ctags  |    1 +
+ rc/customization.vimrc  |    2 +-
+ syntax/perl.vim         |   20 -
+ 8 files changed, 2403 insertions(+), 2127 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri May 19 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Adaption for 'perlcritic', version 0.16 .
+    + Bugfix: The profiler now gets the command line arguments of the script.
+    + Minor bugfixes and improvements.
+
+ ChangeLog                  |    7 ++++
+ README.perlsupport         |   16 ++++------
+ doc/perlsupport.txt        |   66 ++++++++++++++++++++++++++------------------
+ plugin/perl-support.vim    |   64 +++++++++++++++++++++++++++++-------------
+ rc/customization.SmallProf |    8 -----
+ rc/customization.smallprof |    8 +++++
+ 6 files changed, 105 insertions(+), 64 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Apr 18 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Adaption for Vim 7.
+    + The hotkeys F9 and \rd now also starts the debugger (perl -d ..) if vim is running  without GUI.
+    + Debugger starts correctly for scripts with command line arguments (Windows only).
+    + Minor improvements.
+
+ ChangeLog                         |  200 +++++++++++++++++++++++++++++++++++++
+ README.perlsupport                |  197 ++-----------------------------------
+ doc/perl-hot-keys.pdf             |  Bin 41783 -> 41784 bytes
+ doc/perlsupport.txt               |   36 +++++--
+ ftplugin/perl.vim                 |   36 ++++---
+ plugin/perl-support.vim           |  180 ++++++++++++++++++++++-----------
+ plugin/templates/perl-file-header |    2 +-
+ 7 files changed, 376 insertions(+), 275 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.9.2)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Apr 6 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Adaption for 'perlcritic', version 0.15 .
+    + New template file for POD documentation files.
+    + Minor bugs fixed and improvements.
+
+ README.perlsupport        |   33 +-
+ doc/perl-hot-keys.pdf     |  Bin 43364 -> 41783 bytes
+ doc/perlsupport.html      | 1163 ---------------------------------------------
+ doc/perlsupport.txt       |  141 ++++--
+ doc/perlsupport.txt.pdf   |  Bin 35699 -> 0 bytes
+ ftplugin/perl.vim         |   19 +-
+ perlsupport.zip           |  Bin 147303 -> 0 bytes
+ plugin/perl-support.vim   |  154 ++++--
+ plugin/templates/perl-pod |  122 +++++
+ rc/customization.vimrc    |    8 +-
+ syntax/perl.vim           |   20 +
+ wordlists/perl.list       |   66 +++
+ 12 files changed, 441 insertions(+), 1285 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.9.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Feb 28 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + New menu entry for setting perl command line switches (Thanks to Adam MacKinnon).
+    + For files with extension 't' (Perl test files) the filetype is set to 'perl'. This
+      allows syntax checking, reading help, and checking with perlcritic.
+    + There is a new comment template file 'perl-test-header' which will be
+      inserted at the beginning of a new test file (extension 't').
+    + Comment after some POD directives removed (podchecker showed errors).
+
+ README.perlsupport                |   12 +++++-
+ doc/perl-hot-keys.pdf             |  Bin 43578 -> 43364 bytes
+ doc/perlsupport.html              |   90 ++++++++++++++++++++++---------------
+ doc/perlsupport.txt               |   91 ++++++++++++++++++++++---------------
+ doc/perlsupport.txt.pdf           |  Bin 35466 -> 35699 bytes
+ ftplugin/perl.vim                 |    3 +-
+ perlsupport.zip                   |  Bin 0 -> 147303 bytes
+ plugin/perl-support.vim           |   90 +++++++++++++++++++++++++++----------
+ plugin/templates/perl-test-header |   23 +++++++++
+ plugin/wrapper.sh                 |   34 +++++++++-----
+ 10 files changed, 232 insertions(+), 111 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.9)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Jan 31 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + perlcritic integrated. Runs like a compiler. Opens a quickfix error window.<br>
+    + Help menu entry added (plugin help).
+    + A hardcopy shows date and time in the header line.
+    + open file/pipe idioms according to Conway's "Perl Best Practices".
+    + POSIX class [:blank:] added.
+    + Bugfix: Wrong cursor positon in hash idiom.
+    + Plugin can be used with autocompletion for (, [, and { .
+
+ README.perlsupport                |   17 +-
+ codesnippets-perl/slurp-file.pl   |    2 +-
+ doc/perl-hot-keys.pdf             |  Bin 43434 -> 43578 bytes
+ doc/perlsupport.html              | 1145 +++++++++++++++++++++++++++++++++++++
+ doc/perlsupport.txt               |  198 +++++--
+ doc/perlsupport.txt.pdf           |  Bin 0 -> 35466 bytes
+ ftplugin/perl.vim                 |  110 ++---
+ plugin/perl-support.vim           |  503 +++++++++++------
+ plugin/templates/perl-file-header |    1 +
+ rc/customization.vimrc            |    6 +
+ 10 files changed, 1687 insertions(+), 295 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.2)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed Nov 23 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Bugfix: Starting perltidy called a wrong function.
+
+ README.perlsupport      |    9 +++++++--
+ doc/perlsupport.txt     |    4 ++--
+ plugin/perl-support.vim |    6 +++---
+ 3 files changed, 12 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri Nov 18 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Bugfix: Some key mappings not working/not properly working (Thanks to Edward Wijaya).
+    + Bugfix: Unnecessary message 'Made file executable' removed (Thanks to Edward Wijaya).
+    + Bugfix: Wrong quoting for script arguments fixed; Windows only (Thanks to Norin Raad).
+
+ README.perlsupport      |   13 +++++-
+ doc/perl-hot-keys.pdf   |  Bin 43464 -> 43434 bytes
+ doc/perlsupport.txt     |   12 ++++-
+ ftplugin/perl.vim       |   94 +++++++++++++++++++++++++++++++++--------------
+ plugin/perl-support.vim |   79 ++++++++++++++++++++++++---------------
+ 5 files changed, 134 insertions(+), 64 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Nov 3 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Podchecker integrated. Runs like a compiler. Opens a quickfix error window.
+    + Script will be made executable before running it (e.g. after a "Save As...").
+    + Many blanks in 2 POD templates removes which garbled the resulting documents (bugfix).
+    + Message now visible if SmallProf is not runable (bugfix).
+
+ README.perlsupport                            |   10 ++-
+ codesnippets-perl/pod-template-application.pl |  121 ++++++++++++-------------
+ codesnippets-perl/pod-template-module.pl      |  111 +++++++++++------------
+ doc/perl-hot-keys.pdf                         |  Bin 43363 -> 43464 bytes
+ doc/perlsupport.txt                           |   20 ++++-
+ doc/pmdesc3.text                              |   56 ++++++------
+ plugin/perl-support.vim                       |  107 ++++++++++++++++------
+ plugin/pmdesc3.pl                             |    6 +-
+ 8 files changed, 252 insertions(+), 179 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.7)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed Oct 19 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + POD: \"invisible POD\" added (as suggested in Conway&#039s book \"Perl Best Practices\").<br>
+    + POD: sequence insertion improved; &#039<E>&#039 added; &#039=for&#039 added.<br>
+    + <S-F1> (read perldoc) now works only for filetype &#039perl&#039 .<br>
+    + Some idioms improved (e.g. opening files, subroutine stub).<br>
+    + Added &#039:&#039 to the keyword characters; recognizes tokens like &#039Net::Cmd&#039 as one keyword.<br>
+    + Perltidy integration made safer.<br>
+    + Starting an xterm was not possible with some installations (bugfix).
+
+ README.perlsupport                            |   38 +++-
+ codesnippets-perl/module-interface.pl         |    5 +-
+ codesnippets-perl/pod-template-application.pl |  125 +++++++++
+ codesnippets-perl/pod-template-module.pl      |  115 ++++++++
+ codesnippets-perl/pod-to-append.pl            |   54 ----
+ codesnippets-perl/slurp-file.pl               |    5 +
+ codesnippets-perl/slurp-mode.pl               |    4 -
+ doc/perlsupport.txt                           |  356 ++++++++++++++++---------
+ doc/pmdesc3.text                              |   45 ++--
+ ftplugin/perl.vim                             |   32 ++-
+ plugin/perl-support.vim                       |  346 ++++++++++++++++--------
+ plugin/pmdesc3.pl                             |   33 ++-
+ plugin/templates/perl-function-description    |    7 +-
+ plugin/templates/perl-module-header           |    1 +
+ rc/customization.SmallProf                    |    8 +
+ rc/customization.ctags                        |    3 +
+ rc/customization.gvimrc                       |   23 ++
+ rc/customization.perltidyrc                   |    4 +-
+ rc/customization.vimrc                        |   77 +++---
+ wordlists/perl.list                           |   35 ++-
+ 20 files changed, 923 insertions(+), 393 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri Jul 1 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + blocks: opening brace no longer on a new line (adjustable for backward compatibility).
+    + Vim (without GUI): new key mappings: all entries in the run menu do have mappings now.
+    + Vim (without GUI): perldoc can be read with hotkeys \h and \rp .
+    + Vim (without GUI): perldoc displays docs using plain text converter.+ output into buffer: cursor goes to top of file.
+    + trailing ^M in perldoc window will be removed (UNIX/Linux).
+    + output into buffer: cursor goes to top of file.
+
+ README.perlsupport                                 |   12 +-
+ codesnippets-perl/module-interface.pl              |   25 ++-
+ codesnippets-perl/new.pl                           |   10 +
+ codesnippets-perl/pod-to-append.pl                 |   21 ++-
+ codesnippets-perl/print-hash-sorted.pl             |    6 +-
+ codesnippets-perl/print-hash.pl                    |    6 +-
+ ...process-all-files-in-a-directory-recursively.pl |    3 +-
+ doc/perl-hot-keys.pdf                              |  Bin 45746 -> 43363 bytes
+ doc/perlsupport.txt                                |  197 ++++++++++++-------
+ ftplugin/perl.vim                                  |   67 +++++--
+ plugin/perl-support.vim                            |  189 +++++++++++++------
+ plugin/templates/perl-function-description         |    2 +-
+ rc/customization.perltidyrc                        |    1 -
+ 13 files changed, 365 insertions(+), 174 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Apr 18 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Windows support. Most features are now available under Windows.
+    + Spaces in path and file names are now possible (Windows and UNIX).
+    + Reading documentation with perldoc improved.
+    + Minor bugs fixed and improvements.
+
+ README.perlsupport                                 |   42 ++-
+ codesnippets-perl/pod-to-append.pl                 |    2 +-
+ .../print-data-structure-with-Dumper.pl            |    4 +
+ codesnippets-perl/print-hash-sorted.pl             |   14 +
+ codesnippets-perl/print-hash.pl                    |   14 +
+ codesnippets-perl/slurp-mode.pl                    |    2 +-
+ doc/perlsupport.txt                                |   63 ++--
+ doc/pmdesc3.text                                   |    4 +-
+ plugin/efm_perl.pl                                 |  158 +++++++++
+ plugin/perl-support.vim                            |  254 ++++++++++----
+ plugin/pmdesc3                                     |  309 ----------------
+ plugin/pmdesc3.pl                                  |  369 ++++++++++++++++++++
+ plugin/wrapper.sh                                  |   16 +-
+ rc/customization.gvimrc                            |    7 +
+ rc/customization.perltidyrc                        |    4 +
+ rc/customization.vimrc                             |   31 ++-
+ 16 files changed, 861 insertions(+), 432 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed Mar 2 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Run the profiler SmallProf from the menu; save different results with time stamps.
+    + Line end comments start in a fixed column now (can be set from the menu).
+    + Recommended settings for ctags corrected (Thanks to William McKee).
+    + Perl module list generator pmdesc3 again slightly improved.
+
+ README.perlsupport                       |   30 ++-
+ codesnippets-perl/SmallProf-variables.pl |   10 +
+ codesnippets-perl/dot.SmallProf          |    8 +
+ codesnippets-perl/pod-to-append.pl       |    3 +-
+ codesnippets-perl/slurp-mode.pl          |    4 +
+ doc/perlsupport.txt                      |  343 +++++++++++++++++-------------
+ doc/pmdesc3.text                         |   60 ++++++
+ doc/pmdesc3.txt                          |   60 ------
+ ftplugin/perl.vim                        |    6 +-
+ plugin/perl-support.vim                  |  301 ++++++++++++++++++--------
+ plugin/pmdesc3                           |   21 ++-
+ plugin/wrapper.sh                        |    4 +-
+ rc/customization.vimrc                   |    4 +-
+ 13 files changed, 531 insertions(+), 323 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Sun Dec 12 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + One of three debuggers can be started with the hotkey F9.+ Complete file or marked area can be reformatted with perltidy. + Run a perl-script:   (1) The script can be run from the command line.  (2) The output can be directed into a window with name "Perl-Output".   (3) The script can be run in an xterm (adjustable).+ The new hotkey Shift-F9 and the menu entry "cmd. line arg." set command line  arguments for the current buffer.+ A code snippet with the file name extension "ni" or "noindent" will not be  indented on insertion.+ Bug fixed (POD->Text)
+
+ README.perlsupport                                 |   20 ++-
+ codesnippets-perl/module-interface.pl              |   12 +-
+ codesnippets-perl/pod-to-append.pl                 |    7 +-
+ ...process-all-files-in-a-directory-recursively.pl |   20 +-
+ doc/perl-hot-keys.pdf                              |  Bin 45667 -> 45746 bytes
+ doc/perlsupport.txt                                |  140 ++++++++--
+ ftplugin/perl.vim                                  |   27 ++-
+ plugin/perl-support.vim                            |  303 +++++++++++++++-----
+ plugin/wrapper.sh                                  |   22 ++
+ rc/customization.vimrc                             |   68 +++---
+ 10 files changed, 461 insertions(+), 158 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3.2)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri Nov 5 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Perl module list generator pmdesc3 improved (no double entries, no control
+       characters in version numbers, handles DOS-teminated files correctly).
+    + Looking up help with Shift-F1 now works also in the perldoc help buffer.
+    + Running a Perl-script now opens a window with name "Perl-Output" to display
+      the script output. The buffer and its content will disappear when closing
+      the window.
+
+ README.perlsupport      |   23 ++++-
+ doc/perlsupport.txt     |   49 ++++++---
+ doc/pmdesc3.txt         |   60 +++++++++++
+ plugin/perl-support.vim |  173 ++++++++++++++++++++----------
+ plugin/pmdesc3          |  268 ++++++++++++++++++++++++++++++++++-------------
+ 5 files changed, 422 insertions(+), 151 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Oct 14 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + There is now at most one help window/buffer.+ There is now at most one Perl module list window/buffer.+ The perldoc help will now search in FAQs too;    search order :  modules - functions - FAQs. + Template files and snippet files are no longer kept in the list of alternate files.+ A bug fixed in the Perl module list generator pmdesc3.
+
+ README.perlsupport      |   16 ++++-
+ doc/perlsupport.txt     |   42 ++++++----
+ ftplugin/perl.vim       |    9 +-
+ plugin/perl-support.vim |  194 ++++++++++++++++++++++++++---------------------
+ plugin/pmdesc3          |    4 +-
+ 5 files changed, 154 insertions(+), 111 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Oct 5 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Better adaption to the Windows plattforms (default directories, running scripts).
+    + Templates are more consistent now.
+    + 'Line End Comments' ignores blank lines in a marked block.
+
+ README.perlsupport                         |   47 +++++++++--
+ doc/perlsupport.txt                        |  123 ++++++++--------------------
+ ftplugin/perl.vim                          |    6 +-
+ plugin/perl-support.vim                    |  100 ++++++++++++++---------
+ plugin/templates/perl-file-header          |    9 +-
+ plugin/templates/perl-frame                |    4 +-
+ plugin/templates/perl-function-description |    4 +-
+ plugin/templates/perl-module-header        |    9 +-
+ rc/customization.vimrc                     |   28 ------
+ 9 files changed, 151 insertions(+), 179 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Sat Jun 26 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Installation simplified. + The generation of the module list is a magnitude faster.+ The version of a module is now shown in the module list. + The perl documentation (pod::perl*) appears in the module list.+ The dialog windows (GUI) have been replaced by more flexible command line inputs.+ User will now be asked before a snippet file will be overwritten.+ The undocumented and unnecessary hot key F12 has been removed.
+
+ README.perlsupport                                 |  189 +++++++++
+ codesnippets-perl/free-software-comment            |    8 +
+ codesnippets-perl/module-interface.pl              |   30 ++
+ codesnippets-perl/pod-to-append.pl                 |   41 ++
+ ...process-all-files-in-a-directory-recursively.pl |   31 ++
+ doc/perlsupport.txt                                |  155 +++++--
+ perl.2.0/README                                    |  436 --------------------
+ perl.2.0/codesnippets-perl/free-software-comment   |    8 -
+ perl.2.0/codesnippets-perl/module-interface.pl     |   30 --
+ perl.2.0/codesnippets-perl/pod-to-append.pl        |   41 --
+ ...process-all-files-in-a-directory-recursively.pl |   31 --
+ perl.2.0/install.sh                                |  101 -----
+ perl.2.0/plugin/templates/perl-file-header         |   24 --
+ perl.2.0/plugin/templates/perl-frame               |    3 -
+ .../plugin/templates/perl-function-description     |    6 -
+ perl.2.0/plugin/templates/perl-module-header       |   21 -
+ perl.2.0/rc/customization.ctags                    |    7 -
+ perl.2.0/rc/customization.gvimrc                   |   23 -
+ perl.2.0/rc/customization.vimrc                    |  157 -------
+ perl.2.0/rc/perl.vimrc                             |   20 -
+ perl.2.0/wordlists/perl.list                       |  239 -----------
+ plugin/perl-support.vim                            |  169 +++++----
+ plugin/pmdesc                                      |  142 -------
+ plugin/pmdesc3                                     |  172 ++++++++
+ plugin/templates/perl-file-header                  |   24 ++
+ plugin/templates/perl-frame                        |    3 +
+ plugin/templates/perl-function-description         |    6 +
+ plugin/templates/perl-module-header                |   21 +
+ rc/customization.ctags                             |    7 +
+ rc/customization.gvimrc                            |   23 +
+ rc/customization.vimrc                             |  150 +++++++
+ wordlists/perl.list                                |  239 +++++++++++
+ 32 files changed, 1154 insertions(+), 1403 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Wed May 12 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + New menu for regex-construction.
+    + New menu with POD commands.
+    + A list of all installed Perl modules can be built and read in.
+      The documentation for a module can be opened from this list.
+    + Extension to ctags + taglist shows POD table of content and enables navigation.
+    + Append aligned comments to all lines of a marked block.
+    + The root menu can be removed.
+    + Documentation improved.
+    + Bug fix (template file handling).
+    + Install script improved.
+
+ doc/perl-hot-keys.pdf                              |  Bin 45747 -> 45667 bytes
+ doc/perlsupport.txt                                |  579 ++++++++--
+ ftplugin/perl.vim                                  |   40 +-
+ perl.1.9.2/README                                  |  319 -----
+ perl.1.9.2/install.sh                              |   59 -
+ perl.1.9.2/plugin/templates/perl-file-header       |   21 -
+ perl.1.9.2/plugin/templates/perl-frame             |    3 -
+ .../plugin/templates/perl-function-description     |   13 -
+ perl.1.9.2/rc/customization.gvimrc                 |   25 -
+ perl.1.9.2/rc/customization.vimrc                  |  128 --
+ perl.1.9.2/rc/perl.vimrc                           |   20 -
+ perl.1.9.2/wordlists/perl.list                     |  239 ----
+ perl.2.0/README                                    |  436 +++++++
+ perl.2.0/codesnippets-perl/free-software-comment   |    8 +
+ perl.2.0/codesnippets-perl/module-interface.pl     |   30 +
+ perl.2.0/codesnippets-perl/pod-to-append.pl        |   41 +
+ ...process-all-files-in-a-directory-recursively.pl |   31 +
+ perl.2.0/install.sh                                |  101 ++
+ perl.2.0/plugin/templates/perl-file-header         |   24 +
+ perl.2.0/plugin/templates/perl-frame               |    3 +
+ .../plugin/templates/perl-function-description     |    6 +
+ perl.2.0/plugin/templates/perl-module-header       |   21 +
+ perl.2.0/rc/customization.ctags                    |    7 +
+ perl.2.0/rc/customization.gvimrc                   |   23 +
+ perl.2.0/rc/customization.vimrc                    |  157 +++
+ perl.2.0/rc/perl.vimrc                             |   20 +
+ perl.2.0/wordlists/perl.list                       |  239 ++++
+ plugin/perl-support.vim                            | 1305 ++++++++++++--------
+ plugin/pmdesc                                      |  142 +++
+ 29 files changed, 2567 insertions(+), 1473 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.9.2)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Aug 4 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Only one entry in the gVim root menu.+ All hotkeys are only defined for Perl files.+ Install script added.+ Customization improved. + Documentation improved.
+
+ doc/perl-hot-keys.pdf                              |  Bin 0 -> 45747 bytes
+ doc/perlsupport.txt                                |  262 +++--
+ ftplugin/perl.vim                                  |  109 ++
+ perl.1.9.2/README                                  |  319 +++++
+ perl.1.9.2/install.sh                              |   59 +
+ perl.1.9.2/plugin/templates/perl-file-header       |   21 +
+ perl.1.9.2/plugin/templates/perl-frame             |    3 +
+ .../plugin/templates/perl-function-description     |   13 +
+ perl.1.9.2/rc/customization.gvimrc                 |   25 +
+ perl.1.9.2/rc/customization.vimrc                  |  128 ++
+ perl.1.9.2/rc/perl.vimrc                           |   20 +
+ perl.1.9.2/wordlists/perl.list                     |  239 ++++
+ perl.1.9/README                                    |  235 ----
+ perl.1.9/costumization.gvimrc                      |   25 -
+ perl.1.9/costumization.vimrc                       |  116 --
+ perl.1.9/perl-hot-keys.pdf                         |  Bin 45747 -> 0 bytes
+ perl.1.9/perl-support.vim                          | 1251 --------------------
+ perl.1.9/templates/perl-file-header                |   21 -
+ perl.1.9/templates/perl-frame                      |    3 -
+ perl.1.9/templates/perl-function-description       |   13 -
+ perl.1.9/word.list                                 |  239 ----
+ plugin/perl-support.vim                            | 1132 ++++++++++++++++++
+ 22 files changed, 2230 insertions(+), 2003 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Tue Jul 15 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + 58 key mappings for Vim without GUI.  See perl-hot-keys.pdf  (reference card).+ A marked region can be surrounded by a for-, if-, do-while- , until-, ...   statements (with indentation).+ The Perl special variables have been added to the file word.list  for dictionary completion.+ Vim doc added (file perlsupport.txt).
+
+ README.orig                                  |  190 ----
+ costumization.gvimrc                         |   25 -
+ doc/perlsupport.txt                          |  298 ++++++
+ perl.1.9/README                              |  235 +++++
+ perl.1.9/costumization.gvimrc                |   25 +
+ perl.1.9/costumization.vimrc                 |  116 +++
+ perl.1.9/perl-hot-keys.pdf                   |  Bin 0 -> 45747 bytes
+ perl.1.9/perl-support.vim                    | 1251 ++++++++++++++++++++++++++
+ perl.1.9/templates/perl-file-header          |   21 +
+ perl.1.9/templates/perl-frame                |    3 +
+ perl.1.9/templates/perl-function-description |   13 +
+ perl.1.9/word.list                           |  239 +++++
+ plugin/costumization.vimrc                   |  118 ---
+ plugin/perl-support.vim                      | 1022 ---------------------
+ templates/perl-file-header                   |   22 -
+ templates/perl-frame                         |    3 -
+ templates/perl-function-description          |   13 -
+ word.list                                    |  178 ----
+ 18 files changed, 2201 insertions(+), 1571 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Sat May 31 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Tag substitution rewritten (Some characters in a substitution text for a tag   prevented the tag from being substituted).
+
+ README.orig                |    9 +++-
+ plugin/costumization.vimrc |    3 -
+ plugin/perl-support.vim    |  105 +++++++++++++++++++++++++++++---------------
+ 3 files changed, 78 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Sat Apr 26 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Block comments are now read as templates or skeletons from files:      frame Comment,  function description,  file header+ These templates can contain tags like |FILENAME|, |AUTHOR| etc. which are replaced  after reading.+ indentation: multiline inserts and code snippets will be indented after insertion.+ Most menu entries are now also active in normal mode.+ Reading the templates is done in one function which can be called in an autocmd.+ Code cleanup: register z no longer used. Most function calls are silent now.
+
+ README.orig                         |  183 ++++++++++
+ costumization.gvimrc                |   25 ++
+ plugin/costumization.vimrc          |  121 +++++++
+ plugin/perl-support.vim             |  649 ++++++++++++++++++++++-------------
+ templates/perl-file-header          |   22 ++
+ templates/perl-frame                |    3 +
+ templates/perl-function-description |   13 +
+ word.list                           |  178 ++++++++++
+ 8 files changed, 962 insertions(+), 232 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Fri Feb 7 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                  |   48 +++
+ plugin/perl-support.vim |  802 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 850 insertions(+), 0 deletions(-)

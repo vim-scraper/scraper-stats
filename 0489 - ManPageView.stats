@@ -1,0 +1,17 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/22, refs/heads/master)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Nov 26 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improved handling of non-existing manpages.
+    No generation of K map for "" strings.
+
+ README                       |   40 ++
+ autoload/manpageview.vim     | 1060 ++++++++++++++++++++++++++++++++++++++++++
+ doc/manpageview.txt          |  437 +++++++++++++++++
+ plugin/manpageviewPlugin.vim |   31 ++
+ syntax/info.vim              |   32 ++
+ syntax/man.vim               |  106 +++++
+ syntax/mankey.vim            |   39 ++
+ syntax/manphp.vim            |   75 +++
+ 8 files changed, 1820 insertions(+), 0 deletions(-)

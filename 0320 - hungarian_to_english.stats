@@ -1,0 +1,45 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.3, refs/heads/master)
+Author:     Issac Trotts <issac at myfirstlink.net>
+AuthorDate: Fri Jun 28 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - removal of fBlah
+    - no more spurious error messages from patterns not found
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.2)
+Author:     Issac Trotts <issac at myfirstlink.net>
+AuthorDate: Wed Jun 26 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - removal of aBlah, eBlah, _blah, chBlah
+    - better handling of m_bBlah and its friends
+    - fixed it so it works not just on the first offending instance
+      of each line
+    - corrected incorrectly changing identifiers like PRINTF when
+      ignorecase is turned on
+
+ plugin/hungarian_to_english.vim |   39 ++++++++++++++++++++++++++++++---------
+ 1 files changed, 30 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     Issac Trotts <issac at myfirstlink.net>
+AuthorDate: Wed Jun 26 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - fixed a bug with capitalization
+    - added removal of the m_blah notation
+    - changed to only operate on the selected range
+
+ plugin/hungarian_to_english.vim |   42 +++++++++++++++++++++++++++-----------
+ 1 files changed, 30 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Issac Trotts <issac at myfirstlink.net>
+AuthorDate: Tue Jun 25 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                          |    7 +++++++
+ plugin/hungarian_to_english.vim |   38 ++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 45 insertions(+), 0 deletions(-)

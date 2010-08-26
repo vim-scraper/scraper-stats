@@ -1,0 +1,33 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2, refs/heads/master)
+Author:     Simon Chiu <atomcoder at yahoo.com>
+AuthorDate: Thu Oct 16 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix color for Windows Terminal Client.
+
+ plugin/cvs_cygwin.vim    |   46 ++++++
+ plugin/cvs_cygwin.vimrc  |   46 ------
+ plugin/environment.vim   |  368 ++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/environment.vimrc |  358 --------------------------------------------
+ plugin/gui_mswin.vim     |   15 ++
+ plugin/gui_mswin.vimrc   |   14 --
+ plugin/java.vim          |  138 +++++++++++++++++
+ plugin/java.vimrc        |  122 ---------------
+ plugin/local_mswin.vim   |   61 ++++++++
+ plugin/local_mswin.vimrc |   48 ------
+ 10 files changed, 628 insertions(+), 588 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1)
+Author:     Simon Chiu <atomcoder at yahoo.com>
+AuthorDate: Fri Aug 9 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    environment, java, cvs, local_mswin, gui_mswin
+
+ README                   |   36 +++++
+ plugin/cvs_cygwin.vimrc  |   46 ++++++
+ plugin/environment.vimrc |  358 ++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/gui_mswin.vimrc   |   14 ++
+ plugin/java.vimrc        |  122 ++++++++++++++++
+ plugin/local_mswin.vimrc |   48 ++++++
+ 6 files changed, 624 insertions(+), 0 deletions(-)

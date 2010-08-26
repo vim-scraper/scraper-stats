@@ -1,0 +1,43 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.5, refs/heads/master)
+Author:     Eugene Andreeshchev <admix at pisem.net>
+AuthorDate: Thu Aug 30 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added OpenGL ES 2.0 and EGL symbols (without vendor extensions, for now).
+    Can be disabled with following variables: c_opengl_no_gles2, c_opengl_no_egl.
+    
+    Thanks to Simon Hosie [sh1 at broadcom dot com]!
+
+ syntax/opengl.vim |  508 ++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 files changed, 505 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.1)
+Author:     Eugene Andreeshchev <admix at pisem.net>
+AuthorDate: Thu Nov 6 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for GLUT.
+
+ syntax/opengl.vim | 4623 +++++++++++++++++++++++++++++------------------------
+ 1 files changed, 2513 insertions(+), 2110 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Eugene Andreeshchev <admix at pisem.net>
+AuthorDate: Thu Oct 30 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Updated to OpenGL 1.4 ARB extensions for OpenGL Shading Language.
+
+ syntax/opengl.vim |  582 +++++++++++++++++++++++++++++++++++++++++++++++++++--
+ 1 files changed, 569 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Eugene Andreeshchev <admix at pisem.net>
+AuthorDate: Sat Aug 30 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README            |    4 +
+ syntax/opengl.vim | 1585 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 1589 insertions(+), 0 deletions(-)

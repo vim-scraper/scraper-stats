@@ -1,0 +1,22 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3, refs/heads/master)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed May 25 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    HelpExtractor v2 exhibited odd behavior when one attempted to source a plugin using it from a non-standard location.  Remember, the HelpExtractor is trying to extract documentation from the file, put it in the .vim/doc (vimfiles\doc) directory, and remove the extractor code.  An error message is now produced and the extraction is "finish"d, leaving the plugin operational but with the extractor code and help intact (but not available via :help).
+
+ VIMSCRIPT/HelpExtractor.vim |   65 +++++++++++++++++++++++++++++++++++++
+ doc/HelpExtractor.txt       |   39 ++++++++++++++++++++++
+ plugin/HelpExtractor.vim    |   75 -------------------------------------------
+ 3 files changed, 104 insertions(+), 75 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Thu Sep 9 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    HelpExtractor will create a doc directory for the user if it doesn't currently exist under Linux/Unix.  It now also cooperates with the GetLatestVimScripts automatic updating.
+
+ README                   |   23 ++++++++++++++
+ plugin/HelpExtractor.vim |   75 ++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 98 insertions(+), 0 deletions(-)
