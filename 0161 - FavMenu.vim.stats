@@ -1,0 +1,70 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.32, refs/heads/master)
+Author:     Gergely Kontra <pihentagy at gmail.com>
+AuthorDate: Mon Mar 11 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added Hungarian translation
+
+ plugin/FavMenu.vim |   38 +++++++++++++++++++++++++-------------
+ 1 files changed, 25 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Gergely Kontra <pihentagy at gmail.com>
+AuthorDate: Mon Feb 4 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New features:
+    * Limited path size (set PATHSIZELIMIT)
+    * It closes the file even when 'hidden' is set
+    * Synchronize if +clientserver is available
+
+ plugin/FavMenu.vim |  120 ++++++++++++++++++++++++++++++++++------------------
+ 1 files changed, 79 insertions(+), 41 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.22)
+Author:     Gergely Kontra <pihentagy at gmail.com>
+AuthorDate: Wed Jan 30 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Nice fallbacks to the vars.
+    * fav_menu is renamed to OPEN_FUNC Sorry for the inconvinience.
+    * Menu shortcuts
+
+ plugin/FavMenu.vim |   76 +++++++++++++++++++++++++++++----------------------
+ 1 files changed, 43 insertions(+), 33 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.21)
+Author:     Gergely Kontra <pihentagy at gmail.com>
+AuthorDate: Tue Jan 15 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fixes
+
+ plugin/FavMenu.vim |   24 ++++++++++++++++--------
+ 1 files changed, 16 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Gergely Kontra <pihentagy at gmail.com>
+AuthorDate: Thu Jan 10 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Fixed bug, which caused same files to hide each other
+    * Your favourite files must be located at $FAVOURITES
+    * You can Edit the favourites. Menus will updated, when you save
+    * When you click on the menu, it invokes the fav_fun function
+    * You can choose cascade delete menu by defining fav_cascade_del (at startup!)
+    * You can add directories to your favourites. Thanks to the_intellectual_person <arun_kumar_ks@hotmail.com>, who gave me a patch for this
+
+ plugin/FavMenu.vim |  168 ++++++++++++++++++++++++++++++++++------------------
+ 1 files changed, 110 insertions(+), 58 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Gergely Kontra <pihentagy at gmail.com>
+AuthorDate: Mon Dec 3 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README             |    8 +++++++
+ plugin/FavMenu.vim |   58 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 66 insertions(+), 0 deletions(-)

@@ -1,0 +1,401 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.21, refs/heads/master)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Sat Feb 13 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Back from the dead.  Windows is working again, and a few bugs fixed.
+
+ CHANGELOG        |  273 ++++++++++++++++++++++++++
+ ChangeLog        |  257 -------------------------
+ README           |  237 +++++++++++++++++++++---
+ TODO             |    3 +-
+ plugin/vimsh.vim |   39 +++--
+ vimsh.py         |  559 ++++++++++++++++++++++++++----------------------------
+ vimsh.readme     |  204 --------------------
+ 7 files changed, 782 insertions(+), 790 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.20)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Fri Mar 26 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This version has gone through more testing now that I am using Linux all day @ work on my desktop.  I also did some decent testing on Windows.  Please let me know if you find any bugs...
+    
+    ============================
+    
+    * Leading space in output issue now works 100%, even when doing
+      wacky stuff like 'sleep 10', then 'ls', without waiting for the prompt to return.
+    * Typing 'exit' now works as expected when running ssh, telnet,
+      etc.  This fix also doesn't need the procs_in_pty hack I had previously used.
+    * exit'ing the initially spawned shell correctly deletes the buffer.
+    * Fixed race conditions w/ SIGCHLD (async) setting flag and bdelete
+      path not always seeing flag toggle.
+    * Fixed bug where exiting vimsh buffer kept vim in insert mode.
+    * Ctrl-D (EOF) now closes buffer only when sent to initial spawned shell.
+    * Fixed bug on Windows (pipes) for multiple line command or leading space in command.
+
+ ChangeLog    |   14 ++
+ TODO         |    9 +-
+ vimsh.py     |  678 ++++++++++++++++++++++++++--------------------------------
+ vimsh.readme |    9 +-
+ 4 files changed, 324 insertions(+), 386 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.19)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Sat Mar 20 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Fixed clear_screen call.
+    * Changed default mapping for clearing screen to ^L.
+    * Preserve mode (insert/normal) when clearing screen.
+    * Fix leading space in output when paging commands like ping(8).
+    * Added some tips for [t]csh users to the readme.
+
+ ChangeLog    |   23 ++++++++++++++++-------
+ vimsh.py     |   31 ++++++++++++++++++-------------
+ vimsh.readme |   30 ++++++++++++++++++++++++++----
+ 3 files changed, 60 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.18)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Sat Jan 31 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Use waitpid rather than wait, now correctly handles :!cmd <mbays@sdf.lonestar.org>
+    * Run pyfile command once when sourcing vimsh.vim <mbays@sdf.lonestar.org>
+    * Handle programs that do not have a prompt <mbays@sdf.lonestar.org>
+    * Moved invocation of startup shell in vimsh.vim to outside of pyfile sourcing conditional.
+    * Fixed case where buffer deleted through autocommand and same
+      buffer name used again would cause an error (multiple buf fix).
+    * Fixed multiple au BufDelete commands being invoked for same vimsh buffer name
+      (multiple buf fix).
+    * Fixed password regex for ssh, now handles leading spaces if present within vimsh.
+
+ ChangeLog        |   12 +++++
+ TODO             |    2 -
+ plugin/vimsh.vim |   11 +++--
+ vimsh.py         |  120 +++++++++++++++++++++++++++++++++++++-----------------
+ vimsh.readme     |    2 +-
+ 5 files changed, 102 insertions(+), 45 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.17)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Sat Nov 29 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Multiple buffer support <ddarius@hotpop.com>.
+      i.e. :VimShNewBuf foo
+    * Default behavior of creating a single vimsh buffer
+      when sourced added to multiple buffer patch.
+    * Multi-line command support <ddarius@hotpop.com>
+    * made a clear screen routine honoring g:vimsh_clear_all
+    * clear screen key mapping g:vimsh_clear_key (default F9) <ddarius@hotpop.com>
+    * use startinsert! <ddarius@hotpop.com>
+
+ ChangeLog        |   12 +++-
+ TODO             |   18 +++--
+ plugin/vimsh.vim |    8 ++-
+ vimsh.py         |  203 ++++++++++++++++++++++++++++++++----------------------
+ vimsh.readme     |   18 +++--
+ 5 files changed, 163 insertions(+), 96 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.16)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Fri Sep 19 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Changed '^M' to '\n' for python 2.3.  Vimsh would not
+      run w/ python 2.3. Backwards compatible change.
+
+ ChangeLog          |  212 +++++++++++
+ TODO               |   32 ++
+ plugin/vimsh.vim   |   77 ++++
+ vimsh.py           | 1068 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ vimsh.readme       |  175 +++++++++
+ vimsh/ChangeLog    |  209 ----------
+ vimsh/TODO         |   32 --
+ vimsh/vimsh.py     | 1068 ----------------------------------------------------
+ vimsh/vimsh.readme |  175 ---------
+ vimsh/vimsh.vim    |   77 ----
+ 10 files changed, 1564 insertions(+), 1561 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Mon Sep 30 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Too many changes/bugfixes to list here, please see changelog for this version.
+
+ vimsh/ChangeLog    |   70 ++++++--
+ vimsh/TODO         |   11 +-
+ vimsh/vimsh.py     |  496 +++++++++++++++++++++++++++-------------------------
+ vimsh/vimsh.readme |   38 ++--
+ vimsh/vimsh.vim    |    4 +-
+ 5 files changed, 348 insertions(+), 271 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Thu May 9 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Changed name of buffer name from vimsh to _vimsh_ since this
+      script is usually placed in a directory called vimsh.
+      If vimsh was a directory in vim's cwd it would edit
+      the directory using the explorer plugin.
+    * Fixed procs_in_pty to return full name of command last executed.
+    * Fixed not going back to insert mode after changing timeout.
+    * Added current timeout to timeout prompt.
+    * Correctly handle bogus entered timeout values, like 'ls'.
+    * Added support routine to return the current mode.
+    * Added a support routine to determine if last command
+      executed is still running.
+
+ vimsh/ChangeLog |   17 ++++++++++-
+ vimsh/vimsh.py  |   80 +++++++++++++++++++++++++++++++++++++++++++++++-------
+ 2 files changed, 84 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Wed Apr 10 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Figured out the line break always creeping in to
+      files for some users.  Winzip has feature under
+        Options->Configuration->Miscellaneous
+      called "Tar file smart CF/LF conversion".
+      It's not so smart... Turn it off if you want
+      to unpack the tarball using Winzip.  Better yet
+    use the vimsh.zip file available at my website.
+    * Fixed 'exit' of shell killing entire vim session rather
+    than just the vimsh buffer.
+    * Fixed empty line being added after paging output (F5)
+    * Now check for password prompt when paging slow output(F5).
+    * Cleanup of filename handling
+    * Removed some un-needed ';' characters at the end of
+    lines ( this is what happens when you do C all day )
+    * Removed duplicate sending of EOF in send_eof.
+    * Fixed pty/# of proc detection
+
+ vimsh/ChangeLog    |   23 +++-
+ vimsh/TODO         |   13 ++-
+ vimsh/vimsh.py     |  179 +++++++++++++++++++++-------
+ vimsh/vimsh.readme |  337 +++++++++++++++++++++++++++-------------------------
+ vimsh/vimsh.vim    |   65 ++++++++++-
+ 5 files changed, 400 insertions(+), 217 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Thu Apr 4 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Fix for Solaris pty detection.
+    * EOF and SIGINT now query termios settings so
+      the 'right thing' happens.  Users can still map
+      whatever vim key sequence they want for these
+      operations.  Support for more of these coming
+      in future versions.
+    * Removed now unused vimsh.signal function.
+    * Output of slower commands after refresh give
+      better but still not perfect output.
+    * For pty, SIGINT now flushes remaining data which will
+      work for some commands, i.e. ping.  Some apps still
+      will not flush correctly, find(1) for example.
+    * Added a help message for SIGINT handler which can be
+      disabled by setting vimsh_show_workaround_msgs
+      to 0 in your .vimrc.  It just explains how to get
+      around not seeing the prompt for commands that don't
+      flush correctly after SIGINT.
+    * Go back to insert mode after paging output.
+    * Fixes and speed ups for Windows
+          - BufWipeout wasn't being hit so lots of cmd.exe
+            instances being left around, changed to
+            BufDelete.
+          -
+     wasn't being removed from end of lines that
+            had it, i.e. ping.exe.
+          - Buffer size for reading from pipe has been
+            optimized somewhat.
+          - Return to insert mode after trying to execute
+            unsupported command.
+          - Changed redraw frequency for better interactive
+            response.
+
+ vimsh/ChangeLog    |   46 +++-
+ vimsh/TODO         |    4 +-
+ vimsh/vimsh.py     |  695 +++++++++++++++++++++++++--------------------------
+ vimsh/vimsh.readme |  293 +++++++++-------------
+ 4 files changed, 499 insertions(+), 539 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Fri Mar 8 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added support for sending EOF. Default
+       mapping is Ctrl-D <C-d>.  Now you can run python
+       for example in a buffer and quit it by typing
+       Ctrl-D.
+    * Fixed snafu of line split in the middle of python
+       statement which kept script from loading.  WHOOPS.
+    * Made the signalling mechanism more generic so I can
+       add more handlers in the future.
+
+ ChangeLog          |   92 ------
+ TODO               |   20 --
+ plugin/vimsh.vim   |   16 -
+ vimsh.py           |  889 --------------------------------------------------
+ vimsh.readme       |  223 -------------
+ vimsh/ChangeLog    |  103 ++++++
+ vimsh/TODO         |   20 ++
+ vimsh/vimsh.py     |  908 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ vimsh/vimsh.readme |  223 +++++++++++++
+ vimsh/vimsh.vim    |   16 +
+ 10 files changed, 1270 insertions(+), 1240 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Fri Dec 21 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * !! NOTE !!: new way to run is to "source" vimsh.vim, see vimsh.readme in tarball
+       Windows users need to use the link in the description to get a .zip file.
+    * /bin/sh is symlinked to csh on *bsd, added csh prompt.
+    * Fixed mappings
+    * Added check for buffer's existence before writing prompt
+      and jump to prompt if it already exists.
+    * Ctrl-c ( SIGINT ) for interrupting continuous cmds, prompts
+      if multiple processes besides shell running.
+    * Cleaned up exit handling
+    * Added function and mapping for refreshing/paging
+      output when timeout is too short.
+    * Added vim function to redraw periodically during long
+      operations or continuous operations ( ie ping <host> or
+      find /.
+
+ ChangeLog        |   92 ++++++
+ TODO             |   20 ++
+ plugin/vimsh.vim |   16 +
+ vimsh.py         |  830 ++++++++++++++++++++++++++++++------------------------
+ vimsh.readme     |  223 +++++++++++++++
+ 5 files changed, 814 insertions(+), 367 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Thu Dec 13 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Set buftype=nofile <b.cerrina@wanadoo.fr>
+    Option to use current buffer if non-modified
+    Use vim variables for options so this file doesn&#039t need
+    to be modified to allow customization.  See script for info.
+    Handle cancelling of input dialogs
+    Flag unsupported windows console commands
+    ( partial list see:unsupp_regex )
+    See NOTE for this version in script for more Windows specific information.
+
+ vimsh.py |  301 ++++++++++++++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 227 insertions(+), 74 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Tue Dec 11 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Windows support, tested on NT4 w/ ActiveState Python 2.2
+        Should also work on 2K/XP. Caveat hacktor  :).  Non interactive
+        programs dir, findstr, attrib etc work fine, no ftp, telnet, etc yet.
+    - Made clear check more explicit, cleartool was triggering it
+    - Fixed the mysterious missing single char issue.
+    
+    I'm getting some good feedback from Windows users, are there any Unix
+    vim people using it?
+
+ vimsh.py |  547 +++++++++++++++++++++++++++++++++++++++-----------------------
+ 1 files changed, 346 insertions(+), 201 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Sun Dec 9 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Made import/usage of tty, pty conditional on not being windows
+    Removed popen buffer size
+    Increased timeout if using popen3
+    Fixed output for lines crossing consecutive reads for pty
+    Added map for starting a new prompt at bottom of buffer
+
+ vimsh.py |  156 +++++++++++++++++++++++++++++++++++++++++++++-----------------
+ 1 files changed, 114 insertions(+), 42 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Sat Dec 8 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NOTE: the python module select doesn't seem to be available except for sockets on Windows so I need to investigate this more
+    - Removed the <Delete><BS> hooks.  They just weren't working as I thought they would.  Now just check for cursor to not be in prompt.
+    - Figured out the ftp issue see "notes".
+    - Added a mapping & func to set timeouts.
+    - Changed pty prompt to something useful
+    - fixed clear
+
+ vimsh.py |  194 +++++++++++++++++++++++++++++++++++++-------------------------
+ 1 files changed, 115 insertions(+), 79 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Fri Dec 7 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Implemented secure input of passwords,
+    Exit cmd works as expected, for subprocesses it
+    exits to parent, initial shell exit will delete buffer,
+    Keep <Delete> from overwriting prompt
+
+ vimsh.py |  144 ++++++++++++++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 113 insertions(+), 31 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4a)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Fri Dec 7 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    implemented alternate subprocess control ( popen ) so it should *in theory* work on any platform that supports
+    pipes, i.e. WinXX, albiet the output isn't as pretty-formatted as with pty.  I cannot at the moment test on Windows
+    and would like some feedback.  Shell commands clear and exit are also implemented.
+
+ vimsh.py |  230 +++++++++++++++++++++++++++++++++++++++-----------------------
+ 1 files changed, 146 insertions(+), 84 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3a)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Thu Dec 6 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed up the 1st line issue, and ^M printing.  The script is starting to firm up so I'm
+    going to next try to get it to work on windows.  Please send any feedback/issues not listed
+    in the script.
+
+ vimsh.py |   70 +++++++++++++++++++++++++++++++++++++++++--------------------
+ 1 files changed, 47 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2a)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Wed Dec 5 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed tabwidth, not on prompt message, handling of user input execution rm -i works, and shells now die via autocommand
+
+ vimsh.py |  113 ++++++++++++++++++++++++++++++++++++++------------------------
+ 1 files changed, 69 insertions(+), 44 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1a)
+Author:     brian sturk <bsturk at comcast.net>
+AuthorDate: Tue Dec 4 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README   |   34 +++++++++++
+ vimsh.py |  194 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 228 insertions(+), 0 deletions(-)

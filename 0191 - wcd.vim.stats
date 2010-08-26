@@ -1,0 +1,42 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.13, refs/heads/master)
+Author:     Pavol Juhas <juhas at seas.upenn.edu>
+AuthorDate: Fri Dec 5 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Small fixes, wcd should work better with unix gvim.  Settings can now be adjusted via global variables in .vimrc.
+
+ plugin/wcd.vim |  122 +++++++++++++++++++++++++++++++++-----------------------
+ 1 files changed, 72 insertions(+), 50 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
+Author:     Pavol Juhas <juhas at seas.upenn.edu>
+AuthorDate: Sat Mar 16 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New: OS sensitive defaults.  Now it should work under *nix
+    gvim.  Added settings for easier setup.
+
+ plugin/wcd.vim |  138 +++++++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 108 insertions(+), 30 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.02)
+Author:     Pavol Juhas <juhas at seas.upenn.edu>
+AuthorDate: Sat Mar 9 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    now executed through :silent !wcd.exe
+    :Wcd -g mydir should work nicely
+
+ plugin/wcd.vim |   41 ++++++++++++++++++++++-------------------
+ 1 files changed, 22 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1)
+Author:     Pavol Juhas <juhas at seas.upenn.edu>
+AuthorDate: Thu Jan 24 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README         |    9 +++++++++
+ plugin/wcd.vim |   47 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 56 insertions(+), 0 deletions(-)

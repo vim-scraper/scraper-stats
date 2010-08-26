@@ -1,0 +1,251 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5.7.1, refs/heads/master)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Thu Jun 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    *Moved ANT menu under Plugin
+    *Updated to toggle menu options upon load
+
+ plugin/ant_menu.vim |   57 +++++++++++++++++++++++---------------------------
+ 1 files changed, 26 insertions(+), 31 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.7)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Wed Jun 3 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Selected options will now be marked with an '*' in the ant menu.
+
+ plugin/ant_menu.vim |   82 +++++++++++++++++++++++++++++++++++++++++++-------
+ 1 files changed, 70 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.6)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Wed May 20 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fix for default buffer problems that occurs when the user switches between buffers.
+    Thanks to David Fishburn for the fix.
+
+ plugin/ant_menu.vim |   19 +++++++++++++++----
+ 1 files changed, 15 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.5)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Sun Nov 19 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Amit Jain's cleaner output changes
+
+ plugin/ant_menu.vim |   18 +++++++++---------
+ 1 files changed, 9 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.4)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Mon Apr 19 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    *Changed name to ant_menu.vim to avoid confusion with the numerous other ant.vim's.
+    *Includes Derek Pomery's code to dynamically load build.xml upon buffer switch.
+    *Includes David's <dakATdotech.com > code to specify a target on find.
+
+ plugin/ant.vim      |  284 ----------------------------------------------
+ plugin/ant_menu.vim |  312 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 312 insertions(+), 284 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.3)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Sun Dec 28 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    *Merged in javac 1.4 code for GetProbFile() from 'Michael Scheper <ant.vim@michaelscheper.com>'
+    *added code for kjc (only works with -emacs)
+    *clean up
+
+ plugin/ant.vim |  445 ++++++++++++++++++++++++++++++--------------------------
+ 1 files changed, 241 insertions(+), 204 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Sun Dec 14 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    *Incorporated Phil McCarthy's fix that starts ant -find from the file's current directory.
+    *Incorporated bug fix from Michael Scheper.
+
+ plugin/ant.vim |  490 ++++++++++++++++++++++++++++----------------------------
+ 1 files changed, 247 insertions(+), 243 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Fri Mar 7 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    *merged in Jou Wei Huang's fix for multiline targets
+    *fixed bug that prevented '-find' from working when another option is set
+
+ plugin/ant.vim |   18 +++++++++++-------
+ 1 files changed, 11 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Sat Jan 18 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    *Incorporated David Fishburn's quickfix code.
+    *Minor tweaks to target menu functionality.
+
+ plugin/ant.vim |   62 ++++++++++++++++++++++++++++---------------------------
+ 1 files changed, 32 insertions(+), 30 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.3)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Sat Nov 9 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    *target menu fix for multi-line targets and
+      target lines in which "name" is not the
+      first attribute (thanks to Ronny Wilms for
+      the fix)
+    *,g should have better support for jikes
+      (thanks to Mark Healy for the code)
+    *,g will open a new gvim only if the file is
+      in an existing buffer
+
+ plugin/ant.vim |   62 ++++++++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 47 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Mon Aug 12 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    *',g' now spawns new gvim window
+      (thanks to Nathan for the suggestion)
+    *cleaned up target menu code
+    *added ',t' binding for selecting build
+     targets (thanks goes out to Anton Straka
+     for the code snippet)
+
+ plugin/ant.vim |   22 ++++++++++++++++------
+ 1 files changed, 16 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.1)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Tue Jan 8 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    updated to allow multiple ant options
+
+ plugin/ant.vim |   47 +++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 33 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Wed Jan 2 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added ',g' keyboard shortcut.  When in the ant error buffer, this
+    will attempt to parse out the file in error and open it in a new
+    buffer with the cursor at the line flagged in error.  The user must
+    execute the shortcut at the line that identifies the file in error.
+
+ plugin/ant.vim |   29 +++++++++++++++++++++++++++--
+ 1 files changed, 27 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.31)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Thu Dec 13 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added new options to specify a log file.  Once this has
+    been done, ant output will be piped to the log file.  You
+    must select the 'no log file' option to return  to dumping
+    the output to a buffer.  Alsoadded menu option for
+    '-projecthelp'.
+
+ plugin/ant.vim |   57 +++++++++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 46 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Fri Dec 7 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug in which ant.vim chokes on periods in target
+    names (thanks to Keith Corwin for pointing it out).
+    Added descriptions of keyboard shortcuts in comments.
+
+ plugin/ant.vim |   14 ++++++++++++--
+ 1 files changed, 12 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.21)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Tue Dec 4 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    ant.vim now builds the target entry on startup if a build.xml exists in the current
+    directory.  The user can now set options seperate from the build, hopefully this
+    will provide greater flexibility (as well as one less step to the build option :-)).
+    If you forget which option is set, "ANT->Set Option->Show Current" will display
+    the current option.
+
+ plugin/ant.vim |   88 ++++++++++++++++++++++++++++++++-----------------------
+ 1 files changed, 51 insertions(+), 37 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Mon Dec 3 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    ant.vim will now add a 'Target' menu when the user manually sets the location of
+    the build file with ',s' or by selecting the build option.  So, for example, selecting
+    ANT->Target->clean from the menu will execute 'ant clean.'  I'm not all that confident
+    in my regex skills, so I can't guarantee that it will work in all (or even most!) circumstances.
+    Any help or bug reports will be appreciated.
+
+ plugin/ant.vim |   19 +++++++++++++++++--
+ 1 files changed, 17 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Mon Nov 26 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed problem with find option.  Added keyboard shortcut for 'ant -find'.
+
+ plugin/ant.vim |   11 ++++++++++-
+ 1 files changed, 10 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Fri Nov 23 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    *Rearranged the menu selections
+    *Added quiet build
+    *Added keyboard shortcuts for "default build" and "build.xml set"
+
+ plugin/ant.vim |   18 +++++++++++++-----
+ 1 files changed, 13 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Wed Nov 21 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added test for the existence of build.xml.
+
+ plugin/ant.vim |    9 ++++++---
+ 1 files changed, 6 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Shad Gregory <captshadg at gmail.com>
+AuthorDate: Wed Nov 21 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README         |   15 ++++++++++++++
+ plugin/ant.vim |   57 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 72 insertions(+), 0 deletions(-)

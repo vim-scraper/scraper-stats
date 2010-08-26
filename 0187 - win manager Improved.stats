@@ -1,0 +1,34 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.01, refs/heads/master)
+Author:     Anubhav Srivastava <anubhav47 at hotmail.com>
+AuthorDate: Sat Jan 19 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New in Version:
+              1). Upgraded to work with winmanager 2.0
+              2). Easier installation: just upzip in your $VIMRUNTIME, or place file addToWinManager in your plugin directory.
+              3). Removed bug for windows platform (was not escaping / earlier) .
+              4). A new command to add current directory to Dir-shortcut menu is added.
+              5). A direct access to .menu1.vim is provided through the Dir-shortcut menu.
+    
+    Thanks yet again for the suggestions. These are  what makes VIM community great.
+    
+    Anubhav
+
+ README                     |   16 +-
+ doc/winmanager.txt         |  179 ----
+ plugin/addToWinManager.vim |   79 ++-
+ plugin/winmanager.vim      | 2362 --------------------------------------------
+ 4 files changed, 71 insertions(+), 2565 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Anubhav Srivastava <anubhav47 at hotmail.com>
+AuthorDate: Fri Jan 18 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                     |   46 +
+ doc/winmanager.txt         |  179 ++++
+ plugin/addToWinManager.vim |   62 ++
+ plugin/winmanager.vim      | 2362 ++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 2649 insertions(+), 0 deletions(-)

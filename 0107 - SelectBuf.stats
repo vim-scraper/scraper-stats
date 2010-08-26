@@ -1,0 +1,451 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.3, refs/heads/master)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue Jun 12 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New setting selBufShowRelativePath (Nathan Huizinga
+      (nathan dot huizinga at gmail dot com)).
+    - Bug fix: |:SBSettings| is still broken.
+    Requires at least version 2.4 of genutils.
+
+ autoload/selectbuf.vim |   31 +++++++++++++++++++++----------
+ doc/selectbuf.txt      |   28 +++++++++++++++++++++++-----
+ plugin/selectbuf.vim   |    9 +++++----
+ 3 files changed, 49 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue Jun 5 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Bug fix: |:SBSettings| is broken.
+    - Bug fix: syntax highlighting is sometimes broken the first time browser
+      window is open.
+    - Bug fix: formatting is sometimes broken with incremental update, when
+      browser is open after certain sequence of buffer changes.
+
+ autoload/selectbuf.vim |   39 ++++++++++++++++++++++-----------------
+ doc/selectbuf.txt      |   26 +++++++++-----------------
+ plugin/selectbuf.vim   |    9 +++------
+ 3 files changed, 34 insertions(+), 40 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue Sep 12 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Bug fix: multiselect usage is not conditional in some places.
+    - Bug fix: Syntax may not be setup correctly when the first time browser window
+      is opened.
+
+ autoload/selectbuf.vim |   14 +++++++-------
+ doc/selectbuf.txt      |    9 +++++++--
+ plugin/selectbuf.vim   |    4 ++--
+ 3 files changed, 16 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon Sep 11 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Started using vim7 features, so it is no longer backwards compatible.
+    - No longer depends on multvals. The plugin has been reworked to use Vim7 arrays
+      and sort(), so there should be significant improvement in performance
+      everywhere.
+    - It is now autoloaded on demand, which means it will help your vim session
+      load faster.
+    - Support for multiselect has been enhanced. The selections are a lot more
+      meaningful now, as they move along with the buffers. You can even sort the
+      contents and still not loose your selections.
+    - |:SBSettings| is now more flexible and easier to use as it supports arguments
+      and command-line completion.
+    - The global variables for the settings are no longer removed, but you should
+      still run |:SBInitialize| for any side effects to take place. Use
+      |:SBSettings| to make this easier.
+    If you want to use multiselect with this plugin, make sure you download the latest version of it.
+
+ autoload/selectbuf.vim | 2310 +++++++++++++++++++++++++++++++++++++++++++++
+ doc/selectbuf.txt      |  148 ++--
+ plugin/selectbuf.vim   | 2418 ++----------------------------------------------
+ 3 files changed, 2477 insertions(+), 2399 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.6)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon May 8 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Release 3.6 for vim7 compatibility. Also includes minor changes. This
+    will probably the last release that will work in Vim 6.3/6.4 version.
+    - Restoring search string works again. New setting
+      |selBufRestoreSearchString|.
+    - New mark d, see |selectbuf-marks|.
+
+ doc/selectbuf.txt    |   25 ++++++++
+ plugin/selectbuf.vim |  150 +++++++++++++++++++++++++++++++++++++------------
+ 2 files changed, 138 insertions(+), 37 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.5)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Mar 16 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fixes.
+    - Refresh now updates the MRU list.
+    - Fixed broken "toggle details" functionality.
+    - "SBLaunch ." now correctly launches windows explorer on the current
+      directory as expected.
+    - Entering buffer number directly in the browser window now works much
+      better.
+    - Misc. bug fixes.
+
+ plugin/selectbuf.vim |  203 ++++++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 147 insertions(+), 56 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.4)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Oct 28 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Faster sorting of buffer list.
+    - If multiselect is installed, you can use spacebar to toggle selection. See
+      |selectbuf-multiselect|.
+    - Fixed a bug in case-insensitive sorting of buffer names.
+    - Number keys are now mapped to jump to a buffer by its number. See
+      |selectbuf-buffer-search|.
+    - Bug fixes.
+        - If SBExec created a new window, it results in a Vim error.
+        - Toggle buffer numbers is broken.
+        - Other misc. bug fixes.
+    
+    Get the latest multvals (vimscript #171) and genutils (vimscript #197) plugins.
+
+ doc/selectbuf.txt    |   91 +++++++++++++++++++++++++++++++++++++++-----------
+ plugin/selectbuf.vim |   54 ++++++++++++++++++++++--------
+ 2 files changed, 111 insertions(+), 34 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Jul 23 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now requires Vim 6.3.
+    
+    Mostly a maintenance release.
+    	- Better launcher command for windows. You can now launch applications
+    	  with arguments, and handles spaces well.
+    	- Improved the performance of delete/wipeout when the list of files is
+    	  huge.
+    	- Better performance for toggling indicators,paths etc.
+    	- A fix for incremental update in split paths.
+
+ doc/selectbuf.txt    |   43 ++++--
+ plugin/selectbuf.vim |  448 ++++++++++++++++++++++++++++----------------------
+ 2 files changed, 280 insertions(+), 211 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Apr 7 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :help selectbuf-changes-3.2
+    
+    - Added a feature to split file paths, instead of the setting
+      selBufHighlightOnlyFilename. See help on |selBufAlwaysShowPaths|. The browser
+      by default now starts with this mode.
+    - The display is now more compact by the use of only required number of spaces
+      than using hard tabs.
+    - A setting to ignore case while sorting, see |selBufIgnoreCaseInSort|.
+    - A new "selectbuf" filetype to further customize the syntax highlighting and
+      extend the functionality, see |selectbuf-filetype|. There is now an API
+      available, see |selectbuf-extend|.
+    - New command SBExec for selections, see |SBExec|. Extremely useful to execute
+      external commands.
+    - Support for multiple selections through multiselect.vim plugin, see
+      |selectbuf-multiselect|.
+    - New command (very useful, at least on MS Windows), |SBLaunch|.
+    - Improved |SelBufTHiddenKey| and |SelBufTDetailsKey| to avoid doing a full
+      refresh. It should work much faster now.
+
+ doc/selectbuf.txt    |  432 ++++++++++++++--
+ plugin/selectbuf.vim | 1386 +++++++++++++++++++++++++++++++++-----------------
+ 2 files changed, 1301 insertions(+), 517 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri May 2 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed many bugs found/reported in version 3.0. The plugin is also much more responsive under WinManager. See :h |selectbuf-changes| for information on what is fixed. Thanks a lot to David Fishburn (fishburn at sybase dot com) for reporting many issues. I also had to fix some more of the WinManager issues, so please download the latest version (with my patches) from the URL mentioned in the installation section. Also download version 1.6 of genutils plugin.
+
+ doc/selectbuf.txt    |   60 ++++++--
+ plugin/selectbuf.vim |  427 ++++++++++++++++++++++++++++++--------------------
+ 2 files changed, 303 insertions(+), 184 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Sat Mar 29 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This is a major improvement over the previous version. One feature for
+    which I worked very hard is the incremental update of the buffer list.
+    The buffer opens very quickly now irrespective of how many files you
+    have currently open in your current session.  Here is a brief list of
+    new features. For a complete list and their description see the :help
+    selectbuf-features
+    
+        - Incremental update of the browser for speed. The browser caches the
+          the list of buffers and incrementally changes it as you open new
+          files and delete them.
+        - Hide buffer numbers to save real estate (useful with "Always on"
+          mode or with WinManager).
+        - New vim help file with detailed description of features and configuration.
+        - Block operations for buffer deletes now works well.
+        - "Always On" mode is now much better.
+        - Marks for a quick access to the next, previous and current buffers
+          has a better meaning.
+        - WinManager integration. This requires patches to WinManager
+          though. Until Srinath is out of his hibernation to validate my
+          patches and make the next release, it can be downloaded from:
+    
+    	http://mywebpage.netscape.com/haridara/vim/winmanager.vim
+    
+          With incremental update feature, opening files from WinManager now
+          literally flies. Get the latest versions of multvals and genutils plugins
+          along with this. I would very much appreciate any feedback.
+
+ doc/selectbuf.txt    |  469 ++++++++++++
+ plugin/selectbuf.vim | 1976 +++++++++++++++++++++++++++++---------------------
+ 2 files changed, 1629 insertions(+), 816 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.4)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue Feb 19 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Main improvement is the faster sorting algorithm. The browser sorts much quickly and works flawlessly when there are a lot of files open (order of 200), especially when the MRU is selected. Still more can be done to imrove the sorting speed.
+    - When the browser window is opened, a message is generated with the total number of buffers and number of buffers shown.
+    - Cleaned up a lot of stuff. Now the impact of the browser on the user environment is much less as it avoids cluttering search history and restores the unnamed register.
+
+ plugin/selectbuf.vim |  555 +++++++++++++++++++++++++++-----------------------
+ 1 files changed, 296 insertions(+), 259 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.3)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon Feb 4 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed the "myBufNr" not defined error reported by Halim Salman.
+
+ plugin/selectbuf.vim |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.2)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Feb 1 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I have finally added MRU soring support with the popular demand :)
+    
+    - Now you can specify the sorting method to be by MRU files. To make mru the default order, place this line in your vimrc:
+    
+    let g:selBufDefaultSortOrder = "mru"
+    
+    You can also use SBBufToHead and SBBufToTail commands with a buffer number argument to move the specified buffer to the starting and ending of the MRU list.
+    
+    - If you make any changes to the configuration, you can use the new command SBInitialize to reconfigure the internal data of selectbuf.vim.
+    
+    - Fixed some misc. bugs.
+    - FIxed the broken save/restore window settings (after converting to 6.0). Now even the vertically split windows are restored correctly.
+    
+    Note that you need the new improved script genutils.vim instead of the older bufNwinUtils.vim. Download it from
+    
+    http://vim.sourceforge.net/scripts/script.php?script_id=197
+    
+    Also you need the new improved multvals.vim instead of the older lightWeightArray.vim. Download it from:
+    
+    http://vim.sourceforge.net/scripts/script.php?script_id=171
+
+ plugin/selectbuf.vim |  375 +++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 261 insertions(+), 114 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.11)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Nov 15 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New feature to bulk delete/wipeout multiple buffers by selecting the rows.
+      Very useful when you load a bunch of files by mistake and you just want to
+      delete all the buffers at once. You can also sort by type and select all the
+      buffers of a particular type and delete/wipeout at once.
+    - Complete configurability of the key mappings for all the commands. You can
+      define your own key mappings for all the actions, or just for those that you
+      don't like the default key assignment. E.g., I don't like to use "?" for
+      showing the help (though it is more intuitive), as it disables my ability to
+      search backwards in the browser window. So I changed the assignment by
+      putting the following line in .vimrc
+    
+            noremap <silent> <Plug>SelBufHelpKey <C-H>
+    
+      The ? key is now freed and I can use ^H instead to toggle help header.
+
+ plugin/selectbuf.vim |  203 +++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 151 insertions(+), 52 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.10)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Nov 8 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I am making this a 2.1 release version after a good amount of usage for the past
+    few weeks. Here is a final summary of all the new features in this release:
+    
+        - help header with a status line
+        - open/close browser using the same key (to get a quick glance of the files)
+        - optionally show buffer indicators
+        - show/hide hidden buffers
+        - separate delete and wipeout functionality
+        - refresh browser
+        - show/hide path info
+        - buffer markers for easy navigation
+        - most of the features are configurable
+        - avoid cluttering the global name space with the config variables
+        - sort/reverse sort by "buffer nubmer", "name", "path", "type", "indicators"
+        - must better syntax highlighting (configurable)
+        - optionally open a vertical window for the browser
+        - three operating modes for the browser
+            - split: standard style, split opens the browser window
+            - switch: reuse the current window (bufexplorer style)
+            - keep: keep browser always open. Very useful when used with the
+                    previous option to open a vertically split window.
+    
+        Requires 1.0.3 bufNwinUtils.vim.
+    
+    Please keep sending bug reports/suggestions/comments etc.
+
+ plugin/selectbuf.vim |  194 ++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 149 insertions(+), 45 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1beta9)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon Nov 5 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I have added most of the features that I wanted to, and also fixed all the FIXME's. So the script is now mostly clean and very stable.
+    
+    - Now sort by name and sort by path are separate.
+    - Fixed the bug in remembering the cursor position.
+    - More configurability of the script. Fix for avoiding the global config params from cluttering the global namespace.
+    - You can specify a default sort order.
+    - Syntax coloring in the browser window is much better now.
+    - Added P command to show/hide paths.
+    - Improved stability.
+    
+    It is very close to a release version now.
+
+ plugin/selectbuf.vim |  443 ++++++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 317 insertions(+), 126 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1beta6)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Oct 26 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added some cool new features and fixed some problems.
+    
+    - Added sorting. You can now sort by "buffer number", "name", "type" or by "indicators".
+      - Use s to select the sort type forward.
+      - Use S to select the sort type backward.
+      - Use r to sort in the reverse order.
+      - Since r is more appropriate (and familiar) for reverse sorting, I used R to refresh the browser.
+    - I got the solution for the toggling the meaning of activation key, so now you can use the same key that activates the browser to even close it. So provided you have <F3> mapped, you can have a quick look at the browser by pressing <F3> twice in quick succession.
+    - I also used some nice 6.0 features to make the browser buffer more friendly.
+    - Fixed the spurious nomodifiable problem (happens occassionally). Thanks for reporting this problem.
+
+ plugin/selectbuf.vim |  423 ++++++++++++++++++++++++++++++++++++++++++-------
+ 1 files changed, 362 insertions(+), 61 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1beta3)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue Oct 23 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added the following useful features:
+    
+    - Optionally hide fileexplorer buffers.
+    - Undelete (relist) buffers.
+    - show status line with the current settings.
+
+ plugin/selectbuf.vim |   88 ++++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 71 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1beta2)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Oct 19 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I got a nice feedback from a few people that mapping cursor movement commands for functionality is asking for trouble. Since w, W, h and H are cursor movement commands, before it is too late, I changed the key mappings as follows:
+    
+    Delete buffer: d from D
+    Wipeout buffer: D from W
+    Toggle hidden: u from H (u for unlisted)
+    Toggle wrap: p from w
+    Toggle help: ? from h
+    
+    Now you shouldn't see many surprises when you follow your natural instincts to move cursor :)
+    Please continue to give feedback. Thank you.
+
+ plugin/selectbuf.vim |   35 +++++++++++++++++++----------------
+ 1 files changed, 19 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1beta1)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Oct 18 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Some nice improvements.
+    - help header (can be toggled)
+    - buffer indicators on the lines of :ls (can be toggled)
+    - show hidden buffers (can be toggled)
+    - Separate delete and wipeout functionality for buffers
+    - refresh browser (without reopening) .
+    - buffer markers to easily navigate.
+    - more robust.
+    - more configurability.
+    
+    It is still beta, but I have done quite a lot of testing and it seems to be stable. I would appreciate any bug reports and feedback. I have more ideas for some good features to come soon, but if you would like to see any features yourself, please let me know.
+    
+    You need the 1.0.1 version of bufNwinUtils.vim
+
+ plugin/selectbuf.vim |  433 +++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 338 insertions(+), 95 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0.3)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Oct 10 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Removed the ^M's.
+
+ plugin/selectbuf.vim |  458 +++++++++++++++++++++++++-------------------------
+ 1 files changed, 229 insertions(+), 229 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0.2)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon Oct 8 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    While converting the script to 6.0, lost the hack that restores search history when the browser is closed.
+
+ plugin/selectbuf.vim |   15 +++++++++++++--
+ 1 files changed, 13 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2001-10-05)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Oct 5 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README               |   67 +++++++++++++++
+ plugin/selectbuf.vim |  218 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 285 insertions(+), 0 deletions(-)

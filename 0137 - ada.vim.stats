@@ -1,0 +1,92 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.28, refs/heads/master)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Tue Nov 23 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    A number of block-matching related bug fixes.
+
+ indent/ada.vim |   24 ++++++++++++++----------
+ 1 files changed, 14 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.27)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Tue Feb 24 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    A couple of block indent recoveries (patch by Robert Nowotniak)
+
+ indent/ada.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.26)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Wed May 21 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix indent / block-matching after forward procedure specifications (Meikel Brandmeyer).
+
+ indent/ada.vim |   16 ++++++++++++----
+ 1 files changed, 12 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.25)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Tue Apr 8 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix 'end' after 'exception' mis-alignment.
+    Cope (hopefully) with multil-line 'thing is new other' declaration.
+
+ indent/ada.vim |   12 ++++++++----
+ 1 files changed, 8 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.24)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Mon Aug 5 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Allow a procecure call's arg. list's leading "(" to be on next line (Serge Robyns).
+    Fix bug whilst checking for indent of previous multi-line statement after a ";".
+
+ indent/ada.vim |    9 +++++++--
+ 1 files changed, 7 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.22)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Tue May 21 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Cope correctly with generic package instances ('package is new' - Thomas Maier-Komor).
+
+ indent/ada.vim |   14 +++++++++-----
+ 1 files changed, 9 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.20)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Fri Apr 5 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix & enhance indent during/after record definitions (Donald Bindner).
+
+ indent/ada.vim |   18 ++++++++++--------
+ 1 files changed, 10 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.19)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Mon Dec 10 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Stop 'beeping' bug when matching indent back to start of parenthesis pair.
+
+ indent/ada.vim |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.18)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Thu Nov 8 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README         |    7 ++
+ indent/ada.vim |  241 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 248 insertions(+), 0 deletions(-)

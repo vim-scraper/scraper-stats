@@ -1,0 +1,315 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2.6, refs/heads/master)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Sat Jul 31 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug for changing environments with <S-F5>.
+
+ ftplugin/auctex.vim |   12 ++++++------
+ 1 files changed, 6 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.5)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Thu May 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Some further cleanup
+
+ ftplugin/auctex.vim |   36 +++++++++++++++++++-----------------
+ 1 files changed, 19 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.4)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Wed May 26 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Slight improvement of the double insert macro of 2.2.3.  Removed corresponding <Tab> key bindings.
+
+ ftplugin/auctex.vim |   75 +++++++++++++++++++++------------------------------
+ 1 files changed, 31 insertions(+), 44 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.3)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Tue May 25 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Pressing <Insert> twice now changes brackets in various ways, according to a menu that appears at the bottom.
+
+ ftplugin/auctex.vim |   35 +++++++++++++++++++++++++++++++++--
+ 1 files changed, 33 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.2)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Mon May 17 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug in changing environments (perhaps due to changes in vim scripting).
+
+ ftplugin/auctex.vim |   12 ++++++------
+ 1 files changed, 6 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.1)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Wed Apr 22 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed small bug when searching for "bibliography".
+
+ ftplugin/auctex.vim |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Sun Mar 2 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Some bug fixes, especially in breaking lines.
+
+ ftplugin/auctex.vim |  108 ++++++++++++++++++++++++++-------------------------
+ 1 files changed, 55 insertions(+), 53 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.4)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Wed Feb 13 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Various features are faster and better.  For example, ending the line in a period now splits the line if it is too long.
+
+ ftplugin/auctex.vim |  246 ++++++++++++++++++++++++---------------------------
+ 1 files changed, 114 insertions(+), 132 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.3)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Mon Feb 4 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Speeded up the macro where ".." results in "\ldots" or "\cdots", or just "\dots".
+
+ ftplugin/auctex.vim |   11 +++++++----
+ 1 files changed, 7 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.2)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Mon Jan 28 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Suppressed search highlighting that came on in one of the macros, and made another small fix.
+
+ ftplugin/auctex.vim |    8 +++++---
+ 1 files changed, 5 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.1)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Mon Dec 31 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Another improvement to \ref and \cite macros, in line with the Reftex emacs package.
+
+ ftplugin/auctex.vim |  111 ++++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 79 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Wed Nov 14 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improved citation lookup.  Now pressing tab while in \cite{} will split the window and either view your bibitem entries (if any) or load your bibtex file.  Then you can go to the entry you want, press Enter, and the citation will be copied into \cite{}.  This was inspired by reftex, an emacs package.
+
+ ftplugin/auctex.vim |  129 +++++++++++++++++++++++++++++++--------------------
+ 1 files changed, 78 insertions(+), 51 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0011)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Mon Oct 15 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Yet another small improvement in the tab map.
+
+ ftplugin/auctex.vim |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0010)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Thu Oct 4 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Made a small improvement in the tab key map.
+
+ ftplugin/auctex.vim |   13 ++++++++-----
+ 1 files changed, 8 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0009)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Fri Sep 7 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    One small change.  To change an environment, type S-F1 through S-F5.  This replaces the control key, which is used for other things in KDE.  Otherwise, there seems to be no reason to change the script, please send suggestions if you think otherwise.
+
+ ftplugin/auctex.vim |  143 ++++++++++++++++++++++++++++++++-------------------
+ 1 files changed, 90 insertions(+), 53 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0008)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Fri Jul 30 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Inspired by LaTeX-Suite, the tab key has some new uses.  Inside \ref{}, it opens a subwindow with the reference keys.  Pressing enter will insert that reference.
+    Ditto for \cite{}.  Pressing enter within the bibtex reference will insert the proper
+    citation key.
+
+ ftplugin/auctex.vim |  228 +++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 178 insertions(+), 50 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0007)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Thu Mar 18 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug involving changes of environment.  (Control-F5)
+
+ ftplugin/auctex.vim |  274 +++++++++++++++++++++++++++++----------------------
+ 1 files changed, 158 insertions(+), 116 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0006)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Fri Jul 11 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The tab key now does word completion
+    outside of a math environment, or
+    produces a tab at the beginning of the
+    line or if the previous character is a
+    space.  Within a math environment, it takes you to the next set of
+    parentheses, or to the end of the
+    environment.  Other small fixes.
+
+ ftplugin/auctex.vim |  503 ++++++++++++++++++++++++++++++---------------------
+ 1 files changed, 300 insertions(+), 203 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0005)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Fri Dec 6 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed the last bug in this version
+    (I hope).
+
+ ftplugin/auctex.vim |   16 +++++++++++++---
+ 1 files changed, 13 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0004)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Mon Dec 2 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now running latex automatically
+    takes you to the error (if any).
+    Also, corrected a bug.
+
+ ftplugin/auctex.vim |  153 ++++++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 110 insertions(+), 43 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0003)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Mon Nov 11 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug in the automatic line
+    breaking.  Also, the script is now
+    easier to read and customize.
+
+ ftplugin/auctex.vim | 1156 ++++++++++++++++++++++++++++-----------------------
+ 1 files changed, 639 insertions(+), 517 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0002)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Mon Oct 28 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug
+
+ ftplugin/auctex.vim |   38 +++++++++++++++++++++++++++-----------
+ 1 files changed, 27 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0001)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Wed Oct 23 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Used the "mapleader" variable to make
+    it easier to customize some macros.
+
+ ftplugin/auctex.vim |  202 ++++++++++++++++++++++++++-------------------------
+ 1 files changed, 104 insertions(+), 98 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Fri Oct 4 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    auctex.vim is now compatible with both
+    latex and amslatex.  See the file for
+    details.  This mostly affects the function keys, which are used to enter the most common environments.
+
+ ftplugin/auctex.vim |  203 ++++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 151 insertions(+), 52 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6.1)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Tue Sep 3 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for the ampersand macro
+    in the tabular environment.  Suggested
+    by Johannes Ranke.
+
+ ftplugin/auctex.vim |   41 ++++++++++++++++++++++++-----------------
+ 1 files changed, 24 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Fri Jul 26 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Extensive code clean-up, with many
+    suggestions by Peppe Guldberg.  Various
+    improvements and fixes.  Some emacs
+    bindings included for convenience.
+    Vi purists can delete these!
+
+ ftplugin/auctex.vim |  587 ++++++++++++++++++++++++++++++---------------------
+ 1 files changed, 344 insertions(+), 243 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Sat Jun 22 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed the <F5> macro for the entering
+    environments (thanks to Peppe Guldberg and Torsten Wolf).  Improved the macros
+    for modifying brackets.  A few other
+    small changes, too.
+
+ ftplugin/auctex.vim |  140 +++++++++++++++++++++++++++++++++------------------
+ 1 files changed, 90 insertions(+), 50 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.01)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Sun Dec 9 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Corrected a bug in the bracket macros.
+
+ ftplugin/auctex.vim |    8 +++++---
+ 1 files changed, 5 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Carl Mueller <vim at carlm.e4ward.com>
+AuthorDate: Mon Dec 3 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |   74 +++++
+ ftplugin/auctex.vim |  793 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 867 insertions(+), 0 deletions(-)

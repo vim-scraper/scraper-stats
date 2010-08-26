@@ -1,0 +1,105 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.16, refs/heads/master)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Thu Jul 14 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    A number of padding-related bug-fixes.
+
+ plugin/renumber.vim |   14 ++++++++++----
+ 1 files changed, 10 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.13)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Mon Apr 19 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix bug when visual selection doesn't cover start of initial number (e.g., '456' of "123456".
+
+ plugin/renumber.vim |   13 +++++++++++--
+ 1 files changed, 11 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Mon Apr 19 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add support for renumbering hex values (0x1, 0x001, etc.).
+    Some more 'nasty' stuff, as vim can't convert dec->hex, so, unfortunately, this will only work with a perl-capable vim (you won't get any errors without perl, it just won't cope with it, as it didn't before).
+    You get a free global 'Dec2Hex' function, though :-)
+
+ plugin/renumber.vim |  104 ++++++++++++++++++++++++++++++++++++++++++--------
+ 1 files changed, 87 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Thu Dec 4 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug - now correctly skips lines with no matching nos. to renumber
+    Also hopefully copes with lines containing mixtures of tabs/spaces, which cause havoc with visual-block column numbers.
+    I'm doing some quite dodgy stuff to fix that, so please let me know if it misbehaves.
+
+ plugin/renumber.vim |   36 +++++++++++++++++++++++++-----------
+ 1 files changed, 25 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Wed May 21 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Wasn't matching preceeding '-'s as part of a number to replace.
+    - Added r[everse] option, to start renumbering from the end of the block.
+
+ plugin/renumber.vim |   21 +++++++++++++--------
+ 1 files changed, 13 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Mon Mar 31 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fix arg. parsing for negative renumbering (John Sumsion)
+
+ plugin/renumber.vim |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Thu Mar 27 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bugfix the month/day stuff, plus a little speed optimisation.
+
+ plugin/renumber.vim |   65 +++++++++++++++++++++++++++++---------------------
+ 1 files changed, 38 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Wed Mar 26 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add 'renumber' of days-of-week and months-of-year (English only)!
+
+ plugin/renumber.vim |  120 +++++++++++++++++++++++++++++++++-----------------
+ 1 files changed, 79 insertions(+), 41 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Tue Mar 12 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Use col() instead of virtcol(), thus letting it work on lines containing <Tabs>!
+
+ plugin/renumber.vim |   10 +++++-----
+ 1 files changed, 5 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Neil Bird <neil at fnxweb.com>
+AuthorDate: Wed Jan 23 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |   37 ++++++++++
+ plugin/renumber.vim |  186 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 223 insertions(+), 0 deletions(-)

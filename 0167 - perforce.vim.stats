@@ -1,0 +1,72 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5, refs/heads/master)
+Author:     Tom Slee <no_spam_tslee at ianywhere.com>
+AuthorDate: Thu Jun 21 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Extensive enhancements by Suresh Srinivasan:
+    
+    Added a set of changelist commands ('&#039 indicates the leader character):
+    
+        \v - Show list of versions of the file.
+        \u - Show unified diff of the file.
+        \z - Show diff between specific versions of the file.
+        \p - Show depot version of file.
+        \a - Show depot version of file with annotations (revision# for each line).
+        \x - Mark file for delete.
+    
+        \C - Create new changelist.
+        \D - Show diff of all files in a changelist.
+        \F - Show list of files in a changelist.
+        \L - Show list of pending changelists.
+        \X - Delete a changelist.
+        \S - Submit current changelist.
+        \I - Show changelist info.
+    
+        \h - Show Help message.
+        \l - Login into perforce.
+        \\ - Show general perforce info (license, location, etc.).
+    
+    Status line message now includes the changelist number.
+
+ plugin/perforce.vim |  490 +++++++++++++++++++++++++++++++++++++++++++++++----
+ 1 files changed, 454 insertions(+), 36 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Tom Slee <no_spam_tslee at ianywhere.com>
+AuthorDate: Thu Sep 11 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Useful enhancements made by Terrance Cohen:
+    
+    - Added P4DiffFile() option
+    - "[Not in p4]" appears on ruler instead of "0"
+    - Added defaults to confirmation dialogs so user can just hit enter or
+    escape... no need to find a hotkey. Revert defaults to 'No', others
+    default to 'Yes'.
+    - Changed icons in confirmation dialogs to question
+    - Rephrased confirmation texts to make them easier to parse quickly
+
+ plugin/perforce.vim |  159 ++++++++++++++++++++++++++++++++-------------------
+ 1 files changed, 99 insertions(+), 60 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Tom Slee <no_spam_tslee at ianywhere.com>
+AuthorDate: Tue Jan 15 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - fixed bug where cursor position within a line was not always maintained across p4 operations on the file.
+    - sped up "p4 edit" operation -- it now uses two shell commands instead of three.
+
+ plugin/perforce.vim |  138 +++++++++++++++++++++-----------------------------
+ 1 files changed, 58 insertions(+), 80 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Tom Slee <no_spam_tslee at ianywhere.com>
+AuthorDate: Thu Dec 13 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |   11 ++
+ plugin/perforce.vim |  319 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 330 insertions(+), 0 deletions(-)

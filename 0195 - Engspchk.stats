@@ -1,0 +1,175 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/64, refs/heads/master)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Mon Oct 30 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    When filetype is mail, spell checking no longer takes place in initial lines
+
+ doc/engspchk.txt    |   19 +++++++++++--------
+ plugin/cecutil.vim  |   39 ++++++++++++++++++++++++---------------
+ plugin/engspchk.vim |   13 +++++++++----
+ 3 files changed, 44 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/63)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Feb 15 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Small things: includes CVIMSYN/engspchk.match, uses cecutil, and CVIMSYN can now have spaces in its path
+
+ CVIMSYN/engspchk.match |    1 +
+ doc/engspchk.txt       |   12 ++-
+ plugin/cecutil.vim     |  455 ++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/engspchk.vim    |  213 +++++------------------
+ 4 files changed, 511 insertions(+), 170 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/62)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue Jul 12 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    cpo workaround and improved visual-block only spellchecking
+
+ CVIMSYN/engspchk.dict   |   38 +++---
+ CVIMSYN/engspchk.proper |    2 +-
+ CVIMSYN/engspchk.rare   |    4 +-
+ doc/engspchk.txt        |    4 +-
+ plugin/engspchk.vim     |  291 +++++++++++++++++++++++++++--------------------
+ 5 files changed, 193 insertions(+), 146 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/61)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Mon Mar 14 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    A check is made for +clipboard before attempting to clear it
+
+ CVIMSYN/engspchk.rare |    2 +-
+ doc/engspchk.txt      |   19 ++++++++++++-------
+ plugin/engspchk.vim   |   36 +++++++++++++++++++-----------------
+ 3 files changed, 32 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/60)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Fri Feb 11 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Engspchk now has improved operation with html.
+    Engspchk checks if "m" is part of guioptions before doing (un)menu operations.
+    Contractions have now been moved to [lang]spchk.contraction; hopefully, some
+    folks will step up and make some contraction dictionaries for their native
+    languages (I know that French, for example, needs such support!).
+
+ CVIMSYN/engspchk.contraction |   29 +++++++
+ CVIMSYN/engspchk.dict        |   20 +++---
+ doc/engspchk.txt             |   15 ++++-
+ plugin/engspchk.vim          |  166 +++++++++++++++++++-----------------------
+ 4 files changed, 128 insertions(+), 102 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/59)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Dec 15 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Silenced all "unmenu" operations; included more tests to see if the gui is actually running before attempting to (un)install menus
+
+ doc/engspchk.txt    |   11 +++++---
+ plugin/engspchk.vim |   63 ++++++++++++++++++++++++++++----------------------
+ 2 files changed, 42 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/58)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue Nov 9 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Engspchk now has language-specific starting commands: :Engspchk :Nlspchk :Spanspchk etc (which are based on the dictionaries you have available in $CVIMSYN)
+    Error messages now have a "press <cr> to continue" message so that one can see them.
+    Bugfixes: modeline priority, modeline highlighting, incomplete saving/restoration of user maps
+
+ doc/engspchk.txt    |  118 ++++++++++++++++++++++-------
+ plugin/engspchk.vim |  210 +++++++++++++++++++++++++++++++++------------------
+ 2 files changed, 226 insertions(+), 102 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/57)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Thu Jun 17 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New Feature: \ev enables spell checking on just a visual-block (ie. ctrl-v, v, or V), and \eV removes the block restriction
+    New utf8 German (with two dialects) and Russian dictionaries (tnx, Sergey Markelov!)
+    bugfix: when mapleader wasn't explicitly set, a variable-not-found message resulted.  Fixed (tnx, Sergey Markelov!)
+
+ CVIMSYN/engspchk.rare |    2 +-
+ doc/engspchk.txt      |   15 ++++++++++-
+ plugin/engspchk.vim   |   69 +++++++++++++++++++++++++++++++++++++++++-------
+ 3 files changed, 74 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/56)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Mon Jun 14 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    \ej, \eJ: enables saving words to and from *spchk.proj, engspchk's project support.
+    bugfix: the loading of colorschemes usually wiped out RareWord and Dialect highlighting.  A CursorHold is now used to restore such highlighting.
+    bugfix: usually languages (C Vim Mail etc) want to confine spellchecking to certain regions (ie. comments).  The latest engspchk does that, but the dictionaries needed to be changed.  engspchk.dict is changed for you, but new non-English dictionaries also need to be obtained.
+
+ CVIMSYN/engspchk.dialect |   26 ++++----
+ CVIMSYN/engspchk.dict    |  102 +++++++++++++-------------
+ CVIMSYN/engspchk.proper  |    8 +-
+ CVIMSYN/engspchk.rare    |    4 +-
+ doc/engspchk.txt         |   56 +++++++++++++--
+ plugin/engspchk.vim      |  175 +++++++++++++++++++++++++++++----------------
+ 6 files changed, 232 insertions(+), 139 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/55)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Mon Jun 7 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bugfixes: now uses finish instead of exit for certain errors, an exception has been made for mail for extensive spell checking, the "-" has been removed from iskeyword for French (please let me know if other languages need it removed, too!), an improved search method for dictionaries (often won't need CVIMSYN set anymore!).  Most important, a bug with wordlist generation caused some words to be dropped that should not have been.  Pls wipe out your old engspchk.wordlist and let engspchk v55 re-generate it!
+
+ doc/engspchk.txt    |  430 +++++++++++++++++++++++++++-----------------------
+ plugin/engspchk.vim |  437 +++++++++++++++++++++++++++++++++++++--------------
+ 2 files changed, 545 insertions(+), 322 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/50)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue May 11 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    \er and \ed now cycle through three states:
+      "RareWord/Dialect : Error : no" highlighting
+    
+    Engspchk now supports modelines (spchk: ...)
+    where one may set options such as acronym,
+    altright, autonext, cvimsyn, dialect, DrChipTopLvlMenu,
+    mouse, nonhl, proj, punc, silent, and lang.
+    
+    Engspchk has dictionaries for: Dutch, Galician, German,
+    Hungarian, Italian, Russian, Spanish, Polish.  A Yiddish
+    variant has also been made available.  See
+    http://www.erols.com/astronaut/index.html#vimlinks_scripts
+    Engspchk supports selecting from multiple languages by mouse.
+
+ CVIMSYN/engspchk.dialect      |   18 +
+ CVIMSYN/engspchk.dict         |   54 ++
+ CVIMSYN/engspchk.proper       |    7 +
+ CVIMSYN/engspchk.rare         |  143 ++++
+ VIMSCRIPT/engspchk.vim        |  525 ---------------
+ VIMSCRIPT/wb1913_engspchk.vim |   56 --
+ doc/engspchk.txt              |  734 +++++++++++++++++++--
+ plugin/engspchk.vim           | 1473 +++++++++++++++++++++++++++++++++++++++++
+ 8 files changed, 2366 insertions(+), 644 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.09)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Jan 30 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                        |  132 +++++++++++
+ VIMSCRIPT/engspchk.vim        |  525 +++++++++++++++++++++++++++++++++++++++++
+ VIMSCRIPT/wb1913_engspchk.vim |   56 +++++
+ doc/engspchk.txt              |   72 ++++++
+ 4 files changed, 785 insertions(+), 0 deletions(-)

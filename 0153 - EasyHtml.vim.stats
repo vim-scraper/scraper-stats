@@ -1,0 +1,114 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5.1, refs/heads/master)
+Author:     Gontran BAERTS <gbcreation at free.fr>
+AuthorDate: Fri Mar 22 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - No longer use of the modifiable option.
+
+ plugin/EasyHtml.vim |   26 ++++++++++++++++++--------
+ 1 files changed, 18 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Gontran BAERTS <gbcreation at free.fr>
+AuthorDate: Mon Mar 18 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Now use liblist.vim script to handle lists and genutils.vim script to handle windows (Thanks to Hari Krishna Dara for this script).
+    Download them at
+      http://vim.sourceforge.net/scripts/script.php?script_id=166
+    and
+      http://vim.sourceforge.net/scripts/script.php?script_id=197
+    Make script smaller.
+    - Mapping changed !
+      <F2> displays tag attributes
+      <F3> displays attributes values
+      <F4> displays CSS Properties values
+      <ENTER> no longer close list after item addition. Use <S-ENTER> to add and exit from list.
+    - More user friendly : you no longer need to move cursor exactly on the keyword. Cursor may stay on '=', ':' or '"' signs just after keyword while hitting <F2>, <F3> or <F4> keys.
+    For example,
+    . Tags : <img
+      Hitting <F2> key works while cursor is at '<' sign.
+    . Attributes : style=""
+      Hitting <F3> key works while cursor is at '=' or '"' signs.
+    . CSS properties : background-color:;
+      Hitting <F4> key works while cursor is at ':' or ';' signs.
+    - New g:eh_atfirstplace variable. See Usage section above.
+    - Fix modifiable setting again
+    - Fix syntax error for the "frame" attribute of <table> tag which causes "border" attribute to not been seen in attributes list.
+
+ plugin/EasyHtml.vim |  565 ++++++++++++++++++++++++++-------------------------
+ 1 files changed, 292 insertions(+), 273 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.1)
+Author:     Gontran BAERTS <gbcreation at free.fr>
+AuthorDate: Wed Dec 5 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fix infinite loop to find window when easyhtml buffer is hidden. Thanks to Jonathon Merz who pointed out the bug and send me the patch.
+    'The drawback to this fix is that it will reinitialize all the buffer
+    mappings and such for the EasyHtml buffer every time the buffer is opened but
+    is not in a window already', he says. Hari Krishna Dara has made a great script named bufNwinUtils.vim which contains useful functions to handle buffers and windows. It will allow me to avoid the drawback. I'm interesting to use his script with mine, but it requires to load entire bufNwinUtils.vim for only  two or three functions used. What do you think about that ? give me feedback, thanks.
+
+ plugin/EasyHtml.vim |   11 ++++++++---
+ 1 files changed, 8 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Gontran BAERTS <gbcreation at free.fr>
+AuthorDate: Mon Dec 3 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added values for the "style" attribute (CSS2 properties)
+    - Added values for CSS2 properties
+    - <PageUp> and <PageDown> are now usable to move highlight through the list
+    - When adding a value for an attribute, current attribute value (if exists) is replaced by the selected one, except for "style" attribute for which values are append
+    - Set g:eh_singlequote variable to 0 or 1 to use double or single quote when adding attributes (For example id="" or id='')
+
+ plugin/EasyHtml.vim |  426 +++++++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 313 insertions(+), 113 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Gontran BAERTS <gbcreation at free.fr>
+AuthorDate: Wed Nov 28 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Attributes list updated
+    - Don't display attributes list for closing tags
+    - Now, display values list when hitting <F3> with cursor on attribute word (for some attributes only).
+
+ plugin/EasyHtml.vim |  291 ++++++++++++++++++++++++++++++---------------------
+ 1 files changed, 174 insertions(+), 117 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
+Author:     Gontran BAERTS <gbcreation at free.fr>
+AuthorDate: Tue Nov 27 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fix global modifiable setting instead of local
+
+ plugin/EasyHtml.vim |   15 +++++++++------
+ 1 files changed, 9 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Gontran BAERTS <gbcreation at free.fr>
+AuthorDate: Mon Nov 26 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Attributs list is now alphabetically sorted
+    - Hitting <F3> allows to display attributs list in Insert mode too
+    - Allows to select an attribut by incremental search :-)
+    For example, with <body> tag, typing "onk" (normal mode) in the attributs list buffer automatically select "onkeydown" attribut. Use backspace (<BS>) to remove characters. This behavior is enable by setting g:eh_incsearch variable to 1. Warning : when incremental attribut search is on, 'q', 'h', 'j', 'k' and 'l' keys aren't used to exit from list and to move highlighting. Use 'Q', '<Left>', '<Down>', '<Up>' and '<Right>' instead.
+    - Check for attributs list already opened, and reuse it
+
+ plugin/EasyHtml.vim |  548 +++++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 374 insertions(+), 174 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Gontran BAERTS <gbcreation at free.fr>
+AuthorDate: Wed Nov 21 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |   34 +++++
+ plugin/EasyHtml.vim |  363 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 397 insertions(+), 0 deletions(-)

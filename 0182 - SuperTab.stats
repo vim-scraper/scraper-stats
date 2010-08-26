@@ -1,0 +1,91 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.41, refs/heads/master)
+Author:     Gergely Kontra <pihentagy at gmail.com>
+AuthorDate: Tue Jul 11 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed couple bugs introduced in last version
+    Eric Van Dewoestine
+
+ plugin/supertab.vim |   46 +++++++++++++++++++++-------------------------
+ 1 files changed, 21 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Gergely Kontra <pihentagy at gmail.com>
+AuthorDate: Mon May 15 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Upgrade by Eric Van Dewoestine
+
+ plugin/SuperTab.vim |   73 -----------------
+ plugin/supertab.vim |  215 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 215 insertions(+), 73 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.32)
+Author:     Gergely Kontra <pihentagy at gmail.com>
+AuthorDate: Mon Nov 10 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bugfix: tab insertion/completion decidion correction. SuperTab now inserts <Tab>, if the preceding character is whitespace
+    Thx to  Lorenz Wegener
+
+ plugin/SuperTab.vim |    5 +++--
+ 1 files changed, 3 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.31)
+Author:     Gergely Kontra <pihentagy at gmail.com>
+AuthorDate: Fri Sep 20 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now SuperTab allow cycling back with <S-Tab>
+    Limitations: You must cycle forward before and it works in the GUI version only
+
+ plugin/SuperTab.vim |   15 +++++++++++----
+ 1 files changed, 11 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Gergely Kontra <pihentagy at gmail.com>
+AuthorDate: Tue Mar 19 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Back to the roots.
+    * Bugfix
+    * Autocompletion removed
+
+ plugin/SuperTab.vim |  180 ++++----------------------------------------------
+ 1 files changed, 15 insertions(+), 165 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2afix)
+Author:     Gergely Kontra <pihentagy at gmail.com>
+AuthorDate: Tue Feb 19 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug with <C-X>p and <C-x>n.
+    <C-E> and <C-Y> modes are not remembered now.
+
+ plugin/SuperTab.vim |  213 ++++++++++++++++++++++++++------------------------
+ 1 files changed, 111 insertions(+), 102 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2alpha)
+Author:     Gergely Kontra <pihentagy at gmail.com>
+AuthorDate: Fri Jan 18 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Experimental autocompletion mode.
+    It can be turned on and off with \ac.
+    In this mode <CR> accept autocompletion, <Del> clears the current autocomplete <Esc> goes back to normal mode without applying the offered autocompletion, and <Tab> allows another completion (from this point, you cannot undo the completion you made)
+    The script uses Charles E. Campbell, Jr.'s SaveMap function.
+    The script is bigger and bigger. Help me to simplify it.
+
+ plugin/SuperTab.vim |  165 +++++++++++++++++++++++++++++++++++++++++++++++++--
+ 1 files changed, 159 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Gergely Kontra <pihentagy at gmail.com>
+AuthorDate: Tue Jan 15 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |    7 ++++++
+ plugin/SuperTab.vim |   53 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 60 insertions(+), 0 deletions(-)

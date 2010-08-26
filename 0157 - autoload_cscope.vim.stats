@@ -1,0 +1,31 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3, refs/heads/master)
+Author:     michael tilstra <tadpol at tadpol.org>
+AuthorDate: Mon Jan 28 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fixed the issue where it wasn't always finding the right place to start looking.
+    usnig the nifty fnamemodify() function saves a lot of crude I was trying to do by hand.
+
+ plugin/autoload_cscope.vim |   20 ++++++++------------
+ 1 files changed, 8 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     michael tilstra <tadpol at tadpol.org>
+AuthorDate: Mon Jan 14 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fixed up the Cycle_csdb function a bit.  still has a few little bugs.  but they don't seem to be life threatening.  (scan the file for FIXME to see them)
+
+ plugin/autoload_cscope.vim |   78 +++++++++++++++++++++++--------------------
+ 1 files changed, 42 insertions(+), 36 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     michael tilstra <tadpol at tadpol.org>
+AuthorDate: Fri Nov 30 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                     |    9 ++
+ plugin/autoload_cscope.vim |  179 ++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 188 insertions(+), 0 deletions(-)

@@ -1,0 +1,96 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     Andrew Nikitin <andrewnikitin at yahoo.com>
+AuthorDate: Wed Dec 17 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    special processing for line-block movements, changed cabbr for perl
+
+ doc/boxdraw.txt    |   57 ++++++++++++++++++++++++++++++++-----------------
+ plugin/boxdraw.vim |   60 ++++++++++++++++++++++++++++++++++++++++-----------
+ 2 files changed, 84 insertions(+), 33 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Andrew Nikitin <andrewnikitin at yahoo.com>
+AuthorDate: Fri Nov 26 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    combined single-byte and utf8 versions, included sampler.txt to help determine encoding
+
+ bdua2b.pl                |   34 +++-
+ doc/boxdraw.txt          |   36 +++-
+ doc/keyboard-utf16le.txt |  Bin 2028 -> 0 bytes
+ doc/keyboard.txt         |   18 --
+ doc/resistor-network.txt |   37 ----
+ doc/sampler.txt          |   13 ++
+ doc/vetka.txt            |   19 --
+ plugin/boxdraw-tiny.vim  |   46 -----
+ plugin/boxdraw.vim       |  463 +++++++++++++++++++++++++--------------------
+ 9 files changed, 321 insertions(+), 345 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Andrew Nikitin <andrewnikitin at yahoo.com>
+AuthorDate: Fri Jun 18 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    following the lines, updated perl scripts
+
+ bdua2b.pl            |   73 ++++++++++++++++++++++++++++++++++++
+ bdub2a.pl            |   30 +++++++++++++++
+ border.pl            |   53 --------------------------
+ doc/boxdraw.txt      |   32 +++++++++-------
+ outline.pl           |   34 +++++++++++++---
+ plugin/bd-single.vim |   81 ----------------------------------------
+ plugin/boxdraw.vim   |  101 ++++++++++++++++++++++++++++++++++++++++++-------
+ 7 files changed, 234 insertions(+), 170 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Andrew Nikitin <andrewnikitin at yahoo.com>
+AuthorDate: Tue Nov 25 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    perl scripts + some rectangular block movements
+
+ border.pl               |   53 +++++++++++++++++++++++++++++++++++++
+ doc/boxdraw.txt         |   67 ++++++++++++++++++++++++++++++++++++++++------
+ outline.pl              |   54 +++++++++++++++++++++++++++++++++++++
+ plugin/boxdraw-tiny.vim |   46 ++++++++++++++++++++++++++++++++
+ plugin/boxdraw.vim      |   37 ++++++++++++++++++++++++-
+ 5 files changed, 246 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Andrew Nikitin <andrewnikitin at yahoo.com>
+AuthorDate: Wed Jan 30 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    support for single-byte encoding, box->ascii conversion
+
+ doc/boxdraw.txt          |   67 +++++++++++++++++++++++++++++---------
+ doc/keyboard-utf16le.txt |  Bin 0 -> 2028 bytes
+ doc/keyboard.txt         |   18 ++++++++++
+ doc/resistor-network.txt |   37 +++++++++++++++++++++
+ doc/vetka.txt            |   19 +++++++++++
+ plugin/bd-single.vim     |   81 ++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/boxdraw.vim       |   41 +++++++++++++++++------
+ 7 files changed, 237 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Andrew Nikitin <andrewnikitin at yahoo.com>
+AuthorDate: Thu Jan 10 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Double boxeswere added. Still only utf-8.
+
+ doc/boxdraw.txt    |   45 ++++++++++++++++++++++
+ plugin/boxdraw.vim |  105 +++++++++++++++++++++++++++++++--------------------
+ 2 files changed, 109 insertions(+), 41 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0)
+Author:     Andrew Nikitin <andrewnikitin at yahoo.com>
+AuthorDate: Wed Jan 9 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README             |  156 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/boxdraw.vim |   58 +++++++++++++++++++
+ 2 files changed, 214 insertions(+), 0 deletions(-)

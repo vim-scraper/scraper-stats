@@ -1,0 +1,457 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.5, refs/heads/master)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Sep 17 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Re-uploading the zip file with the correct name.
+    - Improved genutils#CleanupFileName() to expand "~" and environment
+      variables. It also works more reliably now.
+    - More user friendly version of genutils#UserFileComplete() function
+      added as genutils#UserFileComplete2(). It can now be used directly as
+      the custom or customlist function in commands (so saves trouble for
+      users, as no wrapper needs be written), and also offer various
+      customizations via passing params.
+    - New function genutils#UserDirComplete2(), which is a customization on
+      top of genutils#UserFileComplete2() for the sake of restricting the
+      completions to directories only.
+    - Minor improvements in genutils#PathIsAbsolute() and
+      genutils#GetVimCmdOutput()
+
+ autoload/genutils.vim |  152 ++++++++++++++++++++++++++++--------------------
+ plugin/genutils.vim   |   99 ++++++++++++++++++++++++--------
+ 2 files changed, 164 insertions(+), 87 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue Jun 12 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed some corner cases in RelPathFromDir()/RelPathFromFile().
+    - Made the default comparators sort() function friendly.
+
+ autoload/genutils.vim |   93 ++++++++++++++++++++++--------------------------
+ plugin/genutils.vim   |   86 ++++++++-------------------------------------
+ 2 files changed, 58 insertions(+), 121 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Sun Sep 3 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - SilentSubstitute() and SilentDelete() should preserve cursor position.
+    - CleanupFileName() should also remove any leading or trailing
+      whitespace.
+
+ autoload/genutils.vim |    8 +++++++-
+ plugin/genutils.vim   |   13 ++++++++-----
+ 2 files changed, 15 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Aug 31 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - EscapeCommand() now supports Lists as arguments.
+    - CrUnProtectedCharsPattern() now accepts an optional "capture"
+      argument.
+    - Renamed PromptForElement2 to PromptForElement. It was a typo.
+
+ autoload/genutils.vim |   63 +++++++++++++++++++++++++++++++++---------------
+ plugin/genutils.vim   |   25 ++++++++++++-------
+ 2 files changed, 59 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Aug 9 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed a typo in AddNotifyWindowClose() in the previous release.
+    - Added BinSearchList() function.
+    (uploading again to correct the Vim compatibility information, sorry to bump up)
+
+ autoload/genutils.vim |   48 +++++++-----
+ plugin/genutils.vim   |  204 ++++++++++++++++---------------------------------
+ 2 files changed, 93 insertions(+), 159 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Jun 23 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    genutils 2.0 release for Vim7.0.
+    This release is not backwards compatible with previous genutils or Vim
+    versions, so download this version only when a plugin explicitly
+    depends on this version. If you want to use plugins that use both the
+    old and new version of genutils, then you need to follow the below
+    procedure so that both can co-exist:
+    - Install the latest version of genutils first. Overwriting all existing
+      files.
+    - Open the plugin/genutils.vim file and note the value set to
+      loaded_genutils variable.
+    - Install the older version of genutils (non autoload version) in to
+      plugin directory, overwriting the existing file.
+    - Open the plugin/genutils.vim again and change the value of
+      loaded_genutils variable to the value you noted before and save it.
+    
+    This version has the following changes:
+    - No longer depends on multvals plugin. Inherits some useful functions
+      from multvals to make way for it to be retired (in favor of Vim7
+      arrays). New functions are:
+      CrUnProtectedCharsPattern
+      PromptForElement/GetSelectedIndex
+    - Fix for Save/RestoreHardPosition() not working right when there are
+      wrapped lines in the window.
+    - Dropped the AddToFCShell and RemoveFromFCShell functions as these
+      can't be implemented in Vim7 because of new restrictions on
+      FileChangedShell autocommand. Use AddToFcShellPre and
+      RemoveFromFCShellPre functions instead.
+
+ autoload/genutils.vim | 1926 ++++++++++++++++++++++++++++++++++
+ plugin/genutils.vim   | 2726 +++++++++----------------------------------------
+ 2 files changed, 2409 insertions(+), 2243 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.20)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue May 9 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Release 1.20 for fixing an issue with my previous release. Thanks to
+    Niels, Delphin and Craig for reporting the problem. If you downloaded the latest selectbuf, please download this version of genutils.
+
+ plugin/genutils.vim |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.19)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon May 8 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now Vim7 compatible, no functionality change.
+
+ plugin/genutils.vim |  332 ++++++++++++++++++++++++++-------------------------
+ 1 files changed, 170 insertions(+), 162 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.18)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Mar 16 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New functions OpenWinNoEa() and CloseWinNoEa() which open and close
+      windows with minimal side effects (such as minimizing the impact on
+      the current window sizes, restoring the cursor to the original window
+      and even restoring the current-previous-window). This is a good
+      alternative to using the existing Save/RestoreWindowSettings()
+      method.
+    - GetShellEnvType() is now public. Useful in conjunction with the
+      EscapeCommand() function.
+
+ plugin/genutils.vim |   94 ++++++++++++++++++++++++++++++++++++++++++++------
+ 1 files changed, 82 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.17)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Oct 28 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Minor corrections to the FindBufferForName() function to work well
+      with filenames containing backslashes (see doc).
+
+ plugin/genutils.vim |   23 +++++++++++++++--------
+ 1 files changed, 15 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.16)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Oct 20 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fast BinInsertSort() based on the BISort() by Peit Delport's.
+    - Slightly improved QSort().
+
+ plugin/genutils.vim |  106 ++++++++++++++++++++++++++++++++++++++++++++------
+ 1 files changed, 93 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.15)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon Oct 18 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New functions:
+    - CloseWindow()
+    - MarkActiveWindow()
+    - RestoreActiveWindow()
+    New overloaded function for:
+    - SilentDelete()
+    
+    - Fixed IsOnlyVerticalWindow() and IsOnlyHorizontalWindow() to use
+      MarkActiveWindow() and RestoreActiveWindow() to avoid corrupting the
+      "previous-window".
+
+ plugin/genutils.vim |  166 ++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 132 insertions(+), 34 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.14)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Aug 11 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New functions: GetNextWinnrInStack, GetLastWinnrInStack, MoveCursorToNextInWinStack, MoveCursorToLastInWinStack based on Dr. Chip's WinStackMv() function.
+    - New functions: SaveVisualSelection, RestoreVisualSelection.
+    - FIxed a possible issue with my earlier change. You can't add to 'eventignore'  if its current value is "all".
+    - Some improvement to RestoreWindowSettings(). It is still not working perfectly. Actually, there are no commands available in Vim to accurately resize windows in all circumstances.
+    - Save/Restore functions for cursor positions now create marks in the buffer context. This means, you can use the same name to create marks in different buffers, without overwriting each other. This is how Vim works for lowercase marks anyway.
+    - Misc. other improvements/bugfixes.
+
+ plugin/genutils.vim |  353 ++++++++++++++++++++++++++++++++++++++++++---------
+ 1 files changed, 294 insertions(+), 59 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.13)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Jul 7 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now requires Vim 6.3
+    
+    - More documentation. I now added a section with all the supported functions at one place so it is easy to lookup.
+    - New function GetBufNameForAU().
+    - New functions to help write custom completion functions, UserFileComplete() and UserFileExpand()
+    - Some clarifications on EscapeCommand().
+    - Improved CleanFileName() to work with Windows UNC paths.
+
+ plugin/genutils.vim |  283 ++++++++++++++++++++++++++++++++++++++++++++-------
+ 1 files changed, 244 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Jun 18 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New function EscapeCommand() extracted from my perforce.vim plugin. This
+      makes it simpler for plugins to execute external commands passing
+      arguments literally.
+    - New functions IsOnlyHorizontalWindow(), IsOnlyVerticalWindow(),
+      QuoteStr(), SilentSubstitute(), SilentDelete()
+    - More documentation on GetPreviewWinnr(), DefFileChangedShell(),
+      MakeArgumentString(), MakeArgumentList(), UnEscape(), GetSpacer()
+
+ plugin/genutils.vim |  490 ++++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 347 insertions(+), 143 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon Mar 29 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Most important change is a lot of documentation with function prototypes. Now it is not necessary to look into the code to see the help and usage information. I also documented a lot of functions that lacked documentation earlier.
+    - A few minor fixes to bugs/inconsistencies and other improvements in Escape(), RestoreSoftPosition, Notify window close related functionality. Also added a patch from Bram for persistence related funcationality.
+
+ plugin/genutils.vim |  993 +++++++++++++++++++++++++++++++--------------------
+ 1 files changed, 611 insertions(+), 382 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Dec 17 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed bugs in the RelPathFromFile and RelPathFromDir functions.
+    - The g:loaded_genutils variable now contains the version number for dependency checking (see ":help v:version" for format). If your plugin depends on genutils.vim, it is now easy and safe to check if the user has at least the minimum base version.
+
+ plugin/genutils.vim |   46 +++++++++++++++++++++++++++++++---------------
+ 1 files changed, 31 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Oct 30 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Misc. functions added: GetSpacer, GetPreviewWinnr, ExtractFuncListing, UnEscape, GetLine/ColPosition. Removed undocumented IsPreviewWindowOpen function. See description for more details.
+
+ plugin/genutils.vim |  118 +++++++++++++++++++++++++++++----------------------
+ 1 files changed, 67 insertions(+), 51 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Aug 28 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    When disabling persistence feature using g:genutilsNoPersist, it is possible for the plugins that depend on it to fail. Fixed it.
+
+ plugin/genutils.vim |   48 +++++++++++++++++++++++++++---------------------
+ 1 files changed, 27 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon Aug 25 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Misc. changes, see script for more details.
+    - The scriptlets g:makeArgumentString g:makeArgumentList have been replaced with new function MakeArgumentString() and MakeArgumentList() and the usage now is more concise. The old usage is now deprecated.
+    - New functions Escape(), GetVimCmdOutput() and OptClearBuffer()
+    - New utility functions for signs, CurLineHasSign() and ClearAllSigns().
+    - Fixed bugs in FindWindowForName().
+    - The FindWindowForBuffer() function is now redundant and is deprecated, use bufwinnr(FindBufferForName(fileName)) for the same purpose.
+    - Some improvements for Vim6.2, but it should still work with Vim6.0.
+    - Fixed a few bugs.
+
+ plugin/genutils.vim |  492 +++++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 339 insertions(+), 153 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri May 2 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor fixes/updates. Fixed a bug in restoring line position with respect to window. Users of FileChangedShell functionality provided by the plugin (and thus the perforce plugin), should download this version only if the 6.1.220 patch is installed.
+
+ plugin/genutils.vim |   23 +++++++++++------------
+ 1 files changed, 11 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Sun Mar 30 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    My earlier version was using :normal instead of :normal! command, so user's mapping will interfere with it. If you have downloaded 1.4 earlier, please download it again. Thanks to David Rennalls for reporting the problem.
+
+ plugin/genutils.vim |   20 ++++++++++----------
+ 1 files changed, 10 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Sun Mar 23 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Some bugfixes and improvements.
+    - New UnEscape() which is more close to escape() than the old DeEscape().
+    - ExecMap() is separated as a new plugin. That is the better place for it as it is not really useful as a library function.
+    - The sort compare methods were made public as they are very useful in writing new compares.
+    - Some update on doc.
+    - Now CreateArgString() can be used with an arbitrary pattern.
+    - Fixed some bugs in MoveCurLineToWinLine(). It works better now.
+    - Added a functions to handle FileChangedShell autocommand and emulate the default vim behavior.
+
+ plugin/genutils.vim |  310 ++++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 220 insertions(+), 90 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Dec 5 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    GPLed it for the use by Cream project. See http://cream.sf.net for information on Cream for Vim.
+
+ plugin/genutils.vim |   10 +++++++---
+ 1 files changed, 7 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue Nov 26 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Generalized Quick sort function. The sort routine is no longer tied to the
+      buffer contents (multvals.vim uses this function to sort arrays).
+    - A binary search function that can be used to incrementally update sorted
+      buffer contents (like buffer lists, tag lists etc), and a generalized variant
+      of this function which is no tied to the buffer contents.
+    - A new comparator to sort Java imports first by name and then by their length.
+      This groups the imports from the same package pretty well together.
+    - Minor fixes in FindWindowForBuffer() and FindBufferForWindow()
+
+ plugin/genutils.vim |  233 +++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 178 insertions(+), 55 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue Aug 13 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New functions
+      - CenterWordInSpace(), useful if you use Align.vim and want to center the text horizontally in the boxes.
+      - Improved ShiftWordInSpace().
+      - New collection from list, CommonPath() with minor improvements. Added RelPathFromFile() and RelPathFromDir() functions.
+      - New persistence functions, PutPersistenceVar() and GetPersistenceVar() functions to save and retrieve your script variables across vim sessions without stepping on another script's name space.
+      -- Minor fixes in CleanupFileName() function.
+
+ plugin/genutils.vim |  317 +++++++++++++++++++++++++++++++++++++++++++++-----
+ 1 files changed, 285 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.24)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Apr 12 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New function, AlignWordWithWordInPreviousLine(). Improved ExecMap(), it is now much more useful. Added new scriptlet, g:makeArgumentList and its companion function, CreateArgString().
+
+ plugin/genutils.vim |  230 ++++++++++++++++++++++++++++++++++++++++++---------
+ 1 files changed, 192 insertions(+), 38 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.20)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Mar 29 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a typo in ResetWindowSettings(). Update the previous version to fix an error while quitting selectbuf or perforce help window.
+
+ plugin/genutils.vim |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.19)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue Mar 26 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor changes. Fixed FindWindowForBuffer and other functions to take care of the extra backslashes in the filenames protecting the spaces etc. Save/RestoreWindowSettings functions now have a variant that takes in a key. This key can be used to call these function from multiple scripts at the same time without overwriting each other's settings. Some new functions.
+
+ plugin/genutils.vim | 1546 ++++++++++++++++++++++++++++-----------------------
+ 1 files changed, 851 insertions(+), 695 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.15)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Mar 8 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed minor issues with makeArgumentString.
+    - New functions to do quick sort on the current window contents. A command to sort lines by their length.
+    - A Basic help/description is added at the start of the script.
+
+ plugin/genutils.vim | 1260 ++++++++++++++++++++++++++++-----------------------
+ 1 files changed, 695 insertions(+), 565 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.11)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon Feb 25 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New utility to pass variable number of arugments to other functions. Ex usage:
+       fu! s:IF(...)
+         exec g:makeArgumentString
+         exec "call Impl(" . argumentString . ")"
+       endfu
+    
+    New OnMS() function to check for any windoze OS. New utility ShiftWordInSpace() and SetupScratchBuffer() functions. Add the following mappings to move words in the white space:
+    
+    noremap <silent> <C-Space> :call ShiftWordInSpace(1)<CR>
+    noremap <silent> <C-BS> :call ShiftWordInSpace(-1)<CR>
+
+ plugin/genutils.vim |  118 +++++++++++++++++++++++++++++++++++++++++++++++----
+ 1 files changed, 109 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.8)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon Feb 4 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improved the save/restore position to even save/restore the line position in the window. Take a look at the set of Save/Restore/ResetSoft/HardPosition() functions.
+
+ plugin/genutils.vim |  891 +++++++++++++++++++++++++++------------------------
+ 1 files changed, 465 insertions(+), 426 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.7)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Feb 1 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |  204 ++++++++++++++++++++++++
+ plugin/genutils.vim |  426 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 630 insertions(+), 0 deletions(-)

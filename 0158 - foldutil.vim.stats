@@ -1,0 +1,112 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.0, refs/heads/master)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue Oct 10 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - No longer depends on multvals.
+    - Works with the new autoload version of genutils.
+
+ plugin/foldutil.vim |   97 +++++++++++++++++++-------------------------------
+ 1 files changed, 37 insertions(+), 60 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri May 13 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Now you can pass separate begin and end patterns to specify the fold
+      blocks.
+    - FoldShowMatching has been renamed to FoldMatching.
+    - You can also invert the pattern easily by passing a *bang* to the
+      FoldMatching and other commands.
+    - There are now multiple ways to specify the match criteria
+      - Search pattern (existing): FoldMatching, FoldNonMatching
+      - Line numbers (existing): FoldShowLines
+      - Vim marks (new): FoldShowMarks
+      - Highlight group names (new): FoldShowHiGroup
+    - Easy way to create custom match criteria if the above doesn't suite
+      your needs. This provides a lot of extensibility.
+    - The logic has been rewritten for the ease of maintenance and
+      extensibility. The plugin also runs much faster now (makes difference
+      on huge log files).
+    
+    There is a new dependency on the genutils.vim plugin.
+
+ plugin/foldutil.vim |  725 +++++++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 529 insertions(+), 196 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Oct 28 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New FoldShowRange command to fold all lines except the selected range.
+      See doc for usage.
+
+ plugin/foldutil.vim |   43 +++++++++++++++++++++++++++++++++++++------
+ 1 files changed, 37 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue Jul 13 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Now requires Vim6.2
+    - Now requires multvals.vim
+    - The plugin now remembers "manual" folds and restores with :FoldEndFolding. Defines a useful global function FoldCreateFoldsStr() for this purpose.
+    - A new :FoldSetContext to conveniently change only the context of the current match.
+    - Also fixed an error with non-existing w:settStr.
+
+ plugin/foldutil.vim |  160 +++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 123 insertions(+), 37 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon Jan 26 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    A very useful "-1" context is now supported. Thanks to John A. Peters for the idea. Read the description for details.
+
+ plugin/foldutil.vim |   93 +++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 71 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Jun 18 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Thanks to Tom Regner {tomte at tomsdiner dot org} for the enhancement to work even when foldmethod is not 'manual'. See description for a new command and more information.
+
+ plugin/foldutil.vim |   90 +++++++++++++++++++++++++++++++-------------------
+ 1 files changed, 56 insertions(+), 34 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Jun 11 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a couple of bugs and added a new command ":FoldShowLines" to fold away all the lines that are not part of the comma separated list of lines specified on the command-line. See description for usage.
+
+ plugin/foldutil.vim |   78 ++++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 62 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon Sep 23 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a couple of bugs reported by Gergely Kontra and better error messages (missing search pattern etc.)
+
+ plugin/foldutil.vim |  123 +++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 86 insertions(+), 37 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.0)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Nov 30 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |  203 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/foldutil.vim |  105 ++++++++++++++++++++++++++
+ 2 files changed, 308 insertions(+), 0 deletions(-)

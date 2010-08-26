@@ -1,0 +1,247 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.10, refs/heads/master)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Oct 28 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New MvBISortElements() that uses the faster BinInsertSort2() function
+      from genutils.vim plugin.
+
+ plugin/multvals.vim |   52 +++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 40 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.9)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Oct 20 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - MvIterPeek made public. This was left private by accident.
+
+ plugin/multvals.vim |   11 +++++++----
+ 1 files changed, 7 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.8)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Sep 24 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bugs in the *StrIndex* functions, such that when the element is
+    not found, they always return the contracted -1 (instead of any -ve
+    value). This will fix problems with a number of other functions that
+    depend on them (such as MvPushToFront reported by Thomas Link).
+
+ plugin/multvals.vim |   21 ++++++++++++++-------
+ 1 files changed, 14 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.6)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Jun 18 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Maintenance release.
+    - Work-around for a bug in MvNumberOfElements().
+    - New utility function MvCrUnProtectedCharsPattern()
+
+ plugin/multvals.vim |   58 ++++++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 42 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.5)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon Mar 22 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    CAUTION: This version potentially introduces an incompatibility with that of
+    older versions because of the below change. If your plugin depended on this
+    undocumented behavior you will have to update your plugin immediately to work
+    with the new plugin. Even if you didn't know about behavior, it is still better
+    to check if your plugin accidentally depended on this. If you need further
+    clarifications, please email me with your questions and I will try to answer.
+    
+    - Now the plugin ignores the 'ignorecase' and 'smartcase' settings, so the
+      results are more consistent. This I think is the right thing to do for a
+      library.
+    - Also added a new function MvIterPeek.
+
+ plugin/multvals.vim |  338 +++++++++++++++++++++++++++++++++------------------
+ 1 files changed, 220 insertions(+), 118 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.4)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Dec 17 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - The plugin was not working correctly when there are *'s in the array.
+    - New function MvRemovePatternAll
+    - g:loaded_multvals now contains the version number for dependency cheking.
+      (see ":help v:version" for format)
+    - Added prototypes for the functions in the header as per the suggestion
+      of Naveen Chandra.
+
+ plugin/multvals.vim |  260 ++++++++++++++++++++++++++++++++-------------------
+ 1 files changed, 163 insertions(+), 97 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon Aug 25 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor changes, added a new function MvElementLike and improved MvPromptForElement by adding a new companion function MvGetSelectedIndex, to be used when the array can contain empty elements.
+
+ plugin/multvals.vim |   95 +++++++++++++++++++++++++++++++++-----------------
+ 1 files changed, 63 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Jun 11 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New function MvNumSearchNext. See the function header for details.
+
+ plugin/multvals.vim |   79 +++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 55 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Mar 28 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor changes. Now the MvCreateIter() also accepts sample separator as the last argument when a regular expression is used as a separator. This is consistent with the rest of the functions and makes it easy to iterate over settings like 'tags'.
+    
+    call MvIterCreate(&tags, "\\\@<!\(\\\\\)*\zs,", "Tags", ',')
+
+ plugin/multvals.vim |   35 +++++++++++++++++++++++------------
+ 1 files changed, 23 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Dec 26 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - All functions can now be used with regular expressions as separators. Most of the functions now accept an optional extra argument as the last argument, which needs to be a plain separator as a sample that matches the regular expression of the separator. If the separator is not a regular expressions, this can be ignored, making it backwardly compatible change.
+    - Added new functions MvRemovePattern, MvStrIndexOfPattern, MvStrIndexAfterPattern, MvIndexOfPattern, MvContainsPattern.
+    - Fixed a bug in the new implementation of MvPromptForElement. This function now accepts only element index as selection. This makes it cleaner to implement and also makes it possible to have even numbers as values in the array.
+
+ plugin/multvals.vim | 1117 +++++++++++++++++++++++++++------------------------
+ 1 files changed, 596 insertions(+), 521 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Dec 5 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Just removed some debug echomsg which I forgot to remove. Sorry about it. I also added some more information on how to use MvQSortElements() method.
+
+ plugin/multvals.vim |   33 +++++++++++++++++++++++++++------
+ 1 files changed, 27 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue Nov 26 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New functions MvQSortElements() and MvSwapElementsAt(). Requires genutils.vim
+      for sorting support.
+    - Worked-around a bug in vim that effects MvElementAt() for last element in a
+      large array.
+    - A variant of MvPromptForElement to specify the number of columns that you
+      want the elements to be formatted in. The formatting is very nice now.
+
+ plugin/multvals.vim |  273 +++++++++++++++++++++++++++++++++++++++++++++------
+ 1 files changed, 243 insertions(+), 30 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Jun 21 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    GPL'ed it mainly for the use by Creme project (http://cream.sf.net). Added MvRemoveElementAll and MvReplaceElementAt, contributed by Steve Hall <digitect at mindspring.com>
+
+ plugin/multvals.vim |   40 ++++++++++++++++++++++++++++++++++++++--
+ 1 files changed, 38 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.2)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon Feb 25 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    More robust iterator, now checks for maximum count. Reimplemented it to use the ElementAt() function and removed NextElement and NextIndex() functions that are not needed.
+
+ plugin/multvals.vim | 1756 +++++++++++++++++++++++++--------------------------
+ 1 files changed, 877 insertions(+), 879 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.1)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Feb 8 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Enhanced the script to accept any regular expression as a separator pattern, but it works only for read-only operations. Now you can treat the following as an array:
+    
+    axxbxxxxcxdxxxxxe
+    
+    and access a, b, c, d and e as array elements.
+    
+    Now the element is escaped before using in the matches, so you shouldn't have any problem using any random strings to store in to the array.
+    
+    Also the script is now made as a plugin, so it works only 6.0
+
+ plugin/multvals.vim | 1556 +++++++++++++++++++++++++++++----------------------
+ 1 files changed, 879 insertions(+), 677 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0.5)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Feb 1 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bugs in MvStrIndexOfElement(), MvIterHasNext() and MvCmpByPosition(). Now I have been using the script for quite some time and fixed all the bugs that I discovered. It should be quite robust and usable now. I have used the functions from here in selectbuf.vim for implementing MRU listing and also in the remcmd.vim for list selection, so check these scripts for a good usage. Also see the end of the script for test code that gives example usage of the script.
+
+ plugin/multvals.vim |   33 ++++++++++++++++++++-------------
+ 1 files changed, 20 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0.4)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Jan 11 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Lots of new functions are added and they are documented well. Now the script has functions to access the elements by element index, just like a real array. Much more usable as an array than previously it was.
+    
+     However, it is incompatible with the previous version for the following reasons:
+       - Prefixed all the global functions with "Mv" to avoid global name
+           conflicts.
+       - The order of arguments for MvIterCreate has been changed for the sake of
+           consistency.
+    
+    Here is a list of all the functions:
+           MvAddElement
+           MvInsertElementAt
+           MvRemoveElement
+           MvRemoveElementAt
+           MvNumberOfElements
+           MvStrIndexOfElement
+           MvStrIndexOfElementAt
+           MvIndexOfElement
+           MvContainsElement
+           MvElementAt
+           MvLastElement
+           MvPushToFront
+           MvPushToFrontElementAt
+           MvPullToBack
+           MvPullToBackElementAt
+           MvIterCreate
+           MvIterDestroy
+           MvIterHasNext
+           MvIterNext
+           MvCmpByPosition
+           MvPromptForElement
+
+ plugin/multvals.vim |  558 +++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 428 insertions(+), 130 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0.2)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Jan 2 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |   55 ++++++++
+ plugin/multvals.vim |  372 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 427 insertions(+), 0 deletions(-)
