@@ -1,0 +1,91 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.3, refs/heads/master)
+Author:     Meikel Brandmeyer <Brandels_Mikesh at web.de>
+AuthorDate: Thu Feb 21 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Still alive! Yeah! :-D
+    
+    Finally a new release....
+    
+    This is mainly a bugfix release:
+    * Fixed a typo in the apache detection. (thanks to Brian Neu)
+    * Fixed handling of nested comment escape strings. (thanks to Samuel Ferencik)
+    * Fixed broken keyboard mappings when wcm is set to <Tab>. (thanks to xpatriotx)
+    
+    * Added support for viki & deplate (thanks to Thomas Link)
+    * Added support xslt, xsd & mail (thanks to Stefano Zacchiroli)
+    * Added callback-functionality to enable extension of the script without actually modifying the script.
+
+ EnhancedCommentify-2.3/LICENSE.EnhancedCommentify |   24 ++++
+ doc/EnhancedCommentify.txt                        |   40 +++++--
+ plugin/EnhancedCommentify.vim                     |  126 +++++++++++++--------
+ 3 files changed, 130 insertions(+), 60 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     Meikel Brandmeyer <Brandels_Mikesh at web.de>
+AuthorDate: Mon Sep 27 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New features:
+     * Keybindings may be turned off in the different modes. (eg. no bindings in insert mode)
+     * Keybindings may be local to the buffer now.
+     * Keybindings may be turned off in case of an unknown filetype.
+    
+    Bugfixes:
+     * Fixed a problem with UseSyntax. (thanks to Pieter Naaijkens)
+     * Fixed Ocaml support. (thanks to Zhang Le)
+
+ doc/EnhancedCommentify.txt    |   13 ++
+ ftplugin/ocaml_enhcomm.vim    |    1 +
+ plugin/EnhancedCommentify.vim |  251 ++++++++++++++++++++++++-----------------
+ 3 files changed, 161 insertions(+), 104 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Meikel Brandmeyer <Brandels_Mikesh at web.de>
+AuthorDate: Mon Jan 26 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This is version 2.1 of the EnhancedCommentify Script.
+    New features:
+     * one-block commenting for multipart comments
+     * if possible, use commentstring option in order to determine the comment strings.
+     * moved autocmd to BufWinEnter in order to fix modeline usage
+     * experimental parsing of comments option to find out middle string for new one-block feature.
+    
+    Bugfixes:
+     * fixed problems with tabs if align-right option is used
+     * fixed case sensitive check for overrideEL (thanks to Steve Hall)
+     * fixed problems with javascript filetype (thanks to Brian Neu)
+     * changed init-autocmd to BufWinEnter to fix usage of modeline
+
+ doc/EnhancedCommentify.txt    |   52 ++--
+ plugin/EnhancedCommentify.vim |  704 +++++++++++++++++++++++++++++++----------
+ 2 files changed, 566 insertions(+), 190 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Meikel Brandmeyer <Brandels_Mikesh at web.de>
+AuthorDate: Wed Sep 11 00:00:00 2002 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Version 2.0 is finally out. With a whole bunch of changes. Most important:
+    The script is now released under BSD license. But this should be no restriction I think.
+    Bugfixes:
+     * '&#039' is an invalid expression (thanks to Zak Beck)
+     * AltOpen/Close set to '' could cause problems (thanks to Ben Kibbey)
+     * bug in keybinding code (thanks to Charles Campbell)
+     * trouble with 'C' in cpo (thanks to Luc Hermitte)
+    New features:
+     * produces now block comments, eg:
+        /*int a;
+        char b;*/
+     * option to add ident string only at opener
+     * options may now be set on a per buffer basis.
+    
+    I can only recommend (again!) to read the help file for new options and explanations for old ones.
+    This release contains script und helpfile in a tar.gz.
+
+ README                        |    7 +
+ doc/EnhancedCommentify.txt    |  470 +++++++++++++++++
+ ftplugin/php_enhcomm.vim      |    6 +
+ plugin/EnhancedCommentify.vim | 1152 +++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 1635 insertions(+), 0 deletions(-)

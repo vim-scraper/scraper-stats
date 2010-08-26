@@ -1,0 +1,20 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     Garner Halloran <garnerh42 at yahoo.com>
+AuthorDate: Thu Jul 5 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    A little more efficient pattern searching.  Added support for loading header files that don't end in .h (ie fstream).  Added support for loading .c files instead of just .cpp files.  Added loaded_LoadHeaderFile so you can disable the plugin.  Fixed bug where it didn't recognize a #include if it wasn't at the beginning of a line.
+
+ plugin/LoadHeaderFile.vim |   36 +++++++++++++++++++++++++-----------
+ 1 files changed, 25 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Garner Halloran <garnerh42 at yahoo.com>
+AuthorDate: Fri Jun 22 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                    |   16 ++++++++++++++++
+ plugin/LoadHeaderFile.vim |   28 ++++++++++++++++++++++++++++
+ 2 files changed, 44 insertions(+), 0 deletions(-)

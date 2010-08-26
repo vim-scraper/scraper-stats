@@ -1,0 +1,32 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2, refs/heads/master)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Tue Jun 19 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Removed functions and user command (as of Vim 6.0aj :compiler command is included in the distribution), and updated the all of the compiler .vim files to fit the accepted format.
+
+ ./compiler/bcc55.vim  |   19 +++++++++++++++++++
+ ./compiler/jikes.vim  |   30 ++++++++++++++++++++++++++++++
+ ./compiler/msvc++.vim |   23 +++++++++++++++++++++++
+ ./compiler/msvj.vim   |   21 +++++++++++++++++++++
+ compiler/bcc55.vim    |   15 ---------------
+ compiler/jikes.vim    |   28 ----------------------------
+ compiler/msvc++.vim   |   19 -------------------
+ compiler/msvj.vim     |   17 -----------------
+ plugin/compiler.vim   |   41 -----------------------------------------
+ 9 files changed, 93 insertions(+), 120 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Douglas Potts <pottsdl at gmail.com>
+AuthorDate: Fri Jun 8 00:00:00 2001 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |    6 ++++++
+ compiler/bcc55.vim  |   15 +++++++++++++++
+ compiler/jikes.vim  |   28 ++++++++++++++++++++++++++++
+ compiler/msvc++.vim |   19 +++++++++++++++++++
+ compiler/msvj.vim   |   17 +++++++++++++++++
+ plugin/compiler.vim |   41 +++++++++++++++++++++++++++++++++++++++++
+ 6 files changed, 126 insertions(+), 0 deletions(-)
