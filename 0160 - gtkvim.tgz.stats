@@ -5,9 +5,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     Updated to build against GTK2 by default.
 
- gtkvim/Makefile       |   19 +++++++++----
- gtkvim/gtkvim.c       |   33 +++++++++++++++++++++---
- gtkvim/rangewidgets.c |   67 +++++++++++++++++++++++++------------------------
+ Makefile       |   19 +++++++++++-----
+ gtkvim.c       |   33 ++++++++++++++++++++++++---
+ rangewidgets.c |   67 ++++++++++++++++++++++++++++---------------------------
  3 files changed, 76 insertions(+), 43 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
@@ -17,7 +17,7 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     Fixed coredump due to incorrectly initialised string (Evan Martin).
 
- gtkvim/gtkvim.c |    6 +++++-
+ gtkvim.c |    6 +++++-
  1 files changed, 5 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -27,9 +27,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     Initial upload
 
- README                |   34 ++++
- gtkvim/Makefile       |   24 +++
- gtkvim/gtkvim.c       |  425 +++++++++++++++++++++++++++++++++++++++++++++++++
- gtkvim/gtkvim.h       |  124 ++++++++++++++
- gtkvim/rangewidgets.c |  312 ++++++++++++++++++++++++++++++++++++
+ Makefile       |   24 +++
+ README         |   34 +++++
+ gtkvim.c       |  425 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ gtkvim.h       |  124 ++++++++++++++++
+ rangewidgets.c |  312 +++++++++++++++++++++++++++++++++++++++++
  5 files changed, 919 insertions(+), 0 deletions(-)

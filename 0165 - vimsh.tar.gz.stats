@@ -107,17 +107,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     * Changed '^M' to '\n' for python 2.3.  Vimsh would not
       run w/ python 2.3. Backwards compatible change.
 
- ChangeLog          |  212 +++++++++++
- TODO               |   32 ++
- plugin/vimsh.vim   |   77 ++++
- vimsh.py           | 1068 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- vimsh.readme       |  175 +++++++++
- vimsh/ChangeLog    |  209 ----------
- vimsh/TODO         |   32 --
- vimsh/vimsh.py     | 1068 ----------------------------------------------------
- vimsh/vimsh.readme |  175 ---------
- vimsh/vimsh.vim    |   77 ----
- 10 files changed, 1564 insertions(+), 1561 deletions(-)
+ ChangeLog |    3 +++
+ vimsh.py  |    6 +++---
+ 2 files changed, 6 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
 Author:     brian sturk <bsturk at comcast.net>
@@ -126,11 +118,11 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     Too many changes/bugfixes to list here, please see changelog for this version.
 
- vimsh/ChangeLog    |   70 ++++++--
- vimsh/TODO         |   11 +-
- vimsh/vimsh.py     |  496 +++++++++++++++++++++++++++-------------------------
- vimsh/vimsh.readme |   38 ++--
- vimsh/vimsh.vim    |    4 +-
+ ChangeLog        |   70 ++++++--
+ TODO             |   11 +-
+ plugin/vimsh.vim |    4 +-
+ vimsh.py         |  496 ++++++++++++++++++++++++++++-------------------------
+ vimsh.readme     |   38 +++--
  5 files changed, 348 insertions(+), 271 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
@@ -150,8 +142,8 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     * Added a support routine to determine if last command
       executed is still running.
 
- vimsh/ChangeLog |   17 ++++++++++-
- vimsh/vimsh.py  |   80 +++++++++++++++++++++++++++++++++++++++++++++++-------
+ ChangeLog |   17 +++++++++++-
+ vimsh.py  |   80 ++++++++++++++++++++++++++++++++++++++++++++++++++++--------
  2 files changed, 84 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
@@ -176,11 +168,11 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     * Removed duplicate sending of EOF in send_eof.
     * Fixed pty/# of proc detection
 
- vimsh/ChangeLog    |   23 +++-
- vimsh/TODO         |   13 ++-
- vimsh/vimsh.py     |  179 +++++++++++++++++++++-------
- vimsh/vimsh.readme |  337 +++++++++++++++++++++++++++-------------------------
- vimsh/vimsh.vim    |   65 ++++++++++-
+ ChangeLog        |   23 +++-
+ TODO             |   13 ++-
+ plugin/vimsh.vim |   65 ++++++++++-
+ vimsh.py         |  179 +++++++++++++++++++++--------
+ vimsh.readme     |  337 ++++++++++++++++++++++++++++--------------------------
  5 files changed, 400 insertions(+), 217 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
@@ -220,10 +212,10 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
           - Changed redraw frequency for better interactive
             response.
 
- vimsh/ChangeLog    |   46 +++-
- vimsh/TODO         |    4 +-
- vimsh/vimsh.py     |  695 +++++++++++++++++++++++++--------------------------
- vimsh/vimsh.readme |  293 +++++++++-------------
+ ChangeLog    |   46 ++++-
+ TODO         |    4 +-
+ vimsh.py     |  695 ++++++++++++++++++++++++++++-----------------------------
+ vimsh.readme |  293 ++++++++++---------------
  4 files changed, 499 insertions(+), 539 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
@@ -240,17 +232,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     * Made the signalling mechanism more generic so I can
        add more handlers in the future.
 
- ChangeLog          |   92 ------
- TODO               |   20 --
- plugin/vimsh.vim   |   16 -
- vimsh.py           |  889 --------------------------------------------------
- vimsh.readme       |  223 -------------
- vimsh/ChangeLog    |  103 ++++++
- vimsh/TODO         |   20 ++
- vimsh/vimsh.py     |  908 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- vimsh/vimsh.readme |  223 +++++++++++++
- vimsh/vimsh.vim    |   16 +
- 10 files changed, 1270 insertions(+), 1240 deletions(-)
+ ChangeLog        |   13 ++-
+ TODO             |    2 +-
+ plugin/vimsh.vim |   12 +-
+ vimsh.py         |   49 ++++--
+ vimsh.readme     |  446 +++++++++++++++++++++++++++---------------------------
+ 5 files changed, 276 insertions(+), 246 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
 Author:     brian sturk <bsturk at comcast.net>

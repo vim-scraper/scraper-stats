@@ -5,19 +5,18 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     Many changes, fixes, ... Now definitively working on MsWindows boxes; cf Changelog for more details
 
- Changelog                |  191 ++++++
- doc/VS_help.html         |  825 +++++++++++++++++++++++
- doc/VS_help.txt          |  753 +++++++++++++++++++++
- macros/lhVimSpell.vim    | 1635 ++++++++++++++++++++++++++++++++++++++++++++++
- plugin/a-old.vim         |   90 +++
- plugin/system_utils.vim  |  797 ++++++++++++++++++++++
- vim-spell/ChangeLog      |  126 ----
- vim-spell/VS_gui-map.vim |  186 ------
- vim-spell/VS_help.html   |  601 -----------------
- vim-spell/VS_help.txt    |  543 ---------------
- vim-spell/a.vim          |   90 ---
- vim-spell/lhVimSpell.vim | 1234 ----------------------------------
- 12 files changed, 4291 insertions(+), 2780 deletions(-)
+ ChangeLog               |  126 ----
+ Changelog               |  191 ++++++
+ VS_help.html            |  601 -----------------
+ doc/VS_help.html        |  825 ++++++++++++++++++++++++
+ doc/VS_help.txt         |  842 +++++++++++++++---------
+ macros/lhVimSpell.vim   | 1635 +++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/VS_gui-map.vim   |  186 ------
+ plugin/a-old.vim        |   90 +++
+ plugin/a.vim            |   90 ---
+ plugin/lhVimSpell.vim   | 1234 -----------------------------------
+ plugin/system_utils.vim |  797 +++++++++++++++++++++++
+ 11 files changed, 4064 insertions(+), 2553 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3c)
 Author:     Luc Hermitte <hermitte at free.fr>
@@ -26,11 +25,11 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     Bug fixes : (*) words can be added directly into local dictionary ; (*) mappings will works for several buffers (used to be a problem when calling vim with for instance 'vim *.tex').
 
- vim-spell/ChangeLog      |    6 +
- vim-spell/VS_gui-map.vim |   14 ++-
- vim-spell/VS_help.html   |    6 +-
- vim-spell/VS_help.txt    |    6 +-
- vim-spell/lhVimSpell.vim |  265 ++++++++++++++++++++++++++++------------------
+ ChangeLog             |    6 +
+ VS_help.html          |    6 +-
+ doc/VS_help.txt       |    6 +-
+ plugin/VS_gui-map.vim |   14 ++-
+ plugin/lhVimSpell.vim |  265 ++++++++++++++++++++++++++++++-------------------
  5 files changed, 184 insertions(+), 113 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3b)
@@ -40,10 +39,10 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     No more error message when there is no misspelling. The syntax highlighting rules have been extended to support HTML files and some others filetypes ; the rules for TeX files have been enhanced.
 
- vim-spell/ChangeLog      |   11 +++++++++
- vim-spell/VS_help.html   |   24 ++++++++++++++++++-
- vim-spell/VS_help.txt    |   25 ++++++++++++++++++--
- vim-spell/lhVimSpell.vim |   55 +++++++++++++++++++++++++++++++++++++++------
+ ChangeLog             |   11 +++++++++
+ VS_help.html          |   24 +++++++++++++++++++-
+ doc/VS_help.txt       |   25 +++++++++++++++++++--
+ plugin/lhVimSpell.vim |   55 +++++++++++++++++++++++++++++++++++++++++-------
  4 files changed, 102 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -53,17 +52,17 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     The plugin has been simplified. The number of files has been reduced to 3 ; it should be easier to install.
 
- vim-spell/ChangeLog      |    9 +
- vim-spell/VS-all.vim     |   53 ---
- vim-spell/VS_deps.vim    |   27 --
- vim-spell/VS_fm-fun.vim  |  287 ------------
- vim-spell/VS_gui-map.vim |   94 ++--
- vim-spell/VS_gui.vim     |  398 ----------------
- vim-spell/VS_help.html   |  153 ++++---
- vim-spell/VS_help.txt    |  151 ++++---
- vim-spell/VS_int-fun.vim |  171 -------
- vim-spell/VS_map.vim     |  102 -----
- vim-spell/lhVimSpell.vim | 1134 ++++++++++++++++++++++++++++++++++++++++++++++
+ ChangeLog             |    9 +
+ VS_help.html          |  153 ++++---
+ doc/VS_help.txt       |  151 ++++---
+ plugin/VS-all.vim     |   53 ---
+ plugin/VS_deps.vim    |   27 --
+ plugin/VS_fm-fun.vim  |  287 -------------
+ plugin/VS_gui-map.vim |   94 ++---
+ plugin/VS_gui.vim     |  398 -----------------
+ plugin/VS_int-fun.vim |  171 --------
+ plugin/VS_map.vim     |  102 -----
+ plugin/lhVimSpell.vim | 1134 +++++++++++++++++++++++++++++++++++++++++++++++++
  11 files changed, 1368 insertions(+), 1211 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2d)
@@ -73,27 +72,27 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     The capitalization problem with the archive has been fixed. + some minor changes
 
- vim-spell/ChangeLog      |  100 +++++++++
- vim-spell/VS-all.vim     |   53 +++++
- vim-spell/VS_deps.vim    |   27 +++
- vim-spell/VS_fm-fun.vim  |  287 ++++++++++++++++++++++++
- vim-spell/VS_gui-map.vim |  186 ++++++++++++++++
- vim-spell/VS_gui.vim     |  398 +++++++++++++++++++++++++++++++++
- vim-spell/VS_help.html   |  552 ++++++++++++++++++++++++++++++++++++++++++++++
- vim-spell/VS_help.txt    |  497 +++++++++++++++++++++++++++++++++++++++++
- vim-spell/VS_int-fun.vim |  171 ++++++++++++++
- vim-spell/VS_map.vim     |  102 +++++++++
- vim-spell/changelog      |   95 --------
- vim-spell/tags           |   46 ----
- vim-spell/vs-all.vim     |   53 -----
- vim-spell/vs_deps.vim    |   27 ---
- vim-spell/vs_fm-fun.vim  |  287 ------------------------
- vim-spell/vs_gui-map.vim |  186 ----------------
- vim-spell/vs_gui.vim     |  398 ---------------------------------
- vim-spell/vs_help.html   |  546 ---------------------------------------------
- vim-spell/vs_help.txt    |  491 -----------------------------------------
- vim-spell/vs_int-fun.vim |  171 --------------
- vim-spell/vs_map.vim     |  102 ---------
+ ChangeLog             |  100 +++++++++
+ VS_help.html          |  552 +++++++++++++++++++++++++++++++++++++++++++++++++
+ changelog             |   95 ---------
+ doc/VS_help.txt       |  497 ++++++++++++++++++++++++++++++++++++++++++++
+ doc/vs_help.txt       |  491 -------------------------------------------
+ plugin/VS-all.vim     |   53 +++++
+ plugin/VS_deps.vim    |   27 +++
+ plugin/VS_fm-fun.vim  |  287 +++++++++++++++++++++++++
+ plugin/VS_gui-map.vim |  186 +++++++++++++++++
+ plugin/VS_gui.vim     |  398 +++++++++++++++++++++++++++++++++++
+ plugin/VS_int-fun.vim |  171 +++++++++++++++
+ plugin/VS_map.vim     |  102 +++++++++
+ plugin/vs-all.vim     |   53 -----
+ plugin/vs_deps.vim    |   27 ---
+ plugin/vs_fm-fun.vim  |  287 -------------------------
+ plugin/vs_gui-map.vim |  186 -----------------
+ plugin/vs_gui.vim     |  398 -----------------------------------
+ plugin/vs_int-fun.vim |  171 ---------------
+ plugin/vs_map.vim     |  102 ---------
+ tags                  |   46 ----
+ vs_help.html          |  546 ------------------------------------------------
  21 files changed, 2373 insertions(+), 2402 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2c)
@@ -103,28 +102,28 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     The list of words to be ignored is no more reset after every parsing. A dependency has been "eased". Some bugs fixed.
 
- vim-spell/ChangeLog      |   79 -------
- vim-spell/VS-all.vim     |   53 -----
- vim-spell/VS_deps.vim    |   27 ---
- vim-spell/VS_fm-fun.vim  |  258 ----------------------
- vim-spell/VS_gui-map.vim |  186 ----------------
- vim-spell/VS_gui.vim     |  397 ---------------------------------
- vim-spell/VS_help.html   |  549 ----------------------------------------------
- vim-spell/VS_help.txt    |  494 -----------------------------------------
- vim-spell/VS_int-fun.vim |  185 ----------------
- vim-spell/VS_map.vim     |  102 ---------
- vim-spell/a.vim          |   90 ++++++++
- vim-spell/changelog      |   95 ++++++++
- vim-spell/tags           |   91 ++++----
- vim-spell/vs-all.vim     |   53 +++++
- vim-spell/vs_deps.vim    |   27 +++
- vim-spell/vs_fm-fun.vim  |  287 ++++++++++++++++++++++++
- vim-spell/vs_gui-map.vim |  186 ++++++++++++++++
- vim-spell/vs_gui.vim     |  398 +++++++++++++++++++++++++++++++++
- vim-spell/vs_help.html   |  546 +++++++++++++++++++++++++++++++++++++++++++++
- vim-spell/vs_help.txt    |  491 +++++++++++++++++++++++++++++++++++++++++
- vim-spell/vs_int-fun.vim |  171 ++++++++++++++
- vim-spell/vs_map.vim     |  102 +++++++++
+ ChangeLog             |   79 -------
+ VS_help.html          |  549 -------------------------------------------------
+ changelog             |   95 +++++++++
+ doc/VS_help.txt       |  494 --------------------------------------------
+ doc/vs_help.txt       |  491 +++++++++++++++++++++++++++++++++++++++++++
+ plugin/VS-all.vim     |   53 -----
+ plugin/VS_deps.vim    |   27 ---
+ plugin/VS_fm-fun.vim  |  258 -----------------------
+ plugin/VS_gui-map.vim |  186 -----------------
+ plugin/VS_gui.vim     |  397 -----------------------------------
+ plugin/VS_int-fun.vim |  185 -----------------
+ plugin/VS_map.vim     |  102 ---------
+ plugin/a.vim          |   90 ++++++++
+ plugin/vs-all.vim     |   53 +++++
+ plugin/vs_deps.vim    |   27 +++
+ plugin/vs_fm-fun.vim  |  287 ++++++++++++++++++++++++++
+ plugin/vs_gui-map.vim |  186 +++++++++++++++++
+ plugin/vs_gui.vim     |  398 +++++++++++++++++++++++++++++++++++
+ plugin/vs_int-fun.vim |  171 +++++++++++++++
+ plugin/vs_map.vim     |  102 +++++++++
+ tags                  |   91 ++++----
+ vs_help.html          |  546 ++++++++++++++++++++++++++++++++++++++++++++++++
  22 files changed, 2492 insertions(+), 2375 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2b)
@@ -134,18 +133,18 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     There is no important improvments in this version. Only the dependancies have been reduced (help.vim is no more required, while triggers.vim has become optional)
 
- vim-spell/ChangeLog      |   37 +-
- vim-spell/Makefile       |   97 ----
- vim-spell/VS-all.vim     |   58 +++-
- vim-spell/VS_deps.vim    |   27 ++
- vim-spell/VS_fm-fun.vim  |    4 +-
- vim-spell/VS_gui-map.vim |   72 +++-
- vim-spell/VS_help.html   | 1093 +++++++++++++++++++++++-----------------------
- vim-spell/VS_help.txt    |   43 +-
- vim-spell/VS_map.vim     |   30 +-
- vim-spell/makehtml2.awk  |  746 -------------------------------
- vim-spell/maketags.awk   |   42 --
- vim-spell/tags           |   91 ++--
+ ChangeLog             |   37 ++-
+ Makefile              |   97 -----
+ VS_help.html          | 1093 +++++++++++++++++++++++++------------------------
+ doc/VS_help.txt       |   43 ++-
+ makehtml2.awk         |  746 ---------------------------------
+ maketags.awk          |   42 --
+ plugin/VS-all.vim     |   58 +++-
+ plugin/VS_deps.vim    |   27 ++
+ plugin/VS_fm-fun.vim  |    4 +-
+ plugin/VS_gui-map.vim |   72 +++-
+ plugin/VS_map.vim     |   30 +-
+ tags                  |   91 ++--
  12 files changed, 801 insertions(+), 1539 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -155,18 +154,18 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     Some bugs have been fixed (accentuated characters can be inserted into personal dictionaries, ...); the color highlighting scheme with LaTeX is now correct; the dependancies have been reduced for VIM 6.
 
- README                   |   24 ++
- vim-spell/ChangeLog      |   68 +++++
- vim-spell/Makefile       |   97 ++++++
- vim-spell/VS-all.vim     |    5 +
- vim-spell/VS_fm-fun.vim  |  258 ++++++++++++++++
- vim-spell/VS_gui-map.vim |  148 +++++++++
- vim-spell/VS_gui.vim     |  397 ++++++++++++++++++++++++
- vim-spell/VS_help.html   |  544 +++++++++++++++++++++++++++++++++
- vim-spell/VS_help.txt    |  489 ++++++++++++++++++++++++++++++
- vim-spell/VS_int-fun.vim |  185 ++++++++++++
- vim-spell/VS_map.vim     |   88 ++++++
- vim-spell/makehtml2.awk  |  746 ++++++++++++++++++++++++++++++++++++++++++++++
- vim-spell/maketags.awk   |   42 +++
- vim-spell/tags           |   46 +++
+ ChangeLog             |   68 +++++
+ Makefile              |   97 +++++++
+ README                |   24 ++
+ VS_help.html          |  544 +++++++++++++++++++++++++++++++++++
+ doc/VS_help.txt       |  489 ++++++++++++++++++++++++++++++++
+ makehtml2.awk         |  746 +++++++++++++++++++++++++++++++++++++++++++++++++
+ maketags.awk          |   42 +++
+ plugin/VS-all.vim     |    5 +
+ plugin/VS_fm-fun.vim  |  258 +++++++++++++++++
+ plugin/VS_gui-map.vim |  148 ++++++++++
+ plugin/VS_gui.vim     |  397 ++++++++++++++++++++++++++
+ plugin/VS_int-fun.vim |  185 ++++++++++++
+ plugin/VS_map.vim     |   88 ++++++
+ tags                  |   46 +++
  14 files changed, 3137 insertions(+), 0 deletions(-)

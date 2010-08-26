@@ -5,12 +5,16 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     Removed functions and user command (as of Vim 6.0aj :compiler command is included in the distribution), and updated the all of the compiler .vim files to fit the accepted format.
 
- compiler/bcc55.vim  |   12 ++++++++----
- compiler/jikes.vim  |   10 ++++++----
- compiler/msvc++.vim |   12 ++++++++----
- compiler/msvj.vim   |   12 ++++++++----
+ compiler/bcc55.vim  |   15 ---------------
+ compiler/jikes.vim  |   28 ----------------------------
+ compiler/msvc++.vim |   19 -------------------
+ compiler/msvj.vim   |   17 -----------------
+ plugin/bcc55.vim    |   19 +++++++++++++++++++
  plugin/compiler.vim |   41 -----------------------------------------
- 5 files changed, 30 insertions(+), 57 deletions(-)
+ plugin/jikes.vim    |   30 ++++++++++++++++++++++++++++++
+ plugin/msvc++.vim   |   23 +++++++++++++++++++++++
+ plugin/msvj.vim     |   21 +++++++++++++++++++++
+ 9 files changed, 93 insertions(+), 120 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
 Author:     Douglas Potts <pottsdl at gmail.com>
