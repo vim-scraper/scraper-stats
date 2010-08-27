@@ -1,0 +1,72 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.07, refs/heads/master)
+Author:     Michael Gnezdov <brmglt at gmail.com>
+AuthorDate: Sun Apr 1 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        1.07:
+            Html size optimized
+        Fixed:
+            1. Status line %V item
+            2. Proper embedding in HTML page with defined default color
+
+ plugin/ScreenShot.vim | 1712 +++++++++++++++++++++++++------------------------
+ 1 files changed, 862 insertions(+), 850 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.06)
+Author:     Michael Gnezdov <brmglt at gmail.com>
+AuthorDate: Wed Mar 7 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1.06:
+          Fixed:
+            1. Folds are displayed correctly now(was broken in 1.05)
+            2. Unprintable unicode chracters are displayed correctly now
+    1.05:
+          Added:
+            Good multibyte support(thanks Cyril Slobin <slobin@ice.ru> for suggestion)
+
+ plugin/ScreenShot.vim |   70 ++++++++++++++++++++++++++++---------------------
+ 1 files changed, 40 insertions(+), 30 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.04)
+Author:     Michael Gnezdov <brmglt at gmail.com>
+AuthorDate: Tue Mar 6 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    |1.04:
+    |Fixed:
+    |    1. Proper colors for DOS and win32 console versions(suggestion by Cyril Slobin <slobin@ice.ru>)
+    |    2. Black color is now default for background in console, even if no
+    |       "reverse" attribute set, because it is typical behaviour of terminals.
+    |Added:
+    |    3. 'force_background' option
+    |
+    |1.03: A few bugfixes by Cyril Slobin <slobin@ice.ru>
+    |Added:
+    |    7. Support for 256-color xterm
+    |
+    |1.0:
+    |Added:
+    |    1. Diff mode support
+    |    2. New command Diff2Html
+
+ plugin/ScreenShot.vim |  329 +++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 223 insertions(+), 106 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Michael Gnezdov <brmglt at gmail.com>
+AuthorDate: Wed Jun 14 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added:
+    1)Custom statusline (i.e. 'stl' option support)
+    2)Tabline bar(only for console or if 'guioptions' does not contain 'e'). Custom tabline also supported .
+    3)Title bar with VIM logo (can be disabled). Custom title(i.e. option 'titlestring') also supported
+    4)Credits in right bottom corner(can be disabled)
+    5)A few global settings in dictionary g:ScreenShot
+    Removed:
+    An extra VertSplit line in the very right
+
+ README                |   33 ++
+ plugin/ScreenShot.vim | 1050 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 1083 insertions(+), 0 deletions(-)

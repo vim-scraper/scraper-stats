@@ -1,0 +1,21 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/200608xx, refs/heads/master)
+Author:     Gabor Fekete <mocsok at loveable.com>
+AuthorDate: Fri Aug 18 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    o Fix: don't rebuild the database when not needed
+    o Mod: Use strings instead of numbers for ACSBfindsym.
+    o Add: support for separate cscope.out directory in the source tree.
+    E.g. If your source code is at /home/joe/code, then you can have
+    the cscope.* files built in /home/joe/code/cscope-data/.
+    o Add: C-R rebuilds the database.
+
+ Changelog                       |   20 +
+ README                          |   14 +
+ README.orig                     |  130 +++++++
+ codelight-make-data             |   79 ++++
+ codelight-print-cscope.files    |   34 ++
+ codelight-rebuild-cscopedb      |   55 +++
+ plugin/acsb.vim                 |  774 +++++++++++++++++++++++++++++++++++++++
+ plugin/acsb_autoload_cscope.vim |  199 ++++++++++
+ 8 files changed, 1305 insertions(+), 0 deletions(-)

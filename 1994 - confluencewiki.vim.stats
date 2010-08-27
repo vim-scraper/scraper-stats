@@ -1,0 +1,71 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.1.0, refs/heads/master)
+Author:     Daniel Graña <dangra at gmail.com>
+AuthorDate: Thu Sep 3 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    a lot of improvements made by Ingor Karkat <swdev{AT}ingo-karkat{DOT}de>
+    
+    - Added confluenceImage.
+    - confluenceCode, confluenceQuote and confluenceVerbatim tags are now
+      highlighted as tags, not the formatting they create.
+    - confluenceLink now supports optional labels and tips with different
+      highlighting.
+    - Adjusted confluenceHeading, confluenceHeadingMarker, confluenceList,
+      confluenceFixed and confluenceLink highlightings to other wiki syntax
+      highlightings.
+    - BF: confluenceLink is unbounded, i.e. need not be surrounded by whitespace
+      etc.
+    - Added spelling support.
+    - BF: confluenceHeading only supports 1-6.
+    - BF: confluenceTag parameter names can also contain '-'; parameter values can
+      contain any character except '|' or '}'.
+    - Expanded highlighting of confluenceTag to highlight (optional) parameters
+      and their values, similar to HTML tag attributes.
+    - confluenceComment tags are now highlighted as tags, not the formatting they
+      create.
+    - BF: No spell error on {HTMLcomment}, {code} and {noformat} tags.
+    - BF: Applying top-level formatting inside confluenceComment and
+      confluenceQuote, (but not for confluenceCode and confluenceVerbatim).
+    - BF: Allowing optional parameters for confluenceCode and confluenceVerbatim.
+    - BF: Added 'keepend' for confluenceQuote.
+    - Added highlighting for confluenceEmoticons.
+    - BF: Added additional allowed characters after confluenceEmphasis and
+      confluenceFixed: !()[]{}
+    - Added matching and highlighting for confluenceCitation, confluenceStrike,
+      confluenceUnderlined, confluenceSuperscript, confluenceSubscript.
+    - ENH: Escaped (via '&#039) markup is not highlighted any more.
+    - Added confluenceEscaping to highlight the escape character '&#039.
+    - BF: confluenceSeparator: horizontal ruler must be exactly 4 dashes, but can
+      be surrounded by whitespace in the line.
+    - BF: Emphasis must contain at least one non-emphasis character (i.e. an empty
+      emphasis is not rendered). Added after-match atom to
+      s:ConfluenceCreateEmphasis().
+      Added confluenceSymbols for ndash (--) and mdash (---).
+    - ENH: Added highlighting for confluenceTableHeader (which can include other
+      emphases).
+    - ENH: confluenceImage now supports highlighting of image link (like a
+      confluenceLink) and optional parameter names and values.
+
+ syntax/confluencewiki.vim |  131 +++++++++++++++++++++++++++++++-------------
+ 1 files changed, 92 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.2)
+Author:     Daniel Graña <dangra at gmail.com>
+AuthorDate: Thu Aug 16 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    {HTMLcomment} support added
+
+ syntax/confluencewiki.vim |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
+Author:     Daniel Graña <dangra at gmail.com>
+AuthorDate: Thu Aug 16 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                    |    5 ++
+ syntax/confluencewiki.vim |  152 +++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 157 insertions(+), 0 deletions(-)

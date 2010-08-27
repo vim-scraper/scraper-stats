@@ -1,0 +1,42 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.3, refs/heads/master)
+Author:     Robert Lillack <rob at lillack.de>
+AuthorDate: Thu Sep 1 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add ability to delete buffers using the buffer list by pressing d. A feature requested by Stephen Kennedy.
+
+ plugin/bufferlist.vim |   31 +++++++++++++++++++++++++------
+ 1 files changed, 25 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Robert Lillack <rob at lillack.de>
+AuthorDate: Fri Aug 26 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    two small fixes:
+    - bufferlist does not mess up your registers anymore (reported by Kingsley Gordon)
+    - display fix if there are NO file buffers open
+
+ plugin/bufferlist.vim |   23 ++++++++++++++++-------
+ 1 files changed, 16 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Robert Lillack <rob at lillack.de>
+AuthorDate: Sun Aug 7 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    added intelligent resizing of the buffer list window and cutting of filenames, if still too long. (set g:BufferListMaxWidth to the maximum window width you can tolerate) -- thanks to Kingsley Gordon for the original request.
+
+ plugin/bufferlist.vim |   26 ++++++++++++++++++++++----
+ 1 files changed, 22 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Robert Lillack <rob at lillack.de>
+AuthorDate: Tue Aug 2 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                |    5 +
+ plugin/bufferlist.vim |  227 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 232 insertions(+), 0 deletions(-)

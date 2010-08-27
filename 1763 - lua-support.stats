@@ -1,0 +1,45 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Mon Jul 2 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + New menu item and key mapping to adjust end-of-line comments.
+    + New insert mode mappings.
+    + A few mappings have been renamed (to bring them into line with my C/C++).
+    + New global variable for Lua compiler and interpreter name.
+    + Better adaption for console mode.
+    + Better adaption for MS Windows.
+    + Snippets can now be managed in the console mode.
+
+ README.luasupport              |   15 ++-
+ doc/ChangeLog                  |   11 ++
+ doc/lua-hot-keys.pdf           |  Bin 39006 -> 39473 bytes
+ doc/luasupport.txt             |  101 +++++++-----
+ ftplugin/lua.vim               |   90 +++++++----
+ lua-support/scripts/wrapper.sh |   36 ++++
+ plugin/lua-support.vim         |  348 +++++++++++++++++++++++++---------------
+ 7 files changed, 395 insertions(+), 206 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Fritz Mehner <mehner at fh-swf.de>
+AuthorDate: Thu Jan 11 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                                             |   18 +
+ README.luasupport                                  |  134 ++
+ doc/ChangeLog                                      |    5 +
+ doc/lua-hot-keys.pdf                               |  Bin 0 -> 39006 bytes
+ doc/luasupport.txt                                 |  781 +++++++++++
+ ftplugin/lua.vim                                   |  147 +++
+ .../codesnippets/print_command_line_arguments.lua  |    5 +
+ lua-support/rc/customization.gvimrc                |   53 +
+ lua-support/rc/customization.vimrc                 |  128 ++
+ lua-support/templates/lua-file-header              |   16 +
+ lua-support/templates/lua-frame                    |    3 +
+ lua-support/templates/lua-function-description     |    7 +
+ lua-support/wordlists/lua-c-api.list               |  163 +++
+ lua-support/wordlists/lua.list                     |  164 +++
+ plugin/lua-support.vim                             | 1353 ++++++++++++++++++++
+ 15 files changed, 2977 insertions(+), 0 deletions(-)

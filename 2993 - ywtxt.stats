@@ -1,0 +1,561 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.18, refs/heads/master)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Tue Aug 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. Greatly improved: speed issue for large document.
+    
+    2. Major changed: foldmethod changed from 'syntax' to 'marker' in documnet for speed issue, so you need to append '{{{' and '}}} to lines '^% BEGIN.*$' and '^% END.*$' respectively to fold your old format of ywtxt documents. Method:
+    :%s/^\(% BEGIN.*\)/\1 {{{/c
+    :%s/^\(% END.*\)/\1 }}}/c
+    Sorry for inconvenience!
+    
+    3. Fixed: bug in wrong location when inserting nohtml region.
+    
+    4. Changed: heading creation will prompt you to insert heading text.
+    
+    5. Improved toc generation speed.
+
+ ftplugin/ywtxt.vim |    2 +-
+ plugin/ywtxt.vim   |  427 +++++++++++++++++++++++++++-------------------------
+ syntax/ywtxt.vim   |    3 +-
+ 3 files changed, 222 insertions(+), 210 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.17)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sat Jul 31 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. Added: In toc window, keymap J, K to move a heading region up/down. D/Y to delete/yank a heading region, and put deleted/yanked content into "z.
+    2. Changed: key map to re-indent heading level in toc window \> -> L; \< -> H
+    3. Changed: Doesn't fold document's headings for speed issue.
+    4. Changed: g:ywtxt_autonumber is on by default, heading creation will set section number.
+    5. Improved: g:ywtxt_headings_hl, now you can assign blank value for the default bg/fg color in bold face.
+    6. Improved: heading syntax.
+    7. Fixed: bug in heading creation.
+    8. Fixed: export2html bug in nohtml region
+
+ ftplugin/ywtxt.vim |    8 +-
+ plugin/ywtxt.vim   |  523 +++++++++++++++++++++++++++++++---------------------
+ syntax/ywtxt.vim   |   15 ++-
+ 3 files changed, 334 insertions(+), 212 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.16_1)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Thu May 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for non_export2html region "^% BEGIN_NOHTML", "^% END_NOHTML"(keymap: <ctrl-o>%).
+    
+    Improved the function for switching the types of toc: "Con(t)ents/(F)igures/Ta(b)les/(A)nchors/(L)inks"
+    
+    Fixed non-working keymap for <space> in toc window.
+    
+    Fixed reindentation bug with customized headings.
+    
+    Fixed a heading level bug with the customized heading which contains "#.".
+
+ plugin/ywtxt.vim |  116 +++++++++++++++++++++++++++++++++++++----------------
+ syntax/ywtxt.vim |    2 +-
+ 2 files changed, 82 insertions(+), 36 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.16)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Fri May 21 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Changed the reference region format, please see document for details.
+    
+    2) Abandoned var: g:ywtxt_biblioname.
+    
+    3) Added operator to create arbitrary heading level(<Ctrl-j> o).
+    
+    4) Added syntax for title: The first line in document with a trailing space.
+    
+    5) Added book type to the default bib type.
+    [1] Authors. Book name. City: publisher, year.
+    
+    6) Changed export-to-html routine, now will generate a tmp file firstly(foo.ywtxt -> foo_ywtxt -> foo_ywtxt.html -> rm foo_ywtxt).
+    
+    7) Added vars: g:ywtxt_2htmlpre_usercmds, g:ywtxt_2htmlpost_usercmds, see doc for details(Section 6.5).
+    
+    8) Added var: g:ywtxt_bib_nump to set/unset [<number>] in References list when generating references. Default: 1.
+    
+    9) Added feature '% input file', to include another file when 2html. The feature is very limited, no proper heading syntax supporting.
+    
+    10) Improved syntax for bold/underlined/italic chars in-between * around the Chinese charactors.
+    
+    11) Improved the cursor postion in the document after doing operators in toc window.
+    
+    12) Fixed locating back to the document after finishing exporting to html.
+    
+    13) Fixed non-working of changing bib keywords to numbers while exporting to html.
+    
+    14) Fixed a bug of heading recorgnization.
+    
+    15) Fixed a bug with the function of the bib file finding.
+    
+    16) Fixed error while hit <tab> on '~'.
+    
+    17) Fixed error related to <tab> (reference recognization).
+
+ plugin/ywtxt.vim |  353 ++++++++++++++++++++++++++++++++----------------------
+ syntax/ywtxt.vim |    8 +-
+ 2 files changed, 213 insertions(+), 148 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.15_6)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Fri Apr 23 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Changed, removed and integrated keymaps for creating headings/reference/snip, works both in normal/insert mode(<Ctrl-j>).
+    2) Added var for configuring auto-setting the heading number after creating a heading(set g:ywtxt_autonumber=1). Note it will be slow.
+    3) Improved syntax bug for bold/underlined/italic/.
+
+ plugin/ywtxt.vim |   58 +++++++++++++++++++++++++++++++++++++++++++----------
+ syntax/ywtxt.vim |   15 +++++++++++--
+ 2 files changed, 59 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.15_5)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sat Apr 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug of location with <space>, thanks Zhang Xin's good catch.
+
+ plugin/ywtxt.vim |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.15_4)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sat Apr 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed snip inserting bug which is brought by the last update.
+
+ plugin/ywtxt.vim |    8 +++++---
+ 1 files changed, 5 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.15_3)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sat Apr 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Added syntax for figure/table(figure #-#.; table #-#.)
+    2) Fixed comment region bug.
+    3) Removed setting to nowrap in toc window.
+    4) Removed '[' as a file name charactor, now <C-x><C-f> can complete the file name after '['.
+
+ ftplugin/ywtxt.vim |    4 +++-
+ plugin/ywtxt.vim   |    7 +++----
+ syntax/ywtxt.vim   |    4 ++--
+ 3 files changed, 8 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.15_2)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Thu Mar 25 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Improved anchor-locating behavior for Chinese and English.
+    2) Changed highlight for anchor.
+    3) Added keymap for insert mode: _{ _{}
+
+ plugin/ywtxt.vim |   11 ++++++++---
+ syntax/ywtxt.vim |    6 +++---
+ 2 files changed, 11 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.15_1)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Wed Mar 24 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Added definition for anchor "[#anchor]", please see the section cross-references in document. Thanks for Adrien Pied Piérard's suggestion.
+    2) Removed keymap in insert mode: _(_{}). Thanks for Adrien Pied Piérard's suggestion.
+    3) Added syntax highligh for anchor. Thanks for Adrien Pied Piérard's suggestion.
+    4) Removed textwidth setting.
+    5) Suppressed new file msg when open toc window.
+
+ ftplugin/ywtxt.vim |    1 -
+ plugin/ywtxt.vim   |  750 +++++++++++++++++++++++++++-------------------------
+ syntax/ywtxt.vim   |    6 +-
+ 3 files changed, 391 insertions(+), 366 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Tue Mar 23 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Added var g:ywtxt_browserapp to support opening html directly after export to html, see section "Misc vars" for detail.
+    2) Added support for Cross-references(*[file#anchor]). Please see the section "ywtxt file format" for details.
+
+ plugin/ywtxt.vim |   70 +++++++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 56 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.14_2)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Mon Mar 22 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Fixed outline/unoutline in toc window.
+    2) Suppressed the not pattern found warning when exporting to html.
+
+ plugin/ywtxt.vim |    5 +++--
+ 1 files changed, 3 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.14_1)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Fri Mar 19 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed toc window not refresh after undo/redo
+
+ plugin/ywtxt.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Fri Mar 19 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Added configurable heading highlighting(g:ywtxt_headings_hl) support. Please see the document for details.
+    2) Added encoding declaration in syntax/ywtxt.vim and ftplugin/ywtxt.vim, to prevent encoding issue. thanks zhangxin's report.
+    3) Improved italic, bold, and underlined definition to allow blank spaces in between.
+
+ ftplugin/ywtxt.vim |    2 ++
+ plugin/ywtxt.vim   |   31 +++++++++++++++++++++++++++++++
+ syntax/ywtxt.vim   |   32 +++++---------------------------
+ 3 files changed, 38 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.13_2)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Tue Mar 16 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Fixed errors caused by operations on toc window title line. Thanks pengo's catching.
+    2) Speeded up a little for the toc window opening and jumping.
+    3) Added syntax: "&#22270; #.  ",  "&#34920; #.  ".
+
+ plugin/ywtxt.vim |  143 ++++++++++++++++++++++++++++-------------------------
+ syntax/ywtxt.vim |   16 +++---
+ 2 files changed, 84 insertions(+), 75 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.13_1)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Mon Mar 15 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug: operations in toc winodow unworking.
+
+ plugin/ywtxt.vim |   53 ++++++++++++++++++++++++++++-------------------------
+ 1 files changed, 28 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Mon Mar 15 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Added feature: Customized heading pattern can be set globally(g:ywtxt_HeadingsPat), please see the advanced features in the document for details.
+    2) Improved: The setting for customized heading pattern needn't force user to specify the last pattern to be a ywtxt known pattern.
+    3) Improved the handling of the title line in toc window.
+    4) Improved uncontinious section support, thanks for zhangxin's catch.
+    5) Ignore the unproper user setting for customized section pattern.
+    6) Fixed a bug in keymap shift-x: Outline/un-outline.
+
+ plugin/ywtxt.vim |   79 +++++++++++++++++++++++++++++++++++++++--------------
+ syntax/ywtxt.vim |    9 +++++-
+ 2 files changed, 65 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.12_3)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sat Mar 13 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug in customize section pattern which has spaces in name.
+
+ plugin/ywtxt.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.12_2)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sat Mar 13 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug in bib generation.
+    Fixed a heading syntax bug.
+
+ ftplugin/ywtxt.vim |    3 +-
+ plugin/ywtxt.vim   |   87 ++++++++++++++++++++++++++-------------------------
+ syntax/ywtxt.vim   |    2 +
+ 3 files changed, 48 insertions(+), 44 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.12_1)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sat Mar 13 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug: toc location uncorrectly.
+    Fixed reindent bug.
+
+ plugin/ywtxt.vim |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sat Mar 13 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Added feature to customize section number style, please see the advanced features section in document.
+    
+    2) Improved snip folding and syntax supportings.
+    
+    3) Improved the displaying of toc.
+    
+    4) Improved keymap in toc window: Shift-x fold/unfold all.
+    Thanks for pengo's suggestion.
+    
+    5) Added warning before trying to generate references region.
+    Thanks for pengo's suggestion.
+    
+    6) Improved the uncontinuous headings handling.
+    thanks for pengo's catching.
+    
+    7) Changed: Syntax for figure and table to:
+    "Figure #.  "
+    "Fig. #.  "
+    "Table #.  "
+    
+    8) Added support on Figure/table of contents. Hit 't' in toc window to toggle
+    toc's type.
+    
+    9) Added support for the Multiple reference sections. Please see the
+    advanced feature in document.
+
+ ftplugin/ywtxt.vim |    5 +-
+ plugin/ywtxt.vim   |  503 +++++++++++++++++++++++++++++++++++++++-------------
+ syntax/ywtxt.vim   |   20 +--
+ 3 files changed, 393 insertions(+), 135 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11_2)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Wed Mar 10 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Fixed non-working toc window.
+    2) Fixed references region identification. Thanks for pengo's catching.
+    3) Improved toc window intendation. Thanks for pengo's suggestion.
+
+ plugin/ywtxt.vim |   78 +++++++++++++++++++++++-------------------------------
+ syntax/ywtxt.vim |    2 +-
+ 2 files changed, 34 insertions(+), 46 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11_1)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Wed Mar 10 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed folding and toc highlighting bugs.
+
+ plugin/ywtxt.vim |    2 +-
+ syntax/ywtxt.vim |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Wed Mar 10 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) NOTE! Imcompatible changed!!!: heading format changed again till 0.10: "1  ", "#.#  "(note the following has 2 spaces!)
+    How to upgrade:
+    0.10 user: :call Ywtxt_old2new()<CR> This function will be abandoned in next release.
+    earlier than 0.10 user: :%s/^\(\%(\%(#\|\d\+\)\.\)*\)\(#\|\d\+\)\.\(\s\)/\1\2\3 /g
+    2) snip support. <Leader>I inserts snip, auto-completion supported. See the document for details.
+    3) Added keymaps for toc window: J, K: outline next/previous line.
+    4) Abandoned indentation feature.
+    5) Fixed html export bugs. Thanks for pengo's great catch.
+    6) note and todo strings get highlighted anywhere.
+    7) Added done(DONE) syntax.
+    8) Optimized the toc display.
+
+ ftplugin/ywtxt.vim |    3 +-
+ plugin/ywtxt.vim   |  233 +++++++++++++++++++++++++++++++---------------------
+ syntax/ywtxt.vim   |   61 ++++++++------
+ 3 files changed, 175 insertions(+), 122 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.10_3)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Wed Mar 10 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This will be the last 0.10 series verion, please see all 0.10 series's changelog and the updated document to get how to update. Note again! you can use :call Ywtxt_old2new() then ggVG= to reformat the old version, but please care the inproperly reformat!!! Ywtxt_old2new() will be abandoned in next version! You've been warned.
+    1) Fixed a heading determination error.
+
+ plugin/ywtxt.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.10_2)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Wed Mar 10 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This will be the last 0.10 series verion, please see all 0.10 series's changelog and the updated document to get how to update. Note again! you can use :call Ywtxt_old2new() then ggVG= to reformat the old version, but please care the inproperly reformat!!! Ywtxt_old2new() will be abandoned in next version! You've been warned.
+    1) Improved heading determination
+    2) Improved Indentation function
+
+ plugin/ywtxt.vim |  136 +++++++++++++++++++++++-------------------------------
+ 1 files changed, 58 insertions(+), 78 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.10_1)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Tue Mar 9 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed: a serious toc heading bug.
+    Note!!! Please see the version *0.10*'s changelog and the updated document for detailed changes, otherwise ywtxt will not work properly with the older format in the new version!
+
+ plugin/ywtxt.vim |   14 ++++++++------
+ 1 files changed, 8 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Tue Mar 9 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Uncompatible Changed!: Heading format changed to "#. ", "   #.# ", old user can use :call Ywtxt_old2new() to reformat the old format of ywtxt, note that function Ywtxt_old2new() will abandon in next version.
+    2) Widened: Comment region definition: Lines starts with optional spaces and % considered as comment.
+    3) Changed: Delete comment region when export to html.
+    4) Added: Markup for superscript(^{}) and subscript(_{})
+    5) Added: imap for _(_{}), ^{(^{}) and ^[(^[])
+    6) Added: g:ywtxt_tocwidth for configuration of toc window's width. Thanks for pengo's suggestion.
+    7) Improved: Highlight note and todo strings in headings. Add "&#27880;&#24847;" in note syntax. Thanks for pengo's suggestion.
+    8) Added: markup of "[/path/to/local.pic]" (jpg, png, bmp, gif) can be viewed in exporting html directly.
+    9) Changed: bibliography's name to references.
+    10) Added: Auto Indent.
+    11) Improved: toc window cursorline.
+    12) Improved: reindent func.
+
+ ftplugin/ywtxt.vim |    6 +
+ plugin/ywtxt.vim   |  363 ++++++++++++++++++++++++++++++++++------------------
+ syntax/ywtxt.vim   |   51 ++++----
+ 3 files changed, 272 insertions(+), 148 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sun Mar 7 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Added simple html export. Hit <Shift-e> in toc window will export .ywtxt to .html, set the references keyword to number in document.
+    2) Added keymap in toc window: <Shift-X> will outline the heading in document.
+    3) Changed definition of keymap <space>: open the heading in document without leaving the toc window.
+    4) Abandoned the :call Ywtxt_GenBibliography() way to generate bibliography, use <Shift-b> in toc window instead.
+    5) Improved reindent function.
+    6) Suppressed the no folding found warning of <tab>.
+
+ plugin/ywtxt.vim |  173 ++++++++++++++++++++++++++++++++----------------------
+ syntax/ywtxt.vim |    8 +-
+ 2 files changed, 107 insertions(+), 74 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Fri Mar 5 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Changed toc window openning from horizotally to vertically.
+    2) Added syntax for TODO, NOTE.
+
+ plugin/ywtxt.vim |   26 ++++++++++++++++++++------
+ syntax/ywtxt.vim |    7 ++++++-
+ 2 files changed, 26 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Tue Mar 2 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Added support and keymaps for bibliography generation and viewing, please see the advancd feature in the document for details.
+    2) Improved the header creation funtion.
+    3) Added syntax for Figure capture.
+
+ plugin/ywtxt.vim |  230 +++++++++++++++++++++++++++++++++++++++++++++++------
+ syntax/ywtxt.vim |    6 +-
+ 2 files changed, 207 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sun Feb 28 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Added feature: auto number the section numbers in file according to the toc, and added key maps in toc window(S, w, <leader><tab>, <C-r>, u) and normal file(<leader><tab>). See the document for details.
+    2) Added syntax for bold(*b*), underline(_u_) and italic(/i/).
+    3) Fixed cursor location of toc window.
+    4) Cleaned some unused vars.
+
+ plugin/ywtxt.vim |   86 +++++++++++++++++++++++++++++++++++-------------------
+ syntax/ywtxt.vim |    9 +++++
+ 2 files changed, 65 insertions(+), 30 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sat Feb 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. Improved the toc refresh.
+    2. Removed the dangerous saving operation when changing the level of header.
+
+ plugin/ywtxt.vim |   16 +++++-----------
+ 1 files changed, 5 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sat Feb 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for auto-generating numbered sections in toc window.
+    Fixed unprecisely jumping from toc's bug.
+
+ plugin/ywtxt.vim |   38 +++++++++++++++++++++++++++-----------
+ 1 files changed, 27 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sat Feb 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Fixed syntax for headers matching bug.
+    2) Added feature of changing the level of headers with \< and \> in toc window (Warn!: file will get saved!).
+    3) Added keymap <enter>, x for toc window, see the document for detail.
+    4) Added syntax for [keywords,keywords], figures(Fig. #.<space>) and tables(Table #).
+
+ ftplugin/ywtxt.vim |    5 ----
+ plugin/ywtxt.vim   |   61 ++++++++++++++++++++++++++++++++++++++++++++++++---
+ syntax/ywtxt.vim   |   14 +++++++++--
+ 3 files changed, 68 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Fri Feb 26 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Added highlight for headers(up to 10 levels).
+    2) Fixed toc generation and cursor location bugs.
+    3) Remove normal window key maps for toc window.
+    4) Changed toc window name to the _<file name root>_TOC_
+    5) Added Function for refreshing the toc window(bind it to r in toc window).
+    6) Added key map for normal window: \q      Close the toc window.
+
+ ftplugin/ywtxt.vim |    6 +---
+ plugin/ywtxt.vim   |   82 ++++++++++++++++++++++++++++++++++++----------------
+ syntax/ywtxt.vim   |   34 +++++++++++++++++++--
+ 3 files changed, 89 insertions(+), 33 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Fri Feb 26 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README             |  334 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ ftplugin/ywtxt.vim |   20 +++
+ plugin/ywtxt.vim   |   97 +++++++++++++++
+ syntax/ywtxt.vim   |   13 ++
+ 4 files changed, 464 insertions(+), 0 deletions(-)

@@ -1,0 +1,60 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.3.2, refs/heads/master)
+Author:     Niels Aan de Brugh <nielsadb at gmail.com>
+AuthorDate: Fri Jul 30 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Unix line endings.
+
+ plugin/filtering.vim |  964 +++++++++++++++++++++++++-------------------------
+ 1 files changed, 482 insertions(+), 482 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.3.1)
+Author:     Niels Aan de Brugh <nielsadb at gmail.com>
+AuthorDate: Thu Jul 29 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Made some functions less dependent on custom mappings.
+
+ plugin/filtering.vim |   25 ++++++++++++++++---------
+ 1 files changed, 16 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.3)
+Author:     Niels Aan de Brugh <nielsadb at gmail.com>
+AuthorDate: Wed Sep 9 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed error where ,F always searched for ":echo".
+
+ plugin/filtering.vim |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.2)
+Author:     Niels Aan de Brugh <nielsadb at gmail.com>
+AuthorDate: Thu Sep 3 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Another bug found by a helpful user: called FancyEcho instead of s:FancyEcho in a couple of places. This is now fixed.
+
+ plugin/filtering.vim |   10 +++++-----
+ 1 files changed, 5 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     Niels Aan de Brugh <nielsadb at gmail.com>
+AuthorDate: Wed Sep 2 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    No longer change the global wrapscan setting. Use an emulation for the j/k keys.
+
+ plugin/filtering.vim |   20 ++++++++++++++++----
+ 1 files changed, 16 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Niels Aan de Brugh <nielsadb at gmail.com>
+AuthorDate: Fri Aug 28 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README               |   43 +++++
+ plugin/filtering.vim |  463 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 506 insertions(+), 0 deletions(-)

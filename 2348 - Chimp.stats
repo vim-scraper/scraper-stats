@@ -1,0 +1,59 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2.0, refs/heads/master)
+Author:     Meikel Brandmeyer <Brandels_Mikesh at web.de>
+AuthorDate: Sat Oct 18 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added more functions for the Clojure frontend:
+    - dw to look up documentation for word under the cursor
+    - ld to look up arbitrary documentation
+    - fd to find documentation via find-doc
+    
+    Fixed a bug with an obsolete argument to EvalFile
+
+ chimp-1.1.0/LICENSE                          |   20 --
+ chimp-1.1.0/README.txt                       |   41 ----
+ chimp-1.1.0/after/ftplugin/clojure/chimp.vim |  217 ----------------------
+ chimp-1.1.0/version.txt                      |    6 -
+ chimp-1.2.0/LICENSE                          |   20 ++
+ chimp-1.2.0/README.txt                       |   41 ++++
+ chimp-1.2.0/after/ftplugin/clojure/chimp.vim |  253 ++++++++++++++++++++++++++
+ chimp-1.2.0/version.txt                      |    6 +
+ doc/clojurechimp.txt                         |   19 ++
+ 9 files changed, 339 insertions(+), 284 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.0)
+Author:     Meikel Brandmeyer <Brandels_Mikesh at web.de>
+AuthorDate: Tue Sep 2 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Mostly clean-up release.
+    - Now recognises new clojure/ns function.
+    - Requires VimClojure >= 1.2.1 for the Clojure frontend.
+
+ chimp-1.0.0/LICENSE                          |   20 ---
+ chimp-1.0.0/README.txt                       |   36 -----
+ chimp-1.0.0/after/ftplugin/clojure/chimp.vim |  198 -----------------------
+ chimp-1.0.0/version.txt                      |    6 -
+ chimp-1.1.0/LICENSE                          |   20 +++
+ chimp-1.1.0/README.txt                       |   41 +++++
+ chimp-1.1.0/after/ftplugin/clojure/chimp.vim |  217 ++++++++++++++++++++++++++
+ chimp-1.1.0/version.txt                      |    6 +
+ 8 files changed, 284 insertions(+), 260 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.0)
+Author:     Meikel Brandmeyer <Brandels_Mikesh at web.de>
+AuthorDate: Mon Aug 18 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                                       |   29 ++++
+ autoload/chimp.vim                           |   55 +++++++
+ bin/chimp.sh                                 |   91 ++++++++++++
+ chimp-1.0.0/LICENSE                          |   20 +++
+ chimp-1.0.0/README.txt                       |   36 +++++
+ chimp-1.0.0/after/ftplugin/clojure/chimp.vim |  198 ++++++++++++++++++++++++++
+ chimp-1.0.0/version.txt                      |    6 +
+ doc/chimp.txt                                |  104 ++++++++++++++
+ doc/clojurechimp.txt                         |   73 ++++++++++
+ 9 files changed, 612 insertions(+), 0 deletions(-)

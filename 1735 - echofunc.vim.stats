@@ -1,0 +1,159 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.19, refs/heads/master)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Fri May 1 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix compatibility issues with Ctrl-v I and some other plugins.
+
+ plugin/echofunc.vim |   15 ++++++++++-----
+ 1 files changed, 10 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.18)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Wed Dec 26 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Work around a problem that matchparen is not in effect.
+
+ plugin/echofunc.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.17)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Mon Nov 26 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix a key mapping conflict with omni-completion (thanks to Edward L. Fox and Ben Schmidt).
+
+ plugin/echofunc.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.16)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Wed Nov 7 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Make the keys for Next-Function and Previous-Function configurable.
+    - Make small enhancements.
+
+ plugin/echofunc.vim |   43 +++++++++++++++++++++++++++++++------------
+ 1 files changed, 31 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.14)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Fri Nov 2 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Use the tags language field, when it is available, to avoid irrelevant matches.
+
+ plugin/echofunc.vim |  121 +++++++++++++++++++++++++++++++-------------------
+ 1 files changed, 75 insertions(+), 46 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Thu Nov 1 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add some language-specific support;
+    Improve the support for languages whose tags do not include a `signature'.
+
+ plugin/echofunc.vim |   93 +++++++++++++++++++++++++++++++--------------------
+ 1 files changed, 57 insertions(+), 36 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Sun Oct 28 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Display more information about variables, macros, classes, structs, etc.;
+    - Ensure no leading spaces are ever displayed;
+    - Compress contiguous space characters to a single SPACE;
+    - Add new control variable for the maximum number of balloon declarations.
+
+ plugin/echofunc.vim |   77 +++++++++++++++++++++++++++++++++++++++++++--------
+ 1 files changed, 65 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Sun Oct 21 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix a typo that can prevent member functions from being correctly echoed.
+
+ plugin/echofunc.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Tue Oct 16 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Make both the function echo and the balloon tip support C++ destructors and operator redefinitions.
+
+ plugin/echofunc.vim |   55 ++++++++++++++++++++++++++++++++++++++++++--------
+ 1 files changed, 46 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Sat Oct 6 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Bug fix: not all functions are shown.
+    - Bug fix: some operations take very long.
+    - Improvement: ")" will finish the function echoing.
+    - Improvement: new global variable EchoFuncTagsLanguages to control in which file types echofunc will be automatically enabled.
+    - Improvement: Automatic enabling works also on new files.
+
+ plugin/echofunc.vim |  186 ++++++++++++++++++++++++++++++++------------------
+ 1 files changed, 119 insertions(+), 67 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Wed Aug 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Check file type when starting echo function name or pop a balloon.
+
+ plugin/echofunc.vim |   85 ++++++++++++++++++++++++++++++++++++++++++--------
+ 1 files changed, 71 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Tue Jul 31 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fix
+
+ plugin/echofunc.vim |   13 ++++++++-----
+ 1 files changed, 8 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Mon Jul 23 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fix.
+
+ plugin/echofunc.vim |   16 ++++++++--------
+ 1 files changed, 8 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Sat Jun 9 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    It now support popping out a balloon to show the declaration of the functions and class members under GVim
+
+ plugin/echofunc.vim |   66 ++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 52 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Thu Dec 21 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |   43 +++++++++++++++++++
+ plugin/echofunc.vim |  115 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 158 insertions(+), 0 deletions(-)

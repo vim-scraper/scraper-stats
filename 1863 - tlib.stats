@@ -1,0 +1,796 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.37, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Mar 31 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - g:tlib_inputlist_livesearch_threshold defaults to 1000
+    - tlib#World: optional scratch_pos field
+    - tlib#input#List: By default <m-NUMBER> selects by number but NUMBER is interpreted as string
+    - tlib#date
+    - TTimeCommand
+
+ autoload/tlib/Filter_cnf.vim |   21 +++++++--
+ autoload/tlib/World.vim      |   43 ++++++++++--------
+ autoload/tlib/agent.vim      |    6 ++-
+ autoload/tlib/buffer.vim     |   27 ++++++++---
+ autoload/tlib/cmd.vim        |   18 ++++++--
+ autoload/tlib/date.vim       |   97 ++++++++++++++++++++++++++++++++++++++++++
+ autoload/tlib/input.vim      |   21 +++++++--
+ autoload/tlib/rx.vim         |    8 ++--
+ autoload/tlib/scratch.vim    |    7 ++-
+ autoload/tlib/win.vim        |   11 ++++-
+ doc/tlib.txt                 |   41 +++++++++++++----
+ plugin/02tlib.vim            |   54 ++++++++++++------------
+ 12 files changed, 264 insertions(+), 90 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.36)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sat Feb 20 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Display a message when the filter is for whatever reason invalid
+    - Removed tlib#paragraph#Delete()
+    - New: tlib#paragraph#Define(), tlib#textobjects#StandardParagraph()
+
+ autoload/tlib/World.vim        |   71 +++++++---
+ autoload/tlib/agent.vim        |    9 +-
+ autoload/tlib/autocmdgroup.vim |    8 +-
+ autoload/tlib/buffer.vim       |    8 +-
+ autoload/tlib/cache.vim        |    9 +-
+ autoload/tlib/file.vim         |    4 +-
+ autoload/tlib/input.vim        |  146 +++++++++---------
+ autoload/tlib/paragraph.vim    |   97 +++++++++----
+ autoload/tlib/progressbar.vim  |   14 ++-
+ autoload/tlib/textobjects.vim  |   45 ++++++
+ autoload/tlib/url.vim          |    9 +-
+ autoload/tlib.vim              |    9 +-
+ doc/tlib.txt                   |  330 ++++++++++++++++++++++------------------
+ plugin/02tlib.vim              |   14 ++-
+ 14 files changed, 459 insertions(+), 314 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.35)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Dec 21 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    tlib#input#EditList(): return the list if the user presses esc
+
+ autoload/tlib/input.vim |   17 +++++++++++------
+ doc/tlib.txt            |   12 ++++++------
+ plugin/02tlib.vim       |    9 ++++++---
+ 3 files changed, 23 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.34)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Dec 7 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - tlib#buffer#HighlightLine(line): call tlib#autocmdgroup#Init()  (reported by Sergey Khorev)
+
+ autoload/tlib/World.vim        |    6 +-
+ autoload/tlib/autocmdgroup.vim |    4 +-
+ autoload/tlib/buffer.vim       |    6 ++-
+ autoload/tlib/map.vim          |   23 +++++++++
+ autoload/tlib/paragraph.vim    |   46 ++++++++++++++++++
+ autoload/tlib/scratch.vim      |    5 +-
+ autoload/tlib/signs.vim        |  103 ++++++++++++++++++++++++++++++++++++++++
+ doc/tlib.txt                   |   18 ++++++-
+ plugin/02tlib.vim              |   15 +++++-
+ 9 files changed, 212 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.33)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Oct 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - tlib#agent#Exit: explicitly return empty value (as a consequence,
+    pressing <esc> when browsing an index-list, returns 0 and not "")
+    - tlib#signs
+    - tlib#input#List: set local statusline
+    - Don't reset statusline
+    - Don't use fnamemodify() to split filenames (for performance reasons)
+    - scratch: Set ft after setting up scratch options
+    - tlib#map#PumAccept(key)
+
+ autoload/tlib/World.vim   |   73 +++++++++++++++++++++++++++++----------------
+ autoload/tlib/agent.vim   |   12 ++++---
+ autoload/tlib/buffer.vim  |   60 +++++++++++++++++++++++--------------
+ autoload/tlib/dir.vim     |    8 ++--
+ autoload/tlib/file.vim    |    7 ++--
+ autoload/tlib/input.vim   |   31 +++++++++++++-----
+ autoload/tlib/list.vim    |    8 ++--
+ autoload/tlib/scratch.vim |   18 +++++++----
+ autoload/tlib/tag.vim     |    5 ++-
+ autoload/tlib/win.vim     |   16 +++++----
+ doc/tlib.txt              |   53 ++++++++++++++++++++++++++++++++-
+ plugin/02tlib.vim         |   49 ++++++++++++++++++++----------
+ 12 files changed, 233 insertions(+), 107 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.31)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Feb 25 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - :TRequire
+    -tlib#input#List: For i-type list views, make sure agents are called
+    with the base indices.
+    - World#RestoreOrigin(): Don't assume &splitright
+
+ autoload/tlib/Filter_cnf.vim   |    6 +-
+ autoload/tlib/Filter_cnfd.vim  |    6 +-
+ autoload/tlib/Filter_fuzzy.vim |    6 +-
+ autoload/tlib/Filter_seq.vim   |    6 +-
+ autoload/tlib/Object.vim       |    6 +-
+ autoload/tlib/Test.vim         |    6 +-
+ autoload/tlib/TestChild.vim    |    6 +-
+ autoload/tlib/World.vim        |   68 +++++++++++++++++++------------
+ autoload/tlib/agent.vim        |    7 ++-
+ autoload/tlib/arg.vim          |    6 +-
+ autoload/tlib/autocmdgroup.vim |    6 +-
+ autoload/tlib/buffer.vim       |    6 +-
+ autoload/tlib/cache.vim        |    7 ++-
+ autoload/tlib/char.vim         |    6 +-
+ autoload/tlib/cmd.vim          |    6 +-
+ autoload/tlib/comments.vim     |    6 +-
+ autoload/tlib/dir.vim          |    6 +-
+ autoload/tlib/eval.vim         |    6 +-
+ autoload/tlib/file.vim         |   21 ++++++----
+ autoload/tlib/hook.vim         |    6 +-
+ autoload/tlib/input.vim        |   18 ++++++--
+ autoload/tlib/list.vim         |    6 +-
+ autoload/tlib/normal.vim       |    6 +-
+ autoload/tlib/notify.vim       |    6 +-
+ autoload/tlib/progressbar.vim  |    6 +-
+ autoload/tlib/rx.vim           |   14 +++---
+ autoload/tlib/scratch.vim      |    6 +-
+ autoload/tlib/string.vim       |    6 +-
+ autoload/tlib/syntax.vim       |    6 +-
+ autoload/tlib/tab.vim          |    6 +-
+ autoload/tlib/tag.vim          |    6 +-
+ autoload/tlib/time.vim         |    8 ++--
+ autoload/tlib/type.vim         |    6 +-
+ autoload/tlib/url.vim          |    6 +-
+ autoload/tlib/var.vim          |    6 +-
+ autoload/tlib/win.vim          |    6 +-
+ autoload/tlib.vim              |    6 +-
+ doc/tlib.txt                   |   87 ++++++++++++++++++++++++++++++++++++++--
+ plugin/02tlib.vim              |   46 ++++++++++++++++++---
+ 39 files changed, 299 insertions(+), 157 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.29)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Thu Feb 12 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - tlib#string#Strip(): Strip also control characters (newlines etc.)
+    - tlib#rx#Suffixes(): 'suffixes' as Regexp
+    - World#RestoreOrigin(): Don't assume &splitbelow
+
+ autoload/tlib/Filter_cnf.vim |    5 +-
+ autoload/tlib/World.vim      |   30 +++++++++--
+ autoload/tlib/agent.vim      |    8 ++--
+ autoload/tlib/buffer.vim     |   11 +++--
+ autoload/tlib/cache.vim      |    6 +-
+ autoload/tlib/file.vim       |    5 +-
+ autoload/tlib/input.vim      |    9 +++-
+ autoload/tlib/rx.vim         |   18 ++++++-
+ autoload/tlib/scratch.vim    |    7 ++-
+ autoload/tlib/string.vim     |    8 ++--
+ autoload/tlib/win.vim        |   17 ++++++-
+ doc/tlib.txt                 |  113 +++---------------------------------------
+ plugin/02tlib.vim            |   11 +++-
+ 13 files changed, 106 insertions(+), 142 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.28)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Dec 2 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - tlib#input#List():
+    -- Improved handling of sticky lists; <cr> and <Leftmouse> resume a suspended list and immediately selects the item under the cursor
+    -- Experimental "seq" matching style: the conjunctions are sequentially ordered, they are combined with "OR" (disjunctions), the regexp is 'magic', and "." is expanded to '.\{-}'
+    -- Experimental "cnfd" matching style: Same as cnf but with an "elastic" dot "." that matches '\.\{-}'
+    -- Filtering acts as if &ic=1 && $sc=1
+    -- Weighting is done by the filter
+    - tlib#agent#Input(): Consume <esc> when aborting input()
+    - INCOMPATIBLE CHANGE: Changed eligible values of g:tlib_inputlist_match to "cnf", "cnfd", "seq" and "fuzzy"
+    - NEW: tlib#buffer#KeepCursorPosition()
+    - tlib#buffer#InsertText(): Take care of the extra line when appending text to an empty buffer.
+
+ autoload/tlib/Filter_cnf.vim   |  129 ++++++++++++++++++
+ autoload/tlib/Filter_cnfd.vim  |   54 ++++++++
+ autoload/tlib/Filter_fuzzy.vim |   64 +++++++++
+ autoload/tlib/Filter_seq.vim   |   94 +++++++++++++
+ autoload/tlib/World.vim        |  235 +++++++++++++++++++++++-----------
+ autoload/tlib/agent.vim        |   54 ++++++--
+ autoload/tlib/buffer.vim       |   19 +++-
+ autoload/tlib/file.vim         |    4 +-
+ autoload/tlib/input.vim        |  146 ++++++++++-----------
+ autoload/tlib/rx.vim           |   17 ++-
+ autoload/tlib/string.vim       |   14 ++-
+ doc/tlib.txt                   |  281 +++++++++++-----------------------------
+ plugin/02tlib.vim              |   42 +++++-
+ test/tlib.vim                  |   10 +-
+ 14 files changed, 776 insertions(+), 387 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.27)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Thu Oct 16 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - NEW: tlib#normal#WithRegister()
+    - FIX: Try not to change numbered registers
+    - FIX: Cosmetic bug, wrong packaging (thanks Nathan Neff)
+    - Meaning of World#filter_format changed; new World#filter_options
+    - Filtering didn't work as advertised
+
+ autoload/tlib/Object.vim |   13 ++-
+ autoload/tlib/World.vim  |   67 ++++++++++++++---
+ autoload/tlib/buffer.vim |   13 ++-
+ autoload/tlib/input.vim  |  183 +++++++++++++++++++++++++---------------------
+ autoload/tlib/normal.vim |   26 +++++++
+ doc/tlib.txt             |   28 +++++++
+ plugin/02tlib.vim        |   20 ++++-
+ 7 files changed, 244 insertions(+), 106 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.25)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Oct 5 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - NEW: tlib#notify#TrimMessage(): trim message to prevent "Press ENTER" messages (contributed by Erik Falor)
+    - NEW: tlib#notify#Echo()
+    - FIX: World.CloseScratch(): Set window
+    - FIX: tlib#input#ListW(): Set initial_display = 1 on reset
+
+ autoload/tlib/World.vim        |   25 +++++-
+ autoload/tlib/agent.vim        |    5 +-
+ autoload/tlib/autocmdgroup.vim |   27 ++++++
+ autoload/tlib/input.vim        |  183 ++++++++++++++++++++++------------------
+ autoload/tlib/notify.vim       |  103 ++++++++++++++++++++++
+ autoload/tlib/scratch.vim      |   20 ++--
+ autoload/tlib/string.vim       |    5 +-
+ autoload/tlib/win.vim          |    8 ++-
+ doc/tlib.txt                   |   74 ++++++++++++++++-
+ plugin/02tlib.vim              |   15 +++-
+ 10 files changed, 357 insertions(+), 108 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.24)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Aug 31 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - s:prototype.SetInitialFilter: accept list as argument
+    - Maintain buffer MRU if required
+
+ autoload/tlib/Object.vim  |    5 ++-
+ autoload/tlib/World.vim   |   11 ++++++--
+ autoload/tlib/buffer.vim  |   55 +++++++++++++++++++++++++++++++++++++++++---
+ autoload/tlib/input.vim   |   20 ++++++++++-----
+ autoload/tlib/rx.vim      |    6 +---
+ autoload/tlib/scratch.vim |   31 ++++++++++++++----------
+ autoload/tlib/string.vim  |   28 +++++++++++++++++++++-
+ autoload/tlib/syntax.vim  |    6 ++--
+ autoload/tlib/var.vim     |    6 ++--
+ plugin/02tlib.vim         |   15 +++++------
+ 10 files changed, 134 insertions(+), 49 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.23)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sat Jun 21 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - FIX: very magic mode for tlib#rx#Escape()
+    - FIX: tlib#arg#Ex: escape "!"
+    - Respect the setting of g:tlib_inputlist_filename_indicators
+    - tlib#input#List(): Reset syntax on resume; option to make list window "sticky"
+    - tlib#agent#ToggleStickyList()
+    - Simplified tlib#url#Decode()
+    - tlib#arg#Ex(): use fnameescape() if available
+
+ autoload/tlib/World.vim  |   59 +++++++++++++++++++------------
+ autoload/tlib/agent.vim  |   11 +++++-
+ autoload/tlib/arg.vim    |   22 +++++++----
+ autoload/tlib/cmd.vim    |   12 +++++-
+ autoload/tlib/file.vim   |    4 +-
+ autoload/tlib/input.vim  |   22 ++++++++----
+ autoload/tlib/rx.vim     |   15 ++++----
+ autoload/tlib/string.vim |   88 +++++++++++++++++++++++++++++++++-------------
+ autoload/tlib/url.vim    |   46 ++++++++----------------
+ doc/tlib.txt             |   76 ++++++++++++++++++++++++----------------
+ plugin/02tlib.vim        |   22 +++++++++---
+ test/tlib.vim            |   11 +++++-
+ 12 files changed, 245 insertions(+), 143 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.21)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Nov 21 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - tlib#buffer#InsertText(): Respect tabs and (experimental) formatoptions+=or
+    - tlib/syntax.vim: Syntax-related functions
+
+ autoload/tlib/World.vim    |   31 ++++-
+ autoload/tlib/buffer.vim   |   42 +++++-
+ autoload/tlib/comments.vim |   57 ++++++++
+ autoload/tlib/input.vim    |    9 +-
+ autoload/tlib/syntax.vim   |   51 +++++++
+ doc/tlib.txt               |  309 ++++++++++++++++++++++++--------------------
+ plugin/02tlib.vim          |   10 +-
+ 7 files changed, 353 insertions(+), 156 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.20)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Nov 12 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    CHANGES:
+    - The arguments of tlib#tag#Collect() have changed.
+    - tlib#input#List(): The view can be "suspended" on initial display.
+    - tlib#input#List(): Follow/trace cursor functionality
+
+ autoload/tlib/World.vim  |   54 +++++--
+ autoload/tlib/buffer.vim |    8 +-
+ autoload/tlib/input.vim  |   33 ++--
+ autoload/tlib/tag.vim    |   46 +++++-
+ doc/tlib.txt             |  410 +++++++++++++++++++++++++---------------------
+ plugin/02tlib.vim        |   33 ++++-
+ 6 files changed, 358 insertions(+), 226 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.19)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Nov 5 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NEW:
+        - tag.vim
+    FIX:
+        - dir.vim: Use plain dir name in tlib#dir#Ensure()
+        - tlib#input#List(): An initial filter argument creates [[filter]]
+        and not as before [[''], [filter]].
+        - tlib#input#List(): When type was "si" and the item was picked by
+        filter, the wrong index was returned.
+        - tlib#input#List(): Don't check if chars are typed when displaying
+        the list for the first time.
+
+ autoload/tlib/World.vim   |   12 +-
+ autoload/tlib/buffer.vim  |    9 +-
+ autoload/tlib/cache.vim   |   18 ++-
+ autoload/tlib/dir.vim     |   14 +-
+ autoload/tlib/file.vim    |   26 ++-
+ autoload/tlib/input.vim   |   34 +++-
+ autoload/tlib/list.vim    |   26 +++-
+ autoload/tlib/scratch.vim |    5 +-
+ autoload/tlib/tag.vim     |   89 ++++++++++
+ doc/tlib.txt              |  409 ++++++++++++++++++++++++++++-----------------
+ plugin/02tlib.vim         |   23 ++-
+ 11 files changed, 469 insertions(+), 196 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.18)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Fri Oct 26 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NEW:
+        - tlib/time.vim
+        - g:tlib_inputlist_livesearch_threshold (useful on slower systems)
+    CHANGES:
+        - tlib#input#ListD(), World: Don't redisplay the list while typing
+        new letters; calculate filter regexps only once before filtering the
+        list.
+        - World.vim: Minor changes to how filenames are handled.
+
+ autoload/tlib/World.vim |  152 ++++++++++++++++++++++++++++++++++++++---------
+ autoload/tlib/char.vim  |   43 ++++++++++----
+ autoload/tlib/hook.vim  |    5 +-
+ autoload/tlib/input.vim |   73 +++++++----------------
+ autoload/tlib/time.vim  |   60 ++++++++++++++++++
+ plugin/02tlib.vim       |   21 ++++++-
+ 6 files changed, 257 insertions(+), 97 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.17)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Fri Oct 12 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NEW:
+        - TBrowseOutput
+    - Some minor changes
+
+ autoload/tlib/cmd.vim  |   14 +++++++-
+ autoload/tlib/file.vim |    8 +++--
+ autoload/tlib/rx.vim   |    9 ++++--
+ doc/tlib.txt           |   75 +++++++++++++++++++++++++++++++++++++++++++++++-
+ plugin/02tlib.vim      |   26 ++++++++++++++--
+ 5 files changed, 120 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.16)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Oct 7 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - tlib#string#Printf1()
+
+ autoload/tlib/agent.vim       |    6 ++--
+ autoload/tlib/arg.vim         |   30 ++++++++++++++++++++++++++-
+ autoload/tlib/input.vim       |    6 ++--
+ autoload/tlib/progressbar.vim |    6 ++--
+ autoload/tlib/scratch.vim     |    6 +++-
+ autoload/tlib/string.vim      |   43 +++++++++++++++++++++++++++++++++++++++-
+ plugin/02tlib.vim             |   10 ++++++--
+ 7 files changed, 89 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Sep 30 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NEW:
+        - tlib#string#TrimLeft(), tlib#string#TrimRight(), tlib#string#Strip()
+        - Progress bar
+
+ autoload/tlib/World.vim       |    4 +-
+ autoload/tlib/input.vim       |    5 +-
+ autoload/tlib/progressbar.vim |   73 ++++++++++++++++++++++++++++++++++
+ autoload/tlib/string.vim      |   20 +++++++++-
+ autoload/tlib/type.vim        |   34 ++++++++++++++++
+ doc/tlib.txt                  |   86 +++++++++++++++++++++++++++++++++++++++++
+ plugin/02tlib.vim             |   11 ++++-
+ 7 files changed, 224 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Sep 19 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NEW:
+        - tlib#buffer#InsertText()
+    CHANGES:
+        - tlib#win#[SG]etLayout(): Use a dictionnary, set &cmdheight.
+    FIXES:
+        - tlib#input#List(): Wrong order with pre-defined filters.
+
+ autoload/tlib/Object.vim    |    6 +-
+ autoload/tlib/Test.vim      |    6 +-
+ autoload/tlib/TestChild.vim |    6 +-
+ autoload/tlib/World.vim     |    6 +-
+ autoload/tlib/agent.vim     |   25 ++-
+ autoload/tlib/arg.vim       |   18 ++-
+ autoload/tlib/buffer.vim    |   78 +++++++-
+ autoload/tlib/cache.vim     |    6 +-
+ autoload/tlib/char.vim      |    6 +-
+ autoload/tlib/cmd.vim       |    6 +-
+ autoload/tlib/dir.vim       |    6 +-
+ autoload/tlib/eval.vim      |   55 ++++++
+ autoload/tlib/file.vim      |    8 +-
+ autoload/tlib/hook.vim      |    6 +-
+ autoload/tlib/input.vim     |   17 ++-
+ autoload/tlib/list.vim      |    6 +-
+ autoload/tlib/rx.vim        |    6 +-
+ autoload/tlib/scratch.vim   |    6 +-
+ autoload/tlib/string.vim    |   10 +-
+ autoload/tlib/tab.vim       |    6 +-
+ autoload/tlib/url.vim       |    6 +-
+ autoload/tlib/var.vim       |    6 +-
+ autoload/tlib/win.vim       |   20 +-
+ autoload/tlib.vim           |    6 +-
+ doc/tlib.txt                |  453 +++++++++++++++++++++++--------------------
+ plugin/02tlib.vim           |   26 ++-
+ 26 files changed, 511 insertions(+), 295 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Sep 11 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    CHANGES:
+        - Scratch: Set &fdc=0.
+        - The cache directory can be configured via g:tlib_cache
+        - Renamed tlib#buffer#SetBuffer() to tlib#buffer#Set().
+    FIXES:
+        - tlib#input#List(): Select the active item per mouse.
+        - TLet: simplified
+
+ autoload/tlib/World.vim   |   10 ++++++----
+ autoload/tlib/agent.vim   |    8 ++++----
+ autoload/tlib/buffer.vim  |   31 +++++++++++++++++++++++--------
+ autoload/tlib/cache.vim   |   13 ++++++++-----
+ autoload/tlib/file.vim    |    4 ++--
+ autoload/tlib/input.vim   |   38 +++++++++++++++++++++++++-------------
+ autoload/tlib/scratch.vim |    5 +++--
+ autoload/tlib/var.vim     |   19 +++++++++++++++++--
+ plugin/02tlib.vim         |   26 +++++++++++++++++++-------
+ 9 files changed, 107 insertions(+), 47 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sat Sep 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NEW:
+        - tlib/tab.vim
+    CHANGES:
+        - Renamed tlib#win#SetWin() to tlib#win#Set()
+    IMPROVEMENTS:
+        - tlib#input#List(): <left>, <right> keys work in some lists
+        - tlib#input#List(): If an index_table is provided this will be used
+        instead of the item's list index.
+    FIXES:
+        - tlib#input#List(): Problem with scrolling, when the list was
+        shorter than the window (eg when using a vertical window).
+        - tlib#cache#Filename(): Don't rewrite name as relative filename if
+        explicitly given as argument. Avoid double (back)slashes.
+        - TLet: simplified
+
+ autoload/tlib/Object.vim    |   18 +++++++++--
+ autoload/tlib/Test.vim      |    6 ++--
+ autoload/tlib/TestChild.vim |    6 ++--
+ autoload/tlib/World.vim     |   48 +++++++++++++++++++++++-------
+ autoload/tlib/agent.vim     |   32 ++++++++++++++------
+ autoload/tlib/arg.vim       |    6 ++--
+ autoload/tlib/buffer.vim    |   12 ++++++--
+ autoload/tlib/cache.vim     |   26 ++++++++++------
+ autoload/tlib/char.vim      |    6 ++--
+ autoload/tlib/cmd.vim       |   24 +++++++++++++--
+ autoload/tlib/dir.vim       |   14 +++++++--
+ autoload/tlib/file.vim      |    9 ++++--
+ autoload/tlib/hook.vim      |    6 ++--
+ autoload/tlib/input.vim     |   53 ++++++++++++++++++++++++++-------
+ autoload/tlib/list.vim      |    6 ++--
+ autoload/tlib/rx.vim        |    6 ++--
+ autoload/tlib/scratch.vim   |    8 ++--
+ autoload/tlib/string.vim    |    6 ++--
+ autoload/tlib/tab.vim       |   55 ++++++++++++++++++++++++++++++++++
+ autoload/tlib/url.vim       |   15 ++++++---
+ autoload/tlib/var.vim       |    6 ++--
+ autoload/tlib/win.vim       |   28 ++++++++++-------
+ autoload/tlib.vim           |    6 ++--
+ doc/tlib.txt                |   68 ++++++++++++++++++++++++++++++++++++++----
+ plugin/02tlib.vim           |   39 +++++++++++++++++++------
+ test/tlib.vim               |    6 ++--
+ 26 files changed, 388 insertions(+), 127 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Aug 26 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NEW:
+        - The :TLet command replaces :TLLet (which was removed)
+        - :TScratch[!] command (with ! don't split but use the whole window)
+        - tlib#rx#Escape(text, ?magic='m')
+        - tlib#buffer#GetList(?show_hidden=0)
+        - tlib#dir#CD(), tlib#dir#Push(), tlib#dir#Pop()
+        - tlib#input#ListW: A slightly remodeled version of tlib#input#List
+        that takes a World as second argument.
+        - Added some documentation doc/tlib.txt (most of it is automatically
+        compiled from the source files)
+    CHANGES:
+        - tlib#input#List(): The default keys for AND, NOT have changed to
+        be more Google-like (space, minus); the keys can be configured via
+        global variables.
+    IMPROVEMENTS:
+        - In file listings, indicate if a file is loaded, listed, modified
+        etc.
+        - tlib#input#List(): Highlight the filter pattern
+        - tlib#input#List(): <c-up/down> scrolls g:tlib_scroll_lines
+        (default=10) lines
+    FIXES:
+        - tlib#input#List(): Centering line, clear match, clear & restore
+        the search register
+        - tlib#input#List(): Ensure the window layout doesn't change (if the
+        number of windows hasn't changed)
+        - tlib#arg#Ex(): Don't escape backslashes by default
+
+ autoload/tlib/Object.vim    |   67 +++-
+ autoload/tlib/Test.vim      |    8 +-
+ autoload/tlib/TestChild.vim |    8 +-
+ autoload/tlib/World.vim     |  279 ++++++++++--
+ autoload/tlib/agent.vim     |  178 +++++++--
+ autoload/tlib/arg.vim       |   24 +-
+ autoload/tlib/buffer.vim    |  151 ++++++--
+ autoload/tlib/cache.vim     |    9 +-
+ autoload/tlib/char.vim      |   14 +-
+ autoload/tlib/cmd.vim       |   20 +
+ autoload/tlib/dir.vim       |   43 ++-
+ autoload/tlib/file.vim      |   37 +-
+ autoload/tlib/hook.vim      |   32 ++
+ autoload/tlib/input.vim     |  368 ++++++++++++----
+ autoload/tlib/list.vim      |   96 +++--
+ autoload/tlib/rx.vim        |   34 ++
+ autoload/tlib/scratch.vim   |   59 ++-
+ autoload/tlib/string.vim    |    8 +-
+ autoload/tlib/url.vim       |   13 +-
+ autoload/tlib/var.vim       |   47 ++-
+ autoload/tlib/win.vim       |  104 +++++
+ doc/tlib.txt                | 1008 +++++++++++++++++++++++++++++++++++++++++++
+ plugin/02tlib.vim           |  295 ++++++++-----
+ test/tlib.vim               |   59 ++-
+ 24 files changed, 2526 insertions(+), 435 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Jul 18 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - tlib#input#List(): (v)split type of commands leave the original window
+    untouched (you may use <c-w> to replace its contents)
+    - tlib#file#With(): Check whether an existing buffer is loaded.
+    - Scratch related functions went to tlib/scratch.vim so that they are
+    accessible from other scripts.
+    - Configure the list window height via g:tlib_inputlist_pct (1..100%)
+
+ autoload/tlib/World.vim   |   68 ++++++++++++---------------------------------
+ autoload/tlib/agent.vim   |   31 ++++++++++++++------
+ autoload/tlib/file.vim    |    8 +++--
+ autoload/tlib/input.vim   |    9 +++--
+ autoload/tlib/scratch.vim |   65 +++++++++++++++++++++++++++++++++++++++++++
+ plugin/02tlib.vim         |   24 ++++++++++++++--
+ test/tlib.vim             |   12 ++++----
+ 7 files changed, 141 insertions(+), 76 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Jul 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Re-arrangements & modularization (this means many function names have
+    changed, on the other hand only those functions are loaded that are
+    actually needed)
+    - tlib#input#List(): Added maps with m-modifiers for <c-q>, <c-z>, <c-a>
+    - tlib#input#List(): Make sure &fdm is manual
+    - tlib#input#List(): When exiting the list view, consume the next 5
+    characters in the queue (if any)
+    - tlib#input#EditList(): Now has cut, copy, paste functionality.
+    - Added documentation and examples
+
+ autoload/tlib/TestChild.vim |   23 +
+ autoload/tlib/World.vim     |  174 ++++++-
+ autoload/tlib/agent.vim     |  249 +++++++++-
+ autoload/tlib/arg.vim       |   52 ++
+ autoload/tlib/buffer.vim    |   53 ++
+ autoload/tlib/cache.vim     |   50 ++
+ autoload/tlib/char.vim      |   39 ++
+ autoload/tlib/dir.vim       |   36 ++
+ autoload/tlib/file.vim      |   95 ++++
+ autoload/tlib/input.vim     |  392 ++++++++++++++
+ autoload/tlib/list.vim      |  112 ++++
+ autoload/tlib/string.vim    |   20 +
+ autoload/tlib/url.vim       |   59 +++
+ autoload/tlib/var.vim       |   67 +++
+ autoload/tlib.vim           | 1203 +------------------------------------------
+ plugin/02tlib.vim           |  173 ++++++-
+ test/tlib.vim               |  118 +++--
+ 17 files changed, 1646 insertions(+), 1269 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Jun 24 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - FIX: Return empty cache name for buffers that have no files attached to it
+    - Some re-arranging
+
+ autoload/tlib/agent.vim |   64 +++++++++++++++++++++++++++++++++++++++++++++++
+ autoload/tlib.vim       |   53 ++++++++++++++++++++++++++++----------
+ plugin/02tlib.vim       |    6 ++--
+ 3 files changed, 106 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Jun 20 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - tlib#InputList(): <c-z> ... Suspend/Resume input loop
+    - tlib#InputList(): <c-q> ... Input text on the command line (useful on slow systems when working with very large lists)
+    - tlib#InputList(): AND-pattern starting with '!' will work as 'exclude matches'
+    - tlib#InputList(): FIX <c-bs> pop OR-patterns properly
+    - tlib#InputList(): display_format == filename: don't add '/' to directory names (avoid filesystem access)
+
+ autoload/tlib/World.vim |   28 +++++++---
+ autoload/tlib.vim       |  133 +++++++++++++++++++++++++++++++++++-----------
+ plugin/02tlib.vim       |   10 ++--
+ 3 files changed, 127 insertions(+), 44 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed May 23 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - tlib#InputList(): Disabled <c-space> map
+    - tlib#InputList(): try to be smart about user itentions only if a
+    list's length is < g:tlib_sortprefs_threshold (default: 200)
+    - tlib#Object: Super() method
+    - tlib#MyRuntimeDir()
+    - tlib#GetCacheName(), tlib#CacheSave(), tlib#CacheGet()
+    - tlib#Args(), tlib#GetArg()
+    - FIX: tlib#InputList(): Display problem with first item
+
+ autoload/tlib/Object.vim |   45 ++++++++++++++--
+ autoload/tlib/Test.vim   |    8 ++-
+ autoload/tlib/World.vim  |   16 +++++-
+ autoload/tlib.vim        |  131 +++++++++++++++++++++++++++++++++++++++++++---
+ plugin/02tlib.vim        |    9 ++--
+ test/tlib.vim            |   65 +++++++++++++++++++++--
+ 6 files changed, 249 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Thu May 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - tlib#InputList(): FIX: Selecting items in filtered view
+    - tlib#InputList(): <c-bs>: Remove last AND pattern from filter
+
+ autoload/tlib/World.vim |   13 ++++-
+ autoload/tlib.vim       |  129 ++++++++++++++++++++++++++++++++++------------
+ plugin/02tlib.vim       |   50 +-----------------
+ 3 files changed, 109 insertions(+), 83 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue May 15 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - tlib#InputList(): Up/Down keys wrap around list
+    - tlib#InputList(): FIX: Problem when reducing the filter & using AND
+    - tlib#InputList(): FIX: Problem when using shift-up/down with filtered lists
+    - tlib#InputList(): Made <a-numeric> work (can be configured via
+    - tlib#InputList(): special display_format: "filename"
+    - tlib#Object: experimental support for some kind of OOP
+    - tlib#World: Extracted some functions from tlib.vim to tlib/World.vim
+    - tlib#FileJoin(), tlib#FileSplit(), tlib#RelativeFilename()
+    - tlib#Let()
+    - tlib#EnsureDirectoryExists(dir)
+    - tlib#DirName(dir)
+    - tlib#DecodeURL(url), tlib#EncodeChar(char), tlib#EncodeURL(url)
+
+ autoload/tlib.vim        |  919 ---------------------------------------------
+ autoload/tlib/Object.vim |   55 +++
+ autoload/tlib/Test.vim   |   19 +
+ autoload/tlib/World.vim  |  158 ++++++++
+ autoload/tlib.vim        |  932 ++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/02tlib.vim        |   53 +++-
+ test/tlib.vim            |   31 ++-
+ 7 files changed, 1241 insertions(+), 926 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Thu Apr 26 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Show feedback in statusline instead of the echo area
+    - tlib#GetVar(), tlib#GetValue()
+
+ autoload/tlib.vim |   85 ++++++++++++++++++++++++++++++++--------------------
+ plugin/02tlib.vim |   36 ++++++++++++++++++++--
+ test/tlib.vim     |   14 +++++++-
+ 3 files changed, 97 insertions(+), 38 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Apr 24 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - More list convenience functions
+    - tlib#EditList()
+    - tlib#InputList(): properly handle duplicate items; it type contains
+    'i', the list index + 1 is returned, not the element
+
+ autoload/tlib.vim |  759 +++++++++++++++++++++++++++++++++++++++--------------
+ plugin/02tlib.vim |   21 +--
+ test/tlib.vim     |   34 ++-
+ 3 files changed, 585 insertions(+), 229 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Apr 18 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README            |   67 +++++++
+ autoload/tlib.vim |  547 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/02tlib.vim |   31 +++
+ test/tlib.vim     |   41 ++++
+ 4 files changed, 686 insertions(+), 0 deletions(-)

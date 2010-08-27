@@ -1,0 +1,263 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.02, refs/heads/master)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Wed Aug 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Mark with command ability added.
+    open  sco_command_feature.sco from sco.zip arhcive with vim to read about new feature.
+    Bug fix with sco options parse.
+
+ ftplugin/sco.vim |    4 +++-
+ 1 files changed, 3 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.01)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Wed Aug 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    small bug fix. remove error messages that wasn't at previous versions.
+
+ ftplugin/sco.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Wed Aug 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Mark with command ability added.
+    open  sco_command_feature.sco from sco.zip arhcive with vim to read about new feature.
+
+ ftplugin/sco.vim        |  218 +++++++++++++++++++++++++++++++++++++++++------
+ ftplugin/sco_keys.vim   |    1 +
+ sco_command_feature.sco |  203 +++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 397 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Thu Jul 19 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    result output headers changed to be with tags: information. SCOSaveSearch rewrited to work faster and  without bugs. changed colors for tag list in tags: line
+
+ ftplugin/sco.vim |  111 +++++++++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 81 insertions(+), 30 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.241)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Thu May 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :SCOSaveSearch bugged on linux. Fixed. Please check.
+
+ ftplugin/sco.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.24)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Thu May 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :SCOMarkSmart changed to work with :g/pattern/SCOMarkSmart. :SCOSaveSearch (c<space>s by default) command added to store all lines with last pattern to sco buffer as marks. create new .sco file and read help.
+
+ ftplugin/sco.vim      |   54 +++++++++++++++++++++++++++++++++++++++++++-----
+ ftplugin/sco_keys.vim |    1 +
+ 2 files changed, 49 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Mon Apr 2 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :AppendPlace added. Select place where you want to add marks in sco file. Execute :AppendPlace on any line in sco buffer. Every :AddMark[Smart]  will add marks staring from that line and exactly in that sco buffer.
+    sco_keys.vim added to change hot keys.
+
+ ftplugin/sco.vim      |  105 ++++++++++++++++++++++++++++++-------------------
+ ftplugin/sco_keys.vim |   28 +++++++++++++
+ 2 files changed, 93 insertions(+), 40 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Fri Mar 30 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :TransferToMarks command to convert back trace ( tested on gdb ) to smart marks. Create new sco file and read help
+
+ ftplugin/sco.vim |   45 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 45 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.92)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Wed Mar 28 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :SCOReMark added ( c<Space>r ) to point current mark to another place: for repair broken marks
+
+ ftplugin/sco.vim |   29 +++++++++++++++++++++++++++++
+ 1 files changed, 29 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.9)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Wed Mar 21 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :FileNameCaption added ( create new .sco file ( [g]vim newfile.sco ) and read help )
+
+ ftplugin/sco.vim |   26 +++++++++++++++++++++++++-
+ 1 files changed, 25 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.81)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Wed Feb 21 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    remove bug with :SCONext in cases when there is only one .sco file in buffer list and it is first
+
+ ftplugin/sco.vim |    8 ++++++++
+ 1 files changed, 8 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Mon Feb 5 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    added :header highlight for use with tagscan.vim
+
+ ftplugin/sco.vim |    8 ++++++--
+ 1 files changed, 6 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.7)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Fri Feb 2 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added highlight for records like
+    tags: tag1, tag2, tag3
+    tags: create, gui, file
+    to use with tagscan.vim
+
+ ftplugin/sco.vim |    8 ++++++++
+ 1 files changed, 8 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Mon Jan 29 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :SCOPrevious :SCONext commands added to switch between different sco buffers ( interfaces.sco; bugs.sco; breakpoints.sco; etc.. ) Map them on <C-Left> <C-Right> for example.
+    Create new sco file and read help.
+
+ ftplugin/sco.vim |   81 +++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 files changed, 80 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Mon Jan 22 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Select several lines in sco buffer (visual mode) and press 'o'.
+    Try it.
+     ( Create new .sco file and read help )
+
+ ftplugin/sco.vim |   62 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 62 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.41)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Mon Jan 15 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Removed bug with smart mark lines with '||' symbol
+
+ ftplugin/sco.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Wed Dec 13 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    added useful commands
+    :SCOUp
+    :SCODown
+    ( create new .sco file and read help )
+    Map them for example to <C-Up> and <C-Down> for fast browsing
+
+ ftplugin/sco.vim |   63 ++++++++++++++++++++++++++++++++++++++++++++++++++---
+ 1 files changed, 59 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Fri Oct 20 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :SCOTag 'tag_regexp' - add tags information to sco buffer.
+    :SCOTag '' - add information about tag under cursor (c<Space>t)
+
+ ftplugin/sco.vim |  110 +++++++++++++++++++++++++++++++++++++++++++++++++----
+ 1 files changed, 101 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Wed Oct 18 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Command :SCOClassInfo '' generate information about all classes.
+    Fix Bug with "can't find pattern" (unescape '/' symbol when jump to tag)
+
+ ftplugin/sco.vim |  157 ++++++++++++++++++++++++++++++++++++++++++++++++------
+ 1 files changed, 141 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Mon Oct 16 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added command :SCOClassInfo 'class[stuct]name' which build tree info (members, methods, inner classes with methods and members) about class. Command used tag file builded with ctags. Tested for c++. Execution of this command can take some time. Create new .sco file and set parametr tags_db equal to path for your tag file.
+
+ ftplugin/sco.vim |  354 ++++++++++++++++++++++++++++++++++++++++++++++++++---
+ 1 files changed, 334 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Fri Oct 6 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New appearance of smart marks. New appearance of folds at all.
+    Added captions to smart marks. Added hot keys to work in visual mode. Create new file with sco extension and read help
+
+ ftplugin/sco.vim |  292 +++++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 235 insertions(+), 57 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.1)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Thu Oct 5 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix bug. Smart marks didn't worked at lines with " * [ ] " symbols
+
+ ftplugin/sco.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Tue Oct 3 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New kind of marks added (smart marks).
+    :Allign command added. (create new sco file and read help for details)
+
+ ftplugin/sco.vim |  264 +++++++++++++++++++++++++++++++++++++++++++++++-------
+ 1 files changed, 232 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Tue Sep 26 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Rewrited in pure vim language. Not need vim's perl support. Not need vim's cscope support.
+    Added auto align of marks.
+
+ README           |  105 +++++++++++++
+ ftplugin/sco.vim |  447 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 552 insertions(+), 0 deletions(-)

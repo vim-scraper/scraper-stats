@@ -1,0 +1,33 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2, refs/heads/master)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Sun Jan 17 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add pathogen#legacyjoin() which escapes spaces for older options like 'path' and 'tags'.
+    Fix pathogen#join() to not escape spaces (caused problems on many Windows setups).
+    Add pathogen#uniq() to filter out duplicates.
+    Add pathogen#helptags() to generate helptags for everything in 'runtimepath'.
+
+ plugin/pathogen.vim |   73 +++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 56 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Fri Oct 24 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Properly escape spaces in paths
+
+ plugin/pathogen.vim |   11 +++++------
+ 1 files changed, 5 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Thu Aug 7 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |   17 +++++++++
+ plugin/pathogen.vim |  101 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 118 insertions(+), 0 deletions(-)

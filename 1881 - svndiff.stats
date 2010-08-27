@@ -1,0 +1,94 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.3, refs/heads/master)
+Author:     Ico - <vim at zevv.nl>
+AuthorDate: Sat May 8 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for Mercurial, fixed Git support
+
+ plugin/svndiff.vim |   43 +++++++++++++++++++++++++++++++++----------
+ 1 files changed, 33 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
+Author:     Ico - <vim at zevv.nl>
+AuthorDate: Tue Nov 25 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added CVS support. svndiff now works with subversion, GIT and CVS.
+
+ plugin/svndiff.vim |    9 +++++++++
+ 1 files changed, 9 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
+Author:     Ico - <vim at zevv.nl>
+AuthorDate: Mon Nov 24 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for GIT, repository type is detected at runtime (subversion / git)
+
+ plugin/svndiff.vim |   51 ++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 40 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
+Author:     Ico - <vim at zevv.nl>
+AuthorDate: Wed Feb 27 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The latest rewrite broke vim 6 compatiblity. The plugin is now simply disabled for older vim versions to avoid a lot of warnings when loading.
+
+ plugin/svndiff.vim |   13 ++++++++++---
+ 1 files changed, 10 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
+Author:     Ico - <vim at zevv.nl>
+AuthorDate: Mon Feb 4 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed script behaviour for non-english locales.
+
+ plugin/svndiff.vim |   29 ++++++++++++++++++-----------
+ 1 files changed, 18 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Ico - <vim at zevv.nl>
+AuthorDate: Sun Feb 3 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Major redesign of the plugin:
+    
+    * auto-update feature highlights svn diff signs while editing
+    * signs from other sources (debugger, etc) are no longer effected
+    * better performance, diff is only executed when code is actually modified
+
+ plugin/svndiff.vim |  242 ++++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 189 insertions(+), 53 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Ico - <vim at zevv.nl>
+AuthorDate: Thu Aug 16 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    svndiff now uses tags to indicated the difference between the buffer and the original file, so it leaves intact the original syntax highlighting.
+
+ plugin/svndiff.vim |  108 ++++++++++++++++++++++++++++++++++------------------
+ 1 files changed, 71 insertions(+), 37 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Ico - <vim at zevv.nl>
+AuthorDate: Thu Jun 14 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    updated to work with recent version of diff (-u0 option was obsolete, changed to -U0)
+
+ plugin/svndiff.vim |    4 +++-
+ 1 files changed, 3 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Ico - <vim at zevv.nl>
+AuthorDate: Wed May 2 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added jump-to-prev/next
+
+ README             |  127 ++++++++++++++++++++++++++++++++++++++++++++
+ plugin/svndiff.vim |  150 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 277 insertions(+), 0 deletions(-)

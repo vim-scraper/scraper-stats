@@ -1,0 +1,61 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2.1, refs/heads/master)
+Author:     Paul Miller <vimfan at voltar-confed.org>
+AuthorDate: Tue Jun 28 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I added a couple syntax errors for some things I was screwing up regularly.  If you know of a few more gotchas that should be red, please let me know.
+    
+    New (lame) errors:
+       - _ADD &nr0 1 -- looks fine to me, it's not.  the rhs and lhs must both be
+         nr-registers...
+    
+      - [section_name] ; this executes during something -- looks fine to me.  It's not.
+        The section won't ever execute ever.  Strictly speaking comments should not be on
+        the same line as ANY code, but I find that they work everywhere except this.
+
+ syntax/rsl.vim |    5 ++++-
+ 1 files changed, 4 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Paul Miller <vimfan at voltar-confed.org>
+AuthorDate: Tue Jun 21 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    ... corrected bugs with the message functions (one was missing).
+    
+    ... fixed a problem with branch highlighting when static data is on the line (e.g.
+        IFGT &nr7 2 go_here wasn't blue-ing the go_here).
+
+ syntax/rsl.vim |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Paul Miller <vimfan at voltar-confed.org>
+AuthorDate: Sun Jun 5 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I made dozens of needed improvements to the highlighting.  I would call this version useable.
+
+ syntax/rsl.vim |   26 +++++++++++++++++---------
+ 1 files changed, 17 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     Paul Miller <vimfan at voltar-confed.org>
+AuthorDate: Fri Jun 3 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I _KNEW_ if I uploaded a copy, it'd be the wrong one.  But here is my real version 1.0 -- with a bug fix.
+
+ syntax/rsl.vim |    5 ++++-
+ 1 files changed, 4 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Paul Miller <vimfan at voltar-confed.org>
+AuthorDate: Fri Jun 3 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README         |    3 +
+ syntax/rsl.vim |  128 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 131 insertions(+), 0 deletions(-)

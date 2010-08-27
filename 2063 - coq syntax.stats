@@ -1,0 +1,41 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.4.3, refs/heads/master)
+Author:     Vincent Aravantinos <vincent.aravantinos at gmail.com>
+AuthorDate: Tue Dec 2 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added Program and Obligations constructs of Coq v8.2.
+
+ syntax/coq.vim |  400 ++++++++++++++++++++++++++++++++++++++------------------
+ 1 files changed, 272 insertions(+), 128 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Vincent Aravantinos <vincent.aravantinos at gmail.com>
+AuthorDate: Sun Jan 27 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed the colours. It should now be more uniform and more readable. Tell me if you prefer the way it was before.
+    - Improved the way things are coloured : in previous versions, the plugin often had to wait until you finish the current sentence before colouring it. Quite inconvenient. Now, it will colour things as you type them (for almost all constructions). Colouring is also more robust.
+
+ syntax/coq.vim |  244 ++++++++++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 175 insertions(+), 69 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Vincent Aravantinos <vincent.aravantinos at gmail.com>
+AuthorDate: Wed Nov 7 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Complete refactoring. Highlighting is now much more accurate. Oh, and the code is not ugly anymore.
+
+ syntax/coq.vim |   96 ++++++++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 70 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.01)
+Author:     Vincent Aravantinos <vincent.aravantinos at gmail.com>
+AuthorDate: Tue Nov 6 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README         |    7 ++++++
+ syntax/coq.vim |   67 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 74 insertions(+), 0 deletions(-)

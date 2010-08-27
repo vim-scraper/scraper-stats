@@ -1,0 +1,93 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5, refs/heads/master)
+Author:     Wxyarv Wang <weasley_wx AT qq DOT com>
+AuthorDate: Thu Jan 28 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      - support upcase letter placeholder
+      - remain placeholder will substitute environment variables. add a option ctk_envvarfmt to detect the variable formant.
+      - add RefreshCTK command, and auto refresh all buffer after EditCompilerInfo command.
+
+ .compiler_info |   42 +++++++++++++++++-------
+ doc/ctk.txt    |   28 +++++++++++++++-
+ plugin/ctk.vim |   99 ++++++++++++++++++++++++++++++++++++++++---------------
+ 3 files changed, 129 insertions(+), 40 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4-bugfix)
+Author:     Wxyarv Wang <weasley_wx AT qq DOT com>
+AuthorDate: Tue Aug 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      - add option g:ctk_cmdenc
+      - add discribes of using :silent/:redir command in cmd or run in doc
+      - fix the bug when compile multi-times, the += operator in modeline acts incorrect.
+
+ .compiler_info |    9 +++++++++
+ doc/ctk.txt    |   32 ++++++++++++++++++++++++++++++++
+ plugin/ctk.vim |   52 +++++++++++++++++++++++++++++++++-------------------
+ 3 files changed, 74 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Wxyarv Wang <weasley_wx AT qq DOT com>
+AuthorDate: Wed Jul 22 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      - fix the bug StopCTK doesn't stop ctk.
+      - change the usage of some command, see :h ctk-usage for details.
+      - add command ":SetExtensionName" command.
+      - modfiy the document.
+
+ .compiler_info |   58 ++--
+ doc/ctk.txt    |  314 ++++++++++++++-------
+ plugin/ctk.vim |  864 +++++++++++++++++++++++++++++++-------------------------
+ 3 files changed, 718 insertions(+), 518 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3-bugfix)
+Author:     Wxyarv Wang <weasley_wx AT qq DOT com>
+AuthorDate: Fri Jun 26 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    just bugfix. and fix some issues in Windows.
+
+ plugin/ctk.vim |  430 +++++++++++++++++++++++++++++---------------------------
+ 1 files changed, 220 insertions(+), 210 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Wxyarv Wang <weasley_wx AT qq DOT com>
+AuthorDate: Sun May 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -- add a quoted tag support
+    -- changed document
+    -- make info line's syntax be the same as the modeline's
+    -- remove the '*' command-type. you can use :call foobar() to replace it.
+
+ .compiler_info |   22 ++-
+ doc/ctk.txt    |  334 +++++++++++++++++-------
+ plugin/ctk.vim |  794 ++++++++++++++++++++++++++++++--------------------------
+ 3 files changed, 688 insertions(+), 462 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2-bugfix)
+Author:     Wxyarv Wang <weasley_wx AT qq DOT com>
+AuthorDate: Sun Apr 26 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    add some stuff in doc, and changed the behavior of :CC
+    
+    if your compile command is ":foobar" (that is, a Vim command instead of a shell command), the output will disappear at command line. see :h :RUN
+
+ doc/ctk.txt    |   28 ++++++++++-
+ plugin/ctk.vim |  136 ++++++++++++++++++++++++++++++--------------------------
+ 2 files changed, 98 insertions(+), 66 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Wxyarv Wang <weasley_wx AT qq DOT com>
+AuthorDate: Sat Apr 25 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ .compiler_info |   54 +++++
+ README         |   10 +
+ doc/ctk.txt    |  302 ++++++++++++++++++++++++
+ plugin/ctk.vim |  692 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 1058 insertions(+), 0 deletions(-)

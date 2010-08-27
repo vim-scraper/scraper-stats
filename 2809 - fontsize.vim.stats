@@ -1,0 +1,39 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2.0, refs/heads/master)
+Author:     Michael Henry <vim at drmikehenry.com>
+AuthorDate: Fri Oct 23 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Version 0.2.0    Date    2009-10-21                 *fontsize-changelog-0.2.0*
+    
+      - Changed <Leader>== to enter "font size" mode without changing the
+        font size.
+    
+      - Fixed regex for win32 and others to not require colon after size field
+        (e.g., "fontname:h12" works, don't need "fontname:h12:cANSI").  Added
+        regex support for other platforms.
+    
+      - Added g:fontsize_encoding feature to handle different encodings for
+        &guifont and &guifontwide.
+    
+      - Handles empty &guifont better now (but cannot change font size in that
+        case).
+    
+      - Added documentation sections for TODO, ChangeLog.
+
+ autoload/fontsize.vim |  150 ++++++++++++++++++++++++++++++++++++++-----------
+ doc/fontsize.txt      |  126 ++++++++++++++++++++++++++++++++---------
+ plugin/fontsize.vim   |   23 +++++---
+ 3 files changed, 230 insertions(+), 69 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.0)
+Author:     Michael Henry <vim at drmikehenry.com>
+AuthorDate: Sun Oct 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                |   77 ++++++++++++++++++++++++++++++++++++
+ autoload/fontsize.vim |   65 ++++++++++++++++++++++++++++++
+ doc/fontsize.txt      |  104 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/fontsize.vim   |   66 +++++++++++++++++++++++++++++++
+ 4 files changed, 312 insertions(+), 0 deletions(-)

@@ -1,0 +1,45 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.00.0002a, refs/heads/master)
+Author:     hao hu <whohow at vip.sina.com>
+AuthorDate: Thu Apr 7 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add "How to" in README:
+    -------------------------------------
+    HOW To Use
+    ----------
+    1. Easy, just like this:
+        python vimen.py <your_executable_file>
+    2. In opened VIM window, you can use the following function key:
+      <F5>    start/continue debugging
+      <F6>    toggel break point
+      <F7>    step into
+      <F8>    step over
+      <S-F7>  step out
+      <C-F8>  step until
+      <S-F5>  stop debugging
+      <F12>   set program arguments
+    3. A Balloon Value Function is also available.
+    
+    Request
+    -------
+    1. Python 2.4
+    2. "pyparsing" (from http://sourceforge.net/projects/pyparsing/)
+    3. "ctypes" (from http://sourceforge.net/projects/ctypes)
+       or "pywin32" (from http://sourceforge.net/projects/pywin32/)
+
+ ChangeLog          |   17 +++
+ README             |    4 +
+ README.orig        |   48 +++++++
+ TODO               |   13 ++
+ VERSION            |    5 +
+ bkpt.xpm           |   24 ++++
+ bkpt0.xpm          |   24 ++++
+ config.py          |   16 +++
+ core.py            |  352 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ gdbi.py            |  285 ++++++++++++++++++++++++++++++++++++++++++
+ ibase.py           |  122 ++++++++++++++++++
+ plugin/startup.vim |   21 +++
+ utils.py           |   49 +++++++
+ vimen.py           |    3 +
+ vimi.py            |  308 +++++++++++++++++++++++++++++++++++++++++++++
+ 15 files changed, 1291 insertions(+), 0 deletions(-)

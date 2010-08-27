@@ -1,0 +1,73 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.11, refs/heads/master)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Wed Jun 2 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Appended "; total N" to evaluations that excluded the match on the cursor from the "overall" count, as it was misleading what "overall" meant in this context.
+
+ autoload/SearchPosition.vim |   23 +++++++++++++++++++++--
+ autoload/ingosearch.vim     |   30 ++++++++++++++++++++++++++++--
+ doc/SearchPosition.txt      |    5 +++++
+ 3 files changed, 54 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Fri Jan 8 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Moved functions from plugin to separate autoload script.
+    - BUG: Wrong reporting of additional occurrences when the current line is outside the passed range.
+    - BUG: Catch non-existing items in evaluations that can be caused by e.g having \%# inside the search pattern. Warn about "special atoms have distorted the tally" in such cases.
+
+ autoload/SearchPosition.vim |  250 +++++++++++++++++++++++++++++++++++++++++++
+ doc/SearchPosition.txt      |    8 ++
+ plugin/SearchPosition.vim   |  231 +++------------------------------------
+ 3 files changed, 276 insertions(+), 213 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.03)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Tue Jan 5 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    ENH: Offering a whole-word ALT-M mapping in addition to the former literal search (which is now mapped to g_ALT-M), like the |star| and |gstar| commands.
+
+ autoload/ingosearch.vim   |   92 +++++++++++++++++++++++++++++++++++++++++++++
+ doc/SearchPosition.txt    |   20 ++++++++--
+ plugin/SearchPosition.vim |   42 +++++++++++++-------
+ 3 files changed, 135 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.02)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Fri Sep 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    BUG: Cannot set mark " in Vim 7.0 and 7.1; using mark z instead. This only affected the <Leader><A-n>{motion} command.
+
+ doc/SearchPosition.txt    |    4 ++++
+ plugin/SearchPosition.vim |   14 ++++++++++++--
+ 2 files changed, 16 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.01)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Fri Jun 19 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The jumplist is not clobbered anymore by the :SearchPosition command.
+
+ autoload/EchoWithoutScrolling.vim |    6 +++++-
+ doc/SearchPosition.txt            |   13 ++++++++-----
+ plugin/SearchPosition.vim         |   19 ++++++++++++++-----
+ 3 files changed, 27 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.00)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Fri May 15 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                            |   51 +++++++
+ autoload/EchoWithoutScrolling.vim |  263 ++++++++++++++++++++++++++++++++++++
+ doc/SearchPosition.txt            |  130 ++++++++++++++++++
+ plugin/SearchPosition.vim         |  269 +++++++++++++++++++++++++++++++++++++
+ 4 files changed, 713 insertions(+), 0 deletions(-)

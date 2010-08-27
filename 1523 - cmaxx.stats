@@ -1,0 +1,165 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1.0, refs/heads/master)
+Author:     Markus Trenkwalder <markus()trenkwalder(a)gmx()at>
+AuthorDate: Mon May 15 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added the possibility to select the value for a macro from a list (see ":help  macro-list-variables").
+
+ doc/cmaxx.txt    |  172 +++++++++++++++++++++++++++++++++++++----------------
+ plugin/cmaxx.vim |  140 ++++++++++++++++++++++++++++++++++++++++----
+ 2 files changed, 247 insertions(+), 65 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.3)
+Author:     Markus Trenkwalder <markus()trenkwalder(a)gmx()at>
+AuthorDate: Thu Apr 27 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed another bug with buffer local variables found by Andreas Karpfen.
+
+ plugin/cmaxx.vim |   16 ++++++++--------
+ 1 files changed, 8 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.2)
+Author:     Markus Trenkwalder <markus()trenkwalder(a)gmx()at>
+AuthorDate: Wed Apr 26 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed some bugs regarding buffer local variables (thanx to Igor Prischepoff)
+    - New feature: mappings can be tured off by two variables.
+
+ doc/cmaxx.txt    |   49 +++++++++++++++++---
+ plugin/cmaxx.vim |  134 +++++++++++++++++++++++++++++++++++-------------------
+ 2 files changed, 129 insertions(+), 54 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     Markus Trenkwalder <markus()trenkwalder(a)gmx()at>
+AuthorDate: Tue Apr 25 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Works with vim 6.x again.
+
+ doc/cmaxx.txt    |    2 +-
+ plugin/cmaxx.vim |   55 +++++++++++++++++++++++++++++++----------------------
+ 2 files changed, 33 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.0)
+Author:     Markus Trenkwalder <markus()trenkwalder(a)gmx()at>
+AuthorDate: Fri Apr 21 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                          |    7 +
+ doc/cmaxx.txt                   |  445 ++++++++++++++++++
+ plugin/cmaxx.vim                |  992 +++++++++++++++++++++++++++++++++++++++
+ templates/auth.tmpl             |    1 +
+ templates/class.tmpl            |   15 +
+ templates/cpp/D.tmpl            |    1 +
+ templates/cpp/D0.tmpl           |    1 +
+ templates/cpp/D1.tmpl           |    1 +
+ templates/cpp/D2.tmpl           |    1 +
+ templates/cpp/D3.tmpl           |    1 +
+ templates/cpp/D4.tmpl           |    1 +
+ templates/cpp/D5.tmpl           |    1 +
+ templates/cpp/D6.tmpl           |    1 +
+ templates/cpp/D7.tmpl           |    1 +
+ templates/cpp/D8.tmpl           |    1 +
+ templates/cpp/DEBUG.tmpl        |  241 ++++++++++
+ templates/cpp/Dc.tmpl           |    1 +
+ templates/cpp/Dd.tmpl           |    1 +
+ templates/cpp/cerr.tmpl         |    1 +
+ templates/cpp/cout.tmpl         |    1 +
+ templates/cpp/da.tmpl           |    1 +
+ templates/cpp/do.tmpl           |    2 +
+ templates/cpp/dp.tmpl           |    4 +
+ templates/cpp/dr.tmpl           |    1 +
+ templates/cpp/dtd.tmpl          |    1 +
+ templates/cpp/dtr.tmpl          |    3 +
+ templates/cpp/for.tmpl          |    2 +
+ templates/cpp/fori.tmpl         |    2 +
+ templates/cpp/forv.tmpl         |    2 +
+ templates/cpp/getopt.tmpl       |   19 +
+ templates/cpp/if.tmpl           |    2 +
+ templates/cpp/ife.tmpl          |    3 +
+ templates/cpp/le.tmpl           |    1 +
+ templates/cpp/lg.tmpl           |    1 +
+ templates/cpp/li.tmpl           |    1 +
+ templates/cpp/lt.tmpl           |    1 +
+ templates/cpp/main.tmpl         |    6 +
+ templates/cpp/ns.tmpl           |    7 +
+ templates/cpp/usage.tmpl        |    6 +
+ templates/cpp/vim.tmpl          |    3 +
+ templates/cpp/while.tmpl        |    2 +
+ templates/date.tmpl             |    1 +
+ templates/docbk/app.tmpl        |    1 +
+ templates/docbk/area.tmpl       |    1 +
+ templates/docbk/co.tmpl         |    4 +
+ templates/docbk/command.tmpl    |    1 +
+ templates/docbk/emp.tmpl        |    1 +
+ templates/docbk/entry.tmpl      |    1 +
+ templates/docbk/example.tmpl    |    3 +
+ templates/docbk/fig.tmpl        |    3 +
+ templates/docbk/fn.tmpl         |    1 +
+ templates/docbk/ft.tmpl         |    1 +
+ templates/docbk/ge.tmpl         |    8 +
+ templates/docbk/graphic.tmpl    |    1 +
+ templates/docbk/gt.tmpl         |    1 +
+ templates/docbk/ilist.tmpl      |    3 +
+ templates/docbk/link.tmpl       |    1 +
+ templates/docbk/listing.tmpl    |    1 +
+ templates/docbk/listitem.tmpl   |    1 +
+ templates/docbk/lit.tmpl        |    1 +
+ templates/docbk/para.tmpl       |    3 +
+ templates/docbk/row.tmpl        |    3 +
+ templates/docbk/screen.tmpl     |    1 +
+ templates/docbk/sect1.tmpl      |    7 +
+ templates/docbk/sect2.tmpl      |    7 +
+ templates/docbk/sect3.tmpl      |    7 +
+ templates/docbk/sect4.tmpl      |    7 +
+ templates/docbk/systemname.tmpl |    1 +
+ templates/docbk/table.tmpl      |   12 +
+ templates/docbk/th.tmpl         |    6 +
+ templates/docbk/ulink.tmpl      |    1 +
+ templates/docbk/userinput.tmpl  |    1 +
+ templates/docbk/username.tmpl   |    1 +
+ templates/docbk/var.tmpl        |    1 +
+ templates/docbk/xref.tmpl       |    1 +
+ templates/dox.tmpl              |    3 +
+ templates/f.tmpl                |    1 +
+ templates/file.tmpl             |   13 +
+ templates/func.tmpl             |    4 +
+ templates/header.tmpl           |    8 +
+ templates/html/a.tmpl           |    1 +
+ templates/perl/vim.tmpl         |    2 +
+ templates/tex/bf.tmpl           |    1 +
+ templates/tex/c.tmpl            |    1 +
+ templates/tex/cap.tmpl          |    1 +
+ templates/tex/desc.tmpl         |    3 +
+ templates/tex/em.tmpl           |    1 +
+ templates/tex/enum.tmpl         |    3 +
+ templates/tex/equ.tmpl          |    4 +
+ templates/tex/ex.tmpl           |    4 +
+ templates/tex/fig.tmpl          |    7 +
+ templates/tex/file.tmpl         |   12 +
+ templates/tex/foot.tmpl         |    1 +
+ templates/tex/i.tmpl            |    1 +
+ templates/tex/ir.tmpl           |   10 +
+ templates/tex/item.tmpl         |    3 +
+ templates/tex/kap.tmpl          |    1 +
+ templates/tex/l.tmpl            |    1 +
+ templates/tex/latex.tmpl        |   58 +++
+ templates/tex/mb.tmpl           |    1 +
+ templates/tex/mbf.tmpl          |    1 +
+ templates/tex/ml.tmpl           |    4 +
+ templates/tex/quote.tmpl        |    3 +
+ templates/tex/s.tmpl            |    8 +
+ templates/tex/sfig.tmpl         |   10 +
+ templates/tex/ss.tmpl           |    6 +
+ templates/tex/sss.tmpl          |    6 +
+ templates/tex/sub.tmpl          |    4 +
+ templates/tex/url.tmpl          |    1 +
+ templates/tex/verb.tmpl         |    1 +
+ templates/tex/vim.tmpl          |    3 +
+ templates/vim/file.tmpl         |   10 +
+ templates/vim.tmpl              |    3 +
+ 113 files changed, 2084 insertions(+), 0 deletions(-)

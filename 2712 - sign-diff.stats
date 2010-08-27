@@ -1,0 +1,48 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.3, refs/heads/master)
+Author:     tyru   <tyru.exe (at) gmail.com>
+AuthorDate: Sun Jul 26 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - fix warning of SDEnable. sorry.
+    - add g:SD_disable.
+
+ plugin/sign-diff.vim |   19 ++++++++++++++++---
+ 1 files changed, 16 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.2)
+Author:     tyru   <tyru.exe (at) gmail.com>
+AuthorDate: Fri Jul 17 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - supports GetLatestVimScripts
+    - supports Windows (but cmd.exe shows up at front most...)
+    - fix the bug that the changed lines are highlighted as the added lines...
+    - supports difftext(the one changed line). if you wish to let this plugin
+    behave same as previous version, put "let g:SD_sign_text = '*'" and
+    "let g:SD_hl_difftext = 'DiffAdd'" into your .vimrc
+
+ plugin/sign-diff.vim |   83 +++++++++++++++++++++++++++++++++-----------------
+ 1 files changed, 55 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
+Author:     tyru   <tyru.exe (at) gmail.com>
+AuthorDate: Thu Jul 16 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - strict check the global options.
+    - no new files are created when g:SD_comp_with is default value.
+    - fix some bugs.
+
+ plugin/sign-diff.vim |  232 +++++++++++++++++++++++++++----------------------
+ 1 files changed, 128 insertions(+), 104 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.0)
+Author:     tyru   <tyru.exe (at) gmail.com>
+AuthorDate: Wed Jul 15 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README               |   95 +++++
+ plugin/sign-diff.vim |  950 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 1045 insertions(+), 0 deletions(-)

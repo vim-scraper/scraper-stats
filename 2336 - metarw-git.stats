@@ -1,0 +1,49 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.3, refs/heads/master)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Tue May 12 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - When completing branches, remove "remotes/" prefix from remote-tracking branches.- Fix not to complete wrong or unnecessary stuffs as branches.  For example, "(no branch)", "origin/HEAD -> origin/master", etc.
+
+ doc/metarw-git.txt                           |   11 +-
+ vim-metarw-git-0.0.2/autoload/metarw/git.vim |  299 -------------------------
+ vim-metarw-git-0.0.3/autoload/metarw/git.vim |  310 ++++++++++++++++++++++++++
+ 3 files changed, 320 insertions(+), 300 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.2)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Tue May 5 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fix a bug that metarw-git uses wrong function to escape file-like arguments to shells.  Thanks @thinca for reporting this.
+
+ doc/metarw-git.txt                           |  122 +++++++++++
+ doc/metarw_git.txt                           |  114 ----------
+ vim-metarw-git-0.0.1/autoload/metarw/git.vim |  299 --------------------------
+ vim-metarw-git-0.0.2/autoload/metarw/git.vim |  299 ++++++++++++++++++++++++++
+ 4 files changed, 421 insertions(+), 413 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Sun Aug 10 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fix requirements - metarw-git uses |fnameescape()| which is added
+      since Vim 7.1.299.  (thanks to id:thinca)
+
+ doc/metarw_git.txt                           |    8 +-
+ vim-metarw-git-0.0.0/autoload/metarw/git.vim |  299 --------------------------
+ vim-metarw-git-0.0.1/autoload/metarw/git.vim |  299 ++++++++++++++++++++++++++
+ 3 files changed, 305 insertions(+), 301 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.0)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Sat Aug 9 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload.
+
+ README                                       |   18 ++
+ doc/metarw_git.txt                           |  110 ++++++++++
+ vim-metarw-git-0.0.0/autoload/metarw/git.vim |  299 ++++++++++++++++++++++++++
+ 3 files changed, 427 insertions(+), 0 deletions(-)

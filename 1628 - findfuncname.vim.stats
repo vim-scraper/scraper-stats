@@ -1,0 +1,94 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.5, refs/heads/master)
+Author:     Alex Esplin <alex.esplin at gmail.com>
+AuthorDate: Thu Sep 24 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Updated the regex to catch commas (if argument list is split from the declaration line onto succeeding lines) or closing parens (if argument list is all on the declaration line).
+
+ plugin/findfuncname.vim |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.4)
+Author:     Alex Esplin <alex.esplin at gmail.com>
+AuthorDate: Thu Sep 24 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug with the filename matching when checking for Python files. Made the regex for C-like function declarations a little more specific.
+
+ plugin/findfuncname.vim |    9 ++++-----
+ 1 files changed, 4 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
+Author:     Alex Esplin <alex.esplin at gmail.com>
+AuthorDate: Thu Sep 24 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed to detect if the current file ends with .py and makes it look for the most recent 'class name:' or def 'func():' statement.
+
+ plugin/findfuncname.vim |   21 +++++++++++++++------
+ 1 files changed, 15 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
+Author:     Alex Esplin <alex.esplin at gmail.com>
+AuthorDate: Sun Mar 29 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    minor change to allow for empty space at the end of the declaration line
+
+ plugin/findfuncname.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
+Author:     Alex Esplin <alex.esplin at gmail.com>
+AuthorDate: Wed Feb 25 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Small change to allow for code with the curly brace on the line below the function declaration.
+
+ plugin/findfuncname.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Alex Esplin <alex.esplin at gmail.com>
+AuthorDate: Tue Feb 24 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Major change to search pattern.
+    
+    Actually works for most C, C++, Python, and Perl programs with functions.
+    
+    Relies on function starting in the first column, so Java files will have issues, I'll fix this soon...
+
+ plugin/findfuncname.vim |   17 ++++++-----------
+ 1 files changed, 6 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0.1)
+Author:     Alex Esplin <alex.esplin at gmail.com>
+AuthorDate: Tue Jan 20 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    minor comment/documentation change
+
+ plugin/findfuncname.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Alex Esplin <alex.esplin at gmail.com>
+AuthorDate: Tue Jan 20 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Major overhaul using a backwards-searching regular expression that seems to dodge control statements (if,else,else if,for,while, etc...) and catch most function declarations.
+
+ plugin/findfuncname.vim |   42 ++++++++----------------------------------
+ 1 files changed, 8 insertions(+), 34 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Alex Esplin <alex.esplin at gmail.com>
+AuthorDate: Thu Aug 3 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                  |    9 +++++++
+ plugin/findfuncname.vim |   60 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 69 insertions(+), 0 deletions(-)

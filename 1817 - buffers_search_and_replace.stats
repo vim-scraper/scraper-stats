@@ -1,0 +1,91 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5.2, refs/heads/master)
+Author:     Alexandru Ionut Munteanu <io_fx at yahoo.fr>
+AuthorDate: Mon Apr 6 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - added option to set range when searching through current buffer (:<range> Bsc <search_regex>)
+    - <range> must be &#039<,&#039> for searching in visual selection
+    - fixed the &#039u&#039 event to update with the current search type
+    - added a top line showing the type of the search
+
+ plugin/buffers_search_and_replace.vim |  113 ++++++++++++++++++++++++++-------
+ 1 files changed, 91 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
+Author:     Alexandru Ionut Munteanu <io_fx at yahoo.fr>
+AuthorDate: Thu Mar 12 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -added command to search and exclude some buffers from the search :
+         :Bse <buffer_name_exclusion_regex> <search_regex>
+    -added searching on custom buffers (buffer name filtering) command :
+         :Bsf <buffer_name_filter_regex> <search_regex>
+    *thank you Vasilii Pascal :)
+
+ plugin/buffers_search_and_replace.vim |  188 +++++++++++++++++++++++----------
+ 1 files changed, 132 insertions(+), 56 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Alexandru Ionut Munteanu <io_fx at yahoo.fr>
+AuthorDate: Tue Mar 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Optimised 'd' action, in order not to refresh the buffer each time.
+    Warning ! 'r' option for refreshing the screen has been replaced with the 'replace' action !
+    Action 'D', 'r' and 'R' added :
+    "D"  : definitely deletes the current range search result (default: current line),
+    "r"  : replace action on the non-deleted searched results
+    "R"  : replace action on the deleted searched results
+    Changed name to buffers_search_and_replace.vim
+
+ plugin/buffers_search.vim             | 1287 --------------------------
+ plugin/buffers_search_and_replace.vim | 1586 +++++++++++++++++++++++++++++++++
+ 2 files changed, 1586 insertions(+), 1287 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Alexandru Ionut Munteanu <io_fx at yahoo.fr>
+AuthorDate: Sat Mar 7 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -option 'd' implemented :
+                "d"  : deletes the current range search result (default: current line)
+                       the deleted search results are showed at the bottom of
+                       the buffer; deleting a deleted search results will
+                       set it again as search result
+    -added the ':Bsc <search_string>' command for searching only in the current buffer
+
+ plugin/buffers_search.vim |  242 +++++++++++++++++++++++++++++++--------------
+ 1 files changed, 167 insertions(+), 75 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Alexandru Ionut Munteanu <io_fx at yahoo.fr>
+AuthorDate: Sun Mar 11 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -changed some internals to follow Jimmy advices (like using buffer numbers
+    instead of buffer names to support unnamed buffers); thanks!
+    -options J,A,Q,O,r,u,i,I,x,? implemented (see docs)
+
+ plugin/buffers_search.vim |  951 +++++++++++++++++++++++++++++++++++++--------
+ 1 files changed, 789 insertions(+), 162 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Alexandru Ionut Munteanu <io_fx at yahoo.fr>
+AuthorDate: Wed Mar 7 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed an important bug : the search did not returned all the matches
+
+ plugin/buffers_search.vim |   48 +++++++++++++++++++++++++++++++++++---------
+ 1 files changed, 38 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Alexandru Ionut Munteanu <io_fx at yahoo.fr>
+AuthorDate: Wed Mar 7 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                    |   45 ++++
+ plugin/buffers_search.vim |  540 +++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 585 insertions(+), 0 deletions(-)

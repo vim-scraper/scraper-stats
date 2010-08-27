@@ -1,0 +1,95 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.3, refs/heads/master)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Sun May 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    splashbufs only version, option g:splashbufs gone
+    similar to v2.7, but no change of 'timeoutlen' for Bufmru mode
+    NF: variable g:bufmru_lazy_filetype
+
+ autoload/anwolib.vim  |  212 --------------------------------
+ autoload/wildmenu.vim |  123 ------------------
+ doc/bufmru.txt        |  327 -------------------------------------------------
+ plugin/bufmru.vim     |  246 +++++++++++++++++++-----------------
+ 4 files changed, 130 insertions(+), 778 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.7)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Sun May 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    wildmenu only version, option g:splashbufs gone
+    BF: 'fileformat' of wildmenu.vim and anwolib.vim set to unix !
+    BF: now works better with 'lazyredraw' set
+    BF: g:bufmru_limit=0 now means unlimited (0 makes no sense otherwise)
+    NF: variable g:bufmru_wilditems to customize wildmenu entries
+    NF: 'timeoutlen' of Bufmru Mode set to 60000 ms
+
+ autoload/anwolib.vim  |  382 +++++++++++++++++--------------
+ autoload/wildmenu.vim |  241 ++++++++++----------
+ doc/bufmru.txt        |  602 +++++++++++++++++++++++++++----------------------
+ plugin/bufmru.vim     |  212 +++++++++---------
+ 4 files changed, 766 insertions(+), 671 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Thu Mar 5 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    like 1.0 but includes a help file and uses autoload/wildmenu.vim to show buffer names in a wildmenu like list
+
+ autoload/anwolib.vim  |  170 ++++++++++++++++++++++++++++++
+ autoload/wildmenu.vim |  118 +++++++++++++++++++++
+ doc/bufmru.txt        |  275 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/bufmru.vim     |  107 ++++++++------------
+ 4 files changed, 605 insertions(+), 65 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Thu Mar 5 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New Variables: g:bufmru_splashbufs
+    Changed Variables: g:bufmru_confclose, g:bufmru_nummarks renamed to g:bufmru_read_nummarks
+    Added Keys: y  !  f
+    Changed Keys: <Space> replaced with  f  in Bufmru mode
+    New Functions: Bufmru_Read_Nummarks()
+    Behaviour:
+    * no more cycling: going forward/backward stops at either end of the MRU list
+    * Valid buffer number: now also 'buflisted' required
+    Bug fixes ...
+
+ plugin/bufmru.vim |  373 +++++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 292 insertions(+), 81 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Fri Aug 29 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    now truncates too long buffer names
+    added g:bufmru_nummarks
+
+ plugin/bufmru.vim |   54 +++++++++++++++++++++++++++++++++++++++++++++-------
+ 1 files changed, 46 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Tue Aug 19 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    some config added, keys added, some obvious bugs fixed. recommended update
+
+ plugin/bufmru.vim |  109 +++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 86 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Mon Aug 18 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README            |   65 +++++++++++++++++++++++++++++++
+ plugin/bufmru.vim |  109 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 174 insertions(+), 0 deletions(-)

@@ -1,0 +1,26 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2, refs/heads/master)
+Author:     jeremy schultz <taozhyn at gmail.com>
+AuthorDate: Tue Nov 4 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -   Fixed an issue with Block elements (header) not being highlighted when placed on the first or second line of the file
+    -   Fixed multi line HTML comment block
+    -   Fixed lowercase list items
+    -   Fixed list items gobbling to many empty lines
+    -   Added highlight support to identify newline (2 spaces)
+    -   Fixed HTML highlight, ignore if the first character in the angle brackets is not a letter
+    -   Fixed Emphasis highlighting when it contained multiple spaces
+
+ syntax/pdc.vim |   50 ++++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 34 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     jeremy schultz <taozhyn at gmail.com>
+AuthorDate: Thu Oct 2 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README         |    7 ++
+ syntax/pdc.vim |  312 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 319 insertions(+), 0 deletions(-)

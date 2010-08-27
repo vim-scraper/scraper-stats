@@ -1,0 +1,50 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1.2, refs/heads/master)
+Author:     Yanbiao Zhao <yanbiao_zhao at yahoo.com>
+AuthorDate: Mon May 8 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. Clear the code to use taglist() instead of using command "tselect"
+    
+    2. Fix bug in detecting tag file changes
+
+ plugin/CTree.vim |  112 ++++++++++++++++--------------------------------------
+ 1 files changed, 33 insertions(+), 79 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.1)
+Author:     Yanbiao Zhao <yanbiao_zhao at yahoo.com>
+AuthorDate: Wed May 3 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. Add command "CTag". It will jump to class/interface definition matching the tag
+    
+    2. Detect the changes to tag setting and tag files. If they are changed, type information will be reloaed automatically. Command "CTreeReset" is not necessary any more and removed.
+    
+    3. Add short cuts to command "CTree" and "CTag". They are commented out in the script. Uncomment them if you want.
+
+ plugin/CTree.vim |   77 ++++++++++++++++++++++++++++++++++++++++++++++++++---
+ 1 files changed, 72 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Yanbiao Zhao <yanbiao_zhao at yahoo.com>
+AuthorDate: Sun Apr 16 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add command "CTreeReset" to clear the cached tag information
+    
+    Will get parent of interface if it has only one parent.
+    
+    Add prompt information when load tag information and display total number of entries in cache
+
+ plugin/CTree.vim |   67 +++++++++++++++++++++++++++++++++---------------------
+ 1 files changed, 41 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Yanbiao Zhao <yanbiao_zhao at yahoo.com>
+AuthorDate: Fri Apr 14 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README           |    7 ++
+ plugin/CTree.vim |  204 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 211 insertions(+), 0 deletions(-)

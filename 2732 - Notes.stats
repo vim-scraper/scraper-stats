@@ -1,0 +1,91 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1, refs/heads/master)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Sep 18 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed broken :NoteSaveAs command.
+
+ autoload/notes.vim |    4 ++--
+ plugin/notes.vim   |   12 ++++++------
+ 2 files changed, 8 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Sep 16 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Documentation in vim help file format.
+    - Dependency on newer genutils (2.5).
+    - New setting g:notesCompleteAnchortAtStart
+    - Full command-line completion for all commands that accept filename or
+      directory paths (:NoteNewFolder, :NoteBrowse, :NoteGrep, :NoteChangeRoot
+      etc.).
+    - New command :NoteSaveAs the replaces the previous :NoteAsNew with a lot more
+      functionality.
+    - New command :NoteChangeRoot to make it easier to switch between multiple
+      notes roots.
+    - Improved :NoteGrep command that is now fully compatible with the built-in
+      :vimgrep. Allows specifying one or more files or folders and even supports
+      completion once the pattern is entered.
+    - Improved :NoteBrowse with folder completion and memory of last specified
+      folder.
+    - Better folder completion (using newer version of genutils).
+    - Further refactoring of code for more consistent behavior of the plugin.
+    - Now the plugin preserves the cursor position during a file rename.
+
+ autoload/notes.vim |  140 +++++++++++------
+ doc/notes.txt      |  427 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/notes.vim   |  122 +++-------------
+ 3 files changed, 536 insertions(+), 153 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Aug 19 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bugfix for broken filename sync.
+
+ autoload/notes.vim |    3 +--
+ plugin/notes.vim   |    6 +++---
+ 2 files changed, 4 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue Aug 18 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed issues reported by Gary Johnson.
+    - Changed line endings to work on unix like systems.
+    - Escape filenames so that spaes will not cause an issue on unix like systems.
+    - g:notesWordSeparator to use a different character other than space in the filenames.
+    - Some valid paths in g:notesRoot (such as "$HOME/notes" or "~/notes") are not being recognized.
+
+ autoload/notes.vim |  700 ++++++++++++++++++++++++++--------------------------
+ plugin/notes.vim   |  339 +++++++++++++------------
+ 2 files changed, 527 insertions(+), 512 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Aug 14 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added g:notesFileExtension. You can now manage files with other extension (e.g., if you keep your notes in wiki style, you can let the extension to ".wiki").
+    - Support for setting a 'filetype' for opened notes. By default sets to "note", but can be changed to say "wiki" if your notes are in wiki format.
+    - :NoteRemove command to remove current note file.
+    - Misc. enhancements and fixes.
+
+ autoload/notes.vim |   76 +++++++++++++++++++++++++++++++++++++++++----------
+ plugin/notes.vim   |   72 +++++++++++++++++++++++++++++++++++++-----------
+ 2 files changed, 116 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Sat Aug 8 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README             |   19 ++++
+ autoload/notes.vim |  302 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/notes.vim   |  126 ++++++++++++++++++++++
+ 3 files changed, 447 insertions(+), 0 deletions(-)

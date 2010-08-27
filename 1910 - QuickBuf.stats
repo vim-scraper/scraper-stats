@@ -1,0 +1,86 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.12, refs/heads/master)
+Author:     pal nart <palnart at gmail.com>
+AuthorDate: Tue Feb 3 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    ADD: key 'c' to close an already opened window.
+    ADD: checking vim's version to silently skip on older vim (less than 7.0). Thanks to Bernhard Walle.
+
+ doc/qbuf_readme.txt |   53 ---------------------------------------------------
+ plugin/qbuf.vim     |   15 ++++++++++++-
+ 2 files changed, 13 insertions(+), 55 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
+Author:     pal nart <palnart at gmail.com>
+AuthorDate: Sat Jan 5 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Changes:
+       - Automatically select the active buffer
+       - Fix the display problem related to Vim's option "lazyredraw"
+
+ doc/qbuf_readme.txt |   31 ++++++++++++++++++++++++-------
+ plugin/qbuf.vim     |    6 ++++--
+ 2 files changed, 28 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     pal nart <palnart at gmail.com>
+AuthorDate: Tue Dec 25 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Changes:
+    - More stable, tolerant to malformed commands
+    - Add <up>/<down> key to navigate buffer list
+    - Add 's' command to open buffer in a new split window
+    - Deal with Vim's multiple window
+    - Improve: 'u' command automatically move select bar to the next buffer
+    - Add some decorations
+
+ doc/qbuf_readme.txt |   71 ++++-------
+ plugin/qbuf.vim     |  323 ++++++++++++++++++++++++++++-----------------------
+ 2 files changed, 202 insertions(+), 192 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.01)
+Author:     pal nart <palnart at gmail.com>
+AuthorDate: Sat Jun 2 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor fix:
+    Save and keystroke when user press <Enter> but error switching to another buffer, no need to wait a keystroke, just leave QuickBuf, error message still visible!
+
+ plugin/qbuf.vim |   23 ++++++++++++-----------
+ 1 files changed, 12 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     pal nart <palnart at gmail.com>
+AuthorDate: Sat Jun 2 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Redesign, much added, much more feature rich!
+
+ doc/qbuf_readme.txt |   81 +++++++++++++++++++------------
+ plugin/qbuf.vim     |  134 +++++++++++++++++++++++++++++++--------------------
+ 2 files changed, 131 insertions(+), 84 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
+Author:     pal nart <palnart at gmail.com>
+AuthorDate: Sat Jun 2 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add a plus sign (+) to indicate modified buffers
+    Error message when buffer list too long to fit in Vim's shell more readable
+
+ doc/qbuf_readme.txt |   40 ++++++++++++++++++++++++++++++
+ plugin/qbuf.vim     |   67 +++++++--------------------------------------------
+ 2 files changed, 49 insertions(+), 58 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     pal nart <palnart at gmail.com>
+AuthorDate: Fri Jun 1 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README          |   30 ++++++++++
+ plugin/qbuf.vim |  164 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 194 insertions(+), 0 deletions(-)

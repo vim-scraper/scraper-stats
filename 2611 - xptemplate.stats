@@ -1,0 +1,307 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4.8-r911, refs/heads/master)
+Author:     drdr xp <drdr.xp at gmail.com>
+AuthorDate: Sun Jul 25 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fix problem that pressing <Tab> with pum unclosed gets chars lost
+
+ ftplugin/c/c99.xpt.vim |   12 ++++++++++++
+ plugin/xptemplate.vim  |    3 ++-
+ 2 files changed, 14 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.8-r899)
+Author:     drdr xp <drdr.xp at gmail.com>
+AuthorDate: Sat Jul 10 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix: brace completion bug with pop up menu opened. Thanks to yeskky reporting this issue.
+    
+    Add: 3 new filetypes : gitconfig, gnuplot, r. Simple and useful. Thanks to Vicent B
+
+ ftplugin/_loops/java.for.like.xpt.vim |    4 +-
+ ftplugin/c/autoimplem.xpt.vim         |    2 +-
+ ftplugin/cmake/cmake.xpt.vim          |    2 +-
+ ftplugin/gitconfig/gitconfig.xpt.vim  |   24 +++++++++++++++++
+ ftplugin/gnuplot/gnuplot.xpt.vim      |   34 +++++++++++++++++++++++
+ ftplugin/java/java.xpt.vim            |   10 +++---
+ ftplugin/objc/autoimplem.xpt.vim      |   12 ++++++++
+ ftplugin/objc/objc.xpt.vim            |   47 +++++++++++++++++++++++++++++++++
+ ftplugin/r/r.xpt.vim                  |   36 +++++++++++++++++++++++++
+ ftplugin/rst/rst.xpt.vim              |   20 ++++++++++++++
+ ftplugin/zsh/zsh.xpt.vim              |    8 +++++
+ plugin/xptemplate.vim                 |    4 +++
+ 12 files changed, 194 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.8-r860)
+Author:     drdr xp <drdr.xp at gmail.com>
+AuthorDate: Mon May 24 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix some mistakes in doc.
+    Fix but with repetition started at the first char.
+    Fix <expr> mapping bug
+
+ doc/xpt.snippet.syn.txt        |   18 ++++++++++++++++++
+ doc/xptemplate.txt             |    2 +-
+ ftplugin/xptest/xptest.xpt.vim |    5 ++++-
+ plugin/classes/MapSaver.vim    |    1 +
+ plugin/xpmark.vim              |    3 +++
+ plugin/xptemplate.conf.vim     |   16 ++++++++++++++++
+ plugin/xptemplate.vim          |    8 ++++++--
+ 7 files changed, 49 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.8-r852)
+Author:     drdr xp <drdr.xp at gmail.com>
+AuthorDate: Sun May 23 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add: autoimplemen bundle for c and cpp.
+    Fix: cross-line place holder is created incorrectly.
+    
+    Plenty Thanks to  Vincent B and Simon Ruderich.
+
+ ftplugin/c/autoimplem.xpt.vim   |   78 ++++++++++++
+ ftplugin/c/c.xpt.vim            |    8 ++
+ ftplugin/cmake/cmake.xpt.vim    |   14 ++
+ ftplugin/cpp/autoimplem.xpt.vim |  256 +++++++++++++++++++++++++++++++++++++++
+ ftplugin/cpp/cpp.xpt.vim        |   10 ++
+ plugin/xptemplate.vim           |   15 ++-
+ 6 files changed, 377 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.8-r842)
+Author:     drdr xp <drdr.xp at gmail.com>
+AuthorDate: Mon May 17 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix: auto-indent bug
+
+ autoload/XPT.vim                            |   29 ++++-
+ doc/xpt.snippet.syn.txt                     |    5 +-
+ doc/xptemplate.txt                          |   81 +++++++++++--
+ ftplugin/_common/common.bracketcmpl.xpt.vim |   43 ++++++-
+ ftplugin/_common/common.xpt.vim             |   14 +-
+ ftplugin/_structures/c.like.xpt.vim         |    2 +-
+ ftplugin/css/css.xpt.vim                    |    2 +-
+ ftplugin/html/html.xpt.vim                  |   15 ++-
+ ftplugin/javascript/jquery.xpt.vim          |    8 +-
+ ftplugin/python/python.xpt.vim              |    5 +-
+ ftplugin/vim/vim.xpt.vim                    |    9 +-
+ ftplugin/xpt/xpt.xpt.vim                    |   18 ++-
+ plugin/classes/MapSaver.vim                 |   26 ++--
+ plugin/xpmark.vim                           |    2 +-
+ plugin/xpopup.vim                           |  125 +++++++++++--------
+ plugin/xpreplace.vim                        |    2 +-
+ plugin/xpt.plugin.highlight.vim             |   31 +++--
+ plugin/xptemplate.conf.vim                  |   98 +++++++++------
+ plugin/xptemplate.parser.vim                |    8 +-
+ plugin/xptemplate.vim                       |  185 +++++++++++++++++++-------
+ 20 files changed, 496 insertions(+), 212 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.7-r807)
+Author:     drdr xp <drdr.xp at gmail.com>
+AuthorDate: Wed Apr 28 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fix: improve non-word char snippet name support
+    fix: when <tab> pressed to go to next, pum does not close and it swallows some chars
+    fix: removes all XPTemplateDef command
+    fix: supertab does not work well
+    fix: pum bug mess text.
+    fix: edges with quotes are wrongly evaluated.
+
+ autoload/XPT.vim                                   |   78 +-
+ doc/xpt.api.txt                                    |   53 +-
+ doc/xpt.snippet.syn.txt                            |  212 ++-
+ doc/xpt.snippet.tutor.txt                          |   94 +-
+ doc/xptemplate.txt                                 |  208 ++-
+ ftplugin/_comment/doubleSign.xpt.vim               |   69 +-
+ ftplugin/_comment/doubleSingle.xpt.vim             |   19 +
+ ftplugin/_comment/singleDouble.xpt.vim             |   56 +-
+ ftplugin/_comment/singleSign.xpt.vim               |   38 +-
+ ftplugin/_common/cmn.counter.xpt.vim               |    3 +-
+ ftplugin/_common/common.bracketcmpl.xpt.vim        |  153 ++
+ ftplugin/_common/common.path.xpt.vim               |   37 +
+ ftplugin/_common/common.xpt.vim                    |  253 ++-
+ ftplugin/_common/inlineComplete.xpt.vim            |   53 +
+ ftplugin/_condition/c.like.xpt.vim                 |   60 +-
+ ftplugin/_condition/ecma.xpt.vim                   |   32 +-
+ ftplugin/_condition/lisp.like.xpt.vim              |    1 -
+ ftplugin/_func/c.like.xpt.vim                      |   21 +-
+ ftplugin/_loops/c.for.like.xpt.vim                 |   45 +-
+ ftplugin/_loops/c.while.like.xpt.vim               |   36 +-
+ ftplugin/_loops/for.xpt.vim                        |   51 +-
+ ftplugin/_loops/java.for.like.xpt.vim              |    5 +-
+ ftplugin/_preprocessor/c.like.xpt.vim              |   59 +-
+ ftplugin/_printf/c.like.xpt.vim                    |  105 +
+ ftplugin/_structures/c.like.xpt.vim                |   54 +-
+ ftplugin/actionscript/actionscript.xpt.vim         |   12 +-
+ ftplugin/ada/ada.xpt.vim                           |   43 +-
+ ftplugin/c/c.xpt.vim                               |  114 +-
+ ftplugin/cabal/cabal.xpt.vim                       |    1 -
+ ftplugin/cg/cg.xpt.vim                             |   15 +-
+ ftplugin/cpp/cpp.xpt.vim                           |   47 +-
+ ftplugin/cs/cs.xpt.vim                             |   34 +-
+ ftplugin/css/css.xpt.vim                           |  167 +-
+ ftplugin/dot/dot.xpt.vim                           |   31 +-
+ ftplugin/erlang/erlang.xpt.vim                     |   40 +-
+ ftplugin/eruby/eruby.ftdetect.vim                  |    5 +-
+ ftplugin/eruby/eruby.xpt.vim                       |    1 -
+ ftplugin/factor/factor.xpt.vim                     |   44 +
+ ftplugin/haskell/haskell.xpt.vim                   |   52 +-
+ ftplugin/haskell/wrapt.xpt.vim                     |   33 -
+ ftplugin/help/help.xpt.vim                         |    9 +-
+ ftplugin/html/eruby.xpt.vim                        |    9 +-
+ ftplugin/html/html.ftdetect.vim                    |    5 +-
+ ftplugin/html/html.xpt.vim                         |  363 ++--
+ ftplugin/html/php.xpt.vim                          |   15 +-
+ ftplugin/htmldjango/htmldjango.ftdetect.vim        |   73 +
+ ftplugin/htmldjango/htmldjango.xpt.vim             |   13 +
+ ftplugin/java/java.xpt.vim                         |   39 +-
+ ftplugin/javascript/javascript.xpt.vim             |   54 +-
+ ftplugin/javascript/jquery.xpt.vim                 |   83 +-
+ ftplugin/lex/lex.xpt.vim                           |   10 +-
+ ftplugin/lua/lua.xpt.vim                           |   37 +-
+ ftplugin/make/make.xpt.vim                         |   25 +-
+ ftplugin/ocaml/ocaml.xpt.vim                       |   57 +-
+ ftplugin/ocaml.revised/ocaml.revised.xpt.vim       |   57 +-
+ ftplugin/perl/perl.xpt.vim                         |   57 +-
+ ftplugin/php/php.ftdetect.vim                      |    5 +-
+ ftplugin/php/php.xpt.vim                           |   11 +-
+ ftplugin/ps1/ps1.xpt.vim                           |   35 +-
+ ftplugin/python/python.xpt.vim                     |   87 +-
+ ftplugin/ruby/ruby.xpt.vim                         |  233 ++-
+ ftplugin/scheme/scheme.xpt.vim                     |   51 +-
+ ftplugin/sh/sh.xpt.vim                             |  116 +-
+ ftplugin/sql/sql.xpt.vim                           |   80 +
+ ftplugin/svg/svg.xpt.vim                           |   65 +
+ ftplugin/tcl/tcl.xpt.vim                           |   23 +-
+ ftplugin/tex/tex.xpt.vim                           |   53 +-
+ ftplugin/vim/vim.xpt.vim                           |   85 +-
+ ftplugin/xml/xml.xpt.vim                           |   86 +-
+ ftplugin/xpt/xpt.xpt.vim                           |   94 +-
+ ftplugin/xptest/xptest.xpt.vim                     |   61 +
+ ftplugin/xslt/xslt.xpt.vim                         |   25 +-
+ ftplugin/yacc/yacc.xpt.vim                         |    9 +-
+ personal/ftplugin/_common/personal_example.xpt.vim |    1 -
+ plugin/FiletypeScope.class.vim                     |   32 -
+ plugin/FilterValue.class.vim                       |   15 -
+ plugin/MapSaver.class.vim                          |  131 --
+ plugin/SettingSwitch.class.vim                     |   44 -
+ plugin/classes/FiletypeScope.vim                   |   32 +
+ plugin/classes/FilterValue.vim                     |   45 +
+ plugin/classes/MapSaver.vim                        |  158 ++
+ plugin/classes/RenderContext.vim                   |   68 +
+ plugin/classes/SettingSwitch.vim                   |   52 +
+ plugin/debug.vim                                   |  134 +-
+ plugin/mapstack.vim                                |    1 -
+ plugin/xpclass.vim                                 |    1 -
+ plugin/xpmark.vim                                  |  187 ++-
+ plugin/xpopup.vim                                  |  413 +++-
+ plugin/xpreplace.vim                               |  110 +-
+ plugin/xpt.plugin.highlight.vim                    |   48 +-
+ plugin/xptemplate.conf.vim                         |   75 +-
+ plugin/xptemplate.parser.vim                       |  128 +-
+ plugin/xptemplate.util.vim                         |    6 +-
+ plugin/xptemplate.vim                              | 2203 +++++++++++---------
+ syntax/xpt.vim                                     |   54 +-
+ 95 files changed, 5025 insertions(+), 3372 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.9.98)
+Author:     drdr xp <drdr.xp at gmail.com>
+AuthorDate: Mon Dec 14 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix : vim halts when XPT searching for keywords
+
+ README                                             |   49 +
+ autoload/XPT.vim                                   |   75 +
+ autoload/XPpum.vim                                 |   65 +
+ doc/xpt-function.txt                               |   35 +
+ doc/xpt.api.txt                                    |   78 +
+ doc/xpt.snippet.syn.txt                            |  810 +++++++
+ doc/xpt.snippet.tutor.txt                          |   27 +
+ doc/xptemplate.txt                                 |  670 ++++++
+ ftdetect/xptemplate.detect.vim                     |    1 +
+ ftplugin/_comment/c.like.xpt.vim                   |   11 +
+ ftplugin/_comment/cpp.like.xpt.vim                 |   13 +
+ ftplugin/_comment/doubleSign.xpt.vim               |   56 +
+ ftplugin/_comment/pattern.xpt.vim                  |   42 +
+ ftplugin/_comment/singleDouble.xpt.vim             |   59 +
+ ftplugin/_comment/singleSign.xpt.vim               |   44 +
+ ftplugin/_comment/xml.xpt.vim                      |   11 +
+ ftplugin/_common/cmn.counter.xpt.vim               |   41 +
+ ftplugin/_common/common.xpt.vim                    |  585 +++++
+ ftplugin/_condition/c.like.xpt.vim                 |  117 +
+ ftplugin/_condition/ecma.xpt.vim                   |   44 +
+ ftplugin/_condition/lisp.like.xpt.vim              |   39 +
+ ftplugin/_func/c.like.xpt.vim                      |   72 +
+ ftplugin/_loops/c.for.like.xpt.vim                 |   44 +
+ ftplugin/_loops/c.while.like.xpt.vim               |   39 +
+ ftplugin/_loops/for.xpt.vim                        |   52 +
+ ftplugin/_loops/java.for.like.xpt.vim              |   24 +
+ ftplugin/_preprocessor/c.like.xpt.vim              |   90 +
+ ftplugin/_structures/c.like.xpt.vim                |   64 +
+ ftplugin/actionscript/actionscript.xpt.vim         |   41 +
+ ftplugin/ada/ada.xpt.vim                           |  135 ++
+ ftplugin/c/c.xpt.vim                               |  178 ++
+ ftplugin/cabal/cabal.xpt.vim                       |   59 +
+ ftplugin/cg/cg.xpt.vim                             |  106 +
+ ftplugin/cpp/cpp.xpt.vim                           |  193 ++
+ ftplugin/cs/cs.xpt.vim                             |  131 ++
+ ftplugin/css/css.xpt.vim                           |  480 +++++
+ ftplugin/dot/dot.xpt.vim                           |  117 +
+ ftplugin/erlang/erlang.xpt.vim                     |  151 ++
+ ftplugin/eruby/eruby.ftdetect.vim                  |   68 +
+ ftplugin/eruby/eruby.xpt.vim                       |   22 +
+ ftplugin/haskell/haskell.xpt.vim                   |  156 ++
+ ftplugin/haskell/wrapt.xpt.vim                     |   33 +
+ ftplugin/help/help.xpt.vim                         |   32 +
+ ftplugin/html/eruby.xpt.vim                        |   25 +
+ ftplugin/html/html.ftdetect.vim                    |   60 +
+ ftplugin/html/html.xpt.vim                         |  310 +++
+ ftplugin/html/php.xpt.vim                          |   24 +
+ ftplugin/java/java.xpt.vim                         |  134 ++
+ ftplugin/javascript/javascript.xpt.vim             |  185 ++
+ ftplugin/javascript/jquery.xpt.vim                 |  559 +++++
+ ftplugin/lex/lex.xpt.vim                           |   51 +
+ ftplugin/lua/lua.xpt.vim                           |  150 ++
+ ftplugin/make/make.xpt.vim                         |   81 +
+ ftplugin/module/module.javascript.xpt.vim          |   25 +
+ ftplugin/ocaml/ocaml.xpt.vim                       |  194 ++
+ ftplugin/ocaml.revised/ocaml.revised.xpt.vim       |  185 ++
+ ftplugin/perl/perl.xpt.vim                         |  176 ++
+ ftplugin/php/php.ftdetect.vim                      |   72 +
+ ftplugin/php/php.xpt.vim                           |   86 +
+ ftplugin/ps1/ps1.xpt.vim                           |  121 ++
+ ftplugin/python/python.xpt.vim                     |  324 +++
+ ftplugin/ruby/ruby.xpt.vim                         |  820 +++++++
+ ftplugin/scheme/scheme.xpt.vim                     |   75 +
+ ftplugin/sh/sh.xpt.vim                             |  182 ++
+ ftplugin/tcl/tcl.xpt.vim                           |   94 +
+ ftplugin/tex/tex.xpt.vim                           |  167 ++
+ ftplugin/unknown/unknown.xpt.vim                   |    8 +
+ ftplugin/vim/vim.xpt.vim                           |  167 ++
+ ftplugin/xhtml/xhtml.xpt.vim                       |    6 +
+ ftplugin/xml/xml.xpt.vim                           |  117 +
+ ftplugin/xpt/xpt.xpt.vim                           |  203 ++
+ ftplugin/xslt/xslt.xpt.vim                         |  111 +
+ ftplugin/yacc/yacc.xpt.vim                         |   56 +
+ personal/Readme.txt                                |   25 +
+ personal/ftplugin/_common/personal_example.xpt.vim |   16 +
+ plugin/FiletypeScope.class.vim                     |   32 +
+ plugin/FilterValue.class.vim                       |   15 +
+ plugin/MapSaver.class.vim                          |  131 ++
+ plugin/SettingSwitch.class.vim                     |   44 +
+ plugin/debug.vim                                   |  135 ++
+ plugin/mapstack.vim                                |    1 +
+ plugin/xpclass.vim                                 |    1 +
+ plugin/xpmark.vim                                  |  665 ++++++
+ plugin/xpopup.vim                                  |  447 ++++
+ plugin/xpreplace.vim                               |  161 ++
+ plugin/xpt.plugin.highlight.vim                    |  129 ++
+ plugin/xptemplate.conf.vim                         |  136 ++
+ plugin/xptemplate.parser.vim                       |  341 +++
+ plugin/xptemplate.util.vim                         |   70 +
+ plugin/xptemplate.vim                              | 2249 ++++++++++++++++++++
+ syntax/xpt.vim                                     |  223 ++
+ 91 files changed, 14748 insertions(+), 0 deletions(-)

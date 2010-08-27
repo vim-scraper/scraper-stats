@@ -1,0 +1,76 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.6, refs/heads/master)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Tue Jun 15 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Bug fix for :doautocmd User PublishPre hook:
+      http://github.com/xolox/vim-publish/commit/964e4dbb486f203ae7a1cb426af9491f44225db1
+    
+    * Bug fix: Escape ~ in tag search patterns:
+      http://github.com/xolox/vim-publish/commit/2da32565a73c0a9ab25d4fd9b0f6626336202d07
+    
+    * Improved handling of VimL script-local functions:
+      http://github.com/xolox/vim-publish/commit/537fe778d8bec47001367193323a813c3333d038
+    
+    * Always prefer earlier tag definitions in the same document:
+      http://github.com/xolox/vim-publish/commit/17b9e7563464da908baf45870831599e2bc9c809
+    
+    * Faster remote publishing using rsync (automatically enabled):
+      http://github.com/xolox/vim-publish/commit/027a2f0f4f8ccd6a7f1739f023b4825944e71b57
+
+ autoload/publish.vim     |  114 +++++++++++++++++++++++++++++++++-------------
+ autoload/xolox/path.vim  |   30 ++++++++++++-
+ autoload/xolox/timer.vim |   79 ++++++++++++++++++++++++++++++++
+ autoload/xolox.vim       |   50 ++++++++++++++++++++
+ doc/publish.html         |   42 ++++++++++++----
+ doc/publish.txt          |   36 ++++++++++++--
+ plugin/publish.vim       |   53 +++++++++++++--------
+ 7 files changed, 333 insertions(+), 71 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5.2)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Sun Jun 6 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now includes generated Vim documentation based on README
+
+ doc/publish.html |   10 +++---
+ doc/publish.txt  |   79 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 84 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5.1)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Sat Jun 5 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fix: Fixed usage instructions to include tags generation :-\
+    http://github.com/xolox/vim-publish/commit/8eee22a18373125398d853dc3848d4101865576b
+
+ doc/publish.html   |   36 ++++++++++++++++++++++++++----------
+ plugin/publish.vim |    2 +-
+ 2 files changed, 27 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Sat Jun 5 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Completely switched directions by forgetting about incremental, automatic publishing (which interferes with the user because "2html.vim" is too slow) and instead focusing on batch publishing of multiple related files, which means the plug-in can now include hyperlinks between the published files based on tags.
+
+ autoload/publish.vim      |  197 +++++++++++++++++++++++++++++++++++++
+ autoload/xolox/escape.vim |   26 +++++
+ autoload/xolox/path.vim   |  130 +++++++++++++++++++++++++
+ doc/publish.html          |   71 ++++++++++++++
+ plugin/publish.vim        |  237 +++++++++++++++++----------------------------
+ 5 files changed, 515 insertions(+), 146 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Sun May 25 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README             |    8 +++
+ plugin/publish.vim |  154 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 162 insertions(+), 0 deletions(-)

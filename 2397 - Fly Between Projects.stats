@@ -1,0 +1,17 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.02, refs/heads/master)
+Author:     vijayandra singh <vsingh.usa at gmail.com>
+AuthorDate: Sat Oct 11 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New Field been added, Press F1 for selecting project and F2 opens files present in current directory using wild char supplied in text file as shown following.
+    
+    F1 Select Project
+    F2 Select files in sub project
+    
+    PRJ1 c:\PRJ1DIR1 DEFFILEPRJ1.C *.C
+    PRJ2 c:\PRJ1DIR2 DEFFILEPRJ2.C *.CPP
+
+ README                  |    9 ++
+ doc/selfreqfiles.txt    |    2 +
+ plugin/selfreqfiles.vim |  223 +++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 234 insertions(+), 0 deletions(-)

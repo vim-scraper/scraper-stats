@@ -1,0 +1,124 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2, refs/heads/master)
+Author:     Stratis Aftousmis <saftousmis at tampabay.rr.com>
+AuthorDate: Mon Nov 9 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Traded tk_chooseColor for SelectColor (big improvment!)
+    
+    I also added more images...
+
+ .main.tcl.swp                    |  Bin 24576 -> 0 bytes
+ Images/Constant.ppm              |  Bin 0 -> 35933 bytes
+ Images/Identifier.ppm            |  Bin 0 -> 35933 bytes
+ Images/StatusLine.ppm            |  Bin 0 -> 34373 bytes
+ Images/StatusLineNC.ppm          |  Bin 0 -> 33203 bytes
+ TestCopy.tcl                     |   17 +-
+ bwidget1.9/arrow.tcl             |  551 ++++++++++
+ bwidget1.9/bitmap.tcl            |   94 ++
+ bwidget1.9/button.tcl            |  324 ++++++
+ bwidget1.9/buttonbox.tcl         |  414 +++++++
+ bwidget1.9/color.tcl             |  493 +++++++++
+ bwidget1.9/combobox.tcl          |  885 +++++++++++++++
+ bwidget1.9/dialog.tcl            |  345 ++++++
+ bwidget1.9/dragsite.tcl          |  197 ++++
+ bwidget1.9/dropsite.tcl          |  456 ++++++++
+ bwidget1.9/dynhelp.tcl           |  793 ++++++++++++++
+ bwidget1.9/entry.tcl             |  472 ++++++++
+ bwidget1.9/font.tcl              |  566 ++++++++++
+ bwidget1.9/images/bold.gif       |  Bin 0 -> 118 bytes
+ bwidget1.9/images/copy.gif       |  Bin 0 -> 145 bytes
+ bwidget1.9/images/cut.gif        |  Bin 0 -> 130 bytes
+ bwidget1.9/images/dragfile.gif   |  Bin 0 -> 949 bytes
+ bwidget1.9/images/dragicon.gif   |  Bin 0 -> 1012 bytes
+ bwidget1.9/images/error.gif      |  Bin 0 -> 259 bytes
+ bwidget1.9/images/file.gif       |  Bin 0 -> 860 bytes
+ bwidget1.9/images/folder.gif     |  Bin 0 -> 139 bytes
+ bwidget1.9/images/hourglass.gif  |  Bin 0 -> 211 bytes
+ bwidget1.9/images/info.gif       |  Bin 0 -> 256 bytes
+ bwidget1.9/images/italic.gif     |  Bin 0 -> 111 bytes
+ bwidget1.9/images/minus.xbm      |    5 +
+ bwidget1.9/images/new.gif        |  Bin 0 -> 131 bytes
+ bwidget1.9/images/opcopy.xbm     |    5 +
+ bwidget1.9/images/open.gif       |  Bin 0 -> 139 bytes
+ bwidget1.9/images/openfold.gif   |  Bin 0 -> 146 bytes
+ bwidget1.9/images/oplink.xbm     |    5 +
+ bwidget1.9/images/opmove.xbm     |    5 +
+ bwidget1.9/images/overstrike.gif |  Bin 0 -> 119 bytes
+ bwidget1.9/images/palette.gif    |  Bin 0 -> 151 bytes
+ bwidget1.9/images/passwd.gif     |  Bin 0 -> 481 bytes
+ bwidget1.9/images/paste.gif      |  Bin 0 -> 159 bytes
+ bwidget1.9/images/plus.xbm       |    5 +
+ bwidget1.9/images/print.gif      |  Bin 0 -> 140 bytes
+ bwidget1.9/images/question.gif   |  Bin 0 -> 265 bytes
+ bwidget1.9/images/redo.gif       |  Bin 0 -> 70 bytes
+ bwidget1.9/images/save.gif       |  Bin 0 -> 138 bytes
+ bwidget1.9/images/target.xbm     |    9 +
+ bwidget1.9/images/underline.gif  |  Bin 0 -> 119 bytes
+ bwidget1.9/images/undo.gif       |  Bin 0 -> 115 bytes
+ bwidget1.9/images/warning.gif    |  Bin 0 -> 254 bytes
+ bwidget1.9/init.tcl              |   40 +
+ bwidget1.9/label.tcl             |  271 +++++
+ bwidget1.9/labelentry.tcl        |  100 ++
+ bwidget1.9/labelframe.tcl        |  160 +++
+ bwidget1.9/lang/da.rc            |   52 +
+ bwidget1.9/lang/de.rc            |   52 +
+ bwidget1.9/lang/en.rc            |   52 +
+ bwidget1.9/lang/es.rc            |   53 +
+ bwidget1.9/lang/fr.rc            |   52 +
+ bwidget1.9/lang/hu.rc            |   52 +
+ bwidget1.9/lang/nl.rc            |   52 +
+ bwidget1.9/lang/no.rc            |   52 +
+ bwidget1.9/listbox.tcl           | 1693 ++++++++++++++++++++++++++++
+ bwidget1.9/mainframe.tcl         |  712 ++++++++++++
+ bwidget1.9/messagedlg.tcl        |  128 +++
+ bwidget1.9/notebook.tcl          | 1166 ++++++++++++++++++++
+ bwidget1.9/pagesmgr.tcl          |  294 +++++
+ bwidget1.9/panedw.tcl            |  385 +++++++
+ bwidget1.9/panelframe.tcl        |  246 +++++
+ bwidget1.9/passwddlg.tcl         |  182 +++
+ bwidget1.9/pkgIndex.tcl          |   47 +
+ bwidget1.9/progressbar.tcl       |  208 ++++
+ bwidget1.9/progressdlg.tcl       |   87 ++
+ bwidget1.9/scrollframe.tcl       |  262 +++++
+ bwidget1.9/scrollview.tcl        |  254 +++++
+ bwidget1.9/scrollw.tcl           |  282 +++++
+ bwidget1.9/separator.tcl         |   75 ++
+ bwidget1.9/spinbox.tcl           |  331 ++++++
+ bwidget1.9/statusbar.tcl         |  422 +++++++
+ bwidget1.9/titleframe.tcl        |  170 +++
+ bwidget1.9/tree.tcl              | 2243 ++++++++++++++++++++++++++++++++++++++
+ bwidget1.9/utils.tcl             |  680 ++++++++++++
+ bwidget1.9/widget.tcl            | 1610 +++++++++++++++++++++++++++
+ bwidget1.9/xpm2image.tcl         |  115 ++
+ doc/bwidget1.9.txt               |   38 +
+ doc/readme.txt                   |    4 +-
+ doc/readme.txt~                  |    8 -
+ main.tcl                         |   19 +-
+ main.tcl.bak                     |  575 ----------
+ main.tcl~                        |  576 ++++++++++
+ 89 files changed, 18840 insertions(+), 601 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Stratis Aftousmis <saftousmis at tampabay.rr.com>
+AuthorDate: Wed Nov 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I changed the way HiVim starts GVim...
+
+ .main.tcl.swp        |  Bin 0 -> 24576 bytes
+ Images/Comment.ppm   |    9 +
+ Images/Cursor.ppm    |  Bin 0 -> 35933 bytes
+ Images/Dummy.ppm     |   11 +
+ Images/ErrorMsg.ppm  |  Bin 0 -> 35933 bytes
+ Images/LineNr.ppm    |  Bin 0 -> 35933 bytes
+ Images/Normal.ppm    |    5 +
+ Images/Start.ppm     |  Bin 0 -> 35933 bytes
+ Images/Statement.ppm |    5 +
+ Images/VertSplit.ppm |  Bin 0 -> 35933 bytes
+ README               |   16 ++
+ TestCopy.tcl         |  575 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/readme.txt       |   16 ++
+ doc/readme.txt~      |    8 +
+ main.tcl             |  575 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ main.tcl.bak         |  575 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 16 files changed, 1795 insertions(+), 0 deletions(-)

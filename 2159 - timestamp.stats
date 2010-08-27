@@ -1,0 +1,27 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     Peng Du <a at yegong.net>
+AuthorDate: Mon Nov 10 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    It's a script to insert a "Last Change" comment field in your source file.
+    You can modify the default behavior of this plug-in.
+    To add the support of new file type
+    put this to your vimrc
+    au BufWritePre *.cpp        call TimeStamp('//')
+    if the comment block in that language has both the begin and end symbol,
+    just enjoy this
+    au BufWritePre *.php          call TimeStamp('<?php //', '?>')
+
+ plugin/timestamp.vim |   72 ++++++++++++++++++-------------------------------
+ 1 files changed, 27 insertions(+), 45 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Peng Du <a at yegong.net>
+AuthorDate: Tue Feb 19 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README               |    4 +++
+ plugin/timestamp.vim |   51 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 55 insertions(+), 0 deletions(-)

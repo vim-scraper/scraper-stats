@@ -1,0 +1,300 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/11.0, refs/heads/master)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Thu Aug 12 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NF: Documented the global variables to customize the location of the YankRing menu.
+    
+    NF: The YankRing menu now shows the maps used for the default actions to help learn them more easily.
+    
+    NF: Added g:yankring_menu_root and g:yankring_menu_priority (David Barsam).
+    
+    NF: Added a warning indicating a stored value has been truncated based on g:yankring_max_element_length and a new option to suppress this warning, g:yankring_warn_on_truncate (Hans-Günter).
+    
+    BF: The YRAfterMaps() function (if it exists) was not re-run if YRToggle was used to disable and enable the YankRing.
+    
+    BF: Multibyte strings may not have been pasted correctly (Dr. Chip).
+    
+    BF: When pasting a string of 1111's, and additional -1 could also be included in the output.
+
+ doc/yankring.txt    |   61 ++++++++++++++++++++++++++-
+ plugin/yankring.vim |  114 ++++++++++++++++++++++++++++++++++-----------------
+ 2 files changed, 134 insertions(+), 41 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/10.0)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Mon Feb 1 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NF: Change the buffer name to [YankRing] to resemble other non-user buffers.
+    
+    NF: Added g:yankring_min_element_length which can prevent items from being added to the YankRing if they are too small.  For example, single character deletes (Vedran M).
+    
+    BF: When shifting focus back to Vim, the YankRing may incorrectly report: "YR:Failed to change to the yankring buffer, please contact author".
+    
+    BF: When entering Vim for the first time and hitting "p" nothing was pasted (Mark Huiskes).
+    
+    BF: When entering Vim for the first time and the yankring_clipboard_monitor = 1, the clipboard entry was not automatically added to the yankring.
+    
+    BF: When overriding the default and setting g:yankring_window_use_bottom = 0, the YankRing would report the error (Sergey Khorev):  E21: Cannot make changes, 'modifiable' is off
+
+ "doc/doc\\yankring.txt"       | 1386 -----------------------
+ doc/yankring.txt              | 1412 +++++++++++++++++++++++
+ "plugin/plugin\\yankring.vim" | 2412 ----------------------------------------
+ plugin/yankring.vim           | 2461 +++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 3873 insertions(+), 3798 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/9.0)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Sun Aug 30 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    BF: You cannot execute a macro with ":normal @a".  It is still not possible, but you can execute it with ":normal! @a" (A S Budden).
+    BF: When g:yankring_persist = 0 the YankRing could go into an infinite loop (A S Budden).
+    BF: When replaying a macro which used any of the zap keys (f,F,t,T,/,?) you were prompted again for the string to match on (Ovidiu C).
+    BF: When checking the clipboard for changes (g:yankring_clipboard_monitor == 1) only add the item if it is not already in the ring.  Previously, the item was moved to the top of the YankRing each time you flipped focus.
+
+ "doc/doc\\yankring.txt"       |   19 ++++-
+ "plugin/plugin\\yankring.vim" |  209 +++++++++++++++++++++++++++++------------
+ 2 files changed, 164 insertions(+), 64 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8.0)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Tue Dec 30 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NF: Changed the implementation of YRGetSearch() (David Liang).
+    BF: Under some unknown circumstances, the yankring can fail to change to the correct buffer.  Put in code to double check and abort.
+    BF: Yanking and pasting a line which ends in a backslash resulted in the backslash being replaced by "@@@".
+    BF: When repeating a command (".") which used any of the zap keys (f,F,t,T,/,?) you were prompted again for the string to match on (Vasilii Pascal).
+
+ "doc/doc\\yankring.txt"       |   15 ++-
+ "plugin/plugin\\yankring.vim" |  292 ++++++++++++++++++++++++++++++----------
+ 2 files changed, 232 insertions(+), 75 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/7.0)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Sat Nov 15 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NF: Added support for the / and ? motions so that y/search is supported (Vasilii Pascal).
+    NF: When the YankRing window is displayed (or updated) an additional check is made against the default register.  If it has changed since the YankRing recorded it, the value will be added to the history.
+    NF: Added support for more motions h, j, k, l, H, M, L, ^, 0, -, +, _.  And a pile of g motions g_, g^, gm, g$, gk, gj, gg, ge, gE.
+    NF: The YankRing window will display a message it is operating in a limited mode if not using Vim 7.2 or the correct patch level.
+    BF: Correction to some internal code which could lead to an endless loop (John Beckett).
+    BF: Opening and closing the YankRing window with "set report=0" reported "1 line less" messages (Bill McCarthy).
+    BF: Changed the default value of g:yankring_paste_check_default_buffer to check if the default paste buffer has changed when pressing 'p'.  For example, if a plugin has changed the default registers it will be pasted rather than the top item from the YankRing.
+    BF: YRMapsDelete did not remove all the maps created by the YankRing.
+    BF: Under particular circumstances, yanking text with embedded @ characters were not properly stored and retrieved from the YankRing (Andrew Long).
+    BF: Changed to use xmaps instead of vmaps so that the maps only work in visual mode and not select mode (David Liang).
+
+ "doc/doc\\yankring.txt"       |   68 +++++++++++++++---
+ "plugin/plugin\\yankring.vim" |  157 ++++++++++++++++++++++++++++++-----------
+ 2 files changed, 173 insertions(+), 52 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6.1)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Fri Oct 31 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    BF: If the g:yankring_history_dir contains spaces (default on Windows) an error was reported.  A simple work around was to let g:yankring_history_dir = 'c:\Vim' or no spaces (Matt).
+    All Windows users should download this version.
+
+ "doc/doc\\yankring.txt"       |    5 +++++
+ "plugin/plugin\\yankring.vim" |   11 +++++------
+ 2 files changed, 10 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6.0)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Thu Oct 30 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NF: The YankRing now maintains the history in a file.  This means if you are running multiple instances of Vim, they all see the same yankring whether you are using X, Windows, SSH or Screen.
+    NF: The location and name of the file is configurable by the user.
+    NF: The g:yankring_separator is no longer used and has been removed.
+    NF: The g:yankring_max_element_length can be used to limit the size of an element in the yankring.
+    NF: The g:yankring_share_between_instances can be used to indicate whether each instance of Vim running on a machine should share the history file or whether each should have their own individual history file.
+    NF: The g:yankring_clipboard_monitor can be used to indicate whether changes to the system clipboard should be added to the YankRing (default is on).
+    NF: The YankRing window can toggle the clipboard monitor by pressing 'c'.  See the help in the window by pressing ?.
+    NF: Added some highlighting to the YankRing window (Marty Grenfell).
+
+ "doc/doc\\yankring.txt"       |  440 ++++++++++++++++++---------
+ "plugin/plugin\\yankring.vim" |  694 ++++++++++++++++++++---------------------
+ 2 files changed, 643 insertions(+), 491 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.0)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Mon Sep 22 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NF: The yankring can recognize certain Vim commands which do not change the contents of a buffer and not attempt to capture it.
+    NF: The global variables which allow you to customize the behaviour are now space separated instead of comma separated.  This provides greater flexibility but will require you to modify your vimrc (if you have customized it). (Andy Wokula)
+    BF: If using <C-O> from within insert mode, the yankring inserted characters into the buffer instead of capturing the changes, this was fixed by Andy Wokula (Agathoklis Hatzimanikas).
+    BF: The yankring did not properly account for all the different forms of counts "5yy" worked but "y5y" did not (Edwin Shao).
+
+ "doc/doc\\yankring.txt"       |   17 +++++-
+ "plugin/plugin\\yankring.vim" |  131 ++++++++++++++++++-----------------------
+ 2 files changed, 72 insertions(+), 76 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Sat Aug 9 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NF: The yankring now allows you to override which operators should be ignored (yankring_ignore_operator).  By default this is set for the standard Vim operators which do not modify any registers (Examples: = and gu) (Andy Wokula).
+    NF: The yankring did not map v_x (Matt Tolton).
+    BF: The expression register (quote=) was not accounted for correctly (Agathoklis Hatzimanikas).
+    BF: Using the v:operator variable must be escaped when used in a regular expression.
+
+ "doc/doc\\yankring.txt"       |   22 +++++++++-
+ "plugin/plugin\\yankring.vim" |   88 ++++++++++++++++++++++++++--------------
+ 2 files changed, 77 insertions(+), 33 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Tue Jun 24 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NF: The yankring by default now captures all |text-objects| and all motions (|motion.txt|) which Vim supports.  Version 3.0 only supported a subset of the basic motion commands.
+    NF: Prior to this version only predefined maps triggered the capture of data into the yankring.  These maps only supported yanks and deletes.  The yankring now also supports operator-pending mode, which allows a greater range of operations to be automatically captured and added to the yankring.
+    Operating pending mode functionality requires Vim 7.2 or Vim 7.1 with patch #205.  If using Vim 7.1 you can determine this with:
+           echo has("patch205")
+    NF: Prior to this version only yanks and deletes were registered in the yankring.  Changes are now also captured into the yankring.
+    NF: The yankring will also capture the system cliboard when focus is returned to the vim window.  This is useful if you copy text between applications.
+    NF: The yankring window always opened bottom horizontal.  Now it can be opened top or bottom and horizontal or vertically.  This can be controlled via variables in your .vimrc.
+    BF: The yankring has an option to persist between instances of Vim by storing the values in global variables within the viminfo.  This has led to some unusual ordering of items in the ring from conflicts between instances.  This option has been turn off by default.
+    BF: Their was an issue with yanking using y$.
+
+ "doc/doc\\yankring.txt"       | 1126 ++++++++++++++++++++++
+ doc/yankring.txt              | 1088 ---------------------
+ "plugin/plugin\\yankring.vim" | 2098 +++++++++++++++++++++++++++++++++++++++++
+ plugin/yankring.vim           | 1806 -----------------------------------
+ 4 files changed, 3224 insertions(+), 2894 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Fri Sep 7 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NF: Converted the yankring to use the new Vim7's List object which means it is no longer compatible with Vim6.
+    NF: By default the yankring will now maintain the yankring's items persistently by default.  It does this via the |viminfo| file. This means the contents of the yankring rely on the internal variables of only 1 Vim instance.
+    BF: YRToggle was not unmapping 'gp' and 'gP'.
+    BF: YRSearch prompted the user for a regex even if one was provided on the command line.
+    BF: If g:yankring_manage_numbered_reg is enabled, the "." operator did not correctly repeat the previous action (Pedro DeRose).
+
+ doc/yankring.txt    |   37 +++-
+ plugin/yankring.vim |  569 ++++++++++++++++++++++++---------------------------
+ 2 files changed, 297 insertions(+), 309 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Fri Oct 21 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    BF: If you pressed '?' to toggle the display of the help in the
+    yankring window, the yankring window would close.  This also applied to
+    'a', which allowed you to toggle the autoclose feature.
+
+ doc/yankring.txt    |    9 +++++++--
+ plugin/yankring.vim |   12 ++++++------
+ 2 files changed, 13 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Tue Oct 11 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NF: Much improved usability, the yankring now has a "GUI" to service
+        the yankring.  If YRShow or YRSearch is used, a split buffer is
+        opened which displays all the elements in the yankring.  There
+        are a number of maps that allow you to interact with the
+        contents.  The window can be positioned vertically or
+        horizontally as well as being sized all through options
+        specified in your vimrc.
+    NF: Added the ability for the yankring to override Vim's numbered
+        registers.  Instead of the numbered registers holding the last
+        yanked value, and the 9 previous deletes, they will now reflect
+        the top 10 items in the yankring.  This allows you to reference
+        them directly with "5p.
+    NF: YRPop can now delete any items from the yankring, rather
+        that just from the top.
+    NF: YRSetTop has been removed, it is no longer required as the
+        internal representation of the yankring has changed.
+    BF: If g:yankring_ignore_duplicate is set (which is the default)
+        you could get some unpredicable results when moving
+        backwards and forwards (<C-P> and <C-N>) through the
+        previous values.
+
+ doc/yankring.txt    |   39 +++++++--
+ plugin/yankring.vim |  230 +++++++++++++++++++++++++++++++++++++--------------
+ 2 files changed, 196 insertions(+), 73 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0-Beta1a)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Mon Aug 22 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Some people reported an error when selecting the first item from the yankring.
+
+ plugin/yankring.vim |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0-Beta1)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Sat Aug 20 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added a new split buffer that allows you to visually interact with the yankring.  This makes using it much better, no more commands you need to remember.
+    Previous commands are still available.  The new buffer is configurable.  Please see the tutorial for further details.
+    
+    Feedback is greatly appreciated.
+
+ doc/yankring.txt    |  708 +++++++++++++++++------------
+ plugin/yankring.vim | 1274 +++++++++++++++++++++++++++++++++++++++------------
+ 2 files changed, 1402 insertions(+), 580 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Sat May 7 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NF: YRSearch is similar to YRGetElem.  Given a regular expression it will interactively display all the elements in the yankring that match the regular expression.  You can enter the number of the element to paste it.  If you have many elements within the yankring, this can help you identify them more easily.
+    NF: Updated the default history size from 30 to 100, which is partially the reason for the YRSearch command.
+    NF: By default it supports "gp" and "gP", in addition to "p" and "P".
+    NF: Added support for the expression register (:h quote=).  Here is an example of how it is used:
+           "="X"<CR>P
+
+ doc/yankring.txt    |  100 +++++++++++++++++++++++++++----
+ plugin/yankring.vim |  165 ++++++++++++++++++++++++++++++++++++++++++--------
+ 2 files changed, 227 insertions(+), 38 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Fri Apr 1 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NF: The yankring now respects the cpoptions setting, if 'y' is included and you press '.', the previous yank command is executed and added to the yankring.  You can also add this behaviour by setting this in your |vimrc|:
+           let g:yankring_dot_repeat_yank = 1
+    
+    NF: Duplicates will not be added to the yankring by default.  If a duplicate is found, the element will be moved to the top of the yankring.  This can be controlled by setting this in your |vimrc|:
+           let g:yankring_ignore_duplicate = 0 (1 is default)
+    
+    BF: Regression from version 1.4, the '.' operator may incorrectly insert garbage.
+
+ doc/yankring.txt    |   42 +++++++++++++++-
+ plugin/yankring.vim |  138 ++++++++++++++++++++++++++++++++++++++++----------
+ 2 files changed, 151 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Sun Mar 27 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NF: YRToggle has been updated.  If you toggle the yankring off (disable) the maps it creates are removed.  Calling YRToggle again will recreate the maps.  This truly disables the yankring, where the previous version attempted to do this via code.
+    BF: Using the '.' operator was not corrected replaying operations that did not move text in some way (g~t_) changed the case of the text but a '.' did not replay it.
+    BF: When replacing previously pasted text the yankring did not respect what key was used to paste the text originally.  All replaced items were pasted using 'p', even if you had originally pasted the text with 'P'.
+
+ README              |  125 ++++++++
+ doc/yankring.txt    |  799 ++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/yankring.vim |  846 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 1770 insertions(+), 0 deletions(-)

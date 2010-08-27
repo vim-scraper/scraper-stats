@@ -1,0 +1,43 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0, refs/heads/master)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Tue Dec 19 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    AWEditMirrorFile command not only open alternate file but moves to position where is same line (current line) is present.
+    You can easily change workspaces by new commands:
+    :AWAutoSetChild
+    :AWAutoSetParent
+    Example:
+    if you have current file name "/home/me/project/src/...../.cpp"
+    you can set variable g:aw_stop_word = "src" and after execution of command :AWAutoSetChild
+    child path will be "/home/me/project"
+    
+    Removed mappings for EditMirrorFile and DiffMirrorFile (
+    Add
+    nnoremap key1 :AWEditMirrorFile<CR>
+    nnoremap key2 :AWDiffMirrorFile<CR>
+    ...
+
+ plugin/alternate_workspace.vim |  123 +++++++++++++++++++++++++++++++++++-----
+ 1 files changed, 108 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Tue Sep 26 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added AWSetChild and AWSetParent commands.
+
+ plugin/alternate_workspace.vim |  181 +++++++++++++++++++++++-----------------
+ 1 files changed, 105 insertions(+), 76 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1)
+Author:     Mykola Golubyev <golubev.nikolay at gmail.com>
+AuthorDate: Mon Sep 25 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                         |   43 ++++++++++++++++++++++
+ plugin/alternate_workspace.vim |   76 ++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 119 insertions(+), 0 deletions(-)

@@ -1,0 +1,27 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.1, refs/heads/master)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Tue Sep 8 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Feature enhancements:- Add |:Gred|, |grex#delete()| and |<Plug>(operator-grex-delete)|.- Support register designation for |grex-operators|.  |operator-user| 0.0.5 or later is required to use this feature.- Support register designation for functions |grex-functions|.Minor improvements:- Revise the document.Incompatible changes:- Rename the plugin as "grex".  The old name "grey" is not proper for further enhancements.- Rename all commands, functions and key mappings.
+
+ autoload/grex.vim |   86 +++++++++++++++++++++++++
+ autoload/grey.vim |   48 --------------
+ doc/grex.txt      |  182 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/grey.txt      |  135 ---------------------------------------
+ plugin/grex.vim   |   44 +++++++++++++
+ plugin/grey.vim   |   42 ------------
+ 6 files changed, 312 insertions(+), 225 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.0)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Fri Sep 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README            |   41 ++++++++++++++++
+ autoload/grey.vim |   48 +++++++++++++++++++
+ doc/grey.txt      |  135 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/grey.vim   |   42 ++++++++++++++++
+ 4 files changed, 266 insertions(+), 0 deletions(-)

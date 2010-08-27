@@ -1,0 +1,38 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.2.0, refs/heads/master)
+Author:     Wu Jie <ayacai at 163.com>
+AuthorDate: Thu Dec 14 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    exUtility-4.2.0~
+    Bug Fix:~
+    	exGlobaleSearch: <1> fix jump error when the file have been modified.
+    	exWindow: <1> prevent edit same file when jumping, to prevent a pop-up error message.
+    Additional Features:~
+    	none
+
+ doc/exUtility-Install.txt              |   48 +++++++++++++++++++++++++++++++-
+ doc/exUtility-exEnvironmentSetting.txt |    3 +-
+ doc/exUtility-exSymbolTable.txt        |    2 +-
+ plugin/exGlobalSearch.vim              |   14 ++++++++-
+ plugin/exWindow.vim                    |    5 ++-
+ 5 files changed, 64 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.1.0)
+Author:     Wu Jie <ayacai at 163.com>
+AuthorDate: Tue Dec 12 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                                 |   25 ++
+ doc/exUtility-Install.txt              |   45 ++
+ doc/exUtility-exEnvironmentSetting.txt |  116 +++++
+ doc/exUtility-exGlobalSearch.txt       |  270 ++++++++++++
+ doc/exUtility-exSymbolTable.txt        |  269 ++++++++++++
+ doc/exUtility-exTagSelect.txt          |  286 +++++++++++++
+ plugin/exEnvironmentSetting.vim        |   86 ++++
+ plugin/exGlobalSearch.vim              |  735 ++++++++++++++++++++++++++++++++
+ plugin/exSymbolTable.vim               |  397 +++++++++++++++++
+ plugin/exTagSelect.vim                 |  615 ++++++++++++++++++++++++++
+ plugin/exWindow.vim                    |  467 ++++++++++++++++++++
+ 11 files changed, 3311 insertions(+), 0 deletions(-)

@@ -1,0 +1,85 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/9, refs/heads/master)
+Author:     Ben Williams <benw at plasticboy.com>
+AuthorDate: Mon May 18 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Numerous link and emphasis fixes.
+
+ syntax/mkd.vim |   44 +++++++++++++++++++++++++++++++-------------
+ 1 files changed, 31 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8)
+Author:     Ben Williams <benw at plasticboy.com>
+AuthorDate: Wed Apr 30 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Really fix matching bold and underline characters inside of words.
+
+ syntax/mkd.vim |   12 ++++++------
+ 1 files changed, 6 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/7)
+Author:     Ben Williams <benw at plasticboy.com>
+AuthorDate: Sat Mar 1 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixes several bugs, most thanks to David Wolever:
+        * Dont match bold and underline characters inside of words.
+        * Dont match code blocks that arent preceded by a blank line.
+        * Fix double back-tick code blocks without a back-tick inside of them.
+        * Fix # headings being matched anywhere in the line.
+        * Match <pre> and <code> tags.
+
+ syntax/mkd.vim |   36 +++++++++++++++++++-----------------
+ 1 files changed, 19 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6)
+Author:     Ben Williams <benw at plasticboy.com>
+AuthorDate: Fri Sep 1 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Enables spellchecking in Vim 7 and adds highlighting for reference-style links thanks to Will Norris.
+
+ syntax/mkd.vim |   13 ++++++++-----
+ 1 files changed, 8 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5)
+Author:     Ben Williams <benw at plasticboy.com>
+AuthorDate: Thu Dec 1 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixes numbered headings being highlighted as list items and horizontal rules being highlighted as headings. Thanks to Stephen Haberman.
+
+ syntax/mkd.vim |   22 ++++++++++++----------
+ 1 files changed, 12 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4)
+Author:     Ben Williams <benw at plasticboy.com>
+AuthorDate: Wed Aug 24 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixes stuff in parentheses being highlighted when not part of a link structure.
+
+ syntax/mkd.vim |  159 ++++++++++++++++++++++++++++----------------------------
+ 1 files changed, 79 insertions(+), 80 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3)
+Author:     Ben Williams <benw at plasticboy.com>
+AuthorDate: Thu May 5 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixes a problem with indented lists being highlighted as code blocks.
+
+ syntax/mkd.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2)
+Author:     Ben Williams <benw at plasticboy.com>
+AuthorDate: Mon Mar 21 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README         |    6 ++++
+ syntax/mkd.vim |   80 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 86 insertions(+), 0 deletions(-)

@@ -1,0 +1,274 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6.2, refs/heads/master)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Wed Jun 9 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for Mac OS X via Terminal.app (on behalf of Vlad Hanciuta), added string "clj" as a detector for Clojure (by Vlad Hanciuta), bugfixes: paredit wrap function missed last character when 'selection' was not "exclusive" (thanks to Marcin Fatyga), input was stuck inside SBCL debugger (on behalf of Philipp Marek and Dmitry Petukhov), occasional error messages during REPL buffer update, REPL menu was sometimes missing, occasional command line color problems.
+
+ doc/slimv.txt      |   22 +++++++++++++++++-----
+ ftplugin/slimv.py  |   44 +++++++++++++++++++++++++++++++++-----------
+ ftplugin/slimv.vim |   43 +++++++++++++++----------------------------
+ plugin/paredit.vim |    7 +++++--
+ 4 files changed, 70 insertions(+), 46 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.1)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Tue Apr 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added Split/Join/Wrap/Splice functions to Paredit Mode. Bugfixes: delete commands put erased characters into yank buffer, D does not delete whole line.
+
+ doc/slimv.txt                      |  104 ++++++++-
+ ftplugin/clojure/slimv-clojure.vim |    5 +-
+ ftplugin/slimv.vim                 |   28 ++--
+ plugin/paredit.vim                 |  424 ++++++++++++++++++++++++++++++------
+ 4 files changed, 464 insertions(+), 97 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.0)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Wed Apr 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added paredit mode, set wrap for REPL buffer.
+
+ doc/slimv.txt                      |  280 ++++++++++++-
+ ftplugin/clojure/slimv-clojure.vim |    4 +-
+ ftplugin/lisp/slimv-lisp.vim       |    4 +-
+ ftplugin/slimv.vim                 |   83 +++-
+ plugin/paredit.vim                 |  793 ++++++++++++++++++++++++++++++++++++
+ 5 files changed, 1117 insertions(+), 47 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.6)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Mon Feb 15 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improved REPL buffer response time, added debug log flushing frequency, bugfix: early exit of REPL refresh mode on some machines.
+
+ doc/slimv.txt      |   23 +++++++++++++++-
+ ftplugin/slimv.vim |   72 +++++++++++++++++++++++++++++++++++++++++----------
+ 2 files changed, 79 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.5)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Sat Jan 9 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Updated Clojure API to 1.1, expand tilde-prefix to home directory on Linux, autodetect Clojure in the user home directory on Linux.
+
+ doc/slimv.txt                      |   10 +-
+ ftplugin/clojure/slimv-clojure.vim |   10 +-
+ ftplugin/slimv-cljapi.vim          | 1109 +++++++++++++++++++-----------------
+ ftplugin/slimv.py                  |   12 +-
+ ftplugin/slimv.vim                 |    9 +-
+ 5 files changed, 611 insertions(+), 539 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.4)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Sun Nov 15 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added autodetection for clojure-contrib.jar and Clozure CL, applied lisp_rainbow to Clojure's [], renamed Clojure indent plugin to clojure.vim, switched on lisp indentation for Clojure files.
+
+ doc/slimv.txt                           |   20 ++++++++++++++------
+ ftplugin/clojure/slimv-clojure.vim      |   31 +++++++++++++++++++++++++------
+ ftplugin/lisp/slimv-lisp.vim            |   16 ++++++++++++++--
+ indent/clojure.vim                      |   20 ++++++++++++++++++++
+ indent/clojure/slimv-indent-clojure.vim |   18 ------------------
+ syntax/clojure/slimv-syntax-clojure.vim |   20 ++++++++++++++++++--
+ 6 files changed, 91 insertions(+), 34 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.3)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Thu Jun 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added Interrupt-Lisp-Process command, added mapping for the REPL menu, added special forms to Clojre API lookup, bugfixes: put cursor after the last character in insert mode when refreshing REPL buffer, fixed some Ctrl-C handling problems.
+
+ doc/slimv.txt             |   20 +-
+ ftplugin/slimv-cljapi.vim | 1022 +++++++++++++++++++++++----------------------
+ ftplugin/slimv.vim        |   91 +++--
+ 3 files changed, 594 insertions(+), 539 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Wed May 6 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Adapted Clojure API lookup and JAR autodetection to version 1.0, Complete-Symbol moved to separate Edit submenu, added Close-Form command.
+
+ doc/slimv.txt                      |   17 +-
+ ftplugin/clojure/slimv-clojure.vim |   13 +-
+ ftplugin/slimv-cljapi.vim          | 1003 ++++++++++++++++++------------------
+ ftplugin/slimv.vim                 |   41 ++-
+ 4 files changed, 567 insertions(+), 507 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Fri Apr 24 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added symbol name completion based on the Hyperspec database.
+
+ doc/slimv.txt                      |   58 ++++++++++++++++++++++++--
+ ftplugin/clojure/slimv-clojure.vim |   16 ++++----
+ ftplugin/lisp/slimv-lisp.vim       |   28 ++++++------
+ ftplugin/slimv.vim                 |   79 +++++++++++++++++++++++++++--------
+ 4 files changed, 136 insertions(+), 45 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.0)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Sun Apr 19 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Major project reorganization: Slimv is now a Lisp and Clojure filetype plugin; added Common Lisp Hyperspec, Clojure API and JavaDoc lookup; separate menu for REPL buffer; menu items work in every Vim mode; fixed mark 's usage bug.
+
+ doc/slimv.txt                           |  180 ++-
+ ftdetect/clojure.vim                    |    2 +
+ ftplugin/clojure/slimv-clojure.vim      |   84 +
+ ftplugin/lisp/slimv-lisp.vim            |  137 ++
+ ftplugin/metering.lisp                  | 1227 ++++++++++
+ ftplugin/slimv-clhs.vim                 | 2236 ++++++++++++++++++
+ ftplugin/slimv-cljapi.vim               |  530 +++++
+ ftplugin/slimv-javadoc.vim              | 3820 +++++++++++++++++++++++++++++++
+ ftplugin/slimv.py                       |  546 +++++
+ ftplugin/slimv.vim                      | 1585 +++++++++++++
+ indent/clojure/slimv-indent-clojure.vim |   18 +
+ plugin/metering.lisp                    | 1227 ----------
+ plugin/slimv.py                         |  546 -----
+ plugin/slimv.vim                        | 1568 -------------
+ syntax/clojure/slimv-syntax-clojure.vim |   18 +
+ 15 files changed, 10335 insertions(+), 3389 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.1)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Wed Mar 25 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added profiler support for SBCL, new commands: Show Profiled/Send Input/Close and Send Input/Previous Input/Next Input, highlight error messages.
+
+ doc/slimv.txt    |   83 ++++++++++++----
+ plugin/slimv.vim |  296 +++++++++++++++++++++++++++++++++++++++++-------------
+ 2 files changed, 291 insertions(+), 88 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.0)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Sun Mar 22 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added SLIME's profiling tool with support from Slimv, added command to generate tags file, fixed eval problems of large buffers, fixed Compile And Load filename problems with '&#039 on Windows, recycle old REPL temporary file at next server startup.
+
+ doc/slimv.txt        |  208 ++++++----
+ plugin/metering.lisp | 1227 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/slimv.py      |   21 +-
+ plugin/slimv.vim     |  152 ++++++-
+ 4 files changed, 1500 insertions(+), 108 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.0)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Mon Mar 16 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    REPL buffer enhancements: added syntax highlighting and automatic indentation, it is possible to enter a multi-line command, Ctrl-C is working; server REPL window performance enhancement on Linux.
+
+ doc/slimv.txt    |  175 +++++++++++++++++++++++++++++------
+ plugin/slimv.py  |   40 +++++----
+ plugin/slimv.vim |  270 +++++++++++++++++++++++++++++++++++++++---------------
+ 3 files changed, 363 insertions(+), 122 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.2)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Sun Mar 8 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed REPL input and output mix-up problems, evaluation performance enhancement, corrected some more macroexpand problems.
+
+ doc/slimv.txt    |   10 +++++++---
+ plugin/slimv.py  |   48 ++++++++++++++++++++++++++++++++++++------------
+ plugin/slimv.vim |   22 ++++++++++------------
+ 3 files changed, 53 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Wed Mar 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added basic Clojure support, fixed some macroexpand and REPL refresh problems.
+
+ doc/slimv.txt    |   62 +++++++++++++++++++++++-
+ plugin/slimv.py  |    4 +-
+ plugin/slimv.vim |  141 ++++++++++++++++++++++++++++++++++++++++++++++--------
+ 3 files changed, 182 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.0)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Sat Feb 28 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Major update: Lisp REPL inside a Vim buffer
+
+ doc/slimv.txt    |  258 ++++++++++++++++++++++++++++++-----
+ plugin/slimv.py  |  134 ++++++++++---------
+ plugin/slimv.vim |  398 ++++++++++++++++++++++++++++++++++++++++++++++++------
+ 3 files changed, 650 insertions(+), 140 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.4)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Sat Feb 21 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Ctrl+C is propagated to Lisp REPL, so it is possible to interrupt a running program. Bugfix: delayed display of last line in REPL window on Linux.
+
+ doc/slimv.txt    |   17 +++++++-
+ plugin/slimv.py  |  112 +++++++++++++++++++++++++++--------------------------
+ plugin/slimv.vim |   64 ++++++++++---------------------
+ 3 files changed, 93 insertions(+), 100 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.3)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Tue Feb 17 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Handle DOS and Unix style line endings on Windows, don't write logfile when debug level not set
+
+ doc/slimv.txt    |    9 ++++-
+ plugin/slimv.py  |  101 ++++++++++++++++-------------------------------------
+ plugin/slimv.vim |   97 +++++++++++++++++----------------------------------
+ 3 files changed, 71 insertions(+), 136 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.2)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Thu Feb 12 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Windows users do not need pywin32 anymore
+
+ doc/slimv.txt    |   20 +++++--
+ plugin/slimv.py  |  155 ++++++++++++++++++++++++++++--------------------------
+ plugin/slimv.vim |    5 +-
+ 3 files changed, 98 insertions(+), 82 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.1)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Wed Feb 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Corrected memory fill up problem after a long REPL session.
+
+ doc/slimv.txt    |   14 +++++++++-----
+ plugin/slimv.py  |   38 ++++++++++++++++++++++++++++++++++----
+ plugin/slimv.vim |   36 ++++++++++++++++++++++++++++++++++--
+ 3 files changed, 77 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Sat Jan 31 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README           |   76 +++++
+ doc/slimv.txt    |  417 ++++++++++++++++++++++++++++
+ plugin/slimv.py  |  493 +++++++++++++++++++++++++++++++++
+ plugin/slimv.vim |  797 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 1783 insertions(+), 0 deletions(-)

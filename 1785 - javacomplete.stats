@@ -1,0 +1,238 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.77.1, refs/heads/master)
+Author:     fang cheng <fangread at yahoo.com.cn>
+AuthorDate: Tue Sep 25 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Supported showing method parameters information in any place between parenthesises.
+
+ Reflection.java           |  670 ---------
+ autoload/Reflection.java  |  670 +++++++++
+ autoload/java_parser.vim  | 3500 +++++++++++++++++++++++++++++++++++++++++++++
+ autoload/javacomplete.vim | 2918 +++++++++++++++++++++++++++++++++++++
+ doc/javacomplete.txt      |   36 +-
+ ftplugin/java_parser.vim  | 3500 ---------------------------------------------
+ ftplugin/javacomplete.vim | 2853 ------------------------------------
+ 7 files changed, 7112 insertions(+), 7035 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.77)
+Author:     fang cheng <fangread at yahoo.com.cn>
+AuthorDate: Tue Sep 18 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Supported new contexts "jav|", "var|", just after an incomplete word.
+    + Supported accessible static imported members, add new context "abs(|)".
+    + Supported accessible inherited members.
+    - [Reflection.java]Improved getting paths of all system jar files for different JDKs in different platforms.
+    - Rewrote some core functions.
+
+ Reflection.java           |  280 +++++--
+ doc/javacomplete.txt      |  217 +++--
+ ftplugin/java_parser.vim  |   33 +-
+ ftplugin/javacomplete.vim | 2253 +++++++++++++++++++++++++++++----------------
+ 4 files changed, 1811 insertions(+), 972 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.76.8)
+Author:     fang cheng <fangread at yahoo.com.cn>
+AuthorDate: Thu Aug 30 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Improved support of JSP: appending automatically jar or classpath under WEB-INF.
+    - Supported local and anonymous classes.
+    - Improved searching type or symbol name.
+
+ doc/javacomplete.txt      |   19 ++-
+ ftplugin/java_parser.vim  |   14 +-
+ ftplugin/javacomplete.vim |  401 ++++++++++++++++-----------------------------
+ 3 files changed, 165 insertions(+), 269 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.76.7)
+Author:     fang cheng <fangread at yahoo.com.cn>
+AuthorDate: Tue Aug 28 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Improved process of type arguments of generic type and method parameters.
+    - Reorganize codes in javacomplete#Complete()
+    - Fixed case of "new java.util.zip.ZipFile().|"
+
+ doc/javacomplete.txt      |   13 ++-
+ ftplugin/java_parser.vim  |   80 ++++------
+ ftplugin/javacomplete.vim |  358 +++++++++++++++++++++++++++------------------
+ 3 files changed, 256 insertions(+), 195 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.76.6)
+Author:     fang cheng <fangread at yahoo.com.cn>
+AuthorDate: Thu Aug 23 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Improved recognizing methods, ctors, and variable declarators declared in most common form.
+    - Optimized code and fixed bugs.
+
+ doc/javacomplete.txt      |   20 ++-
+ ftplugin/java_parser.vim  |  398 ++++++++++++++++++++-------------------------
+ ftplugin/javacomplete.vim |  119 ++++++++------
+ 3 files changed, 256 insertions(+), 281 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.76.5)
+Author:     fang cheng <fangread at yahoo.com.cn>
+AuthorDate: Tue Aug 21 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Optimized code: s:modeAndEXPR(), formalParameter(), and others.
+    - Added quick recognizing fields or methods declared in most common form.
+    - Fixed bug: "foo().|", "getFoo().foo().|", "for (Enumeration entries = ; entries.|; )".
+    - Supported input contexts: "((Object)o).|", "((Object)o).getClass().|", "new ZipFile(path).|", "(new String().)|".
+
+ doc/javacomplete.txt      |   23 +++-
+ ftplugin/java_parser.vim  |  287 +++++++++++++++++++++++++++++---------------
+ ftplugin/javacomplete.vim |   94 ++++++++++++----
+ 3 files changed, 281 insertions(+), 123 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.76.4.1)
+Author:     fang cheng <fangread at yahoo.com.cn>
+AuthorDate: Fri Aug 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Made a major improvement of Reflection. REMEMBER to DELETE the old Reflection.class.
+    - Support accessible nested classes from reflection.
+    - Support import static members and import accessible nested classes.
+    - Improved input contexts: "int.class.toString().|", "list.toArray().|".
+    - Fixed recognition of "this(|)", "method1(|)"
+    - Added the 'kind' letter to distinguish between classes and packages.
+    - Fixed a bug when Reflection.java is in the path which contains space.
+    - Better support for JSP.
+
+ Reflection.java           |  273 ++++++++++++++--------
+ doc/javacomplete.txt      |   65 ++++-
+ ftplugin/java_parser.vim  |   17 +-
+ ftplugin/javacomplete.vim |  578 ++++++++++++++++++++++----------------------
+ 4 files changed, 519 insertions(+), 414 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.76.3)
+Author:     fang cheng <fangread at yahoo.com.cn>
+AuthorDate: Fri Aug 10 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Make an improvement for JSP file.
+    - Add an option 'searchdecl' set by javacomplete#SetSearchdeclMethod().
+    - Clear cache when set options affecting classpath.
+    - Improved DoGetPackageList() and s:GenerateImports().
+    - Replace codes searching list of string with index().
+    - Removed the unclear s:tokens and s:modifier_keywords in java_parser.
+    - Add java_parser#GetSnapshot() and java_parser#Restore().
+    - Fixed a bug when no top level class defined
+
+ Reflection.java           |  118 +++++++++++++++++++++++++---
+ doc/javacomplete.txt      |   37 +++++++--
+ ftplugin/java_parser.vim  |   83 ++++++++++----------
+ ftplugin/javacomplete.vim |  196 +++++++++++++++++++++++++++------------------
+ 4 files changed, 298 insertions(+), 136 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.76.2)
+Author:     fang cheng <fangread at yahoo.com.cn>
+AuthorDate: Wed Aug 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Add inherited fields and methods to local class.
+    - Combine members of local packages and loadable packages.
+    - Add quick recognition of package or import.
+    - Fix failing to list members of nested class.
+    - Improved java_parser.
+    - [Reflection] Return a modifier value as a string because it more than 32bit.
+
+ Reflection.java           |    8 +-
+ doc/javacomplete.txt      |   27 +++++-
+ ftplugin/java_parser.vim  |  170 +++++++++++++++++++--------------------
+ ftplugin/javacomplete.vim |  200 +++++++++++++++++++++++----------------------
+ 4 files changed, 212 insertions(+), 193 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.76.1)
+Author:     fang cheng <fangread at yahoo.com.cn>
+AuthorDate: Sun Aug 5 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Support new language features in JAVA 5 and above.
+    - The embedded JAVA parser is full-featured now, adding supports for parsing statement, block or expression.
+    - Java_parser.vim is an autoload script now.
+    - Support JDK1.1.
+    - Improve for 'this' or 'super'.
+    - Support searching toplevel class in current directory, same package or in sourcepath.
+    - Supports input context: "StringLiteral".|, "int.|", "void.|"
+    - Add java compiler option, default 'javac'
+    - Add JVM launcher option, default 'java'
+    - Automatcally compile Reflection.java and place it to $HOME.
+    - Easier to install and use.
+
+ Reflection.class          |  Bin 7089 -> 0 bytes
+ Reflection.java           |  668 +++++----
+ doc/javacomplete.txt      |  359 +++++
+ ftplugin/java_parser.vim  | 3604 +++++++++++++++++++++++++++++++++------------
+ ftplugin/javacomplete.vim | 1135 ++++++++++-----
+ 5 files changed, 4211 insertions(+), 1555 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.75beta)
+Author:     fang cheng <fangread at yahoo.com.cn>
+AuthorDate: Tue Feb 13 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    " 	Add java_parser.vim.
+    " 	Add b:sourcepath option.
+    " 	Improve recognition of classes defined in current buffer or in source path.
+    " 	Support generating class information from tags instead of returning list directly.
+
+ ftplugin/java_parser.vim  | 1716 +++++++++++++++++++++++++++++++++++++++++++++
+ ftplugin/javacomplete.vim |  617 +++++++++++++----
+ 2 files changed, 2210 insertions(+), 123 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.74)
+Author:     fang cheng <fangread at yahoo.com.cn>
+AuthorDate: Sat Feb 3 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Support jre1.2 (and above).
+    Support input context like "boolean.class.|"
+    Handle java primitive types such as 'int'.
+
+ Reflection$MemberComparator.class |  Bin 664 -> 0 bytes
+ Reflection.class                  |  Bin 11962 -> 7089 bytes
+ Reflection.java                   |  357 ++-----------------------------------
+ ftplugin/javacomplete.vim         |  198 +++++++++++++++++----
+ 4 files changed, 176 insertions(+), 379 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.73)
+Author:     fang cheng <fangread at yahoo.com.cn>
+AuthorDate: Thu Feb 1 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix bug that CLASSPATH not used when b:classpath or g:java_classpath not set.
+    Fix bug that call filter() without making a copy for incomplete.
+    Improve recognition of declaration of this class
+
+ ftplugin/javacomplete.vim |  161 +++++++++++++++++++++++++++++----------------
+ 1 files changed, 103 insertions(+), 58 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.72)
+Author:     fang cheng <fangread at yahoo.com.cn>
+AuthorDate: Wed Jan 31 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix bugs in nested expression:
+    "System.out.println( str.| )"
+    "System.out.println(str.charAt(| )"
+    "for (int i = 0; i < str.|; i++)"
+
+ ftplugin/javacomplete.vim |   28 ++++++++++++++++++----------
+ 1 files changed, 18 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.71)
+Author:     fang cheng <fangread at yahoo.com.cn>
+AuthorDate: Sun Jan 28 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                            |  120 ++++
+ Reflection$MemberComparator.class |  Bin 0 -> 664 bytes
+ Reflection.class                  |  Bin 0 -> 11962 bytes
+ Reflection.java                   |  630 +++++++++++++++++++++
+ ftplugin/javacomplete.vim         | 1131 +++++++++++++++++++++++++++++++++++++
+ 5 files changed, 1881 insertions(+), 0 deletions(-)

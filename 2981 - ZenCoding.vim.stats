@@ -1,0 +1,80 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.43, refs/heads/master)
+Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+AuthorDate: Fri Jun 11 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This is an upgrade for ZenCoding.vim:fixed behavior for nested block. like "html:5>#page>(header#globalHeader>(hgroup>h1+h2)+(nav>ul>li*3>a)+(form>p.siteSearch>input+input[type=button]))+(#contents>(#main>(section>h2+p*5)+p.pagetop>a[href=#page])+(#sub>p+(nav>ul>li>a)))+(footer#globalFoooter>(ul>li>a)+(p.copyright>small))"
+
+ plugin/zencoding.vim |   10 ++++++----
+ 1 files changed, 6 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.41)
+Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+AuthorDate: Mon May 31 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This is an upgrade for ZenCoding.vim:fixed default filter. when using 'e' filter, output become empty.
+
+ plugin/zencoding.vim |  336 ++++++++++++++++++++++++++++----------------------
+ 1 files changed, 190 insertions(+), 146 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.40)
+Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+AuthorDate: Thu May 13 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This is an upgrade for ZenCoding.vim:add the pure vimscript code for 'get image size'. you can use it without perl interface just now.change key assign of ZenCodingExpandWord from ',' to ';'. it don't effect to most users.
+
+ plugin/zencoding.vim |   58 +++++++++++++++++++++++++-------------------------
+ 1 files changed, 29 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.39)
+Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+AuthorDate: Tue May 11 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This is an upgrade for ZenCoding.vim: fixed problem about 'selection'. see http://github.com/mattn/zencoding-vim/issues/#issue/2
+
+ plugin/zencoding.vim |    7 +++++--
+ 1 files changed, 5 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.38)
+Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+AuthorDate: Mon May 10 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This is an upgrade for ZenCoding.vim: use v7h"_s instead of v7hs for backspace.
+
+ plugin/zencoding.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.37)
+Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+AuthorDate: Thu May 6 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This is an upgrade for ZenCoding.vim: fixed problem that won't working with some 'backspace' options.
+
+ plugin/zencoding.vim |   23 +++++++++++++----------
+ 1 files changed, 13 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.36)
+Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+AuthorDate: Wed Mar 17 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This is an upgrade for ZenCoding.vim: fixed problem that filter does not work.
+
+ plugin/zencoding.vim |   15 +++++++++------
+ 1 files changed, 9 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.35)
+Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+AuthorDate: Tue Mar 16 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This is an upgrade for ZenCoding.vim: enable zencoding for other languages. (meaning php also)
+
+ README               |    3 +
+ plugin/zencoding.vim | 2076 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 2079 insertions(+), 0 deletions(-)

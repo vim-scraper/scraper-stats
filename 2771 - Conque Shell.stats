@@ -1,0 +1,198 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     Nico Raffo <nicoraffo at gmail.com>
+AuthorDate: Fri May 28 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     * Allow shell buffer to be hidden
+     * Fix xterm colors
+     * Allow custom key for leaving insert mode
+     * Various other bugfixes
+
+ autoload/conque_term.vim   |  424 +++++++++---
+ conque_1.0/conque_term.vba | 1702 --------------------------------------------
+ plugin/conque_term.vim     |   29 +-
+ syntax/conque_term.vim     |    8 +-
+ 4 files changed, 342 insertions(+), 1821 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Nico Raffo <nicoraffo at gmail.com>
+AuthorDate: Wed Feb 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Same as above.
+
+ README.orig                             |  107 --
+ autoload/conque.vim                     |  718 -------------
+ autoload/conque_term.vim                | 1378 +++++++++++++++++++++++++
+ autoload/subprocess/proc_py.vim         |  386 -------
+ autoload/subprocess/shell_translate.vim |  457 ---------
+ autoload/subprocess.vim                 |   41 -
+ conque_1.0/conque_term.vba              | 1702 +++++++++++++++++++++++++++++++
+ doc/conque_term.txt                     |  156 +++
+ doc/license.txt                         |   23 -
+ plugin/conque.vim                       |   66 --
+ plugin/conque_term.vim                  |   80 ++
+ syntax/conque.vim                       |   76 --
+ syntax/conque_term.vim                  |   77 ++
+ 13 files changed, 3393 insertions(+), 1874 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Nico Raffo <nicoraffo at gmail.com>
+AuthorDate: Fri Dec 18 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     * Fix GVim errors with non-english locale
+     * No functional changes
+
+ README.orig                                        |  107 +++++
+ autoload/conque.vim                                |    7 +-
+ autoload/subprocess.vim                            |   41 --
+ autoload/subprocess/proc_py.vim                    |  386 +++++++++++++++++
+ autoload/subprocess/shell_translate.vim            |  457 ++++++++++++++++++++
+ autoload/subprocess.vim                            |   41 ++
+ conque_0.5/README                                  |  112 -----
+ conque_0.5/autoload/subprocess/proc_py.vim         |  369 ----------------
+ conque_0.5/autoload/subprocess/shell_translate.vim |  456 -------------------
+ conque_0.5/license.txt                             |   23 -
+ doc/license.txt                                    |   23 +
+ plugin/conque.vim                                  |    4 +-
+ syntax/conque.vim                                  |    4 +-
+ 13 files changed, 1023 insertions(+), 1007 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Nico Raffo <nicoraffo at gmail.com>
+AuthorDate: Wed Dec 2 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     * Various performance enhancements and bugfixes. * Rewritten escape sequence processing
+
+ autoload/conque.vim                                |  198 +++++-----
+ autoload/subprocess.vim                            |    4 +-
+ conque_0.4/README                                  |  107 -----
+ conque_0.4/autoload/subprocess/proc_py.vim         |  369 ----------------
+ conque_0.4/autoload/subprocess/shell_translate.vim |  347 ---------------
+ conque_0.4/license.txt                             |   23 -
+ conque_0.5/README                                  |  112 +++++
+ conque_0.5/autoload/subprocess/proc_py.vim         |  369 ++++++++++++++++
+ conque_0.5/autoload/subprocess/shell_translate.vim |  456 ++++++++++++++++++++
+ conque_0.5/license.txt                             |   23 +
+ plugin/conque.vim                                  |    4 +-
+ syntax/conque.vim                                  |    4 +-
+ 12 files changed, 1065 insertions(+), 951 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Nico Raffo <nicoraffo at gmail.com>
+AuthorDate: Fri Oct 30 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        * Improved history and tab completion
+        * Fix escape sequence formatting and improve highlighting
+        * Send selected text to shell from any buffer
+        * Add special handling of "vi" and "man" commands
+        * Various bugfixes
+
+ autoload/conque.vim                                |  613 +++++++++++---------
+ autoload/subprocess.vim                            |    4 +-
+ conque_0.3/README                                  |   89 ---
+ conque_0.3/autoload/subprocess/proc_py.vim         |  334 -----------
+ conque_0.3/autoload/subprocess/shell_translate.vim |  212 -------
+ conque_0.3/license.txt                             |   23 -
+ conque_0.4/README                                  |  107 ++++
+ conque_0.4/autoload/subprocess/proc_py.vim         |  369 ++++++++++++
+ conque_0.4/autoload/subprocess/shell_translate.vim |  347 +++++++++++
+ conque_0.4/license.txt                             |   23 +
+ plugin/conque.vim                                  |   20 +-
+ syntax/conque.vim                                  |   18 +-
+ 12 files changed, 1195 insertions(+), 964 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Nico Raffo <nicoraffo at gmail.com>
+AuthorDate: Wed Oct 14 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     * Apply escape sequence coloring to output, e.g. ls --color
+     * Clean up syntax files for portability
+     * Fix several Vim 7.1 bugs
+     * Bugfixes for multiple shell buffers
+     * Add experimental shell folding option
+
+ autoload/conque.vim                                |   68 ++--
+ autoload/subprocess.vim                            |    6 +-
+ conque_0.2/INSTALL                                 |   46 ---
+ conque_0.2/autoload/subprocess/proc_py.vim         |  335 --------------------
+ conque_0.2/license.txt                             |   23 --
+ conque_0.3/README                                  |   89 ++++++
+ conque_0.3/autoload/subprocess/proc_py.vim         |  334 +++++++++++++++++++
+ conque_0.3/autoload/subprocess/shell_translate.vim |  212 +++++++++++++
+ conque_0.3/license.txt                             |   23 ++
+ plugin/conque.vim                                  |   12 +-
+ syntax/conque.vim                                  |   48 ++-
+ 11 files changed, 736 insertions(+), 460 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Nico Raffo <nicoraffo at gmail.com>
+AuthorDate: Fri Oct 2 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * New subprocess management in Python instead of C
+    * Stronger support in OS X and Windows
+    * Faster/less buggy tab completion
+    * Support for multiple shell buffers
+
+ INSTALL                                    |   30 --
+ autoload/conque.vim                        |  453 +++++++++++------
+ autoload/fakepoll.h                        |  163 ------
+ autoload/proc.c                            |  676 -------------------------
+ autoload/proc.so                           |  Bin 24096 -> 0 bytes
+ autoload/proc.vim                          |  325 ------------
+ autoload/proc_w32.c                        |  745 ----------------------------
+ autoload/subprocess.vim                    |   43 ++
+ autoload/vimstack.c                        |  241 ---------
+ conque/license.txt                         |  674 -------------------------
+ conque_0.2/INSTALL                         |   46 ++
+ conque_0.2/autoload/subprocess/proc_py.vim |  335 +++++++++++++
+ conque_0.2/license.txt                     |   23 +
+ plugin/conque.vim                          |   63 ++-
+ syntax/conque.vim                          |   37 +-
+ vimproc/Makefile                           |   38 --
+ vimproc/README                             |    4 -
+ vimproc/make_mac.mak                       |   15 -
+ vimproc/make_msvc.mak                      |    6 -
+ vimproc/test/test1.vim                     |   10 -
+ vimproc/test/test2.vim                     |   13 -
+ vimproc/test/test3.vim                     |   14 -
+ vimproc/test/test4.vim                     |   19 -
+ vimproc/test/test5.vim                     |   13 -
+ vimproc/test/test6.vim                     |   13 -
+ 25 files changed, 808 insertions(+), 3191 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Nico Raffo <nicoraffo at gmail.com>
+AuthorDate: Thu Sep 3 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ INSTALL                |   30 ++
+ README                 |   33 +++
+ autoload/conque.vim    |  531 ++++++++++++++++++++++++++++++++++
+ autoload/fakepoll.h    |  163 +++++++++++
+ autoload/proc.c        |  676 +++++++++++++++++++++++++++++++++++++++++++
+ autoload/proc.so       |  Bin 0 -> 24096 bytes
+ autoload/proc.vim      |  325 +++++++++++++++++++++
+ autoload/proc_w32.c    |  745 ++++++++++++++++++++++++++++++++++++++++++++++++
+ autoload/vimstack.c    |  241 ++++++++++++++++
+ conque/license.txt     |  674 +++++++++++++++++++++++++++++++++++++++++++
+ plugin/conque.vim      |   33 +++
+ syntax/conque.vim      |   57 ++++
+ vimproc/Makefile       |   38 +++
+ vimproc/README         |    4 +
+ vimproc/make_mac.mak   |   15 +
+ vimproc/make_msvc.mak  |    6 +
+ vimproc/test/test1.vim |   10 +
+ vimproc/test/test2.vim |   13 +
+ vimproc/test/test3.vim |   14 +
+ vimproc/test/test4.vim |   19 ++
+ vimproc/test/test5.vim |   13 +
+ vimproc/test/test6.vim |   13 +
+ 22 files changed, 3653 insertions(+), 0 deletions(-)

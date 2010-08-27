@@ -1,0 +1,72 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6, refs/heads/master)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Mon Apr 28 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    customization revised, no other changes
+
+ indent/html.vim |  151 ++++++++++++++++++++++++-------------------------------
+ 1 files changed, 65 insertions(+), 86 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Sun Mar 9 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed: 'indk' when breaking a line with Enter (e.g. given the line "<div><center></center>", inserting Enter after "<center>" now adds an indent for the new line)
+    Change: line must start with a closing tag (old: any tag) to get same indent as the starting tag
+
+ indent/html.vim |   46 +++++++++++++++++++++++++++++-----------------
+ 1 files changed, 29 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Wed Nov 21 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added: configurable indent for the first line after <script> or <style>
+
+ indent/html.vim |   16 +++++++++++-----
+ 1 files changed, 11 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.2)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Wed Nov 21 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Another dumb bug fixed: didn't match tag names with digits (h1-h6)
+    goody: simple arg-completion for IndHtmlLocal
+
+ indent/html.vim |   14 +++++++++-----
+ 1 files changed, 9 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Tue Nov 20 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bugfix: didn't detect "-->" as end of region
+
+ indent/html.vim |   18 ++++++++++--------
+ 1 files changed, 10 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Mon Nov 19 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    now indents <style> regions
+
+ indent/html.vim |  315 +++++++++++++++++++++++++++++--------------------------
+ 1 files changed, 165 insertions(+), 150 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Sun Nov 18 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README          |   45 +++++
+ indent/html.vim |  490 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 535 insertions(+), 0 deletions(-)

@@ -1,0 +1,414 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.83, refs/heads/master)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Mon Jul 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug when leaving snippet for another buffer, having a variable at the end of a line in a snippet, or typing certain characters in select mode, and (finally) added support for <shift-tab> to go back a tab stop. Also added snippets for zsh (thanks israelchauca) and mako (thanks "iElectric"), and updated C, Obj-C, and C++ snippets.
+
+ autoload/snipMate.vim  |  173 +++++++++++++++++++++++++++++------------------
+ doc/snipMate.txt       |   27 +++++---
+ plugin/snipMate.vim    |   28 +++++++-
+ snippets/c.snippets    |   32 +++++++--
+ snippets/mako.snippets |   54 +++++++++++++++
+ snippets/objc.snippets |   57 +++++++++-------
+ snippets/zsh.snippets  |   58 ++++++++++++++++
+ syntax/snippet.vim     |    2 +-
+ 8 files changed, 320 insertions(+), 111 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.82)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Thu Jun 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug with <c-r><tab>, placeholders, or having more than 9 tab stops on the same line, and added a Python snippet for the lambda (thanks voyeg3r), as well as snippets for the Tcl (thanks israelchauca) and AutoIt (thanks Angel Ezquerra Moreu) filetypes.
+
+ autoload/snipMate.vim        |   32 +++++++-------
+ doc/snipMate.txt             |    2 +-
+ plugin/snipMate.vim          |   24 +++++++----
+ snippets/autoit.snippets     |   66 ++++++++++++++++++++++++++++++
+ snippets/c.snippets          |    6 +-
+ snippets/cpp.snippets        |    2 +-
+ snippets/html.snippets       |    2 +-
+ snippets/java.snippets       |   16 ++++----
+ snippets/javascript.snippets |    2 +-
+ snippets/objc.snippets       |   10 ++--
+ snippets/php.snippets        |    4 +-
+ snippets/python.snippets     |   11 ++++-
+ snippets/sh.snippets         |    2 +-
+ snippets/tcl.snippets        |   92 ++++++++++++++++++++++++++++++++++++++++++
+ snippets/vim.snippets        |    2 -
+ 15 files changed, 221 insertions(+), 52 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.81)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Sat May 16 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added syntax highlighting to show errors in snippet files, fixed typos in certain snippets, fixed a bug with "&" in placeholders, fixed a bug when canceling multi-snippets, and fixed a bug when inserting a new line in a snippet.
+
+ autoload/snipMate.vim        |   18 ++++++++------
+ doc/snipMate.txt             |    6 ++--
+ plugin/snipMate.vim          |   10 +++++---
+ snippets/c.snippets          |    6 ++--
+ snippets/cpp.snippets        |    2 +-
+ snippets/html.snippets       |    8 +++---
+ snippets/java.snippets       |   16 ++++++------
+ snippets/javascript.snippets |    2 +-
+ snippets/objc.snippets       |   52 +++++++++++++++--------------------------
+ snippets/perl.snippets       |    2 +-
+ snippets/php.snippets        |    4 +-
+ snippets/python.snippets     |   15 +++++++++---
+ snippets/ruby.snippets       |   52 ++++++++++++++++++++++++-----------------
+ snippets/sh.snippets         |    4 +-
+ snippets/vim.snippets        |    2 +
+ syntax/snippet.vim           |    2 +
+ 16 files changed, 105 insertions(+), 96 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Sun May 3 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added & fixed some snippets, and added a menu that displays all snippets for the current buffer when <c-r><tab> is typed in insert mode.
+    
+    I've removed convertSnip.py from this release since most snippets should be converted by now; if you still need it, just grab it from an earlier release.
+
+ autoload/snipMate.vim  |   10 ++--
+ convertSnip.py         |  107 ------------------------------------------------
+ doc/snipMate.txt       |   19 +++++---
+ plugin/snipMate.vim    |   31 +++++++++++++-
+ snippets/html.snippets |    2 +-
+ snippets/objc.snippets |   34 ++++++++++++---
+ snippets/ruby.snippets |   30 +++++++-------
+ 7 files changed, 91 insertions(+), 142 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.79)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Tue Apr 14 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for more than 9 tab stops, fixed typos in certain snippets, and cleaned up the code a bit.
+
+ autoload/snipMate.vim         |  305 +++++++++++++++++++---------------------
+ ftplugin/html_snip_helper.vim |    2 +-
+ plugin/snipMate.vim           |   33 ++---
+ snippets/objc.snippets        |   10 +-
+ snippets/vim.snippets         |   11 +-
+ syntax/snippet.vim            |    6 +-
+ 6 files changed, 179 insertions(+), 188 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.78)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Mon Apr 6 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug with aliased filetypes (e.g. loading C snippets for Obj-C files), updating placeholders on separate lines, and extracting snippets on Windows. Also added a few more Python, C, and Obj-C snippets, and fixed some typos in the Latex and C++ snippets.
+
+ autoload/snipMate.vim    |   11 +++--
+ convertSnip.py           |  109 +++++++++++++++++++++++++---------------------
+ doc/snipMate.txt         |   19 ++++----
+ plugin/snipMate.vim      |   47 +++++++++++---------
+ snippets/c.snippets      |    8 ++-
+ snippets/cpp.snippets    |    3 +-
+ snippets/objc.snippets   |   26 ++++++++++-
+ snippets/python.snippets |   17 +++----
+ snippets/tex.snippets    |    2 +-
+ syntax/snippet.vim       |    3 -
+ 10 files changed, 139 insertions(+), 106 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.77)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Mon Mar 30 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug with single quotes (') in snippet triggers, and hyphenated global snippets (e.g., _-mysnips.snippets).
+
+ plugin/snipMate.vim |   11 ++++++-----
+ 1 files changed, 6 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.76)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Sun Mar 29 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug with extracting snippet files on Windows, folding, and a minor bug with supertab.
+
+ autoload/snipMate.vim  |    2 +-
+ plugin/snipMate.vim    |   23 +++++++++++++----------
+ snippets/objc.snippets |   23 ++++++++++++++++++++++-
+ syntax/snippet.vim     |    3 +++
+ 4 files changed, 39 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.75)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Fri Mar 27 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added fix for hyphenated *.snippets files.
+
+ plugin/snipMate.vim |    9 +++++----
+ snippets/c.snippets |    4 ++--
+ 2 files changed, 7 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.74)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Thu Mar 26 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This release completely eliminates command-based snippets in favor of a new, easier to read & maintain syntax. A python script, convertSnip.py, has been included in this release to make it easier to migrate. For more information, see :h snippet-syntax; it's not very complicated, so it shouldn't take too much time to understand.
+    
+    This release also fixes a number of bugs, including: support for supertab, special characters in snippet variables, the popup-menu, and adds support for hyphened snippet folders (e.g. snippets/c-snippets/ for C).
+
+ autoload/snipMate.vim         |  402 ++++++++++++++++++++++++++++
+ convertSnip.py                |   98 +++++++
+ doc/snipMate.txt              |  243 ++++++++----------
+ ftplugin/c_snips.vim          |   46 ----
+ ftplugin/cpp_snips.vim        |   17 --
+ ftplugin/html_snip_helper.vim |   10 +
+ ftplugin/html_snips.vim       |   95 -------
+ ftplugin/java_snips.vim       |   42 ---
+ ftplugin/javascript_snips.vim |   38 ---
+ ftplugin/objc_snips.vim       |   55 ----
+ ftplugin/perl_snips.vim       |   40 ---
+ ftplugin/php_snips.vim        |   68 -----
+ ftplugin/python_snips.vim     |   33 ---
+ ftplugin/ruby_snips.vim       |  170 ------------
+ ftplugin/sh_snips.vim         |   14 -
+ ftplugin/tex_snips.vim        |   50 ----
+ ftplugin/vim_snips.vim        |   22 --
+ plugin/global_snips.vim       |    8 -
+ plugin/snipMate.vim           |  582 ++++++++---------------------------------
+ snippets/_.snippets           |    7 +
+ snippets/c.snippets           |   88 ++++++
+ snippets/cpp.snippets         |   31 +++
+ snippets/html.snippets        |  190 ++++++++++++++
+ snippets/java.snippets        |   78 ++++++
+ snippets/javascript.snippets  |   74 ++++++
+ snippets/objc.snippets        |  122 +++++++++
+ snippets/perl.snippets        |   91 +++++++
+ snippets/php.snippets         |  216 +++++++++++++++
+ snippets/python.snippets      |   75 ++++++
+ snippets/ruby.snippets        |  412 +++++++++++++++++++++++++++++
+ snippets/sh.snippets          |   28 ++
+ snippets/snippet.snippets     |    7 +
+ snippets/tex.snippets         |  115 ++++++++
+ snippets/vim.snippets         |   27 ++
+ syntax/snippet.vim            |   15 +
+ 35 files changed, 2300 insertions(+), 1309 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.73)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Sun Mar 15 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug with redefinition of C++ snippets, fixed a bug when using the completion menu, added support for the 'shellslash' option (thanks Derek Wyatt), and added support for buffer-local snippets (thanks Meikel Brandmeyer).
+
+ doc/snipMate.txt       |   54 +++++++++++++++++----------------
+ ftplugin/cpp_snips.vim |    1 +
+ ftplugin/vim_snips.vim |    4 ++-
+ plugin/snipMate.vim    |   77 ++++++++++++++++++++++-------------------------
+ 4 files changed, 68 insertions(+), 68 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.72)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Tue Mar 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug with variables inside placeholders (e.g. "${1:foo} ${2:$1bar}").
+
+ plugin/snipMate.vim |   22 +++++++---------------
+ 1 files changed, 7 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.71)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Mon Mar 9 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    First and foremost, the code has been significantly re-factored; it is a bit longer now, but hopefully at the sake of being much easier to read and maintain.
+    
+    This release also adds: support for file-based snippets, support for delimiters before snippet triggers (e.g., "bar.foo" could expand "foo"), and bug fixes.
+
+ doc/snipMate.txt              |  117 +++++--
+ ftplugin/c_snips.vim          |   20 +-
+ ftplugin/cpp_snips.vim        |   16 +
+ ftplugin/html_snips.vim       |    7 +-
+ ftplugin/java_snips.vim       |    5 +-
+ ftplugin/javascript_snips.vim |    5 +-
+ ftplugin/objc_snips.vim       |    5 +-
+ ftplugin/perl_snips.vim       |    7 +-
+ ftplugin/php_snips.vim        |    5 +-
+ ftplugin/python_snips.vim     |   11 +-
+ ftplugin/ruby_snips.vim       |    7 +-
+ ftplugin/sh_snips.vim         |    7 +-
+ ftplugin/tex_snips.vim        |    5 +-
+ ftplugin/vim_snips.vim        |   20 +
+ plugin/snipMate.vim           |  854 +++++++++++++++++++++++------------------
+ 15 files changed, 647 insertions(+), 444 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6956)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Wed Feb 25 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Forgot a backslash in the supertab.vim fix.
+
+ plugin/snipMate.vim |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6955)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Tue Feb 24 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Actually fixed the supertab bug (thanks Asher VanBrunt); also added some more Objective-C snippets, and fixed another bug with expanding snippets before text introduced in the previous version.
+
+ ftplugin/objc_snips.vim |   24 +++++++++++++++++++-----
+ plugin/snipMate.vim     |   19 ++++++++++---------
+ 2 files changed, 29 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6954)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Tue Feb 24 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug when expanding snippets with text after them, and a bug with expanding evals (`...`) that prevented substitutions containing "\=" such as substitute('foo', '.*', '\=toupper(submatch(0))') from working.
+    
+    Also fixed another typo in the Python snippets, and supertab compatibility.
+
+ after/.zip           |  Bin 22 -> 0 bytes
+ ftplugin/c_snips.vim |    2 +-
+ plugin/snipMate.vim  |   68 ++++++++++++++++++++++----------------------------
+ 3 files changed, 31 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6942)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Sat Feb 21 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed some typos in LaTeX and Python snippets, and added a snippet for the HTML 5 doctype.
+    
+    Also added support for cycling through completions using supertab, and using completions to expand placeholder text.
+    
+    The indentation amount for 'expandtab' also now defaults to 'sw' if 'sts' is not set.
+
+ doc/snipMate.txt          |   20 ++++++++++++--------
+ ftplugin/html_snips.vim   |    4 ++++
+ ftplugin/objc_snips.vim   |    4 ++--
+ ftplugin/python_snips.vim |    4 ++--
+ ftplugin/tex_snips.vim    |   12 ++++++------
+ plugin/snipMate.vim       |   26 +++++++++++++++-----------
+ 6 files changed, 41 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.61803399)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Mon Feb 16 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I apparently forgot to update the "Snip!" commands to "Snipp!" in the last version; this update takes care of that (thanks Martin Krauskopf for the bug report). The regex command to update these should actually be ":%s/exe \(.\)Snip\( \|!\)/exe \1Snipp\2".
+    
+    This update also fixes a typo in the "def" ruby snippet (thanks Reza Jelveh & Jan Andersson).
+
+ ftplugin/html_snips.vim |   14 ++++++++------
+ ftplugin/php_snips.vim  |   16 ++++++++--------
+ ftplugin/ruby_snips.vim |   36 ++++++++++++++++++------------------
+ plugin/snipMate.vim     |    9 ++++-----
+ 4 files changed, 38 insertions(+), 37 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6180339)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Sun Feb 15 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for 'virtualedit=all' and 'virtualedit=onemore'. Thanks Mikhail Daen for the bug report.
+
+ after/.DS_Store      |  Bin 6148 -> 0 bytes
+ after/._.DS_Store    |  Bin 82 -> 0 bytes
+ after/.zip           |  Bin 0 -> 22 bytes
+ ftplugin/c_snips.vim |    2 +-
+ plugin/snipMate.vim  |   21 ++++++++++++---------
+ 5 files changed, 13 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.618033)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Sat Feb 14 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed another bug concerning loading a filetype more than once.
+
+ ftplugin/c_snips.vim          |    6 +++---
+ ftplugin/html_snips.vim       |    4 ++--
+ ftplugin/java_snips.vim       |    4 ++--
+ ftplugin/javascript_snips.vim |    4 ++--
+ ftplugin/objc_snips.vim       |    4 ++--
+ ftplugin/perl_snips.vim       |    4 ++--
+ ftplugin/php_snips.vim        |    4 ++--
+ ftplugin/python_snips.vim     |    4 ++--
+ ftplugin/ruby_snips.vim       |    4 ++--
+ ftplugin/sh_snips.vim         |    4 ++--
+ ftplugin/tex_snips.vim        |    4 ++--
+ plugin/snipMate.vim           |    2 +-
+ 12 files changed, 24 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.61803)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Fri Feb 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed some other bugs for compatibility with supertab.vim and 'set expandtab' and added check to ensure snippets are not loaded twice.
+    
+    I also changed the "Snip" command to "Snipp" to maintain compatibility with vimscript #244 (imaps.vim). Unfortunately this breaks backward compatibility; to update any snippets you have added, just execute this regex on the appropriate files: ":%s/exe \(.\)Snip /exe \1Snipp /g"
+
+ after/.DS_Store               |  Bin 6148 -> 6148 bytes
+ doc/snipMate.txt              |   57 ++++++----
+ ftplugin/c_snips.vim          |   49 +++++----
+ ftplugin/html_snips.vim       |   95 +++++++++--------
+ ftplugin/java_snips.vim       |   75 +++++++-------
+ ftplugin/javascript_snips.vim |   35 +++---
+ ftplugin/objc_snips.vim       |   37 ++++---
+ ftplugin/perl_snips.vim       |   35 +++---
+ ftplugin/php_snips.vim        |   73 +++++++------
+ ftplugin/python_snips.vim     |   25 +++--
+ ftplugin/ruby_snips.vim       |  235 +++++++++++++++++++++--------------------
+ ftplugin/sh_snips.vim         |   15 ++--
+ ftplugin/tex_snips.vim        |   53 +++++-----
+ plugin/global_snips.vim       |    3 +-
+ plugin/snipMate.vim           |   17 ++--
+ 15 files changed, 414 insertions(+), 390 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6180)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Fri Feb 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for 'set expandtab', supertab.vim, and fixed some bugs.
+
+ after/.DS_Store         |  Bin 0 -> 6148 bytes
+ after/._.DS_Store       |  Bin 0 -> 82 bytes
+ ftplugin/html_snips.vim |   12 ++++----
+ ftplugin/perl_snips.vim |    2 +-
+ plugin/snipMate.vim     |   62 +++++++++++++++++++++++++++-------------------
+ 5 files changed, 43 insertions(+), 33 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.42)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Wed Feb 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                        |   28 +++
+ doc/snipMate.txt              |  214 +++++++++++++++++++
+ ftplugin/c_snips.vim          |   55 +++++
+ ftplugin/html_snips.vim       |   87 ++++++++
+ ftplugin/java_snips.vim       |   40 ++++
+ ftplugin/javascript_snips.vim |   36 +++
+ ftplugin/objc_snips.vim       |   39 ++++
+ ftplugin/perl_snips.vim       |   36 +++
+ ftplugin/php_snips.vim        |   66 ++++++
+ ftplugin/python_snips.vim     |   27 +++
+ ftplugin/ruby_snips.vim       |  166 +++++++++++++++
+ ftplugin/sh_snips.vim         |   10 +
+ ftplugin/tex_snips.vim        |   48 +++++
+ plugin/global_snips.vim       |    7 +
+ plugin/snipMate.vim           |  470 +++++++++++++++++++++++++++++++++++++++++
+ 15 files changed, 1329 insertions(+), 0 deletions(-)

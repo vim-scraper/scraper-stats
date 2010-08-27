@@ -1,0 +1,59 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Oct 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Handle multi-line regexps (thanks to M Weber for pointing this out)
+    - Changed key for "trace cursor" from <c-t> to <c-insert>.
+    - Require tlib 0.32
+    - Fill location list
+
+ autoload/ttoc.vim |   57 +++++++++++++++++++++++++++++++++++++++++++++-------
+ doc/ttoc.txt      |    5 +--
+ plugin/ttoc.vim   |   38 +++++++++++++++++++++++++++--------
+ 3 files changed, 80 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Nov 23 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Highlight the search term on partial searches
+    - Defined :Ttoc as synonym for :TToC
+    - Defined :Ttocbg to open a toc in the "background" (leave the focus/cursor in the main window)
+    - Require tlib 0.21
+    - Experimental: ttoc#Autoword(onoff): automatically show lines containing the word under the cursor; must be enabled for each buffer.
+    - Split plugin into (autoload|plugin)/ttoc.vim
+    - Follow/trace cursor functionality (toggled with <c-t>): instantly preview the line under cursor.
+    - Restore original position when using preview
+
+ autoload/ttoc.vim |  207 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/ttoc.txt      |   88 ++++++++++++++--------
+ plugin/ttoc.vim   |  180 ++++++++++++----------------------------------
+ 3 files changed, 309 insertions(+), 166 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Nov 5 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - <c-e> Run a command on selected lines.
+    - g:ttoc_world can be a normal dictionary.
+    - Use tlib#input#ListD() instead of tlib#input#ListW().
+    - Require tlib >= 0.14
+
+ doc/ttoc.txt    |   41 ++++++++++++++++++++++++++++-------------
+ plugin/ttoc.vim |   38 +++++++++++++++++++++++---------------
+ 2 files changed, 51 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sat Sep 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README          |   32 +++++++
+ doc/ttoc.txt    |  192 ++++++++++++++++++++++++++++++++++++++
+ plugin/ttoc.vim |  274 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 498 insertions(+), 0 deletions(-)

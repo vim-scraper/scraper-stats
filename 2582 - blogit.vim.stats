@@ -1,0 +1,166 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.4.3, refs/heads/master)
+Author:     Romain Bignon <romain at peerfuse.org>
+AuthorDate: Sat Jan 2 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added infrastructure for acceptance tests;
+    * Added gettext i18n;
+    * Fixed pep8 compliance;
+    * Fixed setting date on ":Blogit commit" and "push";
+    * Fixed time in blog posts;
+    * Improved help file.
+
+ doc/blogit.txt              |   33 ++--
+ plugin/blogit.vim           |  391 ++++++++++++++++++++----------------------
+ plugin/mock_vim.py          |   91 ----------
+ po/Makefile                 |   38 ++++
+ po/POTFILES.in              |    2 +
+ po/POTFILES.skip            |    1 +
+ po/po4a.cfg.in              |    8 +
+ testing/README              |   48 ++++++
+ testing/conftest.py         |  110 ++++++++++++
+ testing/mock_vim.py         |   99 +++++++++++
+ testing/socketserver.py     |   92 ++++++++++
+ testing/t.html              |    4 +
+ testing/t.mkd               |   48 ++++++
+ testing/test_147.py         |  117 +++++++++++++
+ testing/test_147_execnet.py |  306 +++++++++++++++++++++++++++++++++
+ testing/test_blogit.py      |   78 +++++++++
+ testing/test_vim_execnet.py |   26 +++
+ testing/test_wordpress.py   |   61 +++++++
+ testing/vim_execnet.py      |   27 +++
+ 19 files changed, 1268 insertions(+), 312 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.2)
+Author:     Romain Bignon <romain at peerfuse.org>
+AuthorDate: Wed Oct 28 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor bugfixes:
+    
+    * Fixed encoding issues;
+    * Fixed omnicomplete issues.
+
+ doc/blogit.txt    |    4 +-
+ plugin/blogit.vim |   88 ++++++++++++++++++++++++++++++++++++++++++-----------
+ 2 files changed, 72 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.1)
+Author:     Romain Bignon <romain at peerfuse.org>
+AuthorDate: Sat Sep 19 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This minor release fixes some bugs:
+    
+    * Implemented sending new pages;
+    * Implemented (un)pushing of pages;
+    * Fixed dates.
+
+ plugin/Session.vim |  375 ----------------------------------------------------
+ plugin/blogit.vim  |   39 ++++--
+ 2 files changed, 29 insertions(+), 385 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Romain Bignon <romain at peerfuse.org>
+AuthorDate: Thu Sep 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This is probably the final stable release of the 1.x branch. Here is changelog:
+    
+    * Introduced the *Blogit page* command to edit a page content (closes #134);
+    * Ability to give the blog name to edit/ls/new/this commands;
+    * Fixed non-ascii problem with datetimes;
+    * Fixed "variables not updated when switching blogs" (closes #144);
+    * Several other minors fixes;
+    * Added vim documentation file for blogit.
+    * Code refactoring;
+    * Better unitary tests system.
+    
+    Really thanks to Adam who has still done a lot of work.
+
+ doc/blogit.txt     |  145 ++++
+ plugin/Session.vim |  375 +++++++++
+ plugin/blogit.vim  | 2255 ++++++++++++++++++++++++++++++++-------------------
+ plugin/mock_vim.py |    6 +-
+ 4 files changed, 1940 insertions(+), 841 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Romain Bignon <romain at peerfuse.org>
+AuthorDate: Sun Aug 16 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This release is mostly a bugfix release:
+    
+    * Finished up displaying comments;
+    * Fixed order of comments;
+    * Fixed comment count;
+    * Support shortening of Blogit-commands;
+    * Update comments via ":Blogit commit";
+    * Fixed using multible buffers;
+    * Added command "preview";
+    * Code cleanup.
+
+ plugin/blogit.vim  |  823 +++++++++++++++++++++++++++++++++++++---------------
+ plugin/mock_vim.py |   87 ++++++
+ 2 files changed, 679 insertions(+), 231 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Romain Bignon <romain at peerfuse.org>
+AuthorDate: Sat Jul 18 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This new release of blogit.vim introduces this new features:
+    
+    * Added the :Blogit this command to create a blog post from the current vim buffer;
+    * The :Blogit categories command is merged into the :Blogit tags command;
+    * Comments can be displayed with gf on Status,
+    
+    There is also some minor (or less minors) bugfixes.
+    
+    Thanks to Adam Schmalhofer for contributing.
+
+ plugin/blogit.vim |  715 +++++++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 505 insertions(+), 210 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Romain Bignon <romain at peerfuse.org>
+AuthorDate: Sun Jun 21 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The blogit.vim 1.1 release's changes are:
+    * Use a separated file to set blogit.vim settings.
+    * Use of filter to get/post text. Default is pandoc, to display text as ReST.
+    * Multi-blogs support.
+    * Localized timestamps.
+    * Date/times are displayed in users preferred time format.
+    * Omni-complete categories and tags.
+    
+    There are also some bug fixes, and code cleanup.
+    
+    Thanks to Adam Schmalhofer for his patches.
+
+ plugin/blogit.vim |  413 +++++++++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 306 insertions(+), 107 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     Romain Bignon <romain at peerfuse.org>
+AuthorDate: Sat Apr 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The blogit.vim 1.0.1 release fixes these issues:
+    * option to disable tags (which are a wordpress plugin)
+    * datetime issues (datetime is now UTC)
+
+ plugin/blogit.vim |   48 +++++++++++++++++++++++++++++++-----------------
+ 1 files changed, 31 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Romain Bignon <romain at peerfuse.org>
+AuthorDate: Sat Apr 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial version.
+
+ README            |   32 ++++++
+ plugin/blogit.vim |  284 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 316 insertions(+), 0 deletions(-)

@@ -1,0 +1,22 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4.4, refs/heads/master)
+Author:     James Dominy <jgdominy at gmail.com>
+AuthorDate: Sun Feb 7 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    vdb-0.4.4.tar.gz	2010-02-08
+     * Aoyama Shotaro: add a ruby interface
+     * Aoyama Shotaro: fixed a typo in cpdb.py and made pdbout global
+     * Aoyama Shotaro: using subprocess module instead of os,popen
+     * hacked debuggers to be included in the main package hence forth
+     * lots more, see change log in the README
+
+ COPYING             |  340 ++++++++++++++++
+ README              |    7 +
+ README.orig         |  317 +++++++++++++++
+ cpdb.py             | 1114 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/quick-start.txt |  211 ++++++++++
+ plugin/vdb.vim      |  797 ++++++++++++++++++++++++++++++++++++
+ todo                |    2 +
+ vdbruby.rb          |  991 +++++++++++++++++++++++++++++++++++++++++++++
+ vdbruby.sh          |   21 +
+ 9 files changed, 3800 insertions(+), 0 deletions(-)

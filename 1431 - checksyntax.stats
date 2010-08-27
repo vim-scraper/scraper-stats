@@ -1,0 +1,32 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sat Sep 26 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - use vim compilers if available (e.g., tidy, xmllint ...)
+    - Support for jsl (javascript lint).
+    - Support for jlint.
+    - Support for lua (thanks to norman)
+    - Don't automatically check php files if eclim is installed.
+    - Allow auto_* parameters to be buffer local.
+    - FIX: Unlet current_compiler, use g:current_compiler
+    - FIX: garbled screen: use redraw! (thanks to Vincent de Lau)
+    - FIX: makeprg was restored in the wrong window
+
+ checksyntax/etc/checksyntax.lst |    3 -
+ doc/checksyntax.txt             |    6 +-
+ plugin/checksyntax.vim          |  289 +++++++++++++++++++++++++++++++--------
+ 3 files changed, 238 insertions(+), 60 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Dec 12 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                          |   21 +++++
+ checksyntax/etc/checksyntax.lst |    3 +
+ doc/checksyntax.txt             |   51 +++++++++++
+ plugin/checksyntax.vim          |  188 +++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 263 insertions(+), 0 deletions(-)

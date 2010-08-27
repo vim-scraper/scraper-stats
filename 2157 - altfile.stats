@@ -1,0 +1,80 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2a, refs/heads/master)
+Author:     Alex Kunin <alexkunin at gmail.com>
+AuthorDate: Sat Mar 1 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    No more ":drop" (i.e. no more GUI dependency). File load/activation code is smarter now. Uncommented forgotten try...catch block. Removed all inline docs, added link to the project site.
+
+ plugin/altfile.vim |  204 +++++++++++----------------------------------------
+ 1 files changed, 44 insertions(+), 160 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Alex Kunin <alexkunin at gmail.com>
+AuthorDate: Tue Feb 26 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added visual file selector (resembles BufExplorer; also, some tricks were borrowed from source code of that really nice script).
+
+ plugin/altfile.vim |  192 ++++++++++++++++++++++++++++++++++++++++++++++------
+ 1 files changed, 172 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1e)
+Author:     Alex Kunin <alexkunin at gmail.com>
+AuthorDate: Fri Feb 22 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Autoload support and "write-plugin" guidelines (thanks to Thomas Link for advices). Couple of minor bugs fixed.
+
+ plugin/altfile.vim |  240 ++++++++++++++++++++++++++-------------------------
+ 1 files changed, 122 insertions(+), 118 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1d)
+Author:     Alex Kunin <alexkunin at gmail.com>
+AuthorDate: Tue Feb 19 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now wildmenu is used as "engine", so look & feel are much better now. No more numeric shortcats, however. Lots of code cleanup.
+
+ plugin/altfile.vim |  330 ++++++++++++++++++++++++++++++----------------------
+ 1 files changed, 193 insertions(+), 137 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1c)
+Author:     Alex Kunin <alexkunin at gmail.com>
+AuthorDate: Mon Feb 18 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Default choice now mimics Alt-Tab (Cmd-Tab for Mac users), i.e. hitting the hot key and then <CR> will cycle between last two files. Visual adjustments: current file is square brakets, and asterisk indicates default choice.
+
+ plugin/altfile.vim |   49 ++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 38 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1b)
+Author:     Alex Kunin <alexkunin at gmail.com>
+AuthorDate: Mon Feb 18 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    If selected file is already visible in some window, the script will activate it.
+
+ plugin/altfile.vim |   15 ++++++++++++---
+ 1 files changed, 12 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1a)
+Author:     Alex Kunin <alexkunin at gmail.com>
+AuthorDate: Sat Feb 16 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    When GUI is available, dialog forced to be console-friendly, i.e. no GUI window is poping up.
+
+ plugin/altfile.vim |   22 +++++++++++++++++++---
+ 1 files changed, 19 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Alex Kunin <alexkunin at gmail.com>
+AuthorDate: Sat Feb 16 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README             |   40 +++++++++++
+ plugin/altfile.vim |  193 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 233 insertions(+), 0 deletions(-)

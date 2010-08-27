@@ -1,0 +1,36 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2, refs/heads/master)
+Author:     Alexandru Ungur <alexandru at globalterrasoft.ro>
+AuthorDate: Tue Jun 3 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * added CheatRecent command to get a list of recent cheatsheets
+    * thanks to Ferry Boender for the code for dumping output of
+       commands into a window (Bexec - script #1788) now Cheat dumps
+       its output into a window as well, and no longer to 'stdout'
+
+ plugin/cheat.vim |   81 ++++++++++++++++++++++++++++++++++++++++++++++++++----
+ 1 files changed, 75 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Alexandru Ungur <alexandru at globalterrasoft.ro>
+AuthorDate: Sat Sep 15 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added caching to decrease the loading time. By default it caches to "$HOME/.cheats" but that can be overriden from .vimrc with:
+    let g:cheats_cache = "/path/to/your/file"
+    
+    Also the plugin does not depend on any *nix commands any longer (cut, grep, cat) so it may be possible to run it on other platforms as well.
+
+ plugin/cheat.vim |   25 ++++++++++++++++++++-----
+ 1 files changed, 20 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Alexandru Ungur <alexandru at globalterrasoft.ro>
+AuthorDate: Sat Sep 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README           |    9 +++++++++
+ plugin/cheat.vim |   34 ++++++++++++++++++++++++++++++++++
+ 2 files changed, 43 insertions(+), 0 deletions(-)

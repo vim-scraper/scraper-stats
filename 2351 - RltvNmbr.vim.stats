@@ -1,0 +1,41 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3, refs/heads/master)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Fri Nov 21 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Speeded up sign unplacing
+    * Included g:rltvnmbrmode to report en/dis-ablement of relative numbering
+    * Includes some more autocmds for relative number updating
+
+ autoload/RltvNmbr.vim     |  110 ++++++++++++++++++++++++++++++++++-----------
+ doc/RltvNmbr.txt          |   81 +++++++++++++++++++++++++++++----
+ plugin/RltvNmbr.vim       |  110 ++++++++++++++++++++++++++++++++++-----------
+ plugin/RltvNmbrPlugin.vim |    7 ++-
+ 4 files changed, 244 insertions(+), 64 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Aug 20 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Been a number of requests to provide a toggling command, and so:  :RN  will toggle RltvNmbr'ing.  Plus a few more events will redraw the relative numbering signs.
+
+ autoload/RltvNmbr.vim     |   50 ++++++++++++++++++++++++++++++++++++++------
+ doc/RltvNmbr.txt          |   15 +++++++++++-
+ plugin/RltvNmbr.vim       |   50 ++++++++++++++++++++++++++++++++++++++------
+ plugin/RltvNmbrPlugin.vim |   14 +++++++++--
+ 4 files changed, 110 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue Aug 19 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Displays line numbers relative to the current line -- helpful with commands that use [count]s.
+
+ README                    |   22 ++++++
+ autoload/RltvNmbr.vim     |  169 +++++++++++++++++++++++++++++++++++++++++++++
+ doc/RltvNmbr.txt          |   41 +++++++++++
+ plugin/RltvNmbr.vim       |  169 +++++++++++++++++++++++++++++++++++++++++++++
+ plugin/RltvNmbrPlugin.vim |   26 +++++++
+ 5 files changed, 427 insertions(+), 0 deletions(-)

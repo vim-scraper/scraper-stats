@@ -1,0 +1,53 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.3, refs/heads/master)
+Author:     Salman Halim <salmanhalim at hotmail.com>
+AuthorDate: Fri Mar 6 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Made the plugin accept global values for overriding the returned string; useful for changing the language, for example. Place the following in your _vimrc for
+    French:
+    
+    let g:numberToEnglish_digits = [ "", "un",   "deux",  "trois",  "quatre",   "cinq",      "six",      "sept",         "huit",         "neuf" ]
+    let g:numberToEnglish_teens  = [ "", "onze", "douze", "treize", "quatorze", "quinze",    "seize",    "dix-sept",     "dix-huit",     "dix-neuf" ]
+    let g:numberToEnglish_tens   = [ "", "dix",  "vingt", "trente", "quarante", "cinquante", "soixante", "soixante dix", "quatre vingt", "quatre vingt dix" ]
+    
+    let g:numberToEnglish_scale = [ "", "mille", "million", "billion" ]
+    
+    let g:numberToEnglish_hundred = "cent"
+    
+    This change necessitates the use of GetVar (http://vim.sourceforge.net/scripts/script.php?script_id=353). Technically, the usage of GetVar allows the setting
+    of any combination of these variables on a per-window, buffer or tab level (allowing different languages, capitalizations, etc., depending upon the buffer
+    type, for example).
+
+ plugin/NumberToEnglish.vim |   67 ++++++++++++++++++++++++++++++++++---------
+ 1 files changed, 53 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Salman Halim <salmanhalim at hotmail.com>
+AuthorDate: Tue Mar 3 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added two new mappings:
+    
+    <Plug>DNumberToEnglish and <Plug>DCNumberToEnglish -- the D is short for "Detailed".
+    
+    Differs from the versions without the D in that it places the original number at the end of the expanded version:
+    
+    Thus, 12341234 becomes twelve million three hundred forty one thousand two hundred thirty four (12341234).
+    
+    Version 1.1 (not uploaded):
+    
+    Took the hard-coded values out of the functions into script-local variables -- no sense defining them every time.
+
+ plugin/NumberToEnglish.vim |   44 ++++++++++++++++++++++++++++++--------------
+ 1 files changed, 30 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Salman Halim <salmanhalim at hotmail.com>
+AuthorDate: Fri Feb 27 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                     |   16 +++++
+ plugin/NumberToEnglish.vim |  151 ++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 167 insertions(+), 0 deletions(-)

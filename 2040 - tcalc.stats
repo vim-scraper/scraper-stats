@@ -1,0 +1,216 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.11, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Dec 5 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New words: all?, any?, array_*, and, or, !=
+    - Curses frontend: Show possible completions; map 127 to backspace, F1
+    to 'ls'; improved handling of cursor keys etc.
+    - Debugger (sort of)
+    - FIX: Nested blocks & more
+
+ doc/tcalc.txt       |   48 +++++
+ plugin/tcalc.vim    |   14 ++-
+ syntax/tcalc.vim    |    6 +-
+ tcalc/ruby/tcalc.rb |  497 +++++++++++++++++++++++++++++++++++++++------------
+ 4 files changed, 442 insertions(+), 123 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Fri Nov 30 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - rm,* ... Remove all words
+    - If g:tcalc_lines < 0, use fixed window height.
+    - VIM: use the tcalc window to display plots, lists etc.
+    - FIX: Nested words and some more
+
+ autoload/tcalc.vim  |   35 +++++++++++++++++------
+ doc/tcalc.txt       |   41 +++++++++++++--------------
+ ftplugin/tcalc.vim  |   15 ++++++++++
+ plugin/tcalc.vim    |   19 ++++++++-----
+ syntax/tcalc.vim    |    6 ++--
+ tcalc/ruby/tcalc.rb |   76 ++++++++++++++++++++++++++++++++++-----------------
+ 6 files changed, 127 insertions(+), 65 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Nov 28 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - FIX: Curses frontend: Display error messages properly
+    - FIX: readline support.
+    - FIX: sort words on completion
+    - Distribute as zip
+
+ doc/tcalc.txt       |  266 +++++++++--
+ plugin/tcalc.vim    |   14 +-
+ ruby/tcalc.rb       | 1328 --------------------------------------------------
+ syntax/tcalc.vim    |    9 +-
+ tcalc/ruby/tcalc.rb | 1349 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 5 files changed, 1591 insertions(+), 1375 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Nov 27 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Named arguments: args is a synonym for assert but provides for named
+    arguments.
+    - New words: Sequence/seq, map, mmap, plot (a simple ASCII function
+    plotter), stack_size, stack_empty?, iqueue_size, iqueue_empty?
+    - Syntactic sugar for assignments: VALUE -> VAR
+    - Defined "Array" as a synonym for "group"
+    - "define" command as alternative to the forth-like syntax for defining
+    words
+    - Dynamic binding of words/variables (the words "begin ... end"
+    establish a new scope)
+    - The stack, the input queue, and the dictionary are accessible like
+    words (__STACK__, __IQUEUE__, __WORDS__)
+    - TCalc and tcalc#Calculator take initial tokens as argument.
+    - TCalc! with [!] will reset the stack & input queue.
+    - Completion of partial commands
+    - Readline-support for CLI mode (--no-curses).
+    - Simple key handling for the curses-based frontend
+    - Non-VIM-versons save the history in ~/.tcalc/history.txt
+    - #VAR,METHOD has slightly changed.
+    - TCalc syntax file.
+    - FIX: Command line completion
+
+ autoload/tcalc.vim |   26 +-
+ plugin/tcalc.vim   |   59 +++-
+ ruby/tcalc.rb      |  943 +++++++++++++++++++++++++++++++++++++++++++---------
+ syntax/tcalc.vim   |   69 ++++
+ 4 files changed, 911 insertions(+), 186 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Oct 29 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Comments: /* ... */
+    - New words:
+        - assert: Display an error message if the stack doesn't match the
+        assertion.
+        - validate: Like assert but push a boolean (the result of the check)
+        on the stack.
+        - do: synonym for recapture.
+        - source: load a file (see also g:tcalc_dir)
+        - require: load a ruby library
+        - p: print an object (doesn't do much, but prettyprint seems
+        to have problems)
+        - history (useful when using tcalc as stand-alone calculator)
+    - tcalc.rb can now be used as stand-alone program (a simple
+    curses-based frontend).
+
+ autoload/tcalc.vim |    8 +-
+ doc/tcalc.txt      |   46 +++++-
+ plugin/tcalc.vim   |   34 ++++-
+ ruby/tcalc.rb      |  473 +++++++++++++++++++++++++++++++++++++++++++++-------
+ 4 files changed, 492 insertions(+), 69 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Fri Oct 26 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Included support for rational and complex numbers
+    - Included matrix support
+    - Syntax for pushing arrays [ a b c ... ]
+    - New "at" method to select an item from array-like objects
+    - Removed shortcut variables.
+
+ autoload/tcalc.vim |  283 +----------------------------------------
+ doc/tcalc.txt      |   58 ++++++++-
+ plugin/tcalc.vim   |   45 ++++---
+ ruby/tcalc.rb      |  364 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 450 insertions(+), 300 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Fri Oct 12 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Minor fix: command regexp
+
+ autoload/tcalc.vim |   30 +++++++++-----
+ doc/tcalc.txt      |  107 +++++++++++++++++++++++++++++++++++++--------------
+ plugin/tcalc.vim   |    9 +++-
+ 3 files changed, 102 insertions(+), 44 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Oct 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - COUNT can be "#", in which case the top number on the stack will be
+    used (e.g. "3 dup3" is the same as "3 3 dup#")
+    - Disabled vars, (, ) commands
+    - Variables are words
+    - New words can be defined in a forth-like manner ":NAME ... ;"
+    - Built-in commands get evaluated before any methods.
+    - Messages can be sent to objects on the stack by "#N,METHOD", e.g. "1 2
+    g2 3 #1,<<" yields "[1,2,3]"
+    - The copyN, cN command now means: push a copy of element N.
+    - ( ... ) push unprocessed tokens as array
+    - recapture command (feed an array of unprocessed tokens to the input
+    queue)
+    - if, ifelse commands
+    - delN, deleteN commands
+    - Can push strings ("foo bar")
+    - "Symbols" à la 'foo (actually a string)
+
+ autoload/tcalc.vim |  229 +++++++++++++++++++++++++++++++++++++++-------------
+ doc/tcalc.txt      |  111 +++++++++++++++++++++++++
+ plugin/tcalc.vim   |   90 +++++++-------------
+ 3 files changed, 313 insertions(+), 117 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Oct 7 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - The swap count argument is increased by one (for conformance with the
+    rot command).
+    - Shortcuts are now RPN expression (elements at the stack can be
+    referred to by # (= top element) or #N).
+    - Removed g:tcalc_reverse_display
+    - Positions on the stack can be referred to by #N.
+    - rot works the other way round
+    - d, dup command
+    - clear command
+    - print, hex, HEX, oct, dec, bin, float, format commands
+    - Removed dependency on tlib
+    - Variables; ls, vars, let, =, rm commands
+    - Command line completion for variables and commands
+
+ autoload/tcalc.vim |  294 ++++++++++++++++++++++++++++++++++------------------
+ plugin/tcalc.vim   |   78 ++++++++++----
+ 2 files changed, 253 insertions(+), 119 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Oct 7 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Arguments were (not properly) reverted: 12 4 / now yields 3.
+    - The input will be split into tokens, i.e. you can input "1 2 + <cr>"
+    or "1<cr>2<cr>+<cr>". (Command-line completions doesn't work properly
+    though.)
+    - The syntax has slightly changed: "CmdCount,Arg", eg, "y3,a"
+
+ autoload/tcalc.vim |  121 +++++++++++++++++++++++++++-------------------------
+ plugin/tcalc.vim   |   24 ++++++++--
+ 2 files changed, 82 insertions(+), 63 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Oct 7 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README             |   36 +++++++++++++++
+ autoload/tcalc.vim |  125 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/tcalc.vim   |   65 +++++++++++++++++++++++++++
+ 3 files changed, 226 insertions(+), 0 deletions(-)

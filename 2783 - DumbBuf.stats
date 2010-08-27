@@ -1,0 +1,133 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.9, refs/heads/master)
+Author:     tyru   <tyru.exe (at) gmail.com>
+AuthorDate: Tue Mar 2 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Add 'o' mapping to execute ':sbuffer'. Thanks to Jan Christoph.
+    - Fix bug to fail to restore original CursorLine highlight.
+    - Change default value of g:dumbbuf_options
+    - Allow to execute mappings even on noname buffer.
+    - Add '<Plug>(dumbbuf-open)'.
+      g:dumbbuf_hotkey is not '',
+      g:dumbbuf_hotkey is mapped to '<Plug>(dumbbuf-open)'.
+    - Write document
+    - etc.
+
+ autoload/dumbbuf.vim | 1267 ++++++++++++++++++++++++++++++++++++++++
+ doc/dumbbuf.txt      |  334 +++++++++++
+ plugin/dumbbuf.vim   | 1586 +-------------------------------------------------
+ 3 files changed, 1614 insertions(+), 1573 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.8)
+Author:     tyru   <tyru.exe (at) gmail.com>
+AuthorDate: Fri Jan 1 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Happy New Year, Vimmers ;)
+    
+    - NOTE: If you want to use mapping
+      2 more than characters to toggle dumbbuf buffer,
+      you have to change g:dumbbuf_timeoutlen.
+      for e.g.: let g:dumbbuf_timeoutlen = 100
+      But you can always use 'q' to close buffer.
+    - Change default values of g:dumbbuf_disp_expr, g:dumbbuf_options
+      (Options written in 'For The Experienced User' may be changed
+      in the future. sorry)
+    - Implement g:dumbbuf_all_shown_types.
+    - Remove g:dumbbuf_single_key, g:dumbbuf_single_key_echo_stack,
+      g:dumbbuf_updatetime
+    - Remove single key emulation.
+      This emulates normal key input
+      in order to prevent Vim from waiting candidate keys.
+      Now I know I have invented the wheel :)
+      (I changed &timeout, &timeoutlen)
+    - Suppress flicker when mapping executed.
+    - Some optimizations.
+    - Some fixes of minor bugs.
+
+ plugin/dumbbuf.vim | 1407 ++++++++++++++++++++++++++++++----------------------
+ 1 files changed, 825 insertions(+), 582 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.7)
+Author:     tyru   <tyru.exe (at) gmail.com>
+AuthorDate: Fri Oct 30 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - highlight support
+    - add option g:dumbbuf_single_key_echo_stack,
+      g:dumbbuf_hl_cursorline,
+      g:dumbbuf_remove_marked_when_close.
+    - change g:dumbbuf_disp_expr's spec.
+    - fix minor bugs and do some optimizations.
+    - replace the words 'select' to 'mark' in document and source code.
+      I would use 'select' for only visual mode's region.
+
+ plugin/dumbbuf.vim | 1108 +++++++++++++++++++++++++++++-----------------------
+ 1 files changed, 617 insertions(+), 491 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.6)
+Author:     tyru   <tyru.exe (at) gmail.com>
+AuthorDate: Mon Sep 28 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    0.0.5:
+        - fix bug: when using with another plugin that uses unlisted buffer,
+          pressing <CR> in dumbbuf buffer jumps into that unlisted buffer.
+          * Thanks to Bernhard Walle for reporting the bug :) *
+        - add g:dumbbuf_open_with.
+    0.0.6:
+        - fix bug: when there is no buffers in list,
+          dumbbuf can't get selected buffer info.
+        - add option g:dumbbuf_wrap_cursor, and allow 'keep' in
+          g:dumbbuf_cursor_pos.
+        - implement 'select' of buffers. mapping is 'xx'.
+
+ plugin/dumbbuf.vim |  966 ++++++++++++++++++++++++++++++++--------------------
+ 1 files changed, 605 insertions(+), 361 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.4)
+Author:     tyru   <tyru.exe (at) gmail.com>
+AuthorDate: Sat Sep 26 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - implement single key mappings like QuickBuf.vim.
+      'let g:dumbbuf_single_key = 1' to use it.
+    - add g:dumbbuf_single_key, g:dumbbuf_updatetime.
+    - map plain gg and G mappings in local buffer.
+    - fix bug of making a waste buffer when called from
+      unlisted buffer.
+
+ plugin/dumbbuf.vim |  177 +++++++++++++++++++++++++++++++++++++++++++++++-----
+ 1 files changed, 161 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.3)
+Author:     tyru   <tyru.exe (at) gmail.com>
+AuthorDate: Thu Sep 24 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - fix bug of trapping all errors(including other plugin error).
+
+ plugin/dumbbuf.vim |  486 +++++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 348 insertions(+), 138 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
+Author:     tyru   <tyru.exe (at) gmail.com>
+AuthorDate: Sun Sep 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    implement g:dumbbuf_cursor_pos, g:dumbbuf_shown_type, and 'tt' mapping.
+    and fix bug of showing listed buffers even if current buffer is unlisted.
+
+ plugin/dumbbuf.vim |  346 ++++++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 242 insertions(+), 104 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.0)
+Author:     tyru   <tyru.exe (at) gmail.com>
+AuthorDate: Fri Sep 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README             |  185 ++++++++++++++++
+ plugin/dumbbuf.vim |  592 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 777 insertions(+), 0 deletions(-)

@@ -1,0 +1,50 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4, refs/heads/master)
+Author:     Vladimir Marek <vlmarek at volny.cz>
+AuthorDate: Thu Apr 17 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Hg & Sccs backends: Better implementation of VCSAnnotate. Thanks to Christian Ebert
+    - Hg backend: Syntax fix for author names starting at the end of the line
+    - Sccs backend: Syntax fix for branches
+
+ plugin/vcshg.vim        |    6 ++++--
+ plugin/vcssccs.vim      |    6 ++++--
+ syntax/SCCSAnnotate.vim |    2 +-
+ 3 files changed, 9 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3)
+Author:     Vladimir Marek <vlmarek at volny.cz>
+AuthorDate: Thu Apr 17 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Hg backend: Fixed VCSAnnotate
+
+ plugin/vcshg.vim      |    3 ++-
+ syntax/HGAnnotate.vim |    4 ++--
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2)
+Author:     Vladimir Marek <vlmarek at volny.cz>
+AuthorDate: Thu Apr 17 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - updated to latest vcscommand version
+    - Sccs backend: added VCSDiff support (VCSVimDiff was already implemented)
+
+ plugin/vcshg.vim   |    2 +-
+ plugin/vcssccs.vim |   28 ++++++++++++++--------------
+ 2 files changed, 15 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1)
+Author:     Vladimir Marek <vlmarek at volny.cz>
+AuthorDate: Tue May 15 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                  |   14 ++
+ plugin/vcshg.vim        |  332 +++++++++++++++++++++++++++++++++++++++++++++
+ plugin/vcssccs.vim      |  343 +++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/HGAnnotate.vim   |   41 ++++++
+ syntax/SCCSAnnotate.vim |   38 +++++
+ 5 files changed, 768 insertions(+), 0 deletions(-)

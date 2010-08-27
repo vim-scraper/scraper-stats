@@ -1,0 +1,60 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Fri Jan 4 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    /bb- Reset cached passwords after g:tgpg_timeout seconds without access
+    - If g:tgpg_gpg_md5_sum is set, check gpg's checksum via
+    g:tgpg_gpg_md5_check before doing anything.
+    - The gpg program must be configured via g:tgpg_gpg_cmd.
+    - Make sure certain options (e.g., verbosefile, verbose) are set to
+    predefined values during read/write, see g:tgpg_options.
+    - Reset registers when unloading the buffer (this should prevent
+    information copied to the clipboard to be written to the viminfo file;
+    as it may have unintended consequences, you can turn it off by setting
+    g:tgpg_registers to '')
+    - randomized replacement tables for encryption
+
+ doc/tgpg.txt    |  259 +++++++++++++++++++++++++
+ plugin/tGpg.vim |  570 +++++++++++++++++++++++++++++++++++++------------------
+ 2 files changed, 641 insertions(+), 188 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Jun 12 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed command template syntax
+    - The user is now queried for information only as required by the command template
+    - Changed default value of g:tgpgTempSuffix
+    - Removed recipients from the clearsign template
+    - Make sure we're in the right buffer
+    - Enable buffer local command line options (eg b:tgpgWrite_symmetric_*_options)
+
+ plugin/tGpg.vim |  369 +++++++++++++++++++++++++++++++++++++------------------
+ 1 files changed, 250 insertions(+), 119 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Jan 3 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Made the cache a script local variable.
+    - Let user retype passwords when writing a file with a new or changed passphrase.
+    - Display a warning if the size of the output file is 0 & revert to old file.
+    - Keep the original when writing.
+    - Run BufRead autocommands on filename root after reading the buffer.
+
+ plugin/tGpg.vim |  168 +++++++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 127 insertions(+), 41 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Jan 2 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README          |   50 +++++++++
+ plugin/tGpg.vim |  320 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 370 insertions(+), 0 deletions(-)

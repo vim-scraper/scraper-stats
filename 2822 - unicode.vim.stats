@@ -1,0 +1,62 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5, refs/heads/master)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Mon Apr 19 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New public repository at http://github.com/chrisbra/unicode.vim
+
+ autoload/unicode.vim |    4 ++--
+ doc/unicode.txt      |    7 +++++--
+ plugin/unicode.vim   |    4 ++--
+ 3 files changed, 9 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Mon Feb 1 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Use UnicodeData.txt to generate Data
+    (Index.txt does not contain all glyphs).
+    Check for empty file UnicodeData.txt
+
+ autoload/unicode.vim |   55 ++++++++++++++++++++++++++++++--------------------
+ doc/unicode.txt      |   50 +++++++++++++++++++++++---------------------
+ plugin/unicode.vim   |    3 +-
+ 3 files changed, 61 insertions(+), 47 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Mon Oct 26 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added digraph completion
+
+ autoload/unicode.vim |   52 ++++++++++++++++++++++++++++++++++++++++++-------
+ doc/unicode.txt      |   27 ++++++++++++++++++++-----
+ plugin/unicode.vim   |    3 +-
+ 3 files changed, 67 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Thu Oct 22 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Enabled GetLatestVimScripts
+
+ autoload/unicode.vim |   13 ++++++++++++-
+ doc/unicode.txt      |    3 ++-
+ plugin/unicode.vim   |    3 +--
+ 3 files changed, 15 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Thu Oct 22 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README               |   95 ++++++++++++++++++++++++++++++
+ autoload/unicode.vim |  159 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/unicode.txt      |  109 ++++++++++++++++++++++++++++++++++
+ plugin/unicode.vim   |   38 ++++++++++++
+ 4 files changed, 401 insertions(+), 0 deletions(-)

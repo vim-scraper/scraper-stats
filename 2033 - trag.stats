@@ -1,0 +1,149 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Mar 31 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Moved the definition of some variables from plugin/trag.vim to autoload/trag.vim
+    - :TRagcw! (show :cw even if there are no recognized errors)
+    - Require tlib 0.37
+
+ autoload/trag.vim |  396 +++++++++++++++++++++++++++++++++++++++++++++--------
+ doc/trag.txt      |  138 ++++++++++---------
+ plugin/trag.vim   |  231 +++-----------------------------
+ 3 files changed, 434 insertions(+), 331 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Dec 21 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - trag#QuickList(): Accept a dict as optional argument.
+    - trag#Grep(): rx defaults to '\.{-}'
+    - trag#Grep(): use :g (instead of search()) for non-vimgrep mode
+
+ autoload/trag/rename.vim |   43 +++++++++++++++++++++++++++++++++++++
+ autoload/trag/viki.vim   |   20 +++++++++++++++++
+ autoload/trag.vim        |   53 ++++++++++++++++++++++++---------------------
+ doc/trag.txt             |    4 +-
+ plugin/trag.vim          |   13 +++++++---
+ 5 files changed, 102 insertions(+), 31 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Oct 18 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - trag#viki#Rename()
+    - Generalized trag#rename#Rename()
+    - Enabled "trace cursor" functionality (mapped to the <c-insert> key).
+    - :Traglw
+    - TRagGitFiles, trag#SetGitFiles(), g:trag_git
+
+ autoload/trag/java.vim |   30 +---------
+ autoload/trag.vim      |  139 +++++++++++++++++++++++++++++++++++++++++-------
+ doc/trag.txt           |   65 +++++++++++++++++++---
+ plugin/trag.vim        |   68 +++++++++++++++++------
+ 4 files changed, 229 insertions(+), 73 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Feb 25 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Update the qfl when running a command on selected lines
+    - Enable certain operations for multiple choices
+    - Java, Ruby: x ... find subclasses (extends/implements)
+    - Experimental rename command for refactoring (general, java)
+    - NEW: [bg]:trag_get_files_{&filetype}
+    - Traggrep: If the second argument (glob pattern) is missing, the
+    default file list will be used.
+
+ autoload/trag.vim         |  530 ---------------------------------------
+ autoload/trag/general.vim |   21 ++
+ autoload/trag/java.vim    |   43 ++++
+ autoload/trag.vim         |  606 +++++++++++++++++++++++++++++++++++++++++++++
+ doc/trag.txt              |  139 ++++++++---
+ plugin/trag.vim           |   68 ++++--
+ 6 files changed, 814 insertions(+), 593 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sat Nov 22 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - trag_proj* variables were renamed to trag_project*.
+    - Traggrep: Arguments have changed for conformity with grep commands (an implicit .-argument is prepended)
+    - Make sure tlib is loaded even if it is installed in a different rtp-directory.
+    - Post-process lines (strip whitespace) collected by vimgrep
+    - tlib#Edit(): for list input, set pick_last_item=0, show_empty=1
+    - Aliases for some commands: Trag, Traggrep ...
+
+ autoload/trag.vim |   47 +++++++++++++++++++++++--------
+ plugin/trag.vim   |   78 ++++++++++++++++++++++++++++++++++------------------
+ 2 files changed, 86 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Feb 26 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Use vimgrep with set ei=all as default search mode (can be configured via g:trag_search_mode); by default trag now is a wrapper around vimgrep that does the handling of project-related file-sets and regexp builing for you.
+    - FIX: ruby/f regexp
+
+ autoload/trag.vim |   75 +++++++++++++++++++++++++++++++----------------------
+ doc/trag.txt      |   11 ++++++++
+ plugin/trag.vim   |   25 +++++++++++++++---
+ 3 files changed, 76 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Feb 19 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Quite a few things have changed and I haven't had the time yet to test
+    these changes thorougly. There is a chance that nested patterns thus
+    don't work as described (please report).
+    - Enable search for more than one kinds at once (as comma-separated
+    list)
+    - Enabled <c-e>: Run ex-command on selected lines (e.g. for refactoring
+    purposes)
+    - Enabled <c-s>, <c-v>, <c-t>: Open selected lines in (vertically) split
+    windows or tabs.
+    - Renamed vV kinds to lL (~ let)
+    - New kind: r/R (right hand side argument of an assignment/let, i.e.
+    value)
+    - New kind: fuzzy (typo-tolerant search)
+    - INCOMPATIBLE CHANGE: Renamed "mode" to "kind"
+    - TRag now has some idea of negation. E.g., "TRag !i,w call" will search
+    for the word "call" but ignore matches in comments (if defined for the
+        current filetype)
+    - Alternative methods to define project files: g:trag_files,
+    g:trag_glob, g:trag_proj.
+    - Improved support for ruby, vim
+    - TRagKeyword, trag#CWord(): Customize keyword rx.
+    - g:trag_get_files
+    - [bg]:trag_proj_{&filetype}: Name of the filetype-specific project
+    files catalog (overrides [bg]:trag_proj if defined)
+    - trag#Edit() will now initally select files with the same "basename
+    root" (^\w\+) as the current buffer (the command is thus slightly more
+    useful and can be used as an ad-hoc alternative file switcher)
+    - FIX: Match a line only once
+    - FIX: Caching of regexps
+
+ autoload/trag.vim |  397 +++++++++++++++++++++++++++++++++++++++++------------
+ doc/trag.txt      |  329 +++++++++++++++++++++++++++++++++-----------
+ plugin/trag.vim   |  246 +++++++++++++++++++++++++++------
+ 3 files changed, 760 insertions(+), 212 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Sep 30 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README            |   31 ++++++
+ autoload/trag.vim |  275 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/trag.txt      |  226 +++++++++++++++++++++++++++++++++++++++++++
+ plugin/trag.vim   |  172 +++++++++++++++++++++++++++++++++
+ 4 files changed, 704 insertions(+), 0 deletions(-)

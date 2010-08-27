@@ -1,0 +1,51 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.2, refs/heads/master)
+Author:     erik falor <ewfalor at gmail.com>
+AuthorDate: Thu Apr 10 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    DoMatchParen command re-loads this plugin instead of matchparen.vim.
+    Thanks to James Marshall for this idea.
+
+ plugin/matchparen++.vim |   10 +++++++---
+ 1 files changed, 7 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     erik falor <ewfalor at gmail.com>
+AuthorDate: Wed Mar 19 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Using timeout feature of searchpairpos() to avoid a long delay while
+    finding a matching paren.  Borrowed from Bram's patch #7.1.269.
+    Also accommodates Vim users who don't have the latest patches compiled.
+
+ plugin/matchparen++.vim |   29 ++++++++++++++++++++++++-----
+ 1 files changed, 24 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.99)
+Author:     erik falor <ewfalor at gmail.com>
+AuthorDate: Mon Nov 5 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Using Bram's matchparen.vim plugin from standard distribution as starting point for this version.
+    
+    Print line containing matching brace with echo instead of echomsg so as to not fill message history with non-message items.
+    
+    Truncate matching brace line when it's gonna be too long - this avoids the dreaded "Press ENTER or type command to continue" message that would be so disruptive to workflow.
+    
+    To do this, the plugin must take the &showcmd, &ruler and &laststatus options into consideration.  If you use a custom &rulerformat, you will want to set the global variable g:MP_rulerwidth to the width of your ruler.
+    
+    The variable g:MP_stmt_thresh lets the user specify how far back the plugin may scan for a statement beginning a code block.
+
+ plugin/matchparen++.vim |  273 ++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 201 insertions(+), 72 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     erik falor <ewfalor at gmail.com>
+AuthorDate: Thu Nov 1 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                  |   12 +++++
+ plugin/matchparen++.vim |  119 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 131 insertions(+), 0 deletions(-)

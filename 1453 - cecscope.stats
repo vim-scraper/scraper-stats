@@ -1,0 +1,44 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4, refs/heads/master)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Nov 12 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Security enhanced with fnameescape(), so cecscope now needs vim 7.2.
+    Help menu fixed.
+
+ doc/cecscope.txt    |   27 +++++++++++-----
+ plugin/cecscope.vim |   86 +++++++++++++++++++++++++++++++++------------------
+ 2 files changed, 74 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue Jan 8 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :CS now supports cscope.out database searching; if the current directory or a parent directory up to but not including the $HOME directory has a cscope.out database, it'll be used.  This provides better support to projects with their multiple subdirectories.
+
+ doc/cecscope.txt    |  158 ++++++++++++++++++++++++++
+ plugin/cecscope.vim |  310 ++++++++++++---------------------------------------
+ 2 files changed, 231 insertions(+), 237 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Mon Feb 13 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :CSR included (cscope reset)
+    Changed commands to :CSH, :CSS, :CSS!, :CSL to make it easier to type
+
+ plugin/cecscope.vim |  127 +++++++++++++++++++++++++++++++++------------------
+ 1 files changed, 83 insertions(+), 44 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Mon Jan 30 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |   24 +++
+ plugin/cecscope.vim |  449 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 473 insertions(+), 0 deletions(-)

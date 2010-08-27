@@ -1,0 +1,149 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.96, refs/heads/master)
+Author:     Daniel Price <vim at danprice.fastmail.net>
+AuthorDate: Fri Nov 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Feature: Expanded upon the list of file associations
+    Feature: Expanded searches to the current buffer's directory in addition to the current working directory
+    Feature: Added command line arguments to :Grep and :Replace for recursive searches and case sensitivity
+    Feature: Added toggle for window replace mode
+    Feature: Added toggle for showing file associations list in options explorer
+    Bugfix: Case insensitivity would fail in replacing some patterns
+
+ doc/EasyGrep.txt                |   82 +++++++----
+ plugin/EasyGrep.vim             |  300 ++++++++++++++++++++++++++++++++-------
+ plugin/EasyGrepFileAssociations |   72 +++++++++-
+ 3 files changed, 371 insertions(+), 83 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.951)
+Author:     Daniel Price <vim at danprice.fastmail.net>
+AuthorDate: Mon Mar 23 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Update to 0.95: Fixed an error in calling ReplaceCurrentWord identified by Eric Ho.
+    
+    Feature: Added search and replace on visual selections.
+    Feature: Improved Grepping for items that can be interpreted as regular expressions.  Selections are assumed to be literal, whereas explicit commands are assumed to be regular expressions.
+    Feature: Removed option g:EasyGrepNoDirectMappings in favor of g:EasyGrepOptionPrefix, which allows the option prefix to be changed.
+    Bugfix:  The tracked extension would sometimes fail to be updated when switching between buffers
+    Documentation: Split the documentation into its own file; greatly expanded upon its contents.
+    Change: Activating a mode that is already activated will no longer deactivate it.
+    Change: GrepOptions no longer accepts an argument; use user mode instead.
+    Change: Clarified mapping names; custom mappings will need to be reset.
+
+ doc/EasyGrep.txt                |  519 +++++++++++++++++++++
+ plugin/EasyGrep.vim             |  979 +++++++++++++++++++--------------------
+ plugin/EasyGrepFileAssociations |    1 +
+ 3 files changed, 996 insertions(+), 503 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Daniel Price <vim at danprice.fastmail.net>
+AuthorDate: Tue Jan 27 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Feature: Added forward slash delineated pattern to the Replace command
+    e.g. :Replace /target/replacement/
+    that allows more complicated replacements; you can now work with
+    patterns that have spaces in them.
+    Bugfix: If cursorline is off at the start of a replace, now ensuring that cursorline is turned off for all buffers, and not just the last one
+    Bugfix: fixed an issue with an extra tab being opened during a replacement
+
+ plugin/EasyGrep.vim |   77 +++++++++++++++++++++++++++++++++++++++++++-------
+ 1 files changed, 66 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Daniel Price <vim at danprice.fastmail.net>
+AuthorDate: Sun Jan 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Implemented case sensitivity that is independent of ignorecase; thanks to Doro Wu for contributing to this functionality
+    Changed shortcut key for hidden files from 'i' to 'h'
+
+ plugin/EasyGrep.vim |  169 ++++++++++++++++++++++++++++++++------------------
+ 1 files changed, 108 insertions(+), 61 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Daniel Price <vim at danprice.fastmail.net>
+AuthorDate: Fri Dec 26 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Expanded search of EasyGrepFileAssociations list to every component of 'runtimepath'.  This solves a starting message for those who placed EasyGrepFileAssociations in a location other than the first location in 'runtimepath'.
+
+ plugin/EasyGrep.vim |   38 ++++++++++++++++++++++++++++++--------
+ 1 files changed, 30 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Daniel Price <vim at danprice.fastmail.net>
+AuthorDate: Tue Dec 9 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed paths with spaces in them
+    Folds will now be disabled where replacements are to be made
+    Fixed an error with checking for extra warnings
+    Better highlighting while replacing
+    Recursive mode can no longer be activated when Buffers mode is activated
+
+ plugin/EasyGrep.vim |  121 ++++++++++++++++++++++++++++++++++++++++++--------
+ 1 files changed, 101 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Daniel Price <vim at danprice.fastmail.net>
+AuthorDate: Mon Nov 24 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed an issue with tracking the file extension where sometimes the desired extension wouldn't be registered.
+    Better reporting when no files match.
+    Now warning when searching from a working directory that doesn't match the current file's directory.
+    Added g:EasyGrepExtraWarnings option.
+
+ plugin/EasyGrep.vim |   82 ++++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 56 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Daniel Price <vim at danprice.fastmail.net>
+AuthorDate: Fri Nov 21 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improved Replace and ReplaceUndo
+    Added two configurable modes for how the windows operate when doing a global replace.
+    Fixed an issue with linked filetypes.
+
+ plugin/EasyGrep.vim |  209 +++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 154 insertions(+), 55 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Daniel Price <vim at danprice.fastmail.net>
+AuthorDate: Wed Nov 19 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added experimental :Replace and :ReplaceUndo commands; keymapped <leader>vr for :Replace
+    Improved response when no matches
+
+ plugin/EasyGrep.vim                 |  505 +++++++++++++++++++++++++++++------
+ plugin/EasyGrepFileAssociationsFull |   20 --
+ 2 files changed, 423 insertions(+), 102 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Daniel Price <vim at danprice.fastmail.net>
+AuthorDate: Sat Nov 15 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added option to toggle showing fewer or more options; showing fewer options by default.
+    Added option '?' to print the current configuration and save it to a register.
+    Now creating direct mapping by default; see g:EasyGrepNoDirectMappings to turn this off.
+
+ plugin/EasyGrep.vim                 |  185 ++++++++++++++++++++++------------
+ plugin/EasyGrepFileAssociationsFull |   20 ++++
+ 2 files changed, 140 insertions(+), 65 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Daniel Price <vim at danprice.fastmail.net>
+AuthorDate: Thu Nov 13 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                          |   58 ++
+ plugin/EasyGrep.vim             | 1333 +++++++++++++++++++++++++++++++++++++++
+ plugin/EasyGrepFileAssociations |   11 +
+ 3 files changed, 1402 insertions(+), 0 deletions(-)

@@ -1,0 +1,78 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2, refs/heads/master)
+Author:     Jose Figueroa Martinez <coloso at gmail.com>
+AuthorDate: Mon Apr 12 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Removed the size limit for the buffer to send by calling "screen" multiple times.
+    - Fixed behavior with multiple tabs.
+    - Tip: It is better to run the interpreter under "rlwrap".
+    - Limitation: Sending to much text can be slow.
+
+ plugin/vicle.vim |  227 +++++++++++++++++++++++++++++++++---------------------
+ 1 files changed, 139 insertions(+), 88 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.3)
+Author:     Jose Figueroa Martinez <coloso at gmail.com>
+AuthorDate: Tue Oct 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed copying multiple times the same selection when sending a selected text
+
+ plugin/vicle.vim |   14 +++++++++-----
+ 1 files changed, 9 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.2)
+Author:     Jose Figueroa Martinez <coloso at gmail.com>
+AuthorDate: Mon Oct 12 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed cursor return to the last position when sending a command
+
+ plugin/vicle.vim |   21 +++++++++++----------
+ 1 files changed, 11 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.1)
+Author:     Jose Figueroa Martinez <coloso at gmail.com>
+AuthorDate: Sun Oct 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Edition Mode are 1 (On) by default.
+    - Fixed the annoying "Press ENTER ...." that happend when yank send more than 2 lines to Screen.
+    - More documentation
+
+ plugin/vicle.vim |   95 ++++++++++++++++++++++++++++++++----------------------
+ 1 files changed, 56 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Jose Figueroa Martinez <coloso at gmail.com>
+AuthorDate: Fri Oct 2 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added a Edition Mode that not clear the Vim screen and send only a custom selection of text. By default, the current line.
+    - Added the feature for send selected text using the Vim's Visual Mode
+    - Added more tips to use vicle with more than one language
+
+ plugin/vicle.vim |  190 ++++++++++++++++++++++++++++++++++++++++++++++++------
+ 1 files changed, 169 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     Jose Figueroa Martinez <coloso at gmail.com>
+AuthorDate: Tue Feb 24 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix problem with load/saving history commands, removed some doc, a command for send the content.
+    The previous version are for Vim7 too. Sorry for the mistake.
+
+ plugin/vicle.vim |   28 +++++++++++++++++++---------
+ 1 files changed, 19 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.0)
+Author:     Jose Figueroa Martinez <coloso at gmail.com>
+AuthorDate: Mon Feb 23 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README           |  123 ++++++++++++++++++++
+ plugin/vicle.vim |  328 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 451 insertions(+), 0 deletions(-)

@@ -1,0 +1,66 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2.2, refs/heads/master)
+Author:     Henning Hasemann <henning at hasemail.de>
+AuthorDate: Sat Jul 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Little color fixes
+
+ colors/pyte.vim |    8 +++++---
+ 1 files changed, 5 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
+Author:     Henning Hasemann <henning at hasemail.de>
+AuthorDate: Tue Jun 13 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed issue with Error-color, if you used cursorline before, errors got white-on white, now foreground color for errors is red which schould cause your attention on every of my defined background colors.
+
+ colors/pyte.vim |   35 ++++++++++++++++++-----------------
+ 1 files changed, 18 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Henning Hasemann <henning at hasemail.de>
+AuthorDate: Thu Jun 8 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for some new features in vim:
+    - CursorLines
+    - TabLine
+    - Pmenu (auto-completion)
+    
+    Note that this colorscheme does not (and will propably never) *require* VIM v7, as vims-scripting language provides conditionals to query the version.
+    So it should look (at your opinion) nice with VIM6 and VIM7 now.
+
+ colors/pyte.vim |   18 +++++++++++++++++-
+ 1 files changed, 17 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Henning Hasemann <henning at hasemail.de>
+AuthorDate: Thu Jun 8 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Defined colors for diff-view (vim -d)
+
+ colors/pyte.vim |    7 +++++++
+ 1 files changed, 7 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.01)
+Author:     Henning Hasemann <henning at hasemail.de>
+AuthorDate: Tue Jun 6 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Made NonText Foreground grey so the "~" signs on an empty document dont look that ugly anymore
+
+ colors/pyte.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Henning Hasemann <henning at hasemail.de>
+AuthorDate: Sun Mar 12 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README          |    6 +++++
+ colors/pyte.vim |   68 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 74 insertions(+), 0 deletions(-)

@@ -1,0 +1,98 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.4, refs/heads/master)
+Author:     Wang Dong <winterTTr.vim at gmail.com>
+AuthorDate: Tue Jun 19 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -- Add function TTrCodeAssistor_ToggleComment to add or
+       remove comments of the current line or v selected area.
+    You can map it to a key like this :
+        nnoremap <F7> :call TTrCodeAssistor_ToggleComments()<CR>
+        vnoremap <F7> :call TTrCodeAssistor_ToggleComments()<CR>
+    
+    I think you can under stand the TTrCodeAssistor_Templates , so , you can expand it when you need.
+
+ plugin/TTrCodeAssistor.vim |   37 +++++++++++++++++++++++++++++++++++--
+ 1 files changed, 35 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
+Author:     Wang Dong <winterTTr.vim at gmail.com>
+AuthorDate: Fri Jan 26 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -- Modify the code to match the function name exactly
+    -- Let the menu to display rightly
+    -- Add the function for <bs> to make it delete the redundant ) while the ) is close to (
+    -- little bug fixed
+
+ plugin/TTrCodeAssistor.vim |   51 ++++++++++++++++++++++++++++++++++++++-----
+ 1 files changed, 45 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2.1)
+Author:     Wang Dong <winterTTr.vim at gmail.com>
+AuthorDate: Mon Jan 22 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    remove the confirm info used to debug
+
+ plugin/TTrCodeAssistor.vim |    1 -
+ 1 files changed, 0 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
+Author:     Wang Dong <winterTTr.vim at gmail.com>
+AuthorDate: Thu Jan 18 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -- Add the Menu for this plugin which let the user can
+       start or stop all the functions.
+    -- Add TTrCodeAssistor_AutoStart variable which can let
+       this plugin start automaticlly.
+    -- Fix the problem about the Function name which is followed
+       by its owner ,such as , the member function of a class.
+
+ plugin/TTrCodeAssistor.vim |  163 ++++++++++++++++++++++++++++++++------------
+ 1 files changed, 120 insertions(+), 43 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
+Author:     Wang Dong <winterTTr.vim at gmail.com>
+AuthorDate: Wed Jan 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -- Add the function for key ')' , make it intelligent on whether to insert himself or just more to the next ')'
+    -- Remove the <end> label from the function prototype completation , which is replace by the function of key ' )'
+
+ plugin/TTrCodeAssistor.vim |   82 +++++++++++++++++++++++++++++++++++++------
+ 1 files changed, 70 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Wang Dong <winterTTr.vim at gmail.com>
+AuthorDate: Tue Jan 16 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -- Add the expand "main"
+    -- Make the key '(' to have the ability to complete the function prototype according to you tag files
+    
+    Enjoy it yourself.!! ;o)
+
+ plugin/TTrCodeAssistor.vim |  135 +++++++++++++++++++++++++++++++++++++-------
+ 1 files changed, 114 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Wang Dong <winterTTr.vim at gmail.com>
+AuthorDate: Mon Jan 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     Modify the main process to make it clear. Add sulotion to the <for> to replace the += 1 or += -1 to += and -- . Add new expand word while modifying some expands to make it more convenient.
+
+ plugin/TTrCodeAssistor.vim |  397 ++++++++++++++++++++++++++++++--------------
+ 1 files changed, 270 insertions(+), 127 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Wang Dong <winterTTr.vim at gmail.com>
+AuthorDate: Thu Jan 4 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                     |   39 ++++++++
+ plugin/TTrCodeAssistor.vim |  225 ++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 264 insertions(+), 0 deletions(-)

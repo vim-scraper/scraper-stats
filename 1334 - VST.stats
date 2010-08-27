@@ -1,0 +1,121 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.4, refs/heads/master)
+Author:     Mikolaj Machowski <mikmach at wp.pl>
+AuthorDate: Sat Nov 4 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - FIX: Vst link broken
+    - FIX: & in URLs double encoded
+    - FIX: broken chained links with uppercase letters
+
+ autoload/vst/vst.vim |   15 ++++++---------
+ doc2/vst.txt         |   40 ++++++++--------------------------------
+ plugin/vstplugin.vim |    4 ++--
+ 3 files changed, 16 insertions(+), 43 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Mikolaj Machowski <mikmach at wp.pl>
+AuthorDate: Tue Oct 31 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      - ADD: show number of directive line and percentage position in file for
+        easier navigation when folding by directive
+      - ADD: proper encryption of URIs (amp, percentage)
+      - ADD: make preproc auxiliary command recursive
+      - ADD: fold according to level of headers: fold1, fold2, etc.
+      - ADD: recursive folding: foldr
+      - ADD: [LaTeX] containers as ghost commands
+      - ADD: [LaTeX] Generator line (debug purposes)
+      - CHG: make folding by directive more flexible
+      - CHG: improve layout of fold texts with centered titles
+      - CHG: improve layout of text table of contents with centered titles
+      - CHG: level of recursiveness is now &maxfuncdepth/2 (50 should be enough
+        for everybody!)
+      - CHG: [HTML] when source are lists starting from no-one use transitional
+        doctype, otherwise strict
+      - CHG: [HTML] "Downgrade" to HTML 4.01 (no sense to use XHTML doctype when
+        using content text/html)
+      - FIX: length of ornaments inserted with <C-B>o
+      - FIX: show output of auxiliary commands depending on table
+      - FIX: presence of apostrophes in section titles could cause problems in folding
+      - FIX: internal links in fancy formatted text could be broken
+      - FIX: unnecessary creation of targets from links broken in several lines
+      - FIX: minor fixes in docs
+      - FIX: optimizations, 10-15% speed gains
+      - FIX: [LaTeX] too much whitespace at the end of footnotes
+      - FIX: [LaTeX] internal links work again
+      - FIX: [S5] uploaded CSS files for web page to make presentation work (sorry
+        George!)
+
+ autoload/vst/vst.vim | 2434 ++++++++++++++++++++++++++++----------------------
+ doc2/vst.txt         |  132 ++-
+ plugin/vstplugin.vim |    4 +-
+ 3 files changed, 1440 insertions(+), 1130 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Mikolaj Machowski <mikmach at wp.pl>
+AuthorDate: Fri Oct 13 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      - ADD: <C-B>o auxiliary mapping for ornaments
+      - ADD: section numbers in fold auxiliary command
+      - ADD: section numbers in toc auxiliary command
+      - ADD: [LaTeX] raw directive accepts tex, not only latex argument
+      - CHG: don't look for including commands in auxiliary commands - massive
+        speed gains
+      - CHG: [LaTeX] change default font size for 12pt
+      - FIX: [HTML] all styles from multiple 2html directives are in <head>
+      - FIX: [HTML] @ in 2html directive was breaking syntax highlighting
+      - FIX: [HTML] restore validity of generated documents
+      - FIX: [LaTeX] bug with _ in filenames in raw latex file option
+      - FIX: many minor bugs
+
+ autoload/vst/default.css |   38 +++---
+ autoload/vst/vst.vim     |  404 +++++++++++++++++++++++++++++++++++++++-------
+ doc2/vst.txt             |   98 +++++++-----
+ plugin/vstplugin.vim     |    8 +-
+ 4 files changed, 428 insertions(+), 120 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Mikolaj Machowski <mikmach at wp.pl>
+AuthorDate: Sun Jul 23 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      - ADD: support for ltrim, rtrim, trim for regular replacement
+      - CHG: `including commands`_ are working recursively now
+      - FIX: wrong indentation of included files
+      - FIX: problems with backslash as last character in line
+      - FIX: minor fixes in docs
+      - FIX: [pdf] incorrect call of cursor function
+
+ autoload/vst/vst.vim |  236 +++++++++++++++++++++++++++++---------------------
+ doc2/vst.txt         |  108 +++++++++++------------
+ plugin/vstplugin.vim |    2 +-
+ 3 files changed, 189 insertions(+), 157 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Mikolaj Machowski <mikmach at wp.pl>
+AuthorDate: Sat Jul 1 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Tons of imrovements and bugfixes from last vim-online release. Finally stable 1.0 because of final Vim7. Enjoy!
+
+ README                         |   48 +
+ autoload/vst/default.css       |   99 +
+ autoload/vst/lightblue.css     |  110 +
+ autoload/vst/myhtmlvst.vim     |   18 +
+ autoload/vst/s5ui/blank.gif    |  Bin 0 -> 49 bytes
+ autoload/vst/s5ui/framing.css  |   23 +
+ autoload/vst/s5ui/iepngfix.htc |   42 +
+ autoload/vst/s5ui/opera.css    |    7 +
+ autoload/vst/s5ui/outline.css  |   15 +
+ autoload/vst/s5ui/pretty.css   |   86 +
+ autoload/vst/s5ui/print.css    |    1 +
+ autoload/vst/s5ui/s5-core.css  |    9 +
+ autoload/vst/s5ui/slides.css   |    3 +
+ autoload/vst/s5ui/slides.js    |  552 ++++
+ autoload/vst/vst.vim           | 5584 ++++++++++++++++++++++++++++++++++++++++
+ doc2/test.png                  |  Bin 0 -> 6912 bytes
+ doc2/vst-s5.txt                |  145 ++
+ doc2/vst.txt                   | 2943 +++++++++++++++++++++
+ plugin/vstplugin.vim           |   64 +
+ 19 files changed, 9749 insertions(+), 0 deletions(-)

@@ -1,0 +1,39 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3, refs/heads/master)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Sun Feb 8 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    added more options for pluginkiller's checkout: acd, insertmode, num, spell
+
+ PluginKiller            |    2 -
+ doc/pluginkiller.txt    |   19 +-
+ plugin/pluginkiller.vim |  428 +++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 437 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Thu Oct 19 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The acd option even causes the pluginkiller itself problems; hence, it doesn't define it for testing (although a commented out version is available).
+    
+    Pluginkiller is now easier to use: type :PK in a test file with vim and the pluginkiller will initialize itself using a server.  Pluginkiller needs +clientserver enabled vim.
+
+ PluginKiller                  |    2 +
+ PluginKiller/pluginkiller     |    2 -
+ PluginKiller/pluginkiller.vim |  369 -----------------------------------------
+ doc/pluginkiller.txt          |  104 +++++++-----
+ 4 files changed, 67 insertions(+), 410 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Mar 8 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload.
+
+ PluginKiller/pluginkiller     |    2 +
+ PluginKiller/pluginkiller.vim |  369 +++++++++++++++++++++++++++++++++++++++++
+ README                        |   12 ++
+ doc/pluginkiller.txt          |  148 ++++++++++++++++
+ 4 files changed, 531 insertions(+), 0 deletions(-)

@@ -1,0 +1,33 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     drachen kiraa <drachenkiraa at gmail.com>
+AuthorDate: Wed Jul 1 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    FIX: Cursor disappeared when moving it in a Comment. This ONLY
+      happened on one terminal (gnome-terminal). Now the Comment ctermfg
+      color is DarkGreen for all 8 color Xterms. But you'll still get the
+      original color (DarkGray) if your terminal supports more colors
+      (when you force it by setting 't_Co' to 16 or more).
+    Changed 'Cursor', 'CursorLine', 'CursorColumn' colors to
+      DarkBlue instead of the ugly Green.
+    Changed SpellRare guifg color from Magenta to DarkMagenta.
+    Changed IncSearch guifg color from LighMagenta to Green.
+    Changed PreCondit guifg color to a darker yellow color.
+    Set ctermfg and guifg options of 'Search' and 'IncSearch' to the
+      background color.
+    Made 'Character' guifg color more brighter.
+    Changed 'Special' guifg color from Blue to a nice Red color.
+
+ colors/kalt.vim |   79 ++++++++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 55 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     drachen kiraa <drachenkiraa at gmail.com>
+AuthorDate: Thu Jun 25 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README          |    8 +++
+ colors/kalt.vim |  182 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 190 insertions(+), 0 deletions(-)

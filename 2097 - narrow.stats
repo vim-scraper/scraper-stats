@@ -1,0 +1,52 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2.1, refs/heads/master)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Sat Feb 28 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fix minor bugs:  - |:Widen| raises an error for buffers without fold.  - |:Narrow| doesn't hide lines smaller than 'foldminlines'.
+
+ autoload/narrow.vim |   41 ++++++++++++++++++++++++-------
+ doc/narrow.txt      |   67 +++++++++++++++++++++++++++++++++++++++++++++-----
+ plugin/narrow.vim   |   24 ++++++++++++++++--
+ 3 files changed, 113 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Fri Dec 28 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fix |:Narrow| and |:Widen| not to use temporary files.  Now |:Widen| correctly works even if the target buffer is |:Narrow|'ed by two or more Vim processes.
+    - Modify |:Narrow| to |zz| after narrowing for visibility.
+    - Modify |:Narrow| to include all lines of closed folds in [range].
+
+ autoload/narrow.vim |   84 ++++++++++++++++++++++++++++----------------------
+ doc/narrow.txt      |   19 +++++------
+ plugin/narrow.vim   |    4 +-
+ 3 files changed, 58 insertions(+), 49 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Thu Dec 27 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fix the bug that 'foldenable' is not set after :Narrow.
+    - Fix the bug that the cursor is moved to somewhere after :Widen.
+    - Add g:narrow_allow_overridingp.
+
+ autoload/narrow.vim |   33 ++++++++++++++++++++++++---------
+ doc/narrow.txt      |   18 +++++++++++++++---
+ plugin/narrow.vim   |    4 ++--
+ 3 files changed, 41 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Sat Dec 15 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |   28 ++++++++++
+ autoload/narrow.vim |  150 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/narrow.txt      |   97 +++++++++++++++++++++++++++++++++
+ plugin/narrow.vim   |   23 ++++++++
+ 4 files changed, 298 insertions(+), 0 deletions(-)

@@ -1,0 +1,88 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5, refs/heads/master)
+Author:     Martin Stubenschrott <stubenschrott at gmx.net>
+AuthorDate: Thu Nov 1 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+            * IMPORTANT: Last and final release of icomplete, use OmniCppComplete in future
+            * autocompletion on . or -> (patch by Sanjaya Karunase)
+            * add ability to change name of .icomplete_taglist (Tim Murison)
+            * fixed some segfaults (thanks Johannes Winkelmann)
+            * cleaned up the doc
+
+ AUTHORS                |    2 ++
+ ChangeLog              |    7 +++++++
+ TODO                   |    3 ++-
+ plugin/cppcomplete.vim |   35 ++++++++++++++++++++++++++++++++++-
+ plugin/icomplete.vim   |    8 ++++++--
+ src/list.c             |    3 ++-
+ src/main.c             |   27 +++++++++++++++------------
+ src/options.c          |    6 ++++++
+ src/options.h          |    1 +
+ src/parse.c            |    3 ++-
+ src/tree.c             |    2 ++
+ tags_my                |    6 ------
+ 12 files changed, 79 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Martin Stubenschrott <stubenschrott at gmx.net>
+AuthorDate: Wed Apr 19 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Apr 19, 2006:
+    	* version 0.4
+    	* completely new namespace support (by Maxime Coste)
+    	* -t option to specify different tags filename (patch by Yuxuan Wang)
+    	* completely new #include file parser, fixes problem of macos which does not understand \\s codes in regexps
+    	* fixes segfault (replaced mmap with fread)
+    	* improved java support
+    	* including a shell script to create a java tags file for system classes
+    	* placeholders work for more than two arguments now (forgot the 'g' in the
+    	substitute command)
+    	* added sys/types.h in parse.h and tree.h which solves compiling under
+    	MacOS X
+
+ AUTHORS                      |   14 +
+ COPYING                      |  340 +++
+ ChangeLog                    |   59 +
+ Dir.mk                       |    6 +
+ README                       |   31 +
+ README.orig                  |   33 +
+ TODO                         |    5 +
+ common.mk                    |    7 +
+ configure                    |   58 +
+ doxyfile                     | 1227 ++++++++
+ icomplete.conf               |   29 +
+ icomplete.log                | 6551 ++++++++++++++++++++++++++++++++++++++++++
+ mkjavatags.sh                |   17 +
+ plugin/cppcomplete.vim       |   88 +
+ plugin/icomplete.vim         |   14 +
+ scripts/checks.sh            |  318 ++
+ scripts/configure-private.sh |  506 ++++
+ scripts/configure.sh         |  341 +++
+ scripts/dist                 |  124 +
+ scripts/generate-tags        |   69 +
+ scripts/install              |  263 ++
+ scripts/lib.mk               |  156 +
+ scripts/main.mk              |  110 +
+ scripts/sedin                |   79 +
+ scripts/sub.mk               |  194 ++
+ scripts/top.mk               |   59 +
+ scripts/utils.sh             |  338 +++
+ src/Dir.mk                   |   12 +
+ src/error.c                  |   34 +
+ src/error.h                  |   17 +
+ src/list.c                   |   81 +
+ src/list.h                   |   83 +
+ src/main.c                   |  391 +++
+ src/options.c                |  203 ++
+ src/options.h                |   60 +
+ src/parse.c                  |  938 ++++++
+ src/parse.h                  |   91 +
+ src/readtags.c               |  959 ++++++
+ src/readtags.h               |  252 ++
+ src/tree.c                   |  130 +
+ src/tree.h                   |   88 +
+ src/treeold.c                |  499 ++++
+ src/treeold.h                |   40 +
+ tags_my                      |    6 +
+ 44 files changed, 14920 insertions(+), 0 deletions(-)

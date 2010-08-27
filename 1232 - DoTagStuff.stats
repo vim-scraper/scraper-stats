@@ -1,0 +1,39 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2.2, refs/heads/master)
+Author:     Gary Holloway <gary at castandcrew dot com>
+AuthorDate: Fri Mar 11 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed typo in README; added note that samples are intended only for gui (i.e., only set guifg/guibg).
+
+ HighlightTags/README |    6 ++++--
+ 1 files changed, 4 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Gary Holloway <gary at castandcrew dot com>
+AuthorDate: Thu Mar 10 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added more debugging output (when run with -D).
+    
+    Added note to README:  Must use --fields=l option to ctags to include the file language in the tag entries (needed for syntax names).
+
+ HighlightTags/README        |   21 ++++++++++++++-------
+ HighlightTags/find_tagstuff |    5 ++++-
+ autoload/.SetupTags.vim.swp |  Bin 12288 -> 0 bytes
+ 3 files changed, 18 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Gary Holloway <gary at castandcrew dot com>
+AuthorDate: Mon Mar 7 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ HighlightTags/README                |   27 +
+ HighlightTags/after/syntax/c.vim    |  180 ++++++
+ HighlightTags/after/syntax/perl.vim |   16 +
+ HighlightTags/find_tagstuff         | 1026 +++++++++++++++++++++++++++++++++++
+ README                              |   11 +
+ autoload/.SetupTags.vim.swp         |  Bin 0 -> 12288 bytes
+ autoload/DoTagStuff.vim             |   10 +
+ 7 files changed, 1270 insertions(+), 0 deletions(-)

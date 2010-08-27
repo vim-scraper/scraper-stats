@@ -1,0 +1,19 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2.2, refs/heads/master)
+Author:     drdr xp <drdr.xp at gmail.com>
+AuthorDate: Sun Jun 15 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed fix the bug of some text being selected at start
+    Fixed bug of cursor at first column not being rendered correctly
+    Fixed fix no item bug.
+    Added add default cursor position at template end
+
+ README                                            |   24 ++
+ plugin/template.vim                               |  447 +++++++++++++++++++++
+ plugin/templateVar.vim                            |   30 ++
+ xt/ftplugin/c/c.template.vim                      |   62 +++
+ xt/ftplugin/html/html.template.vim                |   20 +
+ xt/ftplugin/javascript/javascript.template.vim    |   91 +++++
+ xt/ftplugin/module/module.javascript.template.vim |   18 +
+ xt/ftplugin/vim/vim.template.vim                  |    4 +
+ 8 files changed, 696 insertions(+), 0 deletions(-)

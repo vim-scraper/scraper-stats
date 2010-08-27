@@ -1,0 +1,41 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3, refs/heads/master)
+Author:     Meikel Brandmeyer <Brandels_Mikesh at web.de>
+AuthorDate: Sun Mar 1 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New Features:
+     * Skip
+     * Todo
+     * BailOut
+     * SetOutputFile/FlushOutput
+    
+    Uses now Harnesses under the hood.
+
+ LICENSE.VimTAP            |   21 ---
+ VimTAP-0.3/LICENSE.VimTAP |   21 +++
+ VimTAP-0.3/vtruntest.sh   |   51 ++++++
+ autoload/vimtap.vim       |  369 +++++++++++++++++++++++++++++++++++++++-----
+ doc/VimTAP.txt            |  160 ++++++++++++++++----
+ vtruntest.sh              |   44 ------
+ 6 files changed, 530 insertions(+), 136 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Meikel Brandmeyer <Brandels_Mikesh at web.de>
+AuthorDate: Mon Apr 14 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Two new test functions are introduced, Like und Unlike, for use with
+    regular expressions instead of concrete values for comparison.
+    
+    Some online documentation was added.
+    
+    The vtruntest.sh utility was also added to provide a driver, which can
+    be used to run tests from outside vim. One possibility is for example
+    the runtests of Perl's TAP::Parser: runtests -e 'sh vtruntest.sh'
+
+ LICENSE.VimTAP      |   21 ++++++
+ README              |   20 +++++
+ autoload/vimtap.vim |  197 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/VimTAP.txt      |  145 +++++++++++++++++++++++++++++++++++++
+ vtruntest.sh        |   44 +++++++++++
+ 5 files changed, 427 insertions(+), 0 deletions(-)

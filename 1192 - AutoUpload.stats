@@ -1,0 +1,40 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2, refs/heads/master)
+Author:     Mariusz Gniazdowski <ptr128 at gmail.com>
+AuthorDate: Sun Jan 30 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Remote locations can now be contained in buffers (in 'modelines'). Bugfixes.
+
+ plugin/autoupload.vim |  205 +++++++++++++++++++++++++++++++++++++++++++------
+ 1 files changed, 182 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Mariusz Gniazdowski <ptr128 at gmail.com>
+AuthorDate: Sat Jan 29 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Feature enhancements: multiple 'maps' files, multiple uploads, more verbosity, absolute paths.
+
+ plugin/autoupload.vim |  241 ++++++++++++++++++++++++++++++++++++++++---------
+ 1 files changed, 198 insertions(+), 43 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.01)
+Author:     Mariusz Gniazdowski <ptr128 at gmail.com>
+AuthorDate: Sat Jan 29 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Serious bug fixed ( file name like "bbcc" was matching file name "aabbcc" and uploaded at wrong address )
+
+ plugin/autoupload.vim |    7 +++++--
+ 1 files changed, 5 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Mariusz Gniazdowski <ptr128 at gmail.com>
+AuthorDate: Fri Jan 28 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                |   91 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/autoupload.vim |   85 +++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 176 insertions(+), 0 deletions(-)

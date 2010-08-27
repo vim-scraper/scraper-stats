@@ -1,0 +1,25 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3, refs/heads/master)
+Author:     Stefano Zacchiroli <zack at bononia.it>
+AuthorDate: Sun Jul 22 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - quote the name part of returned addresses, so that names with (e.g.) commas does not break the headers
+    - change license to GPL v3 or above
+
+ plugin/lbdbq.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Stefano Zacchiroli <zack at bononia.it>
+AuthorDate: Mon Jan 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - bugfix for lines which are continuation of RFC822 fields
+    - added URL field in the plugin
+    - less stupid vmappings (i.e. more efficient)
+    - normalize spaces when expanding contacts
+    - silent mappings
+
+ README           |   21 +++++++++
+ plugin/lbdbq.vim |  124 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 145 insertions(+), 0 deletions(-)

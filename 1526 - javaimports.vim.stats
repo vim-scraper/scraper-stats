@@ -1,0 +1,66 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.6, refs/heads/master)
+Author:     Steve Kreyer <steve.kreyer at web.de>
+AuthorDate: Tue Apr 25 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added Filetype auto command
+
+ libvim_javaimports.c   |  111 ------------------------------------------------
+ plugin/javaimports.vim |   18 +++----
+ 2 files changed, 8 insertions(+), 121 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.5)
+Author:     Steve Kreyer <steve.kreyer at web.de>
+AuthorDate: Tue Apr 25 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed bug  in vim script file
+    - Added org.* classes to lib
+    - Changed installation directory to ~/.vim directory,
+      so an installation as root is no longer required
+
+ Makefile               |   10 +-
+ README.orig            |    3 +-
+ libvim_javaimports.c   |  757 +++++++++++++++++++++++++++++++++++++++++++++++-
+ plugin/javaimports.vim |   77 ++++--
+ 4 files changed, 816 insertions(+), 31 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.3)
+Author:     Steve Kreyer <steve.kreyer at web.de>
+AuthorDate: Mon Apr 24 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Make the plugin a little bit more user friendly.
+    If ambiguous imports occure, the user can choose
+    which import clause to insert.
+
+ Makefile               |    4 +-
+ libvim_javaimports.c   |  100 +++++++++++++++++++++++++-----------------------
+ plugin/javaimports.vim |   72 +++++++++++++++++++++++++++++++++-
+ 3 files changed, 124 insertions(+), 52 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.2)
+Author:     Steve Kreyer <steve.kreyer at web.de>
+AuthorDate: Mon Apr 24 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Changed key mapping from Ctrl-i to `ii
+
+ README.orig            |    2 +-
+ libvim_javaimports.c   |    6 ++++++
+ plugin/javaimports.vim |    5 ++++-
+ 3 files changed, 11 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
+Author:     Steve Kreyer <steve.kreyer at web.de>
+AuthorDate: Mon Apr 24 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ Makefile               |   22 +
+ README                 |    9 +
+ README.orig            |    9 +
+ libvim_javaimports.c   | 2990 ++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/javaimports.vim |    9 +
+ 5 files changed, 3039 insertions(+), 0 deletions(-)

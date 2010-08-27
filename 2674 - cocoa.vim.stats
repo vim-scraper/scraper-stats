@@ -1,0 +1,130 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4, refs/heads/master)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Wed Mar 31 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Many bug fixes and miscellaneous improvements.
+
+ after/objc_enhanced.vim                           |   59 -
+ autoload/objc/cocoacomplete.vim                   |    2 +-
+ autoload/objc/man.vim                             |   14 +-
+ doc/cocoa.txt                                     |    7 +-
+ ftplugin/objc_cocoa_mappings.vim                  |   15 +
+ lib/cocoa_indexes/cocoa_indexes/classes.txt       |  637 -------
+ lib/cocoa_indexes/cocoa_indexes/constants.txt     | 1888 ---------------------
+ lib/cocoa_indexes/cocoa_indexes/functions.txt     |  320 ----
+ lib/cocoa_indexes/cocoa_indexes/methods.txt.gz    |  Bin 82161 -> 0 bytes
+ lib/cocoa_indexes/cocoa_indexes/notifications.txt |   95 -
+ lib/cocoa_indexes/cocoa_indexes/types.txt         |  259 ---
+ lib/extras/README_if_you_like                     |    2 +
+ lib/extras/cocoa_definitions.pyc                  |  Bin 5190 -> 5190 bytes
+ lib/extras/cocoa_indexes/classes.txt              |  637 +++++++
+ lib/extras/cocoa_indexes/constants.txt            | 1714 +++++++++++++++++++
+ lib/extras/cocoa_indexes/functions.txt            |  330 ++++
+ lib/extras/cocoa_indexes/methods.txt.gz           |  Bin 0 -> 82161 bytes
+ lib/extras/cocoa_indexes/notifications.txt        |  105 ++
+ lib/extras/cocoa_indexes/types.txt                |  222 +++
+ lib/get_methods.sh                                |    5 +-
+ plugin/cocoa.vim                                  |    3 +-
+ syntax/cocoa_keywords.vim                         |   14 +-
+ syntax/objc_enhanced.vim                          |    2 +-
+ 23 files changed, 3055 insertions(+), 3275 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Mon Dec 28 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a number of bugs, and added support for the iPhone SDK and Snow Leopard.
+
+ after/objc_enhanced.vim                           |   59 +
+ autoload/.DS_Store                                |  Bin 6148 -> 0 bytes
+ autoload/objc/man.vim                             |   43 +-
+ autoload/objc/method_builder.vim                  |    1 +
+ autoload/objc/method_list.vim                     |    3 +-
+ autoload/objc/pum_snippet.vim                     |   14 +-
+ doc/cocoa.txt                                     |   76 +-
+ ftplugin/objc_cocoa_mappings.vim                  |   48 +-
+ lib/.DS_Store                                     |  Bin 6148 -> 0 bytes
+ lib/cocoa_indexes/classes.txt                     |   78 +
+ lib/cocoa_indexes/cocoa_indexes/classes.txt       |  637 +++++++
+ lib/cocoa_indexes/cocoa_indexes/constants.txt     | 1888 +++++++++++++++++++++
+ lib/cocoa_indexes/cocoa_indexes/functions.txt     |  320 ++++
+ lib/cocoa_indexes/cocoa_indexes/methods.txt.gz    |  Bin 0 -> 82161 bytes
+ lib/cocoa_indexes/cocoa_indexes/notifications.txt |   95 +
+ lib/cocoa_indexes/cocoa_indexes/types.txt         |  259 +++
+ lib/cocoa_indexes/constants.txt                   |  267 +++-
+ lib/cocoa_indexes/functions.txt                   |  608 ++++---
+ lib/cocoa_indexes/methods.txt.gz                  |  Bin 78079 -> 82161 bytes
+ lib/cocoa_indexes/types.txt                       |   14 +-
+ lib/extras/README-if-you-like                     |    2 +
+ lib/extras/README_if_you_like                     |    2 -
+ lib/extras/build_syntaxfile.py                    |   10 +-
+ lib/extras/cocoa_classes.py                       |   21 +-
+ lib/extras/cocoa_definitions.py                   |   39 +-
+ lib/extras/cocoa_definitions.pyc                  |  Bin 4944 -> 5190 bytes
+ plugin/cocoa.vim                                  |    5 +-
+ syntax/cocoa_keywords.vim                         |   18 +-
+ 28 files changed, 4125 insertions(+), 382 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Wed Jul 1 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Many, many bug fixes and improvements, including multi-line message highlighting, multi-line documentation message lookup, automatic detection of ivar classes for completion, support for #pragma marks in :ListMethods, and many other things.
+
+ autoload/objc/cocoacomplete.vim  |   50 ++++++++++++++++-----
+ autoload/objc/man.vim            |   56 ++++++++++++++++++++++-
+ autoload/objc/method_builder.vim |    9 +++-
+ autoload/objc/method_list.vim    |   22 ++++++---
+ autoload/objc/pum_snippet.vim    |   12 +++++
+ doc/cocoa.txt                    |    4 +-
+ ftplugin/objc_cocoa_mappings.vim |    8 ++--
+ lib/cocoa_indexes/functions.txt  |   90 +++++++++++++++++++-------------------
+ lib/cocoa_indexes/methods.txt.gz |  Bin 78328 -> 78079 bytes
+ lib/extras/README_if_you_like    |    2 +-
+ lib/extras/cocoa_definitions.py  |   11 +++--
+ lib/extras/cocoa_definitions.pyc |  Bin 0 -> 4944 bytes
+ lib/extras/cocoa_methods.py      |    4 +-
+ lib/extras/superclasses          |  Bin 17164 -> 17116 bytes
+ lib/extras/superclasses.m        |   12 +++---
+ plugin/cocoa.vim                 |    4 +-
+ syntax/objc_enhanced.vim         |   18 +++++---
+ 17 files changed, 208 insertions(+), 94 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Michael Sanders <msanders42+vim at gmail.com>
+AuthorDate: Sat Jun 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                              |   18 +
+ autoload/.DS_Store                  |  Bin 0 -> 6148 bytes
+ autoload/objc/cocoacomplete.vim     |  187 +++++
+ autoload/objc/man.vim               |  110 +++
+ autoload/objc/method_builder.vim    |  116 +++
+ autoload/objc/method_list.vim       |  106 +++
+ autoload/objc/pum_snippet.vim       |   87 +++
+ doc/cocoa.txt                       |  109 +++
+ ftplugin/objc_cocoa_mappings.vim    |   50 ++
+ lib/.DS_Store                       |  Bin 0 -> 6148 bytes
+ lib/cocoa_indexes/classes.txt       |  559 ++++++++++++++
+ lib/cocoa_indexes/constants.txt     | 1449 +++++++++++++++++++++++++++++++++++
+ lib/cocoa_indexes/functions.txt     |  278 +++++++
+ lib/cocoa_indexes/methods.txt.gz    |  Bin 0 -> 78328 bytes
+ lib/cocoa_indexes/notifications.txt |  105 +++
+ lib/cocoa_indexes/types.txt         |  210 +++++
+ lib/extras/README_if_you_like       |    2 +
+ lib/extras/build_syntaxfile.py      |   94 +++
+ lib/extras/cocoa_classes.py         |   59 ++
+ lib/extras/cocoa_definitions.py     |   92 +++
+ lib/extras/cocoa_methods.py         |   63 ++
+ lib/extras/superclasses             |  Bin 0 -> 17164 bytes
+ lib/extras/superclasses.m           |   47 ++
+ lib/get_methods.sh                  |    3 +
+ plugin/cocoa.vim                    |   16 +
+ syntax/cocoa_keywords.vim           |   28 +
+ syntax/objc_enhanced.vim            |   55 ++
+ 27 files changed, 3843 insertions(+), 0 deletions(-)

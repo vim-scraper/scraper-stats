@@ -1,0 +1,33 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2, refs/heads/master)
+Author:     Oscar Hellström <oscar at hellstrom.st>
+AuthorDate: Sat Oct 4 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Cleaned up release and included indentation plugin from Csaba Hoch.
+
+ README_erlang                   |   62 -------
+ TODO                            |    3 -
+ compiler/erlang.vim             |   48 ------
+ ftplugin/erlang.vim             |   11 ++-
+ indent/erlang.vim               |  334 +++++++++++++++++++++++----------------
+ syntax/erlang.vim               |  253 ++++++++++-------------------
+ vim_erlang-0.2/.hg_archival.txt |    2 +
+ vim_erlang-0.2/README_erlang    |   37 +++++
+ 8 files changed, 332 insertions(+), 418 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Oscar Hellström <oscar at hellstrom.st>
+AuthorDate: Sun Jun 25 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                      |    8 ++
+ README_erlang               |   62 +++++++++++++
+ TODO                        |    3 +
+ autoload/erlangcomplete.vim |  112 ++++++++++++++++++++++
+ compiler/erlang.vim         |   48 ++++++++++
+ ftplugin/erlang.vim         |  192 ++++++++++++++++++++++++++++++++++++++
+ indent/erlang.vim           |  148 ++++++++++++++++++++++++++++++
+ syntax/erlang.vim           |  213 +++++++++++++++++++++++++++++++++++++++++++
+ 8 files changed, 786 insertions(+), 0 deletions(-)

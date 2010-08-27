@@ -1,0 +1,52 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1.1, refs/heads/master)
+Author:     Takahiro SUZUKI <takahiro.suzuDELETEMEki.ja at gmDELETEMEail.com>
+AuthorDate: Sun Jul 26 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    simplified the script using range function.
+    counting WS with virtcol (work fine with mixture of tabs and spaces).
+
+ plugin/commentop.vim |   99 +++++++++++++++++++++++++++-----------------------
+ 1 files changed, 54 insertions(+), 45 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.0)
+Author:     Takahiro SUZUKI <takahiro.suzuDELETEMEki.ja at gmDELETEMEail.com>
+AuthorDate: Sun Jul 12 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    simplified <Plug> maps (no backward compatibility for 1.0.2 or before)
+    determine the comment string automatically (using 'commentstring')
+
+ plugin/commentop.vim |  189 ++++++++++++++++++++++++++------------------------
+ 1 files changed, 97 insertions(+), 92 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.2)
+Author:     Takahiro SUZUKI <takahiro.suzuDELETEMEki.ja at gmDELETEMEail.com>
+AuthorDate: Sat Jul 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    bug fix (wrong comment string with ft=vim)
+
+ plugin/commentop.vim |    8 +++++---
+ 1 files changed, 5 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     Takahiro SUZUKI <takahiro.suzuDELETEMEki.ja at gmDELETEMEail.com>
+AuthorDate: Thu Jul 9 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    bug fix (gO was mapped to comment out operator)
+
+ plugin/commentop.vim |   39 +++++++++++++++++++++++++++------------
+ 1 files changed, 27 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Takahiro SUZUKI <takahiro.suzuDELETEMEki.ja at gmDELETEMEail.com>
+AuthorDate: Wed Jul 8 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README               |   48 ++++++++++++
+ plugin/commentop.vim |  196 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 244 insertions(+), 0 deletions(-)

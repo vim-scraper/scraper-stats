@@ -1,0 +1,37 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3a, refs/heads/master)
+Author:     Edward Fox <edyfox at gmail.com>
+AuthorDate: Thu Oct 27 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This is an Alpha (UNSTABLE) version with some new features added and a few bugs fixed.
+    
+    
+    New features:
+    
+      * (Major) Dumps the breakpoints out to ".gdbvim_breakpoints" when you quit gdbvim, and re-read all the breakpoints when you launch gdbvim the next time.
+    
+      * Add "Clear all breakpoints" feature.
+    
+      * (Minor) Changed the menu layout. Added "Call stacks" and some other useful menu items.
+    
+    
+    Bugs fixed:
+    
+      * The previous version may fail to clear some breakpoints under some new version of gdb. Because  such gdb may breaks at two or more different addresses in the binary code when you set breakpoint at only one position of the source code.
+
+ doc/gdbvim.txt    |   52 ++++++++++++++++++++++
+ plugin/gdbvim     |   52 +++++++++++++++++-----
+ plugin/gdbvim.vim |  122 +++++++++++++++++++++++++++++++++-------------------
+ 3 files changed, 169 insertions(+), 57 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Edward Fox <edyfox at gmail.com>
+AuthorDate: Wed Oct 26 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README            |    9 ++
+ plugin/gdbvim     |  235 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/gdbvim.vim |  142 ++++++++++++++++++++++++++++++++
+ 3 files changed, 386 insertions(+), 0 deletions(-)

@@ -1,0 +1,54 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sat Sep 26 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Set balloonexpr only if empty (don't try to be smart)
+    - Disable CursorMoved(I) events, when &lazyredraw isn't set.
+
+ plugin/quickfixsigns.vim |   52 +++++++++++++++++++++++++++++++---------------
+ 1 files changed, 35 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Mar 29 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - FIX: Error when g:quickfixsigns_marks = [] (thanks Ingo Karkat)
+    - s:ClearBuffer: removed old code
+    - QuickfixsignsMarks(state): Switch the display of marks on/off.
+
+ doc/quickfixsigns.txt    |   28 +++++++++---
+ plugin/quickfixsigns.vim |  113 ++++++++++++++++++++++++++++++----------------
+ 2 files changed, 96 insertions(+), 45 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Mar 29 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Old signs weren't always removed
+    - Avoid "flicker" etc.
+    - g:quickfixsigns_max: Don't display signs if the list is longer than n items.
+    
+    Incompatible changes:
+    - Removed g:quickfixsigns_show_marks variable
+    - g:quickfixsigns_marks: Marks that should be used for signs
+    - g:quickfixsigns_lists: event field is a list
+    - g:quickfixsigns_lists: timeout field: don't re-display this list more often than n seconds
+
+ doc/quickfixsigns.txt    |   27 +++++---
+ plugin/quickfixsigns.vim |  161 ++++++++++++++++++++++++++++++---------------
+ 2 files changed, 125 insertions(+), 63 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Mar 17 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    GLVS, minor fix
+
+ README                   |   10 ++
+ doc/quickfixsigns.txt    |   74 ++++++++++++
+ plugin/quickfixsigns.vim |  278 ++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 362 insertions(+), 0 deletions(-)

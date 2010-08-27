@@ -1,0 +1,28 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Thu Jul 10 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Loremipsum!: With !, insert inline (single paragraph)
+    - Loreplace: Replace loremipsum text with something else (provided a marker was defined for the current filetype)
+    - If the template argument is *, don't apply the default paragraph template.
+    - g:loremipsum_file, b:loremipsum_file
+
+ autoload/loremipsum.vim |  136 +++++++++++++++++++++++++++++++++++++++++------
+ doc/loremipsum.txt      |   37 ++++++++++++-
+ plugin/loremipsum.vim   |   50 +++++++++++++++--
+ 3 files changed, 198 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Thu Jul 10 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                  |   18 +++++++
+ autoload/loremipsum.txt |  127 +++++++++++++++++++++++++++++++++++++++++++++++
+ autoload/loremipsum.vim |   55 ++++++++++++++++++++
+ doc/loremipsum.txt      |   64 ++++++++++++++++++++++++
+ plugin/loremipsum.vim   |   47 +++++++++++++++++
+ 5 files changed, 311 insertions(+), 0 deletions(-)

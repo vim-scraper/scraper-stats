@@ -1,0 +1,733 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Tue Aug 24 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * NEW: Issue 57: Make it possible to have pre block inside list item.
+    * NEW: Issue 82: Add quick goto command. See |:VimwikiGoto|.
+    * NEW: Issue 83: Quick switch in diary. See |:VimwikiDiaryNextDay| and
+      |:VimwikiDiaryPrevDay| commands.
+    * FIX: Issue 84: Vimwiki rename removed the WikiWord display name.
+    * FIX: Issue 85: Errors if you have '~' subdirectory in a wiki directory.
+    * FIX: Issue 86: Existed links '[[WikiLink1|Alias1]] | [[WikiLink2]]' are
+      highlighted as a single link.
+    * FIX: Issue 88: Underline text. See |g:vimwiki_valid_html_tags|.
+    * FIX: Issue 92: Wikies in a subdir could be renamed to an empty file.
+    * FIX: Issue 93: Use alias name in html title. See |vimwiki-title|.
+    * FIX: Issue 94: Relative links to PHP files are broken. See
+      |g:vimwiki_file_exts| for details.
+    * FIX: Issue 96: Closing bracket at the end of weblink shouldn't be a part
+      of that link.
+    * FIX: Issue 97: Error opening weblink in a browser if it has # inside.
+    * FIX: Issue 99: Vim is not responing while opening arbitrary wiki file.
+    * FIX: Issue 100: Additional content on diary index page could be
+      corrupted.
+    * NEW: Issue 101: Customized HTML tags. See |g:vimwiki_valid_html_tags|
+    * NEW: Issue 102: Conceal feature usage. See |g:vimwiki_conceallevel|.
+    * FIX: Issue 103: Always highlight links to non-wiki files as existed.
+    * FIX: Issue 104: vimwiki#nested_syntax needs 'keepend' to avoid contained
+      language syntax eat needed '}}}'.
+    * FIX: Issue 105: <i_CR> on a todo list item with [ ] doesn't create new
+      todo list item.
+    * FIX: Issue 106: With MediaWiki syntax <C-Space> on a child todo list
+      item produce errors.
+    * FIX: Issue 107: With MediaWiki syntax <C-Space> on a list item creates
+      todo list item without space between * and [ ].
+    * FIX: Issue 110: Syntax highlighting doesn't work for indented codeblock.
+    * FIX: Issue 115: Nested Perl syntax highlighting differs from regular
+      one.
+    * MISC: Many vimwiki commands were renamed from Vimwiki.*Word to
+      Vimwiki.*Link. VimwikiGoHome is renamed to VimwikiIndex,
+      VimwikiTabGoHome to VimwikiTabIndex.
+    * MISC: vimwiki-option-gohome is removed.
+
+ autoload/vimwiki.vim       |  288 +++++++++++++++++++++++++++++++++-----------
+ autoload/vimwiki_diary.vim |   65 +++++++++-
+ autoload/vimwiki_html.vim  |  120 +++++++++++--------
+ autoload/vimwiki_lst.vim   |   21 ++--
+ autoload/vimwiki_tbl.vim   |    6 +
+ doc/vimwiki.txt            |  235 +++++++++++++++++++++++++-----------
+ ftplugin/vimwiki.vim       |  124 ++++++++++++--------
+ plugin/vimwiki.vim         |   78 +++++-------
+ syntax/vimwiki.vim         |  187 ++++++++++++++++++++---------
+ syntax/vimwiki_default.vim |   13 ++-
+ syntax/vimwiki_media.vim   |    9 ++
+ 11 files changed, 781 insertions(+), 365 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Wed May 12 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * NEW: Issue 41: Table cell and column text objects. See `vimwiki-text-objects`.
+    * NEW: Issue 42: Commands to move table columns left and right. See `:VimwikiTableMoveColumnLeft` and `:VimwikiTableMoveColumnRight`.
+    * NEW: Issue 44: `<S-Tab>` should move cursor to the previous table cell.
+    * NEW: Issue 45: It should be possible to indent tables. Indented tables are centered in html.
+    * NEW: Issue 46: Do not htmlize some wiki pages (blacklist). New placeholder is added: `%nohtml`. See `vimwiki-nohtml`.
+    * FIX: Issue 47: Lists aren't HTMLized properly.
+    * FIX: Issue 48: With autochdir it is impossible to have path_html such as `d:\vimwiki\html\`
+    * FIX: Issue 49: Table is not HTMLized properly at the end of wiki page.
+    * FIX: Issue 50: Inline formatting is not performed in table cells.
+    * FIX: Issue 51: Cannot insert '-' (minus) into table cells of the first column.
+    * FIX: Issue 52: Table cell width is incorrect when double wide characters are used (ie. Chinese). Check `g:vimwiki_CJK_length`.
+    * NEW: Issue 53: Wiki markup can not nested. (Use links and inline markup in Headers).
+    * NEW: Issue 54: Highlight for placeholders.
+    * NEW: Issue 56: Directory indexes. See `g:vimwiki_dir_link` option and `:VimwikiGenerateLinks` command.
+    * NEW: Issue 58: Html new lines with `<br />`. Could be inserted with `<S-CR>` in insert mode.
+    * FIX: Issue 59: List item's text can't be started from `*`.
+    * NEW: Issue 60: Links inside completed gtd-items.
+    * NEW: Issue 61: Headers numbering. See `g:vimwiki_html_header_numbering` and `g:vimwiki_html_header_numbering_sym` options.
+    * FIX: Issue 63: Table cannot have leading empty cells in html.
+    * FIX: Issue 65: Table separator is not htmlized right if on top of the table.
+    * FIX: Issue 66: Table empty cells are very small in html.
+    * FIX: Issue 67: Wrong html conversion of multilined list item with bold text on the start of next line.
+    * FIX: Issue 68: auto-indent problem with langmap.
+    * FIX: Issue 73: Link navigation by Tab. "Escaped" wiki-word should be skipped for navigation with `<tab>`.
+    * FIX: Issue 75: `code` syntax doesn't display correctly in toc.
+    * FIX: Issue 77: Diary index only showing link to today's diary entry file for extensions other than '.wiki'.
+    * FIX: Issue 79: Further calendar.vim integration -- add sign to calendar date if it has corresponding diary page.
+    * FIX: Issue 80: Debian Lenny GUI Vim 7.2 has problems with toggling inner todo list items.
+    * FIX: Issue 81: Don't convert `WikiWord` as a link in html when `let g:vimwiki_camel_case = 0`
+
+ autoload/vimwiki.vim       |  356 +++++++++++++++++++++++++++-----
+ autoload/vimwiki_diary.vim |   16 +-
+ autoload/vimwiki_html.vim  |  494 +++++++++++++++++++++++++++++---------------
+ autoload/vimwiki_lst.vim   |    5 +-
+ autoload/vimwiki_tbl.vim   |  245 ++++++++++++++++++----
+ doc/vimwiki.txt            |  300 ++++++++++++++++++++++-----
+ ftplugin/vimwiki.vim       |   48 ++++-
+ plugin/vimwiki.vim         |   43 +++--
+ syntax/vimwiki.vim         |   40 +++--
+ syntax/vimwiki_default.vim |   10 +-
+ syntax/vimwiki_media.vim   |    2 +-
+ 11 files changed, 1204 insertions(+), 355 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.9)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Tue Feb 23 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * NEW: Diary. Help in making daily notes. See ':h vimwiki-diary'. Now you
+      can really easy add information into vimwiki that should be sorted out
+      later.
+    * NEW: Tables are redesigned. Syntax is changed. Now they are
+      auto-formattable. You can navigate them with <tab> and <cr> in insert
+      mode. See 'vimwiki-syntax-tables' and 'vimwiki-tables' for more details.
+    * NEW: Keyword STARTED: is added.
+    * NEW: Words TODO:, DONE:, STARTED:, XXX:, FIXME:, FIXED: are highlighed
+      inside headers.
+    * FIX: Export to html external links with 'file://' protocol. Ex:
+      '[file:///home/user1/book.pdf my book]'.
+    * FIX: Menu is corrupted if wiki's path contains spaces.
+    * FIX: Settings 'wrap' and 'linebreak' are removed from ftplugin. Add them
+      into your personal settings file '.vim/after/ftplugin/vimwiki.vim' if
+      needed.
+    * NEW: Headers are highlighted in different colors by default.  See ':h
+      g:vimwiki_hl_headers' to turn it off.
+    * FIX: Issue 40: Links with russian subdirs don't work.
+    * NEW: It is now possible to generate HTML files automatically on page
+      save. See ':h vimwiki-option-auto_export'.
+
+ autoload/vimwiki.vim       |   59 ++++--
+ autoload/vimwiki_diary.vim |  216 +++++++++++++++++++++
+ autoload/vimwiki_html.vim  |  144 ++++++++------
+ autoload/vimwiki_tbl.vim   |  335 ++++++++++++++++++++++++++++++++
+ doc/vimwiki.txt            |  455 ++++++++++++++++++++++++++++++++++++--------
+ ftplugin/vimwiki.vim       |   35 +++-
+ plugin/vimwiki.vim         |   89 ++++++++-
+ syntax/vimwiki.vim         |   28 ++-
+ 8 files changed, 1178 insertions(+), 183 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.801)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Thu Jan 21 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Issue 39:	Not a critical error in doc/vimwiki.txt
+
+ doc/vimwiki.txt |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.8)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Wed Jan 20 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * NEW: Rename g:vimwiki_fold_empty_lines to g:vimwiki_fold_trailing_empty_lines.
+    * NEW: One can use - along with * to start unordered list item.
+    * NEW: List items could be started from the first column.  As a result some
+      limitations appeared:
+        * a space after *, - or # for a list item is mandatory.
+        * g:vimwiki_fold_trailing_empty_lines if set to 0 folds one trailing
+          empty line.
+    * NEW: Folding is off by default. Use g:vimwiki_folding to enable it.
+    * NEW: Speed up vimwiki's folding a bit. Should lag a bit less in a long todo lists.
+    * NEW: Centered headers. Start header with at least one space to make it html centered.
+    * NEW: Change in default css: header's colors.
+    * NEW: Vimwiki is aware of GetLatestVimScripts now.
+    * FIX: Use <del> tag instead of custom <span class="strike"> in html.
+    * FIX: There are no text styling in htmlized quoted text.
+    * FIX: set default value of g:vimwiki_fold_lists to 0 as written in this help.
+    * FIX: Issue 33: Folded list items have wrong indentation when 'tabs' are used.
+    * FIX: Issue 34: vimwiki#subdir got wrong dir when VimwikiGet('path') is a
+      symbolic link. Thanks lilydjwg for the patch.
+    * FIX: Issue 28: todo-list auto-indent enhancement. New item should always be unchecked.
+    * FIX: Issue 36: Change the name of the :Search command to :VimwikiSearch
+      as it conflicts with MultipleSearch. Alias :VWS is also available.
+    * NEW: You can generate 'Table of contents' of your wiki page. See :h vimwiki-toc for details.
+
+ autoload/vimwiki.vim       |  676 +++++++
+ autoload/vimwiki_html.vim  | 1099 +++++++++++
+ autoload/vimwiki_lst.vim   |  361 ++++
+ doc/vimwiki.txt            | 1547 ++++++++++++++++
+ ftplugin/vimwiki.vim       |  299 +++
+ plugin/vimwiki.vim         |  336 ++++
+ syntax/vimwiki.vim         |  141 ++
+ syntax/vimwiki_default.vim |   76 +
+ syntax/vimwiki_media.vim   |   58 +
+ vimwiki_0_9_701.vba        | 4361 --------------------------------------------
+ 10 files changed, 4593 insertions(+), 4361 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.701)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Fri Dec 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * FIX: Issue 30: Highlighting doesn't work for checked list item.
+
+ vimwiki_0_9_7.vba   | 4356 --------------------------------------------------
+ vimwiki_0_9_701.vba | 4361 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 4361 insertions(+), 4356 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.7)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Wed Dec 9 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * NEW: Default checkbox symbols are changed to [ ], [.], [o], [O], [X].
+      You can change them using |g:vimwiki-listsyms| variable.
+    * NEW: Color group names are renamed from wikiBold, wikiItalic, etc to
+      VimwikiBold, VimwikiItalic, etc.
+    * NEW: Open external links in a browser. There are default browsers
+      defined in |g:vimwiki_browsers| list. You can also redefine
+      |VimwikiWeblinkHandler| function to open weblinks in other programs.
+    * NEW: Issue 25: Toggle the states of multiple TODO list items at a time
+      (in VISUAL and in VISUAL LINE modes)
+    * NEW: Issue 26: Highlight code snippets in vimwiki's pre. See
+      |vimwiki-option-nested_syntaxes|. Thanks kriomant.
+    * NEW: Issue 27: Automatic garbage deletion from html directory.
+    * NEW: Save all open vimwiki buffers before export to html.
+    * NEW: Issue 29: Custom :Search command.
+    * NEW: Header text objects are now expandable in VISUAL mode. Tap 'vah' to
+      select a header. Tap again 'ah' to expand selection further. Thanks
+      Andy Wokula.
+    * FIX: Folding settings are reset to vim defaults in a new tab (think of
+      \wt) so you cannot hide things in folds.
+    * FIX: https links in form of [https://hello.world.com] are not exported
+      into html. Thanks Saurabh Sarpal for the patch.
+
+ vimwiki_0_9_6.vba | 4011 ------------------------------------------------
+ vimwiki_0_9_7.vba | 4356 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 4356 insertions(+), 4011 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.6)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Thu Oct 22 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * NEW: You can have multiline list items. See |vimwiki-syntax-lists|.
+    * NEW: You can ignore newlines in multiline list items when do export to
+      html. See |g:vimwiki_list_ignore_newline| option.
+    * NEW: Different checkbox symbols [.], [:], [o] are added. See
+      |vimwiki-todo-lists|.
+    * NEW: Now there is no longer syntax of preformatted text that is started
+      by a whitespace.
+    * NEW: Blockquotes. See |vimwiki-syntax-blockquote|.
+    * NEW: Per wiki folding option (vimwiki-option-folding) is removed. Global
+      |g:vimwiki_folding| and |g:vimwiki_fold_lists| are added.
+    * NEW: Due to being quite slow folding of list items is off by default.
+      Use |g:vimwiki_fold_lists| to turn it on.
+    * NEW: If you want replace some symbols in a wikifilename use
+      |g:vimwiki_badsyms| option (Andreas Baldeau).
+    * FIX: Command |:VimwikiToggleListItem| doesn't work for one of the two
+      wikies opened at the same time with different syntaxes.
+    * FIX: Command |:VimwikiToggleListItem| do not switch parent checkboxes if
+      there are non-checkbox list items available.
+    * FIX: Issue 24: Link error in html when write [[one.two.three]].
+    * FIX: Rename WikiWord to something with a colon (:) does nasty things.
+    * FIX: Command |:VimwikiToggleListItem| do not switch right if there are
+      list items without checkboxes in the list.
+
+ vimwiki_0_9_5.vba | 3743 -------------------------------------------------
+ vimwiki_0_9_6.vba | 4011 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 4011 insertions(+), 3743 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.5)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Wed Sep 16 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      * NEW: Added g:vimwiki_global_ext to control creation of temporary wikies in a dirs that are not listed in g:vimwiki_list.
+      * NEW: Added g:vimwiki_hl_headers to highlight headers with different predefined colors.
+      * NEW: Checked [x] items are not highlighted with Comment syntax group by default. Use g:vimwiki_hl_cb_checked to turn it on.
+      * NEW: Added new syntax for links: [[link address][link description]].
+      * NEW: Added <C-@> allias of <C-Space> mapping for *nix systems.
+      * NEW: Added g:vimwiki_camel_case. Set it to 0 if you do not want CamelCased WikiWords to be linkified.
+      * FIX: Links with g:viwmiki_stripsym (default '_') [[My_Link|Text]] are not highlighted when created.
+      * FIX: indent/vimwiki.vim is obsolete. If you upgrade from previous versions remove it. It causes wrong list indentation if noexpandtab is set.
+      * FIX: If tabs and spaces are used to indent list items html export gives error. Thanks Klaus Ethgen for report.
+      * FIX: Some html export fixes.
+
+ vimwiki_0_9_4.vba | 3580 --------------------------------------------------
+ vimwiki_0_9_5.vba | 3743 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 3743 insertions(+), 3580 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.4)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Tue Jul 28 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      * NEW: Links with directories: [[dir_name/Link|Text]]. Thanks Jie Wu.
+      * NEW: Added %root_path% template variable to get relative root dir of path_html. See vimwiki-option-html_header.
+      * FIX: Indent incorrect for vim without "float" compile option. Thanks Julian Kooij.
+      * FIX: Convert to html doesn't work right with links like [[foo::bar]].
+      * FIX: Rename wikiword doesn't work right when rename WikiWord to [[WikiWord blablabla]].
+      * FIX: Renaming of links with description doesn't work.
+      * FIX: Weblinks with commas are not highlighted.
+      * MISC: Some changes in default css file.
+
+ vimwiki_0_9_3.vba | 3424 --------------------------------------------------
+ vimwiki_0_9_4.vba | 3580 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 3580 insertions(+), 3424 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.3)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Fri Jun 12 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      * NEW: g:vimwiki_menu option is a string which is menu path. So one can use let g:vimwiki_menu = 'Plugin.Vimwiki' to set the menu to the right place.
+      * NEW: g:vimwiki_fold_empty_lines -- don't or do fold in empty lines between headers. See :h g:vimwiki_fold_empty_lines
+      * FIX: Encoding error when running vimwiki in Windows XP Japanese.  Thanks KarasAya.
+
+ vimwiki_0_9_2c.vba | 3384 ---------------------------------------------------
+ vimwiki_0_9_3.vba  | 3424 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 3424 insertions(+), 3384 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.2c)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Sat May 9 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      * FIX: Regression bug. Export to HTML of `[[link|desc]]` is wrong.
+
+ vimwiki_0_9_2b.vba | 3376 ---------------------------------------------------
+ vimwiki_0_9_2c.vba | 3384 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 3384 insertions(+), 3376 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.2b)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Tue May 5 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I was playing with python and vimball archives -- as a result CRLFs in a recent vba file. Anyway I hope those evil CRLFs in the past.
+    
+      * FIX: Installation on Linux doesn't work. (Dos line endings in Vimball archive file).
+      * FIX: Clear out FlexWiki ftplugin's setup. Now you don't have to hack filetype.vim to get rid of unexpected ':setlocal bomb' from FlexWiki's ftplugin.
+      * FIX: When write done: it will show another done: in html file.
+
+ vimwiki_0_9_2a.vba | 3381 ----------------------------------------------------
+ vimwiki_0_9_2b.vba | 3376 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 3376 insertions(+), 3381 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.2a)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Mon May 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    FIX: Remove dos line endings from some files.
+
+ vimwiki_0_9_2.vba  | 3377 ---------------------------------------------------
+ vimwiki_0_9_2a.vba | 3381 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 3381 insertions(+), 3377 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.2)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Sat May 2 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      * NEW: Option 'folding' added to turn folding on/off.
+      * NEW: Header text object. See :h vimwiki-text-objects.
+      * NEW: Add/remove Header levels with '=' and '-'. See :h vimwiki_=.
+      * NEW: Vimwiki GUI menu to select available wikies. See :h g:vimwiki_menu.
+      * NEW: You can specify the name of your css file now. See :h vimwiki-option-css_name
+      * NEW: You can add styles to image links, see :h vimwiki-syntax-links.
+      * FIX: History doesn't work after :VimwikiRenameWord.
+      * FIX: Some of wikipedia links are not correctly highlighted. Links with parentheses.
+      * MISC: Renamed vimwiki_gtd to vimwiki_lst.
+
+ vimwiki_0_9_1.vba | 3130 -------------------------------------------------
+ vimwiki_0_9_2.vba | 3377 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 3377 insertions(+), 3130 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.1)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Sun Apr 12 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      * [new] HTML Table cell text alignment, see :h vimwiki-syntax-tables.
+      * [new] Wikipage history simplified. Each vimwiki buffer now holds b:vimwiki_prev_word which is list of [PrevWord, getpos()].
+      * [new] If highlight for groups wikiHeader1..wikiHeader6 exist (defined in a colorscheme) -- use it. Otherwise use Title highlight for all Headers.
+      * [fix] Warn only once if 'html_header' or 'html_footer' does not exist.
+      * [fix] Wrong folding for the text after the last nested list item.
+      * [fix] Bold and Italic aren't highlighted in tables without spaces between || and * or _. ||*bold*||_asdf_ || (Thanks Brett Stahlman)
+
+ vimwiki_0_9_0.vba | 3078 ----------------------------------------------------
+ vimwiki_0_9_1.vba | 3130 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 3130 insertions(+), 3078 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Mon Mar 30 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      * [new] You can add classes to 'pre' tag -- :h vimwiki-syntax-preformatted. This might be useful for coloring some programming code with external js tools like google syntax highlighter.
+      * [new] !WikiPage is not highlighted. It is just a plain word WikiPage in HTML, without exclamation mark
+      * [new] Definition lists, see :h vimwiki-syntax-lists.
+      * [new] New implementation of :h VimwikiRenameWord. CAUTION: It was tested on 2 computers only, backup your wiki before use it. Email me if it doesn't work for you.
+      * [new] HTML: convert [ ] to html checkboxes.
+      * [new] Default CSS: gray out checked items.
+      * [fix] Less than 3 characters are not highlighted in Bold and Italic.
+      * [fix] Added vimwiki autocmd group to avoid clashes with user defined autocmds.
+      * [fix] Pressing ESC while :h :VimwikiUISelect opens current wiki index file.  Should cancel wiki selection.
+
+ vimwiki_0_8_3.vba | 2859 -------------------------------------------------
+ vimwiki_0_9_0.vba | 3078 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 3078 insertions(+), 2859 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.3)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Thu Mar 19 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      * [new] <C-Space> on a list item creates checkbox.
+      * [fix] With * in the first column, <CR> shouldn't insert more * (default syntax).
+      * [fix] With MediaWiki's ** [ ], <CR> should insert it on the next line.
+      * [fix] HTML export should use 'fileencoding' instead of 'encoding'.
+      * [fix] Code cleanup.
+
+ vimwiki_0_8_2.vba | 2849 ----------------------------------------------------
+ vimwiki_0_8_3.vba | 2859 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 2859 insertions(+), 2849 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.2)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Sat Mar 14 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      * [del] Removed google syntax file.
+      * [new] Default vimwiki syntax is a subset of google's one. Header's has been changed from !Header to =Header=. It is easier to maintain only 2 syntaxes. See :h vimwiki-syntax-headers.
+      * [new] Multiline paragraphs -- less longlines.
+      * [new] Comments. See :h vimwiki-syntax-comments.
+      * [del] Removed setlocal textwidth = 0 from ftplugin.
+      * [fix] New regexps for bold, italic, bolditalic.
+      * [fix] The last item in List sometimes fold-in incorrectly.
+      * [fix] Minor tweaks on default css.
+
+ vimwiki_0_8_1.vba | 2773 ---------------------------------------------------
+ vimwiki_0_8_2.vba | 2849 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 2849 insertions(+), 2773 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.1)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Wed Mar 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      * [new] Vimwiki's foldmethod changed from syntax to expr. Foldtext is changed to be nicer with folded list items.
+      * [new] Fold/outline list items.
+      * [new] It is possible now to edit wiki files in arbitrary directories which is not in g:vimwiki_list's paths. New WikiWords are created in the path of the current WikiWord.
+      * [new] User can remap Vimwiki's built in mappings.
+      * [new] Added g:vimwiki_use_mouse. It is off by default.
+      * [fix] Removed <C-h> mapping.
+
+ vimwiki_0_8.vba   | 2615 --------------------------------------------------
+ vimwiki_0_8_1.vba | 2773 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 2773 insertions(+), 2615 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Thu Mar 5 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NOTE: g:vimwiki_home is obsolete now!!!
+      * NEW Multiple wikies support. A lot of options have been changed, see :h vimwiki-options
+      * NEW Auto create directories.
+      * NEW Checked list item highlighted as comment.
+      * FIX Multiple set ft=vimwiki for each buffer disabled. Vimwiki should load its buffers a bit faster now.
+
+ vimwiki_0_7_1.vba | 2447 -------------------------------------------------
+ vimwiki_0_8.vba   | 2615 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 2615 insertions(+), 2447 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Sat Feb 28 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * NEW: <Plug>VimwikiToggleListItem added to be able to remap <C-Space> to anything user prefers more.
+    * FIX: Toggleable list items do not work with MediaWiki markup.
+    * FIX: Changing g:vimwiki_home_html to path with ~ while vimwiki is loaded gives errors for HTML export.
+    * DEL: Command :VimwikiExploreHome.
+
+ vimwiki_0_7_0.vba | 2424 ----------------------------------------------------
+ vimwiki_0_7_1.vba | 2447 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 2447 insertions(+), 2424 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Mon Feb 23 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     * NEW: GTD stuff -- toggleable list items. See h: vimwiki-gtd.
+     * FIX: Headers do not fold inner headers. (Thanks Brett Stahlman)
+     * FIX: Remove last blank lines from preformatted text at the end of file (HTML).
+     * DEL: Removed g:vimwiki_smartCR option.
+
+ vimwiki_0_6_2.vba | 2202 ------------------------------------------------
+ vimwiki_0_7_0.vba | 2424 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 2424 insertions(+), 2202 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.2)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Sun Feb 15 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        * NEW: [[link|description]] is available now.
+        * FIX: Barebone links (ie: http://bla-bla-bla.org/h.pl?id=98) get extra escaping of ? and friends so they become invalid in HTML.
+        * FIX: In linux going to [[wiki with whitespaces]] and then pressing BS to go back to prev wikipage produce error. (Thanks Brendon Bensel for the fix)
+        * FIX: Remove setlocal encoding and fileformat from vimwiki ftplugin.
+        * FIX: Some tweaks on default style.css
+
+ vimwiki_0_6_1.vba | 2150 ---------------------------------------------------
+ vimwiki_0_6_2.vba | 2202 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 2202 insertions(+), 2150 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.1)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Sun Feb 8 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        * FIX: [blablabla bla] shouldn't be converted to a link.
+        * FIX: Remove extra annoing empty strings from PRE tag made from
+          whitespaces in HTML export.
+        * FIX: Moved functions related to HTML converting to new autoload module
+          to increase a bit vimwiki startup time.
+
+ vimwiki_0_6.vba   | 2108 ---------------------------------------------------
+ vimwiki_0_6_1.vba | 2150 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 2150 insertions(+), 2108 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Wed Feb 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     * NEW: Header and footer templates. See g:vimwiki_html_header and g:vimwiki_html_footer in help.
+     * FIX: :Vimwiki2HTML does not recognize ~ as part of a valid path.
+
+ vimwiki_0_5_3.vba | 2044 ---------------------------------------------------
+ vimwiki_0_6.vba   | 2108 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 2108 insertions(+), 2044 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.3)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Tue Jan 20 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * FIX: Fixed :VimwikiRenameWord. Error when g:vimwiki_home had whitespaces in path.
+    * FIX: :VimwikiSplitWord and :VimwikiVSplitWord didn't work.
+
+ vimwiki_0_5_2.vba | 2038 ----------------------------------------------------
+ vimwiki_0_5_3.vba | 2044 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 2044 insertions(+), 2038 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Mon Jan 19 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        * NEW: Added :VimwikiGoHome, :VimwikiTabGoHome and :VimwikiExploreHome commands.
+        * NEW: Added <Leader>wt mapping to open vimwiki index file in a new tab.
+        * NEW: Added g:vimwiki_gohome option that controls how :VimwikiGoHome works when current buffer is changed. (Thanks Timur Zaripov)
+        * FIX: Fixed :VimwikiRenameWord. Very bad behaviour when autochdir isn't set up.
+        * FIX: Fixed commands :Wiki2HTML and :WikiAll2HTML to be available only for vimwiki buffers.
+        * FIX: Renamed :Wiki2HTML and :WikiAll2HTML to :Vimwiki2HTML and :VimwikiAll2HTML commands.
+        * FIX: Help file corrections.
+
+ vimwiki_0_5_1.vba | 1901 -------------------------------------------------
+ vimwiki_0_5_2.vba | 2038 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 2038 insertions(+), 1901 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Wed Dec 3 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      * [new] Help is created.
+      * [new] Now you can fold headers.
+      * [new] <Plug>VimwikiGoHome and <Plug>VimwikiExploreHome were added.
+      * [fix] Bug with {{{HelloWikiWord}}} export to HTML is fixed.
+      * [del] Sync option removed from: Syntax highlighting for preformatted text  {{{ }}}.
+
+ vimwiki_0_5.vba   | 1372 --------------------------------------
+ vimwiki_0_5_1.vba | 1901 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 1901 insertions(+), 1372 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Mon Sep 15 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      * DONE: vimwiki default markup to HTML conversion improved.
+      * DONE: Added basic `GoogleWiki` and `MediaWiki` markup languages.
+      * DONE: Chinese `[[complex wiki words]]`.
+
+ autoload/vimwiki.vim |  923 ---------------------------------
+ ftplugin/vimwiki.vim |   86 ----
+ plugin/vimwiki.vim   |   59 ---
+ syntax/vimwiki.vim   |  121 -----
+ vimwiki_0_5.vba      | 1372 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 5 files changed, 1372 insertions(+), 1189 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Mon Jun 2 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      * DONE: vimwiki=>HTML converter in plain vim language.
+      * DONE: Plugin autoload.
+
+ autoload/vimwiki.vim |  923 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ ftplugin/vimwiki.vim |   48 ++--
+ plugin/vimwiki.vim   |  348 +------------------
+ syntax/vimwiki.vim   |    6 +-
+ 4 files changed, 964 insertions(+), 361 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.4)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Mon May 26 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      * FIXED: Backup files (.wiki~) caused a bunch of errors while opening wiki files.
+
+ plugin/vimwiki.vim |    9 +++++++--
+ 1 files changed, 7 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.3)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Fri May 23 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      * FIXED: `[[wiki word with dots at the end...]]` didn't work.
+      * DONE: Added error handling for `delete wiki word` function.
+      * DONE: Added keybindings `o` and `O` for list items when g:vimwiki_smartCR=1.
+      * DONE: Added keybinding `<Leader>wh` to visit wiki home directory.
+
+ ftplugin/vimwiki.vim |   10 +++++--
+ plugin/vimwiki.vim   |   63 +++++++++++++++++++++++++++++++++++--------------
+ syntax/vimwiki.vim   |    8 ++++--
+ 3 files changed, 57 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.2)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Fri May 16 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    FIXED: Renaming - error if complex wiki word contains %.
+    FIXED: Syntax highlighting for preformatted text . Sync option added.
+    FIXED: smartCR bug fix.
+
+ plugin/vimwiki.vim |   37 ++++++++++++++++++++++++++++---------
+ syntax/vimwiki.vim |    5 +++--
+ 2 files changed, 31 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Fri May 16 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    DONE: Use mouse to follow links. Left double-click to follow WikiPage, Rightclick then Leftclick to go back.
+    FIXED: Renaming - [[hello world?]] to [[hello? world]] links are not updated.
+    FIXED: Buffers menu after renaming is the same as before renaming.
+
+ ftplugin/vimwiki.vim |   12 ++++++++++--
+ plugin/vimwiki.vim   |   11 ++++++++---
+ syntax/vimwiki.vim   |    4 ++--
+ 3 files changed, 20 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Thu May 15 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    DONE: - Highlight non-existent WikiWords.
+    DONE: - delete current WikiWord (<Leader>wd)
+    DONE: - g:vimwiki_smartCR=2 => use vim comments (see :h comments :h formatoptions) feature to deal with list items. (thx - Dmitry Alexandrov)
+    DONE: Add highlighting to TODO:, DONE:, FIXED:.
+    DONE: Rename current WikiWord - be careful on Windows you cannot rename wikiword to WikiWord. After renaming update all links to that renamed WikiWord
+    FIXED: Bug - do not duplicate WikiWords in wiki history.
+    FIXED: after renaming [[wiki word]] twice buffers are not deleted
+    FIXED: when renaming from [[wiki word]] to WikiWord result is [[WikiWord]]
+    FIXED: more than one complex words on one line is bugging each other when try go to one of them. [[bla bla bla]] [[dodo dodo dodo]] becomes bla bla bla ]] [[dodo dodo dodo
+
+ ftplugin/vimwiki.vim |  209 ++++----------------------------
+ plugin/vimwiki.vim   |  331 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/vimwiki.vim   |   33 ++++--
+ 3 files changed, 376 insertions(+), 197 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.2)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Wed May 7 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added keybindings to split/vertsplit when following WikiWords.
+    <S-CR> - split WikiWord
+    <C-CR> - vertical split WikiWord
+
+ ftplugin/vimwiki.vim |   21 +++++++++++++++------
+ syntax/vimwiki.vim   |   10 ++++------
+ 2 files changed, 19 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Tue May 6 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    install on linux now works.
+
+ syntax/vimwiki.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Mon May 5 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      * (+) Add part of Google's Wiki syntax.
+      * (+) Add auto insert # with ENTER.
+      * (+) On/Off auto insert bullet with ENTER.
+      * (+) Strip `[[complex wiki name]]` from symbols that cannot be used in file names.
+      * (+) Links to non-wiki files. Non wiki files are files with extensions ie `[[hello world.txt]]` or `[[my homesite.html]]`
+
+ ftplugin/vimwiki.vim |  220 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/vimwiki.vim   |  109 +++++++++++++++++++++++++
+ 2 files changed, 329 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Maxim Kim <habamax at gmail.com>
+AuthorDate: Sun May 4 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README |   97 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 97 insertions(+), 0 deletions(-)

@@ -1,0 +1,43 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2a, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Fri Mar 31 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Forgot to add the ftplugin
+
+ ftplugin/glark.vim  |   52 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ glark/etc/glark.lst |    1 +
+ plugin/glark.vim    |   10 +-------
+ 3 files changed, 55 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Mar 29 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - File completion for the :Glark command
+    - Support folds
+    - Use --explain option to construct @/ pattern
+    - Bind double click to open file
+    - GlarkUpdate() (bound to 'u')
+    - GlarkKeys() is called from ftplugin -> glark is a proper filetype now
+    - If g:glarkHeight is 0, the window is set to &lines/2 at runtime.
+    - Unset wrap before jumping to a line in the document
+
+ plugin/glark.vim |  214 +++++++++++++++++++++++++++++++++++++++---------------
+ syntax/glark.vim |   22 ++++--
+ 2 files changed, 172 insertions(+), 64 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Feb 6 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |   21 +++++
+ doc/glark.txt       |   46 +++++++++++
+ glark/etc/glark.lst |    4 +
+ plugin/glark.vim    |  207 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/glark.vim    |   36 +++++++++
+ 5 files changed, 314 insertions(+), 0 deletions(-)

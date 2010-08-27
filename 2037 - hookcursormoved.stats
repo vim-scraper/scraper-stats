@@ -1,0 +1,104 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Oct 18 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - hookcursormoved#Register: Print a message on unknown hooks (don't throw an error)
+    - hookcursormoved#Register: If g:hookcursormoved_linechange is undefined, assume the plugin wasn't loaded.
+
+ autoload/hookcursormoved.vim |   30 ++++++++++++++++++++++--------
+ doc/hookcursormoved.txt      |    4 +---
+ plugin/hookcursormoved.vim   |   13 +++++++++----
+ 3 files changed, 32 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Fri Jul 11 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    hookcursormoved#Register: Allow deregister
+
+ autoload/hookcursormoved.vim |   58 +++++++++++++++++++++++++++++------------
+ doc/hookcursormoved.txt      |   13 ++++-----
+ plugin/hookcursormoved.vim   |    9 ++++--
+ 3 files changed, 53 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Nov 21 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Minor tweaks
+    - FIX: Check correct column in s:CheckChars()
+
+ autoload/hookcursormoved.vim |   48 +++++++++++++++++++++++++++++++----------
+ doc/hookcursormoved.txt      |   20 ++++++++--------
+ plugin/hookcursormoved.vim   |   12 +++++++---
+ 3 files changed, 54 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Nov 18 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Check correct column in syntax* tests.
+
+ autoload/hookcursormoved.vim |   57 +++++++++++++++++++++++++----------------
+ plugin/hookcursormoved.vim   |    9 ++++--
+ 2 files changed, 41 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Nov 12 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - hookcursormoved#Register() takes mode as optional 3rd argument which
+    allows to check a condition only in insert or only in normal mode.
+    - Defined parenthesis_round_open and parenthesis_round_close.
+    - Modes are now defined via the g:hookcursormoved_{mode} variable (the
+    function name as string).
+
+ autoload/hookcursormoved.vim |   68 +++++++++++++-----------
+ doc/hookcursormoved.txt      |  120 +++++++++++++++++++++++++++++------------
+ plugin/hookcursormoved.vim   |   81 +++++++++++++++++++++++++++-
+ 3 files changed, 199 insertions(+), 70 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Oct 29 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Defined parenthesis_round
+    - FIX: parenthesis
+
+ autoload/hookcursormoved.vim |   29 ++++++++++++++++++++++++++---
+ doc/hookcursormoved.txt      |    7 ++++---
+ plugin/hookcursormoved.vim   |    6 +++---
+ 3 files changed, 33 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Fri Oct 12 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Defined parenthesis, syntaxleave_oneline conditions
+    - Removed namespace parameter (everything is buffer-local)
+    - Perform less checks (this should be no problem, if you use #Register).
+
+ autoload/hookcursormoved.vim |  133 ++++++++++++++++++++++++++++++++----------
+ doc/hookcursormoved.txt      |   98 +++++++++++++++++++++++++++++++
+ plugin/hookcursormoved.vim   |   71 +---------------------
+ 3 files changed, 203 insertions(+), 99 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Thu Oct 4 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Renamed s:Enable() to hookcursormoved#Enable()
+    - Renamed s:enabled to b:hookcursormoved_enabled
+
+ README                       |   41 +++++++++++++++++++
+ autoload/hookcursormoved.vim |   65 ++++++++++++++++++++++++++++++
+ plugin/hookcursormoved.vim   |   90 ++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 196 insertions(+), 0 deletions(-)

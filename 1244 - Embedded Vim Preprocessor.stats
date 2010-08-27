@@ -1,0 +1,40 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.1, refs/heads/master)
+Author:     Roberto Morales <timer24 at hotmail.com>
+AuthorDate: Sat Mar 26 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fixed: Now you don't need to escape quotes in normal text
+    Bug fixed: Empty processing lines, and other overwrite errors were fixed.
+    New Features: <?vim:include=""> statement, unix and windows support
+
+ doc/testing.txt                   |   24 -----
+ evcp1.0.1unix/1layer_source.html  |    7 ++
+ evcp1.0.1unix/evcp1.0.1unix.vim   |  198 +++++++++++++++++++++++++++++++++++++
+ evcp1.0.1unix/footer_source.html  |    7 ++
+ evcp1.0.1unix/generated.html      |   19 ++++
+ evcp1.0.1unix/header_source.html  |    5 +
+ evcp1.0.1unix/page_source.html    |   10 ++
+ evcp1.0.1unix/readme.txt          |   16 +++
+ evcp1.0.1win32/1layer_source.html |    7 ++
+ evcp1.0.1win32/evcp1.0.1win32.vim |  194 ++++++++++++++++++++++++++++++++++++
+ evcp1.0.1win32/footer_source.html |    7 ++
+ evcp1.0.1win32/generated.html     |   19 ++++
+ evcp1.0.1win32/header_source.html |    5 +
+ evcp1.0.1win32/page_source.html   |   10 ++
+ evcp1.0.1win32/readme.txt         |   16 +++
+ plugin/evcp.vim                   |  155 -----------------------------
+ testing.html                      |   56 -----------
+ 17 files changed, 520 insertions(+), 235 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/v1.0)
+Author:     Roberto Morales <timer24 at hotmail.com>
+AuthorDate: Mon Mar 21 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README          |   70 +++++++++++++++++++++++++
+ doc/testing.txt |   24 +++++++++
+ plugin/evcp.vim |  155 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ testing.html    |   56 ++++++++++++++++++++
+ 4 files changed, 305 insertions(+), 0 deletions(-)

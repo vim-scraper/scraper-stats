@@ -1,0 +1,148 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.3, refs/heads/master)
+Author:     Mahlon Smith <mahlon at martini.nu>
+AuthorDate: Tue Jun 16 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor bump, add rspec 1.26 'expect to' and 'expect to_not' syntax highlights and snippets.
+
+ plugin/specky.vim       |    2 +-
+ snippets/rspec.snippets |    8 +++++++-
+ syntax/rspec.vim        |    4 ++--
+ 3 files changed, 10 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Mahlon Smith <mahlon at martini.nu>
+AuthorDate: Mon Apr 20 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add support for opening spec output and rdoc in a new tab/horz split/vert split.  Support syntax highlighting for -implemented- pending specs.  (spec code wrapped in a 'pending' block, vs an 'it' declaration that has no block.)  Allow rdoc lookup from rspec mode.  Banner creation now respects current indent level.
+
+ doc/specky.txt     |   29 +++++++++++++++++++----------
+ plugin/specky.vim  |   35 +++++++++++++++++++++++++++--------
+ syntax/specrun.vim |    4 ++--
+ 3 files changed, 48 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Mahlon Smith <mahlon at martini.nu>
+AuthorDate: Thu Apr 9 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Provide matchit compatibility functions (piggybacking on the base ruby type) for rspec files.  Many thanks to Douglas McInnes (lloyd at lloydslounge org) for the patch!
+
+ ftplugin/rspec.vim |    7 +++++++
+ 1 files changed, 7 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Mahlon Smith <mahlon at martini.nu>
+AuthorDate: Sun Apr 5 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed rdoc display bug introduced in the last version.  Added new screencast, found here: http://projects.martini.nu/vim-stuff/wiki/SpeckyCast
+
+ doc/specky.txt          |    2 +-
+ plugin/specky.vim       |    4 ++--
+ snippets/rspec.snippets |    2 +-
+ syntax/rspec.vim        |    2 +-
+ 4 files changed, 5 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Mahlon Smith <mahlon at martini.nu>
+AuthorDate: Thu Apr 2 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added file detection and syntax highlighting for spec files, and now distribute an rspec snippet (vimscript #2540) file as part of the package.
+
+ doc/specky.txt          |   15 +++--
+ ftdetect/rspec.vim      |    1 +
+ plugin/specky.vim       |   14 ++--
+ snippets/rspec.snippets |  162 +++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/rspec.vim        |   30 +++++++++
+ 5 files changed, 210 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Mahlon Smith <mahlon at martini.nu>
+AuthorDate: Sun Mar 22 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed quote switching so it plays nice with the excellent 'Surround' plugin.  Added comment banner creation.
+
+ doc/specky.txt    |   85 +++++++++++++++++++++++++++++++++++-----------------
+ plugin/specky.vim |   30 ++++++++++++++++--
+ 2 files changed, 83 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Mahlon Smith <mahlon at martini.nu>
+AuthorDate: Fri Aug 15 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Removed the alignment routine completely.  There are far more robust implementations of this sort of thing already. (vimscript #294)
+
+ doc/specky.txt     |   73 +++++++++------------------------------------------
+ plugin/specky.vim  |   46 +--------------------------------
+ syntax/rdoc.vim    |   52 +++++++++++++++++++++++++++++++++++++
+ syntax/specrun.vim |    2 +-
+ 4 files changed, 67 insertions(+), 106 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Mahlon Smith <mahlon at martini.nu>
+AuthorDate: Wed Aug 6 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Switched to VimBall packaging.  Added real documentation.  Better whitespace cleanup for 'Align'.  Saner config args for overriding defaults.
+
+ doc/specky.txt     |  337 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/specky.vim  |  202 +++++--------------------------
+ syntax/specrun.vim |    2 +-
+ 3 files changed, 368 insertions(+), 173 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Mahlon Smith <mahlon at martini.nu>
+AuthorDate: Thu Jul 31 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add context line padding around assertion failure detail.  Auto switch to spec if run while in code.  Script cleanup. Fixed stupid typo (my vimscript needs rspec!).
+
+ plugin/specky.vim |   47 ++++++++++++++++++++++++++++++-----------------
+ 1 files changed, 30 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Mahlon Smith <mahlon at martini.nu>
+AuthorDate: Tue Jul 29 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix bug with rdoc "multiple match" cWORD.
+
+ plugin/specky.vim |    9 +++++----
+ 1 files changed, 5 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Mahlon Smith <mahlon at martini.nu>
+AuthorDate: Tue Jul 29 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added assigment and hash key/value line alignment.
+
+ plugin/specky.vim |  112 +++++++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 91 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Mahlon Smith <mahlon at martini.nu>
+AuthorDate: Wed Jul 9 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added syntax highlighting for spec output, and spec assertion failure 'jumping'.  Screencast available for your viewing pleasure.
+
+ plugin/specky.vim  |   64 ++++++++++++++++++++++++++++++++++++++-----
+ syntax/specrun.vim |   75 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 131 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Mahlon Smith <mahlon at martini.nu>
+AuthorDate: Sun Jul 6 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README            |   23 ++++
+ plugin/specky.vim |  360 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 383 insertions(+), 0 deletions(-)

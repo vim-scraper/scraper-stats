@@ -1,0 +1,52 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1.0, refs/heads/master)
+Author:     Marty Grenfell <martin.grenfell at gmail.com>
+AuthorDate: Wed Dec 16 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Version 1.1.0 [codenamed: tpimp]
+    - Dont load rubygems for ruby/eruby syntax checkers.  Thanks tpope.
+    - Improve the javascript syntax checker to catch some
+      warnings that were getting missed. Thanks tpope.
+    - Dont automatically focus the error window. Thanks tpope.
+    - Add support for cucumber [tpope], haskell & perl
+      [Anthony Carapetis], and xhtml
+    - Add commands to enable/disable syntax checking at
+      runtime. See :help syntastic-commands.
+    - Add an option to specifiy syntax checkers that should
+      be disabled by default. See :help syntastic_disabled_filetypes.
+    - Dont use :signs if vim wasnt compiled with support for them.
+
+ doc/syntastic.txt              |   73 ++++++++++++++++++++++++++++++++++-----
+ plugin/syntastic.vim           |   66 ++++++++++++++++++++++++++++--------
+ syntax_checkers/cucumber.vim   |   27 +++++++++++++++
+ syntax_checkers/eruby.vim      |    4 +-
+ syntax_checkers/haml.vim       |    5 +--
+ syntax_checkers/haskell.vim    |   30 ++++++++++++++++
+ syntax_checkers/html.vim       |    2 +-
+ syntax_checkers/javascript.vim |    4 +-
+ syntax_checkers/perl.vim       |   31 +++++++++++++++++
+ syntax_checkers/php.vim        |    2 +-
+ syntax_checkers/ruby.vim       |    4 +-
+ syntax_checkers/sass.vim       |    2 +-
+ syntax_checkers/xhtml.vim      |   34 ++++++++++++++++++
+ 13 files changed, 247 insertions(+), 37 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.0)
+Author:     Marty Grenfell <martin.grenfell at gmail.com>
+AuthorDate: Tue Aug 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                         |   30 +++++
+ doc/syntastic.txt              |  204 +++++++++++++++++++++++++++++++++++
+ plugin/syntastic.vim           |  228 ++++++++++++++++++++++++++++++++++++++++
+ syntax_checkers/eruby.vim      |   33 ++++++
+ syntax_checkers/haml.vim       |   32 ++++++
+ syntax_checkers/html.vim       |   36 +++++++
+ syntax_checkers/javascript.vim |   26 +++++
+ syntax_checkers/php.vim        |   26 +++++
+ syntax_checkers/python.vim     |   24 ++++
+ syntax_checkers/ruby.vim       |   27 +++++
+ syntax_checkers/sass.vim       |   31 ++++++
+ 11 files changed, 697 insertions(+), 0 deletions(-)

@@ -1,0 +1,154 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4.3, refs/heads/master)
+Author:     Marc Weber <marco-oweber at gmx.de>
+AuthorDate: Tue Aug 24 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    automatic installation of some important windows dependencies such as tar, patch, diff, unzip etc, separate functions for download and unpacking so that they can be reused, comment for gvim usage
+
+ autoload/sample_vimrc_for_new_users.vim |   20 +-
+ autoload/scriptmanager.vim              |   56 ++-
+ autoload/scriptmanager2.vim             |  213 +++++++---
+ autoload/scriptmanager_test.vim         |   71 +++
+ autoload/scriptmanager_util.vim         |  181 ++++++++
+ autoload/vcs_checkouts.vim              |   17 +-
+ doc/vim-addon-manager-addon-info.txt    |    2 +-
+ doc/vim-addon-manager.txt               |  713 +++++++++++++++++++++++--------
+ 8 files changed, 1010 insertions(+), 263 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2.4)
+Author:     Marc Weber <marco-oweber at gmx.de>
+AuthorDate: Fri Aug 6 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    xcopy patch for Windows
+
+ autoload/sample_vimrc_for_new_users.vim |    3 +-
+ autoload/scriptmanager2.vim             |  219 ++++++++++++++++++++++---------
+ autoload/vcs_checkouts.vim              |   82 ++++++++++++
+ doc/vim-addon-manager.txt               |   45 +++++++
+ vim-addon-manager-test.sh               |   53 ++++++++
+ 5 files changed, 337 insertions(+), 65 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2.2)
+Author:     Marc Weber <marco-oweber at gmx.de>
+AuthorDate: Wed Jul 21 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fixes by TuxTom
+
+ autoload/scriptmanager2.vim |    9 ++++-----
+ 1 files changed, 4 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2.1)
+Author:     Marc Weber <marco-oweber at gmx.de>
+AuthorDate: Tue Jul 20 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fix cd bug on Windows - adding sample .vimrc file. If you have more suggestions I"ll add them
+
+ autoload/sample_vimrc_for_new_users.vim |  200 +++++++++++++++++++++++++++++++
+ autoload/scriptmanager2.vim             |   59 +++++++---
+ doc/vim-addon-manager.txt               |    1 +
+ 3 files changed, 243 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2)
+Author:     Marc Weber <marco-oweber at gmx.de>
+AuthorDate: Sun Jul 11 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    only load code which is always used on startup - when updating include known-repositories
+
+ autoload/scriptmanager.vim  |  315 ++-----------------------------------------
+ autoload/scriptmanager2.vim |  303 +++++++++++++++++++++++++++++++++++++++++
+ doc/vim-addon-manager.txt   |    1 +
+ 3 files changed, 315 insertions(+), 304 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.1)
+Author:     Marc Weber <marco-oweber at gmx.de>
+AuthorDate: Wed Jul 7 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    addons can be installed by url now - many small enhancements by ZyX
+
+ .../vim-addon-manager-addon-info.txt               |    9 -
+ autoload/scriptmanager.vim                         |  229 +++++++++++++++-----
+ doc/vim-addon-manager-addon-info.txt               |    9 +
+ doc/vim-addon-manager.txt                          |   57 +++++-
+ 4 files changed, 232 insertions(+), 72 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Marc Weber <marco-oweber at gmx.de>
+AuthorDate: Mon Jan 11 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    run helptags.
+    Some windows support (You have to put curl and git etc in PATH)
+    support runtimepath being subdirectories.
+    support .tar.gz plugins
+
+ .../vim-addon-manager-addon-info.txt               |    9 ++
+ .../vim-addon-manager-addon-info.txt               |    9 --
+ autoload/scriptmanager.vim                         |  109 +++++++++++++++-----
+ doc/vim-addon-manager.txt                          |   39 +++++--
+ 4 files changed, 119 insertions(+), 47 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Marc Weber <marco-oweber at gmx.de>
+AuthorDate: Sat Jan 9 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    new command to uninstall a addon
+    completion for commands
+
+ .../vim-addon-manager-addon-info.txt               |    9 +
+ MarcWeber-vim-plugin-manager-b59dda9/README        |    1 -
+ .../plugin-info.txt                                |    9 -
+ autoload/scriptmanager.vim                         |  173 ++++++++++++++++++--
+ doc/vim-addon-manager.txt                          |  104 ++++++++++++
+ doc/vim-plugin-manager.txt                         |   80 ---------
+ 6 files changed, 271 insertions(+), 105 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Marc Weber <marco-oweber at gmx.de>
+AuthorDate: Sun Jan 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    supporting installing vimballs from www.vim.org site (tested with library: tlib)
+
+ MarcWeber-vim-plugin-manager-9388433/README        |    1 -
+ .../plugin-info.txt                                |    9 ---------
+ MarcWeber-vim-plugin-manager-b59dda9/README        |    1 +
+ .../plugin-info.txt                                |    9 +++++++++
+ autoload/scriptmanager.vim                         |   15 ++++++++++++++-
+ doc/vim-plugin-manager.txt                         |    3 +++
+ 6 files changed, 27 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Marc Weber <marco-oweber at gmx.de>
+AuthorDate: Fri Jan 1 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fixed handling of plugin/*.vim after/plugin/*.vim files
+    Support downloading .zip files from this site.
+
+ MarcWeber-vim-plugin-manager-9388433/README        |    1 +
+ .../plugin-info.txt                                |    9 ++
+ MarcWeber-vim-plugin-manager-eb92729/README        |    1 -
+ .../plugin-info.txt                                |    9 --
+ autoload/scriptmanager.vim                         |  101 ++++++++++++++++----
+ doc/vim-plugin-manager.txt                         |    6 +-
+ 6 files changed, 96 insertions(+), 31 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0)
+Author:     Marc Weber <marco-oweber at gmx.de>
+AuthorDate: Sun Dec 27 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ MarcWeber-vim-plugin-manager-eb92729/README        |    1 +
+ .../plugin-info.txt                                |    9 ++
+ README                                             |   58 ++++++++++
+ autoload/scriptmanager.vim                         |  110 ++++++++++++++++++++
+ doc/vim-plugin-manager.txt                         |   79 ++++++++++++++
+ 5 files changed, 257 insertions(+), 0 deletions(-)

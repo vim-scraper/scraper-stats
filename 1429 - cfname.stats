@@ -1,0 +1,63 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.0, refs/heads/master)
+Author:     Fabio Visona' <fabioviso at hotmail.com>
+AuthorDate: Fri Mar 24 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The function name is now automatically displayed on the status bar only for *.c, *.cpp or *.cc files, because the status bar update caused the scrolling of non-c files to slow down unnecessarily. These changes have been contributed by Yakov Lerner.
+
+ plugin/Cfname.vim |   74 ++++++++++++++--------------------------------------
+ 1 files changed, 20 insertions(+), 54 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0a)
+Author:     Fabio Visona' <fabioviso at hotmail.com>
+AuthorDate: Fri Mar 24 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Special version by Yakov Lerner (see description above)
+
+ plugin/Cfname.vim |   86 +++++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 64 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     Fabio Visona' <fabioviso at hotmail.com>
+AuthorDate: Thu Dec 15 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added 'ft' to jump back where the cursor was before typing 'fb' or 'fe'
+    - Added missing restoring of the cursor position in 'CF_GetPrototype' when
+      'searchpair' calls fail
+
+ plugin/Cfname.vim |  141 ++++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 112 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Fabio Visona' <fabioviso at hotmail.com>
+AuthorDate: Tue Dec 13 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug: some ^M characters in the script lead to warning messages under UNIX
+
+ plugin/Cfname.vim |  172 ++++++++++++++++++++++++++--------------------------
+ 1 files changed, 86 insertions(+), 86 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Fabio Visona' <fabioviso at hotmail.com>
+AuthorDate: Mon Dec 12 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added automatic visualization of the function name in the status line;
+    Added "fz" and "fo" commands to fold/unfold the function.
+
+ plugin/Cfname.vim |   28 ++++++++++++++++++++++++++--
+ 1 files changed, 26 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Fabio Visona' <fabioviso at hotmail.com>
+AuthorDate: Mon Dec 12 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README            |   49 +++++++++++++++++++++++++++++++++++++++++
+ plugin/Cfname.vim |   62 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 111 insertions(+), 0 deletions(-)

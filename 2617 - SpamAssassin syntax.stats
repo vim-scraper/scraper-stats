@@ -1,0 +1,90 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0, refs/heads/master)
+Author:     Adam Katz <vim at khopis.com>
+AuthorDate: Wed Nov 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Cleanup; no longer taking perl.vim wholesale (by require), now importing only the regexp matcher.  Also made other regexp tweaks.  Version bump to a .0-release to indicate pseudo-independence from perl syntax garbage (no more dependency and version mismatches), also indicating the parts newly implemented from scratch rather than free from perl.vim.
+
+ syntax/spamassassin.vim |  135 ++++++++++++++++++++++------------------------
+ 1 files changed, 65 insertions(+), 70 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
+Author:     Adam Katz <vim at khopis.com>
+AuthorDate: Tue Nov 3 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed syntax clearing bug found in 7.0 (but not 6.x or 7.1+)
+
+ syntax/spamassassin.vim |   11 +++++++----
+ 1 files changed, 7 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
+Author:     Adam Katz <vim at khopis.com>
+AuthorDate: Thu Oct 29 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fix bug introduced in 1.9 (header regexps using just // weren't colored)
+
+ syntax/spamassassin.vim |    6 ++++--
+ 1 files changed, 4 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
+Author:     Adam Katz <vim at khopis.com>
+AuthorDate: Thu Oct 29 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Updates include fixed alt regexp handling, support for :name and the like, if-unset, SA pseudo-headers, better handling of exists and eval.
+
+ syntax/spamassassin.vim |   48 ++++++++++++++++++++++++++++++----------------
+ 1 files changed, 31 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
+Author:     Adam Katz <vim at khopis.com>
+AuthorDate: Wed Jul 1 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Faster regexs using \%(query\) notation (equiv to perl's (?:query) notation) and other extremely minor tweaks like 'exists' no longer accepting functions.  I haven't touched this since 5/4/9, as reflected in internal release date, but I (wrongly) figured I'd tweak it more before another release.  It's pretty much done now, so I don't expect more releases.  There are two remaining TODO items:  one for reorganization (code cleanup) which is mostly unnecessary, and one assuming there is more perl highlighting to disable/tweak (though I haven't seen any evidence recently).  One more TODO is the recognition of regexs using alternate bounding characters like apostrophe instead of slash.
+
+ syntax/spamassassin.vim |   40 +++++++++++++++++++++-------------------
+ 1 files changed, 21 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
+Author:     Adam Katz <vim at khopis.com>
+AuthorDate: Fri May 1 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Oops, there were some things unique to vim6+ and 7+ in there (removed perl syntax groups).  I've cleaned that up.  This has been tested with vim7.1, vim7.0, vim6.0, and vim6.0 with the perl.vim syntax from vim5.5.
+
+ syntax/spamassassin.vim |   23 ++++++++++++++---------
+ 1 files changed, 14 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     Adam Katz <vim at khopis.com>
+AuthorDate: Fri May 1 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed remaining known bugs.  Template Tags are now contained in the header-modifying portions only.  Functions are now colored properly, with known common ones showing a different color (but do we care?).  Arguments to functions are better handled.  Parentheses are now colored.  Operators in meta lines are now colored.  URIBL types are recognized.
+
+ syntax/spamassassin.vim |   81 +++++++++++++++++++++++++++++++---------------
+ 1 files changed, 54 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Adam Katz <vim at khopis.com>
+AuthorDate: Tue Apr 28 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added the missing two plugins, better clearing of unwanted perl bits, fixed path and IP address recognizing, better handling of spelling on overflowed describe lines, and support for 3rd-party plugins URICountry (thanks Stefan Luetje) and SAGrey.
+
+ syntax/spamassassin.vim |  109 ++++++++++++++++++++++++++--------------------
+ 1 files changed, 62 insertions(+), 47 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Adam Katz <vim at khopis.com>
+AuthorDate: Thu Apr 23 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                  |   10 ++
+ syntax/spamassassin.vim |  307 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 317 insertions(+), 0 deletions(-)

@@ -1,0 +1,33 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0, refs/heads/master)
+Author:     Mikolaj Machowski <mikmach at wp.pl>
+AuthorDate: Tue Apr 25 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - not all element children were properly recognized
+    - comment out lines responsible for detection of obligatory attributes, too many false positives; uncomment on your own responsibility
+
+ dtd2vim |   41 +++++++++++++++++++++++++++++++----------
+ 1 files changed, 31 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Mikolaj Machowski <mikmach at wp.pl>
+AuthorDate: Sat Feb 18 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - generate 'info' field for attributes and tags (/> - EMPTY tag, * - required attribute)
+    - no extension
+
+ dtd2vim    |  177 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ dtd2vim.pl |  161 ------------------------------------------------------
+ 2 files changed, 177 insertions(+), 161 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Mikolaj Machowski <mikmach at wp.pl>
+AuthorDate: Sun Feb 12 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README     |   46 +++++++++++++++++
+ dtd2vim.pl |  161 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 207 insertions(+), 0 deletions(-)

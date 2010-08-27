@@ -1,0 +1,70 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.4, refs/heads/master)
+Author:     Yukihiro Nakadaira <yukihiro.nakadaira at gmail.com>
+AuthorDate: Fri Nov 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed some incompatibility of comment formatting.
+
+ autofmt/Makefile                      |   37 ++
+ autofmt/README                        |    1 +
+ autofmt/autoload/autofmt/compat.vim   |  428 ++++++++-------
+ autofmt/autoload/autofmt/japanese.vim |   65 +---
+ autofmt/autoload/autofmt/uax14.vim    |    6 +-
+ autofmt/memo.txt                      |  216 ++++++++
+ autofmt/test/Makefile                 |   36 ++
+ autofmt/test/dotest.in                |    4 +
+ autofmt/test/test1.in                 |  934 +++++++++++++++++++++++++++++++++
+ autofmt/test/test1.ok                 |  735 ++++++++++++++++++++++++++
+ autofmt/test/test2.in                 |   71 +++
+ autofmt/test/test2.ok                 |   63 +++
+ autofmt/test/test3.in                 |  138 +++++
+ autofmt/test/test3.ok                 |  108 ++++
+ autofmt/test/unix.vim                 |    5 +
+ 15 files changed, 2577 insertions(+), 270 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Yukihiro Nakadaira <yukihiro.nakadaira at gmail.com>
+AuthorDate: Sat Apr 25 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug that c, q flags of formatoptions didn't work.
+
+ autofmt/autoload/autofmt/compat.vim |   19 +++++++++++++------
+ 1 files changed, 13 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Yukihiro Nakadaira <yukihiro.nakadaira at gmail.com>
+AuthorDate: Tue Apr 15 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Removed dependency of unicode table from compat.
+
+ autofmt/autoload/autofmt/compat.vim |   15 ++-------------
+ autofmt/autoload/autofmt/uax14.vim  |    4 +++-
+ 2 files changed, 5 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Yukihiro Nakadaira <yukihiro.nakadaira at gmail.com>
+AuthorDate: Fri Jul 6 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    bug fix
+
+ autofmt/autoload/autofmt/compat.vim   |   37 ++++++++++++++------------------
+ autofmt/autoload/autofmt/japanese.vim |    9 +++++++-
+ 2 files changed, 24 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Yukihiro Nakadaira <yukihiro.nakadaira at gmail.com>
+AuthorDate: Sun Jul 1 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                                |   11 +
+ autofmt/autoload/autofmt/compat.vim   |  697 ++++++++++++++
+ autofmt/autoload/autofmt/japanese.vim |  168 ++++
+ autofmt/autoload/autofmt/uax14.vim    |   63 ++
+ autoload/unicode.vim                  | 1678 +++++++++++++++++++++++++++++++++
+ doc/autofmt.txt                       |   50 +
+ 6 files changed, 2667 insertions(+), 0 deletions(-)

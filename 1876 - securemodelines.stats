@@ -1,0 +1,40 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/20080424, refs/heads/master)
+Author:     Ciaran McCreesh <ciaran.mccreesh at googlemail.com>
+AuthorDate: Thu Apr 24 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Two tweaks, thanks to Christian J. Robinson: Make the messages it echoes end up in the :messages history. Modelines of the format "vim: set ...:" can also be be "vim:set ...:".
+
+ plugin/securemodelines.vim |   10 ++++++----
+ 1 files changed, 6 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20070518)
+Author:     Ciaran McCreesh <ciaran.mccreesh at googlemail.com>
+AuthorDate: Fri May 18 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The number of lines to search is now controllable via let g:secure_modelines_modelines=5. If g:secure_modelines_leave_modeline is defined, the internal &modeline variable will be left alone. Previously only one line at the end of the document would be searched for modelines. This is now fixed, thanks to Thomas de Grenier de Latour. The <SID>DoModelines function can now be accessed externally via SecureModelines_DoModelines.
+
+ plugin/securemodelines.vim |   33 ++++++++++++++++++++++++---------
+ 1 files changed, 24 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20070513)
+Author:     Ciaran McCreesh <ciaran.mccreesh at googlemail.com>
+AuthorDate: Sun May 13 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Modelines with no set: are now parsed correctly. rightleft is now included in the default allowed options, for help files. Builtin modelines are now forcibly disabled.
+
+ plugin/securemodelines.vim |   24 +++++++++++++++++-------
+ 1 files changed, 17 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20070409)
+Author:     Ciaran McCreesh <ciaran.mccreesh at googlemail.com>
+AuthorDate: Sun Apr 29 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                     |   29 ++++++++++
+ plugin/securemodelines.vim |  122 ++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 151 insertions(+), 0 deletions(-)

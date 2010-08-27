@@ -1,0 +1,1710 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/8.04, refs/heads/master)
+Author:     Jie Wu <karasaya at gmail.com>
+AuthorDate: Wed May 26 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     * New features
+    
+       * support swig error format.
+       * add swig syntax highlight.
+       * add csharp syntax highlight for special mark labels.
+       * add zencoding plugin.
+       * add matchit plugin.
+       * add django syntax highlight.
+       * add sphinx document compile support.
+    
+     * Changes
+    
+       * update vimwiki to 1.0.0.
+       * update cscope to 15.7a.
+       * refine gcc makefiles.
+       * let EnhancedCommentify support swig.
+       * disable auto-comment for c# language.
+       * always show status-line.
+       * change comment mathod for c in EnhancedCommentify, instead of using ``/**/`` we use ``//`` like cpp.
+       * change guifont in win32 to Bitstream_Vera_Sans_Mono:h10.
+       * Not allow exGlobalSearch running in stand-alone mode, this prevent exGlobalSearch show error message.
+       * let exQuickFix support cs error format.
+       * change ``_vimfiles`` folder to .vimfiles
+       * change ``_vimfiles/_hierarchies`` folder to .vimfiles/.hierarchies
+       * change ``_vimfiles/_temp`` folder to .vimfiles/.temp
+       * change vimwiki _doc folder to wiki_src
+       * let exProject ignore checking .vimfiles folders when browsing.
+       * generate header.tpl use dest file's encoding.
+       * update gvim.exe link with python26.dll in windows.
+       * add ex_try, ex_catch, ex_catch_exp, ex_throw, ex_safe_delete, ex_safe_free... syntax highlight.
+       * add my method to judge if it is objc or mathlab files.
+       * add key-world TEST, PATCH, FIXME, BUG, TIPS, HINT
+       * add ``<leader>sub`` for quick substitue word_highlight_1 to word_highlight_2
+       * add signal, slots, emit qt keywords for highlighting
+       * disable maximize window when openning vim.
+    
+     * Bug fix
+    
+       * fix exQuickFix open a file another programme already editing issue.
+       * fix exTagSelect show tags error when read preview from a file that already not exists.
+
+ .vimrc_ex                                          |  132 ++-
+ autoload/exUtility.vim                             |  110 +-
+ plugin/exEnvironmentSetting.vim                    |   24 +-
+ plugin/exGlobalSearch.vim                          |    6 +
+ plugin/exMacroHighlight.vim                        |    2 +
+ plugin/exMarksBrowser.vim                          |    4 +-
+ plugin/exQuickFix.vim                              |   24 +-
+ plugin/exTagSelect.vim                             |   12 +-
+ plugin/exUtility.vim                               |   71 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushAS3.js    |   58 +-
+ .../SyntaxHighlighter/scripts/shBrushColdFusion.js |   58 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushErlang.js |   58 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushGroovy.js |   58 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushJavaFX.js |   58 +-
+ .../SyntaxHighlighter/scripts/shBrushPowerShell.js |  152 ++--
+ toolkit/SyntaxHighlighter/scripts/shCore.js        |   58 +-
+ toolkit/SyntaxHighlighter/scripts/shLegacy.js      |   58 +-
+ toolkit/SyntaxHighlighter/styles/shCore.css        |    4 +-
+ toolkit/SyntaxHighlighter/styles/shThemeDjango.css |   58 +-
+ toolkit/SyntaxHighlighter/styles/shThemeEX.css     |    8 +-
+ .../SyntaxHighlighter/styles/shThemeEclipse.css    |   58 +-
+ toolkit/SyntaxHighlighter/styles/shThemeEmacs.css  |   58 +-
+ .../SyntaxHighlighter/styles/shThemeFadeToGrey.css |   58 +-
+ .../SyntaxHighlighter/styles/shThemeMidnight.css   |   58 +-
+ toolkit/SyntaxHighlighter/styles/shThemeRDark.css  |   58 +-
+ toolkit/cTags/.ctags                               |   25 -
+ toolkit/cTags/command.txt                          |   15 -
+ toolkit/doxygen/CodeGen/config.cfg                 | 1310 --------------------
+ toolkit/doxygen/CodeGen/footer.html                |    5 -
+ toolkit/doxygen/CodeGen/generate_doc.bat           |   21 -
+ toolkit/doxygen/CodeGen/header.html                |    9 -
+ toolkit/doxygen/CodeGen/hhc.exe                    |  Bin 51472 -> 0 bytes
+ toolkit/doxygen/CodeGen/logo.gif                   |  Bin 4475 -> 0 bytes
+ toolkit/doxygen/CodeGen/ubisoft.css                |  359 ------
+ toolkit/gawk/command.txt                           |   22 -
+ toolkit/gawk/prg_FileFilter.awk                    |   42 +-
+ toolkit/iconv/command.txt                          |   14 -
+ toolkit/iconv/iconv_big5-to-gb.bat                 |   20 -
+ toolkit/iconv/iconv_cp932-to-EUC_JP.bat            |   21 -
+ toolkit/iconv/iconv_latin1-to-cp936.bat            |   21 -
+ toolkit/iconv/iconv_latin1-to-utf-8.bat            |   21 -
+ toolkit/idutils/command.txt                        |   22 -
+ toolkit/idutils/id-lang.map                        |  248 ++--
+ toolkit/makefile/gcc/gcc_config.mk                 |    2 +-
+ toolkit/makefile/gcc/gcc_entry_m.mk                |  129 +--
+ toolkit/makefile/gcc/gcc_entry_s.mk                |   24 +-
+ toolkit/makefile/gcc/gcc_project.mk                |   24 +-
+ toolkit/makefile/gcc/gcc_rule.mk                   |  632 ----------
+ toolkit/makefile/gcc/gcc_rule_m.mk                 |  132 ++
+ toolkit/makefile/gcc/gcc_rule_s.mk                 |  632 ++++++++++
+ toolkit/quickgen/bash/quick_gen_project.sh         |    2 +-
+ toolkit/quickgen/batch/quick_gen_project.bat       |    2 +-
+ toolkit/snippets/cpp.snippets                      |    9 +-
+ toolkit/snippets/html.snippets                     |  104 ++-
+ toolkit/snippets/htmldjango.snippets               |  286 +++++
+ toolkit/snippets/mako.snippets                     |  108 +-
+ toolkit/snippets/zsh.snippets                      |  116 +-
+ toolkit/src-highlight/data/bison.lang              |    4 +-
+ toolkit/src-highlight/data/c_comment.lang          |   24 +-
+ toolkit/src-highlight/data/caml.lang               |   32 +-
+ toolkit/src-highlight/data/changelog.lang          |   32 +-
+ toolkit/src-highlight/data/cpp.lang                |   64 +-
+ toolkit/src-highlight/data/css_common.outlang      |   34 +-
+ toolkit/src-highlight/data/cssdoc.outlang          |   46 +-
+ toolkit/src-highlight/data/default.style           |   68 +-
+ toolkit/src-highlight/data/esc.outlang             |   92 +-
+ toolkit/src-highlight/data/esc.style               |   26 +-
+ toolkit/src-highlight/data/ex.css                  |  578 +++++-----
+ toolkit/src-highlight/data/ex_cpp.lang             |   36 +-
+ toolkit/src-highlight/data/flex.lang               |   72 +-
+ toolkit/src-highlight/data/fortran.lang            |   48 +-
+ toolkit/src-highlight/data/function.lang           |    2 +-
+ toolkit/src-highlight/data/html.lang               |   30 +-
+ toolkit/src-highlight/data/html.outlang            |   18 +-
+ toolkit/src-highlight/data/html_common.outlang     |   68 +-
+ toolkit/src-highlight/data/htmldoc.outlang         |   38 +-
+ toolkit/src-highlight/data/java.lang               |   46 +-
+ toolkit/src-highlight/data/javascript.lang         |    8 +-
+ toolkit/src-highlight/data/lang.map                |   96 +-
+ toolkit/src-highlight/data/latex.lang              |  104 +-
+ toolkit/src-highlight/data/latex.outlang           |   74 +-
+ toolkit/src-highlight/data/latexcolor.outlang      |   50 +-
+ toolkit/src-highlight/data/latexcolordoc.outlang   |   42 +-
+ toolkit/src-highlight/data/latexdoc.outlang        |   40 +-
+ toolkit/src-highlight/data/log.lang                |  108 +-
+ toolkit/src-highlight/data/logtalk.lang            |  154 ++--
+ toolkit/src-highlight/data/lua.lang                |   52 +-
+ toolkit/src-highlight/data/number.lang             |    2 +-
+ toolkit/src-highlight/data/outlang.map             |   28 +-
+ toolkit/src-highlight/data/pascal.lang             |   40 +-
+ toolkit/src-highlight/data/perl.lang               |   46 +-
+ toolkit/src-highlight/data/php.lang                |   46 +-
+ toolkit/src-highlight/data/prolog.lang             |   72 +-
+ toolkit/src-highlight/data/python.lang             |   58 +-
+ toolkit/src-highlight/data/ruby.lang               |   46 +-
+ toolkit/src-highlight/data/sml.lang                |    8 +-
+ toolkit/src-highlight/data/style2.style            |   18 +-
+ toolkit/src-highlight/data/style3.style            |   18 +-
+ toolkit/src-highlight/data/symbols.lang            |   44 +-
+ toolkit/src-highlight/data/texinfo.outlang         |   40 +-
+ toolkit/src-highlight/data/texinfo.style           |   24 +-
+ toolkit/src-highlight/data/url.lang                |    2 +-
+ toolkit/src-highlight/data/xhtml.outlang           |   24 +-
+ toolkit/src-highlight/data/xhtmlcss.outlang        |   48 +-
+ toolkit/src-highlight/data/xhtmldoc.outlang        |   46 +-
+ toolkit/vim/backup/doc/bufexplorer.txt             |  442 -------
+ toolkit/vim/backup/plugin/bufexplorer.vim          |  993 ---------------
+ toolkit/vim/command.txt                            |   23 -
+ toolkit/vim/compile_vim.bat                        |   34 -
+ vimfiles/after/compiler/exmsvc.vim                 |   55 +
+ vimfiles/after/compiler/msvc2005.vim               |   55 -
+ vimfiles/after/syntax/c.vim                        |   25 +-
+ vimfiles/after/syntax/cpp.vim                      |   17 +-
+ vimfiles/after/syntax/make.vim                     |   68 +-
+ vimfiles/filetype.vim                              |   62 +-
+ 115 files changed, 3722 insertions(+), 6428 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8.03)
+Author:     Jie Wu <karasaya at gmail.com>
+AuthorDate: Wed Dec 2 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     * New features
+        * let make syntax support external comments.
+        * refine install method for unix/linux.
+        * support Mac OS X.
+     * Changes
+        * support matlab/octave language
+        * support maxscript language
+        * move data/backup and data/swap directory to $HOME/.data/backup $HOME/.data/swap
+        * change default toolkit_path to $HOME/.toolkit/ for unix
+        * enlarge the font size, re-adjust default windows width increment
+        * update cTags to 5.8
+        * update SyntaxHighliter to 2.1.364
+        * update vimwiki to 0.9.6
+        * update NERD_tree to 4.1.0
+        * update genutils to 2.5
+     * Bug fix
+        * fix the filter format shows wrong syntax in dialog
+        * fix bracket "()" in directory name does not work.
+        * fix gcc_rule can't compile source file have same name but in different directory.
+        * fix PutHeader will show time in local encoding. Force to set it in English.
+        * fix exQuickFix can't jump msvc error message when use single core cpu. ( those message don't have "1>" at the beginning )
+        * fix exQuickfix can't select multi-core and single-core jump in msvc2005
+        * fix quick_gen_project.sh file_filter syntax error in unix/linux.
+        * add protection for ImageViewer and WebBrowser
+
+ .vimrc_ex                                          | 1090 ++++++
+ _vimrc_ex                                          | 1058 ------
+ autoload/exUtility.vim                             | 3807 ++++++++++++++++++++
+ colors/ex.vim                                      |   86 +
+ colors/ex_lightgray.vim                            |   86 +
+ doc/exVim.txt                                      | 2969 +++++++++++++++
+ .../SyntaxHighlighter/scripts/clipboard.swf        |  Bin 1361 -> 0 bytes
+ .../SyntaxHighlighter/scripts/shBrushBash.js       |   59 -
+ .../SyntaxHighlighter/scripts/shBrushCSharp.js     |   64 -
+ .../SyntaxHighlighter/scripts/shBrushCpp.js        |   99 -
+ .../SyntaxHighlighter/scripts/shBrushCss.js        |   93 -
+ .../SyntaxHighlighter/scripts/shBrushDelphi.js     |   57 -
+ .../SyntaxHighlighter/scripts/shBrushDiff.js       |   43 -
+ .../SyntaxHighlighter/scripts/shBrushGroovy.js     |   69 -
+ .../SyntaxHighlighter/scripts/shBrushJScript.js    |   51 -
+ .../SyntaxHighlighter/scripts/shBrushJava.js       |   55 -
+ .../SyntaxHighlighter/scripts/shBrushPerl.js       |   74 -
+ .../SyntaxHighlighter/scripts/shBrushPhp.js        |   91 -
+ .../SyntaxHighlighter/scripts/shBrushPlain.js      |   35 -
+ .../SyntaxHighlighter/scripts/shBrushPython.js     |   56 -
+ .../SyntaxHighlighter/scripts/shBrushRuby.js       |   57 -
+ .../SyntaxHighlighter/scripts/shBrushScala.js      |   53 -
+ .../SyntaxHighlighter/scripts/shBrushSql.js        |   68 -
+ .../toolkit/SyntaxHighlighter/scripts/shBrushVb.js |   58 -
+ .../SyntaxHighlighter/scripts/shBrushXml.js        |   71 -
+ .../toolkit/SyntaxHighlighter/scripts/shCore.js    |   30 -
+ .../toolkit/SyntaxHighlighter/scripts/shLegacy.js  |   30 -
+ .../vim/toolkit/SyntaxHighlighter/styles/help.png  |  Bin 786 -> 0 bytes
+ .../toolkit/SyntaxHighlighter/styles/magnifier.png |  Bin 615 -> 0 bytes
+ .../SyntaxHighlighter/styles/page_white_code.png   |  Bin 603 -> 0 bytes
+ .../SyntaxHighlighter/styles/page_white_copy.png   |  Bin 309 -> 0 bytes
+ .../toolkit/SyntaxHighlighter/styles/printer.png   |  Bin 731 -> 0 bytes
+ .../toolkit/SyntaxHighlighter/styles/shCore.css    |  321 --
+ .../SyntaxHighlighter/styles/shThemeDefault.css    |  191 -
+ .../SyntaxHighlighter/styles/shThemeDjango.css     |  193 -
+ .../toolkit/SyntaxHighlighter/styles/shThemeEX.css |  163 -
+ .../SyntaxHighlighter/styles/shThemeEmacs.css      |  192 -
+ .../SyntaxHighlighter/styles/shThemeFadeToGrey.css |  193 -
+ .../SyntaxHighlighter/styles/shThemeMidnight.css   |  192 -
+ .../SyntaxHighlighter/styles/shThemeRDark.css      |  192 -
+ .../toolkit/SyntaxHighlighter/styles/wrapping.png  |  Bin 631 -> 0 bytes
+ exDev/vim/toolkit/cTags/.ctags                     |   17 -
+ exDev/vim/toolkit/cTags/command.txt                |   15 -
+ exDev/vim/toolkit/doxygen/CodeGen/config.cfg       | 1310 -------
+ exDev/vim/toolkit/doxygen/CodeGen/footer.html      |    5 -
+ exDev/vim/toolkit/doxygen/CodeGen/generate_doc.bat |   21 -
+ exDev/vim/toolkit/doxygen/CodeGen/header.html      |    9 -
+ exDev/vim/toolkit/doxygen/CodeGen/hhc.exe          |  Bin 51472 -> 0 bytes
+ exDev/vim/toolkit/doxygen/CodeGen/logo.gif         |  Bin 4475 -> 0 bytes
+ exDev/vim/toolkit/doxygen/CodeGen/ubisoft.css      |  359 --
+ exDev/vim/toolkit/gawk/command.txt                 |   22 -
+ exDev/vim/toolkit/gawk/prg_ConvertLog.awk          |   20 -
+ exDev/vim/toolkit/gawk/prg_FileFilter.awk          |   21 -
+ .../vim/toolkit/gawk/prg_FileFilterWithQuotes.awk  |   21 -
+ exDev/vim/toolkit/gawk/prg_FilenameTagLinux.awk    |   26 -
+ exDev/vim/toolkit/gawk/prg_FilenameTagWin.awk      |   26 -
+ exDev/vim/toolkit/gawk/prg_Inherits.awk            |   30 -
+ exDev/vim/toolkit/gawk/prg_InheritsDot.awk         |   29 -
+ exDev/vim/toolkit/gawk/prg_NoStripSymbol.awk       |   22 -
+ exDev/vim/toolkit/gawk/prg_StripSymbol.awk         |   27 -
+ exDev/vim/toolkit/iconv/command.txt                |   14 -
+ exDev/vim/toolkit/iconv/iconv_big5-to-gb.bat       |   20 -
+ exDev/vim/toolkit/iconv/iconv_cp932-to-EUC_JP.bat  |   21 -
+ exDev/vim/toolkit/iconv/iconv_latin1-to-cp936.bat  |   21 -
+ exDev/vim/toolkit/iconv/iconv_latin1-to-utf-8.bat  |   21 -
+ exDev/vim/toolkit/idutils/command.txt              |   22 -
+ exDev/vim/toolkit/idutils/id-lang-default.map      |  101 -
+ exDev/vim/toolkit/idutils/id-lang.map              |  124 -
+ exDev/vim/toolkit/idutils/readme.txt               |    1 -
+ exDev/vim/toolkit/makefile/gcc/gcc_config.mk       |  217 --
+ exDev/vim/toolkit/makefile/gcc/gcc_entry_m.mk      |  153 -
+ exDev/vim/toolkit/makefile/gcc/gcc_entry_s.mk      |   99 -
+ exDev/vim/toolkit/makefile/gcc/gcc_project.mk      |   98 -
+ exDev/vim/toolkit/makefile/gcc/gcc_rule.mk         |  624 ----
+ exDev/vim/toolkit/makefile/msvc/make_vs.bat        |   76 -
+ exDev/vim/toolkit/makefile/msvc/msvc_config.mk     |  109 -
+ exDev/vim/toolkit/makefile/msvc/msvc_entry.mk      |  120 -
+ exDev/vim/toolkit/makefile/msvc/msvc_tmpl.txt      |    9 -
+ .../toolkit/makefile/msvc/vc_project/project.sln   |   46 -
+ .../msvc/vc_project/project_exe/project_exe.cpp    |   28 -
+ .../msvc/vc_project/project_exe/project_exe.h      |   14 -
+ .../msvc/vc_project/project_exe/project_exe.vcproj |  749 ----
+ .../project_exe.vcproj.EXPC.Johnny.user            |  177 -
+ .../msvc/vc_project/project_lib/project_lib.cpp    |   13 -
+ .../msvc/vc_project/project_lib/project_lib.h      |   14 -
+ .../msvc/vc_project/project_lib/project_lib.vcproj |  708 ----
+ .../project_lib.vcproj.EXPC.Johnny.user            |  177 -
+ .../toolkit/makefile/ref/gcc_rule_multi_logs.mk    |  405 ---
+ exDev/vim/toolkit/makefile/shader/shader_config.mk |  266 --
+ .../vim/toolkit/makefile/shader/shader_entry_m.mk  |  130 -
+ .../vim/toolkit/makefile/shader/shader_entry_s.mk  |  106 -
+ .../vim/toolkit/makefile/shader/shader_project.mk  |  104 -
+ exDev/vim/toolkit/makefile/shader/shader_rule.mk   |  320 --
+ exDev/vim/toolkit/octave/.octaverc                 |   19 -
+ .../vim/toolkit/quickgen/bash/quick_gen_project.sh |  464 ---
+ .../toolkit/quickgen/batch/quick_gen_project.bat   |  512 ---
+ exDev/vim/toolkit/snippets/_.snippets              |    7 -
+ exDev/vim/toolkit/snippets/autoit.snippets         |   66 -
+ exDev/vim/toolkit/snippets/c.snippets              |  206 --
+ exDev/vim/toolkit/snippets/cpp.snippets            |   83 -
+ exDev/vim/toolkit/snippets/html.snippets           |  190 -
+ exDev/vim/toolkit/snippets/java.snippets           |   78 -
+ exDev/vim/toolkit/snippets/javascript.snippets     |   74 -
+ exDev/vim/toolkit/snippets/mako.snippets           |   54 -
+ exDev/vim/toolkit/snippets/objc.snippets           |  184 -
+ exDev/vim/toolkit/snippets/perl.snippets           |   91 -
+ exDev/vim/toolkit/snippets/php.snippets            |  216 --
+ exDev/vim/toolkit/snippets/python.snippets         |   86 -
+ exDev/vim/toolkit/snippets/ruby.snippets           |  420 ---
+ exDev/vim/toolkit/snippets/sh.snippets             |   28 -
+ exDev/vim/toolkit/snippets/snippet.snippets        |    7 -
+ exDev/vim/toolkit/snippets/tcl.snippets            |   92 -
+ exDev/vim/toolkit/snippets/tex.snippets            |  115 -
+ exDev/vim/toolkit/snippets/vim.snippets            |   68 -
+ exDev/vim/toolkit/snippets/zsh.snippets            |   58 -
+ exDev/vim/toolkit/src-highlight/command.txt        |   15 -
+ .../toolkit/src-highlight/default/default.style    |   34 -
+ exDev/vim/toolkit/src-highlight/default/lang.map   |   47 -
+ exDev/vim/toolkit/src-highlight/ex/default.style   |   34 -
+ exDev/vim/toolkit/src-highlight/ex/ex.css          |  289 --
+ exDev/vim/toolkit/src-highlight/ex/ex_cpp.lang     |   18 -
+ exDev/vim/toolkit/src-highlight/ex/lang.map        |   48 -
+ exDev/vim/toolkit/vim/backup/doc/bufexplorer.txt   |  442 ---
+ .../vim/toolkit/vim/backup/plugin/bufexplorer.vim  |  993 -----
+ exDev/vim/toolkit/vim/command.txt                  |   23 -
+ exDev/vim/toolkit/vim/compile_vim.bat              |   34 -
+ exDev/vim/vimfiles/after/compiler/exgcc.vim        |   29 -
+ exDev/vim/vimfiles/after/compiler/hlsl.vim         |   15 -
+ exDev/vim/vimfiles/after/compiler/msvc2005.vim     |   55 -
+ exDev/vim/vimfiles/after/syntax/c.vim              |  129 -
+ exDev/vim/vimfiles/after/syntax/cpp.vim            |   69 -
+ exDev/vim/vimfiles/after/syntax/exUtility.vim      |   72 -
+ exDev/vim/vimfiles/after/syntax/hlsl.vim           |  108 -
+ exDev/vim/vimfiles/after/syntax/maxscript.vim      |   86 -
+ exDev/vim/vimfiles/after/syntax/python.vim         |   29 -
+ exDev/vim/vimfiles/after/syntax/syncolor.vim       |  100 -
+ exDev/vim/vimfiles/after/syntax/vim.vim            |   28 -
+ exDev/vim/vimfiles/autoload/exUtility.vim          | 3785 -------------------
+ exDev/vim/vimfiles/colors/ex.vim                   |   86 -
+ exDev/vim/vimfiles/doc/exVim.txt                   | 2963 ---------------
+ exDev/vim/vimfiles/filetype.vim                    |   31 -
+ exDev/vim/vimfiles/plugin/exCscope.vim             |  864 -----
+ exDev/vim/vimfiles/plugin/exEnvironmentSetting.vim |  443 ---
+ exDev/vim/vimfiles/plugin/exGlobalSearch.vim       |  917 -----
+ exDev/vim/vimfiles/plugin/exJumpStack.vim          |  644 ----
+ exDev/vim/vimfiles/plugin/exMacroHighlight.vim     |  745 ----
+ exDev/vim/vimfiles/plugin/exMarksBrowser.vim       |  484 ---
+ exDev/vim/vimfiles/plugin/exProject.vim            | 1061 ------
+ exDev/vim/vimfiles/plugin/exQuickFix.vim           |  650 ----
+ exDev/vim/vimfiles/plugin/exSearchComplete.vim     |  122 -
+ exDev/vim/vimfiles/plugin/exSymbolTable.vim        |  551 ---
+ exDev/vim/vimfiles/plugin/exTagSelect.vim          |  554 ---
+ exDev/vim/vimfiles/plugin/exUtility.vim            |  347 --
+ plugin/exBufExplorer.vim                           |  414 +++
+ plugin/exCscope.vim                                |  864 +++++
+ plugin/exEnvironmentSetting.vim                    |  443 +++
+ plugin/exGlobalSearch.vim                          |  917 +++++
+ plugin/exJumpStack.vim                             |  644 ++++
+ plugin/exMacroHighlight.vim                        |  745 ++++
+ plugin/exMarksBrowser.vim                          |  484 +++
+ plugin/exProject.vim                               | 1061 ++++++
+ plugin/exQuickFix.vim                              |  661 ++++
+ plugin/exSearchComplete.vim                        |  122 +
+ plugin/exSymbolTable.vim                           |  551 +++
+ plugin/exTagSelect.vim                             |  554 +++
+ plugin/exUtility.vim                               |  347 ++
+ toolkit/SyntaxHighlighter/scripts/clipboard.swf    |  Bin 0 -> 1361 bytes
+ toolkit/SyntaxHighlighter/scripts/shBrushAS3.js    |   61 +
+ toolkit/SyntaxHighlighter/scripts/shBrushBash.js   |   66 +
+ toolkit/SyntaxHighlighter/scripts/shBrushCSharp.js |   67 +
+ .../SyntaxHighlighter/scripts/shBrushColdFusion.js |  102 +
+ toolkit/SyntaxHighlighter/scripts/shBrushCpp.js    |   99 +
+ toolkit/SyntaxHighlighter/scripts/shBrushCss.js    |   93 +
+ toolkit/SyntaxHighlighter/scripts/shBrushDelphi.js |   57 +
+ toolkit/SyntaxHighlighter/scripts/shBrushDiff.js   |   43 +
+ toolkit/SyntaxHighlighter/scripts/shBrushErlang.js |   54 +
+ toolkit/SyntaxHighlighter/scripts/shBrushGroovy.js |   69 +
+ .../SyntaxHighlighter/scripts/shBrushJScript.js    |   52 +
+ toolkit/SyntaxHighlighter/scripts/shBrushJava.js   |   59 +
+ toolkit/SyntaxHighlighter/scripts/shBrushJavaFX.js |   60 +
+ toolkit/SyntaxHighlighter/scripts/shBrushPerl.js   |   74 +
+ toolkit/SyntaxHighlighter/scripts/shBrushPhp.js    |   91 +
+ toolkit/SyntaxHighlighter/scripts/shBrushPlain.js  |   35 +
+ .../SyntaxHighlighter/scripts/shBrushPowerShell.js |   76 +
+ toolkit/SyntaxHighlighter/scripts/shBrushPython.js |   66 +
+ toolkit/SyntaxHighlighter/scripts/shBrushRuby.js   |   57 +
+ toolkit/SyntaxHighlighter/scripts/shBrushScala.js  |   53 +
+ toolkit/SyntaxHighlighter/scripts/shBrushSql.js    |   68 +
+ toolkit/SyntaxHighlighter/scripts/shBrushVb.js     |   58 +
+ toolkit/SyntaxHighlighter/scripts/shBrushXml.js    |   71 +
+ toolkit/SyntaxHighlighter/scripts/shCore.js        |   30 +
+ toolkit/SyntaxHighlighter/scripts/shLegacy.js      |   30 +
+ toolkit/SyntaxHighlighter/styles/help.png          |  Bin 0 -> 786 bytes
+ toolkit/SyntaxHighlighter/styles/magnifier.png     |  Bin 0 -> 615 bytes
+ .../SyntaxHighlighter/styles/page_white_code.png   |  Bin 0 -> 603 bytes
+ .../SyntaxHighlighter/styles/page_white_copy.png   |  Bin 0 -> 309 bytes
+ toolkit/SyntaxHighlighter/styles/printer.png       |  Bin 0 -> 731 bytes
+ toolkit/SyntaxHighlighter/styles/shCore.css        |  330 ++
+ .../SyntaxHighlighter/styles/shThemeDefault.css    |  173 +
+ toolkit/SyntaxHighlighter/styles/shThemeDjango.css |  176 +
+ toolkit/SyntaxHighlighter/styles/shThemeEX.css     |  145 +
+ .../SyntaxHighlighter/styles/shThemeEclipse.css    |  190 +
+ toolkit/SyntaxHighlighter/styles/shThemeEmacs.css  |  175 +
+ .../SyntaxHighlighter/styles/shThemeFadeToGrey.css |  177 +
+ .../SyntaxHighlighter/styles/shThemeMidnight.css   |  175 +
+ toolkit/SyntaxHighlighter/styles/shThemeRDark.css  |  175 +
+ toolkit/SyntaxHighlighter/styles/wrapping.png      |  Bin 0 -> 631 bytes
+ toolkit/cTags/.ctags                               |   25 +
+ toolkit/cTags/command.txt                          |   15 +
+ toolkit/doxygen/CodeGen/config.cfg                 | 1310 +++++++
+ toolkit/doxygen/CodeGen/footer.html                |    5 +
+ toolkit/doxygen/CodeGen/generate_doc.bat           |   21 +
+ toolkit/doxygen/CodeGen/header.html                |    9 +
+ toolkit/doxygen/CodeGen/hhc.exe                    |  Bin 0 -> 51472 bytes
+ toolkit/doxygen/CodeGen/logo.gif                   |  Bin 0 -> 4475 bytes
+ toolkit/doxygen/CodeGen/ubisoft.css                |  359 ++
+ toolkit/gawk/command.txt                           |   22 +
+ toolkit/gawk/prg_ConvertLog.awk                    |   20 +
+ toolkit/gawk/prg_FileFilter.awk                    |   21 +
+ toolkit/gawk/prg_FileFilterWithQuotes.awk          |   21 +
+ toolkit/gawk/prg_FilenameTagLinux.awk              |   26 +
+ toolkit/gawk/prg_FilenameTagWin.awk                |   26 +
+ toolkit/gawk/prg_Inherits.awk                      |   30 +
+ toolkit/gawk/prg_InheritsDot.awk                   |   29 +
+ toolkit/gawk/prg_NoStripSymbol.awk                 |   22 +
+ toolkit/gawk/prg_StripSymbol.awk                   |   27 +
+ toolkit/iconv/command.txt                          |   14 +
+ toolkit/iconv/iconv_big5-to-gb.bat                 |   20 +
+ toolkit/iconv/iconv_cp932-to-EUC_JP.bat            |   21 +
+ toolkit/iconv/iconv_latin1-to-cp936.bat            |   21 +
+ toolkit/iconv/iconv_latin1-to-utf-8.bat            |   21 +
+ toolkit/idutils/command.txt                        |   22 +
+ toolkit/idutils/id-lang-default.map                |  101 +
+ toolkit/idutils/id-lang.map                        |  124 +
+ toolkit/idutils/readme.txt                         |    1 +
+ toolkit/makefile/gcc/gcc_config.mk                 |  217 ++
+ toolkit/makefile/gcc/gcc_entry_m.mk                |  153 +
+ toolkit/makefile/gcc/gcc_entry_s.mk                |   99 +
+ toolkit/makefile/gcc/gcc_project.mk                |   98 +
+ toolkit/makefile/gcc/gcc_rule.mk                   |  632 ++++
+ toolkit/makefile/msvc/make_vs.bat                  |   76 +
+ toolkit/makefile/msvc/msvc_config.mk               |  109 +
+ toolkit/makefile/msvc/msvc_entry.mk                |  120 +
+ toolkit/makefile/msvc/msvc_tmpl.txt                |    9 +
+ toolkit/makefile/msvc/vc_project/project.sln       |   46 +
+ .../msvc/vc_project/project_exe/project_exe.cpp    |   28 +
+ .../msvc/vc_project/project_exe/project_exe.h      |   14 +
+ .../msvc/vc_project/project_exe/project_exe.vcproj |  749 ++++
+ .../project_exe.vcproj.EXPC.Johnny.user            |  177 +
+ .../msvc/vc_project/project_lib/project_lib.cpp    |   13 +
+ .../msvc/vc_project/project_lib/project_lib.h      |   14 +
+ .../msvc/vc_project/project_lib/project_lib.vcproj |  708 ++++
+ .../project_lib.vcproj.EXPC.Johnny.user            |  177 +
+ toolkit/makefile/ref/gcc_rule_multi_logs.mk        |  405 +++
+ toolkit/makefile/shader/shader_config.mk           |  266 ++
+ toolkit/makefile/shader/shader_entry_m.mk          |  130 +
+ toolkit/makefile/shader/shader_entry_s.mk          |  106 +
+ toolkit/makefile/shader/shader_project.mk          |  104 +
+ toolkit/makefile/shader/shader_rule.mk             |  320 ++
+ toolkit/octave/.octaverc                           |   19 +
+ toolkit/quickgen/bash/quick_gen_project.sh         |  464 +++
+ toolkit/quickgen/batch/quick_gen_project.bat       |  513 +++
+ toolkit/snippets/_.snippets                        |    7 +
+ toolkit/snippets/autoit.snippets                   |   66 +
+ toolkit/snippets/c.snippets                        |  210 ++
+ toolkit/snippets/cpp.snippets                      |   94 +
+ toolkit/snippets/html.snippets                     |  190 +
+ toolkit/snippets/java.snippets                     |   78 +
+ toolkit/snippets/javascript.snippets               |   74 +
+ toolkit/snippets/mako.snippets                     |   54 +
+ toolkit/snippets/objc.snippets                     |  184 +
+ toolkit/snippets/perl.snippets                     |   91 +
+ toolkit/snippets/php.snippets                      |  216 ++
+ toolkit/snippets/python.snippets                   |   86 +
+ toolkit/snippets/ruby.snippets                     |  420 +++
+ toolkit/snippets/sh.snippets                       |   28 +
+ toolkit/snippets/snippet.snippets                  |    7 +
+ toolkit/snippets/tcl.snippets                      |   92 +
+ toolkit/snippets/tex.snippets                      |  115 +
+ toolkit/snippets/vim.snippets                      |   68 +
+ toolkit/snippets/zsh.snippets                      |   58 +
+ toolkit/src-highlight/command.txt                  |   15 +
+ toolkit/src-highlight/data/bison.lang              |    3 +
+ toolkit/src-highlight/data/c_comment.lang          |   13 +
+ toolkit/src-highlight/data/caml.lang               |   16 +
+ toolkit/src-highlight/data/changelog.lang          |   16 +
+ toolkit/src-highlight/data/cpp.lang                |   32 +
+ toolkit/src-highlight/data/css_common.outlang      |   17 +
+ toolkit/src-highlight/data/cssdoc.outlang          |   23 +
+ toolkit/src-highlight/data/default.style           |   34 +
+ toolkit/src-highlight/data/esc.outlang             |   46 +
+ toolkit/src-highlight/data/esc.style               |   13 +
+ toolkit/src-highlight/data/ex.css                  |  289 ++
+ toolkit/src-highlight/data/ex_cpp.lang             |   18 +
+ toolkit/src-highlight/data/flex.lang               |   37 +
+ toolkit/src-highlight/data/fortran.lang            |   24 +
+ toolkit/src-highlight/data/function.lang           |    2 +
+ toolkit/src-highlight/data/html.lang               |   15 +
+ toolkit/src-highlight/data/html.outlang            |    9 +
+ toolkit/src-highlight/data/html_common.outlang     |   34 +
+ toolkit/src-highlight/data/htmldoc.outlang         |   19 +
+ toolkit/src-highlight/data/java.lang               |   23 +
+ toolkit/src-highlight/data/javascript.lang         |    4 +
+ toolkit/src-highlight/data/lang.map                |   48 +
+ toolkit/src-highlight/data/latex.lang              |   52 +
+ toolkit/src-highlight/data/latex.outlang           |   38 +
+ toolkit/src-highlight/data/latexcolor.outlang      |   25 +
+ toolkit/src-highlight/data/latexcolordoc.outlang   |   21 +
+ toolkit/src-highlight/data/latexdoc.outlang        |   20 +
+ toolkit/src-highlight/data/log.lang                |   55 +
+ toolkit/src-highlight/data/logtalk.lang            |   77 +
+ toolkit/src-highlight/data/lua.lang                |   26 +
+ toolkit/src-highlight/data/number.lang             |    1 +
+ toolkit/src-highlight/data/outlang.map             |   15 +
+ toolkit/src-highlight/data/pascal.lang             |   20 +
+ toolkit/src-highlight/data/perl.lang               |   23 +
+ toolkit/src-highlight/data/php.lang                |   23 +
+ toolkit/src-highlight/data/prolog.lang             |   37 +
+ toolkit/src-highlight/data/python.lang             |   29 +
+ toolkit/src-highlight/data/ruby.lang               |   23 +
+ toolkit/src-highlight/data/sml.lang                |    5 +
+ toolkit/src-highlight/data/style2.style            |   10 +
+ toolkit/src-highlight/data/style3.style            |   10 +
+ toolkit/src-highlight/data/symbols.lang            |   23 +
+ toolkit/src-highlight/data/texinfo.outlang         |   21 +
+ toolkit/src-highlight/data/texinfo.style           |   12 +
+ toolkit/src-highlight/data/url.lang                |    2 +
+ toolkit/src-highlight/data/xhtml.outlang           |   13 +
+ toolkit/src-highlight/data/xhtmlcss.outlang        |   25 +
+ toolkit/src-highlight/data/xhtmldoc.outlang        |   24 +
+ toolkit/src-highlight/default/default.style        |   34 +
+ toolkit/src-highlight/default/lang.map             |   47 +
+ toolkit/src-highlight/ex/default.style             |   34 +
+ toolkit/src-highlight/ex/ex.css                    |  289 ++
+ toolkit/src-highlight/ex/ex_cpp.lang               |   18 +
+ toolkit/src-highlight/ex/lang.map                  |   48 +
+ toolkit/vim/backup/doc/bufexplorer.txt             |  442 +++
+ toolkit/vim/backup/plugin/bufexplorer.vim          |  993 +++++
+ toolkit/vim/command.txt                            |   23 +
+ toolkit/vim/compile_vim.bat                        |   34 +
+ vimfiles/after/compiler/exgcc.vim                  |   29 +
+ vimfiles/after/compiler/hlsl.vim                   |   15 +
+ vimfiles/after/compiler/msvc2005.vim               |   55 +
+ vimfiles/after/syntax/c.vim                        |  129 +
+ vimfiles/after/syntax/cpp.vim                      |   69 +
+ vimfiles/after/syntax/exUtility.vim                |   72 +
+ vimfiles/after/syntax/hlsl.vim                     |  108 +
+ vimfiles/after/syntax/make.vim                     |   34 +
+ vimfiles/after/syntax/maxscript.vim                |  132 +
+ vimfiles/after/syntax/python.vim                   |   29 +
+ vimfiles/after/syntax/syncolor.vim                 |  100 +
+ vimfiles/after/syntax/vim.vim                      |   28 +
+ vimfiles/filetype.vim                              |   34 +
+ 353 files changed, 33565 insertions(+), 31057 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8.02)
+Author:     Jie Wu <karasaya at gmail.com>
+AuthorDate: Wed Jul 29 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        * New features
+        * Changes
+              o let title show vimentry name first, so that you can select project with a clear name in task bar.
+              o add qt language map ( qt: qrc, pro, pri )
+        * Bug fix
+              o fix exJumpStack jump error when we do tg word1, gg word2 then tg word1 again.
+              o fix inherit image can't show when path have white-space.
+              o fix exQuickFix loose fix when we load another quickfix list, and try to use the exQuickFix again.
+              o fix multiple gcc project makefile clean-deps error.
+              o fix lookupfile re-open deleted buffer will not show in the minibufexpl. (thanks vxzhong)
+              o fix minibufexpl mouse click open will not open in edit-buffer. (thanks ozgezer)
+
+ _vimrc_ex                                          |    2 +-
+ exDev/vim/toolkit/makefile/gcc/gcc_entry_m.mk      |    2 +-
+ exDev/vim/toolkit/snippets/mako.snippets           |   54 ++++++++++++++++++
+ exDev/vim/toolkit/snippets/objc.snippets           |   57 +++++++++++--------
+ exDev/vim/toolkit/snippets/zsh.snippets            |   58 ++++++++++++++++++++
+ exDev/vim/vimfiles/autoload/exUtility.vim          |    7 ++-
+ exDev/vim/vimfiles/plugin/exEnvironmentSetting.vim |   10 +++-
+ exDev/vim/vimfiles/plugin/exGlobalSearch.vim       |    6 ++-
+ exDev/vim/vimfiles/plugin/exQuickFix.vim           |    5 ++-
+ exDev/vim/vimfiles/plugin/exTagSelect.vim          |    6 ++-
+ 10 files changed, 172 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8.02c)
+Author:     Jie Wu <karasaya at gmail.com>
+AuthorDate: Sun Jul 5 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        * New features
+              o Temp highlight words under current cursor when cursor holds.
+        * Changes
+              o let exQuickFix can jump template sub-errors in msvc.
+        * Bug fix
+              o fix quick gen project can't generate cscope database. (thanks ozgezer)
+              o fix exBufExplorer save list buffers in bookmarks if we don't have a bookmarks file.
+              o fix quick_gen_project.sh filenamelist generation errors in unix like system. (thanks oz
+
+ .../vim/toolkit/quickgen/bash/quick_gen_project.sh |   31 +++++++++---
+ exDev/vim/vimfiles/autoload/exUtility.vim          |   51 ++++++++++++++++++--
+ exDev/vim/vimfiles/doc/exVim.txt                   |    7 +++
+ exDev/vim/vimfiles/plugin/exQuickFix.vim           |    1 +
+ exDev/vim/vimfiles/plugin/exUtility.vim            |   15 ++++++
+ 5 files changed, 93 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8.02b)
+Author:     Jie Wu <karasaya at gmail.com>
+AuthorDate: Sat Jun 27 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        * New features
+              o add exBufExplorer.
+              o add bookmarks in exBufExplorer.
+              o When cursor hold in exProject window, it will echo the full path in the cursor line.
+              o add ex_toolkit_path so user can install toolkit folder in a specific path.
+              o user delete bookmark directly in exBufExplorer.
+        * Changes
+              o change gf function to use lookupfile plugin.
+              o add SS command for filtering symbol table search result
+        * Bug fix
+              o fix quickgen bash script if statement syntax error.
+              o fix fail to run quick_gen_project script in csh shell.
+              o fix !FreeBSD ctags can't be detected correctly.
+              o fix buffer delete mess the window layout when there have several window opened.
+              o fix \ff,\fd search error, new method can even use smart case for search.
+              o fix ctrl-left/right will go to the next buffer in plugin window, mess-up the window layout.
+              o fix exCscope syntax file name syntax highlight beyond the range.
+              o fix restore buffer never execute auto-command in last edit-buffer.
+              o only do search jump when current line not matched with the pattern in exJumpStack
+
+ _vimrc_ex                                          |   27 ++-
+ .../vim/toolkit/quickgen/bash/quick_gen_project.sh |   60 +++--
+ .../quickgen/bash/quick_gen_project_custom.sh      |   42 ---
+ .../toolkit/quickgen/batch/quick_gen_project.bat   |   30 ++-
+ .../quickgen/batch/quick_gen_project_custom.bat    |   47 ----
+ exDev/vim/toolkit/snippets/c.snippets              |    4 +-
+ exDev/vim/vimfiles/autoload/exUtility.vim          |   49 ++--
+ exDev/vim/vimfiles/doc/exVim.txt                   |  266 ++++++++++++++++++--
+ exDev/vim/vimfiles/plugin/exCscope.vim             |    4 +-
+ exDev/vim/vimfiles/plugin/exEnvironmentSetting.vim |    3 +-
+ exDev/vim/vimfiles/plugin/exJumpStack.vim          |   14 +-
+ exDev/vim/vimfiles/plugin/exProject.vim            |  239 +++++-------------
+ exDev/vim/vimfiles/plugin/exSymbolTable.vim        |   13 +-
+ exDev/vim/vimfiles/plugin/exUtility.vim            |   31 +++
+ 14 files changed, 464 insertions(+), 365 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8.02a)
+Author:     Jie Wu <karasaya at gmail.com>
+AuthorDate: Sat Jun 20 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        * New features
+              o let exProject support file with no-suffix (NULL filetype).
+              o let cscope can parse by specific language type.
+              o add DirDiff and snipMate plugin.
+              o add pythoncomplete plugin.
+              o add exBufExplorer (exProject quick-view window) for exploring and editing opened buffers.
+        * Changes
+              o add backspace navigate and alt+left/right navigate for exJumpStack.
+              o let EnhComment support snippet file.
+              o change ex_plugin_list to ex_plugin_registered_bufnames,ex_plugin_registered_filetypes to enhance the register-plugin.
+              o let exProject and NERDtree can switch.
+              o remove _vimfiles* folders when list project tree in exProject window.
+        * Bug fix
+              o fix Mark Text can't be lower case.
+              o fix lots of exCscope problem.
+              o fix cscope syntax highlight.
+              o fix showmarks conflict with snipMate plugin,
+              o fix color scheme will be dark when there is no colorscheme set in _vimrc.
+              o fix taglist,NERD_tree,minibufexpl opens window not take the position when there already have ex-plugin window.
+              o let exJumpStack can recognize all registered plugin window.
+              o fix findfile in g:exES_CWD reports wrong result when directory name have space
+              o remove hard code in detecting ctags and cscope support.
+              o fix cursor can't move to the edit-buffer when use restore buffer.
+
+ _vimrc_ex                                          |   50 +-
+ exDev/vim/toolkit/snippets/_.snippets              |    7 +
+ exDev/vim/toolkit/snippets/autoit.snippets         |   66 ++
+ exDev/vim/toolkit/snippets/c.snippets              |  206 ++++
+ exDev/vim/toolkit/snippets/cpp.snippets            |   83 ++
+ exDev/vim/toolkit/snippets/html.snippets           |  190 ++++
+ exDev/vim/toolkit/snippets/java.snippets           |   78 ++
+ exDev/vim/toolkit/snippets/javascript.snippets     |   74 ++
+ exDev/vim/toolkit/snippets/objc.snippets           |  175 ++++
+ exDev/vim/toolkit/snippets/perl.snippets           |   91 ++
+ exDev/vim/toolkit/snippets/php.snippets            |  216 +++++
+ exDev/vim/toolkit/snippets/python.snippets         |   86 ++
+ exDev/vim/toolkit/snippets/ruby.snippets           |  420 +++++++++
+ exDev/vim/toolkit/snippets/sh.snippets             |   28 +
+ exDev/vim/toolkit/snippets/snippet.snippets        |    7 +
+ exDev/vim/toolkit/snippets/tcl.snippets            |   92 ++
+ exDev/vim/toolkit/snippets/tex.snippets            |  115 +++
+ exDev/vim/toolkit/snippets/vim.snippets            |   68 ++
+ exDev/vim/toolkit/vim/backup/doc/bufexplorer.txt   |  442 +++++++++
+ .../vim/toolkit/vim/backup/plugin/bufexplorer.vim  |  993 ++++++++++++++++++++
+ exDev/vim/vimfiles/autoload/exUtility.vim          |  254 ++++--
+ exDev/vim/vimfiles/doc/exVim.txt                   |    2 +-
+ exDev/vim/vimfiles/plugin/exCscope.vim             |  160 ++--
+ exDev/vim/vimfiles/plugin/exEnvironmentSetting.vim |    3 +-
+ exDev/vim/vimfiles/plugin/exGlobalSearch.vim       |   19 +-
+ exDev/vim/vimfiles/plugin/exProject.vim            |  224 ++++-
+ exDev/vim/vimfiles/plugin/exSymbolTable.vim        |    4 +-
+ exDev/vim/vimfiles/plugin/exTagSelect.vim          |    2 +-
+ exDev/vim/vimfiles/plugin/exUtility.vim            |   37 +-
+ 29 files changed, 4003 insertions(+), 189 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8.01b)
+Author:     Jie Wu <karasaya at gmail.com>
+AuthorDate: Sun Jun 14 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        * New features
+              o let quick_gen_project can update filenametags
+              o let exCscope support find g method
+        * Changes
+              o make exSearchComplete disable in unix/linux terminal.
+              o let lookupfile, taglist use the same key map settings as ex-plugins have.
+              o use pattern instead of preview for exJumpStack, the preview will be generate dynamically.
+              o use pattern locate the jump result, so that even you changes some of the line between the jump result, it still have chance to locate to the exact position.
+              o add quick_gen_project_pre_custom and quick_gen_project_post_custom when update project.
+              o when doing stack jump, use keepjumps.
+              o Add protect codes for moving project files.
+              o add cscope file name highlight
+        * Bug fix
+              o fix the EX_DEV been overwritten in linux.
+              o fix highlight error of key word "class::define" in exJumpStack.
+              o fix exJumpStack when poping up stack, reset wrong tag index.
+              o fix EX_DEV setting error in windows, when there is no EX_DEV environment variable.
+              o fix cscope filter search error.
+              o fix EX_DEV setting error in windows, when there is no EX_DEV environment variable.
+              o fix exJumpStack can't locate empty line or line with only space, tab problem
+
+ _vimrc_ex                                          |   17 +-
+ exDev/vim/toolkit/gawk/prg_FilenameTagLinux.awk    |   26 +++
+ exDev/vim/toolkit/gawk/prg_FilenameTagWin.awk      |   26 +++
+ .../vim/toolkit/quickgen/bash/quick_gen_project.sh |   59 ++++--
+ .../toolkit/quickgen/batch/quick_gen_project.bat   |   71 ++++--
+ exDev/vim/vimfiles/autoload/exUtility.vim          |   77 +++++--
+ exDev/vim/vimfiles/doc/exVim.txt                   |  212 ++++++++++++-------
+ exDev/vim/vimfiles/plugin/exCscope.vim             |  233 ++++++++++++--------
+ exDev/vim/vimfiles/plugin/exGlobalSearch.vim       |    8 +-
+ exDev/vim/vimfiles/plugin/exJumpStack.vim          |   57 ++++-
+ exDev/vim/vimfiles/plugin/exSearchComplete.vim     |    6 +
+ exDev/vim/vimfiles/plugin/exSymbolTable.vim        |    6 +-
+ exDev/vim/vimfiles/plugin/exTagSelect.vim          |   14 +-
+ exDev/vim/vimfiles/plugin/exUtility.vim            |    9 +-
+ 14 files changed, 557 insertions(+), 264 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8.01a)
+Author:     Jie Wu <karasaya at gmail.com>
+AuthorDate: Sun Jun 7 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        * New features
+              o add ex_lightgray color scheme.
+              o Support search result sorting for exGlobalSearch.
+                    + add g:exGS_auto_sort, g:exGS_lines_for_autosort settings
+                    + add \sr operations for force sort search result.
+              o Support general key map settings for ex-plugin.
+              o add exJumpStack
+        * Changes
+              o add errorformat support for exGlobalSearch result. (People may copy the exGlobaSearch result from global search window to quickfix window)
+              o in old version, exQF_PasteQuickFixResult? can only use \p. now you can use p or \p to accomplish the task.
+              o add warnning when use visual p,\p to paste a result to quickfix window, it will switch to normal p,\p operation.
+              o add EX_DEV environment support in unix/linux.
+              o let taglist support hlsl language.
+              o let root directory dialog only show up in exProject standalone version.
+              o add compile error support for hlsl in exQuickFix.
+              o remove tag stack in exTagSelect, use exJumpStack instead.
+        * Bug fix
+              o fix cscope can't parse file name with space.
+              o fix switch window can't keep the same window size problem.
+              o fix macro highlight ignore case for macro
+              o fix arrow key can't be used in terminal version of unix/linux
+              o fix macro highlight highlight error when the macro #if is not at the beginning of the line.
+
+ _vimrc_ex                                          |   66 ++-
+ .../vim/toolkit/gawk/prg_FileFilterWithQuotes.awk  |   21 +
+ .../vim/toolkit/quickgen/bash/quick_gen_project.sh |    2 +-
+ .../toolkit/quickgen/batch/quick_gen_project.bat   |    2 +-
+ exDev/vim/vimfiles/autoload/exUtility.vim          |   26 +-
+ exDev/vim/vimfiles/colors/ex.vim                   |   14 +-
+ exDev/vim/vimfiles/doc/exVim.txt                   |   24 +
+ exDev/vim/vimfiles/plugin/exCscope.vim             |   42 +-
+ exDev/vim/vimfiles/plugin/exEnvironmentSetting.vim |    8 +-
+ exDev/vim/vimfiles/plugin/exGlobalSearch.vim       |  451 ++++++---------
+ exDev/vim/vimfiles/plugin/exJumpStack.vim          |  611 ++++++++++++++++++++
+ exDev/vim/vimfiles/plugin/exMacroHighlight.vim     |   55 +--
+ exDev/vim/vimfiles/plugin/exMarksBrowser.vim       |   12 +-
+ exDev/vim/vimfiles/plugin/exProject.vim            |   70 +--
+ exDev/vim/vimfiles/plugin/exQuickFix.vim           |   64 ++-
+ exDev/vim/vimfiles/plugin/exSearchComplete.vim     |    6 +
+ exDev/vim/vimfiles/plugin/exSymbolTable.vim        |  123 +++-
+ exDev/vim/vimfiles/plugin/exTagSelect.vim          |  412 ++++---------
+ exDev/vim/vimfiles/plugin/exUtility.vim            |   80 +++-
+ 19 files changed, 1331 insertions(+), 758 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/7.05)
+Author:     Jie Wu <karasaya at gmail.com>
+AuthorDate: Sat May 30 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        * New features
+              o add \ve to quick edit current vimentry file.
+              o add vimentry name check when open vimentry file. if vimentry name is not the same with the value VimEntryName in vimentry file, it will lead to a vimentry re-write.
+              o add paste quickfix result from register '*'.
+              o add exUtility#CloseAllExpluginWindow() function
+              o add s:ex_lang_map for exVim. you can use exUtility#RestLangMap and exUtility#AddLangMap function to create your own language maps.
+                    + remove g:exPJ_default_filter variable. use g:ex_default_langs instead.
+                    + add ExpjUpdateFilters command
+                    + add g:exES_LangType? set project filter process in exEnvironment
+                    + let exUtility#GetLangType and exUtility#GetCtagsOption support s:ex_lang_map
+              o add darkscheme support
+        * Changes
+              o change the id language custom map from id-lang.map to id-lang-custom.map.
+              o disable move/del command shows information in quick_gen_project.bat by add > nul
+              o change g:exES_vimfile_dir to g:exES_vimfiles_dirname.
+              o change exProject filetype from ft_exproject to ex_filetype
+              o change g:exUT_plugin_list to g:ex_plugin_list
+        * Bug fix
+              o fix \fc can't work outside edit window.
+              o fix "<args>" can't accept win32 path problem. by replace all "<args>" to '<args>'
+              o use :e xxx.vimentry when you already in another vimentry, the project settings will not be switch.
+                    + fix :EXProject <filename> will not close old project file when the <filename> is not the same.
+                    + fix exSymbolTable and exMacroHighlight can't load new file when they already load one.
+              o fix \cf error.
+              o fix toggle window can't let the cursor focus on it.
+
+ _vimrc_ex                                          |   25 +-
+ .../vim/toolkit/quickgen/bash/quick_gen_project.sh |    4 +-
+ .../toolkit/quickgen/batch/quick_gen_project.bat   |    4 +-
+ exDev/vim/vimfiles/autoload/exUtility.vim          |  292 +++++++++++++-------
+ exDev/vim/vimfiles/colors/ex.vim                   |    2 +-
+ exDev/vim/vimfiles/doc/exVim.txt                   |  176 +++++++------
+ exDev/vim/vimfiles/filetype.vim                    |    3 +
+ exDev/vim/vimfiles/plugin/exCscope.vim             |   14 +-
+ exDev/vim/vimfiles/plugin/exEnvironmentSetting.vim |   58 ++++-
+ exDev/vim/vimfiles/plugin/exGlobalSearch.vim       |   23 +--
+ exDev/vim/vimfiles/plugin/exMacroHighlight.vim     |   44 ++--
+ exDev/vim/vimfiles/plugin/exMarksBrowser.vim       |    8 +-
+ exDev/vim/vimfiles/plugin/exProject.vim            |   67 +++---
+ exDev/vim/vimfiles/plugin/exQuickFix.vim           |   64 +++--
+ exDev/vim/vimfiles/plugin/exSymbolTable.vim        |   19 +-
+ exDev/vim/vimfiles/plugin/exTagSelect.vim          |   17 +-
+ exDev/vim/vimfiles/plugin/exUtility.vim            |   64 ++++--
+ 17 files changed, 530 insertions(+), 354 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/7.05b)
+Author:     Jie Wu <karasaya at gmail.com>
+AuthorDate: Sun May 24 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     * New features
+        * Support more than one ".vimentry" in same directory.
+        * add "!VimEntryName" and "!VimfilesDirName" in `.vimentry` file.
+     * Changes
+        * add "autogen settings (DO NOT MODIFY)" comments in the vimentry file.
+        * `.vimentry` version number update to 21. ( you will loose your old .vimentry file settings when open an old project )
+        * disable move/del command shows information in quick_gen_project.bat by add `> nul`
+        * change g:exPJ_defualt_filter to g:exPJ_default_filter.
+        * remove g:exES_default_vimfiles, now the vimfiles dirname will be generate automatically by the vimentry name.
+     * Bug fix
+        * fix exEnvironment use getcwd as g:exES_CWD bug. Instead, we use the folder path of `.vimentry` file
+        * fix exGlobalSearch <c-left>, <c-right> will go to edit buffer
+        * fix visual studio.py can't load unicode solution name
+        * fix open `.vimentry` failed from vim in different path than the path of `.vimentry`
+
+ _vimrc_ex                                          |   35 ++--
+ .../toolkit/quickgen/batch/quick_gen_project.bat   |   21 +--
+ .../quickgen/batch/quick_gen_project_custom.bat    |    2 +-
+ exDev/vim/vimfiles/autoload/exUtility.vim          |   89 ++++++----
+ exDev/vim/vimfiles/plugin/exCscope.vim             |    2 +-
+ exDev/vim/vimfiles/plugin/exEnvironmentSetting.vim |  185 ++++++++++----------
+ exDev/vim/vimfiles/plugin/exGlobalSearch.vim       |   10 +-
+ exDev/vim/vimfiles/plugin/exProject.vim            |   18 +-
+ exDev/vim/vimfiles/plugin/exQuickFix.vim           |   80 +++++----
+ 9 files changed, 241 insertions(+), 201 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/7.05a)
+Author:     Jie Wu <karasaya at gmail.com>
+AuthorDate: Mon May 18 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        * New features
+              o Restore last edit buffer.
+              o Update project depends on project files ( file_filter and dir_filter ).
+                    + add filenamelist generate script in quick_gen_project.bat/sh.
+                    + update ctags use option -L filenamelist instead of -R.
+                    + update cscope use filenamelist instead of dir /s /b whole directory.
+                    + add trace log for quick_gen_project script.
+              o Support multi-language type for project.
+              o Support choose language type automatically. (depends on your file_filter input)
+        * Changes
+              o change exProject file filter and dir filter syntax
+                    + file filter = type1,type2,type3,...,
+                    + dir filter = dir1,dir2,dir3,...,
+                    + NOTE: you need to remove the original *.exproject files for this change, or you will meet unwanted errors during refresh project and update project.
+              o Automatically generate quick_gen_project-auto.bat/sh instead of copying one from toolkit/quickgen.
+              o Remove quick_gen_project_xxx_only.bat/sh scripts. (since we use quick_gen_project-auto and -custom)
+              o .vimentry version number update to 17. ( you will loose your old .vimentry file settings when open an old project )
+        * Bug fix
+              o Fix exMacroHighlight syntax highlight disappear when no any c-like file loaded.
+
+ _vimrc_ex                                          |  952 ++
+ autoload/genutils.vim                              | 1954 ---
+ autoload/lookupfile.vim                            |  486 -
+ doc/EnhancedCommentify.txt                         |  493 -
+ doc/NERD_tree.txt                                  | 1079 --
+ doc/crefvim.txt                                    |14112 --------------------
+ doc/crefvimdoc.txt                                 | 1742 ---
+ doc/lookupfile.txt                                 |  765 --
+ doc/minibufexpl.txt                                |   39 -
+ doc/omnicppcomplete.txt                            | 1078 --
+ doc/showmarks.txt                                  |  264 -
+ doc/surround.txt                                   |  218 -
+ doc/taglist.txt                                    | 1501 ---
+ doc/vimwiki.txt                                    | 1076 --
+ doc/visincr.txt                                    |  488 -
+ .../SyntaxHighlighter/scripts/clipboard.swf        |  Bin 0 -> 1361 bytes
+ .../SyntaxHighlighter/scripts/shBrushBash.js       |   59 +
+ .../SyntaxHighlighter/scripts/shBrushCSharp.js     |   64 +
+ .../SyntaxHighlighter/scripts/shBrushCpp.js        |   99 +
+ .../SyntaxHighlighter/scripts/shBrushCss.js        |   93 +
+ .../SyntaxHighlighter/scripts/shBrushDelphi.js     |   57 +
+ .../SyntaxHighlighter/scripts/shBrushDiff.js       |   43 +
+ .../SyntaxHighlighter/scripts/shBrushGroovy.js     |   69 +
+ .../SyntaxHighlighter/scripts/shBrushJScript.js    |   51 +
+ .../SyntaxHighlighter/scripts/shBrushJava.js       |   55 +
+ .../SyntaxHighlighter/scripts/shBrushPerl.js       |   74 +
+ .../SyntaxHighlighter/scripts/shBrushPhp.js        |   91 +
+ .../SyntaxHighlighter/scripts/shBrushPlain.js      |   35 +
+ .../SyntaxHighlighter/scripts/shBrushPython.js     |   56 +
+ .../SyntaxHighlighter/scripts/shBrushRuby.js       |   57 +
+ .../SyntaxHighlighter/scripts/shBrushScala.js      |   53 +
+ .../SyntaxHighlighter/scripts/shBrushSql.js        |   68 +
+ .../toolkit/SyntaxHighlighter/scripts/shBrushVb.js |   58 +
+ .../SyntaxHighlighter/scripts/shBrushXml.js        |   71 +
+ .../toolkit/SyntaxHighlighter/scripts/shCore.js    |   30 +
+ .../toolkit/SyntaxHighlighter/scripts/shLegacy.js  |   30 +
+ .../vim/toolkit/SyntaxHighlighter/styles/help.png  |  Bin 0 -> 786 bytes
+ .../toolkit/SyntaxHighlighter/styles/magnifier.png |  Bin 0 -> 615 bytes
+ .../SyntaxHighlighter/styles/page_white_code.png   |  Bin 0 -> 603 bytes
+ .../SyntaxHighlighter/styles/page_white_copy.png   |  Bin 0 -> 309 bytes
+ .../toolkit/SyntaxHighlighter/styles/printer.png   |  Bin 0 -> 731 bytes
+ .../toolkit/SyntaxHighlighter/styles/shCore.css    |  321 +
+ .../SyntaxHighlighter/styles/shThemeDefault.css    |  191 +
+ .../SyntaxHighlighter/styles/shThemeDjango.css     |  193 +
+ .../toolkit/SyntaxHighlighter/styles/shThemeEX.css |  163 +
+ .../SyntaxHighlighter/styles/shThemeEmacs.css      |  192 +
+ .../SyntaxHighlighter/styles/shThemeFadeToGrey.css |  193 +
+ .../SyntaxHighlighter/styles/shThemeMidnight.css   |  192 +
+ .../SyntaxHighlighter/styles/shThemeRDark.css      |  192 +
+ .../toolkit/SyntaxHighlighter/styles/wrapping.png  |  Bin 0 -> 631 bytes
+ exDev/vim/toolkit/cTags/.ctags                     |   17 +
+ exDev/vim/toolkit/cTags/command.txt                |   15 +
+ exDev/vim/toolkit/doxygen/CodeGen/config.cfg       | 1310 ++
+ exDev/vim/toolkit/doxygen/CodeGen/footer.html      |    5 +
+ exDev/vim/toolkit/doxygen/CodeGen/generate_doc.bat |   21 +
+ exDev/vim/toolkit/doxygen/CodeGen/header.html      |    9 +
+ exDev/vim/toolkit/doxygen/CodeGen/hhc.exe          |  Bin 0 -> 51472 bytes
+ exDev/vim/toolkit/doxygen/CodeGen/logo.gif         |  Bin 0 -> 4475 bytes
+ exDev/vim/toolkit/doxygen/CodeGen/ubisoft.css      |  359 +
+ exDev/vim/toolkit/gawk/command.txt                 |   22 +
+ exDev/vim/toolkit/gawk/prg_ConvertLog.awk          |   20 +
+ exDev/vim/toolkit/gawk/prg_FileFilter.awk          |   21 +
+ exDev/vim/toolkit/gawk/prg_Inherits.awk            |   30 +
+ exDev/vim/toolkit/gawk/prg_InheritsDot.awk         |   29 +
+ exDev/vim/toolkit/gawk/prg_NoStripSymbol.awk       |   22 +
+ exDev/vim/toolkit/gawk/prg_StripSymbol.awk         |   27 +
+ exDev/vim/toolkit/iconv/command.txt                |   14 +
+ exDev/vim/toolkit/iconv/iconv_big5-to-gb.bat       |   20 +
+ exDev/vim/toolkit/iconv/iconv_cp932-to-EUC_JP.bat  |   21 +
+ exDev/vim/toolkit/iconv/iconv_latin1-to-cp936.bat  |   21 +
+ exDev/vim/toolkit/iconv/iconv_latin1-to-utf-8.bat  |   21 +
+ exDev/vim/toolkit/idutils/command.txt              |   22 +
+ exDev/vim/toolkit/idutils/id-lang-default.map      |  101 +
+ exDev/vim/toolkit/idutils/id-lang.map              |  124 +
+ exDev/vim/toolkit/idutils/readme.txt               |    1 +
+ exDev/vim/toolkit/makefile/gcc/gcc_config.mk       |  217 +
+ exDev/vim/toolkit/makefile/gcc/gcc_entry_m.mk      |  153 +
+ exDev/vim/toolkit/makefile/gcc/gcc_entry_s.mk      |   99 +
+ exDev/vim/toolkit/makefile/gcc/gcc_project.mk      |   98 +
+ exDev/vim/toolkit/makefile/gcc/gcc_rule.mk         |  624 +
+ exDev/vim/toolkit/makefile/msvc/make_vs.bat        |   76 +
+ exDev/vim/toolkit/makefile/msvc/msvc_config.mk     |  109 +
+ exDev/vim/toolkit/makefile/msvc/msvc_entry.mk      |  120 +
+ exDev/vim/toolkit/makefile/msvc/msvc_tmpl.txt      |    9 +
+ .../toolkit/makefile/msvc/vc_project/project.sln   |   46 +
+ .../msvc/vc_project/project_exe/project_exe.cpp    |   28 +
+ .../msvc/vc_project/project_exe/project_exe.h      |   14 +
+ .../msvc/vc_project/project_exe/project_exe.vcproj |  749 ++
+ .../project_exe.vcproj.EXPC.Johnny.user            |  177 +
+ .../msvc/vc_project/project_lib/project_lib.cpp    |   13 +
+ .../msvc/vc_project/project_lib/project_lib.h      |   14 +
+ .../msvc/vc_project/project_lib/project_lib.vcproj |  708 +
+ .../project_lib.vcproj.EXPC.Johnny.user            |  177 +
+ .../toolkit/makefile/ref/gcc_rule_multi_logs.mk    |  405 +
+ exDev/vim/toolkit/makefile/shader/shader_config.mk |  266 +
+ .../vim/toolkit/makefile/shader/shader_entry_m.mk  |  130 +
+ .../vim/toolkit/makefile/shader/shader_entry_s.mk  |  106 +
+ .../vim/toolkit/makefile/shader/shader_project.mk  |  104 +
+ exDev/vim/toolkit/makefile/shader/shader_rule.mk   |  320 +
+ exDev/vim/toolkit/octave/.octaverc                 |   19 +
+ .../vim/toolkit/quickgen/bash/quick_gen_project.sh |  406 +
+ .../quickgen/bash/quick_gen_project_custom.sh      |   42 +
+ .../toolkit/quickgen/batch/quick_gen_project.bat   |  474 +
+ .../quickgen/batch/quick_gen_project_custom.bat    |   47 +
+ exDev/vim/toolkit/src-highlight/command.txt        |   15 +
+ .../toolkit/src-highlight/default/default.style    |   34 +
+ exDev/vim/toolkit/src-highlight/default/lang.map   |   47 +
+ exDev/vim/toolkit/src-highlight/ex/default.style   |   34 +
+ exDev/vim/toolkit/src-highlight/ex/ex.css          |  289 +
+ exDev/vim/toolkit/src-highlight/ex/ex_cpp.lang     |   18 +
+ exDev/vim/toolkit/src-highlight/ex/lang.map        |   48 +
+ exDev/vim/toolkit/vim/command.txt                  |   23 +
+ exDev/vim/toolkit/vim/compile_vim.bat              |   34 +
+ exDev/vim/vimfiles/after/compiler/exgcc.vim        |   29 +
+ exDev/vim/vimfiles/after/compiler/hlsl.vim         |   15 +
+ exDev/vim/vimfiles/after/compiler/msvc2005.vim     |   55 +
+ exDev/vim/vimfiles/after/syntax/c.vim              |  129 +
+ exDev/vim/vimfiles/after/syntax/cpp.vim            |   69 +
+ exDev/vim/vimfiles/after/syntax/exUtility.vim      |   72 +
+ exDev/vim/vimfiles/after/syntax/hlsl.vim           |  108 +
+ exDev/vim/vimfiles/after/syntax/maxscript.vim      |   86 +
+ exDev/vim/vimfiles/after/syntax/python.vim         |   29 +
+ exDev/vim/vimfiles/after/syntax/syncolor.vim       |  100 +
+ exDev/vim/vimfiles/after/syntax/vim.vim            |   28 +
+ exDev/vim/vimfiles/autoload/exUtility.vim          | 3446 +++++
+ exDev/vim/vimfiles/colors/ex.vim                   |   96 +
+ exDev/vim/vimfiles/doc/exVim.txt                   | 2632 ++++
+ exDev/vim/vimfiles/filetype.vim                    |   28 +
+ exDev/vim/vimfiles/plugin/exCscope.vim             |  777 ++
+ exDev/vim/vimfiles/plugin/exEnvironmentSetting.vim |  396 +
+ exDev/vim/vimfiles/plugin/exGlobalSearch.vim       | 1032 ++
+ exDev/vim/vimfiles/plugin/exMacroHighlight.vim     |  756 ++
+ exDev/vim/vimfiles/plugin/exMarksBrowser.vim       |  480 +
+ exDev/vim/vimfiles/plugin/exProject.vim            | 1017 ++
+ exDev/vim/vimfiles/plugin/exQuickFix.vim           |  586 +
+ exDev/vim/vimfiles/plugin/exSearchComplete.vim     |  110 +
+ exDev/vim/vimfiles/plugin/exSymbolTable.vim        |  498 +
+ exDev/vim/vimfiles/plugin/exTagSelect.vim          |  715 +
+ exDev/vim/vimfiles/plugin/exUtility.vim            |  209 +
+ plugin/crefvim.vim                                 |  357 -
+ plugin/echofunc.vim                                |  455 -
+ plugin/genutils.vim                                |  996 --
+ plugin/lookupfile.vim                              |  580 -
+ plugin/minibufexpl.vim                             | 1849 ---
+ plugin/showmarks.vim                               |  575 -
+ plugin/taglist.vim                                 | 4602 -------
+ plugin/visual_studio.py                            |  616 -
+ plugin/visual_studio.vim                           |  607 -
+ 148 files changed, 25844 insertions(+), 35932 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Jie Wu <karasaya at gmail.com>
+AuthorDate: Sun May 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    the patched third part plugins
+
+ _vimrc_ex                                          |  952 --
+ autoload/exUtility.vim                             | 2957 ----
+ autoload/genutils.vim                              | 1954 +++
+ autoload/lookupfile.vim                            |  486 +
+ colors/ex.vim                                      |   96 -
+ doc/EnhancedCommentify.txt                         |  493 +
+ doc/NERD_tree.txt                                  | 1079 ++
+ doc/crefvim.txt                                    |14112 ++++++++++++++++++++
+ doc/crefvimdoc.txt                                 | 1742 +++
+ doc/exVim.txt                                      | 2632 ----
+ doc/lookupfile.txt                                 |  765 ++
+ doc/minibufexpl.txt                                |   39 +
+ doc/omnicppcomplete.txt                            | 1078 ++
+ doc/showmarks.txt                                  |  264 +
+ doc/surround.txt                                   |  218 +
+ doc/taglist.txt                                    | 1501 +++
+ doc/vimwiki.txt                                    | 1076 ++
+ doc/visincr.txt                                    |  488 +
+ plugin/crefvim.vim                                 |  357 +
+ plugin/echofunc.vim                                |  455 +
+ plugin/exCscope.vim                                |  777 --
+ plugin/exEnvironmentSetting.vim                    |  366 -
+ plugin/exGlobalSearch.vim                          | 1032 --
+ plugin/exMacroHighlight.vim                        |  755 --
+ plugin/exMarksBrowser.vim                          |  480 -
+ plugin/exProject.vim                               |  994 --
+ plugin/exQuickFix.vim                              |  586 -
+ plugin/exSearchComplete.vim                        |  110 -
+ plugin/exSymbolTable.vim                           |  498 -
+ plugin/exTagSelect.vim                             |  715 -
+ plugin/exUtility.vim                               |  209 -
+ plugin/genutils.vim                                |  996 ++
+ plugin/lookupfile.vim                              |  580 +
+ plugin/minibufexpl.vim                             | 1849 +++
+ plugin/showmarks.vim                               |  575 +
+ plugin/taglist.vim                                 | 4602 +++++++
+ plugin/visual_studio.py                            |  616 +
+ plugin/visual_studio.vim                           |  607 +
+ toolkit/SyntaxHighlighter/scripts/clipboard.swf    |  Bin 1361 -> 0 bytes
+ toolkit/SyntaxHighlighter/scripts/shBrushBash.js   |   59 -
+ toolkit/SyntaxHighlighter/scripts/shBrushCSharp.js |   64 -
+ toolkit/SyntaxHighlighter/scripts/shBrushCpp.js    |   99 -
+ toolkit/SyntaxHighlighter/scripts/shBrushCss.js    |   93 -
+ toolkit/SyntaxHighlighter/scripts/shBrushDelphi.js |   57 -
+ toolkit/SyntaxHighlighter/scripts/shBrushDiff.js   |   43 -
+ toolkit/SyntaxHighlighter/scripts/shBrushGroovy.js |   69 -
+ .../SyntaxHighlighter/scripts/shBrushJScript.js    |   51 -
+ toolkit/SyntaxHighlighter/scripts/shBrushJava.js   |   55 -
+ toolkit/SyntaxHighlighter/scripts/shBrushPerl.js   |   74 -
+ toolkit/SyntaxHighlighter/scripts/shBrushPhp.js    |   91 -
+ toolkit/SyntaxHighlighter/scripts/shBrushPlain.js  |   35 -
+ toolkit/SyntaxHighlighter/scripts/shBrushPython.js |   56 -
+ toolkit/SyntaxHighlighter/scripts/shBrushRuby.js   |   57 -
+ toolkit/SyntaxHighlighter/scripts/shBrushScala.js  |   53 -
+ toolkit/SyntaxHighlighter/scripts/shBrushSql.js    |   68 -
+ toolkit/SyntaxHighlighter/scripts/shBrushVb.js     |   58 -
+ toolkit/SyntaxHighlighter/scripts/shBrushXml.js    |   71 -
+ toolkit/SyntaxHighlighter/scripts/shCore.js        |   30 -
+ toolkit/SyntaxHighlighter/scripts/shLegacy.js      |   30 -
+ toolkit/SyntaxHighlighter/styles/help.png          |  Bin 786 -> 0 bytes
+ toolkit/SyntaxHighlighter/styles/magnifier.png     |  Bin 615 -> 0 bytes
+ .../SyntaxHighlighter/styles/page_white_code.png   |  Bin 603 -> 0 bytes
+ .../SyntaxHighlighter/styles/page_white_copy.png   |  Bin 309 -> 0 bytes
+ toolkit/SyntaxHighlighter/styles/printer.png       |  Bin 731 -> 0 bytes
+ toolkit/SyntaxHighlighter/styles/shCore.css        |  321 -
+ .../SyntaxHighlighter/styles/shThemeDefault.css    |  191 -
+ toolkit/SyntaxHighlighter/styles/shThemeDjango.css |  193 -
+ toolkit/SyntaxHighlighter/styles/shThemeEX.css     |  163 -
+ toolkit/SyntaxHighlighter/styles/shThemeEmacs.css  |  192 -
+ .../SyntaxHighlighter/styles/shThemeFadeToGrey.css |  193 -
+ .../SyntaxHighlighter/styles/shThemeMidnight.css   |  192 -
+ toolkit/SyntaxHighlighter/styles/shThemeRDark.css  |  192 -
+ toolkit/SyntaxHighlighter/styles/wrapping.png      |  Bin 631 -> 0 bytes
+ toolkit/cTags/.ctags                               |   17 -
+ toolkit/cTags/command.txt                          |   15 -
+ toolkit/doxygen/CodeGen/config.cfg                 | 1310 --
+ toolkit/doxygen/CodeGen/footer.html                |    5 -
+ toolkit/doxygen/CodeGen/generate_doc.bat           |   21 -
+ toolkit/doxygen/CodeGen/header.html                |    9 -
+ toolkit/doxygen/CodeGen/hhc.exe                    |  Bin 51472 -> 0 bytes
+ toolkit/doxygen/CodeGen/logo.gif                   |  Bin 4475 -> 0 bytes
+ toolkit/doxygen/CodeGen/ubisoft.css                |  359 -
+ toolkit/gawk/command.txt                           |   22 -
+ toolkit/gawk/prg_ConvertLog.awk                    |   20 -
+ toolkit/gawk/prg_Inherits.awk                      |   30 -
+ toolkit/gawk/prg_InheritsDot.awk                   |   29 -
+ toolkit/gawk/prg_NoStripSymbol.awk                 |   22 -
+ toolkit/gawk/prg_StripSymbol.awk                   |   27 -
+ toolkit/iconv/command.txt                          |   14 -
+ toolkit/iconv/iconv_big5-to-gb.bat                 |   20 -
+ toolkit/iconv/iconv_cp932-to-EUC_JP.bat            |   21 -
+ toolkit/iconv/iconv_latin1-to-cp936.bat            |   21 -
+ toolkit/iconv/iconv_latin1-to-utf-8.bat            |   21 -
+ toolkit/idutils/command.txt                        |   22 -
+ toolkit/idutils/id-lang-default.map                |  101 -
+ toolkit/idutils/id-lang.map                        |  124 -
+ toolkit/idutils/readme.txt                         |    1 -
+ toolkit/makefile/gcc/gcc_config.mk                 |  217 -
+ toolkit/makefile/gcc/gcc_entry_m.mk                |  153 -
+ toolkit/makefile/gcc/gcc_entry_s.mk                |   99 -
+ toolkit/makefile/gcc/gcc_project.mk                |   98 -
+ toolkit/makefile/gcc/gcc_rule.mk                   |  624 -
+ toolkit/makefile/msvc/make_vs.bat                  |   76 -
+ toolkit/makefile/msvc/msvc_config.mk               |  109 -
+ toolkit/makefile/msvc/msvc_entry.mk                |  120 -
+ toolkit/makefile/msvc/msvc_tmpl.txt                |    9 -
+ toolkit/makefile/msvc/vc_project/project.sln       |   46 -
+ .../msvc/vc_project/project_exe/project_exe.cpp    |   28 -
+ .../msvc/vc_project/project_exe/project_exe.h      |   14 -
+ .../msvc/vc_project/project_exe/project_exe.vcproj |  749 --
+ .../project_exe.vcproj.EXPC.Johnny.user            |  177 -
+ .../msvc/vc_project/project_lib/project_lib.cpp    |   13 -
+ .../msvc/vc_project/project_lib/project_lib.h      |   14 -
+ .../msvc/vc_project/project_lib/project_lib.vcproj |  708 -
+ .../project_lib.vcproj.EXPC.Johnny.user            |  177 -
+ toolkit/makefile/ref/gcc_rule_multi_logs.mk        |  405 -
+ toolkit/makefile/shader/shader_config.mk           |  266 -
+ toolkit/makefile/shader/shader_entry_m.mk          |  130 -
+ toolkit/makefile/shader/shader_entry_s.mk          |  106 -
+ toolkit/makefile/shader/shader_project.mk          |  104 -
+ toolkit/makefile/shader/shader_rule.mk             |  320 -
+ toolkit/octave/.octaverc                           |   19 -
+ toolkit/quickgen/bash/quick_gen_project.sh         |  323 -
+ toolkit/quickgen/bash/quick_gen_project_all.sh     |   14 -
+ toolkit/quickgen/bash/quick_gen_project_c_only.sh  |   14 -
+ .../quickgen/bash/quick_gen_project_cpp_only.sh    |   14 -
+ .../quickgen/bash/quick_gen_project_csharp_only.sh |   14 -
+ toolkit/quickgen/bash/quick_gen_project_general.sh |   14 -
+ .../quickgen/bash/quick_gen_project_html_only.sh   |   14 -
+ .../bash/quick_gen_project_javascript_only.sh      |   14 -
+ .../quickgen/bash/quick_gen_project_lua_only.sh    |   14 -
+ .../quickgen/bash/quick_gen_project_math_only.sh   |   14 -
+ .../quickgen/bash/quick_gen_project_python_only.sh |   14 -
+ toolkit/quickgen/bash/quick_gen_project_uc_only.sh |   14 -
+ .../quickgen/bash/quick_gen_project_vim_only.sh    |   14 -
+ toolkit/quickgen/batch/quick_gen_project.bat       |  357 -
+ toolkit/quickgen/batch/quick_gen_project_all.bat   |   16 -
+ .../quickgen/batch/quick_gen_project_c_only.bat    |   16 -
+ .../quickgen/batch/quick_gen_project_cpp_only.bat  |   16 -
+ .../batch/quick_gen_project_csharp_only.bat        |   16 -
+ .../quickgen/batch/quick_gen_project_general.bat   |   16 -
+ .../quickgen/batch/quick_gen_project_html_only.bat |   16 -
+ .../batch/quick_gen_project_javascript_only.bat    |   16 -
+ .../quickgen/batch/quick_gen_project_lua_only.bat  |   16 -
+ .../quickgen/batch/quick_gen_project_math_only.bat |   16 -
+ .../batch/quick_gen_project_python_only.bat        |   16 -
+ .../quickgen/batch/quick_gen_project_uc_only.bat   |   16 -
+ .../quickgen/batch/quick_gen_project_vim_only.bat  |   16 -
+ toolkit/src-highlight/command.txt                  |   15 -
+ toolkit/src-highlight/default/default.style        |   34 -
+ toolkit/src-highlight/default/lang.map             |   47 -
+ toolkit/src-highlight/ex/default.style             |   34 -
+ toolkit/src-highlight/ex/ex.css                    |  289 -
+ toolkit/src-highlight/ex/ex_cpp.lang               |   18 -
+ toolkit/src-highlight/ex/lang.map                  |   48 -
+ toolkit/vim/command.txt                            |   23 -
+ toolkit/vim/compile_vim.bat                        |   34 -
+ vimfiles/after/compiler/exgcc.vim                  |   29 -
+ vimfiles/after/compiler/hlsl.vim                   |   15 -
+ vimfiles/after/compiler/msvc2005.vim               |   55 -
+ vimfiles/after/syntax/c.vim                        |  129 -
+ vimfiles/after/syntax/cpp.vim                      |   69 -
+ vimfiles/after/syntax/exUtility.vim                |   72 -
+ vimfiles/after/syntax/hlsl.vim                     |  108 -
+ vimfiles/after/syntax/maxscript.vim                |   86 -
+ vimfiles/after/syntax/python.vim                   |   29 -
+ vimfiles/after/syntax/syncolor.vim                 |  100 -
+ vimfiles/after/syntax/vim.vim                      |   28 -
+ vimfiles/filetype.vim                              |   28 -
+ 169 files changed, 35932 insertions(+), 25351 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/7.04a)
+Author:     Jie Wu <karasaya at gmail.com>
+AuthorDate: Sun May 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fix some bugs
+
+ _vimrc_ex                                          |  952 +++++++
+ autoload/exUtility.vim                             | 2957 +++++++++++++++++++
+ colors/ex.vim                                      |   96 +
+ doc/FAQ.txt                                        |  157 --
+ doc/Makefile                                       | 2959 --------------------
+ doc/compile_vim.win32.bat                          |   24 -
+ doc/exVim.txt                                      | 2632 +++++++++++++++++
+ doc/install.unix.txt                               |   36 -
+ doc/install.win32.txt                              |   78 -
+ doc/quick_start.txt                                |   52 -
+ doc/showmarks.vim.patch                            |   84 -
+ doc/vim_plugins.txt                                |   30 -
+ ex_plugin_only/_vimrc                              |  952 -------
+ .../SyntaxHighlighter/scripts/clipboard.swf        |  Bin 1361 -> 0 bytes
+ .../SyntaxHighlighter/scripts/shBrushBash.js       |   59 -
+ .../SyntaxHighlighter/scripts/shBrushCSharp.js     |   64 -
+ .../SyntaxHighlighter/scripts/shBrushCpp.js        |   99 -
+ .../SyntaxHighlighter/scripts/shBrushCss.js        |   93 -
+ .../SyntaxHighlighter/scripts/shBrushDelphi.js     |   57 -
+ .../SyntaxHighlighter/scripts/shBrushDiff.js       |   43 -
+ .../SyntaxHighlighter/scripts/shBrushGroovy.js     |   69 -
+ .../SyntaxHighlighter/scripts/shBrushJScript.js    |   51 -
+ .../SyntaxHighlighter/scripts/shBrushJava.js       |   55 -
+ .../SyntaxHighlighter/scripts/shBrushPerl.js       |   74 -
+ .../SyntaxHighlighter/scripts/shBrushPhp.js        |   91 -
+ .../SyntaxHighlighter/scripts/shBrushPlain.js      |   35 -
+ .../SyntaxHighlighter/scripts/shBrushPython.js     |   56 -
+ .../SyntaxHighlighter/scripts/shBrushRuby.js       |   57 -
+ .../SyntaxHighlighter/scripts/shBrushScala.js      |   53 -
+ .../SyntaxHighlighter/scripts/shBrushSql.js        |   68 -
+ .../toolkit/SyntaxHighlighter/scripts/shBrushVb.js |   58 -
+ .../SyntaxHighlighter/scripts/shBrushXml.js        |   71 -
+ .../toolkit/SyntaxHighlighter/scripts/shCore.js    |   30 -
+ .../toolkit/SyntaxHighlighter/scripts/shLegacy.js  |   30 -
+ .../toolkit/SyntaxHighlighter/styles/help.png      |  Bin 786 -> 0 bytes
+ .../toolkit/SyntaxHighlighter/styles/magnifier.png |  Bin 615 -> 0 bytes
+ .../SyntaxHighlighter/styles/page_white_code.png   |  Bin 603 -> 0 bytes
+ .../SyntaxHighlighter/styles/page_white_copy.png   |  Bin 309 -> 0 bytes
+ .../toolkit/SyntaxHighlighter/styles/printer.png   |  Bin 731 -> 0 bytes
+ .../toolkit/SyntaxHighlighter/styles/shCore.css    |  321 ---
+ .../SyntaxHighlighter/styles/shThemeDefault.css    |  191 --
+ .../SyntaxHighlighter/styles/shThemeDjango.css     |  193 --
+ .../toolkit/SyntaxHighlighter/styles/shThemeEX.css |  163 --
+ .../SyntaxHighlighter/styles/shThemeEmacs.css      |  192 --
+ .../SyntaxHighlighter/styles/shThemeFadeToGrey.css |  193 --
+ .../SyntaxHighlighter/styles/shThemeMidnight.css   |  192 --
+ .../SyntaxHighlighter/styles/shThemeRDark.css      |  192 --
+ .../toolkit/SyntaxHighlighter/styles/wrapping.png  |  Bin 631 -> 0 bytes
+ ex_plugin_only/toolkit/cTags/.ctags                |   17 -
+ ex_plugin_only/toolkit/cTags/command.txt           |   15 -
+ ex_plugin_only/toolkit/doxygen/CodeGen/config.cfg  | 1310 ---------
+ ex_plugin_only/toolkit/doxygen/CodeGen/footer.html |    5 -
+ .../toolkit/doxygen/CodeGen/generate_doc.bat       |   21 -
+ ex_plugin_only/toolkit/doxygen/CodeGen/header.html |    9 -
+ ex_plugin_only/toolkit/doxygen/CodeGen/hhc.exe     |  Bin 51472 -> 0 bytes
+ ex_plugin_only/toolkit/doxygen/CodeGen/logo.gif    |  Bin 4475 -> 0 bytes
+ ex_plugin_only/toolkit/doxygen/CodeGen/ubisoft.css |  359 ---
+ ex_plugin_only/toolkit/gawk/command.txt            |   22 -
+ ex_plugin_only/toolkit/gawk/prg_ConvertLog.awk     |   20 -
+ ex_plugin_only/toolkit/gawk/prg_Inherits.awk       |   30 -
+ ex_plugin_only/toolkit/gawk/prg_InheritsDot.awk    |   29 -
+ ex_plugin_only/toolkit/gawk/prg_NoStripSymbol.awk  |   22 -
+ ex_plugin_only/toolkit/gawk/prg_StripSymbol.awk    |   27 -
+ ex_plugin_only/toolkit/iconv/command.txt           |   14 -
+ ex_plugin_only/toolkit/iconv/iconv_big5-to-gb.bat  |   20 -
+ .../toolkit/iconv/iconv_cp932-to-EUC_JP.bat        |   21 -
+ .../toolkit/iconv/iconv_latin1-to-cp936.bat        |   21 -
+ .../toolkit/iconv/iconv_latin1-to-utf-8.bat        |   21 -
+ ex_plugin_only/toolkit/idutils/command.txt         |   22 -
+ ex_plugin_only/toolkit/idutils/id-lang-default.map |  101 -
+ ex_plugin_only/toolkit/idutils/id-lang.map         |  124 -
+ ex_plugin_only/toolkit/idutils/readme.txt          |    1 -
+ ex_plugin_only/toolkit/makefile/gcc/gcc_config.mk  |  217 --
+ ex_plugin_only/toolkit/makefile/gcc/gcc_entry_m.mk |  153 -
+ ex_plugin_only/toolkit/makefile/gcc/gcc_entry_s.mk |   99 -
+ ex_plugin_only/toolkit/makefile/gcc/gcc_project.mk |   98 -
+ ex_plugin_only/toolkit/makefile/gcc/gcc_rule.mk    |  624 -----
+ ex_plugin_only/toolkit/makefile/msvc/make_vs.bat   |   76 -
+ .../toolkit/makefile/msvc/msvc_config.mk           |  109 -
+ ex_plugin_only/toolkit/makefile/msvc/msvc_entry.mk |  120 -
+ ex_plugin_only/toolkit/makefile/msvc/msvc_tmpl.txt |    9 -
+ .../toolkit/makefile/msvc/vc_project/project.sln   |   46 -
+ .../msvc/vc_project/project_exe/project_exe.cpp    |   28 -
+ .../msvc/vc_project/project_exe/project_exe.h      |   14 -
+ .../msvc/vc_project/project_exe/project_exe.vcproj |  749 -----
+ .../project_exe.vcproj.EXPC.Johnny.user            |  177 --
+ .../msvc/vc_project/project_lib/project_lib.cpp    |   13 -
+ .../msvc/vc_project/project_lib/project_lib.h      |   14 -
+ .../msvc/vc_project/project_lib/project_lib.vcproj |  708 -----
+ .../project_lib.vcproj.EXPC.Johnny.user            |  177 --
+ .../toolkit/makefile/ref/gcc_rule_multi_logs.mk    |  405 ---
+ .../toolkit/makefile/shader/shader_config.mk       |  266 --
+ .../toolkit/makefile/shader/shader_entry_m.mk      |  130 -
+ .../toolkit/makefile/shader/shader_entry_s.mk      |  106 -
+ .../toolkit/makefile/shader/shader_project.mk      |  104 -
+ .../toolkit/makefile/shader/shader_rule.mk         |  320 ---
+ ex_plugin_only/toolkit/octave/.octaverc            |   19 -
+ .../toolkit/quickgen/bash/quick_gen_project.sh     |  323 ---
+ .../toolkit/quickgen/bash/quick_gen_project_all.sh |   14 -
+ .../quickgen/bash/quick_gen_project_c_only.sh      |   14 -
+ .../quickgen/bash/quick_gen_project_cpp_only.sh    |   14 -
+ .../quickgen/bash/quick_gen_project_csharp_only.sh |   14 -
+ .../quickgen/bash/quick_gen_project_general.sh     |   14 -
+ .../quickgen/bash/quick_gen_project_html_only.sh   |   14 -
+ .../bash/quick_gen_project_javascript_only.sh      |   14 -
+ .../quickgen/bash/quick_gen_project_lua_only.sh    |   14 -
+ .../quickgen/bash/quick_gen_project_math_only.sh   |   14 -
+ .../quickgen/bash/quick_gen_project_python_only.sh |   14 -
+ .../quickgen/bash/quick_gen_project_uc_only.sh     |   14 -
+ .../quickgen/bash/quick_gen_project_vim_only.sh    |   14 -
+ .../toolkit/quickgen/batch/quick_gen_project.bat   |  357 ---
+ .../quickgen/batch/quick_gen_project_all.bat       |   16 -
+ .../quickgen/batch/quick_gen_project_c_only.bat    |   16 -
+ .../quickgen/batch/quick_gen_project_cpp_only.bat  |   16 -
+ .../batch/quick_gen_project_csharp_only.bat        |   16 -
+ .../quickgen/batch/quick_gen_project_general.bat   |   16 -
+ .../quickgen/batch/quick_gen_project_html_only.bat |   16 -
+ .../batch/quick_gen_project_javascript_only.bat    |   16 -
+ .../quickgen/batch/quick_gen_project_lua_only.bat  |   16 -
+ .../quickgen/batch/quick_gen_project_math_only.bat |   16 -
+ .../batch/quick_gen_project_python_only.bat        |   16 -
+ .../quickgen/batch/quick_gen_project_uc_only.bat   |   16 -
+ .../quickgen/batch/quick_gen_project_vim_only.bat  |   16 -
+ ex_plugin_only/toolkit/src-highlight/command.txt   |   15 -
+ .../toolkit/src-highlight/default/default.style    |   34 -
+ .../toolkit/src-highlight/default/lang.map         |   47 -
+ .../toolkit/src-highlight/ex/default.style         |   34 -
+ ex_plugin_only/toolkit/src-highlight/ex/ex.css     |  289 --
+ .../toolkit/src-highlight/ex/ex_cpp.lang           |   18 -
+ ex_plugin_only/toolkit/src-highlight/ex/lang.map   |   48 -
+ ex_plugin_only/toolkit/vim/command.txt             |   23 -
+ ex_plugin_only/toolkit/vim/compile_vim.bat         |   34 -
+ ex_plugin_only/vimfiles/after/compiler/exgcc.vim   |   27 -
+ ex_plugin_only/vimfiles/after/compiler/hlsl.vim    |   13 -
+ .../vimfiles/after/compiler/msvc2005.vim           |   53 -
+ ex_plugin_only/vimfiles/after/ftplugin/c.vim       |    2 -
+ ex_plugin_only/vimfiles/after/ftplugin/cpp.vim     |    2 -
+ ex_plugin_only/vimfiles/after/syntax/__fxhlsl.vim  |  196 --
+ ex_plugin_only/vimfiles/after/syntax/c.vim         |  129 -
+ ex_plugin_only/vimfiles/after/syntax/cpp.vim       |   69 -
+ ex_plugin_only/vimfiles/after/syntax/doxygen.vim   |  696 -----
+ ex_plugin_only/vimfiles/after/syntax/exUtility.vim |   72 -
+ ex_plugin_only/vimfiles/after/syntax/gmsh.vim      |  107 -
+ ex_plugin_only/vimfiles/after/syntax/help.vim      |  114 -
+ ex_plugin_only/vimfiles/after/syntax/hlsl.vim      |  108 -
+ ex_plugin_only/vimfiles/after/syntax/matlab.vim    |   54 -
+ ex_plugin_only/vimfiles/after/syntax/maxscript.vim |   85 -
+ ex_plugin_only/vimfiles/after/syntax/python.vim    |   29 -
+ ex_plugin_only/vimfiles/after/syntax/syncolor.vim  |  100 -
+ ex_plugin_only/vimfiles/after/syntax/vim.vim       |   28 -
+ ex_plugin_only/vimfiles/autoload/exUtility.vim     | 2957 -------------------
+ ex_plugin_only/vimfiles/colors/ex.vim              |   96 -
+ ex_plugin_only/vimfiles/doc/exVim.txt              | 2632 -----------------
+ ex_plugin_only/vimfiles/filetype.vim               |   26 -
+ ex_plugin_only/vimfiles/plugin/exCscope.vim        |  777 -----
+ .../vimfiles/plugin/exEnvironmentSetting.vim       |  366 ---
+ ex_plugin_only/vimfiles/plugin/exGlobalSearch.vim  | 1032 -------
+ .../vimfiles/plugin/exMacroHighlight.vim           |  755 -----
+ ex_plugin_only/vimfiles/plugin/exMarksBrowser.vim  |  480 ----
+ ex_plugin_only/vimfiles/plugin/exProject.vim       |  994 -------
+ ex_plugin_only/vimfiles/plugin/exQuickFix.vim      |  586 ----
+ .../vimfiles/plugin/exSearchComplete.vim           |  110 -
+ ex_plugin_only/vimfiles/plugin/exSymbolTable.vim   |  498 ----
+ ex_plugin_only/vimfiles/plugin/exTagSelect.vim     |  715 -----
+ ex_plugin_only/vimfiles/plugin/exUtility.vim       |  209 --
+ plugin/exCscope.vim                                |  777 +++++
+ plugin/exEnvironmentSetting.vim                    |  366 +++
+ plugin/exGlobalSearch.vim                          | 1032 +++++++
+ plugin/exMacroHighlight.vim                        |  755 +++++
+ plugin/exMarksBrowser.vim                          |  480 ++++
+ plugin/exProject.vim                               |  994 +++++++
+ plugin/exQuickFix.vim                              |  586 ++++
+ plugin/exSearchComplete.vim                        |  110 +
+ plugin/exSymbolTable.vim                           |  498 ++++
+ plugin/exTagSelect.vim                             |  715 +++++
+ plugin/exUtility.vim                               |  209 ++
+ toolkit/SyntaxHighlighter/scripts/clipboard.swf    |  Bin 0 -> 1361 bytes
+ toolkit/SyntaxHighlighter/scripts/shBrushBash.js   |   59 +
+ toolkit/SyntaxHighlighter/scripts/shBrushCSharp.js |   64 +
+ toolkit/SyntaxHighlighter/scripts/shBrushCpp.js    |   99 +
+ toolkit/SyntaxHighlighter/scripts/shBrushCss.js    |   93 +
+ toolkit/SyntaxHighlighter/scripts/shBrushDelphi.js |   57 +
+ toolkit/SyntaxHighlighter/scripts/shBrushDiff.js   |   43 +
+ toolkit/SyntaxHighlighter/scripts/shBrushGroovy.js |   69 +
+ .../SyntaxHighlighter/scripts/shBrushJScript.js    |   51 +
+ toolkit/SyntaxHighlighter/scripts/shBrushJava.js   |   55 +
+ toolkit/SyntaxHighlighter/scripts/shBrushPerl.js   |   74 +
+ toolkit/SyntaxHighlighter/scripts/shBrushPhp.js    |   91 +
+ toolkit/SyntaxHighlighter/scripts/shBrushPlain.js  |   35 +
+ toolkit/SyntaxHighlighter/scripts/shBrushPython.js |   56 +
+ toolkit/SyntaxHighlighter/scripts/shBrushRuby.js   |   57 +
+ toolkit/SyntaxHighlighter/scripts/shBrushScala.js  |   53 +
+ toolkit/SyntaxHighlighter/scripts/shBrushSql.js    |   68 +
+ toolkit/SyntaxHighlighter/scripts/shBrushVb.js     |   58 +
+ toolkit/SyntaxHighlighter/scripts/shBrushXml.js    |   71 +
+ toolkit/SyntaxHighlighter/scripts/shCore.js        |   30 +
+ toolkit/SyntaxHighlighter/scripts/shLegacy.js      |   30 +
+ toolkit/SyntaxHighlighter/styles/help.png          |  Bin 0 -> 786 bytes
+ toolkit/SyntaxHighlighter/styles/magnifier.png     |  Bin 0 -> 615 bytes
+ .../SyntaxHighlighter/styles/page_white_code.png   |  Bin 0 -> 603 bytes
+ .../SyntaxHighlighter/styles/page_white_copy.png   |  Bin 0 -> 309 bytes
+ toolkit/SyntaxHighlighter/styles/printer.png       |  Bin 0 -> 731 bytes
+ toolkit/SyntaxHighlighter/styles/shCore.css        |  321 +++
+ .../SyntaxHighlighter/styles/shThemeDefault.css    |  191 ++
+ toolkit/SyntaxHighlighter/styles/shThemeDjango.css |  193 ++
+ toolkit/SyntaxHighlighter/styles/shThemeEX.css     |  163 ++
+ toolkit/SyntaxHighlighter/styles/shThemeEmacs.css  |  192 ++
+ .../SyntaxHighlighter/styles/shThemeFadeToGrey.css |  193 ++
+ .../SyntaxHighlighter/styles/shThemeMidnight.css   |  192 ++
+ toolkit/SyntaxHighlighter/styles/shThemeRDark.css  |  192 ++
+ toolkit/SyntaxHighlighter/styles/wrapping.png      |  Bin 0 -> 631 bytes
+ toolkit/cTags/.ctags                               |   17 +
+ toolkit/cTags/command.txt                          |   15 +
+ toolkit/doxygen/CodeGen/config.cfg                 | 1310 +++++++++
+ toolkit/doxygen/CodeGen/footer.html                |    5 +
+ toolkit/doxygen/CodeGen/generate_doc.bat           |   21 +
+ toolkit/doxygen/CodeGen/header.html                |    9 +
+ toolkit/doxygen/CodeGen/hhc.exe                    |  Bin 0 -> 51472 bytes
+ toolkit/doxygen/CodeGen/logo.gif                   |  Bin 0 -> 4475 bytes
+ toolkit/doxygen/CodeGen/ubisoft.css                |  359 +++
+ toolkit/gawk/command.txt                           |   22 +
+ toolkit/gawk/prg_ConvertLog.awk                    |   20 +
+ toolkit/gawk/prg_Inherits.awk                      |   30 +
+ toolkit/gawk/prg_InheritsDot.awk                   |   29 +
+ toolkit/gawk/prg_NoStripSymbol.awk                 |   22 +
+ toolkit/gawk/prg_StripSymbol.awk                   |   27 +
+ toolkit/iconv/command.txt                          |   14 +
+ toolkit/iconv/iconv_big5-to-gb.bat                 |   20 +
+ toolkit/iconv/iconv_cp932-to-EUC_JP.bat            |   21 +
+ toolkit/iconv/iconv_latin1-to-cp936.bat            |   21 +
+ toolkit/iconv/iconv_latin1-to-utf-8.bat            |   21 +
+ toolkit/idutils/command.txt                        |   22 +
+ toolkit/idutils/id-lang-default.map                |  101 +
+ toolkit/idutils/id-lang.map                        |  124 +
+ toolkit/idutils/readme.txt                         |    1 +
+ toolkit/makefile/gcc/gcc_config.mk                 |  217 ++
+ toolkit/makefile/gcc/gcc_entry_m.mk                |  153 +
+ toolkit/makefile/gcc/gcc_entry_s.mk                |   99 +
+ toolkit/makefile/gcc/gcc_project.mk                |   98 +
+ toolkit/makefile/gcc/gcc_rule.mk                   |  624 +++++
+ toolkit/makefile/msvc/make_vs.bat                  |   76 +
+ toolkit/makefile/msvc/msvc_config.mk               |  109 +
+ toolkit/makefile/msvc/msvc_entry.mk                |  120 +
+ toolkit/makefile/msvc/msvc_tmpl.txt                |    9 +
+ toolkit/makefile/msvc/vc_project/project.sln       |   46 +
+ .../msvc/vc_project/project_exe/project_exe.cpp    |   28 +
+ .../msvc/vc_project/project_exe/project_exe.h      |   14 +
+ .../msvc/vc_project/project_exe/project_exe.vcproj |  749 +++++
+ .../project_exe.vcproj.EXPC.Johnny.user            |  177 ++
+ .../msvc/vc_project/project_lib/project_lib.cpp    |   13 +
+ .../msvc/vc_project/project_lib/project_lib.h      |   14 +
+ .../msvc/vc_project/project_lib/project_lib.vcproj |  708 +++++
+ .../project_lib.vcproj.EXPC.Johnny.user            |  177 ++
+ toolkit/makefile/ref/gcc_rule_multi_logs.mk        |  405 +++
+ toolkit/makefile/shader/shader_config.mk           |  266 ++
+ toolkit/makefile/shader/shader_entry_m.mk          |  130 +
+ toolkit/makefile/shader/shader_entry_s.mk          |  106 +
+ toolkit/makefile/shader/shader_project.mk          |  104 +
+ toolkit/makefile/shader/shader_rule.mk             |  320 +++
+ toolkit/octave/.octaverc                           |   19 +
+ toolkit/quickgen/bash/quick_gen_project.sh         |  323 +++
+ toolkit/quickgen/bash/quick_gen_project_all.sh     |   14 +
+ toolkit/quickgen/bash/quick_gen_project_c_only.sh  |   14 +
+ .../quickgen/bash/quick_gen_project_cpp_only.sh    |   14 +
+ .../quickgen/bash/quick_gen_project_csharp_only.sh |   14 +
+ toolkit/quickgen/bash/quick_gen_project_general.sh |   14 +
+ .../quickgen/bash/quick_gen_project_html_only.sh   |   14 +
+ .../bash/quick_gen_project_javascript_only.sh      |   14 +
+ .../quickgen/bash/quick_gen_project_lua_only.sh    |   14 +
+ .../quickgen/bash/quick_gen_project_math_only.sh   |   14 +
+ .../quickgen/bash/quick_gen_project_python_only.sh |   14 +
+ toolkit/quickgen/bash/quick_gen_project_uc_only.sh |   14 +
+ .../quickgen/bash/quick_gen_project_vim_only.sh    |   14 +
+ toolkit/quickgen/batch/quick_gen_project.bat       |  357 +++
+ toolkit/quickgen/batch/quick_gen_project_all.bat   |   16 +
+ .../quickgen/batch/quick_gen_project_c_only.bat    |   16 +
+ .../quickgen/batch/quick_gen_project_cpp_only.bat  |   16 +
+ .../batch/quick_gen_project_csharp_only.bat        |   16 +
+ .../quickgen/batch/quick_gen_project_general.bat   |   16 +
+ .../quickgen/batch/quick_gen_project_html_only.bat |   16 +
+ .../batch/quick_gen_project_javascript_only.bat    |   16 +
+ .../quickgen/batch/quick_gen_project_lua_only.bat  |   16 +
+ .../quickgen/batch/quick_gen_project_math_only.bat |   16 +
+ .../batch/quick_gen_project_python_only.bat        |   16 +
+ .../quickgen/batch/quick_gen_project_uc_only.bat   |   16 +
+ .../quickgen/batch/quick_gen_project_vim_only.bat  |   16 +
+ toolkit/src-highlight/command.txt                  |   15 +
+ toolkit/src-highlight/default/default.style        |   34 +
+ toolkit/src-highlight/default/lang.map             |   47 +
+ toolkit/src-highlight/ex/default.style             |   34 +
+ toolkit/src-highlight/ex/ex.css                    |  289 ++
+ toolkit/src-highlight/ex/ex_cpp.lang               |   18 +
+ toolkit/src-highlight/ex/lang.map                  |   48 +
+ toolkit/vim/command.txt                            |   23 +
+ toolkit/vim/compile_vim.bat                        |   34 +
+ vimfiles/after/compiler/exgcc.vim                  |   29 +
+ vimfiles/after/compiler/hlsl.vim                   |   15 +
+ vimfiles/after/compiler/msvc2005.vim               |   55 +
+ vimfiles/after/syntax/c.vim                        |  129 +
+ vimfiles/after/syntax/cpp.vim                      |   69 +
+ vimfiles/after/syntax/exUtility.vim                |   72 +
+ vimfiles/after/syntax/hlsl.vim                     |  108 +
+ vimfiles/after/syntax/maxscript.vim                |   86 +
+ vimfiles/after/syntax/python.vim                   |   29 +
+ vimfiles/after/syntax/syncolor.vim                 |  100 +
+ vimfiles/after/syntax/vim.vim                      |   28 +
+ vimfiles/filetype.vim                              |   28 +
+ 307 files changed, 25351 insertions(+), 29933 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/7.0)
+Author:     Jie Wu <karasaya at gmail.com>
+AuthorDate: Wed May 6 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                                             |   68 +
+ doc/FAQ.txt                                        |  157 ++
+ doc/Makefile                                       | 2959 ++++++++++++++++++++
+ doc/compile_vim.win32.bat                          |   24 +
+ doc/install.unix.txt                               |   36 +
+ doc/install.win32.txt                              |   78 +
+ doc/quick_start.txt                                |   52 +
+ doc/showmarks.vim.patch                            |   84 +
+ doc/vim_plugins.txt                                |   30 +
+ ex_plugin_only/_vimrc                              |  952 +++++++
+ .../SyntaxHighlighter/scripts/clipboard.swf        |  Bin 0 -> 1361 bytes
+ .../SyntaxHighlighter/scripts/shBrushBash.js       |   59 +
+ .../SyntaxHighlighter/scripts/shBrushCSharp.js     |   64 +
+ .../SyntaxHighlighter/scripts/shBrushCpp.js        |   99 +
+ .../SyntaxHighlighter/scripts/shBrushCss.js        |   93 +
+ .../SyntaxHighlighter/scripts/shBrushDelphi.js     |   57 +
+ .../SyntaxHighlighter/scripts/shBrushDiff.js       |   43 +
+ .../SyntaxHighlighter/scripts/shBrushGroovy.js     |   69 +
+ .../SyntaxHighlighter/scripts/shBrushJScript.js    |   51 +
+ .../SyntaxHighlighter/scripts/shBrushJava.js       |   55 +
+ .../SyntaxHighlighter/scripts/shBrushPerl.js       |   74 +
+ .../SyntaxHighlighter/scripts/shBrushPhp.js        |   91 +
+ .../SyntaxHighlighter/scripts/shBrushPlain.js      |   35 +
+ .../SyntaxHighlighter/scripts/shBrushPython.js     |   56 +
+ .../SyntaxHighlighter/scripts/shBrushRuby.js       |   57 +
+ .../SyntaxHighlighter/scripts/shBrushScala.js      |   53 +
+ .../SyntaxHighlighter/scripts/shBrushSql.js        |   68 +
+ .../toolkit/SyntaxHighlighter/scripts/shBrushVb.js |   58 +
+ .../SyntaxHighlighter/scripts/shBrushXml.js        |   71 +
+ .../toolkit/SyntaxHighlighter/scripts/shCore.js    |   30 +
+ .../toolkit/SyntaxHighlighter/scripts/shLegacy.js  |   30 +
+ .../toolkit/SyntaxHighlighter/styles/help.png      |  Bin 0 -> 786 bytes
+ .../toolkit/SyntaxHighlighter/styles/magnifier.png |  Bin 0 -> 615 bytes
+ .../SyntaxHighlighter/styles/page_white_code.png   |  Bin 0 -> 603 bytes
+ .../SyntaxHighlighter/styles/page_white_copy.png   |  Bin 0 -> 309 bytes
+ .../toolkit/SyntaxHighlighter/styles/printer.png   |  Bin 0 -> 731 bytes
+ .../toolkit/SyntaxHighlighter/styles/shCore.css    |  321 +++
+ .../SyntaxHighlighter/styles/shThemeDefault.css    |  191 ++
+ .../SyntaxHighlighter/styles/shThemeDjango.css     |  193 ++
+ .../toolkit/SyntaxHighlighter/styles/shThemeEX.css |  163 ++
+ .../SyntaxHighlighter/styles/shThemeEmacs.css      |  192 ++
+ .../SyntaxHighlighter/styles/shThemeFadeToGrey.css |  193 ++
+ .../SyntaxHighlighter/styles/shThemeMidnight.css   |  192 ++
+ .../SyntaxHighlighter/styles/shThemeRDark.css      |  192 ++
+ .../toolkit/SyntaxHighlighter/styles/wrapping.png  |  Bin 0 -> 631 bytes
+ ex_plugin_only/toolkit/cTags/.ctags                |   17 +
+ ex_plugin_only/toolkit/cTags/command.txt           |   15 +
+ ex_plugin_only/toolkit/doxygen/CodeGen/config.cfg  | 1310 +++++++++
+ ex_plugin_only/toolkit/doxygen/CodeGen/footer.html |    5 +
+ .../toolkit/doxygen/CodeGen/generate_doc.bat       |   21 +
+ ex_plugin_only/toolkit/doxygen/CodeGen/header.html |    9 +
+ ex_plugin_only/toolkit/doxygen/CodeGen/hhc.exe     |  Bin 0 -> 51472 bytes
+ ex_plugin_only/toolkit/doxygen/CodeGen/logo.gif    |  Bin 0 -> 4475 bytes
+ ex_plugin_only/toolkit/doxygen/CodeGen/ubisoft.css |  359 +++
+ ex_plugin_only/toolkit/gawk/command.txt            |   22 +
+ ex_plugin_only/toolkit/gawk/prg_ConvertLog.awk     |   20 +
+ ex_plugin_only/toolkit/gawk/prg_Inherits.awk       |   30 +
+ ex_plugin_only/toolkit/gawk/prg_InheritsDot.awk    |   29 +
+ ex_plugin_only/toolkit/gawk/prg_NoStripSymbol.awk  |   22 +
+ ex_plugin_only/toolkit/gawk/prg_StripSymbol.awk    |   27 +
+ ex_plugin_only/toolkit/iconv/command.txt           |   14 +
+ ex_plugin_only/toolkit/iconv/iconv_big5-to-gb.bat  |   20 +
+ .../toolkit/iconv/iconv_cp932-to-EUC_JP.bat        |   21 +
+ .../toolkit/iconv/iconv_latin1-to-cp936.bat        |   21 +
+ .../toolkit/iconv/iconv_latin1-to-utf-8.bat        |   21 +
+ ex_plugin_only/toolkit/idutils/command.txt         |   22 +
+ ex_plugin_only/toolkit/idutils/id-lang-default.map |  101 +
+ ex_plugin_only/toolkit/idutils/id-lang.map         |  124 +
+ ex_plugin_only/toolkit/idutils/readme.txt          |    1 +
+ ex_plugin_only/toolkit/makefile/gcc/gcc_config.mk  |  217 ++
+ ex_plugin_only/toolkit/makefile/gcc/gcc_entry_m.mk |  153 +
+ ex_plugin_only/toolkit/makefile/gcc/gcc_entry_s.mk |   99 +
+ ex_plugin_only/toolkit/makefile/gcc/gcc_project.mk |   98 +
+ ex_plugin_only/toolkit/makefile/gcc/gcc_rule.mk    |  624 +++++
+ ex_plugin_only/toolkit/makefile/msvc/make_vs.bat   |   76 +
+ .../toolkit/makefile/msvc/msvc_config.mk           |  109 +
+ ex_plugin_only/toolkit/makefile/msvc/msvc_entry.mk |  120 +
+ ex_plugin_only/toolkit/makefile/msvc/msvc_tmpl.txt |    9 +
+ .../toolkit/makefile/msvc/vc_project/project.sln   |   46 +
+ .../msvc/vc_project/project_exe/project_exe.cpp    |   28 +
+ .../msvc/vc_project/project_exe/project_exe.h      |   14 +
+ .../msvc/vc_project/project_exe/project_exe.vcproj |  749 +++++
+ .../project_exe.vcproj.EXPC.Johnny.user            |  177 ++
+ .../msvc/vc_project/project_lib/project_lib.cpp    |   13 +
+ .../msvc/vc_project/project_lib/project_lib.h      |   14 +
+ .../msvc/vc_project/project_lib/project_lib.vcproj |  708 +++++
+ .../project_lib.vcproj.EXPC.Johnny.user            |  177 ++
+ .../toolkit/makefile/ref/gcc_rule_multi_logs.mk    |  405 +++
+ .../toolkit/makefile/shader/shader_config.mk       |  266 ++
+ .../toolkit/makefile/shader/shader_entry_m.mk      |  130 +
+ .../toolkit/makefile/shader/shader_entry_s.mk      |  106 +
+ .../toolkit/makefile/shader/shader_project.mk      |  104 +
+ .../toolkit/makefile/shader/shader_rule.mk         |  320 +++
+ ex_plugin_only/toolkit/octave/.octaverc            |   19 +
+ .../toolkit/quickgen/bash/quick_gen_project.sh     |  323 +++
+ .../toolkit/quickgen/bash/quick_gen_project_all.sh |   14 +
+ .../quickgen/bash/quick_gen_project_c_only.sh      |   14 +
+ .../quickgen/bash/quick_gen_project_cpp_only.sh    |   14 +
+ .../quickgen/bash/quick_gen_project_csharp_only.sh |   14 +
+ .../quickgen/bash/quick_gen_project_general.sh     |   14 +
+ .../quickgen/bash/quick_gen_project_html_only.sh   |   14 +
+ .../bash/quick_gen_project_javascript_only.sh      |   14 +
+ .../quickgen/bash/quick_gen_project_lua_only.sh    |   14 +
+ .../quickgen/bash/quick_gen_project_math_only.sh   |   14 +
+ .../quickgen/bash/quick_gen_project_python_only.sh |   14 +
+ .../quickgen/bash/quick_gen_project_uc_only.sh     |   14 +
+ .../quickgen/bash/quick_gen_project_vim_only.sh    |   14 +
+ .../toolkit/quickgen/batch/quick_gen_project.bat   |  357 +++
+ .../quickgen/batch/quick_gen_project_all.bat       |   16 +
+ .../quickgen/batch/quick_gen_project_c_only.bat    |   16 +
+ .../quickgen/batch/quick_gen_project_cpp_only.bat  |   16 +
+ .../batch/quick_gen_project_csharp_only.bat        |   16 +
+ .../quickgen/batch/quick_gen_project_general.bat   |   16 +
+ .../quickgen/batch/quick_gen_project_html_only.bat |   16 +
+ .../batch/quick_gen_project_javascript_only.bat    |   16 +
+ .../quickgen/batch/quick_gen_project_lua_only.bat  |   16 +
+ .../quickgen/batch/quick_gen_project_math_only.bat |   16 +
+ .../batch/quick_gen_project_python_only.bat        |   16 +
+ .../quickgen/batch/quick_gen_project_uc_only.bat   |   16 +
+ .../quickgen/batch/quick_gen_project_vim_only.bat  |   16 +
+ ex_plugin_only/toolkit/src-highlight/command.txt   |   15 +
+ .../toolkit/src-highlight/default/default.style    |   34 +
+ .../toolkit/src-highlight/default/lang.map         |   47 +
+ .../toolkit/src-highlight/ex/default.style         |   34 +
+ ex_plugin_only/toolkit/src-highlight/ex/ex.css     |  289 ++
+ .../toolkit/src-highlight/ex/ex_cpp.lang           |   18 +
+ ex_plugin_only/toolkit/src-highlight/ex/lang.map   |   48 +
+ ex_plugin_only/toolkit/vim/command.txt             |   23 +
+ ex_plugin_only/toolkit/vim/compile_vim.bat         |   34 +
+ ex_plugin_only/vimfiles/after/compiler/exgcc.vim   |   27 +
+ ex_plugin_only/vimfiles/after/compiler/hlsl.vim    |   13 +
+ .../vimfiles/after/compiler/msvc2005.vim           |   53 +
+ ex_plugin_only/vimfiles/after/ftplugin/c.vim       |    2 +
+ ex_plugin_only/vimfiles/after/ftplugin/cpp.vim     |    2 +
+ ex_plugin_only/vimfiles/after/syntax/__fxhlsl.vim  |  196 ++
+ ex_plugin_only/vimfiles/after/syntax/c.vim         |  129 +
+ ex_plugin_only/vimfiles/after/syntax/cpp.vim       |   69 +
+ ex_plugin_only/vimfiles/after/syntax/doxygen.vim   |  696 +++++
+ ex_plugin_only/vimfiles/after/syntax/exUtility.vim |   72 +
+ ex_plugin_only/vimfiles/after/syntax/gmsh.vim      |  107 +
+ ex_plugin_only/vimfiles/after/syntax/help.vim      |  114 +
+ ex_plugin_only/vimfiles/after/syntax/hlsl.vim      |  108 +
+ ex_plugin_only/vimfiles/after/syntax/matlab.vim    |   54 +
+ ex_plugin_only/vimfiles/after/syntax/maxscript.vim |   85 +
+ ex_plugin_only/vimfiles/after/syntax/python.vim    |   29 +
+ ex_plugin_only/vimfiles/after/syntax/syncolor.vim  |  100 +
+ ex_plugin_only/vimfiles/after/syntax/vim.vim       |   28 +
+ ex_plugin_only/vimfiles/autoload/exUtility.vim     | 2957 +++++++++++++++++++
+ ex_plugin_only/vimfiles/colors/ex.vim              |   96 +
+ ex_plugin_only/vimfiles/doc/exVim.txt              | 2632 +++++++++++++++++
+ ex_plugin_only/vimfiles/filetype.vim               |   26 +
+ ex_plugin_only/vimfiles/plugin/exCscope.vim        |  777 +++++
+ .../vimfiles/plugin/exEnvironmentSetting.vim       |  366 +++
+ ex_plugin_only/vimfiles/plugin/exGlobalSearch.vim  | 1032 +++++++
+ .../vimfiles/plugin/exMacroHighlight.vim           |  755 +++++
+ ex_plugin_only/vimfiles/plugin/exMarksBrowser.vim  |  480 ++++
+ ex_plugin_only/vimfiles/plugin/exProject.vim       |  994 +++++++
+ ex_plugin_only/vimfiles/plugin/exQuickFix.vim      |  586 ++++
+ .../vimfiles/plugin/exSearchComplete.vim           |  110 +
+ ex_plugin_only/vimfiles/plugin/exSymbolTable.vim   |  498 ++++
+ ex_plugin_only/vimfiles/plugin/exTagSelect.vim     |  715 +++++
+ ex_plugin_only/vimfiles/plugin/exUtility.vim       |  209 ++
+ 162 files changed, 30001 insertions(+), 0 deletions(-)

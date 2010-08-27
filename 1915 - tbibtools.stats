@@ -1,0 +1,46 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Jul 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - VIM: Require tlib 0.9
+
+ README_TBIBTOOLS.TXT        |   25 -------------------------
+ doc/tbibtools.txt           |   12 +++++++++++-
+ plugin/tbibtools.vim        |   18 +++++++++---------
+ tbibtools/ruby/tbibtools.rb |   29 ++++++++++++++++++++++++++---
+ 4 files changed, 46 insertions(+), 38 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Jun 18 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - sortCrossref: Put cross-referenced entries to the back.
+    - New format: (un)selectCrossref: View only entries that are (not) cross-referenced
+    - Improved TBibList (include keywords in list; if g:tbibUseCache is set, the listing will be cached between editing sessions)
+
+ doc/tbibtools.txt           |   91 ++++++++++++++------
+ plugin/tbibtools.vim        |   97 +++++++++++++++------
+ tbibtools/ruby/tbibtools.rb |  203 +++++++++++++++++++++++++------------------
+ tbibtools/ruby/tvimtools.rb |    9 +-
+ 4 files changed, 256 insertions(+), 144 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Fri Jun 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Syntax of the query command has changed: query FIELD1 => RX1, FIELD2 => RX2 ...
+    - Merge duplicate entries
+    - Merge certain conflicting fields
+    - FIX: Problem with --ls
+
+ README                            |  152 +++++++
+ README_TBIBTOOLS.TXT              |   25 +
+ doc/tbibtools.txt                 |  245 +++++++++++
+ plugin/tbibtools.vim              |   93 ++++
+ tbibtools/ruby/Makefile.tbibtools |   14 +
+ tbibtools/ruby/tbibtools.rb       |  873 +++++++++++++++++++++++++++++++++++++
+ tbibtools/ruby/tvimtools.rb       |   54 +++
+ 7 files changed, 1456 insertions(+), 0 deletions(-)

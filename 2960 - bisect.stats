@@ -1,0 +1,72 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.1, refs/heads/master)
+Author:     Zachary Michaels <mikezackles at gmail.com>
+AuthorDate: Wed Feb 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ .git/COMMIT_EDITMSG                                |    1 +
+ .git/HEAD                                          |    1 +
+ .git/config                                        |    8 +
+ .git/description                                   |    1 +
+ .git/hooks/applypatch-msg.sample                   |   15 ++
+ .git/hooks/commit-msg.sample                       |   24 +++
+ .git/hooks/post-commit.sample                      |    8 +
+ .git/hooks/post-receive.sample                     |   15 ++
+ .git/hooks/post-update.sample                      |    8 +
+ .git/hooks/pre-applypatch.sample                   |   14 ++
+ .git/hooks/pre-commit.sample                       |   46 ++++++
+ .git/hooks/pre-rebase.sample                       |  169 ++++++++++++++++++++
+ .git/hooks/prepare-commit-msg.sample               |   36 ++++
+ .git/hooks/update.sample                           |  128 +++++++++++++++
+ .git/index                                         |  Bin 0 -> 272 bytes
+ .git/info/exclude                                  |    6 +
+ .git/logs/HEAD                                     |   12 ++
+ .git/logs/refs/heads/master                        |   12 ++
+ .git/logs/refs/remotes/origin/master               |    7 +
+ .../05/65909d700bc32ff62b92a9cb4b497a72da7bc5      |  Bin 0 -> 159 bytes
+ .../0e/38574c3e487fb331f93712702cc86040031dce      |  Bin 0 -> 190 bytes
+ .../10/194573ea4613b6e14207cdcb86901c215202d3      |  Bin 0 -> 1539 bytes
+ .../10/2f74ce28dbf6a6ec2135d2b2278c481132df6c      |  Bin 0 -> 1111 bytes
+ .../17/361b95e0263b053632ad14f7ad2dd2179b3e1f      |  Bin 0 -> 586 bytes
+ .../18/90c8fcde612c6833c997eccd939bc3a0902bc3      |  Bin 0 -> 55 bytes
+ .../1e/e84da9887ff9c23cf4f62eb48fa186b8fcd963      |  Bin 0 -> 21 bytes
+ .../1e/f01085115a336c30b6ed296d96433e00e6f960      |  Bin 0 -> 1527 bytes
+ .../1f/0d78dfee90d7b80ba8858e4ce88cc6074c6d71      |  Bin 0 -> 1109 bytes
+ .../20/182a1aee42e261187798e5fa5aff1efee91688      |  Bin 0 -> 1529 bytes
+ .../32/d1148842530e3f859d53b4293e053fc4af0b68      |  Bin 0 -> 55 bytes
+ .../35/33809258e675c00889086e40e9b8fb1e79c03e      |  Bin 0 -> 1158 bytes
+ .../36/265f5c4dae9acf016e4b1ace160633a3b905f7      |  Bin 0 -> 180 bytes
+ .../44/4799ffbd7dba690b1b7db65440518b40407100      |  Bin 0 -> 117 bytes
+ .../49/736eb621cdbddf0595045468aee08f40b2be1f      |  Bin 0 -> 117 bytes
+ .../4c/661add7d56ade907a38a521c737d8defc6cb00      |  Bin 0 -> 117 bytes
+ .../4c/e18b00e2e0d7ebfe7113f2fcf32edf7add1e18      |    1 +
+ .../4f/59625647d87aaff5407ba488636acd91391f1e      |  Bin 0 -> 117 bytes
+ .../51/26873f3aa6106506c59033530ccd85d98c702b      |  Bin 0 -> 1490 bytes
+ .../51/85faa59bee9f9e5b0ebbb43b953bbee97e9523      |  Bin 0 -> 55 bytes
+ .../66/600f6d9d11a916824b729ba595c55d40226e6d      |  Bin 0 -> 55 bytes
+ .../6b/1634033ffd1f09bff2042008fce397753278f4      |  Bin 0 -> 208 bytes
+ .../8d/b35d3c5b54fc47317d4c8f53edcf3ad023dae8      |  Bin 0 -> 117 bytes
+ .../90/8d21c8963233885d1e07e783b39f089ff81f63      |  Bin 0 -> 117 bytes
+ .../96/b3908d28cd766868339168da0cb18b1d8c0be4      |  Bin 0 -> 1529 bytes
+ .../9b/97c9de95271e3a885a279df872e6b8b056e27b      |  Bin 0 -> 54 bytes
+ .../b9/f298480ef44f3007898eee9a451850996ecb4e      |  Bin 0 -> 1484 bytes
+ .../bc/b5a07f00cc322cb12ea633245c2f6fda50361f      |  Bin 0 -> 172 bytes
+ .../c0/80de2853190b45c75bd234350d2d304f89ea03      |  Bin 0 -> 176 bytes
+ .../c2/85f1b50e3feaad6c848d4012d1b740a478a6d6      |  Bin 0 -> 774 bytes
+ .../c7/42d9ca14334ec2b0acd67a18419b6f9034e76e      |  Bin 0 -> 172 bytes
+ .../cd/08780877410d22d6638c2b921ffea58f72c920      |  Bin 0 -> 117 bytes
+ .../d7/052c6a52d2f6d5fca082599796e9a9ab19d1ba      |    1 +
+ .../df/17b2f61af158c82e129f773e0662d269e4005a      |  Bin 0 -> 1163 bytes
+ .../df/acea4529643f48cb515666dc09268d6ba223c3      |  Bin 0 -> 192 bytes
+ .../e1/620956e68af15e7acdb1edbda773c46d5309ca      |    4 +
+ .../eb/d786195d62fc60c3400a609b610e0559a3ef79      |  Bin 0 -> 1536 bytes
+ .../f7/5ce42260f64e42ea7a120e2bce668df90f841e      |  Bin 0 -> 1557 bytes
+ .../fc/b373fc57a9ded604cafe8e855ad82a5313e8c3      |  Bin 0 -> 204 bytes
+ .git/refs/heads/master                             |    1 +
+ .git/refs/remotes/origin/master                    |    1 +
+ .gitignore                                         |    1 +
+ README                                             |   19 +++
+ doc/bisect.txt                                     |   66 ++++++++
+ plugin/bisect.vim                                  |  142 ++++++++++++++++
+ 64 files changed, 747 insertions(+), 0 deletions(-)

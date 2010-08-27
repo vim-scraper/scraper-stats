@@ -1,0 +1,22 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2, refs/heads/master)
+Author:     Eugen Minciu <minciue at gmail.com>
+AuthorDate: Thu Aug 3 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This version doesn't set the filetype to HTML anymore.
+    It now works correctly with Tim Pope's SVN version of rails.vim which will support highlighting Liquid through this file.
+    The identifier names where changed to start with a lowercase letter (so omnicompletion should now work)
+
+ syntax/liquid.vim |   71 +++++++++++++++++++++++++++-------------------------
+ 1 files changed, 37 insertions(+), 34 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1)
+Author:     Eugen Minciu <minciue at gmail.com>
+AuthorDate: Wed Aug 2 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README            |    9 ++++++
+ syntax/liquid.vim |   73 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 82 insertions(+), 0 deletions(-)

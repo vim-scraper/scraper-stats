@@ -1,0 +1,139 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.6, refs/heads/master)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Thu Dec 11 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Progress bar no longer used for better compatibility; one may use  g:fencview_checklines=0 to check all lines; do not change the current file encoding if no valid multi-byte encoding is detected.
+
+ plugin/fencview.vim |   55 ++++++++++++++++----------------------------------
+ 1 files changed, 18 insertions(+), 37 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.5)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Fri Sep 5 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add a workaround (UNIX only) for earlier Vim versions where shellescape() is not defined; avoid using `y$' to prevent issues when folding is used (contributed by Ingo Karkat).
+
+ plugin/fencview.vim |   19 ++++++++++++-------
+ 1 files changed, 12 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.4)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Mon Jun 2 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix two problems found under Unix:
+    1) Big5 can be loosely used for CP950;
+    2) g:legacy_encoding can be wrongly guessed (it should not be used).
+
+ plugin/fencview.vim |   13 +++++++------
+ 1 files changed, 7 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.3)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Tue Nov 27 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Make it run more smoothly under Windows with my gVim build (http://wyw.dcweb.cn/#download).
+
+ plugin/fencview.vim |   32 +++++++++++++++++++++++---------
+ 1 files changed, 23 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Fri May 25 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    update
+
+ plugin/fencview.vim |   46 +++++++++++++++++++++++-----------------------
+ 1 files changed, 23 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Tue May 22 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    some improvements
+
+ plugin/fencview.vim |  157 ++++++++++++++++++++++++++++++++++-----------------
+ 1 files changed, 105 insertions(+), 52 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Thu May 3 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    It merges functionality in multienc.vim: allows the use of an external program to determine the file encoding; use the http-equiv meta tag to help decide the file encoding; use the fileencoding modeline to help decide the file encoding; autodetect the encoding of .txt, .htm, and .html files; add a new command FencManualEncoding to override the encoding where autodetection affects the normal ++enc. Also some minor fixes are made.
+
+ plugin/fencview.vim |  365 +++++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 295 insertions(+), 70 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Sun Mar 4 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    bug fix: set syntax on after auto detect
+
+ plugin/fencview.vim |   41 ++++++++++++++++++++++++++++-------------
+ 1 files changed, 28 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Mon Dec 11 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    A lot of improvements.
+
+ plugin/fencview.vim |  487 +++++++++++++++++++++++++++++++++++++++++++++++----
+ 1 files changed, 456 insertions(+), 31 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Tue Nov 28 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now it can auto detect the file encodings. You just need to select "Auto detect" from the menu or use :FencAutoDetect command to let it detect the fileencoding automatically.
+    Supported encodings:
+    utf-8
+    cp936(GBK)
+    cp950(big5)
+    cp932(sjis)
+
+ plugin/fencview.vim |  545 +++++++++++++++++++++++++++++++++++++++++++++++++--
+ 1 files changed, 527 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Thu Nov 16 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Some bug fix.
+
+ plugin/fencview.vim |   47 +++++++++++++++++++++++++----------------------
+ 1 files changed, 25 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Wed Nov 15 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now, you can select a file encoding from the menu, just like what you did in Firefox/IE.
+    Screenshot:
+    http://mbbill.googlepages.com/fenc.png
+
+ plugin/fencview.vim |  184 ++++++++++++++++++++++++++++++++-------------------
+ 1 files changed, 116 insertions(+), 68 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Tue Nov 14 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |   75 +++++++++++++++++++++++++++
+ plugin/fencview.vim |  141 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 216 insertions(+), 0 deletions(-)

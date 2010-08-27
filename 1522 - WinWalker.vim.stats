@@ -1,0 +1,98 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2, refs/heads/master)
+Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+AuthorDate: Sun May 28 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -	Revamped window jump list ( ^I and ^O ); better
+    tracking, cleanup, and display.
+    -	Fixed a few problems with the find command and
+    menu handler returning early
+    -	Separated startup and menu timeoutlen[s].
+    -	Updated help file.
+
+ doc/WinWalker.txt    |  130 ++++++--
+ plugin/Char_menu.vim |   68 +++--
+ plugin/WinWalker.vim |  889 +++++++++++++++++++++++++++++++++++---------------
+ 3 files changed, 762 insertions(+), 325 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+AuthorDate: Tue May 16 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -	added 'follow' option,
+    -	'c' preset now sets the sticky auto-resize,
+    	line/column values,
+    -	windows and buffers auto-resize separately,
+    -	small cmdheight bug,
+    -	smarter hondling of 'previous' window,
+    -	various sizing fixes,
+
+ doc/WinWalker.txt    |  201 +++++++--
+ plugin/Char_menu.vim |   72 ++-
+ plugin/WinWalker.vim | 1223 ++++++++++++++++++++++++++++++++++++--------------
+ 3 files changed, 1099 insertions(+), 397 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+AuthorDate: Thu Apr 27 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -	Constrained size and placement.  Windows can be
+    'attached' to walls or other windows.
+    -	Added key feedkeys() macros
+    -	Sessions remember WinWalker constraints
+
+ doc/WinWalker.txt    |  139 ++++-
+ plugin/Char_menu.vim |    5 +
+ plugin/WinWalker.vim | 1614 +++++++++++++++++++++++++++++++++++++++++---------
+ 3 files changed, 1479 insertions(+), 279 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
+Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+AuthorDate: Mon Apr 24 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Restored accidentally deleted function, kill spurious debug msg
+
+ plugin/WinWalker.vim |   38 ++++++++++++++++++++++++--------------
+ 1 files changed, 24 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+AuthorDate: Mon Apr 24 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -	handle copen and exchange/push
+    -	fixed searching by bufnr bug
+    -	switch to Unix file format
+    -	added session quick-save
+    -	revamped help and help folding
+
+ doc/WinWalker.txt    |  550 +++++
+ plugin/Char_menu.vim |  764 ++++----
+ plugin/WinWalker.vim | 5538 +++++++++++++++++++++++++++-----------------------
+ 3 files changed, 3982 insertions(+), 2870 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+AuthorDate: Fri Apr 21 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     -   Added help extraction to standard help
+     -   Tweaked to handle Taglist.vim
+
+ plugin/WinWalker.vim |  392 +++++++++++++++++++++++++++++++++-----------------
+ 1 files changed, 257 insertions(+), 135 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+AuthorDate: Wed Apr 19 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README               |  130 +++
+ plugin/Char_menu.vim |  382 ++++++++
+ plugin/WinWalker.vim | 2366 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 2878 insertions(+), 0 deletions(-)

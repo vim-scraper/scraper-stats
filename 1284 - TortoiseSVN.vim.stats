@@ -1,0 +1,38 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Aug 21 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - g:tortoiseSvnInstallAutoCmd: 0=disable autocmd; 1=commit on BufUnload; 2=commit on BufWritePost
+    - most function accept now a filename as optional argument
+    - fixed problem with some "fileless" buffers
+    - fixed problem when leaving vim
+
+ doc/TortoiseSVN.txt    |    4 +-
+ plugin/TortoiseSVN.vim |  129 ++++++++++++++++++++++++++++++++++++++----------
+ 2 files changed, 106 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Thu May 19 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Make sure this works with cmd.exe as &shell (which is Windows standard)
+    - Make <SID>CanonicFileName(fname) &shell sensible
+    - Fixed a cut&paste error in the menu
+
+ plugin/TortoiseSVN.vim |   43 ++++++++++++++++++++++++++++++-------------
+ 1 files changed, 30 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue May 17 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                          |   25 +++++++++
+ TortoiseSVN/etc/TortoiseSVN.lst |    3 +
+ doc/TortoiseSVN.txt             |   59 ++++++++++++++++++++
+ plugin/TortoiseSVN.vim          |  114 +++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 201 insertions(+), 0 deletions(-)

@@ -1,0 +1,58 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.98, refs/heads/master)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Wed Aug 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    (BE SURE TO UPDATE TO THIS VERSION, THE PREVIOUS VERSION HAS A SERIOUS BUG WHICH WOULD CAUSE FILE LOST!)
+    0.98
+        -   Add option VEConf_filePanelFilter.
+        -   Bug fix: Escape <space> in command 'e' 'se' 'u' and '='.
+        -   Bug fix: 'Cut' and 'Paste' command causes file lost.
+        -   Change the default hotkey 'M' and 'B' to 'm','J'.
+        -   Change forward and backward hotkey to |<c-o>| and |<c-i>|(<tab>).
+        -   Change hotkey |<tab>| to |<c-tab>|.
+        -   Change hotkey |mr| |mv| |md| |me| |mc| to |Mr| |Mv| |Md| |Me| |Mc|.
+        -   When GUI is running, use confirm() to pop a dialog instead of input().
+
+ plugin/vimExplorer.vim |  289 +++++++++++++++++++++++++++++++----------------
+ 1 files changed, 190 insertions(+), 99 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.97)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Tue Jul 24 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    0.97
+        - Change the behaviour of hotkey 'F', now it adds the path under cursor to
+            favorite list. If no path under cursor, use current working path
+            instead.(Thanks to Vincent Wang)
+        - Bug fix: escape ' %#' for path.
+        - Add options |g:VEConf_usingKDE| and |g:VEConf_usingGnome| for starting
+            program in *nix environment.
+        - Check if the script is already loaded, thanks to Dennis Hostetler.
+        - Change default g:VEConf_systemEncoding to '' (empty)
+        - Bug fix: favorite selection out of range.
+
+ plugin/vimExplorer.vim |  661 +++++++++++++++++++++++++-----------------------
+ 1 files changed, 339 insertions(+), 322 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.96)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Wed Jul 18 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    bug fix.
+
+ plugin/vimExplorer.vim |   14 +++++++-------
+ 1 files changed, 7 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.95)
+Author:     Ming Bai <mbbill at gmail.com>
+AuthorDate: Wed Jul 11 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                 |   72 ++
+ plugin/vimExplorer.vim | 3301 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 3373 insertions(+), 0 deletions(-)

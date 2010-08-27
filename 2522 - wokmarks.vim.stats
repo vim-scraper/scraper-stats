@@ -1,0 +1,48 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3.1, refs/heads/master)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Tue Aug 17 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - fix: the hook executed modelines (via :doautocmd, wtf?); reset 'modeline'
+
+ plugin/wokmarks_0.3.1.vim |  364 +++++++++++++++++++++++++++++++++++++++++++++
+ plugin/wokmarks_0.3.vim   |  359 --------------------------------------------
+ 2 files changed, 364 insertions(+), 359 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Sun Mar 28 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - added toggle hook (:au User WokmarksChange) (Tom Link)
+    - added Wokmarks_GetLocalMarks()
+
+ plugin/wokmarks_0.2.vim |  333 -------------------------------------------
+ plugin/wokmarks_0.3.vim |  359 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 359 insertions(+), 333 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Sun Nov 1 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - tj tk set the ' mark, to allow jumping back with CTRL-O
+    - added Omap mode for <Plug>NextMarkWok, <Plug>PrevMarkWok
+    - let Wokmarks_GetMark() also accept ".", "$", etc.
+    - if g:wokmarks_do_maps == 2, then F2 maps are used (Tom Link)
+    - prev/next mark searches wrap around (Tom Link)
+
+ plugin/wokmarks_0.1.vim |  295 -----------------------------------------
+ plugin/wokmarks_0.2.vim |  333 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 333 insertions(+), 295 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Andy Wokula <anwoku at yahoo.de>
+AuthorDate: Thu Jan 22 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                  |   59 ++++++++++
+ plugin/wokmarks_0.1.vim |  295 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 354 insertions(+), 0 deletions(-)

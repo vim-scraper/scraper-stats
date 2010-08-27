@@ -1,0 +1,26 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.2, refs/heads/master)
+Author:     Noah Spurrier <noah at noah.org>
+AuthorDate: Tue Apr 15 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I added a feature to make a backup of an encrypted file before writing changes. This helps guard against the situation where you may edit a file and write changes with the wrong password. You can still go back to the previous backup version. The backup file will have the same name as the original file with .bak before the original extension. For example:
+    
+        .auth.bfa  -->  .auth.bak.bfa
+    
+    To turn on backups put the following global definition in your .vimrc file:
+    
+        let g:openssl_backup = 1
+
+ plugin/openssl.vim |   43 +++++++++++++++++++++++++++++++++++--------
+ 1 files changed, 35 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Noah Spurrier <noah at noah.org>
+AuthorDate: Fri Sep 7 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README             |   66 ++++++++++++++++++++
+ plugin/openssl.vim |  174 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 240 insertions(+), 0 deletions(-)

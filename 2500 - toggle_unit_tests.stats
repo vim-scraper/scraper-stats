@@ -1,0 +1,23 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     Pete Johns <paj-vim at johnsy.com>
+AuthorDate: Wed Aug 5 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed annoying bug where if a file was already loaded into a buffer, the cursor would move to the top when switching.
+    
+    Refactored code to make easier to read and maintain.
+
+ plugin/toggle_unit_tests.vim |  116 ++++++++++++++++++++++++++++++------------
+ 1 files changed, 84 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Pete Johns <paj-vim at johnsy.com>
+AuthorDate: Thu Jan 1 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                       |   33 +++++++++++++++++++
+ doc/toggle_unit_tests.txt    |   45 ++++++++++++++++++++++++++
+ plugin/toggle_unit_tests.vim |   72 ++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 150 insertions(+), 0 deletions(-)

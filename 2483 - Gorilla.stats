@@ -1,0 +1,20 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1.1, refs/heads/master)
+Author:     Meikel Brandmeyer <Brandels_Mikesh at web.de>
+AuthorDate: Wed Dec 31 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This is a compatibility release for Clojure >= SVN rev1192 and Clojure Contrib >= SVN rev331.
+    If you are using earlier revisions of Clojure and Contrib, eg. the December Release of Clojure
+    you don't need this release.
+
+ README                                           |    3 +
+ doc/gorilla.txt                                  |  181 +++++++
+ gorilla-1.1.1/LICENSE.txt                        |  249 ++++++++++
+ gorilla-1.1.1/README.txt                         |   71 +++
+ gorilla-1.1.1/after/ftplugin/clojure/gorilla.vim |   52 ++
+ gorilla-1.1.1/build.xml                          |   78 +++
+ gorilla-1.1.1/gorilla.jar                        |  Bin 0 -> 34128 bytes
+ gorilla-1.1.1/src/de/kotka/gorilla.clj           |  178 +++++++
+ gorilla-1.1.1/version.txt                        |    6 +
+ plugin/gorilla.vim                               |  569 ++++++++++++++++++++++
+ 10 files changed, 1387 insertions(+), 0 deletions(-)

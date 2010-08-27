@@ -1,0 +1,31 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2, refs/heads/master)
+Author:     Krzysiek Goj <bin-krzysiek at poczta.gazeta.pl>
+AuthorDate: Sat May 17 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    bugfix: from foo import (bar, baz)
+    Now requires only python 2.3 (patch from Konrad Delong)
+
+ plugin/sort_python_imports.vim |   19 ++++++++++++++++---
+ 1 files changed, 16 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Krzysiek Goj <bin-krzysiek at poczta.gazeta.pl>
+AuthorDate: Fri May 2 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bugfix: now works for 'from foo.bar import baz' style imports
+
+ plugin/sort_python_imports.vim |    8 ++++++--
+ 1 files changed, 6 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Krzysiek Goj <bin-krzysiek at poczta.gazeta.pl>
+AuthorDate: Thu May 1 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                         |    9 +++
+ plugin/sort_python_imports.vim |  142 ++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 151 insertions(+), 0 deletions(-)

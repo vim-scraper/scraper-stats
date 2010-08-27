@@ -1,0 +1,123 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.81, refs/heads/master)
+Author:     Grzegorz Dymarek <gd58 at alumni.st-andrews.ac.uk>
+AuthorDate: Thu Apr 28 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improved recognition of imperative programming
+
+ plugin/OCamlSig.vim |   13 ++++++++-----
+ 1 files changed, 8 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.80)
+Author:     Grzegorz Dymarek <gd58 at alumni.st-andrews.ac.uk>
+AuthorDate: Thu Apr 7 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Should now work everything fine (structuers, types, etc) but sometimes bit slow. Clear the buffer then. (see description)
+
+ plugin/OCamlSig.vim |   10 +++++++---
+ 1 files changed, 7 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.80-beta2)
+Author:     Grzegorz Dymarek <gd58 at alumni.st-andrews.ac.uk>
+AuthorDate: Thu Mar 31 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fixes
+
+ plugin/OCamlSig.vim |   59 +++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 46 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.80-beta)
+Author:     Grzegorz Dymarek <gd58 at alumni.st-andrews.ac.uk>
+AuthorDate: Sun Mar 20 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Should recognize types and structures (tested on trees)
+
+ plugin/OCamlSig.vim |   83 ++++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 66 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.79a)
+Author:     Grzegorz Dymarek <gd58 at alumni.st-andrews.ac.uk>
+AuthorDate: Mon Mar 14 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Repaired ver of 0.79 (0.79 doesn't work good - bug: instraction recognition)
+
+ plugin/OCalmSig.vim |  389 --------------------------------------------------
+ plugin/OCamlSig.vim |  390 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 390 insertions(+), 389 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.79)
+Author:     Grzegorz Dymarek <gd58 at alumni.st-andrews.ac.uk>
+AuthorDate: Sat Mar 12 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added status window and a few improvements. Now you can work more effectively. No need to clear buffer so often.
+
+ plugin/OCalmSig.vim |  306 ++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 241 insertions(+), 65 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.72)
+Author:     Grzegorz Dymarek <gd58 at alumni.st-andrews.ac.uk>
+AuthorDate: Sat Mar 5 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Don't have to be in first line of instruction to parse it,
+    "Inteligent" buffer - doesn't add instructions that shouldn't be there (hence: buffer doesn't grow so fast - faster parsing)
+
+ plugin/OCalmSig.vim |  105 +++++++++++++++++++++++++++++++++++++++++---------
+ 1 files changed, 86 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Grzegorz Dymarek <gd58 at alumni.st-andrews.ac.uk>
+AuthorDate: Fri Mar 4 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added menu, error and warning handling, recognizing functions in functions, parsing instructions that calls functions, can also parse whole buffer, interpretating instructions that have strings in " "
+
+ plugin/OCalmSig.vim |  142 ++++++++++++++++++++++++++++++++++++++++++++-------
+ 1 files changed, 124 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Grzegorz Dymarek <gd58 at alumni.st-andrews.ac.uk>
+AuthorDate: Wed Mar 2 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Faster execution, more comfortable, no need to have csh, don't have to save file before running (working on buffer). Just better OCaml instructions signature plugin (not script)
+
+ ocaml.sign.csh      |   28 ----------------------------
+ plugin/OCalmSig.vim |   40 ++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 40 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
+Author:     Grzegorz Dymarek <gd58 at alumni.st-andrews.ac.uk>
+AuthorDate: Tue Mar 1 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Hanging eliminated
+
+ ocaml.sign.csh |   34 ++++++++++++++++++++--------------
+ 1 files changed, 20 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
+Author:     Grzegorz Dymarek <gd58 at alumni.st-andrews.ac.uk>
+AuthorDate: Mon Feb 28 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Recognizing instructions that take/are in more then one line
+
+ ocaml.sign.csh |   15 +++++++++++++--
+ 1 files changed, 13 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Grzegorz Dymarek <gd58 at alumni.st-andrews.ac.uk>
+AuthorDate: Sun Feb 27 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README         |   57 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ ocaml.sign.csh |   11 ++++++++++
+ 2 files changed, 68 insertions(+), 0 deletions(-)

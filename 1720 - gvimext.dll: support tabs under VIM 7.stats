@@ -1,0 +1,38 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0, refs/heads/master)
+Author:     Tianmiao Hu <tianmiao at acm.org>
+AuthorDate: Wed Jun 13 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Updated to avoid bell sound when VIM already in command mode.
+
+ README                      |   15 +
+ Source/GvimExt.reg          |   20 +
+ Source/Make_bc5.mak         |   43 ++
+ Source/Make_ming.mak        |   69 +++
+ Source/Makefile             |   40 ++
+ Source/README.txt           |   94 ++++
+ Source/SendKeys.cpp         |  691 ++++++++++++++++++++++++++
+ Source/SendKeys.h           |   76 +++
+ Source/SendKeys.obj         |  Bin 0 -> 10254 bytes
+ Source/UseTab.reg           |  Bin 0 -> 194 bytes
+ Source/UseTab.txt           |   29 ++
+ Source/builddll.bat         |    2 +
+ Source/gvimext.RES          |  Bin 0 -> 1288 bytes
+ Source/gvimext.cpp          | 1126 +++++++++++++++++++++++++++++++++++++++++++
+ Source/gvimext.def          |    8 +
+ Source/gvimext.dll          |  Bin 0 -> 32768 bytes
+ Source/gvimext.dll.manifest |    8 +
+ Source/gvimext.exp          |  Bin 0 -> 753 bytes
+ Source/gvimext.h            |  183 +++++++
+ Source/gvimext.inf          |   22 +
+ Source/gvimext.lib          |  Bin 0 -> 1756 bytes
+ Source/gvimext.obj          |  Bin 0 -> 19038 bytes
+ Source/gvimext.rc           |  111 +++++
+ Source/gvimext_ming.def     |   10 +
+ Source/gvimext_ming.rc      |   45 ++
+ Source/resource.h           |   15 +
+ Source/uninst.bat           |    1 +
+ UseTab.reg                  |  Bin 0 -> 194 bytes
+ doc/Readme.txt              |   21 +
+ gvimext.dll                 |  Bin 0 -> 32768 bytes
+ 30 files changed, 2629 insertions(+), 0 deletions(-)

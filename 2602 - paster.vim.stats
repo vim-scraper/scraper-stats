@@ -1,0 +1,30 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2, refs/heads/master)
+Author:     Eugene Ciurana <vim at eugeneciurana.com>
+AuthorDate: Sun Oct 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Option to open a web browser after the paste is posted to the pastebin site.  See the paster-config.vim file for details.  Set the g:PASTER_BROWSER_COMMAND variable in .vimrc with the command for opening the browser.
+    
+    Michael Jansen provided a pastey bug fix and ideas for creating the browser interface.
+
+ README.orig              |    9 ++++++++
+ plugin/paster-config.vim |   48 ++++++++++++++++++++++++++++++++++-----------
+ plugin/paster.vim        |   20 +++++++++++++++++++
+ 3 files changed, 65 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Eugene Ciurana <vim at eugeneciurana.com>
+AuthorDate: Sat Apr 25 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Will Gray provided the configuration for using pastey.net with paster.vim
+    Separated the configuration portion from the main script in paster-config.vim
+    
+    There are no operational changes.  The installation and usage instructions are unchanged.
+
+ README                   |   39 +++
+ README.orig              |   37 +++
+ doc/paster.txt           |  124 +++++++++
+ plugin/paster-config.vim |  629 ++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/paster.vim        |  175 +++++++++++++
+ 5 files changed, 1004 insertions(+), 0 deletions(-)

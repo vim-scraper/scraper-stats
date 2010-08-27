@@ -1,0 +1,48 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.3, refs/heads/master)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Sun Aug 30 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Incompatible changes:- Requrie |textobj-user| 0.3.8 or later.Major improvements:- Add |<Plug>(textobj-indent-same-a)| and |<Plug>(textobj-indent-same-i)|.Minor improvements:- Revise the document a bit.- Add tests.- Fix a minor bug.- Revise to be autoloaded.
+
+ doc/textobj-indent.txt                             |  106 ++++++++++---
+ vim-textobj-indent-0.0.2/plugin/textobj/indent.vim |  157 --------------------
+ .../autoload/textobj/indent.vim                    |  155 +++++++++++++++++++
+ vim-textobj-indent-0.0.3/plugin/textobj/indent.vim |   69 +++++++++
+ 4 files changed, 305 insertions(+), 182 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.2)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Fri Apr 17 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fix the bug to calculate indentation levels.  Now these text objects target a set of lines with the same indentation as you see.
+
+ doc/textobj-indent.txt                             |    6 +-
+ vim-textobj-indent-0.0.1/plugin/textobj/indent.vim |  157 --------------------
+ vim-textobj-indent-0.0.2/plugin/textobj/indent.vim |  157 ++++++++++++++++++++
+ 3 files changed, 162 insertions(+), 158 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Fri Feb 27 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Add |<Plug>(textobj-indent-a)| and |<Plug>(textobj-indent-i)|.- Remove |<Plug>(textobj-indent)|.  Use |<Plug>(textobj-indent-a)| instead.
+
+ doc/textobj-indent.txt                             |   40 ++++-
+ vim-textobj-indent-0.0.0/plugin/textobj/indent.vim |  121 ---------------
+ vim-textobj-indent-0.0.1/plugin/textobj/indent.vim |  157 ++++++++++++++++++++
+ 3 files changed, 189 insertions(+), 129 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.0)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Sat Dec 13 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                                             |   60 ++++++++
+ doc/textobj-indent.txt                             |  155 ++++++++++++++++++++
+ vim-textobj-indent-0.0.0/plugin/textobj/indent.vim |  121 +++++++++++++++
+ 3 files changed, 336 insertions(+), 0 deletions(-)

@@ -1,0 +1,371 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.1.1, refs/heads/master)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Wed Jul 21 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Don't throw an error when looking up special non-file buffers.  (Thanks to Ben Boeckel)
+
+ plugin/lusty-explorer.vim |   12 +++++++-----
+ 1 files changed, 7 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1.0)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Mon Jun 28 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Buffer grep: performance improvement.
+    - Buffer explorer: secondary sort by most-recently used.
+
+ plugin/lusty-explorer.vim |  333 ++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 235 insertions(+), 98 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Sat Jun 26 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New :LustyBufferGrep for searching through open buffers.
+    - Filesystem explorer: fixed a directory recursion highlighting bug.
+
+ plugin/lusty-explorer.vim |  857 +++++++++++++++++++++++++++++++--------------
+ 1 files changed, 600 insertions(+), 257 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3.0)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Sun Mar 28 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Better matches window layout algorithm.
+    - Put code in its own namespace to play nicer with other Ruby plugins.
+    - Don't error when run in read-only mode.  (Thanks to Ali Asad Lotia)
+    - Don't error if a file is treated as a dir.
+    - Don't error when a single-quote is typed.
+
+ plugin/lusty-explorer.vim |  895 +++++++++++++++++++++++++++------------------
+ 1 files changed, 536 insertions(+), 359 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.3)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Sat Mar 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Cygwin and Windows compatibility fixes.  (Thanks to Brett DiFrischia)
+    - Warn if &compatible mode is set.
+    - Windows: show matches when at root (i.e. C:/).
+    - Cygwin: workaround some missing POSIX stuff.
+    - Cygwin: don't freeze when exploring root (weird Ruby bug).
+
+ plugin/lusty-explorer.vim |   55 ++++++++++++++++++++++++++++++++++++++++-----
+ 1 files changed, 49 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.2)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Fri Mar 26 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Buffer explorer: fixed a spurious error message introduced in the previous release.  (Thanks to sowill)
+
+ plugin/lusty-explorer.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.1)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Fri Mar 26 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Performance improvements.
+
+ plugin/lusty-explorer.vim |   96 ++++++++++++++++++++++++---------------------
+ 1 files changed, 51 insertions(+), 45 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.0)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Mon Mar 15 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New keys: C-o -> open in horizontal split, C-v -> open in vertical split.  (Thanks to David Brown)
+    - Fix environment variable expansion.
+    - Rename launch commands, e.g. BufferExplorer -> LustyBufferExplorer.
+
+ plugin/lusty-explorer.vim |  266 ++++++++++++++++++++++++---------------------
+ 1 files changed, 143 insertions(+), 123 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.3)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Thu Mar 4 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix an error message on some platforms introduced in the previous release.  (Thanks to sowill)
+
+ plugin/lusty-explorer.vim |    6 ++++--
+ 1 files changed, 4 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.2)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Wed Mar 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fix performance over NFS.
+    - Fix portability with the updated Vim->Ruby data type conversion in devhead Vim.  (Thanks to Björn Winckler)
+    - Fix portability with Ruby 1.9.
+
+ plugin/lusty-explorer.vim |  102 +++++++++++++++++++++++++++++++--------------
+ 1 files changed, 70 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.1)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Tue Oct 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Open files using relative paths for better readability in e.g. :ls. (Thanks to Bernhard Walle)
+    - Warn when fuzzyfinder_textmate is detected -- this plugin interacts poorly with LustyExplorer. (Thanks to Charl Matthee)
+    - Fix a minor highlighting bug.
+
+ plugin/lusty-explorer.vim |   15 +++++++++++----
+ 1 files changed, 11 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.0)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Wed Jun 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Significant performance increase for directories with many files.
+    - Lower memory usage in directory memoization.
+
+ plugin/lusty-explorer.vim |  588 +++++++++++++++++++++++++-------------------
+ 1 files changed, 334 insertions(+), 254 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Thu May 28 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The vast majority of these changes were contributed by Matt Tolton:
+    - Flex/fuzzy matching using the LiquidMetal algorithm:
+      <http://github.com/rmm5t/liquidmetal/tree/master&gt;
+    - Buffer explorer: paths are hidden except to differentiate buffers of
+      the same basename.
+    - New option:
+        g:LustyExplorerAlwaysShowDotFiles
+    - Filesystem explorer: directory contents are memoized
+    - New keys for the prompt:
+        C-t: open selected entry in new tab
+        C-n: select the next entry
+        C-p: select the previous entry
+        C-w: move one directory upward at prompt
+        C-u: clear the prompt
+    - New keys specific to the filesystem explorer:
+        C-r: refresh directory contents
+        C-a: open all files in the current list
+        C-e: create a new file with the given name
+    - Cursor will "hide" correctly when a filename includes a two-column
+      character.
+    - GetLatestVimScripts compatibility.
+    - Faster implentation of columnize().  Thanks to Sami Samhuri.
+    - Fixed a declaration typo.  Thanks to Simo Salminen.
+
+ plugin/lusty-explorer.vim |  870 ++++++++++++++++++++-------------------------
+ 1 files changed, 394 insertions(+), 476 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.3)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Mon Feb 2 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Definitively fix the bug of overwritten delete registers.
+    - Respect the 'wildignore' variable; g:LustyExplorerFileMasks still works, but is deprecated.
+
+ plugin/lusty-explorer.vim |   80 ++++++++++++++++----------------------------
+ 1 files changed, 29 insertions(+), 51 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.2)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Mon Aug 25 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Restore the unnamed (default) register after using the explorer.  Thanks to cho45.
+
+ plugin/lusty-explorer.vim |  104 +++++++++++++++++++++++----------------------
+ 1 files changed, 53 insertions(+), 51 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.1)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Sun Nov 4 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - When the explorer is cancelled, reset the previous buffer (b#) to the actual previous buffer.
+    - Fixed error when launching the explorer while editing a remote file through netrw.  Thanks to Bernhard Walle.
+
+ plugin/lusty-explorer.vim |   54 +++++++++++++++++++++++++++++++++++++-------
+ 1 files changed, 45 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.0)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Thu Nov 1 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Filesystem explorer: added g:LustyExplorerFileMasks variable to hide certain types of files.
+    - Filesystem explorer: speed up for directories with many files.
+    - Added truncation indicator if there are more entries than can be displayed.
+
+ plugin/lusty-explorer.vim |  121 +++++++++++++++++++++++++++++++++++---------
+ 1 files changed, 96 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3.1)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Fri Oct 26 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed memoization bug for recursing into directories with mixed case names.
+
+ plugin/lusty-explorer.vim |    5 +++--
+ 1 files changed, 3 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3.0)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Thu Oct 25 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Filesystem explorer now does variable ($FOO) expansion.
+    - Added some memoization for noticeable speed up on older hardware.
+
+ plugin/lusty-explorer.vim |  107 +++++++++++++++++++++++++++++++++------------
+ 1 files changed, 79 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.6)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Sat Oct 13 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added compatibility for Windows, finally.  Please let me know if you have any problems.
+
+ plugin/lusty-explorer.vim |   40 +++++++++++++++++++++++++++++++---------
+ 1 files changed, 31 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.5)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Fri Oct 5 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Now deals correctly with unnamed buffers instead of spitting out an error.  Thanks to Rajendra Badapanda.
+    - Buffer explorer will now launch even if only a single buffer is open.
+
+ plugin/lusty-explorer.vim |   24 ++++++++++++------------
+ 1 files changed, 12 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.4)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Tue Sep 18 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Pressing <TAB> will now open a buffer/file if it is the only entry.
+    - If <ENTER> is pressed when there are no matching entries, a new buffer will be created with the given name.
+    - <C-g> now behaves like <C-c> and <ESC>.
+
+ plugin/lusty-explorer.vim |   52 ++++++++++++++++++++++++++++++++------------
+ 1 files changed, 38 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.3)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Thu Jun 21 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added g:LustyExplorerSuppressRubyWarning option for situations where the same Vim configuration is used over multiple machines, not all of which have Ruby installed.  Thanks to Bernhard Walle.
+
+ plugin/lusty-explorer.vim |   94 +++++++++++++++++++++++++-------------------
+ 1 files changed, 53 insertions(+), 41 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.2)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Mon Jun 18 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed filename truncation when sidescroll/sidescrolloff have been set.  Thanks to Bernhard Walle.
+
+ plugin/lusty-explorer.vim |   14 +++++++++++---
+ 1 files changed, 11 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Tue Jun 5 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - <C-h> now interpreted as backspace.  Thanks to Yuichi Tateno.
+    - Much improved handling of files/directories with special characters in their names.
+
+ plugin/lusty-explorer.vim |  137 ++++++++++++++++++++++++--------------------
+ 1 files changed, 75 insertions(+), 62 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.0)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Sat Jun 2 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added :FilesystemExplorerFromHere command.  Thanks to Sergey Popov.
+    - Added highlighting to the prompt and cursor.
+    - Buffer explorer: added [+] indicator to dirty buffers.
+    - Many small fixes.
+
+ plugin/lusty-explorer.vim |  346 ++++++++++++++++++++++++++++-----------------
+ 1 files changed, 215 insertions(+), 131 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.2)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Wed May 30 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Filesystem explorer now does tilde (~) expansion.
+    - Fixed some Vim error messages for special characters in filenames/input.
+    - Internal refactoring.
+
+ plugin/lusty-explorer.vim |  477 +++++++++++++++++++++++++--------------------
+ 1 files changed, 266 insertions(+), 211 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.1)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Thu May 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Recursing into directories with capital letters in their names using case-insensitive matching has been fixed.  Thanks to Raimon Grau.
+
+ plugin/lusty-explorer.vim |    7 ++++---
+ 1 files changed, 4 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.0)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Tue May 15 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Renamed from DynamicExplorer.
+    - Buffer explorer now orders by Most Recently Used.
+    - Buffer explorer now matches anywhere in name.
+    - Filesystem explorer highlights opened files.
+
+ plugin/dynamic-explorer.vim |  932 ------------------------------------
+ plugin/lusty-explorer.vim   | 1106 +++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 1106 insertions(+), 932 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Sat May 12 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Allow opening files with spaces in their names.
+    - Fixed listing bug where the whole window width sometimes wasn't being utilized.
+    - The cursor is now moved off into a more inconspicuous corner.
+    - Syntax highlighting improved for listings with spaces or parens.
+    - Internal refactoring.
+
+ plugin/dynamic-explorer.vim |  821 +++++++++++++++++++++++--------------------
+ 1 files changed, 439 insertions(+), 382 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Stephen Bach <lusty at sjbach.com>
+AuthorDate: Tue May 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                      |   35 ++
+ plugin/dynamic-explorer.vim |  875 +++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 910 insertions(+), 0 deletions(-)

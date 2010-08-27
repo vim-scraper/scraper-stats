@@ -1,0 +1,292 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.7, refs/heads/master)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Thu Jun 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add "undefined" as a type keyword
+
+ syntax/javascript.vim |    9 ++++-----
+ 1 files changed, 4 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.6)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Tue Sep 9 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Change the 'syntax sync' method to improve the performance with large JavaScript files.
+    The old way 'syntax sync fromstart' is too slow to handle the files greater than 2000 lines.
+
+ syntax/javascript.vim |   21 ++++++++-------------
+ 1 files changed, 8 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.5)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Thu May 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1, Get the vimdiff problem fixed finally.
+      Matthew Gallant reported the problem and test the fix. ;)
+    
+    2, Follow the suggestioin from Ingo Karkat.
+      The 'foldtext' and 'foldlevel' settings should only be changed if the file being edited is pure JavaScript, not if JavaScript syntax is embedded inside other syntaxes.
+    
+    3, Remove function FT_JavaScriptDoc(). Since VIM do the better than me.
+
+ syntax/javascript.vim |  109 +++++++++++++++++++++----------------------------
+ 1 files changed, 47 insertions(+), 62 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.4)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Mon May 14 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1, Fix a bug reported by Matthew Gallant.
+       It will cause the vimdiff (6.x) freezes (chokes, with a 100% cpu usage) and never finally displays the diff between the files. The script need to be finished by press CTRL+C.
+    
+    2, Add some more JSDoc tags which used by Yahoo! UI
+
+ syntax/javascript.vim |   61 +++++++++++++++++++++++++++++--------------------
+ 1 files changed, 36 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.3)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Tue Mar 13 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add the keywords for JavaScript 1.7: let, yield,
+
+ syntax/javascript.vim |   11 +++++------
+ 1 files changed, 5 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.2)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Tue Jan 30 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Turn off the DOM2, HTML, and CSS speicified attributes and methods by default.
+    
+    if you like it please add follow code into your .vimrc file.
+    let javascript_enable_domhtmlcss=1
+    
+    I really hate the inaccuracy syntax highlight.
+    
+    Thanks,
+    
+    ZHAOYI
+
+ syntax/javascript.vim |   54 +++++++++++++++++++++++++-----------------------
+ 1 files changed, 28 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Fri Jan 5 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1, Add DOM2, HTML, and CSS speicified attributes and methods, based on
+    http://www.w3.org/TR/2000/REC-DOM-Level-2-Core-20001113/ecma-script-binding.html
+        http://www.dannyg.com/ref/jsquickref.html
+        Thanks Claudio Fleiner <claudio@fleiner.com> for the great idea.
+    2, Minor bug fix for JSDoc.
+    3, Minor bug fix for comment highlight.
+    
+    NOTE:
+      The syntax detection for DOM/HTML/CSS options are tricky, it can't be handled 100%
+     accuracy by using the regex  based highlight system.
+      If the DOM/HTML/CSS highlight make you unhappy, you can simply add these:
+    
+    let javascript_ignore_domhtmlcss=1
+    
+      into your .vimrc file to prevent the highlight on DOM/HTML/CSS functions and attributes.
+    
+    Thanks,
+    
+    Yi
+
+ syntax/javascript.vim |   80 +++++++++++++++++++++++++++++++++++++++++++-----
+ 1 files changed, 71 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.0)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Fri Nov 17 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add all keywords/exceptions defined in ECMAScript Language Specification Edition 3.
+
+ syntax/javascript.vim |   24 ++++++++++++------------
+ 1 files changed, 12 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.9)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Wed Nov 1 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1, Fix a bug of javaScriptLineComment which mark the code line which follows the indent empty // as comment.
+    2, Modify the javaScriptLinecomment folding mode, line comments only fold start the full line comment.
+
+ syntax/javascript.vim |   15 +++++++++------
+ 1 files changed, 9 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.8)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Sun Oct 29 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix the function FT_JavaScriptDoc() redefine warning when switch the buffer in multi-buffer mode.
+
+ syntax/javascript.vim |   13 ++++++-------
+ 1 files changed, 6 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.7)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Wed Oct 25 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. JSDoc parameter do recogonize "#.:/" at any position.
+    2. The "$" can appear at any position of the function name.
+    3. The continous line comments will be folding in fold mode.
+
+ syntax/javascript.vim |   21 +++++++++++----------
+ 1 files changed, 11 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.6)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Sun Oct 22 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. Rename the syntax group name to javaScript* to follow the syntax file recommendation.
+    2, The unmached "[]", "()", and "{}" can be detected.
+    3, A minor bug fix for the javaScriptNumber highlight.
+
+ syntax/javascript.vim |  155 +++++++++++++++++++++++++------------------------
+ 1 files changed, 80 insertions(+), 75 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.5)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Sat Oct 21 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1, Add the highlight for Float number
+    2, Refine the highlight of Number
+    
+    3, Define the highlight for the JSDoc tags' value.
+        e.g. "@see #see_what" the #see_what will be highlighted.
+    
+    4, Fold support for JavaScript comment and Function's body
+        Folding is  intesting. @see http://vimdoc.sourceforge.net/htmldoc/usr_28.html
+        By default, the fold is off.
+    
+        In the Normal mode, zM to fold all.
+
+ syntax/javascript.vim |   80 ++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 53 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Tue Oct 17 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add JSDoc support to the syntax file. The "@zzzz" and {@zzz xxxx} will be highlight.
+    
+    For more information about the JSDoc, refer to http://jsdoc.sf.net
+
+ syntax/javascript.vim |   69 +++++++++++++++++++++++++++++++-----------------
+ 1 files changed, 44 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Sat Oct 14 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    In ECMA-262v3, The dollar sign ($) is permitted anywhere in an identifier. The dollar sign is intended for use only in mechanically generated code.
+    
+    Add dollar sigh as keyword to avoid irregular highlight against the $break or $continue
+    
+    Thanks "Nai chao Wu" <superwunc AT hotmail.com> for his help.
+
+ syntax/javascript.vim |   16 ++++++++++------
+ 1 files changed, 10 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Sun Jul 2 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor upate on the jsRegexpString.
+
+ syntax/javascript.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Mon Mar 20 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1, Provided the htmlJavaScript cluster to HTML syntax (syntax/html.vim).
+    2, Try the fold on JavaScript, I found it is really abnormal, and useless for JavaScript. So I just remove the fold from the TODO list.
+    
+    And there is a syntax highlight problem in html.vim
+    If you want to make the JavaScript inside HTML highlight properly, please commented out the follows lines in html.vim.
+    <pre>
+    " HtmlHiLink javaScript		    Special
+    " HtmlHiLink javaScriptExpression   javaScript
+    </pre>
+
+ syntax/javascript.vim |   48 ++++++++++++++++++++++++++++--------------------
+ 1 files changed, 28 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.1)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Sat Mar 18 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor fix with jsLabel and jsRegexpString.
+    
+    The dojo.js and dojo.js.uncompressed.js can be highlight properly.
+
+ syntax/javascript.vim |   12 ++++++------
+ 1 files changed, 6 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Fri Mar 17 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1, Update the jsRegexpString, make it work with Dojo JavaScript source.
+    2, Update the jsSpecial, make it match the oct/hex/unicode characters.
+    
+    If you are playing with the regexp string, try this version. :)
+
+ syntax/javascript.vim |   12 ++++++------
+ 1 files changed, 6 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Sun Mar 12 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1, Add jsLabel support;
+    2, Add all JavaScript keywords and Global Objects based on the JavaScript 1.5 reference at http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference
+    3, Add jsBlock can be put in jsBracket .
+
+ syntax/javascript.vim |   51 ++++++++++++++++++++++++++++--------------------
+ 1 files changed, 30 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Yi Zhao <zzlinux AT hotmail DOT com>
+AuthorDate: Thu Mar 9 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Changed the file format to Unix.
+    
+    I found that the DOS format file has problems to work under the Unix.
+    Yestorday I didn't test it under the UNIX.
+    
+    I am sorry, if it caused some problem.
+    
+    Thanks,
+    
+    Yi Zhao
+
+ README                |   16 +++++++
+ syntax/javascript.vim |  119 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 135 insertions(+), 0 deletions(-)

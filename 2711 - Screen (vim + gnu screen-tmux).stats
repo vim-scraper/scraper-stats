@@ -1,0 +1,117 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     Eric Van Dewoestine <ervandew at gmail.com>
+AuthorDate: Mon Jan 25 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - fixed to handle non screen TERM env var better
+    - added support for vertically split screen/tmux regions (suggested by Hemant Borole)
+    - added setting to specify whether vim or the shell gain focus when first opening a split region (suggested by Sung Pae)
+
+ doc/screen.txt    |   78 ++++++++++++++++++++++++++++++++++++-
+ plugin/screen.vim |  111 +++++++++++++++++++++++++++++++++++++++++++----------
+ 2 files changed, 166 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Eric Van Dewoestine <ervandew at gmail.com>
+AuthorDate: Thu Dec 3 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - added support for using tmux instead of gnu screen
+    - now distributing as a vimball with a help file (:h screen)
+
+ doc/screen.txt    |  232 +++++++++++++++++++
+ plugin/screen.vim |  650 ++++++++++++++++++++++++++++++++---------------------
+ 2 files changed, 625 insertions(+), 257 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Eric Van Dewoestine <ervandew at gmail.com>
+AuthorDate: Mon Oct 12 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added a global funcref allowing other plugins to send strings to the running screen session (based on suggestion by Jakson Alves de Aquino)
+
+ plugin/screen.vim |   86 ++++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 66 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Eric Van Dewoestine <ervandew at gmail.com>
+AuthorDate: Tue Sep 8 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - fixed grabbing of partial visual selection on one line for sending
+    - now suppresses vim's reload prompt when returning to your original vim session, and auto reloads the modified files for you.
+
+ plugin/screen.vim |   18 ++++++++++++++----
+ 1 files changed, 14 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Eric Van Dewoestine <ervandew at gmail.com>
+AuthorDate: Wed Aug 26 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - fixed running :ScreenShell when vim is already in a screen session.
+    - fixed starting screen in an external terminal on Windows.
+    - fixed executing of command supplied to :ScreenShell when using an external shell (thanks to Tobais Wolf for reporting this issue).
+
+ plugin/screen.vim |   47 ++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 36 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Eric Van Dewoestine <ervandew at gmail.com>
+AuthorDate: Mon Aug 24 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - gvim (windows, linux, etc.) now supported by forcing usage of an external terminal
+    - multiple vim instances running independent screen shells now supported
+    - when using an external terminal from a console vim, only restart vim in a screen session if g:ScreenShellServername is set and clientserver is supported.
+    - ability to attach to an existing screen session.
+
+ plugin/screen.vim |  476 +++++++++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 352 insertions(+), 124 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Eric Van Dewoestine <ervandew at gmail.com>
+AuthorDate: Wed Aug 12 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - fixed usage in cygwin, which the previous version broke
+    - fixed handling of large amounts of text sent through :ScreenSend (thanks to Tobias Wolf for discovering the issue)
+
+ plugin/screen.vim |   42 ++++++++++++++++++++++++++++++++++--------
+ 1 files changed, 34 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Eric Van Dewoestine <ervandew at gmail.com>
+AuthorDate: Mon Aug 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Improved error handling running :ScreenShell when not all buffers can be saved.
+    Several enhancements based on suggestions by Tobias Wolf.
+    - Added support for spawning a terminal instead of using a split region for the shell.
+    - The vim instance started in screen now has its server name set, permitting remote calls.
+    - The shell screen window title is now based on the command supplied to :ScreenShell, if any.
+    - Other minor improvements behind the scenes.
+
+ plugin/screen.vim |  300 ++++++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 230 insertions(+), 70 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Eric Van Dewoestine <ervandew at gmail.com>
+AuthorDate: Tue Aug 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Replaced control characters with the vim escape sequence equivalents.
+
+ plugin/screen.vim |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Eric Van Dewoestine <ervandew at gmail.com>
+AuthorDate: Sat Jul 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README            |   66 +++++++++++++
+ plugin/screen.vim |  280 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 346 insertions(+), 0 deletions(-)

@@ -1,0 +1,75 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9.1, refs/heads/master)
+Author:     Aaron Cornelius <A.Aaron.Cornelius at gmail.com>
+AuthorDate: Sun Mar 4 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Addition of configuration examples.
+    Big fixes for tabpage/multiple file editing (sorry it was so busted in 0.9).
+    Addition of debugging functionality.
+
+ autoload/TagsParser.vim |  734 +++++++++++++++++++++++++++++------------------
+ doc/TagsParser.txt      |  344 +++++++++++++++++-----
+ plugin/TagsParser.vim   |   96 ++++---
+ 3 files changed, 772 insertions(+), 402 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Aaron Cornelius <A.Aaron.Cornelius at gmail.com>
+AuthorDate: Tue Feb 13 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Addition of some new features, most notably project configurations and tabpage support (these require Vim 7.0 to use though).  Many bugfixes also implemented.
+
+ autoload/TagsParser.vim | 3236 +++++++++++++++++++++++++++++++++++++++++++++++
+ doc/TagsParser.txt      | 2945 +++++++++++++++++++++++++------------------
+ plugin/TagsParser.vim   | 2872 +++---------------------------------------
+ 3 files changed, 5136 insertions(+), 3917 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Aaron Cornelius <A.Aaron.Cornelius at gmail.com>
+AuthorDate: Wed Nov 8 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Many updates and bugfixes... Addition of fully Vim native functions, Perl is no longer required for users of Vim 7.0 and greater.
+
+ ctags/ada.c           | 2113 ----------------------------
+ doc/TagsParser.txt    |  269 +++-
+ plugin/TagsParser.vim | 3659 ++++++++++++++++++++++++++++++-------------------
+ 3 files changed, 2463 insertions(+), 3578 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Aaron Cornelius <A.Aaron.Cornelius at gmail.com>
+AuthorDate: Mon Sep 25 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Another bugfix release.  The complete changes are in the change log.  It has been a while since I uploaded some fixes so I thought it was time.
+
+ ctags/ada.c           |   73 ++-
+ doc/TagsParser.txt    | 2196 +++++++++++++++++++++++++------------------------
+ plugin/TagsParser.vim |  142 +++--
+ 3 files changed, 1274 insertions(+), 1137 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Aaron Cornelius <A.Aaron.Cornelius at gmail.com>
+AuthorDate: Sun Jun 11 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Some bugfixes and modifications.
+
+ ctags/ada.c           | 2070 +++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/TagsParser.txt    | 2012 +++++++++++++++++++++++++----------------------
+ plugin/TagsParser.vim |  621 ++++++----------
+ plugin/ada/ada.c      | 2031 ------------------------------------------------
+ 4 files changed, 3367 insertions(+), 3367 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Aaron Cornelius <A.Aaron.Cornelius at gmail.com>
+AuthorDate: Sun May 7 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                |   53 ++
+ doc/TagsParser.txt    |  939 +++++++++++++++++++++
+ plugin/TagsParser.vim | 2235 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/ada/ada.c      | 2031 ++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 5258 insertions(+), 0 deletions(-)

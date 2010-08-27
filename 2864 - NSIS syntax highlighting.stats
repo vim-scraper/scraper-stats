@@ -1,0 +1,32 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.45-3, refs/heads/master)
+Author:     Chris Morgan <chris.morganiser at gmail.com>
+AuthorDate: Tue Dec 8 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed ; or # comment characters at end of line making the next line a comment
+    Fixed ${|} and ${||} LogicLib highlighting
+    Changed nsisTodo list's contents and added it and @Spell to a new nsisCommentGroup
+
+ syntax/nsis.vim |   35 ++++++++++++++++++++++++-----------
+ 1 files changed, 24 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.45-2)
+Author:     Chris Morgan <chris.morganiser at gmail.com>
+AuthorDate: Sun Nov 22 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed missing colouring of nsisConstVar (NSIS constants like $DESKTOP)
+
+ syntax/nsis.vim |    5 +++--
+ 1 files changed, 3 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.45-1)
+Author:     Chris Morgan <chris.morganiser at gmail.com>
+AuthorDate: Sun Nov 22 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README          |    7 +
+ syntax/nsis.vim |  341 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 348 insertions(+), 0 deletions(-)

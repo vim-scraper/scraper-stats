@@ -1,0 +1,440 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.14.1, refs/heads/master)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sat Dec 12 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed the way of auto-popup for avoiding an issue about filename completion.
+    - Fixed a bug that popup menu was opened twice when auto-popup was done.
+
+ autoload/acp.vim |   13 ++++++-------
+ doc/acp.txt      |    5 +++++
+ 2 files changed, 11 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.14)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sun Nov 15 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added the support for perl-completion.vim.
+
+ autoload/acp.vim |   18 +++++++++++++-----
+ doc/acp.jax      |   18 ++++++++++++++++++
+ doc/acp.txt      |   22 ++++++++++++++++++++++
+ plugin/acp.vim   |    8 ++++++++
+ 4 files changed, 61 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.13)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sat Nov 14 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed to sort snipMate's triggers.
+    - Fixed a bug that a wasted character was inserted after snipMate's trigger
+      completion.
+
+ autoload/acp.vim |   11 +++++------
+ doc/acp.txt      |    5 +++++
+ 2 files changed, 10 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.12.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Thu Nov 12 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed to avoid a strange behavior with Microsoft IME.
+
+ autoload/acp.vim |   28 ++++++++++++++--------------
+ doc/acp.txt      |    3 +++
+ 2 files changed, 17 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.12)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed Nov 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added g:acp_behaviorKeywordIgnores option.
+    - Added g:acp_behaviorUserDefinedMeets option and removed
+      g:acp_behaviorUserDefinedPattern.
+    - Changed to do auto-popup only when a buffer is modified.
+    - Changed the structure of g:acp_behavior option.
+    - Changed to reflect a change of behavior options (named g:acp_behavior*)
+      any time it is done.
+    - Fixed a bug that completions after omni completions or snipMate's trigger
+      completion were never attempted when no candidate for the former
+      completions was found.
+
+ autoload/acp.vim |  218 +++++++++++++++++++++++++++++++++++++++++++-----------
+ doc/acp.jax      |   57 +++++++++-----
+ doc/acp.txt      |   78 +++++++++++++-------
+ plugin/acp.vim   |  147 ++++++++++++++----------------------
+ 4 files changed, 317 insertions(+), 183 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.11.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Tue Oct 27 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed a bug that a snipMate's trigger could not be expanded when it was
+      completed.
+
+ autoload/acp.vim |    4 ++--
+ doc/acp.txt      |    6 +++++-
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.11)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Fri Oct 23 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Implemented experimental feature which is snipMate's trigger completion.
+
+ autoload/acp.vim |   65 +++++++++++++++++++++++++++++++++++++++++++++--------
+ doc/acp.jax      |   38 +++++++++++++++++++++++++++++--
+ doc/acp.txt      |   45 +++++++++++++++++++++++++++++++++----
+ plugin/acp.vim   |   13 ++++++++++
+ 4 files changed, 143 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.10)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Thu Oct 22 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Improved the response by changing not to attempt any completion when
+      keyword characters are entered after a word which has been found that it
+      has no completion candidate at the last attempt of completions.
+    - Improved the response by changing to close popup menu when <BS> was
+      pressed and the text before the cursor would not match with the pattern of
+      current behavior.
+
+ autoload/acp.vim |   38 +++++++++++++++++++++++++++++++++++---
+ doc/acp.txt      |    8 ++++++++
+ 2 files changed, 43 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.9)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sat Oct 17 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed default behavior to support XML omni completion.
+    - Changed default value of g:acp_behaviorKeywordCommand option.
+      The option with "\<C-p>" cause a problem which inserts a match without
+      <CR> when 'dictionary' has been set and keyword completion is done.
+    - Changed to show error message when incompatible with a installed vim.
+
+ doc/acp.jax    |    9 ++++++++-
+ doc/acp.txt    |   17 ++++++++++++++++-
+ plugin/acp.vim |   18 ++++++++++++++++--
+ 3 files changed, 40 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Tue Sep 15 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed a bug which inserted a selected match to the next line when
+      auto-wrapping (enabled with 'formatoptions') was performed.
+
+ autoload/acp.vim |   41 ++++++++++++++++++++++++-----------------
+ doc/acp.txt      |    4 ++++
+ 2 files changed, 28 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Mon Sep 14 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added g:acp_behaviorUserDefinedFunction option and
+      g:acp_behaviorUserDefinedPattern option for users who want to make custom
+      completion auto-popup.
+    - Fixed a bug that setting 'spell' on a new buffer made typing go crazy.
+
+ autoload/acp.vim |  213 +++++++++++++++++++++++++++++++++++++++++
+ doc/acp.jax      |   15 +++-
+ doc/acp.txt      |   74 +++++++++-----
+ plugin/acp.vim   |  281 ++++++++++--------------------------------------------
+ 4 files changed, 325 insertions(+), 258 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.7)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sun Sep 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed naming conventions for filenames, functions, commands, and options
+      and thus renamed them.
+    - Added g:acp_behaviorKeywordCommand option. If you prefer the previous
+      behavior for keyword completion, set this option "\<C-n>".
+    - Changed default value of g:acp_ignorecaseOption option.
+    
+    The following were done by Ingo Karkat:
+    
+    - ENH: Added support for setting a user-provided 'completefunc' during the
+      completion, configurable via g:acp_behavior.
+    - BUG: When the configured completion is <C-p> or <C-x><C-p>, the command to
+      restore the original text (in on_popup_post()) must be reverted, too.
+    - BUG: When using a custom completion function (<C-x><C-u>) that also uses
+      an s:...() function name, the s:GetSidPrefix() function dynamically
+      determines the wrong SID. Now calling s:DetermineSidPrefix() once during
+      sourcing and caching the value in s:SID.
+    - BUG: Should not use custom defined <C-X><C-...> completion mappings. Now
+      consistently using unmapped completion commands everywhere. (Beforehand,
+      s:PopupFeeder.feed() used mappings via feedkeys(..., 'm'), but
+      s:PopupFeeder.on_popup_post() did not due to its invocation via
+      :map-expr.)
+
+ doc/acp.jax             |  215 +++++++++++++++++
+ doc/acp.txt             |  365 ++++++++++++++++++++++++++++
+ plugin/acp.vim          |  347 +++++++++++++++++++++++++++
+ plugin/autocomplpop.vim |  606 -----------------------------------------------
+ 4 files changed, 927 insertions(+), 606 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sun Oct 12 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Improved the behavior of omni completion for HTML/XHTML.
+
+ plugin/autocomplpop.vim |   41 ++++++++++++++++++++++-------------------
+ 1 files changed, 22 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Tue Jun 17 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added some options to customize behavior easily:
+        g:AutoComplPop_BehaviorKeywordLength
+        g:AutoComplPop_BehaviorFileLength
+        g:AutoComplPop_BehaviorRubyOmniMethodLength
+        g:AutoComplPop_BehaviorRubyOmniSymbolLength
+        g:AutoComplPop_BehaviorPythonOmniLength
+        g:AutoComplPop_BehaviorHtmlOmniLength
+        g:AutoComplPop_BehaviorCssOmniPropertyLength
+        g:AutoComplPop_BehaviorCssOmniValueLength
+
+ plugin/autocomplpop.vim |  344 ++++++++++++++++++++++++++---------------------
+ 1 files changed, 190 insertions(+), 154 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed May 7 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added g:AutoComplPop_MappingDriven option.
+
+ plugin/autocomplpop.vim |   84 ++++++++++++++++++++++++++++++++++++++++-------
+ 1 files changed, 72 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Mon Mar 31 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed to set 'lazyredraw' while a popup menu is visible to avoid
+      flickering.
+    - Changed a behavior for CSS.
+    - Added support for GetLatestVimScripts.
+
+ plugin/autocomplpop.vim |   26 +++++++++++++++++++-------
+ 1 files changed, 19 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sat Mar 29 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added a behavior for Python to support omni completion.
+    - Added a behavior for CSS to support omni completion.
+
+ plugin/autocomplpop.vim |  122 +++++++++++++++++++++++++++++++----------------
+ 1 files changed, 80 insertions(+), 42 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Fri Mar 21 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed not to work when 'paste' option is set.
+    - Fixed AutoComplPopEnable command and AutoComplPopDisable command to
+      map/unmap "i" and "R".
+
+ plugin/autocomplpop.vim |   20 +++++++++++++++-----
+ 1 files changed, 15 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Thu Mar 20 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed the problem caused by "." command in Normal mode.
+    - Changed to map "i" and "R" to feed completion command after starting
+      Insert mode.
+    - Avoided the problem caused by Windows IME.
+
+ plugin/autocomplpop.vim |   46 +++++++++++++++++++++++++++++++---------------
+ 1 files changed, 31 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Tue Mar 18 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed to use CursorMovedI event to feed a completion command instead
+      of key mapping. Now the auto-popup is triggered by moving the cursor.
+    - Changed to feed completion command after starting Insert mode.
+    - Removed g:AutoComplPop_MapList option.
+
+ plugin/autocomplpop.vim |  169 ++++++++++++++++-------------------------------
+ 1 files changed, 56 insertions(+), 113 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Mon Mar 3 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added behaviors for HTML/XHTML. Now supports the omni completion for
+      HTML/XHTML.
+    - Changed not to show expressions for CTRL-R =.
+    - Changed not to set 'nolazyredraw' while a popup menu is visible.
+
+ plugin/autocomplpop.vim |  521 ++++++++++++++++++++++++++---------------------
+ 1 files changed, 286 insertions(+), 235 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Tue Feb 12 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed not to trigger the filename competion by a text which has
+      multi-byte characters.
+
+ plugin/autocomplpop.vim |   30 ++++++++++++++++++------------
+ 1 files changed, 18 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Fri Feb 1 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Redesigned g:AutoComplPop_Behavior option.
+    - Changed default value of g:AutoComplPop_CompleteOption option.
+    - Changed default value of g:AutoComplPop_MapList option.
+
+ plugin/autocomplpop.vim |  121 +++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 86 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed Dec 26 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Implemented continuous-completion for the filename completion. And
+      added new option to g:AutoComplPop_Behavior.
+
+ plugin/autocomplpop.vim |  451 ++++++++++++++++++++++++-----------------------
+ 1 files changed, 234 insertions(+), 217 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sun Dec 9 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed the bug that the auto-popup was not suspended in fuzzyfinder.
+    - Fixed the bug that an error has occurred with Ruby-omni-completion
+      unless Ruby interface.
+
+ plugin/autocomplpop.vim |   54 ++++++++++++++++++++++++++++------------------
+ 1 files changed, 33 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sat Nov 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Supported Ruby-omni-completion by default.
+    - Supported filename completion by default.
+    - Added g:AutoComplPop_Behavior option.
+    - Added g:AutoComplPop_CompleteoptPreview option.
+    - Removed g:AutoComplPop_MinLength option.
+    - Removed g:AutoComplPop_MaxLength option.
+    - Removed g:AutoComplPop_PopupCmd option.
+
+ plugin/autocomplpop.vim |  210 ++++++++++++++++++++++++++++-------------------
+ 1 files changed, 126 insertions(+), 84 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sun Nov 11 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed bugs related to 'completeopt'.
+
+ plugin/autocomplpop.vim |  145 +++++++++++++++++++++++++++++------------------
+ 1 files changed, 90 insertions(+), 55 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Fri Nov 9 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added g:AutoComplPop_IgnoreCaseOption option.
+    - Added g:AutoComplPop_NotEnableAtStartup option.
+    - Removed g:AutoComplPop_LoadAndEnable option.
+
+ plugin/autocomplpop.vim |  292 +++++++++++++++++++++++++++--------------------
+ 1 files changed, 167 insertions(+), 125 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed Aug 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    g:AutoComplPop_LoadAndEnable option for a startup activation is added.
+    AutoComplPopLock command and AutoComplPopUnlock command are added to suspend and resume.
+    'completeopt' and 'complete' options are changed temporarily while completing by this script.
+
+ plugin/autocomplpop.vim |  220 +++++++++++++++++++++++++----------------------
+ 1 files changed, 119 insertions(+), 101 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sun May 13 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The first match are selected when the popup menu is Opened. You can insert the first match with CTRL-Y.
+
+ plugin/autocomplpop.vim |  131 ++++++++++++++++++++++++++++-------------------
+ 1 files changed, 79 insertions(+), 52 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed May 9 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed the problem that the original text is not restored if 'longest' is not set in 'completeopt'. Now the plugin works whether or not 'longest' is set in 'completeopt', and also 'menuone'.
+
+ plugin/autocomplpop.vim |   41 +++++++++++++++++++++++++----------------
+ 1 files changed, 25 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed May 9 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    When completion matches are not found, insert CTRL-E to stop completion.
+    Clear the echo area.
+    Fixed the problem in case of dividing words by symbols, popup menu is not opened.
+
+ plugin/autocomplpop.vim |   46 +++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 33 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed May 2 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                  |   98 +++++++++++++++++++++++++++++
+ plugin/autocomplpop.vim |  158 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 256 insertions(+), 0 deletions(-)

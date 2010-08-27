@@ -1,0 +1,46 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0, refs/heads/master)
+Author:     Martin Krischik <krischik at users.sourceforge.net>
+AuthorDate: Mon Sep 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now as a bundle. The new version will use autoload to conserve memory and start-up time.
+    
+    New features: Uses NERD_Commenter when available, fallback to &commentstring when not.
+
+ autoload/modelines.vim       |   94 ++++++++++++++++++++++++++++++++++++++++++
+ plugin/modelines.vim         |   60 +++++++--------------------
+ plugin/modelines_options.vim |   54 ++++++++++++++++++++++++
+ 3 files changed, 163 insertions(+), 45 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Martin Krischik <krischik at users.sourceforge.net>
+AuthorDate: Sat Nov 18 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    When integrating the Ada Mode into the standart runtime Bram enlightent me on which modeline settings are usefull and which are not. The result is this fixed version.
+    
+    It also uses not the "vim: set ... :" syntax so it will work fine with languages using something like "/* */".
+
+ plugin/modelines.vim |   58 +++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 39 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Martin Krischik <krischik at users.sourceforge.net>
+AuthorDate: Thu Feb 23 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This version does not need the NERD Commenter any more. It used the &commentstring instead.
+
+ plugin/modelines.vim |   75 ++++++++++++++++++++++++++++---------------------
+ 1 files changed, 43 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Martin Krischik <krischik at users.sourceforge.net>
+AuthorDate: Tue Sep 13 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README               |   15 +++++++++++++++
+ plugin/modelines.vim |   36 ++++++++++++++++++++++++++++++++++++
+ 2 files changed, 51 insertions(+), 0 deletions(-)

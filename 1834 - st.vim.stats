@@ -1,0 +1,83 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2.1, refs/heads/master)
+Author:     J&#257;nis R&#363;cis <parasti at gmail.com>
+AuthorDate: Sun Apr 1 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Changed the way temporary variables are matched.  Should be less broken now.
+
+ syntax/st.vim |   12 ++++++++----
+ 1 files changed, 8 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.0)
+Author:     J&#257;nis R&#363;cis <parasti at gmail.com>
+AuthorDate: Sat Mar 31 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Underscore is now recognized in identifiers.
+    - Added support for Smalltalk/X-style end-of-line comments (comment starting with "/ and ending at a newline).  For these to be recognized you have to set (:let) the st_stx_style_end_of_line_comments internal variable to any value in your .vimrc or wherever it is you usually set them.
+    - For name spaces in addition to the dot a double-colon is now recognized in the #methodFor: statement.
+    - Support for three-character binary selectors can be activated by setting the st_three_character_binary_selectors internal variable to any value.
+    - Made the white-space before an argument identifier optional for keyword and binary selectors in message patterns.  "doSomethingTo:anObject" and "==anObject" won't be highlighted as errors.
+    - Added support for Smalltalk/X-style primitives, sort of.  #primitiveDefinitions and #primitiveFunctions chunks are recognized, as well as %{ and %}-delimited regions.  (Contained C code is also highlighted.  Might be an overkill, though.)  For these to be recognized, set the st_stx_style_primitives variable.
+    - Re-added support for GNU Smalltalk-style sign-after-radix numbers.  Actived with st_sign_after_radix.
+    - Sign is now everywhere highlighted as part of the number.
+    - Assignment operator is only highlighted if preceded by an identifier.
+    - Some other stuff like, say, a new completely arbitrary script versioning system...
+
+ syntax/st.vim |  213 +++++++++++++++++++++++++++++++++++++++------------------
+ 1 files changed, 146 insertions(+), 67 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     J&#257;nis R&#363;cis <parasti at gmail.com>
+AuthorDate: Tue Mar 27 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added a check to make sure there's white-space separating
+    message pattern from the body of the method.  Makes
+    errors somewhat easier to spot.
+    
+    Added a fix to allow use of line continuation.  Script will no
+    longer fail when 'compatible' is set.
+    
+    Added support for spell checking.  It's now performed only
+    in comments and strings.
+    
+    Numbers are now handled separately as integers, floats and
+    scaled decimals.  The patterns now conform to the
+    draft ANSI Smalltalk standard which means that some
+    GNU Smalltalk specific constructs are no longer supported.
+    It's planned to reintroduce those in a different fashion
+    some time "in the future".  Which is soon, hopefully.
+    
+    Temporarily removed error highlighting from array literals.  This is a
+    side effect of the change above.
+    
+    Symbol handling was also changed for conformance.  In
+    particular, Symbol literals that aren't strings must
+    be valid selectors.  This isn't quite true in
+    GNU Smalltalk, but it's also something that I'll add back
+    later.
+
+ syntax/st.vim |   82 ++++++++++++++++++++++++++++++++-------------------------
+ 1 files changed, 46 insertions(+), 36 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     J&#257;nis R&#363;cis <parasti at gmail.com>
+AuthorDate: Sat Mar 24 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Don't treat comments in Array and ByteArray literals as error.
+
+ syntax/st.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     J&#257;nis R&#363;cis <parasti at gmail.com>
+AuthorDate: Sat Mar 24 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README        |    4 +
+ syntax/st.vim |  285 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 289 insertions(+), 0 deletions(-)

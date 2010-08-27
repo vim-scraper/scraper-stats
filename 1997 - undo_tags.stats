@@ -1,0 +1,50 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2, refs/heads/master)
+Author:     Andreas Politz <politzaOfh-trier,de>
+AuthorDate: Fri Aug 31 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    +helpfile more standard alike
+    +better handling of long tagnames
+    +allow tagging a virgin buffer
+
+ doc/undo_tags.txt    |  136 +++++++++++++++++++++++--------------------------
+ plugin/undo_tags.vim |  124 ++++++++++++++++++++++++---------------------
+ 2 files changed, 130 insertions(+), 130 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Andreas Politz <politzaOfh-trier,de>
+AuthorDate: Thu Aug 23 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - renamed commands
+    - replaced autocommand with function
+    - added command for deleting tags
+    - use changenr() instead of :undolist
+      this way it always returns to the correct textstate
+    +thanks to A.Wokula
+
+ doc/undo_tags.txt    |  108 +++++++++++++++++----------
+ plugin/undo_tags.vim |  200 +++++++++++++++++++++++++++++++-------------------
+ 2 files changed, 192 insertions(+), 116 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     Andreas Politz <politzaOfh-trier,de>
+AuthorDate: Wed Aug 22 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    bugfix :  changed the strftime  string, which happens to crash on some windows© versions
+
+ plugin/undo_tags.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Andreas Politz <politzaOfh-trier,de>
+AuthorDate: Mon Aug 20 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README               |   10 ++++
+ doc/undo_tags.txt    |   83 ++++++++++++++++++++++++++++++++++++
+ plugin/undo_tags.vim |  113 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 206 insertions(+), 0 deletions(-)

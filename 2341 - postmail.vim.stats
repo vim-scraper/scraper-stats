@@ -1,0 +1,85 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6, refs/heads/master)
+Author:     omi taku <mail at nanasi.jp>
+AuthorDate: Fri Dec 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    refactoring plugin, and more easy setupable.
+
+ doc/postmail.jax           |  371 ----------------------------------------
+ doc/postmail.txt           |  403 ++++++++++++++------------------------------
+ plugin/postmail.basic.conf |   11 --
+ plugin/postmail.conf       |   71 ++++++++
+ plugin/postmail.gmail.conf |   11 --
+ plugin/postmail.op25b.conf |   11 --
+ plugin/postmail.pop.conf   |   15 --
+ plugin/postmail.py         |    6 +-
+ plugin/postmail.vim        |  270 +-----------------------------
+ syntax/help_ja.vim         |    3 -
+ 10 files changed, 202 insertions(+), 970 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.3)
+Author:     omi taku <mail at nanasi.jp>
+AuthorDate: Mon Aug 18 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    plugin/postmail.vim
+    - Add escape code if mail_encoding is 'ISO-2022-JP'.
+
+ doc/postmail.jax    |    6 ++++++
+ doc/postmail.txt    |    6 ++++++
+ plugin/postmail.vim |    6 ++++++
+ 3 files changed, 18 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
+Author:     omi taku <mail at nanasi.jp>
+AuthorDate: Sat Aug 16 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Change script name from 'sendmail' to 'postmail'.
+    - Change from 'Vimball' to 'zip' archive distribution.
+
+ doc/postmail.jax           |  365 +++++++++++++++++++++++++++++++++++
+ doc/postmail.txt           |  357 ++++++++++++++++++++++++++++++++++
+ doc/sendmail.jax           |  341 --------------------------------
+ plugin/postmail.basic.conf |   11 +
+ plugin/postmail.gmail.conf |   11 +
+ plugin/postmail.op25b.conf |   11 +
+ plugin/postmail.pop.conf   |   15 ++
+ plugin/postmail.py         |  100 ++++++++++
+ plugin/postmail.vim        |  459 ++++++++++++++++++++++++++++++++++++++++++++
+ 9 files changed, 1329 insertions(+), 341 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
+Author:     omi taku <mail at nanasi.jp>
+AuthorDate: Thu Aug 14 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Help Document In Japanese.
+
+ doc/sendmail.jax           |  341 +++++++++++++++++++++++++++++++++++++++++
+ plugin/sendmail.basic.conf |   11 --
+ plugin/sendmail.conf       |   11 --
+ plugin/sendmail.gmail.conf |   11 --
+ plugin/sendmail.op25b.conf |   11 --
+ plugin/sendmail.pop.conf   |   15 --
+ plugin/sendmail.py         |   90 -----------
+ plugin/sendmail.vim        |  361 --------------------------------------------
+ syntax/help_ja.vim         |    3 +
+ 9 files changed, 344 insertions(+), 510 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     omi taku <mail at nanasi.jp>
+AuthorDate: Wed Aug 13 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                     |   45 ++++++
+ plugin/sendmail.basic.conf |   11 ++
+ plugin/sendmail.conf       |   11 ++
+ plugin/sendmail.gmail.conf |   11 ++
+ plugin/sendmail.op25b.conf |   11 ++
+ plugin/sendmail.pop.conf   |   15 ++
+ plugin/sendmail.py         |   90 +++++++++++
+ plugin/sendmail.vim        |  361 ++++++++++++++++++++++++++++++++++++++++++++
+ 8 files changed, 555 insertions(+), 0 deletions(-)

@@ -1,0 +1,83 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Mar 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    If viminfo doesn't include '!', then use tlib#cache to save the file list.
+
+ doc/tmru.txt    |   21 +++++++++++++++------
+ plugin/tmru.vim |   42 ++++++++++++++++++++++++++++++++++--------
+ 2 files changed, 49 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Dec 2 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - g:tmruEvents can be configured (eg. BufEnter)
+    - Require tlib 0.28
+
+ doc/tmru.txt    |   92 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/tmru.vim |   69 +++++++++++++++++++++++++----------------
+ 2 files changed, 134 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Fri Oct 12 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Don't escape backslashes for :edit
+
+ plugin/tmru.vim |   17 +++++++++++++----
+ 1 files changed, 13 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Sep 11 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - <c-w> ... View file in original window
+    - <c-i> ... Show file info
+    - <c-t> ... Show in tab
+    - Require tlib >= 0.13
+
+ plugin/tmru.vim |   52 ++++++++++++++++++++++++++++++++++------------------
+ 1 files changed, 34 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Jul 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Autocmds use expand('%') instead of expand('<afile>')
+    - Build menu (if the prefix g:tmruMenu isn't empty)
+    - Key shortcuts to open files in (vertically) split windows or tabs
+    - Require tlib >= 0.9
+
+ plugin/tmru.vim |  131 +++++++++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 93 insertions(+), 38 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue May 15 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - :TRecentlyUsedFilesEdit
+    - Don't register nofile buffers or buffers with no filename.
+    - <c-c> copy file name(s) (to @*)
+    - When !has('fname_case'), ignore case when checking if a filename is
+    already registered.
+
+ plugin/tmru.vim |   63 +++++++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 48 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Apr 18 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README          |   10 ++++++
+ plugin/tmru.vim |   93 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 103 insertions(+), 0 deletions(-)

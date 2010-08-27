@@ -1,0 +1,23 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2, refs/heads/master)
+Author:     lei fw <fwlei at live.com>
+AuthorDate: Sun Mar 28 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. optimized speed, now it is indetectable while update current file(so long as the tags-file small than 20MiB).
+    2. removed ctags_delete.c, use grep unix command instead. now the plugin depends on nothing except unix commands ctags, grep, tail, cut, sort.
+
+ ctags_delete.c      |  124 -----------------------------
+ plugin/omnitags.vim |  214 ++++++++++++++++++---------------------------------
+ 2 files changed, 74 insertions(+), 264 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     lei fw <fwlei at live.com>
+AuthorDate: Tue Nov 24 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |   39 ++++++
+ ctags_delete.c      |  124 +++++++++++++++++++
+ plugin/omnitags.vim |  325 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 488 insertions(+), 0 deletions(-)

@@ -1,0 +1,22 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3, refs/heads/master)
+Author:     Afanasov Dmitry <ender at atrus.ru>
+AuthorDate: Thu May 18 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fixed bug with switching buffers: ftplugin/perl.vim is executed every time user switching buf and reset l:path.
+    
+    added global variable perl_local_path
+
+ ftplugin/perl_search_lib.vim |   45 +++++++++++++++++++++++++++++++++--------
+ 1 files changed, 36 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Afanasov Dmitry <ender at atrus.ru>
+AuthorDate: Wed May 17 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                       |    3 ++
+ ftplugin/perl_search_lib.vim |   52 ++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 55 insertions(+), 0 deletions(-)

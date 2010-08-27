@@ -1,0 +1,52 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5, refs/heads/master)
+Author:     Christian J. Robinson <heptite () gmail ! com>
+AuthorDate: Wed Nov 23 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - When 'fileformat' was "dos" and g:greedybackspacenl was set too many characters could be deleted.
+
+ plugin/GreedyBackspace.vim |   12 +++++++++---
+ 1 files changed, 9 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Christian J. Robinson <heptite () gmail ! com>
+AuthorDate: Wed Nov 16 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - g:greedybackspacenl = 1 wasn't working properly when the cursor was on the first character of a line.
+
+ plugin/GreedyBackspace.vim |   14 +++++++++-----
+ 1 files changed, 9 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Christian J. Robinson <heptite () gmail ! com>
+AuthorDate: Fri Nov 11 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - The 'smarttab' option was confusing the logic.
+    - You can now do ":let g:greedybackspacenl = 1" to cause the script to eat newlines as well.
+
+ plugin/GreedyBackspace.vim |   18 ++++++++++++++++--
+ 1 files changed, 16 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Christian J. Robinson <heptite () gmail ! com>
+AuthorDate: Thu Nov 3 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Commentary added.
+    - Syntax tweaks, no functional changes.
+
+ plugin/GreedyBackspace.vim |   22 +++++++++++++++++-----
+ 1 files changed, 17 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Christian J. Robinson <heptite () gmail ! com>
+AuthorDate: Mon Oct 31 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                     |   10 ++++++++++
+ plugin/GreedyBackspace.vim |   34 ++++++++++++++++++++++++++++++++++
+ 2 files changed, 44 insertions(+), 0 deletions(-)

@@ -1,0 +1,275 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.13, refs/heads/master)
+Author:     David Baelde <david.baelde at ens-lyon.org>
+AuthorDate: Fri Apr 8 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add: support for 'c', "=" and [|..|]
+    Bug: parsing of expression and comment un-skipping
+    Comments are now always aligned on the next block
+
+ indent/omlet.vim     |   56 ++++++---
+ omlet-0.12/ChangeLog |   17 ---
+ omlet-0.12/INSTALL   |    6 -
+ omlet-0.12/LICENSE   |  341 --------------------------------------------------
+ omlet-0.12/Makefile  |   34 -----
+ omlet-0.12/README    |   11 --
+ omlet-0.13/ChangeLog |   22 ++++
+ omlet-0.13/INSTALL   |    6 +
+ omlet-0.13/LICENSE   |  341 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ omlet-0.13/Makefile  |   34 +++++
+ omlet-0.13/README    |   11 ++
+ 11 files changed, 451 insertions(+), 428 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
+Author:     David Baelde <david.baelde at ens-lyon.org>
+AuthorDate: Fri Mar 25 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug: omlet now overrides correctly the caml.vim files: autodetect used to do a useless job for syntax and ftplugin...
+    Add: OCaml modeline
+    Add: * in the middle of comments is customizable
+    Bug: Auto indent is less tricked by keyword prefixed names
+    Bug: Many minor bugs
+
+ ftdetect/omlet.vim   |    5 +-
+ ftplugin/omlet.vim   |   53 ++++++--
+ indent/omlet.vim     |  236 ++++++++++++++++++++--------------
+ omlet-0.11/INSTALL   |    6 -
+ omlet-0.11/LICENSE   |  341 --------------------------------------------------
+ omlet-0.11/Makefile  |   34 -----
+ omlet-0.11/README    |   12 --
+ omlet-0.12/ChangeLog |   17 +++
+ omlet-0.12/INSTALL   |    6 +
+ omlet-0.12/LICENSE   |  341 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ omlet-0.12/Makefile  |   34 +++++
+ omlet-0.12/README    |   11 ++
+ syntax/omlet.vim     |    2 +-
+ 13 files changed, 592 insertions(+), 506 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
+Author:     David Baelde <david.baelde at ens-lyon.org>
+AuthorDate: Mon Mar 14 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug: The parsing functions were weak, and were rewritten.
+    Add: More infix operators are now understood.
+    Bug: Many other bugs corrected by the way..
+
+ indent/omlet.vim    |  182 +++++++++++++++++-----------
+ omlet-0.10/INSTALL  |    6 -
+ omlet-0.10/LICENSE  |  341 ---------------------------------------------------
+ omlet-0.10/Makefile |   34 -----
+ omlet-0.10/README   |   58 ---------
+ omlet-0.11/INSTALL  |    6 +
+ omlet-0.11/LICENSE  |  341 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ omlet-0.11/Makefile |   34 +++++
+ omlet-0.11/README   |   12 ++
+ 9 files changed, 504 insertions(+), 510 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
+Author:     David Baelde <david.baelde at ens-lyon.org>
+AuthorDate: Thu Mar 10 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug: indentation after while/for
+    Bug: parenthesis on the master keyword's line
+    Bug: ! was not parsed correctly
+    Better integration with the official file, new syntax & code annotations...
+
+ ftplugin/omlet.vim  |  231 +++++++++++++++++++++++++++++++++--
+ indent/omlet.vim    |   17 ++--
+ omlet-0.10/INSTALL  |    6 +
+ omlet-0.10/LICENSE  |  341 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ omlet-0.10/Makefile |   34 +++++
+ omlet-0.10/README   |   58 +++++++++
+ omlet-0.9/INSTALL   |    6 -
+ omlet-0.9/LICENSE   |  341 ---------------------------------------------------
+ omlet-0.9/Makefile  |   34 -----
+ omlet-0.9/README    |   58 ---------
+ syntax/omlet.vim    |  112 +++++++++--------
+ 11 files changed, 729 insertions(+), 509 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     David Baelde <david.baelde at ens-lyon.org>
+AuthorDate: Thu Mar 10 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug: folding works whatever the value of ocaml_indent_struct is
+    Bug: issues with patterns
+    And cleaning, optimizations...
+
+ ftplugin/omlet.vim |   29 +++--
+ indent/omlet.vim   |   97 ++++++++-------
+ omlet-0.8/INSTALL  |    6 -
+ omlet-0.8/LICENSE  |  341 ----------------------------------------------------
+ omlet-0.8/Makefile |   34 -----
+ omlet-0.8/README   |   58 ---------
+ omlet-0.9/INSTALL  |    6 +
+ omlet-0.9/LICENSE  |  341 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ omlet-0.9/Makefile |   34 +++++
+ omlet-0.9/README   |   58 +++++++++
+ 10 files changed, 513 insertions(+), 491 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     David Baelde <david.baelde at ens-lyon.org>
+AuthorDate: Tue Mar 1 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug Corrected again the type definition indentation
+    Bug Better handling of comments when parsing
+    Add Better installation procedure, including system-wide installation
+
+ ftdetect/omlet.vim                |    1 +
+ indent/omlet.vim                  |   42 +++--
+ omlet-0.8/INSTALL                 |    6 +
+ omlet-0.8/LICENSE                 |  341 +++++++++++++++++++++++++++++++++++++
+ omlet-0.8/Makefile                |   34 ++++
+ omlet-0.8/README                  |   58 +++++++
+ omlet-050225/INSTALL              |    6 -
+ omlet-050225/LICENSE              |  341 -------------------------------------
+ omlet-050225/Makefile             |   33 ----
+ omlet-050225/README               |   58 -------
+ omlet-050225/example_filetype.vim |    8 -
+ 11 files changed, 465 insertions(+), 463 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     David Baelde <david.baelde at ens-lyon.org>
+AuthorDate: Fri Feb 25 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add Flexible indentation nearly everywhere
+    Add Much more customization
+
+ ftplugin/omlet.vim                |    2 +-
+ indent/omlet.vim                  |  148 +++++++++-------
+ omlet-050219/INSTALL              |    6 -
+ omlet-050219/LICENSE              |  341 -------------------------------------
+ omlet-050219/Makefile             |   33 ----
+ omlet-050219/README               |   52 ------
+ omlet-050219/example_filetype.vim |    8 -
+ omlet-050225/INSTALL              |    6 +
+ omlet-050225/LICENSE              |  341 +++++++++++++++++++++++++++++++++++++
+ omlet-050225/Makefile             |   33 ++++
+ omlet-050225/README               |   58 +++++++
+ omlet-050225/example_filetype.vim |    8 +
+ 12 files changed, 530 insertions(+), 506 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     David Baelde <david.baelde at ens-lyon.org>
+AuthorDate: Fri Feb 18 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug: Sum type definition
+    Add: Polymorphic variants
+    Add: Customization is starting
+    Many minor fixes...
+
+ ftplugin/omlet.vim                |    5 +
+ indent/omlet.vim                  |  150 +++++++++++------
+ omlet-050214/INSTALL              |    6 -
+ omlet-050214/LICENSE              |  341 -------------------------------------
+ omlet-050214/Makefile             |   33 ----
+ omlet-050214/README               |   38 ----
+ omlet-050214/example_filetype.vim |    8 -
+ omlet-050219/INSTALL              |    6 +
+ omlet-050219/LICENSE              |  341 +++++++++++++++++++++++++++++++++++++
+ omlet-050219/Makefile             |   33 ++++
+ omlet-050219/README               |   52 ++++++
+ omlet-050219/example_filetype.vim |    8 +
+ 12 files changed, 542 insertions(+), 479 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     David Baelde <david.baelde at ens-lyon.org>
+AuthorDate: Mon Feb 14 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add Plugins from the official files
+    Cleaning of indentation code, minor fixes
+
+ ftplugin/omlet.vim                |   99 ++++++++++-
+ indent/omlet.vim                  |   10 +-
+ omlet-050209/INSTALL              |    6 -
+ omlet-050209/LICENSE              |  341 -------------------------------------
+ omlet-050209/Makefile             |   33 ----
+ omlet-050209/README               |   29 ---
+ omlet-050209/example_filetype.vim |    8 -
+ omlet-050214/INSTALL              |    6 +
+ omlet-050214/LICENSE              |  341 +++++++++++++++++++++++++++++++++++++
+ omlet-050214/Makefile             |   33 ++++
+ omlet-050214/README               |   38 ++++
+ omlet-050214/example_filetype.vim |    8 +
+ 12 files changed, 521 insertions(+), 431 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     David Baelde <david.baelde at ens-lyon.org>
+AuthorDate: Wed Feb 9 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add: indent 'and' in let/and/.../in
+    Bug: file didn't load twice correctly
+    And more work on having it working for everybody
+
+ ftplugin/omlet.vim |    6 +-
+ indent/omlet.vim   |  150 ++++++++++++++++++++++++++++++++--------------------
+ 2 files changed, 96 insertions(+), 60 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     David Baelde <david.baelde at ens-lyon.org>
+AuthorDate: Tue Feb 8 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add: Indentation of ;;
+    Bug: Variables names beginning with let
+    Bug: Toplevel "let" after end of modules/classes
+    Bug: Many Makefile fixes
+
+ indent/omlet.vim                  |   45 ++++-
+ omlet-050206/INSTALL              |    6 -
+ omlet-050206/LICENSE              |  341 -------------------------------------
+ omlet-050206/Makefile             |   35 ----
+ omlet-050206/README               |   21 ---
+ omlet-050206/example_filetype.vim |    8 -
+ omlet-050209/INSTALL              |    6 +
+ omlet-050209/LICENSE              |  341 +++++++++++++++++++++++++++++++++++++
+ omlet-050209/Makefile             |   33 ++++
+ omlet-050209/README               |   29 +++
+ omlet-050209/example_filetype.vim |    8 +
+ 11 files changed, 455 insertions(+), 418 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     David Baelde <david.baelde at ens-lyon.org>
+AuthorDate: Sat Feb 5 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor (|| and && added) and major (bug with then let _ = ... ; ...) enhancements
+
+ indent/omlet.vim                  |  152 ++++++++++-------
+ omlet-050203/INSTALL              |    6 -
+ omlet-050203/LICENSE              |  341 -------------------------------------
+ omlet-050203/Makefile             |   35 ----
+ omlet-050203/README               |   11 --
+ omlet-050203/example_filetype.vim |    8 -
+ omlet-050206/INSTALL              |    6 +
+ omlet-050206/LICENSE              |  341 +++++++++++++++++++++++++++++++++++++
+ omlet-050206/Makefile             |   35 ++++
+ omlet-050206/README               |   21 +++
+ omlet-050206/example_filetype.vim |    8 +
+ 11 files changed, 501 insertions(+), 463 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     David Baelde <david.baelde at ens-lyon.org>
+AuthorDate: Wed Feb 2 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor correction in Makefile.
+
+ README                            |    5 +
+ ftplugin/omlet.vim                |   70 ++++++
+ indent/omlet.vim                  |  442 +++++++++++++++++++++++++++++++++++++
+ omlet-050203/INSTALL              |    6 +
+ omlet-050203/LICENSE              |  341 ++++++++++++++++++++++++++++
+ omlet-050203/Makefile             |   35 +++
+ omlet-050203/README               |   11 +
+ omlet-050203/example_filetype.vim |    8 +
+ syntax/omlet.vim                  |  320 +++++++++++++++++++++++++++
+ 9 files changed, 1238 insertions(+), 0 deletions(-)

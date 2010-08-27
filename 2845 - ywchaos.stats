@@ -1,0 +1,229 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.14, refs/heads/master)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Tue Feb 23 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Reserved first two lines for html pre tags to fix html encoding issue, please see the example file and adjust for your own file.
+    2) Changed folding functions. Now use <tab> in tags list region to toggle tags view or dates view.
+    3) Fixed bug in new entry creation.
+
+ ftplugin/ywchaos.vim |    3 +-
+ plugin/ywchaos.vim   |   80 ++++++++++++++++++++++++++++++++++++-------------
+ syntax/ywchaos.vim   |    2 +-
+ 3 files changed, 62 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Mon Feb 8 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. Implemented html syntax, now you can rename ywchaos file to .html to view the pictures.
+    2. Added simplist html tags insertion & completion support.
+    3. Changed Tag list region to start from 2nd line. 1st line reserves for html pre tag.
+    Please take the test file in the document for a try!
+
+ ftplugin/ywchaos.vim |    8 +-
+ plugin/ywchaos.vim   |  225 ++++++++++++++++++++++++++++++++-----------------
+ syntax/ywchaos.vim   |   11 ++-
+ 3 files changed, 158 insertions(+), 86 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sun Dec 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. Fixed bug that cursor position may change after refresh the TAGS list region.
+    2. Improved the highlight after tag name changed.
+
+ plugin/ywchaos.vim |   25 ++++++++++++-------------
+ 1 files changed, 12 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Fri Nov 27 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Tag grep(<C-]>) and tag outlining(<TAB>) now differ well with the subtags sharing a same name which in different parent tags.
+    2) Improved TAGS list region generation function.
+
+ plugin/ywchaos.vim |   69 +++++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 47 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Fri Nov 20 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Improved TAGS list region generating function to prevent the lost of TAGS header.
+    2) Fixed the bug of messing up the highlighting when inserting multi filetypes of snips.
+    3) Fixed bug of vimgrep(<C-]>) for the multi-tag & subtag's matching.
+    4) Ignore case in tags highlighting.
+    5) Improved highlighting. Highlights accroding to English *word* and Chinese *charactors* .
+    6) Removed '@' from the option of 'iskwd'.
+
+ ftplugin/ywchaos.vim |    3 +--
+ plugin/ywchaos.vim   |   30 +++++++++++++++++++++---------
+ 2 files changed, 22 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Mon Nov 16 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. Arrange the subtags alphabetically.
+    2. Improved <Tab> for subtag completion.
+
+ plugin/ywchaos.vim |   32 ++++++++++++++++++++------------
+ 1 files changed, 20 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sun Nov 15 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Fixed <C-]> not working for the new format of TAGS list region.
+    2) Improved TAGS list region generating function.
+
+ ftplugin/ywchaos.vim |    1 -
+ plugin/ywchaos.vim   |   37 ++++++++++++++++++-------------------
+ syntax/ywchaos.vim   |    1 -
+ 3 files changed, 18 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7_2)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Fri Nov 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug with the var undefined...
+
+ plugin/ywchaos.vim |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Fri Nov 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    UPGRATE NOTE!!!: Delete the TAGSLINE manually please, new version use a different fomat which is called TAGS list region now. Please see the document and the sample file for detail.
+    1) Tagsline format has changed to TAGS list region. Also note that the modeline should be change to the end of file if you use modeline.
+    2) Added sub-tags supported which defined by @tag:subtag.
+    3) Improved to test condition that if <tab> should try to complete on '|' and ':'.
+    4) Fixed minor highlighting bug.
+
+ ftplugin/ywchaos.vim |    2 +-
+ plugin/ywchaos.vim   |  254 +++++++++++++++++++++++++++++++++++---------------
+ syntax/ywchaos.vim   |    4 +-
+ 3 files changed, 181 insertions(+), 79 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Wed Nov 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Added <tab> autocompetion for tag name when in insert mode after '@' and '|'.
+    2) Added folding support on snips.
+    3) Added syntax of @tag1|tag2 to support multi-tags.
+    4) Improved syntax highlighting.
+    5) Removed useless buffer variable.
+
+ ftplugin/ywchaos.vim |    8 ++++-
+ plugin/ywchaos.vim   |   73 +++++++++++++++++++++++++++++++++++++-------------
+ syntax/ywchaos.vim   |    2 +-
+ 3 files changed, 61 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5_2)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Tue Nov 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug that snips can't be highlighted when start editing.
+
+ plugin/ywchaos.vim |   33 ++++++++++++++++++++++-----------
+ 1 files changed, 22 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Tue Nov 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Supports inserting any other filetypes of snip and their highlightings!
+
+ ftplugin/ywchaos.vim |    1 +
+ plugin/ywchaos.vim   |   91 ++++++++++++++++++++++++++++++++++++-------------
+ syntax/ywchaos.vim   |    2 +
+ 3 files changed, 70 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Mon Nov 9 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Suppressed <Tab> no fold found's warning.
+    2) Fixed bug of <Tab> behavior on TAGSLINE.
+    3) Added <Leader><C-l> for easing the TAGSLINE refresh.
+
+ ftplugin/ywchaos.vim |    3 ++-
+ plugin/ywchaos.vim   |    6 +++---
+ 2 files changed, 5 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Mon Nov 9 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    TAGSLINE treament improved.
+    <Tab> key map improved.
+    Accept 'yy' and 'yyyy' as year string, but 'yyyy' is recommended.
+    Minor bugs fixed.
+
+ ftplugin/ywchaos.vim |    6 +++++-
+ plugin/ywchaos.vim   |   38 +++++++++++++++++++++++++-------------
+ syntax/ywchaos.vim   |   10 +++++-----
+ 3 files changed, 35 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sun Nov 8 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. More highlightings support.
+    2. Timestamp format changed to show second now.
+    3. Timestamp entry can be folded now.
+
+ plugin/ywchaos.vim |   20 +++++++++++++-------
+ syntax/ywchaos.vim |   15 ++++++++++-----
+ 2 files changed, 23 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1_2)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sat Nov 7 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed non-work highlighting and some minor bugs.
+
+ ftplugin/ywchaos.vim |    9 +--------
+ plugin/ywchaos.vim   |    1 +
+ 2 files changed, 2 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1_1)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sat Nov 7 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix function name typo.
+
+ ftplugin/ywchaos.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Yue Wu <ywupub at gmail.com>
+AuthorDate: Sat Nov 7 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README               |   80 +++++++++++++++++++++++++++++++++++++++
+ ftplugin/ywchaos.vim |   20 ++++++++++
+ plugin/ywchaos.vim   |  102 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/ywchaos.vim   |   15 +++++++
+ 4 files changed, 217 insertions(+), 0 deletions(-)

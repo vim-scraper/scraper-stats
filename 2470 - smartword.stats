@@ -1,0 +1,36 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.2, refs/heads/master)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Fri Jan 23 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fix the document a bit.- Revise the treatment on 'iskeyword'.- Fix 2 bugs on |<Plug>(smartword-e)| and |<Plug>(smartword-ge)| with |o_v|.  These bugs are appeared only in Vim with the patch (*).
+
+ autoload/smartword.vim |  101 ++++-------------------------------------------
+ doc/smartword.txt      |   27 ++++++++----
+ plugin/smartword.vim   |    2 +-
+ 3 files changed, 28 insertions(+), 102 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Sat Dec 6 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fix |<Plug>(smartword-e)| and |<Plug>(smartword-ge)| to be  |inclusive| as same as |e| and |ge|.
+
+ autoload/smartword.vim |   83 ++++++++++++++++++++++++++++++++++++++----------
+ doc/smartword.txt      |   13 ++++++-
+ plugin/smartword.vim   |   20 +++++++++---
+ 3 files changed, 92 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.0)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Fri Dec 5 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                 |   37 ++++++++++++
+ autoload/smartword.vim |  153 ++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/smartword.txt      |  142 ++++++++++++++++++++++++++++++++++++++++++++
+ plugin/smartword.vim   |   43 +++++++++++++
+ 4 files changed, 375 insertions(+), 0 deletions(-)

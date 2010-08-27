@@ -1,0 +1,185 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.8, refs/heads/master)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Sep 13 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Even more control on the mappings with the new setting
+      |LookupFile_EnableRemapCmd|.
+    - New feature to specify names that follow CamelCasing pattern by abbreviating
+      them. This works more or less like for the "Open Type" dialog in Eclipse.
+      For more information see, |LookupFile_TagsExpandCamelCase|.
+    - New feature to remember the recent files, see
+      |Lookupfile_RecentFileListSize|.
+    - Changed the message line such that the message is shown on the left side and
+      the pattern is shown on the right side. This prevents the more important
+      message from getting lost when the filenames are too long.
+    - New settings |LookupFile_EnableRemapCmd|, |LookupFile_SearchForBufsInTabs|,
+      |LookupFile_TagsExpandCamelCase|, |Lookupfile_RecentFileListSize|.
+
+ autoload/lookupfile.vim |   62 ++++++++++++++++++++++++------
+ doc/lookupfile.txt      |   98 +++++++++++++++++++++++++++++++++++++++-------
+ plugin/lookupfile.vim   |   32 ++++++++++++---
+ 3 files changed, 158 insertions(+), 34 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Tue May 29 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Bug fix: LUPath and LUArgs were broken (stoning at gmail dot com).
+    - Removed debugging code.
+
+ autoload/lookupfile.vim |    1 -
+ doc/lookupfile.txt      |    4 ++++
+ plugin/lookupfile.vim   |   10 +++++-----
+ 3 files changed, 9 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon May 28 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Requires Vim 7.1.
+    
+    This is a combined 1.5(previously unreleased)/1.6 release of lookupfile and includes the following improvements and bugfixes.
+    - LookupFile now uses CursorHoldI instead of CursorMovedI to show matches. This
+      means, the matches are not computed until you stop typing, which should give a
+      better experience. See |LookupFile_UpdateTime| for more information.
+    - The plugin now sets 'completefunc' such that you can now hit <C-X><C-U> to
+      trigger completions explicitly (instead of waiting for
+      g:LookupFile_UpdateTime). This is useful if you are a slow typer and so prefer
+      a large value for g:LookupFile_UpdateTime.
+    - The plugin now recognizes 'ignorecase' and 'smartcase' settings to match files
+      even on systems that are case-sensitive. This is mainly significant for the
+      commands that use |globpath()| or |glob()| which are, |:LUPath| and |:LUWalk|,
+      as the others already respect these settings.
+    - There is now a separate command called :LUTags that always does what
+      :LookupFile used to do, while the :LookupFile command itself now gets
+      dynamically assigned to the last command used. This also means, the map that
+      is choosen in |lookupfile-map| now invokes the last command that is used, use
+      |LookupFile_DefaultCmd| and |LookupFile_DisableDefaultMap| settings to control
+      this behavior.
+    - LUWalk now supports showing only directory names in the results. Just type
+      an extra / to filter those that are not directories (the suffix will then be
+      two slashes).
+    - The default behavior of |:LUBufs| is now to match the entire |bufname()|,
+      just like the |:buffer| command would do. To see the old behavior, reset
+      |LookupFile_Bufs_LikeBufCmd| setting.
+    - If you have the new version of SelectBuf also installed, you can have
+      |:LUBufs| sort buffers in MRU order. See, |LookupFile_Bufs_BufListExpr|.
+    - When tags file is not generated as per the requirements of |lookupfile-tags|,
+      the format of the matches doesn't look good, so by default the matches just
+      show full filenames. See |LookupFile_UsingSpecializedTags| to get better
+      formatted results.
+    - New settings |LookupFile_UsingSpecializedTags|, |LookupFile_SortMethod|,
+      |LookupFile_DefaultCmd|, |LookupFile_DisableDefaultMap|,
+      |LookupFile_Bufs_LikeBufCmd|, |LookupFile_Bufs_BufListExpr|,
+      |LookupFile_EscCancelsPopup|.
+    - Bug fix: exact matches were getting dropped from results  (Max Dyckhoff).
+    - Bug fix: <BS> in |:LUWalk| right after selecting a directory match caused it
+      to misbehave.
+    - Bug fix: if tags file is not in the current directory, the opening fails. Now
+      :LookupFile expands the filenames explicitly so that the paths are always
+      valid.
+    - Bug fix: Unsetting |LookupFile_AllowNewFiles| didn't disable the feature.
+    - Bug fix: <C-E> was not hiding the popup.
+    - Bug fix: <S-BS> triggers the default insert-mode completion (Max Dyckhoff).
+    - Fixed misc. bugs in opening files.
+    - Workaround for <Esc> not working on some systems, allow disabling the
+      mapping.
+    - Bug fix: When there is an exising swapfile, opening the files result in an
+      error message (David Fishburn).
+    - When LookupFile_UsingSpecializedTags is set, sorting should be done on the
+      filename (patch by Timothy, Guo).
+
+ autoload/lookupfile.vim |  185 ++++++++++++++++++-----
+ doc/lookupfile.txt      |  360 ++++++++++++++++++++++++++++++++++++++-------
+ plugin/lookupfile.vim   |  382 ++++++++++++++++++++++++++++++++++-------------
+ 3 files changed, 729 insertions(+), 198 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Aug 31 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed a bug in the initial pattern getting ignored.
+    - LUBufs now completes the full pathname of the buffers, so that it is
+      less dependent on the current directory of Vim.
+    - LUBufs and LUPath commands now present the matches in a better format.
+    - Pressing <F5> while popup is visible didn't close the lookupfile
+      window.
+
+ autoload/lookupfile.vim |   41 ++++++++++---------
+ doc/lookupfile.txt      |   78 +++++++++++++++++++++++++++++++-----
+ plugin/lookupfile.vim   |  102 ++++++++++++++++++++++++++++++++++++++++-------
+ 3 files changed, 176 insertions(+), 45 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Sun Aug 20 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New feature to create a file, if the file doesn't already exist (Ido).
+      Can be disabled using g:LookupFile_AllowNewFiles setting.
+    - Bug fix: while using LUWalk, if the first match is a directory, then
+      selecting files was offset by one.
+
+ autoload/lookupfile.vim |   31 ++++++++++++++++++++-----------
+ doc/lookupfile.txt      |   17 ++++++++++++++---
+ plugin/lookupfile.vim   |   18 +++++++++++++-----
+ 3 files changed, 47 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Aug 16 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New LUWalk command that works very similar to Emacs ido.el to quickly navigate
+      paths.
+    - g:LookupFile_AlwaysAcceptFirst setting to always accept the first
+      entry (the default is 0).
+    - g:LookupFile_FileFilter to specify a filter.
+    - All commands now accepts the initial pattern as argument. This provides
+      unlimited number of possibilities to create your own custom commands (see
+      |lookupfile-tips| for some examples).
+    - The g:LookupFile_MinPatLength is automatically set to 0 except for tag and
+      'path' lookup.
+    - When Lookup window is opened, the filetype is set to "lookupfile". This allows
+      you to create ftplugins to fine tune the behavior.
+    - Renamed :LUBuf command to :LUBufs.
+    The plugin has been in extensive use by myself and a couple of other users, and there are no major issues.
+
+ autoload/lookupfile.vim |  130 +++++++++++++++++++++----------
+ doc/lookupfile.txt      |  115 +++++++++++++++++++++++++---
+ plugin/lookupfile.vim   |  197 +++++++++++++++++++++++++++++++++++++++++++----
+ 3 files changed, 372 insertions(+), 70 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Jul 5 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added LUBuf, LUPath and LUArgs commands.
+    - Renamed the prefix for all the settings from g:lookupfile_ to
+      g:LookupFile_. This is required to support Funcref settings.
+    - Now the cursor position is preserved, while opening a file that is
+      already loaded.
+    - Using genutils 2.1.
+
+ autoload/lookupfile.vim |   34 ++++++++-----
+ doc/lookupfile.txt      |  122 +++++++++++++++++++++++++---------------------
+ plugin/lookupfile.vim   |   85 ++++++++++++++++++++++++++-------
+ 3 files changed, 154 insertions(+), 87 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Jun 23 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                  |   55 ++++++++++
+ autoload/lookupfile.vim |  272 +++++++++++++++++++++++++++++++++++++++++++++++
+ doc/lookupfile.txt      |  265 +++++++++++++++++++++++++++++++++++++++++++++
+ plugin/lookupfile.vim   |   90 ++++++++++++++++
+ 4 files changed, 682 insertions(+), 0 deletions(-)

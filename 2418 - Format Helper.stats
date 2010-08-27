@@ -1,0 +1,60 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.7.8, refs/heads/master)
+Author:     Frank Sun <frank.sun.319 at gmail.com>
+AuthorDate: Fri Nov 7 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Support to handle wide character language (such as Chinese, Japanese, etc): (1) ":HeadLine" and ":FootLine"; (2) ":AddTextBlock".
+
+ doc/README.txt           |    2 +-
+ plugin/format_helper.vim |   52 +++++++++++++++++++++++++--------------------
+ 2 files changed, 30 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7.6)
+Author:     Frank Sun <frank.sun.319 at gmail.com>
+AuthorDate: Thu Nov 6 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Enhance character counting and word counting of Statistics() to support wide character such as Chinese, Japanese, etc.
+    + Enhance Enumeratelist.Del(), Numberlist.Del() and Textblock.Del() to keep original indent width when their head were deleted.
+    - Fix BUGs in Numberlist.Del().
+
+ doc/README.txt           |    4 +-
+ plugin/format_helper.vim |  162 +++++++++++++++++++++++++---------------------
+ 2 files changed, 89 insertions(+), 77 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7.2)
+Author:     Frank Sun <frank.sun.319 at gmail.com>
+AuthorDate: Wed Oct 29 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + In order to enhance stability of script, change all global "interval" variables to script variables (remark with 's:').
+    
+    - Fixed BUGs in Numberlist.Del(), LastNumberList(), Enumeratelist.Del().
+
+ doc/README.txt           |    3 -
+ plugin/format_helper.vim |  100 +++++++++++++++++++++++++++++++---------------
+ 2 files changed, 68 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
+Author:     Frank Sun <frank.sun.319 at gmail.com>
+AuthorDate: Tue Oct 28 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + Enhance AddNumberList to support assigned beginning index number or automatically continue with the last index of previous number list in above context.
+
+ doc/README.txt           |  531 +++++++++++++++++++++++++---------------------
+ plugin/format_helper.vim |   53 ++++-
+ 2 files changed, 327 insertions(+), 257 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.51)
+Author:     Frank Sun <frank.sun.319 at gmail.com>
+AuthorDate: Mon Oct 27 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed a BUG in AddTextBlock to handle '\t';
+    + Modified readme.txt;
+
+ README                   |  273 +++++++++++++++++++++++++++
+ doc/README.txt           |  246 ++++++++++++++++++++++++
+ plugin/format_helper.vim |  461 ++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 980 insertions(+), 0 deletions(-)

@@ -1,0 +1,134 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/5.0, refs/heads/master)
+Author:     Travis Jeffery <eatsleepgolf at gmail.com>
+AuthorDate: Fri Mar 28 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This will probably be my last version, it will be continued by Po Shan Cheah. This version does a lot under the hood: now you just define your login and password in your .vimrc file so that when you update the script you don't have to change it at all. The format in your .vimrc file should be "let vimtwitter_login="USER:PASS". All the commands are the same, now when you use the T command (tweet visualized text) it doesn't have to open a new tab. Added HTTP proxy support, URL-encoded the tweet so that special characters such as &, ", %, all work much better now. Thanks to Po Shan Cheah for the help, and to everyone who liked my script.
+
+ plugin/vimtwitter.vim |  111 +++++++++++++++++++++++++++++--------------------
+ 1 files changed, 66 insertions(+), 45 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
+Author:     Travis Jeffery <eatsleepgolf at gmail.com>
+AuthorDate: Wed Mar 26 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug with the T map.
+
+ plugin/vimtwitter.vim |    5 +++--
+ 1 files changed, 3 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
+Author:     Travis Jeffery <eatsleepgolf at gmail.com>
+AuthorDate: Fri Mar 7 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Changed the :PosttoTwitter command so that you now just type your Twitter in the command-line. So when you do :PosttoTwitter it will ask you for your twitter you type it in and send it off; which is better because there&#039s no need to start a new buffer. To Twitter the current buffer now do :BPosttoTwitter, and to Twitter the current line do the :CPosttoTwitter.
+
+ plugin/vimtwitter.vim |   26 +++++++++++++++++++++++---
+ 1 files changed, 23 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Travis Jeffery <eatsleepgolf at gmail.com>
+AuthorDate: Sun Mar 2 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now when you send a Twitter it nows says "from Vim" instead of the default "from web."
+
+ plugin/vimtwitter.vim |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Travis Jeffery <eatsleepgolf at gmail.com>
+AuthorDate: Sun Feb 24 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added a few other things by request; now you can just send the current line with :CPosttoTwitter, and also I hacked together the ability to post visually selected text. To send visualized text; visual select the text and press T, thats a capital t. All the functionality to send visualized text is through a map that will yank the text, open a new tab, paste the text run the normal command :PosttoTwitter and then close the tab.
+
+ plugin/vimtweet.vim   |   25 -------------------------
+ plugin/vimtwitter.vim |   43 +++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 43 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.61)
+Author:     Travis Jeffery <eatsleepgolf at gmail.com>
+AuthorDate: Thu Feb 21 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a grammar mistake.
+
+ plugin/vimtweet.vim   |   25 +++++++++++++++++++++++++
+ plugin/vimtwitter.vim |   25 -------------------------
+ 2 files changed, 25 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     Travis Jeffery <eatsleepgolf at gmail.com>
+AuthorDate: Thu Feb 21 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now supports "quotes."
+
+ plugin/vimtweet.vim   |   24 ------------------------
+ plugin/vimtwitter.vim |   25 +++++++++++++++++++++++++
+ 2 files changed, 25 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Travis Jeffery <eatsleepgolf at gmail.com>
+AuthorDate: Mon Feb 18 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed an error where the script wouldn't send Tweets that were exactly 140 characters.
+
+ plugin/vimtweet.vim   |   24 ++++++++++++++++++++++++
+ plugin/vimtwitter.vim |   24 ------------------------
+ 2 files changed, 24 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Travis Jeffery <eatsleepgolf at gmail.com>
+AuthorDate: Mon Feb 18 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The script will now handle multiple lines.
+
+ plugin/vimtwitter.vim |   27 ++++++++++++++-------------
+ 1 files changed, 14 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Travis Jeffery <eatsleepgolf at gmail.com>
+AuthorDate: Mon Feb 18 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now tells you how many characters you used on a successful Tweet.
+
+ plugin/vimtwitter.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Travis Jeffery <eatsleepgolf at gmail.com>
+AuthorDate: Mon Feb 18 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    If you're over 140 characters it will tell you by how many and and not send anything.
+
+ plugin/vimtwitter.vim |   11 ++++++++---
+ 1 files changed, 8 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Travis Jeffery <eatsleepgolf at gmail.com>
+AuthorDate: Mon Feb 18 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Simply made it so that "Tweet successfully sent." is echoed.
+
+ plugin/vimtwitter.vim |   11 +++++++----
+ 1 files changed, 7 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Travis Jeffery <eatsleepgolf at gmail.com>
+AuthorDate: Tue Jan 15 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                |    9 +++++++++
+ plugin/vimtwitter.vim |   15 +++++++++++++++
+ 2 files changed, 24 insertions(+), 0 deletions(-)

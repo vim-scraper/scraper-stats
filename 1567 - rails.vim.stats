@@ -1,0 +1,515 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.2, refs/heads/master)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Sat Mar 13 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Default :Rlib to db/seeds.rb.
+    Default :Rplugin to Gemfile.
+    :Renvironment prefers Rails 3's config/application.rb.
+    Support script/rails from Rails 3.
+    Update generator completion for Rails 3.
+    Syntax highlighting and gf support in Rails 3 routes.
+    Update syntax highlighting for assorted Rails 3 changes.
+    Add support for Rails 3 mailers.
+    Add :Rmailer navigation command.
+    Add abbreviations for ActiveModel/ActionDispatch.
+    Expose pluralization as abolish.vim (vimscript #1545) coercions t and l.
+    Add support for allml.vim replacement ragtag.vim (vimscript #1896).
+    Highlight its, expect, and double from RSpec.
+    Fix parsing of Test::Unit failures.
+    Add support for tmux (like GNU screen) [Will Gray].
+    Disable menu in MacVim by default to eliminate weird terminal output.
+    Eliminate g:rails_expensive, g:rails_dbext, and g:rails_default_database.
+
+ autoload/rails.vim |  378 ++++++++++++++++++++++++++++-----------------------
+ doc/rails.txt      |  384 +++++++++++++++++++++------------------------------
+ plugin/rails.vim   |   60 ++++++---
+ 3 files changed, 409 insertions(+), 413 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Fri Dec 18 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Completely eliminate usage of if_ruby.
+    Highlight *_via_redirect in tests and raw in views.
+    Support gf on stylesheets/javascripts when extension is given.
+    License clarification to enable distribution in Debian.
+    Explain that donations on Github through Pledgie are matched and given to ICCF.
+
+ autoload/rails.vim |   56 ++++++++++++++++++++++++++++++++++++++++++++-------
+ doc/rails.txt      |   10 +++++++++
+ plugin/rails.vim   |    9 --------
+ 3 files changed, 58 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Sun Oct 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Remove all deprecated commands.
+    Update syntax highlighting for Rails 2.3.4.
+    Fix bug when path to application contains whitespace.
+    :Rtree spawns NERDTree. :Rproject is deprecated.
+    Ignore all Javascript with :Rtags.
+    Assorted changes to dbext support.
+    Clean up verbosity in statusline.
+    Fix bugs in :Rfixtures.
+    :Rlocale navigation command.
+    :Rintegrationtest knows about integration specs.
+    :RD family of commands for reading in a file.
+    :R in model is now schema definition (die, annotated_models).
+    :A in view now always tries for a spec or test, not a helper.
+    :R/:A jump to next/previous timestamped migration.
+    :1R filename calls :Rfind filename.
+    :0R is the same as :A and :.A is the same as :R.
+    Cease setting makeprg.
+    :Rake opens error window (:cwindow).
+    :Rake in db/seeds.rb runs rake db:seed.
+    :.Rake in controller runs rake routes CONTROLLER=.
+    Document :Rake default tasks.
+
+ autoload/rails.vim | 1286 ++++++++++++++++++++++++++++------------------------
+ doc/rails.txt      |  225 ++++++----
+ plugin/rails.vim   |    2 +-
+ 3 files changed, 823 insertions(+), 690 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.4)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Fri Mar 27 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Load rake stats, routes, notes, etc into quickfix window.
+    :Rake! doesn't jump to first error.
+    :Rmetal navigation command.
+    :Rintegrationtest edits cucumber features.
+    :Rstylesheet edits sass if present.
+    Preserve case with :Rjavascript and :Rstylesheet.
+    Option for :Rtags to override ctags arguments.
+    Rails 2.3 gf support: render 'foo', ApplicationController.
+    Rails 2.3 and additional rspec syntax highlighting.
+
+ autoload/rails.vim |  441 +++++++++++++++++++++++++++++++---------------------
+ doc/rails.txt      |   33 +++-
+ plugin/rails.vim   |    1 +
+ 3 files changed, 289 insertions(+), 186 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Fri Jan 23 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :Rtags ignores jquery plugins (can trip up ctags).
+    :Rtags indexes .rake, .rjs, and .builder files [Mark Wilden].
+    :Rproject is more robust against missing directories [Mark Wilden].
+    :Rproject uses NERDTree if project.vim not present.
+    Highlight #default_scope in models; setup/teardown/test in tests [Daniel Schierbeck].
+    :.Rake in a migration method runs db:migrate:up or db:migrate:down.
+    Gracefully ignore leading underscore in :Rextract _foo.
+    Navigation commands accept a line number (:Redit Rakefile:5).
+    :Rmigration with no argument always jumps to latest migration.
+    :Renvironment and :Rinitializer navigation commands.
+
+ autoload/rails.vim |  208 ++++++++++++++++++++++++++++------------------------
+ doc/rails.txt      |   49 +++++++------
+ 2 files changed, 139 insertions(+), 118 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Thu Nov 13 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix :Rview when the cwd isn't the rails root.
+    Fix edge case with :Rscript family on Windows.
+    Use new autocmd interface of dbext 8.00.
+    Fix :Rp, :Rpp, :Ry.
+    Miscellaneous tab complete fiddling.
+    :Rake in a cucumber feature runs that feature.
+    Pluralization for alias, status, index, and vertex.
+
+ autoload/rails.vim |  178 +++++++++++++++++++++++++++-------------------------
+ doc/rails.txt      |   25 ++++---
+ plugin/rails.vim   |    2 +-
+ 3 files changed, 108 insertions(+), 97 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Fri Oct 24 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Update helpers to Edge Rails.
+    :Rmigration 0 edits db/schema.rb.
+    :Rake now defaults to full test/spec (:.Rake for a focused run).
+    Remove Vim 7 clauses from documentation.
+    :Redit . edits Rails root.
+    Fix tab completion bugs.
+    Fix :Rails command.
+
+ autoload/rails.vim |  123 ++++++++++++++++++++++++----------------------------
+ doc/rails.txt      |   66 ++++++++++++----------------
+ plugin/rails.vim   |   21 ++-------
+ 3 files changed, 90 insertions(+), 120 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Fri Oct 17 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Major refactoring to take advantage of Vim 7 features (please report any regressions).
+    Smart, app dependent menus for generators and rake tasks.
+    Smart, app dependent tab completion for generators, rake tasks, and environments.
+    Crude fuzzy tab complete: :Rmodel um<Tab> could expand to user_mailer.
+    :Rlib with no argument is now a shortcut to config/routes.rb.
+    :Rintegrationtest with no argument now a shortcut to test/test_helper.rb.
+    :Rspec navigation command.
+    :Runittest also navigates to model specs.
+    :Rfunctionaltest also navigates to controller specs.
+    :Rfixtures finds extensionless rspec fixtures.
+    :Rake line number argument. :8Rake to run the test on line 8.
+    :0Rake forces all tests to run.
+    :Rake in a spec scopes by line number.
+    :Rake in an app/ file runs the corresponding spec (if no test exists).
+    :Rake in config/routes.rb runs rake routes.
+    :Rake in a fixtures file runs db:fixtures:identify LABEL=identifier.
+    :0Rake in a fixtures file runs db:fixtures:load FIXTURES=name.
+    :Rtags now creates tags file in tmp (for easier SCM ignoring).
+    Fix :Rgenerate migration to properly jump to timestamped migrations.
+
+ autoload/rails.vim | 2106 ++++++++++++++++++++++++++--------------------------
+ doc/rails.txt      |  153 +++--
+ plugin/rails.vim   |   77 ++-
+ 3 files changed, 1205 insertions(+), 1131 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Thu Oct 9 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Syntax highlighting updates.
+    Tweaks to gf algorithm to find views and add include/extend support.
+    :Rcd and :Rlcd tab completion.
+    :Rake in a spec scopes by line number.
+    Fix :A for lib/view/nested-controller specs.
+    Detect model name in object daddy exemplars (for use with :Rmodel, etc)
+    Point docs at github repository.
+
+ autoload/rails.vim |  143 ++++++++++++++++++++++++++--------------------------
+ doc/rails.txt      |   19 ++++---
+ plugin/rails.vim   |    2 +-
+ 3 files changed, 82 insertions(+), 82 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Mon May 26 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New git friendly versioning scheme.
+    Extract rails_tabstop feature to vimscript #2253.
+    Tab completion of timestamped migrations.
+    Work around nonzero exit status on Leopard.
+    Minor bug fixes.
+
+ autoload/rails.vim |   69 ++++++++++++++++++++++++------------------------
+ doc/rails.txt      |   33 +++++++----------------
+ plugin/rails.vim   |   74 +++++++---------------------------------------------
+ 3 files changed, 54 insertions(+), 122 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/256)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Sun Feb 17 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added an autoload file, greatly reducing the code loaded at startup.
+    Highlight omitted assert_tag and assert_no_tag methods in tests.
+    OS X now more liberally detected when choosing a browser.
+    Handle plain files with gf.
+
+ autoload/rails.vim | 4379 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/rails.txt      |    8 +-
+ plugin/rails.vim   | 4536 ++--------------------------------------------------
+ 3 files changed, 4502 insertions(+), 4421 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/239)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Thu Jan 3 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Miscellaneous Rails 2.0 related tweaks.
+    Commands like :Rconsole now work with Cygwin Ruby.
+    Rudimentary HAML support.
+
+ doc/rails.txt    |    5 +-
+ plugin/rails.vim |  125 +++++++++++++++++++++++++++--------------------------
+ 2 files changed, 67 insertions(+), 63 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/222)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Fri Nov 2 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :Rake runs rake spec inside a spec.
+    Rails 2.0 cleanups and tweaks
+
+ doc/rails.txt    |   32 ++++++++------
+ plugin/rails.vim |  125 +++++++++++++++++++++++++++++++-----------------------
+ 2 files changed, 90 insertions(+), 67 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/216)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Thu Sep 6 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Refactoring.  Please report any regressions.
+    :Rpreview utilizes "# GET /foos/1" style comments.
+    :Rake in a migration defaults to migrating to the currently edited version.
+
+ doc/rails.txt    |   38 ++-
+ plugin/rails.vim | 1159 +++++++++++++++++++++++++++---------------------------
+ 2 files changed, 620 insertions(+), 577 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/200)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Thu May 31 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Anniversary edition:
+    Greatly enhanced documentation.
+    Proper gf support for named route helpers (edit_post_url).
+    Syntax highlighting for custom assertions from test_helper.rb.
+
+ doc/rails.txt    |  266 ++++++++++++++++++++---------
+ plugin/rails.vim |  492 ++++++++++++++++++++++++++++++++++++++---------------
+ 2 files changed, 535 insertions(+), 223 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/192)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Thu May 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :Rails works again.
+    :R jumps between config/database.yml and config/environments/*.rb
+
+ plugin/rails.vim |   30 +++++++++++++++++++-----------
+ 1 files changed, 19 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/190)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Tue May 15 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Partial support for nested extensions from edge (index.html.erb)
+    :Rpp and Ry evaluate ruby and pretty print/YAML dump the result.
+    :Rplugin navigation command.
+    Fixed multiple bugs peculiar to Vim 6.2.
+    Other small bug fixes and enhancements.
+
+ doc/rails.txt    |   63 +++-----
+ plugin/rails.vim |  476 +++++++++++++++++++++++++++++++++++-------------------
+ 2 files changed, 337 insertions(+), 202 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/180)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Tue Apr 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :Rtask now additionally looks in the currently edited plugin's task directory.
+    :Rlib navigation command looks for files in the lib directory and the current plugin's lib directory.
+    :Rcommand creates custom navigation commands.
+    :Rrefresh clears certain cached data. :Rrefresh! reloads rails.vim.
+    Added a browsefilter (for win32 file dialogs).
+
+ doc/rails.txt    |  110 +++++++++++++---
+ plugin/rails.vim |  373 ++++++++++++++++++++++++++++++++++++++++++------------
+ 2 files changed, 380 insertions(+), 103 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/175)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Fri Mar 30 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Highlight user classes (models, etc.) with the railsUserClass group.
+    Static list of highlighted helper methods (speeds up initialization).
+    HTML highlighting occurs inside string literals like %Q<Hello <b>world</b>>.
+    Recognize .erb and .builder extensions from edge Rails.
+    :Rtask navigation command.
+
+ doc/rails.txt    |   21 ++--
+ plugin/rails.vim |  410 +++++++++++++++++++++++++++++++++++++++---------------
+ 2 files changed, 306 insertions(+), 125 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/166)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Tue Feb 27 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Prototype syntax highlighting.
+    Improved errorformat, and an alternate format on :Rake! for backtraces.
+    More robust database.yml loading for dbext.
+
+ doc/rails.txt    |    9 ++-
+ plugin/rails.vim |  242 ++++++++++++++++++++++++++++++++----------------------
+ 2 files changed, 150 insertions(+), 101 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/150)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Sun Jan 28 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed stack overflow when used in conjunction with rubycomplete.vim.
+    Improved speed in certain setups on network file systems.
+    More Rails 1.2 goodies, including limited gf on url helpers.
+
+ plugin/rails.vim |  101 +++++++++++++++++++++++++++++++++++-------------------
+ 1 files changed, 66 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/144)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Wed Jan 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Syntax highlighting for routes.
+    Updates for Ruby on Rails 1.2 (primarily syntax highlighting, and a few abbreviations).
+    Tiny little bug fixes.
+
+ plugin/rails.vim |   64 ++++++++++++++++++++++++++++++++----------------------
+ 1 files changed, 38 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/140)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Fri Jan 5 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :Rstylesheet and :Rjavascript commands.
+    Better tab completion for some file editing commands.
+    GUI menu for recently edited projects.
+    Certain expensive operations now enabled by default.  See :help rails-slow if you have any noticable delays.
+
+ doc/rails.txt    |  103 +++++++++------
+ plugin/rails.vim |  383 +++++++++++++++++++++++++++++++++++++++---------------
+ 2 files changed, 339 insertions(+), 147 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/132)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Wed Nov 1 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    ":Rmodel ." will open app/models.  Other commands follow suit.
+    Support for surround.vim, vimscript#1697.
+    Miscellaneous bug fixes and cleanups.
+
+ doc/rails.txt    |   36 ++++++++++++++----
+ plugin/rails.vim |  104 ++++++++++++++++++++++++++++++++++++++++--------------
+ 2 files changed, 105 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/128)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Wed Aug 16 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improved documentation.
+    Minor bug fixes.
+    Deprecated :Rpartial in favor of :Rextract.
+
+ doc/rails.txt    |  205 +++++++++++++++++++++++++++---------
+ plugin/rails.vim |  311 ++++++++++++++++++++++++++++++++---------------------
+ 2 files changed, 342 insertions(+), 174 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/123)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Fri Aug 4 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Quieter error messages (less "Press ENTER").
+    Fully functional modelines, including method local modelines.
+    :Rmodel, :Rview, :Rcontroller, plus 9 other similar commands.
+
+ doc/rails.txt    |  164 ++++--
+ plugin/rails.vim | 1478 ++++++++++++++++++++++++++++++++++++------------------
+ 2 files changed, 1096 insertions(+), 546 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/113)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Wed Jul 19 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bugfix for error messages in 6.x (apparently string() was added in 7.0)
+
+ plugin/rails.vim |   31 ++++++++++++++++++++++---------
+ 1 files changed, 22 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/111)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Mon Jul 17 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Abbreviations.
+    :Rinvert to write a self.down migration.
+    :Rset for per-app/buffer/method configuration.
+    Preliminary modelines (disabled by default).
+
+ doc/rails.txt    |  270 +++++---
+ plugin/rails.vim | 2235 ++++++++++++++++++++++++++++++++++++------------------
+ 2 files changed, 1657 insertions(+), 848 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/100)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Sun Jul 2 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :Rserver to start a new server, :Rserver! to kill old server first.
+    Other new commands.
+    Improved 'errorformat'.
+    Integration with dbext.vim.
+    GUI menu.
+    Robustness, robustness, robustness.
+    Miscellaneous bug fixes and tweaks.
+    And as always, more...
+
+ doc/rails.txt    |  744 ++++++++++++++++++++-------------
+ plugin/rails.vim | 1254 ++++++++++++++++++++++++++++++++++++++++--------------
+ 2 files changed, 1380 insertions(+), 618 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/69)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Fri Jun 16 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    rails_level now defaults to 3.
+    a.vim compatible commands (:A et al).
+    autocmds for specific file types (e.g. models)
+    minimal syntax based user completion function (^X^U).
+    :Rlog and log syntax highlighting.
+    :Rproject - create/find a project.vim project.
+    and more...
+
+ doc/rails.txt    |  218 ++++++++++---
+ plugin/rails.vim |  963 +++++++++++++++++++++++++++++++++++++-----------------
+ 2 files changed, 826 insertions(+), 355 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/37)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Tue Jun 6 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Lots of new features:
+    Easy configuration with g:rails_level.
+    :Rgenerate controller Foo generates and edits foo_controller.rb.
+    <LocalLeader>rm and <LocalLeader>ra for good clean fun.
+    Smarter partial extraction with :Rpartial.
+    And more...
+
+ doc/rails.txt    |  163 ++++++--
+ plugin/rails.vim | 1134 ++++++++++++++++++++++++++++++++++++++++++++----------
+ 2 files changed, 1056 insertions(+), 241 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/18)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Wed May 31 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README           |   21 ++
+ doc/rails.txt    |  274 +++++++++++++++++++++++++
+ plugin/rails.vim |  598 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 893 insertions(+), 0 deletions(-)

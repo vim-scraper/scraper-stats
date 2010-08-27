@@ -1,0 +1,43 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2, refs/heads/master)
+Author:     thomas coopman <thomas.coopman at gmail.com>
+AuthorDate: Tue May 29 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    complete refactor,
+    now it should work with python2.4 and it should also work when editing different buffers with different filetypes!
+
+ src/.snipper-0.1.py.swo |  Bin 16384 -> 0 bytes
+ src/.snipper-0.1.py.swp |  Bin 24576 -> 0 bytes
+ src/snipper-0.1.py      |   11 +-
+ src/snipper-0.2.py      |  552 +++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/snipper.vim      |   16 ++
+ use.wiki                |   25 +--
+ 6 files changed, 587 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     thomas coopman <thomas.coopman at gmail.com>
+AuthorDate: Sun May 27 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                          |    8 ++
+ README.orig                     |    2 +
+ TODO                            |    6 +
+ src/.snipper-0.1.py.swo         |  Bin 0 -> 16384 bytes
+ src/.snipper-0.1.py.swp         |  Bin 0 -> 24576 bytes
+ src/snipper-0.1.py              |  244 +++++++++++++++++++++++++++++++++++++++
+ templates/C-templates.xml       |   25 ++++
+ templates/GtkRC-templates.xml   |   26 ++++
+ templates/HTML-templates.xml    |    8 ++
+ templates/Haskell-templates.xml |    3 +
+ templates/Java-templates.xml    |   71 +++++++++++
+ templates/LaTeX-templates.xml   |    6 +
+ templates/PHP-templates.xml     |   48 ++++++++
+ templates/Python-templates.xml  |   77 ++++++++++++
+ templates/ROR-templates.xml     |  182 +++++++++++++++++++++++++++++
+ templates/Ruby-templates.xml    |   60 ++++++++++
+ templates/XML-templates.xml     |    6 +
+ test/test.py                    |   10 ++
+ use.wiki                        |   25 ++++
+ 19 files changed, 807 insertions(+), 0 deletions(-)

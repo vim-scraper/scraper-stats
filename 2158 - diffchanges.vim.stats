@@ -1,0 +1,80 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2.6, refs/heads/master)
+Author:     Jeremy Cantrell <jmcantrell at gmail.com>
+AuthorDate: Mon Nov 30 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed problem with diff mode where diff was not started on the first line.
+
+ plugin/diffchanges.vim |  157 ++++++++++++++++++++++++------------------------
+ 1 files changed, 79 insertions(+), 78 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.5)
+Author:     Jeremy Cantrell <jmcantrell at gmail.com>
+AuthorDate: Sun Mar 9 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improved some of the error checking and fixed a few regressions from the previous upload.
+
+ plugin/diffchanges.vim |   60 ++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 40 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.4)
+Author:     Jeremy Cantrell <jmcantrell at gmail.com>
+AuthorDate: Sat Mar 8 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added a check to make sure the script only loads in Vim 7 (Thanks to Scott Urban).
+
+ plugin/diffchanges.vim |   65 +++++++++++++++++------------------------------
+ 1 files changed, 24 insertions(+), 41 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.3)
+Author:     Jeremy Cantrell <jmcantrell at gmail.com>
+AuthorDate: Fri Feb 29 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Made it easier to :source the plugin after it has already been loaded.
+
+ plugin/diffchanges.vim |   14 +++++++-------
+ 1 files changed, 7 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.2)
+Author:     Jeremy Cantrell <jmcantrell at gmail.com>
+AuthorDate: Fri Feb 29 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fixes and a few enhancements (Thanks to Ben Armston).
+
+ plugin/diffchanges.vim |   74 +++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 54 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
+Author:     Jeremy Cantrell <jmcantrell at gmail.com>
+AuthorDate: Sat Feb 23 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added another mode for viewing a patch of the changes made since last save
+
+ plugin/diffchanges.vim |   94 +++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 65 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Jeremy Cantrell <jmcantrell at gmail.com>
+AuthorDate: Sat Feb 23 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Made functions, variables, and mappings "script-friendly". Thanks #vim!
+
+ plugin/diffchanges.vim |   60 ++++++++++++++++++++++++++++-------------------
+ 1 files changed, 36 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Jeremy Cantrell <jmcantrell at gmail.com>
+AuthorDate: Mon Feb 18 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                 |   19 ++++++++++++++++
+ plugin/diffchanges.vim |   55 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 74 insertions(+), 0 deletions(-)

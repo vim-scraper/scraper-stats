@@ -1,0 +1,28 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.1, refs/heads/master)
+Author:     Matthew Daniel <vim at mdaniel.scdi.com>
+AuthorDate: Tue Jun 6 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for marking extraneous whitespace not followed by an element. Since (sigh) ABNF seems to be whitespace sensitive, that could be a problem.
+    
+    Added support for marking comments which are not part of a rule (i.e. at the beginning of a file).
+    
+    Both of these new features may be enabled or disabled according to your preference.
+    
+    The whitespace matching is enabled by default, but may be disabled via {{{let abnf_ignore_whitespace=1}}}.
+    
+    The comments thing is disabled by default and may be enabled via {{{let abnf_strict=1}}}
+
+ syntax/abnf.vim |   21 +++++++++++++++++++--
+ 1 files changed, 19 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.0)
+Author:     Matthew Daniel <vim at mdaniel.scdi.com>
+AuthorDate: Sun Jun 4 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README          |    5 +++++
+ syntax/abnf.vim |   55 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 60 insertions(+), 0 deletions(-)

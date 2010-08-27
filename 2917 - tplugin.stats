@@ -1,0 +1,130 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Aug 24 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Renamed #TPluginInclude to @TPluginInclude
+    - Added support for @TPluginMap, @TPluginBefore, @TPluginAfter annotations
+    - TPluginMap() restores the proper mode
+    - Load after/autoload/* files
+    - ...
+
+ doc/tplugin.txt    |   57 +++++----
+ macros/tplugin.vim |  342 ++++++++++++++++++++++++++++++++++++++++------------
+ 2 files changed, 294 insertions(+), 105 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Apr 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Delete commands only when they were defined without a bang; make sure all commands in a file defined without a bang are deleted
+    - g:tplugin_scan defaults to 'cfpt'
+    - Don't register each autoload function but deduce the repo/plugin from the prefix.
+    - g:tplugin_scan defaults to 'cfpta'
+    - TPluginCommand and TPluginFunction are functions. Removed the commands with the same name.
+    - #TPluginInclude tag
+
+ doc/tplugin.txt    |  158 ++++++-----
+ macros/tplugin.vim |  863 +++++++++++++++++++++++++++++++++-------------------
+ 2 files changed, 631 insertions(+), 390 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sat Feb 20 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - TPluginScan: try to maintain information about command-line completion (this won't work if a custom script-local completion function is used)
+
+ doc/tplugin.txt    |    6 +++-
+ macros/tplugin.vim |   88 ++++++++++++++++++++++++++++++++++++++++------------
+ 2 files changed, 73 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Feb 16 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - CHANGE: The root specific autoload files are now called '_tplugin.vim'
+    - Provide a poor-man implementation of fnameescape() for users of older versions of vim.
+    - If the root name ends with '*', the root is no directory tree but a single directory (actually a plugin repo)
+    - s:TPluginComplete(): Hide tplugin autoload files.
+
+ doc/tplugin.txt    |   33 ++++++++--
+ macros/tplugin.vim |  190 +++++++++++++++++++++++++++++++++++++++------------
+ 2 files changed, 173 insertions(+), 50 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Feb 2 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Support for ftdetect
+    - Support for ftplugins in directories and named {&FT}_{NAME}.vim
+    - :TPlugin accepts "-" as argument, which means load "NO PLUGIN".
+    - :TPluginScan: don't use full filenames as arguments for TPluginFiletype()
+    - FIX: Concatenation of filetype-related files
+    - FIX: Don't add autoload files to the menu.
+    - FIX: Don't load any plugins when autoloading an "autoload function"
+    - FIX: Filetype-related problems
+    - FIX: s:ScanLine: Don't create duplicate autoload commands.
+    - FIX: s:ScanRoots(): Remove empty entries from filelist
+    - g:tplugin_autoload_exclude: Exclude repos from autoloading
+    - If g:tplugin_autoload == 2, run |:TPluginScan| after updating tplugin.
+    - Moved autoload functions to macros/tplugin.vim -- users have to rescan their repos.
+    - Per repo metadata (ROOT/REPO/tplugin.vim)
+    - Relaxed the rx for functions
+    - Replaced :TPluginMap with a function TPluginMap()
+    - Speed up :TPluginScan (s:ScanRoots(): run glob() only once, filter file contents before passing it to s:ScanSource())
+    - TPluginMap(): Don't map keys if the key already is mapped (via maparg())
+
+ autoload/tplugin.vim |  326 -------------------------------
+ doc/tplugin.txt      |  189 ++++++++++--------
+ macros/tplugin.vim   |  522 +++++++++++++++++++++++++++++++++++++++++++++++---
+ 3 files changed, 596 insertions(+), 441 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Jan 19 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - TPluginBefore, TPluginAfter commands to define inter-repo dependencies
+    - Support for autoloading filetypes
+    - Support for autoloading <plug> maps
+    - Build helptags during :TPluginScan (i.e. support for helptags requires
+    autoload to be enabled) - Call delcommand before autoloading a plugin because of an unknown command
+    - TPluginScan: Take a root directory as the second optional argument
+    - The autoload file was renamed to ROOT/tplugin.vim
+    - When adding a repository to &rtp, ROOT/tplugin_REPO.vim is loaded
+
+ autoload/tplugin.vim |  148 +++++++++++++++++++++++++++++++++++++++-----
+ doc/tplugin.txt      |   93 ++++++++++++++++++++++-----
+ macros/tplugin.vim   |  169 +++++++++++++++++++++++++++++++++++---------------
+ 3 files changed, 327 insertions(+), 83 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Jan 10 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Experimental autoload for commands and functions (à la AsNeeded)
+    - Improved command-line completion for :TPlugin
+    - The after path is inserted at the second to last position
+    - When autoload is enabled and g:tplugin_menu_prefix is not empty, build a menu with available plugins (NOTE: this is disabled by default)
+
+ autoload/tplugin.vim |  210 ++++++++++++++++++++++++++++++++++++++++++++
+ doc/tplugin.txt      |  202 ++++++++++++++++++++++++++++++++++---------
+ macros/tplugin.vim   |  236 +++++++++++++++++++++++++++++++++++++++++++-------
+ 3 files changed, 576 insertions(+), 72 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Jan 5 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README             |   42 ++++++++++++++++
+ doc/tplugin.txt    |  139 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ macros/tplugin.vim |  134 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 315 insertions(+), 0 deletions(-)

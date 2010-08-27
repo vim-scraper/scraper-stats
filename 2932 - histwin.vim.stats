@@ -1,0 +1,151 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.12, refs/heads/master)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Tue May 4 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Small extension to the help file
+    - generate help file with 'et' set, so the README at github looks better
+    - Highlight the key binding using |hl-SpecialKey|
+    - The help tag for the color configuration was wrong.
+
+ autoload/histwin.vim     |   30 +++--------------
+ doc/histwin.txt          |   84 ++++++++++++++++++++++++++++-----------------
+ plugin/histwinPlugin.vim |    6 ++--
+ 3 files changed, 60 insertions(+), 60 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Wed Apr 21 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Set old buffers read only (disable the setting via the g:undo_tree_nomod variable
+    - Make sure, Warning Messages are really displayed using :unsilent
+
+ autoload/histwin.vim     |  112 +++++++++++++++++++++++++++++++---------------
+ doc/histwin.txt          |   68 ++++++++++++++++++++++++----
+ plugin/histwinPlugin.vim |    9 ++--
+ 3 files changed, 138 insertions(+), 51 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Tue Apr 20 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed annoying Resizing bug
+    - linebreak tags, if they are too long
+    - dynamically grow the histwin window, for longer tags (up
+       to a maximum)
+    - Bugfix: Always indicate the correct branch
+    - Added a few try/catch statements and some error handling
+
+ autoload/histwin.vim     |  142 ++++++++++++++++++++++++++++++++++------------
+ doc/histwin.txt          |   11 +++-
+ plugin/histwinPlugin.vim |   45 +++------------
+ 3 files changed, 123 insertions(+), 75 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Wed Jan 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    BF: Error handling for Replaying (it may not work always)
+    NF: Finally added Documentation (see :h histwin.txt)
+    BF: Use syntax highlighting
+    BF: Tagging finally works (you can now tag additional states)
+
+ autoload/histwin.vim     |  320 +++++++++++++++++++++++++++++-----------------
+ doc/histwin.txt          |  202 +++++++++++++++++++++++++++++
+ plugin/histwinPlugin.vim |   10 +-
+ 3 files changed, 409 insertions(+), 123 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Thu Jan 21 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - NF: make speed of the replay adjustable. Use g:undo_tree_speed to set time in milliseconds
+    - BF: code cleanup
+    - BF: highlighting should work better now.
+
+ autoload/histwin.vim     |  128 ++++++++++++++++++++++++++++-----------------
+ plugin/histwinPlugin.vim |   11 +++--
+ 2 files changed, 87 insertions(+), 52 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.2.0)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Wed Jan 20 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - BF: Check undolevel Settings
+    - BF: make sure when switching to a different undo branch, that the undo-tree will be updated
+
+ autoload/histwin.vim     |   16 ++++++++++------
+ plugin/histwinPlugin.vim |    6 ++++--
+ 2 files changed, 14 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Wed Jan 20 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    BF: fixed a problem with mapping the keys which broke the Undo-Tree keys (I guess I don't fully understand, when to use s: and <sid>)
+
+ autoload/histwin.vim     |   10 +++++-----
+ plugin/histwinPlugin.vim |    4 +++-
+ 2 files changed, 8 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Wed Jan 20 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - NF: created autoloadPlugin (patch by Charles Campbell) Thanks!
+    - NF: enabled GLVS (patch by Charles Campbell) Thanks!
+    - NF: made Plugin available as histwin.vba
+    - NF: Check for availability of :UB before defining it
+    - BF: cleaned up old comments
+    - BF: deleted :noautocmd which could cause trouble with other plugins
+    - BF: small changes in coding style (<sid> to s:, fun instead of fu)
+
+ autoload/histwin.vim     |  258 ++++++++++++++++++++++++++++++++++++++++++
+ plugin/histwin.vim       |  283 ----------------------------------------------
+ plugin/histwinPlugin.vim |   59 ++++++++++
+ 3 files changed, 317 insertions(+), 283 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Wed Jan 20 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    BF: fix missing bufname() when creating the undo_tree window
+    NF: make undo_tree window a little bit smaller (size is adjustable via g:undo_tree_wdth variable)
+
+ plugin/histwin.vim |   51 +++++++++++++++++++++------------------------------
+ 1 files changed, 21 insertions(+), 30 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Wed Jan 20 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NF: Allow diffing with selected branch
+    NF: highlight current version
+    NF: Use changenr() to determine undobranch
+    NF: <C-L> updates view
+    NF: allow switching to initial load state, before buffer was edited
+    BF: Fix annoying bug, that displays --No lines in buffer--
+    BF: fix several small annoying bugs
+
+ plugin/histwin.vim |  206 +++++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 148 insertions(+), 58 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Tue Jan 19 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README             |   34 +++++++++
+ plugin/histwin.vim |  202 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 236 insertions(+), 0 deletions(-)

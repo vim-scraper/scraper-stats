@@ -1,0 +1,131 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.3, refs/heads/master)
+Author:     ujihisa . <ujihisa at gmail.com>
+AuthorDate: Sun Aug 15 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * [Bugfix] Supports rpeg-markdown without rubygems* [Feature] g:blogger_ruby_path for ~/.vimrc
+
+ autoload/metarw/blogger.rb  |    8 +++++++-
+ autoload/metarw/blogger.vim |    5 ++++-
+ 2 files changed, 11 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     ujihisa . <ujihisa at gmail.com>
+AuthorDate: Sat Jul 17 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * [Bugfix] Follows changes in nokogiri or blogger; you can edit posts again.
+
+ autoload/metarw/blogger.rb  |   23 +++++++++++++++++------
+ autoload/metarw/blogger.vim |    2 +-
+ 2 files changed, 18 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     ujihisa . <ujihisa at gmail.com>
+AuthorDate: Fri Mar 12 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * [Bugfix] Supports bloggers who use "summarize" feature
+
+ autoload/metarw/blogger.rb  |   17 ++++++++++-------
+ autoload/metarw/blogger.vim |    2 +-
+ 2 files changed, 11 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     ujihisa . <ujihisa at gmail.com>
+AuthorDate: Sat Mar 6 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * [Feature] Gist support. (Greatefully thanks to Sora Harakami!)* `let g:blogger_gist = 1` allows you to post long code into gist automatically.
+
+ autoload/metarw/blogger.rb  |  211 ++++++++++++++++++++++++++++++++++++++-----
+ autoload/metarw/blogger.vim |   35 ++++++--
+ 2 files changed, 217 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     ujihisa . <ujihisa at gmail.com>
+AuthorDate: Fri Aug 21 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * [Feature] Uses gem net-https-wrapper* [Feature] Ignores Hashes and Spaces before the title
+
+ autoload/metarw/blogger.rb  |   30 ++++++++----------------------
+ autoload/metarw/blogger.vim |    2 +-
+ 2 files changed, 9 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     ujihisa . <ujihisa at gmail.com>
+AuthorDate: Tue Jul 28 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * [Feature] Longer blogger:list
+
+ autoload/metarw/blogger.rb  |    2 +-
+ autoload/metarw/blogger.vim |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     ujihisa . <ujihisa at gmail.com>
+AuthorDate: Tue Jul 28 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * [Bugfix] Enable to handle an old entry in show and update* [Bugfix] Remove the last image which is automatically added by blogger web service* [Bugfix] Automatically setl mkd filetype
+
+ autoload/metarw/blogger.rb  |   42 +++++++++++++++++++++++++++++++++---------
+ autoload/metarw/blogger.vim |    1 +
+ 2 files changed, 34 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     ujihisa . <ujihisa at gmail.com>
+AuthorDate: Mon Jun 22 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * [Feature] Copy the new blog post URI into clipboard automaticaly in OS X* [Feature] Switch to use pandoc from html2text* [Bugfix] All bugs by html2text was solved
+
+ autoload/metarw/blogger.rb  |   24 ++++++++----------------
+ autoload/metarw/blogger.vim |    2 +-
+ autoload/metarw/html2text   |    4 ----
+ 3 files changed, 9 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     ujihisa . <ujihisa at gmail.com>
+AuthorDate: Mon Jun 8 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * [Feature] Automatically rename the fakepath after creating a blog post.* [Bugfix] Enabled to post with Inline HTML* [Feature] Added Rakefile for an installer (Thanks From Kyushu!)* [Bugfix] Fixed the wrong install document (Thanks Karl Schudt!)
+
+ autoload/metarw/blogger.rb  |    1 +
+ autoload/metarw/blogger.vim |   18 +++++++++++++++---
+ 2 files changed, 16 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     ujihisa . <ujihisa at gmail.com>
+AuthorDate: Thu May 21 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * [Feature] Changed the fakepath scheme of metarw  * blogger:{blogid}:something -> blogger:something  * This change needs you to add g:blogger_blogid on your vimrc* [Bugfix] The bug which occurs in updating an exist blog post was fixed* [Bugfix] The bug of the ways of handling the multi line codes of  html2text code was fixed
+
+ autoload/metarw/blogger.rb         |  157 ++++++++++++++++++++++++++++++++++++
+ autoload/metarw/blogger.vim        |  147 +++++++++++++++++++++++++++++++++
+ autoload/metarw/html2text          |    4 +
+ plugin/blogger.vim/README.md       |   98 ----------------------
+ plugin/blogger.vim/blogger.rb      |  144 ---------------------------------
+ plugin/blogger.vim/blogger.vim     |  149 ----------------------------------
+ plugin/blogger.vim/blogger_spec.rb |  116 --------------------------
+ plugin/blogger.vim/html2text       |    4 -
+ 8 files changed, 308 insertions(+), 511 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     ujihisa . <ujihisa at gmail.com>
+AuthorDate: Mon May 18 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                             |    3 +
+ plugin/blogger.vim/README.md       |   98 +++++++++++++++++++++++
+ plugin/blogger.vim/blogger.rb      |  144 ++++++++++++++++++++++++++++++++++
+ plugin/blogger.vim/blogger.vim     |  149 ++++++++++++++++++++++++++++++++++++
+ plugin/blogger.vim/blogger_spec.rb |  116 ++++++++++++++++++++++++++++
+ plugin/blogger.vim/html2text       |    4 +
+ 6 files changed, 514 insertions(+), 0 deletions(-)

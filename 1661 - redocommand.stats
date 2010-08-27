@@ -1,0 +1,46 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.20, refs/heads/master)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Fri Apr 3 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added optional [count] to repeat the Nth, not the last found match.
+    - Split off documentation into separate help file. Now packaging as VimBall.
+    - Using separate autoload script to help speed up VIM startup.
+
+ autoload/redocommand.vim |  105 ++++++++++++++++++++++++++++++++++++
+ doc/redocommand.txt      |  121 +++++++++++++++++++++++++++++++++++++++++
+ plugin/redocommand.vim   |  133 +++------------------------------------------
+ 3 files changed, 235 insertions(+), 124 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10.005)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Wed Feb 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Implemented ':Redocommand old=new <pattern>'. Now requiring VIM 7.
+
+ plugin/redocommand.vim |   96 ++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 69 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.00.003)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Mon Aug 4 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Better handling of errors during execution of the command.
+    The redone command is added to the history.
+    Last version with support for VIM 6.2 - 6.4; dropped support for VIM 6.0 and 6.1.
+
+ plugin/redocommand.vim |   36 ++++++++++++++++++++++++++----------
+ 1 files changed, 26 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.02)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Mon Sep 18 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                 |   43 ++++++++++++++++++++
+ plugin/redocommand.vim |  100 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 143 insertions(+), 0 deletions(-)

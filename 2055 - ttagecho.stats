@@ -1,0 +1,72 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Oct 18 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - NEW: g:ttagecho_char_rx: custom keyword char regexp
+    - Always use compact style when there is only one tag that matches and if many_lines < 0
+    - Find the right keyword, when the current line contains more than one
+
+ autoload/ttagecho.vim |   61 ++++++++++++++++++++++++++++++++++++++++---------
+ doc/ttagecho.txt      |   10 +++++--
+ plugin/ttagecho.vim   |   27 +++++++++++++++++----
+ 3 files changed, 79 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Oct 5 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Make sure tlib is loaded even if it is installed in a different rtp-directory (thanks to ... sorry, cannot find the e-mail)
+    - Use tlib#notify#TrimMessage() (thanks to Erik Falor)
+
+ autoload/ttagecho.vim |   11 +++++++----
+ doc/ttagecho.txt      |    8 +++++---
+ plugin/ttagecho.vim   |   19 +++++++++++++------
+ 3 files changed, 25 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Nov 21 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Adapt for hookcursormoved >= 0.7
+
+ autoload/ttagecho.vim |    4 ++--
+ doc/ttagecho.txt      |   12 ++++++------
+ plugin/ttagecho.vim   |    7 +++++--
+ 3 files changed, 13 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Nov 12 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Customize display: g:ttagecho_tagwidth
+    - g:ttagecho_matchbeginning
+    - Check for has('balloon_eval')
+    - Restore showmode only on InsertLeave events (not on CursorHold(I) events).
+    - Check only opening parentheses (require hookcursormoved 0.5)
+    - Use [bg]:tlib_tags_extra if defined.
+    - Require tlib >= 0.20
+    - g:ttagecho_substitute became g:tlib_tag_substitute
+    - Removed support for: [bg]:ttagecho_more_tags (use [bg]:tlib_tags_extra
+    instead)
+
+ autoload/ttagecho.vim |   77 ++++++++++++++++++-------------------------
+ doc/ttagecho.txt      |   60 +++++++++++++++++++---------------
+ plugin/ttagecho.vim   |   86 ++++++++++++++++++++++++++++--------------------
+ 3 files changed, 115 insertions(+), 108 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Oct 29 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                |   21 +++++++
+ autoload/ttagecho.vim |  159 +++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/ttagecho.txt      |  136 ++++++++++++++++++++++++++++++++++++++++++
+ plugin/ttagecho.vim   |  120 +++++++++++++++++++++++++++++++++++++
+ 4 files changed, 436 insertions(+), 0 deletions(-)

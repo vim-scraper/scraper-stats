@@ -1,0 +1,124 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.50, refs/heads/master)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Tue May 5 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Do not create mappings for select mode; according to|Select-mode|, printable
+      character commands should delete the selection and insert the typed
+      characters. Now using :xmap to only target visual mode.
+    - Moved functions from plugin to separate autoload script.
+    - Split off documentation into separate help file. Now packaging as VimBall.
+
+ autoload/camelcasemotion.vim |  173 +++++++++++++++++++++++
+ doc/camelcasemotion.txt      |  183 +++++++++++++++++++++++++
+ plugin/camelcasemotion.vim   |  309 +++++-------------------------------------
+ 3 files changed, 388 insertions(+), 277 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.40.017)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Mon May 19 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    BF: Now using :normal! to be independent from any user mappings. Thanks to Neil Walker for the patch.
+
+ plugin/camelcasemotion.vim |    9 ++++++---
+ 1 files changed, 6 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.40.016)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Mon Apr 28 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    BF: Wrong forward motion stop at the second digit if a word starts with multiple numbers (e.g. 1234.56789). Thanks to Wasim Ahmed for reporting this.
+
+ plugin/camelcasemotion.vim |   26 ++++++++++++++++++++------
+ 1 files changed, 20 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.40.015)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Thu Apr 24 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    ENH: Added inner "word" text objects 'i,w' etc. that work analoguous to the built-in 'iw' text object. Thanks to David Kotchan for this suggestion.
+
+ plugin/camelcasemotion.vim |  115 ++++++++++++++++++++++++++++++++++++++++++--
+ 1 files changed, 110 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.30.014)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Sun Apr 20 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The motions now also stop at non-keyword boundaries, just like the regular motions. This has no effect inside a CamelCaseWord or inside underscore_notation, but it makes the motions behave like the regular motions (which is important if you replace the default motions). Thanks to Mun Johl for reporting this.
+
+ plugin/camelcasemotion.vim |   27 +++++++++++++++++++++++----
+ 1 files changed, 23 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.30.013)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Wed Apr 9 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Allowing users to use mappings different than ,w ,b ,e by defining <Plug>CamelCaseMotion_? target mappings. This can even be used to replace the default 'w', 'b' and 'e' mappings, as suggested by Mun Johl.
+    Now requires VIM 7.0 or higher.
+
+ plugin/camelcasemotion.vim |  132 ++++++++++++++++++++++++++-----------------
+ 1 files changed, 80 insertions(+), 52 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.20.012)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Wed Jun 6 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    BF: Corrected motions through mixed CamelCase_and_UnderScore words by re-ordering and narrowing the search patterns.
+
+ plugin/camelcasemotion.vim |   18 +++++++++++++-----
+ 1 files changed, 13 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.20.011)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Sat Jun 2 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Thanks again to Joseph Barker for discussing the complicated visual mode mapping on the vim-dev mailing list and coming up with a great simplification.
+
+ plugin/camelcasemotion.vim |   88 ++++++++++++++++++++++---------------------
+ 1 files changed, 45 insertions(+), 43 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.20.010)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Wed May 30 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    ENH: The visual mode motions now also (mostly) work with the (default) setting 'set selection=inclusive' / 'behave xterm', instead of selecting one character too much. So far, you had to 'set selection=exclusive' / 'behave mswin'.
+
+ plugin/camelcasemotion.vim |  144 ++++++++++++++++++++++++++++++--------------
+ 1 files changed, 98 insertions(+), 46 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10.009)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Wed May 30 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Incorporated major improvements and simplifications done by Joseph Barker:
+    Operator-pending and visual mode motions now accept [count] of more than 9.
+    Visual selections can now be extended from either end.
+    Instead of misusing the :[range], the special variable v:count1 is used. Custom commands are not needed anymore.
+    Operator-pending and visual mode mappings are now generic: There's only a single mapping for ,w that can be repeated, rather than having a separate mapping for 1,w 2,w 3,w ...
+    BF: The operator-pending and visual mode ,e mapping doesn't work properly when it reaches the end of line; the final character of the moved-over "word" remains. Fixed this problem unless the "word" is at the very end of the buffer.
+    BF: Degenerate CamelCaseWords that consist of only a single uppercase letter (e.g. "P" in "MapPRoblem") are skipped by all motions. Thanks to Joseph Barker for reporting this.
+    BF: In CamelCaseWords that consist of uppercase letters followed by decimals (e.g. "MyUPPER123Problem", the uppercase "word" is skipped by all motions.
+
+ plugin/camelcasemotion.vim |  215 +++++++++++++++++++++-----------------------
+ 1 files changed, 101 insertions(+), 114 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.00.007)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Tue May 22 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                     |   55 +++++++++++
+ plugin/camelcasemotion.vim |  231 ++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 286 insertions(+), 0 deletions(-)

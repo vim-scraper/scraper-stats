@@ -1,0 +1,85 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.3, refs/heads/master)
+Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+AuthorDate: Wed Jun 21 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -	added window size restore
+    -	changed // to 'literal' command
+    -	bug with fname and dirname sharing same prefix
+
+ plugin/CD_Plus.vim |  136 +++++++++++++++++++++++++++++++++++-----------------
+ 1 files changed, 91 insertions(+), 45 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+AuthorDate: Thu Jun 8 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -	Fixed accumulating syntax entries (gradual slow down)
+    -	Highlighting shortcuts to speed up tabbing
+
+ plugin/CD_Plus.vim |   65 ++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 51 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+AuthorDate: Wed Jun 7 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -	Misc fixes (stray error messages)
+    -	Option to recan for pc drives
+    -	Misc fixes for pc drive pathnames
+    	(Still some problems).
+    -	Added sorting options
+    -	Faster scrolling and tabbing
+    -	Changed :excmd enter method
+    -	Added file size and time options.
+    -	Added match collapse listing option.
+    -	Added highlighting toggle
+    -	Added long listing toggle
+
+ plugin/CD_Plus.vim |  912 +++++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 648 insertions(+), 264 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+AuthorDate: Sun Jun 4 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     -	Added literal input mode (allow non-existent
+       names).
+     -	Added ^F command window access.
+     -	Display and highlighting cleaned and improved.
+     -	Added options aliases for col wrap and
+       autochdir.
+     -	Added ^E ^Y passthrough for scrolling.
+     -	Misc fixes.
+
+ plugin/CD_Plus.vim |  720 +++++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 541 insertions(+), 179 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+AuthorDate: Fri Jun 2 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -   many minor fixes
+    -   added filename completion, and quick switch to
+        edit, etc., and cmap e<space> .....
+    -   added separate directory and filename
+        histories.
+    -   will try to create intermediate directories.
+
+ plugin/CD_Plus.vim |  866 +++++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 612 insertions(+), 254 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+AuthorDate: Mon May 22 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README             |  200 +++++++++++
+ plugin/CD_Plus.vim | 1008 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 1208 insertions(+), 0 deletions(-)

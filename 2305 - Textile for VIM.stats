@@ -1,0 +1,40 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3, refs/heads/master)
+Author:     Tim Harper <timcharper at gmail.com>
+AuthorDate: Mon Nov 3 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Documentation fixes
+
+ doc/textile.txt      |   14 +++++++-------
+ ftplugin/textile.vim |   10 ++++++----
+ 2 files changed, 13 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Tim Harper <timcharper at gmail.com>
+AuthorDate: Tue Aug 26 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added multiple colors for headers, and alternating colors for list items
+    - Fixed error in the vim script for TextileRenderBufferToFile
+    - Changed shortcut keys from \\tp to \\rp (render preview instead of textile preview, since it's file-type specific anyways)
+
+ doc/textile.txt      |   26 ++++++++++++++------------
+ ftplugin/textile.vim |    8 ++++----
+ syntax/textile.vim   |   29 ++++++++++++++++++++---------
+ textile/.gitignore   |    2 --
+ 4 files changed, 38 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Tim Harper <timcharper at gmail.com>
+AuthorDate: Mon Jul 21 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README               |   56 ++++++++++++++++++++++++++++++++++++
+ doc/textile.txt      |   50 +++++++++++++++++++++++++++++++++
+ ftplugin/textile.vim |   49 ++++++++++++++++++++++++++++++++
+ plugin/textile.vim   |    5 +++
+ syntax/textile.vim   |   76 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ textile/.gitignore   |    2 +
+ 6 files changed, 238 insertions(+), 0 deletions(-)

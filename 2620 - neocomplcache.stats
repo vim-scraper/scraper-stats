@@ -1,0 +1,1908 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/5.1, refs/heads/master)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Mon Aug 2 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added "nothing" in text mode filetype.
+    - Added :NeoComplCacheCachingDictionary discription.
+    - Added g:neocomplcache_quick_match_table.
+    - Added g:neocomplcache_text_mode_filetypes option.
+    - Added neocomplcache#set_completion_length().
+    - Added neocomplcache#smart_close_popup().
+    - Added omni completion examples.
+    - Added tex in text mode filetypes.
+    - Allow blank line in snippet.
+    - Changed neocomplcache#set_dictionary_helper().
+    - Changed vim_complete marker.
+    - Deleted obsolute functions.
+    - Deleted spell_complete.
+    - Disabled Ruby omni completion.
+    - Disabled keyword_complete when eskk is enabled.
+    - Fixed :NeoComplCacheToggle.
+    - Fixed analyzing function.
+    - Fixed autocompletion freeze.
+    - Fixed context filetype bug.
+    - Fixed css snippet.
+    - Fixed documentation.
+    - Fixed environments parse bug.
+    - Fixed error when complete directory.
+    - Fixed error when local variable completion.
+    - Fixed eskk check.
+    - Fixed eskk omni completion bug.
+    - Fixed example.
+    - Fixed ftplugin bug.
+    - Fixed get filetype timing in snippets_complete.
+    - Fixed neocomplcache#complete_common_string() bug.
+    - Fixed neocomplcache#match_word() bug.
+    - Fixed neocomplcache#system().
+    - Fixed omni completion bug.
+    - Fixed quick match bug.
+    - Fixed quickmatch error.
+    - Fixed quickmatch selection.
+    - Fixed snippet parse.
+    - Fixed snippets expand error.
+    - Fixed vim_complete commands.dict.
+    - Fixed vim_complete error.
+    - Implemented dictionary plugins.
+    - Implemented expand completion.
+    - Implemented filetype plugin.
+    - Implemented set rank helper.
+    - Implemented syntax attr helper.
+    - Implemented text mode.
+    - Improved :NeoComplCacheAutoCompletionLength behavior.
+    - Improved autoload plugins.
+    - Improved buffer caching.
+    - Improved caching.
+    - Improved check wildcard.
+    - Improved context filetype.
+    - Improved css keyword pattern.
+    - Improved detect completefunc.
+    - Improved eskk and vimproc check.
+    - Improved examples.
+    - Improved filetype completion.
+    - Improved g:neocomplcache_omni_patterns description.
+    - Improved g:neocomplcache_plugin_disable behavior.
+    - Improved haskell keyword pattern.
+    - Improved include check.
+    - Improved include_complete.
+    - Improved integrated completion.
+    - Improved interactive termtter pattern.
+    - Improved javascript support.
+    - Improved local variable analysis.
+    - Improved member filter.
+    - Improved multibyte trunk.
+    - Improved neocomplcache#close_popup().
+    - Improved neocomplcache#filetype_complete().
+    - Improved neocomplcache#get_auto_completion_length().
+    - Improved neocomplcache#snippets_complete#expandable().
+    - Improved print error.
+    - Improved quickmatch selection.
+    - Improved snippet alias pattern.
+    - Improved startup.
+    - Improved termtter keywords.
+    - Improved text mode.
+    - Improved tilde substitution.
+    - Improved truncate filename.
+    - Improved vim keyword pattern.
+    - Improved vim_complete.
+    - Improved vimshell pattern.
+    - Optimized match.
+    - Refactoringed vim_complete.
+    - Skip filename completion when too many candidates.
+    - Supported GetLatestVimScripts.
+    - Supported coffee script.
+    - Supported gdb keyword.
+    - Supported inline assembly language.
+    - Supported union.
+
+ autoload/neocomplcache.vim                         | 1378 -----------------
+ autoload/neocomplcache/cache.vim                   |  403 +++++
+ autoload/neocomplcache/sources/abbrev_complete.vim |   64 +
+ autoload/neocomplcache/sources/buffer_complete.vim |  615 ++++++++
+ .../sources/completefunc_complete.vim              |  114 ++
+ .../neocomplcache/sources/dictionary_complete.vim  |  156 ++
+ .../neocomplcache/sources/filename_complete.vim    |  177 +++
+ .../neocomplcache/sources/include_complete.vim     |  311 ++++
+ .../neocomplcache/sources/keyword_complete.vim     |   87 ++
+ autoload/neocomplcache/sources/omni_complete.vim   |  251 ++++
+ .../neocomplcache/sources/snippets_complete/_.snip |   56 +
+ .../sources/snippets_complete/actionscript.snip    |  273 ++++
+ .../sources/snippets_complete/apache.snip          |   23 +
+ .../sources/snippets_complete/applescript.snip     |  201 +++
+ .../neocomplcache/sources/snippets_complete/c.snip |  124 ++
+ .../sources/snippets_complete/cpp.snip             |   20 +
+ .../sources/snippets_complete/css.snip             |  252 ++++
+ .../neocomplcache/sources/snippets_complete/d.snip |   25 +
+ .../sources/snippets_complete/eruby.snip           |   19 +
+ .../sources/snippets_complete/java.snip            |  274 ++++
+ .../sources/snippets_complete/javascript.snip      |   47 +
+ .../sources/snippets_complete/markdown.snip        |   51 +
+ .../sources/snippets_complete/objc.snip            |  352 +++++
+ .../sources/snippets_complete/perl.snip            |   89 ++
+ .../sources/snippets_complete/php.snip             |  266 ++++
+ .../sources/snippets_complete/python.snip          |   85 ++
+ .../sources/snippets_complete/rails.snip           |  167 ++
+ .../sources/snippets_complete/ruby.snip            |   40 +
+ .../sources/snippets_complete/sh.snip              |   59 +
+ .../sources/snippets_complete/snippet.snip         |    8 +
+ .../sources/snippets_complete/tex.snip             |   15 +
+ .../sources/snippets_complete/vim.snip             |   56 +
+ .../sources/snippets_complete/vimshell.snip        |    4 +
+ .../sources/snippets_complete/xhtml.snip           |  239 +++
+ .../neocomplcache/sources/snippets_complete.vim    |  700 +++++++++
+ autoload/neocomplcache/sources/syntax_complete.vim |  319 ++++
+ autoload/neocomplcache/sources/tags_complete.vim   |  122 ++
+ .../sources/vim_complete/autocmds.dict             |   82 +
+ .../sources/vim_complete/command_args.dict         |   33 +
+ .../sources/vim_complete/command_completions.dict  |  492 ++++++
+ .../sources/vim_complete/command_prototypes.dict   |  492 ++++++
+ .../sources/vim_complete/command_replaces.dict     |   10 +
+ .../sources/vim_complete/commands.dict             |  486 ++++++
+ .../sources/vim_complete/features.dict             |  148 ++
+ .../sources/vim_complete/functions.dict            |  234 +++
+ .../neocomplcache/sources/vim_complete/helper.vim  |  982 ++++++++++++
+ .../sources/vim_complete/mappings.dict             |   53 +
+ .../sources/vim_complete/options.dict              |  345 +++++
+ .../sources/vim_complete/variables.dict            |   54 +
+ autoload/neocomplcache/sources/vim_complete.vim    |  179 +++
+ autoload/neocomplcache/util.vim                    |   91 ++
+ autoload/neocomplcache.vim                         | 1580 ++++++++++++++++++++
+ doc/neocomplcache.jax                              |   88 +-
+ doc/neocomplcache.txt                              |  312 ++++-
+ doc/tags-ja                                        |  102 ++
+ plugin/neocomplcache.vim                           |   27 +-
+ syntax/snippet.vim                                 |   38 +-
+ ver.5.0/autoload/neocomplcache/cache.vim           |  400 -----
+ .../complfunc/completefunc_complete.vim            |  111 --
+ .../neocomplcache/complfunc/filename_complete.vim  |  186 ---
+ .../neocomplcache/complfunc/keyword_complete.vim   |   88 --
+ .../neocomplcache/complfunc/omni_complete.vim      |  247 ---
+ .../complfunc/vim_complete/autocmds.dict           |   82 -
+ .../complfunc/vim_complete/command_args.dict       |   33 -
+ .../vim_complete/command_completions.dict          |  492 ------
+ .../complfunc/vim_complete/command_prototypes.dict |  492 ------
+ .../complfunc/vim_complete/command_replaces.dict   |   10 -
+ .../complfunc/vim_complete/commands.dict           |  486 ------
+ .../complfunc/vim_complete/features.dict           |  148 --
+ .../complfunc/vim_complete/functions.dict          |  234 ---
+ .../complfunc/vim_complete/helper.vim              |  897 -----------
+ .../complfunc/vim_complete/mappings.dict           |   53 -
+ .../complfunc/vim_complete/options.dict            |  345 -----
+ .../complfunc/vim_complete/variables.dict          |   54 -
+ .../neocomplcache/complfunc/vim_complete.vim       |  180 ---
+ .../neocomplcache/plugin/abbrev_complete.vim       |   56 -
+ .../neocomplcache/plugin/buffer_complete.vim       |  598 --------
+ .../neocomplcache/plugin/dictionary_complete.vim   |  140 --
+ .../neocomplcache/plugin/include_complete.vim      |  296 ----
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   56 -
+ .../plugin/snippets_complete/actionscript.snip     |  273 ----
+ .../plugin/snippets_complete/apache.snip           |   23 -
+ .../plugin/snippets_complete/applescript.snip      |  201 ---
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  124 --
+ .../plugin/snippets_complete/cpp.snip              |   20 -
+ .../plugin/snippets_complete/css.snip              |  252 ----
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   25 -
+ .../plugin/snippets_complete/eruby.snip            |   19 -
+ .../plugin/snippets_complete/java.snip             |  274 ----
+ .../plugin/snippets_complete/javascript.snip       |   47 -
+ .../plugin/snippets_complete/markdown.snip         |   51 -
+ .../plugin/snippets_complete/objc.snip             |  352 -----
+ .../plugin/snippets_complete/perl.snip             |   89 --
+ .../plugin/snippets_complete/php.snip              |  266 ----
+ .../plugin/snippets_complete/python.snip           |   85 --
+ .../plugin/snippets_complete/rails.snip            |  167 --
+ .../plugin/snippets_complete/ruby.snip             |   40 -
+ .../neocomplcache/plugin/snippets_complete/sh.snip |   59 -
+ .../plugin/snippets_complete/snippet.snip          |    8 -
+ .../plugin/snippets_complete/tex.snip              |   15 -
+ .../plugin/snippets_complete/vim.snip              |   56 -
+ .../plugin/snippets_complete/vimshell.snip         |    4 -
+ .../plugin/snippets_complete/xhtml.snip            |  239 ---
+ .../neocomplcache/plugin/snippets_complete.vim     |  681 ---------
+ .../neocomplcache/plugin/spell_complete.vim        |   47 -
+ .../neocomplcache/plugin/syntax_complete.vim       |  306 ----
+ .../neocomplcache/plugin/tags_complete.vim         |  113 --
+ 107 files changed, 11760 insertions(+), 11030 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.0)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Sat Jun 26 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added abbrev_complete plugin.
+    - Added eskk omni completion support.
+    - Added g:neocomplcache_delimiter_patterns option.
+    - Added g:neocomplcache_filetype_include_lists option.
+    - Added g:neocomplcache_omni_function_list option.
+    - Added g:neocomplcache_plugin_rank option.
+    - Added g:neocomplcache_vim_completefuncs option.
+    - Added neocomplcache#cancel_popup().
+    - Added objc omni completion support.
+    - Added pasm and pir support.
+    - Allow snipMate like snippet.
+    - Changed NeoComplCacheCachingDisable into NeoComplCacheDisableCaching.
+    - Changed NeoComplCacheCachingEnable into NeoComplCacheEnableCaching.
+    - Changed g:neocomplcache_alphabetical_order into g:neocomplcache_enable_alphabetical_order.
+    - Changed g:neocomplcache_caching_disable_pattern into g:neocomplcache_disable_caching_buffer_name_pattern.
+    - Changed g:neocomplcache_caching_limit_file_size default value.
+    - Changed g:neocomplcache_enable_cursor_hold_i_time into g:neocomplcache_cursor_hold_i_time.
+    - Changed g:neocomplcache_enable_quick_match default value.
+    - Changed g:neocomplcache_lock_buffer_name_pattern into g:neocomplcache_lock_buffer_name_pattern.
+    - Changed g:neocomplcache_omni_function_list as g:neocomplcache_omni_functions.
+    - Changed g:neocomplcache_plugin_completion_length into g:neocomplcache_plugin_completion_length.
+    - Changed variables name dramatically.
+    - Check obsolute options.
+    - Deleted g:neocomplcache_cache_line_count variable.
+    - Deleted g:neocomplcache_caching_percent_in_statusline option.
+    - Deleted g:neocomplcache_enable_alphabetical_order option.
+    - Deleted g:neocomplcache_enable_randomize option.
+    - Deleted neocomplcache#caching_percent().
+    - Deleted neocomplcache#cancel_popup().
+    - Fixed abbrev_complete bug.
+    - Fixed abbrev_complete check.
+    - Fixed command line window error.
+    - Fixed context filetype bug.
+    - Fixed delete cache bug.
+    - Fixed disable AutoComplPop.
+    - Fixed dup problem in snippets_complete.
+    - Fixed eruby and ruby pattern.
+    - Fixed examples.
+    - Fixed expand a snippet contained blank line bug.
+    - Fixed filename_complete rank.
+    - Fixed g:neocomplcache_enable_cursor_hold_i bug.
+    - Fixed help file caching bug.
+    - Fixed icase bug.
+    - Fixed include_complete error.
+    - Fixed manual completion freeze bug.
+    - Fixed multibyte problems.
+    - Fixed nested snippet bug.
+    - Fixed obsolute settings.
+    - Fixed presentation file.
+    - Fixed rank bug.
+    - Fixed save cache error.
+    - Fixed sort bug.
+    - Fixed vim_complete freeze.
+    - Implemented customlist completion in vim_complete.
+    - Implemented delemiter completion.
+    - Improved abbr check.
+    - Improved abbr.
+    - Improved cache timing.
+    - Improved caching message.
+    - Improved caching timing.
+    - Improved clojure support.
+    - Improved context filetype.
+    - Improved cur_text.
+    - Improved d and java keyword patterns.
+    - Improved dummy move.
+    - Improved erlang keyword pattern.
+    - Improved eruby support.
+    - Improved eskk support.
+    - Improved expand snippet.
+    - Improved filename_complete.
+    - Improved filter.
+    - Improved garbage collect and calc rank.
+    - Improved help.
+    - Improved icase.
+    - Improved keyword pattern.
+    - Improved keyword patterns.
+    - Improved masm and nasm keyword pattern.
+    - Improved ruby keyword.
+    - Improved snippets expand.
+    - Improved syntax_complete.
+    - Improved vim_complete.
+    - Introduced thinca's script.
+    - Optimized cache.
+    - Optimized caching.
+    - Optimized completion.
+    - Optimized frequencies.
+    - Optimized memory when loaded cache.
+    - Optimized sort.
+    - Refactoringed keyword_complete.
+    - Refactoringed neocomplcache#start_manual_complete().
+    - Refixed help caching bug.
+    - Refixed help file caching bug.
+    - Reimplemented neocomplcache#close_popup().
+    - Renamed g:neocomplcache_disable_plugin_list as g:neocomplcache_plugin_disable.
+    - Renamed g:neocomplcache_plugin_completion_length_list as g:neocomplcache_plugin_completion_length.
+    - Supported H8-300 keyword pattern.
+    - dictionary_complete use dictionary option.
+
+ autoload/neocomplcache.vim                         |  760 +++++++++-------
+ doc/neocomplcache.jax                              |  362 +++++----
+ doc/neocomplcache.txt                              |  567 +++++++++----
+ plugin/neocomplcache.vim                           |  142 ++--
+ ver.4.30a/autoload/neocomplcache/cache.vim         |  397 ---------
+ .../complfunc/completefunc_complete.vim            |  124 ---
+ .../neocomplcache/complfunc/filename_complete.vim  |  182 ----
+ .../neocomplcache/complfunc/keyword_complete.vim   |  145 ---
+ .../neocomplcache/complfunc/omni_complete.vim      |  214 -----
+ .../complfunc/vim_complete/autocmds.dict           |   82 --
+ .../complfunc/vim_complete/command_args.dict       |   33 -
+ .../vim_complete/command_completions.dict          |  492 -----------
+ .../complfunc/vim_complete/command_prototypes.dict |  492 -----------
+ .../complfunc/vim_complete/command_replaces.dict   |   10 -
+ .../complfunc/vim_complete/commands.dict           |  486 -----------
+ .../complfunc/vim_complete/features.dict           |  148 ----
+ .../complfunc/vim_complete/functions.dict          |  234 -----
+ .../complfunc/vim_complete/helper.vim              |  917 --------------------
+ .../complfunc/vim_complete/mappings.dict           |   53 --
+ .../complfunc/vim_complete/options.dict            |  345 --------
+ .../complfunc/vim_complete/variables.dict          |   54 --
+ .../neocomplcache/complfunc/vim_complete.vim       |  156 ----
+ .../neocomplcache/plugin/buffer_complete.vim       |  695 ---------------
+ .../neocomplcache/plugin/dictionary_complete.vim   |  156 ----
+ .../neocomplcache/plugin/include_complete.vim      |  331 -------
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   56 --
+ .../plugin/snippets_complete/actionscript.snip     |  273 ------
+ .../plugin/snippets_complete/apache.snip           |   23 -
+ .../plugin/snippets_complete/applescript.snip      |  201 -----
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  124 ---
+ .../plugin/snippets_complete/cpp.snip              |   20 -
+ .../plugin/snippets_complete/css.snip              |  252 ------
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   25 -
+ .../plugin/snippets_complete/eruby.snip            |   19 -
+ .../plugin/snippets_complete/java.snip             |  274 ------
+ .../plugin/snippets_complete/javascript.snip       |   47 -
+ .../plugin/snippets_complete/markdown.snip         |   51 --
+ .../plugin/snippets_complete/objc.snip             |  352 --------
+ .../plugin/snippets_complete/perl.snip             |   89 --
+ .../plugin/snippets_complete/php.snip              |  266 ------
+ .../plugin/snippets_complete/python.snip           |   85 --
+ .../plugin/snippets_complete/rails.snip            |  167 ----
+ .../plugin/snippets_complete/ruby.snip             |   40 -
+ .../neocomplcache/plugin/snippets_complete/sh.snip |   59 --
+ .../plugin/snippets_complete/snippet.snip          |    8 -
+ .../plugin/snippets_complete/tex.snip              |   15 -
+ .../plugin/snippets_complete/vim.snip              |   56 --
+ .../plugin/snippets_complete/vimshell.snip         |    4 -
+ .../plugin/snippets_complete/xhtml.snip            |  239 -----
+ .../neocomplcache/plugin/snippets_complete.vim     |  894 -------------------
+ .../neocomplcache/plugin/spell_complete.vim        |   47 -
+ .../neocomplcache/plugin/syntax_complete.vim       |  312 -------
+ .../neocomplcache/plugin/tags_complete.vim         |  139 ---
+ ver.5.0/autoload/neocomplcache/cache.vim           |  400 +++++++++
+ .../complfunc/completefunc_complete.vim            |  111 +++
+ .../neocomplcache/complfunc/filename_complete.vim  |  186 ++++
+ .../neocomplcache/complfunc/keyword_complete.vim   |   88 ++
+ .../neocomplcache/complfunc/omni_complete.vim      |  247 ++++++
+ .../complfunc/vim_complete/autocmds.dict           |   82 ++
+ .../complfunc/vim_complete/command_args.dict       |   33 +
+ .../vim_complete/command_completions.dict          |  492 +++++++++++
+ .../complfunc/vim_complete/command_prototypes.dict |  492 +++++++++++
+ .../complfunc/vim_complete/command_replaces.dict   |   10 +
+ .../complfunc/vim_complete/commands.dict           |  486 +++++++++++
+ .../complfunc/vim_complete/features.dict           |  148 ++++
+ .../complfunc/vim_complete/functions.dict          |  234 +++++
+ .../complfunc/vim_complete/helper.vim              |  897 +++++++++++++++++++
+ .../complfunc/vim_complete/mappings.dict           |   53 ++
+ .../complfunc/vim_complete/options.dict            |  345 ++++++++
+ .../complfunc/vim_complete/variables.dict          |   54 ++
+ .../neocomplcache/complfunc/vim_complete.vim       |  180 ++++
+ .../neocomplcache/plugin/abbrev_complete.vim       |   56 ++
+ .../neocomplcache/plugin/buffer_complete.vim       |  598 +++++++++++++
+ .../neocomplcache/plugin/dictionary_complete.vim   |  140 +++
+ .../neocomplcache/plugin/include_complete.vim      |  296 +++++++
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   56 ++
+ .../plugin/snippets_complete/actionscript.snip     |  273 ++++++
+ .../plugin/snippets_complete/apache.snip           |   23 +
+ .../plugin/snippets_complete/applescript.snip      |  201 +++++
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  124 +++
+ .../plugin/snippets_complete/cpp.snip              |   20 +
+ .../plugin/snippets_complete/css.snip              |  252 ++++++
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   25 +
+ .../plugin/snippets_complete/eruby.snip            |   19 +
+ .../plugin/snippets_complete/java.snip             |  274 ++++++
+ .../plugin/snippets_complete/javascript.snip       |   47 +
+ .../plugin/snippets_complete/markdown.snip         |   51 ++
+ .../plugin/snippets_complete/objc.snip             |  352 ++++++++
+ .../plugin/snippets_complete/perl.snip             |   89 ++
+ .../plugin/snippets_complete/php.snip              |  266 ++++++
+ .../plugin/snippets_complete/python.snip           |   85 ++
+ .../plugin/snippets_complete/rails.snip            |  167 ++++
+ .../plugin/snippets_complete/ruby.snip             |   40 +
+ .../neocomplcache/plugin/snippets_complete/sh.snip |   59 ++
+ .../plugin/snippets_complete/snippet.snip          |    8 +
+ .../plugin/snippets_complete/tex.snip              |   15 +
+ .../plugin/snippets_complete/vim.snip              |   56 ++
+ .../plugin/snippets_complete/vimshell.snip         |    4 +
+ .../plugin/snippets_complete/xhtml.snip            |  239 +++++
+ .../neocomplcache/plugin/snippets_complete.vim     |  681 +++++++++++++++
+ .../neocomplcache/plugin/spell_complete.vim        |   47 +
+ .../neocomplcache/plugin/syntax_complete.vim       |  306 +++++++
+ .../neocomplcache/plugin/tags_complete.vim         |  113 +++
+ 103 files changed, 10623 insertions(+), 10611 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.30a)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Wed Jun 2 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed critical popup bug.
+
+ autoload/neocomplcache.vim                         |   15 +-
+ doc/neocomplcache.jax                              |    2 +-
+ doc/neocomplcache.txt                              |   12 +-
+ .../autoload/neocomplcache/cache.vim               |  397 ---------
+ .../complfunc/completefunc_complete.vim            |  124 ---
+ .../neocomplcache/complfunc/filename_complete.vim  |  182 ----
+ .../neocomplcache/complfunc/keyword_complete.vim   |  145 ---
+ .../neocomplcache/complfunc/omni_complete.vim      |  214 -----
+ .../complfunc/vim_complete/autocmds.dict           |   82 --
+ .../complfunc/vim_complete/command_args.dict       |   33 -
+ .../vim_complete/command_completions.dict          |  492 -----------
+ .../complfunc/vim_complete/command_prototypes.dict |  492 -----------
+ .../complfunc/vim_complete/command_replaces.dict   |   10 -
+ .../complfunc/vim_complete/commands.dict           |  486 -----------
+ .../complfunc/vim_complete/features.dict           |  148 ----
+ .../complfunc/vim_complete/functions.dict          |  234 -----
+ .../complfunc/vim_complete/helper.vim              |  917 --------------------
+ .../complfunc/vim_complete/mappings.dict           |   53 --
+ .../complfunc/vim_complete/options.dict            |  345 --------
+ .../complfunc/vim_complete/variables.dict          |   54 --
+ .../neocomplcache/complfunc/vim_complete.vim       |  156 ----
+ .../neocomplcache/plugin/buffer_complete.vim       |  695 ---------------
+ .../neocomplcache/plugin/dictionary_complete.vim   |  156 ----
+ .../neocomplcache/plugin/include_complete.vim      |  331 -------
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   56 --
+ .../plugin/snippets_complete/actionscript.snip     |  273 ------
+ .../plugin/snippets_complete/apache.snip           |   23 -
+ .../plugin/snippets_complete/applescript.snip      |  201 -----
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  124 ---
+ .../plugin/snippets_complete/cpp.snip              |   20 -
+ .../plugin/snippets_complete/css.snip              |  252 ------
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   25 -
+ .../plugin/snippets_complete/eruby.snip            |   19 -
+ .../plugin/snippets_complete/java.snip             |  274 ------
+ .../plugin/snippets_complete/javascript.snip       |   47 -
+ .../plugin/snippets_complete/markdown.snip         |   51 --
+ .../plugin/snippets_complete/objc.snip             |  352 --------
+ .../plugin/snippets_complete/perl.snip             |   89 --
+ .../plugin/snippets_complete/php.snip              |  266 ------
+ .../plugin/snippets_complete/python.snip           |   85 --
+ .../plugin/snippets_complete/rails.snip            |  167 ----
+ .../plugin/snippets_complete/ruby.snip             |   40 -
+ .../neocomplcache/plugin/snippets_complete/sh.snip |   59 --
+ .../plugin/snippets_complete/snippet.snip          |    8 -
+ .../plugin/snippets_complete/tex.snip              |   15 -
+ .../plugin/snippets_complete/vim.snip              |   56 --
+ .../plugin/snippets_complete/vimshell.snip         |    4 -
+ .../plugin/snippets_complete/xhtml.snip            |  239 -----
+ .../neocomplcache/plugin/snippets_complete.vim     |  894 -------------------
+ .../neocomplcache/plugin/spell_complete.vim        |   47 -
+ .../neocomplcache/plugin/syntax_complete.vim       |  312 -------
+ .../neocomplcache/plugin/tags_complete.vim         |  139 ---
+ ver.4.30a/autoload/neocomplcache/cache.vim         |  397 +++++++++
+ .../complfunc/completefunc_complete.vim            |  124 +++
+ .../neocomplcache/complfunc/filename_complete.vim  |  182 ++++
+ .../neocomplcache/complfunc/keyword_complete.vim   |  145 +++
+ .../neocomplcache/complfunc/omni_complete.vim      |  214 +++++
+ .../complfunc/vim_complete/autocmds.dict           |   82 ++
+ .../complfunc/vim_complete/command_args.dict       |   33 +
+ .../vim_complete/command_completions.dict          |  492 +++++++++++
+ .../complfunc/vim_complete/command_prototypes.dict |  492 +++++++++++
+ .../complfunc/vim_complete/command_replaces.dict   |   10 +
+ .../complfunc/vim_complete/commands.dict           |  486 +++++++++++
+ .../complfunc/vim_complete/features.dict           |  148 ++++
+ .../complfunc/vim_complete/functions.dict          |  234 +++++
+ .../complfunc/vim_complete/helper.vim              |  917 ++++++++++++++++++++
+ .../complfunc/vim_complete/mappings.dict           |   53 ++
+ .../complfunc/vim_complete/options.dict            |  345 ++++++++
+ .../complfunc/vim_complete/variables.dict          |   54 ++
+ .../neocomplcache/complfunc/vim_complete.vim       |  156 ++++
+ .../neocomplcache/plugin/buffer_complete.vim       |  695 +++++++++++++++
+ .../neocomplcache/plugin/dictionary_complete.vim   |  156 ++++
+ .../neocomplcache/plugin/include_complete.vim      |  331 +++++++
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   56 ++
+ .../plugin/snippets_complete/actionscript.snip     |  273 ++++++
+ .../plugin/snippets_complete/apache.snip           |   23 +
+ .../plugin/snippets_complete/applescript.snip      |  201 +++++
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  124 +++
+ .../plugin/snippets_complete/cpp.snip              |   20 +
+ .../plugin/snippets_complete/css.snip              |  252 ++++++
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   25 +
+ .../plugin/snippets_complete/eruby.snip            |   19 +
+ .../plugin/snippets_complete/java.snip             |  274 ++++++
+ .../plugin/snippets_complete/javascript.snip       |   47 +
+ .../plugin/snippets_complete/markdown.snip         |   51 ++
+ .../plugin/snippets_complete/objc.snip             |  352 ++++++++
+ .../plugin/snippets_complete/perl.snip             |   89 ++
+ .../plugin/snippets_complete/php.snip              |  266 ++++++
+ .../plugin/snippets_complete/python.snip           |   85 ++
+ .../plugin/snippets_complete/rails.snip            |  167 ++++
+ .../plugin/snippets_complete/ruby.snip             |   40 +
+ .../neocomplcache/plugin/snippets_complete/sh.snip |   59 ++
+ .../plugin/snippets_complete/snippet.snip          |    8 +
+ .../plugin/snippets_complete/tex.snip              |   15 +
+ .../plugin/snippets_complete/vim.snip              |   56 ++
+ .../plugin/snippets_complete/vimshell.snip         |    4 +
+ .../plugin/snippets_complete/xhtml.snip            |  239 +++++
+ .../neocomplcache/plugin/snippets_complete.vim     |  894 +++++++++++++++++++
+ .../neocomplcache/plugin/spell_complete.vim        |   47 +
+ .../neocomplcache/plugin/syntax_complete.vim       |  312 +++++++
+ .../neocomplcache/plugin/tags_complete.vim         |  139 +++
+ 101 files changed, 9904 insertions(+), 9891 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.30)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Mon May 31 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added g:NeoComplCache_EnableAutoSelect option.
+    * Added g:NeoComplCache_EnableCursorHoldI and g:NeoComplCache_CursorHoldITime options.
+    * Deleted g:NeoComplCache_EnableSkipCompletion and g:NeoComplCache_SkipCompletionTime options.
+    * Deleted mapping check.
+    * Detect conflicted plugin.
+    * Detect text was changed.
+    * Disabled C/C++ Omni patterns.
+    * Enable cache in "[Command line]" buffer.
+    * Enable spell_complete in manual_complete.
+    * Fixed g:NeoComplCache_IgnoreCase bug.
+    * Fixed html next keyword pattern.
+    * Fixed neocomplcache#complete_common_string() bug.
+    * Fixed quickmatch behaivior.
+    * Fixed quickmatch keyword position bug.
+    * Fixed vim completion bug.
+    * Fixed vim_complete bugs.
+    * If <CR> is mapped, g:NeoComplCache_EnableAutoSelect option does not work to avoid a side effect.
+    * Ignore command line window caching.
+    * Implemented CursorHoldI completion.
+    * Implemented dictionary completion in vim_complete.
+    * Implemented lazy caching in vim_complete.
+    * Improved disable bell.
+    * Improved filename pattern.
+    * Improved filename_complete.
+    * Improved for skk.vim.
+    * Improved g:NeoComplCache_MaxKeywordWidth.
+    * Improved neocomplcache#close_popup().
+    * Improved print prototype behaivior when g:NeoComplCache_CursorHoldITime.
+    * Improved print prototype in vim_complete.
+    * Improved quickmatch.
+    * Improved redraw.
+    * Improved user commands analsze in vim_complete.
+    * Improved vim_complete analyse.
+    * Improved vim_complete. Recognize context.
+    * Improved vimproc#system().
+    * Revised completion.
+    * Use b:changedtick.
+    * neocomplcache disables bell.
+    - '#' as wildcard in vim_complete.
+    - Added AutoComplPop like behavior settings.
+    - Added ml keyword pattern.
+    - Caching readonly buffer.
+    - Changed check buflisted() into bufloaded().
+    - Deleted keyword cache in omni_complete.
+    - Deleted obsolute functions.
+    - Deleted obsolute internal variable.
+    - Detect AutoComplPop.
+    - Disabled php omni completion.
+    - Fixed completion length bugs.
+    - Fixed custom and customlist error in vim_complete.
+    - Fixed error when NeoComplCacheDisable.
+    - Fixed menu bug in buffer_complete.
+    - Fixed prototype in vim_complete.
+    - Fixed quickmatch bugs.
+    - Implemented ambiguous command completion.
+    - Implemented ~Username/ completion in filename_complete.
+    - Improved buffer cache timing.
+    - Improved caching timing in buffer_complete.
+    - Improved caching.
+    - Improved directory completion in vim_complete.
+    - Improved dummy move.
+    - Improved filtering.
+    - Improved function display in vim_complete.
+    - Improved help file.
+    - Improved ocaml keyword pattern.
+    - Improved recaching behaivior.
+    - Improved vim_complete.
+    - Improved wildcard check.
+    - Refactoringed.
+    - Revised example settings.
+    - Supported '<,'>command...
+    - Use 'path' in filename_complete.
+    - cd source path when searching include files.
+
+ autoload/neocomplcache.vim                         |  347 ++++----
+ doc/neocomplcache.jax                              |   70 +-
+ doc/neocomplcache.txt                              |  209 ++++-
+ .../autoload/neocomplcache/cache.vim               |  397 +++++++++
+ .../complfunc/completefunc_complete.vim            |  124 +++
+ .../neocomplcache/complfunc/filename_complete.vim  |  182 ++++
+ .../neocomplcache/complfunc/keyword_complete.vim   |  145 +++
+ .../neocomplcache/complfunc/omni_complete.vim      |  214 +++++
+ .../complfunc/vim_complete/autocmds.dict           |   82 ++
+ .../complfunc/vim_complete/command_args.dict       |   33 +
+ .../vim_complete/command_completions.dict          |  492 +++++++++++
+ .../complfunc/vim_complete/command_prototypes.dict |  492 +++++++++++
+ .../complfunc/vim_complete/command_replaces.dict   |   10 +
+ .../complfunc/vim_complete/commands.dict           |  486 +++++++++++
+ .../complfunc/vim_complete/features.dict           |  148 ++++
+ .../complfunc/vim_complete/functions.dict          |  234 +++++
+ .../complfunc/vim_complete/helper.vim              |  917 ++++++++++++++++++++
+ .../complfunc/vim_complete/mappings.dict           |   53 ++
+ .../complfunc/vim_complete/options.dict            |  345 ++++++++
+ .../complfunc/vim_complete/variables.dict          |   54 ++
+ .../neocomplcache/complfunc/vim_complete.vim       |  156 ++++
+ .../neocomplcache/plugin/buffer_complete.vim       |  695 +++++++++++++++
+ .../neocomplcache/plugin/dictionary_complete.vim   |  156 ++++
+ .../neocomplcache/plugin/include_complete.vim      |  331 +++++++
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   56 ++
+ .../plugin/snippets_complete/actionscript.snip     |  273 ++++++
+ .../plugin/snippets_complete/apache.snip           |   23 +
+ .../plugin/snippets_complete/applescript.snip      |  201 +++++
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  124 +++
+ .../plugin/snippets_complete/cpp.snip              |   20 +
+ .../plugin/snippets_complete/css.snip              |  252 ++++++
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   25 +
+ .../plugin/snippets_complete/eruby.snip            |   19 +
+ .../plugin/snippets_complete/java.snip             |  274 ++++++
+ .../plugin/snippets_complete/javascript.snip       |   47 +
+ .../plugin/snippets_complete/markdown.snip         |   51 ++
+ .../plugin/snippets_complete/objc.snip             |  352 ++++++++
+ .../plugin/snippets_complete/perl.snip             |   89 ++
+ .../plugin/snippets_complete/php.snip              |  266 ++++++
+ .../plugin/snippets_complete/python.snip           |   85 ++
+ .../plugin/snippets_complete/rails.snip            |  167 ++++
+ .../plugin/snippets_complete/ruby.snip             |   40 +
+ .../neocomplcache/plugin/snippets_complete/sh.snip |   59 ++
+ .../plugin/snippets_complete/snippet.snip          |    8 +
+ .../plugin/snippets_complete/tex.snip              |   15 +
+ .../plugin/snippets_complete/vim.snip              |   56 ++
+ .../plugin/snippets_complete/vimshell.snip         |    4 +
+ .../plugin/snippets_complete/xhtml.snip            |  239 +++++
+ .../neocomplcache/plugin/snippets_complete.vim     |  894 +++++++++++++++++++
+ .../neocomplcache/plugin/spell_complete.vim        |   47 +
+ .../neocomplcache/plugin/syntax_complete.vim       |  312 +++++++
+ .../neocomplcache/plugin/tags_complete.vim         |  139 +++
+ neocomplcache/autoload/neocomplcache/cache.vim     |  399 ---------
+ .../complfunc/completefunc_complete.vim            |  133 ---
+ .../neocomplcache/complfunc/filename_complete.vim  |  228 -----
+ .../neocomplcache/complfunc/keyword_complete.vim   |  145 ---
+ .../neocomplcache/complfunc/omni_complete.vim      |  267 ------
+ .../complfunc/vim_complete/autocmds.dict           |   82 --
+ .../complfunc/vim_complete/command_args.dict       |   34 -
+ .../vim_complete/command_completions.dict          |  498 -----------
+ .../complfunc/vim_complete/command_prototypes.dict |  493 -----------
+ .../complfunc/vim_complete/command_replaces.dict   |   10 -
+ .../complfunc/vim_complete/commands.dict           |  486 -----------
+ .../complfunc/vim_complete/features.dict           |  148 ----
+ .../complfunc/vim_complete/functions.dict          |  234 -----
+ .../complfunc/vim_complete/helper.vim              |  696 ---------------
+ .../complfunc/vim_complete/mappings.dict           |   53 --
+ .../complfunc/vim_complete/options.dict            |  345 --------
+ .../complfunc/vim_complete/variables.dict          |   54 --
+ .../neocomplcache/complfunc/vim_complete.vim       |  142 ---
+ .../neocomplcache/plugin/buffer_complete.vim       |  695 ---------------
+ .../neocomplcache/plugin/dictionary_complete.vim   |  175 ----
+ .../neocomplcache/plugin/include_complete.vim      |  392 ---------
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   56 --
+ .../plugin/snippets_complete/actionscript.snip     |  273 ------
+ .../plugin/snippets_complete/apache.snip           |   23 -
+ .../plugin/snippets_complete/applescript.snip      |  201 -----
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  124 ---
+ .../plugin/snippets_complete/cpp.snip              |   20 -
+ .../plugin/snippets_complete/css.snip              |  252 ------
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   25 -
+ .../plugin/snippets_complete/eruby.snip            |   19 -
+ .../plugin/snippets_complete/java.snip             |  274 ------
+ .../plugin/snippets_complete/javascript.snip       |   47 -
+ .../plugin/snippets_complete/markdown.snip         |   51 --
+ .../plugin/snippets_complete/objc.snip             |  352 --------
+ .../plugin/snippets_complete/perl.snip             |   89 --
+ .../plugin/snippets_complete/php.snip              |  266 ------
+ .../plugin/snippets_complete/python.snip           |   85 --
+ .../plugin/snippets_complete/rails.snip            |  167 ----
+ .../plugin/snippets_complete/ruby.snip             |   40 -
+ .../neocomplcache/plugin/snippets_complete/sh.snip |   59 --
+ .../plugin/snippets_complete/snippet.snip          |    8 -
+ .../plugin/snippets_complete/tex.snip              |   15 -
+ .../plugin/snippets_complete/vim.snip              |   56 --
+ .../plugin/snippets_complete/vimshell.snip         |    4 -
+ .../plugin/snippets_complete/xhtml.snip            |  239 -----
+ .../neocomplcache/plugin/snippets_complete.vim     |  896 -------------------
+ .../neocomplcache/plugin/spell_complete.vim        |   53 --
+ .../neocomplcache/plugin/syntax_complete.vim       |  418 ---------
+ .../neocomplcache/plugin/tags_complete.vim         |  210 -----
+ plugin/neocomplcache.vim                           |   19 +-
+ 102 files changed, 10304 insertions(+), 10255 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.20)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Thu Apr 15 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added snippets_complete help in Japanese.
+    * Added variables dictionary.
+    * Caching disable when bufname is '[Command line]'
+    * Changed default value of g:NeoComplCache_IgnoreCase.
+    * Completed prototype dictionary.
+    * Deleted obsolute variables.
+    * Fixed filename pattern.
+    * Fixed interactive filetype.
+    * Fixed manual completion bug.
+    * Fixed quickmatch bug.
+    * Fixed quickmatch bug.
+    * Fixed quickmatch bug.
+    * Fixed snippets expand bug.
+    * Highlight color when print prototype.
+    * Improved _ snippets.
+    * Improved buffer caching.
+    * Improved caching print.
+    * Improved command completion in vim_complete.
+    * Improved command completion text.
+    * Improved command name search.
+    * Improved command prototype dictionary in vim_complete.
+    * Improved for skk.vim.
+    * Improved frequency garbage collect.
+    * Improved keyword_filter.
+    * Improved manual complete.
+    * Improved mappings dictionary.
+    * Improved vim_complete performance.
+    * Improved vim_complete.
+    * Incleased omni completion rank.
+    * Lazy caching environment variables.
+    * Skip head digits in vim_complete.
+    * Use neocomplcache#escape_match().
+
+ Ver.4.09/autoload/neocomplcache/cache.vim          |  402 ---------
+ .../complfunc/completefunc_complete.vim            |  133 ---
+ .../neocomplcache/complfunc/filename_complete.vim  |  228 -----
+ .../neocomplcache/complfunc/keyword_complete.vim   |  145 ----
+ .../neocomplcache/complfunc/omni_complete.vim      |  335 --------
+ .../complfunc/vim_complete/autocmds.dict           |   82 --
+ .../complfunc/vim_complete/command_args.dict       |   34 -
+ .../complfunc/vim_complete/command_replaces.dict   |   10 -
+ .../complfunc/vim_complete/commands.dict           |  496 -----------
+ .../complfunc/vim_complete/features.dict           |  148 ----
+ .../complfunc/vim_complete/functions.dict          |  234 -----
+ .../complfunc/vim_complete/mappings.dict           |    9 -
+ .../complfunc/vim_complete/options.dict            |  345 --------
+ .../neocomplcache/complfunc/vim_complete.vim       |  742 ----------------
+ .../neocomplcache/plugin/buffer_complete.vim       |  709 ----------------
+ .../neocomplcache/plugin/dictionary_complete.vim   |  175 ----
+ .../neocomplcache/plugin/include_complete.vim      |  392 ---------
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   50 --
+ .../plugin/snippets_complete/actionscript.snip     |  273 ------
+ .../plugin/snippets_complete/apache.snip           |   23 -
+ .../plugin/snippets_complete/applescript.snip      |  201 -----
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  124 ---
+ .../plugin/snippets_complete/cpp.snip              |   20 -
+ .../plugin/snippets_complete/css.snip              |  252 ------
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   25 -
+ .../plugin/snippets_complete/eruby.snip            |   19 -
+ .../plugin/snippets_complete/java.snip             |  274 ------
+ .../plugin/snippets_complete/javascript.snip       |   47 -
+ .../plugin/snippets_complete/markdown.snip         |   51 --
+ .../plugin/snippets_complete/objc.snip             |  352 --------
+ .../plugin/snippets_complete/perl.snip             |   89 --
+ .../plugin/snippets_complete/php.snip              |  266 ------
+ .../plugin/snippets_complete/python.snip           |   85 --
+ .../plugin/snippets_complete/rails.snip            |  167 ----
+ .../plugin/snippets_complete/ruby.snip             |   40 -
+ .../neocomplcache/plugin/snippets_complete/sh.snip |   59 --
+ .../plugin/snippets_complete/snippet.snip          |    8 -
+ .../plugin/snippets_complete/tex.snip              |   15 -
+ .../plugin/snippets_complete/vim.snip              |   56 --
+ .../plugin/snippets_complete/vimshell.snip         |    4 -
+ .../plugin/snippets_complete/xhtml.snip            |  239 ------
+ .../neocomplcache/plugin/snippets_complete.vim     |  886 -------------------
+ .../neocomplcache/plugin/syntax_complete.vim       |  418 ---------
+ .../neocomplcache/plugin/tags_complete.vim         |  210 -----
+ autoload/neocomplcache.vim                         |  194 +++--
+ doc/neocomplcache.jax                              |  163 ++++-
+ doc/neocomplcache.txt                              |  151 +++-
+ indent/snippet.vim                                 |  116 ++--
+ neocomplcache/autoload/neocomplcache/cache.vim     |  399 +++++++++
+ .../complfunc/completefunc_complete.vim            |  133 +++
+ .../neocomplcache/complfunc/filename_complete.vim  |  228 +++++
+ .../neocomplcache/complfunc/keyword_complete.vim   |  145 ++++
+ .../neocomplcache/complfunc/omni_complete.vim      |  267 ++++++
+ .../complfunc/vim_complete/autocmds.dict           |   82 ++
+ .../complfunc/vim_complete/command_args.dict       |   34 +
+ .../vim_complete/command_completions.dict          |  498 +++++++++++
+ .../complfunc/vim_complete/command_prototypes.dict |  493 +++++++++++
+ .../complfunc/vim_complete/command_replaces.dict   |   10 +
+ .../complfunc/vim_complete/commands.dict           |  486 +++++++++++
+ .../complfunc/vim_complete/features.dict           |  148 ++++
+ .../complfunc/vim_complete/functions.dict          |  234 +++++
+ .../complfunc/vim_complete/helper.vim              |  696 +++++++++++++++
+ .../complfunc/vim_complete/mappings.dict           |   53 ++
+ .../complfunc/vim_complete/options.dict            |  345 ++++++++
+ .../complfunc/vim_complete/variables.dict          |   54 ++
+ .../neocomplcache/complfunc/vim_complete.vim       |  142 +++
+ .../neocomplcache/plugin/buffer_complete.vim       |  695 +++++++++++++++
+ .../neocomplcache/plugin/dictionary_complete.vim   |  175 ++++
+ .../neocomplcache/plugin/include_complete.vim      |  392 +++++++++
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   56 ++
+ .../plugin/snippets_complete/actionscript.snip     |  273 ++++++
+ .../plugin/snippets_complete/apache.snip           |   23 +
+ .../plugin/snippets_complete/applescript.snip      |  201 +++++
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  124 +++
+ .../plugin/snippets_complete/cpp.snip              |   20 +
+ .../plugin/snippets_complete/css.snip              |  252 ++++++
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   25 +
+ .../plugin/snippets_complete/eruby.snip            |   19 +
+ .../plugin/snippets_complete/java.snip             |  274 ++++++
+ .../plugin/snippets_complete/javascript.snip       |   47 +
+ .../plugin/snippets_complete/markdown.snip         |   51 ++
+ .../plugin/snippets_complete/objc.snip             |  352 ++++++++
+ .../plugin/snippets_complete/perl.snip             |   89 ++
+ .../plugin/snippets_complete/php.snip              |  266 ++++++
+ .../plugin/snippets_complete/python.snip           |   85 ++
+ .../plugin/snippets_complete/rails.snip            |  167 ++++
+ .../plugin/snippets_complete/ruby.snip             |   40 +
+ .../neocomplcache/plugin/snippets_complete/sh.snip |   59 ++
+ .../plugin/snippets_complete/snippet.snip          |    8 +
+ .../plugin/snippets_complete/tex.snip              |   15 +
+ .../plugin/snippets_complete/vim.snip              |   56 ++
+ .../plugin/snippets_complete/vimshell.snip         |    4 +
+ .../plugin/snippets_complete/xhtml.snip            |  239 ++++++
+ .../neocomplcache/plugin/snippets_complete.vim     |  896 ++++++++++++++++++++
+ .../neocomplcache/plugin/spell_complete.vim        |   53 ++
+ .../neocomplcache/plugin/syntax_complete.vim       |  418 +++++++++
+ .../neocomplcache/plugin/tags_complete.vim         |  210 +++++
+ plugin/neocomplcache.vim                           |    6 +-
+ 98 files changed, 10476 insertions(+), 9057 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.09)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Wed Feb 10 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added completefunc_complete.
+    - Added g:NeoComplCache_CtagsProgram option.
+    - Added interactive termtter keyword.
+    - Added keyword pattern of batch file.
+    - Added same filetype lists for vimshell iexe.
+    - Added snippet files(Thanks mfumi!).
+    - Added syntax pattern for vimshell iexe.
+    - Added vimshell omni completion support.
+    - Deleted '...' pattern.
+    - Deleted g:NeoComplCache_NonBufferFileTypeDetect option.
+    - Disabled filename_complete in vimshell.
+    - Don't fnamemodify in omni_complete.
+    - Fixed analyzing bug in vim_complete.
+    - Fixed complete common string bug.
+    - Fixed complete length bug in omni_complete.
+    - Fixed complete length bug in omni_complete.
+    - Fixed ctags execution bug.
+    - Fixed filename completion bug.
+    - Fixed functions_prototype bug in vim_complete.
+    - Fixed indent.
+    - Fixed multibyte input bug.
+    - Fixed neocomplcache#get_cur_text() bug.
+    - Fixed neocomplcache#system.
+    - Fixed pattern match error.
+    - Fixed snippet newline expand in snippets_complete.
+    - Fixed unpack dictionary bug in tags_complete.
+    - Fixed wildcard bug.
+    - Fixed wildcard freeze in filename_complete.
+    - Implemented dictionary_complete.vim.
+    - Improved NeoComplCachePrintSnippets command.
+    - Improved analyzing extra args in vim_complete.
+    - Improved check match filter.
+    - Improved command completion in snippets_complete.
+    - Improved composition filetype keyword support.
+    - Improved filaname pattern.
+    - Improved filetype completion.
+    - Improved filtering word.
+    - Improved head match.
+    - Improved keywords in vim_complete.
+    - Improved quickmatch behaivior.
+    - Improved same filetype.
+    - Improved skip directory in filename_complete.
+    - Improved snippet alias.
+    - Improved syntax detect in snippets_complete.
+    - Improved syntax highlight in snippets_complete.
+    - Improved tex pattern.
+    - Improved trunk filename in filename_complete.
+    - Optimized buffer_complete.
+    - Optimized filename_complete.
+    - Supported Visual Basic.
+    - Supported interactive ocaml.
+    - Supported lingr-vim.
+    - Supported omnifunc name pattern in omni_complete.
+    - Update lines number in buffer_complete.
+
+ Ver.4.02/autoload/neocomplcache/cache.vim          |  379 ----
+ .../neocomplcache/complfunc/filename_complete.vim  |  229 ---
+ .../neocomplcache/complfunc/keyword_complete.vim   |  147 --
+ .../neocomplcache/complfunc/omni_complete.vim      |  328 ----
+ .../complfunc/vim_complete/autocmds.dict           |   82 -
+ .../complfunc/vim_complete/command_args.dict       |    8 -
+ .../complfunc/vim_complete/command_replaces.dict   |   10 -
+ .../complfunc/vim_complete/commands.dict           |  496 ------
+ .../complfunc/vim_complete/features.dict           |  148 --
+ .../complfunc/vim_complete/functions.dict          |  234 ---
+ .../complfunc/vim_complete/mappings.dict           |    9 -
+ .../complfunc/vim_complete/options.dict            |  344 ----
+ .../neocomplcache/complfunc/vim_complete.vim       |  707 --------
+ .../neocomplcache/plugin/buffer_complete.vim       |  861 ---------
+ .../neocomplcache/plugin/include_complete.vim      |  385 -----
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   50 -
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  124 --
+ .../plugin/snippets_complete/cpp.snip              |   20 -
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   25 -
+ .../plugin/snippets_complete/eruby.snip            |   19 -
+ .../plugin/snippets_complete/markdown.snip         |   51 -
+ .../plugin/snippets_complete/php.snip              |   11 -
+ .../plugin/snippets_complete/python.snip           |   85 -
+ .../plugin/snippets_complete/rails.snip            |  167 --
+ .../plugin/snippets_complete/ruby.snip             |   40 -
+ .../plugin/snippets_complete/snippet.snip          |    8 -
+ .../plugin/snippets_complete/tex.snip              |   15 -
+ .../plugin/snippets_complete/vim.snip              |   56 -
+ .../plugin/snippets_complete/vimshell.snip         |    4 -
+ .../plugin/snippets_complete/xhtml.snip            |  239 ---
+ .../neocomplcache/plugin/snippets_complete.vim     |  903 ----------
+ .../neocomplcache/plugin/syntax_complete.vim       |  415 -----
+ .../neocomplcache/plugin/tags_complete.vim         |  207 ---
+ Ver.4.09/autoload/neocomplcache/cache.vim          |  402 +++++
+ .../complfunc/completefunc_complete.vim            |  133 ++
+ .../neocomplcache/complfunc/filename_complete.vim  |  228 +++
+ .../neocomplcache/complfunc/keyword_complete.vim   |  145 ++
+ .../neocomplcache/complfunc/omni_complete.vim      |  335 ++++
+ .../complfunc/vim_complete/autocmds.dict           |   82 +
+ .../complfunc/vim_complete/command_args.dict       |   34 +
+ .../complfunc/vim_complete/command_replaces.dict   |   10 +
+ .../complfunc/vim_complete/commands.dict           |  496 ++++++
+ .../complfunc/vim_complete/features.dict           |  148 ++
+ .../complfunc/vim_complete/functions.dict          |  234 +++
+ .../complfunc/vim_complete/mappings.dict           |    9 +
+ .../complfunc/vim_complete/options.dict            |  345 ++++
+ .../neocomplcache/complfunc/vim_complete.vim       |  742 ++++++++
+ .../neocomplcache/plugin/buffer_complete.vim       |  709 ++++++++
+ .../neocomplcache/plugin/dictionary_complete.vim   |  175 ++
+ .../neocomplcache/plugin/include_complete.vim      |  392 +++++
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   50 +
+ .../plugin/snippets_complete/actionscript.snip     |  273 +++
+ .../plugin/snippets_complete/apache.snip           |   23 +
+ .../plugin/snippets_complete/applescript.snip      |  201 +++
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  124 ++
+ .../plugin/snippets_complete/cpp.snip              |   20 +
+ .../plugin/snippets_complete/css.snip              |  252 +++
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   25 +
+ .../plugin/snippets_complete/eruby.snip            |   19 +
+ .../plugin/snippets_complete/java.snip             |  274 +++
+ .../plugin/snippets_complete/javascript.snip       |   47 +
+ .../plugin/snippets_complete/markdown.snip         |   51 +
+ .../plugin/snippets_complete/objc.snip             |  352 ++++
+ .../plugin/snippets_complete/perl.snip             |   89 +
+ .../plugin/snippets_complete/php.snip              |  266 +++
+ .../plugin/snippets_complete/python.snip           |   85 +
+ .../plugin/snippets_complete/rails.snip            |  167 ++
+ .../plugin/snippets_complete/ruby.snip             |   40 +
+ .../neocomplcache/plugin/snippets_complete/sh.snip |   59 +
+ .../plugin/snippets_complete/snippet.snip          |    8 +
+ .../plugin/snippets_complete/tex.snip              |   15 +
+ .../plugin/snippets_complete/vim.snip              |   56 +
+ .../plugin/snippets_complete/vimshell.snip         |    4 +
+ .../plugin/snippets_complete/xhtml.snip            |  239 +++
+ .../neocomplcache/plugin/snippets_complete.vim     |  886 ++++++++++
+ .../neocomplcache/plugin/syntax_complete.vim       |  418 +++++
+ .../neocomplcache/plugin/tags_complete.vim         |  210 +++
+ autoload/neocomplcache.vim                         | 1818 +++++++++++---------
+ doc/neocomplcache.jax                              |   29 +-
+ doc/neocomplcache.txt                              |  113 ++-
+ plugin/neocomplcache.vim                           |    8 +-
+ syntax/snippet.vim                                 |    9 +-
+ 82 files changed, 9989 insertions(+), 7666 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.02)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Tue Dec 15 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added C/C++ support in omni_complete.
+    - Added NeoComplCacheCachingDictionary command.
+    - Added Python snippet.
+    - Added filename pattern.
+    - Added g:NeoComplCache_EnableDispalyParameter option.
+    - Added g:NeoComplCache_QuickMatchPatterns option.
+    - Added g:NeoComplCache_TagsFilterPatterns option.
+    - Added markdown snippet.
+    - Added same filetype.
+    - Allow keyword trigger in snippets_complete.
+    - Caching current buffer in include_complete.
+    - Catch error in omni_complete.
+    - Catch eval error in snippets_complete.
+    - Changed g:NeoComplCache_CalcRankRandomize option as g:NeoComplCache_EnableRandomize.
+    - Delete dup check in buffer_complete.
+    - Deleted Filename() and g:snips_author in snippets_complete.
+    - Deleted \v pattern.
+    - Deleted caching current buffer in include_complete.
+    - Deleted caching when BufWritePost in include_complete.
+    - Deleted calc_rank().
+    - Deleted dup in include_complete.
+    - Deleted g:NeoComplCache_EnableInfo option.
+    - Deleted g:NeoComplCache_PreviousKeywordCompletion. It's default.
+    - Deleted g:NeoComplCache_SkipInputTime option.
+    - Deleted prev_rank.
+    - Deleted regacy option.
+    - Don't cache huge file in include_complete.
+    - Don't complete within comment in vim_complete.
+    - Don't expand environment variable in filename_complete.
+    - Don't save empty tags file.
+    - Don't set dup when match with next keyword.
+    - Fixed NeoComplCacheEditRuntimeSnippets bug.
+    - Fixed PHP pattern bug in omni_complete.
+    - Fixed caching error in tags_complete(Thanks tosik).
+    - Fixed disable expand when buftype is 'nofile' bug in snippets_complete.
+    - Fixed error when execute NeoComplCacheDisable.
+    - Fixed error when load file in include_complete.
+    - Fixed error; when open the file of the filetype that g:NeoComplCache_KeywordPatterns does not have in include_complete.
+    - Fixed executable bug in filename_complete.
+    - Fixed expand snippets bug.
+    - Fixed fatal buffer_complete bug.
+    - Fixed fatal include_complete error.
+    - Fixed fatal manual completion bug.
+    - Fixed filetype bug in include_complete.
+    - Fixed finalize error.
+    - Fixed freeze bug in filename_complete.
+    - Fixed haskell and ocaml patterns.
+    - Fixed in TeX behaviour in filename_complete.
+    - Fixed keyword bug in vim_complete.
+    - Fixed manual completion error in omni_complete.
+    - Fixed manual completion error.
+    - Fixed manual completion error.
+    - Fixed member fileter error.
+    - Fixed output keyword error.
+    - Fixed prefix bug.
+    - Fixed quickmatch bug in omni_complete.
+    - Fixed quickmatch list bug.
+    - Fixed ruby omni_complete bug.
+    - Fixed save cache error.
+    - Fixed set completeopt bug.
+    - Fixed set path pattern in Python.
+    - Fixed snippet expand bug in snippets_complete.
+    - Fixed tags_complete caching error.
+    - Formatted help files.
+    - Ignore space in snippets_complete.
+    - Implemented <Plug>(neocomplcache_snippets_jump) in snippets_complete.
+    - Implemented Filename() and g:snips_author for snipMate.
+    - Implemented auto cache in tags_complete.
+    - Implemented buffer local autocomplete lock.
+    - Implemented environment variable completion in vim_complete.
+    - Implemented hard tab expand in vim_complete.
+    - Implemented intellisense like prototype echo in vim_complete.
+    - Implemented keyword cache in omni_complete.
+    - Implemented pseudo animation.
+    - Implemented skip directory in filename_complete.
+    - Implemented the static model recognition in vim_complete.
+    - Implemented vim_complete(testing).
+    - Improved analyze in syntax_complete.
+    - Improved backslash escape in filename_complete.
+    - Improved buffer caching.
+    - Improved buffer caching.
+    - Improved caching print.
+    - Improved caching speed when FileType in include_complete.
+    - Improved calc frequency.
+    - Improved complete option in vim_complete.
+    - Improved garbage collect in buffer_complete.
+    - Improved garbage collect.
+    - Improved get keyword pattern.
+    - Improved global caching in vim_complete.
+    - Improved html and vim keyword pattern.
+    - Improved load complfuncs.
+    - Improved manual completion.
+    - Improved next keyword completion.
+    - Improved omni patterns in omni_complete.
+    - Improved option in vim_complete.
+    - Improved print prototype in vim_complete.
+    - Improved randomize.
+    - Improved shortcut filename completion in filename_complete.
+    - Improved skip completion.
+    - Improved tex keyword pattern.
+    - Improved wildcard.
+    - Optimized speed.
+    - Refactoringed set pattern.
+    - Reinforced vim_complete.vim.
+    - Restore cursor position in omni_complete.
+    - Revised English help.
+    - Supported backslash in vim_complete.
+    - Supported manual plugin complete.
+    - Supported mark down filetype.
+    - Supported nested include file in C/C++ filetype in include_complete.
+    - Supported next keyword completion in filename_complete.
+    - Supported string and dictionary candidates in omni_complete.
+    - Supported wildcard in vim_complete and omni_complete.
+    - Syntax_complete disabled in vim.
+    - Use /dev/stdout in Linux and Mac in include_complete.
+    - Use caching helper in plugins.
+    - Use g:NeoComplCache_TagsFilterPatterns in omni_complete.
+    - Use include_complete's cache in omni_complete.
+
+ Ver.4.02/autoload/neocomplcache/cache.vim          |  379 +++++++
+ .../neocomplcache/complfunc/filename_complete.vim  |  229 ++++
+ .../neocomplcache/complfunc/keyword_complete.vim   |  147 +++
+ .../neocomplcache/complfunc/omni_complete.vim      |  328 ++++++
+ .../complfunc/vim_complete/autocmds.dict           |   82 ++
+ .../complfunc/vim_complete/command_args.dict       |    8 +
+ .../complfunc/vim_complete/command_replaces.dict   |   10 +
+ .../complfunc/vim_complete/commands.dict           |  496 +++++++++
+ .../complfunc/vim_complete/features.dict           |  148 +++
+ .../complfunc/vim_complete/functions.dict          |  234 ++++
+ .../complfunc/vim_complete/mappings.dict           |    9 +
+ .../complfunc/vim_complete/options.dict            |  344 ++++++
+ .../neocomplcache/complfunc/vim_complete.vim       |  707 ++++++++++++
+ .../neocomplcache/plugin/buffer_complete.vim       |  861 +++++++++++++++
+ .../neocomplcache/plugin/include_complete.vim      |  385 +++++++
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   50 +
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  124 +++
+ .../plugin/snippets_complete/cpp.snip              |   20 +
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   25 +
+ .../plugin/snippets_complete/eruby.snip            |   19 +
+ .../plugin/snippets_complete/markdown.snip         |   51 +
+ .../plugin/snippets_complete/php.snip              |   11 +
+ .../plugin/snippets_complete/python.snip           |   85 ++
+ .../plugin/snippets_complete/rails.snip            |  167 +++
+ .../plugin/snippets_complete/ruby.snip             |   40 +
+ .../plugin/snippets_complete/snippet.snip          |    8 +
+ .../plugin/snippets_complete/tex.snip              |   15 +
+ .../plugin/snippets_complete/vim.snip              |   56 +
+ .../plugin/snippets_complete/vimshell.snip         |    4 +
+ .../plugin/snippets_complete/xhtml.snip            |  239 ++++
+ .../neocomplcache/plugin/snippets_complete.vim     |  903 +++++++++++++++
+ .../neocomplcache/plugin/syntax_complete.vim       |  415 +++++++
+ .../neocomplcache/plugin/tags_complete.vim         |  207 ++++
+ autoload/neocomplcache.vim                         |  632 +++++++----
+ doc/neocomplcache.jax                              |  413 ++++----
+ doc/neocomplcache.txt                              |  607 ++++++++---
+ plugin/neocomplcache.vim                           |   26 +-
+ syntax/snippet.vim                                 |   59 +-
+ .../neocomplcache/complfunc/filename_complete.vim  |  186 ----
+ .../neocomplcache/complfunc/keyword_complete.vim   |  193 ----
+ .../neocomplcache/complfunc/omni_complete.vim      |  173 ---
+ .../neocomplcache/plugin/buffer_complete.vim       | 1164 --------------------
+ .../neocomplcache/plugin/include_complete.vim      |  608 ----------
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   50 -
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  131 ---
+ .../plugin/snippets_complete/cpp.snip              |   23 -
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   29 -
+ .../plugin/snippets_complete/eruby.snip            |   24 -
+ .../plugin/snippets_complete/rails.snip            |  167 ---
+ .../plugin/snippets_complete/ruby.snip             |   40 -
+ .../plugin/snippets_complete/snippet.snip          |    8 -
+ .../plugin/snippets_complete/tex.snip              |    9 -
+ .../plugin/snippets_complete/vim.snip              |   62 -
+ .../plugin/snippets_complete/vimshell.snip         |    4 -
+ .../plugin/snippets_complete/xhtml.snip            |  240 ----
+ .../neocomplcache/plugin/snippets_complete.vim     |  851 --------------
+ .../neocomplcache/plugin/syntax_complete.vim       |  373 -------
+ .../neocomplcache/plugin/tags_complete.vim         |  390 -------
+ 58 files changed, 7901 insertions(+), 5367 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.14)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Mon Nov 16 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    *Fatal: Fixed fatal buffer and dictionary cache bug. *
+        - Fixed disable auto completion bug if bugtype contains 'nofile'.
+        - Ignore no suffixes file in include_complete.
+        - Fixed snippet merge bug in snippets_complete.
+        - Fixed break buffer and dictionary cache bug.
+
+ autoload/neocomplcache.vim                         |    6 +-
+ doc/neocomplcache.jax                              |    2 +-
+ doc/neocomplcache.txt                              |   11 +-
+ plugin/neocomplcache.vim                           |    4 +-
+ .../neocomplcache/complfunc/filename_complete.vim  |  186 ----
+ .../neocomplcache/complfunc/keyword_complete.vim   |  193 ----
+ .../neocomplcache/complfunc/omni_complete.vim      |  173 ---
+ .../neocomplcache/plugin/buffer_complete.vim       | 1164 --------------------
+ .../neocomplcache/plugin/include_complete.vim      |  605 ----------
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   50 -
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  126 ---
+ .../plugin/snippets_complete/cpp.snip              |   23 -
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   29 -
+ .../plugin/snippets_complete/eruby.snip            |   24 -
+ .../plugin/snippets_complete/rails.snip            |  167 ---
+ .../plugin/snippets_complete/ruby.snip             |   40 -
+ .../plugin/snippets_complete/snippet.snip          |    8 -
+ .../plugin/snippets_complete/tex.snip              |    4 -
+ .../plugin/snippets_complete/vim.snip              |   58 -
+ .../plugin/snippets_complete/vimshell.snip         |    4 -
+ .../plugin/snippets_complete/xhtml.snip            |  240 ----
+ .../neocomplcache/plugin/snippets_complete.vim     |  848 --------------
+ .../neocomplcache/plugin/syntax_complete.vim       |  373 -------
+ .../neocomplcache/plugin/tags_complete.vim         |  390 -------
+ .../neocomplcache/complfunc/filename_complete.vim  |  186 ++++
+ .../neocomplcache/complfunc/keyword_complete.vim   |  193 ++++
+ .../neocomplcache/complfunc/omni_complete.vim      |  173 +++
+ .../neocomplcache/plugin/buffer_complete.vim       | 1164 ++++++++++++++++++++
+ .../neocomplcache/plugin/include_complete.vim      |  608 ++++++++++
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   50 +
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  131 +++
+ .../plugin/snippets_complete/cpp.snip              |   23 +
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   29 +
+ .../plugin/snippets_complete/eruby.snip            |   24 +
+ .../plugin/snippets_complete/rails.snip            |  167 +++
+ .../plugin/snippets_complete/ruby.snip             |   40 +
+ .../plugin/snippets_complete/snippet.snip          |    8 +
+ .../plugin/snippets_complete/tex.snip              |    9 +
+ .../plugin/snippets_complete/vim.snip              |   62 +
+ .../plugin/snippets_complete/vimshell.snip         |    4 +
+ .../plugin/snippets_complete/xhtml.snip            |  240 ++++
+ .../neocomplcache/plugin/snippets_complete.vim     |  851 ++++++++++++++
+ .../neocomplcache/plugin/syntax_complete.vim       |  373 +++++++
+ .../neocomplcache/plugin/tags_complete.vim         |  390 +++++++
+ 44 files changed, 4740 insertions(+), 4713 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.13)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Fri Nov 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Add '*' to a delimiter in filename_complete.
+    - Added g:NeoComplCache_DisablePluginList option.
+    - Added g:NeoComplCache_EnableAutoSelect option.
+    - Added g:NeoComplCache_IncludeSuffixes option.
+    - Added snippet indent file.
+    - Allow dup and improved menu in omni_complete.
+    - Allow dup in include_complete and tags_complete.
+    - Caching buffer when CursorHold.
+    - Changed cache file syntax.
+    - Complfunc supported g:NeoComplCache_PluginCompletionLength option.
+    - Deleted C omni completion support.
+    - Deleted cpp omni support.
+    - Deleted g:NeoComplCache_TagsAutoUpdate option.
+    - Disable auto caching in tags_complete.
+    - Disabled '-' wildcard.
+    - Disabled partial match.
+    - Don't caching readonly buffer in include_complete.
+    - Echo error when you use old Vim.
+    - Echo filename when caching.
+    - Enable auto-complete in tags_complete.
+    - Expand tilde.
+    - Filtering same word.
+    - Fixed auto completion bug in filename_complete.
+    - Fixed disable completion bug.
+    - Fixed dup check bug in syntax_complete.
+    - Fixed error when includeexpr is empty in include_complete.
+    - Fixed error when omnifunc is empty.
+    - Fixed eval snippet bug.
+    - Fixed executable bug in filename_complete.
+    - Fixed filter bug in include_complete.
+    - Fixed filtering bug.
+    - Fixed keyword pattern error in include_complete.
+    - Fixed manual completion bug.
+    - Fixed manual completion error.
+    - Fixed manual omni_complete error.
+    - Fixed matchstr timing in include_complete.
+    - Fixed menu in buffer_complete.
+    - Fixed quick match dup bug.
+    - Fixed regex escape bug in snippets_complete.
+    - Fixed skip error.
+    - Fixed tags caching bug.
+    - Fixed wildcard bug when auto completion.
+    - Fixed wildcard bug.
+    - Implemented NeoComplCacheCachingTags command.
+    - Implemented cache in tags_complete.
+    - Implemented completion skip if previous completion is empty.
+    - Implemented complfunc rank.
+    - Implemented fast search.
+    - Implemented include_complete.
+    - Implemented member filter.
+    - Improved buffer caching timing.
+    - Improved caching in tags_complete and include_complete.
+    - Improved caching timing.
+    - Improved ctags arguments patterns.
+    - Improved filename completion.
+    - Improved html's keyword pattern.
+    - Improved keyword patterns.
+    - Improved manual completion.
+    - Improved omni completion pattern.
+    - Improved ps1 keyword.
+    - Improved remove next keyword.
+    - Improved wildcard behaivior.
+    - Integrated complfuncs.
+    - Open popup menu when modified.
+    - Optimized keyword_complete.
+    - Optimized tags_complete.
+    - Print error when cache file is wrong.
+    - Print filename when caching.
+    - Recognized snippets directory of snipMate automatically.
+    - Reimplemented g:NeoComplCache_SkipInputTime option.
+    - Reimplemented quickmatch.
+    - Save error log when analyzing tags.
+    - Set completeopt-=longest.
+    - Skip completion if too many candidates.
+    - Split nicely when edit snippets_file.
+    - Use complete_check().
+    - Implemented filename wildcard.
+    - Set completeopt-=menuone.
+
+ autoload/neocomplcache.vim                         |  878 +++++++-------
+ doc/neocomplcache.jax                              |  115 ++-
+ doc/neocomplcache.txt                              |  173 ++-
+ indent/snippet.vim                                 |   58 +
+ indent/snippets.vim                                |   43 -
+ plugin/neocomplcache.vim                           |   29 +-
+ syntax/snippet.vim                                 |   59 +-
+ .../neocomplcache/complfunc/filename_complete.vim  |  191 ---
+ .../neocomplcache/complfunc/keyword_complete.vim   |  319 -----
+ .../neocomplcache/complfunc/omni_complete.vim      |  194 ---
+ .../neocomplcache/plugin/buffer_complete.vim       | 1271 --------------------
+ .../neocomplcache/plugin/include_complete.vim      |  383 ------
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   50 -
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  126 --
+ .../plugin/snippets_complete/cpp.snip              |   23 -
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   29 -
+ .../plugin/snippets_complete/eruby.snip            |   24 -
+ .../plugin/snippets_complete/rails.snip            |  167 ---
+ .../plugin/snippets_complete/ruby.snip             |   40 -
+ .../plugin/snippets_complete/snippet.snip          |    8 -
+ .../plugin/snippets_complete/tex.snip              |    4 -
+ .../plugin/snippets_complete/vim.snip              |   43 -
+ .../plugin/snippets_complete/vimshell.snip         |    4 -
+ .../plugin/snippets_complete/xhtml.snip            |  240 ----
+ .../neocomplcache/plugin/snippets_complete.vim     |  807 -------------
+ .../neocomplcache/plugin/syntax_complete.vim       |  369 ------
+ .../neocomplcache/plugin/tags_complete.vim         |  168 ---
+ .../neocomplcache/complfunc/filename_complete.vim  |  186 +++
+ .../neocomplcache/complfunc/keyword_complete.vim   |  193 +++
+ .../neocomplcache/complfunc/omni_complete.vim      |  173 +++
+ .../neocomplcache/plugin/buffer_complete.vim       | 1164 ++++++++++++++++++
+ .../neocomplcache/plugin/include_complete.vim      |  605 ++++++++++
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   50 +
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  126 ++
+ .../plugin/snippets_complete/cpp.snip              |   23 +
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   29 +
+ .../plugin/snippets_complete/eruby.snip            |   24 +
+ .../plugin/snippets_complete/rails.snip            |  167 +++
+ .../plugin/snippets_complete/ruby.snip             |   40 +
+ .../plugin/snippets_complete/snippet.snip          |    8 +
+ .../plugin/snippets_complete/tex.snip              |    4 +
+ .../plugin/snippets_complete/vim.snip              |   58 +
+ .../plugin/snippets_complete/vimshell.snip         |    4 +
+ .../plugin/snippets_complete/xhtml.snip            |  240 ++++
+ .../neocomplcache/plugin/snippets_complete.vim     |  848 +++++++++++++
+ .../neocomplcache/plugin/syntax_complete.vim       |  373 ++++++
+ .../neocomplcache/plugin/tags_complete.vim         |  390 ++++++
+ 47 files changed, 5436 insertions(+), 5084 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.03a)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Tue Oct 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added ActionScript support in omni_complete.
+    - Added NeoComplCachePrintSnippets command.
+    - Added g:NeoComplCache_CachingPercentInStatusline option.
+    - Added registers snippet.
+    - Added scala support.
+    - Added select mode mappings in snippets_complete.
+    - Added snippet indent file.
+    - Added xhtml snippet(Thanks just!).
+    - Call multiple complefunc if cur_keyword_pos is equal.
+    - Changed buffer_complete cache directory.
+    - Clear numbered list when close popup.
+    - Clear quickmatch cache when auto complete is skipped.
+    - Deleted cdpath completion.
+    - Don't select in manual completion.
+    - Expand tilde.
+    - Expandable a snippet including sign.
+    - Fixed completion column bug.
+    - Fixed css error.
+    - Fixed cursor pos bug.
+    - Fixed error in snippets_complete.
+    - Fixed error when sh/zsh file opened.
+    - Fixed escape bug in filename_complete.
+    - Fixed escape bug.
+    - Fixed expand cursor bug in snippets_complete.
+    - Fixed fatal bug when snippet expand.
+    - Fixed fatal caching bug.
+    - Fixed marker substitute bug.
+    - Fixed neocomplcache#plugin#snippets_complete#expandable()'s error.
+    - Fixed next keyword completion bug.
+    - Fixed non-initialize error.
+    - Fixed wildcard bug.
+    - Implemented completion undo.
+    - Implemented condition in snippets_complete.
+    - Implemented fast filter.
+    - Implemented filetype completion.
+    - Implemented multiple keyword.
+    - Implemented optional placeholder.
+    - Implemented sync placeholder.
+    - Improved caching message.
+    - Improved caching.
+    - Improved command's completion.
+    - Improved filename completion.
+    - Improved get cur_text in snippets_complete.
+    - Improved html keyword completion.
+    - Improved html/xhtml keyword pattern.
+    - Improved keymapping in snippets_complete.
+    - Improved no new line snippet expand.
+    - Improved quickmatch behaivior.
+    - Improved remove next keyword.
+    - Improved skip completion.
+    - Improved snippet menu.
+    - Renamed keyword_complete.vim as buffer_complete.vim.
+    - Sort alphabetical order in snippets_complete.
+    - Splitted filename completion and omni completion and keyword completion.
+    - Supported abbr in omni completion.
+    - Supported placeholder 0.
+    - Supported same filetype lists in snippets_complete.
+    - Supported snipMate's multi snippet.
+
+ autoload/neocomplcache.vim                         | 1204 ++++++-------------
+ doc/neocomplcache.jax                              |   69 +-
+ doc/neocomplcache.txt                              |  159 ++-
+ indent/snippets.vim                                |   43 +
+ plugin/neocomplcache.vim                           |   23 +-
+ syntax/snippet.vim                                 |   62 +-
+ .../autoload/neocomplcache/include_complete.vim    |  383 ------
+ .../autoload/neocomplcache/keyword_complete.vim    | 1158 ------------------
+ .../neocomplcache/snippets_complete/_.snip         |   16 -
+ .../neocomplcache/snippets_complete/c.snip         |  125 --
+ .../neocomplcache/snippets_complete/cpp.snip       |   23 -
+ .../neocomplcache/snippets_complete/d.snip         |   29 -
+ .../neocomplcache/snippets_complete/eruby.snip     |   24 -
+ .../neocomplcache/snippets_complete/rails.snip     |  167 ---
+ .../neocomplcache/snippets_complete/ruby.snip      |   40 -
+ .../neocomplcache/snippets_complete/snippet.snip   |    8 -
+ .../neocomplcache/snippets_complete/tex.snip       |    4 -
+ .../neocomplcache/snippets_complete/vim.snip       |   38 -
+ .../neocomplcache/snippets_complete/vimshell.snip  |    4 -
+ .../autoload/neocomplcache/snippets_complete.vim   |  514 --------
+ .../autoload/neocomplcache/syntax_complete.vim     |  349 ------
+ ver.2.75a/autoload/neocomplcache/tags_complete.vim |  157 ---
+ .../neocomplcache/complfunc/filename_complete.vim  |  191 +++
+ .../neocomplcache/complfunc/keyword_complete.vim   |  319 +++++
+ .../neocomplcache/complfunc/omni_complete.vim      |  194 +++
+ .../neocomplcache/plugin/buffer_complete.vim       | 1271 ++++++++++++++++++++
+ .../neocomplcache/plugin/include_complete.vim      |  383 ++++++
+ .../neocomplcache/plugin/snippets_complete/_.snip  |   50 +
+ .../neocomplcache/plugin/snippets_complete/c.snip  |  126 ++
+ .../plugin/snippets_complete/cpp.snip              |   23 +
+ .../neocomplcache/plugin/snippets_complete/d.snip  |   29 +
+ .../plugin/snippets_complete/eruby.snip            |   24 +
+ .../plugin/snippets_complete/rails.snip            |  167 +++
+ .../plugin/snippets_complete/ruby.snip             |   40 +
+ .../plugin/snippets_complete/snippet.snip          |    8 +
+ .../plugin/snippets_complete/tex.snip              |    4 +
+ .../plugin/snippets_complete/vim.snip              |   43 +
+ .../plugin/snippets_complete/vimshell.snip         |    4 +
+ .../plugin/snippets_complete/xhtml.snip            |  240 ++++
+ .../neocomplcache/plugin/snippets_complete.vim     |  807 +++++++++++++
+ .../neocomplcache/plugin/syntax_complete.vim       |  369 ++++++
+ .../neocomplcache/plugin/tags_complete.vim         |  168 +++
+ 42 files changed, 5099 insertions(+), 3960 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.75a)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Thu Sep 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Don't select in manual completion.
+    - Add rank if match next keyword.
+    - Added ChangeLog.
+    - Added NeoComplCacheCachingSyntax command.
+    - Added Objective-C/C++ support.
+    - Added css support.
+    - Added g:NeoComplCache_PluginCompletionLength option.
+    - Added snippet file snippet.
+    - Caching from cache in syntax_complete.
+    - Check cdpath in filename completion.
+    - Convert string omni completion.
+    - Create g:NeoComplCache_SnippetsDir directory if not exists.
+    - Create g:NeoComplCache_TemporaryDir directory if not exists.
+    - Delete quick match cache when BufWinEnter.
+    - Deleted g:NeoComplCache_FilenameCompletionSkipItems option.
+    - Dispay 'cdpath' files in filename completion.
+    - Dispay 'w:vimshell_directory_stack' files in filename completion.
+    - Display readonly files.
+    - Fixed dup bug in snippets_complete.
+    - Fixed error in manual omni completion when omnifunc is empty.
+    - Fixed expand jump bug in snippets completion.
+    - Fixed expand() bug in snippets_complete.
+    - Fixed filename completion bug when environment variable used.
+    - Fixed filename completion bug.
+    - Fixed html omni completion error.
+    - Fixed manual_complete wildcard bug.
+    - Fixed no new line snippet expand bug in snippet completion.
+    - Fixed prefix bug in filename completion.
+    - Fixed snippet without default value expand bug.
+    - Ignore japanese syntax message in syntax completion.
+    - Implemented direct expantion in snippet complete.
+    - Implemented short filename completion.
+    - Implemented snippet alias in snippet complete.
+    - Improved check candidate.
+    - Improved filename completion.
+    - Improved filename completion.
+    - Improved g:NeoComplCache_CtagsArgumentsList in vim filetype.
+    - Improved get cursour word.
+    - Improved html omni completion pattern.
+    - Improved keyword pattern.
+    - Improved manual completion.
+    - Improved next keyword completion.
+    - Improved omni completion.
+    - Improved omni completion.
+    - Improved quick match in filename completion.
+    - Improved quick match.
+    - Improved quickmatch behaivior.
+    - Improved skipped behaivior.
+    - Improved tex keyword.
+    - Improved vim keyword.
+    - Insert quickmatched candidate immediately.
+    - No ignorecase in next keyword completion.
+    - Optimized filename completion.
+    - Recognize next keyword in omni completion.
+    - Search quick match if no keyword match.
+    - Substitute $HOME into '~' in filename completion.
+    - The quick match input does not make a cash.
+
+ autoload/neocomplcache.vim                         |  619 ++++++++---
+ doc/neocomplcache.jax                              |   27 +-
+ doc/neocomplcache.txt                              |  701 ++++++++++++-
+ plugin/neocomplcache.vim                           |  616 +----------
+ syntax/snippet.vim                                 |   18 +-
+ .../autoload/neocomplcache/keyword_complete.vim    | 1167 --------------------
+ .../neocomplcache/snippets_complete/_.snip         |    4 -
+ .../neocomplcache/snippets_complete/c.snip         |  125 ---
+ .../neocomplcache/snippets_complete/cpp.snip       |   23 -
+ .../neocomplcache/snippets_complete/d.snip         |   29 -
+ .../neocomplcache/snippets_complete/eruby.snip     |   24 -
+ .../neocomplcache/snippets_complete/rails.snip     |  167 ---
+ .../neocomplcache/snippets_complete/ruby.snip      |   40 -
+ .../neocomplcache/snippets_complete/tex.snip       |    4 -
+ .../neocomplcache/snippets_complete/vim.snip       |   37 -
+ .../neocomplcache/snippets_complete/vimshell.snip  |    4 -
+ .../autoload/neocomplcache/snippets_complete.vim   |  460 --------
+ .../autoload/neocomplcache/syntax_complete.vim     |  256 -----
+ ver.2.66a/autoload/neocomplcache/tags_complete.vim |  157 ---
+ .../autoload/neocomplcache/include_complete.vim    |  383 +++++++
+ .../autoload/neocomplcache/keyword_complete.vim    | 1158 +++++++++++++++++++
+ .../neocomplcache/snippets_complete/_.snip         |   16 +
+ .../neocomplcache/snippets_complete/c.snip         |  125 +++
+ .../neocomplcache/snippets_complete/cpp.snip       |   23 +
+ .../neocomplcache/snippets_complete/d.snip         |   29 +
+ .../neocomplcache/snippets_complete/eruby.snip     |   24 +
+ .../neocomplcache/snippets_complete/rails.snip     |  167 +++
+ .../neocomplcache/snippets_complete/ruby.snip      |   40 +
+ .../neocomplcache/snippets_complete/snippet.snip   |    8 +
+ .../neocomplcache/snippets_complete/tex.snip       |    4 +
+ .../neocomplcache/snippets_complete/vim.snip       |   38 +
+ .../neocomplcache/snippets_complete/vimshell.snip  |    4 +
+ .../autoload/neocomplcache/snippets_complete.vim   |  514 +++++++++
+ .../autoload/neocomplcache/syntax_complete.vim     |  349 ++++++
+ ver.2.75a/autoload/neocomplcache/tags_complete.vim |  157 +++
+ 35 files changed, 4231 insertions(+), 3286 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.66a)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Mon Aug 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added English manual.
+    - Added g:NeoComplCache_CachingDisablePattern option.
+    - Added g:NeoComplCache_CachingLimitFileSize option.
+    - Added snippet delete.
+    - Caching snippets when file open.
+    - Callable get_complete_words() and word_caching_current_line() function.
+    - Changed short filename into ~.
+    - Deleted wildcard from filename completion.
+    - Don't caching readonly file.
+    - Erb is same filetype with ruby.
+    - Fixed ATOK X3 on when snippets expanded.
+    - Fixed snippet expand bugs.
+    - Fixed snippet without default value expand bug.
+    - Fixed syntax match timing(Thanks thinca!).
+    - Improved NeoComplCacheCachingBuffer command.
+    - Improved css omni completion.
+    - Improved erb snippets.
+    - Improved filename completion.
+    - Improved html and erb filetype.
+    - Improved neocomplcache#keyword_complete#caching_percent.
+    - Improved set complete function timing.
+    - Improved vimshell keyword pattern.
+    - Improved vimshell keyword pattern.
+    - Substitute ... -> ../.. .
+    - Substitute \ -> / in Windows.
+    - Supported escape sequence in filename completion.
+    - g:NeoComplCache_SnippetsDir is comma-separated list.
+
+ autoload/neocomplcache.vim                         |   87 +-
+ doc/neocomplcache.jax                              |   18 +-
+ doc/neocomplcache.txt                              |  480 ++++++++
+ plugin/neocomplcache.vim                           |   48 +-
+ syntax/snippet.vim                                 |   12 +-
+ .../autoload/neocomplcache/keyword_complete.vim    | 1157 -------------------
+ .../neocomplcache/snippets_complete/_.snip         |    4 -
+ .../neocomplcache/snippets_complete/c.snip         |  125 ---
+ .../neocomplcache/snippets_complete/cpp.snip       |   23 -
+ .../neocomplcache/snippets_complete/d.snip         |   29 -
+ .../neocomplcache/snippets_complete/eruby.snip     |   10 -
+ .../neocomplcache/snippets_complete/rails.snip     |  167 ---
+ .../neocomplcache/snippets_complete/ruby.snip      |   40 -
+ .../neocomplcache/snippets_complete/tex.snip       |    4 -
+ .../neocomplcache/snippets_complete/vim.snip       |   37 -
+ .../neocomplcache/snippets_complete/vimshell.snip  |    4 -
+ .../autoload/neocomplcache/snippets_complete.vim   |  448 --------
+ .../autoload/neocomplcache/syntax_complete.vim     |  256 -----
+ ver.2.62/autoload/neocomplcache/tags_complete.vim  |  157 ---
+ .../autoload/neocomplcache/keyword_complete.vim    | 1167 ++++++++++++++++++++
+ .../neocomplcache/snippets_complete/_.snip         |    4 +
+ .../neocomplcache/snippets_complete/c.snip         |  125 +++
+ .../neocomplcache/snippets_complete/cpp.snip       |   23 +
+ .../neocomplcache/snippets_complete/d.snip         |   29 +
+ .../neocomplcache/snippets_complete/eruby.snip     |   24 +
+ .../neocomplcache/snippets_complete/rails.snip     |  167 +++
+ .../neocomplcache/snippets_complete/ruby.snip      |   40 +
+ .../neocomplcache/snippets_complete/tex.snip       |    4 +
+ .../neocomplcache/snippets_complete/vim.snip       |   37 +
+ .../neocomplcache/snippets_complete/vimshell.snip  |    4 +
+ .../autoload/neocomplcache/snippets_complete.vim   |  460 ++++++++
+ .../autoload/neocomplcache/syntax_complete.vim     |  256 +++++
+ ver.2.66a/autoload/neocomplcache/tags_complete.vim |  157 +++
+ 33 files changed, 3099 insertions(+), 2504 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/Ver.2.62)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Mon Jul 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added g:NeoComplCache_FilenameCompletionSkipItems option.
+    - Added make syntax.
+    - Draw executable files in filename completion.
+    - Fixed ATOK X3 on when snippets expanded.
+    - Fixed filename completion bug on enable quick match.
+    - Fixed keyword sort bug.
+    - Improved filtering.
+    - Improved long filename view.
+    - Improved skip completion.
+    - Improved vimshell syntax.
+    - Put up the priority of directory in filename completion.
+
+ autoload/neocomplcache.vim                         |  143 ++-
+ doc/neocomplcache.jax                              |    6 +
+ plugin/neocomplcache.vim                           |   24 +-
+ .../autoload/neocomplcache/keyword_complete.vim    | 1157 --------------------
+ .../neocomplcache/snippets_complete/_.snip         |    4 -
+ .../neocomplcache/snippets_complete/c.snip         |  120 --
+ .../neocomplcache/snippets_complete/cpp.snip       |   23 -
+ .../neocomplcache/snippets_complete/d.snip         |   29 -
+ .../neocomplcache/snippets_complete/eruby.snip     |   10 -
+ .../neocomplcache/snippets_complete/rails.snip     |  167 ---
+ .../neocomplcache/snippets_complete/ruby.snip      |   40 -
+ .../neocomplcache/snippets_complete/tex.snip       |    4 -
+ .../neocomplcache/snippets_complete/vim.snip       |   37 -
+ .../neocomplcache/snippets_complete/vimshell.snip  |    4 -
+ .../autoload/neocomplcache/snippets_complete.vim   |  442 --------
+ .../autoload/neocomplcache/syntax_complete.vim     |  256 -----
+ ver.2.59/autoload/neocomplcache/tags_complete.vim  |  157 ---
+ .../autoload/neocomplcache/keyword_complete.vim    | 1157 ++++++++++++++++++++
+ .../neocomplcache/snippets_complete/_.snip         |    4 +
+ .../neocomplcache/snippets_complete/c.snip         |  125 +++
+ .../neocomplcache/snippets_complete/cpp.snip       |   23 +
+ .../neocomplcache/snippets_complete/d.snip         |   29 +
+ .../neocomplcache/snippets_complete/eruby.snip     |   10 +
+ .../neocomplcache/snippets_complete/rails.snip     |  167 +++
+ .../neocomplcache/snippets_complete/ruby.snip      |   40 +
+ .../neocomplcache/snippets_complete/tex.snip       |    4 +
+ .../neocomplcache/snippets_complete/vim.snip       |   37 +
+ .../neocomplcache/snippets_complete/vimshell.snip  |    4 +
+ .../autoload/neocomplcache/snippets_complete.vim   |  448 ++++++++
+ .../autoload/neocomplcache/syntax_complete.vim     |  256 +++++
+ ver.2.62/autoload/neocomplcache/tags_complete.vim  |  157 +++
+ 31 files changed, 2582 insertions(+), 2502 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.59)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Mon Jun 8 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added g:NeoComplCache_TemporaryDir option.
+    - Changed g:NeoComplCache_PartialCompletionStartLength default value.
+    - Changed g:NeoComplCache_PreviousKeywordCompletion default value.
+    - Don't caching when not buflisted in syntax complete.
+    - Fixed E220 in tex filetype.
+    - Fixed NeoComplCacheDisable bug.
+    - Fixed add rank bug in snippet completion.
+    - Fixed analyze caching bug.
+    - Fixed caching bug.
+    - Fixed feedkeys.
+    - Fixed neocomplcache#keyword_complete#caching_percent() bug.
+    - Fixed quick match.
+    - Implemented _ snippets in snippet completion.
+    - Implemented filename completion.
+    - Implemented neocomplcache#manual_filename_complete().
+    - Improved caching timing.
+    - Improved camel case completion and underbar completion.
+    - Improved edit snippet.
+    - Improved filename toriming.
+    - Improved garbage collect.
+    - Improved skip completion.
+    - Improved snippets_complete.
+    - Improved wildcard.
+    - Loadable snipMate snippets file in snippet completion.
+    - Optimized caching.
+
+ autoload/neocomplcache.vim                         |  251 ++++-
+ doc/neocomplcache.jax                              |   32 +-
+ plugin/neocomplcache.vim                           |   42 +-
+ .../autoload/neocomplcache/keyword_complete.vim    |  959 ----------------
+ .../neocomplcache/snippets_complete/c.snip         |   59 -
+ .../neocomplcache/snippets_complete/cpp.snip       |   23 -
+ .../neocomplcache/snippets_complete/d.snip         |   29 -
+ .../neocomplcache/snippets_complete/eruby.snip     |   10 -
+ .../neocomplcache/snippets_complete/vim.snip       |   37 -
+ .../autoload/neocomplcache/snippets_complete.vim   |  419 -------
+ .../autoload/neocomplcache/syntax_complete.vim     |  254 -----
+ ver.2.52/autoload/neocomplcache/tags_complete.vim  |  157 ---
+ .../autoload/neocomplcache/keyword_complete.vim    | 1157 ++++++++++++++++++++
+ .../neocomplcache/snippets_complete/_.snip         |    4 +
+ .../neocomplcache/snippets_complete/c.snip         |  120 ++
+ .../neocomplcache/snippets_complete/cpp.snip       |   23 +
+ .../neocomplcache/snippets_complete/d.snip         |   29 +
+ .../neocomplcache/snippets_complete/eruby.snip     |   10 +
+ .../neocomplcache/snippets_complete/rails.snip     |  167 +++
+ .../neocomplcache/snippets_complete/ruby.snip      |   40 +
+ .../neocomplcache/snippets_complete/tex.snip       |    4 +
+ .../neocomplcache/snippets_complete/vim.snip       |   37 +
+ .../neocomplcache/snippets_complete/vimshell.snip  |    4 +
+ .../autoload/neocomplcache/snippets_complete.vim   |  442 ++++++++
+ .../autoload/neocomplcache/syntax_complete.vim     |  256 +++++
+ ver.2.59/autoload/neocomplcache/tags_complete.vim  |  157 +++
+ 26 files changed, 2714 insertions(+), 2008 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.52)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Mon May 18 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed g:NeoComplCache_PreviousKeywordCompletion default value.
+    - Improved wildcard.
+    - Don't caching on BufEnter.
+    - Optimized manual_complete behaivior.
+    - Optimized NeoComplCacheCachingBuffer.
+    - Caching on editing file.
+    - Implemented neocomplcache#close_popup() and neocomplcache#cansel_popup().
+    - Don't save info in keyword completion.
+    - Improved popup menu in tags completion.
+    - Changed 'abbr_save' into 'abbr'.
+    - Call completefunc when original completefunc.
+    - Implemented underbar completion.
+    
+    - Added g:NeoComplCache_ManualCompletionStartLength option.
+    - Added g:NeoComplCache_EnableUnderbarCompletion option.
+    - Added g:NeoComplCache_TryFilenameCompletion option.
+    
+    - Deleted g:NeoComplCache_MaxTryKeywordLength options.
+    - Deleted NeoComplCacheCachingDictionary command.
+    - Deleted g:NeoComplCache_TryKeywordCompletion and g:NeoComplCache_TryDefaultCompletion options.
+    - Deleted g:NeoComplCache_MaxInfoList and g:NeoComplCache_DeleteRank0 option.
+    
+    - Fixed NeoComplCacheDisable bug.
+    - Fixed neocomplcache#keyword_complete#caching_percent() bug.
+    - Fixed analyze caching bug.
+    - Fixed quick match.
+    - Fixed abbr_save error.
+    - Fixed next keyword completion bug.
+    - Fixed caching initialize bug.
+    - Fixed on InsertLeave error.
+    - Fixed ignore case behaivior.
+    - Fixed escape error.
+    - Fixed help.
+    - Fixed :NeoComplCacheCachingBuffer bug.
+    - Fixed menu padding.
+    - Fixed caching error.
+
+ .../autoload/neocomplcache/keyword_complete.vim    |  875 ------------------
+ .../neocomplcache/snippets_complete/c.snip         |   59 --
+ .../neocomplcache/snippets_complete/cpp.snip       |   23 -
+ .../neocomplcache/snippets_complete/d.snip         |   29 -
+ .../neocomplcache/snippets_complete/vim.snip       |   37 -
+ .../autoload/neocomplcache/snippets_complete.vim   |  415 ---------
+ .../autoload/neocomplcache/syntax_complete.vim     |  247 -----
+ Ver.2.41/autoload/neocomplcache/tags_complete.vim  |  142 ---
+ autoload/neocomplcache.vim                         |  207 +++--
+ doc/neocomplcache.jax                              |  189 +++--
+ plugin/neocomplcache.vim                           |  112 ++-
+ .../autoload/neocomplcache/keyword_complete.vim    |  959 ++++++++++++++++++++
+ .../neocomplcache/snippets_complete/c.snip         |   59 ++
+ .../neocomplcache/snippets_complete/cpp.snip       |   23 +
+ .../neocomplcache/snippets_complete/d.snip         |   29 +
+ .../neocomplcache/snippets_complete/eruby.snip     |   10 +
+ .../neocomplcache/snippets_complete/vim.snip       |   37 +
+ .../autoload/neocomplcache/snippets_complete.vim   |  419 +++++++++
+ .../autoload/neocomplcache/syntax_complete.vim     |  254 ++++++
+ ver.2.52/autoload/neocomplcache/tags_complete.vim  |  157 ++++
+ 20 files changed, 2274 insertions(+), 2008 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.41)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Thu May 7 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Improved empty check.
+    - Fixed eval bug in snippet complete.
+    - Fixed include bug in snippet complete.
+
+ .../autoload/neocomplcache/keyword_complete.vim    |  875 ++++++++++++++++++++
+ .../neocomplcache/snippets_complete/c.snip         |   59 ++
+ .../neocomplcache/snippets_complete/cpp.snip       |   23 +
+ .../neocomplcache/snippets_complete/d.snip         |   29 +
+ .../neocomplcache/snippets_complete/vim.snip       |   37 +
+ .../autoload/neocomplcache/snippets_complete.vim   |  415 ++++++++++
+ .../autoload/neocomplcache/syntax_complete.vim     |  247 ++++++
+ Ver.2.41/autoload/neocomplcache/tags_complete.vim  |  142 ++++
+ autoload/neocomplcache.vim                         |   16 +-
+ plugin/neocomplcache.vim                           |    8 +-
+ .../autoload/neocomplcache/keyword_complete.vim    |  873 -------------------
+ .../neocomplcache/snippets_complete/c.snip         |   59 --
+ .../neocomplcache/snippets_complete/cpp.snip       |   23 -
+ .../neocomplcache/snippets_complete/d.snip         |   29 -
+ .../neocomplcache/snippets_complete/vim.snip       |   37 -
+ .../autoload/neocomplcache/snippets_complete.vim   |  412 ---------
+ .../autoload/neocomplcache/syntax_complete.vim     |  245 ------
+ ver.2.40/autoload/neocomplcache/tags_complete.vim  |  142 ----
+ 18 files changed, 1841 insertions(+), 1830 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.40)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Wed May 6 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Optimized caching in small files.
+    - Deleted buffer dictionary.
+    - Display cached from buffer.
+    - Changed g:NeoComplCache_MaxInfoList default value.
+    - Improved calc rank.
+    - Improved caching timing.
+    - Added NeoComplCacheCachingDisable and g:NeoComplCacheCachingEnable commands.
+    - Fixed commentout bug in snippet complete.
+    - Fixed syntax highlight.
+    - Overwrite snippet if name is same.
+    - Caching on InsertLeave.
+    - Manual completion add wildcard when input non alphabetical character.
+    - Fixed menu error in syntax complete.
+    - Fixed typo.
+    - Optimized caching.
+    - Added g:NeoComplCache_SkipCompletionTime option.
+    - Added g:NeoComplCache_SkipInputTime option.
+    - Changed g:NeoComplCache_SlowCompleteSkip option into g:NeoComplCache_EnableSkipCompletion.
+    - Improved ruby omni pattern.
+    - Optimized syntax complete.
+    - Delete command abbreviations in vim filetype.
+
+ autoload/neocomplcache.vim                         |  163 ++--
+ doc/neocomplcache.jax                              |   62 +-
+ .../autoload/neocomplcache/keyword_complete.vim    |  871 -------------------
+ .../neocomplcache/snippets_complete/c.snip         |   51 --
+ .../neocomplcache/snippets_complete/cpp.snip       |   23 -
+ .../neocomplcache/snippets_complete/vim.snip       |   36 -
+ .../autoload/neocomplcache/snippets_complete.vim   |  392 ---------
+ .../autoload/neocomplcache/syntax_complete.vim     |  207 -----
+ .../autoload/neocomplcache/tags_complete.vim       |  142 ----
+ plugin/neocomplcache.vim                           |   69 ++-
+ .../autoload/neocomplcache/keyword_complete.vim    |  873 ++++++++++++++++++++
+ .../neocomplcache/snippets_complete/c.snip         |   59 ++
+ .../neocomplcache/snippets_complete/cpp.snip       |   23 +
+ .../neocomplcache/snippets_complete/d.snip         |   29 +
+ .../neocomplcache/snippets_complete/vim.snip       |   37 +
+ .../autoload/neocomplcache/snippets_complete.vim   |  412 +++++++++
+ .../autoload/neocomplcache/syntax_complete.vim     |  245 ++++++
+ ver.2.40/autoload/neocomplcache/tags_complete.vim  |  142 ++++
+ 18 files changed, 2001 insertions(+), 1835 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.36)
+Author:     Shougo Matsushita <Shougo.Matsu at gmail.com>
+AuthorDate: Mon Apr 27 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial version.
+
+ README                                             |   91 ++
+ autoload/neocomplcache.vim                         |  766 +++++++++++++++++
+ doc/neocomplcache.jax                              |  374 +++++++++
+ .../autoload/neocomplcache/keyword_complete.vim    |  871 ++++++++++++++++++++
+ .../neocomplcache/snippets_complete/c.snip         |   51 ++
+ .../neocomplcache/snippets_complete/cpp.snip       |   23 +
+ .../neocomplcache/snippets_complete/vim.snip       |   36 +
+ .../autoload/neocomplcache/snippets_complete.vim   |  392 +++++++++
+ .../autoload/neocomplcache/syntax_complete.vim     |  207 +++++
+ .../autoload/neocomplcache/tags_complete.vim       |  142 ++++
+ plugin/neocomplcache.vim                           |  536 ++++++++++++
+ syntax/snippet.vim                                 |   74 ++
+ 12 files changed, 3563 insertions(+), 0 deletions(-)

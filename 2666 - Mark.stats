@@ -1,0 +1,114 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.4.0, refs/heads/master)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Thu Jul 29 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    ENH: The MarkSearch mappings (<Leader>[*#/?]) add the original cursor position to the jump list, like the built-in [/?*#nN] commands. This allows to use the regular jump commands for mark matches, like with regular search matches.
+
+ autoload/mark.vim |   21 ++++++++++++++++++++-
+ doc/mark.txt      |   23 ++++++++++++++++++++---
+ 2 files changed, 40 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3.3)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Fri Feb 19 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - BUG: Clearing of an accidental zero-width match (e.g. via :Mark \zs) results in endless loop. Thanks to Andy Wokula for the patch.
+
+ autoload/mark.vim |   11 +++++++++--
+ doc/mark.txt      |    7 ++++++-
+ 2 files changed, 15 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3.2)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Tue Nov 17 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    BUG: Creation of literal pattern via '\V' in {Visual}<Leader>m mapping collided with individual escaping done in <Leader>m mapping so that an escaped '\*' would be interpreted as a multi item when both modes are used for marking. Thanks to Andy Wokula for the patch.
+
+ autoload/mark.vim |   39 ++++++++++++++++-----------------------
+ doc/mark.txt      |    6 ++++++
+ plugin/mark.vim   |   11 ++++++++---
+ 3 files changed, 30 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3.1)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Mon Aug 3 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Now working correctly when 'smartcase' is set. All mappings and the :Mark command use 'ignorecase', but not 'smartcase'.
+
+ autoload/mark.vim |   40 ++++++++++++++++++++++++----------------
+ doc/mark.txt      |   19 +++++++++++++++++--
+ 2 files changed, 41 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3.0)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Mon Jul 6 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - All jump commands now take an optional [count], so you can quickly skip over some marks, as with the built-in */# and n/N commands. For this, the entire core search algorithm has been rewritten. The script's logic has been simplified through the use of Vim 7 features like Lists.
+    - Now also printing a Vim-alike search error message when 'nowrapscan' is set.
+
+ autoload/mark.vim |  235 +++++++++++++++++++++++++++++++----------------------
+ doc/mark.txt      |   48 +++++++++--
+ plugin/mark.vim   |   35 +++++---
+ 3 files changed, 197 insertions(+), 121 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.0)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Sun Jul 5 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Split off functions into autoload script.
+    - Initialization of global variables and autocommands is now done lazily on
+      the first use, not during loading of the plugin. This reduces Vim startup
+      time and footprint as long as the functionality isn't yet used.
+    - Split off documentation into separate help file. Now packaging as VimBall.
+
+ autoload/mark.vim |  426 ++++++++++++++++++++++++++++++++++++++++
+ doc/mark.txt      |  195 +++++++++++++++++++
+ plugin/mark.vim   |  557 +++++------------------------------------------------
+ 3 files changed, 671 insertions(+), 507 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.0)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Thu Jul 2 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    THIS VERSION REQUIRES VIM 7.2 / 7.1 with patches, BUT IT'S WORTH UPDATING!
+    - Replaced highlighting via :syntax with matchadd() / matchdelete(). This
+      requires Vim 7.2 / 7.1 with patches. This method is faster, there are no
+      more clashes with syntax highlighting (:match always has preference), and
+      the background highlighting does not disappear under 'cursorline'.
+    - Using winrestcmd() to fix effects of :windo: By entering a window, its
+      height is potentially increased from 0 to 1.
+    - Handling multiple tabs by calling s:UpdateScope() on the TabEnter event.
+
+ plugin/mark.vim |  202 +++++++++++++++++++++++++++++--------------------------
+ 1 files changed, 107 insertions(+), 95 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0.0)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Mon Jun 8 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    THIS VERSION REQUIRES VIM 7.0!
+    - Now using Vim List for g:mwWord and thus requiring Vim 7. g:mwCycle is now zero-based, but the syntax groups "MarkWordx" are still one-based.
+    - Factored :syntax operations out of s:DoMark() and s:UpdateMark() so that they can all be done in a single :windo.
+    - Normal mode <Plug>MarkSet now has the same semantics as its visual mode cousin: If the cursor is on an existing mark, the mark is removed. Beforehand, one could only remove a visually selected mark via again selecting it. Now, one simply can invoke the mapping when on such a mark.
+
+ plugin/mark.vim |  251 ++++++++++++++++++++++++++++---------------------------
+ 1 files changed, 127 insertions(+), 124 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6.1)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Sun Jun 7 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README          |   65 ++++++
+ plugin/mark.vim |  637 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 702 insertions(+), 0 deletions(-)

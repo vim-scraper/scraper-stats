@@ -1,0 +1,40 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3.1, refs/heads/master)
+Author:     Michael Brown <mjbrownie at gmail.com>
+AuthorDate: Fri Feb 26 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Uses getline for better expansion. Added a normal mode mapping to get the import statement forthe <cword>
+
+ ftplugin/python_tag_import.vim |   54 ++++++++++++++++++++++++++++++++-------
+ 1 files changed, 44 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Michael Brown <mjbrownie at gmail.com>
+AuthorDate: Thu Nov 12 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for variations in python import statements. Eg. from ? import ?, import ? as ?, etc
+
+ ftplugin/python_tag_import.vim |   65 +++++++++++++++++++++++++++++++--------
+ 1 files changed, 51 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.1)
+Author:     Michael Brown <mjbrownie at gmail.com>
+AuthorDate: Thu Sep 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug introduced affecting relative directories
+
+ ftplugin/python_tag_import.vim |    5 ++++-
+ 1 files changed, 4 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Michael Brown <mjbrownie at gmail.com>
+AuthorDate: Wed Sep 9 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                         |   78 +++++++++++++++++++++++++++
+ ftplugin/python_tag_import.vim |  116 ++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 194 insertions(+), 0 deletions(-)

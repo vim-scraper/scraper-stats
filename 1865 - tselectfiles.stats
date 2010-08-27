@@ -1,0 +1,125 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.10, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Oct 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - :TSelectFiles, :TSelectFilesInSubdirs, tselectfiles#SelectFiles: take
+    an initial pattern as the second optional argument (i.e. if you pass a
+    directory as first optional argument, you'll have to escape blanks with
+    a backslash).
+    - tselectfiles#SelectFiles: if dir is &, search &path
+    - tselectfiles_filter_rx is always evaluated unless a pattern is
+    provided as extra argument
+    - tselectfiles_prefix is always evaluated
+
+ autoload/tselectfiles.vim |   51 ++++++++++++-------
+ doc/tselectfiles.txt      |  124 +++++++++++++++++++++++++++++++++++++++------
+ plugin/tselectfiles.vim   |   26 +++++++--
+ 3 files changed, 162 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Thu Feb 12 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Don't assume s:select_files_pattern.limit is set
+    - Include .* in tselectfiles_hidden_rx
+    - FIX: Include .* files (but hide them by default; thanks to
+    naquad/Daniil F.).
+    - FIX: If 'splitbelow' is false, opening buffers in split view didn't
+    properly work (thanks to naquad/Daniil F.)
+
+ autoload/tselectfiles.vim |   40 ++++++++++++++++++++++++++++------------
+ doc/tselectfiles.txt      |   12 ++++++------
+ plugin/tselectfiles.vim   |   30 ++++++++++++++++++++++--------
+ 3 files changed, 56 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Dec 2 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Require tlib 0.28
+
+ autoload/tselectfiles.vim |   25 ++++++++++++++++++-------
+ doc/tselectfiles.txt      |    5 +++++
+ plugin/tselectfiles.vim   |   19 ++++++++++++-------
+ 3 files changed, 35 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Thu Oct 16 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - NEW: g:tselectfiles_part_subst* variables (for use with tselectfiles#BaseFilter())
+    - NEW: [bg]:tselectfiles_filter_basename variable (if true, match on basename only)
+
+ autoload/tselectfiles.vim |   24 ++++++++++++++++++++----
+ doc/tselectfiles.txt      |   31 ++++++++++++++++++++++++++++++-
+ plugin/tselectfiles.vim   |   17 ++++++++++++++---
+ 3 files changed, 64 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Oct 5 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - [gbw]tselectfiles_prefix: Remove prefix from filenames in list
+    - [gbw]tselectfiles_limit variable
+    - [wbg]:tselectfiles_filter_rx is used only when no directory is given on the command line.
+    - Require tlib >= 0.18
+    - If the filename matches an entry in g:tselectfiles_filedescription_rx, use the expression there to construct a file description (eg the file's first line)
+    - Option to run vimgrep on selected files.
+    - tselectfiles#BaseFilter(): Set b:tselectfiles_filter_rx to something useful.
+    - tselectfiles#BaseFilter(): takes 2 optional arguments to substitute a rx in the current buffer's filename.
+    - tselectfiles_filter_rx: Set as array
+    - Problem when browsing single directories
+
+ autoload/tselectfiles.vim |  457 +++++++++++++++++++++++++++++++++++++++++++++
+ doc/tselectfiles.txt      |   52 ++++--
+ plugin/tselectfiles.vim   |  424 ++++++++----------------------------------
+ 3 files changed, 578 insertions(+), 355 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Sep 11 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - "Delete file" will ask whether to delete a corresponding buffer too.
+    - <c-w> ... View file in original window
+    - Disabled <c-o> Open dir
+    - Require tlib >= 0.13
+    - When renaming a file that's loaded, rename also the buffer.
+    - You can filter the list of selected files via setting the
+    [wbg]:tselectfiles_filter_rx variable.
+    - Renamed g:tselectfiles_no_cache to g:tselectfiles_no_cache_rx
+    - [bg]:tselectfiles_use_cache and [bg]:tselectfiles_no_cache_rx can now
+    also be set per buffer.
+    - Renamed some variables from tselectfile_* to tselectfiles_*.
+    - Can be "suspended" (i.e. you can switch back to the orignal window)
+
+ doc/tselectfiles.txt    |   98 +++++++++++++++++++++++
+ plugin/tselectfiles.vim |  201 ++++++++++++++++++++++++++++-------------------
+ 2 files changed, 219 insertions(+), 80 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Jul 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Require tlib 0.9
+    - "Delete file" will ask whether to delete a corresponding buffer too.
+
+ plugin/tselectfiles.vim |  347 +++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 248 insertions(+), 99 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Apr 18 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                  |   46 +++++++++
+ plugin/tselectfiles.vim |  253 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 299 insertions(+), 0 deletions(-)

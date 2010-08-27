@@ -1,0 +1,585 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5.5, refs/heads/master)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Mon Aug 23 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added a way to compute HMAC-SHA1 digests using openssl command line utility.
+
+ doc/twitvim.txt    |   46 +++++++++++++++++++++++++++++++++++++++-------
+ plugin/twitvim.vim |   20 +++++++++++++++++---
+ 2 files changed, 56 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.4)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Sat Aug 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added Ruby and Tcl versions of HMAC-SHA1 digest code.
+    * Improved error messages for cURL users.
+    * Code fix to keep 'nomodifiable' setting from leaking out into other buffers.
+    * Support Twitter SSL via Tcl interface.
+
+ doc/twitvim.txt    |  198 ++++++++++++++++++++++++++++++++-------------------
+ plugin/twitvim.vim |  122 ++++++++++++++++++++++++++++----
+ 2 files changed, 231 insertions(+), 89 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.3)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Sat Jul 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Improved error messages for most commands if using Perl, Python, Ruby, or Tcl interfaces.
+    * Added :FollowTwitter, :UnfollowTwitter, :BlockTwitter, :UnblockTwitter, :ReportSpamTwitter, :AddToListTwitter, :RemoveFromListTwitter.
+
+ doc/twitvim.txt    |   62 ++++++++++++
+ plugin/twitvim.vim |  274 ++++++++++++++++++++++++++++++++++++++++------------
+ 2 files changed, 273 insertions(+), 63 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Tue Jun 22 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    More fixes for Twitter OAuth.
+
+ doc/twitvim.txt    |    1 +
+ plugin/twitvim.vim |   56 +++++++++++++++++++++++----------------------------
+ 2 files changed, 26 insertions(+), 31 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Sat Jun 19 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Shorten auth URL with is.gd/Bitly if we need to ask the user to visit it manually.
+    * Fixed the :PublicTwitter invalid request error.
+    * Include new-style retweets in user timeline.
+
+ doc/twitvim.txt    |   12 +++++++++++-
+ plugin/twitvim.vim |   31 +++++++++++++++++++++++++------
+ 2 files changed, 36 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.0)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Thu Jun 17 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Switched to OAuth for user authentication on Twitter.
+    Added more information to :ProfileTwitter output.
+
+ doc/twitvim.txt    |  296 ++++++++++++++++-------
+ plugin/twitvim.vim |  678 +++++++++++++++++++++++++++++++++++-----------------
+ 2 files changed, 666 insertions(+), 308 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.7)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Sat Mar 13 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added :MentionsTwitter as an alias for :RepliesTwitter.
+    * Support twitvim_count in :MentionsTwitter.
+    * Fixed twitvim_count bug in :ListTwitter.
+    * Fixed Ruby interface problem with Vim patch 7.2.374.
+    * Fixed :BackTwitter behavior when timeline window is hidden by user.
+    * Handle SocketError exception in Ruby code.
+
+ doc/twitvim.txt    |   30 +++++++++++---
+ plugin/twitvim.vim |  108 +++++++++++++++++++++++++++++++--------------------
+ 2 files changed, 90 insertions(+), 48 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.6)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Sun Feb 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added twitvim_show_header config to allow user to hide the timeline header.
+    Minor fix to normal commands to avoid inadvertently triggering user mappings.
+
+ doc/twitvim.txt    |   28 +++++++++++++
+ plugin/twitvim.vim |  115 +++++++++++++++++++++++++++++++++++-----------------
+ 2 files changed, 105 insertions(+), 38 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.5)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Thu Dec 31 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Prompt user for Twitter login if not configured in vimrc. Reintroduced old-style retweets via user option.
+
+ doc/twitvim.txt    |   71 +++++++++++++++++++++++
+ plugin/twitvim.vim |  157 ++++++++++++++++++++++++++++++++++++++++++++++-----
+ 2 files changed, 212 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.4)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Thu Dec 17 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added some support for Retweet API.
+    Fixed :BackTwitter behavior with lists.
+    Upgraded bit.ly API support to version 2.0.1.
+    Added support for Zi.ma URL shortener.
+
+ doc/twitvim.txt    |  110 ++++++++++++++++++++++++++---------
+ plugin/twitvim.vim |  161 ++++++++++++++++++++++++++++++++++++++++++++++------
+ 2 files changed, 225 insertions(+), 46 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.3)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Fri Nov 27 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added |:ListTwitter|
+    * Fixed some minor breakage in LongURL support.
+    * Omit author's name from the list when doing a reply to all.
+
+ doc/twitvim.txt    |   25 ++++++-
+ plugin/twitvim.vim |  183 ++++++++++++++++++++++++++++++++++++++++++++++++----
+ 2 files changed, 192 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Fri Jul 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Bugfix: Reset syntax items in Twitter window.
+    * Bugfix: Show progress message before querying for in-reply-to tweet.
+    * Added reply to all feature.
+
+ doc/twitvim.txt    |   18 +++++++++++++++-
+ plugin/twitvim.vim |   55 +++++++++++++++++++++++++++++++++++++++++++++++++--
+ 2 files changed, 68 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.1)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Mon Mar 30 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a problem with usernames and search terms that begin with digits.
+
+ doc/twitvim.txt    |    2 ++
+ plugin/twitvim.vim |   12 ++++++------
+ 2 files changed, 8 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.0)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Mon Mar 9 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Many changes. See release notes at http://mortonfox.livejournal.com/654033.html
+
+ doc/twitvim.txt    |  214 ++++++++++++++++++
+ plugin/twitvim.vim |  633 ++++++++++++++++++++++++++++++++++++++++++++--------
+ 2 files changed, 757 insertions(+), 90 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.5)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Wed Feb 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added support for pagination and page length to :SearchTwitter.
+    * Shortened default retweet prefix to "RT".
+
+ doc/twitvim.txt    |   14 ++++++++++++--
+ plugin/twitvim.vim |   39 ++++++++++++++++++++++++++++-----------
+ 2 files changed, 40 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.4)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Fri Nov 14 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added twitvim_count option to allow user to configure the number of tweets returned by :FriendsTwitter and :UserTwitter.
+
+ doc/twitvim.txt    |   16 ++++++++++++++++
+ plugin/twitvim.vim |   31 +++++++++++++++++++++++++++++--
+ 2 files changed, 45 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.3)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Thu Oct 9 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added support for Cligs. |:Cligs|
+    * Fixed a problem with not being able to unset the proxy if using Tcl http.
+
+ doc/twitvim.txt    |   40 ++++++++++++++++++++++++++++++++++++++++
+ plugin/twitvim.vim |   40 ++++++++++++++++++++++++++++++++++++++--
+ 2 files changed, 78 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.2)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Wed Oct 1 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added command to display rate limit info.
+    * Improved error reporting for :UserTwitter.
+    * Added command and mapping to display user profile information.
+    * Added command for updating location.
+    * Added support for tr.im.
+    * Error reporting fix for Tcl http code.
+
+ doc/twitvim.txt    |  141 ++++++++++++++++++++---
+ plugin/twitvim.vim |  327 ++++++++++++++++++++++++++++++++++++++++++++++------
+ 2 files changed, 419 insertions(+), 49 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Mon Sep 22 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added support for http networking through the Vim Perl, Python, Ruby, and Tcl interfaces, as alternatives to cURL. See :help TwitVim-non-cURL for setup details.
+    * Removed UrlTea support.
+    * Added support for posting Unicode tweets.
+    * Added support for LongURL.
+    * Remove newlines from tweets before retweeting.
+
+ doc/twitvim.txt    |  150 ++++++++--
+ plugin/twitvim.vim |  869 ++++++++++++++++++++++++++++++++++++++--------------
+ 2 files changed, 761 insertions(+), 258 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.24)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Fri Aug 29 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added retweet feature.
+
+ doc/twitvim.txt    |   47 ++++++++++++++++++++++++++++++++++++++++++++---
+ plugin/twitvim.vim |   28 ++++++++++++++++++++++++++--
+ 2 files changed, 70 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.23)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Tue Aug 26 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Support in_reply_to_status_id parameter.
+    * Added tip on line length in statusline.
+    * Report browser launch errors.
+    * Set syntax highlighting on every timeline refresh.
+
+ doc/twitvim.txt    |   17 +++++
+ plugin/twitvim.vim |  166 +++++++++++++++++++++++++++++++++++-----------------
+ 2 files changed, 128 insertions(+), 55 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.22)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Wed Aug 13 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Rewrote date/time formatting code in pure Vim script so it should now work on almost any Vim installation without requiring if_perl or if_python.
+
+ doc/twitvim.txt    |    3 +
+ plugin/twitvim.vim |  272 +++++++++++++---------------------------------------
+ 2 files changed, 70 insertions(+), 205 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.21)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Tue Aug 12 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added tips section to documentation.
+    * Use create_or_reuse instead of create in UrlBorg API so that it will always generate the same short URL for the same long URL.
+    * Added support for highlighting #hashtags and jumping to Twitter Searches for #hashtags.
+    * Added Python code to convert Twitter timestamps to local time and simplify them.
+
+ doc/twitvim.txt    |   86 ++++++++++++++++++++++++--
+ plugin/twitvim.vim |  170 ++++++++++++++++++++++++++++++++++++++++++++++++----
+ 2 files changed, 238 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.20)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Thu Jul 24 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Switched from Summize to Twitter Search.
+
+ doc/twitvim.txt    |   20 +++++++++-----------
+ plugin/twitvim.vim |   34 +++++++++++++++++++---------------
+ 2 files changed, 28 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.19)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Wed Jul 23 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for non-Twitter servers implementing the Twitter API. This is for identi.ca support.
+
+ doc/twitvim.txt    |   21 +++++++++++++++++++++
+ plugin/twitvim.vim |   20 ++++++++++++--------
+ 2 files changed, 33 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.18)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Mon Jul 14 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for urlBorg API.
+
+ doc/twitvim.txt    |   40 ++++++++++++++++++++++++++++++++++++++++
+ plugin/twitvim.vim |   50 +++++++++++++++++++++++++++++++++++++++++++++++++-
+ 2 files changed, 89 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.17)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Fri Jul 11 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added command to show DM Sent Timeline.
+    * Added support for pagination in Friends, User, Replies, DM, and DM Sent timelines.
+    * Added support for bit.ly API and is.gd API.
+
+ doc/twitvim.txt    |  104 ++++++++++++++++++++++++++++---
+ plugin/twitvim.vim |  177 +++++++++++++++++++++++++++++++++++++++++++---------
+ 2 files changed, 243 insertions(+), 38 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.16a)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Thu May 15 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Escape ! character in browser launch URL.
+
+ doc/twitvim.txt    |    1 +
+ plugin/twitvim.vim |    2 +-
+ 2 files changed, 2 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.16)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Thu May 15 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Removed quotes around browser launch URL. There was a problem with TwitPic.
+
+ doc/twitvim.txt    |    1 +
+ plugin/twitvim.vim |    6 +++---
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.15)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Tue May 13 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Extend :UserTwitter and :FriendsTwitter to show another user's timeline if argument supplied.
+    * Extend Alt-G mapping to jump to another user's timeline if invoked over @user or user:
+    * Escape special Vim shell characters in URL when launching web browser.
+
+ doc/twitvim.txt    |   23 ++++++++++++++++++++
+ plugin/twitvim.vim |   58 +++++++++++++++++++++++++++++++++++++++------------
+ 2 files changed, 67 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.14)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Mon May 12 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support for Summize search API.
+
+ doc/twitvim.txt    |   16 ++++++++
+ plugin/twitvim.vim |  102 +++++++++++++++++++++++++++++++++++++++++++++++----
+ 2 files changed, 110 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.13)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Wed May 7 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added mappings to launch web browser on URLs in timeline.
+
+ doc/twitvim.txt    |   22 ++++++++++++++++++++++
+ plugin/twitvim.vim |   37 +++++++++++++++++++++++++++++++++++--
+ 2 files changed, 57 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.12)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Mon May 5 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Allow user to specify Twitter login info and proxy login info preencoded in base64.
+
+ doc/twitvim.txt    |   51 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/twitvim.vim |   18 ++++++++++++++----
+ 2 files changed, 65 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.11)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Fri May 2 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Scroll to top in timeline window after adding an update line.
+    * Add <Leader>r and <Leader>d mappings as alternative to Alt-R and Alt-D.
+
+ doc/twitvim.txt    |   17 +++++++++++++++++
+ plugin/twitvim.vim |    5 ++++-
+ 2 files changed, 21 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.10)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Fri Apr 25 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Shortened snipurl.com to snipr.com
+    * Added support for proxy authentication.
+    * Handle Perl module load failure. Not that I expect those modules to ever be missing.
+
+ doc/twitvim.txt    |   16 ++++++++++++++++
+ plugin/twitvim.vim |   21 +++++++++++++++------
+ 2 files changed, 31 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.9)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Tue Apr 22 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added some status messages.
+    * Added menu items under Plugin menu.
+    * Allow Ctrl-T as an alternative to Alt-T to avoid conflict with the menu bar.
+    * Added support for UrlTea API.
+    * Generalize URL encoding to all non-alpha chars.
+
+ doc/twitvim.txt    |   39 ++++++++++++++++++
+ plugin/twitvim.vim |  111 ++++++++++++++++++++++++++++++++++++++++++++--------
+ 2 files changed, 133 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.8)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Tue Apr 22 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Encode URLs sent to URL-shortening services.
+
+ doc/twitvim.txt    |    1 +
+ plugin/twitvim.vim |   26 +++++++++++++++++---------
+ 2 files changed, 18 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.7)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Mon Apr 21 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Add support for TinyURL API.
+    * Add quick direct message feature.
+
+ doc/twitvim.txt    |   40 +++++++++++++++++++++++++++++++++++++-
+ plugin/twitvim.vim |   53 ++++++++++++++++++++++++++++++++++++++++++++++++---
+ 2 files changed, 87 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.6)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Tue Apr 15 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Delete Twitter buffer to the blackhole register to avoid stepping on registers unnecessarily.
+    * Quote login and proxy arguments before sending to cURL.
+    * Added support for SnipURL API and Metamark API.
+
+ doc/twitvim.txt    |   61 +++++++++++++++++++++++++++++++++++++++-
+ plugin/twitvim.vim |   80 +++++++++++++++++++++++++++++++++++++++++++--------
+ 2 files changed, 127 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.5)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Mon Apr 14 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Escape the "+" character in sent tweets.
+    * Added Perl code to convert Twitter timestamps to local time and simplify them.
+    * Fix for timestamp highlight when the "|" character appears in a tweet.
+
+ doc/twitvim.txt    |    5 +++
+ plugin/twitvim.vim |   92 ++++++++++++++++++++++++++++++++++++++++++++++++----
+ 2 files changed, 90 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.4)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Sun Apr 13 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Use <q-args> in Tweetburner commands.
+    * Improve XML parsing so that order of elements does not matter.
+    * Changed T mapping to Alt-T to avoid overriding the |T| command.
+
+ doc/twitvim.txt    |   11 ++++--
+ plugin/twitvim.vim |  103 +++++++++++++++++++++++++++++++++++-----------------
+ 2 files changed, 77 insertions(+), 37 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.3)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Fri Apr 11 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added more Tweetburner commands.
+
+ doc/twitvim.txt    |   15 +++++++++++++++
+ plugin/twitvim.vim |   20 ++++++++++++++++----
+ 2 files changed, 31 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.2)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Thu Apr 10 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added quick reply feature.
+    			   * Added Tweetburner support.
+    			   * Changed client ident to "from twitvim".
+
+ doc/twitvim.txt    |   30 ++++++++++++++++++++++++-
+ plugin/twitvim.vim |   59 ++++++++++++++++++++++++++++++++++++++++++++--------
+ 2 files changed, 78 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Thu Apr 10 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fix for Chinese characters in timeline.
+    Scroll up to newest tweet after refreshing timeline.
+    Changed Twitter window name to avoid unsafe special characters and clashes with file names.
+
+ doc/twitvim.txt    |    6 ++++++
+ plugin/twitvim.vim |   38 +++++++++++++++++++++++++++++---------
+ 2 files changed, 35 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.0)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Wed Apr 9 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added views for public, friends, user timelines, replies, and direct messages. Automatically insert user's posts into public, friends, or user timeline, if visible. Added syntax highlighting for timeline view.
+
+ doc/twitvim.txt    |  123 ++++++++++++++++++++++++-----
+ plugin/twitvim.vim |  223 ++++++++++++++++++++++++++++++++++++++++++++++++++--
+ 2 files changed, 318 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.2)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Thu Apr 3 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added help documentation. Made plugin code conform to guidelines in :help write-plugin. Repackaged as Vimball archive.
+
+ doc/twitvim.txt    |  125 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/twitvim.vim |   55 +++++++++++++++++-----
+ 2 files changed, 167 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.1)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Tue Apr 1 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Report errors from or problems with cURL.
+
+ plugin/twitvim.vim |   14 +++++++++++---
+ 1 files changed, 11 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Fri Mar 28 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial version.
+
+ README             |   55 ++++++++++++++++++++++++
+ plugin/twitvim.vim |  119 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 174 insertions(+), 0 deletions(-)

@@ -1,0 +1,67 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1.8-g, refs/heads/master)
+Author:     Yuheng Xie <xie_yuheng at yahoo.com.cn>
+AuthorDate: Fri Apr 25 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1.1.8 global version. It differ from 1.1.8 that colors will be shared between buffers, instead of localized to buffers as in 1.1.8.
+    If you would like to have the same words highlighted in different files, use this.
+    If you would like to have different words highlighted in different files, use 1.1.8.
+
+ plugin/mark.vim |  133 +++++++++++++++++++++++++++++++++++++------------------
+ 1 files changed, 89 insertions(+), 44 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.8)
+Author:     Yuheng Xie <xie_yuheng at yahoo.com.cn>
+AuthorDate: Fri Mar 10 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added \* \# \/ \? for the ability of jumping to ANY mark, even when the cursor is not currently over any mark.
+
+ plugin/mark.vim |  122 +++++++++++++++++++++++++++++++++++++++++++++++++++----
+ 1 files changed, 114 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.7)
+Author:     Yuheng Xie <xie_yuheng at yahoo.com.cn>
+AuthorDate: Thu Sep 29 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    bug fix again
+
+ plugin/mark.vim |   13 +++++++------
+ 1 files changed, 7 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.5)
+Author:     Yuheng Xie <xie_yuheng at yahoo.com.cn>
+AuthorDate: Mon Sep 19 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Thank Luc Hermitte for the big improvement to my script:
+    1) now can use :Mark to trigger the function.
+    2) \r on visual mode to input a regexp base on the selection
+    3) may alter the leader (instead of default "\") in .vimrc
+
+ plugin/mark.vim |  213 ++++++++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 164 insertions(+), 49 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.4)
+Author:     Yuheng Xie <xie_yuheng at yahoo.com.cn>
+AuthorDate: Thu May 26 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    use map-<silent> to avoid echo on the command line
+
+ plugin/mark.vim |   53 +++++++++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 39 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.2)
+Author:     Yuheng Xie <xie_yuheng at yahoo.com.cn>
+AuthorDate: Tue Mar 22 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    \n now first try to clear this mark (i.e. the mark under the cursor), before clearing all marks.
+    mapped * and # for jumping to the next and previous occurrence of this mark.
+    mark patterns now also added to the search history
+
+ README          |   63 +++++++++++++++++
+ plugin/mark.vim |  199 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 262 insertions(+), 0 deletions(-)

@@ -1,0 +1,39 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2.2, refs/heads/master)
+Author:     Manpreet Singh <junkblocker at yahoo.com>
+AuthorDate: Thu Feb 25 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Security fixes by removing custom tempfile creation
+    2) Removed need for DiffReviewCleanup/PatchReviewCleanup
+    3) Better command execution error detection and display
+    4) Improved diff view and folding by ignoring modelines
+    5) Improved tab labels display
+
+ doc/patchreview.txt    |   63 ++++++++--------------
+ plugin/patchreview.vim |  138 ++++++++++++++++++++----------------------------
+ 2 files changed, 80 insertions(+), 121 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Manpreet Singh <junkblocker at yahoo.com>
+AuthorDate: Sun Feb 21 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1) Added DiffReview command for reviewing local changes in the workspace
+    
+    2) Removed the need for filterdiff by implemeting it in pure vim script
+
+ doc/patchreview.txt    |  105 ++++---
+ plugin/patchreview.vim |  892 +++++++++++++++++++++++++++++++++++++++---------
+ 2 files changed, 787 insertions(+), 210 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Manpreet Singh <junkblocker at yahoo.com>
+AuthorDate: Thu May 25 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                 |   11 ++
+ doc/patchreview.txt    |   97 ++++++++++++++
+ plugin/patchreview.vim |  332 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 440 insertions(+), 0 deletions(-)

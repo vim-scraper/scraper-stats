@@ -1,0 +1,51 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.03, refs/heads/master)
+Author:     Anthony Panozzo <panozzaj at gmail.com>
+AuthorDate: Sun Apr 19 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Thanks to Gilles Bertrand for sending me a list containing a bunch of new corrections!  Many of the corrections are longer or more technical in nature.  In addition, I created a file in the GitHub repository that contains multiple word corrections in case this is ever easy to do in the future with Vim.  I also added a README in the tar file itself.
+
+ README.orig            |   53 +++++++++++
+ autocorrect.dat        |  113 ++++++++++++++++++++++++
+ generator.rb           |   10 ++-
+ plugin/autocorrect.vim |  225 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 399 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.02)
+Author:     Anthony Panozzo <panozzaj at gmail.com>
+AuthorDate: Sun Feb 1 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Found that Cream had an abbreviation file, so I took any words that were in there that I didn't already have and added them (about thirty, with some day of the week capitalization.)  Changed output of generator to recognize when a fix was just a capitalization.  Reduced size of final file by changing from 'iabbrev' to 'ia' (8000*5 characters!)  Also went through and deleted corrections of dubious quality and fixed some problems in the source file.  Added a couple of things that I've made mistakes on in the past two months.  All in all, a bunch of nice changes, less lines and size and more autocorrectionness.
+
+ autocorrect.dat        |  310 +-
+ generator.rb           |   10 +-
+ plugin/autocorrect.vim |15950 ++++++++++++++++++++++++------------------------
+ 3 files changed, 8065 insertions(+), 8205 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.01)
+Author:     Anthony Panozzo <panozzaj at gmail.com>
+AuthorDate: Sat Dec 6 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added mistakes that I have made over the last month that should have been autocorrected.
+    
+    Converted from dos line endings to unix ones.  Before I did this, it worked fine on the Windows box, but would cause a line break to be inserted on other operating systems when space was pressed.
+
+ autocorrect.dat        | 8123 ++++++++++++------------
+ generator.rb           |   16 +-
+ plugin/autocorrect.vim |16025 ++++++++++++++++++++++++------------------------
+ 3 files changed, 12099 insertions(+), 12065 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Anthony Panozzo <panozzaj at gmail.com>
+AuthorDate: Fri Nov 7 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                 |   17 +
+ autocorrect.dat        | 4056 ++++++++++++++++++++++++
+ generator.rb           |    8 +
+ plugin/autocorrect.vim | 8001 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 12082 insertions(+), 0 deletions(-)

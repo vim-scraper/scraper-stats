@@ -1,0 +1,54 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     Fabrice Guy <fabrice.guy at gmail.com>
+AuthorDate: Tue Oct 28 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Enhanced syntax highligting for Matlab m-files : most Matlab builtin functions are now highlighted
+
+ doc/matlab.txt    |    3 -
+ syntax/matlab.vim |  262 +++++++++++++++++++++++++++++++++++++++++++++++++++--
+ 2 files changed, 254 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.2)
+Author:     Fabrice Guy <fabrice.guy at gmail.com>
+AuthorDate: Fri Oct 24 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Wrong indentation of subfunctions without matching 'end' has been fixed
+
+ indent/matlab.vim |   30 +++++++++++++++++++++++++-----
+ 1 files changed, 25 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     Fabrice Guy <fabrice.guy at gmail.com>
+AuthorDate: Tue Oct 21 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    As pointed out by Tobias Wolf :
+    - renamed the package to .zip
+    - replaced the DOS endings by CR line endings
+    
+    Added a help file (matlab.txt)
+
+ .ctags              |    6 +-
+ compiler/mlint.vim  |   88 ++++++++++----------
+ doc/matlab.txt      |  115 +++++++++++++++++++++++++
+ ftplugin/matlab.vim |   62 +++++++-------
+ indent/matlab.vim   |  232 +++++++++++++++++++++++++-------------------------
+ syntax/matlab.vim   |  226 +++++++++++++++++++++++++-------------------------
+ 6 files changed, 422 insertions(+), 307 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Fabrice Guy <fabrice.guy at gmail.com>
+AuthorDate: Fri Oct 17 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ .ctags              |    3 +
+ README              |   54 ++++++++++++++++++++++++
+ compiler/mlint.vim  |   44 +++++++++++++++++++
+ ftplugin/matlab.vim |   31 ++++++++++++++
+ indent/matlab.vim   |  116 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/matlab.vim   |  113 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 6 files changed, 361 insertions(+), 0 deletions(-)

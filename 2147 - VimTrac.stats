@@ -1,0 +1,35 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3.6, refs/heads/master)
+Author:     Michael Brown <mjbrownie at gmail.com>
+AuthorDate: Fri Sep 25 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Some compatability fixes for trac 0.11. Fixed :w mapping on add_comment buffer.  Thanks to Brad Fritz
+
+ plugin/trac.py  |   15 +++++++++++----
+ plugin/trac.vim |    3 ++-
+ 2 files changed, 13 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.5)
+Author:     Michael Brown <mjbrownie at gmail.com>
+AuthorDate: Thu Feb 26 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improved python old version checker and notification. removed .svn files that were accidentally stuck in the last package, Thanks Kai
+
+ doc/trac.txt    |  315 ++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ plugin/trac.py  |   32 +++---
+ plugin/trac.vim |   82 +++++++++++----
+ 3 files changed, 392 insertions(+), 37 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.3)
+Author:     Michael Brown <mjbrownie at gmail.com>
+AuthorDate: Sun Jun 15 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added improved ticket summary view, Wiki VimDiff view, blacklist filters for tickets and ticket sorting
+
+ README          |   22 +
+ doc/trac.txt    |  314 +++++++++++
+ plugin/trac.py  | 1564 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/trac.vim |  470 +++++++++++++++++
+ 4 files changed, 2370 insertions(+), 0 deletions(-)

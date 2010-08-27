@@ -1,0 +1,46 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2.3, refs/heads/master)
+Author:     Urs Stotz <stotz at gmx.ch>
+AuthorDate: Sat Aug 20 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The perl vimplate script is running now also on Windows.
+    A vim help added.
+    Dokumentation written for Windows ActiveState Perl User.
+    Templates for C++, Perl, LaTeX and make revised.
+
+ README.orig                          |  300 ---------------------------
+ Templates/Makefile-C.tt              |   24 ---
+ Templates/Test.tt                    |   15 --
+ Templates/cpp-default.tt             |   38 ----
+ Templates/hpp-default.tt             |   70 -------
+ doc/vimplate.txt                     |  350 ++++++++++++++++++++++++++++++++
+ plugin/vimplate.vim                  |   96 +---------
+ vimplate                             |  338 -------------------------------
+ vimplate/Templates/LaTeX.tt          |  100 +++++++++
+ vimplate/Templates/Makefile-C.tt     |   24 +++
+ vimplate/Templates/Makefile-LaTeX.tt |   43 ++++
+ vimplate/Templates/Test.tt           |   15 ++
+ vimplate/Templates/cpp-default.tt    |   26 +++
+ vimplate/Templates/hpp-default.tt    |   55 +++++
+ vimplate/Templates/perl.tt           |  174 ++++++++++++++++
+ vimplate/vimplate                    |  368 ++++++++++++++++++++++++++++++++++
+ vimplate/vimplate.cmd                |   18 ++
+ 17 files changed, 1178 insertions(+), 876 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.2)
+Author:     Urs Stotz <stotz at gmx.ch>
+AuthorDate: Mon Jul 18 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Better templates for C++. Now with choose between Doxygen comments or non comments.
+    Vimplate should be running on Windows when there Template-Toolkit is installed.
+
+ README                   |  312 ++++++++++++++++++++++++++++++++++++++++++
+ README.orig              |  300 ++++++++++++++++++++++++++++++++++++++++
+ Templates/Makefile-C.tt  |   24 ++++
+ Templates/Test.tt        |   15 ++
+ Templates/cpp-default.tt |   38 +++++
+ Templates/hpp-default.tt |   70 ++++++++++
+ plugin/vimplate.vim      |  123 +++++++++++++++++
+ vimplate                 |  338 ++++++++++++++++++++++++++++++++++++++++++++++
+ 8 files changed, 1220 insertions(+), 0 deletions(-)

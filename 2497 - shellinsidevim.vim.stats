@@ -1,0 +1,100 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.7, refs/heads/master)
+Author:     Zhenliang Ju <juzhenliang at gmail.com>
+AuthorDate: Thu Sep 24 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    In some different platforms, the vim may not support the feature '@+'.
+    So these vimers will not use the result of the shell command in the System Clipboard.
+    
+    BTW: This function of the plugin is unpublicized before.
+
+ plugin/shellinsidevim.vim |   25 ++++++++++++++++---------
+ 1 files changed, 16 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
+Author:     Zhenliang Ju <juzhenliang at gmail.com>
+AuthorDate: Wed Sep 23 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    support the 'cd' command to change the current directory
+    Another fine adjustment
+
+ plugin/common.vim         |   10 ++--
+ plugin/shellinsidevim.vim |   98 ++++++++++++++++++++++++++++-----------------
+ 2 files changed, 66 insertions(+), 42 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
+Author:     Zhenliang Ju <juzhenliang at gmail.com>
+AuthorDate: Mon Mar 9 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Changed:
+    This version, you can put them into any plugin directory of your runtime path.
+    The old version only can find the common.vim if it is in the vim root plugin directory.
+
+ plugin/shellinsidevim.vim |   17 ++++++++++-------
+ 1 files changed, 10 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
+Author:     Zhenliang Ju <juzhenliang at gmail.com>
+AuthorDate: Sun Mar 8 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Updated:
+    1.Add three global variables:
+    a. g:ShowOutputWindowWhenVimLaunched.
+    If its value gather then 0, The output window will open. The default value is 1.
+    b. g:AutoShowOutputWindow.
+    if its value is non-zero, the output window will open after command executing if it was closed.
+    c. g:ShowOutputInCommandline
+    If its value is non-zero, the outputs from system() will also echoed at the vim command line.
+    
+    2.You can use "clear" shell command to clear the output windows
+
+ plugin/common.vim         |   37 +++++++++++++++++++++++++++++++++++++
+ plugin/shellinsidevim.vim |   36 +++++++++++++++++++++++-------------
+ 2 files changed, 60 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     Zhenliang Ju <juzhenliang at gmail.com>
+AuthorDate: Wed Mar 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    changed:
+    Catch the exception from system(), this is useful when you interrupt the shell.
+    
+    Give some more variables for controlling the output.
+
+ plugin/shellinsidevim.vim |  113 ++++++++++++++++++++------------------------
+ 1 files changed, 51 insertions(+), 62 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Zhenliang Ju <juzhenliang at gmail.com>
+AuthorDate: Sat Jan 10 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fixed bug&#65306;
+    The shell with input file by invoking system(exp,input) does not work, maybe this is a bug of vim itself.
+    
+    update:
+    The message in the output window is highlighted for reading.
+    
+    changed:
+    The input file has a fixed name called ".VIM_STD_IN", the orig variable g:VIM_STD_IN_FILE has been deleted.
+    
+    Other:
+    last version I gave an error email , this is a correct one
+
+ plugin/shellinsidevim.vim |   80 ++++++++++++++++++++++++---------------------
+ 1 files changed, 43 insertions(+), 37 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Zhenliang Ju <juzhenliang at gmail.com>
+AuthorDate: Mon Dec 29 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                    |   31 ++++++++
+ plugin/shellinsidevim.vim |  187 +++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 218 insertions(+), 0 deletions(-)

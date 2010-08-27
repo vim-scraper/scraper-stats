@@ -1,0 +1,804 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.5, refs/heads/master)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Thu Dec 3 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      - Added Line mode.
+      - Added Help mode.
+      - Added key mapping to switch between fuzzy matching and partial matching.
+      - Changed the default values of g:fuf_file_exclude for ignoring "*.dll".
+      - Changed Tag mode and Tagged-File mode to cache parsed data to files in "~/.vim-fuf-cache/".
+      - Fixed a bug that repeating preview key produced no effect.
+      - Fixed a bug that File mode and Directory mode didn't list items in a directory whose name includes uppercase characters. (Thanks, ryo7000)
+
+ autoload/fuf/bookmark.vim     |    6 +-
+ autoload/fuf/buffer.vim       |    6 +-
+ autoload/fuf/callbackfile.vim |    6 +-
+ autoload/fuf/callbackitem.vim |   10 +-
+ autoload/fuf/changelist.vim   |    6 +-
+ autoload/fuf/dir.vim          |    4 +-
+ autoload/fuf/file.vim         |    6 +-
+ autoload/fuf/givencmd.vim     |    6 +-
+ autoload/fuf/givendir.vim     |    4 +-
+ autoload/fuf/givenfile.vim    |    8 +-
+ autoload/fuf/help.vim         |  202 +++++++++++++++++++++++++++++++++++++++++
+ autoload/fuf/jumplist.vim     |    6 +-
+ autoload/fuf/line.vim         |  131 ++++++++++++++++++++++++++
+ autoload/fuf/mrucmd.vim       |    6 +-
+ autoload/fuf/mrufile.vim      |    6 +-
+ autoload/fuf/quickfix.vim     |    6 +-
+ autoload/fuf/tag.vim          |   52 +++++++---
+ autoload/fuf/taggedfile.vim   |   41 ++++++--
+ autoload/fuf.vim              |  153 ++++++++++++++++++++-----------
+ doc/fuf.jax                   |  154 ++++++++++++++++++++++++++-----
+ doc/fuf.txt                   |  167 +++++++++++++++++++++++++++-------
+ plugin/fuf.vim                |   36 +++++---
+ 22 files changed, 830 insertions(+), 192 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.4a)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Fri Nov 20 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added new feature which makes it possible to preview selected completion item.
+    - Changed matching rules and added g:fuf_splitPathMatching.
+    - Changed sorting rules.
+    - Changed the default values of g:fuf_file_exclude and g:fuf_dir_exclude in order to ignore ".hg", ".git", and ".bzr" directories.
+    - Changed the default value of g:fuf_mrufile_exclude in order to ignore network files (\\*) on Windows and ignore /mnt/* and /media/* on Unix like systems.
+    - Fixed a bug that an exclude pattern of File, Dir, and Callback-File mode can't be changed.
+
+ autoload/fuf/bookmark.vim     |   94 ++++++++----
+ autoload/fuf/buffer.vim       |   45 +++++-
+ autoload/fuf/callbackfile.vim |   30 +++-
+ autoload/fuf/callbackitem.vim |   33 ++++-
+ autoload/fuf/changelist.vim   |   33 ++++-
+ autoload/fuf/dir.vim          |   33 +++-
+ autoload/fuf/file.vim         |   30 +++-
+ autoload/fuf/givencmd.vim     |   29 +++-
+ autoload/fuf/givendir.vim     |   28 +++-
+ autoload/fuf/givenfile.vim    |   25 +++-
+ autoload/fuf/jumplist.vim     |   35 ++++-
+ autoload/fuf/mrucmd.vim       |   31 +++-
+ autoload/fuf/mrufile.vim      |   25 +++-
+ autoload/fuf/quickfix.vim     |   36 ++++-
+ autoload/fuf/tag.vim          |   57 ++++++-
+ autoload/fuf/taggedfile.vim   |   31 +++-
+ autoload/fuf.vim              |  356 +++++++++++++++++++++++++++++------------
+ doc/fuf.jax                   |   71 ++++++--
+ doc/fuf.txt                   |  176 ++++++++++++++-------
+ plugin/fuf.vim                |   51 +++---
+ 20 files changed, 922 insertions(+), 327 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sat Oct 17 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added Jump-List mode, Change-List mode, and Quickfix mode which enable
+      jumps with jump list, change list, and quickfix list.
+    - Added new feature which deletes selected bookmark with FuzzyFinder and
+      g:fuf_bookmark_keyDelete option.
+    - Changed default values of g:fuf_keyPrevPattern.
+    - Changed to show error message when incompatible with a installed vim.
+
+ autoload/fuf/bookmark.vim     |   28 +++--
+ autoload/fuf/buffer.vim       |   12 +-
+ autoload/fuf/callbackfile.vim |    9 +-
+ autoload/fuf/callbackitem.vim |   19 +--
+ autoload/fuf/changelist.vim   |  145 +++++++++++++++++++
+ autoload/fuf/dir.vim          |    6 +-
+ autoload/fuf/file.vim         |   27 +++--
+ autoload/fuf/givencmd.vim     |    9 +-
+ autoload/fuf/givendir.vim     |    5 +-
+ autoload/fuf/givenfile.vim    |    5 +-
+ autoload/fuf/jumplist.vim     |  153 +++++++++++++++++++++
+ autoload/fuf/mrucmd.vim       |   10 +-
+ autoload/fuf/mrufile.vim      |    8 +-
+ autoload/fuf/quickfix.vim     |  126 +++++++++++++++++
+ autoload/fuf/tag.vim          |    7 +-
+ autoload/fuf/taggedfile.vim   |    5 +-
+ autoload/fuf.vim              |  305 +++++++++++++++++++----------------------
+ doc/fuf.jax                   |  157 +++++++++++++++++----
+ doc/fuf.txt                   |  134 ++++++++++++++++--
+ plugin/fuf.vim                |   29 +++-
+ 20 files changed, 912 insertions(+), 287 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sun Sep 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added g:fuf_promptHighlight option to integrate such options for each
+      mode.
+    - Changed APIs of Given-File, Given-Directory, Given-Command, Callback-File,
+      and Callback-Item modes to be able to set a prompt string.
+    - Changed default values of g:fuf_keyPrevPattern and g:fuf_keyNextPattern.
+    - Fixed a bug that MRU-File data was not updated When a file was opened with
+      FuzzyFinder.
+    - Fixed a bug with scoring matchings for sorting. Thanks to Vincent.
+    - Brought back the removed feature which is switching to an other mode in
+      FuzzyFinder.
+
+ autoload/fuf/bookmark.vim     |   16 +++---
+ autoload/fuf/buffer.vim       |   14 ++--
+ autoload/fuf/callbackfile.vim |   18 +++---
+ autoload/fuf/callbackitem.vim |   15 +++--
+ autoload/fuf/dir.vim          |   10 ++--
+ autoload/fuf/file.vim         |   10 ++--
+ autoload/fuf/givencmd.vim     |   15 +++--
+ autoload/fuf/givendir.vim     |   15 +++--
+ autoload/fuf/givenfile.vim    |   17 +++---
+ autoload/fuf/mrucmd.vim       |   24 ++++----
+ autoload/fuf/mrufile.vim      |   12 ++--
+ autoload/fuf/tag.vim          |   12 ++--
+ autoload/fuf/taggedfile.vim   |   10 ++--
+ autoload/fuf.vim              |   91 +++++++++++++++++++-------
+ doc/fuf.jax                   |  118 ++++++++++++++++++++++------------
+ doc/fuf.txt                   |  140 +++++++++++++++++++++++++++--------------
+ plugin/fuf.vim                |   71 +++++++++------------
+ 17 files changed, 361 insertions(+), 247 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Mon Sep 7 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added new feature to recall patterns which have been entered before from
+      history.
+
+ autoload/fuf.vim |   24 ++++++++++++++++++++++++
+ doc/fuf.jax      |   23 ++++++++++++++++++-----
+ doc/fuf.txt      |   30 ++++++++++++++++++++++++------
+ plugin/fuf.vim   |    2 ++
+ 4 files changed, 68 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Fri Sep 4 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Redesigned the whole plugin for improvements of maintainability and
+      performance. "fuzzyfinder" is abbreviated to "fuf" in the sorce code and
+      filenames. All commands and options are renamed.
+    - Added new feature which is refining pattern.
+    - Improved the rules for sorting completion items. Thanks to the suggestion
+      by Nathan, the rule for boundary matching was implemented.
+    - Changed to open one line buffer of FuzzyFinder with :topleft command
+      instead of :leftabove. The window will alway appear at the top and occupy
+      the full with of the vim window. Thanks to Jan Christoph.
+    - Changed default filename of information file.
+    - Changed MRU-File mode and MRU-Command mode to be disabled by default
+      due to performance and side effect issues.
+    - Removed the feature which is switching to an other mode in FuzzyFinder.
+    - Removed the feature which is temporarily switching 'ignorecase' in
+      FuzzyFinder.
+
+ autoload/fuf/bookmark.vim     |  169 ++++
+ autoload/fuf/buffer.vim       |  145 ++++
+ autoload/fuf/callbackfile.vim |  118 +++
+ autoload/fuf/callbackitem.vim |  118 +++
+ autoload/fuf/dir.vim          |  111 +++
+ autoload/fuf/file.vim         |  116 +++
+ autoload/fuf/givencmd.vim     |  104 +++
+ autoload/fuf/givendir.vim     |  101 +++
+ autoload/fuf/givenfile.vim    |  102 +++
+ autoload/fuf/mrucmd.vim       |  117 +++
+ autoload/fuf/mrufile.vim      |  143 ++++
+ autoload/fuf/tag.vim          |  120 +++
+ autoload/fuf/taggedfile.vim   |  127 +++
+ autoload/fuf.vim              |  910 +++++++++++++++++++++
+ doc/fuf.jax                   |  862 ++++++++++++++++++++
+ doc/fuf.txt                   | 1225 +++++++++++++++++++++++++++++
+ doc/fuzzyfinder.jax           |  967 -----------------------
+ doc/fuzzyfinder.txt           | 1303 ------------------------------
+ plugin/fuf.vim                |  160 ++++
+ plugin/fuzzyfinder.vim        | 1742 -----------------------------------------
+ 20 files changed, 4748 insertions(+), 4012 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.22.3)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed Jun 3 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed a bug that Fuzzyfinder could not open files with '$' in the name on
+      Windows.
+
+ doc/fuzzyfinder.txt    |    4 ++++
+ plugin/fuzzyfinder.vim |    7 ++++---
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.22.2)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Tue Jun 2 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed to consider a length of a date/time string when abbreviates long
+      completion items.
+    - Fixed a bug that '**/' pattern did not search for files directly under the
+      current working directory in File mode. Thanks to Martin for reporting.
+
+ doc/fuzzyfinder.txt    |    6 +++
+ plugin/fuzzyfinder.vim |   95 +++++++++++++++++++++++++++---------------------
+ 2 files changed, 60 insertions(+), 41 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.22.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Mon May 25 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed a bug that Fuzzyfinder could not expand abbreviations to patterns
+      including '&#039 correctly.
+    - Fixed to show item number in Given-File, Given-Directory, and
+      Given-Command mode.
+
+ doc/fuzzyfinder.jax    |   26 +++++++++++++++++++-------
+ doc/fuzzyfinder.txt    |   38 +++++++++++++++++++++++++++++---------
+ plugin/fuzzyfinder.vim |   35 ++++++++++++++++++++++++-----------
+ 3 files changed, 72 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.22.0)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed May 20 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - More improved the abbreviation method for long completion items.
+    - Added Given-File mode for third-party script to select a file from a given
+      list and open.
+    - Added Given-Directory mode for third-party script to select a directory
+      from a given list and change current working directory to it.
+    - Added Given-Command mode for third-party script to select a command from a
+      given list and execute.
+    - Changed ways to launch Callback-File mode and Callback-item mode.
+
+ doc/fuzzyfinder.jax    |  165 +++++++++++++++++++++++++++++++++-
+ doc/fuzzyfinder.txt    |  186 ++++++++++++++++++++++++++++++---------
+ plugin/fuzzyfinder.vim |  234 +++++++++++++++++++++++++++++++++++++-----------
+ 3 files changed, 489 insertions(+), 96 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.21.0)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed May 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Improved a method of trimming long completion items. Thanks to Andy,
+      pyrhockz, and Nathan.
+    - Changed not to map command-line <CR> for MRU-Command mode if
+      g:FuzzyFinderOptions.MruCmd.mode_available is set 0 before loading
+      fuzzyfinder.vim.
+    - Added Callback-File mode and Callback-Item mode for third-party script to
+      find a file/directory or an item from a given list using Fuzzyfinder.
+    - Changed not to append ".." to a completion menu in File/Directory mode.
+      Use dot sequence feature.
+    - Changed default value of g:FuzzyFinderOptions.File.excluded_path option.
+    - Changed default value of g:FuzzyFinderOptions.Dir.excluded_path option.
+    - Fixed a bug that couldn't jump to a tag. Thanks to Thinca.
+
+ doc/fuzzyfinder.jax    |  107 ++++++-----
+ doc/fuzzyfinder.txt    |  221 ++++++++++++++++-----
+ plugin/fuzzyfinder.vim |  498 ++++++++++++++++++++++++++++++++++--------------
+ 3 files changed, 590 insertions(+), 236 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.20)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Tue Apr 28 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added help files which are doc/fuzzyfinder.txt and doc/fuzzyfinder.jax.
+    - Fixed a bug that an error occurs if current directory included spaces.
+      Thanks id:cho45 and id:secondlife.
+    - Implemented a feature to reuse a window containing target buffer.
+    - Added g:FuzzyFinderOptions.Buffer.reuse_window option.
+    - Added g:FuzzyFinderOptions.File.reuse_window option.
+    - Added g:FuzzyFinderOptions.MruFile.reuse_window option.
+    - Added g:FuzzyFinderOptions.Bookmark.reuse_window option.
+    - Added g:FuzzyFinderOptions.TaggedFile.reuse_window option.
+    - Changed to use 'omnifunc' instead of 'completefunc'. Now you can use <C-u>
+      to delete all entered characters.
+    - Changed default value of g:FuzzyFinderOptions.Base.key_open_tab option.
+    - Changed default value of g:FuzzyFinderOptions.Base.key_next_mode option.
+    - Changed default value of g:FuzzyFinderOptions.Base.key_prev_mode option.
+    - Changed default value of g:FuzzyFinderOptions.Base.key_ignore_case option.
+    - Changed to truncate long completion items from the head instead of tail.
+    - Added g:FuzzyFinderOptions.Base.max_menu_width option instead of
+      g:FuzzyFinderOptions.Base.trim_length option.
+    - Added :FuzzyFinderFileWithFullCwd command.
+    - Added :FuzzyFinderFileWithCurrentBufferDir command.
+    - Added :FuzzyFinderDirWithFullCwd command.
+    - Added :FuzzyFinderDirWithCurrentBufferDir command.
+    - Added :FuzzyFinderTagWithCursorWord command.
+    - Renamed :FuzzyFinderRemoveCache command to :FuzzyFinderRenewCache.
+
+ doc/fuzzyfinder.jax    |  779 +++++++++++++++++++++++++++++++++++
+ doc/fuzzyfinder.txt    | 1052 ++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/fuzzyfinder.vim |  809 ++++++++------------------------------
+ 3 files changed, 1989 insertions(+), 651 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.19)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed Jan 14 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed MRU-File mode that always formats completion items to be
+      relative to the home directory.
+    - Fixed a bug that a file was opened in an unintended window with Tag
+      List plugin. Thanks Alexey.
+    - Fixed a bug that garbage characters were entered when switched current
+      mode. Thanks id:lugecy.
+
+ plugin/fuzzyfinder.vim |   62 ++++++++++++++++++++++++++---------------------
+ 1 files changed, 34 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.18)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Tue Jan 13 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Improved rules for the sorting of completion items.
+    - Changed not to learn a completion if an entered pattern is empty.
+    - Fixed a bug that Buffer mode did not work. Thanks ryo7000.
+
+ plugin/fuzzyfinder.vim |  171 +++++++++++++++++++++++++++++-------------------
+ 1 files changed, 104 insertions(+), 67 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.17)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sun Jan 11 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Introduced a learning system for the sorting of completion items.
+    - Added g:FuzzyFinderOptions.Base.learning_limit option.
+    - Changed the specification of the information file. Please remove your
+      information file for Fuzzyfinder.
+
+ plugin/fuzzyfinder.vim |  568 +++++++++++++++++++++++++-----------------------
+ 1 files changed, 295 insertions(+), 273 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.16)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed Dec 10 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Improved response time by caching in MRU-File mode.
+    - Fixed a bug in Bookmark mode that Fuzzyfinder did not jump to the
+      Bookmarked line number when Bookmarked pattern was not found.
+
+ plugin/fuzzyfinder.vim |  148 ++++++++++++++++++++++++++++++------------------
+ 1 files changed, 93 insertions(+), 55 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.15)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sat Dec 6 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added Bookmark mode.
+    - Removed Favorite-file mode. Use Bookmark mode instead.
+    - Fixed not to record a entry of input() in MRU-Command mode.
+
+ plugin/fuzzyfinder.vim |  351 +++++++++++++++++++++++++++++------------------
+ 1 files changed, 216 insertions(+), 135 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.14)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Tue Dec 2 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed to show buffer status in Buffer mode.
+    - Fixed a bug that an error occurs when nonexistent buffer-name was
+      entered in Buffer mode. Thanks Maxim Kim.
+    - Added 'enumerating_limit' option. Thanks id:secondlife.
+    - Removed 'matching_limit' option. Use 'enumerating_limit' instead.
+
+ plugin/fuzzyfinder.vim |  160 ++++++++++++++++++++++++------------------------
+ 1 files changed, 79 insertions(+), 81 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.13)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sat Oct 4 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed a bug that a directory disappeared when a file in that directroy
+      was being opened in File/Mru-File mode.
+
+ plugin/fuzzyfinder.vim |   59 +++++++++++++++++++++++++++++------------------
+ 1 files changed, 36 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.12)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sat Sep 13 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed to be able to show completion items in the order of recently
+      used in Buffer mode.
+    - Added g:FuzzyFinderOptions.Buffer.mru_order option.
+
+ plugin/fuzzyfinder.vim |   83 +++++++++++++++++++++++++++++------------------
+ 1 files changed, 51 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.11)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed Sep 10 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed that a dot sequence of entered pattern is expanded to parent
+      directroies in File/Dir mode.
+      E.g.: "foo/...bar" -> "foo/../../bar"
+    - Fixed a bug that a prompt string was excessively inserted.
+
+ plugin/fuzzyfinder.vim |   30 ++++++++++++++++++++++++------
+ 1 files changed, 24 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.10)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Tue Sep 9 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed not to show a current buffer in a completion menu.
+    - Fixed a bug that a filename to open was not been escaped.
+    - Added 'prompt' option.
+    - Added 'prompt_highlight' option.
+    - Removed g:FuzzyFinderOptions.MruFile.no_special_buffer option.
+
+ plugin/fuzzyfinder.vim |  158 ++++++++++++++++++++++++++++++------------------
+ 1 files changed, 100 insertions(+), 58 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.9)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Fri Sep 5 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Enhanced <BS> behavior in Fuzzyfinder and added 'smart_bs' option.
+    - Fixed a bug that entered pattern was not been escaped.
+    - Fixed not to insert "zv" with "c/pattern<CR>" command in Normal mode
+    - Avoid the slow down problem caused by filereadable() check for the MRU
+      information in BufEnter/BufWritePost.
+
+ plugin/fuzzyfinder.vim |   64 ++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 49 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Mon Aug 25 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed a bug caused by the non-escaped buffer name "[Fuzzyfinder]".
+    - Fixed a command to open in a new tab page in Buffer mode.
+
+ plugin/fuzzyfinder.vim |   14 ++++++++++----
+ 1 files changed, 10 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Thu Jul 17 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added 'trim_length' option.
+    - Added 'switch_order' option.
+    - Fixed a bug that entered command did not become the newest in the
+      history.
+    - Fixed a bug that folds could not open with <CR> in a command-line when
+      searching.
+    - Removed 'excluded_indicator' option. Now a completion list in Buffer
+      mode is the same as a result of :buffers.
+
+ plugin/fuzzyfinder.vim |  265 +++++++++++++++++++++++++++++-------------------
+ 1 files changed, 160 insertions(+), 105 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.7)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Mon Jul 14 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed to find an item whose index is matched with the number
+      suffixed with entered pattern.
+    - Fixed the cache bug after changing current directroy in File mode.
+
+ plugin/fuzzyfinder.vim |  614 +++++++++++++++++++++---------------------------
+ 1 files changed, 267 insertions(+), 347 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.6.2)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Tue Jul 8 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed not to miss changes in options when updates the MRU information.
+
+ plugin/fuzzyfinder.vim |   10 +++++++---
+ 1 files changed, 7 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.6.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Mon Jul 7 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed a bug related to floating-point support.
+    - Added support for GetLatestVimScripts.
+
+ plugin/fuzzyfinder.vim |   28 +++++++++++++++++-----------
+ 1 files changed, 17 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Fri Mar 28 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Revived MRU-command mode. The problem with a command-line abbreviation
+      was solved.
+    - Changed the specification of the information file.
+    - Added :FuzzyFinderEditInfo command.
+
+ plugin/fuzzyfinder.vim |  311 +++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 226 insertions(+), 85 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sat Mar 22 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed to be able to match "foo/./bar" by "foo/**/bar" in File mode.
+    - Fixed to be able to open a space-containing file in File mode.
+    - Fixed to honor the current working directory properly in File mode.
+
+ plugin/fuzzyfinder.vim |  465 ++++++++++++++++++++++++------------------------
+ 1 files changed, 234 insertions(+), 231 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Fri Feb 22 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed the bug that a wrong initial text is entered after switching to a
+      next mode.
+    - Fixed the bug that it does not return to previous window after leaving
+      Fuzzyfinder one.
+
+ plugin/fuzzyfinder.vim |   32 ++++++++++++++------------------
+ 1 files changed, 14 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed Feb 20 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed the bug that Fuzzyfinder fails to open a file caused by auto-cd
+      plugin/script.
+
+ plugin/fuzzyfinder.vim |  105 +++++++++++++++++++++++++++--------------------
+ 1 files changed, 60 insertions(+), 45 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Tue Feb 19 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added a key mapping to open items in a new tab page and
+      g:FuzzyFinderOptions.Base.key_open_tab opton.
+    - Changed to show Fuzzyfinder window above last window even if
+      'splitbelow' was set.
+    - Changed to set nocursorline and nocursorcolumn in Fuzzyfinder.
+    - Fixed not to push up a buffer number unlimitedly.
+
+ plugin/fuzzyfinder.vim |  511 +++++++++++++++++++++++-------------------------
+ 1 files changed, 247 insertions(+), 264 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Mon Feb 18 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added new feature, which is the partial matching.
+    - Fixed the bug that an error occurs when "'" was entered.
+
+ plugin/fuzzyfinder.vim |  353 +++++++++++++++++++++++++++---------------------
+ 1 files changed, 196 insertions(+), 157 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sun Feb 17 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Restructured the option system AGAIN. Sorry :p
+    - Changed to inherit a typed text when switching a mode without leaving
+      a insert mode.
+    - Changed commands which launch explorers to be able to take a argument
+      for initial text.
+    - Changed to complete file names by relative path and not full path in
+      the buffer/mru-file/tagged-file mode.
+    - Changed to highlight a typed text when the completion item was not
+      found or the completion process was aborted.
+    - Changed to create caches for each tag file and not working directory
+      in the tag/tagged-file mode.
+    - Fixed the bug that the buffer mode couldn't open a unnamed buffer.
+    - Added 'matching_limit' option.
+    - Removed 'max_match' option. Use 'matching_limit' option instead.
+    - Removed 'initial_text' option. Use command argument instead.
+    - Removed the MRU-command mode.
+
+ plugin/fuzzyfinder.vim | 1944 ++++++++++++++++++++++--------------------------
+ 1 files changed, 897 insertions(+), 1047 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Thu Jan 3 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added the tag mode.
+    - Added the tagged-file mode.
+    - Added :FuzzyFinderRemoveCache command.
+    - Restructured the option system. many options are changed names or
+      default values of some options.
+    - Changed to hold and reuse caches of completion lists by default.
+    - Changed to set filetype 'fuzzyfinder'.
+    - Disabled the MRU-command mode by default because there are problems.
+    - Removed FuzzyFinderAddMode command.
+
+ plugin/fuzzyfinder.vim | 2082 +++++++++++++++++++++++++++---------------------
+ 1 files changed, 1169 insertions(+), 913 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Fri Nov 9 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added the directory mode.
+    - Fixed the bug that it caused an error when switch a mode in the
+      insert mode.
+    - Changed g:FuzzyFinder_KeySwitchMode type to a list.
+
+ plugin/fuzzyfinder.vim |  217 +++++++++++++++++++++++++++++++----------------
+ 1 files changed, 143 insertions(+), 74 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed Oct 24 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed the specification of the information file.
+    - Added the MRU-commands mode.
+    - Renamed :FuzzyFinderAddFavorite command to :FuzzyFinderAddFavFile.
+    - Renamed g:FuzzyFinder_MruModeVars option to
+      g:FuzzyFinder_MruFileModeVars.
+    - Renamed g:FuzzyFinder_FavoriteModeVars option to
+      g:FuzzyFinder_FavFileModeVars.
+    - Changed to show registered time of each item in MRU/favorite mode.
+    - Added 'timeFormat' option for MRU/favorite modes.
+
+ plugin/fuzzyfinder.vim |  453 +++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 309 insertions(+), 144 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Fri Oct 19 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed a handling of multi-byte characters.
+
+ plugin/fuzzyfinder.vim |   10 +++++++---
+ 1 files changed, 7 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Tue Oct 16 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added support for Migemo. (Migemo is Japanese search method.)
+
+ plugin/fuzzyfinder.vim |   30 ++++++++++++++++++++++--------
+ 1 files changed, 22 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Sun Oct 14 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added the favorite mode.
+    - Added new features, which are abbreviations and multiple search.
+    - Added 'abbrevMap' option for each mode.
+    - Added g:FuzzyFinder_MruModeVars['ignoreSpecialBuffers'] option.
+    - Fixed the bug that it did not work correctly when a user have mapped
+      <C-p> or <Down>.
+
+ plugin/fuzzyfinder.vim |  461 +++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 335 insertions(+), 126 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Mon Oct 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added the MRU mode.
+    - Added commands to add and use original mode.
+    - Improved the sorting algorithm for completion items.
+    - Added 'initialInput' option to automatically insert a text at the
+      beginning of a mode.
+    - Changed that 'excludedPath' option works for the entire path.
+    - Renamed some options.
+    - Changed default values of some options.
+    - Packed the mode-specific options to dictionaries.
+    - Removed some options.
+
+ plugin/fuzzyfinder.vim |  918 ++++++++++++++++++++++++++++++------------------
+ 1 files changed, 580 insertions(+), 338 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed Sep 12 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed some bugs.
+
+ plugin/fuzzyfinder.vim |  333 +++++++++++++++++++++---------------------------
+ 1 files changed, 143 insertions(+), 190 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Tue Sep 11 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Improved response by aborting processing too many items.
+    - Changed to be able to open a buffer/file not only in previous
+      window but also in new window.
+    - Fixed a bug that recursive searching with '**' does not work.
+    - Added g:FuzzyFinder_CompletionItemLimit option.
+    - Added g:FuzzyFinder_KeyOpen option.
+
+ plugin/fuzzyfinder.vim |  345 +++++++++++++++++++++++++++---------------------
+ 1 files changed, 196 insertions(+), 149 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Fri Sep 7 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Improved response of the input.
+    - Improved the sorting algorithm for completion items. It is based
+      on the matching level. 1st is perfect matching, 2nd is prefix
+      matching, and 3rd is fuzzy matching.
+    - Added g:FuzzyFinder_ExcludePattern option.
+    - Removed g:FuzzyFinder_WildIgnore option.
+    - Removed g:FuzzyFinder_EchoPattern option.
+    - Removed g:FuzzyFinder_PathSeparator option.
+    - Changed the default value of g:FuzzyFinder_MinLengthFile from 1 to
+      0.
+
+ plugin/fuzzyfinder.vim |  220 ++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 150 insertions(+), 70 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Fri Aug 10 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added g:FuzzyFinder_IgnoreCase option.
+    - Added g:FuzzyFinder_KeyToggleIgnoreCase option.
+    - Added g:FuzzyFinder_EchoPattern option.
+    - Changed the open command in a buffer mode from ":edit" to
+    ":buffer" to avoid being reset cursor position.
+    - Changed the default value of g:FuzzyFinder_KeyToggleMode from
+    <C-Space> to <F12> because <C-Space> does not work on some CUI
+    environments.
+    - Changed to avoid being loaded by Vim before 7.0.
+    - Fixed a bug with making a fuzzy pattern which has '&#039.
+
+ plugin/fuzzyfinder.vim |  226 +++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 157 insertions(+), 69 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Thu Aug 9 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    A bug it does not work on Linux is fixed.
+
+ plugin/fuzzyfinder.vim |   39 ++++++++++++++++++++++++++-------------
+ 1 files changed, 26 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed Aug 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                 |  562 ++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/fuzzyfinder.vim |  392 +++++++++++++++++++++++++++++++++
+ 2 files changed, 954 insertions(+), 0 deletions(-)

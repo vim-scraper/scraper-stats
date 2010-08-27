@@ -1,0 +1,68 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.5, refs/heads/master)
+Author:     Lorance Stinson <LoranceStinson at gmail.com>
+AuthorDate: Mon Jun 25 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    *Added lookup of Perl builtin variables via \pv and PerlVar.
+    *Now loads default topics when no topic is provided.
+
+ doc/perlhelp.txt    |   10 ++++-
+ plugin/perlhelp.vim |  108 +++++++++++++++++++++++++++++++++++++++++----------
+ 2 files changed, 96 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Lorance Stinson <LoranceStinson at gmail.com>
+AuthorDate: Fri Jun 22 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    When lookup up a function strip everything up to, and including, '->'.  This will make methods be looked up instead of the object the method is called from.
+
+ doc/perlhelp.txt    |    4 ++--
+ plugin/perlhelp.vim |   22 ++++++++++++++++------
+ 2 files changed, 18 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Lorance Stinson <LoranceStinson at gmail.com>
+AuthorDate: Fri Jun 15 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Enhanced the handling of module and general help topic lookup.
+    * Set the file type to man when looking up general perl help topics.
+
+ doc/perlhelp.txt    |   17 +++++---
+ plugin/perlhelp.vim |  113 +++++++++++++++++++++++++++++++++------------------
+ 2 files changed, 83 insertions(+), 47 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Lorance Stinson <LoranceStinson at gmail.com>
+AuthorDate: Thu Jun 14 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Removed 'setlocal iskeyword+=:' and used <cWORD> and a substitution as suggested by Erik Falor.
+
+ doc/perlhelp.txt    |    4 +-
+ plugin/perlhelp.vim |   56 ++++++++++++++++++++++++++------------------------
+ 2 files changed, 31 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Lorance Stinson <LoranceStinson at gmail.com>
+AuthorDate: Wed Jun 13 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added 'setlocal iskeyword+=:' to account for :'s in module names.
+
+ doc/perlhelp.txt    |    4 ++--
+ plugin/perlhelp.vim |   12 ++++++++++--
+ 2 files changed, 12 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Lorance Stinson <LoranceStinson at gmail.com>
+AuthorDate: Mon Jun 4 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |   33 +++++++++
+ doc/perlhelp.txt    |   89 +++++++++++++++++++++++++
+ plugin/perlhelp.vim |  181 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 303 insertions(+), 0 deletions(-)
