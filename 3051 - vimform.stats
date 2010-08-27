@@ -1,0 +1,38 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Apr 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Canned forms
+    - New "widgets": singlechoice, file, dir
+
+ autoload/vimform.vim                      |  651 ------------------------
+ autoload/vimform/forms/substitute.vim     |   61 +++
+ autoload/vimform/widget.vim               |  145 ++++++
+ autoload/vimform/widgets/checkbox.vim     |   96 ++++
+ autoload/vimform/widgets/dir.vim          |   72 +++
+ autoload/vimform/widgets/file.vim         |   72 +++
+ autoload/vimform/widgets/singlechoice.vim |   83 +++
+ autoload/vimform/widgets/text.vim         |   25 +
+ autoload/vimform.vim                      |  773 +++++++++++++++++++++++++++++
+ doc/vimform.txt                           |   75 +++-
+ ftplugin/vimform.vim                      |   46 ++-
+ plugin/vimform.vim                        |   10 +-
+ syntax/vimform.vim                        |   12 +-
+ 13 files changed, 1438 insertions(+), 683 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Apr 11 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README               |   11 +
+ autoload/vimform.vim |  651 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/vimform.txt      |  147 ++++++++++++
+ ftplugin/vimform.vim |   48 ++++
+ indent/vimform.vim   |   16 ++
+ plugin/vimform.vim   |   30 +++
+ syntax/vimform.vim   |   39 +++
+ 7 files changed, 942 insertions(+), 0 deletions(-)

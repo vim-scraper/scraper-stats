@@ -1,0 +1,36 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.1a, refs/heads/master)
+Author:     Marko Mahni&#269; <marko.mahnic at gmail.com>
+AuthorDate: Sun Apr 18 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * added missing function
+
+ plugin/_au_manuals.vim |   21 +++++++++++++++++++++
+ 1 files changed, 21 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Marko Mahni&#269; <marko.mahnic at gmail.com>
+AuthorDate: Sun Apr 18 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * tested without vimuiex, fixed
+    * vxlib can load the plugin without running :VxRegen
+
+ autoload/manuals/core.vim    |    9 +-
+ autoload/manuals/display.vim |   92 ++++++++++++---
+ autoload/manuals/search.vim  |   51 +--------
+ plugin/_au_manuals.vim       |  266 ++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 348 insertions(+), 70 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.01)
+Author:     Marko Mahni&#269; <marko.mahnic at gmail.com>
+AuthorDate: Fri Apr 16 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                       |   47 ++++
+ autoload/manuals/core.vim    |  493 ++++++++++++++++++++++++++++++++++++
+ autoload/manuals/display.vim |  234 +++++++++++++++++
+ autoload/manuals/search.vim  |  568 ++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 1342 insertions(+), 0 deletions(-)

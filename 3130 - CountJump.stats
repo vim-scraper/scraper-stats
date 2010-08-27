@@ -1,0 +1,72 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.22, refs/heads/master)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Fri Aug 6 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - No more motion mappings and text objects for select mode; as the mappings start with a printable character, no select-mode mapping should be defined.
+
+ autoload/CountJump/Motion.vim     |   20 ++++++++++++++------
+ autoload/CountJump/TextObject.vim |   26 ++++++++++++++++++++++++--
+ doc/CountJump.txt                 |   12 ++++++++++++
+ 3 files changed, 50 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.21)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Tue Aug 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - FIX: A 2]] jump inside a region (unless last line) jumped like a 1]] jump. The search for next region must not decrease the iteration counter when _not_ searching _across_ the region.
+    - FIX: Must not do (characterwise) end position adaptation for linewise text object that does not exclude boundaries.
+    - Switched example from email fortunes to Pascal begin..end blocks, as they are conceptually easier.
+
+ autoload/CountJump/Region.vim     |   30 ++++++++++++++-----
+ autoload/CountJump/TextObject.vim |   13 +++++++-
+ doc/CountJump.txt                 |   56 +++++++++++++++++++-----------------
+ 3 files changed, 63 insertions(+), 36 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.20)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Tue Aug 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - ENH: In CountJump#Motion#MakeBracketMotion(), a:keyAfterBracket and a:inverseKeyAfterBracket can now be empty, the resulting mappings are then omitted. Likewise, any jump function can be empty in CountJump#Motion#MakeBracketMotionWithJumpFunctions().
+    - With the added CountJump#Motion#MakeBracketMotionWithJumpFunctions() motions can be defined via jump functions, similar to how text objects can be defined.
+    - Added CountJump/Region.vim to move to borders of a region defined by lines matching a pattern.
+    - FIX: CountJump#CountJump() with mode "O" didn't add original position to jump list.
+    - The previous visual selection is kept when the text object could not be selected. (Beforehand, a new selection of the text object's selection type was created.)
+    - The adjustment movements after the jumps to the text object boundaries now do not cause beeps if that movement cannot be done (e.g. a 'j' at the end of the buffer).
+
+ autoload/CountJump/Motion.vim     |  142 ++++++++++++++++-
+ autoload/CountJump/Region.vim     |  314 +++++++++++++++++++++++++++++++++++++
+ autoload/CountJump/TextObject.vim |   90 ++++++++---
+ autoload/CountJump.vim            |   29 ++--
+ doc/CountJump.txt                 |   65 ++++++++
+ 5 files changed, 592 insertions(+), 48 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Tue Jul 20 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Changed behavior if there aren't [count] matches: Instead of jumping to the last available match (and ringing the bell), the cursor stays at the original position, like with the old vi-compatible motions.
+    - ENH: Only adding to jump list if there actually is a match. This is like the built-in Vim motions work.
+    - FIX: For a linewise text object, the end cursor column is not important; do not compare with the original cursor column in this case.
+
+ autoload/CountJump/TextObject.vim |   16 +++++++++-
+ autoload/CountJump.vim            |   57 +++++++++++++++++++++++++++++++++----
+ doc/CountJump.txt                 |   19 ++++++++++++
+ 3 files changed, 84 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.00)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Tue Jun 22 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                            |  127 +++++++++++++++
+ autoload/CountJump/Motion.vim     |  128 +++++++++++++++
+ autoload/CountJump/TextObject.vim |  319 +++++++++++++++++++++++++++++++++++++
+ autoload/CountJump.vim            |  120 ++++++++++++++
+ doc/CountJump.txt                 |  144 +++++++++++++++++
+ 5 files changed, 838 insertions(+), 0 deletions(-)

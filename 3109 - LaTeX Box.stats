@@ -1,0 +1,230 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9.3, refs/heads/master)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Wed Aug 25 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fix TOC bug for unnumbered sections
+
+ ftplugin/latex-box/motion.vim |   28 +++++++++++++++++++++++++---
+ 1 files changed, 25 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.2)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Tue Aug 24 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fix TOC bug with amsart
+
+ doc/latex-box.txt             |    4 ++-
+ ftplugin/latex-box/common.vim |   44 +++++++++++++++++++++++++++++++++++++++++
+ ftplugin/latex-box/motion.vim |   38 +++++++++++++++-------------------
+ 3 files changed, 64 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.1)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Thu Aug 5 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Plenty of minor bug fixes.
+
+ doc/latex-box.txt                  |   39 +++++++++++++---
+ ftplugin/latex-box/common.vim      |    3 +
+ ftplugin/latex-box/complete.vim    |   20 ++++----
+ ftplugin/latex-box/indent.vim      |    6 +-
+ ftplugin/latex-box/latexmk.vim     |   14 ++++--
+ ftplugin/latex-box/motion.vim      |   85 ++++++++++++++++++++++++++++--------
+ ftplugin/latex-box/vimcomplete.bst |    9 +++-
+ ftplugin/tex_LatexBox.vim          |   24 +++++++---
+ 8 files changed, 147 insertions(+), 53 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.0)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Wed Jun 30 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - add highlight matching pairs
+    - improve pair matching
+
+ doc/latex-box.txt               |   19 +++-
+ ftplugin/latex-box/common.vim   |   15 ++-
+ ftplugin/latex-box/complete.vim |   27 ++++--
+ ftplugin/latex-box/indent.vim   |   11 ++-
+ ftplugin/latex-box/motion.vim   |  219 ++++++++++++++++++++++++++++++++-------
+ ftplugin/tex_LatexBox.vim       |    2 +-
+ 6 files changed, 236 insertions(+), 57 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.5)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Sat Jun 26 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added the indent file that was missing in previous versions. I forgot to add it to the vimball in the previous versions.
+
+ ftplugin/latex-box/complete.vim |   16 ++++----
+ ftplugin/latex-box/indent.vim   |   70 +++++++++++++++++++++++++++++++++++++++
+ ftplugin/latex-box/mappings.vim |    2 +-
+ ftplugin/latex-box/motion.vim   |    2 +-
+ ftplugin/tex_LatexBox.vim       |    3 +-
+ 5 files changed, 82 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.4)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Wed Jun 23 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New g:LatexBox_split_width setting
+    - Add matching for '$' pairs
+    - Add inline math objects
+
+ doc/latex-box.txt               |   13 ++++++
+ ftplugin/latex-box/common.vim   |   38 +++++++++++------
+ ftplugin/latex-box/complete.vim |   20 +++++-----
+ ftplugin/latex-box/mappings.vim |    4 ++
+ ftplugin/latex-box/motion.vim   |   84 ++++++++++++++++++++++++++++-----------
+ ftplugin/tex_LatexBox.vim       |    4 +-
+ 6 files changed, 114 insertions(+), 49 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.3)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Tue Jun 22 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Load errors automatically when latexmk exits with nonzero status
+    - Fixed a stupid bug that would prevent in bibtex completion
+
+ ftplugin/latex-box/complete.vim |    2 +-
+ ftplugin/latex-box/latexmk.vim  |    2 +-
+ ftplugin/tex_LatexBox.vim       |    4 +++-
+ 3 files changed, 5 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.2)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Tue Jun 22 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Optimized smart indentation for speed
+
+ ftplugin/latex-box/common.vim |    5 +++++
+ ftplugin/tex_LatexBox.vim     |    2 +-
+ 2 files changed, 6 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.1)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Mon Jun 21 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed bug in % matching.
+    - Support for environment objects (e.g., select with "vie" or "vae")
+
+ doc/latex-box.txt               |    3 +-
+ ftplugin/latex-box/common.vim   |   16 ++++++-
+ ftplugin/latex-box/mappings.vim |    7 +++-
+ ftplugin/latex-box/motion.vim   |   91 +++++++++++++++++++++++++++++++-------
+ ftplugin/tex_LatexBox.vim       |    2 +-
+ 5 files changed, 97 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Sun Jun 20 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Smart indentation
+    - Navigation through \begin/\end and \left/\right pairs with %
+    - Change environment, including \[ \]
+    - Kill all latexmk instances when vim quits
+    - Speed optimization
+    - Do not complete closing bracket if already present
+    - Support \left/\right in close last environment
+
+ doc/latex-box.txt               |   32 +++-
+ ftplugin/latex-box/common.vim   |   68 ++++++---
+ ftplugin/latex-box/complete.vim |  329 ++++++++++++++++++---------------------
+ ftplugin/latex-box/latexmk.vim  |   24 +++-
+ ftplugin/latex-box/mappings.vim |    8 +
+ ftplugin/latex-box/motion.vim   |   25 +++
+ ftplugin/tex_LatexBox.vim       |    2 +-
+ 7 files changed, 273 insertions(+), 215 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Thu Jun 17 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    minor bug fixes
+    fixes by Marcin Szamotulski
+    deprecated templates
+    new mappings <Plug>CloseLastEnv and <Plug>WrapSelection
+
+ doc/latex-box.txt                  |  114 ++++++++++----
+ ftplugin/latex-box/common.vim      |   59 ++------
+ ftplugin/latex-box/complete.vim    |  295 +++++++++++++++++++++++-------------
+ ftplugin/latex-box/latexmk.vim     |   33 +++--
+ ftplugin/latex-box/mappings.vim    |    1 +
+ ftplugin/latex-box/motion.vim      |    2 +-
+ ftplugin/latex-box/vimcomplete.bst |    6 +-
+ ftplugin/tex_LatexBox.vim          |    2 +-
+ 8 files changed, 315 insertions(+), 197 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Tue Jun 15 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added :LatexmkStop command to stop latexmk (thanks to Charlie Tanksley for Mac testing).
+    Bug fix in the TOC by Marcin Szamotulski.
+    New :LatexmkStatusDetailed command to show process group ID's of running instances of latexmk.
+    New g:LatexBox_cite_pattern and g:LatexBox_ref_pattern options.
+
+ doc/latex-box.txt               |   51 ++++++++++++++-
+ ftplugin/latex-box/common.vim   |  110 ++++++++++++++++++++++++---------
+ ftplugin/latex-box/complete.vim |   13 +++--
+ ftplugin/latex-box/latexmk.vim  |  133 +++++++++++++++++++++++++++++++--------
+ ftplugin/latex-box/mappings.vim |    2 +
+ ftplugin/latex-box/motion.vim   |   13 +++-
+ ftplugin/tex_LatexBox.vim       |    2 +-
+ 7 files changed, 258 insertions(+), 66 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.3)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Thu Jun 10 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug in \ref completion.
+
+ ftplugin/latex-box/complete.vim |    2 +-
+ ftplugin/latex-box/motion.vim   |    6 ++++--
+ ftplugin/tex_LatexBox.vim       |    2 +-
+ 3 files changed, 6 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.2)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Wed Jun 9 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug in brace/bracket motion
+
+ doc/latex-box.txt               |    1 -
+ ftplugin/latex-box/common.vim   |   47 +++++++++++++++++++++++---------------
+ ftplugin/latex-box/complete.vim |    6 ++++-
+ ftplugin/latex-box/latexmk.vim  |    6 ++++-
+ ftplugin/latex-box/motion.vim   |    2 +
+ ftplugin/tex_LatexBox.vim       |    2 +-
+ 6 files changed, 41 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Thu Jun 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a but in the TOC.
+
+ README                             |   20 ++
+ doc/latex-box.txt                  |  259 +++++++++++++++++++++++++++
+ ftplugin/latex-box/common.vim      |  151 ++++++++++++++++
+ ftplugin/latex-box/complete.vim    |  340 ++++++++++++++++++++++++++++++++++++
+ ftplugin/latex-box/latexmk.vim     |   93 ++++++++++
+ ftplugin/latex-box/mappings.vim    |   49 +++++
+ ftplugin/latex-box/motion.vim      |  133 ++++++++++++++
+ ftplugin/latex-box/vimcomplete.bst |  299 +++++++++++++++++++++++++++++++
+ ftplugin/tex_LatexBox.vim          |   21 +++
+ 9 files changed, 1365 insertions(+), 0 deletions(-)

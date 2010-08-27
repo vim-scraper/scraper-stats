@@ -1,0 +1,22 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6.0, refs/heads/master)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Sun Jul 4 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    new python version
+    if you use a watch-list from the shell-script version, the new python version will need to redownload all the scripts in the watchlist once
+
+ update-watch-list.sh  |  291 ---------------------------------
+ vim-update-scripts.py |  435 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 435 insertions(+), 291 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
+Author:     David Munger <mungerd at gmail.com>
+AuthorDate: Thu Jul 1 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - unzip .vim.gz, .vim.bz2, .vba.gz, .vba.bz2 if needed
+
+ README               |   29 +++++
+ update-watch-list.sh |  291 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 320 insertions(+), 0 deletions(-)

@@ -1,0 +1,206 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8, refs/heads/master)
+Author:     Wincent Colaiuta <win at wincent.com>
+AuthorDate: Thu Aug 19 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - overrides for the default mappings can now be lists of strings, allowing multiple mappings to be defined for any given action
+    - <Leader>t mapping only set up if no other map for |:CommandT| exists (patch from Scott Bronson)
+    - prevent folds from appearing in the match listing
+    - tweaks to avoid the likelihood of "Not enough room" errors when trying to open files
+    - watch out for "nil" windows when restoring window dimensions
+    - optimizations (avoid some repeated downcasing)
+    - move all Ruby files under the "command-t" subdirectory and avoid polluting the "Vim" module namespace
+
+ doc/command-t.txt              |  182 +++++++++++++++++++++++++++++++---------
+ plugin/command-t.vim           |   11 ++-
+ ruby/command-t/controller.rb   |   67 +++++++++++----
+ ruby/command-t/match.c         |    6 +-
+ ruby/command-t/match_window.rb |   69 ++++++++-------
+ ruby/command-t/matcher.c       |    1 +
+ ruby/command-t/prompt.rb       |   12 ++--
+ ruby/command-t/scanner.rb      |    4 +-
+ ruby/command-t/settings.rb     |   10 +-
+ ruby/command-t/stub.rb         |    6 +-
+ ruby/command-t/vim/screen.rb   |   32 +++++++
+ ruby/command-t/vim/window.rb   |   38 ++++++++
+ ruby/command-t/vim.rb          |   43 ++++++++++
+ ruby/vim/screen.rb             |   34 --------
+ ruby/vim/window.rb             |   40 ---------
+ ruby/vim.rb                    |   41 ---------
+ 16 files changed, 368 insertions(+), 228 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8b)
+Author:     Wincent Colaiuta <win at wincent.com>
+AuthorDate: Sun Jul 11 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - large overhaul if the scoring algorithm to make the ordering of returned results more intuitive; given the scope of the changes and room for optimization of the new algorithm, this release is labelled as "beta"
+
+ doc/command-t.txt      |    6 +
+ ruby/command-t/ext.c   |    3 +-
+ ruby/command-t/ext.h   |    3 +
+ ruby/command-t/match.c |  288 +++++++++++++++++++++---------------------------
+ 4 files changed, 135 insertions(+), 165 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Wincent Colaiuta <win at wincent.com>
+AuthorDate: Thu Jun 10 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - handle more |'wildignore'| patterns by delegating to VIM's own |expand()| function; with this change it is now viable to exclude patterns such as 'vendor/rails/**' in addition to filename-only patterns like '*.o' and '.git' (patch from Mike Lundy)
+    - always sort results alphabetically for empty search strings; this eliminates filesystem-specific variations (patch from Mike Lundy)
+
+ doc/command-t.txt            |   64 +++++++++++++++++++++---------------
+ plugin/command-t.vim         |    2 +-
+ ruby/command-t/controller.rb |    3 +-
+ ruby/command-t/depend        |    2 +-
+ ruby/command-t/matcher.c     |   74 +++++++++++++++++++++++------------------
+ ruby/command-t/scanner.rb    |   12 ++++---
+ ruby/vim/screen.rb           |    4 +-
+ ruby/vim.rb                  |    4 +-
+ 8 files changed, 93 insertions(+), 72 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Wincent Colaiuta <win at wincent.com>
+AuthorDate: Thu Apr 29 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - |:CommandT| now accepts an optional parameter to specify the starting directory, temporarily overriding the usual default of VIM's |:pwd|
+    - fix truncated paths when operating from root directory
+
+ doc/command-t.txt              |   58 +++++++++++++++++++++++++++++++--------
+ plugin/command-t.vim           |    6 ++--
+ ruby/command-t/controller.rb   |    8 +++++-
+ ruby/command-t/match_window.rb |   29 ++++++++++++++-----
+ ruby/command-t/scanner.rb      |    2 +-
+ ruby/command-t/stub.rb         |    6 ++--
+ 6 files changed, 81 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
+Author:     Wincent Colaiuta <win at wincent.com>
+AuthorDate: Sun Apr 11 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - fix for Ruby 1.9 compatibility regression introduced in 0.5
+    - documentation enhancements, specifically targetted at Windows users
+
+ doc/command-t.txt            |  146 +++++++++++++++++++++++++++++++-----------
+ ruby/command-t/controller.rb |    2 +-
+ 2 files changed, 109 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Wincent Colaiuta <win at wincent.com>
+AuthorDate: Sat Apr 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - |:CommandTFlush| now re-evaluates settings, allowing changes made via |:let| to be picked up without having to restart VIM
+    - fix premature abort when scanning very deep directory hierarchies
+    - remove broken |<Esc>| key mapping on vt100 and xterm terminals
+    - provide settings for overriding default mappings
+    - minor performance optimization
+
+ doc/command-t.txt              |   84 +++++++++++++++++++++++++++++++++----
+ plugin/command-t.vim           |   12 +++---
+ ruby/command-t/controller.rb   |   91 +++++++++++++++++++++++----------------
+ ruby/command-t/ext.c           |    3 -
+ ruby/command-t/match_window.rb |    6 ---
+ ruby/command-t/scanner.rb      |    5 +-
+ ruby/command-t/settings.rb     |    4 ++
+ 7 files changed, 141 insertions(+), 64 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Wincent Colaiuta <win at wincent.com>
+AuthorDate: Sat Mar 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - add |g:CommandTMatchWindowAtTop| setting (patch from Zak Johnson)
+    - documentation fixes and enhancements
+    - internal refactoring and simplification
+
+ doc/command-t.txt              |   24 ++++++++++-
+ ruby/command-t/base.rb         |   48 ---------------------
+ ruby/command-t/controller.rb   |   14 ++++---
+ ruby/command-t/finder.rb       |   51 ++++++++++++++++++++++
+ ruby/command-t/match_window.rb |    4 +-
+ ruby/command-t/scanner.rb      |   92 ++++++++++++++++++++++++++++++++++++++++
+ ruby/command-t/scanner/base.rb |   40 -----------------
+ ruby/command-t/scanner/ruby.rb |   84 ------------------------------------
+ ruby/command-t/scanner.rb      |   33 --------------
+ 9 files changed, 177 insertions(+), 213 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Wincent Colaiuta <win at wincent.com>
+AuthorDate: Wed Mar 24 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - add |g:CommandTMaxHeight| setting for controlling the maximum height of the match window (patch from Lucas de Vries)
+    - fix bug where |'list'| setting might be inappropriately set after dismissing Command-T
+    - compatibility fix for different behaviour of "autoload" under Ruby 1.9.1
+    - avoid "highlight group not found" warning when run under a version of VIM that does not have syntax highlighting support
+    - open in split when opening normally would fail due to |'hidden'| and |'modified'| values
+
+ doc/command-t.txt              |   19 +++++++++++++++
+ plugin/command-t.vim           |   15 +++++-------
+ ruby/command-t/base.rb         |    3 ++
+ ruby/command-t/controller.rb   |   21 +++++++++++++++--
+ ruby/command-t/match_window.rb |   24 ++++++++++++-------
+ ruby/command-t/scanner/find.rb |   48 ----------------------------------------
+ ruby/command-t/scanner/ruby.rb |    2 +
+ ruby/command-t/scanner.rb      |    6 +---
+ ruby/command-t/settings.rb     |    2 -
+ ruby/command-t.rb              |   39 --------------------------------
+ 10 files changed, 65 insertions(+), 114 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Wincent Colaiuta <win at wincent.com>
+AuthorDate: Tue Mar 23 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - compatibility fixes for compilation under Ruby 1.9 series
+    - compatibility fixes for compilation under Ruby 1.8.5
+    - compatibility fixes for Windows and other non-UNIX platforms
+    - suppress "mapping already exists" message if <Leader>t mapping is already defined when plug-in is loaded
+    - exclude paths based on |'wildignore'| setting rather than a hardcoded regular expression
+
+ doc/command-t.txt              |   50 ++++++++++++++++++++++++++++++++-------
+ plugin/command-t.vim           |   14 ++++++++---
+ ruby/command-t/controller.rb   |    8 +++++-
+ ruby/command-t/match.c         |   17 +++++++------
+ ruby/command-t/matcher.c       |   35 ++++++++++++++-------------
+ ruby/command-t/ruby_compat.h   |   49 +++++++++++++++++++++++++++++++++++++++
+ ruby/command-t/scanner/ruby.rb |   10 ++++++-
+ 7 files changed, 142 insertions(+), 41 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Wincent Colaiuta <win at wincent.com>
+AuthorDate: Mon Mar 22 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                         |   13 ++
+ doc/command-t.txt              |  332 ++++++++++++++++++++++++++++++++++++++++
+ plugin/command-t.vim           |  145 +++++++++++++++++
+ ruby/command-t/base.rb         |   45 ++++++
+ ruby/command-t/controller.rb   |  209 +++++++++++++++++++++++++
+ ruby/command-t/depend          |   24 +++
+ ruby/command-t/ext.c           |   69 +++++++++
+ ruby/command-t/ext.h           |   33 ++++
+ ruby/command-t/extconf.rb      |   32 ++++
+ ruby/command-t/match.c         |  228 +++++++++++++++++++++++++++
+ ruby/command-t/match.h         |   29 ++++
+ ruby/command-t/match_window.rb |  321 ++++++++++++++++++++++++++++++++++++++
+ ruby/command-t/matcher.c       |  154 +++++++++++++++++++
+ ruby/command-t/matcher.h       |   30 ++++
+ ruby/command-t/prompt.rb       |  165 ++++++++++++++++++++
+ ruby/command-t/scanner/base.rb |   40 +++++
+ ruby/command-t/scanner/find.rb |   48 ++++++
+ ruby/command-t/scanner/ruby.rb |   76 +++++++++
+ ruby/command-t/scanner.rb      |   35 +++++
+ ruby/command-t/settings.rb     |   73 +++++++++
+ ruby/command-t/stub.rb         |   46 ++++++
+ ruby/command-t.rb              |   39 +++++
+ ruby/vim/screen.rb             |   34 ++++
+ ruby/vim/window.rb             |   40 +++++
+ ruby/vim.rb                    |   41 +++++
+ 25 files changed, 2301 insertions(+), 0 deletions(-)

@@ -1,0 +1,67 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/b3.0, refs/heads/master)
+Author:     Preston Koprivica <pkopriv2 at gmail.com>
+AuthorDate: Fri May 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed: Runaway Indentation
+    Fixed: indentkeys correctly invokes indent
+    Fixed: Comment lines with keywords.  (Tentative fix)
+
+ indent/javascript.vim                              |  190 ++++------
+ web-indent/.svn/all-wcprops                        |   17 +
+ web-indent/.svn/entries                            |   99 +++++
+ web-indent/.svn/prop-base/test.js.svn-base         |    5 +
+ web-indent/.svn/text-base/test.html.svn-base       |  399 +++++++++++++++++++
+ web-indent/.svn/text-base/test.js.svn-base         |  412 ++++++++++++++++++++
+ web-indent/indent/.svn/all-wcprops                 |   17 +
+ web-indent/indent/.svn/entries                     |   96 +++++
+ web-indent/indent/.svn/text-base/html.vim.svn-base |  254 ++++++++++++
+ .../indent/.svn/text-base/javascript.vim.svn-base  |  331 ++++++++++++++++
+ web-indent/test.js                                 |   26 +-
+ 11 files changed, 1711 insertions(+), 135 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/b2.2)
+Author:     Preston Koprivica <pkopriv2 at gmail.com>
+AuthorDate: Wed May 5 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added: Support for while() control block.
+    Added: Support for do {} while(); control block.
+    Added: Support for with() {} control block.
+    Added: Skeleton support for all MULTI-LINE cntrl blocks  SINGLE LINE cntrl blocks DO NOT HAVE SKELETON VERSIONS!!
+    Added: Skeleton support for function declarations.
+    Added: Skeleton support for basic objects.
+    Added: Tests for skeleton code.
+
+ indent/html.vim       |   30 ++--
+ indent/javascript.vim |  169 +++++++++++++--------
+ web-indent/test.html  |  399 +++++++++++++++++++++++++++++++++++++++++++++++++
+ web-indent/test.js    |   75 +++++++++
+ 4 files changed, 593 insertions(+), 80 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/b2.1)
+Author:     Preston Koprivica <pkopriv2 at gmail.com>
+AuthorDate: Wed May 5 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed: Object endings regex.  Now doesn't include preceding {, or [;
+    Fixed: Multi-Line invocation (Caveat: Must end in a ; or ,)
+
+ indent/javascript.vim |   37 +++++++++++-----
+ web-indent/test.js    |  113 +++++++++++++++++++++++++++++++++----------------
+ 2 files changed, 102 insertions(+), 48 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/b2.0)
+Author:     Preston Koprivica <pkopriv2 at gmail.com>
+AuthorDate: Wed May 5 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Completely Rewrote
+    Fixed: Determines comment lines by synIDAttr
+    Added: Anonymous function handling
+
+ README                |  144 +++++++++++++++++++++
+ indent/html.vim       |  250 ++++++++++++++++++++++++++++++++++++
+ indent/javascript.vim |  337 +++++++++++++++++++++++++++++++++++++++++++++++++
+ web-indent/test.js    |  296 +++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 1027 insertions(+), 0 deletions(-)

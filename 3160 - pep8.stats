@@ -1,0 +1,22 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     Vincent Driessen <vincent at datafox.nl>
+AuthorDate: Fri Jul 23 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Doesn't redeclare the function if it is already defined. This avoids an error message when loading another Python file in the same buffer.
+    
+    Also, jumps to the right column position for errors.
+
+ ftplugin/python_pep8.vim |   72 +++++++++++++++++++++++----------------------
+ 1 files changed, 37 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Vincent Driessen <vincent at datafox.nl>
+AuthorDate: Wed Jul 21 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                   |   18 +++++++++++
+ ftplugin/python_pep8.vim |   71 ++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 89 insertions(+), 0 deletions(-)

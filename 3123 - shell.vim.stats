@@ -1,0 +1,130 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.2, refs/heads/master)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Sun Aug 15 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fix for E33: No previous substitute regular expression:
+    http://github.com/xolox/vim-shell/commit/8ab66c465f5f7e29cc7677b2d54012f0fe762576
+    
+    The packages for version 0.7 and 0.7.1 below should have included the "shell.dll" dynamic link library but I failed to include it. This has been fixed now. Sorry about that!
+
+ autoload/xolox/shell.dll |  Bin 0 -> 43520 bytes
+ autoload/xolox/shell.vim |    5 +++--
+ autoload/xolox.vim       |   12 +++++++++---
+ plugin/shell.vim         |    4 ++--
+ 4 files changed, 14 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Tue Aug 10 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Enable passing stdin to xolox#shell#execute():
+    http://github.com/xolox/vim-shell/commit/fc16d5c0e72d8ba4112d239f211cc0576640aaa3
+
+ autoload/xolox/shell.vim |   23 +++++++++++++++--------
+ plugin/shell.vim         |    4 ++--
+ 2 files changed, 17 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Mon Aug 9 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     Full-screen mode now hides Vim's menu/toolbar/tabline by default. This makes it useful even when the actual full-screen state of Vim's GUI window can't be changed because the DLL/wmctrl is unavailable.
+    
+     Full-screen mode should now work in most graphical terminal emulators like xterm and gnome-terminal (though <F11> won't work in the latter).
+    
+     Included user friendly :Open and :Fullscreen commands plus default key mappings so the plug-in is more useful out of the box.
+    
+     The xolox#shell#execute() function now returns the output of the shell command if it was executed in synchronous mode (this enables integration with my easytags.vim plug-in).
+    
+     I've merged my unreleased `hyperlink.vim' plug-in into `shell.vim' which improves the openurl() functionality and includes automatic highlighting for URLs and e-mail addresses in comments and strings.
+    
+    All from http://github.com/xolox/vim-shell/commit/2f6414109fa52b20c1a86faff215fe1329ba6eb8
+
+ autoload/xolox/escape.vim |   26 ++++
+ autoload/xolox/shell.dll  |  Bin 43520 -> 0 bytes
+ autoload/xolox/shell.vim  |  344 +++++++++++++++++++++++++++++++++------------
+ autoload/xolox.vim        |   99 +++++++++++++
+ doc/shell.txt             |  253 ++++++++++++++++++++++-----------
+ etc/shell/Makefile        |   12 --
+ etc/shell/readme.html     |  123 ----------------
+ etc/shell/shell.c         |  187 ------------------------
+ plugin/shell.vim          |   62 ++++++++
+ 9 files changed, 610 insertions(+), 496 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.1)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Mon Jun 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fix: Updated instructions to match new execute() implementation. Sorry about that!
+    http://github.com/xolox/vim-shell/commit/2cc68db470c974acbc4c43ea001536c1106ae0e2
+
+ doc/shell.txt         |   16 ++++++++--------
+ etc/shell/readme.html |   22 +++++++++++-----------
+ 2 files changed, 19 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Mon Jun 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Improved test instructions for execute()
+      http://github.com/xolox/vim-shell/commit/50453066d1d211cfa6e426b78f3e503e3f46c82e
+    
+    * Better DLL detection, synchronous command execution
+      http://github.com/xolox/vim-shell/commit/82f6cb0f013480f994438d44b6cf98ae136569c0
+    
+    * Improved README, added screenshots, fixed typo
+      http://github.com/xolox/vim-shell/commit/364ceee3040e77f0a3fb8b4b657aac612f6dbcc4
+
+ autoload/xolox/shell.dll |  Bin 43008 -> 43520 bytes
+ autoload/xolox/shell.vim |   66 ++++++++++++++++++++++++++++++----------------
+ doc/shell.txt            |   56 +++++++++++++++++++++------------------
+ etc/shell/readme.html    |   28 ++++++++++---------
+ etc/shell/shell.c        |   62 ++++++++++++++++++++++++++++++------------
+ 5 files changed, 132 insertions(+), 80 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Mon Jun 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fix for execute() implementation in DLL
+    http://github.com/xolox/vim-shell/commit/c46f8e522f53283528f1dc9ab58cc6eb0a9c5507
+
+ autoload/xolox/shell.dll |  Bin 43008 -> 43008 bytes
+ doc/shell.txt            |   38 ++++++++++++++++++++++++++------------
+ etc/shell/Makefile       |    2 +-
+ etc/shell/readme.html    |   39 +++++++++++++++++++++++++++------------
+ etc/shell/shell.c        |    3 +--
+ 5 files changed, 55 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Sun Jun 13 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed typo in NMAKE makefile and references to Vim scripts page.
+
+ doc/shell.txt         |    2 +-
+ etc/shell/readme.html |   10 +++++-----
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Sun Jun 13 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                   |   13 ++++
+ autoload/xolox/shell.dll |  Bin 0 -> 43008 bytes
+ autoload/xolox/shell.vim |  159 +++++++++++++++++++++++++++++++++++++++++++++
+ doc/shell.txt            |   99 ++++++++++++++++++++++++++++
+ etc/shell/Makefile       |   12 ++++
+ etc/shell/readme.html    |  106 ++++++++++++++++++++++++++++++
+ etc/shell/shell.c        |  162 ++++++++++++++++++++++++++++++++++++++++++++++
+ 7 files changed, 551 insertions(+), 0 deletions(-)

@@ -1,0 +1,102 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2.3, refs/heads/master)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Thu Aug 19 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      Improve compatibility with :mksession by setting g:SessionLoad:
+       http://github.com/xolox/vim-session/commit/fe61f0170e1a54dd6a87ac3031228370de3c5497
+    
+      Vim 7.0 compatibility, :Restart improvement:
+       http://github.com/xolox/vim-session/commit/c02815d6505d520ebf76471c0605a2d120f69899
+
+ autoload/session.vim |   12 +++++++---
+ autoload/xolox.vim   |   12 ++++++++--
+ doc/session.txt      |   57 ++++++++++++++++++++++++-------------------------
+ plugin/session.vim   |    4 +-
+ 4 files changed, 47 insertions(+), 38 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.2)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Fri Jul 30 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      Enable user defined SwapExists autocmd using <nested> keyword:
+       http://github.com/xolox/vim-session/commit/0341c020336174460455719be50049caaceea3d2
+    
+      Experimental :RestartVim command (to be documented):
+       http://github.com/xolox/vim-session/commit/ec2ead371fb6e77a31c6b8dcbc151f290d3b07fc
+    
+      Experimental support for buffer list persistence:
+       http://github.com/xolox/vim-session/commit/6ad9516c3aba9b7cfa04c9233d4bb7ff3e2e48f8
+
+ autoload/session.vim     |   46 ++++++-
+ autoload/xolox/shell.vim |  317 ----------------------------------------------
+ autoload/xolox.vim       |   16 ++-
+ doc/session.txt          |   18 ++--
+ plugin/session.vim       |    7 +-
+ 5 files changed, 63 insertions(+), 341 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Fri Jul 16 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      Plug-in doesn't prompt on --servername anymore, that was before lock files:
+       http://github.com/xolox/vim-session/commit/765e9312dbb7909783cd3f096ad42aae3859b412
+    
+      The default session isn't automatically deleted anymore, that was an ugly hack before lock files were used!
+      Finished description of g:session_autosave option :-s
+      Documented the :DeleteSession command.
+      Documented session locking and the bang workaround.
+      The :SaveSession command now locks the session after saving.
+       http://github.com/xolox/vim-session/commit/50ad3662d58bc574a93f5c327f8fab5d0f9c4f5f
+
+ autoload/session.vim |    6 ++--
+ doc/session.txt      |   89 ++++++++++++++++++++++++++++++++------------------
+ plugin/session.vim   |    2 +-
+ 3 files changed, 61 insertions(+), 36 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Fri Jul 16 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      Added uniform confirmational messages to :commands:
+       http://github.com/xolox/vim-session/commit/7b31f5ba0c4c3d44afaddf39eed3aa739ae23a63
+    
+      Basic support for restoring NERD tree:
+       http://github.com/xolox/vim-session/commit/7513e54b91477755ff5e615e054b0e2e7f5802e9
+
+ autoload/session.vim |  115 ++++++++++++++++++++++++++++----------------------
+ autoload/xolox.vim   |    8 ++-
+ plugin/session.vim   |    4 +-
+ 3 files changed, 71 insertions(+), 56 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.1)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Thu Jul 15 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improved documentation, added automatic update support using GLVS plug-in:
+    http://github.com/xolox/vim-session/commit/b228b5ad7cff4fcab76a432b340b82f6336a4e6d
+
+ doc/session.txt    |   16 ++++++++++++++++
+ plugin/session.vim |    5 ++++-
+ 2 files changed, 20 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Thu Jul 15 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                    |    8 +
+ autoload/session.vim      |  522 +++++++++++++++++++++++++++++++++++++++++++++
+ autoload/xolox/escape.vim |   26 +++
+ autoload/xolox/path.vim   |  158 ++++++++++++++
+ autoload/xolox/shell.vim  |  317 +++++++++++++++++++++++++++
+ autoload/xolox.vim        |   95 ++++++++
+ doc/session.txt           |  207 ++++++++++++++++++
+ plugin/session.vim        |   62 ++++++
+ 8 files changed, 1395 insertions(+), 0 deletions(-)

@@ -1,0 +1,68 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.4, refs/heads/master)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Sun Apr 4 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Add additional syntax file for |vspec-commands|.- |:Should|: Provide expression completion for convenience.- Improve minor stuffs.
+
+ autoload/vspec.vim                              |    6 +-
+ bin/vspec                                       |   26 ++-
+ doc/tags                                        |    1 +
+ doc/vspec.txt                                   |    9 +-
+ vim-vspec-0.0.3/.mduem/cache/Makefile.variables |    6 -
+ vim-vspec-0.0.3/Makefile                        |   12 -
+ vim-vspec-0.0.3/mduem/Makefile                  |  423 ----------------------
+ vim-vspec-0.0.3/test/context.expected           |   18 -
+ vim-vspec-0.0.3/test/context.input              |   65 ----
+ vim-vspec-0.0.3/test/custom-matcher.expected    |   30 --
+ vim-vspec-0.0.3/test/custom-matcher.input       |   99 ------
+ vim-vspec-0.0.3/test/no-test.expected           |    7 -
+ vim-vspec-0.0.3/test/no-test.input              |    2 -
+ vim-vspec-0.0.3/test/tools.expected             |   20 -
+ vim-vspec-0.0.3/test/tools.input                |   46 ---
+ vim-vspec-0.0.3/test/typical-content.expected   |  193 ----------
+ vim-vspec-0.0.3/test/typical-content.input      |  109 ------
+ vim-vspec-0.0.4/.mduem/cache/Makefile.variables |    6 +
+ vim-vspec-0.0.4/Makefile                        |   13 +
+ vim-vspec-0.0.4/after/syntax/vim/vspec.vim      |   39 ++
+ vim-vspec-0.0.4/mduem/Makefile                  |  428 +++++++++++++++++++++++
+ vim-vspec-0.0.4/test/context.expected           |   18 +
+ vim-vspec-0.0.4/test/context.input              |   65 ++++
+ vim-vspec-0.0.4/test/custom-matcher.expected    |   30 ++
+ vim-vspec-0.0.4/test/custom-matcher.input       |   99 ++++++
+ vim-vspec-0.0.4/test/no-test.expected           |    7 +
+ vim-vspec-0.0.4/test/no-test.input              |    2 +
+ vim-vspec-0.0.4/test/syntax.expected            |   12 +
+ vim-vspec-0.0.4/test/syntax.input               |  105 ++++++
+ vim-vspec-0.0.4/test/tools.expected             |   20 +
+ vim-vspec-0.0.4/test/tools.input                |   46 +++
+ vim-vspec-0.0.4/test/typical-content.expected   |  193 ++++++++++
+ vim-vspec-0.0.4/test/typical-content.input      |  109 ++++++
+ 33 files changed, 1228 insertions(+), 1036 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.3)
+Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+AuthorDate: Fri Mar 12 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                                          |    3 +
+ autoload/vspec.vim                              |  526 +++++++++++++++++++++++
+ bin/vspec                                       |   39 ++
+ doc/tags                                        |   31 ++
+ doc/vspec.txt                                   |  302 +++++++++++++
+ vim-vspec-0.0.3/.mduem/cache/Makefile.variables |    6 +
+ vim-vspec-0.0.3/Makefile                        |   12 +
+ vim-vspec-0.0.3/mduem/Makefile                  |  423 ++++++++++++++++++
+ vim-vspec-0.0.3/test/context.expected           |   18 +
+ vim-vspec-0.0.3/test/context.input              |   65 +++
+ vim-vspec-0.0.3/test/custom-matcher.expected    |   30 ++
+ vim-vspec-0.0.3/test/custom-matcher.input       |   99 +++++
+ vim-vspec-0.0.3/test/no-test.expected           |    7 +
+ vim-vspec-0.0.3/test/no-test.input              |    2 +
+ vim-vspec-0.0.3/test/tools.expected             |   20 +
+ vim-vspec-0.0.3/test/tools.input                |   46 ++
+ vim-vspec-0.0.3/test/typical-content.expected   |  193 +++++++++
+ vim-vspec-0.0.3/test/typical-content.input      |  109 +++++
+ 18 files changed, 1931 insertions(+), 0 deletions(-)

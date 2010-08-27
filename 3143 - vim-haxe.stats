@@ -1,0 +1,46 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.1.2, refs/heads/master)
+Author:     Marc Weber <marco-oweber at gmx.de>
+AuthorDate: Wed Jul 21 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    tag std lib matching current target, support HaXe completion when using quick targets. a tmp.hxml file is created for that purpose
+
+ autoload/haxe.vim |   61 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/README.txt    |   20 ++++++++++++++++-
+ 2 files changed, 80 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.1)
+Author:     Marc Weber <marco-oweber at gmx.de>
+AuthorDate: Wed Jul 21 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    small fix syntax highlighting, action targeting flash
+
+ autoload/haxe.vim           |    9 +++++++
+ ftplugin/haxe.vim           |   10 ++++++++
+ plugin/haxeOmnicomplete.vim |    4 +--
+ snippets/haxe.snippets      |   51 +++++++++++++++++++++++++++++++++++++-----
+ syntax/haxe.vim             |   16 ++++++------
+ 5 files changed, 73 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Marc Weber <marco-oweber at gmx.de>
+AuthorDate: Wed Jul 7 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                      |    6 +
+ autoload/haxe.vim           |  714 +++++++++++++++++++++++++++++++++++++++++++
+ autoload/haxe_snipmate.vim  |   61 ++++
+ doc/CHANGELOG.txt           |   16 +
+ doc/LICENSE.txt             |  339 ++++++++++++++++++++
+ doc/README.txt              |  109 +++++++
+ doc/vim-haxe-addon-info.txt |   18 ++
+ ftplugin/actionscript.vim   |   25 ++
+ ftplugin/haxe.vim           |   18 ++
+ ftplugin/mxml.vim           |    1 +
+ plugin/haxeOmnicomplete.vim |   86 ++++++
+ snippets/haxe.snippets      |  191 ++++++++++++
+ syntax/haxe.vim             |  544 ++++++++++++++++++++++++++++++++
+ 13 files changed, 2128 insertions(+), 0 deletions(-)

@@ -1,0 +1,46 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1.1, refs/heads/master)
+Author:     ZyX ZyX <kp-pav at yandex.ru>
+AuthorDate: Sat Aug 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added default exception message
+
+ autoload/load.vim       |    5 -
+ doc/chk.txt             |  422 --------------
+ doc/comp.txt            |  123 ----
+ doc/load.txt            |  335 -----------
+ plugin/chk.vim          | 1046 ---------------------------------
+ plugin/comp.vim         |  387 -------------
+ plugin/load.vim         | 1467 -----------------------------------------------
+ plugin/oop.vim          |  232 --------
+ plugin/vimoop-1.1.1.vim |  417 ++++++++++++++
+ 9 files changed, 417 insertions(+), 4017 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     ZyX ZyX <kp-pav at yandex.ru>
+AuthorDate: Tue Aug 10 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added Exception built-in class, commented out list of instances attached to the class, so that garbage collector could free them.
+
+ plugin/comp.vim |    9 +++++++--
+ plugin/oop.vim  |   48 ++++++++++++++++++++++++++++++++++++++++++++----
+ 2 files changed, 51 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     ZyX ZyX <kp-pav at yandex.ru>
+AuthorDate: Wed Aug 4 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README            |    3 +
+ autoload/load.vim |    5 +
+ doc/chk.txt       |  422 +++++++++++++++
+ doc/comp.txt      |  123 +++++
+ doc/load.txt      |  335 ++++++++++++
+ plugin/chk.vim    | 1046 ++++++++++++++++++++++++++++++++++++++
+ plugin/comp.vim   |  382 ++++++++++++++
+ plugin/load.vim   | 1467 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/oop.vim    |  192 +++++++
+ 9 files changed, 3975 insertions(+), 0 deletions(-)

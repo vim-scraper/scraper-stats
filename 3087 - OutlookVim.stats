@@ -1,0 +1,88 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/5.0, refs/heads/master)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Sat Aug 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New Features
+    ------------
+    - Changed how the script looks for some system files especially useful if you do not store your vimfiles directory in the $VIM directory (Adam Duck).
+
+ doc/outlook.txt       |   16 ++++++++++++----
+ plugin/OutlookVim.bas |    6 ++----
+ plugin/outlook.vim    |   15 ++++++++++-----
+ plugin/outlookvim.js  |    4 ++--
+ 4 files changed, 26 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Fri Jun 4 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New Features
+    ------------
+    - Updated documentation.  Added a troubleshooting section (Zsolt Botykai).
+    - Updated outlookvim.js to display a message if double clicked on to determine if Windows Script Host is correctly installed.
+    - Updated outlookvim.bas (the Outlook VBScript Macro) to show an error if it cannot access the file system.  Modified all the message boxes Outlook may display to indicate "OutlookVim:" is displaying the message.
+    - You can specify whether new emails should be opened in a new tab via the g:outlook_use_tabs configuration option (Zsolt Botykai).
+    
+    After unzipping the contents into your vimfiles directory, copy and paste the outlookvim.bas file into your Outlook macro created earlier (ALT-F11 in Outlook).
+    
+    Also from within Vim run (choose the location where the plugin was installed):
+    :helptags $VIM\vimfiles\doc
+
+ doc/outlook.txt       |  116 ++++++++++++++++++++++------
+ plugin/OutlookVim.bas |   41 ++++++++---
+ plugin/outlook.vim    |  204 ++++++++++++++++++++++++++++---------------------
+ plugin/outlookvim.js  |   64 ++++++++++-----
+ 4 files changed, 280 insertions(+), 145 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Mon May 10 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     New Features
+     ------------
+     - You can specify which Vim instance to edit the file by setting a variable in your .vimrc (i.e. let g:outlook_servername = 'OUTLOOK')
+    
+     Bug Fixes
+     ---------
+     - For some (international?) Windows versions, there were errors when (or a failure) editing the file.  Needed to escape the backslashes of the filename.
+
+ doc/outlook.txt       |   22 +++++++++++++-
+ plugin/OutlookVim.bas |   77 ++++++++++++++++++++++++++++--------------------
+ plugin/outlook.vim    |   36 ++++++++++++++++++----
+ plugin/outlookvim.js  |    4 +-
+ 4 files changed, 96 insertions(+), 43 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Fri May 7 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This version adds support for Microsoft Outlook 2007 as well as earlier versions.
+    Documentation improvements.
+
+ "doc/doc\\outlook.txt"       |  196 ----------------------------------
+ doc/outlook.txt              |  243 ++++++++++++++++++++++++++++++++++++++++++
+ plugin/OutlookVim.bas        |  225 ++++++++++++++++++++++++++++++++++++++
+ plugin/outlook.vim           |  172 +++++++++++++++++++++++++++++
+ plugin/outlookvim.js         |  179 +++++++++++++++++++++++++++++++
+ "plugin/plugin\\outlook.vim" |  167 -----------------------------
+ "plugin\\OutlookVim.bas"     |  199 ----------------------------------
+ "plugin\\outlookvim.js"      |  144 -------------------------
+ 8 files changed, 819 insertions(+), 706 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Fri May 7 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                       |   24 +++++
+ "doc/doc\\outlook.txt"       |  196 +++++++++++++++++++++++++++++++++++++++++
+ "plugin/plugin\\outlook.vim" |  167 +++++++++++++++++++++++++++++++++++
+ "plugin\\OutlookVim.bas"     |  199 ++++++++++++++++++++++++++++++++++++++++++
+ "plugin\\outlookvim.js"      |  144 ++++++++++++++++++++++++++++++
+ 5 files changed, 730 insertions(+), 0 deletions(-)

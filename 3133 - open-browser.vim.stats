@@ -1,0 +1,37 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.2, refs/heads/master)
+Author:     tyru   <tyru.exe (at) gmail.com>
+AuthorDate: Mon Jun 28 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Rename |g:openbrowser_isfname| to |g:openbrowser_iskeyword|.
+    variable |g:openbrowser_isfname| is still available for
+    backward compatibility.
+    - Specialize |g:openbrowser_iskeyword| value to get URI in <cword>.
+    - More readable messages.
+
+ doc/openbrowser.txt    |   16 ++++++++-
+ plugin/openbrowser.vim |   87 +++++++++++++++++++++++++++++++++---------------
+ 2 files changed, 74 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
+Author:     tyru   <tyru.exe (at) gmail.com>
+AuthorDate: Sun Jun 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Support opening file path.
+    - Fix minor bugs.
+
+ plugin/openbrowser.vim |   59 ++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 42 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.0)
+Author:     tyru   <tyru.exe (at) gmail.com>
+AuthorDate: Sat Jun 26 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                 |   25 +++++
+ doc/openbrowser.txt    |  197 ++++++++++++++++++++++++++++++++++++++++
+ plugin/openbrowser.vim |  236 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 458 insertions(+), 0 deletions(-)

@@ -1,0 +1,73 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2, refs/heads/master)
+Author:     richard emberson <richard.n.emberson at gmail.com>
+AuthorDate: Mon May 10 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor correction: could not handle parameters with templates with commas:
+      def getAtomicVars(atomicMethods: List[XMethodInfo], methods: HashMap[global.Symbol, XMethodInfo], vars: HashMap[global.Symbol, XVarInfo]) : List[XVarInfo] = {
+      }
+
+ plugin/scalacommenter.vim |   26 +++++++++++++++++---------
+ 1 files changed, 17 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     richard emberson <richard.n.emberson at gmail.com>
+AuthorDate: Sat Apr 24 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Very minor: Method recognition failed for the List methods: '::', ':::' and 'reverse_:::'.
+
+ plugin/scalacommenter.vim |   57 ++++++++++++++++++++++++++++++--------------
+ 1 files changed, 39 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     richard emberson <richard.n.emberson at gmail.com>
+AuthorDate: Thu Apr 22 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Refactored comment generation code using Self.vim, the Vim
+      dictionary-base object prototype system. Unified the code that
+      generated output for both the writing and re-formatting of
+      comments.
+    Throw tags are now sorted in alphabetical order
+    Unified the comment writing code so that comment formatting,
+      first comment generation, and subsequent generation all
+      use the came code.
+    Text associated with an existing comment tag is no longer lost.
+    Add b:scommenter_top_level_tparams_only which controls if all
+      template parameters have @tparam tags generated or only those
+      at the top-level have tags generated.
+    Fixed scanning parameters, now scans past qualifiers like 'val',
+    Supports curried notations func(a: A)(b: B).
+    'var' or 'private var', etc.
+    Added b:scommenter_extra_line_text_offset allowing the user to control
+      the offset of any additional text associated with a tag.
+    There is now a b:scommenter_user_tags configuration variable allowing
+      the user to register in their .vimrc file third-party tags.
+    Added b:scommenter_warning_message_enable which controls the printing
+      of warning messages (if any)
+    Added b:scommenter_line_between_user_unknown_and_std_tags which
+      controls if a single comment line is printed between the
+      user/unknown tags and the standard tags.
+    Added b:scommenter_user_unknown_before_std_tags which controls the
+      order of formatting of the user/unknown tags and the standard tags.
+    Added b:scommenter_warn_deleted_tags which allows the user to
+      save the text from tags deleted during re-formatting.
+    Supports capturing parameter template @specialized information
+      in comments.
+    The @deprecated(text) annotation now becomes a ScalaDoc @deprecated
+       tag (just as the @throws annotation does).
+
+ plugin/scalacommenter.vim | 5057 ++++++++++++++++++++++++++++++---------------
+ 1 files changed, 3341 insertions(+), 1716 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     richard emberson <richard.n.emberson at gmail.com>
+AuthorDate: Fri Apr 9 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                    |   81 ++
+ plugin/scalacommenter.vim | 2851 +++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 2932 insertions(+), 0 deletions(-)

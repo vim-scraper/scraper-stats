@@ -1,0 +1,32 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1c, refs/heads/master)
+Author:     Eugene Ciurana <vim at eugeneciurana.com>
+AuthorDate: Sat Aug 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a typo in the documentation comments and updated contributors list.  No functional changes if you already have 1.1b.
+
+ plugin/gedim.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1b)
+Author:     Eugene Ciurana <vim at eugeneciurana.com>
+AuthorDate: Sat Aug 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed the EOL detection code for the Windows script that reports the screen resolution; the original author had forgotten that EOL in DOS/Windows == \r\n.  Thanks to Nathan Tenney for pointing that out an for providing a fix.
+
+ plugin/gedim.vim |    4 +++-
+ 1 files changed, 3 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Eugene Ciurana <vim at eugeneciurana.com>
+AuthorDate: Wed Aug 11 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README           |   12 ++++++
+ doc/gedim.txt    |  101 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ gedim/README     |   45 ++++++++++++++++++++++++
+ plugin/gedim.vim |   98 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 256 insertions(+), 0 deletions(-)

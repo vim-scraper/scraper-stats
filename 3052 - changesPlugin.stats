@@ -1,0 +1,121 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.11, refs/heads/master)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Tue May 4 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    BF: Document, that |InsertLeave| autocommand is used as autocommand
+    BF: generate the help file with 'et' set, so that the README at github looks prettier
+    BF: When staying in diff mode, don't reset 'fdm' and apply syntax coloring to scratch buffer
+    BF: the check for the diff executable does not work as expected (Reported by Sergey Khorev), additionally outputting the Warnings did not work in that case
+
+ autoload/changes.vim     |   63 ++++++++++++----------
+ doc/ChangesPlugin.txt    |  133 +++++++++++++++++++++++++---------------------
+ plugin/changesPlugin.vim |    6 +-
+ 3 files changed, 110 insertions(+), 92 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Wed Apr 28 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed Issue 1 from github (http://github.com/chrisbra/changesPlugin/issues/1/find)
+
+ autoload/changes.vim     |    8 ++++----
+ doc/ChangesPlugin.txt    |    4 +++-
+ plugin/changesPlugin.vim |    6 +++---
+ 3 files changed, 10 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Sat Apr 24 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    0.9: Apr 24, 2010:
+    NF: You can now use different VCS Systems for each buffer you are using.
+    NF: Stay in diff mode
+    BF: Fix the display of deleted signs
+    BF: Undefining old signs, so that changing g:changes_hl_lines works
+    BF: Some more error handling.
+    NF: Show an overview for changed lines in location-list (|:CL|)
+    NF: Show what each sign means using |:CC|
+    
+    0.8: Apr 22, 2010:  NF: Renamed the helpfile, to make it more obvious, that it refers to a plugin
+    NF: Outputting name of checked file, if checking against VCS
+    BF: Don't check for empty files.
+    BF: Reworked the Message function
+    BF: Don't try to place signs, if there are no differences (unreleased, VCS successfully tested with git, hg, svn, cvs, bzr)
+    0.7: Apr 19, 2010:
+    NF: Check against a file in a VCS (unreleased, first working version, needs to be checked for each VCS)
+
+ autoload/changes.vim     |  442 ++++++++++++++++++++++++++++++++++------------
+ doc/ChangesPlugin.txt    |  259 +++++++++++++++++++++++++++
+ doc/changesPlugin.txt    |  124 -------------
+ plugin/changesPlugin.vim |   27 ++-
+ 4 files changed, 603 insertions(+), 249 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Tue Apr 13 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    BF: also take care of DiffText from diff-mode (see :h hl-DiffText)
+
+ autoload/changes.vim     |    9 +++++----
+ doc/changesPlugin.txt    |    1 +
+ plugin/changesPlugin.vim |    4 ++--
+ 3 files changed, 8 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Mon Apr 12 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    BF: error when trying to access b:diffhl in the scratch buffer. This should be fixed now (thanks Jeet Sukumaran!)
+    BF: Use the correct highlighting groups (thanks Jeet Sukumaran!)
+
+ autoload/changes.vim     |   24 ++++++++++++++++--------
+ doc/changesPlugin.txt    |    7 ++++++-
+ plugin/changesPlugin.vim |    4 ++--
+ 3 files changed, 24 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Mon Apr 12 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NF: |ToggleChangesView|
+    NF: The autocommand checks, if the buffer has been modified, since the last time.
+    BF: Do not mess with signs, that have not been placed by changesPlugin.vim
+    BF: CleanUp was seriously messed up (sorry, I must have been asleep, when writing that)
+    BF: Take care of 'foldcolumn' setting, which would be overwritten by the signs-column
+
+ autoload/changes.vim     |  135 ++++++++++++++++++++++++++++++++-------------
+ doc/changesPlugin.txt    |   30 +++++++++-
+ plugin/changesPlugin.vim |   16 ++++--
+ 3 files changed, 134 insertions(+), 47 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Sun Apr 11 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    BF: redraw, so that the diff window will not be displayed
+    NF: enabled GLVS (see |GLVS|)
+
+ autoload/changes.vim     |    8 +++++---
+ doc/changesPlugin.txt    |    7 ++++---
+ plugin/changesPlugin.vim |    8 ++++----
+ 3 files changed, 13 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Sun Apr 11 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                   |   87 +++++++++++++++++++
+ autoload/changes.vim     |  205 ++++++++++++++++++++++++++++++++++++++++++++++
+ doc/changesPlugin.txt    |   93 +++++++++++++++++++++
+ plugin/changesPlugin.vim |   37 ++++++++
+ 4 files changed, 422 insertions(+), 0 deletions(-)

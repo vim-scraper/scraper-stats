@@ -1,0 +1,32 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3, refs/heads/master)
+Author:     Shuhei Kubota <kubota.shuhei+vim at gmail.com>
+AuthorDate: Mon Aug 2 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1. fixed reopening closed tab behavior. (:TabopsReopenClosedTab)
+    2. added command :TabopsUniq (closes duplicate tabs)
+    3. added command :TabopsOpenSiblings (scan buffers that are in the same directory, and open them in tabs)
+
+ plugin/tabops.vim |  193 ++++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 153 insertions(+), 40 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Shuhei Kubota <kubota.shuhei+vim at gmail.com>
+AuthorDate: Wed Jul 28 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fixed reopening closed tab behavior. (:TabopsReopenClosedTab)
+
+ plugin/tabops.vim |   99 +++++++++++++++++++++++++++++++++++++++++++++--------
+ 1 files changed, 84 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Shuhei Kubota <kubota.shuhei+vim at gmail.com>
+AuthorDate: Thu Jul 22 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README            |   40 ++++++++
+ plugin/tabops.vim |  259 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 299 insertions(+), 0 deletions(-)

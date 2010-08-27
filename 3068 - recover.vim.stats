@@ -1,0 +1,87 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9, refs/heads/master)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Wed Jun 2 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    : use feedkeys(...,'t') instead of feedkeys()  (this works more reliable, although it pollutes the history), so delete those
+      spurious history entries
+    : |RecoverPluginHelp| shows a small help message, about diff commands (suggested by David Fishburn, thanks!)
+    : |RecoverPluginFinish| is a shortcut for |FinishRecovery|
+
+ autoload/recover.vim  |   94 ++++++++++++++++++++++++++++++++++---------------
+ doc/recoverPlugin.txt |   34 ++++++++++++++---
+ plugin/recover.vim    |    7 ++--
+ 3 files changed, 97 insertions(+), 38 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Tue Jun 1 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    0.8:
+    :make :FinishRecovery more robust
+    0.7 (unreleased):
+    |FinishRecovery| closes the diff-window and cleans everything up (suggestion by David Fishburn)
+    :DeleteSwapFile is not needed anymore
+
+ autoload/recover.vim  |   23 ++++++++++++++++++-----
+ doc/recoverPlugin.txt |   15 +++++++++++----
+ plugin/recover.vim    |    6 +++---
+ 3 files changed, 32 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Mon May 31 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    : |recover-feedback|
+    : Ask to really open a diff buffer for a file (suggestion: David Fishburn, thanks!)
+    : DeleteSwapFile to delete the swap file, that was used to create the diff buffer
+    : change feedkeys(...,'t') to feedkeys('..') so that not every command appears in the history.
+
+ autoload/recover.vim  |   73 +++++++++++++++++++++++++++++++-----------------
+ doc/recoverPlugin.txt |   49 ++++++++++++++++++++++++++++++---
+ plugin/recover.vim    |    9 +++---
+ 3 files changed, 96 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Tue May 4 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    -0r command in recover plugin adds extra \n
+      Patch by Sergey Khorev (Thanks!)
+    - generate help file with 'et' set, so the README at github looks prettier
+
+ autoload/recover.vim  |   11 ++++++++---
+ doc/recoverPlugin.txt |   46 +++++++++++++++++++++++++---------------------
+ plugin/recover.vim    |    6 +++---
+ 3 files changed, 36 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Mon Apr 26 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    0.4: Apr 26, 2010:
+    - handle Windows and Unix path differently
+    - Code cleanup
+    - Enabled |:GLVS|
+
+ autoload/recover.vim  |   67 +++++++++++++++++++++++++++++++++----------------
+ doc/recoverPlugin.txt |   19 +++++++++++--
+ plugin/recover.vim    |    6 ++--
+ 3 files changed, 64 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Tue Apr 20 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                |   36 ++++++++++++++++++++
+ autoload/recover.vim  |   88 +++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/recoverPlugin.txt |   53 +++++++++++++++++++++++++++++
+ plugin/recover.vim    |   34 +++++++++++++++++++
+ 4 files changed, 211 insertions(+), 0 deletions(-)
