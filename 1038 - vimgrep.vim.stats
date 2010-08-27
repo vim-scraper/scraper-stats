@@ -1,0 +1,283 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.2, refs/heads/master)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Wed Sep 1 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Version 3.2
+      Added:
+        -  VimfindEdit/EditVimfind()
+           operates the same as
+           VimgrepEdit/EditVimgrep()
+           VimgrepEditDel functionality
+           also applies.
+
+ bitmaps/quest.bmp             |  Bin 0 -> 798 bytes
+ bitmaps/quest.xpm             |   44 ++++++
+ bitmaps/tb_close.bmp          |  Bin 0 -> 334 bytes
+ bitmaps/tb_close.xpm          |   31 +++++
+ doc/vimgrep.ans               |   33 +++--
+ doc/vimgrep.doc               |  Bin 60928 -> 63488 bytes
+ doc/vimgrep.html              |  117 ++++++++++++----
+ doc/vimgrep.rtf               |  298 ++++++++++++++++++++++-------------------
+ doc/vimgrep.txt               |   33 +++--
+ plugin/vimgrep.vim            |   56 ++++++++-
+ test/testVG.vim               |   58 ++++++++
+ vimfiles/bitmaps/quest.bmp    |  Bin 798 -> 0 bytes
+ vimfiles/bitmaps/quest.xpm    |   44 ------
+ vimfiles/bitmaps/tb_close.bmp |  Bin 334 -> 0 bytes
+ vimfiles/bitmaps/tb_close.xpm |   31 -----
+ vimfiles/test/testVG.vim      |   58 --------
+ 16 files changed, 472 insertions(+), 331 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Thu Aug 19 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Version 3.1
+      Enhanced:
+       -  Rewrote s:vimGrep() for
+          search optimization.
+
+ plugin/vimgrep.vim |  172 +++++++++++++++++-----------------------------------
+ 1 files changed, 57 insertions(+), 115 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0-b)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Fri Aug 13 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    decoupled vsutil.vim
+    decoupled curBuf.vim
+    these are now separate packages
+
+ doc/vsutil.ans                 |  142 -----------
+ doc/vsutil.doc                 |  Bin 32256 -> 0 bytes
+ doc/vsutil.html                |  541 ----------------------------------------
+ doc/vsutil.rtf                 |  216 ----------------
+ doc/vsutil.txt                 |  142 -----------
+ plugin/curBuf.vim              |  132 ----------
+ plugin/vsutil.vim              |  321 ------------------------
+ vimfiles/bitmaps/lightning.bmp |  Bin 1654 -> 0 bytes
+ vimfiles/bitmaps/lightning.xpm |  188 --------------
+ vimfiles/bitmaps/speed.bmp     |  Bin 1654 -> 0 bytes
+ vimfiles/bitmaps/speed.xpm     |  167 ------------
+ 11 files changed, 0 insertions(+), 1849 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Tue Aug 10 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Version 3.0
+      New:
+       -  Rewrote to change optional
+          arguments to switches instead
+          of positional arguments.
+          Simplifies usage.
+       -  Changed documentation to
+          reflect same.
+      Misc:
+       -  Some minor code clean up
+       -  Removed use of dummy file
+          for empty Vim session.
+
+ doc/vimgrep.ans          |  170 ++++----
+ doc/vimgrep.doc          |  Bin 60928 -> 60928 bytes
+ doc/vimgrep.html         | 1147 ++++++++++++++++++++++------------------------
+ doc/vimgrep.rtf          |  592 +++++++++++++------------
+ doc/vimgrep.txt          |  170 ++++----
+ plugin/vimgrep.vim       |  530 ++++++++++++----------
+ vimfiles/test/testVG.vim |   37 +--
+ 7 files changed, 1310 insertions(+), 1336 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Sun Aug 8 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     Version 2.2
+      Fixed:
+       -  Inappropriate inclusion of
+          command/function arguments.
+      New:
+       -  Added BuiltInHelp
+       -  Added VimfindToBuf
+       -  Added VimfindList
+       -  Added VimgrepList
+       -  Added VimgrepHelpList
+       -  Added Command/Function Help
+          menu/mapped '??'
+    
+          Vim[find|grep]List opens a
+          buffer listing file name
+          results from the respective
+          function.  Then simply cursor
+          to a line in the list, and
+          press 'o' to open the listed
+          file in an edit buffer.
+
+ doc/vimgrep.ans            |  677 ++++++++--------
+ doc/vimgrep.doc            |  Bin 54784 -> 60928 bytes
+ doc/vimgrep.html           | 1936 ++++++++++++++++++++++++--------------------
+ doc/vimgrep.rtf            |  989 +++++++++++------------
+ doc/vimgrep.txt            |  677 ++++++++--------
+ doc/vsutil.ans             |    9 +-
+ doc/vsutil.doc             |  Bin 31232 -> 32256 bytes
+ doc/vsutil.html            |   15 +
+ doc/vsutil.rtf             |   48 +-
+ doc/vsutil.txt             |    9 +-
+ plugin/curBuf.vim          |   14 +-
+ plugin/vimgrep.vim         |  590 ++++++++++++--
+ plugin/vsutil.vim          |  118 +++-
+ vimfiles/bitmaps/quest.bmp |  Bin 0 -> 798 bytes
+ vimfiles/bitmaps/quest.xpm |   44 +
+ vimfiles/test/testVG.vim   |  126 ++--
+ 16 files changed, 2999 insertions(+), 2253 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Tue Aug 3 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Version 2.1
+      Fixed:
+       -  echo-ed results scrolling off
+          command line by adding Pause()
+       -  problem with file argument
+          being '/' would append '/*' to
+          search which always failed.
+          Now only appends extra '/' if
+          file argument does not end in
+          '/' or '&#039.
+      Enhanced:
+       -  Stopped search after first match
+          if FNonly.  Do no search at all
+          if srchpat == '\%$'
+      New:
+       -  Added Vimfind
+          (inspired by email from
+            Hari Krishna Dara)
+
+ doc/vimgrep.ans    |   43 ++++++++-
+ doc/vimgrep.doc    |  Bin 51200 -> 54784 bytes
+ doc/vimgrep.html   |  161 ++++++++++++++++++++++++++++---
+ doc/vimgrep.rtf    |  271 +++++++++++++++++++++++++++++++---------------------
+ doc/vimgrep.txt    |   43 ++++++++-
+ doc/vsutil.ans     |   17 +++-
+ doc/vsutil.doc     |  Bin 30720 -> 31232 bytes
+ doc/vsutil.html    |   20 ++++-
+ doc/vsutil.rtf     |   95 ++++++++++---------
+ doc/vsutil.txt     |   17 +++-
+ plugin/vimgrep.vim |  198 ++++++++++++++++++++++++--------------
+ plugin/vsutil.vim  |    9 ++
+ 12 files changed, 618 insertions(+), 256 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Sun Aug 1 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Version 2.0
+      Changed script name to vimgrep.vim
+      Introduced naming convention for
+      commands and functions.  Commands
+      begin Vimgrep[\w*], functions and
+      variables begin [\w*]Vimgrep
+    
+      Function MiniVimGrep() obsoleted.
+      Replaced with Vimgrep().
+      Wrapper exists to maintain
+      backward compatibility.
+    
+      New:
+       -  Added opening of edit buffers
+          for successfully grep-ed files.
+       -  Added help files grep-ing.
+       -  Added delete of edit/help
+          buffers.
+       -  Added gvim menu/toolbar items
+          and key mappings for deleting.
+       -  Included documentation files.
+       -  rewrote, beefed up, made more
+          robust, and otherwise enhanced.
+
+ doc/vimgrep.ans                |  395 ++++++++++++++
+ doc/vimgrep.doc                |  Bin 0 -> 51200 bytes
+ doc/vimgrep.html               | 1172 ++++++++++++++++++++++++++++++++++++++++
+ doc/vimgrep.rtf                |  482 +++++++++++++++++
+ doc/vimgrep.txt                |  395 ++++++++++++++
+ doc/vsutil.ans                 |  128 +++++
+ doc/vsutil.doc                 |  Bin 0 -> 30720 bytes
+ doc/vsutil.html                |  508 +++++++++++++++++
+ doc/vsutil.rtf                 |  203 +++++++
+ doc/vsutil.txt                 |  128 +++++
+ plugin/curBuf.vim              |  124 +++++
+ plugin/minigrep.vim            |  246 ---------
+ plugin/vimgrep.vim             |  932 ++++++++++++++++++++++++++++++++
+ plugin/vsutil.vim              |  200 +++++++
+ vimfiles/bitmaps/lightning.bmp |  Bin 0 -> 1654 bytes
+ vimfiles/bitmaps/lightning.xpm |  188 +++++++
+ vimfiles/bitmaps/speed.bmp     |  Bin 0 -> 1654 bytes
+ vimfiles/bitmaps/speed.xpm     |  167 ++++++
+ vimfiles/bitmaps/tb_close.bmp  |  Bin 0 -> 334 bytes
+ vimfiles/bitmaps/tb_close.xpm  |   31 +
+ vimfiles/test/testVG.vim       |   47 ++
+ 21 files changed, 5100 insertions(+), 246 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Tue Jul 20 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The two public functions are:
+    
+         MiniVimGrep(pattern,file(s),[match case],[file names only])
+         BufMiniGrep(pattern,[match case],[file names only])
+    
+    where optional
+    
+          'match case' is zero or non-zero
+          'file names only' is zero or non-zero
+    
+    
+    MiniVimGrep() operates on file(s) arguments and BufMiniGrep() operates on open buffers.
+    
+    Version 1.1
+      For grep-ing in open buffers:
+       -  Added BufMiniGrep for grep-ing all open buffers
+       -  Added code to set cursor to line 1, col 1 in the file in case it is
+          being done with open buffers.  Then the cursor is set back to its
+          original position.
+       -  Added code to allow passing '%' or '' for file, meaning current buffer
+       -  Added augroup and autocmd to save the buffer number so it can be used
+          to return to the original buffer if grep-ing in open buffers
+    
+      For multiple files
+       -  Added code to check for comma and newline file name separators.
+          Comma allows the user to specify 'file' argument as
+          "file1,file2,...", while newline allows 'file' argument to be
+          something like glob(expand("%:p:h")."/*") or
+          glob("<some-path>/*")
+       -  Added code to check if file is the same as the original open
+          buffer, if so, don't do bdelete.
+       -  Added second optional argument for returning file names only.
+          If non-zero, just return file names, not the matching lines.
+    
+      Misc
+       -  Added code to test for empty files
+       -  Added code to test for directories
+
+ plugin/minigrep.vim |  229 ++++++++++++++++++++++++++++++++++++++++++++------
+ 1 files changed, 201 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Mon Jul 19 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README              |    3 ++
+ plugin/minigrep.vim |   73 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 76 insertions(+), 0 deletions(-)

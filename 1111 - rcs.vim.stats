@@ -1,0 +1,113 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.15.2, refs/heads/master)
+Author:     Christian J. Robinson <heptite () gmail ! com>
+AuthorDate: Fri Jun 4 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Suggestions by Jon Peatfield for the checkout routine:
+      + Prompt the user on checkout if there were "unlocked" changes
+      + Check for a lock by another user
+    - A few minor changes and fixes
+
+ plugin/rcs.vim |  126 +++++++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 98 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
+Author:     Christian J. Robinson <heptite () gmail ! com>
+AuthorDate: Sat Apr 24 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Detect RCS's ,v files in the file's cwd as well (Jon Peatfield)
+
+ plugin/rcs.vim |   22 ++++++++++++++++------
+ 1 files changed, 16 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.13.1)
+Author:     Christian J. Robinson <heptite () gmail ! com>
+AuthorDate: Mon Aug 25 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fix error when g:rcs_plugin_* isn't set (Sven Bischof)
+    - Prompt the user when the file is unwritten and :RCSci is used (Sven Bischof)
+    - Sometimes the help file wasn't being generated--try a different method (Sven Bischof)
+
+ plugin/rcs.vim |  257 ++++++++++++++++++++++++++++++++-----------------------
+ 1 files changed, 149 insertions(+), 108 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
+Author:     Christian J. Robinson <heptite () gmail ! com>
+AuthorDate: Sun Jun 15 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Try to safely escape shell commands
+
+ plugin/rcs.vim |   47 ++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 32 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11.1)
+Author:     Christian J. Robinson <heptite () gmail ! com>
+AuthorDate: Fri Jun 6 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Use matchadd() instead of :2match -- less likelihood of a "collision" with another plugin
+    - Make entering the log messages easier
+    - Don't go into diff mode if a diff is already open in Vim
+    - Allow diffing of two consecutive revisions from the log view
+    - misc. minor changes
+
+ plugin/rcs.vim |  228 ++++++++++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 187 insertions(+), 41 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
+Author:     Christian J. Robinson <heptite () gmail ! com>
+AuthorDate: Tue Apr 29 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Abandoned Vim 6 support
+    - Allow editing of individual revision log messages from the log display
+    - Auto-install a help file if possible
+
+ plugin/rcs.vim |  440 ++++++++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 336 insertions(+), 104 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Christian J. Robinson <heptite () gmail ! com>
+AuthorDate: Tue Apr 8 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Open the folds where the cursor is located when the file is checked out on the FileChangedRO event
+    - Internal documentation added
+    - Code clean up
+
+ plugin/rcs.vim |  122 ++++++++++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 100 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Christian J. Robinson <heptite () gmail ! com>
+AuthorDate: Sat Aug 26 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Preserve the cursor position when reloading the file. (Mical Ward)
+
+ plugin/rcs.vim |   14 +++++++++++++-
+ 1 files changed, 13 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Christian J. Robinson <heptite () gmail ! com>
+AuthorDate: Tue Apr 11 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Minor changes to make it compatible with Vim 7.
+
+ plugin/rcs.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Christian J. Robinson <heptite () gmail ! com>
+AuthorDate: Sat Oct 23 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README         |    9 ++
+ plugin/rcs.vim |  330 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 339 insertions(+), 0 deletions(-)

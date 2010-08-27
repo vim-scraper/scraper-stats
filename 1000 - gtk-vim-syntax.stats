@@ -1,0 +1,665 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/20091024, refs/heads/master)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Sat Oct 24 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Keyword `if' that appeared in the previous version among GObject identifiers due to some gtk-doc misparsing was removed.
+
+ syntax/gobject.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20091021)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Wed Oct 21 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Syntaxes were updated to versions corresponding to GNOME 2.28.  Two new files were added: for libsoup and libunique.
+
+ syntax/atk.vim            |    4 +-
+ syntax/atspi.vim          |    4 +-
+ syntax/cairo.vim          |    4 +-
+ syntax/clutter.vim        |   37 ++++++++++---------------------
+ syntax/dbusglib.vim       |    6 ++--
+ syntax/evince.vim         |    2 +-
+ syntax/gail.vim           |    2 +-
+ syntax/gconf.vim          |    4 +-
+ syntax/gdk.vim            |   18 +++++++-------
+ syntax/gdkpixbuf.vim      |    6 ++--
+ syntax/gimp.vim           |    2 +-
+ syntax/gio.vim            |   22 ++++++++----------
+ syntax/glib.vim           |   12 +++++-----
+ syntax/gnomedesktop.vim   |    8 +++---
+ syntax/gnomevfs.vim       |    4 +-
+ syntax/gobject.vim        |    8 +++---
+ syntax/goocanvas.vim      |    4 +-
+ syntax/gtk.vim            |   20 ++++++++--------
+ syntax/gtkglext.vim       |    2 +-
+ syntax/gtksourceview.vim  |   30 ++++++++++++++++++------
+ syntax/libglade.vim       |    2 +-
+ syntax/libgnome.vim       |    4 +-
+ syntax/libgnomecanvas.vim |    4 +-
+ syntax/libgnomeui.vim     |    2 +-
+ syntax/libgsf.vim         |   14 ++++++------
+ syntax/libnotify.vim      |    2 +-
+ syntax/liboil.vim         |    2 +-
+ syntax/librsvg.vim        |    8 +++---
+ syntax/libsoup.vim        |   53 +++++++++++++++++++++++++++++++++++++++++++++
+ syntax/libunique.vim      |   32 +++++++++++++++++++++++++++
+ syntax/libwnck.vim        |    4 +-
+ syntax/orbit2.vim         |    2 +-
+ syntax/pango.vim          |    6 ++--
+ syntax/poppler.vim        |   12 +++++-----
+ syntax/vte.vim            |   18 +++++++++------
+ 35 files changed, 226 insertions(+), 138 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20090402)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Thu Apr 2 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    All syntax files were updated to Gnome 2.26 versions; clutter and goocanvas syntax files were added.
+
+ syntax/atk.vim            |    6 ++--
+ syntax/atspi.vim          |    4 +-
+ syntax/cairo.vim          |    2 +-
+ syntax/clutter.vim        |   53 +++++++++++++++++++++++++++++++++++++++++++++
+ syntax/dbusglib.vim       |    4 +-
+ syntax/evince.vim         |    2 +-
+ syntax/gail.vim           |    2 +-
+ syntax/gconf.vim          |    4 +-
+ syntax/gdk.vim            |    2 +-
+ syntax/gdkpixbuf.vim      |    2 +-
+ syntax/gimp.vim           |    4 +-
+ syntax/gio.vim            |   24 +++++++++++++++-----
+ syntax/glib.vim           |   12 +++++-----
+ syntax/gnomedesktop.vim   |   29 ++++++++----------------
+ syntax/gnomevfs.vim       |    2 +-
+ syntax/gobject.vim        |    4 +-
+ syntax/goocanvas.vim      |   38 ++++++++++++++++++++++++++++++++
+ syntax/gtk.vim            |    2 +-
+ syntax/gtkglext.vim       |    2 +-
+ syntax/gtksourceview.vim  |    6 ++--
+ syntax/libglade.vim       |    2 +-
+ syntax/libgnome.vim       |    8 +++---
+ syntax/libgnomecanvas.vim |    2 +-
+ syntax/libgnomeui.vim     |    2 +-
+ syntax/libgsf.vim         |    2 +-
+ syntax/libnotify.vim      |    6 ++--
+ syntax/liboil.vim         |    6 ++--
+ syntax/librsvg.vim        |    8 +++---
+ syntax/libwnck.vim        |    4 +-
+ syntax/orbit2.vim         |    2 +-
+ syntax/pango.vim          |   12 +++++-----
+ syntax/poppler.vim        |    4 +-
+ syntax/vte.vim            |   18 ++++++++++-----
+ 33 files changed, 190 insertions(+), 90 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20090105)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Mon Jan 5 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    GObject syntax file missing in the last release was re-added.
+
+ syntax/atk.vim            |    2 +-
+ syntax/atspi.vim          |    2 +-
+ syntax/cairo.vim          |    2 +-
+ syntax/dbusglib.vim       |    2 +-
+ syntax/evince.vim         |    2 +-
+ syntax/gail.vim           |    2 +-
+ syntax/gconf.vim          |    2 +-
+ syntax/gdk.vim            |    2 +-
+ syntax/gdkpixbuf.vim      |    2 +-
+ syntax/gimp.vim           |    2 +-
+ syntax/gio.vim            |    2 +-
+ syntax/glib.vim           |    2 +-
+ syntax/gnomedesktop.vim   |    2 +-
+ syntax/gnomevfs.vim       |    2 +-
+ syntax/gobject.vim        |   52 +++++++++++++++++++++++++++++++++++++++++++++
+ syntax/gtk.vim            |    2 +-
+ syntax/gtkglext.vim       |    2 +-
+ syntax/gtksourceview.vim  |    2 +-
+ syntax/libglade.vim       |    2 +-
+ syntax/libgnome.vim       |    2 +-
+ syntax/libgnomecanvas.vim |    2 +-
+ syntax/libgnomeui.vim     |    2 +-
+ syntax/libgsf.vim         |    2 +-
+ syntax/libnotify.vim      |    2 +-
+ syntax/liboil.vim         |    2 +-
+ syntax/librsvg.vim        |    2 +-
+ syntax/libwnck.vim        |    2 +-
+ syntax/orbit2.vim         |    2 +-
+ syntax/pango.vim          |    2 +-
+ syntax/poppler.vim        |    2 +-
+ syntax/vte.vim            |    2 +-
+ 31 files changed, 82 insertions(+), 30 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20090102)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Fri Jan 2 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Everything was updated to Gnome 2.24.  GIO and evince syntax files were added.
+
+ README.orig               |    6 ++++--
+ syntax/atk.vim            |    8 ++++----
+ syntax/atspi.vim          |    6 +++---
+ syntax/cairo.vim          |   20 ++++++++++----------
+ syntax/dbusglib.vim       |   12 ++++++------
+ syntax/evince.vim         |   34 ++++++++++++++++++++++++++++++++++
+ syntax/gail.vim           |    6 +++---
+ syntax/gconf.vim          |   12 ++++++------
+ syntax/gdk.vim            |   26 ++++++++++++++++----------
+ syntax/gdkpixbuf.vim      |   18 ++++++++++--------
+ syntax/gimp.vim           |   36 +++++++++++++++++++++---------------
+ syntax/gio.vim            |   36 ++++++++++++++++++++++++++++++++++++
+ syntax/glib.vim           |   26 +++++++++++++-------------
+ syntax/gnomedesktop.vim   |   22 +++++++++++++---------
+ syntax/gnomevfs.vim       |   12 ++++++------
+ syntax/gobject.vim        |   40 ----------------------------------------
+ syntax/gtk.vim            |   32 ++++++++++++++++----------------
+ syntax/gtkglext.vim       |    4 ++--
+ syntax/gtksourceview.vim  |   22 +++++++++-------------
+ syntax/libglade.vim       |    6 +++---
+ syntax/libgnome.vim       |   10 +++++-----
+ syntax/libgnomecanvas.vim |    6 +++---
+ syntax/libgnomeui.vim     |    8 ++++----
+ syntax/libgsf.vim         |   16 ++++++++--------
+ syntax/libnotify.vim      |    4 ++--
+ syntax/liboil.vim         |   16 +++++++++-------
+ syntax/librsvg.vim        |    6 +++---
+ syntax/libwnck.vim        |   16 ++++++++--------
+ syntax/orbit2.vim         |    6 +++---
+ syntax/pango.vim          |   20 ++++++++++----------
+ syntax/poppler.vim        |   18 +++++++++---------
+ syntax/vte.vim            |   39 ++++++++++++++++++++++++++++++---------
+ 32 files changed, 309 insertions(+), 240 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20070925)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Tue Sep 25 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    All files were updated to Gnome 2.20 versions of the respective libraries. (GLib to 2.14, Gtk+ to 2.12, ...). Syntax file for linc was dropped, files for at-spi, gail, dbus-glib, gtksourceview, gnome-desktop, gnome-vfs, liboil and poppler were added.
+
+ README.orig               |    9 +++++-
+ syntax/atk.vim            |   14 +++++----
+ syntax/atspi.vim          |   36 +++++++++++++++++++++++++
+ syntax/cairo.vim          |   12 ++++----
+ syntax/dbusglib.vim       |   36 +++++++++++++++++++++++++
+ syntax/gail.vim           |   32 +++++++++++++++++++++++
+ syntax/gconf.vim          |   10 +++---
+ syntax/gdk.vim            |   10 +++---
+ syntax/gdkpixbuf.vim      |   10 +++---
+ syntax/gimp.vim           |   30 +++++++++++----------
+ syntax/glib.vim           |   20 +++++++-------
+ syntax/gnomedesktop.vim   |   53 +++++++++++++++++++++++++++++++++++++
+ syntax/gnomevfs.vim       |   63 +++++++++++++++++++++++++++++++++++++++++++++
+ syntax/gobject.vim        |   10 +++---
+ syntax/gtk.vim            |   26 +++++++++---------
+ syntax/gtkglext.vim       |    2 +-
+ syntax/gtksourceview.vim  |   36 +++++++++++++++++++++++++
+ syntax/libglade.vim       |    6 ++--
+ syntax/libgnome.vim       |   12 ++++----
+ syntax/libgnomecanvas.vim |    4 +-
+ syntax/libgnomeui.vim     |   30 ++++++++++----------
+ syntax/libgsf.vim         |   12 ++++----
+ syntax/libnotify.vim      |    4 +-
+ syntax/liboil.vim         |   34 ++++++++++++++++++++++++
+ syntax/librsvg.vim        |   10 +++---
+ syntax/libwnck.vim        |   27 +++++++++++++++----
+ syntax/linc.vim           |   38 ---------------------------
+ syntax/orbit2.vim         |    4 +-
+ syntax/pango.vim          |   18 ++++++------
+ syntax/poppler.vim        |   36 +++++++++++++++++++++++++
+ syntax/vte.vim            |    6 ++--
+ 31 files changed, 482 insertions(+), 168 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20061121)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Tue Nov 21 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Variables (e.g. gtk_major_version or glib_mem_profiler_table) were added, they are highlighted as Identifiers by default (suggestions how to differentiate them from functions are welcome).
+    
+    The synax files were cleaned up bit: hi-links are created only for symbol classes actually present in the file, deprecation stuff is completely excluded from files that contain no deprecated symbols.
+
+ syntax/atk.vim            |   31 ++-----------------------------
+ syntax/c.vim.example      |    6 ++++++
+ syntax/cairo.vim          |   30 ++----------------------------
+ syntax/gconf.vim          |   22 ++++------------------
+ syntax/gdk.vim            |   14 +++++++-------
+ syntax/gdkpixbuf.vim      |   23 ++++-------------------
+ syntax/gimp.vim           |   22 ++++++++--------------
+ syntax/glib.vim           |   19 ++++++-------------
+ syntax/gobject.vim        |   32 ++++----------------------------
+ syntax/gtk.vim            |    6 ++++--
+ syntax/gtkglext.vim       |   34 ++++------------------------------
+ syntax/libglade.vim       |   27 ++++-----------------------
+ syntax/libgnome.vim       |   17 ++---------------
+ syntax/libgnomecanvas.vim |   37 +++----------------------------------
+ syntax/libgnomeui.vim     |    6 ++----
+ syntax/libgsf.vim         |   33 ++++-----------------------------
+ syntax/libnotify.vim      |   32 ++------------------------------
+ syntax/librsvg.vim        |   19 ++-----------------
+ syntax/libwnck.vim        |   32 ++------------------------------
+ syntax/linc.vim           |   33 ++++-----------------------------
+ syntax/orbit2.vim         |   34 ++++------------------------------
+ syntax/pango.vim          |   10 ++--------
+ syntax/vte.vim            |   33 ++-------------------------------
+ 23 files changed, 84 insertions(+), 468 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20061120)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Mon Nov 20 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Syntax highlighting files for librsvg, libwnck, libgsf and libnotify were added.
+
+ README.orig               |    4 +++
+ syntax/atk.vim            |    2 +-
+ syntax/cairo.vim          |    2 +-
+ syntax/gconf.vim          |    2 +-
+ syntax/gdk.vim            |    2 +-
+ syntax/gdkpixbuf.vim      |    2 +-
+ syntax/gimp.vim           |    2 +-
+ syntax/glib.vim           |    2 +-
+ syntax/gobject.vim        |    2 +-
+ syntax/gtk.vim            |    2 +-
+ syntax/gtkglext.vim       |    2 +-
+ syntax/libglade.vim       |    2 +-
+ syntax/libgnome.vim       |    2 +-
+ syntax/libgnomecanvas.vim |    2 +-
+ syntax/libgnomeui.vim     |    2 +-
+ syntax/libgsf.vim         |   63 ++++++++++++++++++++++++++++++++++++++++++++
+ syntax/libnotify.vim      |   62 +++++++++++++++++++++++++++++++++++++++++++
+ syntax/librsvg.vim        |   64 +++++++++++++++++++++++++++++++++++++++++++++
+ syntax/libwnck.vim        |   62 +++++++++++++++++++++++++++++++++++++++++++
+ syntax/linc.vim           |    2 +-
+ syntax/orbit2.vim         |    2 +-
+ syntax/pango.vim          |    2 +-
+ syntax/vte.vim            |    2 +-
+ 23 files changed, 273 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20061119)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Sun Nov 19 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    atk syntax was updated to 1.12, cairo to 1.2, gdk, gdk-pixbuf and gtk+ to 2.10, glib and gobject to 2.12, libglade to 2.6, gnome libs to 2.16, pango to 1.14 and vte to 0.14.
+
+ syntax/atk.vim            |   14 +++++++-------
+ syntax/cairo.vim          |   12 ++++++------
+ syntax/gconf.vim          |    2 +-
+ syntax/gdk.vim            |    8 ++++----
+ syntax/gdkpixbuf.vim      |    4 ++--
+ syntax/gimp.vim           |    4 ++--
+ syntax/glib.vim           |   16 ++++++++--------
+ syntax/gobject.vim        |    6 +++---
+ syntax/gtk.vim            |   24 ++++++++++++------------
+ syntax/gtkglext.vim       |    2 +-
+ syntax/libglade.vim       |    4 ++--
+ syntax/libgnome.vim       |    4 ++--
+ syntax/libgnomecanvas.vim |    2 +-
+ syntax/libgnomeui.vim     |   28 ++++++++++++++--------------
+ syntax/linc.vim           |    2 +-
+ syntax/orbit2.vim         |    2 +-
+ syntax/pango.vim          |   12 ++++++------
+ syntax/vte.vim            |    6 +++---
+ 18 files changed, 76 insertions(+), 76 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20060423)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Sun Apr 23 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Syntax files for Gnome libs were updated to 2.14.
+
+ syntax/atk.vim            |    8 ++++----
+ syntax/cairo.vim          |    2 +-
+ syntax/gconf.vim          |   12 ++++++------
+ syntax/gdk.vim            |    4 ++--
+ syntax/gdkpixbuf.vim      |    4 ++--
+ syntax/gimp.vim           |    4 ++--
+ syntax/glib.vim           |    2 +-
+ syntax/gobject.vim        |   14 +++++++-------
+ syntax/gtk.vim            |    4 ++--
+ syntax/gtkglext.vim       |    4 ++--
+ syntax/libglade.vim       |    4 ++--
+ syntax/libgnome.vim       |   18 ++++++++++--------
+ syntax/libgnomecanvas.vim |    8 ++++----
+ syntax/libgnomeui.vim     |   29 +++++++++++++++--------------
+ syntax/linc.vim           |    2 +-
+ syntax/orbit2.vim         |    8 ++++----
+ syntax/pango.vim          |    2 +-
+ syntax/vte.vim            |   17 ++++++++---------
+ 18 files changed, 74 insertions(+), 72 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2006-03-20)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Mon Mar 20 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Pango syntax file was updated to 1.12.
+
+ README.orig               |   15 +++++++++++++--
+ syntax/atk.vim            |    2 +-
+ syntax/cairo.vim          |    2 +-
+ syntax/gconf.vim          |    2 +-
+ syntax/gdk.vim            |    2 +-
+ syntax/gdkpixbuf.vim      |    2 +-
+ syntax/gimp.vim           |    2 +-
+ syntax/glib.vim           |    2 +-
+ syntax/gobject.vim        |    2 +-
+ syntax/gtk.vim            |    2 +-
+ syntax/gtkglext.vim       |    2 +-
+ syntax/libglade.vim       |    2 +-
+ syntax/libgnome.vim       |    2 +-
+ syntax/libgnomecanvas.vim |    2 +-
+ syntax/libgnomeui.vim     |    2 +-
+ syntax/linc.vim           |    2 +-
+ syntax/orbit2.vim         |    2 +-
+ syntax/pango.vim          |   14 +++++++-------
+ syntax/vte.vim            |    2 +-
+ 19 files changed, 37 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2006-03-19)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Sun Mar 19 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    GLib syntax file was updated to 2.10.
+
+ README.orig               |   14 ++++++++++----
+ syntax/atk.vim            |    2 +-
+ syntax/c.vim.example      |    5 +++++
+ syntax/cairo.vim          |    4 ++--
+ syntax/gconf.vim          |    2 +-
+ syntax/gdk.vim            |    2 +-
+ syntax/gdkpixbuf.vim      |    2 +-
+ syntax/gimp.vim           |    2 +-
+ syntax/glib.vim           |   22 ++++++++++++----------
+ syntax/gobject.vim        |    2 +-
+ syntax/gtk.vim            |    2 +-
+ syntax/gtkglext.vim       |    2 +-
+ syntax/libglade.vim       |    2 +-
+ syntax/libgnome.vim       |    2 +-
+ syntax/libgnomecanvas.vim |    2 +-
+ syntax/libgnomeui.vim     |    2 +-
+ syntax/linc.vim           |    2 +-
+ syntax/orbit2.vim         |    2 +-
+ syntax/pango.vim          |    2 +-
+ syntax/vte.vim            |    2 +-
+ 20 files changed, 45 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2005-09-06)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Tue Sep 6 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Deprecated symbol handling was improved.  Syntax items for deprecated symbols have their own groups (fooDeprecatedFunction instead of fooFunction) so it's possible to link them to something else than normal symbols.  By default, they are not highlighted at all (like before).  If you set
+    
+    :let foo_enable_deprecated = 1
+    
+    they are linked to the same highligt groups as normal symbols.  If you set
+    
+    :let foo_deprecated_errors = 1
+    
+    they are linked to Error.
+    
+    GLib, GObject, Gdk, Gkd-Pixbuf, Gtk+ syntax files were updated to 2.8. Atk and Pango to 1.10. Cairo was newly added.  As a side effect, missing highlighting of GdkPixmap, GdkWindow, and GdkBitmap was fixed.
+
+ README.orig               |    1 +
+ syntax/atk.vim            |   37 +++++++++++++++++++++----
+ syntax/cairo.vim          |   64 ++++++++++++++++++++++++++++++++++++++++++++
+ syntax/gconf.vim          |   35 ++++++++++++++++++++----
+ syntax/gdk.vim            |   55 +++++++++++++++++++++++++++-----------
+ syntax/gdkpixbuf.vim      |   45 +++++++++++++++++++++++-------
+ syntax/gimp.vim           |   45 +++++++++++++++++++++++-------
+ syntax/glib.vim           |   51 +++++++++++++++++++++++++---------
+ syntax/gobject.vim        |   41 +++++++++++++++++++++++-----
+ syntax/gtk.vim            |   65 ++++++++++++++++++++++++++++++--------------
+ syntax/gtkglext.vim       |   31 +++++++++++++++++++--
+ syntax/libglade.vim       |   35 ++++++++++++++++++++----
+ syntax/libgnome.vim       |   35 ++++++++++++++++++++----
+ syntax/libgnomecanvas.vim |   31 +++++++++++++++++++--
+ syntax/libgnomeui.vim     |   49 +++++++++++++++++++++++++---------
+ syntax/linc.vim           |   31 +++++++++++++++++++--
+ syntax/orbit2.vim         |   31 +++++++++++++++++++--
+ syntax/pango.vim          |   57 +++++++++++++++++++++++++++------------
+ syntax/vte.vim            |   31 +++++++++++++++++++--
+ 19 files changed, 620 insertions(+), 150 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20050308)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Tue Mar 8 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Functions taking filename arguments that were incorrectly highlighted as constants since GLib and Gtk+ 2.6 are highlighted as functions again.
+
+ syntax/atk.vim            |    2 +-
+ syntax/gconf.vim          |    2 +-
+ syntax/gdk.vim            |    2 +-
+ syntax/gdkpixbuf.vim      |    4 ++--
+ syntax/gimp.vim           |    2 +-
+ syntax/glib.vim           |    4 ++--
+ syntax/gobject.vim        |    2 +-
+ syntax/gtk.vim            |    6 +++---
+ syntax/gtkglext.vim       |    2 +-
+ syntax/libglade.vim       |    2 +-
+ syntax/libgnome.vim       |    2 +-
+ syntax/libgnomecanvas.vim |    2 +-
+ syntax/libgnomeui.vim     |    2 +-
+ syntax/linc.vim           |    2 +-
+ syntax/orbit2.vim         |    2 +-
+ syntax/pango.vim          |    2 +-
+ syntax/vte.vim            |    2 +-
+ 17 files changed, 21 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20050225)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Fri Feb 25 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fixed: union types were not highlighted.
+
+ syntax/atk.vim            |    3 ++-
+ syntax/gconf.vim          |    3 ++-
+ syntax/gdk.vim            |    4 +++-
+ syntax/gdkpixbuf.vim      |    3 ++-
+ syntax/gimp.vim           |    4 +++-
+ syntax/glib.vim           |    4 +++-
+ syntax/gobject.vim        |    4 +++-
+ syntax/gtk.vim            |    4 +++-
+ syntax/gtkglext.vim       |    3 ++-
+ syntax/libglade.vim       |    3 ++-
+ syntax/libgnome.vim       |    3 ++-
+ syntax/libgnomecanvas.vim |    3 ++-
+ syntax/libgnomeui.vim     |    3 ++-
+ syntax/linc.vim           |    3 ++-
+ syntax/orbit2.vim         |    3 ++-
+ syntax/pango.vim          |    3 ++-
+ syntax/vte.vim            |    3 ++-
+ 17 files changed, 39 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20050123)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Sun Jan 23 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Libglade syntax highlighting was added.
+
+ README.orig               |    1 +
+ syntax/atk.vim            |    2 +-
+ syntax/gconf.vim          |    2 +-
+ syntax/gdk.vim            |    2 +-
+ syntax/gdkpixbuf.vim      |    2 +-
+ syntax/gimp.vim           |    4 ++--
+ syntax/glib.vim           |    2 +-
+ syntax/gobject.vim        |    2 +-
+ syntax/gtk.vim            |    2 +-
+ syntax/gtkglext.vim       |    2 +-
+ syntax/libglade.vim       |   37 +++++++++++++++++++++++++++++++++++++
+ syntax/libgnome.vim       |    2 +-
+ syntax/libgnomecanvas.vim |    2 +-
+ syntax/libgnomeui.vim     |    2 +-
+ syntax/linc.vim           |    2 +-
+ syntax/orbit2.vim         |    2 +-
+ syntax/pango.vim          |    2 +-
+ syntax/vte.vim            |    2 +-
+ 18 files changed, 55 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20041222)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Wed Dec 22 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Gtk+ and GLib syntax files were updated to 2.6, Pango and Atk to 1.8, Gimp to 2.2, Gnome to 2.8.
+
+ syntax/atk.vim            |   10 +++++-----
+ syntax/gconf.vim          |   14 +++++++-------
+ syntax/gdk.vim            |   18 +++++++++---------
+ syntax/gdkpixbuf.vim      |   12 ++++++------
+ syntax/gimp.vim           |   25 ++++++++++++++++---------
+ syntax/glib.vim           |   18 +++++++++---------
+ syntax/gobject.vim        |    6 +++---
+ syntax/gtk.vim            |   18 +++++++++---------
+ syntax/gtkglext.vim       |    2 +-
+ syntax/libgnome.vim       |    6 +++---
+ syntax/libgnomecanvas.vim |    4 ++--
+ syntax/libgnomeui.vim     |    6 +++---
+ syntax/linc.vim           |    2 +-
+ syntax/orbit2.vim         |    2 +-
+ syntax/pango.vim          |   28 ++++++++++++++++++----------
+ syntax/vte.vim            |    2 +-
+ 16 files changed, 94 insertions(+), 79 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20040815)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Sun Aug 15 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Syntax highlighting file for GtkGLExt was added.
+
+ README.orig               |    1 +
+ syntax/atk.vim            |    2 +-
+ syntax/gconf.vim          |    2 +-
+ syntax/gdk.vim            |    2 +-
+ syntax/gdkpixbuf.vim      |    2 +-
+ syntax/gimp.vim           |    2 +-
+ syntax/glib.vim           |    2 +-
+ syntax/gobject.vim        |    2 +-
+ syntax/gtk.vim            |    2 +-
+ syntax/gtkglext.vim       |   36 ++++++++++++++++++++++++++++++++++++
+ syntax/libgnome.vim       |    2 +-
+ syntax/libgnomecanvas.vim |    2 +-
+ syntax/libgnomeui.vim     |    2 +-
+ syntax/linc.vim           |    2 +-
+ syntax/orbit2.vim         |    2 +-
+ syntax/pango.vim          |    2 +-
+ syntax/vte.vim            |    2 +-
+ 17 files changed, 52 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20040813)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Fri Aug 13 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug: many last enum values were not highlighted.
+
+ syntax/atk.vim            |    4 ++--
+ syntax/gconf.vim          |    4 ++--
+ syntax/gdk.vim            |    6 +++---
+ syntax/gdkpixbuf.vim      |    4 ++--
+ syntax/gimp.vim           |    4 ++--
+ syntax/glib.vim           |    4 ++--
+ syntax/gobject.vim        |    2 +-
+ syntax/gtk.vim            |    6 +++---
+ syntax/libgnome.vim       |    4 ++--
+ syntax/libgnomecanvas.vim |    2 +-
+ syntax/libgnomeui.vim     |    6 +++---
+ syntax/linc.vim           |    2 +-
+ syntax/orbit2.vim         |    4 ++--
+ syntax/pango.vim          |    4 ++--
+ syntax/vte.vim            |    4 ++--
+ 15 files changed, 30 insertions(+), 30 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20040611)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Fri Jun 11 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Quite a few missing enums were fixed.  Parameterless macros like
+    
+    #define gimp_get_data gimp_procedural_db_get_data
+    
+    are highlighted as Macro (not Constant as the previous version did) -- if the generator can figure out gimp_procedural_db_get_data is a function.
+
+ syntax/atk.vim            |    4 ++--
+ syntax/gconf.vim          |    8 ++++----
+ syntax/gdk.vim            |   12 ++++++------
+ syntax/gdkpixbuf.vim      |    4 ++--
+ syntax/gimp.vim           |    8 ++++----
+ syntax/glib.vim           |    7 +++----
+ syntax/gobject.vim        |    6 +++---
+ syntax/gtk.vim            |   16 ++++++++--------
+ syntax/libgnome.vim       |    4 ++--
+ syntax/libgnomecanvas.vim |    6 +++---
+ syntax/libgnomeui.vim     |   10 +++++-----
+ syntax/linc.vim           |    2 +-
+ syntax/orbit2.vim         |    4 ++--
+ syntax/pango.vim          |    4 ++--
+ syntax/vte.vim            |    4 ++--
+ 15 files changed, 49 insertions(+), 50 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20040605)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Sat Jun 5 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Parameterless macros were separated to somethingDefine syntax groups, highlighted as Constant by default.  This fixes highlighting of things like NULL or FALSE as macros and is more compatible with Hwanjin Choe's original files.
+
+ syntax/atk.vim            |    6 ++++--
+ syntax/gconf.vim          |    6 ++++--
+ syntax/gdk.vim            |   11 +++++++----
+ syntax/gdkpixbuf.vim      |    8 +++++---
+ syntax/gimp.vim           |    6 ++++--
+ syntax/glib.vim           |   11 +++++++----
+ syntax/gobject.vim        |    8 +++++---
+ syntax/gtk.vim            |   11 +++++++----
+ syntax/libgnome.vim       |    6 ++++--
+ syntax/libgnomecanvas.vim |    6 ++++--
+ syntax/libgnomeui.vim     |    9 ++++++---
+ syntax/linc.vim           |    6 ++++--
+ syntax/orbit2.vim         |    6 ++++--
+ syntax/pango.vim          |    6 ++++--
+ syntax/vte.vim            |    6 ++++--
+ 15 files changed, 73 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20040531)
+Author:     David Necas <yeti at physics.muni.cz>
+AuthorDate: Mon May 31 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                    |    5 +
+ README.orig               |   42 ++
+ syntax/atk.vim            |   35 ++
+ syntax/c.vim.example      |   16 +
+ syntax/gconf.vim          |   38 ++
+ syntax/gdk.vim            |   42 ++
+ syntax/gdkpixbuf.vim      |   37 ++
+ syntax/gimp.vim           |   34 ++
+ syntax/glib.vim           |   39 ++
+ syntax/gobject.vim        |   35 ++
+ syntax/gtk.vim            |   44 ++
+ syntax/libgnome.vim       |   37 ++
+ syntax/libgnomecanvas.vim |   31 ++
+ syntax/libgnomeui.vim     |   43 ++
+ syntax/linc.vim           |   35 ++
+ syntax/orbit2.vim         |   34 ++
+ syntax/pango.vim          |   35 ++
+ syntax/vte.vim            |   34 ++
+ syntax/xlib.vim           | 1100 +++++++++++++++++++++++++++++++++++++++++++++
+ 19 files changed, 1716 insertions(+), 0 deletions(-)

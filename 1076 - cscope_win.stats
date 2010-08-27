@@ -1,0 +1,38 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0, refs/heads/master)
+Author:     Shivakumar T <shivatg at yahoo.co.uk>
+AuthorDate: Fri Mar 10 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The new cscope_win plugin doesn't require cscope support in vim. It directly invokes the cscope utility thus having more flexibilty in displaying the results in a more organised fashion. It also requires the sort utility. All cscope commands are accessed through the "CS" command. The suboptions to this command are same as VIM's cscope interface commands.
+    Type :CS help for a list of supported options.
+    -------------------------------------------------------------------------------------
+    The following options are provided to configure the cscope plugin.
+    
+    g:csAppendResults: Option to specify whether new search results should be appended to the previous results
+    0 => Don't append
+    1 => Append
+    
+    g:csMaxConn: Option to specify the maximum number of cscope connections
+    
+    g:csCaseSensitive: Option to specify whether search should be case sensitive
+    1  => case sensitive
+    0  => case insensitive
+    -1 => decide based on 'ignorecase' option in vim
+    
+    g:csWinSize: Option to specify the cscope window height
+    
+    The following key mapings are provided to invoke the cscope plugin
+    <CTRL-\>s: Find this C symbol
+    <CTRL-\>g  Find this definition
+    <CTRL-\>d  Find functions called by this function
+    <CTRL-\>c  Find functions calling this function
+    <CTRL-\>t  Find assignments to
+    <CTRL-\>e  Find this egrep pattern
+    <CTRL-\>f  Find this file
+    <CTRL-\>i  Find files #including this file
+    
+    <CTRL-\>\: Toggle the option to append or clear the search results
+
+ README                |    5 +
+ plugin/cscope_win.vim |  546 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 551 insertions(+), 0 deletions(-)

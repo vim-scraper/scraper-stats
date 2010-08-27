@@ -1,0 +1,56 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2, refs/heads/master)
+Author:     Mikolaj Machowski <mikmach at wp.pl>
+AuthorDate: Fri Sep 3 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - added: VUXinsert commands can take range (also visual)
+    - added: VULadd command - choose region and call function
+    	with obligatory name argument, and immediately commit it.
+
+ doc/vut.txt    |   21 ++++++++++++++-----
+ plugin/vut.vim |   57 +++++++++++++++++++++++++++++++++++++++++++------------
+ 2 files changed, 59 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Mikolaj Machowski <mikmach at wp.pl>
+AuthorDate: Thu Sep 2 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - added: library hints are given with proper relative paths to insert in
+      BeginLibraryItem declaration
+    - added: libraries in global dir (~/Library) can be put in filetype
+      directories and only them will be shown. Example for ~/projekt/some.js
+      VULcheckout will show libraries (.vhl files) in:
+    	~/projekt
+    	~/projekt/Library
+    	~/Library
+    	~/Library/javascript
+      Note: hierarchy in ~/Library have to be in filetypes, not file
+      extensions.
+    - added: command completion for VUXcheckout, VUXupdate (Vim 6.2
+      required)
+    - added: GLVS line for AutoInstall in script
+    - added: shell scriptlet for comment strings
+
+ doc/vut.txt           |    8 +++-
+ ftplugin/sh/vutsh.vim |    3 +
+ plugin/vut.vim        |  102 +++++++++++++++++++++++++++++++++----------------
+ 3 files changed, 78 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Mikolaj Machowski <mikmach at wp.pl>
+AuthorDate: Wed Sep 1 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                      |   30 ++
+ doc/vut.txt                 |  337 +++++++++++++
+ ftplugin/html/vuthtml.vim   |    3 +
+ ftplugin/sgml/vutsgml.vim   |    3 +
+ ftplugin/tex/vuttex.vim     |    3 +
+ ftplugin/vim/vutvim.vim     |    3 +
+ ftplugin/xhtml/vutxhtml.vim |    3 +
+ ftplugin/xml/vutxml.vim     |    3 +
+ plugin/vut.vim              | 1090 +++++++++++++++++++++++++++++++++++++++++++
+ 9 files changed, 1475 insertions(+), 0 deletions(-)

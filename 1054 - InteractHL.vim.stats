@@ -1,0 +1,100 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2b, refs/heads/master)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Sun Sep 12 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    minor fix.  Added '^' to search for highlight keyword in top window so that exact match for highlight is displayed.
+
+ plugin/IactHlRGB/rgb.txt          |  753 +++++++++++++++++++++++++++++++++++++
+ plugin/interactHL.vim             |    4 +-
+ vimfiles/plugin/IactHlRGB/rgb.txt |  753 -------------------------------------
+ 3 files changed, 755 insertions(+), 755 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Wed Sep 1 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Version 1.1
+      Added:
+        -  g:HiliteFilesDir global
+        -  added Syncolor command
+           to have generated file
+           named 'syncolor.vim'
+        -  added ColorScheme command
+           which takes 2 arguments.
+           1) bg - light|dark
+           2) name - for colors_name=
+              and file <name>.vim
+
+ plugin/interactHL.vim |   79 ++++++++++++++++++++++++++++++++++++++++++------
+ 1 files changed, 69 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1-b)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Fri Aug 13 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    decoupled vsutil.vim.
+    vsutil.vim is now a separate package
+
+ doc/vsutil.ans    |  142 --------------
+ doc/vsutil.doc    |  Bin 32256 -> 0 bytes
+ doc/vsutil.html   |  541 -----------------------------------------------------
+ doc/vsutil.rtf    |  216 ---------------------
+ doc/vsutil.txt    |  142 --------------
+ plugin/vsutil.vim |  331 --------------------------------
+ 6 files changed, 0 insertions(+), 1372 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1-zip)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Fri Aug 13 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added code to search
+    for rgb.txt.  If not found,
+    use rbg.txt included with
+    the zip.  If that's not there
+    either, abort with echoerr
+
+ plugin/interactHL.vim             |   34 ++-
+ vimfiles/plugin/IactHlRGB/rgb.txt |  753 +++++++++++++++++++++++++++++++++++++
+ 2 files changed, 786 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0-zip-b)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Fri Aug 13 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    corrected vsutil.vim SortR
+
+ plugin/vsutil.vim |   22 ++++++++++++++++------
+ 1 files changed, 16 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0-zip)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Fri Aug 13 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Made zip file containing
+    vsuitl.vim also for utility
+    functions used by IactHl
+
+ doc/vsutil.ans    |  142 ++++++++++++++
+ doc/vsutil.doc    |  Bin 0 -> 32256 bytes
+ doc/vsutil.html   |  541 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/vsutil.rtf    |  216 +++++++++++++++++++++
+ doc/vsutil.txt    |  142 ++++++++++++++
+ plugin/vsutil.vim |  321 +++++++++++++++++++++++++++++++
+ 6 files changed, 1362 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Fri Aug 13 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                |   28 ++++
+ plugin/interactHL.vim |  362 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 390 insertions(+), 0 deletions(-)

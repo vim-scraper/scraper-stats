@@ -1,0 +1,135 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.43, refs/heads/master)
+Author:     gi1242 gi1242 <gi1242 at gmail.com>
+AuthorDate: Tue Sep 12 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added highlighting groups for the Tab line (thanks to Paddy Newman).
+
+ ChangeLog          |    6 +++++-
+ colors/xterm16.vim |   18 ++++++++++++------
+ 2 files changed, 17 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.42)
+Author:     gi1242 gi1242 <gi1242 at gmail.com>
+AuthorDate: Thu May 18 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed glaring documentation error (should set t_Co=256, and not 16). Minor highlighting group bugfixes.
+
+ ChangeLog          |   14 +++++++++++---
+ colors/xterm16.vim |   18 ++++++++++++------
+ cpalette.pl        |    7 +++++--
+ doc/xterm16.txt    |    5 ++---
+ tags               |   37 -------------------------------------
+ 5 files changed, 30 insertions(+), 51 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.41)
+Author:     gi1242 gi1242 <gi1242 at gmail.com>
+AuthorDate: Sun Apr 16 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor changes to highlighting groups: Added cursorline & cursorcollumn (thanks to Georg Dhan for pointing this out). Also made sure that Comments are a different color than other highlighting groups in the 'allblue' colormap.
+
+ ChangeLog          |    9 +++++++
+ colors/xterm16.vim |   67 +++++++++++++++++++++++++++------------------------
+ doc/xterm16.txt    |   11 +++++---
+ 3 files changed, 51 insertions(+), 36 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
+Author:     gi1242 gi1242 <gi1242 at gmail.com>
+AuthorDate: Tue Apr 4 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added an "allblue" colormap (makes all foreground colors a shade of blue). Also added a "softlight" colormap with light background for webhosting. Added syntax items for Vim7 (is still backward compatible to vim6.4)
+
+ ChangeLog                      |   28 ++
+ colors/xterm16.vim             |  576 ++++++++++++++++++++++++++++++----------
+ cpalette.pl                    |    2 +-
+ doc/changelog.txt              |   17 --
+ doc/xterm16.txt                |  260 +++++++++---------
+ mrxvt-0.4.1-xterm-colors.patch |  247 -----------------
+ rgb_level.c                    |   59 ----
+ tags                           |    2 +-
+ 8 files changed, 602 insertions(+), 589 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     gi1242 gi1242 <gi1242 at gmail.com>
+AuthorDate: Sat Jun 4 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now fully supports rxvt and mrxvt when compiled with 256 colors. Included an option for transparency with mrxvt. Added a perl script to make changing colors on 16 color terminals easier. Few minor color modifications (StatusLine, StatusLineNC). I mainly wrote this so I can switch to mrxvt with transparency without changing my precious colors :)
+
+ colors/xterm16.vim             |  242 ++++++++++++--------
+ cpalette.pl                    |  107 +++++++++
+ doc/changelog.txt              |   17 ++
+ doc/xterm16.txt                |  517 +++++++++++++++++++++++++---------------
+ mrxvt-0.4.1-xterm-colors.patch |  247 +++++++++++++++++++
+ rgb_level.c                    |   59 +++++
+ rxvt.ad                        |   26 --
+ tags                           |   37 +++
+ xterm.ad                       |   23 --
+ xterm16.schema                 |    2 +-
+ xterm_extra.ad                 |   48 ----
+ 11 files changed, 944 insertions(+), 381 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     gi1242 gi1242 <gi1242 at gmail.com>
+AuthorDate: Mon Nov 15 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improved version to support adjustable brightness and contrast, CRT / LCD monitors. Includes a new 'soft' colormap, where all foreground colors are of almost 'equal' intensity for long late night coding sessions. This version takes advantage of xterm's color support. If you use xterm (compiled with 256 colors), then this script can adjust the colors automatically (without making you mess with .Xresources etc). [Ofcourse, it works on other terminals / GUI too].
+
+ colors/xterm16.vim |  545 ++++++++++++++++++++++++++++++++++++++++------------
+ doc/xterm16.txt    |  415 +++++++++++++++++++++++++++++++---------
+ rxvt.ad            |   41 ++--
+ xterm.ad           |   64 ++-----
+ xterm16.ct         |    4 +-
+ xterm16.schema     |   10 +-
+ xterm_colors.ad    |   20 --
+ xterm_extra.ad     |   48 +++++
+ 8 files changed, 840 insertions(+), 307 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     gi1242 gi1242 <gi1242 at gmail.com>
+AuthorDate: Wed Nov 26 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Changed the Diff / Fold highlighting groups. Added files to change default colors of ctheme (thanks to Juhapekka Tolvanen) and rxvt.
+
+ colors/xterm16.vim      |   32 +++++++---
+ colors/xterm16.vim.html |  149 --------------------------------------------
+ doc/xterm16.txt         |  159 ++++++++++++++++++++++++++--------------------
+ rxvt.ad                 |   25 +++++++
+ tags                    |   17 -----
+ xterm.ad                |   11 ++-
+ xterm16.ct              |   20 ++++++
+ 7 files changed, 165 insertions(+), 248 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     gi1242 gi1242 <gi1242 at gmail.com>
+AuthorDate: Thu Nov 6 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added support to remap the unreadable darkblue on the linux console. Disabled HTML groups from using cterm attributes and used colors instead. Added options to customise GUI colors. All options added here can be disabled.
+
+ colors/xterm16.vim      |   88 +++++++++++++++++++---------
+ colors/xterm16.vim.html |  149 +++++++++++++++++++++++++++++++++++++++++++++++
+ doc/xterm16.txt         |   39 +++++++++++-
+ tags                    |    7 ++
+ 4 files changed, 251 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     gi1242 gi1242 <gi1242 at gmail.com>
+AuthorDate: Tue Nov 4 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor Changes to highlighting groups. Now includes files to change colors on xterm, konsole or gnome-terminal to make the red / dark blue colors more readable.
+
+ README             |   53 +++++++++++++++++++++++++++++
+ colors/xterm16.vim |   93 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/xterm16.txt    |   93 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ tags               |   10 +++++
+ xterm.ad           |   44 ++++++++++++++++++++++++
+ xterm16.schema     |   33 ++++++++++++++++++
+ xterm_colors.ad    |   20 +++++++++++
+ 7 files changed, 346 insertions(+), 0 deletions(-)

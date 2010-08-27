@@ -1,0 +1,49 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/17, refs/heads/master)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue Sep 4 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    A new function, QArgSplitter(), now comes with cecutil.
+
+ doc/cecutil.txt    |    3 ++-
+ plugin/cecutil.vim |   21 ++++++++++++++++++---
+ 2 files changed, 20 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/16)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Thu Apr 12 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Changed com to com! so AsNeeded (vimscript#915) is happier.
+    
+    Fixed a bug concerning maps which don't use the mapleader option are still saved and restored properly.
+
+ doc/cecutil.txt    |    7 ++++++-
+ plugin/cecutil.vim |   33 ++++++++++++++++++---------------
+ 2 files changed, 24 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/15)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue Sep 19 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * (-new-)  map restoration improved
+    * (change) b:(varname) now use b:cecutil_(varname)
+    * (bugfix) bypass for report option for DestroyMark() included
+    * (bugfix) SaveWinPosn() and RestoreWinPosn() now handle an empty buffer
+
+ doc/cecutil.txt    |  198 +++++++++++++++++++++++++
+ plugin/cecutil.vim |  414 +++++++++++-----------------------------------------
+ 2 files changed, 286 insertions(+), 326 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/14)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Jan 25 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    SaveUserMaps' mapmode argument, heretofore just a single letter (see |maparg()|), now accepts a leading "u".  If present, SaveUserMaps() will do an unmap.
+    Bypasses for si, so, and siso options included.
+
+ README             |   48 ++++
+ plugin/cecutil.vim |  702 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 750 insertions(+), 0 deletions(-)

@@ -1,0 +1,37 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/6, refs/heads/master)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Oct 10 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * allows rightmouse to click between dark & bright backgrounds
+    * double-click with leftmouse will pull the color line up to the top of the screen, thereby displaying its rgb values
+    * Vim version 7 now supports 1000s of highlighting groups; gvcolors takes advantage of that
+    * Looks in some more places for where the rgb.txt file may be.
+
+ doc/gvcolors.txt    |   42 +++++++++
+ plugin/gvcolors.vim |  238 +++++++++++++++++++++++++++++++++++----------------
+ 2 files changed, 207 insertions(+), 73 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue Jul 13 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Quicker refresh when moving in the text via the scrollbar.  Up to 188 colors can be shown at a time; this is a slight reduction to avoid problems with Vim's limited quantity of concurrently displayable colors.
+
+ plugin/gvcolors.vim |   20 ++++++++------------
+ 1 files changed, 8 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Fri Apr 2 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Shift-Leftmouse will toggle gvcolors' background between dark and light.
+    Bugfix: full screen displays can result in too many colors for Vim to
+    display at one time; gvcolors now limits itself to 192 colors (any more
+    will be set to "Ignore" highlighting).
+
+ README              |   39 ++++++
+ plugin/gvcolors.vim |  379 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 418 insertions(+), 0 deletions(-)

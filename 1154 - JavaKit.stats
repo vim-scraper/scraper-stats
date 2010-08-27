@@ -1,0 +1,59 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1, refs/heads/master)
+Author:     Yiu Wing Yip <yiuwingyip at virgin.net>
+AuthorDate: Wed May 7 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This is a major release which turns vim into a java IDE.   Debugging with jdb is enabled.  Users can easily access the full functionalities provided by jdb.  The completion feature has been much improved to provide supports for generic types and long expressions.
+
+ JavadocApplet.html                   |  152 ----
+ JavadocHelper.jar                    |  Bin 2824 -> 0 bytes
+ doc/readme.txt                       |   98 +++-
+ plugin/Functions.vim                 |  574 ---------------
+ plugin/JavaMacros.vim                |  539 --------------
+ plugin/JavaSearch.vim                | 1114 ----------------------------
+ plugin/Javac.vim                     |  289 --------
+ plugin/Javadoc.vim                   | 1054 ---------------------------
+ src/debugger/CVS/Entries             |    3 +
+ src/debugger/CVS/Repository          |    1 +
+ src/debugger/CVS/Root                |    1 +
+ src/debugger/DebugSession.java       |  356 +++++++++
+ src/debugger/META-INF/CVS/Entries    |    2 +
+ src/debugger/META-INF/CVS/Repository |    1 +
+ src/debugger/META-INF/CVS/Root       |    1 +
+ src/debugger/META-INF/MANIFEST.MF    |    4 +
+ src/debugger/Reader.java             |  292 ++++++++
+ src/debugger/debug.jar               |  Bin 0 -> 8205 bytes
+ src/javadoc/CVS/Entries              |    5 +
+ src/javadoc/CVS/Repository           |    1 +
+ src/javadoc/CVS/Root                 |    1 +
+ src/javadoc/JavadocApplet.html       |  154 ++++
+ src/javadoc/JavadocHelper.jar        |  Bin 0 -> 2824 bytes
+ src/javadoc/JavadocHelper.java       |  139 ++++
+ src/javadoc/build.xml                |   23 +
+ vim/Functions.vim                    |  635 ++++++++++++++++
+ vim/JavaDebug.vim                    |  756 +++++++++++++++++++
+ vim/JavaKit.vim                      |   16 +
+ vim/JavaMacros.vim                   |  594 +++++++++++++++
+ vim/JavaSearch.vim                   | 1313 ++++++++++++++++++++++++++++++++++
+ vim/JavaUtil.vim                     |  196 +++++
+ vim/Javac.vim                        |  306 ++++++++
+ vim/Javadoc.vim                      | 1056 +++++++++++++++++++++++++++
+ 33 files changed, 5940 insertions(+), 3736 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Yiu Wing Yip <yiuwingyip at virgin.net>
+AuthorDate: Thu Dec 9 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ JavadocApplet.html    |  152 +++++++
+ JavadocHelper.jar     |  Bin 0 -> 2824 bytes
+ README                |    3 +
+ doc/readme.txt        |   20 +
+ plugin/Functions.vim  |  574 +++++++++++++++++++++++++
+ plugin/JavaMacros.vim |  539 ++++++++++++++++++++++++
+ plugin/JavaSearch.vim | 1114 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/Javac.vim      |  289 +++++++++++++
+ plugin/Javadoc.vim    | 1054 ++++++++++++++++++++++++++++++++++++++++++++++
+ 9 files changed, 3745 insertions(+), 0 deletions(-)

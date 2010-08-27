@@ -1,0 +1,217 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.80, refs/heads/master)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Thu Mar 25 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    C-H is no longer toggles hidden file showing, as it overwrites backspace binding in some terminals.
+
+ doc/vimcommander.txt    |   43 ++++++++++++++++++++++---------------------
+ plugin/vimcommander.vim |    3 +--
+ 2 files changed, 23 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.79)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Tue Feb 23 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Windows path handling working, thanks to Zacco!
+    Using vimball format from now on.
+
+ doc/vimcommander.txt    |  126 ++++++++++++++++++++
+ plugin/vimcommander.vim |  291 +++++------------------------------------------
+ 2 files changed, 156 insertions(+), 261 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.78)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Sun Jan 31 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Change dir dialog, required in windows.
+
+ plugin/vimcommander.vim |   15 ++++++++++++---
+ 1 files changed, 12 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.77)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Sat Jan 23 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Version scheme changed.
+    Accepting initial directories from global configuration variables.
+
+ plugin/vimcommander.vim |   58 ++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 40 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/76)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Wed Jan 14 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Directory escaping was missing. Thanks devix for the fix.
+
+ plugin/vimcommander.vim |   11 ++++++-----
+ 1 files changed, 6 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/75)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Mon Dec 3 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    If hidden files were enabled, the glob coud become '**', taking a very long time to build the tree. Thanks go to Oleg Popov for the fix
+
+ plugin/vimcommander.vim |   10 ++++++----
+ 1 files changed, 6 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/74)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Tue Aug 21 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Works with 'splitright'. Thanks to Vladimir Marek again!
+
+ plugin/vimcommander.vim |    5 ++++-
+ 1 files changed, 4 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/73)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Sun Jun 24 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Files with spaces working now, thanks to Vladimír Marek!
+
+ plugin/vimcommander.vim |   68 ++++++++++++++++++++---------------------------
+ 1 files changed, 29 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/69)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Sun Apr 9 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    + and - bound to kPlus and kMinus.
+
+ plugin/vimcommander.vim |    6 ++++--
+ 1 files changed, 4 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/68)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Sat Mar 11 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix: directories with spaces. New: local copy.
+    New version numbering scheme.
+
+ plugin/vimcommander.vim |   79 +++++++++++++++++++++++++---------------------
+ 1 files changed, 43 insertions(+), 36 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.54.2.9)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Sun Oct 2 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now vimcommander keeps the previous window open, preventing the break of C-O among other things.
+
+ plugin/vimcommander.vim |   30 +++++++-----------------------
+ 1 files changed, 7 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.54.2.8)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Wed May 11 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Does not come back to the begining of last open file when switching off.
+    mkdir was not working when dir had spaces.
+    Fixes to make S-F4 working, and to prevent error report when canceling interactive questions.
+
+ plugin/vimcommander.vim |   37 ++++++++++++++++++++++++++++++-------
+ 1 files changed, 30 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.54.2.2)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Thu Feb 26 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Directory change is optional. Fixed <leader>o/<C-O>.
+
+ plugin/vimcommander.vim |   58 +++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 41 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.54.2.1)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Sun Jan 25 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    ToggleHiddenFiles and key conflict solved.
+    Fixed typo in doc.
+
+ plugin/vimcommander.vim |   32 +++++++++++++++++++++++---------
+ 1 files changed, 23 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.52)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Wed Nov 19 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Self-installing documentation created. Directory history implemented. Bugfix: does not overwrite " register; does not lose track of last buffer anymore. Uses only the window where its openend. Some changes in the layout also. Licensing info appended.
+
+ plugin/vimcommander.vim |  844 ++++++++++++++++++++++++++++++-----------------
+ 1 files changed, 536 insertions(+), 308 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.41)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Sat Nov 15 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bugfix: remembers last panel visited and proper closure now working.
+
+ plugin/vimcommander.vim |   18 +++++++-----------
+ 1 files changed, 7 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.39)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Wed Nov 12 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bugfix: move is now working. Alternate keys for C-. Options for the window are saved/restored when entering/exiting.
+
+ plugin/vimcommander.vim |  162 ++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 111 insertions(+), 51 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.35)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Sun Nov 9 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fullscreen. Toggle improved. Selection of files thru <INS>, + and - implemented. Generally more similar to wincmd.
+
+ plugin/vimcommander.vim | 1106 +++++++++++++++++++++++++++++------------------
+ 1 files changed, 682 insertions(+), 424 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.16)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Thu Nov 6 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New:
+    F7 - create directory
+    C-U exchange panels
+    F11 - switch buffer-vimcommander
+    C-Right/C-Left - puts dir under cursor on other panel
+    Copy, move & del work with dirs (CAUTION ADVISED)
+    Fixed:
+    copy, move & paste for files with spaces.
+    
+    Removing keys & compatibility with opsplorer.
+
+ plugin/vimcommander.vim |  203 +++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 160 insertions(+), 43 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
+Author:     Leandro Penz <lpenz at terra.com.br>
+AuthorDate: Sat Nov 1 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                  |   22 ++
+ plugin/vimcommander.vim |  658 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 680 insertions(+), 0 deletions(-)

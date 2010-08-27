@@ -1,0 +1,29 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0, refs/heads/master)
+Author:     Milan Berta <bertm0am at artax.karlin.mff.cuni.cz>
+AuthorDate: Sat Mar 27 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    In single file: mapping encoding (latin2, win, or pl2) and TeX, copnvert current file between them.
+
+ doc/readme.txt              |   16 --
+ plugin/dks-TeX.vim          |  106 ---------
+ plugin/dks-il2+tex-v2.0.vim |  530 +++++++++++++++++++++++++++++++++++++++++++
+ plugin/dks-il2.vim          |  104 ---------
+ plugin/dks-pl2+tex-v2.0.vim |  530 +++++++++++++++++++++++++++++++++++++++++++
+ plugin/dks-win+tex-v2.0.vim |  530 +++++++++++++++++++++++++++++++++++++++++++
+ plugin/nodks.vim            |  104 ---------
+ 7 files changed, 1590 insertions(+), 330 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Milan Berta <bertm0am at artax.karlin.mff.cuni.cz>
+AuthorDate: Thu Oct 30 00:00:00 2003 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README             |   27 +++++++++++++
+ doc/readme.txt     |   16 ++++++++
+ plugin/dks-TeX.vim |  106 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/dks-il2.vim |  104 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/nodks.vim   |  104 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 5 files changed, 357 insertions(+), 0 deletions(-)

@@ -1,0 +1,96 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.01, refs/heads/master)
+Author:     tocer deng <tocer.deng at gmail.com>
+AuthorDate: Tue May 17 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Nothing to do except IGNORE a exception when press '.' key in a string
+
+ plugin/python_calltips.vim | 1004 ++++++++++++++++++++++----------------------
+ 1 files changed, 503 insertions(+), 501 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     tocer deng <tocer.deng at gmail.com>
+AuthorDate: Thu Nov 11 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Change:
+    1.get rid of  F4 key. You can get tips without any extral keys
+    2.support multi buffers
+    3.hightlight calltips syntax..
+    Thank Staale flock and Levin Du help
+
+ plugin/python_calltips.vim |  998 ++++++++++++++++++++++----------------------
+ 1 files changed, 501 insertions(+), 497 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.85)
+Author:     tocer deng <tocer.deng at gmail.com>
+AuthorDate: Mon Oct 25 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix  the  clash with winmanager.vim and  minibufexpl.vim   plugin.
+    Thanks Staale Flock
+
+ plugin/python_calltips.vim |  110 ++++++++++++++++++++++++++++++++++++--------
+ 1 files changed, 90 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     tocer deng <tocer.deng at gmail.com>
+AuthorDate: Wed Sep 22 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1.Rewrap the plugin, and change name to python_calltips.vim. In version 0.8, the plugin don't run automatically
+    
+    2.Add two function to start or end the plugin. You can run function
+      :call DoCalltips()        #start running
+      :call EndCalltips()       #end running
+    
+    3.if you use gVim, you can click  menu to start or end it in "Tools" menu :  "Start Calltips" and "End Calltips"
+
+ plugin/python_calltips.vim |  427 +++++++++++++++++++++++++++++++++++++++++++
+ pyCallTips.py              |  432 --------------------------------------------
+ 2 files changed, 427 insertions(+), 432 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     tocer deng <tocer.deng at gmail.com>
+AuthorDate: Sun Sep 12 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1.More variable can be display calltips.
+    2.Refresh automatically if you don't press key until 5s in "Nomal" mode
+
+ pyCallTips.py |  222 ++++++++++++++++++++++++++++++++++----------------------
+ 1 files changed, 135 insertions(+), 87 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     tocer deng <tocer.deng at gmail.com>
+AuthorDate: Sun Sep 5 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    1.add "CT_unmapkeys()" and "CT_mapkeys()" function
+    2.add calltips of buitin types such as string, list, dictionay, file
+    3.thank Guilherme Salgado. He fix a bug in linux, and I know the script work well in linux
+
+ pyCallTips.py |  298 +++++++++++++++++++++++++++++++++++++++++----------------
+ 1 files changed, 217 insertions(+), 81 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     tocer deng <tocer.deng at gmail.com>
+AuthorDate: Mon Aug 30 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Congratulate China win 32 gold medal in Olympiad Game.
+    and thanks montumba, without his help, I can't release 0.5 so quickly.
+
+ pyCallTips.py |  216 +++++++++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 170 insertions(+), 46 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     tocer deng <tocer.deng at gmail.com>
+AuthorDate: Fri Aug 27 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    add builtin function
+
+ README        |   22 ++++++++++
+ pyCallTips.py |  124 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 146 insertions(+), 0 deletions(-)

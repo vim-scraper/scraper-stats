@@ -1,0 +1,286 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.33, refs/heads/master)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Fri Jul 30 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Rewrote Switch(){case:default:} handling from scratch in a simpler more logical and infallible way.
+    - Added a new option: PHP_outdentphpescape to indent PHP tags as the surrounding code.
+
+ indent/php.vim | 2482 +++++++++++++++++++++++++++++---------------------------
+ 1 files changed, 1269 insertions(+), 1213 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.30)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Sat Nov 22 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed empty case/default identation again :/
+    - The ResetOptions() function will be called each time the ftplugin calls this script, previously it was executed on BufWinEnter and Syntax events.
+
+ indent/php.vim |   44 +++++++++++++++++++++++++++++---------------
+ 1 files changed, 29 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.29)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Sun Oct 26 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed php file detection for ResetOptions() used for comments formatting. It now uses the same tests as filetype.vim. ResetOptions() will be correctly called for *.phtml, *.ctp and *.inc files.
+
+ indent/php.vim |   29 +++++++++++++++++++----------
+ 1 files changed, 19 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.28)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Tue Jun 10 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added support for NOWDOC tags ($foo = <<<'bar')
+    - New option: PHP_vintage_case_default_indent (default off)
+    - End HEREDOC delimiters were not considered as such if they were not followed by a ';'.
+    - if a "case" was preceded by another "case" on the previous line, the second "case" was indented incorrectly.
+    - '/*' character sequences found on a line starting by a '#' were not dismissed by the indenting algorithm and could cause indentation problem in some cases.
+    - Fix some indentation errors on multi line conditions and multi line statements.
+    - Fix when array indenting is broken and a closing ');' is placed at the start of the line, following lines will be indented correctly.
+    - Minor fixes and optimizations.
+
+ indent/php.vim |  193 +++++++++++++++++++++++++++++++++++++-------------------
+ 1 files changed, 127 insertions(+), 66 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.24)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Sat Feb 24 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added compatibility with the latest version of php.vim syntax file by Peter Hodge (http://www.vim.org/scripts/script.php?script_id=1571)
+    This fixes wrong indentation and ultra-slow indenting on large php files...
+    - fixed spelling in comments
+
+ indent/php.vim |   60 +++++++++++++++++++++++++++++++++++--------------------
+ 1 files changed, 38 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.23)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Sat Jan 14 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - <script> html tags are now correctly indented the same way their content is.
+    - <?.*?> (on a single line) php declarations are now always considered as non-php code and let untouched.
+
+ indent/php.vim |   39 ++++++++++++++++++++++++++++++++-------
+ 1 files changed, 32 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.22)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Thu Jan 12 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - PHPDoc comments are now indented according to the surrounding code.
+    - This is also true for '/* */' multi-line comments when the second line begins by a '*'.
+    - Single line '/* */' comments are also indented.
+
+ indent/php.vim |   21 +++++++++++++++------
+ 1 files changed, 15 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.21)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Sat Jan 7 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - 'try' and 'catch' were not registered as block starters so the '{' after a 'try' or 'catch' could be wrongly indented...
+    (thanks to Gert Muller for finding this issue)
+
+ indent/php.vim |   18 +++++++++++-------
+ 1 files changed, 11 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.20)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Mon Nov 21 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Line beginning by a single or double quote followed by a space would cause problems... this was related to the bug correction of version 1.10 - Thanks to David F. for finding this (he was lucky).
+    - Changed the way this script set the 'formatoptions' setting, now it uses '-=' and '+='
+    - New option: PHP_autoformatcomment (defaults to 1), if set to 0 the 'formatoptions' setting will not be altered.
+    - When PHP_autoformatcomment is not 0, the 'comments' setting is set to the type of comments that PHP supports.
+
+ indent/php.vim |   54 ++++++++++++++++++++++++++++++++++++++++++++++++------
+ 1 files changed, 48 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.19)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Fri Nov 18 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Indentation of '*/' delimiter of '/**/' won't be broken by strings or '//' comments containing the "/*" character sequence.
+    - I Forgot to register 'interface' and 'abstract' as block starters so the '{' after them could be wrongly indented...
+
+ indent/php.vim | 1512 +++++++++++++++++++++++++++++---------------------------
+ 1 files changed, 776 insertions(+), 736 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.181)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Fri Sep 16 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - I Forgot to register 'class' as a block starter so the '{' after a 'class' could be wrongly indented...
+
+ indent/php.vim |   11 +++++++----
+ 1 files changed, 7 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.18)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Thu Sep 15 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - No more problem with Vim 6.3 and UTF-8.
+    - Opening braces "{" are always indented according to their block starter.
+
+ indent/php.vim |   84 +++++++++++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 62 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.17)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Wed Jul 6 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Now starting and ending '*' of multiline '/* */' comments are aligned on the '*' of the '/*' comment starter.
+    - Some code improvements that make indentation faster.
+    - Now following parts of split lines are indented:
+        Instead of:
+    	$foo=
+    	"foo"
+    	."foo";
+    
+        You have:
+    	$foo=
+    	    "foo"
+    	   ."foo";
+    
+    - If a "case : break;" was declared on a single line, the following "case" was not indented correctly.
+    - If a </script> html tag was preceded by a "?>" it wasn't indented.
+    - Some other minor corrections and improvements.
+
+ indent/php.vim |  212 ++++++++++++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 160 insertions(+), 52 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.15)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Thu Jun 23 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Corrected some problems with the indentation of multiline "array()" declarations.
+    - Added auto-formatting for comments (using the Vim option formatoptions=qroc).
+    - Added the script option PHP_BracesAtCodeLevel to indent the '{' and '}' at the same level than the code they contain.
+    - Some code cleaning and typo corrections (Thanks to Emanuele Giaquinta for his patches)
+
+ indent/php.vim |  153 +++++++++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 113 insertions(+), 40 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Tue May 31 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - The bug involving searchpair() and utf-8 encoding in Vim 6.3 will not make this script to hang but you'll have to be careful to not write '/* */' comments with other '/*' inside the comments else the indentation won't be correct.
+    NOTE: This is true only if you are using utf-8 and vim 6.3.
+
+ indent/php.vim |   25 ++++++++++++++++++++-----
+ 1 files changed, 20 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Tue May 17 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    If the "case" of a "switch" wasn't alone on its line and if the "switch" was at col 0 (or at default indenting) the lines following the "case" were not indented.
+
+ indent/php.vim |   64 +++++++++++++++++++++----------------------------------
+ 1 files changed, 25 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Tue Feb 22 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Lines beginning by a single or double quote were not indented in some cases.
+
+ indent/php.vim |   10 +++++++---
+ 1 files changed, 7 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.09)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Mon Feb 7 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The javaScript code was not always directly indented when typing.
+
+ indent/php.vim |   26 ++++++++++++++++++--------
+ 1 files changed, 18 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.08)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Sun Jan 9 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - End comment tags '*/' are indented like start tags '/*'.
+    - When typing a multiline comment, '}' are indented according to other commented '{'.
+    - Added a new option 'PHP_removeCRwhenUnix' to automatically remove CR at end of lines when the file format is Unix.
+    - Changed the file format of this very file to Unix.
+    - This version seems to correct several issues some people had with 1.07.
+
+ indent/php.vim | 1466 +++++++++++++++++++++++++++++---------------------------
+ 1 files changed, 754 insertions(+), 712 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.07)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Mon Dec 27 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added support for "Here document" tags:
+    -   HereDoc end tag are indented properly.
+    -   HereDoc content remain unchanged.
+    - All the code that is outside PHP delimiter remains unchanged.
+    - New feature: The content of <script.*> html tag is considered as PHP and indented according to the surrounding PHP code.
+    - "else if" are detected as "elseif".
+    - Multiline /**/ are indented when the user type it but remain unchanged when indenting from their beginning.
+    - Fixed indenting of // and # comments.
+    - php_sync_method option is set to 0 (fromstart). This is required for complex php script else the indent may fail.
+    - Files with non PHP code at the beginning could alter the indent of the following PHP code.
+    - Other minor improvments and corrections.
+
+ indent/php.vim |  477 +++++++++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 351 insertions(+), 126 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.06)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Sun Dec 19 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Switch block were no longer indented correctly...
+    - Added an option to use a default indenting instead of 0.
+    - A problem with ^\s*);\= lines where ending a non '{}' structure.
+    - Changed script local variable to be buffer local variable instead.
+
+ indent/php.vim |  196 ++++++++++++++++++++++++++++++--------------------------
+ 1 files changed, 104 insertions(+), 92 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.05)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Wed Dec 15 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Lines containing "<?php.* ?>" and "?> .*<?php" (start and end tag on the same line) are no longer indented at col 1 but as normal code.
+
+ indent/php.vim |  235 +++++++++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 173 insertions(+), 62 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     John Wellesz <john.wellesz at teaser.fr>
+AuthorDate: Mon Nov 1 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README         |  108 +++++++++++++++++
+ indent/php.vim |  364 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 472 insertions(+), 0 deletions(-)

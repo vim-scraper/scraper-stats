@@ -1,0 +1,70 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2, refs/heads/master)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Thu Sep 2 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Version 1.2
+      Added:
+        -  ARRAYPUT puts elements
+           of one array into another
+    
+    Removed ARRAYMAN use
+    documentation instead.
+
+ doc/arrayman.doc                     |  Bin 47104 -> 48640 bytes
+ doc/arrayman.html                    |   70 ++-
+ doc/arrayman.rtf                     |  216 ++++---
+ plugin/array.vim                     |  102 +++-
+ plugin/arrayman                      | 1092 ----------------------------------
+ plugin/example/addrbook.vim          |   60 ++
+ vimfiles/plugin/example/addrbook.vim |   60 --
+ 7 files changed, 317 insertions(+), 1283 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1-c)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Fri Aug 13 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    decoupled vsutil.vim
+    vsutil.vim is now a separate package
+
+ doc/arrayman.doc     |  Bin 0 -> 47104 bytes
+ doc/arrayman.html    | 1044 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/arrayman.rtf     |  393 +++++++++++++++++++
+ doc/arrayman.txt     |  331 ++++++++++++++++
+ plugin/arrayman.doc  |  Bin 47104 -> 0 bytes
+ plugin/arrayman.html | 1044 --------------------------------------------------
+ plugin/arrayman.rtf  |  393 -------------------
+ plugin/arrayman.txt  |  331 ----------------
+ plugin/vsutil.vim    |   47 ---
+ 9 files changed, 1768 insertions(+), 1815 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0b)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Thu Jul 22 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    added .txt, .rtf, word .doc, and html versions of arrayman
+    NOTE: the directory arrayman_files, though empty, is
+               necessary.  If deleted, the html is also deleted
+
+ plugin/arrayman      |    4 +-
+ plugin/arrayman.doc  |  Bin 0 -> 47104 bytes
+ plugin/arrayman.html | 1044 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/arrayman.rtf  |  393 +++++++++++++++++++
+ plugin/arrayman.txt  |  331 ++++++++++++++++
+ 5 files changed, 1770 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Dave Silvia <dsilvia at mchsi.com>
+AuthorDate: Tue Jul 20 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                               |    7 +
+ plugin/array.vim                     |  914 ++++++++++++++++++++++++++++
+ plugin/arrayman                      | 1092 ++++++++++++++++++++++++++++++++++
+ plugin/vsutil.vim                    |   47 ++
+ vimfiles/plugin/example/addrbook.vim |   60 ++
+ 5 files changed, 2120 insertions(+), 0 deletions(-)

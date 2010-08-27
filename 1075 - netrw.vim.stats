@@ -1,0 +1,593 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/136, refs/heads/master)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue Dec 29 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This one is mostly a bugfix release.  There's also
+    T:  (a new map)  puts the file or directory into a background tab
+    elinks now uses -source instead of -dump
+
+ autoload/netrw.vim     |  600 ++++++++++++++++++++++++++++++++----------------
+ doc/pi_netrw.txt       |  326 ++++++++++++++++++--------
+ plugin/netrwPlugin.vim |    2 +-
+ syntax/netrw.vim       |   24 +-
+ 4 files changed, 647 insertions(+), 305 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/135)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Jan 14 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    A bugfix release -- see  :he netrw-history  --
+
+ autoload/netrw.vim         |  654 ++++++++++++++++++++++----------------------
+ autoload/netrwSettings.vim |    1 +
+ doc/pi_netrw.txt           |  122 +++++++--
+ plugin/netrwPlugin.vim     |    6 +-
+ syntax/netrw.vim           |   59 +++--
+ 5 files changed, 466 insertions(+), 376 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/134)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Thu Oct 23 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * dav: will use curl if cadaver isn't available
+    * [N] added to various Explore commands
+    * bookmarks should now reliably be retained
+    * various bugfixes (x for remote jpgs, for example)
+
+ autoload/netrw.vim             |  572 ++++++++++++++++++++++++++--------------
+ autoload/netrwFileHandlers.vim |   66 +++--
+ autoload/netrwSettings.vim     |    8 +-
+ doc/pi_netrw.txt               |  167 +++++++++---
+ plugin/netrwPlugin.vim         |   11 +-
+ syntax/netrw.vim               |    2 +-
+ 6 files changed, 548 insertions(+), 278 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/133)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Sep 3 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    [*] security improvements (you'll need vim 7.2 for this version)
+    [*] uses cursorline for thin/long/tree listing styles
+    [*] currently trying elinks for http -- comments, please!  I have one dislike so far, so it may be changed back in the future.
+    [*] various bug fixes
+
+ autoload/netrw.vim         |  197 +++++++++++++++++++++++++++++++++-----------
+ autoload/netrwSettings.vim |    7 +-
+ doc/pi_netrw.txt           |  107 ++++++++++++++++++++----
+ plugin/netrwPlugin.vim     |   42 +++-------
+ syntax/netrw.vim           |   57 +++++++------
+ 5 files changed, 285 insertions(+), 125 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/v128)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Jul 30 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Needs fnameescape() and shellescape(), so you'll need an up-to-date vim with this one: vim v7.2b or later.
+
+ autoload/netrw.vim         | 2492 ++++++++++++++++++++++++++-----------------
+ autoload/netrwSettings.vim |   20 +-
+ doc/pi_netrw.txt           |  363 +++++--
+ plugin/netrwPlugin.vim     |   18 +-
+ 4 files changed, 1783 insertions(+), 1110 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/123)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Fri Mar 28 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Marked files now keeps a "global" marked file list.  The global marked file list is used to support tag processing and vimdiff'ing.
+    Several bugs fixed and security enhancements.
+
+ autoload/netrw.vim         |  568 ++++++++++++++++++++++++++++----------------
+ autoload/netrwSettings.vim |   17 +-
+ doc/pi_netrw.txt           |  143 +++++++++---
+ plugin/netrwPlugin.vim     |    2 +-
+ syntax/netrw.vim           |   22 +-
+ 5 files changed, 493 insertions(+), 259 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/122)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue Feb 26 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Mainly a bugfix release (sorting sequence improvements).
+
+ autoload/netrw.vim     |   64 +++++++++++++++++++++++++++---------------------
+ doc/pi_netrw.txt       |   23 +++++++++++++---
+ plugin/netrwPlugin.vim |    2 +-
+ syntax/netrw.vim       |   15 ++++++----
+ 4 files changed, 64 insertions(+), 40 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/121)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue Feb 12 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bugfixes: netrw attempts to retain the alternate file.  v120 broke an explicit :Explore dirname ; fixed.
+
+ autoload/netrw.vim     |   73 ++++++++++++++++++++++++-----------------------
+ doc/pi_netrw.txt       |    6 +++-
+ plugin/netrwPlugin.vim |    2 +-
+ 3 files changed, 43 insertions(+), 38 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/120)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Sat Feb 9 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Marked file system extended (mt, mh, mu, ms) and bugs removed.  One may now have multiple tree listings.  Bugfix: P works with trees.  Changed q -> qb for query-bookmarks, qf added to provide information about file under cursor.  Explore now has four special listing modes: */filepat, *//filepat, **/pattern, and **//pattern.  gh is now a shortcut for toggling hiding of files and directories which begin with a dot.  The menu now includes entries for Explore.
+
+ autoload/netrw.vim         | 6681 +++++++++++++++++++++++---------------------
+ autoload/netrwSettings.vim |    2 +
+ doc/pi_netrw.txt           |  261 ++-
+ plugin/netrwPlugin.vim     |    2 +-
+ syntax/netrw.vim           |   59 +-
+ 5 files changed, 3794 insertions(+), 3211 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/118)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Mon Jan 7 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Netrw has some bug fixes: with :Explore c:/path/, spaces in directory names with s:NetrwOptionRestore(), and with P
+
+ autoload/netrw.vim     |   62 +++++++++++++++++++++++++++++++----------------
+ doc/pi_netrw.txt       |   20 ++++++++++++++-
+ plugin/netrwPlugin.vim |    8 +++---
+ 3 files changed, 63 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/116)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Dec 12 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    bug fixes -- removed some unnecessary directory refreshes, and this version does a better job of retaining user options when editing files under the aegis of netrw's browser
+
+ autoload/netrw.vim     |  208 +++++++++++++++++++++++++++++------------------
+ doc/pi_netrw.txt       |   68 ++++++++++------
+ plugin/netrwPlugin.vim |    2 +-
+ 3 files changed, 173 insertions(+), 105 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/115)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Thu Nov 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * New: :Explore handles path/**/filename
+    * Bugfixes: (shellslash use improved, remote editing of *.tar.gz and *.tar.bz2, sourcing remote files via ftp, etc)
+
+ autoload/netrw.vim |  187 ++++++++++++++++++++++++++++++++++------------------
+ doc/pi_netrw.txt   |  129 ++++++++++++++++++++++++++++++------
+ syntax/netrw.vim   |    2 +-
+ 3 files changed, 232 insertions(+), 86 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/114)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue Oct 2 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    mT now supports generating tags files for remote marked files
+    Netrw's menus are New&Improved!
+
+ autoload/netrw.vim |  129 ++++++++++++++++++++++++++--------------------------
+ doc/pi_netrw.txt   |   54 ++++++++++++++++-----
+ 2 files changed, 105 insertions(+), 78 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/113)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Thu Sep 27 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New: the "x" command has been extended to use Mac OS/X's open facility
+    
+    Bugfix: cursor position restored after deleting or renaming files
+    Bugfix: ftplugins, autocmds, etc can change settings after netrw opens a file
+    Bugfix: strlen() -> s:Strlen(), which handles utf-8 characters better
+
+ autoload/netrw.vim         |  545 +++++++++++++++++++++++-----
+ autoload/netrwSettings.vim |    4 +-
+ doc/pi_netrw.txt           |  864 ++++++++++++++++++++++++++++----------------
+ syntax/netrw.vim           |    3 +-
+ 4 files changed, 996 insertions(+), 420 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/112)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue Sep 4 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added mx (|netrw-mx|) for executing arbitrary commands on marked files
+    Added the :NetrwClean[!] command
+    Bugfix: More option save/restore work for s:NetrwBrowseChgDir(); s:NetrwOptionSave() and s:NetrwOptionRestore() now take a parameter specifying the type of variables to be used for saving and restoring (either "w:" or "s:").  The formatoptions, for example, is saved & restored.
+
+ autoload/netrw.vim     |  273 ++++++++++++++++++++++++++++++++++--------------
+ doc/pi_netrw.txt       |  166 ++++++++++++++++++++----------
+ plugin/netrwPlugin.vim |    3 +-
+ 3 files changed, 307 insertions(+), 135 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/111)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Aug 15 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Included a "marked file" system: one may mark files (with mf or shift-leftmouse); one may then rename, delete, obtain, compress/decompress, and create tags with the marked files.
+    
+    A double-clicked leftmouse (in gvim) will return one from a file to the netrw browser buffer used to edit it.
+    
+    And, some bug fixes!
+
+ autoload/netrw.vim         | 2352 +++++++++++++++++++++++++++-----------------
+ autoload/netrwSettings.vim |    5 +-
+ doc/pi_netrw.txt           | 1309 ++++++++++++++-----------
+ plugin/netrwPlugin.vim     |    3 +-
+ syntax/netrw.vim           |    5 +-
+ 5 files changed, 2159 insertions(+), 1515 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/110)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Jun 20 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New Features:
+    * added [ and ] maps to NetrwTreeListing (bounce across open directories)
+    * preview window may be shown vertically as well as the default horizontally
+    
+    Bug Fixes:
+    * g:netrw_shq more consistently used to support "x" for special file browsing
+    * more [Scratch] buffers are now named properly
+    * c mapping now works when directory names have spaces
+    * options retained in original buffers after a split + :Explore
+    * Fixed remote file deletion/renaming (again)
+    * Using <leftmouse to a non-netrw window was causing an error message
+
+ autoload/netrw.vim         |  973 +++++++++++++++++++++++++-------------------
+ autoload/netrwSettings.vim |   15 +-
+ doc/pi_netrw.txt           |  116 ++++--
+ plugin/netrwPlugin.vim     |    8 +-
+ 4 files changed, 641 insertions(+), 471 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/109)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue May 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    One may select an error/message window vs echoerr messages
+    Various bug fixes (scp -P and ssh -p for ports, Explore attempts to expand $name)
+
+ autoload/netrw.vim         |  166 ++++++++++++++++++++++++++++---------------
+ autoload/netrwSettings.vim |   14 +++-
+ doc/pi_netrw.txt           |   81 ++++++++++++++-------
+ 3 files changed, 172 insertions(+), 89 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/108)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Mar 21 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Netrw now supports sourcing remote files and supports preview (with a "p").  Numerous bug fixes.  Works with Microsoft-based ftp servers.
+
+ autoload/netrw.vim         | 1341 ++++++++++++++++++++++++++------------------
+ autoload/netrwSettings.vim |   11 +-
+ doc/pi_netrw.txt           |  237 ++++++--
+ plugin/netrwPlugin.vim     |   12 +-
+ 4 files changed, 1006 insertions(+), 595 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/107)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Jan 3 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    (browser) tree display mode
+    (browser) amiga supported
+    numerous bug fixes
+
+ autoload/netrw.vim             | 2447 +++++++++++++++++++++-------------------
+ autoload/netrwFileHandlers.vim |   52 +-
+ doc/pi_netrw.txt               |  136 ++-
+ plugin/netrwPlugin.vim         |   14 +-
+ syntax/netrw.vim               |    7 +-
+ 5 files changed, 1455 insertions(+), 1201 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/104)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Thu Sep 14 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * NEW: netrw now has a tree listing style (see :help g:netrw_liststyle)
+    * MOD: as suggested by Rodolfo Borges, :Explore and variants will position the cursor on the file that had just been edited
+    * MOD: changed default g:netrw_sort_sequence order
+    * MOD: changed b, Nb to simply mb  (make bookmark)
+    * MOD: changed B, NB to simply gb  (goto bookmark)
+    * MOD: attempts to retain the alternate file
+
+ autoload/netrw.vim |  162 ++++++++++++++++++++++++++++++++++------------------
+ doc/pi_netrw.txt   |   66 ++++++++++------------
+ 2 files changed, 137 insertions(+), 91 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/103)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Thu Aug 31 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    "t" now opens tabbed windows for the file under the cursor, plus numerous bug fixes!
+
+ autoload/netrw.vim             |  743 ++++++++++++++++++++++++++--------------
+ autoload/netrwFileHandlers.vim |    2 +-
+ autoload/netrwSettings.vim     |   15 +-
+ doc/pi_netrw.txt               |  156 +++++----
+ plugin/netrwPlugin.vim         |   14 +-
+ 5 files changed, 602 insertions(+), 328 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/102)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Mon Jul 24 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    new stuff: g:netrw_menu support included; :Texplore command implemented; <leftmouse> acts as a <cr> for selecting a file; <rightmouse> acts as a <del> for deleting a file
+    bugfixes : g:netrw_keepdir==0 had stopped working; NetOptionSave/Restore now saves/restores the unnamed register; NetSplit and (Local,Net)BrowseChgDir() were both splitting windows.  This affected o, v, and g:netrw_browse_split; works around wildignore setting
+
+ autoload/netrw.vim         |  495 +++++++++++++++++++++++++-------------------
+ autoload/netrwSettings.vim |    7 +-
+ doc/pi_netrw.txt           |   70 +++++--
+ plugin/netrwPlugin.vim     |   13 +-
+ 4 files changed, 342 insertions(+), 243 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/100)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Thu Jun 8 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - numerous bug fixes addressing problems with Windows lacking cygwin
+    - user NFH_*() functions were being unused inadvertently
+    - [NP]Explore */pat and **//pat now wrap
+    - Bookmarks and History added to menu
+    - g:netrw_shq has a better default, and is tunable by the user
+    - bugfix: hiding pattern candidate separators included some characters it shouldn't have (tnx to Osei Poku)
+
+ autoload/netrw.vim             | 1731 ++++++++++++++++++++++------------------
+ autoload/netrwFileHandlers.vim |   37 +-
+ autoload/netrwSettings.vim     |   16 +-
+ doc/pi_netrw.txt               |  145 +++-
+ plugin/netrwPlugin.vim         |   10 +-
+ syntax/netrw.vim               |   10 +-
+ 6 files changed, 1117 insertions(+), 832 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/99)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Fri May 12 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Since the vim 7.0 release:
+      g:netrw_browse_split=3 for opening files in new tabs implemented.
+      deletes temporary file at end of NetRead()
+      visual mode based Obtain implemented for remote systems.
+     added -complete=dir to the various Explore commands
+
+ autoload/netrw.vim             |  166 +++++++++++++++++++++++++++-------------
+ autoload/netrwFileHandlers.vim |    4 +-
+ doc/pi_netrw.txt               |   61 +++++++++++----
+ plugin/netrwPlugin.vim         |   12 ++--
+ 4 files changed, 165 insertions(+), 78 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/93)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Tue Apr 25 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    :Explore */pattern implemented - search for files containing a pattern in the current directory
+    :Explore **//pattern implemented - search for files containing a pattern in the directory and subdirectories
+    Moved DrChip.Netrw menu to a top-level Netrw menu, with priority 80
+    bugfix - :Nexplore or :Pexplore, issued without first having done an Explore now gives an appropriate error message
+    bugfix - removed FocusGained event from causing a slow-browser refresh for Windows
+    bugfix - now handles spaces in filenames and directory names when using ftp-based browsing
+
+ autoload/netrw.vim             |  391 ++++++++++++++++++++++++++--------------
+ autoload/netrwFileHandlers.vim |    6 +-
+ autoload/netrwSettings.vim     |   16 +-
+ doc/pi_netrw.txt               |  140 ++++++++++----
+ syntax/netrw.vim               |   64 +++++++
+ syntax/netrwlist.vim           |   64 -------
+ 6 files changed, 431 insertions(+), 250 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/81)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Mar 15 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    ShellCmdPost and FocusGained used to refresh local browser directory listings when g:netrw_fastmode <= 1.
+
+ autoload/netrw.vim     |   92 +++++++++++++++++++++++++++++++++++++++++++----
+ doc/pi_netrw.txt       |   15 ++++++--
+ plugin/netrwPlugin.vim |    4 +-
+ 3 files changed, 97 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/79)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Thu Mar 9 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * directories now displayed with nowrap
+    * g:netrw_fastbrowse introduced, allows for control of speed vs always-obtain directory listing
+    * bugfix with wide listing, column width < largest filename hangup
+    * semi-colons should now work with temporary files
+
+ autoload/netrw.vim             |  665 +++++++++++++++++++++++++---------------
+ autoload/netrwFileHandlers.vim |  179 ++++++-----
+ autoload/netrwSettings.vim     |    1 +
+ doc/pi_netrw.txt               |  158 ++++++++--
+ plugin/netrwPlugin.vim         |   11 +-
+ 5 files changed, 650 insertions(+), 364 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/77)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Thu Jan 26 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New stuff!
+    g:netrw_browsex_viewer implemented.  NetBrowseX does better at figuring out whether KDE or gnome is actually being used.
+    Use the "P" map to edit a file/directory in the previously used window (like Explorer's O)
+    Use g:netrw_browse_split to specify horizontal/vertical splitting of the window when editing a file from a browser window
+    Some bugfixes, too!
+
+ autoload/netrw.vim         |  353 ++++++++++++++++++++++++++++++++------------
+ autoload/netrwSettings.vim |   18 ++-
+ doc/pi_netrw.txt           |  169 ++++++++++++++++------
+ plugin/netrwPlugin.vim     |   18 ++-
+ 4 files changed, 410 insertions(+), 148 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/74)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Oct 19 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    (vim v7.0 req'd)
+    * Reads remote zip&tar files.
+    * netrwSettings now uses autoloading
+    * Many bugfixes (ctrl-L, ch==1 Hit-Enter, W95's E121, etc).
+    * And more! (see :help netrw-history)
+
+ autoload/netrw.vim             |  746 ++++++++++++++++++++++++----------------
+ autoload/netrwFileHandlers.vim |  321 +++++++++++++++++
+ autoload/netrwSettings.vim     |  161 +++++++++
+ doc/pi_netrw.txt               |  353 ++++++++++++--------
+ plugin/NetrwFileHandlers.vim   |  312 -----------------
+ plugin/NetrwPlugin.vim         |  156 ---------
+ plugin/NetrwSettings.vim       |  157 ---------
+ plugin/netrwPlugin.vim         |  150 ++++++++
+ 8 files changed, 1287 insertions(+), 1069 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/68)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Thu Sep 1 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Netrw now takes advantage of autoload (and requires 7.0).
+    "i" now cycles between thin, long, and wide listing styles.
+    "O" now obtains a file: remote browsing file -> local copy.
+    Double-click-leftmouse selects word under mouse.
+    Netrw now works around the report setting.
+    Passwords which contain blanks will now be surrounded by double-quotes automatically.
+    Netrw now seems to work with a few more Windows situations.
+
+ autoload/netrw.vim           | 3629 ++++++++++++++++++++++++++++++++++++++++++
+ doc/pi_netrw.txt             |  127 ++-
+ plugin/NetrwFileHandlers.vim |   24 +-
+ plugin/NetrwPlugin.vim       |  156 ++
+ plugin/NetrwSettings.vim     |   25 +-
+ plugin/netrw.vim             | 3383 ---------------------------------------
+ syntax/netrwlist.vim         |   46 +-
+ 7 files changed, 3930 insertions(+), 3460 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/62)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Mon Aug 15 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Document upgrade - :NetrwSettings command allows easy editing and review of all netrw variable settings
+    Bugfix - Concurrent Explore **/pattern searches allowed
+    
+    Last vim 6.3 release (unless a major problem appears); future ones will be 7.0 only
+
+ doc/pi_netrw.txt             |  342 ++++++++++++++++++++++--------------------
+ plugin/NetrwFileHandlers.vim |   10 +-
+ plugin/NetrwSettings.vim     |  150 ++++++++++++++++++
+ plugin/netrw.vim             |   83 +++++++++--
+ 4 files changed, 405 insertions(+), 180 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/60)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Thu Aug 11 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Vim 7.0 only:
+    * "Match # of #" indicator for Explore **/*.c
+    * :Explore **/*.c  will now work from a non-netrw-browser window
+    * :Explore **/patterns can now be run in separate browser windows
+    
+    Vim6.3 and Vim7.0:
+    * active banner (hitting <cr> in banner region will cause various things to happen)
+    * bugfixes
+
+ doc/pi_netrw.txt             |  133 +++++++++------
+ plugin/NetrwFileHandlers.vim |   14 ++-
+ plugin/netrw.vim             |  379 +++++++++++++++++++++++++++++++-----------
+ 3 files changed, 371 insertions(+), 155 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/58)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Fri Aug 5 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Explore and relatives can now handle **/pattern (v7)
+    * Nexplore and Pexplore introduced (v7)
+    * Various bugfixes
+
+ doc/pi_netrw.txt |   57 +++++++-
+ plugin/netrw.vim |  395 ++++++++++++++++++++++++++++++++++++++++--------------
+ 2 files changed, 341 insertions(+), 111 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/56)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Mon Aug 1 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Netrw now avoids changing directory when g:netrw_keepdir is false
+    Netrw's LocalBrowse() now bypasses the autochdir option
+    Netrw now uses vim's rename() instead of system + local_rename variable
+    -bar used with :Explore :Sexplore etc to allow multiple commands to be separated by bars
+    browser listings now use the "nowrap" option
+    browser: some unuseful error messages now suppressed
+    
+    If you're using vim7, you need to have an up-to-date one supporting the sort command.
+
+ doc/pi_netrw.txt             |  110 ++++++++------
+ plugin/NetrwFileHandlers.vim |   13 +-
+ plugin/netrw.vim             |  339 ++++++++++++++++++++----------------------
+ 3 files changed, 228 insertions(+), 234 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/54)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Wed Mar 9 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * <amatch> used instead of <afile> in the transparency support (BufReadCmd, FileReadCmd, FileWriteCmd)
+    * For backwards compatibility, Explore and Sexplore have been implemented.  In addition, Hexplore and Vexplore commands are available, too.
+    * ***netrw*** prepended to various error messages netrw may emit
+    * g:netrw_port used instead of b:netrw_port for scp
+    * any leading [:#] is removed from port numbers
+    * backslashes as well as slashes placed in various patterns (ex. g:netrw_sort_sequence) to better support Windows
+
+ doc/pi_netrw.txt |  230 ++++++++++++++++++++++++++++--------
+ plugin/netrw.vim |  347 +++++++++++++++++++++++++++++++-----------------------
+ 2 files changed, 381 insertions(+), 196 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/51)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Fri Oct 8 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    FileWriteCmd event used (supports :[range]w url) supports directory history stack, automatic cygwin use detected (windows), error messages remain visible, bug fixes
+
+ doc/pi_netrw.txt             |  161 ++++++++++++++++--------
+ plugin/NetrwFileHandlers.vim |   14 +-
+ plugin/netrw.vim             |  276 +++++++++++++++++++++++++++++++-----------
+ 3 files changed, 317 insertions(+), 134 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/48)
+Author:     Charles Campbell <drchip at campbellfamily.biz>
+AuthorDate: Fri Sep 10 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Many things (see :help netrw-history), including:
+    remote browsing with ftp, bookmarks, nrml/hide/show, improved x, bugfixes, alt-o/v, preview
+
+ README                       |   73 ++
+ doc/pi_netrw.txt             | 1065 ++++++++++++++++
+ plugin/NetrwFileHandlers.vim |  313 +++++
+ plugin/netrw.vim             | 2802 ++++++++++++++++++++++++++++++++++++++++++
+ syntax/netrwlist.vim         |   56 +
+ 5 files changed, 4309 insertions(+), 0 deletions(-)

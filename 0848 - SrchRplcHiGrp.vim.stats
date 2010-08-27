@@ -1,0 +1,41 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.0, refs/heads/master)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Wed Jan 30 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed an undefined variable and some boundary conditions.
+
+ doc/SrchRplcHiGrp.txt              |  199 ---------------
+ "doc/doc\\SrchRplcHiGrp.txt"       |  199 +++++++++++++++
+ plugin/SrchRplcHiGrp.vim           |  468 ----------------------------------
+ "plugin/plugin\\SrchRplcHiGrp.vim" |  488 ++++++++++++++++++++++++++++++++++++
+ 4 files changed, 687 insertions(+), 667 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Tue Apr 11 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New command, SRSearch, so you can find characters with a specific syntax highlight group.
+    
+    Changed SRHiGrp to escape the regex provided.  This saves you from having to escape the expression yourself.
+
+ doc/SrchRplcHiGrp.txt    |   56 +++++++++++-
+ plugin/SrchRplcHiGrp.vim |  237 +++++++++++++++++++++++++++++++++++++--------
+ 2 files changed, 249 insertions(+), 44 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
+Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+AuthorDate: Fri Jan 9 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Changed SRChooseGrp to default to the top-level syntax group instead of the translated group.  Using SRChooseGrp! will choose the translated group (which will effect more values).
+    Added a help file.
+    Removed SRHiGrpNot and replaced it with SRHiGrp!.
+    Updated the examples.
+    Most of this work was done by Dr. Chip (thanks!).
+
+ README                   |  163 ++++++++++++++++++++++++
+ doc/SrchRplcHiGrp.txt    |  147 +++++++++++++++++++++
+ plugin/SrchRplcHiGrp.vim |  315 ++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 625 insertions(+), 0 deletions(-)

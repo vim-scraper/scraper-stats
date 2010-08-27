@@ -1,0 +1,406 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2.3, refs/heads/master)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Thu Mar 13 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed jumping bug which caused problems with tags between two named tags being missed out. (really, really uploaded new version)
+
+ doc/snippets_emu.txt   |    1 +
+ plugin/snippetsEmu.vim |    3 +++
+ 2 files changed, 4 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.2)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Mon Feb 25 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fix to plugin. Annoying window jumping sorted out. Bundles are now in a separate vimball.
+
+ doc/snippets_emu.txt                   |   30 +----
+ ftplugin/actionscript_snippets.vim     |    9 --
+ ftplugin/asp_snippets.vim              |   17 ---
+ ftplugin/c_snippets.vim                |   51 --------
+ ftplugin/css_snippets.vim              |   30 -----
+ ftplugin/django_model_snippets.vim     |   61 ----------
+ ftplugin/django_template_snippets.vim  |   32 -----
+ ftplugin/f-script_snippets.vim         |   14 ---
+ ftplugin/haskell_snippets.vim          |    9 --
+ ftplugin/html_snippets.vim             |   57 ---------
+ ftplugin/java_snippets.vim             |   52 --------
+ ftplugin/javascript_snippets.vim       |   10 --
+ ftplugin/latex_snippets.vim            |   13 --
+ ftplugin/logo_snippets.vim             |    9 --
+ ftplugin/markdown_snippets.vim         |   10 --
+ ftplugin/movable_type_snippets.vim     |   14 ---
+ ftplugin/objc_snippets.vim             |   53 ---------
+ ftplugin/ocaml_snippets.vim            |   26 ----
+ ftplugin/perl_snippets.vim             |   23 ----
+ ftplugin/php_snippets.vim              |   30 -----
+ ftplugin/phpdoc_snippets.vim           |   19 ---
+ ftplugin/propel_snippets.vim           |   14 ---
+ ftplugin/python_snippets.vim           |  202 --------------------------------
+ ftplugin/rails_snippets.vim            |   54 ---------
+ ftplugin/ruby_snippets.vim             |   32 -----
+ ftplugin/sh_snippets.vim               |   12 --
+ ftplugin/slate_snippets.vim            |   19 ---
+ ftplugin/smarty_snippets.vim           |   35 ------
+ ftplugin/symfony_snippets.vim          |   21 ----
+ ftplugin/tcl_snippets.vim              |   14 ---
+ ftplugin/template_toolkit_snippets.vim |   13 --
+ ftplugin/tex_snippets.vim              |   13 --
+ ftplugin/xhtml_snippets.vim            |   48 --------
+ plugin/snippetsEmu.vim                 |  189 ++++++++++++++++--------------
+ 34 files changed, 103 insertions(+), 1132 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Sun Sep 30 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    VBA file now has unix fileformat, so things should be working better. Vimball has also added fold markers, which aren't backwards compatible, so I've removed them as well.
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Sun Sep 30 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Finally released new version. Big change: No more messing with iskeyword. Other stuff - Commands with autocomplete, new commands for creating snippets, updated bundles. Be sure to read the docs to see what's available.
+
+ doc/snippets_emu.txt                  |   84 ++++-
+ ftplugin/asp_snippets.vim             |    6 +-
+ ftplugin/c_snippets.vim               |   21 +-
+ ftplugin/css_snippets.vim             |   34 +-
+ ftplugin/django_model_snippets.vim    |    2 +-
+ ftplugin/django_template_snippets.vim |   18 +-
+ ftplugin/f-script_snippets.vim        |   12 +-
+ ftplugin/haskell_snippets.vim         |    2 +-
+ ftplugin/html_snippets.vim            |   79 ++--
+ ftplugin/java_snippets.vim            |    4 +-
+ ftplugin/javascript_snippets.vim      |    2 +-
+ ftplugin/movable type_snippets.vim    |   14 -
+ ftplugin/movable_type_snippets.vim    |   14 +
+ ftplugin/objc_snippets.vim            |    3 -
+ ftplugin/ocaml_snippets.vim           |   16 +-
+ ftplugin/perl_snippets.vim            |    8 +-
+ ftplugin/php_snippets.vim             |    4 +-
+ ftplugin/python_snippets.vim          |  207 +++++++--
+ ftplugin/rails_snippets.vim           |   26 +-
+ ftplugin/ruby_snippets.vim            |   32 +-
+ ftplugin/smarty_snippets.vim          |    4 +-
+ ftplugin/tcl_snippets.vim             |    2 +-
+ ftplugin/xhtml_snippets.vim           |   18 +-
+ plugin/snippetsEmu.vim                |  784 ++++++++++++++++++--------------
+ 24 files changed, 835 insertions(+), 561 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Thu Apr 5 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New version contains several bug fixes, reverts start and end tags to more 'friendly' settings and tries to address indenting issues. Snippets must now define their own 'local' indenting. Make sure you create the after/ftplugin directories as described in the installation instructions.
+
+ doc/snippets_emu.txt                  |   69 +++++---
+ ftplugin/asp_snippets.vim             |   18 +-
+ ftplugin/c_snippets.vim               |    8 +-
+ ftplugin/django_model_snippets.vim    |    4 +-
+ ftplugin/django_template_snippets.vim |   18 +-
+ ftplugin/f-script_snippets.vim        |   12 +-
+ ftplugin/haskell_snippets.vim         |    2 +-
+ ftplugin/html_snippets.vim            |    8 +-
+ ftplugin/python_snippets.vim          |   34 ++--
+ ftplugin/ruby_snippets.vim            |   32 ++--
+ plugin/snippetsEmu.vim                |  336 +++++++++++++++++---------------
+ 11 files changed, 290 insertions(+), 251 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Fri Dec 29 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Even more super 1.0.1 version with Unix line endings on the Vimball so things install properly on *nix.
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Thu Dec 28 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Super new 1.0 version with many new features and improvements. New bundles also included.
+
+ doc/snippets_emu.txt                   |  171 +++---
+ ftplugin/actionscript_snippets.vim     |    6 +-
+ ftplugin/asp_snippets.vim              |   22 +-
+ ftplugin/c_snippets.vim                |   44 +-
+ ftplugin/css_snippets.vim              |   48 +-
+ ftplugin/django_model_snippets.vim     |   61 ++
+ ftplugin/django_snippets.vim           |   50 --
+ ftplugin/django_template_snippets.vim  |   32 +
+ ftplugin/f-script_snippets.vim         |   16 +-
+ ftplugin/haskell_snippets.vim          |    6 +-
+ ftplugin/html_snippets.vim             |   65 ++-
+ ftplugin/java_snippets.vim             |   36 +-
+ ftplugin/javascript_snippets.vim       |    8 +-
+ ftplugin/latex_snippets.vim            |   14 +-
+ ftplugin/logo_snippets.vim             |    6 +-
+ ftplugin/markdown_snippets.vim         |    8 +-
+ ftplugin/movable type_snippets.vim     |   16 +-
+ ftplugin/objc_snippets.vim             |   49 +-
+ ftplugin/ocaml_snippets.vim            |   40 +-
+ ftplugin/perl_snippets.vim             |   36 +-
+ ftplugin/php_snippets.vim              |   48 +-
+ ftplugin/phpdoc_snippets.vim           |   26 +-
+ ftplugin/propel_snippets.vim           |   16 +-
+ ftplugin/python_snippets.vim           |   51 ++-
+ ftplugin/rails_snippets.vim            |   96 ++--
+ ftplugin/ruby_snippets.vim             |   52 +-
+ ftplugin/sh_snippets.vim               |   10 +-
+ ftplugin/slate_snippets.vim            |   26 +-
+ ftplugin/smarty_snippets.vim           |   58 +-
+ ftplugin/symfony_snippets.vim          |   30 +-
+ ftplugin/tcl_snippets.vim              |   16 +-
+ ftplugin/template_toolkit_snippets.vim |   14 +-
+ ftplugin/tex_snippets.vim              |   14 +-
+ ftplugin/xhtml_snippets.vim            |   84 ++--
+ plugin/snippetsEmu.vim                 | 1034 ++++++++++++++++----------------
+ 35 files changed, 1268 insertions(+), 1041 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.1)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Tue Nov 28 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Quick fix changes the line endings for the VBA to UNIX which should hopefully stop some problems people are having
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Sat Nov 25 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bugs fixes as per usual but this new version includes a set of snippets bundles for use with various filetypes. Plugin is now a VimBall so everything is in one file.
+
+ doc/snippets_emu.txt                   |  275 +++++++++++
+ ftplugin/actionscript_snippets.vim     |    5 +
+ ftplugin/asp_snippets.vim              |   13 +
+ ftplugin/c_snippets.vim                |   44 ++
+ ftplugin/css_snippets.vim              |   26 +
+ ftplugin/django_snippets.vim           |   50 ++
+ ftplugin/f-script_snippets.vim         |   10 +
+ ftplugin/haskell_snippets.vim          |    5 +
+ ftplugin/html_snippets.vim             |   43 ++
+ ftplugin/java_snippets.vim             |   50 ++
+ ftplugin/javascript_snippets.vim       |    6 +
+ ftplugin/latex_snippets.vim            |    9 +
+ ftplugin/logo_snippets.vim             |    5 +
+ ftplugin/markdown_snippets.vim         |    6 +
+ ftplugin/movable type_snippets.vim     |   10 +
+ ftplugin/objc_snippets.vim             |   49 ++
+ ftplugin/ocaml_snippets.vim            |   22 +
+ ftplugin/perl_snippets.vim             |   23 +
+ ftplugin/php_snippets.vim              |   26 +
+ ftplugin/phpdoc_snippets.vim           |   15 +
+ ftplugin/propel_snippets.vim           |   10 +
+ ftplugin/python_snippets.vim           |   62 +++
+ ftplugin/rails_snippets.vim            |   50 ++
+ ftplugin/ruby_snippets.vim             |   28 ++
+ ftplugin/sh_snippets.vim               |    8 +
+ ftplugin/slate_snippets.vim            |   15 +
+ ftplugin/smarty_snippets.vim           |   31 ++
+ ftplugin/symfony_snippets.vim          |   17 +
+ ftplugin/tcl_snippets.vim              |   10 +
+ ftplugin/template_toolkit_snippets.vim |    9 +
+ ftplugin/tex_snippets.vim              |    9 +
+ ftplugin/xhtml_snippets.vim            |   44 ++
+ plugin/snippetEmu0.5.6.vim             |  759 -----------------------------
+ plugin/snippetsEmu.vim                 |  827 ++++++++++++++++++++++++++++++++
+ 34 files changed, 1812 insertions(+), 759 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.6)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Tue Aug 29 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed several bugs from the last version including random bug which prevented snippets from starting with 's'.
+
+ plugin/snippetEmu0.5.5.vim |  745 -------------------------------------------
+ plugin/snippetEmu0.5.6.vim |  759 ++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 759 insertions(+), 745 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.5)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Mon Aug 14 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed various bugs: s:search_str not being defined or being buffer specific and command tag execution not working with two tags on the same line.
+
+ plugin/snippetEmu0.5.4.vim |  649 --------------------------------------
+ plugin/snippetEmu0.5.5.vim |  745 ++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 745 insertions(+), 649 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.4)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Tue Jul 25 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    TextMate compatibile mode now works under linux.
+
+ plugin/snippetEmu0.5.3.vim |  647 -------------------------------------------
+ plugin/snippetEmu0.5.4.vim |  649 ++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 649 insertions(+), 647 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.3)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Wed Jul 12 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fixes. Things are a lot better behaved. Edge cases should (should) work a lot better now. Highly recommended upgrade.
+
+ plugin/snippetEmu0.5.2.vim |  615 -----------------------------------------
+ plugin/snippetEmu0.5.3.vim |  647 ++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 647 insertions(+), 615 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Tue Jul 4 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor bug fix. Textmate compatible mode did not allow quotes in expansions. Fixed
+
+ plugin/snippetEmu0.5.1.vim |  615 --------------------------------------------
+ plugin/snippetEmu0.5.2.vim |  615 ++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 615 insertions(+), 615 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Mon Jul 3 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This new version adds some bug fixes to the last release and adds the new functionality of being able to define multicharacter start and end tags. It is now easier to define tags which work across multiple languages.
+
+ plugin/snippetEmu0.5.0.vim |  579 -----------------------------------------
+ plugin/snippetEmu0.5.1.vim |  615 ++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 615 insertions(+), 579 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.0)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Sat Jul 1 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This new version adds TextMate style expansions: snippets are not expanded automatically. The user must press Tab for a snippet to be expanded. Tabbing will jump between tags or insert a <Tab> if no tags are active.
+    
+    The tag syntax has changed. Default values are not supported anymore: use the tag's name instead. Commands can now be added in the first tag and unnamed tags can include commands.
+    
+    This is a test release: please send bug reports.
+
+ plugin/snippetEmu.vim      |  475 ------------------------------------
+ plugin/snippetEmu0.5.0.vim |  579 ++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 579 insertions(+), 475 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.6)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Mon Jan 16 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Minor bug fix.  Replacement values modified by commands would be passed to future commands in their modified form, rather than with the original replacement value.
+
+ plugin/snippetEmu.vim |    7 ++++---
+ 1 files changed, 4 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.5)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Sat Jan 14 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fundamental change to the way the new commands feature works.  The command is now 'executed' and the result placed in the variable @z.  The intention is for the command to be a function call rather than a standard command.  I.e. using substitute() rather than :s///.  The value to be replaced is available to the function in @z (previous values of the variable are kept and restored once the command has been executed).  See the updated docs for examples.
+
+ plugin/snippetEmu.vim |   14 +++++++++++---
+ 1 files changed, 11 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Thu Jan 12 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bug fix - Non-greedy matching is now done on the command searching.
+
+ plugin/snippetEmu.vim |    3 ++-
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Wed Jan 11 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New version allows commands to be included in named tags.  Experimental version - does not appear to break older functionality, however.
+
+ plugin/snippetEmu.vim |  142 +++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 114 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.5)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Thu Jan 5 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Tag delimiters can now be set with autocommands to allow for different filetypes.  I.e. '<' and '>' for programming and '@' for HTML.
+
+ plugin/snippetEmu.vim |   27 +++++++++++++++++++++------
+ 1 files changed, 21 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.4)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Thu Jan 5 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug where certain tags were not recognised
+
+ plugin/snippetEmu.vim |   47 ++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 36 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.3)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Wed Jan 4 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Now works with autoindenting
+
+ plugin/snippetEmu.vim |   81 ++++++++++++-------------------------------------
+ 1 files changed, 20 insertions(+), 61 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.2)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Tue Aug 9 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Better behaved.  Couple of bug fixes.
+
+ plugin/snippetEmu.vim |   48 ++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 36 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Tue Aug 9 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added check for the default key combo so that the user's settings aren't clobbered.
+
+ plugin/snippetEmu.vim |   13 +++++++++++--
+ 1 files changed, 11 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Mon Aug 8 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I've given this a full point release as it's a major rewrite.  Start and end tags can now be defined and default values can also be used.
+
+ plugin/snippetEmu.vim |  302 ++++++++++++++++++++++++++++++++++++++++++-------
+ 1 files changed, 260 insertions(+), 42 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Felix Ingram <F.ingram.lists at gmail.com>
+AuthorDate: Tue Jul 26 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                |   32 ++++++++++++
+ plugin/snippetEmu.vim |  129 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 161 insertions(+), 0 deletions(-)

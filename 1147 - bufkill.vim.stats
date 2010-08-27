@@ -1,0 +1,45 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.7, refs/heads/master)
+Author:     John Orr <john undersc0re orr yah00 c0m>
+AuthorDate: Sat Jun 12 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Convert to Vim 7 lists instead of string-based lists.
+    Add buffer navigation (move backwards and forwards through most recently used buffers), support for scratch buffer removal.
+    Improved honouring of the 'confirm' vim option - thanks Magnus Thor Torfason
+    Added (opt-in) Ctrl-^ override support to preserve cursor column.
+    Minor additional improvements.
+
+ plugin/bufkill.vim |  515 +++++++++++++++++++++++++---------------------------
+ 1 files changed, 243 insertions(+), 272 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     John Orr <john undersc0re orr yah00 c0m>
+AuthorDate: Sat Jun 12 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Add column-saving support, to ensure returning to a buffer means positioning the cursor not only at the right line, but also column.
+    Last version that will (should...) work with Vim 6.0.
+
+ plugin/bufkill.vim |  166 ++++++++++++++++++++++++++++++++++++++++++++++-----
+ 1 files changed, 149 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     John Orr <john undersc0re orr yah00 c0m>
+AuthorDate: Wed Dec 1 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix handling of modified, un-named buffers
+
+ plugin/bufkill.vim |   10 ++++------
+ 1 files changed, 4 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     John Orr <john undersc0re orr yah00 c0m>
+AuthorDate: Wed Dec 1 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README             |   25 +++
+ plugin/bufkill.vim |  509 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 534 insertions(+), 0 deletions(-)

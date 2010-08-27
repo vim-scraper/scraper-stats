@@ -1,0 +1,297 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     moshe kamensky <samvimes at fastmail.fm>
+AuthorDate: Tue Mar 15 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Mainly bug fixes. New features:- Added the uri history://n to access the n-th newest item in the history.   Similarly, the :History command may now accecpt a numeric argument.- The last access time for each link now appears on the history page- Added the g:browser_connect_timeout variable to control when we give up   connecting to a remote site- Added support for homepage in the plugin. :Browse and similar commands can   now be called with no arguments.- Changed the loading of the plugin so that vim startup time is improved.- Added a command for showing the current mappings, and a command to extend   this list for user defined mappings
+
+ bin/gvimbrowse.1                                |   13 +-
+ bin/vimbrowse.1                                 |   13 +-
+ bin/vimbrowse.pl                                |   23 +-
+ browser-1.0/ChangeLog                           |  140 --
+ browser-1.0/INSTALL                             |   87 -
+ browser-1.0/README                              |   25 -
+ browser-1.0/README.encoding                     |   30 -
+ browser-1.0/browser.pod                         | 1426 ------------
+ browser-1.0/extra/browser/addressbooks/_search  |    8 -
+ browser-1.0/extra/ftplugin/browser/mappings.vim |   42 -
+ browser-1.0/extra/plugin/browser_extra.vim      |  109 -
+ browser-1.0/extra/plugin/browser_menus.vim      |   28 -
+ browser-1.0/extra/plugin/browser_short.vim      |   65 -
+ browser-1.0/perl/HTML/FormatText/Vim.pm         | 1044 ---------
+ browser-1.0/perl/Mailcap.pm                     | 1438 ------------
+ browser-1.0/perl/VIM/Browser.pm                 | 2620 ----------------------
+ browser-1.0/perl/Vim.pm                         |  444 ----
+ browser-1.0/vim/browser/mailcap                 |   11 -
+ browser-1.0/vim/doc/browser.txt                 | 1168 ----------
+ browser-1.0/vim/ftplugin/browser.vim            |   31 -
+ browser-1.0/vim/plugin/browser.vim              |  376 ----
+ browser-1.0/vim/syntax/browser.vim              |  118 -
+ browser-1.0/vim/syntax/browserBkmkPage.vim      |   53 -
+ browser-1.1/ChangeLog                           |  170 ++
+ browser-1.1/INSTALL                             |   87 +
+ browser-1.1/README                              |   25 +
+ browser-1.1/README.encoding                     |   30 +
+ browser-1.1/browser.html                        | 1753 +++++++++++++++
+ browser-1.1/browser.pod                         | 1638 ++++++++++++++
+ browser-1.1/extra/browser/addressbooks/_search  |    8 +
+ browser-1.1/extra/browser/plugin/extra.vim      |   64 +
+ browser-1.1/extra/browser/plugin/menus.vim      |   19 +
+ browser-1.1/extra/browser/plugin/short.vim      |   49 +
+ browser-1.1/extra/ftplugin/browser/mappings.vim |   39 +
+ browser-1.1/extra/plugin/browser_extra.vim      |   69 +
+ browser-1.1/extra/plugin/browser_menus.vim      |   17 +
+ browser-1.1/extra/plugin/browser_short.vim      |   40 +
+ browser-1.1/perl/HTML/FormatText/Vim.pm         | 1086 +++++++++
+ browser-1.1/perl/Mailcap.pm                     | 1438 ++++++++++++
+ browser-1.1/perl/VIM/Browser.pm                 | 2715 +++++++++++++++++++++++
+ browser-1.1/perl/Vim.pm                         |  460 ++++
+ browser-1.1/vim/browser/mailcap                 |   11 +
+ browser-1.1/vim/browser/plugin/main.vim         |  366 +++
+ browser-1.1/vim/doc/browser.txt                 | 1346 +++++++++++
+ browser-1.1/vim/ftplugin/browser.vim            |   76 +
+ browser-1.1/vim/plugin/browser.vim              |   77 +
+ browser-1.1/vim/syntax/browser.vim              |  118 +
+ browser-1.1/vim/syntax/browserBkmkPage.vim      |   56 +
+ 48 files changed, 11781 insertions(+), 9288 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     moshe kamensky <samvimes at fastmail.fm>
+AuthorDate: Wed Nov 24 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added a sidebar* Added context menu entries* Support for opening links with external applications (using mailcap)* The conceal patch is no longer used. The synmark.vim plugin is used instead.* Global browsing history* Both history and bookmarks can be viewed as browser pages* More support for inline images (viewing, etc.)* Page can be updated when modifying its source* Use vim commands as scheme handlers* Some improvements to standalone versions (vimbrowse)* Improved documentation, added glossary
+
+ bin/gvimbrowse.1                                |  233 ++
+ bin/vimbrowse.1                                 |   43 +-
+ bin/vimbrowse.pl                                |  100 +-
+ browser-0.4/ChangeLog                           |   96 -
+ browser-0.4/INSTALL                             |   74 -
+ browser-0.4/README                              |   24 -
+ browser-0.4/README.encoding                     |   30 -
+ browser-0.4/browser.pod                         |  918 --------
+ browser-0.4/extra/browser/addressbooks/_search  |    7 -
+ browser-0.4/extra/ftplugin/browser/mappings.vim |   37 -
+ browser-0.4/extra/plugin/browser_extra.vim      |   82 -
+ browser-0.4/extra/plugin/browser_short.vim      |   50 -
+ browser-0.4/extra/syntax/browser_highlight.vim  |   18 -
+ browser-0.4/perl/HTML/FormatText/Vim.pm         | 1001 ---------
+ browser-0.4/perl/VIM/Browser.pm                 | 1606 --------------
+ browser-0.4/perl/Vim.pm                         |  266 ---
+ browser-0.4/vim/doc/browser.txt                 |  820 -------
+ browser-0.4/vim/ftplugin/browser.vim            |   31 -
+ browser-0.4/vim/plugin/browser.vim              |  306 ---
+ browser-0.4/vim/syntax/browser.vim              |  139 --
+ browser-1.0/ChangeLog                           |  140 ++
+ browser-1.0/INSTALL                             |   87 +
+ browser-1.0/README                              |   25 +
+ browser-1.0/README.encoding                     |   30 +
+ browser-1.0/browser.pod                         | 1426 ++++++++++++
+ browser-1.0/extra/browser/addressbooks/_search  |    8 +
+ browser-1.0/extra/ftplugin/browser/mappings.vim |   42 +
+ browser-1.0/extra/plugin/browser_extra.vim      |  109 +
+ browser-1.0/extra/plugin/browser_menus.vim      |   28 +
+ browser-1.0/extra/plugin/browser_short.vim      |   65 +
+ browser-1.0/perl/HTML/FormatText/Vim.pm         | 1044 +++++++++
+ browser-1.0/perl/Mailcap.pm                     | 1438 +++++++++++++
+ browser-1.0/perl/VIM/Browser.pm                 | 2620 +++++++++++++++++++++++
+ browser-1.0/perl/Vim.pm                         |  444 ++++
+ browser-1.0/vim/browser/mailcap                 |   11 +
+ browser-1.0/vim/doc/browser.txt                 | 1168 ++++++++++
+ browser-1.0/vim/ftplugin/browser.vim            |   31 +
+ browser-1.0/vim/plugin/browser.vim              |  376 ++++
+ browser-1.0/vim/syntax/browser.vim              |  118 +
+ browser-1.0/vim/syntax/browserBkmkPage.vim      |   53 +
+ 40 files changed, 9583 insertions(+), 5561 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     moshe kamensky <samvimes at fastmail.fm>
+AuthorDate: Sun Sep 26 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Main Improvements:  - Added support for all inputs in a form (file, textarea, multi-options)  - Improved searching capabilities: Added the possibility to customize the     search engine, added :Dictionary and :Thesaurus commands. The searching     commands can now have no arguments, taking the word under the cursor, or      the visaully select words as arguments, instead (Thanks to Aditya Mahajan     for the ideas)  - The browser buffer is now non-modifiable by default. It becomes     modifiable only when changing form input values (again thanks to Aditya     Mahajan)  - Added the possibility to save inline images to a file  - Removed the dependence on HTML-Format. The only dependency that remains     for formatting is HTML::TreeBuilder (which is more widely available).  - There is no longer need to patch HTML::TreeBuilder to view encodings     correctly.  - I think vimbrowse.pl finally works on windows (didn't test, though). Some     environment variables might need to be set.  - Various other features and bug fixes - see the ChangeLog for details
+
+ bin/vimbrowse.pl                                  |   23 +-
+ browser-0.3.1/ChangeLog                           |   56 -
+ browser-0.3.1/INSTALL                             |   74 -
+ browser-0.3.1/README                              |   24 -
+ browser-0.3.1/README.encoding                     |   44 -
+ browser-0.3.1/browser.pod                         |  762 ----------
+ browser-0.3.1/extra/ftplugin/browser/mappings.vim |   26 -
+ browser-0.3.1/extra/plugin/browser_extra.vim      |   45 -
+ browser-0.3.1/extra/plugin/browser_short.vim      |   46 -
+ browser-0.3.1/extra/syntax/browser_highlight.vim  |   16 -
+ browser-0.3.1/perl/HTML/FormatText/Vim.pm         |  513 -------
+ browser-0.3.1/perl/VIM/Browser.pm                 | 1430 ------------------
+ browser-0.3.1/perl/Vim.pm                         |  264 ----
+ browser-0.3.1/vim/doc/browser.txt                 |  681 ---------
+ browser-0.3.1/vim/ftplugin/browser.vim            |   20 -
+ browser-0.3.1/vim/plugin/browser.vim              |  273 ----
+ browser-0.3.1/vim/syntax/browser.vim              |  130 --
+ browser-0.4/ChangeLog                             |   96 ++
+ browser-0.4/INSTALL                               |   74 +
+ browser-0.4/README                                |   24 +
+ browser-0.4/README.encoding                       |   30 +
+ browser-0.4/browser.pod                           |  918 ++++++++++++
+ browser-0.4/extra/browser/addressbooks/_search    |    7 +
+ browser-0.4/extra/ftplugin/browser/mappings.vim   |   37 +
+ browser-0.4/extra/plugin/browser_extra.vim        |   82 ++
+ browser-0.4/extra/plugin/browser_short.vim        |   50 +
+ browser-0.4/extra/syntax/browser_highlight.vim    |   18 +
+ browser-0.4/perl/HTML/FormatText/Vim.pm           | 1001 +++++++++++++
+ browser-0.4/perl/VIM/Browser.pm                   | 1606 +++++++++++++++++++++
+ browser-0.4/perl/Vim.pm                           |  266 ++++
+ browser-0.4/vim/doc/browser.txt                   |  820 +++++++++++
+ browser-0.4/vim/ftplugin/browser.vim              |   31 +
+ browser-0.4/vim/plugin/browser.vim                |  306 ++++
+ browser-0.4/vim/syntax/browser.vim                |  139 ++
+ 34 files changed, 5521 insertions(+), 4411 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
+Author:     moshe kamensky <samvimes at fastmail.fm>
+AuthorDate: Fri Sep 17 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed silly bug
+
+ browser-0.3.1/ChangeLog                           |   56 +
+ browser-0.3.1/INSTALL                             |   74 ++
+ browser-0.3.1/README                              |   24 +
+ browser-0.3.1/README.encoding                     |   44 +
+ browser-0.3.1/browser.pod                         |  762 +++++++++++
+ browser-0.3.1/extra/ftplugin/browser/mappings.vim |   26 +
+ browser-0.3.1/extra/plugin/browser_extra.vim      |   45 +
+ browser-0.3.1/extra/plugin/browser_short.vim      |   46 +
+ browser-0.3.1/extra/syntax/browser_highlight.vim  |   16 +
+ browser-0.3.1/perl/HTML/FormatText/Vim.pm         |  513 ++++++++
+ browser-0.3.1/perl/VIM/Browser.pm                 | 1430 +++++++++++++++++++++
+ browser-0.3.1/perl/Vim.pm                         |  264 ++++
+ browser-0.3.1/vim/doc/browser.txt                 |  681 ++++++++++
+ browser-0.3.1/vim/ftplugin/browser.vim            |   20 +
+ browser-0.3.1/vim/plugin/browser.vim              |  273 ++++
+ browser-0.3.1/vim/syntax/browser.vim              |  130 ++
+ browser-0.3/ChangeLog                             |   51 -
+ browser-0.3/INSTALL                               |   74 --
+ browser-0.3/README                                |   24 -
+ browser-0.3/README.encoding                       |   44 -
+ browser-0.3/browser.pod                           |  762 -----------
+ browser-0.3/extra/ftplugin/browser/mappings.vim   |   26 -
+ browser-0.3/extra/plugin/browser_extra.vim        |   45 -
+ browser-0.3/extra/plugin/browser_short.vim        |   46 -
+ browser-0.3/extra/syntax/browser_highlight.vim    |   16 -
+ browser-0.3/perl/HTML/FormatText/Vim.pm           |  513 --------
+ browser-0.3/perl/VIM/Browser.pm                   | 1430 ---------------------
+ browser-0.3/perl/Vim.pm                           |  264 ----
+ browser-0.3/vim/doc/browser.txt                   |  681 ----------
+ browser-0.3/vim/ftplugin/browser.vim              |   20 -
+ browser-0.3/vim/plugin/browser.vim                |  273 ----
+ browser-0.3/vim/syntax/browser.vim                |  130 --
+ 32 files changed, 4404 insertions(+), 4399 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     moshe kamensky <samvimes at fastmail.fm>
+AuthorDate: Fri Sep 17 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Bugfix release: encoding works correctly; setting options has effect also after
+    the plugin is loaded; Various other fixes - see the ChangeLog for details
+
+ bin/vimbrowse.1                                 |    2 +-
+ bin/vimbrowse.pl                                |   19 +-
+ browser-0.2/ChangeLog                           |   27 -
+ browser-0.2/INSTALL                             |   74 --
+ browser-0.2/README                              |   24 -
+ browser-0.2/browser.pod                         |  753 ------------
+ browser-0.2/extra/ftplugin/browser/mappings.vim |   25 -
+ browser-0.2/extra/plugin/browser_extra.vim      |   45 -
+ browser-0.2/extra/plugin/browser_short.vim      |   46 -
+ browser-0.2/extra/syntax/browser_highlight.vim  |   16 -
+ browser-0.2/perl/HTML/FormatText/Vim.pm         |  421 -------
+ browser-0.2/perl/VIM/Browser.pm                 | 1358 ---------------------
+ browser-0.2/perl/Vim.pm                         |  158 ---
+ browser-0.2/vim/doc/browser.txt                 |  676 -----------
+ browser-0.2/vim/ftplugin/browser.vim            |   20 -
+ browser-0.2/vim/plugin/browser.vim              |  277 -----
+ browser-0.2/vim/syntax/browser.vim              |  130 --
+ browser-0.3/ChangeLog                           |   51 +
+ browser-0.3/INSTALL                             |   74 ++
+ browser-0.3/README                              |   24 +
+ browser-0.3/README.encoding                     |   44 +
+ browser-0.3/browser.pod                         |  762 ++++++++++++
+ browser-0.3/extra/ftplugin/browser/mappings.vim |   26 +
+ browser-0.3/extra/plugin/browser_extra.vim      |   45 +
+ browser-0.3/extra/plugin/browser_short.vim      |   46 +
+ browser-0.3/extra/syntax/browser_highlight.vim  |   16 +
+ browser-0.3/perl/HTML/FormatText/Vim.pm         |  513 ++++++++
+ browser-0.3/perl/VIM/Browser.pm                 | 1430 +++++++++++++++++++++++
+ browser-0.3/perl/Vim.pm                         |  264 +++++
+ browser-0.3/vim/doc/browser.txt                 |  681 +++++++++++
+ browser-0.3/vim/ftplugin/browser.vim            |   20 +
+ browser-0.3/vim/plugin/browser.vim              |  273 +++++
+ browser-0.3/vim/syntax/browser.vim              |  130 ++
+ 33 files changed, 4413 insertions(+), 4057 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     moshe kamensky <samvimes at fastmail.fm>
+AuthorDate: Sun Sep 5 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Main Improvements:
+    	- Added forms support. All input kinds are supported except for
+    	  textarea, file and multiple choice options. Thus, eg, google can be
+    	  used
+    	- Made less system dependent. No known system dependent parts   remain.  Most features should now work on any platform. Partially tested on windows, thanks to Suresh Govindachar.
+    	- A command line (perl) script, 'vimbrowse.pl', now allows lunching
+    	  vim as a browser from the command line.
+    	- Numerous bugs were fixed.
+    
+    See the file 'ChangeLog' for some more details
+
+ INSTALL                                         |   34 -
+ README.orig                                     |   23 -
+ bin/vimbrowse.1                                 |  224 ++++
+ bin/vimbrowse.pl                                |  203 ++++
+ browser-0.2/ChangeLog                           |   27 +
+ browser-0.2/INSTALL                             |   74 ++
+ browser-0.2/README                              |   24 +
+ browser-0.2/browser.pod                         |  753 +++++++++++++
+ browser-0.2/extra/ftplugin/browser/mappings.vim |   25 +
+ browser-0.2/extra/plugin/browser_extra.vim      |   45 +
+ browser-0.2/extra/plugin/browser_short.vim      |   46 +
+ browser-0.2/extra/syntax/browser_highlight.vim  |   16 +
+ browser-0.2/perl/HTML/FormatText/Vim.pm         |  421 +++++++
+ browser-0.2/perl/VIM/Browser.pm                 | 1358 +++++++++++++++++++++++
+ browser-0.2/perl/Vim.pm                         |  158 +++
+ browser-0.2/vim/doc/browser.txt                 |  676 +++++++++++
+ browser-0.2/vim/ftplugin/browser.vim            |   20 +
+ browser-0.2/vim/plugin/browser.vim              |  277 +++++
+ browser-0.2/vim/syntax/browser.vim              |  130 +++
+ browser.pod                                     |  423 -------
+ doc/browser.txt                                 |  398 -------
+ ftplugin/browser.vim                            |   25 -
+ perl/HTML/FormatText/Vim.pm                     |  251 -----
+ perl/VIM/Browser.pm                             | 1085 ------------------
+ perl/Vim.pm                                     |  147 ---
+ plugin/browser.vim                              |  223 ----
+ syntax/browser.vim                              |  113 --
+ 27 files changed, 4477 insertions(+), 2722 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     moshe kamensky <samvimes at fastmail.fm>
+AuthorDate: Mon Aug 9 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ INSTALL                     |   34 ++
+ README                      |   19 +
+ README.orig                 |   23 +
+ browser.pod                 |  423 +++++++++++++++++
+ doc/browser.txt             |  398 ++++++++++++++++
+ ftplugin/browser.vim        |   25 +
+ perl/HTML/FormatText/Vim.pm |  251 ++++++++++
+ perl/VIM/Browser.pm         | 1085 +++++++++++++++++++++++++++++++++++++++++++
+ perl/Vim.pm                 |  147 ++++++
+ plugin/browser.vim          |  223 +++++++++
+ syntax/browser.vim          |  113 +++++
+ 11 files changed, 2741 insertions(+), 0 deletions(-)

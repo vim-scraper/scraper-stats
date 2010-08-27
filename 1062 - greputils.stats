@@ -1,0 +1,138 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.8, refs/heads/master)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Jul 14 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Support for inversing the search pattern. You can pass "!" to built-in grep commands.
+    - Fixed broken GrepBufs command.
+
+ plugin/greputils.vim |   52 +++++++++++++++++++++++++-------------------------
+ 1 files changed, 26 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.7)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Jul 14 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed broken Cfile command.
+
+ plugin/greputils.vim |    5 +++--
+ 1 files changed, 3 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Thu Jul 14 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Just added support for specifying range for all the built-in grep commands. Useful mainly for GrepBufs command.
+
+ plugin/greputils.vim |   88 +++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 66 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Wed Mar 16 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Better handling of unsaved and unnamed buffers while doing built-in grep.
+    - New setting g:greputilsPreserveAllResults to be able to undo over
+      several search results, as far as Vim allows you to do.
+    - Better integration with selectbuf so that the built-in grep performs
+      better, if both plugins are installed (need to get the latest
+      selectbuf).
+    - Much better handling of opening and closing preview window. Requires
+      the latest version genutils.vim.
+    - Misc. bug fixes. Update documentation.
+
+ plugin/greputils.vim |  159 +++++++++++++++++++++++++++++++++-----------------
+ 1 files changed, 105 insertions(+), 54 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Mon Oct 18 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Augmented the built-in grep (:WinGrep, :ArgGrep, :BufGrep)
+      functionality with the new command :GrepBufs to grep specified
+      buffers only. This is very similar to unix :grep command with given
+      filenames.
+    - New commands :GOpen, :GClose and :GWindow on the lines of :copen,
+      :cclose and :cwindow to work with the preview window. The existing
+      commands :GNext, :GPrev and :GG commands now work globally, just like
+      the :cnext, :cprev and :cc commands.
+    - Fixed misc. bugs.
+
+ plugin/greputils.vim |  208 ++++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 166 insertions(+), 42 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Aug 20 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    	- Misc. improvements for Grep Preview window.
+    	  - The Grep Preview window now implements undo functionality to be able
+    	    to undo and recover the previous result set.
+    	  - When you add results to the existing results, the results sets are
+    	    folded such that you can easily distinguish them.
+    	  - Preview window shouldn't be resized if it is already visible.
+    	- The grep commands that utilize the Vim's built-in grep functionality
+    	  are refined and are more useful than ever.
+    	  - They now have command-line completion enabled to complete tags.
+    	  - <cword> and <cWORD> were not being expanded for Vim-grep
+    	    commands.
+    	  - Cleanup the grep window for "pattern not found" error messages and
+    	    such.
+    	  - The current buffer is restored at the end of the operation.
+    	  - Vim event generation is disabled. This provides a significant
+    	    improvement in the speed as well as avoid side effects. This along
+    	    with the above improvement also makes the grep operation look
+    	    completely tranparent.
+    	- New useful GrepPreviewSetup command.
+    	- On windows, setting multiple ID files in IDPATH doesn't work, as it
+    	  does on *NIX. The plugin works around this problem by invoking lid on
+    	  individual ID files and gathering all the results.
+    	- If you use findstr on windows, grepping on a single file doesn't
+    	  generate the results in the right format (no filename prefix etc.).
+    	  The plugin now works around this issue.
+    	- See help on new settings g:greputilsVimGrepSepChar,
+    	  g:greputilsPreviewCreateFolds and g:greputilsPreserveLastResults.
+
+ plugin/greputils.vim |  347 ++++++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 254 insertions(+), 93 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6.2)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Aug 20 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added BufGrep, WinGrep and ArgGrep commands that use the Vim's built-in g/re/p command with :bufdo, :windo and :argdo respectively to do search. This is an experimental feature, please try it and give feedback.
+    - Also fixed a couple or more of minor bugs.
+
+ plugin/greputils.vim |  101 ++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 74 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Aug 20 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Requires Vim 6.3
+    - Added support for running GNU find command and open the files from preview or through quickfix result.
+    - Basic quickfix like commands have been added to the [Grep Preview] window. This is very useful if you want to quickly reach one or two files by running "find" or "lid" and don't care about the full results.
+    - The default completion mode for grep has been changed to "file" from "tag", which is what is more useful.
+    - Fixed :Cfile and :Cgetfile to work correctly if the current directory has changed since the results are generated.
+
+ plugin/greputils.vim |  319 ++++++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 230 insertions(+), 89 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Hari Krishna Dara <hari.vim at gmail.com>
+AuthorDate: Fri Aug 20 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This is an enhanced version of idutils.vim, made more generic and supports regular :grep command too. See description for information on the new version. Needs Vim 6.3
+
+ README               |  189 +++++++++++++++++
+ plugin/greputils.vim |  566 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 755 insertions(+), 0 deletions(-)

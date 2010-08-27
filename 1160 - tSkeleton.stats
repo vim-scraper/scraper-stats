@@ -1,0 +1,1963 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.7, refs/heads/master)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Oct 18 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - TSkeletonMapHyperComplete() (default: <c-space>): Map a magic key that expands skeletons or, if no matching templates were found, completions, tags, words etc.
+    - Minibits: Allow single words as bit definition: "word" expands to "word<+CURSOR+>"
+    - TSkeletonSetup: allow full filenames as argument
+    - Auto templates: don't cd into the templates directory
+    - tskeleton#ExpandBitUnderCursor(): Third argument is a dictionary.
+    - FIX: Problem with <+name/expandsion+> kind of tags when located at the beginning or end of a line
+    - s:GetBitDefs()
+    - Improved tskeleton#Complete() (for use as completefunc or omnifunc)
+    - FIX: Cursor positioning after expanding templates without a <+CURSOR+> tag
+    - Don't build the menu for tSkeleton scratch buffers
+    - Require tlib 0.29
+
+ autoload/tskeleton/abbreviations.vim |   25 ++-
+ autoload/tskeleton/functions.vim     |    6 +-
+ autoload/tskeleton/mini.vim          |    6 +-
+ autoload/tskeleton/skeleton.vim      |    6 +-
+ autoload/tskeleton/tags.vim          |    6 +-
+ autoload/tskeleton.vim               |  440 +++++++++++++++++++++++++++++-----
+ doc/tSkeleton.txt                    |   16 +-
+ plugin/tSkeleton.vim                 |  122 ++++++++--
+ syntax/tSkeleton.vim                 |   50 ----
+ syntax/tskeleton.vim                 |   50 ++++
+ 10 files changed, 564 insertions(+), 163 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.5)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Dec 2 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Make sure tlib is loaded even if it is installed in a different rtp-directory
+    - Call s:InitBufferMenu() earlier.
+    - C modifier: Consider _ whitespace
+    - g:tskelMarkerExtra (extra markers for tskeleton#GoToNextTag)
+
+ autoload/tskeleton.vim |   12 ++++++------
+ doc/tSkeleton.txt      |    6 +++++-
+ plugin/tSkeleton.vim   |   25 ++++++++++++++++++++-----
+ 3 files changed, 31 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.3)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sat Jan 5 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - bbcode group
+    - tskelKeyword_{&ft} and tskelGroup_{&ft} variables can be buffer-local
+    - Case-sensitivity can be configured via [bg]:tskelCaseSensitive and
+    [bg]:tskelCaseSensitive_{&filetype}
+
+ autoload/tskeleton.vim |   39 ++++++++++++++++++++++++++++++---------
+ plugin/tSkeleton.vim   |   26 ++++++++++++++++++++++----
+ 2 files changed, 52 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Nov 12 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Enable <+CURSOR/foo+>. After expansion "foo" will be selected.
+    - New (old) default values: removed 'abbreviations' from g:tskelTypes
+    and set g:tskelAutoAbbrevs to 0 in order to minimize surprises.
+    - Enabled tex-Skeletons for the viki filetype
+    - FIX: Place the cursor at the end of an inserted bit that contains no
+    cursor marker (which was the original behaviour).
+    - Split html bits into html and html_common; the java group includes
+    html_common.
+    - CHANGE: Made bit names case-sensitive
+    - NEW: select() tag (similar to the query tag)
+
+ autoload/tskeleton/skeleton.vim |   12 ++-
+ autoload/tskeleton/tags.vim     |   20 +++-
+ autoload/tskeleton.vim          |  236 +++++++++++++++++++++-----------------
+ doc/tSkeleton.txt               |   37 ++++++-
+ plugin/tSkeleton.vim            |   49 ++++++---
+ 5 files changed, 225 insertions(+), 129 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Sep 19 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Automatically define iabbreviations by adding [bg]:tskelAbbrevPostfix
+    (default: '#') to the bit name (i.e., a bit with the file "foo.bar" will
+    by default create the menu entry "TSkel.foo.bar" for the bit "bar" and
+    the abbreviation "bar#"). If this causes problems, set
+    g:tskelAutoAbbrevs to 0.
+    - Bits can have a <tskel:abbrev> section that defines the abbreviation.
+    - New type 'abbreviations': This will make your abbreviations accessible
+    as templates (in case you can't remember their names)
+    - New experimental <tskel:condition> section (a vim expression) that
+    checks if a bit is eligible in the current context.
+    - New <+input()+> tag.
+    - New <+execute()+> tag.
+    - New <+let(VAR=VALUE)+> tag.
+    - <+include(NAME)+> as synonym for <+bit:NAME+>.
+    - Experimental <+if()+> ... <+elseif()+> ... <+else+> ... <+endif+>,
+    <+for(var in list)+> ... <+endfor+> tags.
+    - Special tags <+nop+>, <+joinline+>, <+nl+> to prevent certain
+    problems.
+    - These special tags have to be lower case.
+    - Made tskeleton#GoToNextTag() smarter in recognizing something like:
+    <+/DEFAULT+>.
+    - Defined <Leader>## and <Leader>#<space> (see g:tskelMapLeader) as
+    visual command (the user will be queried for the name of a skeleton)
+    - Some functions have moved and changed names. It should now be possible
+    to plug-in custom template expanders (or re-use others).
+    - Use append() via tlib#buffer#InsertText() to insert bits. This could
+    cause old problems to reappear although it seems to work fine.
+    - The markup should now be properly configurable (per buffer; you can
+    set template-specific markers in the tskel:here_before section).
+    - Require tlib 0.14
+    - The default value for g:tskelUseBufferCache is 0 as many people might
+    find the accumulation of cached information somewhat surprising. Unless
+    you use tag/functions type of skeleton bit, it's unnecessary anyway.
+    - Removed the dependency on genutils.
+    - The g:tskelMarkerCursor variable was removed and replaced with
+    g:tskelMarkerCursor_mark and g:tskelMarkerCursor_rx.
+
+ autoload/tskeleton.vim               | 1904 --------------------------
+ autoload/tskeleton/abbreviations.vim |   58 +
+ autoload/tskeleton/functions.vim     |   33 +
+ autoload/tskeleton/mini.vim          |   23 +
+ autoload/tskeleton/skeleton.vim      |   35 +
+ autoload/tskeleton/tags.vim          |   85 ++
+ autoload/tskeleton.vim               | 2507 ++++++++++++++++++++++++++++++++++
+ doc/tSkeleton.txt                    |  265 +++-
+ plugin/tSkeleton.vim                 |  243 ++--
+ 9 files changed, 3073 insertions(+), 2080 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sat Sep 8 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Renamed g:tskelPattern* variables to g:tskelMarker*
+    - If g:tskelMarkerHiGroup is non-empty, place holders will be
+    highlighted in this group.
+    - Re-enable 'mini' in g:tskelTypes.
+    - Calling TSkeletonBit with no argument, brings up the menu.
+    - Require tlib 0.12
+    - CHANGE: The cache is now stored in ~/vimfiles/cache/ (use
+    tlib#cache#Filename)
+    - INCOMPATIBLE CHANGE: Use autoload/tskeleton.vim
+    - FIX: Problem with cache name
+    - FIX: Problem in s:IsDefined()
+    - FIX: TSkeletonEditBit completion didn't work before expanding a bit.
+    - FIX: Command-line completion when tSkeleton wasn't invoked yet (and
+    menu wasn't built).
+
+ autoload/tskeleton.vim | 1904 ++++++++++++++++++++++++++++++++++++++++++++
+ doc/tSkeleton.txt      |    4 +-
+ plugin/tSkeleton.vim   | 2081 +++---------------------------------------------
+ syntax/tSkeleton.vim   |   50 ++
+ syntax/tskeleton.vim   |   50 --
+ 5 files changed, 2081 insertions(+), 2008 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.5)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Jul 18 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - FIX: Minor problem with auto-templates
+
+ plugin/tSkeleton.vim |   16 ++++++++++++----
+ 1 files changed, 12 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.4)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Jul 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Automatically reset bits information after editing a bit.
+    - Automatically define autocommands for templates with the form "NAME
+    PATTERN" (where "#" in the pattern is replaced with "*"), i.e. the
+    template file "text #%2ffoo%2f#.txt" will define a template for all new
+    files matching "*/foo/*.txt"; the filetype will be set to "text"
+    - These "auto templates" must be located in
+    ~/.vim/skeletons/templates/GROUP/
+    - TSkeletonCB_FILENAME(), TSkeletonCB_DIRNAME()
+    - FIX: TSkeletonGoToNextTag() didn't work properly with ### type of
+    markers.
+    - FIX: TSkeletonLateExpand(): tag at first column
+    - FIX: In templates, empty lines sometimes were not inserted in the
+    document
+    - FIX: Build menu on SessionLoadPost event.
+    - FIX: Protect against autocommands that move the cursor on a BufEnter
+    event
+    - FIX: Some special characters in the skeleton bit expansion were escaped
+    twice with backslashes.
+    - Require tlib 0.9
+    - Make sure &foldmethod=manual in the scratch buffer
+
+ doc/tSkeleton.txt    |   19 ++++-
+ plugin/tSkeleton.vim |  232 ++++++++++++++++++++++++++++++++++---------------
+ syntax/tskeleton.vim |   22 +++--
+ 3 files changed, 191 insertions(+), 82 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Thu May 17 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New :TSkeletonEditBit command
+    - FIX: Embedded <tskel> tags in file templates didn't work
+
+ doc/tSkeleton.txt    |   10 +++++--
+ plugin/tSkeleton.vim |   66 ++++++++++++++++++++++++++++++++++++++-----------
+ 2 files changed, 58 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue May 15 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - "tags" & "functions" types are disabled by default due to a noticeable
+    delay on initialization; add 'tags' and 'functions' to g:tskelTypes to
+    re-enable them (with the new caching strategy, it's usable, but can
+    produce much noise; but this depends of course on the way you handle
+    tags)
+    - Improved caching strategy: cache filetype bits in
+    skeletons/cache_bits; cache buffer-specific bits in
+    skeletons/cache_bbits/&filetype/path (set g:tskelUseBufferCache to 0 to
+    turn this off; this speeds up things quite a lot but creates many files
+    on the long run, so you might want to purge the cache from time to time)
+    - embedded <tskel:> tags are now extracted on initialization and not
+    when the skeleton is expanded (I'm not sure yet if it is better this
+    way)
+    - CHANGE: dropped support for the ~/.vim/skeletons/prefab subdirectory;
+    you'll have to move the templates, if any, to ~/.vim/skeletons
+    - FIX: :TSkeletonEdit, :TSkeletonSetup command-line completion
+    - FIX: Problem with fold markers in bits when &fdm was marker
+    - FIX: Problems with PrepareBits()
+    - FIX: Problems when the skeletons/menu/ subdirectory didn't exist
+    - TSkeletonExecInDestBuffer(code): speed-up
+    - Moved functions from EncodeURL.vim to tlib.vim
+    - Updated the manual
+    - Renamed the skeletons/menu subdirectory to skeletons/cache_menu
+
+ doc/tSkeleton.txt    |  115 ++++--
+ plugin/EncodeURL.vim |   72 ----
+ plugin/tSkeleton.vim | 1045 ++++++++++++++++++++++++++++----------------------
+ 3 files changed, 662 insertions(+), 570 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Thu Apr 26 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Tag-based code completion for vim
+    - Made the supported skeleton types configurable via g:tskelTypes
+    - FIX: Tag-based skeletons the name of which contain blanks
+    - FIX: Undid shortcut that prevented the <+bit:+> tag from working
+    - Preliminary support for using keys like <space> for insert mode
+    expansion.
+
+ plugin/tSkeleton.vim |  111 ++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 85 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Apr 24 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This version is probably less stable than the predecessor. Or maybe not.
+    - Partial rewrite for vim7 (drop vim6 support)
+    - Now depends on tlib (vimscript #1863)
+    - "query" now uses a more sophisticated version from autoload/tlib.vim
+    - The default value for g:tskelQueryType is "query".
+    - Experimental (proof of concept) code completion for vim script
+    (already sourced user-defined functions only). Use :delf
+    TSkelFiletypeBits_prototypes_vim to disable this as it can take some
+    time on initialization.
+    - Experimental (proof of concept) tags-based code completion for ruby.
+    Use :delf TSkelProcessTag_ruby to disable this. It's only partially
+    useful as it simply works on method names and knows nothing about
+    classes, modules etc. But it gives you an argument list to fill in. It
+    shouldn't be too difficult to adapt this for other filetypes for which
+    such an approach could be more useful.
+    - The code makes it now possible to somehow plug in custom bit types by
+    defining TSkelFiletypeBits_{NAME}(dict, filetype), or
+    TSkelFiletypeBits_{NAME}_{FILETYPE}(dict, filetype),
+    TSkelBufferBits_{NAME}(dict, filetype),
+    TSkelBufferBits_{NAME}_{FILETYPE}(dict, filetype).
+    - FIX s:RetrieveAgent_read(): Delete last line, which should fix the
+    problem with extraneous return characters in recursively included
+    skeleton bits.
+    - FIX: bits containing backslashes
+    - FIX TSkeletonGoToNextTag(): Moving cursor when no tag was found.
+    - FIX: Minibits are now properly displayed in the menu.
+
+ bits/autoit/dim                    |    1 -
+ bits/autoit/dim=                   |    2 -
+ bits/autoit/do                     |    4 -
+ bits/autoit/for                    |    4 -
+ bits/autoit/forin                  |    4 -
+ bits/autoit/func                   |    4 -
+ bits/autoit/if                     |  Bin 113 -> 0 bytes
+ bits/autoit/local                  |    1 -
+ bits/autoit/local=                 |    2 -
+ bits/autoit/select                 |  Bin 158 -> 0 bytes
+ bits/autoit/switch                 |  Bin 169 -> 0 bytes
+ bits/autoit/while                  |    4 -
+ bits/autoit/with                   |    4 -
+ bits/bib/@article                  |   20 -
+ bits/bib/@book                     |   24 -
+ bits/bib/@book_collection          |   22 -
+ bits/bib/@booklet                  |   18 -
+ bits/bib/@conference               |   16 -
+ bits/bib/@inbook                   |   25 -
+ bits/bib/@incollection             |   16 -
+ bits/bib/@inproceedings            |   16 -
+ bits/bib/@manual                   |   19 -
+ bits/bib/@masterthesis             |   19 -
+ bits/bib/@misc                     |   17 -
+ bits/bib/@phdthesis                |   19 -
+ bits/bib/@proceedings              |   22 -
+ bits/bib/@techreport               |   20 -
+ bits/bib/@unpublished              |   17 -
+ bits/bib/Fields.abstract           |    1 -
+ bits/bib/Fields.address            |    1 -
+ bits/bib/Fields.annote             |    1 -
+ bits/bib/Fields.author             |    1 -
+ bits/bib/Fields.booktitle          |    1 -
+ bits/bib/Fields.chapter            |    1 -
+ bits/bib/Fields.crossref           |    1 -
+ bits/bib/Fields.doi                |    1 -
+ bits/bib/Fields.edition            |    1 -
+ bits/bib/Fields.editor             |    1 -
+ bits/bib/Fields.howpublished       |    1 -
+ bits/bib/Fields.institution        |    1 -
+ bits/bib/Fields.isbn               |    1 -
+ bits/bib/Fields.journal            |    1 -
+ bits/bib/Fields.key                |    1 -
+ bits/bib/Fields.keywords           |    1 -
+ bits/bib/Fields.month              |    1 -
+ bits/bib/Fields.note               |    1 -
+ bits/bib/Fields.number             |    1 -
+ bits/bib/Fields.organization       |    1 -
+ bits/bib/Fields.pages              |    1 -
+ bits/bib/Fields.publisher          |    1 -
+ bits/bib/Fields.school             |    1 -
+ bits/bib/Fields.series             |    1 -
+ bits/bib/Fields.standardEntries    |   10 -
+ bits/bib/Fields.title              |    1 -
+ bits/bib/Fields.type               |    1 -
+ bits/bib/Fields.url                |    1 -
+ bits/bib/Fields.volume             |    1 -
+ bits/bib/Fields.year               |    1 -
+ bits/css/background                |    1 -
+ bits/css/border-bottom             |    1 -
+ bits/css/border-left               |    1 -
+ bits/css/border-right              |    1 -
+ bits/css/border-spacing            |    1 -
+ bits/css/border-top                |    1 -
+ bits/css/entry                     |    4 -
+ bits/css/font-size                 |    1 -
+ bits/css/text-align                |    1 -
+ bits/general/%3C%3C                |    1 -
+ bits/general/date                  |    1 -
+ bits/general/header                |    9 -
+ bits/general/localvariables        |    6 -
+ bits/general/test_tSkeleton        |   43 -
+ bits/general/time                  |    1 -
+ bits/general/vi                    |    1 -
+ bits/html/&a.&href                 |    1 -
+ bits/html/&attribute.action=       |    1 -
+ bits/html/&attribute.method=       |    1 -
+ bits/html/&attribute.name=         |    1 -
+ bits/html/&form.%3C&form           |   10 -
+ bits/html/&form.&checkbox          |    1 -
+ bits/html/&form.&clickbutton       |    4 -
+ bits/html/&form.&option            |    1 -
+ bits/html/&form.&radio             |    1 -
+ bits/html/&form.&reset             |    1 -
+ bits/html/&form.&select            |   14 -
+ bits/html/&form.&submit            |    1 -
+ bits/html/&form.&text              |    1 -
+ bits/html/&head.html&401           |    3 -
+ bits/html/tag                      |    7 -
+ bits/html.txt                      |    5 -
+ bits/php/@.@&param                 |    1 -
+ bits/php/@.@&return                |    1 -
+ bits/php/case                      |    3 -
+ bits/php/class                     |   19 -
+ bits/php/define                    |    1 -
+ bits/php/dowhile                   |    3 -
+ bits/php/elseif                    |    1 -
+ bits/php/for                       |   12 -
+ bits/php/for-                      |   12 -
+ bits/php/foreach                   |    3 -
+ bits/php/foreach_assoc             |    3 -
+ bits/php/function                  |    6 -
+ bits/php/ifelse                    |    5 -
+ bits/php/php                       |    1 -
+ bits/php/preg_replace              |    1 -
+ bits/php/switch                    |    7 -
+ bits/php/var                       |    6 -
+ bits/php/var_export                |    1 -
+ bits/php/while                     |    3 -
+ bits/r/break                       |    1 -
+ bits/r/function                    |    4 -
+ bits/r/section                     |    4 -
+ bits/ruby/&begin.&begin            |    3 -
+ bits/ruby/&begin.begin_&ensure     |    4 -
+ bits/ruby/&begin.begin_&rescue     |    5 -
+ bits/ruby/&begin.begin_&while      |    3 -
+ bits/ruby/case                     |    7 -
+ bits/ruby/catch                    |    3 -
+ bits/ruby/class                    |   12 -
+ bits/ruby/collect.&collect         |    1 -
+ bits/ruby/collect.collect_&do      |    3 -
+ bits/ruby/def                      |    3 -
+ bits/ruby/each.&each               |    1 -
+ bits/ruby/each.each_&do            |    3 -
+ bits/ruby/ensure                   |    2 -
+ bits/ruby/for                      |    3 -
+ bits/ruby/if                       |  Bin 99 -> 0 bytes
+ bits/ruby/module.module            |    5 -
+ bits/ruby/module.wrapper           |    1 -
+ bits/ruby/rescue                   |    2 -
+ bits/ruby/shebang                  |    1 -
+ bits/ruby/until                    |    3 -
+ bits/ruby/when                     |    2 -
+ bits/ruby/while                    |    3 -
+ bits/sh/$%28                       |    1 -
+ bits/sh/$%7B.$%7B                  |    1 -
+ bits/sh/$%7B.var_default           |    1 -
+ bits/sh/$%7B.var_length            |    1 -
+ bits/sh/$%7B.var_substitute        |    1 -
+ bits/sh/$%7B.var_substitute_all    |    1 -
+ bits/sh/$%7B.var_substring         |    1 -
+ bits/sh/%28%28                     |    1 -
+ bits/sh/[                          |    1 -
+ bits/sh/[[                         |    1 -
+ bits/sh/alias                      |    2 -
+ bits/sh/case                       |    9 -
+ bits/sh/for                        |    4 -
+ bits/sh/for%28%28                  |    4 -
+ bits/sh/function                   |    4 -
+ bits/sh/if                         |    4 -
+ bits/sh/if[                        |    4 -
+ bits/sh/local                      |    2 -
+ bits/sh/until                      |    4 -
+ bits/sh/until[                     |    4 -
+ bits/sh/while                      |    4 -
+ bits/sh/while[                     |    4 -
+ bits/tex/%5Cfootnote               |    3 -
+ bits/tex/%5Citem                   |    1 -
+ bits/tex/%5Citem[]                 |    1 -
+ bits/tex/%5Clabel                  |    1 -
+ bits/tex/%5Cmulticolumn            |    1 -
+ bits/tex/%5Cparagraph              |    3 -
+ bits/tex/%5Csection                |    3 -
+ bits/tex/%5Csub&paragraph          |    3 -
+ bits/tex/%5Csubsection             |    3 -
+ bits/tex/%5Csubsubsection          |    3 -
+ bits/tex/%5Cusepackage             |    1 -
+ bits/tex/&begin.%5C&begin          |   10 -
+ bits/tex/&begin.&description       |    4 -
+ bits/tex/&begin.&enumerate         |    4 -
+ bits/tex/&begin.&figure            |    5 -
+ bits/tex/&begin.&itemize           |    4 -
+ bits/tex/&begin.&quotation         |    4 -
+ bits/tex/&begin.&quote             |    4 -
+ bits/tex/&begin.&table             |    5 -
+ bits/tex/&begin.&verbatim          |    4 -
+ bits/tex/&begin.tabu&lar           |   16 -
+ bits/tskeleton/tskel_after         |    5 -
+ bits/tskeleton/tskel_before        |    5 -
+ bits/tskeleton/tskel_here_after    |    5 -
+ bits/tskeleton/tskel_here_before   |    5 -
+ bits/viki/Command.%23&ABBREV       |    2 -
+ bits/viki/Command.%23&AUTHOR       |    2 -
+ bits/viki/Command.%23&AUTHORNOTE   |    2 -
+ bits/viki/Command.%23&AUTOIDX      |    2 -
+ bits/viki/Command.%23&BIB          |    2 -
+ bits/viki/Command.%23&CAPTION      |    2 -
+ bits/viki/Command.%23&DONTIDX      |    2 -
+ bits/viki/Command.%23&ELSE         |    2 -
+ bits/viki/Command.%23&ELSEIF       |    2 -
+ bits/viki/Command.%23&GET          |    2 -
+ bits/viki/Command.%23&IDX          |    2 -
+ bits/viki/Command.%23&IF           |    4 -
+ bits/viki/Command.%23&IMG          |    2 -
+ bits/viki/Command.%23&INCLUDE      |    2 -
+ bits/viki/Command.%23&LANG         |    2 -
+ bits/viki/Command.%23&LIST         |    8 -
+ bits/viki/Command.%23&MAKEBIB      |    2 -
+ bits/viki/Command.%23&MAKETITLE    |    2 -
+ bits/viki/Command.%23&MODULE       |    2 -
+ bits/viki/Command.%23&NOIDX        |    2 -
+ bits/viki/Command.%23&OPT          |    2 -
+ bits/viki/Command.%23&PAGE         |    2 -
+ bits/viki/Command.%23&SET          |    2 -
+ bits/viki/Command.%23&TABLE        |    2 -
+ bits/viki/Command.%23&TITLE        |    2 -
+ bits/viki/Command.%23&VAL          |    2 -
+ bits/viki/Command.%23&VAR          |    2 -
+ bits/viki/Command.%23&WITH         |    2 -
+ bits/viki/Command.%23&XVAL         |    2 -
+ bits/viki/Element.Break            |    1 -
+ bits/viki/Heading.h&1              |    2 -
+ bits/viki/Heading.h&2              |    2 -
+ bits/viki/Heading.h&3              |    2 -
+ bits/viki/Heading.h&4              |    2 -
+ bits/viki/Heading.h&5              |    2 -
+ bits/viki/Heading.h&6              |    2 -
+ bits/viki/Heading.h&7              |    2 -
+ bits/viki/Heading.h&8              |    2 -
+ bits/viki/Heading.h&9              |    2 -
+ bits/viki/List.Description         |    1 -
+ bits/viki/List.Ordered             |    1 -
+ bits/viki/List.OrderedAlpha        |    1 -
+ bits/viki/List.Unordered           |    1 -
+ bits/viki/Macro.%7Banchor          |    1 -
+ bits/viki/Macro.%7Battrib          |    1 -
+ bits/viki/Macro.%7Bcite            |    1 -
+ bits/viki/Macro.%7Bcmt             |    1 -
+ bits/viki/Macro.%7Bcode            |    1 -
+ bits/viki/Macro.%7Bdate            |    7 -
+ bits/viki/Macro.%7Bdoc             |    1 -
+ bits/viki/Macro.%7Bem              |    1 -
+ bits/viki/Macro.%7Bfn              |    1 -
+ bits/viki/Macro.%7Bget             |    1 -
+ bits/viki/Macro.%7Bidx             |    1 -
+ bits/viki/Macro.%7Bimg             |    1 -
+ bits/viki/Macro.%7Bins             |    1 -
+ bits/viki/Macro.%7Bitem            |    1 -
+ bits/viki/Macro.%7Blist            |    7 -
+ bits/viki/Macro.%7Bltx             |    1 -
+ bits/viki/Macro.%7Bmath            |    1 -
+ bits/viki/Macro.%7Bnl              |    1 -
+ bits/viki/Macro.%7Bopt             |    1 -
+ bits/viki/Macro.%7Bpagenumber      |    1 -
+ bits/viki/Macro.%7Bplain           |    1 -
+ bits/viki/Macro.%7Bref             |    1 -
+ bits/viki/Macro.%7Bruby            |    1 -
+ bits/viki/Macro.%7Bstacked         |    1 -
+ bits/viki/Macro.%7Bsub             |    1 -
+ bits/viki/Macro.%7Bsuper           |    1 -
+ bits/viki/Macro.%7Bterm            |    1 -
+ bits/viki/Macro.%7Btext            |    1 -
+ bits/viki/Macro.%7Bval             |    1 -
+ bits/viki/Macro.%7Bxval            |    1 -
+ bits/viki/Note.Attention           |    1 -
+ bits/viki/Note.Discuss             |    1 -
+ bits/viki/Note.Elaborate           |    1 -
+ bits/viki/Note.Here                |    1 -
+ bits/viki/Option.!=                |    1 -
+ bits/viki/Option.==                |    1 -
+ bits/viki/Option.context=          |    7 -
+ bits/viki/Option.fmt!=             |    1 -
+ bits/viki/Option.fmt=              |    1 -
+ bits/viki/Option.fmt==             |    1 -
+ bits/viki/Option.id=               |    1 -
+ bits/viki/Option.if!=              |    1 -
+ bits/viki/Option.if==              |    1 -
+ bits/viki/Region.%23&Abstract      |    4 -
+ bits/viki/Region.%23&Code          |    4 -
+ bits/viki/Region.%23&Footer        |    4 -
+ bits/viki/Region.%23&Footnote      |    4 -
+ bits/viki/Region.%23&Header        |    4 -
+ bits/viki/Region.%23&Img           |    4 -
+ bits/viki/Region.%23&Ltx           |    4 -
+ bits/viki/Region.%23&Native        |    4 -
+ bits/viki/Region.%23&Quote         |    4 -
+ bits/viki/Region.%23&Ruby          |    4 -
+ bits/viki/Region.%23&Set           |    4 -
+ bits/viki/Region.%23&Verb          |    4 -
+ bits/viki/Region.%23Def&Element    |    4 -
+ bits/viki/Region.%23Def&Particle   |    4 -
+ bits/viki/Style.emphasize          |    1 -
+ bits/viki/Style.typewriter         |    1 -
+ bits/viki/Symbol.%3C-              |    1 -
+ bits/viki/Symbol.%3C-%3E           |    1 -
+ bits/viki/Symbol.%3C=              |    1 -
+ bits/viki/Symbol.%3C=%3E           |    1 -
+ bits/viki/Symbol.%3C~%3E           |    1 -
+ bits/viki/Symbol.%7E%7E            |    1 -
+ bits/viki/Symbol.-%3E              |    1 -
+ bits/viki/Symbol.=%3E              |    1 -
+ bits/viki/Symbol.~%3E              |    1 -
+ bits/viki/Wiki.Extended            |    1 -
+ bits/viki/Wiki.ExtendedLiteral     |    1 -
+ bits/viki/Wiki.ExtendedName        |    1 -
+ bits/viki/Wiki.ExtendedNameLiteral |    1 -
+ bits/viki/Wiki.Quoted              |    1 -
+ bits/viki/table                    |   13 -
+ bits/vim/TAB                       |    3 -
+ bits/vim/function                  |    4 -
+ bits/vim/if                        |  Bin 112 -> 0 bytes
+ bits/vim/ifelse                    |  Bin 126 -> 0 bytes
+ bits/vim/try                       |    6 -
+ bits/vim/while                     |    4 -
+ bits/websec/entry                  |    4 -
+ doc/tSkeleton.txt                  |  331 ++++++
+ map/html                           |    1 -
+ map/viki                           |   50 -
+ plugin/EncodeURL.vim               |   72 ++
+ plugin/tSkeleton.vim               | 2125 ++++++++++++++++++++++++++++++++++++
+ prefab/batch.bat                   |   11 -
+ prefab/latex.tex                   |   23 -
+ prefab/php.class.php               |   27 -
+ prefab/php.inc.php                 |   17 -
+ prefab/php.php                     |   39 -
+ prefab/plugin.vim                  |   15 -
+ prefab/ruby.rb                     |   25 -
+ prefab/shell.sh                    |    8 -
+ prefab/text.txt                    |    7 -
+ syntax/tskeleton.vim               |   46 +
+ 320 files changed, 2574 insertions(+), 1295 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0samples)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Apr 24 00:00:00 2007 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This files contains some templates to be used with this plugin. They were previously distributed with the plugin.
+
+ bits/autoit/dim                                    |    1 +
+ bits/autoit/dim=                                   |    2 +
+ bits/autoit/do                                     |    4 +
+ bits/autoit/for                                    |    4 +
+ bits/autoit/forin                                  |    4 +
+ bits/autoit/func                                   |    4 +
+ bits/autoit/if                                     |  Bin 0 -> 113 bytes
+ bits/autoit/local                                  |    1 +
+ bits/autoit/local=                                 |    2 +
+ bits/autoit/select                                 |  Bin 0 -> 158 bytes
+ bits/autoit/switch                                 |  Bin 0 -> 169 bytes
+ bits/autoit/while                                  |    4 +
+ bits/autoit/with                                   |    4 +
+ bits/bib/@article                                  |   20 +
+ bits/bib/@book                                     |   24 +
+ bits/bib/@book_collection                          |   22 +
+ bits/bib/@booklet                                  |   18 +
+ bits/bib/@conference                               |   16 +
+ bits/bib/@inbook                                   |   25 +
+ bits/bib/@incollection                             |   16 +
+ bits/bib/@inproceedings                            |   16 +
+ bits/bib/@manual                                   |   19 +
+ bits/bib/@masterthesis                             |   19 +
+ bits/bib/@misc                                     |   17 +
+ bits/bib/@phdthesis                                |   19 +
+ bits/bib/@proceedings                              |   22 +
+ bits/bib/@techreport                               |   20 +
+ bits/bib/@unpublished                              |   17 +
+ bits/bib/Fields.abstract                           |    1 +
+ bits/bib/Fields.address                            |    1 +
+ bits/bib/Fields.annote                             |    1 +
+ bits/bib/Fields.author                             |    1 +
+ bits/bib/Fields.booktitle                          |    1 +
+ bits/bib/Fields.chapter                            |    1 +
+ bits/bib/Fields.crossref                           |    1 +
+ bits/bib/Fields.doi                                |    1 +
+ bits/bib/Fields.edition                            |    1 +
+ bits/bib/Fields.editor                             |    1 +
+ bits/bib/Fields.howpublished                       |    1 +
+ bits/bib/Fields.institution                        |    1 +
+ bits/bib/Fields.isbn                               |    1 +
+ bits/bib/Fields.journal                            |    1 +
+ bits/bib/Fields.key                                |    1 +
+ bits/bib/Fields.keywords                           |    1 +
+ bits/bib/Fields.month                              |    1 +
+ bits/bib/Fields.note                               |    1 +
+ bits/bib/Fields.number                             |    1 +
+ bits/bib/Fields.organization                       |    1 +
+ bits/bib/Fields.pages                              |    1 +
+ bits/bib/Fields.publisher                          |    1 +
+ bits/bib/Fields.school                             |    1 +
+ bits/bib/Fields.series                             |    1 +
+ bits/bib/Fields.standardEntries                    |   10 +
+ bits/bib/Fields.title                              |    1 +
+ bits/bib/Fields.type                               |    1 +
+ bits/bib/Fields.url                                |    1 +
+ bits/bib/Fields.volume                             |    1 +
+ bits/bib/Fields.year                               |    1 +
+ bits/css/background                                |    1 +
+ bits/css/border-bottom                             |    1 +
+ bits/css/border-left                               |    1 +
+ bits/css/border-right                              |    1 +
+ bits/css/border-spacing                            |    1 +
+ bits/css/border-top                                |    1 +
+ bits/css/entry                                     |    4 +
+ bits/css/font-size                                 |    1 +
+ bits/css/text-align                                |    1 +
+ bits/general/%3C%3C                                |    1 +
+ bits/general/date                                  |    1 +
+ bits/general/header                                |    9 +
+ bits/general/localvariables                        |    6 +
+ bits/general/test_tSkeleton                        |   43 +
+ bits/general/time                                  |    1 +
+ bits/general/vi                                    |    1 +
+ bits/html/&a.&href                                 |    1 +
+ bits/html/&attribute.action=                       |    1 +
+ bits/html/&attribute.method=                       |    1 +
+ bits/html/&attribute.name=                         |    1 +
+ bits/html/&form.%3C&form                           |   10 +
+ bits/html/&form.&checkbox                          |    1 +
+ bits/html/&form.&clickbutton                       |    4 +
+ bits/html/&form.&option                            |    1 +
+ bits/html/&form.&radio                             |    1 +
+ bits/html/&form.&reset                             |    1 +
+ bits/html/&form.&select                            |   14 +
+ bits/html/&form.&submit                            |    1 +
+ bits/html/&form.&text                              |    1 +
+ bits/html/&head.html&401                           |    3 +
+ bits/html/tag                                      |    7 +
+ bits/html.txt                                      |    5 +
+ bits/php/@.@&param                                 |    1 +
+ bits/php/@.@&return                                |    1 +
+ bits/php/case                                      |    3 +
+ bits/php/class                                     |   19 +
+ bits/php/define                                    |    1 +
+ bits/php/dowhile                                   |    3 +
+ bits/php/elseif                                    |    1 +
+ bits/php/for                                       |   12 +
+ bits/php/for-                                      |   12 +
+ bits/php/foreach                                   |    3 +
+ bits/php/foreach_assoc                             |    3 +
+ bits/php/function                                  |    6 +
+ bits/php/ifelse                                    |    5 +
+ bits/php/php                                       |    1 +
+ bits/php/preg_replace                              |    1 +
+ bits/php/switch                                    |    7 +
+ bits/php/var                                       |    6 +
+ bits/php/var_export                                |    1 +
+ bits/php/while                                     |    3 +
+ bits/r/break                                       |    1 +
+ bits/r/function                                    |    4 +
+ bits/r/section                                     |    4 +
+ bits/ruby/&begin.&begin                            |    3 +
+ bits/ruby/&begin.begin_&ensure                     |    4 +
+ bits/ruby/&begin.begin_&rescue                     |    5 +
+ bits/ruby/&begin.begin_&while                      |    3 +
+ bits/ruby/case                                     |    7 +
+ bits/ruby/catch                                    |    3 +
+ bits/ruby/class                                    |   12 +
+ bits/ruby/collect.&collect                         |    1 +
+ bits/ruby/collect.collect_&do                      |    3 +
+ bits/ruby/def                                      |    3 +
+ bits/ruby/each.&each                               |    1 +
+ bits/ruby/each.each_&do                            |    3 +
+ bits/ruby/ensure                                   |    2 +
+ bits/ruby/for                                      |    3 +
+ bits/ruby/if                                       |  Bin 0 -> 99 bytes
+ bits/ruby/module.module                            |    5 +
+ bits/ruby/module.wrapper                           |    1 +
+ bits/ruby/rescue                                   |    2 +
+ bits/ruby/shebang                                  |    1 +
+ bits/ruby/until                                    |    3 +
+ bits/ruby/when                                     |    2 +
+ bits/ruby/while                                    |    3 +
+ bits/sh/$%28                                       |    1 +
+ bits/sh/$%7B.$%7B                                  |    1 +
+ bits/sh/$%7B.var_default                           |    1 +
+ bits/sh/$%7B.var_length                            |    1 +
+ bits/sh/$%7B.var_substitute                        |    1 +
+ bits/sh/$%7B.var_substitute_all                    |    1 +
+ bits/sh/$%7B.var_substring                         |    1 +
+ bits/sh/%28%28                                     |    1 +
+ bits/sh/[                                          |    1 +
+ bits/sh/[[                                         |    1 +
+ bits/sh/alias                                      |    2 +
+ bits/sh/case                                       |    9 +
+ bits/sh/for                                        |    4 +
+ bits/sh/for%28%28                                  |    4 +
+ bits/sh/function                                   |    4 +
+ bits/sh/if                                         |    4 +
+ bits/sh/if[                                        |    4 +
+ bits/sh/local                                      |    2 +
+ bits/sh/until                                      |    4 +
+ bits/sh/until[                                     |    4 +
+ bits/sh/while                                      |    4 +
+ bits/sh/while[                                     |    4 +
+ bits/tex/%5Cfootnote                               |    3 +
+ bits/tex/%5Citem                                   |    1 +
+ bits/tex/%5Citem[]                                 |    1 +
+ bits/tex/%5Clabel                                  |    1 +
+ bits/tex/%5Cmulticolumn                            |    1 +
+ bits/tex/%5Cparagraph                              |    3 +
+ bits/tex/%5Csection                                |    3 +
+ bits/tex/%5Csub&paragraph                          |    3 +
+ bits/tex/%5Csubsection                             |    3 +
+ bits/tex/%5Csubsubsection                          |    3 +
+ bits/tex/%5Cusepackage                             |    1 +
+ bits/tex/&begin.%5C&begin                          |   10 +
+ bits/tex/&begin.&description                       |    4 +
+ bits/tex/&begin.&enumerate                         |    4 +
+ bits/tex/&begin.&figure                            |    5 +
+ bits/tex/&begin.&itemize                           |    4 +
+ bits/tex/&begin.&quotation                         |    4 +
+ bits/tex/&begin.&quote                             |    4 +
+ bits/tex/&begin.&table                             |    5 +
+ bits/tex/&begin.&verbatim                          |    4 +
+ bits/tex/&begin.tabu&lar                           |   16 +
+ bits/tskeleton/tskel_after                         |    5 +
+ bits/tskeleton/tskel_before                        |    5 +
+ bits/tskeleton/tskel_here_after                    |    5 +
+ bits/tskeleton/tskel_here_before                   |    5 +
+ bits/viki/Command.%23&ABBREV                       |    2 +
+ bits/viki/Command.%23&AUTHOR                       |    2 +
+ bits/viki/Command.%23&AUTHORNOTE                   |    2 +
+ bits/viki/Command.%23&AUTOIDX                      |    2 +
+ bits/viki/Command.%23&BIB                          |    2 +
+ bits/viki/Command.%23&CAPTION                      |    2 +
+ bits/viki/Command.%23&DONTIDX                      |    2 +
+ bits/viki/Command.%23&ELSE                         |    2 +
+ bits/viki/Command.%23&ELSEIF                       |    2 +
+ bits/viki/Command.%23&GET                          |    2 +
+ bits/viki/Command.%23&IDX                          |    2 +
+ bits/viki/Command.%23&IF                           |    4 +
+ bits/viki/Command.%23&IMG                          |    2 +
+ bits/viki/Command.%23&INCLUDE                      |    2 +
+ bits/viki/Command.%23&LANG                         |    2 +
+ bits/viki/Command.%23&LIST                         |    8 +
+ bits/viki/Command.%23&MAKEBIB                      |    2 +
+ bits/viki/Command.%23&MAKETITLE                    |    2 +
+ bits/viki/Command.%23&MODULE                       |    2 +
+ bits/viki/Command.%23&NOIDX                        |    2 +
+ bits/viki/Command.%23&OPT                          |    2 +
+ bits/viki/Command.%23&PAGE                         |    2 +
+ bits/viki/Command.%23&SET                          |    2 +
+ bits/viki/Command.%23&TABLE                        |    2 +
+ bits/viki/Command.%23&TITLE                        |    2 +
+ bits/viki/Command.%23&VAL                          |    2 +
+ bits/viki/Command.%23&VAR                          |    2 +
+ bits/viki/Command.%23&WITH                         |    2 +
+ bits/viki/Command.%23&XVAL                         |    2 +
+ bits/viki/Element.Break                            |    1 +
+ bits/viki/Heading.h&1                              |    2 +
+ bits/viki/Heading.h&2                              |    2 +
+ bits/viki/Heading.h&3                              |    2 +
+ bits/viki/Heading.h&4                              |    2 +
+ bits/viki/Heading.h&5                              |    2 +
+ bits/viki/Heading.h&6                              |    2 +
+ bits/viki/Heading.h&7                              |    2 +
+ bits/viki/Heading.h&8                              |    2 +
+ bits/viki/Heading.h&9                              |    2 +
+ bits/viki/List.Description                         |    1 +
+ bits/viki/List.Ordered                             |    1 +
+ bits/viki/List.OrderedAlpha                        |    1 +
+ bits/viki/List.Unordered                           |    1 +
+ bits/viki/Macro.%7Banchor                          |    1 +
+ bits/viki/Macro.%7Battrib                          |    1 +
+ bits/viki/Macro.%7Bcite                            |    1 +
+ bits/viki/Macro.%7Bcmt                             |    1 +
+ bits/viki/Macro.%7Bcode                            |    1 +
+ bits/viki/Macro.%7Bdate                            |    7 +
+ bits/viki/Macro.%7Bdoc                             |    1 +
+ bits/viki/Macro.%7Bem                              |    1 +
+ bits/viki/Macro.%7Bfn                              |    1 +
+ bits/viki/Macro.%7Bget                             |    1 +
+ bits/viki/Macro.%7Bidx                             |    1 +
+ bits/viki/Macro.%7Bimg                             |    1 +
+ bits/viki/Macro.%7Bins                             |    1 +
+ bits/viki/Macro.%7Bitem                            |    1 +
+ bits/viki/Macro.%7Blist                            |    7 +
+ bits/viki/Macro.%7Bltx                             |    1 +
+ bits/viki/Macro.%7Bmath                            |    1 +
+ bits/viki/Macro.%7Bnl                              |    1 +
+ bits/viki/Macro.%7Bopt                             |    1 +
+ bits/viki/Macro.%7Bpagenumber                      |    1 +
+ bits/viki/Macro.%7Bplain                           |    1 +
+ bits/viki/Macro.%7Bref                             |    1 +
+ bits/viki/Macro.%7Bruby                            |    1 +
+ bits/viki/Macro.%7Bstacked                         |    1 +
+ bits/viki/Macro.%7Bsub                             |    1 +
+ bits/viki/Macro.%7Bsuper                           |    1 +
+ bits/viki/Macro.%7Bterm                            |    1 +
+ bits/viki/Macro.%7Btext                            |    1 +
+ bits/viki/Macro.%7Bval                             |    1 +
+ bits/viki/Macro.%7Bxval                            |    1 +
+ bits/viki/Note.Attention                           |    1 +
+ bits/viki/Note.Discuss                             |    1 +
+ bits/viki/Note.Elaborate                           |    1 +
+ bits/viki/Note.Here                                |    1 +
+ bits/viki/Option.!=                                |    1 +
+ bits/viki/Option.==                                |    1 +
+ bits/viki/Option.context=                          |    7 +
+ bits/viki/Option.fmt!=                             |    1 +
+ bits/viki/Option.fmt=                              |    1 +
+ bits/viki/Option.fmt==                             |    1 +
+ bits/viki/Option.id=                               |    1 +
+ bits/viki/Option.if!=                              |    1 +
+ bits/viki/Option.if==                              |    1 +
+ bits/viki/Region.%23&Abstract                      |    4 +
+ bits/viki/Region.%23&Code                          |    4 +
+ bits/viki/Region.%23&Footer                        |    4 +
+ bits/viki/Region.%23&Footnote                      |    4 +
+ bits/viki/Region.%23&Header                        |    4 +
+ bits/viki/Region.%23&Img                           |    4 +
+ bits/viki/Region.%23&Ltx                           |    4 +
+ bits/viki/Region.%23&Native                        |    4 +
+ bits/viki/Region.%23&Quote                         |    4 +
+ bits/viki/Region.%23&Ruby                          |    4 +
+ bits/viki/Region.%23&Set                           |    4 +
+ bits/viki/Region.%23&Verb                          |    4 +
+ bits/viki/Region.%23Def&Element                    |    4 +
+ bits/viki/Region.%23Def&Particle                   |    4 +
+ bits/viki/Style.emphasize                          |    1 +
+ bits/viki/Style.typewriter                         |    1 +
+ bits/viki/Symbol.%3C-                              |    1 +
+ bits/viki/Symbol.%3C-%3E                           |    1 +
+ bits/viki/Symbol.%3C=                              |    1 +
+ bits/viki/Symbol.%3C=%3E                           |    1 +
+ bits/viki/Symbol.%3C~%3E                           |    1 +
+ bits/viki/Symbol.%7E%7E                            |    1 +
+ bits/viki/Symbol.-%3E                              |    1 +
+ bits/viki/Symbol.=%3E                              |    1 +
+ bits/viki/Symbol.~%3E                              |    1 +
+ bits/viki/Wiki.Extended                            |    1 +
+ bits/viki/Wiki.ExtendedLiteral                     |    1 +
+ bits/viki/Wiki.ExtendedName                        |    1 +
+ bits/viki/Wiki.ExtendedNameLiteral                 |    1 +
+ bits/viki/Wiki.Quoted                              |    1 +
+ bits/viki/table                                    |   13 +
+ bits/vim/TAB                                       |    3 +
+ bits/vim/function                                  |    4 +
+ bits/vim/if                                        |  Bin 0 -> 112 bytes
+ bits/vim/ifelse                                    |  Bin 0 -> 126 bytes
+ bits/vim/try                                       |    6 +
+ bits/vim/while                                     |    4 +
+ bits/websec/entry                                  |    4 +
+ doc/tSkeleton.txt                                  |  323 ----
+ map/html                                           |    1 +
+ map/viki                                           |   50 +
+ plugin/EncodeURL.vim                               |   72 -
+ plugin/tSkeleton.vim                               | 1788 --------------------
+ prefab/batch.bat                                   |   11 +
+ prefab/latex.tex                                   |   23 +
+ prefab/php.class.php                               |   27 +
+ prefab/php.inc.php                                 |   17 +
+ prefab/php.php                                     |   39 +
+ prefab/plugin.vim                                  |   15 +
+ prefab/ruby.rb                                     |   25 +
+ prefab/shell.sh                                    |    8 +
+ prefab/text.txt                                    |    7 +
+ syntax/tskeleton.vim                               |   46 -
+ tSkeleton/etc/tSkeleton.lst                        |  314 ----
+ tSkeleton/skeletons/bits.samples/bib/@article      |   20 -
+ tSkeleton/skeletons/bits.samples/bib/@book         |   24 -
+ .../skeletons/bits.samples/bib/@book_collection    |   22 -
+ tSkeleton/skeletons/bits.samples/bib/@booklet      |   18 -
+ tSkeleton/skeletons/bits.samples/bib/@conference   |   16 -
+ tSkeleton/skeletons/bits.samples/bib/@inbook       |   25 -
+ tSkeleton/skeletons/bits.samples/bib/@incollection |   16 -
+ .../skeletons/bits.samples/bib/@inproceedings      |   16 -
+ tSkeleton/skeletons/bits.samples/bib/@manual       |   19 -
+ tSkeleton/skeletons/bits.samples/bib/@masterthesis |   19 -
+ tSkeleton/skeletons/bits.samples/bib/@misc         |   17 -
+ tSkeleton/skeletons/bits.samples/bib/@phdthesis    |   19 -
+ tSkeleton/skeletons/bits.samples/bib/@proceedings  |   22 -
+ tSkeleton/skeletons/bits.samples/bib/@techreport   |   20 -
+ tSkeleton/skeletons/bits.samples/bib/@unpublished  |   17 -
+ .../skeletons/bits.samples/bib/Fields.abstract     |    1 -
+ .../skeletons/bits.samples/bib/Fields.address      |    1 -
+ tSkeleton/skeletons/bits.samples/bib/Fields.annote |    1 -
+ tSkeleton/skeletons/bits.samples/bib/Fields.author |    1 -
+ .../skeletons/bits.samples/bib/Fields.booktitle    |    1 -
+ .../skeletons/bits.samples/bib/Fields.chapter      |    1 -
+ .../skeletons/bits.samples/bib/Fields.crossref     |    1 -
+ .../skeletons/bits.samples/bib/Fields.edition      |    1 -
+ tSkeleton/skeletons/bits.samples/bib/Fields.editor |    1 -
+ .../skeletons/bits.samples/bib/Fields.howpublished |    1 -
+ .../skeletons/bits.samples/bib/Fields.institution  |    1 -
+ .../skeletons/bits.samples/bib/Fields.journal      |    1 -
+ tSkeleton/skeletons/bits.samples/bib/Fields.key    |    1 -
+ .../skeletons/bits.samples/bib/Fields.keywords     |    1 -
+ tSkeleton/skeletons/bits.samples/bib/Fields.month  |    1 -
+ tSkeleton/skeletons/bits.samples/bib/Fields.note   |    1 -
+ tSkeleton/skeletons/bits.samples/bib/Fields.number |    1 -
+ .../skeletons/bits.samples/bib/Fields.organization |    1 -
+ tSkeleton/skeletons/bits.samples/bib/Fields.pages  |    1 -
+ .../skeletons/bits.samples/bib/Fields.publisher    |    1 -
+ tSkeleton/skeletons/bits.samples/bib/Fields.school |    1 -
+ tSkeleton/skeletons/bits.samples/bib/Fields.series |    1 -
+ .../bits.samples/bib/Fields.standardEntries        |    8 -
+ tSkeleton/skeletons/bits.samples/bib/Fields.title  |    1 -
+ tSkeleton/skeletons/bits.samples/bib/Fields.type   |    1 -
+ tSkeleton/skeletons/bits.samples/bib/Fields.url    |    1 -
+ tSkeleton/skeletons/bits.samples/bib/Fields.volume |    1 -
+ tSkeleton/skeletons/bits.samples/bib/Fields.year   |    1 -
+ tSkeleton/skeletons/bits.samples/css/background    |    1 -
+ tSkeleton/skeletons/bits.samples/css/border-bottom |    1 -
+ tSkeleton/skeletons/bits.samples/css/border-left   |    1 -
+ tSkeleton/skeletons/bits.samples/css/border-right  |    1 -
+ .../skeletons/bits.samples/css/border-spacing      |    1 -
+ tSkeleton/skeletons/bits.samples/css/border-top    |    1 -
+ tSkeleton/skeletons/bits.samples/css/entry         |    4 -
+ tSkeleton/skeletons/bits.samples/css/font-size     |    1 -
+ tSkeleton/skeletons/bits.samples/css/text-align    |    1 -
+ tSkeleton/skeletons/bits.samples/general/%3C%3C    |    1 -
+ tSkeleton/skeletons/bits.samples/general/date      |    1 -
+ tSkeleton/skeletons/bits.samples/general/header    |    9 -
+ .../skeletons/bits.samples/general/localvariables  |    6 -
+ .../skeletons/bits.samples/general/test_tSkeleton  |   28 -
+ tSkeleton/skeletons/bits.samples/general/time      |    1 -
+ tSkeleton/skeletons/bits.samples/general/vi        |    1 -
+ tSkeleton/skeletons/bits.samples/html/&a.&href     |    1 -
+ .../skeletons/bits.samples/html/&attribute.action= |    1 -
+ .../skeletons/bits.samples/html/&attribute.method= |    1 -
+ .../skeletons/bits.samples/html/&attribute.name=   |    1 -
+ .../skeletons/bits.samples/html/&form.%3C&form     |   10 -
+ .../skeletons/bits.samples/html/&form.&checkbox    |    1 -
+ .../skeletons/bits.samples/html/&form.&clickbutton |    4 -
+ .../skeletons/bits.samples/html/&form.&option      |    1 -
+ tSkeleton/skeletons/bits.samples/html/&form.&radio |    1 -
+ tSkeleton/skeletons/bits.samples/html/&form.&reset |    1 -
+ .../skeletons/bits.samples/html/&form.&select      |   14 -
+ .../skeletons/bits.samples/html/&form.&submit      |    1 -
+ tSkeleton/skeletons/bits.samples/html/&form.&text  |    1 -
+ .../skeletons/bits.samples/html/&head.html&401     |    3 -
+ tSkeleton/skeletons/bits.samples/html/tag          |    7 -
+ tSkeleton/skeletons/bits.samples/html.txt          |    4 -
+ tSkeleton/skeletons/bits.samples/php/@.@&param     |    1 -
+ tSkeleton/skeletons/bits.samples/php/@.@&return    |    1 -
+ tSkeleton/skeletons/bits.samples/php/case          |    3 -
+ tSkeleton/skeletons/bits.samples/php/class         |   19 -
+ tSkeleton/skeletons/bits.samples/php/define        |    1 -
+ tSkeleton/skeletons/bits.samples/php/dowhile       |    3 -
+ tSkeleton/skeletons/bits.samples/php/elseif        |    1 -
+ tSkeleton/skeletons/bits.samples/php/for           |   12 -
+ tSkeleton/skeletons/bits.samples/php/for-          |   12 -
+ tSkeleton/skeletons/bits.samples/php/foreach       |    3 -
+ tSkeleton/skeletons/bits.samples/php/foreach_assoc |    3 -
+ tSkeleton/skeletons/bits.samples/php/function      |    6 -
+ tSkeleton/skeletons/bits.samples/php/ifelse        |    5 -
+ tSkeleton/skeletons/bits.samples/php/php           |    1 -
+ tSkeleton/skeletons/bits.samples/php/preg_replace  |    1 -
+ tSkeleton/skeletons/bits.samples/php/switch        |    7 -
+ tSkeleton/skeletons/bits.samples/php/var           |    6 -
+ tSkeleton/skeletons/bits.samples/php/var_export    |    1 -
+ tSkeleton/skeletons/bits.samples/php/while         |    3 -
+ tSkeleton/skeletons/bits.samples/r/function        |    4 -
+ .../skeletons/bits.samples/ruby/&begin.&begin      |    3 -
+ .../bits.samples/ruby/&begin.begin_&ensure         |    4 -
+ .../bits.samples/ruby/&begin.begin_&rescue         |    5 -
+ .../bits.samples/ruby/&begin.begin_&while          |    3 -
+ tSkeleton/skeletons/bits.samples/ruby/case         |    7 -
+ tSkeleton/skeletons/bits.samples/ruby/catch        |    3 -
+ tSkeleton/skeletons/bits.samples/ruby/class        |   12 -
+ .../skeletons/bits.samples/ruby/collect.&collect   |    1 -
+ .../bits.samples/ruby/collect.collect_&do          |    3 -
+ tSkeleton/skeletons/bits.samples/ruby/def          |    3 -
+ tSkeleton/skeletons/bits.samples/ruby/each.&each   |    1 -
+ .../skeletons/bits.samples/ruby/each.each_&do      |    3 -
+ tSkeleton/skeletons/bits.samples/ruby/ensure       |    2 -
+ tSkeleton/skeletons/bits.samples/ruby/for          |    3 -
+ tSkeleton/skeletons/bits.samples/ruby/if           |  Bin 99 -> 0 bytes
+ .../skeletons/bits.samples/ruby/module.module      |    5 -
+ .../skeletons/bits.samples/ruby/module.wrapper     |    1 -
+ tSkeleton/skeletons/bits.samples/ruby/rescue       |    2 -
+ tSkeleton/skeletons/bits.samples/ruby/shebang      |    1 -
+ tSkeleton/skeletons/bits.samples/ruby/until        |    3 -
+ tSkeleton/skeletons/bits.samples/ruby/when         |    2 -
+ tSkeleton/skeletons/bits.samples/ruby/while        |    3 -
+ tSkeleton/skeletons/bits.samples/sh/$%28           |    1 -
+ tSkeleton/skeletons/bits.samples/sh/$%7B.$%7B      |    1 -
+ .../skeletons/bits.samples/sh/$%7B.var_default     |    1 -
+ .../skeletons/bits.samples/sh/$%7B.var_length      |    1 -
+ .../skeletons/bits.samples/sh/$%7B.var_substitute  |    1 -
+ .../bits.samples/sh/$%7B.var_substitute_all        |    1 -
+ .../skeletons/bits.samples/sh/$%7B.var_substring   |    1 -
+ tSkeleton/skeletons/bits.samples/sh/%28%28         |    1 -
+ tSkeleton/skeletons/bits.samples/sh/[              |    1 -
+ tSkeleton/skeletons/bits.samples/sh/[[             |    1 -
+ tSkeleton/skeletons/bits.samples/sh/alias          |    2 -
+ tSkeleton/skeletons/bits.samples/sh/case           |    9 -
+ tSkeleton/skeletons/bits.samples/sh/for            |    4 -
+ tSkeleton/skeletons/bits.samples/sh/for%28%28      |    4 -
+ tSkeleton/skeletons/bits.samples/sh/function       |    4 -
+ tSkeleton/skeletons/bits.samples/sh/if             |    4 -
+ tSkeleton/skeletons/bits.samples/sh/if[            |    4 -
+ tSkeleton/skeletons/bits.samples/sh/local          |    2 -
+ tSkeleton/skeletons/bits.samples/sh/until          |    4 -
+ tSkeleton/skeletons/bits.samples/sh/until[         |    4 -
+ tSkeleton/skeletons/bits.samples/sh/while          |    4 -
+ tSkeleton/skeletons/bits.samples/sh/while[         |    4 -
+ tSkeleton/skeletons/bits.samples/tex/%5Cfootnote   |    3 -
+ tSkeleton/skeletons/bits.samples/tex/%5Citem       |    1 -
+ tSkeleton/skeletons/bits.samples/tex/%5Citem[]     |    1 -
+ tSkeleton/skeletons/bits.samples/tex/%5Clabel      |    1 -
+ .../skeletons/bits.samples/tex/%5Cmulticolumn      |    1 -
+ tSkeleton/skeletons/bits.samples/tex/%5Cparagraph  |    3 -
+ tSkeleton/skeletons/bits.samples/tex/%5Csection    |    3 -
+ .../skeletons/bits.samples/tex/%5Csub&paragraph    |    3 -
+ tSkeleton/skeletons/bits.samples/tex/%5Csubsection |    3 -
+ .../skeletons/bits.samples/tex/%5Csubsubsection    |    3 -
+ tSkeleton/skeletons/bits.samples/tex/%5Cusepackage |    1 -
+ .../skeletons/bits.samples/tex/&begin.%5C&begin    |   10 -
+ .../skeletons/bits.samples/tex/&begin.&description |    4 -
+ .../skeletons/bits.samples/tex/&begin.&enumerate   |    4 -
+ .../skeletons/bits.samples/tex/&begin.&figure      |    5 -
+ .../skeletons/bits.samples/tex/&begin.&itemize     |    4 -
+ .../skeletons/bits.samples/tex/&begin.&quotation   |    4 -
+ tSkeleton/skeletons/bits.samples/tex/&begin.&quote |    4 -
+ tSkeleton/skeletons/bits.samples/tex/&begin.&table |    5 -
+ .../skeletons/bits.samples/tex/&begin.&verbatim    |    4 -
+ .../skeletons/bits.samples/tex/&begin.tabu&lar     |   16 -
+ .../skeletons/bits.samples/tskeleton/tskel_after   |    5 -
+ .../skeletons/bits.samples/tskeleton/tskel_before  |    5 -
+ .../bits.samples/tskeleton/tskel_here_after        |    5 -
+ .../bits.samples/tskeleton/tskel_here_before       |    5 -
+ .../skeletons/bits.samples/viki/Command.%23&ABBREV |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&AUTHOR |    2 -
+ .../bits.samples/viki/Command.%23&AUTHORNOTE       |    2 -
+ .../bits.samples/viki/Command.%23&AUTOIDX          |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&BIB    |    2 -
+ .../bits.samples/viki/Command.%23&CAPTION          |    2 -
+ .../bits.samples/viki/Command.%23&DONTIDX          |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&ELSE   |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&ELSEIF |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&GET    |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&IDX    |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&IF     |    4 -
+ .../skeletons/bits.samples/viki/Command.%23&IMG    |    2 -
+ .../bits.samples/viki/Command.%23&INCLUDE          |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&LANG   |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&LIST   |    8 -
+ .../bits.samples/viki/Command.%23&MAKEBIB          |    2 -
+ .../bits.samples/viki/Command.%23&MAKETITLE        |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&MODULE |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&NOIDX  |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&OPT    |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&PAGE   |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&SET    |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&TABLE  |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&TITLE  |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&VAL    |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&VAR    |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&WITH   |    2 -
+ .../skeletons/bits.samples/viki/Command.%23&XVAL   |    2 -
+ .../skeletons/bits.samples/viki/Element.Break      |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&1  |    2 -
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&2  |    2 -
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&3  |    2 -
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&4  |    2 -
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&5  |    2 -
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&6  |    2 -
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&7  |    2 -
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&8  |    2 -
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&9  |    2 -
+ .../skeletons/bits.samples/viki/List.Description   |    1 -
+ tSkeleton/skeletons/bits.samples/viki/List.Ordered |    1 -
+ .../skeletons/bits.samples/viki/List.OrderedAlpha  |    1 -
+ .../skeletons/bits.samples/viki/List.Unordered     |    1 -
+ .../skeletons/bits.samples/viki/Macro.%7Banchor    |    1 -
+ .../skeletons/bits.samples/viki/Macro.%7Battrib    |    1 -
+ .../skeletons/bits.samples/viki/Macro.%7Bcite      |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bcmt |    1 -
+ .../skeletons/bits.samples/viki/Macro.%7Bcode      |    1 -
+ .../skeletons/bits.samples/viki/Macro.%7Bdate      |    7 -
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bdoc |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bem  |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bfn  |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bget |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bidx |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bimg |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bins |    1 -
+ .../skeletons/bits.samples/viki/Macro.%7Bitem      |    1 -
+ .../skeletons/bits.samples/viki/Macro.%7Blist      |    7 -
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bltx |    1 -
+ .../skeletons/bits.samples/viki/Macro.%7Bmath      |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bnl  |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bopt |    1 -
+ .../bits.samples/viki/Macro.%7Bpagenumber          |    1 -
+ .../skeletons/bits.samples/viki/Macro.%7Bplain     |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bref |    1 -
+ .../skeletons/bits.samples/viki/Macro.%7Bruby      |    1 -
+ .../skeletons/bits.samples/viki/Macro.%7Bstacked   |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bsub |    1 -
+ .../skeletons/bits.samples/viki/Macro.%7Bsuper     |    1 -
+ .../skeletons/bits.samples/viki/Macro.%7Bterm      |    1 -
+ .../skeletons/bits.samples/viki/Macro.%7Btext      |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bval |    1 -
+ .../skeletons/bits.samples/viki/Macro.%7Bxval      |    1 -
+ .../skeletons/bits.samples/viki/Note.Attention     |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Note.Discuss |    1 -
+ .../skeletons/bits.samples/viki/Note.Elaborate     |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Note.Here    |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Option.!=    |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Option.==    |    1 -
+ .../skeletons/bits.samples/viki/Option.context=    |    7 -
+ tSkeleton/skeletons/bits.samples/viki/Option.fmt!= |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Option.fmt=  |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Option.fmt== |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Option.id=   |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Option.if!=  |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Option.if==  |    1 -
+ .../bits.samples/viki/Region.%23&Abstract          |    4 -
+ .../skeletons/bits.samples/viki/Region.%23&Code    |    4 -
+ .../skeletons/bits.samples/viki/Region.%23&Footer  |    4 -
+ .../bits.samples/viki/Region.%23&Footnote          |    4 -
+ .../skeletons/bits.samples/viki/Region.%23&Header  |    4 -
+ .../skeletons/bits.samples/viki/Region.%23&Img     |    4 -
+ .../skeletons/bits.samples/viki/Region.%23&Ltx     |    4 -
+ .../skeletons/bits.samples/viki/Region.%23&Native  |    4 -
+ .../skeletons/bits.samples/viki/Region.%23&Quote   |    4 -
+ .../skeletons/bits.samples/viki/Region.%23&Ruby    |    4 -
+ .../skeletons/bits.samples/viki/Region.%23&Set     |    4 -
+ .../skeletons/bits.samples/viki/Region.%23&Verb    |    4 -
+ .../bits.samples/viki/Region.%23Def&Element        |    4 -
+ .../bits.samples/viki/Region.%23Def&Particle       |    4 -
+ .../skeletons/bits.samples/viki/Style.emphasize    |    1 -
+ .../skeletons/bits.samples/viki/Style.typewriter   |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Symbol.%3C-  |    1 -
+ .../skeletons/bits.samples/viki/Symbol.%3C-%3E     |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Symbol.%3C=  |    1 -
+ .../skeletons/bits.samples/viki/Symbol.%3C=%3E     |    1 -
+ .../skeletons/bits.samples/viki/Symbol.%3C~%3E     |    1 -
+ .../skeletons/bits.samples/viki/Symbol.%7E%7E      |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Symbol.-%3E  |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Symbol.=%3E  |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Symbol.~%3E  |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Vim.bibref   |    1 -
+ .../skeletons/bits.samples/viki/Vim.disableType    |    1 -
+ .../bits.samples/viki/Vim.noCamelCaseNames         |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Vim.title    |    5 -
+ .../skeletons/bits.samples/viki/Wiki.Extended      |    1 -
+ .../bits.samples/viki/Wiki.ExtendedLiteral         |    1 -
+ .../skeletons/bits.samples/viki/Wiki.ExtendedName  |    1 -
+ .../bits.samples/viki/Wiki.ExtendedNameLiteral     |    1 -
+ tSkeleton/skeletons/bits.samples/viki/Wiki.Quoted  |    1 -
+ tSkeleton/skeletons/bits.samples/viki/table        |   13 -
+ tSkeleton/skeletons/bits.samples/vim/function      |    4 -
+ tSkeleton/skeletons/bits.samples/vim/if            |  Bin 112 -> 0 bytes
+ tSkeleton/skeletons/bits.samples/vim/ifelse        |  Bin 126 -> 0 bytes
+ tSkeleton/skeletons/bits.samples/vim/try           |    6 -
+ tSkeleton/skeletons/bits.samples/vim/while         |    4 -
+ tSkeleton/skeletons/bits.samples/websec/entry      |    4 -
+ tSkeleton/skeletons/map.samples/html               |    1 -
+ tSkeleton/skeletons/map.samples/viki               |   50 -
+ tSkeleton/skeletons/prefab/batch.bat               |   11 -
+ tSkeleton/skeletons/prefab/latex.tex               |   23 -
+ tSkeleton/skeletons/prefab/php.class.php           |   27 -
+ tSkeleton/skeletons/prefab/php.inc.php             |   17 -
+ tSkeleton/skeletons/prefab/php.php                 |   39 -
+ tSkeleton/skeletons/prefab/plugin.vim              |   15 -
+ tSkeleton/skeletons/prefab/ruby.rb                 |   25 -
+ tSkeleton/skeletons/prefab/shell.sh                |    8 -
+ tSkeleton/skeletons/prefab/text.txt                |    7 -
+ 623 files changed, 1295 insertions(+), 3788 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3a)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Oct 3 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Support for current versions of genutils (> 2.0), really
+
+ plugin/tSkeleton.vim |  303 +++++++++++++++++++++++++++++---------------------
+ 1 files changed, 175 insertions(+), 128 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sat Sep 23 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Don't display query menu, when there is only one eligible bit
+    - EncodeURL.vim now correctly en/decoded urls
+    - UTF8 compatibility -- use col() instead of virtcol() (thanks to Elliot Shank)
+
+ plugin/EncodeURL.vim |   15 ++++++++++-----
+ plugin/tSkeleton.vim |   46 ++++++++++++++++++++++++++++++----------------
+ 2 files changed, 40 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed May 10 00:00:00 2006 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Don't accidentally remove torn off menus; rebuild the menu less often
+    - Maintain insert mode (don't switch back to normal mode) in <c-\><c-\> imap
+    - If no menu support is available, use the <SID>Query function to let the user select among eligible bits (see also g:tskelQueryType)
+    - Create a normal and an insert mode menu
+    - Fixed selection of eligible bits
+    - Ensure that g:tskelDir ends with a (back)slash
+    - Search for 'skeletons/' in &runtimepath & set g:tskelDir accordingly
+    - If a template is named "#.suffix", an autocmd is created automatically.
+    - Set g:tskelQueryType to 'popup' only if gui is win32 or gtk.
+    - Minor tweak for vim 7.0 compatibility
+
+ doc/tSkeleton.txt                                  |    5 +-
+ plugin/tSkeleton.vim                               |  552 +++++++++++++-------
+ tSkeleton/etc/tSkeleton.lst                        |   34 ++-
+ tSkeleton/skeletons/bits.samples/bib/@booklet      |   18 +
+ tSkeleton/skeletons/bits.samples/bib/@techreport   |    2 +-
+ .../skeletons/bits.samples/bib/Fields.booklet      |   18 -
+ tSkeleton/skeletons/bits.samples/general/%3C%3C    |    1 +
+ tSkeleton/skeletons/bits.samples/general/header    |    3 +-
+ .../skeletons/bits.samples/general/localvariables  |    2 +-
+ tSkeleton/skeletons/bits.samples/general/vi        |    1 +
+ tSkeleton/skeletons/bits.samples/r/function        |    4 +
+ tSkeleton/skeletons/bits.samples/sh/$%28           |    1 +
+ tSkeleton/skeletons/bits.samples/sh/$%7B.$%7B      |    1 +
+ .../skeletons/bits.samples/sh/$%7B.var_default     |    1 +
+ .../skeletons/bits.samples/sh/$%7B.var_length      |    1 +
+ .../skeletons/bits.samples/sh/$%7B.var_substitute  |    1 +
+ .../bits.samples/sh/$%7B.var_substitute_all        |    1 +
+ .../skeletons/bits.samples/sh/$%7B.var_substring   |    1 +
+ tSkeleton/skeletons/bits.samples/sh/%28%28         |    1 +
+ tSkeleton/skeletons/bits.samples/sh/[              |    1 +
+ tSkeleton/skeletons/bits.samples/sh/[[             |    1 +
+ tSkeleton/skeletons/bits.samples/sh/alias          |    2 +
+ tSkeleton/skeletons/bits.samples/sh/case           |    9 +
+ tSkeleton/skeletons/bits.samples/sh/for            |    4 +
+ tSkeleton/skeletons/bits.samples/sh/for%28%28      |    4 +
+ tSkeleton/skeletons/bits.samples/sh/function       |    4 +
+ tSkeleton/skeletons/bits.samples/sh/if             |    4 +
+ tSkeleton/skeletons/bits.samples/sh/if[            |    4 +
+ tSkeleton/skeletons/bits.samples/sh/local          |    2 +
+ tSkeleton/skeletons/bits.samples/sh/until          |    4 +
+ tSkeleton/skeletons/bits.samples/sh/until[         |    4 +
+ tSkeleton/skeletons/bits.samples/sh/while          |    4 +
+ tSkeleton/skeletons/bits.samples/sh/while[         |    4 +
+ tSkeleton/skeletons/bits.samples/tex/%5Clabel      |    1 +
+ .../skeletons/bits.samples/viki/Element.Break      |    2 +-
+ .../bits.samples/viki/Region.%23&Abstract          |    4 +
+ .../skeletons/bits.samples/viki/Region.%23&Footer  |    4 +
+ .../skeletons/bits.samples/viki/Region.%23&Ruby    |    4 +
+ .../skeletons/bits.samples/viki/Vim.exzerpt_header |    9 -
+ .../skeletons/bits.samples/viki/Vim.letter_head    |    8 -
+ .../skeletons/bits.samples/viki/Vim.noSimpleNames  |    1 -
+ tSkeleton/skeletons/map.samples/viki               |    4 +-
+ 42 files changed, 496 insertions(+), 240 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Thu Aug 11 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - You can define "groups of bits" (e.g. in php mode, all html bits are
+      available too)
+    - context sensitive expansions (only very few examples yet); this causes
+      some slowdown; if it is too slow, delete the files in .vim/skeletons/map/
+    - one-line "mini bits" defined in either
+      ./vim/skeletons/bits/{&filetype}.txt or in $PWD/.tskelmini
+    - Added a few LaTeX, HTML and many Viki skeleton bits
+    - Added EncodeURL.vim
+    - Hierarchical bits menu by calling a bit "SUBMENU.BITNAME" (the "namespace"
+      is flat though; the prefix has no effect on the bit name; see the "bib"
+      directory for an example)
+    - the bit file may have an ampersand (&) in their names to define the
+      keyboard shortcut
+    - Some special characters in bit names may be encoded as hex (%XX as in
+      URLs)
+    - Insert mode: map g:tskelMapInsert ('<c-\><c-\>', which happens to be the
+      <c-#> key on a German qwertz keyboard) to TSkeletonExpandBitUnderCursor()
+    - New <tskel:msg> tag in skeleton bits
+    - g:tskelKeyword_{&filetype} variable to define keywords by regexp (when
+      'iskeyword' isn't flexible enough)
+    - removed the g:tskelSimpleBits option
+    - Fixed some problems with the menu
+    - Less use of globpath()
+
+ doc/tSkeleton.txt                                  |  130 ++-
+ plugin/EncodeURL.vim                               |   67 ++
+ plugin/tSkeleton.vim                               | 1228 ++++++++++++++------
+ tSkeleton/etc/tSkeleton.lst                        |  262 ++++-
+ .../skeletons/bits.samples/bib/Fields.abstract     |    1 +
+ .../skeletons/bits.samples/bib/Fields.address      |    1 +
+ tSkeleton/skeletons/bits.samples/bib/Fields.annote |    1 +
+ tSkeleton/skeletons/bits.samples/bib/Fields.author |    1 +
+ .../skeletons/bits.samples/bib/Fields.booklet      |   18 +
+ .../skeletons/bits.samples/bib/Fields.booktitle    |    1 +
+ .../skeletons/bits.samples/bib/Fields.chapter      |    1 +
+ .../skeletons/bits.samples/bib/Fields.crossref     |    1 +
+ .../skeletons/bits.samples/bib/Fields.edition      |    1 +
+ tSkeleton/skeletons/bits.samples/bib/Fields.editor |    1 +
+ .../skeletons/bits.samples/bib/Fields.howpublished |    1 +
+ .../skeletons/bits.samples/bib/Fields.institution  |    1 +
+ .../skeletons/bits.samples/bib/Fields.journal      |    1 +
+ tSkeleton/skeletons/bits.samples/bib/Fields.key    |    1 +
+ .../skeletons/bits.samples/bib/Fields.keywords     |    1 +
+ tSkeleton/skeletons/bits.samples/bib/Fields.month  |    1 +
+ tSkeleton/skeletons/bits.samples/bib/Fields.note   |    1 +
+ tSkeleton/skeletons/bits.samples/bib/Fields.number |    1 +
+ .../skeletons/bits.samples/bib/Fields.organization |    1 +
+ tSkeleton/skeletons/bits.samples/bib/Fields.pages  |    1 +
+ .../skeletons/bits.samples/bib/Fields.publisher    |    1 +
+ tSkeleton/skeletons/bits.samples/bib/Fields.school |    1 +
+ tSkeleton/skeletons/bits.samples/bib/Fields.series |    1 +
+ .../bits.samples/bib/Fields.standardEntries        |    8 +
+ tSkeleton/skeletons/bits.samples/bib/Fields.title  |    1 +
+ tSkeleton/skeletons/bits.samples/bib/Fields.type   |    1 +
+ tSkeleton/skeletons/bits.samples/bib/Fields.url    |    1 +
+ tSkeleton/skeletons/bits.samples/bib/Fields.volume |    1 +
+ tSkeleton/skeletons/bits.samples/bib/Fields.year   |    1 +
+ tSkeleton/skeletons/bits.samples/bib/abstract      |    1 -
+ tSkeleton/skeletons/bits.samples/bib/address       |    1 -
+ tSkeleton/skeletons/bits.samples/bib/annote        |    1 -
+ tSkeleton/skeletons/bits.samples/bib/author        |    1 -
+ tSkeleton/skeletons/bits.samples/bib/booklet       |   18 -
+ tSkeleton/skeletons/bits.samples/bib/booktitle     |    1 -
+ tSkeleton/skeletons/bits.samples/bib/chapter       |    1 -
+ tSkeleton/skeletons/bits.samples/bib/crossref      |    1 -
+ tSkeleton/skeletons/bits.samples/bib/edition       |    1 -
+ tSkeleton/skeletons/bits.samples/bib/editor        |    1 -
+ tSkeleton/skeletons/bits.samples/bib/howpublished  |    1 -
+ tSkeleton/skeletons/bits.samples/bib/institution   |    1 -
+ tSkeleton/skeletons/bits.samples/bib/journal       |    1 -
+ tSkeleton/skeletons/bits.samples/bib/key           |    1 -
+ tSkeleton/skeletons/bits.samples/bib/keywords      |    1 -
+ tSkeleton/skeletons/bits.samples/bib/month         |    1 -
+ tSkeleton/skeletons/bits.samples/bib/note          |    1 -
+ tSkeleton/skeletons/bits.samples/bib/number        |    1 -
+ tSkeleton/skeletons/bits.samples/bib/organization  |    1 -
+ tSkeleton/skeletons/bits.samples/bib/pages         |    1 -
+ tSkeleton/skeletons/bits.samples/bib/publisher     |    1 -
+ tSkeleton/skeletons/bits.samples/bib/school        |    1 -
+ tSkeleton/skeletons/bits.samples/bib/series        |    1 -
+ .../skeletons/bits.samples/bib/standardEntries     |    8 -
+ tSkeleton/skeletons/bits.samples/bib/title         |    1 -
+ tSkeleton/skeletons/bits.samples/bib/type          |    1 -
+ tSkeleton/skeletons/bits.samples/bib/url           |    1 -
+ tSkeleton/skeletons/bits.samples/bib/volume        |    1 -
+ tSkeleton/skeletons/bits.samples/bib/year          |    1 -
+ tSkeleton/skeletons/bits.samples/html/&a.&href     |    1 +
+ .../skeletons/bits.samples/html/&attribute.action= |    1 +
+ .../skeletons/bits.samples/html/&attribute.method= |    1 +
+ .../skeletons/bits.samples/html/&attribute.name=   |    1 +
+ .../skeletons/bits.samples/html/&form.%3C&form     |   10 +
+ .../skeletons/bits.samples/html/&form.&checkbox    |    1 +
+ .../skeletons/bits.samples/html/&form.&clickbutton |    4 +
+ .../skeletons/bits.samples/html/&form.&option      |    1 +
+ tSkeleton/skeletons/bits.samples/html/&form.&radio |    1 +
+ tSkeleton/skeletons/bits.samples/html/&form.&reset |    1 +
+ .../skeletons/bits.samples/html/&form.&select      |   14 +
+ .../skeletons/bits.samples/html/&form.&submit      |    1 +
+ tSkeleton/skeletons/bits.samples/html/&form.&text  |    1 +
+ .../skeletons/bits.samples/html/&head.html&401     |    3 +
+ tSkeleton/skeletons/bits.samples/html/form         |    9 -
+ tSkeleton/skeletons/bits.samples/html/href         |    1 -
+ tSkeleton/skeletons/bits.samples/html/html401      |    3 -
+ tSkeleton/skeletons/bits.samples/html/tag          |    2 +-
+ tSkeleton/skeletons/bits.samples/html.txt          |    4 +
+ tSkeleton/skeletons/bits.samples/php/@.@&param     |    1 +
+ tSkeleton/skeletons/bits.samples/php/@.@&return    |    1 +
+ tSkeleton/skeletons/bits.samples/php/@param        |    1 -
+ tSkeleton/skeletons/bits.samples/php/@return       |    1 -
+ tSkeleton/skeletons/bits.samples/php/form          |    9 -
+ .../skeletons/bits.samples/ruby/&begin.&begin      |    3 +
+ .../bits.samples/ruby/&begin.begin_&ensure         |    4 +
+ .../bits.samples/ruby/&begin.begin_&rescue         |    5 +
+ .../bits.samples/ruby/&begin.begin_&while          |    3 +
+ tSkeleton/skeletons/bits.samples/ruby/begin        |    3 -
+ tSkeleton/skeletons/bits.samples/ruby/begin+       |    9 -
+ tSkeleton/skeletons/bits.samples/ruby/begin_ensure |    4 -
+ tSkeleton/skeletons/bits.samples/ruby/begin_rescue |    5 -
+ tSkeleton/skeletons/bits.samples/ruby/begin_while  |    3 -
+ tSkeleton/skeletons/bits.samples/ruby/collect      |    1 -
+ .../skeletons/bits.samples/ruby/collect.&collect   |    1 +
+ .../bits.samples/ruby/collect.collect_&do          |    3 +
+ tSkeleton/skeletons/bits.samples/ruby/collect_do   |    3 -
+ tSkeleton/skeletons/bits.samples/ruby/each         |    1 -
+ tSkeleton/skeletons/bits.samples/ruby/each.&each   |    1 +
+ .../skeletons/bits.samples/ruby/each.each_&do      |    3 +
+ tSkeleton/skeletons/bits.samples/ruby/each_do      |    3 -
+ tSkeleton/skeletons/bits.samples/ruby/module       |    5 -
+ .../skeletons/bits.samples/ruby/module.module      |    5 +
+ .../skeletons/bits.samples/ruby/module.wrapper     |    1 +
+ .../skeletons/bits.samples/ruby/module_wrapper     |    1 -
+ tSkeleton/skeletons/bits.samples/ruby/rescue       |    2 +-
+ tSkeleton/skeletons/bits.samples/tex/%5Cfootnote   |    3 +
+ tSkeleton/skeletons/bits.samples/tex/%5Citem       |    1 +
+ tSkeleton/skeletons/bits.samples/tex/%5Citem[]     |    1 +
+ .../skeletons/bits.samples/tex/%5Cmulticolumn      |    1 +
+ tSkeleton/skeletons/bits.samples/tex/%5Cparagraph  |    3 +
+ tSkeleton/skeletons/bits.samples/tex/%5Csection    |    3 +
+ .../skeletons/bits.samples/tex/%5Csub&paragraph    |    3 +
+ tSkeleton/skeletons/bits.samples/tex/%5Csubsection |    3 +
+ .../skeletons/bits.samples/tex/%5Csubsubsection    |    3 +
+ tSkeleton/skeletons/bits.samples/tex/%5Cusepackage |    1 +
+ .../skeletons/bits.samples/tex/&begin.%5C&begin    |   10 +
+ .../skeletons/bits.samples/tex/&begin.&description |    4 +
+ .../skeletons/bits.samples/tex/&begin.&enumerate   |    4 +
+ .../skeletons/bits.samples/tex/&begin.&figure      |    5 +
+ .../skeletons/bits.samples/tex/&begin.&itemize     |    4 +
+ .../skeletons/bits.samples/tex/&begin.&quotation   |    4 +
+ tSkeleton/skeletons/bits.samples/tex/&begin.&quote |    4 +
+ tSkeleton/skeletons/bits.samples/tex/&begin.&table |    5 +
+ .../skeletons/bits.samples/tex/&begin.&verbatim    |    4 +
+ .../skeletons/bits.samples/tex/&begin.tabu&lar     |   16 +
+ tSkeleton/skeletons/bits.samples/viki/#Code        |    4 -
+ tSkeleton/skeletons/bits.samples/viki/#Footnote    |    4 -
+ tSkeleton/skeletons/bits.samples/viki/#Header      |    4 -
+ tSkeleton/skeletons/bits.samples/viki/#Verb        |    4 -
+ .../skeletons/bits.samples/viki/Command.%23&ABBREV |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&AUTHOR |    2 +
+ .../bits.samples/viki/Command.%23&AUTHORNOTE       |    2 +
+ .../bits.samples/viki/Command.%23&AUTOIDX          |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&BIB    |    2 +
+ .../bits.samples/viki/Command.%23&CAPTION          |    2 +
+ .../bits.samples/viki/Command.%23&DONTIDX          |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&ELSE   |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&ELSEIF |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&GET    |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&IDX    |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&IF     |    4 +
+ .../skeletons/bits.samples/viki/Command.%23&IMG    |    2 +
+ .../bits.samples/viki/Command.%23&INCLUDE          |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&LANG   |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&LIST   |    8 +
+ .../bits.samples/viki/Command.%23&MAKEBIB          |    2 +
+ .../bits.samples/viki/Command.%23&MAKETITLE        |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&MODULE |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&NOIDX  |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&OPT    |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&PAGE   |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&SET    |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&TABLE  |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&TITLE  |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&VAL    |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&VAR    |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&WITH   |    2 +
+ .../skeletons/bits.samples/viki/Command.%23&XVAL   |    2 +
+ tSkeleton/skeletons/bits.samples/viki/Description  |    1 -
+ .../skeletons/bits.samples/viki/Element.Break      |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&1  |    2 +
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&2  |    2 +
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&3  |    2 +
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&4  |    2 +
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&5  |    2 +
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&6  |    2 +
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&7  |    2 +
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&8  |    2 +
+ tSkeleton/skeletons/bits.samples/viki/Heading.h&9  |    2 +
+ .../skeletons/bits.samples/viki/List.Description   |    1 +
+ tSkeleton/skeletons/bits.samples/viki/List.Ordered |    1 +
+ .../skeletons/bits.samples/viki/List.OrderedAlpha  |    1 +
+ .../skeletons/bits.samples/viki/List.Unordered     |    1 +
+ .../skeletons/bits.samples/viki/Macro.%7Banchor    |    1 +
+ .../skeletons/bits.samples/viki/Macro.%7Battrib    |    1 +
+ .../skeletons/bits.samples/viki/Macro.%7Bcite      |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bcmt |    1 +
+ .../skeletons/bits.samples/viki/Macro.%7Bcode      |    1 +
+ .../skeletons/bits.samples/viki/Macro.%7Bdate      |    7 +
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bdoc |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bem  |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bfn  |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bget |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bidx |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bimg |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bins |    1 +
+ .../skeletons/bits.samples/viki/Macro.%7Bitem      |    1 +
+ .../skeletons/bits.samples/viki/Macro.%7Blist      |    7 +
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bltx |    1 +
+ .../skeletons/bits.samples/viki/Macro.%7Bmath      |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bnl  |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bopt |    1 +
+ .../bits.samples/viki/Macro.%7Bpagenumber          |    1 +
+ .../skeletons/bits.samples/viki/Macro.%7Bplain     |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bref |    1 +
+ .../skeletons/bits.samples/viki/Macro.%7Bruby      |    1 +
+ .../skeletons/bits.samples/viki/Macro.%7Bstacked   |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bsub |    1 +
+ .../skeletons/bits.samples/viki/Macro.%7Bsuper     |    1 +
+ .../skeletons/bits.samples/viki/Macro.%7Bterm      |    1 +
+ .../skeletons/bits.samples/viki/Macro.%7Btext      |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Macro.%7Bval |    1 +
+ .../skeletons/bits.samples/viki/Macro.%7Bxval      |    1 +
+ .../skeletons/bits.samples/viki/Note.Attention     |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Note.Discuss |    1 +
+ .../skeletons/bits.samples/viki/Note.Elaborate     |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Note.Here    |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Option.!=    |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Option.==    |    1 +
+ .../skeletons/bits.samples/viki/Option.context=    |    7 +
+ tSkeleton/skeletons/bits.samples/viki/Option.fmt!= |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Option.fmt=  |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Option.fmt== |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Option.id=   |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Option.if!=  |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Option.if==  |    1 +
+ .../skeletons/bits.samples/viki/Region.%23&Code    |    4 +
+ .../bits.samples/viki/Region.%23&Footnote          |    4 +
+ .../skeletons/bits.samples/viki/Region.%23&Header  |    4 +
+ .../skeletons/bits.samples/viki/Region.%23&Img     |    4 +
+ .../skeletons/bits.samples/viki/Region.%23&Ltx     |    4 +
+ .../skeletons/bits.samples/viki/Region.%23&Native  |    4 +
+ .../skeletons/bits.samples/viki/Region.%23&Quote   |    4 +
+ .../skeletons/bits.samples/viki/Region.%23&Set     |    4 +
+ .../skeletons/bits.samples/viki/Region.%23&Verb    |    4 +
+ .../bits.samples/viki/Region.%23Def&Element        |    4 +
+ .../bits.samples/viki/Region.%23Def&Particle       |    4 +
+ .../skeletons/bits.samples/viki/Style.emphasize    |    1 +
+ .../skeletons/bits.samples/viki/Style.typewriter   |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Symbol.%3C-  |    1 +
+ .../skeletons/bits.samples/viki/Symbol.%3C-%3E     |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Symbol.%3C=  |    1 +
+ .../skeletons/bits.samples/viki/Symbol.%3C=%3E     |    1 +
+ .../skeletons/bits.samples/viki/Symbol.%3C~%3E     |    1 +
+ .../skeletons/bits.samples/viki/Symbol.%7E%7E      |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Symbol.-%3E  |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Symbol.=%3E  |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Symbol.~%3E  |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Vim.bibref   |    1 +
+ .../skeletons/bits.samples/viki/Vim.disableType    |    1 +
+ .../skeletons/bits.samples/viki/Vim.exzerpt_header |    9 +
+ .../skeletons/bits.samples/viki/Vim.letter_head    |    8 +
+ .../bits.samples/viki/Vim.noCamelCaseNames         |    1 +
+ .../skeletons/bits.samples/viki/Vim.noSimpleNames  |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Vim.title    |    5 +
+ .../skeletons/bits.samples/viki/Wiki.Extended      |    1 +
+ .../bits.samples/viki/Wiki.ExtendedLiteral         |    1 +
+ .../skeletons/bits.samples/viki/Wiki.ExtendedName  |    1 +
+ .../bits.samples/viki/Wiki.ExtendedNameLiteral     |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Wiki.Quoted  |    1 +
+ tSkeleton/skeletons/bits.samples/viki/bibref       |    1 -
+ tSkeleton/skeletons/bits.samples/viki/disableType  |    1 -
+ .../skeletons/bits.samples/viki/exzerpt_header     |    9 -
+ tSkeleton/skeletons/bits.samples/viki/fn           |    1 -
+ tSkeleton/skeletons/bits.samples/viki/table        |   13 +
+ tSkeleton/skeletons/bits.samples/vim/function      |    2 +-
+ tSkeleton/skeletons/bits.samples/vim/if            |  Bin 116 -> 112 bytes
+ tSkeleton/skeletons/bits.samples/vim/ifelse        |  Bin 130 -> 126 bytes
+ tSkeleton/skeletons/bits.samples/vim/try           |    2 +-
+ tSkeleton/skeletons/bits.samples/vim/while         |    2 +-
+ tSkeleton/skeletons/map.samples/html               |    1 +
+ tSkeleton/skeletons/map.samples/viki               |   50 +
+ 265 files changed, 1762 insertions(+), 590 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Thu Jul 28 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Menu of small skeleton "bits"
+    - TSkeletonLateExpand() (mapped to <Leader>#x)
+    - Disabled <Leader># mapping (use it as a prefix only)
+    - Fixed copy & paste error (loaded_genutils)
+    - g:tskelDir defaults to $HOME ."/vimfiles/skeletons/" on Win32
+    - Some speedup
+
+ doc/tSkeleton.txt                                  |   22 +-
+ plugin/tSkeleton.vim                               |  282 +++++++++++++++++---
+ syntax/tskeleton.vim                               |   20 +-
+ tSkeleton/etc/tSkeleton.lst                        |   77 ++++--
+ tSkeleton/skeletons/bits.samples/bib/@article      |   20 ++
+ tSkeleton/skeletons/bits.samples/bib/@book         |   24 ++
+ .../skeletons/bits.samples/bib/@book_collection    |   22 ++
+ tSkeleton/skeletons/bits.samples/bib/@conference   |   16 ++
+ tSkeleton/skeletons/bits.samples/bib/@inbook       |   25 ++
+ tSkeleton/skeletons/bits.samples/bib/@incollection |   16 ++
+ .../skeletons/bits.samples/bib/@inproceedings      |   16 ++
+ tSkeleton/skeletons/bits.samples/bib/@manual       |   19 ++
+ tSkeleton/skeletons/bits.samples/bib/@masterthesis |   19 ++
+ tSkeleton/skeletons/bits.samples/bib/@misc         |   17 ++
+ tSkeleton/skeletons/bits.samples/bib/@phdthesis    |   19 ++
+ tSkeleton/skeletons/bits.samples/bib/@proceedings  |   22 ++
+ tSkeleton/skeletons/bits.samples/bib/@techreport   |   20 ++
+ tSkeleton/skeletons/bits.samples/bib/@unpublished  |   17 ++
+ tSkeleton/skeletons/bits.samples/bib/article       |   20 --
+ tSkeleton/skeletons/bits.samples/bib/book          |   24 --
+ .../skeletons/bits.samples/bib/book_collection     |   22 --
+ tSkeleton/skeletons/bits.samples/bib/conference    |   16 --
+ tSkeleton/skeletons/bits.samples/bib/inbook        |   25 --
+ tSkeleton/skeletons/bits.samples/bib/incollection  |   16 --
+ tSkeleton/skeletons/bits.samples/bib/inproceedings |   16 --
+ tSkeleton/skeletons/bits.samples/bib/manual        |   19 --
+ tSkeleton/skeletons/bits.samples/bib/masterthesis  |   19 --
+ tSkeleton/skeletons/bits.samples/bib/misc          |   17 --
+ tSkeleton/skeletons/bits.samples/bib/phdthesis     |   19 --
+ tSkeleton/skeletons/bits.samples/bib/proceedings   |   22 --
+ tSkeleton/skeletons/bits.samples/bib/techreport    |   20 --
+ tSkeleton/skeletons/bits.samples/bib/unpublished   |   17 --
+ .../skeletons/bits.samples/general/localvariables  |    2 +-
+ tSkeleton/skeletons/bits.samples/html/href         |    1 +
+ tSkeleton/skeletons/bits.samples/html/html401      |    3 +
+ tSkeleton/skeletons/bits.samples/html/tag          |    7 +
+ tSkeleton/skeletons/bits.samples/php/@param        |    1 +
+ tSkeleton/skeletons/bits.samples/php/@return       |    1 +
+ tSkeleton/skeletons/bits.samples/php/case          |    3 +
+ tSkeleton/skeletons/bits.samples/php/class         |    3 +
+ tSkeleton/skeletons/bits.samples/php/define        |    1 +
+ tSkeleton/skeletons/bits.samples/php/dowhile       |    3 +
+ tSkeleton/skeletons/bits.samples/php/elseif        |    1 +
+ tSkeleton/skeletons/bits.samples/php/for           |   12 +
+ tSkeleton/skeletons/bits.samples/php/for-          |   12 +
+ tSkeleton/skeletons/bits.samples/php/foreach       |    3 +
+ tSkeleton/skeletons/bits.samples/php/foreach_assoc |    3 +
+ tSkeleton/skeletons/bits.samples/php/function      |    6 +
+ tSkeleton/skeletons/bits.samples/php/ifelse        |    5 +
+ tSkeleton/skeletons/bits.samples/php/php           |    4 +-
+ tSkeleton/skeletons/bits.samples/php/preg_replace  |    1 +
+ tSkeleton/skeletons/bits.samples/php/switch        |    7 +
+ tSkeleton/skeletons/bits.samples/php/var           |    6 +
+ tSkeleton/skeletons/bits.samples/php/var_export    |    1 +
+ tSkeleton/skeletons/bits.samples/php/while         |    3 +
+ tSkeleton/skeletons/bits.samples/ruby/begin        |    3 +
+ tSkeleton/skeletons/bits.samples/ruby/begin+       |    9 +
+ tSkeleton/skeletons/bits.samples/ruby/begin_ensure |    4 +
+ tSkeleton/skeletons/bits.samples/ruby/begin_rescue |    5 +
+ tSkeleton/skeletons/bits.samples/ruby/begin_while  |    3 +
+ tSkeleton/skeletons/bits.samples/ruby/case         |    5 +-
+ tSkeleton/skeletons/bits.samples/ruby/catch        |    3 +
+ tSkeleton/skeletons/bits.samples/ruby/class        |    2 +-
+ tSkeleton/skeletons/bits.samples/ruby/collect      |    1 +
+ tSkeleton/skeletons/bits.samples/ruby/collect_do   |    3 +
+ tSkeleton/skeletons/bits.samples/ruby/def          |    2 +-
+ tSkeleton/skeletons/bits.samples/ruby/each         |    1 +
+ tSkeleton/skeletons/bits.samples/ruby/each_do      |    3 +
+ tSkeleton/skeletons/bits.samples/ruby/ensure       |    2 +
+ tSkeleton/skeletons/bits.samples/ruby/for          |    3 +
+ tSkeleton/skeletons/bits.samples/ruby/if           |  Bin 103 -> 99 bytes
+ tSkeleton/skeletons/bits.samples/ruby/module       |    2 +-
+ .../skeletons/bits.samples/ruby/module_wrapper     |    3 +-
+ tSkeleton/skeletons/bits.samples/ruby/rescue       |    2 +
+ tSkeleton/skeletons/bits.samples/ruby/until        |    3 +
+ tSkeleton/skeletons/bits.samples/ruby/when         |    2 +
+ tSkeleton/skeletons/bits.samples/ruby/while        |    3 +
+ tSkeleton/skeletons/bits.samples/viki/#Code        |    4 +
+ tSkeleton/skeletons/bits.samples/viki/#Footnote    |    4 +
+ tSkeleton/skeletons/bits.samples/viki/#Header      |    4 +
+ tSkeleton/skeletons/bits.samples/viki/#Verb        |    4 +
+ tSkeleton/skeletons/bits.samples/viki/Description  |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Verb         |    3 -
+ tSkeleton/skeletons/bits.samples/viki/brief_header |    8 -
+ .../skeletons/bits.samples/viki/exzerpt_header     |    1 +
+ tSkeleton/skeletons/bits.samples/viki/fn           |    1 +
+ .../skeletons/bits.samples/viki/noSimpleNames      |    1 -
+ tSkeleton/skeletons/bits.samples/vim/function      |    4 +
+ tSkeleton/skeletons/bits.samples/vim/if            |  Bin 106 -> 116 bytes
+ tSkeleton/skeletons/bits.samples/vim/ifelse        |  Bin 0 -> 130 bytes
+ tSkeleton/skeletons/bits.samples/vim/try           |    6 +
+ tSkeleton/skeletons/bits.samples/vim/while         |    4 +
+ 92 files changed, 779 insertions(+), 364 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Thu May 19 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Popup menu with possible completions if TSkeletonExpandBitUnderCursor() is
+    called for an unknown code skeleton (if there is only one possible completion,
+    this one is automatically selected)
+    - Make sure not to change the alternate file and not to distort the window
+    layout
+    - require genutils
+    - Syntax highlighting for code skeletons
+    - Skeleton bits can now be expanded anywhere in the line. This makes it
+    possible to sensibly use small bits like date or time.
+    - Minor adjustments
+    - g:tskelMapLeader for easy customization of key mapping (changed the map
+    leader to "<Leader>#" in order to avoid a conflict with Align; set
+    g:tskelMapLeader to "<Leader>t" to get the old mappings)
+    - Utility function: TSkeletonGoToNextTag(); imaps.vim like key bindings via TSkeletonMapGoToNextTag()
+
+ doc/tSkeleton.txt                                  |   15 +-
+ plugin/tSkeleton.vim                               |  318 ++++++++++++++------
+ syntax/tskeleton.vim                               |   40 +++
+ tSkeleton/etc/tSkeleton.lst                        |   51 +++-
+ tSkeleton/skeletons/bits.samples/bib/abstract      |    1 +
+ tSkeleton/skeletons/bits.samples/bib/address       |    1 +
+ tSkeleton/skeletons/bits.samples/bib/annote        |    1 +
+ tSkeleton/skeletons/bits.samples/bib/author        |    1 +
+ tSkeleton/skeletons/bits.samples/bib/book          |    1 +
+ tSkeleton/skeletons/bits.samples/bib/booktitle     |    1 +
+ tSkeleton/skeletons/bits.samples/bib/chapter       |    1 +
+ tSkeleton/skeletons/bits.samples/bib/crossref      |    1 +
+ tSkeleton/skeletons/bits.samples/bib/edition       |    1 +
+ tSkeleton/skeletons/bits.samples/bib/editor        |    1 +
+ tSkeleton/skeletons/bits.samples/bib/howpublished  |    1 +
+ tSkeleton/skeletons/bits.samples/bib/institution   |    1 +
+ tSkeleton/skeletons/bits.samples/bib/journal       |    1 +
+ tSkeleton/skeletons/bits.samples/bib/key           |    1 +
+ tSkeleton/skeletons/bits.samples/bib/keywords      |    1 +
+ tSkeleton/skeletons/bits.samples/bib/month         |    1 +
+ tSkeleton/skeletons/bits.samples/bib/note          |    1 +
+ tSkeleton/skeletons/bits.samples/bib/number        |    1 +
+ tSkeleton/skeletons/bits.samples/bib/organization  |    1 +
+ tSkeleton/skeletons/bits.samples/bib/pages         |    1 +
+ tSkeleton/skeletons/bits.samples/bib/publisher     |    1 +
+ tSkeleton/skeletons/bits.samples/bib/school        |    1 +
+ tSkeleton/skeletons/bits.samples/bib/series        |    1 +
+ .../skeletons/bits.samples/bib/standardEntries     |    8 +-
+ tSkeleton/skeletons/bits.samples/bib/title         |    1 +
+ tSkeleton/skeletons/bits.samples/bib/type          |    1 +
+ tSkeleton/skeletons/bits.samples/bib/url           |    1 +
+ tSkeleton/skeletons/bits.samples/bib/volume        |    1 +
+ tSkeleton/skeletons/bits.samples/bib/year          |    1 +
+ tSkeleton/skeletons/bits.samples/css/background    |    1 +
+ tSkeleton/skeletons/bits.samples/css/border-bottom |    1 +
+ tSkeleton/skeletons/bits.samples/css/border-left   |    1 +
+ tSkeleton/skeletons/bits.samples/css/border-right  |    1 +
+ .../skeletons/bits.samples/css/border-spacing      |    1 +
+ tSkeleton/skeletons/bits.samples/css/border-top    |    1 +
+ tSkeleton/skeletons/bits.samples/css/entry         |    4 +
+ tSkeleton/skeletons/bits.samples/css/font-size     |    1 +
+ tSkeleton/skeletons/bits.samples/css/text-align    |    1 +
+ tSkeleton/skeletons/bits.samples/general/date      |    1 +
+ tSkeleton/skeletons/bits.samples/general/header    |    6 +-
+ .../skeletons/bits.samples/general/localvariables  |    3 +
+ .../skeletons/bits.samples/general/test_tSkeleton  |    2 +-
+ tSkeleton/skeletons/bits.samples/general/time      |    1 +
+ tSkeleton/skeletons/bits.samples/php/class         |   16 +
+ tSkeleton/skeletons/bits.samples/php/form          |    9 +
+ tSkeleton/skeletons/bits.samples/php/php           |    3 +
+ tSkeleton/skeletons/bits.samples/ruby/def          |    1 -
+ .../skeletons/bits.samples/tskeleton/tskel_after   |    5 +
+ .../skeletons/bits.samples/tskeleton/tskel_before  |    5 +
+ .../bits.samples/tskeleton/tskel_here_after        |    5 +
+ .../bits.samples/tskeleton/tskel_here_before       |    5 +
+ tSkeleton/skeletons/bits.samples/viki/bibref       |    1 +
+ tSkeleton/skeletons/bits.samples/viki/disableType  |    1 +
+ .../skeletons/bits.samples/viki/exzerpt_header     |    9 +-
+ .../skeletons/bits.samples/viki/noSimpleNames      |    1 +
+ tSkeleton/skeletons/prefab/batch.bat               |    6 +-
+ tSkeleton/skeletons/prefab/deplate.txt             |    8 -
+ tSkeleton/skeletons/prefab/latex.tex               |   11 +-
+ tSkeleton/skeletons/prefab/php.class.php           |   27 ++
+ tSkeleton/skeletons/prefab/php.inc.php             |   26 +-
+ tSkeleton/skeletons/prefab/php.php                 |   27 ++-
+ tSkeleton/skeletons/prefab/plugin.vim              |   38 +--
+ tSkeleton/skeletons/prefab/ruby.rb                 |   32 +-
+ tSkeleton/skeletons/prefab/shell.sh                |    6 +-
+ tSkeleton/skeletons/prefab/text.txt                |   10 +-
+ 69 files changed, 550 insertions(+), 187 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sun Mar 6 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - TSkeletonCleanUpBibEntry (mapped to <Leader>tc for bib files)
+    - complete set of bibtex entries
+    - fixed problem with [&bg]: tags
+    - fixed typo that caused some slowdown
+    - other bug fixes
+    - a query must be enclosed in question marks as in <+?Which ID?+>
+    - the "test_tSkeleton" skeleton can be used to test if tSkeleton is working
+    - and: after/before blocks must not contain function definitions
+
+ doc/tSkeleton.txt                                  |   63 ++++-
+ plugin/tSkeleton.vim                               |  281 +++++++++++---------
+ tSkeleton/etc/tSkeleton.lst                        |   13 +
+ tSkeleton/skeletons/bits.samples/bib/article       |   29 +-
+ tSkeleton/skeletons/bits.samples/bib/book          |   28 ++-
+ .../skeletons/bits.samples/bib/book_collection     |   27 ++-
+ tSkeleton/skeletons/bits.samples/bib/booklet       |   18 ++
+ tSkeleton/skeletons/bits.samples/bib/conference    |   16 ++
+ tSkeleton/skeletons/bits.samples/bib/inbook        |   25 ++
+ tSkeleton/skeletons/bits.samples/bib/incollection  |   22 +-
+ tSkeleton/skeletons/bits.samples/bib/inproceedings |   16 ++
+ tSkeleton/skeletons/bits.samples/bib/manual        |   19 ++
+ tSkeleton/skeletons/bits.samples/bib/masterthesis  |   19 ++
+ tSkeleton/skeletons/bits.samples/bib/misc          |   17 ++
+ tSkeleton/skeletons/bits.samples/bib/phdthesis     |   19 ++
+ tSkeleton/skeletons/bits.samples/bib/proceedings   |   22 ++
+ .../skeletons/bits.samples/bib/standardEntries     |    6 +
+ tSkeleton/skeletons/bits.samples/bib/techreport    |   20 ++
+ tSkeleton/skeletons/bits.samples/bib/unpublished   |   17 ++
+ tSkeleton/skeletons/bits.samples/general/header    |    8 +-
+ .../skeletons/bits.samples/general/test_tSkeleton  |   28 ++
+ tSkeleton/skeletons/bits.samples/ruby/def          |    1 +
+ 22 files changed, 517 insertions(+), 197 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Wed Mar 2 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - new pseudo tags: bit (recursive code skeletons), call (insert function result)
+    - before & after sections in bit definitions may contain function definitions
+    - fixed: no bit name given in <SID>SelectBit()
+    - don't use ={motion} to indent text, but simply shift it
+
+ doc/tSkeleton.txt                                  |  Bin 5911 -> 6828 bytes
+ plugin/tSkeleton.vim                               |  391 +++++++++++++++-----
+ tSkeleton/etc/tSkeleton.lst                        |   10 +
+ tSkeleton/skeletons/bits.samples/bib/article       |    5 +-
+ tSkeleton/skeletons/bits.samples/bib/book          |   17 +
+ .../skeletons/bits.samples/bib/book_collection     |   17 +
+ tSkeleton/skeletons/bits.samples/bib/incollection  |   18 +
+ tSkeleton/skeletons/bits.samples/general/header    |   16 +-
+ tSkeleton/skeletons/bits.samples/ruby/case         |  Bin 135 -> 146 bytes
+ tSkeleton/skeletons/bits.samples/ruby/class        |    2 +-
+ tSkeleton/skeletons/bits.samples/ruby/def          |    3 +
+ tSkeleton/skeletons/bits.samples/ruby/module       |    5 +
+ .../skeletons/bits.samples/ruby/module_wrapper     |    2 +
+ tSkeleton/skeletons/bits.samples/ruby/shebang      |    1 +
+ tSkeleton/skeletons/bits.samples/viki/Verb         |    3 +
+ tSkeleton/skeletons/bits.samples/viki/brief_header |    8 +
+ .../skeletons/bits.samples/viki/exzerpt_header     |   15 +
+ 17 files changed, 420 insertions(+), 93 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Thu Jan 20 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Skeleton bits (small inline skeletons or whatever you want to call it)
+    - User-defined tags
+    - Modifiers <+NAME:MODIFIERS+> (c=capitalize, u=toupper, l=tolower, s//=substitute)
+    - the default markup for tags has changed to <+TAG+> (for "compatibility" with
+    imaps.vim), the cursor position is marked as <+CURSOR+> (but this can be
+    changed by setting g:tskelPatternLeft, g:tskelPatternRight, and
+    g:tskelPatternCursor)
+    - in the not so simple mode, skeleton bits can contain vim code that is
+    evaluated after expanding the template tags (see .../skeletons/bits/vim/if for
+    an example)
+    - function TSkeletonExpandBitUnderCursor(), which is mapped to <Leader>#
+    - utility function: TSkeletonIncreaseRevisionNumber()
+
+ doc/tSkeleton.txt                                  |  Bin 2327 -> 5911 bytes
+ plugin/tSkeleton.vim                               |  391 ++++++++++++++++++--
+ tSkeleton/etc/tSkeleton.lst                        |   27 +-
+ tSkeleton/skeletons/batch.bat                      |    9 -
+ tSkeleton/skeletons/bits.samples/bib/article       |   18 +
+ tSkeleton/skeletons/bits.samples/general/header    |    8 +
+ .../skeletons/bits.samples/general/localvariables  |    3 +
+ tSkeleton/skeletons/bits.samples/html/form         |    9 +
+ tSkeleton/skeletons/bits.samples/ruby/case         |  Bin 0 -> 135 bytes
+ tSkeleton/skeletons/bits.samples/ruby/class        |   12 +
+ tSkeleton/skeletons/bits.samples/ruby/if           |  Bin 0 -> 103 bytes
+ tSkeleton/skeletons/bits.samples/vim/if            |  Bin 0 -> 106 bytes
+ tSkeleton/skeletons/bits.samples/websec/entry      |    4 +
+ tSkeleton/skeletons/deplate.txt                    |    8 -
+ tSkeleton/skeletons/latex.tex                      |   22 --
+ tSkeleton/skeletons/php.inc.php                    |   15 -
+ tSkeleton/skeletons/php.php                        |   28 --
+ tSkeleton/skeletons/plugin.vim                     |   27 --
+ tSkeleton/skeletons/prefab/batch.bat               |    9 +
+ tSkeleton/skeletons/prefab/deplate.txt             |    8 +
+ tSkeleton/skeletons/prefab/latex.tex               |   22 ++
+ tSkeleton/skeletons/prefab/php.inc.php             |   15 +
+ tSkeleton/skeletons/prefab/php.php                 |   28 ++
+ tSkeleton/skeletons/prefab/plugin.vim              |   27 ++
+ tSkeleton/skeletons/prefab/ruby.rb                 |   23 ++
+ tSkeleton/skeletons/prefab/shell.sh                |    6 +
+ tSkeleton/skeletons/prefab/text.txt                |    5 +
+ tSkeleton/skeletons/ruby.rb                        |   23 --
+ tSkeleton/skeletons/shell.sh                       |    6 -
+ tSkeleton/skeletons/text.txt                       |    5 -
+ 30 files changed, 565 insertions(+), 193 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Mon Dec 20 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                          |  117 +++++++++++++++++++++++++++++++++
+ doc/tSkeleton.txt               |   75 +++++++++++++++++++++
+ plugin/tSkeleton.vim            |  138 +++++++++++++++++++++++++++++++++++++++
+ tSkeleton/etc/tSkeleton.lst     |   12 ++++
+ tSkeleton/skeletons/batch.bat   |    9 +++
+ tSkeleton/skeletons/deplate.txt |    8 ++
+ tSkeleton/skeletons/latex.tex   |   22 ++++++
+ tSkeleton/skeletons/php.inc.php |   15 ++++
+ tSkeleton/skeletons/php.php     |   28 ++++++++
+ tSkeleton/skeletons/plugin.vim  |   27 ++++++++
+ tSkeleton/skeletons/ruby.rb     |   23 +++++++
+ tSkeleton/skeletons/shell.sh    |    6 ++
+ tSkeleton/skeletons/text.txt    |    5 ++
+ 13 files changed, 485 insertions(+), 0 deletions(-)

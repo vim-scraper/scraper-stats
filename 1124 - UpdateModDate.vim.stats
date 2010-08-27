@@ -1,0 +1,29 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2, refs/heads/master)
+Author:     Christian Aichinger <Greek0 at gmx.net>
+AuthorDate: Mon Nov 8 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    I've changed the default UDM_DatePattern a bit, to better match different date -u outputs.
+    It does now match the date part less strictly, but the time part more exactly. I hope this solves the "it works once but not thereafter" problem for most people.
+
+ plugin/UpdateModDate.vim |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Christian Aichinger <Greek0 at gmx.net>
+AuthorDate: Sun Nov 7 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The script now starts to search for the DateToken from the very top of the file, and it will only update the first occurance.
+    
+    I changed the script so that the values for DateToken, DatePattern, DateCommand aren't hardcoded any more.
+    You can now define UMD_DateToken, UMD_DatePattern and UMD_DateCommand in your vimrc.
+    
+    The default values are:
+    let s:UMD_DateToken = '%DATE_TAG%'
+    let s:UMD_DatePattern = '\w\{3\}\s\w\{3\}\s\+\d\+\s\+\d\+:\d\+:\d\+\s\+UTC\s\+\d\+'
+    let UMD_DateCommand = 'date -u | tr -d "\n"'
+
+ README                   |   11 +++++
+ plugin/UpdateModDate.vim |   97 ++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 108 insertions(+), 0 deletions(-)

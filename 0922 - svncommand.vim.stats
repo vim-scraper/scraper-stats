@@ -1,0 +1,76 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.67.3, refs/heads/master)
+Author:     Adam Lazur <adam at lazur.org>
+AuthorDate: Mon Apr 18 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - fix svn info (doh!)
+    - add quick hack svk support via SVNCommandAutoSVK variable
+
+ plugin/svncommand.vim         |   26 ++++++++++++++++++++++----
+ svncommand-1.67.2/INSTALL.txt |    8 --------
+ svncommand-1.67.2/Makefile    |   29 -----------------------------
+ svncommand-1.67.2/NEWS.txt    |    9 ---------
+ svncommand-1.67.2/cvs2svn.sed |    5 -----
+ svncommand-1.67.3/INSTALL.txt |    8 ++++++++
+ svncommand-1.67.3/Makefile    |   29 +++++++++++++++++++++++++++++
+ svncommand-1.67.3/NEWS.txt    |   13 +++++++++++++
+ svncommand-1.67.3/cvs2svn.sed |    5 +++++
+ 9 files changed, 77 insertions(+), 55 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.67.2)
+Author:     Adam Lazur <adam at lazur.org>
+AuthorDate: Sun Apr 17 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        - re-added SVNInfo which got reverted in previous version
+        - pass -v to "svn status" for SVNStatus()
+        - add SVNCommitDiff for grabbing a diff from the files listed in svn-commit.tmp
+
+ plugin/svncommand.vim         |   67 +++++++++++++++++++++++++++++++++++++----
+ svncommand-1.67.1/INSTALL.txt |    8 -----
+ svncommand-1.67.1/Makefile    |   16 ----------
+ svncommand-1.67.1/NEWS.txt    |    3 --
+ svncommand-1.67.1/cvs2svn.sed |    5 ---
+ svncommand-1.67.2/INSTALL.txt |    8 +++++
+ svncommand-1.67.2/Makefile    |   29 +++++++++++++++++
+ svncommand-1.67.2/NEWS.txt    |    9 +++++
+ svncommand-1.67.2/cvs2svn.sed |    5 +++
+ 9 files changed, 112 insertions(+), 38 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.67.1)
+Author:     Adam Lazur <adam at lazur.org>
+AuthorDate: Sat Apr 16 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - updated to match version 1.67 cvscommand.vim
+    - included svn commit and svnlog syntax highlighting
+
+ plugin/svncommand.vim         | 1060 +++++++++++++++++++++++++++++++----------
+ svncommand-1.67.1/INSTALL.txt |    8 +
+ svncommand-1.67.1/Makefile    |   16 +
+ svncommand-1.67.1/NEWS.txt    |    3 +
+ svncommand-1.67.1/cvs2svn.sed |    5 +
+ syntax/svn.vim                |   57 +++
+ syntax/svnlog.vim             |   93 ++++
+ 7 files changed, 983 insertions(+), 259 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2)
+Author:     Adam Lazur <adam at lazur.org>
+AuthorDate: Wed Feb 25 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    added svn info support
+
+ plugin/svncommand.vim |   25 ++++++++++++++++++++-----
+ 1 files changed, 20 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1)
+Author:     Adam Lazur <adam at lazur.org>
+AuthorDate: Wed Feb 25 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                |   13 ++
+ plugin/svncommand.vim |  532 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 545 insertions(+), 0 deletions(-)

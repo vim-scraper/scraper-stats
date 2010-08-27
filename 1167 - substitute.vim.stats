@@ -1,0 +1,54 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1, refs/heads/master)
+Author:     Anders Thøgersen <anderslt at gmail.com>
+AuthorDate: Tue Mar 3 00:00:00 2009 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Use VimBall and GetLatestVimscripts
+
+ doc/substitute.txt    |   93 ++++++++++++++++++++++
+ plugin/substitute.vim |  202 ++++++-------------------------------------------
+ 2 files changed, 115 insertions(+), 180 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.04)
+Author:     Anders Thøgersen <anderslt at gmail.com>
+AuthorDate: Tue Sep 27 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added a separate helpfile and the possibility of changing
+    mappings and the register that the script uses.
+
+ plugin/substitute.vim |  203 +++++++++++++++++++++++++++++++++++++++++--------
+ 1 files changed, 172 insertions(+), 31 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.03)
+Author:     Anders Thøgersen <anderslt at gmail.com>
+AuthorDate: Wed Jan 12 00:00:00 2005 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Changed the meaning of the ;' mapping, and added <unique> to the map
+    definitions.  Added the Escape function so $ and ^ are only escaped when they
+    appear at the beginning, or at the end.
+
+ plugin/substitute.vim |  130 +++++++++++++++++++++++++++++++------------------
+ 1 files changed, 83 insertions(+), 47 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.01)
+Author:     Anders Thøgersen <anderslt at gmail.com>
+AuthorDate: Mon Dec 27 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The check to see if the mappings already exist has been removed.  It is probably better to let the user add his or her preferred mappings by modifying the script.
+
+ plugin/substitute.vim |   26 ++++----------------------
+ 1 files changed, 4 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Anders Thøgersen <anderslt at gmail.com>
+AuthorDate: Sat Dec 25 00:00:00 2004 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                |   26 ++++++++++++
+ plugin/substitute.vim |  108 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 134 insertions(+), 0 deletions(-)
