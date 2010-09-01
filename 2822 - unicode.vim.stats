@@ -1,4 +1,16 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5, refs/heads/master)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6, refs/heads/master)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Thu Aug 26 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - many small bugfixes with regard to error-handling and error displaying- use default netrw_http_cmd (instead of hardwiring wget)- small documentation update (Inlude a snippet of UnicodeData.txt and get rid of Index.txt data)
+
+ autoload/unicode.vim |  120 +++++++++++++++++++++++++-------------------------
+ doc/unicode.txt      |   21 ++++++---
+ plugin/unicode.vim   |    4 +-
+ 3 files changed, 76 insertions(+), 69 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
 Author:     Christian Brabandt <cb at 256bit.org>
 AuthorDate: Mon Apr 19 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

@@ -1,4 +1,32 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2.3, refs/heads/master)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.3, refs/heads/master)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Mon Aug 30 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      Bug fix? Unlock deleted sessions:
+       http://github.com/xolox/vim-session/commit/ca5fe566022303034526c791543cffb218f5faa7
+    
+      :ViewSession to quickly view generated Vim scripts:
+       http://github.com/xolox/vim-session/commit/5cbb45ae5855ab6406a2013c4fabdae5abfb3d51
+    
+      Improve command argument handling, avoid double unescaping:
+       http://github.com/xolox/vim-session/commit/8cc669975b8d8026b1649c899cd3fc37513a8478
+    
+      Make Vim on GTK restore &lines and &columns:
+       http://github.com/xolox/vim-session/commit/6fa62c702173682ca3825e2bcb2fe4d7ffbede7d
+    
+      Silence :RestartVim, ignore lock files:
+       http://github.com/xolox/vim-session/commit/b0631c7a0edbe4b2493637783a9c84225ba05a9e
+    
+      Use :mksession instead of reimplementing it, support 'sessionoptions', restore ':Project' windows:
+       http://github.com/xolox/vim-session/commit/a0475914cff7af83e58325391e933ce77cd23161
+
+ autoload/session.vim |  420 +++++++++++++++++++-------------------------------
+ doc/session.txt      |  193 ++++++++++++++++--------
+ plugin/session.vim   |    5 +-
+ 3 files changed, 294 insertions(+), 324 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.3)
 Author:     Peter Odding <peter at peterodding.com>
 AuthorDate: Thu Aug 19 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

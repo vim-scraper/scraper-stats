@@ -1,4 +1,45 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4.8-r911, refs/heads/master)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4.8-r976, refs/heads/master)
+Author:     drdr xp <drdr.xp at gmail.com>
+AuthorDate: Mon Aug 30 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix: mistakingly using SPop as SParg in bracket completion.
+
+ autoload/XPT.vim                            |   64 +++++++++++++++++++++++++++
+ doc/xpt.snippet.syn.txt                     |    2 +-
+ ftplugin/_common/common.bracketcmpl.xpt.vim |    2 +-
+ ftplugin/sh/sh.xpt.vim                      |    1 +
+ plugin/debug.vim                            |    1 -
+ plugin/xpreplace.vim                        |   45 ++++++++++++++-----
+ 6 files changed, 100 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.8-r962)
+Author:     drdr xp <drdr.xp at gmail.com>
+AuthorDate: Fri Aug 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix: bracket following multi-bytes char breaks the previous char
+
+ plugin/xpreplace.vim |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.8-r957)
+Author:     drdr xp <drdr.xp at gmail.com>
+AuthorDate: Thu Aug 26 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix bug that xpreplace sometimes removes chars if folding enabled.
+    
+    Fix nav-key issue with selection set to be exclusive.
+
+ ftplugin/html/html.xpt.vim |    1 +
+ ftplugin/xpt/xpt.xpt.vim   |   18 +++++++++++-------
+ plugin/debug.vim           |    7 ++++---
+ plugin/xpreplace.vim       |    2 ++
+ plugin/xptemplate.vim      |    6 ++++--
+ 5 files changed, 22 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.8-r911)
 Author:     drdr xp <drdr.xp at gmail.com>
 AuthorDate: Sun Jul 25 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

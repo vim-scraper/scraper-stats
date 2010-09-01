@@ -1,4 +1,19 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2, refs/heads/master)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3, refs/heads/master)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Fri Aug 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Automatically stopp Recording for latest started Recording session  (suggested by Salim Halim, thanks!)
+    - Changed recording of time to use localtime() instead of storing a string
+    - Better documentation for :ListRecordings
+    - ListRecordings now also displays the change number (so you can easily jump to a change using :undo)
+
+ autoload/Replay.vim     |   44 ++++++++++++++++++++++++++++++++------------
+ doc/Replay.txt          |   33 ++++++++++++++++++++++++++++-----
+ plugin/ReplayPlugin.vim |    8 ++++----
+ 3 files changed, 64 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
 Author:     Christian Brabandt <cb at 256bit.org>
 AuthorDate: Tue Aug 24 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
@@ -17,8 +32,8 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     Initial upload
 
- README                  |   14 +++++
+ README                  |   17 ++++++
  autoload/Replay.vim     |  132 +++++++++++++++++++++++++++++++++++++++++++++++
  doc/Replay.txt          |   91 ++++++++++++++++++++++++++++++++
  plugin/ReplayPlugin.vim |   34 ++++++++++++
- 4 files changed, 271 insertions(+), 0 deletions(-)
+ 4 files changed, 274 insertions(+), 0 deletions(-)

@@ -718,9 +718,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
       * (+) Strip `[[complex wiki name]]` from symbols that cannot be used in file names.
       * (+) Links to non-wiki files. Non wiki files are files with extensions ie `[[hello world.txt]]` or `[[my homesite.html]]`
 
- ftplugin/vimwiki.vim |  220 ++++++++++++++++++++++++++++++++++++++++++++++++++
- syntax/vimwiki.vim   |  109 +++++++++++++++++++++++++
- 2 files changed, 329 insertions(+), 0 deletions(-)
+ ftplugin/vimwiki.vim |   83 +++++++++++++++++++++++++++++++++++--------------
+ syntax/vimwiki.vim   |   66 ++++++++++++++--------------------------
+ 2 files changed, 82 insertions(+), 67 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
 Author:     Maxim Kim <habamax at gmail.com>
@@ -729,5 +729,7 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     Initial upload
 
- README |   97 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 1 files changed, 97 insertions(+), 0 deletions(-)
+ README               |   97 ++++++++++++++++++++++++++
+ ftplugin/vimwiki.vim |  185 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/vimwiki.vim   |  129 +++++++++++++++++++++++++++++++++++
+ 3 files changed, 411 insertions(+), 0 deletions(-)

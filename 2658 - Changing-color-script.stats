@@ -965,8 +965,8 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     Realised that the LineNr highlight item was the same as Normal and that this looks boring. Have changed this now to look more of a pale or dark blue depending on which looks best relative the background.
 
- colors/changing-colour.vim | 1281 ++++++++++++++++++++++++++++++--------------
- 1 files changed, 867 insertions(+), 414 deletions(-)
+ colors/changing-colour.vim |   15 ++++++++++-----
+ 1 files changed, 10 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0)
 Author:     Paul Contreras <pablo at ezrider.co.uk>
@@ -975,8 +975,8 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     Had to darken the Identifier around the area where it looks bad with the background. I had made this weaker but it's too weak. This is fixed and now it's quite nice, not too dark - you can see the green- but darker.
 
- colors/changing-colour.vim | 1271 ++++++++++++++-----------------------------
- 1 files changed, 414 insertions(+), 857 deletions(-)
+ colors/changing-colour.vim |   13 +++++++++----
+ 1 files changed, 9 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/5.9)
 Author:     Paul Contreras <pablo at ezrider.co.uk>
@@ -1115,8 +1115,8 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     Changed the speed at which background shifts from light to dark and vice-versa so that instead of going gradually from dark to light over the hour then back in the next hour, the background now does so in a half hour slots so the same as happened over two hours before now happens over one hour. The 'shaded backgrounds' added in 4.2 keep it interesting as on hour 1 the colour shades differently to what it does on hour 2, and again to what it does on hour 3. If you feel this is too sudden stick to script version 4.5 as this version does this more gradually over 2 hour slots.
 
- colors/changing-colour.vim |  788 +++++++++++++++++++++++++++++++++++++++++++-
- 1 files changed, 770 insertions(+), 18 deletions(-)
+ colors/changing-colour.vim |   32 ++++++++++++++++++++------------
+ 1 files changed, 20 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.5)
 Author:     Paul Contreras <pablo at ezrider.co.uk>
@@ -1125,8 +1125,8 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     Whilst trying to de-saturate the lighter background shades i seemed to get the math wrong and therefore at certain ranges the background looks super-saturated.  This is fixed now. The background is truly pastel at all lighter background ranges, i fixed the math.
 
- colors/changing-colour.vim |  774 +------------------------------------------
- 1 files changed, 18 insertions(+), 756 deletions(-)
+ colors/changing-colour.vim |   12 +++++++++---
+ 1 files changed, 9 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.4)
 Author:     Paul Contreras <pablo at ezrider.co.uk>

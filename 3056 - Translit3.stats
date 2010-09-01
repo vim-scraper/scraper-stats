@@ -1,4 +1,35 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0.3, refs/heads/master)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0.6, refs/heads/master)
+Author:     ZyX ZyX <kp-pav at yandex.ru>
+AuthorDate: Sun Aug 29 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added ConfigDir option, added tests, some bug fixes
+
+ doc/chk.txt          |    2 +
+ doc/translit3.rux    |   34 +++++++++++----
+ doc/translit3.txt    |   27 +++++++++---
+ plugin/chk.vim       |   20 ++++++++-
+ plugin/stuf.vim      |   41 ++++++++++++++---
+ plugin/translit3.vim |  117 +++++++++++++++++++++++++++++++++++---------------
+ 6 files changed, 182 insertions(+), 59 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0.5)
+Author:     ZyX ZyX <kp-pav at yandex.ru>
+AuthorDate: Fri Aug 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Made `Transliterate' mapping (it shows prompt and transliterates user input) use stuf/cinput function (so that this prompts now have their own history) and new completion
+
+ doc/comp.txt         |   11 ++++
+ doc/json.rux         |    8 ++-
+ doc/json.txt         |    6 +-
+ plugin/comp.vim      |   61 ++++++++++++++++++-----
+ plugin/json.vim      |   28 ++++++++--
+ plugin/stuf.vim      |  131 +++++++++++++++++++++++++++++++++++++++++++++++--
+ plugin/translit3.vim |   46 ++++++++++++++++--
+ 7 files changed, 256 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0.3)
 Author:     ZyX ZyX <kp-pav at yandex.ru>
 AuthorDate: Wed Aug 25 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
