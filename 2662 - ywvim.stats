@@ -1,9 +1,9 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.20, refs/heads/master)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.20)
 Author:     Yue Wu <ywupub at gmail.com>
 AuthorDate: Sun Aug 2 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
-    &#20026;"&#31354;&#30721;&#19981;&#38145;&#38190;&#30424;"&#20248;&#21270;&#20102;&#24555;&#25463;&#38190;<C-w>&#30340;&#34920;&#29616;.
+    为"空码不锁键盘"优化了快捷键<C-w>的表现.
     Improved key map <C-w> behavior for the 'unlocked keyboard'.
 
  plugin/ywvim.vim |   28 +++++++++++++++++++++-------
@@ -14,10 +14,10 @@ Author:     Yue Wu <ywupub at gmail.com>
 AuthorDate: Sat Aug 1 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
-    &#22686;&#21152; added:
-    1. &#40664;&#35748;&#30340;&#31616;&#32321;&#36716;&#25442;&#26041;&#21521;. Preferred simplified-traditonal conv direction:
+    增加 added:
+    1. 默认的简繁转换方向. Preferred simplified-traditonal conv direction:
         let g:ywvim_preconv = 'g2b'
-    2. &#31354;&#30721;&#26102;&#19981;&#38145;&#23450;&#38190;&#30424;&#35774;&#32622;. Don't lock keyboard when no matched:
+    2. 空码时不锁定键盘设置. Don't lock keyboard when no matched:
         let g:ywvim_lockb = 0
 
  plugin/ywvim.vim |   13 +++++++++++--
@@ -28,7 +28,7 @@ Author:     Yue Wu <ywupub at gmail.com>
 AuthorDate: Sat Jul 25 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
-    &#35299;&#20915;&#20102; enmode &#19982;&#20013;&#25991;&#26631;&#28857;&#20914;&#31361; bug.
+    解决了 enmode 与中文标点冲突 bug.
     Workaround for enmode conflicts with Chinese punctuations' bug.
 
  plugin/ywvim.vim |   21 ++++++++++-----------
@@ -39,9 +39,9 @@ Author:     Yue Wu <ywupub at gmail.com>
 AuthorDate: Wed Jun 24 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
-    1. &#20462;&#27491;&#22312; windows &#19978;&#30340;&#21629;&#20196;&#34892;&#26174;&#31034; bug.
-    (&#24863;&#35874;&#22312; newsmth.net &#19978;&#30340; vace &#30340;&#25253;&#21578;)
-    2. g:ywvim_chinesepunc &#25913;&#21517;&#20026; g:ywvim_zhpunc.
+    1. 修正在 windows 上的命令行显示 bug.
+    (感谢在 newsmth.net 上的 vace 的报告)
+    2. g:ywvim_chinesepunc 改名为 g:ywvim_zhpunc.
     
     1. Fix cmdline display bug on windows.
     (Thanks to vace on newsmth.net who catch this bug.)
@@ -55,7 +55,7 @@ Author:     Yue Wu <ywupub at gmail.com>
 AuthorDate: Thu Jun 11 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
-    &#32469;&#36807;&#22312; windows &#19979;&#30340; E341 &#30340; bug(&#36825;&#26159; vim &#30340; bug..).
+    绕过在 windows 下的 E341 的 bug(这是 vim 的 bug..).
     Avoid bug of E341 on windows.(It's a vim's bug..).
 
  plugin/ywvim.vim |   11 +++++------
@@ -66,10 +66,10 @@ Author:     Yue Wu <ywupub at gmail.com>
 AuthorDate: Tue Jun 9 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
-    1. &#20462;&#22797;&#38750;&#25554;&#20837;&#27169;&#24335;&#20381;&#36182;&#20110;&#25554;&#20837;&#27169;&#24335;&#30340; bug. &#29616;&#22312;&#21487;&#20197;&#38543;&#26102;&#38543;&#22320;&#22312;&#20219;&#20309;&#27169;&#24335;&#20351;&#29992; ywvim &#20102;!
+    1. 修复非插入模式依赖于插入模式的 bug. 现在可以随时随地在任何模式使用 ywvim 了!
     Fixed non insert mode depended on insert mode's bug, now you can toggle ywvim unlimitedly in every mode as you like!
     
-    2. &#25913;&#21892;&#20102;&#22312;&#38750;&#25554;&#20837;&#27169;&#24335;&#26102;&#30340;&#26174;&#31034;.
+    2. 改善了在非插入模式时的显示.
     Improved displaying when in non insert modes.
 
  plugin/ywvim.vim |  113 +++++++++++++++++++++++++++++------------------------
@@ -80,8 +80,8 @@ Author:     Yue Wu <ywupub at gmail.com>
 AuthorDate: Tue Jun 9 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
-    &#20462;&#22797;&#31616;&#32321;&#36716;&#25442;&#22312;&#38750; utf-8 &#19979;&#22833;&#25928;&#38382;&#39064;.
-    (&#24863;&#35874;&#22312; newsmth.net &#19978;&#30340; vace &#30340;&#25253;&#21578;)
+    修复简繁转换在非 utf-8 下失效问题.
+    (感谢在 newsmth.net 上的 vace 的报告)
     
     Fixed Sim. <-> Trad. can't work on non utf-8 encoding.
     (Thanks to vace on newsmth.net who catch this bug.)
@@ -103,9 +103,9 @@ Author:     Yue Wu <ywupub at gmail.com>
 AuthorDate: Tue Jun 9 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
-    &#30721;&#34920;&#26356;&#26032;!
-    g2b.ywvim &#31616;&#32321;&#35789;&#37327;&#22686;&#21152; 2466 -> 3145.
-    (&#24863;&#35874;&#22312; newsmth.net &#19978;&#30340; vace &#25552;&#20379;&#20449;&#24687;)
+    码表更新!
+    g2b.ywvim 简繁词量增加 2466 -> 3145.
+    (感谢在 newsmth.net 上的 vace 提供信息)
     Mabiao updated!
     Number of g2b.ywvim's charcotr 2466 -> 3145.
     (Thanks for vace on newsmth.net's info.)
@@ -127,8 +127,8 @@ Author:     Yue Wu <ywupub at gmail.com>
 AuthorDate: Mon Jun 8 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
-    &#20462;&#22797; &#31616;&#32321;&#36716;&#25442; bug.
-    (&#24863;&#35874;&#22312; newsmth.net &#19978;&#30340; vace &#30340;&#21453;&#39243;)
+    修复 简繁转换 bug.
+    (感谢在 newsmth.net 上的 vace 的反饋)
     fixed bug on Sim. -> Tra.
     (Thanks to vace on newsmth.net who catch this bug.)
 
@@ -149,9 +149,9 @@ Author:     Yue Wu <ywupub at gmail.com>
 AuthorDate: Mon Jun 8 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
-    &#30908;&#34920;&#26356;&#26032;!
+    碼表更新!
     mabiao updated!
-    &#22686;&#21152; g2b.ywvim, &#31777;&#32321;&#36681;&#25563;&#35382;&#20856;.
+    增加 g2b.ywvim, 簡繁轉換訶典.
     Add a g2b.ywvim, for converting between Simplified and Traditional Chinese.
 
  array30.ywvim    |81276 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -171,15 +171,15 @@ Author:     Yue Wu <ywupub at gmail.com>
 AuthorDate: Mon Jun 8 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
-    1. <C-m> &#20999;&#25442;&#30333;&#21517;&#21333;.
+    1. <C-m> 切换白名单.
     1. <C-m> toggles whitelist.
     
-    2. &#29366;&#24577;&#26639;&#36755;&#20837;&#27861;&#21517;&#31216;&#29992;&#19981;&#21516;&#39068;&#33394;&#25552;&#31034;&#30333;&#21517;&#21333;&#24320;&#21551;&#29366;&#24577;.
-    (&#24863;&#35874;&#22312; newsmth.net &#19978;&#30340; vace &#25552;&#20379;&#30340;&#24314;&#35758;)
+    2. 状态栏输入法名称用不同颜色提示白名单开启状态.
+    (感谢在 newsmth.net 上的 vace 提供的建议)
     2. use different color for differ the status of whitelist.
     (Thanks for vace on newsmth.net's suggestion.)
     
-    3. &#20462;&#22797; windowns gbk &#29615;&#22659;&#20081;&#30721;.
+    3. 修复 windowns gbk 环境乱码.
     3. fix garbled charactor on windows gbk encoding.
 
  plugin/ywvim.vim |   44 +++++++++++++++++++++++++++++---------------
@@ -190,19 +190,19 @@ Author:     Yue Wu <ywupub at gmail.com>
 AuthorDate: Sun Jun 7 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
-    1. g:ywvim_ims &#30340;&#26684;&#24335;&#25913;&#21464;, &#35831;&#21153;&#24517;&#35201;&#26356;&#25913;&#26684;&#24335;(&#35814;&#35265;&#35828;&#26126;)!
+    1. g:ywvim_ims 的格式改变, 请务必要更改格式(详见说明)!
     1. Format of g:ywvim_ims has been changed, you must adjust it!
     
-    2. &#21487;&#20197;&#21333;&#29420;&#35774;&#32622;&#27599;&#20010;&#30721;&#34920;&#30340;&#21442;&#25968;. &#30721;&#34920;&#32423;&#21035;&#20248;&#20808;(&#35814;&#35265;&#35828;&#26126;).
+    2. 可以单独设置每个码表的参数. 码表级别优先(详见说明).
     2. Most variables can be locale on IM now.
     
-    3. &#22686;&#21152; g:ywvim_wlst_on, &#25511;&#21046;&#30333;&#21517;&#21333;&#24320;&#20851;.
+    3. 增加 g:ywvim_wlst_on, 控制白名单开关.
     Added g:ywvim_wlst_on, for controling while list support.
     
-    4. &#22686;&#21152; g:ywvim_whitelstfile, &#35774;&#32622;&#30333;&#21517;&#20214;&#25991;&#20214;.
+    4. 增加 g:ywvim_whitelstfile, 设置白名件文件.
     Added g:ywvim_whitelstfile, for setup while list file.
     
-    5. &#20462;&#22797;&#31934;&#30830;&#21305;&#37197;&#24320;&#21551;&#26102;&#30340;&#31354;&#30721;&#36755;&#20986;&#20986;&#38169;&#30340; bug.
+    5. 修复精确匹配开启时的空码输出出错的 bug.
     fixed a bug which is introduce from matchexact.
 
  array30.ywvim    |81276 ------------------------------------------------------
@@ -221,8 +221,8 @@ Author:     Yue Wu <ywupub at gmail.com>
 AuthorDate: Sun Jun 7 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
-    &#30721;&#34920;&#26356;&#26032;.
-    1. &#22686;&#21152;&#20102; [CharDefinition] &#21306;&#22495;.
+    码表更新.
+    1. 增加了 [CharDefinition] 区域.
     Added a field of [CharDefinition].
 
  array30.ywvim |    3 +++
@@ -246,15 +246,15 @@ Author:     Yue Wu <ywupub at gmail.com>
 AuthorDate: Sun Jun 7 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
-    1. &#30721;&#34920;&#26356;&#26032;.
-    &#22686;&#21152; MaxElement &#30340;&#25903;&#25345;. &#38656;&#35201;&#20840;&#23616;&#25913;&#21464;&#26368;&#22823;&#35789;&#38271;&#35774;&#32622;&#30340;&#35831;&#20462;&#25913;&#36825;&#34892;, &#20020;&#26102;&#25913;&#21464;&#21487;&#20197;&#36890;&#36807; <C-^> &#35774;&#32622;.
+    1. 码表更新.
+    增加 MaxElement 的支持. 需要全局改变最大词长设置的请修改这行, 临时改变可以通过 <C-^> 设置.
     1. mabiao updated.
     add MaxElement support, now you need to modify this line for changing global setting for max phase length, for local setting, use <C-^>.
     
-    2. &#20462;&#25913;&#20102;&#34892;&#21015;&#30721;&#34920;&#30340;&#38169;&#35823;.
+    2. 修改了行列码表的错误.
     2. fix bug in arrary30.ywvim.
     
-    3. &#22312;&#30721;&#34920;&#30340;&#27599;&#19968;&#34892;&#22686;&#21152;&#19968;&#20010;&#31354;&#26684;&#26242;&#26102;&#35299;&#20915;&#21453;&#26597;&#30721;&#34920;&#19981;&#33021;&#22312;&#38750; utf-8 &#19979;&#24037;&#20316;&#30340;&#38382;&#39064;.
+    3. 在码表的每一行增加一个空格暂时解决反查码表不能在非 utf-8 下工作的问题.
     3. Add a space in each line for dirty workaround help mabiao not working on non-utf8 encoding.
 
  array30.ywvim    |81273 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -275,10 +275,10 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     1. Add let g:ywvim_autoinput = 1
         auto input the only candidate.
-        &#22686;&#21152;&#33258;&#21160;&#19978;&#23631;&#36873;&#39033;.
+        增加自动上屏选项.
     2. Add let g:ywvim_pagec = 1
         circle pageup/pagedown.
-        &#22686;&#21152;&#32763;&#39029;&#24490;&#29615;.
+        增加翻页循环.
 
  array30.ywvim    |81274 ------------------------------------------------------
  cangjie.ywvim    |21987 ---------------
@@ -296,10 +296,10 @@ Author:     Yue Wu <ywupub at gmail.com>
 AuthorDate: Sat Jun 6 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
-    1. &#27880;&#38899; mabiao is added.
-        &#22686;&#21152;&#20102;&#27880;&#38899;&#30721;&#34920;&#30340;&#25903;&#25345;.
+    1. 注音 mabiao is added.
+        增加了注音码表的支持.
     2. mabiao file supports more options:
-        &#30721;&#34920;&#25991;&#20214;&#25903;&#25345;&#26356;&#22810;&#30340;&#36873;&#39033;:
+        码表文件支持更多的选项:
     EndCodes=
     InputZhKeys=
     InputEnKeys=
@@ -323,9 +323,9 @@ AuthorDate: Fri Jun 5 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
     (1) remove the limitation of whitelist only works for utf-8 encoding.
-    &#21435;&#38500;&#20102;&#30333;&#21517;&#21333;&#30340; utf-8 encoding &#38480;&#21046;.
+    去除了白名单的 utf-8 encoding 限制.
     (2) Fixed bug that whitelist has no effect.
-    &#21435;&#38500;&#20102;&#30333;&#21517;&#21333;&#22833;&#25928;&#30340;&#34411;&#23376;.
+    去除了白名单失效的虫子.
 
  plugin/ywvim.vim |   12 ++++++------
  1 files changed, 6 insertions(+), 6 deletions(-)

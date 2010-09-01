@@ -1,4 +1,4 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1.0, refs/heads/master)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1.0)
 Author:     zhu nianyang <zny2008 at gmail.com>
 AuthorDate: Tue Feb 9 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
@@ -6,8 +6,8 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     new feature:
     you can control the cursor's last place. you can see the main.cpp template to know more.
     
-    &#26032;&#29305;&#24615;&#65306;
-    &#29616;&#22312;&#21487;&#20197;&#25511;&#21046;&#40736;&#26631;&#30340;&#26368;&#21518;&#20572;&#30041;&#20301;&#32622;&#21862;&#65292;&#20320;&#21487;&#20197;&#30475;&#19968;&#19979; main.cpp&#36825;&#20010;&#27169;&#26495;&#26469;&#20102;&#35299;&#26356;&#22810;&#12290;
+    新特性：
+    现在可以控制鼠标的最后停留位置啦，你可以看一下 main.cpp这个模板来了解更多。
 
  load_template/template/cpp/main.cpp |    1 +
  plugin/load_template.vim            |    9 +++++++++
@@ -32,9 +32,9 @@ AuthorDate: Thu Feb 4 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
 
     fix the bug:
-    E121: &#26410;&#23450;&#20041;&#30340;&#21464;&#37327;: g:vimrc_splitstr
+    E121: 未定义的变量: g:vimrc_splitstr
     
-    E15: &#26080;&#25928;&#30340;&#34920;&#36798;&#24335;: ~.g:vimrc_splitstr.template_source.vim
+    E15: 无效的表达式: ~.g:vimrc_splitstr.template_source.vim
 
  plugin/load_template.vim |   28 ++++++++++++++++++++++++----
  1 files changed, 24 insertions(+), 4 deletions(-)

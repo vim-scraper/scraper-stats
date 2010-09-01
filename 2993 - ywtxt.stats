@@ -1,4 +1,4 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.18, refs/heads/master)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.18)
 Author:     Yue Wu <ywupub at gmail.com>
 AuthorDate: Tue Aug 3 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
@@ -233,7 +233,7 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
 
     1) Fixed errors caused by operations on toc window title line. Thanks pengo's catching.
     2) Speeded up a little for the toc window opening and jumping.
-    3) Added syntax: "&#22270; #.  ",  "&#34920; #.  ".
+    3) Added syntax: "图 #.  ",  "表 #.  ".
 
  plugin/ywtxt.vim |  143 ++++++++++++++++++++++++++++-------------------------
  syntax/ywtxt.vim |   16 +++---
@@ -426,7 +426,7 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     4) Added: Markup for superscript(^{}) and subscript(_{})
     5) Added: imap for _(_{}), ^{(^{}) and ^[(^[])
     6) Added: g:ywtxt_tocwidth for configuration of toc window's width. Thanks for pengo's suggestion.
-    7) Improved: Highlight note and todo strings in headings. Add "&#27880;&#24847;" in note syntax. Thanks for pengo's suggestion.
+    7) Improved: Highlight note and todo strings in headings. Add "注意" in note syntax. Thanks for pengo's suggestion.
     8) Added: markup of "[/path/to/local.pic]" (jpg, png, bmp, gif) can be viewed in exporting html directly.
     9) Changed: bibliography's name to references.
     10) Added: Auto Indent.
