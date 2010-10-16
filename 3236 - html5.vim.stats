@@ -1,0 +1,30 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2)
+Author:     wei ko kao <othree at gmail.com>
+AuthorDate: Thu Sep 9 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    attributes now must match from beginning.
+    fix some attr(\won\w) will use jscomplete for their value.
+    add vim-makefile.
+
+ Makefile                  |  330 -------------------
+ README.markdown           |   45 ---
+ autoload/htmlcomplete.vim |  803 ---------------------------------------------
+ autoload/xml/html5.vim    |    4 +-
+ syntax/html.vim           |   89 -----
+ 5 files changed, 2 insertions(+), 1269 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     wei ko kao <othree at gmail.com>
+AuthorDate: Thu Sep 9 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ Makefile                  |  330 ++++++++++++++++
+ README                    |   13 +
+ README.markdown           |   45 +++
+ autoload/htmlcomplete.vim |  803 +++++++++++++++++++++++++++++++++++++++
+ autoload/xml/html5.vim    |  922 +++++++++++++++++++++++++++++++++++++++++++++
+ syntax/html.vim           |   89 +++++
+ 6 files changed, 2202 insertions(+), 0 deletions(-)

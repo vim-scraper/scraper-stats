@@ -1,4 +1,15 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.6)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.7)
+Author:     Paul Contreras <pablo at ezrider.co.uk>
+AuthorDate: Fri Sep 17 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Made improvements to scroll till cursor is on top and cursor is at bottom cases.  These work very reliably when in folded mode.  The center case is not quite stable but kind of works, there are still some glitches in folded mode and when the buffer is scrolled near the bottom.
+
+ README                  |    2 +-
+ plugin/SmoothCenter.vim |  103 +++++++++++++++++++---------------------------
+ 2 files changed, 44 insertions(+), 61 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
 Author:     Paul Contreras <pablo at ezrider.co.uk>
 AuthorDate: Mon Aug 23 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

@@ -1,4 +1,63 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.3)
+Author:     Alexandru Tica <alexandru.tica at gmail.com>
+AuthorDate: Tue Sep 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        * explain plan for an sql statement (thanks to Ingo Olbrich)
+        * offline search through the Oracle documentation
+        * the possibility to register your custom key mappings
+        * bug fix: verbose describe and fuzzy search doesn't work under cygwin interface
+
+ README                              |    2 +
+ autoload/fuf/voraxitem.vim          |    4 +-
+ autoload/vorax.vim                  |   66 +++++++++++++-
+ doc/vorax.txt                       |  165 +++++++++++++++++++++++++++++++++++
+ plugin/vorax.vim                    |   88 ++++++++++++++++++-
+ syntax/voraxdoc.vim                 |   14 +++
+ vorax/lib/vim/dbexplorer.vim        |    4 +
+ vorax/lib/vim/vorax_conwin.vim      |    2 +-
+ vorax/lib/vim/vorax_dblayer.vim     |   26 +++++-
+ vorax/lib/vim/vorax_oradoc.vim      |  142 ++++++++++++++++++++++++++++++
+ vorax/lib/vim/vorax_rwin.vim        |    6 ++
+ vorax/lib/vim/vorax_utils.vim       |   32 ++++++-
+ vorax/oradoc/conf/vorax_oradoc.conf |   10 ++
+ vorax/sql/explain.sql               |   32 +++++++
+ vorax/sql/explain_only.sql          |   12 +++
+ 15 files changed, 591 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     Alexandru Tica <alexandru.tica at gmail.com>
+AuthorDate: Wed Sep 8 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+        * refresh output window
+        * cygwin interface support
+        * bug fix: E121: Undefined variable: s:last_line (reported by Pierre Raimbault)
+        * bug fix: some sqlplus keywords were partially highlighted
+        * bug fix: Completion list for parameters was not computed correctly for some procs/funcs
+        * bug fix: errors when output in a non-modifiable result buffer
+        * bug fix: fuzzy search pattern was not properly escaped (reported by Ingo Olbrich)
+
+ autoload/fuf/voraxitem.vim           |   17 ++-
+ autoload/vorax.vim                   |    7 +-
+ doc/vorax.txt                        |   64 ++++++++---
+ ftplugin/sql/vorax.xpt.vim           |    8 ++
+ nerdtree_plugin/vorax_exec.vim       |    7 +-
+ plugin/vorax.vim                     |   13 ++-
+ syntax/sql.vim                       |  216 +++++++++++++++++-----------------
+ vorax/interface/cygwin/cygwin_if.vim |  162 +++++++++++++++++++++++++
+ vorax/interface/cygwin/vorax.rb      |   34 ++++++
+ vorax/interface/unix/unix_if.vim     |   17 ++-
+ vorax/interface/unix/vorax.rb        |   11 +-
+ vorax/interface/win/win_if.vim       |    7 +
+ vorax/lib/vim/vorax_completion.vim   |    1 +
+ vorax/lib/vim/vorax_dblayer.vim      |   11 +-
+ vorax/lib/vim/vorax_rwin.vim         |   22 ++++-
+ vorax/lib/vim/vorax_search.vim       |    2 +-
+ vorax/sql/search.sql                 |    9 +-
+ 17 files changed, 456 insertions(+), 152 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
 Author:     Alexandru Tica <alexandru.tica at gmail.com>
 AuthorDate: Wed Aug 18 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

@@ -1,4 +1,22 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0)
+Author:     Javier Rojas <jerojasro at devnull.li>
+AuthorDate: Sun Sep 12 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added capabilities for creating wiki pages, and for wikilink completion through the omnicompletion framework
+
+ README                                    |   30 +--
+ doc/ikiwiki-nav.txt                       |  201 +++++++++++++++
+ ftplugin/ikiwiki_compl.vim                |   27 ++
+ ftplugin/ikiwiki_nav.vim                  |  313 ++++++------------------
+ ikiwiki-nav_2.0/AUTHORS                   |    1 +
+ ikiwiki-nav_2.0/BUGS                      |    7 +
+ ikiwiki-nav_2.0/TODO                      |    5 +
+ ikiwiki-nav_2.0/autoload/ikiwiki/cmpl.vim |  177 +++++++++++++
+ ikiwiki-nav_2.0/autoload/ikiwiki/nav.vim  |  384 +++++++++++++++++++++++++++++
+ 9 files changed, 881 insertions(+), 264 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
 Author:     Javier Rojas <jerojasro at devnull.li>
 AuthorDate: Tue Feb 9 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

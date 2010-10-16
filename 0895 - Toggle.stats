@@ -1,4 +1,28 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5)
+Author:     Timo Teifel <timo at teifel-net.de>
+AuthorDate: Wed Sep 15 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Keeps the keyword case when toggling (thanks to Jan Christoph Ebersbach for this code)
+    - bugfix for && and || toggling
+
+ plugin/toggle.vim |  129 +++++++++++++++++++++++++++++------------------------
+ 1 files changed, 71 insertions(+), 58 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Timo Teifel <timo at teifel-net.de>
+AuthorDate: Tue Sep 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    default mapping uses + in normal and visual mode instead of <C-T>
+    added toggle entries: && <--> ||   and & <--> |
+    internal optimizations
+
+ README            |    8 +++-
+ plugin/toggle.vim |  118 ++++++++++++++++++++++++++++++++++++-----------------
+ 2 files changed, 87 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
 Author:     Timo Teifel <timo at teifel-net.de>
 AuthorDate: Fri Feb 6 00:00:00 2004 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

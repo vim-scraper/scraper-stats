@@ -1,4 +1,39 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0.6)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1.1)
+Author:     ZyX ZyX <kp-pav at yandex.ru>
+AuthorDate: Wed Sep 15 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed bug with multicharacter source strings (like ÃÂ«ch Ã¢ÂÂ ÃÂÃÂ»)
+
+ plugin/translit3.vim |   47 +++++++++++++----------------------------------
+ 1 files changed, 13 insertions(+), 34 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     ZyX ZyX <kp-pav at yandex.ru>
+AuthorDate: Tue Sep 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added WriteFunc option (allows to override method used to send strings to buffer), added Conque Shell plugin support, fixed behavior when backspace option is not set
+
+ doc/chk.txt              |   24 +-
+ doc/load.txt             |   31 +-
+ doc/oop.txt              |   93 ++
+ doc/translit3.rux        |   16 +
+ doc/translit3.txt        |   15 +
+ doc/yaml.txt             |  236 +++
+ ftplugin/conque_term.vim |    6 +
+ ftplugin/tex.vim         |    6 +
+ plugin/chk.vim           |  318 +++--
+ plugin/comp.vim          |   25 +-
+ plugin/load.vim          |  326 +++-
+ plugin/oop.vim           |  237 +++
+ plugin/stuf.vim          |   75 +-
+ plugin/translit3.vim     |   74 +-
+ plugin/yaml.vim          | 4029 ++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/yaml.vim          |  168 ++
+ 16 files changed, 5409 insertions(+), 270 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0.6)
 Author:     ZyX ZyX <kp-pav at yandex.ru>
 AuthorDate: Sun Aug 29 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

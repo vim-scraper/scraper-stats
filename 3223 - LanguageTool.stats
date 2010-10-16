@@ -1,0 +1,160 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.12)
+Author:     Dominique Pellé <dominique.pelle at gmail.com>
+AuthorDate: Tue Sep 7 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - (bug) fixed incorrect handling of multibyte causing missing highlighting
+
+ plugin/LanguageTool.vim |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
+Author:     Dominique Pellé <dominique.pelle at gmail.com>
+AuthorDate: Sat Sep 4 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - (bug) regex to parse rules from LanguageTool output did not accept rule with dash
+    - (improvement) don't waste a line displaying "Correction:" in scratch buffer when error has no suggested correction
+
+ plugin/LanguageTool.vim |    6 ++++--
+ 1 files changed, 4 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
+Author:     Dominique Pellé <dominique.pelle at gmail.com>
+AuthorDate: Fri Sep 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - avoid spurious highlighting when text of error appears multiple times in line.
+
+ plugin/LanguageTool.vim |   33 ++++++++++++++++++++++-----------
+ 1 files changed, 22 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
+Author:     Dominique Pellé <dominique.pelle at gmail.com>
+AuthorDate: Thu Sep 2 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - improved handling of LeftMouse event (used when clicking on error to jump to its location)
+
+ doc/LanguageTool.txt    |    4 ++--
+ plugin/LanguageTool.vim |   10 +++++-----
+ 2 files changed, 7 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
+Author:     Dominique Pellé <dominique.pelle at gmail.com>
+AuthorDate: Mon Aug 30 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - (bug) fixed syntax error
+    - fixed broken links in help page
+
+ doc/LanguageTool.txt    |    6 +++---
+ plugin/LanguageTool.vim |   19 +++++++++++--------
+ 2 files changed, 14 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
+Author:     Dominique Pellé <dominique.pelle at gmail.com>
+AuthorDate: Mon Aug 30 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - :LanguageToolCheck command now accepts a range
+    - (bug) more fixes to properly handle XML characters such as &
+
+ doc/LanguageTool.txt    |   14 ++++++++-
+ plugin/LanguageTool.vim |   75 ++++++++++++++++++++++++++++------------------
+ 2 files changed, 59 insertions(+), 30 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     Dominique Pellé <dominique.pelle at gmail.com>
+AuthorDate: Mon Aug 30 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - created a Vim help page  (:help LanguageTool)
+
+ doc/LanguageTool.txt    |  221 +++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/LanguageTool.vim |   81 +++++------------
+ 2 files changed, 244 insertions(+), 58 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Dominique Pellé <dominique.pelle at gmail.com>
+AuthorDate: Mon Aug 30 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - (bug) XML code such as " < (etc) had to be replaced in " & (etc)
+    - (bug) escaping \ and ' in regex was not right
+    - improved comment explaining how to install LanguageTool
+
+ plugin/LanguageTool.vim |   68 +++++++++++++++++++++++++++++-----------------
+ 1 files changed, 43 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Dominique Pellé <dominique.pelle at gmail.com>
+AuthorDate: Sun Aug 29 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - (bug) substitute things like &quote; into " from input XML.
+
+ plugin/LanguageTool.vim |   70 ++++++++++++++++++++++++++---------------------
+ 1 files changed, 39 insertions(+), 31 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Dominique Pellé <dominique.pelle at gmail.com>
+AuthorDate: Sun Aug 29 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - populate location list (can now use commands :lopen, :lne, ...)
+
+ plugin/LanguageTool.vim |   25 +++++++++++++++++--------
+ 1 files changed, 17 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Dominique Pellé <dominique.pelle at gmail.com>
+AuthorDate: Sun Aug 29 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - check whether running language tool succeeded + a few other fixes
+
+ plugin/LanguageTool.vim |   33 ++++++++++++++++++++++++---------
+ 1 files changed, 24 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Dominique Pellé <dominique.pelle at gmail.com>
+AuthorDate: Sun Aug 29 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - (bug) fall back to 'enc' encoding when 'fenc' is not set
+    - (new) can now click on error in scratch buffer to jump to them (if mouse is enabled)
+
+ plugin/LanguageTool.vim |   48 ++++++++++++++++++++++++++++++++--------------
+ 1 files changed, 33 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Dominique Pellé <dominique.pelle at gmail.com>
+AuthorDate: Sun Aug 29 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - added escape() and nomagic in a regex to avoid errors
+
+ plugin/LanguageTool.vim |   29 +++++++++++++++++++++--------
+ 1 files changed, 21 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Dominique Pellé <dominique.pelle at gmail.com>
+AuthorDate: Sun Aug 29 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - pressing <Enter> on an error in scratch buffer now jumps to that error
+
+ plugin/LanguageTool.vim |  126 ++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 98 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Dominique Pellé <dominique.pelle at gmail.com>
+AuthorDate: Sat Aug 28 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                  |   68 +++++++++++++++
+ plugin/LanguageTool.vim |  218 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 286 insertions(+), 0 deletions(-)

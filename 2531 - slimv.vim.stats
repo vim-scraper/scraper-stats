@@ -1,4 +1,16 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6.3)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Sat Sep 11 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added option to return cursor to the editor window from REPL buffer after evaluating an s-expression, Wrap: if standing on a paren then wrap the whole s-expression, Wrap selection: exit visual mode after command, Bugfixes: inserting double quotes in paredit mode (like "\""), dd in paredit mode when unbalanced form is inside comment, reopen REPL buffer after closing it via ":q", comment and string detection error with noignorecase setting, wrong positioning when moving parenthesis to the right, defmacro detection problem, paredit wrap selection missed last character when 'selection' was not "exclusive".
+
+ doc/slimv.txt      |   67 +++++++++++++++++++++++++++++++++++---------------
+ ftplugin/slimv.vim |   35 +++++++++++++++++++++++---
+ plugin/paredit.vim |   70 +++++++++++++++++++++++++++------------------------
+ 3 files changed, 115 insertions(+), 57 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.2)
 Author:     Tamas Kovacs <kovisoft at gmail.com>
 AuthorDate: Wed Jun 9 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

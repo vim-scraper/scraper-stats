@@ -1,4 +1,31 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.3)
+Author:     Tim Pope <vimNOSPAM at tpope.org>
+AuthorDate: Fri Sep 10 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Support :Rails new app for Rails 3.
+    Add support for CoffeeScript, LESS CSS, and SCSS.
+    Syntax highlighting updates for Rails 3 and RSpec 2.
+    Support for RSpec 2's spec/requests.
+    Support :.Rake in test 'foo' do ... end.
+    :Rake in quickfix window reruns last rake task.
+    :Rake - reruns last rake task.
+    :Rake in views runs view specs.
+    Support test/unit/helpers.
+    :A from app/weird/foo.rb to spec/weird/foo_spec.rb.
+    Enable omnicomplete in Haml views.
+    Also create :RD commands with :Rnavcommand.
+    Fix gf on "include Namespaced::Module".
+    Fix Windows "C:" versus "c:" issue.
+    Change cookies abbreviation from co to coo (so one can type co.uk).
+
+ README             |    4 +-
+ autoload/rails.vim |  457 +++++++++++++++++++++++++++++-----------------------
+ doc/rails.txt      |   28 ++--
+ plugin/rails.vim   |   18 +-
+ 4 files changed, 283 insertions(+), 224 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
 Author:     Tim Pope <vimNOSPAM at tpope.org>
 AuthorDate: Sat Mar 13 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

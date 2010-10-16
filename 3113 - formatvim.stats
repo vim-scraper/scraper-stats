@@ -1,4 +1,20 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.3.3)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.3.4)
+Author:     ZyX ZyX <kp-pav at yandex.ru>
+AuthorDate: Thu Sep 9 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added %!{cmd}!% format specification, added lcs:conceal support, added support for the case when 'lcs' does not have tab and 'list' is on, lots of bugfixes
+
+ .hgignore         |    2 +
+ README            |    9 +-
+ doc/chk.txt       |   10 ++
+ doc/format.txt    |   19 +++-
+ plugin/chk.vim    |  150 +++++++++++++++++----------
+ plugin/format.vim |  306 ++++++++++++++++++++++++++++++++++++-----------------
+ plugin/stuf.vim   |   17 +++-
+ 7 files changed, 353 insertions(+), 160 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3.3)
 Author:     ZyX ZyX <kp-pav at yandex.ru>
 AuthorDate: Sat Aug 28 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

@@ -1,4 +1,27 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Sat Sep 18 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      Moved OpenBrowser() to external autoload plug-in:
+       http://github.com/xolox/vim-pyref/commit/b059112e6d111f84cb35
+    
+      Added :PyRef command, converted to autoload script:
+       http://github.com/xolox/vim-pyref/commit/a37a24fe6630f40d7145
+
+ autoload/xolox/escape.vim |   26 +
+ autoload/xolox/open.vim   |   75 +
+ autoload/xolox/pyref.vim  |  145 +
+ autoload/xolox.vim        |  110 +
+ doc/pyref.txt             |  129 +-
+ misc/pyref_index          | 8730 +++++++++++++++++++++++++++++++++++++++++++++
+ plugin/pyref.vim          |  214 +--
+ pyref/index               | 8730 ---------------------------------------------
+ pyref/readme.html         |  118 -
+ pyref/spider.py           |   89 -
+ 10 files changed, 9144 insertions(+), 9222 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
 Author:     Peter Odding <peter at peterodding.com>
 AuthorDate: Tue Jun 8 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

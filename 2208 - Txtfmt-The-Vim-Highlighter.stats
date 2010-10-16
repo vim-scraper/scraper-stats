@@ -1,4 +1,23 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.3)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.4)
+Author:     Brett Stahlman <brettstahlman at comcast.net>
+AuthorDate: Sat Sep 18 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    *** TOKENS NOW COMPLETELY CONCEALED (with Vim 7.3) ***
+    -Makes using the "conceal" feature the default for Vim versions >= 7.3.
+    Important Note: If you have legacy files for which you do not wish to use "conceal", read the following:
+    	:help txtfmt-conceal-history
+    	:help txtfmt-viewing-old-files-without-conceal
+    -Provides more accurate definition of "turquoise" color in default color map: LightGreen changed to DarkCyan.
+    -Fixed handling of bad modeline options.
+
+ README            |    4 +
+ doc/txtfmt.txt    |  184 +++++++++++++++++++++++++++++++++++++-------------
+ plugin/txtfmt.vim |  193 +++++++++++++++++++++++++++++++++++++++++++----------
+ syntax/txtfmt.vim |    7 +-
+ 4 files changed, 302 insertions(+), 86 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
 Author:     Brett Stahlman <brettstahlman at comcast.net>
 AuthorDate: Tue Jun 8 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

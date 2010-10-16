@@ -1,4 +1,45 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.3)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8.2)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Sun Sep 19 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      Bug fix: %s/xolox#open#shell/xolox#open#file/:
+       http://github.com/xolox/vim-shell/commit/452e951e2fcc4c7afa5a
+    
+      Truncate expand() result to one pathname:
+       http://github.com/xolox/vim-shell/commit/dc3448ec7f3a66b17199
+    
+      Bug fix: Open either file or directory, but never both!
+       http://github.com/xolox/vim-shell/commit/de1303de9b9317affe10
+
+ autoload/xolox/open.vim        |    6 ++--
+ autoload/xolox/shell.vim       |   13 ++++---
+ doc/open-external-location.txt |   67 ----------------------------------------
+ plugin/shell.vim               |    4 +-
+ 4 files changed, 12 insertions(+), 78 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Sat Sep 18 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    http://github.com/xolox/vim-shell/commit/4d2313b6508c26a1a843:
+      Moved openurl() & open_with() to dedicated plug-in (included in ZIP archive)
+      Simplified Mac OS X support
+      Support command line web browsers in s:open_at_cursor()
+
+ README                         |    2 +-
+ autoload/xolox/escape.vim      |    4 +-
+ autoload/xolox/open.vim        |   75 +++++++++++++++++
+ autoload/xolox/shell.dll       |  Bin 43520 -> 43520 bytes
+ autoload/xolox/shell.vim       |  178 +++++++++-------------------------------
+ autoload/xolox.vim             |   15 ++-
+ doc/open-external-location.txt |   67 +++++++++++++++
+ doc/shell.txt                  |   58 +++++++------
+ plugin/shell.vim               |    9 +--
+ 9 files changed, 226 insertions(+), 182 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.3)
 Author:     Peter Odding <peter at peterodding.com>
 AuthorDate: Mon Aug 30 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

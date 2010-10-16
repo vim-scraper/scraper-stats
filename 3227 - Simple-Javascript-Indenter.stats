@@ -1,0 +1,44 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2.1)
+Author:     Miao Jiang <jiangfriend at gmail.com>
+AuthorDate: Wed Sep 8 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Support: indent for if, else, else if, while, try, catch, finally without brackets.
+
+ indent/javascript.vim                   |  219 +++++++++++++++++++------------
+ simple-javascript-indenter/ChangeLog    |   10 ++
+ simple-javascript-indenter/README.mdown |   70 +++++++----
+ simple-javascript-indenter/test.js      |   64 +++++++--
+ 4 files changed, 240 insertions(+), 123 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.1)
+Author:     Miao Jiang <jiangfriend at gmail.com>
+AuthorDate: Mon Sep 6 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    FIX: indent error for code
+    if( A ||
+    	B &&
+    	C)
+    {
+    }
+
+ indent/javascript.vim                   |  142 +++++++++++++++++++------------
+ simple-javascript-indenter/ChangeLog    |   13 +++-
+ simple-javascript-indenter/README.mdown |  100 +++++++++++-----------
+ simple-javascript-indenter/test.js      |   39 ++++++---
+ 4 files changed, 176 insertions(+), 118 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     Miao Jiang <jiangfriend at gmail.com>
+AuthorDate: Sun Sep 5 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fix comment issue isn't solved after whole reindent if the first line is blank.
+
+ README                                  |  107 ++++++++++++++++++++++++
+ indent/javascript.vim                   |  137 +++++++++++++++++++++++++++++++
+ simple-javascript-indenter/ChangeLog    |    2 +
+ simple-javascript-indenter/README.mdown |   87 +++++++++++++++++++
+ simple-javascript-indenter/test.js      |   48 +++++++++++
+ 5 files changed, 381 insertions(+), 0 deletions(-)

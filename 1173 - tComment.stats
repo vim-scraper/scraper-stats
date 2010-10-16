@@ -1,4 +1,24 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.10)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Sep 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Support for erlang (thanks to Zhang Jinzhu)
+    - Support for x86conf
+    - Changed comment string for eruby (proposed by Vinicius Baggio)
+    - NEW: Enabled key=value pairs to configure commenting
+    - CHANGE: Moved the definition of some variables from plugin/tComment.vim to autoload/tcomment.vim
+    - CHANGE: Renamed the file plugin/tComment.vim to plugin/tcomment.vim
+    - CHANGE: Renamed certain global functions to tcomment#...
+
+ autoload/tcomment.vim |  528 +++++++++++++++++++++++++++++++++++++++----------
+ doc/tComment.txt      |  208 -------------------
+ doc/tcomment.txt      |  233 ++++++++++++++++++++++
+ plugin/tComment.vim   |  385 -----------------------------------
+ plugin/tcomment.vim   |  252 +++++++++++++++++++++++
+ 5 files changed, 904 insertions(+), 702 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
 Author:     Tom Link <micathom at gmail.com>
 AuthorDate: Sun Oct 11 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

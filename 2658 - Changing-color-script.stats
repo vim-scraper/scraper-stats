@@ -1,4 +1,45 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/15.8)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/16.2)
+Author:     Paul Contreras <pablo at ezrider.co.uk>
+AuthorDate: Sun Sep 19 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Removed the timer function from here and made it into a separate script.  This script needs that script in to work properly, so you should install that in your _vimrc if you have not already done so.  Download it from here: http://www.vim.org/scripts/script.php?script_id=3244
+
+ colors/ChangingColor.vim |   25 ++++++++++++-------------
+ 1 files changed, 12 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/16.1)
+Author:     Paul Contreras <pablo at ezrider.co.uk>
+AuthorDate: Sat Sep 18 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Made Folded look exactly the same as LineNr and Foldcolumn.  This makes code 'extra' stuff on the screen look different but the same.  Makes it look a bit more professional.
+
+ colors/ChangingColor.vim |   11 +++++++++--
+ 1 files changed, 9 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/16.0)
+Author:     Paul Contreras <pablo at ezrider.co.uk>
+AuthorDate: Sat Sep 18 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Forgot to update the foreground in FoldColumn so in practice it remained like a non-moving color scheme. Now updates using the same color scheme as LineNr, both background and foreground. Sorry about that, it was a strain to see at times!!
+
+ colors/ChangingColor.vim |    8 ++++++++
+ 1 files changed, 8 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/15.9)
+Author:     Paul Contreras <pablo at ezrider.co.uk>
+AuthorDate: Fri Sep 17 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Made FoldedColumn look the same as LineNr.  Obviously it was not looking good as a static-style color scheme.  It blends in at least.
+
+ colors/ChangingColor.vim   |  701 ++++++++++++++++++++++++++++++++++++++++
+ colors/changing-colour.vim |  756 --------------------------------------------
+ 2 files changed, 701 insertions(+), 756 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/15.8)
 Author:     Paul Contreras <pablo at ezrider.co.uk>
 AuthorDate: Fri Feb 26 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

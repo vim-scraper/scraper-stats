@@ -1,4 +1,48 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.6)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.7.1)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Sun Sep 5 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      Bug fix: Avoid Vim's hit-enter prompt:
+       http://github.com/xolox/vim-publish/commit/7a2705cbdcefa12116f6ca007af9683729c2b37a
+    
+      Instrumented plug-in with xolox#timer#* calls:
+       http://github.com/xolox/vim-publish/commit/514a5f7be3b5d09dc8a944fd594ce1fbd0e17e1b
+    
+      Proper HTML encoding, foolproof publish#customize_html():
+       http://github.com/xolox/vim-publish/commit/be773a134cf404723cc463ab034eaf0b26f7d279
+    
+      Bug fix: Make 2html ignore text folding:
+       http://github.com/xolox/vim-publish/commit/892be723e17dbfd21bec0d72d600519e26e0f6c1
+    
+      Bug fix: Proper escaping in pattern_to_lnum():
+       http://github.com/xolox/vim-publish/commit/43c57b7a8b2d5b030fc3c539df293d0bb350840b
+    
+      Bug fix: Proper escaping in create_subst_cmd() to avoid E33:
+       http://github.com/xolox/vim-publish/commit/4fa75be69245eb5723279793e4a587bb3848aa6c
+    
+      Bug fix for publish#html_encode():
+       http://github.com/xolox/vim-publish/commit/5df4c3d750654a330e077eb96a781c9b8d4dab7c
+    
+      Simplified tags -> hyperlinks conversion hack:
+       http://github.com/xolox/vim-publish/commit/459b8293a2a85885872603765699a210fe72fb74
+    
+      Smarter integration with easytags.vim:
+       http://github.com/xolox/vim-publish/commit/be98f4328bb631cd4c67d8951ff7c413b7cb6355
+    
+      Fixed easytags#update() to overcome argument limit:
+       http://github.com/xolox/vim-publish/commit/87b0305bd27d4ee3715790cddc76cc2cfead7c14
+
+ autoload/publish.vim      |  102 ++++++++++++++++++++++++++++---------------
+ autoload/xolox/escape.vim |    4 +-
+ autoload/xolox/timer.vim  |    6 +-
+ autoload/xolox.vim        |   94 +++++++++++++++++++++++++++++++--------
+ doc/publish.html          |  107 ---------------------------------------------
+ doc/publish.txt           |  100 ++++++++++++++++++++---------------------
+ plugin/publish.vim        |   30 ++++++++-----
+ 7 files changed, 215 insertions(+), 228 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
 Author:     Peter Odding <peter at peterodding.com>
 AuthorDate: Tue Jun 15 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

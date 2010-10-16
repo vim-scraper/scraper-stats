@@ -1,0 +1,138 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.0)
+Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+AuthorDate: Sat Sep 18 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Deletion:
+        made it work correctly in visual block mode
+        repeating it doesn't require to re-enter empty text anymore
+    
+    Improved interactive messages
+    
+    Added support for right to left editing
+    
+    Defined g:blockinsert_commands and used it to disable blockinsert commands by
+    default
+    
+    When repeating actions performed on a visual block selection, blank portions of
+    text in the new area will be correctly skipped.
+    
+    Corrected the virtualedit mess. Still need to disable it though.
+    Renamed the commands to begin with Block... & created Block[Q]BothSame.
+    Updated the help file.
+
+ README                 |   30 ++++++--
+ doc/blockinsert.txt    |   78 ++++++++++++------
+ plugin/blockinsert.vim |  215 ++++++++++++++++++++++++++++++++++++------------
+ 3 files changed, 241 insertions(+), 82 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
+Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+AuthorDate: Fri Sep 17 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    The mappings can now operate on a visual block area defined anywhere.
+    The . (dot) is able to repeat that action now.
+
+ plugin/blockinsert.vim |  159 ++++++++++++++++++++++++++----------------------
+ 1 files changed, 86 insertions(+), 73 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
+Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+AuthorDate: Thu Sep 16 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Corrected a small regression which made the use of . (dot) impossible.
+
+ plugin/blockinsert.vim |    9 +++++----
+ 1 files changed, 5 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+AuthorDate: Thu Sep 16 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    New feature:
+    
+    Added the possibility to define the boundaries of the text acted upon by drawing a visual block selection.
+    
+    Example: (the <bar>s represent our selection)
+    
+        Some text here                |stridx(       |       end of this line
+        Some other text...            |strridx(      |       text after a function
+        Let's start a third line       |strlen(       |       ...finish this line
+        End of paragraph             |substitute(|       end indeed.
+    
+    Now that a selection has been defined, all you need to do is type:
+    \a followed by )
+    and your text will become:
+    
+        Some text here                 stridx()           end of this line
+        Some other text...             strridx()          text after a function
+        Let's start a third line        strlen()           ...finish this line
+        End of paragraph              substitute()    end indeed.
+    
+    Enjoy.
+    
+    todo: Add the possibility to repeat this action by typing . (dot)
+    todo: Create \[[, \]], \q[[, \q]] for cases where we want the same text on both ends.
+
+ README                 |   23 ++++++++++++-
+ doc/blockinsert.txt    |   21 +++++++++++-
+ plugin/blockinsert.vim |   86 +++++++++++++++++++++++++++++++-----------------
+ 3 files changed, 98 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+AuthorDate: Wed Sep 15 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    2 bug fixes:
+    
+    - If a count was used with \qi, \qa or \q[], it wasn't interpreted correctly.
+    - There was also a problem with reseting virtualedit to its original value.
+
+ plugin/blockinsert.vim |   21 +++++++++------------
+ 1 files changed, 9 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+AuthorDate: Tue Sep 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improved integration with the 'repeat' plugin.
+    
+    The inserted / appended text is now remembered,
+    you don't have to re-enter it when repeating.
+
+ doc/blockinsert.txt    |    5 +-
+ plugin/blockinsert.vim |  177 ++++++++++++++++++++++++++++++------------------
+ 2 files changed, 112 insertions(+), 70 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+AuthorDate: Mon Sep 13 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Integrated blockinsert with Tim Pope's repeat plugin.
+    It is now possible to repeat blockinsert mappings by pressing . (dot)
+    
+    More info about repeat:
+    http://www.vim.org/scripts/script.php?script_id=2136
+    http://github.com/tpope/vim-repeat
+
+ doc/blockinsert.txt    |    8 ++++++++
+ plugin/blockinsert.vim |    6 +++++-
+ 2 files changed, 13 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+AuthorDate: Mon Sep 13 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Initial upload
+
+ README                 |   82 ++++++++++++++++++++++++++
+ doc/blockinsert.txt    |  140 +++++++++++++++++++++++++++++++++++++++++++
+ plugin/blockinsert.vim |  153 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 375 insertions(+), 0 deletions(-)

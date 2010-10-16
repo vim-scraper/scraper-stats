@@ -1,4 +1,31 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.37)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.39)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Sep 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - tlib#World#Resize: set winfix{height|width}
+    - g:tlib#cache#dont_purge
+    - tlib#vim#RestoreWindow()
+    - tlib#ballon#...()
+
+ autoload/tlib/Object.vim    |   10 +-
+ autoload/tlib/Test.vim      |    6 +-
+ autoload/tlib/TestChild.vim |    6 +-
+ autoload/tlib/World.vim     |   52 ++-
+ autoload/tlib/agent.vim     |    6 +-
+ autoload/tlib/buffer.vim    |    8 +-
+ autoload/tlib/cache.vim     |  201 +++++-
+ autoload/tlib/date.vim      |    8 +-
+ autoload/tlib/file.vim      |    5 +-
+ autoload/tlib/input.vim     |   68 ++-
+ autoload/tlib/list.vim      |   15 +-
+ autoload/tlib/scratch.vim   |    6 +-
+ autoload/tlib/vim.vim       |  107 +++
+ doc/tlib.txt                | 1669 +++++++++++++++++++++++--------------------
+ plugin/02tlib.vim           |   18 +-
+ 15 files changed, 1336 insertions(+), 849 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.37)
 Author:     Tom Link <micathom at gmail.com>
 AuthorDate: Wed Mar 31 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

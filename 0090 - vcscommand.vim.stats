@@ -1,4 +1,33 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.99.41)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.99.42)
+Author:     Bob Hiestand <bob.hiestand at gmail.com>
+AuthorDate: Fri Sep 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    svnannotate:  handle longer revision numbers
+    
+    VCSVimDiff:  handle 1 vimdiff session per tab
+    
+    menu:  Add VCSCommandDisableMenu, VCSCommandMenuRoot, and VCSCommandMenuPriority variables to customize the GUI menu.
+    
+    vcshg:  correct message for empty commit
+
+ doc/vcscommand.txt     |   18 ++++++-
+ plugin/vcsbzr.vim      |    3 +-
+ plugin/vcscommand.vim  |  138 +++++++++++++++++++++++++++++-------------------
+ plugin/vcscvs.vim      |   28 ++++++----
+ plugin/vcsgit.vim      |    3 +-
+ plugin/vcshg.vim       |    9 ++-
+ plugin/vcssvk.vim      |    3 +-
+ plugin/vcssvn.vim      |    3 +-
+ syntax/cvsannotate.vim |    2 +-
+ syntax/gitannotate.vim |    2 +-
+ syntax/hgannotate.vim  |    2 +-
+ syntax/svkannotate.vim |    2 +-
+ syntax/svnannotate.vim |    6 +-
+ syntax/vcscommit.vim   |    2 +-
+ 14 files changed, 135 insertions(+), 86 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.99.41)
 Author:     Bob Hiestand <bob.hiestand at gmail.com>
 AuthorDate: Fri Aug 20 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

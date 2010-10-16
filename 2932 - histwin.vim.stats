@@ -1,4 +1,16 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.12)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.13)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Tue Aug 31 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - New version that uses Vim 7.3 persistent undo features |new-persistent-undo|- Display saved counter in detailed view- Display indicator for saved branches.- in diff mode, don't set the original buffer to be nomodifiable (so you can always merge chunks).- Check for Vim Version 7.3 (the plugin won't work with older versions of Vim)
+
+ autoload/histwin.vim     |   36 +++++++++++++++++++------------
+ doc/histwin.txt          |   52 +++++++++++++++++++++++++++++++++++----------
+ plugin/histwinPlugin.vim |   20 +++++++++--------
+ 3 files changed, 73 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
 Author:     Christian Brabandt <cb at 256bit.org>
 AuthorDate: Tue May 4 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

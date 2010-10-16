@@ -1,4 +1,22 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.26)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.26.2)
+Author:     tyru   <tyru.exe (at) gmail.com>
+AuthorDate: Fri Sep 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    NOTE: Removed v0.26.0 from vim.org
+    
+    v0.26.2:
+    - Fix fatal bug: g:skk_henkan_point_keys default value was wrongly changed
+    - Fix bug: Several keys in normal mode mapped by skk.vim do not accept [count]. Thanks Toshiki Kataoka for reporting the bug.
+    
+    v0.26.0:
+    - Applied super blooper's JLOD patch. Thanks.
+    -- Added g:skk_enable_jlod_layout
+
+ plugin/skk.vim |   18 ++++++++++++++----
+ 1 files changed, 14 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.26)
 Author:     tyru   <tyru.exe (at) gmail.com>
 AuthorDate: Mon Aug 30 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

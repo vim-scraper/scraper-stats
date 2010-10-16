@@ -1,4 +1,17 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8.1)
+Author:     Wincent Colaiuta <win at wincent.com>
+AuthorDate: Tue Sep 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - fix mapping issues for users who have set |'notimeout'| (patch from Sung Pae)
+
+ README                         |    2 +-
+ doc/command-t.txt              |   43 +++++++++++++++++++++++++++-------------
+ ruby/command-t/match_window.rb |    1 +
+ ruby/command-t/settings.rb     |    2 +
+ 4 files changed, 33 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
 Author:     Wincent Colaiuta <win at wincent.com>
 AuthorDate: Thu Aug 19 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

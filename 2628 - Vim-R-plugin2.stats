@@ -1,4 +1,64 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/100825)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/100917)
+Author:     Jakson Aquino <jalvesaq at gmail.com>
+AuthorDate: Fri Sep 17 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Changed the use of vimrplugin_r_path: now the option includes only the directory part of the path.
+    * Initial support to Conque Shell plugin. Thanks to "il_principe orange" for suggesting the use of Conque Shell, "ZyX-I" for writing the initial code to use Conque Shell, and Nico Raffo for writing the plugin and additional code to integrate both plugins.
+    * New options: vimrplugin_conqueplugin and vimrplugin_conquevsplit, vimrplugin_r_args.
+    * Initial support for Vim-R communication on Windows using Python.
+    * Fixed bug when the plugin was installed in a directory other than ~/.vim (thanks to Tom Link).
+
+ README                          |   88 +++++----
+ autoload/rcomplete.vim          |   10 +-
+ bitmaps/RClear.bmp              |  Bin 0 -> 702 bytes
+ bitmaps/RClear.png              |  Bin 0 -> 1079 bytes
+ bitmaps/RClearAll.bmp           |  Bin 0 -> 702 bytes
+ bitmaps/RClearAll.png           |  Bin 0 -> 718 bytes
+ bitmaps/RClose.bmp              |  Bin 0 -> 702 bytes
+ bitmaps/RClose.png              |  Bin 0 -> 999 bytes
+ bitmaps/RListSpace.bmp          |  Bin 0 -> 702 bytes
+ bitmaps/RListSpace.png          |  Bin 0 -> 667 bytes
+ bitmaps/RSendBlock.bmp          |  Bin 0 -> 702 bytes
+ bitmaps/RSendBlock.png          |  Bin 0 -> 553 bytes
+ bitmaps/RSendFile.bmp           |  Bin 0 -> 702 bytes
+ bitmaps/RSendFile.png           |  Bin 0 -> 530 bytes
+ bitmaps/RSendFunction.bmp       |  Bin 0 -> 702 bytes
+ bitmaps/RSendFunction.png       |  Bin 0 -> 871 bytes
+ bitmaps/RSendLine.bmp           |  Bin 0 -> 702 bytes
+ bitmaps/RSendLine.png           |  Bin 0 -> 949 bytes
+ bitmaps/RSendParagraph.bmp      |  Bin 0 -> 702 bytes
+ bitmaps/RSendParagraph.png      |  Bin 0 -> 390 bytes
+ bitmaps/RSendSelection.bmp      |  Bin 0 -> 702 bytes
+ bitmaps/RSendSelection.png      |  Bin 0 -> 502 bytes
+ bitmaps/RStart.bmp              |  Bin 0 -> 702 bytes
+ bitmaps/RStart.png              |  Bin 0 -> 1050 bytes
+ bitmaps/r-close.xpm             |  160 ---------------
+ bitmaps/r-control-clear.png     |  Bin 1079 -> 0 bytes
+ bitmaps/r-control-clearall.png  |  Bin 718 -> 0 bytes
+ bitmaps/r-control-listspace.png |  Bin 667 -> 0 bytes
+ bitmaps/r-send-block.png        |  Bin 553 -> 0 bytes
+ bitmaps/r-send-file.png         |  Bin 530 -> 0 bytes
+ bitmaps/r-send-function.png     |  Bin 871 -> 0 bytes
+ bitmaps/r-send-line.png         |  Bin 949 -> 0 bytes
+ bitmaps/r-send-paragraph.png    |  Bin 390 -> 0 bytes
+ bitmaps/r-send-selection.png    |  Bin 502 -> 0 bytes
+ bitmaps/r-start.xpm             |  181 ----------------
+ doc/r-plugin.txt                |  429 ++++++++++++++++++++++++++-------------
+ ftdetect/r.vim                  |    2 +-
+ ftplugin/r.vim                  |  417 +++++++++++++++++++++++++-------------
+ ftplugin/rhelp.vim              |  417 +++++++++++++++++++++++++-------------
+ ftplugin/rnoweb.vim             |  417 +++++++++++++++++++++++++-------------
+ indent/r.vim                    |  131 +++++++------
+ r-plugin/build_omni_list.R      |    2 +-
+ r-plugin/rperl.vim              |  110 ++++++++++
+ r-plugin/rpython.vim            |  136 ++++++++++++
+ r-plugin/vimActivate.js         |    4 +
+ syntax/r.vim                    |   19 +-
+ syntax/rout.vim                 |   65 +++++--
+ 47 files changed, 1547 insertions(+), 1041 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/100825)
 Author:     Jakson Aquino <jalvesaq at gmail.com>
 AuthorDate: Wed Aug 25 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

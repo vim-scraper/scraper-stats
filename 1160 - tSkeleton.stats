@@ -1,4 +1,31 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.7)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.9)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Tue Sep 14 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - CHANGE: Renamed plugin/tSkeleton.vim to plugin/tskeleton.vim
+    - CHANGE: Moved the definition of some variables from plugin/tSkeleton.vim to autoload/tskeleton.vim
+    - If g:tskelMapLeader is empty, don't define maps.
+    - Don't build a menu if g:tskelMenuPrefix == ''.
+    - If g:tskelDontSetup is defined and g:tskelMenuPrefix == '', autoload/tskeleton.vim won't be loaded on startup.
+    - Don't create g:tskelBitsDir if it doesn't exist
+    - "Mini bits": Load all .tskelmini files from the current file's  directory upwards
+    - s:InsertDefault handles <+CURSOR+> tags
+    - tskeleton#HyperComplete_query(): Set w:tskeleton_hypercomplete
+    - FIX: g:tskelHyperType = "pum" didn't work properly.
+
+ autoload/tskeleton/completefunc.vim |   26 ++
+ autoload/tskeleton/mini.vim         |   13 +-
+ autoload/tskeleton/omnicomplete.vim |   26 ++
+ autoload/tskeleton/skeleton.vim     |    6 +-
+ autoload/tskeleton.vim              |  681 ++++++++++++++++++++++++---------
+ doc/tSkeleton.txt                   |  599 -----------------------------
+ doc/tskeleton.txt                   |  604 +++++++++++++++++++++++++++++
+ plugin/tSkeleton.vim                |  725 -----------------------------------
+ plugin/tskeleton.vim                |  545 ++++++++++++++++++++++++++
+ 9 files changed, 1715 insertions(+), 1510 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.7)
 Author:     Tom Link <micathom at gmail.com>
 AuthorDate: Sun Oct 18 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
