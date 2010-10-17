@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.10)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Oct 11 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.10
+    
     - :TSelectFiles, :TSelectFilesInSubdirs, tselectfiles#SelectFiles: take
     an initial pattern as the second optional argument (i.e. if you pass a
     directory as first optional argument, you'll have to escape blanks with
@@ -18,10 +20,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 162 insertions(+), 39 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Thu Feb 12 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.9
+    
     - Don't assume s:select_files_pattern.limit is set
     - Include .* in tselectfiles_hidden_rx
     - FIX: Include .* files (but hide them by default; thanks to
@@ -35,10 +39,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 56 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Dec 2 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.8
+    
     - Require tlib 0.28
 
  autoload/tselectfiles.vim |   25 ++++++++++++++++++-------
@@ -47,10 +53,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 35 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Thu Oct 16 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.7
+    
     - NEW: g:tselectfiles_part_subst* variables (for use with tselectfiles#BaseFilter())
     - NEW: [bg]:tselectfiles_filter_basename variable (if true, match on basename only)
 
@@ -60,10 +68,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 64 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Oct 5 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.6
+    
     - [gbw]tselectfiles_prefix: Remove prefix from filenames in list
     - [gbw]tselectfiles_limit variable
     - [wbg]:tselectfiles_filter_rx is used only when no directory is given on the command line.
@@ -81,10 +91,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 578 insertions(+), 355 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Sep 11 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4
+    
     - "Delete file" will ask whether to delete a corresponding buffer too.
     - <c-w> ... View file in original window
     - Disabled <c-o> Open dir
@@ -103,10 +115,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 219 insertions(+), 80 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Jul 17 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     - Require tlib 0.9
     - "Delete file" will ask whether to delete a corresponding buffer too.
 
@@ -114,9 +128,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 248 insertions(+), 99 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Apr 18 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

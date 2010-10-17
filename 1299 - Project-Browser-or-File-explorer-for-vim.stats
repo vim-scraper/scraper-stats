@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2)
-Author:     Pradeep Kudethur <pradeeppp_k at yahoo.com>
+Author:     Pradeep Kudethur <pradeeppp_k@yahoo.com>
 AuthorDate: Fri Jun 24 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.2
+    
     1. "More faster than before.................... We need not do the find operation every time we open the vim, since new file addition is not very frequent to the source base. When one opens the vim, he can just do "ctrl-p", which will get the file list from the local database (by default stored in "filelist"). If new file/files are added then one can type 'R' in the file explorer, which will execute the find command from the project root folder and update the file list database.
     One can also rebuild the file list database, while opening the file explorer by pressing F5 (similar to the older versions)
     NOTE: All the key mappings can be tuned according to the convenience
@@ -15,10 +17,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 114 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Pradeep Kudethur <pradeeppp_k at yahoo.com>
+Author:     Pradeep Kudethur <pradeeppp_k@yahoo.com>
 AuthorDate: Wed Jun 15 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1
+    
     Some minor enhancement for keys <CR> and mouse left button double click. In version 1.0 these keys were responsible for opening the file in the new window (split was based on 'splitBehavior' in the script). But I felt, that everytime opening in a new window might not scale/be the requirement. Hence I have mapped these two keys to open the file in the previous window. Previous window is the one, you were before going to the file explorer.
     
     Note:
@@ -32,9 +36,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 31 insertions(+), 47 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     Pradeep Kudethur <pradeeppp_k at yahoo.com>
+Author:     Pradeep Kudethur <pradeeppp_k@yahoo.com>
 AuthorDate: Fri Jun 10 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

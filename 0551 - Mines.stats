@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/17)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Thu Aug 6 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 17
+    
     * Pressing "x" when atop an "f" now is a no-op; one must use an "f" to clear an "f"
     * Attempting to modify a completed minefield no longer produces not-modifiable error messages.
     * cecutil bug fix incorporated
@@ -17,10 +19,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 253 insertions(+), 74 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/16)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Wed Feb 21 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 16
+    
     On wins, percentage won now shown to 3 decimal places.
     Works with Rndm.vim to save seeds in $HOME/.seed to improve pseudo-random nature of games.
 
@@ -31,10 +35,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 90 insertions(+), 40 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/15)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Wed Jan 17 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 15
+    
     At end of game due to hitting a mine, empty squares mistakenly flagged as bombs are shown with a blue background
     Now includes cecutil to handle saving/restoring user maps
     Insures that it cleans up the -Mines- file
@@ -47,10 +53,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 559 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/14)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Tue Jun 27 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 14
+    
     Added "Flags Used" field while playing.
     New commands for speedier play: pressing "c" changes corner, pressing 0,$,gg,G changes cursor position but stays inside the minefield.
     Improved playability: medium is now 15% mines on an 18x18 grid, hard is 18% mines.
@@ -60,10 +68,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 177 insertions(+), 85 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/13)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Fri Jan 6 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 13
+    
     When you win, Minnie will tell you your winning percentage to the nearest 1/10 percent.
     Mines now uses cecutil to save/restore user maps.
 
@@ -73,10 +83,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 285 insertions(+), 285 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/12)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Thu Dec 22 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 12
+    
     Mines's winning banner now includes a percentage of wins.
     When Rndm.vim is missing, Mines will issue a warning about it (and where to get Rndm.vim)
     Any players out there?  I've now got a 47% winning rate with Easy mode...
@@ -85,10 +97,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 134 insertions(+), 34 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/11)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Fri Aug 27 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 11
+    
     1: An X will now mark the bomb that went off
     2: Flipped the cterm=NONE and fg/bg specs about; some machines were showing all bold which equated to one color.
     3: bugfix: an "f" on a previously determined site (whether numbered or blank) will now have no effect
@@ -97,20 +111,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 51 insertions(+), 37 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/10)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Fri Jul 30 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 10
+    
     Highlighting is now fixed after a colorscheme change.  The updatetime is now set to 200ms during the game (it gets restored) to facilitate the timing statistics and colorscheme handling.  Statistics are now kept separately for each size, and better streak statistics are kept, too.
 
  plugin/Mines.vim |  317 ++++++++++++++++++++++++++++++++++++++----------------
  1 files changed, 223 insertions(+), 94 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Mon Jun 28 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 9
+    
     For some reason I didn't consider light backgrounds before -- Mines.vim now displays well on light as well as dark backgrounds.  To do so it uses the "background" option's setting, which colorschemes normally set (in the colorscheme sampler, only brown bw c dante delek
     don't).
 

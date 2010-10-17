@@ -1,17 +1,19 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2.2)
-Author:     Benji Fisher <benji at member.AMS.org>
+Author:     Benji Fisher <benji@member.AMS.org>
 AuthorDate: Wed Jul 19 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.2.2
+    
     I applied a patch from Bill McCarthy:  set the 'linebreak' option in the help window in case there are tips with long lines, and add :silent when updating the line number.
 
  plugin/totd.vim |    8 ++++----
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2.1)
-Author:     Benji Fisher <benji at member.AMS.org>
+Author:     Benji Fisher <benji@member.AMS.org>
 AuthorDate: Thu Apr 6 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     No new functionality:  I just updated the URL for getting a tips archive.
 
@@ -21,10 +23,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 6 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
-Author:     Benji Fisher <benji at member.AMS.org>
+Author:     Benji Fisher <benji@member.AMS.org>
 AuthorDate: Fri Nov 22 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.2
+    
          I changed the way that the script edits files.  Installation should be slightly smoother, and in rare cases opening the tips should be better.
          In previous versions, I accidentally included a moderately large, very old, tips file instead of a skeleton vimtips.txt.  This version contains a small skeleton file.
 
@@ -33,20 +37,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 37 insertions(+), 3553 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1.1)
-Author:     Benji Fisher <benji at member.AMS.org>
+Author:     Benji Fisher <benji@member.AMS.org>
 AuthorDate: Wed Nov 20 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.1.1
+    
     I fixed a tiny, silly bug that probably would never cause a problem anyway.  (OK, if "vimtips.txs" is in your tags file, the binary search would screw up.)
 
  plugin/totd.vim |    4 ++--
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
-Author:     Benji Fisher <benji at member.AMS.org>
+Author:     Benji Fisher <benji@member.AMS.org>
 AuthorDate: Tue Nov 19 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.1
+    
     Do not run :helptags automatically.  The user should install the docs (totd.txt) himself.  The tag for vimtips.txt is still inserted automatically.
     Reason:  as long as this is the only script that automatically edits the tags file, there is no problem, but what if someone else tries the same trick?  Each script runs :helptags, wiping out the other's customization, ...
 
@@ -54,10 +62,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 1 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     Benji Fisher <benji at member.AMS.org>
+Author:     Benji Fisher <benji@member.AMS.org>
 AuthorDate: Tue Nov 19 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     This is almost a total rewrite.  Installation is simpler, start-up is faster,
     and I added a command
     
@@ -74,10 +84,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 3753 insertions(+), 856 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Benji Fisher <benji at member.AMS.org>
+Author:     Benji Fisher <benji@member.AMS.org>
 AuthorDate: Thu Sep 20 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1
+    
     Bug fix:  Be more graceful if :helptag has not yet been used.  (See the
     installation intructions!)
 
@@ -85,9 +97,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 19 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     Benji Fisher <benji at member.AMS.org>
+Author:     Benji Fisher <benji@member.AMS.org>
 AuthorDate: Thu Sep 20 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

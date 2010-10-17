@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3.2)
-Author:     Frank Duncan <frank at kank.net>
+Author:     Frank Duncan <frank@kank.net>
 AuthorDate: Thu Jul 9 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3.2
+    
      * Another bug where mcclim confused vim with syntax additions. Functions with ] or [ in them will no longer show up as highlighted.
      * Install.sh in the vim plugin was using the wrong environment variable
 
@@ -10,23 +12,27 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 6 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
-Author:     Frank Duncan <frank at kank.net>
+Author:     Frank Duncan <frank@kank.net>
 AuthorDate: Sat Jun 27 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3.1
+    
     * Fixed a bug where loading up packages that defined symboles such as \ and ' would cause syntax additions to fail
     * Added plugin installation.
     * Fixed how the main thread and repl thread share sender data, which should translate into faster bootup times.
 
- ftplugin/lisp/nekthuth/install.sh |   18 ++++++++++++++++++
  ftplugin/lisp/nekthuth.vim        |   10 ++++++++++
+ ftplugin/lisp/nekthuth/install.sh |   18 ++++++++++++++++++
  2 files changed, 28 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     Frank Duncan <frank at kank.net>
+Author:     Frank Duncan <frank@kank.net>
 AuthorDate: Tue Apr 7 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3
+    
         * Multiple return value (using values, such as in #'get-decoded-time) prints correctly in buffer
         * Fixed NekthuthInterrupt (0.2 broke it)
         * Function coloring and complete added for *package* functions and transitively used packages
@@ -38,10 +44,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 45 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Frank Duncan <frank at kank.net>
+Author:     Frank Duncan <frank@kank.net>
 AuthorDate: Mon Jan 5 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     * Remote execution in an already running sbcl instance. See setup in the manual for more information.
     * Fixed ClHelp not opening a window upon failure
 
@@ -49,13 +57,13 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 45 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     Frank Duncan <frank at kank.net>
+Author:     Frank Duncan <frank@kank.net>
 AuthorDate: Tue Aug 26 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
  README                                |   23 +
- ftplugin/lisp/nekthuth/hyperspecTags  |  978 +++++++++++++++++++++++++++++++++
  ftplugin/lisp/nekthuth.vim            |  435 +++++++++++++++
+ ftplugin/lisp/nekthuth/hyperspecTags  |  978 +++++++++++++++++++++++++++++++++
  3 files changed, 1436 insertions(+), 0 deletions(-)

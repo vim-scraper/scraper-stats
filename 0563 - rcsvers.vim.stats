@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.28)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Wed Jan 6 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.28
+    
     Adds syntax highlighting to temporary files retrieved from RCS and fix of \rci to work with vim 7. (thanks to Sergey Khorev)
     Also added Fredrik Eriksson's patch to allow editing of messages. (http://thebc.se/patch-for-rcsversvim)
     And added the -d option to preserve original modification times. (Roger)
@@ -13,50 +15,60 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 151 insertions(+), 83 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.27)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Tue Apr 17 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.27
+    
     Add a new mode for revising (never/ask/always) and fix rlog window width, both thanks to Callum Gibson.  See g:rvMode .
 
  plugin/rcsvers.vim |   46 ++++++++++++++++++++++++++++++++++++++++++++--
  1 files changed, 44 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.26)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Thu Jan 11 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.26
+    
     Fix for Windows for usernames with spaces (from Roger), and macosx directory separator (thanks to Jeff Fox)
 
  plugin/rcsvers.vim |   28 ++++++++++++++++++++++++++--
  1 files changed, 26 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.25)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Sat Jan 21 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.25
+    
     Fix for Windows if you don't have the TZ variable set, and fix how it works when saving a file to another name.
 
  plugin/rcsvers.vim |  110 ++++++++++++++++++++++++++++++++-------------------
  1 files changed, 69 insertions(+), 41 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.24)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Thu Sep 22 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.24
+    
     RCS sets the executable bit on the checked-out file to be the same as the rcs archive file.  So if that property changes after you did your first checkin, your checked-out file will maintain the original setting. So now we change the executable mode of the rcs archive file to align with the current setting of the checked-out copy. Thanks to Ben Bernard.
 
  plugin/rcsvers.vim |   90 ++++++++++++++++++++++++++++++++-------------------
  1 files changed, 56 insertions(+), 34 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.23)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Wed Apr 6 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.23
+    
     Added an option to fix the path on Cygwin systems.
      See g:rvUseCygPathFiltering
      Thanks to Simon Johann-Günter
@@ -65,10 +77,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 43 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.22)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Wed Mar 16 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.22
+    
     some re-factoring, and add the option to leave RCS files unlocked when saving, which is handy for multiple users of the same RCS file.
     See g:rvLeaveRcsUnlocked. (from Roger Pilkey)
 
@@ -76,20 +90,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 172 insertions(+), 113 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.21)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Sat Jul 24 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.21
+    
     small update: Remember the last position in the rlog window. Rename RevisionLog window to avoid collisions
 
  plugin/rcsvers.vim |   59 +++++++++++++++++++++++++++++++++++++++------------
  1 files changed, 45 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.20)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Mon Jun 28 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.20
+    
     Added a mapping to create an initial RCS file. Useful when the script
     is set to save only when a previous RCS file exists. see
     rvSaveIfPreviousRCSFileExists (thanks to Steven Michalske for the
@@ -100,10 +118,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 25 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.19)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Thu Jun 10 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.19
+    
     1.19  Added the option to prompt the user for file and check-in message on
      every save. See rvDescMsgPrompt option for details. Thanks to Kevin
      Stegemoller for the suggestion. Also \rlog will now display the
@@ -113,10 +133,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 66 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.18)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Thu Feb 26 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.18
+    
     Added the option to save an RCS version only if the RCS file already
       exists (No new RCS files will be created). (from Marc Schoechlin)
       See rvSaveIfPreviousRCSFileExists option.
@@ -125,10 +147,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 947 insertions(+), 918 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.17)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Wed Jan 28 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.17
+    
     Added the option to save an RCS version only when there is an RCS
     directory in the files directory. See rvSaveIfRCSExists option.
     (from Camillo Särs)
@@ -137,30 +161,36 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 54 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.16)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Tue Dec 9 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.16
+    
     Save some settings that "set diff" mangles, and different check for &cp
 
  plugin/rcsvers.vim |   59 ++++++++++++++++++++++++++++++++++++++++++++--------
  1 files changed, 50 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.15)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Tue Sep 16 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.15
+    
     Add functions to go back and forth between versions (mapped to \older and \newer). It's kind of jerky, but comes in handy sometimes. Also fixed a few bugs with quotes.
 
  plugin/rcsvers.vim |  292 +++++++++++++++++++++++++++++++++++-----------------
  1 files changed, 195 insertions(+), 97 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.14)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Mon Jun 9 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.14
+    
     Add option to set "rlog" command-line options.  fix rlog display,
     which would crash once in a while saying stuff like "10,10d invalid
     range". When creating a new RCS file on an existing text file, save a
@@ -170,30 +200,36 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 50 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.13)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Thu May 8 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.13
+    
     A g:rvFileQuote fix, suggested by Wiktor Niesiobedzki.  Add the ability to use the current instance of vim for the diff, which is now the default.  Change the name of the diff temp file to include the version.  Make \rlog a toggle (on/off)
 
  plugin/rcsvers.vim |  154 +++++++++++++++++++++++++++++++++-------------------
  1 files changed, 99 insertions(+), 55 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Fri Mar 28 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.12
+    
      1.12  (From Juan Frias) Script will not load if the 'cp' flag is set. Added the option to use an exclude expression, and include expression.  Fixed yet more bugs thanks to Roger for all the beta testing.
 
  plugin/rcsvers.vim |  280 ++++++++++++++++++++++++++++++++++++----------------
  1 files changed, 195 insertions(+), 85 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Mon Mar 10 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.11
+    
     (for Juan Frias) Minor bug fix, when using spaces in the description.
     Also added some error detection code to check and see that RCS
     and CI were successful. And removed requirements for SED and GREP,
@@ -203,29 +239,33 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 112 insertions(+), 51 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
-Author:     Juan Frias <jfrias at boxfi.com>
+Author:     Juan Frias <jfrias@boxfi.com>
 AuthorDate: Mon Mar 3 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.10
+    
     Fixed some major bugs with files with long filenames and spaces Win/Dos systems. Added a variable to pass additional options to the initial RCS check in. Fixed some documentations typos.
 
  plugin/rcsvers.vim |  134 ++++++++++++++++++++++++++++++++--------------------
  1 files changed, 82 insertions(+), 52 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
-Author:     Juan Frias <jfrias at boxfi.com>
+Author:     Juan Frias <jfrias@boxfi.com>
 AuthorDate: Fri Feb 28 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.9
+    
     Added even more options, the ability to set your own description and pass additional options to CI command. Dos/Win Temp directory is taken from the $TEMP environment variable, and quote filenames when using diff program to prevent errors with long filenames with spaces. Also removed confirm box from script. (Thanx Roger for all the beta testing)
 
  plugin/rcsvers.vim |   83 +++++++++++++++++++++++++++++++++++++++++++---------
  1 files changed, 69 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
-Author:     Juan Frias <jfrias at boxfi.com>
+Author:     Juan Frias <jfrias@boxfi.com>
 AuthorDate: Fri Feb 28 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Minor suffix bug fix. Required if you are using suffixes.
 
@@ -233,10 +273,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 13 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
-Author:     Juan Frias <jfrias at boxfi.com>
+Author:     Juan Frias <jfrias@boxfi.com>
 AuthorDate: Thu Feb 27 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.7
+    
     1.7   Will not alter the $xx$ tags when automaticaly checking in files.
           (Thanks to Engelbert Gruber). Added option to save under the current
           directory with no RCS sub directory. Also added the option to choose
@@ -246,20 +288,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 107 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
-Author:     Juan Frias <jfrias at boxfi.com>
+Author:     Juan Frias <jfrias@boxfi.com>
 AuthorDate: Mon Feb 24 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.6
+    
     Complete script re-write. It now allows user define options and the ability to compare to older revisions if you have SED and GREP installed. Working on a way to get rid of these external program in a later version.
 
  plugin/rcsvers.vim |  436 +++++++++++++++++++++++++++++++++++++++-------------
  1 files changed, 328 insertions(+), 108 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
-Author:     engelbert gruber <engelbert.gruber at ssg.co.at>
+Author:     engelbert gruber <engelbert.gruber@ssg.co.at>
 AuthorDate: Thu Feb 20 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.5
+    
     FIX files in current directory - RCS in filedirectory.
     + Check for file .novimrcs in files directory to skip versioning.
 
@@ -267,9 +313,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 14 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
-Author:     engelbert gruber <engelbert.gruber at ssg.co.at>
+Author:     engelbert gruber <engelbert.gruber@ssg.co.at>
 AuthorDate: Thu Feb 20 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     FIX editing files not in current directory.
 
@@ -277,9 +323,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 98 insertions(+), 94 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Wed Feb 19 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     error in uploading
 
@@ -287,19 +333,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 5 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Wed Feb 19 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.2
+    
     option to select the rcs directory, and better comments thanks to Juan Frias
 
  plugin/rcsvers.vim |   98 ++++++++++++++++++++++++++++++++++++++--------------
  1 files changed, 72 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     Roger Pilkey <rpilkey at gmail.com>
+Author:     Roger Pilkey <rpilkey@gmail.com>
 AuthorDate: Wed Feb 12 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

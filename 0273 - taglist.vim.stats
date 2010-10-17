@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.5)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Fri Sep 21 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.5
+    
     Fix an extra space in the check for exctags. Refresh the taglist window
     folds after entering a tab. Escape special characters like backslash in
     the tag name when saving a session file. Add an internal function to get
@@ -12,10 +14,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 70 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.4)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Fri May 25 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.4
+    
     The following fixes are made in this release:
     1. If multiple Vim plugins register for the BufEnter autocmd, then sometimes
         the buffer name supplied to the autocmd is incorrect. Use the buffer number
@@ -27,10 +31,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 21 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.3)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Thu Feb 22 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.3
+    
     1. Added support for jumping to a tag/file in a new or existing tab
        from the taglist window (works only with Vim7 and above).
     2. Added support for opening a tag in the previous window.
@@ -43,10 +49,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 290 insertions(+), 133 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Tue Nov 14 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.2
+    
     1. After opening a file with no tags defined in it with the
        Tlist_Compact_Format option set, if the tags are updated, the folds
        used for the files following the empty tags file are affected.
@@ -74,20 +82,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 177 insertions(+), 61 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Sun Sep 10 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.1
+    
     When the Tlist_File_Fold_Auto_Close variable is set to 1, jumping to the taglist window closes all the folds. Modified the plugin to not close the fold for the currently active file. When the TlistLock and TlistUnlock commands are invoked, an error message is displayed. This problem is fixed.
 
  plugin/taglist.vim |   67 +++++++++++++++++++++++++++------------------------
  1 files changed, 35 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Wed Sep 6 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.0
+    
     Fixes:
     Fix the problems in using the taglist plugin with Vim7 tabs. When
     Tlist_File_Fold_Auto_Close is set, close the tag fold when leaving a
@@ -104,10 +116,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 157 insertions(+), 54 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.0b4)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Wed Apr 12 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.0b4
+    
     Fixes:
     1. When 'Tlist_Show_One_File' is set, after few files are opened,
        unable to select tags from the taglist window.
@@ -129,10 +143,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 307 insertions(+), 222 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.0b3)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Wed Dec 28 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.0b3
+    
     The following changes are made in this version:
     
     1. Delay loading of the taglist plugin to reduce the Vim startup time.
@@ -173,10 +189,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 1529 insertions(+), 828 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.0b2)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Mon Aug 1 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.0b2
+    
     1. Added the TlistAddFiles command to add multiple files to the taglist window without opening them.
     2. Maintain the taglist window width and height across Vim window layout changes.
     3. Restore the Vim window location after the taglist window is closed.
@@ -193,10 +211,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 501 insertions(+), 292 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.0b1)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Tue Apr 5 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.0b1
+    
     Added support for optionally displaying the tags in the drop-down/popup menu. Performance enhancments, various bug fixes and debug support.
 
  doc/taglist.txt    |  967 +++++++++++++++++++------------
@@ -204,10 +224,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 1763 insertions(+), 828 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.4)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Mon Aug 16 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.4
+    
     1. Introduced a new option 'Tlist_Show_One_File" to display the tags for only the current buffer in the taglist window.
     2. Support for not displaying the tags for a user-deleted file in the taglist window.
     3. Fix for sharing the mouse single click map with other plugins
@@ -217,10 +239,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 245 insertions(+), 87 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Tue Jun 1 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.3
+    
     1. If Tlist_Ctags_Cmd variable is not set, on startup, check for the
        presence of exuberant-ctags or ctags or tags in the PATH and set
        Tlist_Ctags_Cmd variable accordingly. If none of the executable is
@@ -245,10 +269,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 501 insertions(+), 262 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Sun Apr 25 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.2
+    
     Added support for closing the tags tree for inactive files, removing the tags tree for deleted buffers, processing the tags when the taglist window is not opened, disabling the automatic highlighting of the current tag, displaying name of the current tag.
 
  doc/taglist.txt    |  130 ++++++++++++++++----
@@ -256,10 +282,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 382 insertions(+), 98 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Sun Nov 2 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.1
+    
     Added support for saving and restoring taglist sessions. Separated the taglist documentation into a separate file in Vim help format.
 
  doc/taglist.txt    |  622 ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -267,9 +295,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 869 insertions(+), 388 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Wed Sep 24 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added support for displaying tags defined in multiple files.
 
@@ -277,9 +305,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 928 insertions(+), 550 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Sun Sep 14 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added information about the taglist mailing list.
 
@@ -287,10 +315,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 33 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.7)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Thu Aug 21 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.7
+    
     1. Added TlistUpdate command to update the taglist window.
     2. Made the taglist highlight groups user configurable.
     3. Fixed a problem in the taglist integration with the winmanager plugin
@@ -299,10 +329,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 144 insertions(+), 38 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Mon Jun 9 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.6
+    
     1. Added support for previewing a tag.
     2. Added the TlistClose command to close the taglist window
     3. Added the Tlist_Exit_OnlyWindow option to close the taglist window if only that window is open.
@@ -311,10 +343,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 85 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
-Author:     Yegappan Lakshmanan <yegappan at yahoo.com>
+Author:     Yegappan Lakshmanan <yegappan@yahoo.com>
 AuthorDate: Fri Apr 25 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.5
+    
     Added support for highlighting the tag scope. Added support for displaying namespaces in C++ files. Updated the comments.
 
  README             |   18 +

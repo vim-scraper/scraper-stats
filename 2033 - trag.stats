@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Mar 31 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.8
+    
     - Moved the definition of some variables from plugin/trag.vim to autoload/trag.vim
     - :TRagcw! (show :cw even if there are no recognized errors)
     - Require tlib 0.37
@@ -13,43 +15,49 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 434 insertions(+), 331 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Mon Dec 21 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.7
+    
     - trag#QuickList(): Accept a dict as optional argument.
     - trag#Grep(): rx defaults to '\.{-}'
     - trag#Grep(): use :g (instead of search()) for non-vimgrep mode
 
+ autoload/trag.vim        |   53 ++++++++++++++++++++++++---------------------
  autoload/trag/rename.vim |   43 +++++++++++++++++++++++++++++++++++++
  autoload/trag/viki.vim   |   20 +++++++++++++++++
- autoload/trag.vim        |   53 ++++++++++++++++++++++++---------------------
  doc/trag.txt             |    4 +-
  plugin/trag.vim          |   13 +++++++---
  5 files changed, 102 insertions(+), 31 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Oct 18 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.6
+    
     - trag#viki#Rename()
     - Generalized trag#rename#Rename()
     - Enabled "trace cursor" functionality (mapped to the <c-insert> key).
     - :Traglw
     - TRagGitFiles, trag#SetGitFiles(), g:trag_git
 
- autoload/trag/java.vim |   30 +---------
  autoload/trag.vim      |  139 +++++++++++++++++++++++++++++++++++++++++-------
+ autoload/trag/java.vim |   30 +---------
  doc/trag.txt           |   65 +++++++++++++++++++---
  plugin/trag.vim        |   68 +++++++++++++++++------
  4 files changed, 229 insertions(+), 73 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Feb 25 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.5
+    
     - Update the qfl when running a command on selected lines
     - Enable certain operations for multiple choices
     - Java, Ruby: x ... find subclasses (extends/implements)
@@ -58,19 +66,20 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     - Traggrep: If the second argument (glob pattern) is missing, the
     default file list will be used.
 
- autoload/trag.vim         |  530 ---------------------------------------
- autoload/trag/general.vim |   21 ++
- autoload/trag/java.vim    |   43 ++++
- autoload/trag.vim         |  606 +++++++++++++++++++++++++++++++++++++++++++++
- doc/trag.txt              |  139 ++++++++---
- plugin/trag.vim           |   68 ++++--
- 6 files changed, 814 insertions(+), 593 deletions(-)
+ autoload/trag.vim         |  140 ++++++++++++++++++++++++++++++++++----------
+ autoload/trag/general.vim |   21 +++++++
+ autoload/trag/java.vim    |   43 ++++++++++++++
+ doc/trag.txt              |  139 +++++++++++++++++++++++++++++++-------------
+ plugin/trag.vim           |   68 +++++++++++++++-------
+ 5 files changed, 316 insertions(+), 95 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sat Nov 22 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4
+    
     - trag_proj* variables were renamed to trag_project*.
     - Traggrep: Arguments have changed for conformity with grep commands (an implicit .-argument is prepended)
     - Make sure tlib is loaded even if it is installed in a different rtp-directory.
@@ -83,10 +92,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 86 insertions(+), 39 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Feb 26 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3
+    
     - Use vimgrep with set ei=all as default search mode (can be configured via g:trag_search_mode); by default trag now is a wrapper around vimgrep that does the handling of project-related file-sets and regexp builing for you.
     - FIX: ruby/f regexp
 
@@ -96,10 +107,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 76 insertions(+), 35 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Feb 19 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     - Quite a few things have changed and I haven't had the time yet to test
     these changes thorougly. There is a chance that nested patterns thus
     don't work as described (please report).
@@ -136,9 +149,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 760 insertions(+), 212 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Sep 30 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

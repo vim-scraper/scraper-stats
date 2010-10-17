@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.15)
-Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+Author:     Michael Geddes <vimmer@frog.wheelycreek.net>
 AuthorDate: Mon Dec 12 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.15
+    
     1.  Words like `Class#Member' is highlighted together as a link in my
         version.
     2.  I used `doxygenHyperLink' instead of `doxygenHttpLink' and
@@ -17,10 +19,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 47 insertions(+), 34 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.14)
-Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+Author:     Michael Geddes <vimmer@frog.wheelycreek.net>
 AuthorDate: Thu Oct 27 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.14
+    
     Fixed up  \c words ending in )  (Wu Yongwei)
      - With auto-brief //!< followed by /** shouldn't supress the auto-brief in   the /**. (Reported by Markus Trenkwalder)
      - Allow numbers in @link linkwords (Reporeted by Wu Yongwei)
@@ -34,10 +38,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 31 insertions(+), 19 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
-Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+Author:     Michael Geddes <vimmer@frog.wheelycreek.net>
 AuthorDate: Thu Jan 27 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.12
+    
     - Fixed up ending of brief lines with respect to line @ commands and  end-comment. Not ending a brief no longer produces an error-comment.
 
  doc/doxygen.txt    |    2 +-
@@ -45,10 +51,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 12 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
-Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+Author:     Michael Geddes <vimmer@frog.wheelycreek.net>
 AuthorDate: Tue Jan 25 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.11
+    
        - Allow doxygen comments inside brackets (Suggested by Zygmunt Krynicki)
        - Restore correct font selection (Wu Yongwei)
        - Don't end brief when encountering ? or ! as this isn't what happens with doxygen.
@@ -62,10 +70,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 55 insertions(+), 42 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
-Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+Author:     Michael Geddes <vimmer@frog.wheelycreek.net>
 AuthorDate: Fri Jan 7 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.9
+    
     Thanks to Toby Allsopp for this version:
      - Allow javadoc style auto-brief to be disabled
      - Move various definitions from single to multiline definitions
@@ -76,20 +86,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 70 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
-Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+Author:     Michael Geddes <vimmer@frog.wheelycreek.net>
 AuthorDate: Fri Dec 10 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.8
+    
      - Fix up some regions not marked as contained (code, verbatim, dot being highlighted outside of the doxygen region) (Toby Allsopp) - Only mark recognised HTML tags (Suggested by Mike Anderson)
 
  syntax/doxygen.vim |  218 +++++++++++++++++++++++++---------------------------
  1 files changed, 105 insertions(+), 113 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
-Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+Author:     Michael Geddes <vimmer@frog.wheelycreek.net>
 AuthorDate: Sun Aug 15 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.7
+    
       - Ignore Errors when loading from idl.
       - Try and match # and \c &c support to match what really happens. (Reported by Wu Yongwei)
       - Don't go into doxygen mode for /**/
@@ -107,10 +121,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 211 insertions(+), 126 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
-Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+Author:     Michael Geddes <vimmer@frog.wheelycreek.net>
 AuthorDate: Tue Aug 10 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.6
+    
      - Fix up # support.
      - Highlight \\endlink properly.
      - Don&#039t mark */ as an error where there is no brief, or @{ is used.
@@ -119,20 +135,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 23 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
-Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+Author:     Michael Geddes <vimmer@frog.wheelycreek.net>
 AuthorDate: Fri Aug 6 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.5
+    
     - Make sure @c \c and friends are equivalent for the start of a brief section.- Allow @c \c and friends to cross lines. (Caveat, they can't be hard up  against a continuation '*' - it just gets tooo difficult).- Highlight a missing \endlink as an error.- Fix multiline description without a '*'
 
  syntax/doxygen.vim |  333 +++++++++++++++++++++++++++++-----------------------
  1 files changed, 184 insertions(+), 149 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
-Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+Author:     Michael Geddes <vimmer@frog.wheelycreek.net>
 AuthorDate: Mon Aug 2 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.4
+    
     - Patches from Wu Yongwei
       * Include '-' in inline \c \e maching.
       * \see, \return are multiline desc.

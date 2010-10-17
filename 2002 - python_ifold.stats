@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.9)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Sun Apr 20 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.9
+    
     - Code refactoring and small fixes.
     - There's a new experimental engine for testing purposes. I did a regression from version 2.8.4 to 2.8.3.6 to the code, moving the enhancement you usually found in 2.8.4 to the experimental engine. It'll stay in this state until I fix some minor bugs. If you wish to continue using the "signature" enhancement, you need to put this in your vimrc:
     let g:ifold_mode=2
@@ -14,10 +16,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 318 insertions(+), 193 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8.4)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Fri Apr 18 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.8.4
+    
     Now it will show the entire signatures of class and function definitions, even if spanned for several lines.
 
  plugin/python_ifold.a.vim |   13 ++++++++++++-
@@ -26,9 +30,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 36 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8.3.6)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Fri Apr 18 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     minor bugfix: Fixed a small bug introduced in the previous release.
 
@@ -38,10 +42,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 15 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8.3.5)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Tue Apr 1 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.8.3.5
+    
     New python_ifold flavor: After receiving many requests via email, I decided to put all the vimrc recommended settings inside the plugin. In a nutshell, it loads these settings whenever the user opens a python file:
     
     set tabstop=4
@@ -57,10 +63,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 204 insertions(+), 28 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8.3.4)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Sat Mar 8 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.8.3.4
+    
     Fix (applicable only for the 'b' flavor): small fix for bug introduced in version 2.8.3.3.b
 
  plugin/python_ifold.a.vim |    7 ++++---
@@ -68,10 +76,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 8 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8.3.3)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Fri Feb 29 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.8.3.3
+    
     Only in the b version or if the g:ifold_accuracy global variable is set
     Fix: Now the script omits any comment mark that lays between the beginning of the line and the first sentence's character, that is, it wont unfold your code even if you put comment marks without proper indentation.
 
@@ -81,9 +91,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 400 insertions(+), 199 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8.3.2.b)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Sun Nov 25 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     python_ifold with all options selected by default
 
@@ -91,9 +101,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8.3.2.a)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Sun Nov 25 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     python_ifold for legacy systems
 
@@ -101,10 +111,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8.3.2)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Thu Oct 18 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.8.3.2
+    
     Enhancement: Now the script prevents "folding preemption", that is, when you try to expand the distance between two fold groups--be them class or function definitions--the engine will prevent from blank lines being eaten up at the bottom of the first fold group; nevertheless, I created a new global (g:ifold_accuracy) so that you can compare the former behavior with the new one.  Also, I decided to make the older engine the default method because it's quicker.
     
     New global:
@@ -117,9 +129,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 63 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8.3.1)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Fri Aug 31 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     bugfix: the ugly bug introduced in 2.8.3 is no more :D
 
@@ -127,10 +139,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 10 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8.3)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Fri Aug 31 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.8.3
+    
     code refactoring and bugfixing:
     before this upgrade the script tend to include commented lines within folded block of lines when they where uncommented, pretty annoying.
 
@@ -138,10 +152,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 9 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8.2)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Fri Aug 31 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.8.2
+    
     bugfix: a stupid bug didn't allow the script to segregate line comments from the class or function definition even if this token was found two lines ahead. I really don't know if this was the expected behavior.
     
     Example:
@@ -155,10 +171,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 3 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8.1)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Fri Aug 31 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.8.1
+    
      Bugfixes:
     - the script now avoids folding a block of code when there is a class or function definition 2 lines ahead.
     - It is now possible to have one line of separation between classes of the same level of indentation without worrying the script eating that line--although happening in extremely rare cases:
@@ -178,10 +196,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 17 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Mon Aug 27 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.8
+    
     Bugfix: this time, the script won't fold when the immediate line is a class or function definition, like the example below
     
     class MyClass():
@@ -194,20 +214,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 17 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.7)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Sun Aug 26 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.7
+    
     Feature: Now you can toggle on/off the script with 'f' key (it won't fold the block where the cursor is tough, but can be folded with zC later).
 
  plugin/python_ifold.vim |   20 +++++++++++++++++---
  1 files changed, 17 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Sun Aug 26 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.6
+    
     Feature: The support markers and the text displayed in the folds are now optional (unset by default), in a desperate attempt to achieve better performance on legacy systems.
     If you want the opposite behavior then you have to set the globals g:ifold_support_markers and g:ifold_show_text to 1.
 
@@ -215,19 +239,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 26 insertions(+), 48 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Sat Aug 25 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.5
+    
     Feature: Added ReFold() function, pretty useful when some or all folds disappear.
 
  plugin/python_ifold.vim |   10 ++++++++++
  1 files changed, 10 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
-Author:     Jean-Pierre Chauvel <jchauvel at gmail.com>
+Author:     Jean-Pierre Chauvel <jchauvel@gmail.com>
 AuthorDate: Sat Aug 25 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

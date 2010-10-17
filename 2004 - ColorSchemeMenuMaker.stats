@@ -1,18 +1,22 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.1)
-Author:     erik falor <ewfalor at gmail.com>
+Author:     erik falor <ewfalor@gmail.com>
 AuthorDate: Thu Jan 15 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.0.1
+    
     Fixed bug when rebuilding menu more than once and the number of colorschemes contained in the menu changes.
 
  plugin/ColorSchemeMenuMaker.vim |   14 ++++++++++----
  1 files changed, 10 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     erik falor <ewfalor at gmail.com>
+Author:     erik falor <ewfalor@gmail.com>
 AuthorDate: Thu Mar 27 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.0
+    
     No reported problems for quite a while; I feel this
     plugin is no longer beta-quality.
     ReloadColorsMenu and RebuildColorsMenu commands will
@@ -24,20 +28,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 27 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10.1)
-Author:     erik falor <ewfalor at gmail.com>
+Author:     erik falor <ewfalor@gmail.com>
 AuthorDate: Wed Dec 26 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.10.1
+    
     Fixed bug: generated menu called non-existent function.
 
  plugin/ColorSchemeMenuMaker.vim |    9 ++++++---
  1 files changed, 6 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
-Author:     erik falor <ewfalor at gmail.com>
+Author:     erik falor <ewfalor@gmail.com>
 AuthorDate: Tue Dec 18 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.10
+    
     Menus sorted in case-insensitive fashion.  If this change breaks your muscle-memory, set the global var g:csmmIgnoreCase to 0 in your .vimrc to get the old behavior.  Super thanks to Bill McCarthy for suggesting this.
     
     Functions ReloadColors(), RefreshColors(), and their corresponding commands renamed to ReloadColorsMenu() and RebuildColorsMenu().
@@ -46,9 +54,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 600 insertions(+), 559 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.1)
-Author:     erik falor <ewfalor at gmail.com>
+Author:     erik falor <ewfalor@gmail.com>
 AuthorDate: Mon Oct 29 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Repackaged as zipfile - too many problems with vimballs.
 
@@ -56,29 +64,33 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 5 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
-Author:     erik falor <ewfalor at gmail.com>
+Author:     erik falor <ewfalor@gmail.com>
 AuthorDate: Tue Oct 23 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.9
+    
     Tries not to create submenus which are too tall to fit on the screen.  By default, generated submenus are split so as to contain fewer than 45 items.  This number may be overridden via g:MaxEntriesPerSubmenu.
 
  plugin/ColorSchemeMenuMaker.vim |  122 ++++++++++++++++++++++++++++++++++-----
  1 files changed, 108 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.1)
-Author:     erik falor <ewfalor at gmail.com>
+Author:     erik falor <ewfalor@gmail.com>
 AuthorDate: Wed Oct 10 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.8.1
+    
     Shuangshi Jie bugfix: changed to Unix line endings.
 
  plugin/ColorSchemeMenuMaker.vim |    6 ++++--
  1 files changed, 4 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
-Author:     erik falor <ewfalor at gmail.com>
+Author:     erik falor <ewfalor@gmail.com>
 AuthorDate: Thu Oct 4 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Avoid loading menu in console mode.
 
@@ -86,9 +98,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 9 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
-Author:     erik falor <ewfalor at gmail.com>
+Author:     erik falor <ewfalor@gmail.com>
 AuthorDate: Thu Sep 20 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed some bugs in SDK mode.  Tweaked IsDarkGrey().
 
@@ -97,10 +109,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 265 insertions(+), 107 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
-Author:     erik falor <ewfalor at gmail.com>
+Author:     erik falor <ewfalor@gmail.com>
 AuthorDate: Fri Sep 14 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.6
+    
     SDK mode lets you quickly see effects of changes to color detection algorithm.  See
     plugin/ColorSchemeMenuMaker.vim for details.
     Added purple submenu.
@@ -112,39 +126,45 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 888 insertions(+), 485 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
-Author:     erik falor <ewfalor at gmail.com>
+Author:     erik falor <ewfalor@gmail.com>
 AuthorDate: Thu Sep 6 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.5
+    
     Store the generated menu under the same directory this file is located.  Thanks to Vincent Vandalon for pointing out that not all folks have a ~/vimfiles directory under WinXP.
 
  colors/ColorSchemeMenuMaker.vim |   25 ++++++++++++++++++++++---
  1 files changed, 22 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
-Author:     erik falor <ewfalor at gmail.com>
+Author:     erik falor <ewfalor@gmail.com>
 AuthorDate: Thu Aug 30 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4
+    
     Switched to Unix line endings.  Look for rgb.txt under /usr/share/X11 to accomodate Gentoo Linux.
 
  colors/ColorSchemeMenuMaker.vim |  930 ++++++++++++++++++++-------------------
  1 files changed, 466 insertions(+), 464 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     erik falor <ewfalor at gmail.com>
+Author:     erik falor <ewfalor@gmail.com>
 AuthorDate: Thu Aug 30 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3
+    
     Now works on Linux by looking for rgb.txt in /usr/X11R6/lib/X11 instead of $VIMRUNTIME.  If your rgb.txt is kept somewhere else, store that absolute pathname in your .vimrc in a variable called g:rgbtxt.
 
  colors/ColorSchemeMenuMaker.vim |   50 ++++++++++++++++++++++++++------------
  1 files changed, 34 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     erik falor <ewfalor at gmail.com>
+Author:     erik falor <ewfalor@gmail.com>
 AuthorDate: Wed Aug 29 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Menu categories include a count of contained items.
 
@@ -152,9 +172,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 80 insertions(+), 74 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     erik falor <ewfalor at gmail.com>
+Author:     erik falor <ewfalor@gmail.com>
 AuthorDate: Tue Aug 28 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.4)
-Author:     Pan Shizhu <pan.shizhu at gmail.com>
+Author:     Pan Shizhu <pan.shizhu@gmail.com>
 AuthorDate: Fri Feb 5 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.4
+    
     For light-background terminal we always assume 256color support.
     Transparency is supported in 256color mode, search the text "transparency" in peaksea.vim for details.
 
@@ -10,20 +12,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 10 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
-Author:     Pan Shizhu <pan.shizhu at gmail.com>
+Author:     Pan Shizhu <pan.shizhu@gmail.com>
 AuthorDate: Fri Oct 31 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.3
+    
     Anton Sharnov thinks it is better to leave the foreground color as is for spell error in 256-color cterm. If you agree this, the version 3.3 is for you, else you can just edit the source. Also, your can search for text 'transparency' within the peaksea.vim to know how to get cterm background transparency.
 
  colors/peaksea.vim |   75 ++++++++++++++++++++++++++++++++++------------------
  1 files changed, 49 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
-Author:     Pan Shizhu <pan.shizhu at gmail.com>
+Author:     Pan Shizhu <pan.shizhu@gmail.com>
 AuthorDate: Wed Jun 4 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.2
+    
     This version adds 256 color term support, a good color scheme has to support 256color term.
     The old ps_color got a name now: peak sea color.
 
@@ -32,20 +38,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 574 insertions(+), 1235 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.00)
-Author:     Pan Shizhu <pan.shizhu at gmail.com>
+Author:     Pan Shizhu <pan.shizhu@gmail.com>
 AuthorDate: Mon Oct 23 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.00
+    
     This version reads the 'background' option instead of setting it. Hence you must do :set background=dark or :set background=light before :colo ps_color. (Note that it is incompatible with previous versions!) Some highlightings are made more harmonize with others. Adds an option to enable cterm background transparency.
 
  colors/ps_color.vim |  403 +++++++++++++++++++++++++++++++++------------------
  1 files changed, 263 insertions(+), 140 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.9)
-Author:     Pan Shizhu <pan.shizhu at gmail.com>
+Author:     Pan Shizhu <pan.shizhu@gmail.com>
 AuthorDate: Tue Jul 25 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.9
+    
     This version adds new highlight groups for Vim 7. All the existing Vim 6 highlight groups unchanged. So you don't need to upgrade if using Vim 6. This script was tested both under Vim 6 and Vim 7.
 
  colors/ps_color.vim | 1112 +++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -53,10 +63,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 1112 insertions(+), 969 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
-Author:     Pan Shizhu <pan.shizhu at gmail.com>
+Author:     Pan Shizhu <pan.shizhu@gmail.com>
 AuthorDate: Tue Jul 25 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.9
+    
     This is an optional utility for "ps_color" scheme, now it works both under Vim 6 and Vim 7.
 
  colors/ps_color.vim | 1025 ---------------------------------------------------
@@ -64,10 +76,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 969 insertions(+), 1025 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.82)
-Author:     Pan Shizhu <pan.shizhu at gmail.com>
+Author:     Pan Shizhu <pan.shizhu@gmail.com>
 AuthorDate: Thu Nov 18 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.82
+    
     This version change the default background color to the popular "dark grey". It can still be changed anyway.
 
  colors/ps_color.vim | 1025 +++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -75,10 +89,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 1025 insertions(+), 856 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
-Author:     Pan Shizhu <pan.shizhu at gmail.com>
+Author:     Pan Shizhu <pan.shizhu@gmail.com>
 AuthorDate: Thu Jul 15 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.6
+    
     This is a utility to tune the whole color scheme in HSL color space. There are some minor fix since version 0.5...
     
     For me it's great fun, I'll be happy if you found it interesting.
@@ -88,9 +104,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 856 insertions(+), 155 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/n-a)
-Author:     Pan Shizhu <pan.shizhu at gmail.com>
+Author:     Pan Shizhu <pan.shizhu@gmail.com>
 AuthorDate: Thu Sep 4 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

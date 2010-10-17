@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1)
-Author:     culley harrelson <vim at culley.fastmail.fm>
+Author:     culley harrelson <vim@culley.fastmail.fm>
 AuthorDate: Wed May 28 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1
+    
     Added 3 new settings: g:phpNewlineBeforeBrace, g:phpFoldMarkerFunctions, g:phpRequireIncludeParens.  I also added support for the following php functions: is_null, is_numeric, empty
 
  doc/php_abb.txt      |  138 +++++++++++++++++++++++++++++++++++++++++++-------
@@ -10,10 +12,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 210 insertions(+), 48 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     culley harrelson <vim at culley.fastmail.fm>
+Author:     culley harrelson <vim@culley.fastmail.fm>
 AuthorDate: Sun May 25 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.0
+    
     Complete rewrite.  The theme of this rewrite was: quit polluting the mapping namespace, allow for most everything to be customized, remove all personal stuff from the script and write documentation.  All maps have been wrapped into a function and all abbreviations are now prefixed with g:phpLeader so you can change this variable and change the prefix for every abbreviation.  Abbreviations are now created in a more modular fashion so it should be much easier to maintain the script.  I have bumped the version to 1.0-- the structure should *finally* be mostly set so I can now focus on extending the script to cover additional php functions.
 
  CHANGELOG            |   27 --
@@ -25,10 +29,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 775 insertions(+), 789 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
-Author:     culley harrelson <vim at culley.fastmail.fm>
+Author:     culley harrelson <vim@culley.fastmail.fm>
 AuthorDate: Sat May 3 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version .4
+    
     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     script version .4
     Uloaded to vim.org 2003-05-03
@@ -64,10 +70,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 176 insertions(+), 49 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     culley harrelson <vim at culley.fastmail.fm>
+Author:     culley harrelson <vim@culley.fastmail.fm>
 AuthorDate: Sat Nov 16 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version .3
+    
     Complete rewrite.  The new format should allow me to continue through the built in php functions till I die.  See the script header for details.
     
     New items:
@@ -91,10 +99,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 581 insertions(+), 408 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     culley harrelson <vim at culley.fastmail.fm>
+Author:     culley harrelson <vim@culley.fastmail.fm>
 AuthorDate: Thu Oct 31 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version .2
+    
     new abbreviations:
     
     phplv     - look up the last value from a postgresql sequence
@@ -112,9 +122,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 124 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     culley harrelson <vim at culley.fastmail.fm>
+Author:     culley harrelson <vim@culley.fastmail.fm>
 AuthorDate: Mon Oct 21 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

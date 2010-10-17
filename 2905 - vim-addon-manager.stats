@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4.3)
-Author:     Marc Weber <marco-oweber at gmx.de>
+Author:     Marc Weber <marco-oweber@gmx.de>
 AuthorDate: Tue Aug 24 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4.3
+    
     automatic installation of some important windows dependencies such as tar, patch, diff, unzip etc, separate functions for download and unpacking so that they can be reused, comment for gvim usage
 
  autoload/sample_vimrc_for_new_users.vim |   20 +-
@@ -16,9 +18,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  8 files changed, 1010 insertions(+), 263 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2.4)
-Author:     Marc Weber <marco-oweber at gmx.de>
+Author:     Marc Weber <marco-oweber@gmx.de>
 AuthorDate: Fri Aug 6 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     xcopy patch for Windows
 
@@ -30,9 +32,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 337 insertions(+), 65 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2.2)
-Author:     Marc Weber <marco-oweber at gmx.de>
+Author:     Marc Weber <marco-oweber@gmx.de>
 AuthorDate: Wed Jul 21 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     fixes by TuxTom
 
@@ -40,10 +42,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 4 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2.1)
-Author:     Marc Weber <marco-oweber at gmx.de>
+Author:     Marc Weber <marco-oweber@gmx.de>
 AuthorDate: Tue Jul 20 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4.2.1
+    
     fix cd bug on Windows - adding sample .vimrc file. If you have more suggestions I"ll add them
 
  autoload/sample_vimrc_for_new_users.vim |  200 +++++++++++++++++++++++++++++++
@@ -52,10 +56,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 243 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2)
-Author:     Marc Weber <marco-oweber at gmx.de>
+Author:     Marc Weber <marco-oweber@gmx.de>
 AuthorDate: Sun Jul 11 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4.2
+    
     only load code which is always used on startup - when updating include known-repositories
 
  autoload/scriptmanager.vim  |  315 ++-----------------------------------------
@@ -64,9 +70,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 315 insertions(+), 304 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.1)
-Author:     Marc Weber <marco-oweber at gmx.de>
+Author:     Marc Weber <marco-oweber@gmx.de>
 AuthorDate: Wed Jul 7 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     addons can be installed by url now - many small enhancements by ZyX
 
@@ -77,10 +83,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 232 insertions(+), 72 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
-Author:     Marc Weber <marco-oweber at gmx.de>
+Author:     Marc Weber <marco-oweber@gmx.de>
 AuthorDate: Mon Jan 11 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4
+    
     run helptags.
     Some windows support (You have to put curl and git etc in PATH)
     support runtimepath being subdirectories.
@@ -93,10 +101,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 119 insertions(+), 47 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     Marc Weber <marco-oweber at gmx.de>
+Author:     Marc Weber <marco-oweber@gmx.de>
 AuthorDate: Sat Jan 9 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3
+    
     new command to uninstall a addon
     completion for commands
 
@@ -109,10 +119,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 271 insertions(+), 105 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Marc Weber <marco-oweber at gmx.de>
+Author:     Marc Weber <marco-oweber@gmx.de>
 AuthorDate: Sun Jan 3 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     supporting installing vimballs from www.vim.org site (tested with library: tlib)
 
  MarcWeber-vim-plugin-manager-9388433/README        |    1 -
@@ -124,10 +136,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 27 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     Marc Weber <marco-oweber at gmx.de>
+Author:     Marc Weber <marco-oweber@gmx.de>
 AuthorDate: Fri Jan 1 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.1
+    
     fixed handling of plugin/*.vim after/plugin/*.vim files
     Support downloading .zip files from this site.
 
@@ -140,15 +154,15 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 96 insertions(+), 31 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0)
-Author:     Marc Weber <marco-oweber at gmx.de>
+Author:     Marc Weber <marco-oweber@gmx.de>
 AuthorDate: Sun Dec 27 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
  MarcWeber-vim-plugin-manager-eb92729/README        |    1 +
  .../plugin-info.txt                                |    9 ++
- README                                             |   58 ++++++++++
+ README                                             |   59 +++++++++++
  autoload/scriptmanager.vim                         |  110 ++++++++++++++++++++
  doc/vim-plugin-manager.txt                         |   79 ++++++++++++++
- 5 files changed, 257 insertions(+), 0 deletions(-)
+ 5 files changed, 258 insertions(+), 0 deletions(-)

@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.6)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Tue Apr 20 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.6
+    
     - Fix |arpeggio-commands| to behave the same as |:map| commands.  In other words, " and keys after " in {rhs} for |arpeggio-commands| are treated as a part of {rhs}.  Old versions don't behave so.- Fix minor bugs.- Revise the document a bit.- Revise additional syntax highlighting a bit.
 
  autoload/arpeggio.vim                              |   13 +-
@@ -19,10 +21,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  11 files changed, 664 insertions(+), 84 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.5)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Sat Dec 6 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.5
+    
     - Remove the assumption on 'timeout' and 'ttimeout'.  Old version  assumes that "set timeout notimeout", but now their values can be  arbitrary.- Fix the bug that 'ttimeoutlen' can be interpreted as an unexpected  value because of the adjustment of 'timeout' and 'timeoutlen' for  arpeggio key mappings.
 
  autoload/arpeggio.vim                            |   12 +++++-
@@ -33,10 +37,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 70 insertions(+), 64 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.4)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Tue Nov 11 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.4
+    
     - Add syntax highlighting for |arpeggio-commands|.- Fix bugs of "noremap" version of |arpeggio-commands| such as  |:Arpeggionoremap| that {rhs} are remapped despite the meaning of  the commands.  (Thanks for id:ampmmn)
 
  autoload/arpeggio.vim                            |    2 +-
@@ -46,10 +52,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 67 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.3)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Sun Nov 9 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.3
+    
     - Add |:Arpeggio|.- Support |:map-<unique>| for |arpeggio#map()| and other commands.- In |arpeggio#map()| and other commands, warn if a key in {lhs} is  already mapped to something other than a part of another  |arpeggio-key-mapping|.- Add custom 'timeoutlen' per key.  See |g:arpeggio_timeoutlens|.- Add a bit of completion for |arpeggio-commands|.
 
  autoload/arpeggio.vim |   37 ++++++++++++++++++---
@@ -58,10 +66,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 129 insertions(+), 48 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.2)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Fri Nov 7 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.2
+    
     - Fix |:Arpeggionoremap| that allowed remapping but it should not do  so.  (Thanks for id:ampmmn)- Define |arpeggio-commands| and |arpeggio-variables| automatically  for interactive or other use.  (But you still have to call  |arpeggio#load()| to use them in vimrc.)
 
  autoload/arpeggio.vim |  210 +++++++++++++++++++++---------------------------
@@ -70,10 +80,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 179 insertions(+), 120 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Thu Nov 6 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.1
+    
     - Implement |arpeggio-commands|.- Add missing |arpeggio#list()|.- Revise minor stuffs.
 
  autoload/arpeggio.vim |  126 ++++++++++++++++++++++++++++++++-----------------
@@ -81,9 +93,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 105 insertions(+), 56 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.0)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Wed Nov 5 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

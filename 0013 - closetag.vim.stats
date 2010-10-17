@@ -1,18 +1,22 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9.1)
-Author:     Steven Mueller <diffusor at ugcs.caltech.edu>
+Author:     Steven Mueller <diffusor@ugcs.caltech.edu>
 AuthorDate: Tue May 24 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.9.1
+    
     Bugfix release: Changed function names to be script-local to avoid conflicts with other scripts' stack implementations.
 
  plugin/closetag.vim |   88 +++++++++++++++++++++++++++++++-------------------
  1 files changed, 54 insertions(+), 34 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
-Author:     Steven Mueller <diffusor at ugcs.caltech.edu>
+Author:     Steven Mueller <diffusor@ugcs.caltech.edu>
 AuthorDate: Fri Jun 8 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.9
+    
     Added synID()-based comment awareness:
     Comment checking is now handled by vim's internal syntax checking.  Closing tags outside comments only matches non-commented tags.  Closing tags in comments matches only tags within comments, skipping blocks of normal code (wee!).  Can be really slow if syn sync minlines is large.  Set the b:closetag_disable_synID variable to disable comment contexts if it's too slow.
     
@@ -27,9 +31,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 81 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
-Author:     Steven Mueller <diffusor at ugcs.caltech.edu>
+Author:     Steven Mueller <diffusor@ugcs.caltech.edu>
 AuthorDate: Tue Jun 5 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

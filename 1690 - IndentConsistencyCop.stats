@@ -1,7 +1,7 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.20.017)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Tue Jul 22 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     BF: Undefined variable l:isEntireBuffer in IndentBufferConsistencyCop().
 
@@ -9,10 +9,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 3 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.20.016)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Mon Jul 21 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.20.016
+    
     ENH: Added b:indentconsistencycop_result buffer-scoped dictionary containing the results of the check, which can be used by other integrations.
     Also check consistency of buffer settings if the buffer/range does not contain indented text. Inconsistent indent settings can then be corrected with a queried setting.
     BF: Clear previous highlighting if buffer/range now does not contain indented text.
@@ -21,30 +23,36 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 423 insertions(+), 143 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.10.012)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Mon Jun 23 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.10.012
+    
     Minor change: Added -bar to all commands that do not take any arguments, so that these can be chained together.
 
  plugin/IndentConsistencyCop.vim |    8 +++++---
  1 files changed, 5 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.10.011)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Thu Feb 28 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.10.011
+    
     Improved the algorithm so that 'softtabstop' is recognized even when a file only has small indents with either (up to 7) spaces or tabs, but no tab + space combination.
 
  plugin/IndentConsistencyCop.vim |  297 +++++++++++++++++++++++++++++++--------
  1 files changed, 236 insertions(+), 61 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.00.010)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Thu Nov 8 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.00.010
+    
     BF: In an inconsistent and large buffer/range that has only one or a few small inconsistencies and one dominant (i.e. 99%) setting, the text "Some minor / inconclusive potential settings have been omitted." is not printed.
     ENH: Print "noexpandtab/expandtab" instead of " expandtab to 0/1", as the user would :setlocal the setting.
 
@@ -52,30 +60,36 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 22 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.00.009)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Mon Jun 4 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.00.009
+    
     ENH: Improved detection accuracy for soft tabstops when the maximum indent is too small for a solid assessment. When the maximum indent of the buffer is not enough to be sure of the indent settings (i.e. differentiating between soft tabstops and spaces), an inconsistent indent was reported, even though it is much more likely that the indent is consistent with "soft tabstop n", but that wasn't recognized because of the small indents used in the file. If allowed, the cop now examines the buffer settings to possibly turn around the verdict of "inconsistent indent".
 
  plugin/IndentConsistencyCop.vim |  233 ++++++++++++++++++++++++++-------------
  1 files changed, 156 insertions(+), 77 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.00.008)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Mon Apr 2 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.00.008
+    
     Allowing user to override wrongly found consistent setting (e.g. 'sts1' instead of 'tab') by choosing 'Wrong, choose correct setting...' in the IndentBufferConsistencyCop.
 
  plugin/IndentConsistencyCop.vim |   54 ++++++++++++++++++++++++++-------------
  1 files changed, 36 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.07)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Thu Nov 2 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.07
+    
     Corrected unreasonable assumption of a consistent small indent setting (of 1 or 2 spaces) when actually only some wrong spaces spoil the consistency. Now, a perfect consistent rating is only accepted if its absolute rating number is also the maximum rating.
     BF: Avoiding runtime error in IndentBufferInconsistencyCop() if s:ratings is empty.
     BF: Suppressing 'Not buffer setting' option if the buffer setting is inconsistent ('badset'), which threw an exception when selected.
@@ -84,19 +98,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 110 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.05)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Mon Oct 30 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.05
+    
     Improved g:indentconsistencycop_non_indent_pattern to also allow ' *\t' and ' *****' comments.
 
  plugin/IndentConsistencyCop.vim |   29 ++++++++++++++++++++---------
  1 files changed, 20 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.04)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Tue Oct 24 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

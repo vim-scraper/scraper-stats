@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.25)
-Author:     Edwin Steiner <edwin.steiner at gmx.net>
+Author:     Edwin Steiner <edwin.steiner@gmx.net>
 AuthorDate: Mon Oct 6 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.25
+    
     Allow appending a configurable suffix to the names of WikiFiles.
     (contributed by Anders Carling)
 
@@ -10,9 +12,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 25 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.24)
-Author:     Edwin Steiner <edwin.steiner at gmx.net>
+Author:     Edwin Steiner <edwin.steiner@gmx.net>
 AuthorDate: Mon Sep 18 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed bug causing "E121: Undefined variable: g:potwiki_dir"
 
@@ -20,9 +22,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.23)
-Author:     Edwin Steiner <edwin.steiner at gmx.net>
+Author:     Edwin Steiner <edwin.steiner@gmx.net>
 AuthorDate: Sun Sep 17 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed regressions from 1.21, non-silent opening of WikiPages.
 
@@ -30,9 +32,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 18 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.22)
-Author:     Edwin Steiner <edwin.steiner at gmx.net>
+Author:     Edwin Steiner <edwin.steiner@gmx.net>
 AuthorDate: Fri Jun 9 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Work-around for a bug in vim 7 <buffer> maps.
 
@@ -40,9 +42,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 20 insertions(+), 34 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.21)
-Author:     Edwin Steiner <edwin.steiner at gmx.net>
+Author:     Edwin Steiner <edwin.steiner@gmx.net>
 AuthorDate: Mon Mar 14 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     autowrite when doing \ww, \wi, \we, \wf, ...
 
@@ -50,49 +52,57 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 18 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.20)
-Author:     Edwin Steiner <edwin.steiner at gmx.net>
+Author:     Edwin Steiner <edwin.steiner@gmx.net>
 AuthorDate: Wed Feb 23 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.20
+    
     Better potwiki-autowrite: write file only if changed, also autowritewhen following another WikiWord with <CR>.Put the following in your .vimrc to use autowrite:    let potwiki_autowrite=1
 
  plugin/potwiki.vim |   12 ++++++++----
  1 files changed, 8 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.19)
-Author:     Edwin Steiner <edwin.steiner at gmx.net>
+Author:     Edwin Steiner <edwin.steiner@gmx.net>
 AuthorDate: Wed Jul 21 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.19
+    
     Better interaction with :syntax on | enable | off.If you want to use these commands put the line 'call PotwikiSyntax()' in a file called~/.vim/syntax/potwiki.vim (You can also add customizations after this line.)
 
  plugin/potwiki.vim |   47 ++++++++++++++++++++++-------------------------
  1 files changed, 22 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.16)
-Author:     Edwin Steiner <edwin.steiner at gmx.net>
+Author:     Edwin Steiner <edwin.steiner@gmx.net>
 AuthorDate: Tue Jul 20 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.16
+    
     fix navigation if more than one WikiWord is on a line (contributed by Michael Fitz)
 
  plugin/potwiki.vim |   13 ++++++++-----
  1 files changed, 8 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.15)
-Author:     Edwin Steiner <edwin.steiner at gmx.net>
+Author:     Edwin Steiner <edwin.steiner@gmx.net>
 AuthorDate: Sun Jul 11 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.15
+    
     fixed disappearing colors, work with hls set, better error handling,use 'potwiki' filetype and syntax, removed umlauts from defaults(avoids problems with UTF-8 locales)
 
  plugin/potwiki.vim |  116 +++++++++++++++++++++++++++++++++++++--------------
  1 files changed, 84 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
-Author:     Edwin Steiner <edwin.steiner at gmx.net>
+Author:     Edwin Steiner <edwin.steiner@gmx.net>
 AuthorDate: Wed Jun 30 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     work correctly when ignorecase is set,added option: potwiki_ignore
 
@@ -100,9 +110,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 46 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
-Author:     Edwin Steiner <edwin.steiner at gmx.net>
+Author:     Edwin Steiner <edwin.steiner@gmx.net>
 AuthorDate: Sun Jun 20 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.31)
-Author:     Robert KellyIV <feral at eclecticwizard.com>
+Author:     Robert KellyIV <feral@eclecticwizard.com>
 AuthorDate: Tue Jun 15 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.31
+    
     Refinement of :OTF -- just bank (with no keyword) will clear the specified group.
     Improvement: ':[#]OTFG[!] <register>' which will copy contents of specifed group to specified register.This means that you can ":2OTFG y" to copy the search pattern used by highlight group 2 into register y.
 
@@ -10,20 +12,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 201 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.21)
-Author:     Robert KellyIV <feral at eclecticwizard.com>
+Author:     Robert KellyIV <feral@eclecticwizard.com>
 AuthorDate: Wed May 7 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.21
+    
     Improvement: As per a suggestion from Mathieu CLABAUT the feralotf# highlight groups now use the default keyword, This allows you to override these default colors easily.
 
  plugin/otf.vim |   59 +++++++++++++++++++++++++++++++++----------------------
  1 files changed, 35 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Robert KellyIV <feral at eclecticwizard.com>
+Author:     Robert KellyIV <feral@eclecticwizard.com>
 AuthorDate: Sat May 3 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     Small update: converted :OTF1-8 into :OTF which takes a count (line number position) and takes optional bang to specify string as a keyword (think register)
     Keywords are:
         (w) cword,                     expand("<cword>")
@@ -38,9 +44,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 94 insertions(+), 28 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     Robert KellyIV <feral at eclecticwizard.com>
+Author:     Robert KellyIV <feral@eclecticwizard.com>
 AuthorDate: Fri May 2 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

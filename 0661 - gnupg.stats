@@ -1,28 +1,34 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3026)
-Author:     Markus Braun <markus.braun at krawel.de>
+Author:     Markus Braun <markus.braun@krawel.de>
 AuthorDate: Wed Jan 27 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3026
+    
     - fix a bug by using a sh compatible setting for 'shellredir' on unix systems. when 'shell' was set to csh or tcsh by the user and the system has /bin/sh linked to dash the plugin didn't work.
 
  plugin/gnupg.vim |  202 ++++++++++++++++++++++++++++++++++++++++++------------
  1 files changed, 158 insertions(+), 44 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2782)
-Author:     Markus Braun <markus.braun at krawel.de>
+Author:     Markus Braun <markus.braun@krawel.de>
 AuthorDate: Mon Jun 15 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2782
+    
     - show more information (key id and creation time) of keys in GPGEditRecipients, GPGViewRecipients and during selecting in case of a ambiguous key.
 
  plugin/gnupg.vim |   56 ++++++++++++++++++++++++++++++++---------------------
  1 files changed, 34 insertions(+), 22 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2773)
-Author:     Markus Braun <markus.braun at krawel.de>
+Author:     Markus Braun <markus.braun@krawel.de>
 AuthorDate: Wed May 27 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2773
+    
     - fix a bug in detecting windows platforms
     - added g:GPGPreferSign to sign encrypted files by default (thanks to Tim Swast).
 
@@ -30,10 +36,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 60 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2276)
-Author:     Markus Braun <markus.braun at krawel.de>
+Author:     Markus Braun <markus.braun@krawel.de>
 AuthorDate: Mon Aug 18 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2276
+    
     - added support for default recipients via the variable g:GPGDefaultRecipients.
     - fixed an wrong error message with symmetric encryption and set recipients (thanks to Sebastian Luettich).
     - create a empty new buffer on leaving vim to wipe out sensitive data on console.
@@ -43,10 +51,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 181 insertions(+), 143 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2249)
-Author:     Markus Braun <markus.braun at krawel.de>
+Author:     Markus Braun <markus.braun@krawel.de>
 AuthorDate: Thu Jul 31 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2249
+    
     - rewritten lots of code to use lists feature of vim 7 instead of my own implementation
     - added a n option to change the name and location of GPG executable
     - try to get GPG_TTY dynamically.
@@ -55,10 +65,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 378 insertions(+), 368 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1933)
-Author:     Markus Braun <markus.braun at krawel.de>
+Author:     Markus Braun <markus.braun@krawel.de>
 AuthorDate: Wed Jan 23 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1933
+    
     - changed parsin to work with gpg2 correctly
     - save/restore view of saved window
     - fix a bug when encoding and fileencoding is different
@@ -69,10 +81,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 130 insertions(+), 42 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1605)
-Author:     Markus Braun <markus.braun at krawel.de>
+Author:     Markus Braun <markus.braun@krawel.de>
 AuthorDate: Thu Apr 5 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1605
+    
     - new plugin options to set preferences for symmetric/asymmetric and armor/binary files
     - fix for use with gvim. !! plugin works only in gvim if gpg-agent is available !!
 
@@ -80,10 +94,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 42 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1472)
-Author:     Markus Braun <markus.braun at krawel.de>
+Author:     Markus Braun <markus.braun@krawel.de>
 AuthorDate: Fri Dec 15 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1472
+    
     - support for symmetric encrypted files.
     - detection of various encryption options.
     - possibility to change gpg options using new commands GPGEditOptions and GPGViewOptions commands.
@@ -95,19 +111,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 746 insertions(+), 409 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.27)
-Author:     Markus Braun <markus.braun at krawel.de>
+Author:     Markus Braun <markus.braun@krawel.de>
 AuthorDate: Tue Jun 24 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.27
+    
     updated documentation, that gnupg.vim only works for public/private-key encrypted files.
 
  plugin/gnupg.vim |   14 +++++++-------
  1 files changed, 7 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.26)
-Author:     Markus Braun <markus.braun at krawel.de>
+Author:     Markus Braun <markus.braun@krawel.de>
 AuthorDate: Fri May 30 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

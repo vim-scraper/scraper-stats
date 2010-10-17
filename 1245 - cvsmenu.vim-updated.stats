@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.150)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Thu Sep 24 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.150
+    
     Fix the issue that "CVS > Revert changes" discards tag/branch information;
     Fix some issues related to fileencoding.
 
@@ -10,39 +12,45 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 6 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.147)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Sun Jun 29 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.147
+    
     Fix the issue that the global fileencoding can be accidentally changed by "let &fileencoding="; fix the problem that the log message is not converted to the CVScmdencoding.
 
  plugin/cvsmenu.vim |   14 ++++++++------
  1 files changed, 8 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.145)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Sat Dec 29 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.145
+    
     Fix the bug that the local status is not automatically refreshed when committing a file not in the current directory.
 
  plugin/cvsmenu.vim |    8 ++++----
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.144)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Fri Oct 26 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.144
+    
     Fix the bug that shortcut keys cannot be created in Unix when the path of cvsmenu.vim contains spaces.
 
  plugin/cvsmenu.vim |   28 ++++++++++++++--------------
  1 files changed, 14 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.143)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Mon Oct 1 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fix the bug that the file path cannot contain spaces (in Unix and Cygwin).
 
@@ -50,10 +58,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 20 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.142)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Wed May 9 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.142
+    
     Shorten `CVScvsoutputencoding' to `CVScmdencoding';
     Add a new control variable g:CVSfileencoding to ensure the result of CVS-Diff and CVS-Annotate is correct;
     Set the appropriate fileencoding in CVSDoCommand.
@@ -62,59 +72,69 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 24 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.140)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Sun Oct 22 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.140
+    
     Re-enable password piping on Windows (tested to work with CVSNT 2.5.02 Build 2115) to make update cvsmenu.vim smoother; Change the name pattern of temporary log message file to make CVSeasylogmessage work with different versions of CVS (tested with more than 4 different CVS clients); Make some minor bug fixes.
 
  plugin/cvsmenu.vim |   41 +++++++++++++++++++++++++++++++----------
  1 files changed, 31 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.136)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Fri Oct 20 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.136
+    
     When vimming a CVS log message, ensure there is an empty line at the beginning, make editing start in insert mode, and make a normal-mode ENTER finish editing (can be disabled by put `let g:CVSeasylogmessage=0' in (.|_)vimrc).
 
  plugin/cvsmenu.vim |   29 ++++++++++++++++++++++++++---
  1 files changed, 26 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.135)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Thu Oct 19 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.135
+    
     Display a message and cease to CVS diff if the file is newly added; allow using `q' to close the CVS history window.
 
  plugin/cvsmenu.vim |   11 ++++++++---
  1 files changed, 8 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.133)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Mon Oct 16 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.133
+    
     Use the corresponding version instead of the most recent version in the repository to Diff, as the command line `cvs diff ...' does.
 
  plugin/cvsmenu.vim |   17 ++++++++++++++---
  1 files changed, 14 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.132)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Fri Oct 13 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.132
+    
     Fix the display problem of `Directory > Local status'; clean up the code a little.
 
  plugin/cvsmenu.vim |   27 ++++++++-------------------
  1 files changed, 8 insertions(+), 19 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.127)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Tue Oct 10 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fix the bug that `Checkout to' does not work.
 
@@ -122,9 +142,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 7 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.126)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Mon Sep 11 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Allow non-ASCII filename to be used when encoding=utf-8.
 
@@ -132,19 +152,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 6 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.125)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Sat Sep 2 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.125
+    
     Truncate the Vim title after the file name so that the file name is always visible when the directory name is long.
 
  plugin/cvsmenu.vim |    8 ++++----
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.124)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Sun Aug 20 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Map `q' to quickly close the buffer opened by cvs annotate and cvs log.
 
@@ -152,9 +174,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 6 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.123)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Sun May 21 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Update broken links and make self-update work again.
 
@@ -162,30 +184,36 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 7 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.122)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Sat May 13 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.122
+    
     Update CVS info due to the SourceForge site change to make updating itself continue to work.
 
  plugin/cvsmenu.vim |   14 +++++++-------
  1 files changed, 7 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.121)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Wed Nov 16 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.121
+    
     - Use extracted cvs command (w/o `-q' etc.) to match with CVSdontconvertfor; - Ensure correct message escaping on Windows when shell=cmd.exe (regardless of shellxquote); - Documentation is updated to reflect my changes: be sure to use `CVS - Settings - Install - Install updates' (or `Download updates' followed by `Install buffer as help' on the help file buffer) to get it.
 
  plugin/cvsmenu.vim |   68 +++++++++++++++++++++++++++++----------------------
  1 files changed, 39 insertions(+), 29 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.118)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Wed Nov 9 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.118
+    
     - Deal with "`" correctly under Unix;
     - Make no-reload-prompt trick work when the committed file is not in the current directory.
 
@@ -193,10 +221,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 6 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.116)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Tue Nov 1 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.116
+    
     - Do not allow to commit if the current file has not a name;
     - Fix a bug when executing `:w file' on an unsaved named buffer.
 
@@ -204,10 +234,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 5 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.114)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Fri Oct 14 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.114
+    
     - Work around a problem that unedit of CVSNT may prompt to revert changes;
     - Allow the ouput encoding of cvs be different from the Vim encoding (e.g., to make Chinese in annotate and the error message of CVSNT display correctly, one may now use `let CVScvsoutputencoding="gbk"' in .vimrc).
 
@@ -215,10 +247,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 23 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.112)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Thu Sep 22 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.112
+    
     - Rename CVSaddspaceafterannotate to CVSspacesinannotate;
     - Display two missing parameters in CVS - Info;
     - Avoid the reload prompt after commit;
@@ -228,9 +262,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 24 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.109)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Thu Jul 7 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fix problems with CVS annotation highlighting.
 
@@ -238,10 +272,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 88 insertions(+), 56 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.107)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Wed Jun 8 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.107
+    
     - Allow space adjustment of output of "CVS - Annotate"  (assign a positive value to g:CVSaddspaceafterannotate) so that files that use TABs can align better.
     - Output of "CVS - Annotate" is now highlighted.
 
@@ -249,10 +285,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 6 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.104)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Thu Apr 28 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.104
+    
     - Do not remap keys for new buffers output by cvs annotate, history, and log.
     - Correct the help message for output buffer.
 
@@ -260,9 +298,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 13 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.102)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Tue Apr 19 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Make menu commands like "CVS - Directory - Update" work in insert mode.
 
@@ -270,10 +308,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 57 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.100)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Sun Apr 17 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.100
+    
     Do not reload-after-commit after a directory commit (to avoid an error).
     
     Fix CVSInstallAsPlugin and CVSInstallAsHelp so that the plugin and its help are installed to where the script is currently installed.
@@ -282,20 +322,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 2294 insertions(+), 2314 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.97)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Mon Apr 4 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.97
+    
     Fix the broken key mapping. Now it is possible to use key sequences similar to the menu hot keys. E.g. `alt-c, i' is used to commit when the GUI menu exists; so `,ci' could be used in text-mode Vim to commit.
 
  plugin/cvsmenu.vim | 4617 ++++++++++++++++++++++++++--------------------------
  1 files changed, 2314 insertions(+), 2303 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.96)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Mon Mar 28 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.96
+    
     Make sure the special characters "&", "<", ">", "|", and "^" are handled correctly if shell is cmd.exe and shellxquote is \" (there will be miscellaneous gotchas if the shell is command.com or shellxquote is empty).
     
     Change the prefixing spaces in menu items to appending spaces to make wildmenu users happier (when wim includes longest).
@@ -304,9 +348,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 142 insertions(+), 128 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.94)
-Author:     Yongwei Wu <wuyongwei at gmail.com>
+Author:     Yongwei Wu <wuyongwei@gmail.com>
 AuthorDate: Tue Mar 22 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

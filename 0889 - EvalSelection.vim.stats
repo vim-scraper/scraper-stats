@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.16)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Fri Jun 8 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.16
+    
     - MzScheme support (thanks to Mark Smithfield)
     - Catch errors on EvalSelectionQuit (you'll have to manually kill zombie
     processes)
@@ -12,10 +14,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 36 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Mon May 14 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.15
+    
     - Escape backslashes in EvalSelectionTalk()
     - SPSS: Insert a space before variable names (like SPSS itself)
 
@@ -27,10 +31,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 531 insertions(+), 495 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Jun 14 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.14
+    
     Fixed some menu-related problems; <LocalLeader>r shortkey for SPSS  andR (work similarly to ctrl-r in the spss editor); display a more usefulerror message when communication via OLE goes wrong; possibility to savethe interaction log; post setup & tear down hooks for externalinterpreters
 
  EvalSelection/ruby/EvalSelection.rb |  164 ++++++--
@@ -39,10 +45,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 613 insertions(+), 353 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Feb 16 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.13
+    
     R: set working directory and load .Rdata if available, word completion, catch errors, build objects menu; SPSS: show data window, build menu; g:evalSelectionLogCommands defaults to 1; revamped log
 
  EvalSelection/etc/EvalSelection.lst |    1 +
@@ -53,10 +61,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 341 insertions(+), 43 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Feb 13 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.10
+    
     capture interaction with R via R(D)COM; "RDCOM" uses a 2nd instance of gvim as a pager (it doesn't start RCmdr any more); "RDCOM Commander" uses RCmdr; "RDCOM Clean" and "RDCOM Commander Clean" modes; take care of R functions with void results (like data, help.search ...)
 
  EvalSelection/ruby/EvalSelection.rb |   75 ++++++++++++------
@@ -65,10 +75,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 190 insertions(+), 98 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sat Feb 12 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.9
+    
     support for interaction with R and SPSS via win32 COM/OLE; calculator shortcuts
 
  EvalSelection/etc/EvalSelection.lst |    4 +
@@ -78,10 +90,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 543 insertions(+), 201 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Thu May 6 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.8
+    
     improved interaction with external interpreters (still not fully usable but it's getting better); reunified EvalSelection.vim and EvalSelectionRuby.vim
 
  EvalSelection/ruby/EvalSelection.rb |   93 +++++++++--------
@@ -91,10 +105,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 261 insertions(+), 254 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Mon May 3 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.7
+    
     Small improvements with external interpreters (e.g., multi-line commands in R); moved code depending on +ruby to EvalSelectionRuby.vim (thanks to Grant  Bowman for pointing out this problem); saved all files in unix  format; added python, perl, and tcl (but I can't tell if they work)
 
  EvalSelection/ruby/EvalSelection.rb |  155 ++++++
@@ -104,19 +120,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 937 insertions(+), 717 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Mar 9 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.6
+    
     Use of redir; EvalSelectionCmdLine (CLI-like interaction); interaction with external interpreter (lisp, scheme, R, ocaml; experimental & requires +ruby support); separated logs; removed bc support
 
  plugin/EvalSelection.vim |  769 +++++++++++++++++++++++++++++++++++++---------
  1 files changed, 620 insertions(+), 149 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.382)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sat Jan 31 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     l-Mode for logging
 

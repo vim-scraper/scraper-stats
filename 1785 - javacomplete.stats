@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.77.1)
-Author:     fang cheng <fangread at yahoo.com.cn>
+Author:     fang cheng <fangread@yahoo.com.cn>
 AuthorDate: Tue Sep 25 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.77.1
+    
     + Supported showing method parameters information in any place between parenthesises.
 
  Reflection.java           |  670 ---------
@@ -15,10 +17,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  7 files changed, 7112 insertions(+), 7035 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.77)
-Author:     fang cheng <fangread at yahoo.com.cn>
+Author:     fang cheng <fangread@yahoo.com.cn>
 AuthorDate: Tue Sep 18 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.77
+    
     + Supported new contexts "jav|", "var|", just after an incomplete word.
     + Supported accessible static imported members, add new context "abs(|)".
     + Supported accessible inherited members.
@@ -32,10 +36,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 1811 insertions(+), 972 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.76.8)
-Author:     fang cheng <fangread at yahoo.com.cn>
+Author:     fang cheng <fangread@yahoo.com.cn>
 AuthorDate: Thu Aug 30 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.76.8
+    
     - Improved support of JSP: appending automatically jar or classpath under WEB-INF.
     - Supported local and anonymous classes.
     - Improved searching type or symbol name.
@@ -46,10 +52,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 165 insertions(+), 269 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.76.7)
-Author:     fang cheng <fangread at yahoo.com.cn>
+Author:     fang cheng <fangread@yahoo.com.cn>
 AuthorDate: Tue Aug 28 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.76.7
+    
     - Improved process of type arguments of generic type and method parameters.
     - Reorganize codes in javacomplete#Complete()
     - Fixed case of "new java.util.zip.ZipFile().|"
@@ -60,10 +68,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 256 insertions(+), 195 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.76.6)
-Author:     fang cheng <fangread at yahoo.com.cn>
+Author:     fang cheng <fangread@yahoo.com.cn>
 AuthorDate: Thu Aug 23 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.76.6
+    
     - Improved recognizing methods, ctors, and variable declarators declared in most common form.
     - Optimized code and fixed bugs.
 
@@ -73,10 +83,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 256 insertions(+), 281 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.76.5)
-Author:     fang cheng <fangread at yahoo.com.cn>
+Author:     fang cheng <fangread@yahoo.com.cn>
 AuthorDate: Tue Aug 21 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.76.5
+    
     - Optimized code: s:modeAndEXPR(), formalParameter(), and others.
     - Added quick recognizing fields or methods declared in most common form.
     - Fixed bug: "foo().|", "getFoo().foo().|", "for (Enumeration entries = ; entries.|; )".
@@ -88,10 +100,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 281 insertions(+), 123 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.76.4.1)
-Author:     fang cheng <fangread at yahoo.com.cn>
+Author:     fang cheng <fangread@yahoo.com.cn>
 AuthorDate: Fri Aug 17 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.76.4.1
+    
     - Made a major improvement of Reflection. REMEMBER to DELETE the old Reflection.class.
     - Support accessible nested classes from reflection.
     - Support import static members and import accessible nested classes.
@@ -108,10 +122,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 519 insertions(+), 414 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.76.3)
-Author:     fang cheng <fangread at yahoo.com.cn>
+Author:     fang cheng <fangread@yahoo.com.cn>
 AuthorDate: Fri Aug 10 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.76.3
+    
     - Make an improvement for JSP file.
     - Add an option 'searchdecl' set by javacomplete#SetSearchdeclMethod().
     - Clear cache when set options affecting classpath.
@@ -128,10 +144,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 298 insertions(+), 136 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.76.2)
-Author:     fang cheng <fangread at yahoo.com.cn>
+Author:     fang cheng <fangread@yahoo.com.cn>
 AuthorDate: Wed Aug 8 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.76.2
+    
     - Add inherited fields and methods to local class.
     - Combine members of local packages and loadable packages.
     - Add quick recognition of package or import.
@@ -146,10 +164,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 212 insertions(+), 193 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.76.1)
-Author:     fang cheng <fangread at yahoo.com.cn>
+Author:     fang cheng <fangread@yahoo.com.cn>
 AuthorDate: Sun Aug 5 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.76.1
+    
     - Support new language features in JAVA 5 and above.
     - The embedded JAVA parser is full-featured now, adding supports for parsing statement, block or expression.
     - Java_parser.vim is an autoload script now.
@@ -170,10 +190,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 4211 insertions(+), 1555 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.75beta)
-Author:     fang cheng <fangread at yahoo.com.cn>
+Author:     fang cheng <fangread@yahoo.com.cn>
 AuthorDate: Tue Feb 13 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.75beta
+    
     " 	Add java_parser.vim.
     " 	Add b:sourcepath option.
     " 	Improve recognition of classes defined in current buffer or in source path.
@@ -184,10 +206,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 2210 insertions(+), 123 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.74)
-Author:     fang cheng <fangread at yahoo.com.cn>
+Author:     fang cheng <fangread@yahoo.com.cn>
 AuthorDate: Sat Feb 3 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.74
+    
     Support jre1.2 (and above).
     Support input context like "boolean.class.|"
     Handle java primitive types such as 'int'.
@@ -199,10 +223,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 176 insertions(+), 379 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.73)
-Author:     fang cheng <fangread at yahoo.com.cn>
+Author:     fang cheng <fangread@yahoo.com.cn>
 AuthorDate: Thu Feb 1 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.73
+    
     Fix bug that CLASSPATH not used when b:classpath or g:java_classpath not set.
     Fix bug that call filter() without making a copy for incomplete.
     Improve recognition of declaration of this class
@@ -211,10 +237,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 103 insertions(+), 58 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.72)
-Author:     fang cheng <fangread at yahoo.com.cn>
+Author:     fang cheng <fangread@yahoo.com.cn>
 AuthorDate: Wed Jan 31 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.72
+    
     Fix bugs in nested expression:
     "System.out.println( str.| )"
     "System.out.println(str.charAt(| )"
@@ -224,9 +252,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 18 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.71)
-Author:     fang cheng <fangread at yahoo.com.cn>
+Author:     fang cheng <fangread@yahoo.com.cn>
 AuthorDate: Sun Jan 28 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

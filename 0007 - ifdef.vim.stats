@@ -1,18 +1,22 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.0)
-Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+Author:     Michael Geddes <vimmer@frog.wheelycreek.net>
 AuthorDate: Fri Aug 6 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.0
+    
     - Renamed everything to be more clear, and reversed some of the includegroups from exclude groups - make use of ALL in groups. This seems to have fixed most bugs, but may have reintroduced some as well, however doing it this way round should prevent most interaction with other scripts.- Actually clear the cPreCondit highlight gtoup as we are taking it over.  Ditto cCppOut (#if 0) handling
 
  syntax/ifdef.vim |  701 +++++++++++++++++++++++++++++-------------------------
  1 files changed, 371 insertions(+), 330 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
-Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+Author:     Michael Geddes <vimmer@frog.wheelycreek.net>
 AuthorDate: Sun Feb 1 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.3
+    
     - Clean up some of the comments
     - Add comments for hilighting groups.
     - Ignore whitespace in .defines files. (TODO: Credit person who suggested this!)
@@ -21,10 +25,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 181 insertions(+), 145 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
-Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+Author:     Michael Geddes <vimmer@frog.wheelycreek.net>
 AuthorDate: Thu Jan 29 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.2
+    
     - Add support for idl files.
     - Suggestions from ??? (let me know if this was you)
         - Check for &#039shell&#039 type and &#039shellslash&#039
@@ -34,10 +40,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 10 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
-Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+Author:     Michael Geddes <vimmer@frog.wheelycreek.net>
 AuthorDate: Wed Jan 1 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.1
+    
     Minor bugfixes (use :p modifier in getting directory)
     - suggestions from Erik R.
     Documentation updates
@@ -46,10 +54,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 27 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+Author:     Michael Geddes <vimmer@frog.wheelycreek.net>
 AuthorDate: Sun Dec 29 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     - Added loading of ifdefs
       - via ifdef modelines
       - via .defines files
@@ -60,9 +70,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 163 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
-Author:     Michael Geddes <vimmer at frog.wheelycreek.net>
+Author:     Michael Geddes <vimmer@frog.wheelycreek.net>
 AuthorDate: Wed Dec 18 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fix up some group names so colours get picked up.
 

@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/35-41)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Wed Mar 4 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 35/41
+    
     Align: save and restore of mod now done with the local version of the option
     Align: new sanity check for an AlignStyle of just ":"
     AlignMaps: new maps: \ts; ts: \ts< \ts= \a(
@@ -18,10 +20,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 171 insertions(+), 87 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/34-40)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Wed Oct 29 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 34/40
+    
     (AlignMaps) split into plugin/ and autoload/ sections (faster [g]vim startup)
     (AlignMaps) maps use <Plug>s and <script>s: allowing users to invoke the maps how they wish, and preventing user maps from interfering with the internal workings of the maps.
     (Align)     bugfix - using :AlignCtrl before entering any alignment ctrl cmds was causing an error
@@ -35,10 +39,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 769 insertions(+), 655 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/33-39)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Thu Mar 6 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 33/39
+    
     * Align now aligns multi-byte characters correctly (see :help align-strlen) -- choose g:Align_xstrlen for the type of codepoint you want handled.
     
     * Align now accepts \"...\" arguments, so one can pass whitespace to Align as a separator
@@ -53,10 +59,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 361 insertions(+), 220 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/32-38)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Mon Aug 20 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 32/38
+    
     The <leader>tt map wasn't working right; Align now uses <q-args> instead of <f-args>, so it does the argument splitting itself, thus allowing patterns containing backslashes to be used without lots of backslash-duplication.  This allows the \tt map in AlignMaps to work, and to work without a lot of extra backslashes.
 
  autoload/Align.vim     |  109 +++++++++++++++++++++++++++++++-----------------
@@ -67,10 +75,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 105 insertions(+), 47 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/31-36)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Thu Aug 16 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 31/36
+    
     New feature -- one can embed AlignCtrl settings into Align (as a one-shot):
     
        [range]Align! [AlignCtrl settings] pattern(s)
@@ -85,10 +95,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 396 insertions(+), 287 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/30-35)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Wed Sep 20 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 30/35
+    
     * \acom can now work with doxygen style /// comments
     * \t= and cousins used "`"s.  They now use \xff characters.
     * <char-0xff> used in \t= \T= \w= and \m= instead of backquotes.
@@ -101,10 +113,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 29 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/29-34)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Tue Apr 25 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 29/34
+    
     Align and AlignMaps now use vim 7.0 style autoloading (quicker startup, loads only when used)
     cecutil updated to use keepjumps
     Now being distributed as a vimball - simply :so % it after decompressing it to install
@@ -118,10 +132,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 1235 insertions(+), 967 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/28-33)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Mon Nov 21 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 28/33
+    
     bugfix: (Align) Align now works around the report option setting.
     bugfix: (Align) AlignCtrl l: wasn't behaving as expected; fixed!
     bugfix: (AlignMap) \ts, now uses P1 in its AlignCtrl call
@@ -133,10 +149,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 125 insertions(+), 85 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/27-32)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Tue Jul 12 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 27/32
+    
     Align v27 : cpo and ignorecase workarounds
     AlignMaps v32: s:WrapperStart() -> AlignWrapperStart(), s:WrapperEnd() -> AlignWrapperEnd()
      These changes let the wrappers be used outside of AlignMaps.vim (customized map support)
@@ -148,10 +166,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 47 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/27-31)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Fri Apr 15 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 27/31
+    
     Align: GetLatestVimScripts/AutoInstall supported
     AlignMaps: new map: \\adcom (align declaration-style comments), \\a, now wors across multiple lines with different types, cecutil.vim now used, more number alignment maps (\\aenum, \\aunum)
 

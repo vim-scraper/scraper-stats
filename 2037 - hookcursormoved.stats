@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Oct 18 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.9
+    
     - hookcursormoved#Register: Print a message on unknown hooks (don't throw an error)
     - hookcursormoved#Register: If g:hookcursormoved_linechange is undefined, assume the plugin wasn't loaded.
 
@@ -12,9 +14,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 32 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Fri Jul 11 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     hookcursormoved#Register: Allow deregister
 
@@ -24,10 +26,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 53 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Nov 21 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.7
+    
     - Minor tweaks
     - FIX: Check correct column in s:CheckChars()
 
@@ -37,9 +41,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 54 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Nov 18 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     - Check correct column in syntax* tests.
 
@@ -48,10 +52,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 41 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Mon Nov 12 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.5
+    
     - hookcursormoved#Register() takes mode as optional 3rd argument which
     allows to check a condition only in insert or only in normal mode.
     - Defined parenthesis_round_open and parenthesis_round_close.
@@ -64,10 +70,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 199 insertions(+), 70 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Mon Oct 29 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4
+    
     - Defined parenthesis_round
     - FIX: parenthesis
 
@@ -77,10 +85,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 33 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Fri Oct 12 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3
+    
     - Defined parenthesis, syntaxleave_oneline conditions
     - Removed namespace parameter (everything is buffer-local)
     - Perform less checks (this should be no problem, if you use #Register).
@@ -91,10 +101,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 203 insertions(+), 99 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Thu Oct 4 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     - Renamed s:Enable() to hookcursormoved#Enable()
     - Renamed s:enabled to b:hookcursormoved_enabled
 

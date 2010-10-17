@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.5)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Wed Nov 13 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.5
+    
     I added ^Xu map to undo the previous immediate capitalization. This will work
     correctly only when you are still next to the word for which you want to
     undo capitaliation and you have not left the insert mode since the
@@ -12,10 +14,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 10 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Fri Nov 1 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.4
+    
     - Added Zak Beck's contribution to ignore the words inside constants too.
     - Also for Vikas Agnihothri, exposed the function that expands the abbreviations conditionally as a global function. You can now use SqlIab_ReplaceConditionally() function anywhere in your scripts to add new abbreviations for sql files.
 
@@ -23,29 +27,33 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 227 insertions(+), 214 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Thu Sep 19 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.3
+    
     I have modified Michael's script to ignore the abbreviations if the same words are used inside comments. Since there is no other difference, you can even download the 1.2 version if you don't like this. Thanks to Michael for allowing me to upload into his space.
 
  ftplugin/sql_iabbr.vim |  438 +++++++++++++++++++++++++-----------------------
  1 files changed, 230 insertions(+), 208 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
-Author:     Michael Brailsford <brailsmt at yahoo.com>
+Author:     Michael Brailsford <brailsmt@yahoo.com>
 AuthorDate: Wed Jul 3 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.2
+    
     Made all the abbreviations local to the buffer.  Now when editing sql and some other language in the same vim instance, typing "create" in the non-sql window will not be changed to "CREATE".
 
  ftplugin/sql_iabbr.vim |  416 ++++++++++++++++++++++++------------------------
  1 files changed, 208 insertions(+), 208 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Michael Brailsford <brailsmt at yahoo.com>
+Author:     Michael Brailsford <brailsmt@yahoo.com>
 AuthorDate: Mon Jun 10 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added a few keywords that I found missing as I used the script.
 
@@ -53,9 +61,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 12 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     Michael Brailsford <brailsmt at yahoo.com>
+Author:     Michael Brailsford <brailsmt@yahoo.com>
 AuthorDate: Wed May 29 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

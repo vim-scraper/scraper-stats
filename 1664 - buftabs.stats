@@ -1,7 +1,7 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.16)
-Author:     Ico - <vim at zevv.nl>
+Author:     Ico - <vim@zevv.nl>
 AuthorDate: Sun Feb 28 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed bug causing errors when using buftabs in vimdiff mode.
 
@@ -9,10 +9,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 15 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
-Author:     Ico - <vim at zevv.nl>
+Author:     Ico - <vim@zevv.nl>
 AuthorDate: Tue Feb 16 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.15
+    
     * Fixed window width handling bug which caused strange behaviour in combination with the bufferlist plugin.
     * Fixed wrong buffer display when deleting last window.
     * Added extra options for tabs style and highlighting.
@@ -23,29 +25,33 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 59 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
-Author:     Ico - <vim at zevv.nl>
+Author:     Ico - <vim@zevv.nl>
 AuthorDate: Thu Jan 28 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.14
+    
     Fixed bug that caused buftabs in command line being overwritten when 'hidden' mode is enabled.
 
  plugin/buftabs.vim |   27 +++++++++++++++++++--------
  1 files changed, 19 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
-Author:     Ico - <vim at zevv.nl>
+Author:     Ico - <vim@zevv.nl>
 AuthorDate: Thu May 7 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.13
+    
     Reusing right-aligned part of original statusline instead of using fixed '%l,%c'
 
  plugin/buftabs.vim |    6 ++++--
  1 files changed, 4 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
-Author:     Ico - <vim at zevv.nl>
+Author:     Ico - <vim@zevv.nl>
 AuthorDate: Wed Mar 18 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed support for split windows
 
@@ -53,9 +59,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 71 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
-Author:     Ico - <vim at zevv.nl>
+Author:     Ico - <vim@zevv.nl>
 AuthorDate: Sat Jan 26 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added GPL license
 
@@ -63,9 +69,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 29 insertions(+), 22 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
-Author:     Ico - <vim at zevv.nl>
+Author:     Ico - <vim@zevv.nl>
 AuthorDate: Wed Aug 22 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Now compatible with older Vim versions < 7.0 as well
 
@@ -73,9 +79,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 8 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
-Author:     Ico - <vim at zevv.nl>
+Author:     Ico - <vim@zevv.nl>
 AuthorDate: Wed May 2 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Update buftabs when leaving insert to properly show modified-status.
 
@@ -83,9 +89,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 4 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
-Author:     Ico - <vim at zevv.nl>
+Author:     Ico - <vim@zevv.nl>
 AuthorDate: Wed Mar 7 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added configuration option to show tabs in statusline instead of cmdline
 
@@ -93,19 +99,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 40 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
-Author:     Ico - <vim at zevv.nl>
+Author:     Ico - <vim@zevv.nl>
 AuthorDate: Sun Mar 4 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.6
+    
     'only_basename' changed to a global variable.  Removed functions and add event handlers instead.  'hidden' mode broke some things, so is disabled now. Fixed documentation.
 
  plugin/buftabs.vim |  156 ++++++++++++++++++++++++++++++----------------------
  1 files changed, 90 insertions(+), 66 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
-Author:     Ico - <vim at zevv.nl>
+Author:     Ico - <vim@zevv.nl>
 AuthorDate: Mon Feb 26 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added option for showing only filenames without directories in tabs
 

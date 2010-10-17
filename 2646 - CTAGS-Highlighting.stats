@@ -1,7 +1,7 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/r398)
-Author:     Al Budden <abudden at gmail.com>
+Author:     Al Budden <abudden@gmail.com>
 AuthorDate: Tue Mar 30 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added support for ctags 'import' type in python.
 
@@ -10,10 +10,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 6 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/r396)
-Author:     Al Budden <abudden at gmail.com>
+Author:     Al Budden <abudden@gmail.com>
 AuthorDate: Mon Mar 29 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version r396
+    
     Significantly improved support for languages other than C.  Factored out redundant ctags_* intermediate highlight groups.
 
  doc/ctags_highlighting.txt |    7 ++++++-
@@ -21,10 +23,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 29 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/r391)
-Author:     Al Budden <abudden at gmail.com>
+Author:     Al Budden <abudden@gmail.com>
 AuthorDate: Wed Mar 3 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version r391
+    
     Better support for different languages including support for C# (thanks to Aleksey Baibarin).
 
  doc/ctags_highlighting.txt    |    7 ++++-
@@ -33,9 +37,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 45 insertions(+), 29 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/387)
-Author:     Al Budden <abudden at gmail.com>
+Author:     Al Budden <abudden@gmail.com>
 AuthorDate: Fri Feb 19 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed bug in new vimfiles location operation.
 
@@ -44,10 +48,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 7 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/r384)
-Author:     Al Budden <abudden at gmail.com>
+Author:     Al Budden <abudden@gmail.com>
 AuthorDate: Fri Feb 19 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version r384
+    
     Improvements to VIMFILESDIR identification.  Re-architecture of type definitions to make them more sensitive to different ctags "kinds" for different languages.  Note that Enumerator has been renamed to EnumerationValue: the latest Bandit Colour Scheme supports this.  Fixed escaping of paths and operation of ReadTypes when not in an autocommand.
 
  doc/ctags_highlighting.txt    |   16 +-
@@ -56,9 +62,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 340 insertions(+), 339 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/r340)
-Author:     Al Budden <abudden at gmail.com>
+Author:     Al Budden <abudden@gmail.com>
 AuthorDate: Mon Nov 2 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added missing winrestview() call (thanks to Yongwei Wu for reporting this).
 
@@ -68,9 +74,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 522 insertions(+), 80 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/r309)
-Author:     Al Budden <abudden at gmail.com>
+Author:     Al Budden <abudden@gmail.com>
 AuthorDate: Tue Aug 18 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added experimental PHP support and a lot more documentation.
 
@@ -80,10 +86,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 387 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/r301)
-Author:     Al Budden <abudden at gmail.com>
+Author:     Al Budden <abudden@gmail.com>
 AuthorDate: Fri Aug 7 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version r301
+    
     Added shellescape() to GUI types and tags files and moved them out of the main distribution (see update 7th August 2009 on the website).
 
  ftplugin/types_qt4.vim        | 1946 -----------------------------------------
@@ -93,9 +101,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 15 insertions(+), 3180 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/r292)
-Author:     Al Budden <abudden at gmail.com>
+Author:     Al Budden <abudden@gmail.com>
 AuthorDate: Mon Aug 3 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed bug with (optional) cscope database generation.
 
@@ -104,9 +112,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 5 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/r286)
-Author:     Al Budden <abudden at gmail.com>
+Author:     Al Budden <abudden@gmail.com>
 AuthorDate: Mon Jul 27 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fix for Linux spaced paths (Mikhail Stepura).
 
@@ -115,10 +123,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 5 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/r285)
-Author:     Al Budden <abudden at gmail.com>
+Author:     Al Budden <abudden@gmail.com>
 AuthorDate: Mon Jul 27 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version r285
+    
     Added support for ctags being stored in a path with spaces and other odd characters (thanks to Mikhail Stepura).
 
  mktypes.py                    |   94 ++++++++++++++++++++++-------------------
@@ -126,10 +136,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 94 insertions(+), 88 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/r262)
-Author:     Al Budden <abudden at gmail.com>
+Author:     Al Budden <abudden@gmail.com>
 AuthorDate: Sat May 23 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version r262
+    
     Changed some of the defaults to the python script (so fewer options need to be passed by UpdateTypesFile).  It should now be possible to generate the types file simply by running "mktypes.py" or "mktypes.py -r" in the project directory.  Of course, UpdateTypesFile still works too.  Added UpdateTypesFileOnly command for projects in which the tags file is updated externally (e.g. the Linux kernel source).  Removed regular expression matches by default: this is much quicker for large projects.  Also added more screenshots to the website.
 
  mktypes.py                    |   36 ++++++++++++++++++++----------------
@@ -137,9 +149,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 45 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/r233)
-Author:     Al Budden <abudden at gmail.com>
+Author:     Al Budden <abudden@gmail.com>
 AuthorDate: Thu May 21 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

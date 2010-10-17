@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0.1)
-Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+Author:     Eric Arnold <eric_p_arnold@yahoo.com>
 AuthorDate: Tue May 23 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0.1
+    
     - startup bug with Tab.._min undefined
     [blah, sorry]
 
@@ -10,10 +12,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 5 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+Author:     Eric Arnold <eric_p_arnold@yahoo.com>
 AuthorDate: Tue May 23 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     - Heavily restructured for support for gui tabs;
     probably installed some bugs too :-P
     - Some speed tweaks
@@ -24,9 +28,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 703 insertions(+), 233 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8.3)
-Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+Author:     Eric Arnold <eric_p_arnold@yahoo.com>
 AuthorDate: Wed May 17 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     - Checks for need to recalc, now ~instant return for page redraws
 
@@ -34,9 +38,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 45 insertions(+), 69 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8.1.1)
-Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+Author:     Eric Arnold <eric_p_arnold@yahoo.com>
 AuthorDate: Sun May 14 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added wrap-max-lines increase/decrease "buttons" on tabline.
 
@@ -44,9 +48,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 10 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8.1)
-Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+Author:     Eric Arnold <eric_p_arnold@yahoo.com>
 AuthorDate: Sun May 14 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     - Corrected indexing for mousefunc patch
 
@@ -54,40 +58,48 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 19 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
-Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+Author:     Eric Arnold <eric_p_arnold@yahoo.com>
 AuthorDate: Sun May 14 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.8
+    
     - Use the tabline wrapping patch if available.
 
  plugin/TabLineSet.vim |  134 ++++++++++++++++++++++++++++++-------------------
  1 files changed, 82 insertions(+), 52 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7.1)
-Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+Author:     Eric Arnold <eric_p_arnold@yahoo.com>
 AuthorDate: Sat May 6 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.7.1
+    
     - Reset highlighting based on synIDattr() and whether some external operation has cleared attributes.
 
  plugin/TabLineSet.vim |   10 +++++++---
  1 files changed, 7 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
-Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+Author:     Eric Arnold <eric_p_arnold@yahoo.com>
 AuthorDate: Thu May 4 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.7
+    
     - Added pre- and post-proc function hooks
 
  plugin/TabLineSet.vim |   62 +++++++++++++++++++++++++++++++++++++++++++++++-
  1 files changed, 60 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.61)
-Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+Author:     Eric Arnold <eric_p_arnold@yahoo.com>
 AuthorDate: Tue May 2 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.61
+    
     - [Really, this time]Fixed problem where slow-down occurs when the
     tabline function is called for every keystroke.  Use
     the toggle or rotate mappings/functions to reset the
@@ -97,20 +109,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 837 insertions(+), 731 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.55)
-Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+Author:     Eric Arnold <eric_p_arnold@yahoo.com>
 AuthorDate: Sun Apr 16 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.55
+    
     - disable the g:TabLineSetFillerFunc per the performance problem with VIm70d.
 
  plugin/TabLineSet.vim |   26 +++++++++++++++++++++-----
  1 files changed, 21 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
-Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+Author:     Eric Arnold <eric_p_arnold@yahoo.com>
 AuthorDate: Sun Apr 9 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.5
+    
     - added filter lists so users can apply multiple regex's to the tabline string from the config vars.
     - re-arranged the close button, the window counter,
       and the (tab,win,buf) list
@@ -119,10 +135,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 334 insertions(+), 76 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
-Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+Author:     Eric Arnold <eric_p_arnold@yahoo.com>
 AuthorDate: Mon Apr 3 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.4
+    
     - added comma list of buffers contained in tab
     - changed toggle and rotate mapping functions to
       handle multiple option sets to switch through
@@ -131,20 +149,25 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 252 insertions(+), 146 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.5)
-Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+Author:     Eric Arnold <eric_p_arnold@yahoo.com>
 AuthorDate: Sun Apr 2 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.3.5
+    
     Added an autocommand to address problems of start up highlighting conflicts.
 
  plugin/TabLineSet.vim |   94 ++++++++++++++++++++++++++----------------------
  1 files changed, 51 insertions(+), 43 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
-Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+Author:     Eric Arnold <eric_p_arnold@yahoo.com>
 AuthorDate: Sun Apr 2 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.3
+    
+    
     - Added more indicators, and toggle mapping funcs
     for verbose control.
     - Changed the name of the script from tabset.vim
@@ -156,19 +179,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 343 insertions(+), 197 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
-Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+Author:     Eric Arnold <eric_p_arnold@yahoo.com>
 AuthorDate: Sat Apr 1 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.2
+    
     Fixed some bugs, better width calc., more presentation and highlighting thingies.
 
  plugin/tabset.vim |  114 +++++++++++++++++++++++++++++++++++++---------------
  1 files changed, 81 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Eric Arnold <eric_p_arnold at yahoo.com>
+Author:     Eric Arnold <eric_p_arnold@yahoo.com>
 AuthorDate: Fri Mar 31 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

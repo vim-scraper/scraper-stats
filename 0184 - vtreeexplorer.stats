@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.28)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Fri Dec 28 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.28
+    
     Added 'O' command which replaces explorer window with editing of file when activated on file in tree - idea from Brian Doyle.
 
  doc/vtreeexplorer.txt    |   12 +++++++++---
@@ -10,10 +12,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 14 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.27)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Sat Nov 10 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.27
+    
     Add feature where files and directories matching global variable g:treeExplHidePattern will be not shown.  Can be updated at anytime.  Hiding toggled with the existing mechanism. Thanks to Vaclav Kulakovsky for the idea and patch.
 
  doc/vtreeexplorer.txt    |   12 ++++++++++--
@@ -21,20 +25,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 33 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.26)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Sat Nov 10 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.26
+    
     Fix for bug that occurs when opening a file after splitting the vtree window. Thanks to genelisp/isaac
 
  plugin/vtreeexplorer.vim |   72 +++++++++++++++++++++++++++++++++-------------
  1 files changed, 52 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.25)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Sat Nov 10 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.25
+    
     Added support for tabs with the 'e' shortcut - thanks to Krzysztof Kościuszkiewicz
 
  doc/vtreeexplorer.txt    |    5 +++++
@@ -42,10 +50,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 16 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.24)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Mon Aug 21 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.24
+    
     Don't clobber yank register, fixes for vim 7, misc fixes.  Thanks to A. Kruize, D. Mayle, M. Grentel
 
  doc/vtreeexplorer.txt    |   10 ++++++++--
@@ -53,9 +63,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 40 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.23)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Sun Oct 30 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixes for functionality on windows.
 
@@ -63,10 +73,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 28 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.22)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Fri Oct 28 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.22
+    
     - bug fix for vim6 - thanks to Steve Hall
     - avoid register clobbering - thanks to Bindu Wavell
 
@@ -74,10 +86,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 27 insertions(+), 19 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.21)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Thu Oct 27 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.21
+    
     - more compact default layout (width of tree layout is customizable)
     - updated contact info
 
@@ -86,10 +100,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 45 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.20)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Thu Dec 30 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.20
+    
     Auto-loading for TreeExplorer buffer type - useful if you save and restore a session with the explorer in it. Updated email address.
 
  doc/vtreeexplorer.txt    |    2 +-
@@ -97,9 +113,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 9 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.19)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Sun Jan 26 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fix for filenames that contain '#' - thanks to Klaus Fabritius.
 
@@ -107,10 +123,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.16)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Thu Sep 19 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.16
+    
     Minor fix when opening modified buffer that is  already open in more than 1 window - Yegappan Lakshman
 
  doc/vtreeexplorer.txt    |    2 +-
@@ -118,9 +136,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 49 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.15)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Tue Jul 23 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Syntax bug - must have hit  'J' instead of 'j' at some point.
 
@@ -128,10 +146,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 2 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.14)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Mon Jul 22 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.14
+    
     Add mapping for mouse button on tree - like 'open' (thanks to Douglas Potts).
 
  doc/vtreeexplorer.txt    |   21 ++++++++++++++++-----
@@ -139,10 +159,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 43 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.13)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Sun Feb 17 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.13
+    
     Bugfix for VSTreeExplore - thanks to Benoit Cerrina
     Added help documenation.
 
@@ -151,59 +173,69 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 197 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Fri Jan 18 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.10
+    
     Added directory sorting and D mapping to toggle between 3 modes. Highlighting change for links. Support for opening more than one tree explorer at once.  Code cleanups and factoring.
 
  plugin/vtreeexplorer.vim |  517 +++++++++++++++++++++++-----------------------
  1 files changed, 261 insertions(+), 256 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Thu Jan 17 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.9
+    
     Added ~ to chars escaped in file names. Suppressed message output. Handle when top dir is of the form C:\ for dos/win systems.
 
  plugin/vtreeexplorer.vim |   55 ++++++++++++++++++++++++---------------------
  1 files changed, 29 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Thu Jan 17 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.8
+    
     Changed recursive expand from E to X mapping. Added E mapping to open regular file explorer on cursor dir.  Added :CD command to switch to direcotry (useful maybe to CD: D: on windows?) - still some escaping bugs on that one.  Fixed bug for dirs/files that start with tree parts. Better escaping of file/dir names. Other minor fixes and clean ups.
 
  plugin/vtreeexplorer.vim |  132 ++++++++++++++++++++++++++++++++++------------
  1 files changed, 98 insertions(+), 34 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Thu Jan 17 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.7
+    
     Added command to refresh cursor dir.  Added command to recursively expand subdirs of cursor dir (caution: this could take a long time for big subdir trees).  Changed the hidded files toggle to refresh current dir after. Fixes for windows. Other minor fixes. Using CVS version numbers now, sorry for the jump.
 
  plugin/vtreeexplorer.vim |  288 ++++++++++++++++++++++++++++++++++------------
  1 files changed, 215 insertions(+), 73 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.01)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Wed Jan 16 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.01
+    
     Fixed problem with esaping dir names with spaces - still some issues with using it in windows.
 
  plugin/vtreeexplorer.vim |   11 +++++++----
  1 files changed, 7 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     scott urban <thomas.scott.urban at gmail.com>
+Author:     scott urban <thomas.scott.urban@gmail.com>
 AuthorDate: Wed Jan 16 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

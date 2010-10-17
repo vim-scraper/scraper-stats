@@ -1,7 +1,7 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.39)
-Author:     Rene de Zwart <renework at xs4all.nl>
+Author:     Rene de Zwart <renework@xs4all.nl>
 AuthorDate: Mon Oct 11 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     An other patch from O3. Make sure that buffer variable did_indent exists
 
@@ -9,10 +9,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.38)
-Author:     Rene de Zwart <renework at xs4all.nl>
+Author:     Rene de Zwart <renework@xs4all.nl>
 AuthorDate: Fri Oct 8 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.38
+    
     Othree send me the patch for:
     update the empty tag list and fix a bug
     while using other indent plugin will make double indent.
@@ -21,10 +23,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 6 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.37)
-Author:     Rene de Zwart <renework at xs4all.nl>
+Author:     Rene de Zwart <renework@xs4all.nl>
 AuthorDate: Thu Nov 12 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.37
+    
     1) document directory create a wrong directory under windows when the path contained a space. thanks to Guande Wang.
     2) filetype indent interferes with xml.vim thanks to Brandon Waskiewicz
     3) exe normal changed to exe normal! to avoid key remappings thanks to Roald de Vries
@@ -33,10 +37,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 79 insertions(+), 75 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.36)
-Author:     Rene de Zwart <renework at xs4all.nl>
+Author:     Rene de Zwart <renework@xs4all.nl>
 AuthorDate: Mon Sep 21 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.36
+    
     xml-plugin-callbacks is defined twice by "Samuel Ferencik"
     CloseTag definiton had optional attribute
 
@@ -44,10 +50,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 5 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.35)
-Author:     Rene de Zwart <renework at xs4all.nl>
+Author:     Rene de Zwart <renework@xs4all.nl>
 AuthorDate: Sat Mar 17 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.35
+    
     1.35 Neil walker send a patch to change to cursor positioning to use (suprise) cursor function
             Thanks Neil
     1.34 Had a variable CloseTag and a function CloseTag
@@ -56,10 +64,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 54 insertions(+), 54 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.33)
-Author:     Rene de Zwart <renework at xs4all.nl>
+Author:     Rene de Zwart <renework@xs4all.nl>
 AuthorDate: Sun Jul 2 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.33
+    
     Ian A. Tegebo noticed that match and fold didn't when a tag has an attribute like
     <tag att="dc=rescomp,dc=berkeley,dc=edu">. The regular expresssion s:Attrib
     didn't work in that situation
@@ -68,10 +78,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.32)
-Author:     Rene de Zwart <renework at xs4all.nl>
+Author:     Rene de Zwart <renework@xs4all.nl>
 AuthorDate: Fri May 12 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.32
+    
     improvements from Guangde Wang (g2wang at yahoo com)
     check for jsp tags, php tags and 0 length tagnames
     Thanks Guangde
@@ -81,10 +93,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 28 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.30)
-Author:     Rene de Zwart <renework at xs4all.nl>
+Author:     Rene de Zwart <renework@xs4all.nl>
 AuthorDate: Wed Apr 12 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.30
+    
     added function
         DelCData ( \[ )     deletes Cdata tag
         DelCDataSection (\{) deletes cdata section
@@ -101,10 +115,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 311 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.28)
-Author:     Rene de Zwart <renework at xs4all.nl>
+Author:     Rene de Zwart <renework@xs4all.nl>
 AuthorDate: Thu Dec 8 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.28
+    
     - Code Changes
         - regular expressions moved to script variables which document them a bit
         - rename b:endtag to b:firstWasEndTag as a better description.
@@ -122,10 +138,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 186 insertions(+), 312 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.27)
-Author:     Rene de Zwart <renework at xs4all.nl>
+Author:     Rene de Zwart <renework@xs4all.nl>
 AuthorDate: Wed Nov 30 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.27
+    
     - Added listitem \l for marking up (itemized|ordered)list in docbook
     - added \I (capital i) indent all function  (does maybe more then one expect)
     - added \<  to comment out a block
@@ -139,10 +157,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 537 insertions(+), 151 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.16)
-Author:     Rene de Zwart <renework at xs4all.nl>
+Author:     Rene de Zwart <renework@xs4all.nl>
 AuthorDate: Wed Nov 16 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.16
+    
     - Error in MakeElement in (x)html mode the cursor postion after emptytags was wrong
     - foldTag added the case when started from closetag (backward range)
     - foldTagAll do everything in the function not calling FoldTag.
@@ -155,10 +175,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 138 insertions(+), 58 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
-Author:     Rene de Zwart <renework at xs4all.nl>
+Author:     Rene de Zwart <renework@xs4all.nl>
 AuthorDate: Mon Nov 14 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.11
+    
     added function makeElement thanks to Bart van Deenen script make-element.vim (632)
     typing word;; expands into <word></word>. ;; is customisable see doc
     documentation update
@@ -170,10 +192,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 75 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
-Author:     Rene de Zwart <renework at xs4all.nl>
+Author:     Rene de Zwart <renework@xs4all.nl>
 AuthorDate: Mon Nov 14 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.9
+    
     documentation update
     new function FormatTagAll will format all tagnames like the one the cursor is on
     error in BlockTag when visual selection is one line only
@@ -183,10 +207,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 209 insertions(+), 49 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
-Author:     Rene de Zwart <renework at xs4all.nl>
+Author:     Rene de Zwart <renework@xs4all.nl>
 AuthorDate: Mon Nov 14 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.6
+    
     More compatability with devins xml.  (HtmlAttribCallback && XmlAttribCallback. xml_use_xhtml
     support for open html tags in html mode and xml mode makes them empty tags)
     Documentation updated
@@ -199,9 +225,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 248 insertions(+), 101 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
-Author:     Rene de Zwart <renework at xs4all.nl>
+Author:     Rene de Zwart <renework@xs4all.nl>
 AuthorDate: Thu Nov 10 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

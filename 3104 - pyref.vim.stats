@@ -1,18 +1,20 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sat Sep 18 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.6
+    
       Moved OpenBrowser() to external autoload plug-in:
        http://github.com/xolox/vim-pyref/commit/b059112e6d111f84cb35
     
       Added :PyRef command, converted to autoload script:
        http://github.com/xolox/vim-pyref/commit/a37a24fe6630f40d7145
 
+ autoload/xolox.vim        |  110 +
  autoload/xolox/escape.vim |   26 +
  autoload/xolox/open.vim   |   75 +
  autoload/xolox/pyref.vim  |  145 +
- autoload/xolox.vim        |  110 +
  doc/pyref.txt             |  129 +-
  misc/pyref_index          | 8730 +++++++++++++++++++++++++++++++++++++++++++++
  plugin/pyref.vim          |  214 +--
@@ -22,10 +24,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  10 files changed, 9144 insertions(+), 9222 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Tue Jun 8 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.5
+    
      * Make all searches case-sensitive since Python is as well
      * Search for substring match on word boundaries
      * Progressively smaller suffix search now uses word boundary
@@ -39,10 +43,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 23 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sun Jun 6 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4.2
+    
     Fixed broken links in README
     http://github.com/xolox/vim-pyref/commit/5dd2e8b539d73a1c7dd01688bb6947f46a827396
 
@@ -51,9 +57,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 20 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.1)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sun Jun 6 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Includes generated Vim documentation based on README
 
@@ -63,10 +69,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 238 insertions(+), 118 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Thu Jun 3 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4
+    
     * Moved all remaining documentation from pyref.vim to README.md
       http://github.com/xolox/vim-pyref/commit/218990f6c228ff0bcf2cd70e48cba5cc443da25d
     
@@ -87,10 +95,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  8 files changed, 9025 insertions(+), 9004 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Thu Jun 3 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3
+    
     * Bug fix: Don't map insert mode when mapping is printable character
       http://github.com/xolox/vim-pyref/commit/2d45371f62b9eb274b837ce084c1ad77710af713
     
@@ -109,9 +119,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 113 insertions(+), 48 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Wed May 26 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

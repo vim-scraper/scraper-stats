@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.1.0)
-Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel at gmail.com>
+Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel@gmail.com>
 AuthorDate: Mon Aug 6 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.1.0
+    
     Fixed the behaviour of keywords after an equal sign is typed. Added search on the online docs at Rollyo.com.
 
  doc/rubysnippets.txt     |   21 +++++++++++++++++++++
@@ -10,10 +12,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 51 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.9)
-Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel at gmail.com>
+Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel@gmail.com>
 AuthorDate: Thu Aug 2 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.9
+    
     A lot of refactoring to allow methods like like select, map, collect and keywords like class, module and def to create the blocks only when they are on the correct scope. So, if you have a comment like
     // def a module class for each object
     they will not expand to the blocks.
@@ -22,10 +26,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 81 insertions(+), 54 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.8)
-Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel at gmail.com>
+Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel@gmail.com>
 AuthorDate: Mon Jul 30 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.8
+    
     Defined signs. They can be simple text strings (>>) or a little Ruby icon when using GUI, and can be inserted on Normal Mode with "is" (insert sign) and removed with "rs" (remove sign).
 
  doc/rubysnippets.txt     |    9 ++
@@ -35,9 +41,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 234 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.7)
-Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel at gmail.com>
+Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel@gmail.com>
 AuthorDate: Fri Jul 27 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed some problems about indentation, spaces and tabs.
 
@@ -45,10 +51,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 17 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.6)
-Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel at gmail.com>
+Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel@gmail.com>
 AuthorDate: Thu Jul 26 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.6
+    
     Added a configuration variable to skip the insertion of some structures (def, class, module) default names (method_name,ClassName,ModuleName).
 
  doc/rubysnippets.txt     |   13 ++++++++++++
@@ -56,10 +64,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 46 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.5)
-Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel at gmail.com>
+Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel@gmail.com>
 AuthorDate: Thu Jul 26 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.5
+    
     Fixed some problems with indentation. Now if you don't use some keywords like class, module and for on the start of the line, they will not expand to its structures. Changed the way to make hashes, they are created checking the nearest cursor position { and } pair.
 
  doc/rubysnippets.txt     |    6 +-
@@ -67,10 +77,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 76 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.4)
-Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel at gmail.com>
+Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel@gmail.com>
 AuthorDate: Wed Jul 25 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.4
+    
     Changed the way to create hashes. Now it works on Insert and Normal modes,  with <C-H> formatting the content of a string like { key value } to the Ruby hash format. Added some documentation.
 
  doc/rubysnippets.txt     |    5 +++-
@@ -78,10 +90,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 46 insertions(+), 19 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.3)
-Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel at gmail.com>
+Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel@gmail.com>
 AuthorDate: Wed Jul 25 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.3
+    
     Added some features to create for loops and hashes with parameters from the current line.
 
  doc/rubysnippets.txt     |  111 ++++++++++++++++++++++++++++++++++++++++++++++
@@ -90,10 +104,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 221 insertions(+), 39 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.2)
-Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel at gmail.com>
+Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel@gmail.com>
 AuthorDate: Mon Jul 23 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.2
+    
     Created some onliners and made some fixes regarding this tip, which I use a lot:
     http://www.vim.org/tips/tip.php?tip_id=153
     Is tested if some chars (like {) are mapped, if so the close pair is not inserted.
@@ -102,9 +118,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 10 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
-Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel at gmail.com>
+Author:     Eustaquio Rangel de Oliveira Jr. <eustaquiorangel@gmail.com>
 AuthorDate: Mon Jul 23 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

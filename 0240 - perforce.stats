@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.1)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Sun Sep 3 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.1
+    
     There were a few issues with the 4.0 version, and this version tries to resolve them, and adds a few features.
     
     - Fixed broken handling of <SHOW DIFF> in describe windows. But it is
@@ -46,10 +48,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 510 insertions(+), 210 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Fri Sep 1 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.0
+    
     Uploading again, the previous attempt had a a file missing in the zip.
     
     - Using Vim7 features, so it is no longer backwards compatible with
@@ -85,10 +89,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 4071 insertions(+), 4392 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Mon May 8 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.2
+    
     Release 3.2 for vim7 compatibility. There are a few enhancements too. This is probably the last version that will work in Vim 6.3/6.4.
     - Fixed PVDiff to work with two filenames. The problem was only with
       PVDiff command, as "PF vdiff" worked fine.
@@ -111,10 +117,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 290 insertions(+), 123 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Thu Oct 28 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.1
+    
     - This version introduces the concept of overriding settints at the
       buffer/window level (an extension of the existing support for
       b:p4Options). Makes it easier to work with multiple clients from a single
@@ -152,10 +160,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 444 insertions(+), 213 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Wed Aug 11 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.0
+    
     Now requires Vim 6.3 and the latest versions of genutils and multvals plugins.
     
     Too many changes to be listed here, read the |perforce-version-changes| section for details.
@@ -180,10 +190,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  11 files changed, 3759 insertions(+), 2261 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Thu Oct 30 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     There are too many changes to mention here. Most notable ones being, the new online help for the plugin and the perforce ruler feature from Tom's perforce plugin which is now integrated into this with some improvements. Regenerate help tags after extracting the zip. I highly recommend reading through at least the installation, changes, troubleshooting and tips sections of the help. I also recommend at least glancing through the rest of the help to have an idea of what the plugin is capable of doing. I appreciate feedback.
     
     Download the new versions of multvals.vim and genutils.vim.
@@ -197,10 +209,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 5092 insertions(+), 1581 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Fri Apr 12 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.3
+    
     - You need genutils.vim version (1.0.24)
     - Now the PSubmit and PDiff2 commands are enhanced. PSubmit can now take arguments that are directly passed to POpened to generate the list of files to submit. So it is possible to say "PSubmit % #" to open the template with only the current and alternate files or "PSubmit //depot/branch/..." to open the template with all the opened files under the given branch.
     - You can now pass in filters at the end of the commands. Just make sure you have a white space before the pipe. Ex:
@@ -218,10 +232,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 601 insertions(+), 248 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.2)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Tue Apr 2 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.2.2
+    
     Earlier, I have uploaded a wrong file as a zip file, I apologize for the mistake. I have deleted the old upload and am trying again.
     
     This is just a minor patch release. Added useful WQ command which is same as the W command but will also quit the window if there is no error. Speeds up making changes to labels, jobs etc. You might still want to use W for submits, as you can copy the output into your integration plans or something like that. Also I made a typo in my previous release notes about the variable name for passing default diff options. The correct name is g:p4DefaultDiffOptions. Please use the latest version of genutils.vim which fixes a typo resulting in an error message while quitting help windows.
@@ -230,10 +246,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 403 insertions(+), 335 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.0)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Tue Mar 26 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.2.0
+    
     - Perforce help window is now much better. It reuses the same window for all the help commands and maximizes too like the vim built-in window. It even restores the windows when you quit the help. Also navigating in the help window is much better as the cursor positions are remembered.
     - New command: PJobspec
     - g:p4DefaultChangesSize to pass in default diff options to all the diff operations. Set it to '-dc' to get diff with context.
@@ -249,10 +267,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 371 insertions(+), 185 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.17)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Wed Mar 20 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1.17
+    
     Fixed it to work on Unix, thanks to Kevin McCarthy for reporting the problem and a solution. I also added a basic syntax highlighting for the perforce windows (not complete yet). Extract the perforce.zip in your runtime directory.
 
  plugin/perforce.vim |   37 +++++++++++-------
@@ -260,29 +280,33 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 125 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.15)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Tue Mar 19 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1.15
+    
     Minor patch release. Fixed PLabels command. Now O in PChanges correctly edits the current change instead of showing the opened list. The opened list can be viewed by using the o (small case) command. Updated the usage header in the file.
 
  plugin/perforce.vim |   83 ++++++++++++++++++++++++++++++--------------------
  1 files changed, 50 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.14)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Sun Mar 17 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1.14
+    
     More featured, more robust, with more predictable results. Lots of bugs have been fixed. Now, a command executed through PF or its shortcut are identical, so no more surprises (PF change and PChange are same). Thanks for the suggestion, Man. The code is also much more cleaner now. I have also improved the help header in the file, so read the first few lines for a good overview of the script's capabilities.
 
  plugin/perforce.vim | 1044 ++++++++++++++++++++++++++++++++++++---------------
  1 files changed, 732 insertions(+), 312 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.8)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Fri Mar 8 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

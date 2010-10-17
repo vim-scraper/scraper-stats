@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.7.1)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sun Sep 5 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.7.1
+    
       Bug fix: Avoid Vim's hit-enter prompt:
        http://github.com/xolox/vim-publish/commit/7a2705cbdcefa12116f6ca007af9683729c2b37a
     
@@ -34,19 +36,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
        http://github.com/xolox/vim-publish/commit/87b0305bd27d4ee3715790cddc76cc2cfead7c14
 
  autoload/publish.vim      |  102 ++++++++++++++++++++++++++++---------------
+ autoload/xolox.vim        |   94 +++++++++++++++++++++++++++++++--------
  autoload/xolox/escape.vim |    4 +-
  autoload/xolox/timer.vim  |    6 +-
- autoload/xolox.vim        |   94 +++++++++++++++++++++++++++++++--------
  doc/publish.html          |  107 ---------------------------------------------
  doc/publish.txt           |  100 ++++++++++++++++++++---------------------
  plugin/publish.vim        |   30 ++++++++-----
  7 files changed, 215 insertions(+), 228 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Tue Jun 15 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.6
+    
     * Bug fix for :doautocmd User PublishPre hook:
       http://github.com/xolox/vim-publish/commit/964e4dbb486f203ae7a1cb426af9491f44225db1
     
@@ -63,18 +67,18 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
       http://github.com/xolox/vim-publish/commit/027a2f0f4f8ccd6a7f1739f023b4825944e71b57
 
  autoload/publish.vim     |  114 +++++++++++++++++++++++++++++++++-------------
+ autoload/xolox.vim       |   50 ++++++++++++++++++++
  autoload/xolox/path.vim  |   30 ++++++++++++-
  autoload/xolox/timer.vim |   79 ++++++++++++++++++++++++++++++++
- autoload/xolox.vim       |   50 ++++++++++++++++++++
  doc/publish.html         |   42 ++++++++++++----
  doc/publish.txt          |   36 ++++++++++++--
  plugin/publish.vim       |   53 +++++++++++++--------
  7 files changed, 333 insertions(+), 71 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5.2)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sun Jun 6 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Now includes generated Vim documentation based on README
 
@@ -83,10 +87,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 84 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5.1)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sat Jun 5 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.5.1
+    
     Bug fix: Fixed usage instructions to include tags generation :-\
     http://github.com/xolox/vim-publish/commit/8eee22a18373125398d853dc3848d4101865576b
 
@@ -95,10 +101,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 27 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sat Jun 5 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.5
+    
     Completely switched directions by forgetting about incremental, automatic publishing (which interferes with the user because "2html.vim" is too slow) and instead focusing on batch publishing of multiple related files, which means the plug-in can now include hyperlinks between the published files based on tags.
 
  autoload/publish.vim      |  197 +++++++++++++++++++++++++++++++++++++
@@ -109,9 +117,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 515 insertions(+), 146 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sun May 25 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

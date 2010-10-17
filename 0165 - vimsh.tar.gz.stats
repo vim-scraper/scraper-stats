@@ -1,7 +1,7 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.21)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Sat Feb 13 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Back from the dead.  Windows is working again, and a few bugs fixed.
 
@@ -15,10 +15,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  7 files changed, 791 insertions(+), 765 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.20)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Fri Mar 26 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version .20
+    
     This version has gone through more testing now that I am using Linux all day @ work on my desktop.  I also did some decent testing on Windows.  Please let me know if you find any bugs...
     
     ============================
@@ -41,10 +43,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 324 insertions(+), 386 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.19)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Sat Mar 20 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.19
+    
     * Fixed clear_screen call.
     * Changed default mapping for clearing screen to ^L.
     * Preserve mode (insert/normal) when clearing screen.
@@ -57,10 +61,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 60 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.18)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Sat Jan 31 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.18
+    
     * Use waitpid rather than wait, now correctly handles :!cmd <mbays@sdf.lonestar.org>
     * Run pyfile command once when sourcing vimsh.vim <mbays@sdf.lonestar.org>
     * Handle programs that do not have a prompt <mbays@sdf.lonestar.org>
@@ -79,10 +85,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 102 insertions(+), 45 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.17)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Sat Nov 29 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.17
+    
     * Multiple buffer support <ddarius@hotpop.com>.
       i.e. :VimShNewBuf foo
     * Default behavior of creating a single vimsh buffer
@@ -100,10 +108,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 163 insertions(+), 96 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.16)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Fri Sep 19 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.16
+    
     * Changed '^M' to '\n' for python 2.3.  Vimsh would not
       run w/ python 2.3. Backwards compatible change.
 
@@ -112,10 +122,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 6 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Mon Sep 30 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.15
+    
     Too many changes/bugfixes to list here, please see changelog for this version.
 
  ChangeLog        |   70 ++++++--
@@ -126,10 +138,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 348 insertions(+), 271 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Thu May 9 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.14
+    
     * Changed name of buffer name from vimsh to _vimsh_ since this
       script is usually placed in a directory called vimsh.
       If vimsh was a directory in vim's cwd it would edit
@@ -147,10 +161,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 84 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Wed Apr 10 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.13
+    
     * Figured out the line break always creeping in to
       files for some users.  Winzip has feature under
         Options->Configuration->Miscellaneous
@@ -176,10 +192,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 400 insertions(+), 217 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Thu Apr 4 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.12
+    
     * Fix for Solaris pty detection.
     * EOF and SIGINT now query termios settings so
       the 'right thing' happens.  Users can still map
@@ -219,10 +237,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 499 insertions(+), 539 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Fri Mar 8 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.11
+    
     * Added support for sending EOF. Default
        mapping is Ctrl-D <C-d>.  Now you can run python
        for example in a buffer and quit it by typing
@@ -240,10 +260,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 276 insertions(+), 246 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Fri Dec 21 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version .10
+    
     * !! NOTE !!: new way to run is to "source" vimsh.vim, see vimsh.readme in tarball
        Windows users need to use the link in the description to get a .zip file.
     * /bin/sh is symlinked to csh on *bsd, added csh prompt.
@@ -267,10 +289,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 814 insertions(+), 367 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Thu Dec 13 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.9
+    
     Set buftype=nofile <b.cerrina@wanadoo.fr>
     Option to use current buffer if non-modified
     Use vim variables for options so this file doesn&#039t need
@@ -284,10 +308,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 227 insertions(+), 74 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Tue Dec 11 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.8
+    
     - Windows support, tested on NT4 w/ ActiveState Python 2.2
         Should also work on 2K/XP. Caveat hacktor  :).  Non interactive
         programs dir, findstr, attrib etc work fine, no ftp, telnet, etc yet.
@@ -301,10 +327,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 346 insertions(+), 201 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Sun Dec 9 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.7
+    
     Made import/usage of tty, pty conditional on not being windows
     Removed popen buffer size
     Increased timeout if using popen3
@@ -315,10 +343,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 114 insertions(+), 42 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Sat Dec 8 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.6
+    
     NOTE: the python module select doesn't seem to be available except for sockets on Windows so I need to investigate this more
     - Removed the <Delete><BS> hooks.  They just weren't working as I thought they would.  Now just check for cursor to not be in prompt.
     - Figured out the ftp issue see "notes".
@@ -330,10 +360,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 115 insertions(+), 79 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Fri Dec 7 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.5
+    
     Implemented secure input of passwords,
     Exit cmd works as expected, for subprocesses it
     exits to parent, initial shell exit will delete buffer,
@@ -343,10 +375,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 113 insertions(+), 31 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4a)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Fri Dec 7 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4a
+    
     implemented alternate subprocess control ( popen ) so it should *in theory* work on any platform that supports
     pipes, i.e. WinXX, albiet the output isn't as pretty-formatted as with pty.  I cannot at the moment test on Windows
     and would like some feedback.  Shell commands clear and exit are also implemented.
@@ -355,10 +389,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 146 insertions(+), 84 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3a)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Thu Dec 6 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3a
+    
     Fixed up the 1st line issue, and ^M printing.  The script is starting to firm up so I'm
     going to next try to get it to work on windows.  Please send any feedback/issues not listed
     in the script.
@@ -367,19 +403,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 47 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2a)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Wed Dec 5 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2a
+    
     Fixed tabwidth, not on prompt message, handling of user input execution rm -i works, and shells now die via autocommand
 
  vimsh.py |  113 ++++++++++++++++++++++++++++++++++++++------------------------
  1 files changed, 69 insertions(+), 44 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1a)
-Author:     brian sturk <bsturk at comcast.net>
+Author:     brian sturk <bsturk@comcast.net>
 AuthorDate: Tue Dec 4 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

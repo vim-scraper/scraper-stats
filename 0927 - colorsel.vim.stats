@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/20100406)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Tue Apr 6 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20100406
+    
     The plug-in now uses the autoload mechanism and, consequently, no longer comes in a single Vim file.  Pressing 'f' now also cycles through a state when no text displayed at all.  (Changes by Ingo Karkat)
 
  autoload/colorsel.vim |  992 +++++++++++++++++++++++++++++++++++++++++++++++
@@ -11,30 +13,36 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 1111 insertions(+), 1025 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20100401)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Thu Apr 1 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20100401
+    
     The color swatch shows text (with changeable proprties), ColorSel can directly edit a hlighlight group and there were several improvements to working with two colors. (Modifications by Ingo Karkat)
 
  plugin/colorsel.vim |  476 +++++++++++++++++++++++++++++++++++++--------------
  1 files changed, 345 insertions(+), 131 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20090505)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Tue May 5 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20090505
+    
     Colours can be stored to a palette (vim registers are used for that).  The colour swatch can be split to show an alternate colour.  Vim 6.2 is required now.  A few small bugs were fixed.  (Enhancements thanks to Ingo Karkat.)
 
  plugin/colorsel.vim |  530 ++++++++++++++++++++++++++++++++-------------------
  1 files changed, 336 insertions(+), 194 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20090428)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Tue Apr 28 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20090428
+    
     ColorSel can be run with an rgb argument (in addition to rrggbb) or with a named color argument (basic CSS colors are supported).  If it is run with a bogus argument, the color is set to black.
     
     Improvements thanks to Martin Junger.
@@ -43,9 +51,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 173 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20051121)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Mon Nov 21 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Compatibility with Vim 7 was fixed (thanks to Markus Trenkwalder).
 
@@ -53,19 +61,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 3 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20040416)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Fri Apr 16 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20040416
+    
     ColorSel now accepts an optional rrggbb color argument (with optional # prefix) to set the color to (either in an existing selector or when creating a new one). Thanks to Thomas Link for the idea.
 
  plugin/colorsel.vim |   25 +++++++++++++++++++------
  1 files changed, 19 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20040303)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Tue Mar 2 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

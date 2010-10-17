@@ -1,7 +1,7 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.77)
-Author:     Thorsten Maerz <info at netztorte.de>
+Author:     Thorsten Maerz <info@netztorte.de>
 AuthorDate: Mon Nov 12 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     some bugfixes, new keymappings in output window
 
@@ -9,10 +9,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 99 insertions(+), 63 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.72)
-Author:     Thorsten Maerz <info at netztorte.de>
+Author:     Thorsten Maerz <info@netztorte.de>
 AuthorDate: Tue Oct 2 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.72
+    
     :CVS command for direct access
     Create patchfiles
     JoinIn (add & commit with default message)
@@ -22,29 +24,33 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 2205 insertions(+), 1980 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.58)
-Author:     Thorsten Maerz <info at netztorte.de>
+Author:     Thorsten Maerz <info@netztorte.de>
 AuthorDate: Sat Sep 8 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.58
+    
     cvs output displayed/remembered in titlebarshow local status (revision, etc.) when opening a file (offline)diff : restore settings when finished
 
  plugin/cvsmenu.vim |  596 ++++++++++++++++++++++++++++++++++++++++------------
  1 files changed, 466 insertions(+), 130 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.42)
-Author:     Thorsten Maerz <info at netztorte.de>
+Author:     Thorsten Maerz <info@netztorte.de>
 AuthorDate: Sat Sep 1 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.42
+    
     improvements:- local status (works offline)- less output, (fits in statusline, if success)- unknown files shown- revised settings menufixes:- conflict syntax
 
  plugin/cvsmenu.vim |  799 ++++++++++++++++++++++++++++++++++++++--------------
  1 files changed, 584 insertions(+), 215 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.37)
-Author:     Thorsten Maerz <info at netztorte.de>
+Author:     Thorsten Maerz <info@netztorte.de>
 AuthorDate: Tue Aug 28 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     less "AnyKey"-promptssorted output (conflicts moved to top,etc.)
 
@@ -52,9 +58,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 255 insertions(+), 99 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.31)
-Author:     Thorsten Maerz <info at netztorte.de>
+Author:     Thorsten Maerz <info@netztorte.de>
 AuthorDate: Mon Aug 27 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Bugfix:Install updates
 
@@ -62,20 +68,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 7 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.30)
-Author:     Thorsten Maerz <info at netztorte.de>
+Author:     Thorsten Maerz <info@netztorte.de>
 AuthorDate: Mon Aug 27 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.30
+    
     output to statusline (optional)CVS based installer/updaterconflict highlighting by default
 
  plugin/cvsmenu.vim | 2061 ++++++++++++++++++++++++++++------------------------
  1 files changed, 1116 insertions(+), 945 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.22)
-Author:     Thorsten Maerz <info at netztorte.de>
+Author:     Thorsten Maerz <info@netztorte.de>
 AuthorDate: Wed Aug 22 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.22
+    
     - added keymappings (there are so little:)
     - added LGPL note
 
@@ -83,10 +93,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 945 insertions(+), 882 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.19)
-Author:     Thorsten Maerz <info at netztorte.de>
+Author:     Thorsten Maerz <info@netztorte.de>
 AuthorDate: Mon Aug 20 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.19
+    
     added menus: update to rev, merge changes from branch/between 2 branches
     link to online doku/latest rev.,
     settings, conflict highlighting
@@ -95,19 +107,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 101 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.16)
-Author:     Thorsten Maerz <info at netztorte.de>
+Author:     Thorsten Maerz <info@netztorte.de>
 AuthorDate: Sun Aug 19 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.16
+    
     added "tagging/branching","import","watch","edit","revert changes"Feel free to send comments, tips, help requests, etc. to info@netztorte.de
 
  plugin/cvsmenu.vim |  532 +++++++++++++++++++++++++++++++++++++++-------------
  1 files changed, 397 insertions(+), 135 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.14)
-Author:     Thorsten Maerz <info at netztorte.de>
+Author:     Thorsten Maerz <info@netztorte.de>
 AuthorDate: Fri Aug 17 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     better support for directories/single filesinsert CVS keywords
 
@@ -115,10 +129,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 536 insertions(+), 408 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
-Author:     Thorsten Maerz <info at netztorte.de>
+Author:     Thorsten Maerz <info@netztorte.de>
 AuthorDate: Thu Aug 16 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.10
+    
     added "release", "remove", "short status" (list files sorted by status)
     major fixes : tempfiles deleted, jump to file ([shift-cr],dblclick) from every output
 
@@ -126,10 +142,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 408 insertions(+), 304 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
-Author:     Thorsten Maerz <info at netztorte.de>
+Author:     Thorsten Maerz <info@netztorte.de>
 AuthorDate: Mon Aug 13 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.7
+    
     added login/out,add,history,global options,new menu structure,...
     http://ezytools.sf.net/VimTools/
     to get the latest version and documentation
@@ -138,10 +156,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 304 insertions(+), 238 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
-Author:     Thorsten Maerz <info at netztorte.de>
+Author:     Thorsten Maerz <info@netztorte.de>
 AuthorDate: Mon Aug 13 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.4
+    
     - Fixes for "checkout" and "queryupdate"
     - Continued at CVS repository : (VimTools section)
     http://ezytools.sourceforge.net/
@@ -150,9 +170,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 238 insertions(+), 236 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
-Author:     Thorsten Maerz <info at netztorte.de>
+Author:     Thorsten Maerz <info@netztorte.de>
 AuthorDate: Sun Aug 12 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added "commit", "checkout" and "update"Added settings/info menuMinor fixes
 
@@ -160,9 +180,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 137 insertions(+), 28 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Thorsten Maerz <info at netztorte.de>
+Author:     Thorsten Maerz <info@netztorte.de>
 AuthorDate: Sun Aug 12 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

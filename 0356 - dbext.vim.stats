@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/12.00)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Thu Jul 15 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 12.00
+    
     Posted by David Fishburn
     
     New Features
@@ -16,40 +18,38 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     - If the word "profile" was used in a dbext profile name dbext would report the error: "dbext: Profiles cannot be nested" (Chris Cierpisz).
     - Corrected the regex used to find object owner names (Sergey Khorev).
 
- autoload/dbext.vim               | 8233 ++++++++++++++++++++++++++++++++++++++
- autoload/dbext_dbi.vim           | 1691 ++++++++
- doc/dbext.txt                    | 3233 +++++++++++++++
- doc/dbext_gpl.dat                |  280 ++
- "doc/doc\\dbext.txt"             | 3226 ---------------
- "doc\\dbext_gpl.dat"             |  280 --
- "plugin/autoload\\dbext.vim"     | 8185 -------------------------------------
- "plugin/autoload\\dbext_dbi.vim" | 1689 --------
- plugin/dbext.vim                 |  491 +++
- "plugin/plugin\\dbext.vim"       |  519 ---
- 10 files changed, 13928 insertions(+), 13899 deletions(-)
+ autoload/dbext.vim     |  142 ++++++++++++++++++++++++++++++++----------------
+ autoload/dbext_dbi.vim |    8 ++-
+ doc/dbext.txt          |   95 +++++++++++++++++---------------
+ plugin/dbext.vim       |   36 ++-----------
+ 4 files changed, 155 insertions(+), 126 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/11.01)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Tue Sep 8 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 11.01
+    
     Post by David Fishburn
     Bug Fixes
     ---------
     - If a large result set is retrieved, there is a significant performance delay which was introduced in 11.00.  This was related to the new g:dbext_rows_affected feature (Tocer).
     - Error E15: Invalid expression: b:dbext_sqlvar_mv[var] is reported if you are using saved variables and then modified the query with a new variable.  Now the saved variables are used for the known variables and you are prompted for the unknown.
 
- "doc/doc\\dbext.txt"             |   17 +++++++++++++++--
- "plugin/autoload\\dbext.vim"     |   24 ++++++++++++++++--------
- "plugin/autoload\\dbext_dbi.vim" |    6 +++---
- "plugin/plugin\\dbext.vim"       |    6 +++---
+ autoload/dbext.vim     |   24 ++++++++++++++++--------
+ autoload/dbext_dbi.vim |    6 +++---
+ doc/dbext.txt          |   17 +++++++++++++++--
+ plugin/dbext.vim       |    6 +++---
  4 files changed, 37 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/11.00)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Sun Aug 23 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 11.00
+    
     Posted by David Fishburn
     
     New Features
@@ -65,17 +65,19 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     - Errors were reported about undefined variable, dbext_sqlvar_temp_mv,  if executing a SQL statement directly from a filetype which was not SQL (i.e. PHP, Java, csharp, ...).
     - If saved variables were in use, it was possible for dbext to used the replaced variables without the user knowing.  For example stored procedures could be created with the replaced strings instead of the variables.
 
- "doc/doc\\dbext.txt"             |  161 +++++++++++++---
- "plugin/autoload\\dbext.vim"     |  391 ++++++++++++++++++++++++++++++++++----
- "plugin/autoload\\dbext_dbi.vim" |   18 ++-
- "plugin/plugin\\dbext.vim"       |   27 ++-
+ autoload/dbext.vim     |  391 ++++++++++++++++++++++++++++++++++++++++++-----
+ autoload/dbext_dbi.vim |   18 ++-
+ doc/dbext.txt          |  161 +++++++++++++++++---
+ plugin/dbext.vim       |   27 ++--
  4 files changed, 515 insertions(+), 82 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/10.00)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Sat Mar 14 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 10.00
+    
     Posted by David Fishburn
     
     New Features
@@ -92,17 +94,19 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     - When listing variables the following error could be reported: E121: Undefined variable
     - It was not possible to retrieve more than 500 characters from a character or binary column in the database when using DBI or ODBC.  Adding driver_parms=LongReadLen=4096 now works correctly.  You can also change this after you are connected to the database using DBSetOption LongReadLen=4096.  Running DBListConnections will display the current setting for each database connection currently open.
 
- "doc/doc\\dbext.txt"             |   51 +++++-
- "plugin/autoload\\dbext.vim"     |  413 ++++++++++++++++++++++++++++++++++----
- "plugin/autoload\\dbext_dbi.vim" |   15 +-
- "plugin/plugin\\dbext.vim"       |  100 +++++-----
+ autoload/dbext.vim     |  413 +++++++++++++++++++++++++++++++++++++++++++-----
+ autoload/dbext_dbi.vim |   15 +-
+ doc/dbext.txt          |   51 ++++++-
+ plugin/dbext.vim       |  100 ++++++------
  4 files changed, 480 insertions(+), 99 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9.0)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Sat Jan 10 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 9.0
+    
     Posted by David Fishburn
     New Features
     ------------
@@ -119,17 +123,19 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     - You are often repeatedly prompted for connection information.  This change reduces the number and allows you to cancel out of the prompt dialogs.
     - Added an unconditional quit command to exit out of Oracle's SQLPlus (Anton Sharonov).
 
- "doc/doc\\dbext.txt"             |  324 +++++++++++++-----
- "plugin/autoload\\dbext.vim"     |  711 ++++++++++++++++++++++++++++++--------
- "plugin/autoload\\dbext_dbi.vim" |    6 +-
- "plugin/plugin\\dbext.vim"       |   94 ++++--
+ autoload/dbext.vim     |  711 ++++++++++++++++++++++++++++++++++++++----------
+ autoload/dbext_dbi.vim |    6 +-
+ doc/dbext.txt          |  324 ++++++++++++++++------
+ plugin/dbext.vim       |   94 ++++---
  4 files changed, 872 insertions(+), 263 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/8.00)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Thu Oct 30 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 8.00
+    
     Posted by David Fishburn
     New Features
     ------------
@@ -143,17 +149,19 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     ---------
     - Setting LongReadLen for DBI and ODBC connections did not work.
 
- "doc/doc\\dbext.txt"             |  117 +++++++++++++++++--
- "plugin/autoload\\dbext.vim"     |  245 +++++++++++++++++++++++++++++--------
- "plugin/autoload\\dbext_dbi.vim" |  102 +++++-----------
- "plugin/plugin\\dbext.vim"       |    6 +-
+ autoload/dbext.vim     |  245 +++++++++++++++++++++++++++++++++++++-----------
+ autoload/dbext_dbi.vim |  102 ++++++--------------
+ doc/dbext.txt          |  117 +++++++++++++++++++++--
+ plugin/dbext.vim       |    6 +-
  4 files changed, 331 insertions(+), 139 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.00)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Sun Sep 21 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 7.00
+    
     Posted by David Fishburn.
     New Features
     ------------
@@ -165,17 +173,19 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     - Using ODBC to connect to SQL Server, dbext did not handle informational messages appropriately leading to "not connected" messages (Albie Janse van Rensburg).
     - When executing SQL if you were prompted for a variable replacement and cancelled the query the dbext history window was displayed instead of returning to the buffer.
 
- "doc/doc\\dbext.txt"             |   29 ++-
- "plugin/autoload\\dbext.vim"     |  145 +-------
- "plugin/autoload\\dbext_dbi.vim" |  740 ++++++++++++++++++++++++++------------
- "plugin/plugin\\dbext.vim"       |    6 +-
+ autoload/dbext.vim     |  145 ++---------
+ autoload/dbext_dbi.vim |  740 +++++++++++++++++++++++++++++++++--------------
+ doc/dbext.txt          |   29 ++-
+ plugin/dbext.vim       |    6 +-
  4 files changed, 566 insertions(+), 354 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.20)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Sat Aug 9 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.20
+    
     Posted by David Fishburn
     Bug Fixes
     ---------
@@ -183,17 +193,19 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     - Changed the query used to retrieve the current line for DBExecSQLUnderCursor when no text is selected (Sergey Alekhin).
     - When parsing a SQL statement for host variables it was possible to miss excluding the INTO clause correctly (Sergey Alekhin).
 
- "doc/doc\\dbext.txt"             |   23 +++++++++++++++++++----
- "plugin/autoload\\dbext.vim"     |   24 ++++++++++++------------
- "plugin/autoload\\dbext_dbi.vim" |   12 ++++++------
- "plugin/plugin\\dbext.vim"       |   16 ++++++++--------
+ autoload/dbext.vim     |   24 ++++++++++++------------
+ autoload/dbext_dbi.vim |   12 ++++++------
+ doc/dbext.txt          |   23 +++++++++++++++++++----
+ plugin/dbext.vim       |   16 ++++++++--------
  4 files changed, 45 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.10)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Tue Jun 10 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.10
+    
     Posted by David Fishburn
     New Features
     ------------
@@ -208,34 +220,38 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     - Tutorial update (Clinton Jones).
     - DBGetOption reported an exception E730: using List as a String.
 
- "doc/doc\\dbext.txt"             |  132 ++++++++++++++++--
- "plugin/autoload\\dbext.vim"     |  281 +++++++++++++++++++++++++++++++-------
- "plugin/autoload\\dbext_dbi.vim" |    6 +-
- "plugin/plugin\\dbext.vim"       |   10 +-
+ autoload/dbext.vim     |  281 +++++++++++++++++++++++++++++++++++++++---------
+ autoload/dbext_dbi.vim |    6 +-
+ doc/dbext.txt          |  132 ++++++++++++++++++++---
+ plugin/dbext.vim       |   10 ++-
  4 files changed, 360 insertions(+), 69 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.01)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Tue Apr 29 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.01
+    
     Posted by David Fishburn
     Bug Fixes
     ---------
     - On dbext startup an error was reported indicating mapleader was not defined (Matt).
 
- "doc/doc\\dbext.txt"               |   12 +-
- "plugin/autoload\\dbext.vim"       |    6 +-
- "plugin/autoload\\dbext_dbi.vim"   |    6 +-
- "plugin/autoload\\sqlcomplete.vim" |  693 ------------------------------------
- "plugin/plugin\\dbext.vim"         |   74 ++--
+ autoload/dbext.vim       |    6 +-
+ autoload/dbext_dbi.vim   |    6 +-
+ autoload/sqlcomplete.vim |  693 ----------------------------------------------
+ doc/dbext.txt            |   12 +-
+ plugin/dbext.vim         |   74 +++---
  5 files changed, 53 insertions(+), 738 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.00)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Mon Apr 28 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.00
+    
     Posted by David Fishburn
     
     New Features
@@ -256,24 +272,20 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     - In some cases when using DBI or ODBC an error was not reported and only a blank result set was returned.  Now the database error is reported back to the user.
     - Data retrieved via DBI or ODBC which contained a backslash were not escaped properly and could disappear.
 
- autoload/dbext.vim                 | 6620 ----------------------------------
- autoload/dbext_dbi.vim             | 1249 -------
- doc/dbext.txt                      | 2536 -------------
- doc/dbext_gpl.dat                  |  280 --
- "doc/doc\\dbext.txt"               | 2652 ++++++++++++++
- "doc\\dbext_gpl.dat"               |  280 ++
- "plugin/autoload\\dbext.vim"       | 6905 ++++++++++++++++++++++++++++++++++++
- "plugin/autoload\\dbext_dbi.vim"   | 1424 ++++++++
- "plugin/autoload\\sqlcomplete.vim" |  693 ++++
- plugin/dbext.vim                   |  467 ---
- "plugin/plugin\\dbext.vim"         |  476 +++
- 11 files changed, 12430 insertions(+), 11152 deletions(-)
+ autoload/dbext.vim       |  879 ++++++++++++++++++++++++++++++----------------
+ autoload/dbext_dbi.vim   |  265 ++++++++++++---
+ autoload/sqlcomplete.vim |  693 ++++++++++++++++++++++++++++++++++++
+ doc/dbext.txt            |  252 ++++++++++----
+ plugin/dbext.vim         |  259 +++++++-------
+ 5 files changed, 1813 insertions(+), 535 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/5.20)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Sat Sep 15 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 5.20
+    
     Posted by David Fishburn.
     New Features
     ------------
@@ -289,10 +301,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 80 insertions(+), 28 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/5.11)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Mon Sep 10 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 5.11
+    
     Posted by David Fishburn.
     New Features ------------
     - Added support for Oracle Rdb on an Open VMS Node.
@@ -307,10 +321,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 275 insertions(+), 28 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/5.06)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Mon Sep 3 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 5.06
+    
     Posted by David Fishburn.
     New Features
     ------------
@@ -336,10 +352,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 8695 insertions(+), 4490 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.20)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Tue Dec 19 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.20
+    
     Posted by David Fishburn.
     New Features
     - Improved support for Cygwin.  If you are using a Cygwin compiled Vim (on   Windows) and are accessing Windows compiled binaries (i.e. sqlplus.exe) the binary will complain since it does not understand Unix path names.  Added the option g:dbext_default_use_win32_filenames which allows you to indicate the binaries must use translated Windows paths instead. (Richard)
@@ -353,10 +371,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 59 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.10)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Tue Dec 5 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.10
+    
     Posted by David Fishburn.
     New Features
     ------------
@@ -372,10 +392,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 89 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.03)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Sat Sep 23 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.03
+    
     Posted by David Fishburn.
     New Features
     ------------
@@ -394,10 +416,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 358 insertions(+), 324 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.50)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Tue Jun 20 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.50
+    
     New Features
     ------------
      - g:dbext_default_inputdialog_cancel_support = 0 will prevent inputdialog from providing a cancel option.  This works around a Vim7 bug.  dbext will automatically detect this and set the option the first time it is encountered.
@@ -413,10 +437,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 169 insertions(+), 36 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.00)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Mon May 15 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.00
+    
     New Features
     ------------
     - dbext supports a history of previous commands.  The DBHistory command will display a numbered list of previous SQL statements.  Pressing <enter> or double clicking on one of the items will execute the statement.  The number of items in the list is configurable via your vimrc.  The history items are stored in a file, dbext_sql_history.txt.  The location of the file can also be controlled.
@@ -437,10 +463,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 739 insertions(+), 159 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.30)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Tue Sep 13 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.30
+    
     New Features
      ------------
      - The result window has a local buffer mapping 'R', which will 'refresh' the window.  This means it will re-run the previous statement which is useful if you are repeatedly checking something in the database.
@@ -461,10 +489,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 340 insertions(+), 195 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.20)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Thu Mar 10 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.20
+    
      New Features
      ------------
      - Added new connection parameter called "extra", you can place any
@@ -513,10 +543,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 259 insertions(+), 94 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.11)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Fri Sep 24 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.11
+    
     Bug fix: On some platforms the temporary file created to execute SQL
     statements must end in ".sql".  Corrected this for all databases.
 
@@ -525,10 +557,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 46 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.10)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Wed Sep 15 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.10
+    
     New Features
     - Support for the SQLite database has been added (thanks to Ron Aaron).
 
@@ -537,10 +571,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 576 insertions(+), 117 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.01)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Thu Jul 22 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.01
+    
     New Features
     - Tutorial - Based on feedback from users, created a step by step tutorial.
     All users should try the tutorial to learn how to use the various features
@@ -572,10 +608,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 1202 insertions(+), 302 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.00)
-Author:     Peter Bagyinszki <petike1 at gmail.com>
+Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Sun Jul 11 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.00
+    
     dbext.vim has been greatly enhanced for version 2.00.
     
     Additional features include:

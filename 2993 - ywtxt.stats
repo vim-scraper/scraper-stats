@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.18)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Tue Aug 3 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.18
+    
     1. Greatly improved: speed issue for large document.
     
     2. Major changed: foldmethod changed from 'syntax' to 'marker' in documnet for speed issue, so you need to append '{{{' and '}}} to lines '^% BEGIN.*$' and '^% END.*$' respectively to fold your old format of ywtxt documents. Method:
@@ -22,10 +24,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 222 insertions(+), 210 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.17)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Sat Jul 31 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.17
+    
     1. Added: In toc window, keymap J, K to move a heading region up/down. D/Y to delete/yank a heading region, and put deleted/yanked content into "z.
     2. Changed: key map to re-indent heading level in toc window \> -> L; \< -> H
     3. Changed: Doesn't fold document's headings for speed issue.
@@ -41,10 +45,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 334 insertions(+), 212 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.16_1)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Thu May 27 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.16_1
+    
     Added support for non_export2html region "^% BEGIN_NOHTML", "^% END_NOHTML"(keymap: <ctrl-o>%).
     
     Improved the function for switching the types of toc: "Con(t)ents/(F)igures/Ta(b)les/(A)nchors/(L)inks"
@@ -60,10 +66,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 82 insertions(+), 36 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.16)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Fri May 21 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.16
+    
     1) Changed the reference region format, please see document for details.
     
     2) Abandoned var: g:ywtxt_biblioname.
@@ -104,10 +112,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 213 insertions(+), 148 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15_6)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Fri Apr 23 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.15_6
+    
     1) Changed, removed and integrated keymaps for creating headings/reference/snip, works both in normal/insert mode(<Ctrl-j>).
     2) Added var for configuring auto-setting the heading number after creating a heading(set g:ywtxt_autonumber=1). Note it will be slow.
     3) Improved syntax bug for bold/underlined/italic/.
@@ -117,9 +127,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 59 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15_5)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Sat Apr 3 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed a bug of location with <space>, thanks Zhang Xin's good catch.
 
@@ -127,9 +137,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15_4)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Sat Apr 3 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed snip inserting bug which is brought by the last update.
 
@@ -137,10 +147,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 5 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15_3)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Sat Apr 3 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.15_3
+    
     1) Added syntax for figure/table(figure #-#.; table #-#.)
     2) Fixed comment region bug.
     3) Removed setting to nowrap in toc window.
@@ -152,10 +164,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 8 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15_2)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Thu Mar 25 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.15_2
+    
     1) Improved anchor-locating behavior for Chinese and English.
     2) Changed highlight for anchor.
     3) Added keymap for insert mode: _{ _{}
@@ -165,10 +179,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 11 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15_1)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Wed Mar 24 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.15_1
+    
     1) Added definition for anchor "[#anchor]", please see the section cross-references in document. Thanks for Adrien Pied Piérard's suggestion.
     2) Removed keymap in insert mode: _(_{}). Thanks for Adrien Pied Piérard's suggestion.
     3) Added syntax highligh for anchor. Thanks for Adrien Pied Piérard's suggestion.
@@ -181,10 +197,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 391 insertions(+), 366 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Tue Mar 23 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.15
+    
     1) Added var g:ywtxt_browserapp to support opening html directly after export to html, see section "Misc vars" for detail.
     2) Added support for Cross-references(*[file#anchor]). Please see the section "ywtxt file format" for details.
 
@@ -192,10 +210,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 56 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14_2)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Mon Mar 22 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.14_2
+    
     1) Fixed outline/unoutline in toc window.
     2) Suppressed the not pattern found warning when exporting to html.
 
@@ -203,9 +223,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 3 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14_1)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Fri Mar 19 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed toc window not refresh after undo/redo
 
@@ -213,10 +233,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Fri Mar 19 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.14
+    
     1) Added configurable heading highlighting(g:ywtxt_headings_hl) support. Please see the document for details.
     2) Added encoding declaration in syntax/ywtxt.vim and ftplugin/ywtxt.vim, to prevent encoding issue. thanks zhangxin's report.
     3) Improved italic, bold, and underlined definition to allow blank spaces in between.
@@ -227,10 +249,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 38 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13_2)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Tue Mar 16 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.13_2
+    
     1) Fixed errors caused by operations on toc window title line. Thanks pengo's catching.
     2) Speeded up a little for the toc window opening and jumping.
     3) Added syntax: "图 #.  ",  "表 #.  ".
@@ -240,9 +264,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 84 insertions(+), 75 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13_1)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Mon Mar 15 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed bug: operations in toc winodow unworking.
 
@@ -250,10 +274,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 28 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Mon Mar 15 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.13
+    
     1) Added feature: Customized heading pattern can be set globally(g:ywtxt_HeadingsPat), please see the advanced features in the document for details.
     2) Improved: The setting for customized heading pattern needn't force user to specify the last pattern to be a ywtxt known pattern.
     3) Improved the handling of the title line in toc window.
@@ -266,9 +292,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 65 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12_3)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Sat Mar 13 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed a bug in customize section pattern which has spaces in name.
 
@@ -276,10 +302,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12_2)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Sat Mar 13 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.12_2
+    
     Fixed a bug in bib generation.
     Fixed a heading syntax bug.
 
@@ -289,10 +317,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 48 insertions(+), 44 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12_1)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Sat Mar 13 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.12_1
+    
     Fixed bug: toc location uncorrectly.
     Fixed reindent bug.
 
@@ -300,10 +330,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Sat Mar 13 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.12
+    
     1) Added feature to customize section number style, please see the advanced features section in document.
     
     2) Improved snip folding and syntax supportings.
@@ -336,10 +368,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 393 insertions(+), 135 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.11_2)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Wed Mar 10 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.11_2
+    
     1) Fixed non-working toc window.
     2) Fixed references region identification. Thanks for pengo's catching.
     3) Improved toc window intendation. Thanks for pengo's suggestion.
@@ -349,9 +383,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 34 insertions(+), 46 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.11_1)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Wed Mar 10 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed folding and toc highlighting bugs.
 
@@ -360,10 +394,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Wed Mar 10 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.11
+    
     1) NOTE! Imcompatible changed!!!: heading format changed again till 0.10: "1  ", "#.#  "(note the following has 2 spaces!)
     How to upgrade:
     0.10 user: :call Ywtxt_old2new()<CR> This function will be abandoned in next release.
@@ -382,10 +418,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 175 insertions(+), 122 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10_3)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Wed Mar 10 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.10_3
+    
     This will be the last 0.10 series verion, please see all 0.10 series's changelog and the updated document to get how to update. Note again! you can use :call Ywtxt_old2new() then ggVG= to reformat the old version, but please care the inproperly reformat!!! Ywtxt_old2new() will be abandoned in next version! You've been warned.
     1) Fixed a heading determination error.
 
@@ -393,10 +431,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10_2)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Wed Mar 10 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.10_2
+    
     This will be the last 0.10 series verion, please see all 0.10 series's changelog and the updated document to get how to update. Note again! you can use :call Ywtxt_old2new() then ggVG= to reformat the old version, but please care the inproperly reformat!!! Ywtxt_old2new() will be abandoned in next version! You've been warned.
     1) Improved heading determination
     2) Improved Indentation function
@@ -405,10 +445,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 58 insertions(+), 78 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10_1)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Tue Mar 9 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.10_1
+    
     Fixed: a serious toc heading bug.
     Note!!! Please see the version *0.10*'s changelog and the updated document for detailed changes, otherwise ywtxt will not work properly with the older format in the new version!
 
@@ -416,10 +458,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 8 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Tue Mar 9 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.10
+    
     1) Uncompatible Changed!: Heading format changed to "#. ", "   #.# ", old user can use :call Ywtxt_old2new() to reformat the old format of ywtxt, note that function Ywtxt_old2new() will abandon in next version.
     2) Widened: Comment region definition: Lines starts with optional spaces and % considered as comment.
     3) Changed: Delete comment region when export to html.
@@ -439,10 +483,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 272 insertions(+), 148 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Sun Mar 7 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.9
+    
     1) Added simple html export. Hit <Shift-e> in toc window will export .ywtxt to .html, set the references keyword to number in document.
     2) Added keymap in toc window: <Shift-X> will outline the heading in document.
     3) Changed definition of keymap <space>: open the heading in document without leaving the toc window.
@@ -455,10 +501,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 107 insertions(+), 74 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Fri Mar 5 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.8
+    
     1) Changed toc window openning from horizotally to vertically.
     2) Added syntax for TODO, NOTE.
 
@@ -467,10 +515,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 26 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Tue Mar 2 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.7
+    
     1) Added support and keymaps for bibliography generation and viewing, please see the advancd feature in the document for details.
     2) Improved the header creation funtion.
     3) Added syntax for Figure capture.
@@ -480,10 +530,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 207 insertions(+), 29 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Sun Feb 28 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.6
+    
     1) Added feature: auto number the section numbers in file according to the toc, and added key maps in toc window(S, w, <leader><tab>, <C-r>, u) and normal file(<leader><tab>). See the document for details.
     2) Added syntax for bold(*b*), underline(_u_) and italic(/i/).
     3) Fixed cursor location of toc window.
@@ -494,10 +546,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 65 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Sat Feb 27 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.5
+    
     1. Improved the toc refresh.
     2. Removed the dangerous saving operation when changing the level of header.
 
@@ -505,10 +559,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 5 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Sat Feb 27 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4
+    
     Added support for auto-generating numbered sections in toc window.
     Fixed unprecisely jumping from toc's bug.
 
@@ -516,10 +572,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 27 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Sat Feb 27 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3
+    
     1) Fixed syntax for headers matching bug.
     2) Added feature of changing the level of headers with \< and \> in toc window (Warn!: file will get saved!).
     3) Added keymap <enter>, x for toc window, see the document for detail.
@@ -531,10 +589,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 68 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Fri Feb 26 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     1) Added highlight for headers(up to 10 levels).
     2) Fixed toc generation and cursor location bugs.
     3) Remove normal window key maps for toc window.
@@ -548,9 +608,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 89 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     Yue Wu <ywupub at gmail.com>
+Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Fri Feb 26 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

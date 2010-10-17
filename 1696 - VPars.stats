@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1)
-Author:     Bernd Pol <bernd.pol at online.de>
+Author:     Bernd Pol <bernd.pol@online.de>
 AuthorDate: Fri Jan 12 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.1
+    
     more bugfixes;
     better behavior of pause/resume block processing
 
@@ -11,10 +13,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 478 insertions(+), 243 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     Bernd Pol <bernd.pol at online.de>
+Author:     Bernd Pol <bernd.pol@online.de>
 AuthorDate: Sat Dec 2 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     A lot of bugs fixed (thanks to Igor Prischepoff for his thorough testing efforts).
     Calling VPars simplified by adding a new VPars_Run() function (see documentation).
     GUI menu user interface and shortcuts overworked; there is now the possibility to pause (,jp) and resume (,jr) processing the substition loop.
@@ -24,10 +28,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 1641 insertions(+), 276 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
-Author:     Bernd Pol <bernd.pol at online.de>
+Author:     Bernd Pol <bernd.pol@online.de>
 AuthorDate: Thu Nov 23 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.2
+    
     It is possible to escape the delay meaning of <...> brackets by putting dots around the variable: "<.<|label|>.>" will result in "<value>" after replacement;
     cursor end line positioning will behave better in virtualedit modes;
     two new shortcuts provided:
@@ -40,10 +46,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 622 insertions(+), 100 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Bernd Pol <bernd.pol at online.de>
+Author:     Bernd Pol <bernd.pol@online.de>
 AuthorDate: Fri Nov 10 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1
+    
     Jump to block beginning/end added. Alternate set of shortcuts added ( ,jj = next variable | ,jb = jump block begin | ,je = jump block end )
 
  doc/vpars.txt    |  130 +++++++++++++++++++++++++++++++++++++++++++++++++++--
@@ -51,9 +59,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 240 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     Bernd Pol <bernd.pol at online.de>
+Author:     Bernd Pol <bernd.pol@online.de>
 AuthorDate: Fri Oct 27 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

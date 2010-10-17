@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4)
-Author:     eric johnson <vim at iijo.org>
+Author:     eric johnson <vim@iijo.org>
 AuthorDate: Sun Jan 6 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4
+    
     Dramatically improved debug console.  New underlying API makes adding support for new languages simpler.  Added support for Gdb, but this module is not yet tested.  This project is still in beta.
 
  VimDebug-0.3.5/ACKNOWLEDGEMENTS                    |    9 -
@@ -17,13 +19,13 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  VimDebug-0.3.5/TODO                                |   55 -
  VimDebug-0.3.5/USAGE                               |   25 -
  VimDebug-0.3.5/VERSION                             |    3 -
+ VimDebug-0.3.5/lib/VimDebug/Debugger.pm            |  157 ---
  VimDebug-0.3.5/lib/VimDebug/Debugger/Gdb.pm        |  286 -----
  VimDebug-0.3.5/lib/VimDebug/Debugger/Perl.pm       |  266 -----
  VimDebug-0.3.5/lib/VimDebug/Debugger/Python.pm     |  296 -----
  VimDebug-0.3.5/lib/VimDebug/Debugger/Ruby.pm       |  301 -----
  VimDebug-0.3.5/lib/VimDebug/Debugger/Test.pm       |  188 ---
  .../lib/VimDebug/Debugger/TestPerlDebugger.pm      |  157 ---
- VimDebug-0.3.5/lib/VimDebug/Debugger.pm            |  157 ---
  VimDebug-0.3.5/lib/VimDebug/TestDebugger.pm        |  214 ----
  VimDebug-0.3.5/lib/VimDebug/VimDebug.pm            |  347 ------
  VimDebug-0.3.5/t/00-load.t                         |    7 -
@@ -51,6 +53,7 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  VimDebug-0.4/TODO                                  |   28 +
  VimDebug-0.4/USAGE                                 |   24 +
  VimDebug-0.4/VERSION                               |    1 +
+ VimDebug-0.4/lib/VimDebug/DebuggerInterface.pm     |  187 +++
  .../lib/VimDebug/DebuggerInterface/Base.pm         |  303 +++++
  .../DebuggerInterface/CompilerErrorTest.pm         |   55 +
  VimDebug-0.4/lib/VimDebug/DebuggerInterface/Gdb.pm |  158 +++
@@ -59,7 +62,6 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  .../lib/VimDebug/DebuggerInterface/Ruby.pm         |  188 +++
  .../VimDebug/DebuggerInterface/RuntimeErrorTest.pm |   68 ++
  .../lib/VimDebug/DebuggerInterface/Test.pm         |  203 ++++
- VimDebug-0.4/lib/VimDebug/DebuggerInterface.pm     |  187 +++
  VimDebug-0.4/t/00-load.t                           |    7 +
  VimDebug-0.4/t/Gdb.testCode                        |  Bin 0 -> 7614 bytes
  VimDebug-0.4/t/Gdb.testCode.c                      |   22 +
@@ -80,10 +82,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  72 files changed, 4044 insertions(+), 4795 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.5)
-Author:     eric johnson <vim at iijo.org>
+Author:     eric johnson <vim@iijo.org>
 AuthorDate: Wed Jan 2 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3.5
+    
     added Python, a very basic debug console, and some other gui improvements; still beta
 
  VimDebug-0.3.5/ACKNOWLEDGEMENTS                    |    9 +
@@ -98,13 +102,13 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  VimDebug-0.3.5/TODO                                |   55 +
  VimDebug-0.3.5/USAGE                               |   25 +
  VimDebug-0.3.5/VERSION                             |    3 +
+ VimDebug-0.3.5/lib/VimDebug/Debugger.pm            |  157 +++
  VimDebug-0.3.5/lib/VimDebug/Debugger/Gdb.pm        |  286 +++++
  VimDebug-0.3.5/lib/VimDebug/Debugger/Perl.pm       |  266 +++++
  VimDebug-0.3.5/lib/VimDebug/Debugger/Python.pm     |  296 +++++
  VimDebug-0.3.5/lib/VimDebug/Debugger/Ruby.pm       |  301 +++++
  VimDebug-0.3.5/lib/VimDebug/Debugger/Test.pm       |  188 +++
  .../lib/VimDebug/Debugger/TestPerlDebugger.pm      |  157 +++
- VimDebug-0.3.5/lib/VimDebug/Debugger.pm            |  157 +++
  VimDebug-0.3.5/lib/VimDebug/TestDebugger.pm        |  214 ++++
  VimDebug-0.3.5/lib/VimDebug/VimDebug.pm            |  347 ++++++
  VimDebug-0.3.5/t/00-load.t                         |    7 +
@@ -133,11 +137,11 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  VimDebug/TODO                                      |   54 -
  VimDebug/USAGE                                     |   24 -
  VimDebug/VERSION                                   |    3 -
+ VimDebug/lib/VimDebug/Debugger.pm                  |  157 ---
  VimDebug/lib/VimDebug/Debugger/Perl.pm             |  266 -----
  VimDebug/lib/VimDebug/Debugger/Ruby.pm             |  301 -----
  VimDebug/lib/VimDebug/Debugger/Test.pm             |  166 ---
  VimDebug/lib/VimDebug/Debugger/TestPerlDebugger.pm |  157 ---
- VimDebug/lib/VimDebug/Debugger.pm                  |  157 ---
  VimDebug/lib/VimDebug/TestDebugger.pm              |  214 ----
  VimDebug/lib/VimDebug/VimDebug.pm                  |  347 ------
  VimDebug/t/00-load.t                               |    7 -
@@ -151,10 +155,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  62 files changed, 4685 insertions(+), 4789 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     eric johnson <vim at iijo.org>
+Author:     eric johnson <vim@iijo.org>
 AuthorDate: Sun Dec 30 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3
+    
     complete rewrite.  much more mature.  this version only supports perl and ruby.
 
  ARCHITECTURE                                       |   78 --
@@ -184,11 +190,11 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  VimDebug/TODO                                      |   54 +
  VimDebug/USAGE                                     |   24 +
  VimDebug/VERSION                                   |    3 +
+ VimDebug/lib/VimDebug/Debugger.pm                  |  157 +++
  VimDebug/lib/VimDebug/Debugger/Perl.pm             |  266 +++++
  VimDebug/lib/VimDebug/Debugger/Ruby.pm             |  301 +++++
  VimDebug/lib/VimDebug/Debugger/Test.pm             |  166 +++
  VimDebug/lib/VimDebug/Debugger/TestPerlDebugger.pm |  157 +++
- VimDebug/lib/VimDebug/Debugger.pm                  |  157 +++
  VimDebug/lib/VimDebug/TestDebugger.pm              |  214 ++++
  VimDebug/lib/VimDebug/VimDebug.pm                  |  347 ++++++
  VimDebug/t/00-load.t                               |    7 +
@@ -208,10 +214,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  48 files changed, 5227 insertions(+), 4488 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     eric johnson <vim at iijo.org>
+Author:     eric johnson <vim@iijo.org>
 AuthorDate: Tue Jun 24 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     fixed some problems with the install process (added multvals.vim)
     script now works with perl v.5.6+ (instead of v.5.8+)
     fixed a bug involving arrays and eval() in the perl debugger module
@@ -228,9 +236,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  9 files changed, 1258 insertions(+), 160 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     eric johnson <vim at iijo.org>
+Author:     eric johnson <vim@iijo.org>
 AuthorDate: Tue Jun 3 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

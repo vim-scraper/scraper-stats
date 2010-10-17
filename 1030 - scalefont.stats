@@ -1,7 +1,7 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.4)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sat Feb 21 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     BufExec & WinExec options
 
@@ -10,10 +10,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 117 insertions(+), 48 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Fri Mar 7 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.3
+    
     - Partial rewrite for vim7.0
     - Default configuration is now done with a dictionary.
     - On mode changes, always evaluate g:scaleFontExec__0 unless g:scaleFontAlwaysResetGuioptions is 0.
@@ -28,10 +30,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 443 insertions(+), 316 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Apr 5 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1
+    
     New variable g:scaleFontExec_{MODE}, the content of which will be executed before reconfiguring the window geometry. This can be used to set guioptions as needed (e.g., for a full screen mode without menu bar and all as for NormalFull). If this variable isn't set, the variable g:scaleFontExec_0 will be executed that resets the guioptions to its initial value.  ScaleFontMaximizeWindow() is defined for OS other than Windows too (kind of). Build modes menu (see g:scaleFontMenuPrefix).
 
  doc/scalefont.txt    |  101 ++++++++++++++-------------
@@ -39,10 +43,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 206 insertions(+), 84 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Mon Dec 20 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.0
+    
     We can now set the window/frame position too (e.g.  NormalNarrowLeft and NormalWideTop); new standard modes: NormalMax, NormalNarrowLeft, NormalWideTop, bigMax; :ScaleFont as an alias to :ScaleFontMode; removed mode "0" from the mode list
 
  doc/scalefont.txt    |   16 ++++-
@@ -50,10 +56,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 133 insertions(+), 63 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Oct 17 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     Take care of whether the font size is increased or decreased; command line completion for ScaleFontMode; ability to define the desired lines and cols parameters per mode (if one of these variables is -1, the window will be maximized; on non-Windows systems you have to define ScaleFontMaximizeWindow() first); new standard modes "largeMax" and "LargeMax" (maximize the window)
 
  doc/scalefont.txt           |  136 +++++++++++++++++++
@@ -62,9 +70,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 318 insertions(+), 128 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Thu Jul 15 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

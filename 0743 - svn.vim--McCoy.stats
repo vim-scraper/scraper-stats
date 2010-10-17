@@ -1,7 +1,7 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.003002)
-Author:     Scott McCoy <tag at cpan.org>
+Author:     Scott McCoy <tag@cpan.org>
 AuthorDate: Sat Sep 6 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Just a bug fix.  \\l (:Svn log) was running through 'windo' (oops)
 
@@ -10,9 +10,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.003001)
-Author:     Scott McCoy <tag at cpan.org>
+Author:     Scott McCoy <tag@cpan.org>
 AuthorDate: Sun Aug 31 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed an ugly bug that made it not play well with other plugins :)
 
@@ -20,10 +20,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.003)
-Author:     Scott McCoy <tag at cpan.org>
+Author:     Scott McCoy <tag@cpan.org>
 AuthorDate: Sat Aug 30 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.003
+    
     Added Documentation, fixed a few minor glitches, added Key Mappings...still waiting for feedback from people on more things this needs.
 
  doc/SVN-README.txt |    5 +++
@@ -32,20 +34,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 161 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.002)
-Author:     Scott McCoy <tag at cpan.org>
+Author:     Scott McCoy <tag@cpan.org>
 AuthorDate: Fri Aug 29 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.002
+    
     the "SVN commit" and Commit methods now open up a window inline, manually fetching the repository status and generating a little file exactly like the one svn generates, then a new 'Complete' command was added that wraps a small sh script around the commit information you provided, which is then given to svn commit as the editor, and then removed.  The window is then closed, and its all done quietly.  I also added 'Svn log' and 'Log' commands that open up the log in a new window and move your cursor to the top :)  This thing is almost cool now
 
  plugin/svn.vim |   54 +++++++++++++++++++++++++++++++++++++++++++++---------
  1 files changed, 45 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.001003)
-Author:     Scott McCoy <tag at cpan.org>
+Author:     Scott McCoy <tag@cpan.org>
 AuthorDate: Fri Aug 29 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.001003
+    
     Added 'Add' keyword and handler.
     Some other stuff I forget...maybe I should put this thing under svn :)
 
@@ -53,19 +59,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 18 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.001001)
-Author:     Scott McCoy <tag at cpan.org>
+Author:     Scott McCoy <tag@cpan.org>
 AuthorDate: Mon Aug 25 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.001001
+    
     Fixed a little bug where I should have been using a global variable and the only reason it worked without the global was my version of vim :-/  Sorry guys.
 
  plugin/svn.vim |    8 ++++----
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.001)
-Author:     Scott McCoy <tag at cpan.org>
+Author:     Scott McCoy <tag@cpan.org>
 AuthorDate: Sun Aug 24 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

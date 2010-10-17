@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3.9)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Mon Apr 19 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3.9
+    
     - |textobj#user#plugin()|: Fix not to define key mappings in Select mode if appropriate.  Now it works smoothly with plugins which utilize and depend on the default behavior in Select mode.
 
  doc/tags                                           |   28 +
@@ -17,10 +19,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  9 files changed, 1157 insertions(+), 564 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.8)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Sat Jul 18 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3.8
+    
     - Fix a bug that it was not possible to select any range which starts with the end of a line.- |textobj#user#plugin()|: Fix a bug that it did not accept any function which is not script-local as a value for "*{spec}-function*".
 
  doc/textobj-user.txt                             |   43 ++-
@@ -29,10 +33,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 588 insertions(+), 564 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.7)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Thu Oct 23 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3.7
+    
     - |textobj#user#select()|: Fix a bug that it didn't select an object  which: (1) matches to multiple lines and (2) contains the cursor.- |textobj#user#select()|, |textobj#user#select_pair()|,  |textobj#user#plugin()| with "*{spec}-function*":  Support |o_v| and others.  To use this feature, you have to apply  the following patch to Vim:  http://github.com/kana/vim/commits/hack/vimvar-motion_force
 
  doc/textobj-user.txt                             |   26 +-
@@ -41,10 +47,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 572 insertions(+), 537 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.5)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Mon Aug 25 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3.5
+    
     Incompatible changes with 0.3.4 or ealier:
     - |textobj#user#plugin()|: Change the specification of functions for "*{spec}-function*".
     
@@ -57,10 +65,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 599 insertions(+), 501 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.4)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Thu Jun 26 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3.4
+    
     Fix several bugs.  Add textobj#user#plugin() to define key mappings and a command to support writing a plugin which provides various user-defined text objects.
 
  doc/textobj-user.txt                             |  197 ++++++++-
@@ -69,9 +79,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 676 insertions(+), 273 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Sat Dec 15 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

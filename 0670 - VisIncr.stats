@@ -1,7 +1,7 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/19)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Wed Dec 19 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Forgot to include calutil with visincr (its there now!)
 
@@ -11,10 +11,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 150 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/18)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Wed Dec 19 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 18
+    
     * Power based incrementing: IPOW (2,4,8,16,...)
     * Date dividers are no longer required
     * Calutil is included, and they use vim 7's autoload feature (load only on demand)
@@ -26,10 +28,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 195 insertions(+), 960 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/17)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Tue Sep 19 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 17
+    
     (NEW) Visincr's commands now support expression-style completion.
     (NEW) g:visincr_datedivset support included: date dividers are (default) assumed to from the set [-./]; the separator actually used is the first one found in your date column.
 
@@ -40,10 +44,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 973 insertions(+), 70 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/16)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Tue Jul 25 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 16
+    
     Roman numerals (:IR and :IIR) supported!
     :IX, :IIX, :IO, and :IIO now support negative increments and negative counts.
 
@@ -54,10 +60,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 948 insertions(+), 705 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/14)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Mon Jun 12 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 14
+    
     Visincr now supports :IX, :IIX, :IO, and :IIO for creating hexadecimal and octal incremented lists, supports autoloading for faster vim startup, and informs users about :help visincr-calutil when necessary.
     
     Autoloading by itself necessitates requiring Vim version 7.0.
@@ -67,10 +75,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 612 insertions(+), 499 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/13)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Mon Mar 20 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 13
+    
     A "zfill" of "" or '' now stands for an empty zfill.
     Bugfix: visincr now insures that the first character of a month or day incrementing sequence is capitalized.
     Bugfix: names embedded within lines weren't being incremented correctly; fixed!
@@ -79,20 +89,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 28 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/12)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Tue Mar 7 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 12
+    
     Zfill capability provided ( 01 02 03 ... style incrementing).  Users may now set g:visincr_dow and g:visincr_month to customize daynames and monthnames (for date incrementing).  Handles more vim option settings.
 
  plugin/visincr.vim |  484 ++++++++++++++++++++++++++++++++++------------------
  1 files changed, 315 insertions(+), 169 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/11)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Tue Aug 24 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 11
+    
     g:visincr_leaddate now allows one to specify a leading character to expand single-digit days and months into two-characters
     The :IM and :ID commands (increment month, increment day) now handle varying length long names
 
@@ -100,10 +114,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 112 insertions(+), 76 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Fri May 14 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 9
+    
     Visincr now supports incrementing/decrementing
     alphabetic lists:  ie. transform a column of
     (a) or a) into (a) (b) (c) (or a) b) c) ).
@@ -118,10 +134,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 222 insertions(+), 99 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/8)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Tue Oct 21 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 8
+    
     Now has month incrementing (:IM) and restriction-pattern commands
     (:RI, :RID, :RYMD, etc) which restrict application of renumbering
     only to those lines which have numbers/daynames/dates/monthnames,

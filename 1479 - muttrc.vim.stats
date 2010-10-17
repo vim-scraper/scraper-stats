@@ -1,38 +1,46 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.8.4)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Mon Aug 9 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.8.4
+    
     Handle a few new things; break-thread, link-threads, and asterisks in unlists and unsubscribe commands, as well as the new %D in folder_format.
 
  syntax/muttrc.vim |   16 +++++++++-------
  1 files changed, 9 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8.3)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Mon Jun 15 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.8.3
+    
     New release for mutt 1.5.20. Handles new fcc_attach behavior, and supports new variables honor_disposition and search_context.
 
  syntax/muttrc.vim |   24 ++++++++++++------------
  1 files changed, 12 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8.2)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Mon Feb 16 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.8.2
+    
     fixing the behavior of a few hook commands, added end-cond, and a few other minor nits.
 
  syntax/muttrc.vim |   99 ++++++++++++++++++++++++++++++-----------------------
  1 files changed, 56 insertions(+), 43 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8.1)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Wed Jan 28 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.8.1
+    
     ssl_verify_dates, ssl_verify_host, attempt to handle blocks of text with escaped whitespace (not 100% accurate, but
     ... better than nothing). also handle "color header" lines with regexes on the end
 
@@ -40,79 +48,93 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 40 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Wed Dec 31 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.8
+    
     fixing several things, including header_cache_compress, unnecessarily required whitespace, some matching efficiency, matching pattern undocumented features, setting multiple variables at once, using & and ? variable prefixes, as well as handling escaped variables in macros better.
 
  syntax/muttrc.vim |  521 ++++++++++++++++++++++++++++-------------------------
  1 files changed, 276 insertions(+), 245 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7.1)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Thu Jun 12 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.7.1
+    
     Added support for query_format, f-keys, and next-unread-mailbox. Fixed multi-line macro highlighting, and a typo in "resend-message".
 
  syntax/muttrc.vim |   41 ++++++++++++++++++++++++-----------------
  1 files changed, 24 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Tue Jan 8 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.7
+    
     Highlights % patterns, and simple patterns can contain variables. Updated for time_inc and threading patterns. Also, if I hadn't mentioned it before, includes support for the printf-style format sequence patterns in the strings that use them.
 
  syntax/muttrc.vim |   75 ++++++++++++++++++++++++++++++++++++-----------------
  1 files changed, 51 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Mon Aug 6 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.6
+    
     Added highlighting for the escapes in strings that support them. The support is somewhat primitive, but effective for most common setups.
 
  syntax/muttrc.vim |  162 +++++++++++++++++++++++++++++++++++++++++++---------
  1 files changed, 134 insertions(+), 28 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5.2)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Mon Mar 12 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.5.2
+    
     Improved date highlighting in patterns, spell-check, updated for mutt 1.5.14 keywords
 
  syntax/muttrc.vim |   18 ++++++++++--------
  1 files changed, 10 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5.1)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Sat Dec 2 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.5.1
+    
     Vastly improved macro highlighting. Also handles aliases with multiple targets, and = search patterns.
 
  syntax/muttrc.vim |   78 ++++++++++++++++++++++++++++++++++++++--------------
  1 files changed, 57 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Thu Aug 3 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.5
+    
     Eliminates imap_cachedir in favor of message_cachedir, fixed some errors in highlighting color lines, added support for my_* variables, what-key, and noop
 
  syntax/muttrc.vim |   49 +++++++++++++++++++++++++++----------------------
  1 files changed, 27 insertions(+), 22 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4.0.1)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Fri Jun 9 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     tag-prefix-cond was missing
 
@@ -120,19 +142,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Wed Jun 7 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.4
+    
     Better support for unhook commands, and support for Brendan Cully's smtp patch.
 
  syntax/muttrc.vim |   15 +++++++++++----
  1 files changed, 11 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Mon May 22 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Support for new CVS options, and the patches currently used in Debian.
 
@@ -140,39 +164,45 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 220 insertions(+), 192 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Mon Apr 3 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.2
+    
     More support for line-breaks (in alias, unalias, bind, macro, color, uncolor). Support for color lines now much improved. Fixed some regular expression highlighting, and created pattern highlighting - applies to both color lines and hooks.
 
  syntax/muttrc.vim |  193 +++++++++++++++++++++++++++++++++++++---------------
  1 files changed, 137 insertions(+), 56 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.1)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Wed Mar 29 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1.1
+    
     Changed the syntax ordering so that (un)lists and (un)subscribe lines get their -group flags highlighted correctly now.
 
  syntax/muttrc.vim |   14 +++++++-------
  1 files changed, 7 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Wed Mar 8 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1
+    
     Improved support of un* constructs, allowed for escaped line-breaks in more places, allowed for un-quoted regular expressions in some places.
 
  syntax/muttrc.vim |   68 +++++++++++++++++++++++++++++++++++------------------
  1 files changed, 45 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1)
-Author:     Kyle Wheeler <kyle-vim at memoryhole.net>
+Author:     Kyle Wheeler <kyle-vim@memoryhole.net>
 AuthorDate: Wed Mar 1 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

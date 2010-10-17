@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.22)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Thu Sep 23 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.22
+    
     * Fixed issue with highlighting version statement inside block.
     
     Note: Jesse Phillips is the new maintainer and is responsible for this version.
@@ -11,10 +13,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 5 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.21)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Sat Sep 11 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.21
+    
     * Fixed some highlighting bugs (Ellery Newcomer).
     * #! highlighting (Steven N. Oliver).
     
@@ -24,10 +28,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 15 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.20)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Wed Aug 25 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.20
+    
     * Added missing keywords for D 2.0 compiler 2.047
     * Added special highlighting of known versions/scopes/annotations (thanks to Shougo Matsushita)
     * Added highlighting of ASM Op Codes in asm blocks.
@@ -38,10 +44,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 257 insertions(+), 101 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.18)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Tue Jan 12 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.18
+    
     Updated to D versions 1.053 and 2.039.
     + Merged Kirk McDonald version 0.17 updates (http://paste.dprogramming.com/dplmb7qx?view=hidelines), including
     delimited strings, token strings, here strings, and some new keywords.
@@ -52,10 +60,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 98 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.16)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Fri Dec 29 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.16
+    
     Updated for D version 0.178.
     + Applied a patch (Tim Keating) to fix a bug in highlighting the `\` literal.
     + Added new keyword: foreach_reverse, lazy
@@ -66,10 +76,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 26 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Sun Mar 12 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.15
+    
     + Improved syntax synchronization, especially for /* */ style comments.
     + Fixed a bug that caused some identifiers and numbers to highlight as octal number errors (thanks to Frank Benoit).
     + Added new scope keyword.
@@ -81,19 +93,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 32 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Sat Oct 29 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.14
+    
     Added missing operator overload. Removed highlighting of string prefixes (because string postfixes are not highlighted! Later I hope to highlight both in prefix/postfix characters).
 
  syntax/d.vim |   21 +++++++++++++--------
  1 files changed, 13 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Thu Jun 2 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added new keyword introduced in D version 0.123.
 
@@ -101,10 +115,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 3 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Wed Mar 9 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.12
+    
     Updated for D version 0.116.
     + Added support for __LINE__, __FILE__ etc.
     + Added support for character entities.
@@ -113,9 +129,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 10 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Thu Jul 15 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Updated for version 0.95 of the D language spec.
 
@@ -123,19 +139,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 123 insertions(+), 123 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Tue May 25 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.8
+    
     Updated for version 0.90 of the D language spec. Removed unnecessary use of 'main_syntax'.
 
  syntax/d.vim |   38 +++++++++++++-------------------------
  1 files changed, 13 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Thu Apr 8 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed problem with highlighting certain styles of floating point numbers.
 
@@ -143,9 +161,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Tue Feb 10 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Updated keywords to match version 0.79 of the D spec.
 
@@ -153,49 +171,57 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 15 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Tue Nov 25 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4
+    
     Updated for 0.76 of the D spec. In a nutshell, add the keyword 'is' and updated operator overload names.
 
  syntax/d.vim |   19 +++++++++++--------
  1 files changed, 11 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Fri Nov 21 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3
+    
     Updated for version 0.75 of the D spec.  Highlights: new keywords, new configuration option, and better highlighting of numbers and strings.
 
  syntax/d.vim |  146 +++++++++++++++++++++++++++++++++++++--------------------
  1 files changed, 95 insertions(+), 51 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Tue Oct 1 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     Added new keywords: template, instance, auto; Added option to (not) highlight strings and numbers in comments; Fixed floating point numbers to recognize floats without decimal points.
 
  syntax/d.vim |   78 +++++++++++++++++++++++++++++++++++++--------------------
  1 files changed, 50 insertions(+), 28 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1.1)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Fri Aug 16 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.1.1
+    
     Fixed a few problems: added interface keyword; differentiated public: (and other scope decls) from user labels.
 
  syntax/d.vim |   19 ++++++++++---------
  1 files changed, 10 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     Jason Mills <jasonmills at nf.sympatico.ca>
+Author:     Jason Mills <jasonmills@nf.sympatico.ca>
 AuthorDate: Thu Aug 15 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

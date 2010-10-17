@@ -1,18 +1,22 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/6.3.2)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Thu Nov 18 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.3.2
+    
     For some reason there was still a call to StopExplorer with 2 params. Many thanks to Jason Mills for reporting this!
 
  plugin/minibufexpl.vim |    9 ++++++---
  1 files changed, 6 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.3.1)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Wed Jun 30 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.3.1
+    
     Added g:miniBufExplForceSyntaxEnable option for folks that are experiencing the vim bug where buffers show up without highlighting when another buffer has been closed, quit, wiped or deleted. This resolves all known issues with buffers loosing their highlighting. If you find a case that is not resolved, please report it :)
     
     Folded source so that it's easier to navigate
@@ -21,10 +25,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 210 insertions(+), 164 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.3.0)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Thu Jun 24 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.3.0
+    
     FEATURE RELEASE:
     o Added optional single click to select buffers in the MBE window
     o MBE is no longer included in :ls output
@@ -43,39 +49,45 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 268 insertions(+), 55 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.8)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Mon Jun 7 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.2.8
+    
     Added an option to stop MBE from targeting non-modifiable buffers when switching buffers. Those of you who use buffer explorers like taglist, project, etc and would like MBE to try not to place selected buffers into explorer windows will like this one :) To get this working download the latest version of minibufexpl.vim and put "let g:miniBufExplModSelTarget = 1" into your .vimrc. This is not a 100% guarantee, but it does a good job of trying to avoice explorer windows. Thanks to A.W. Law for the inspiration for this.
 
  plugin/minibufexpl.vim |   45 ++++++++++++++++++++++++++++++++++++---------
  1 files changed, 36 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.7)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Mon May 24 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.2.7
+    
     Very minor bug fix for people who want to set loaded_minibufexplorer in their .vimrc in order to stop MBE from loading. 99.99% of users do not need this update. Thanks to bash for finding this.
 
  plugin/minibufexpl.vim |    9 ++++++---
  1 files changed, 6 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.6)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Wed Apr 30 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.2.6
+    
     Very minor update: Moved history to end of source file. Updated highlighting documentation. Created global commands MBEbn and MBEbp that can be used in mappings if folks want to cycle buffers while skipping non-eligible buffers.
 
  plugin/minibufexpl.vim |  349 +++++++++++++++++++++++++++---------------------
  1 files changed, 197 insertions(+), 152 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.5)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Sun Apr 13 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added a ToggleExplorer option and updated the documentation.
 
@@ -83,9 +95,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 96 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.4)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Sun Mar 30 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     MiniBufExplorer is now compatible with :set hidden.
 
@@ -93,20 +105,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 13 insertions(+), 41 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.3)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Wed Mar 26 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.2.3
+    
     Added an optional feature to cause tabs to wrap. i.e. you should never get a tab name split across two lines (there is a potential issue if you have filenames with spaces, but otherwise this works.)
 
  plugin/minibufexpl.vim |   59 ++++++++++++++++++++++++++++++++++++-----------
  1 files changed, 45 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.2)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Tue Mar 25 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.2.2
+    
     Changed the way the g:miniBufExplorerMoreThanOne
     global is handled. You can set this to the number
     of eligible buffers you want to be loaded before
@@ -135,10 +151,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 75 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.1)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Fri Mar 21 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.2.1
+    
     If MBE is the only window (because of :bd for example) and there are still eligible buffers then one of them will be displayed.
     
     The <Leader>mbe mapping now highlights the buffer from the current window.
@@ -151,10 +169,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 37 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.0)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Thu Mar 20 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.2.0
+    
     Major overhaul of autocommand and list updating code, we now have much better handling of :bd (which is the most requested feature.) As well as resolving other issues where the buffer list would not be updated automatically. The old version tried to trap specific events, this one just updates frequently, but it keeps track and only changes the screen if there has been a change.
     
     Added g:miniBufExplMaxHeight variable so you can keep the -MiniBufExplorer- window small when you have lots of buffers (or buffers with long names :)
@@ -167,30 +187,36 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 219 insertions(+), 78 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.1.0)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Fri Mar 14 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.1.0
+    
     <Leader>mbc was failing because I was calling one of my own functions with the wrong number of args. Thanks to Gerry Patterson and others for finding this!
 
  plugin/minibufexpl.vim |   35 ++++++++++++++++++++++++++++-------
  1 files changed, 28 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.9)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Tue Sep 17 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.0.9
+    
     Double clicking tabs was overwriting the clipboard register on MS Windows but not elsewhere... go figure :). This has now been fixed. Thanks to Shoeb Bhinderwala for reporting this one.
 
  plugin/minibufexpl.vim |   12 ++++++++----
  1 files changed, 8 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.8)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Tue Aug 6 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.0.8
+    
     Apparently some VIM builds are having a hard time with line continuation in scripts so the few that were here have been removed.
     
     
@@ -202,30 +228,36 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 297 insertions(+), 79 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.7)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Mon Feb 4 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.0.7
+    
     Major update to how MBE handles buffer deletes. Now deletes are handled through an autocmd so you can now use :bd to delete buffers and the UI keeps in sync. Also made the MBE window go away when there is only one eligible buffer left to edit.
 
  plugin/minibufexpl.vim |  370 +++++++++++++++++++++++++++++++-----------------
  1 files changed, 241 insertions(+), 129 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.6)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Mon Jan 28 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.0.6
+    
     Fixed register overwrite bug found by Sébastien Pierre. The @" register was being overwritten with the selected buffer name when switching buffers, the @" register is now preserved.
 
  plugin/minibufexpl.vim |   13 +++++++++----
  1 files changed, 9 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.5)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Tue Jan 22 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.0.5
+    
     Added more optional fancy window/buffer navigation:
     
     You can turn on the ability to use control and the arrow keys to move between windows.
@@ -238,27 +270,33 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 165 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.4)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Wed Dec 19 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.0.4
+    
     After reading 'Tip #173: Switch between splits very fast (for multi-file editing)' I decided to optionally add control+direction [hjkl] mappings to switch between windows. If you want to enable this feature just put 'let g:miniBufExplMapWindowNav=1" into your .vimrc.
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.3)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Wed Dec 19 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.0.3
+    
     Our buffername [MiniBufExplorer] was being treated as a regular expression in some instances and matching several single character file names. Since escaping the '[' and ']' doesn't work on the windows version of vim 6.0 yet, I renamed the buffer -MiniBufExplorer-. This appears to have resolved the issue.
 
  plugin/minibufexpl.vim |   82 ++++++++++++++++++++++++-----------------------
  1 files changed, 42 insertions(+), 40 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.2)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Tue Dec 4 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.0.2
+    
     2 Changes requested by Suresh Govindachar
     Added SplitToEdge option and set it on by default
     Added tab and shift-tab mappings in [MBE] window
@@ -267,9 +305,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 43 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.0)
-Author:     bindu wavell <bindu at wavell.net>
+Author:     bindu wavell <bindu@wavell.net>
 AuthorDate: Sat Dec 1 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

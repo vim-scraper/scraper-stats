@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.5)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Mon Sep 7 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.5
+    
     - Add |operator#user#visual_command_from_wise_name()|.- Revise a bit of the document.
 
  doc/operator-user.txt                              |   36 ++++-
@@ -11,10 +13,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 202 insertions(+), 146 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.4)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Mon Sep 7 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.4
+    
     - Fix a bug that it rarely fails to select the same text as a given {motion} in Normal mode.  It is caused by a bug in Vim; |v:count1| may be 0 in some cases.- Fix a bug that register designation ("a, "b, etc) doesn't work for user defiend operators.
 
  doc/operator-user.txt                              |    9 +-
@@ -23,10 +27,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 153 insertions(+), 113 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.3)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Fri Sep 4 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.3
+    
     Incompatible change:- |operator#user#define()|, |operator#user#define_ex_command()|: Change the meaning of the first argument:  Old versions:	  The argument is {lhs} to execute the operator to be defined.  New version:	  The argument is {name} of the operator to be defined.	  {lhs} to execute the operator is "<Plug>(operator-{name})".  See also |operator-user-bugs-C| for the details.
 
  doc/operator-user.txt                              |  109 ++++++++++++--------
@@ -35,10 +41,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 178 insertions(+), 147 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.2)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Thu Sep 3 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.2
+    
     - Add |operator#user#define_ex_command()|.- Add a note on a bug.  See |operator-user-bugs-B| for the details.- Remove :DefineOperator.  It's useless as a part of this library.
 
  doc/operator-user.txt                              |  151 ++++++++++++--------
@@ -48,10 +56,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 198 insertions(+), 178 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Sat Jul 18 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.0.1
+    
     - Rename as "operator-user".  The old name "myoperator" is not good for further works.
 
  autoload/myoperator.vim                            |   80 --------
@@ -63,9 +73,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 316 insertions(+), 311 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.0)
-Author:     Kana Natsuno <whileimautomaton+vim at gmail.com>
+Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
 AuthorDate: Fri Jun 26 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

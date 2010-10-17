@@ -1,7 +1,7 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2.2)
-Author:     Evgeny Podjachev <evgeny.podjachev at gmail.com>
+Author:     Evgeny Podjachev <evgeny.podjachev@gmail.com>
 AuthorDate: Thu May 28 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed cleaning of search string in some cases.
 
@@ -9,9 +9,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 12 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
-Author:     Evgeny Podjachev <evgeny.podjachev at gmail.com>
+Author:     Evgeny Podjachev <evgeny.podjachev@gmail.com>
 AuthorDate: Fri May 1 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     History menu (<C-H>) also works in normal mode.
 
@@ -19,9 +19,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 7 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.0)
-Author:     Evgeny Podjachev <evgeny.podjachev at gmail.com>
+Author:     Evgeny Podjachev <evgeny.podjachev@gmail.com>
 AuthorDate: Sat Apr 4 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added history of search queries.
 
@@ -29,10 +29,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 78 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.1)
-Author:     Evgeny Podjachev <evgeny.podjachev at gmail.com>
+Author:     Evgeny Podjachev <evgeny.podjachev@gmail.com>
 AuthorDate: Wed Jan 14 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1.1
+    
     Slightly optimized search results output.
     Fixed resizing of YATE window when vim is resized.
 
@@ -40,10 +42,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 32 insertions(+), 37 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.0)
-Author:     Evgeny Podjachev <evgeny.podjachev at gmail.com>
+Author:     Evgeny Podjachev <evgeny.podjachev@gmail.com>
 AuthorDate: Sat Sep 13 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1.0
+    
     Fixes in as-you-type search to improve its usability and fix some bugs.
     Added highlight of line with cursor.
     Added parameter g:YATE_max_matches_to_show defining the maximum number of matches to display.
@@ -53,10 +57,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 80 insertions(+), 62 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
-Author:     Evgeny Podjachev <evgeny.podjachev at gmail.com>
+Author:     Evgeny Podjachev <evgeny.podjachev@gmail.com>
 AuthorDate: Wed Mar 19 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.0.1
+    
     Fixed serious bug which caused the impossibility of inputing characters nowhere but at the and of the search string.
     Add support of GetLatestVimScripts.
 
@@ -64,10 +70,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 45 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.0)
-Author:     Evgeny Podjachev <evgeny.podjachev at gmail.com>
+Author:     Evgeny Podjachev <evgeny.podjachev@gmail.com>
 AuthorDate: Sun Mar 2 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.0.0
+    
     Added automatic search after input of any character (so called as-you-type search).
     Long file paths may be cut to fit line width.
     Fixed bug preventing jump by tags containing ~ (e.g. c++ destructors).
@@ -77,10 +85,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 91 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.2)
-Author:     Evgeny Podjachev <evgeny.podjachev at gmail.com>
+Author:     Evgeny Podjachev <evgeny.podjachev@gmail.com>
 AuthorDate: Sun Dec 23 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.9.2
+    
     Attempt to search empty string doesn't produce error.
     Replacement of modified buffer works correct.
     Close YATE buffer externally (by :q, ZZ etc.) dosn't break its visibility toggle.
@@ -90,10 +100,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 19 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.1)
-Author:     Evgeny Podjachev <evgeny.podjachev at gmail.com>
+Author:     Evgeny Podjachev <evgeny.podjachev@gmail.com>
 AuthorDate: Thu Nov 29 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.9.1
+    
     Search string isn't cleared if there are no matched tags.
     Bug fixes.
 
@@ -101,9 +113,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 19 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
-Author:     Evgeny Podjachev <evgeny.podjachev at gmail.com>
+Author:     Evgeny Podjachev <evgeny.podjachev@gmail.com>
 AuthorDate: Sun Nov 11 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

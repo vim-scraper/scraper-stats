@@ -1,17 +1,19 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2)
-Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+Author:     Yasuhiro Matsumoto <mattn.jp@gmail.com>
 AuthorDate: Thu May 6 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.2
+    
     Applied patch:  http://gist.github.com/355513#file_customizable_keymap.diff  http://gist.github.com/355513#file_winfixwidth.diff
 
  plugin/calendar.vim |   63 ++++++++++++++++++++++++++++++++------------------
  1 files changed, 40 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
-Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+Author:     Yasuhiro Matsumoto <mattn.jp@gmail.com>
 AuthorDate: Wed Mar 24 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Applied patch from thinca. Thanks.
 
@@ -19,19 +21,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 6 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+Author:     Yasuhiro Matsumoto <mattn.jp@gmail.com>
 AuthorDate: Tue Nov 24 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     Applied patch from Ingo Karkat. Thanks.- ENH: Added a config setting g:calendar_datetime. This allows to remove thedisplay of the current date/time in the title (I don't like it), and offers thewindow's statusline as an alternative.- BUG: The checks for g:calendar_action and g:calendar_sign should also checkfor an existing, but empty variable. Otherwise, it is not possible to disable itin a .vimrc, because the sourcing of calendar.vim would initialize the variables.- BUG: In s:CalendarDoAction(), the check for g:calendar_action must come afterthe "navi" handling; otherwise "navi" breaks if g:calendar_action is disabled(see above).- ENH: The :set wrapscan is ugly, because it is a global setting. The search()commands already pass the 'w' flag, so the only remaining issue were thesearches via /. I modified the 'G0/...' search to 'G$?' (i.e. backward from endof buffer), so that 'wrapscan' isn't required any more. (Even better would be touse search() for these jumps, too.) With this, I can also completely get rid ofthe autocmds in case one does not want the date/time in the title, neither (seeabove).- Using :setlocal buftype=nofile instead of =nowrite; this is more suitable forthis kind of scratch buffer, and avoids that the path may be shown in the title/ statusline (depending on the customization).- BUG: Replaced :setlocal nowrap with 'wrap'. Without this, the 'sidescrolloff'setting may cause the left side of the calendar to disappear if the lastinserted element is near the right window border. 'wrap' shouldn't matter,anyway, and 'sidescrolloff' is a global setting, unfortunately.Try :set sidescrolloff=3 in combination with :let g:calendar_navi = 'bottom' toreproduce.- BUG: The :normal i... for the navi rendering causes a trailing space after the"Next>" button. This way, I cannot quickly type "G$<CR>" to activate the nextbutton. Now using :normal a... to append. This causes the entire navi to shiftone character to the right, but you could fix this by decreasing the columncounter.- ENH: Use :stopinsert in case we've gotten here from insert mode (via<C-O>:Calendar<CR>)...- Using :wincmd w instead of :normal <C-w>; it's simpler. (And you should alwaysuse :normal! (with a bang) to avoid interference with user remappings!)- ENH: I noticed that <left> and <s-left> do the same thing, but in differentways (one uses the navi and the latter is called by the former). I dropped theunintuitive shift mappings and instead do the jumps consistently in the navi,using the b:Calendar... variables instead of that ugly maparg() stuff.- ENH: I noticed that <left> and <up> do the same thing. I changed <up>/<down>to move an entire year, so one can quickly let the years pass...- ENH: the 'q' mapping now returns to the previous window, not the first one.
 
  plugin/calendar.vim |  105 +++++++++++++++++++++++++++++----------------------
  1 files changed, 60 insertions(+), 45 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
-Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+Author:     Yasuhiro Matsumoto <mattn.jp@gmail.com>
 AuthorDate: Fri Nov 20 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     This is an upgrade for calendar.vim. use nnoremap.
 
@@ -39,9 +43,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 8 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
-Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+Author:     Yasuhiro Matsumoto <mattn.jp@gmail.com>
 AuthorDate: Thu Oct 8 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     This is an upgrade for calendar.vim. fixed E382 while closing diary.
 
@@ -49,19 +53,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 6 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
-Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+Author:     Yasuhiro Matsumoto <mattn.jp@gmail.com>
 AuthorDate: Fri Feb 15 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.7
+    
     This is a fixed version of calendar.vim. fixed problem of week number on 03/01/2008.
 
  plugin/calendar.vim |   75 ++++++++++++++++++++++++++++----------------------
  1 files changed, 42 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
-Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+Author:     Yasuhiro Matsumoto <mattn.jp@gmail.com>
 AuthorDate: Tue Jul 24 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added new actions 'calendar_begin' and 'calenader_end'.
 
@@ -69,9 +75,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 22 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
-Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+Author:     Yasuhiro Matsumoto <mattn.jp@gmail.com>
 AuthorDate: Tue May 1 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     This is an upgrade for calendar.vim. this include some bug fix.
 
@@ -79,20 +85,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 41 insertions(+), 34 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4a)
-Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+Author:     Yasuhiro Matsumoto <mattn.jp@gmail.com>
 AuthorDate: Mon Jan 16 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.4a
+    
     This is an upgrade for calendar.vim. this include some bug fix and calendar_today action.
 
  plugin/calendar.vim |   65 ++++++++++++++++++++++++++++++++------------------
  1 files changed, 41 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
-Author:     Yasuhiro Matsumoto <mattn.jp at gmail.com>
+Author:     Yasuhiro Matsumoto <mattn.jp@gmail.com>
 AuthorDate: Wed Nov 3 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.4
+    
     This is an upgrade for Calendar.vim. this include 2 bug fixs and 1 improvement.
 
  README              |    4 +

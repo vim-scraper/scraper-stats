@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.50)
-Author:     Matt Wozniski <mjw452 at drexel.edu>
+Author:     Matt Wozniski <mjw452@drexel.edu>
 AuthorDate: Thu Apr 2 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.50
+    
     Fix a major regression that prevented the Eterm and Konsole colors from being correctly snapshotted
     
     Fix a related bug causing incorrect terminal colors after calling :CSApproxSnapshot
@@ -26,10 +28,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 1161 insertions(+), 964 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.05)
-Author:     Matt Wozniski <mjw452 at drexel.edu>
+Author:     Matt Wozniski <mjw452@drexel.edu>
 AuthorDate: Sat Jan 31 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.05
+    
     Fix a harmless "Undefined variable" error in :CSApproxSnapshot
     
     Fix a behavioral bug when dumping out colors defined external to the scheme.
@@ -39,10 +43,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 42 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.00)
-Author:     Matt Wozniski <mjw452 at drexel.edu>
+Author:     Matt Wozniski <mjw452@drexel.edu>
 AuthorDate: Thu Jan 22 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.00
+    
     Update the docs for better info on :CSApproxSnapshot
     
     Allow snapshotted schemes to work on Vim 6, and work properly in Konsole and Eterm (thanks David Majnemer!)
@@ -54,10 +60,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 249 insertions(+), 120 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.00)
-Author:     Matt Wozniski <mjw452 at drexel.edu>
+Author:     Matt Wozniski <mjw452@drexel.edu>
 AuthorDate: Sun Dec 14 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.00
+    
     Add a hooks system, allowing users to specify a command to run, either before or after the approximation algorithm is run, for all schemes or one specific one.
     
     Also rewrite :CSApproxSnapshot to be more maintainable and less of a hack, and fix several bugs that it contained.
@@ -67,10 +75,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 232 insertions(+), 89 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.50)
-Author:     Matt Wozniski <mjw452 at drexel.edu>
+Author:     Matt Wozniski <mjw452@drexel.edu>
 AuthorDate: Wed Nov 19 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.50
+    
     Add :CSApproxSnapshot for writing out a colorscheme file representing the current colors that will work in gvim, 88 color vim, or 256 color vim, even without +gui.  See :help :CSApproxSnapshot
 
  doc/CSApprox.txt    |   21 ++++++-
@@ -78,10 +88,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 122 insertions(+), 59 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
-Author:     Matt Wozniski <mjw452 at drexel.edu>
+Author:     Matt Wozniski <mjw452@drexel.edu>
 AuthorDate: Tue Oct 28 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.10
+    
     Distribute an rgb.txt along with CSApprox, so that CSApprox can still be used on distributions where no rgb.txt is provided with the X server (like Ubuntu Intrepid Ibex).  Thanks to Penn Su for finding this!
 
  doc/CSApprox.txt    |   14 +-
@@ -90,9 +102,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 764 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.00)
-Author:     Matt Wozniski <mjw452 at drexel.edu>
+Author:     Matt Wozniski <mjw452@drexel.edu>
 AuthorDate: Sun Oct 5 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

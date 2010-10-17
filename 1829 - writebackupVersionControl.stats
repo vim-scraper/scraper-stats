@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.24)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Fri Feb 12 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.24
+    
     - ENH: Define a local 'du' mapping to quickly update the diff (of the same version and with the same options as this time), unless [count] is given, which sets a different version).
     - :WriteBackupViewDiffWithPred not just checks for empty scratch buffer, but also considers the diff command exit code.
     - BUG: :WriteBackupViewDiffWithPred can cause E121: Undefined variable: l:predecessor. Similar issue with a:filespec showing scratch buffer name in place of the original file name. Now using l:oldFile and l:newFile instead.
@@ -15,10 +17,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 118 insertions(+), 36 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.23)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Mon Oct 26 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.23
+    
     ENH: :WriteBackupRestoreFromPred now takes an optional [count] to restore an earlier predecessor.
 
  autoload/escapings.vim                 |   13 ++++-
@@ -29,10 +33,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 103 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.22)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Wed Aug 19 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.22
+    
     BF: escapings#shellescape() caused E118 on Vim 7.1. Enhanced wrapper function.
 
  autoload/escapings.vim            |   64 ++++++++++++++++++++++++-------------
@@ -40,10 +46,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 47 insertions(+), 22 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.21)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Sun Jul 19 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.21
+    
     - Replaced simple filespec quoting with built-in shellescape() function (or emulation for Vim 7.0 / 7.1) via escapings.vim wrapper.
     - Keeping cursor position when only refreshing the diff scratch buffer.
     - Window position of the diff scratch buffer can now be configured.
@@ -56,10 +64,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 115 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.20)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Fri Jul 10 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.20
+    
     ENH: Added :WriteBackupViewDiffWithPred command to show the diff output in a scratch buffer. With this, one can get a quick overview of what has changed since the last backup without performing a diffsplit within Vim.
 
  autoload/escapings.vim                 |    3 +
@@ -70,10 +80,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 363 insertions(+), 22 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.11)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Tue Jun 30 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.11
+    
     ENH: :WriteBackupDiffWithPred now takes an optional [count] to diff with an
     earlier predecessor.
 
@@ -83,10 +95,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 21 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.10)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Thu May 28 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.10
+    
     Replaced simple filespec escaping with built-in fnameescape() function (or
     emulation for Vim 7.0 / 7.1) via escapings.vim wrapper.
 
@@ -97,10 +111,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 256 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.01)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Mon May 11 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.01
+    
     Backup versions are now opened read-only (through :WriteBackupGoPrev/Next and
     :WriteBackupDiffWithPred commands) to prevent the user from accidentally
     editing the backup instead of the original.
@@ -110,10 +126,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 42 insertions(+), 37 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.00)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Thu Feb 26 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.00
+    
     - Using separate autoload script to help speed up VIM startup. This is an
       incompatible change that also requires the corresponding writebackup plugin
       version. *** PLEASE UPDATE writebackup (vimscript #1828), too ***
@@ -133,9 +151,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 1130 insertions(+), 802 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.41.021)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Mon Feb 16 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Split off documentation into separate help file. Now packaging as VimBall.
 
@@ -144,10 +162,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 194 insertions(+), 78 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.40.020)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Sat Feb 14 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.40.020
+    
     Renamed configuration variable from g:writebackup_DiffVertSplit to g:WriteBackup_DiffVertSplit. *** PLEASE UPDATE YOUR CONFIGURATION ***
     ENH: Added :WriteBackupGoPrev, :WriteBackupGoNext and :WriteBackupGoOriginal commands.
     ENH: :WriteBackupListVersions now includes backup dirspec if backups aren't done in the original file's directory.
@@ -160,30 +180,36 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 433 insertions(+), 206 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.20.010)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Mon Jun 23 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.20.010
+    
     Minor change: Added -bar to all commands that do not take any arguments, so that these can be chained together.
 
  plugin/writebackupVersionControl.vim |   18 ++++++++++--------
  1 files changed, 10 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.20.009)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Mon Dec 31 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.20.009
+    
     Small Enhancement: :WriteBackupListVersions and :WriteBackupDiffWithPred claimed "no backups exist" if option 'wildignore' hides the backup files. Now temporarily resetting the option before glob().
 
  plugin/writebackupVersionControl.vim |   37 ++++++++++++++++++++++++++-------
  1 files changed, 29 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.20.008)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Tue Sep 18 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.20.008
+    
     ENH: Added support for writing backup files into a different directory (either one static backup dir or relative to the original file). Now requires writebackup.vim version 1.20 or later.
     Command :WriteBackupOfSavedOriginal now checks that the file is an original one.
     BF: :WriteBackupIsBackedUp doesn't deal correctly with filenames that contain special ex characters [%#!].
@@ -192,9 +218,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 162 insertions(+), 40 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.00.006)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Fri Mar 16 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

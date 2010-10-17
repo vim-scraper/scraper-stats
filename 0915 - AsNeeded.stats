@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/16)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Thu Sep 4 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 16
+    
     <*> ANtags now smaller (uses relative paths)
     <*> saves and restore magic setting
     <*> MkAsNeeded creates a menu: DrChip.ANmenu full of commands that AsNeeded can load
@@ -13,10 +15,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 176 insertions(+), 55 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/15)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Fri Feb 23 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 15
+    
     Various bugfixes to automatic updating of ANtags and improvements to handling of no user-specified mapleader.
 
  doc/AsNeeded.txt    |   42 +++++++++++++++++----
@@ -24,10 +28,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 102 insertions(+), 44 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/14)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Tue Sep 19 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 14
+    
     (-NEW-)  Setting a variable, g:AsNeededAutoMake, to something like "ls -1l", lets AsNeeded keep ANtags and ANcmds up-to-date automatically!
     (bugfix) Taglist does a quick-loading trick that involved using FuncUndefined autocmds.  AsNeeded now defers to taglist instead of issuing a warning.
     (bugfix) ei=all was inadvertently being left on; thus no autocmds were operational after AsNeeded successfully loaded a function.  Fixed!
@@ -38,10 +44,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 88 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/13)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Thu May 18 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 13
+    
     AsNeeded now uses Thomas's idea for producing a "ANcmds.vim" plugin with skeleton commands. Plus some bugfixes.  With this feature, commands in scripts in the AsNeeded/ directory act as if they're always available, even when the scripts haven't been loaded.
 
  doc/AsNeeded.txt    |  119 +++++++++++++++++++++++++
@@ -49,30 +57,36 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 174 insertions(+), 185 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/12)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Tue Mar 14 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 12
+    
     (bugfix) AsNeeded needs to work around several options that the user may set.  However, if a plugin changed one of these, AsNeeded "restored" the option at the time that AsNeeded was invoked, thereby overriding whatever the plugin/map etc may have set.  AsNeeded now restores the options, then sources the plugin/map etc.
 
  plugin/AsNeeded.vim |   69 +++++++++++++++++++++++++++++++--------------------
  1 files changed, 42 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/11)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Fri Feb 10 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 11
+    
     Bugfixes (success message itself sometimes caused an error, internally used buffers now wiped silently, keeps/restores lz)
 
  plugin/AsNeeded.vim |   63 ++++++++++++++++++++++++++++++++------------------
  1 files changed, 40 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/10)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Mon Nov 21 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 10
+    
     bugfix: maps with backslashes are escaped so they can be found
     bugfix: report option workaround
 
@@ -80,30 +94,36 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 54 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Tue Jul 12 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 9
+    
     MakeANtags command and function search patterns improved
 
  plugin/AsNeeded.vim |   74 +++++++++++++++++++++++++++++++++++++++++++-------
  1 files changed, 63 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/8)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Thu Feb 17 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 8
+    
     Another bug fix; this time, for some maps, tags were being generated but not executed.  Fixed!
 
  plugin/AsNeeded.vim |   14 ++++++++------
  1 files changed, 8 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7)
-Author:     Charles Campbell <drchip at campbellfamily.biz>
+Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Wed Feb 16 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 7
+    
     MakeANtags now warns the user when no tags were found for each scriptfile it examines in the AsNeeded directory.
     Two bugfixes: MakeANtags was missing some maps and, under Windows, was omitting backslashes in paths.  Fixed!
 

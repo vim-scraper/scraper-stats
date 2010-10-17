@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.0)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Tue Oct 10 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.0
+    
     - No longer depends on multvals.
     - Works with the new autoload version of genutils.
 
@@ -10,10 +12,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 37 insertions(+), 60 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Fri May 13 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     - Now you can pass separate begin and end patterns to specify the fold
       blocks.
     - FoldShowMatching has been renamed to FoldMatching.
@@ -36,10 +40,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 529 insertions(+), 196 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Thu Oct 28 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.7
+    
     - New FoldShowRange command to fold all lines except the selected range.
       See doc for usage.
 
@@ -47,10 +53,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 37 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Tue Jul 13 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.6
+    
     - Now requires Vim6.2
     - Now requires multvals.vim
     - The plugin now remembers "manual" folds and restores with :FoldEndFolding. Defines a useful global function FoldCreateFoldsStr() for this purpose.
@@ -61,49 +69,57 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 123 insertions(+), 37 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Mon Jan 26 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.5
+    
     A very useful "-1" context is now supported. Thanks to John A. Peters for the idea. Read the description for details.
 
  plugin/foldutil.vim |   93 +++++++++++++++++++++++++++++++++++++++------------
  1 files changed, 71 insertions(+), 22 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Wed Jun 18 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.4
+    
     Thanks to Tom Regner {tomte at tomsdiner dot org} for the enhancement to work even when foldmethod is not 'manual'. See description for a new command and more information.
 
  plugin/foldutil.vim |   90 +++++++++++++++++++++++++++++++-------------------
  1 files changed, 56 insertions(+), 34 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Wed Jun 11 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.3
+    
     Fixed a couple of bugs and added a new command ":FoldShowLines" to fold away all the lines that are not part of the comma separated list of lines specified on the command-line. See description for usage.
 
  plugin/foldutil.vim |   78 ++++++++++++++++++++++++++++++++++++++++----------
  1 files changed, 62 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Mon Sep 23 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1
+    
     Fixed a couple of bugs reported by Gergely Kontra and better error messages (missing search pattern etc.)
 
  plugin/foldutil.vim |  123 +++++++++++++++++++++++++++++++++++---------------
  1 files changed, 86 insertions(+), 37 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.0)
-Author:     Hari Krishna Dara <hari.vim at gmail.com>
+Author:     Hari Krishna Dara <hari.vim@gmail.com>
 AuthorDate: Fri Nov 30 00:00:00 2001 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

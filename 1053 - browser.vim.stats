@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1)
-Author:     moshe kamensky <samvimes at fastmail.fm>
+Author:     moshe kamensky <samvimes@fastmail.fm>
 AuthorDate: Tue Mar 15 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1
+    
     Mainly bug fixes. New features:- Added the uri history://n to access the n-th newest item in the history.   Similarly, the :History command may now accecpt a numeric argument.- The last access time for each link now appears on the history page- Added the g:browser_connect_timeout variable to control when we give up   connecting to a remote site- Added support for homepage in the plugin. :Browse and similar commands can   now be called with no arguments.- Changed the loading of the plugin so that vim startup time is improved.- Added a command for showing the current mappings, and a command to extend   this list for user defined mappings
 
  bin/gvimbrowse.1                                |   13 +-
@@ -56,10 +58,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  48 files changed, 11781 insertions(+), 9288 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     moshe kamensky <samvimes at fastmail.fm>
+Author:     moshe kamensky <samvimes@fastmail.fm>
 AuthorDate: Wed Nov 24 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.0
+    
     * Added a sidebar* Added context menu entries* Support for opening links with external applications (using mailcap)* The conceal patch is no longer used. The synmark.vim plugin is used instead.* Global browsing history* Both history and bookmarks can be viewed as browser pages* More support for inline images (viewing, etc.)* Page can be updated when modifying its source* Use vim commands as scheme handlers* Some improvements to standalone versions (vimbrowse)* Improved documentation, added glossary
 
  bin/gvimbrowse.1                                |  233 ++
@@ -105,10 +109,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  40 files changed, 9583 insertions(+), 5561 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
-Author:     moshe kamensky <samvimes at fastmail.fm>
+Author:     moshe kamensky <samvimes@fastmail.fm>
 AuthorDate: Sun Sep 26 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4
+    
     Main Improvements:  - Added support for all inputs in a form (file, textarea, multi-options)  - Improved searching capabilities: Added the possibility to customize the     search engine, added :Dictionary and :Thesaurus commands. The searching     commands can now have no arguments, taking the word under the cursor, or      the visaully select words as arguments, instead (Thanks to Aditya Mahajan     for the ideas)  - The browser buffer is now non-modifiable by default. It becomes     modifiable only when changing form input values (again thanks to Aditya     Mahajan)  - Added the possibility to save inline images to a file  - Removed the dependence on HTML-Format. The only dependency that remains     for formatting is HTML::TreeBuilder (which is more widely available).  - There is no longer need to patch HTML::TreeBuilder to view encodings     correctly.  - I think vimbrowse.pl finally works on windows (didn't test, though). Some     environment variables might need to be set.  - Various other features and bug fixes - see the ChangeLog for details
 
  bin/vimbrowse.pl                                  |   23 +-
@@ -148,9 +154,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  34 files changed, 5521 insertions(+), 4411 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
-Author:     moshe kamensky <samvimes at fastmail.fm>
+Author:     moshe kamensky <samvimes@fastmail.fm>
 AuthorDate: Fri Sep 17 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed silly bug
 
@@ -189,10 +195,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  32 files changed, 4404 insertions(+), 4399 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     moshe kamensky <samvimes at fastmail.fm>
+Author:     moshe kamensky <samvimes@fastmail.fm>
 AuthorDate: Fri Sep 17 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3
+    
     Bugfix release: encoding works correctly; setting options has effect also after
     the plugin is loaded; Various other fixes - see the ChangeLog for details
 
@@ -232,10 +240,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  33 files changed, 4413 insertions(+), 4057 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     moshe kamensky <samvimes at fastmail.fm>
+Author:     moshe kamensky <samvimes@fastmail.fm>
 AuthorDate: Sun Sep 5 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     Main Improvements:
     	- Added forms support. All input kinds are supported except for
     	  textarea, file and multiple choice options. Thus, eg, google can be
@@ -277,9 +287,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  27 files changed, 4477 insertions(+), 2722 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     moshe kamensky <samvimes at fastmail.fm>
+Author:     moshe kamensky <samvimes@fastmail.fm>
 AuthorDate: Mon Aug 9 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

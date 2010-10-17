@@ -1,20 +1,23 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1.7.2)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sat Sep 25 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.1.7.2
+    
     Bug fix for duplicate help tag in easytags.txt (no associated commit because easytags.txt is generated from README.md  I just fixed the conversion script and regenerated easytags.txt)
 
- autoload/xolox.vim |  110 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- autoload/xolox.vim |  106 --------------------------------------------------
+ autoload/xolox.vim |   12 ++++++++----
  doc/easytags.txt   |    2 +-
- 3 files changed, 111 insertions(+), 107 deletions(-)
+ 2 files changed, 9 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1.7)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sun Sep 5 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.1.7
+    
       Documented :HighlightTags tags file format requirements:
        http://github.com/xolox/vim-easytags/commit/738d7508181423e1633e4d5d6014e8ad2acb4595
     
@@ -28,25 +31,29 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
        http://github.com/xolox/vim-easytags/commit/5efb2c7ee0d6926aaa0ad3080a53857ec910d4d3
 
  autoload/easytags.vim     |   29 ++++++++++++++++++-----------
- autoload/xolox/escape.vim |    4 ++--
  autoload/xolox.vim        |    5 +++--
+ autoload/xolox/escape.vim |    4 ++--
  doc/easytags.txt          |   23 ++++++++++++++++++++++-
  plugin/easytags.vim       |    9 ++++-----
  5 files changed, 49 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1.4)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Wed Aug 11 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.1.4
+    
     Fix automatic ctags detection on FreeBSD (reported by Derek Tattersall):
     http://github.com/xolox/vim-easytags/commit/eea8f41b9e04b8b533d1670a1090b16255f9b5f2
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1.3)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Wed Aug 11 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.1.3
+    
       Support scanning & highlighting of struct/class members in C/C++ sources:
        http://github.com/xolox/vim-easytags/commit/2f73c57c857fc0a4f3bed718a90f0296890778a3
     
@@ -59,10 +66,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 61 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Tue Aug 10 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.1
+    
       Support for automatic recursion using ctags -R:
        http://github.com/xolox/vim-easytags/commit/0d9567900f23e8ca243db16df80004aa7c658623
     
@@ -76,10 +85,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 60 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Mon Aug 9 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     http://github.com/xolox/vim-easytags/commit/89f9205ff840329aa75166249a99b1d0f227d661:
       Enable commands like :UpdateTags -R ~/.vim/.
       Fixed a rare problem where tags sort before the !_TAG_FILE_SORTED header causing E432.
@@ -96,10 +107,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 325 insertions(+), 150 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9.7)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Tue Jul 20 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.9.7
+    
       Create case folded tags files when &ignorecase is on:
        http://github.com/xolox/vim-easytags/commit/ff64be5fe506a9a15dce28bac5b5585d4430f4a6
     
@@ -113,10 +126,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 138 insertions(+), 100 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9.6)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sat Jul 10 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.9.6
+    
     * Improved README, added references to Vim documentation
       http://github.com/xolox/vim-easytags/commit/726c08bf946ba3cdabab23a63bb8892c19408a04
     
@@ -134,10 +149,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 102 insertions(+), 277 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9.5)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Wed Jun 16 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.9.5
+    
     Proper handling of unnamed buffers
     http://github.com/xolox/vim-easytags/commit/24cd42357f25f0cf182c83b3b82a3b60e6e6e9f0
 
@@ -145,25 +162,29 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 20 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9.4)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Wed Jun 16 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.9.4
+    
     Bug fix for E713: Cannot use empty key for Dictionary
     http://github.com/xolox/vim-easytags/commit/f31333832adf37467ff70218f889f00e77e57027
 
  autoload/easytags.vim    |    4 +-
- autoload/xolox/timer.vim |    6 ++--
  autoload/xolox.vim       |   25 +++++++++++++++++++++--
+ autoload/xolox/timer.vim |    6 ++--
  doc/easytags.html        |   48 ++++++++++++++++++++++++++++++++++++++++++++-
  doc/easytags.txt         |   43 +++++++++++++++++++++++++++++++++++++++++
  5 files changed, 116 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9.3)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Tue Jun 15 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.9.3
+    
     Version detection of Exuberant Ctags, better error handling, bug fix for dynamic highlighting
     http://github.com/xolox/vim-easytags/commit/5cb775c9a8e8ea07abbb39f09f72c818c2ad518b
 
@@ -173,10 +194,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 127 insertions(+), 43 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9.2)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Mon Jun 14 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.9.2
+    
     Bug fix: Accidentally included local changes from project directory in previous release, sorry!
 
  autoload/easytags.vim |   14 +++++---------
@@ -184,10 +207,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 5 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9.1)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sun Jun 13 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.9.1
+    
     Bug fix: Ignore missing tags file when caching tagged files
     http://github.com/xolox/vim-easytags/commit/d064e0639f488b975af12aad01040493e265804c
 
@@ -195,10 +220,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 17 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sun Jun 13 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.9
+    
     Fixed tags file corruption on Windows!
     http://github.com/xolox/vim-easytags/commit/ad3bd15a76acaeb8bd5c92e104ab95a7b55f6fee
     
@@ -221,10 +248,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 202 insertions(+), 162 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8.2)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Thu Jun 10 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.8.2
+    
      * Moved &tags option parsing to autoload script
       http://github.com/xolox/vim-easytags/commit/1c8733ee23d792bf5f7c325f6e5babec14f798f2
     
@@ -237,10 +266,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 60 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8.1)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Thu Jun 10 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.8.1
+    
     * Dynamic highlighting for Java identifiers
       http://github.com/xolox/vim-easytags/commit/3f762e26ab7b9730ec0757257a9bd924d1f6f05e
 
@@ -248,10 +279,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 15 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Thu Jun 10 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.8
+    
     The plug-in now more-or-less supports Microsoft Windows, the only remaining problems are the flashing command prompt (which I know how to fix) and the fact that CursorHold seems to fire repeatedly (which I don't, yet).
     
     * Make sure there's something to highlight before doing so
@@ -272,10 +305,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 84 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Wed Jun 9 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.7
+    
     * Added "easytags_ignored_filetypes" option
       http://github.com/xolox/vim-easytags/commit/6dd0b7a882d8102f5cff1b2acc927b91cc03e514
     
@@ -293,10 +328,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 65 insertions(+), 28 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6.3)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sun Jun 6 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.6.3
+    
     * Moved script-local function s:unique() to autoload script:
       http://github.com/xolox/vim-easytags/commit/8d13bd28ed9c5bfeef4ac09c2981821e1cf0fdc1
     
@@ -307,16 +344,16 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
       http://github.com/xolox/vim-easytags/commit/5bd20f02ebfd7c7bf5a33a2cd31a7d76a54911dd#L0L107
 
  autoload/easytags.vim    |  196 +++++++++++++++++++++++-----------------------
- autoload/xolox/timer.vim |   23 ++++--
  autoload/xolox.vim       |   50 ++++++++++++
+ autoload/xolox/timer.vim |   23 ++++--
  doc/easytags.html        |   13 +++-
  doc/easytags.txt         |    8 ++-
  5 files changed, 180 insertions(+), 110 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6.2)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sun Jun 6 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload with fixed references to www.vim.org scripts entry
 

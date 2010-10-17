@@ -1,18 +1,22 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/20091024)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Sat Oct 24 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20091024
+    
     Keyword `if' that appeared in the previous version among GObject identifiers due to some gtk-doc misparsing was removed.
 
  syntax/gobject.vim |    2 +-
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20091021)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Wed Oct 21 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20091021
+    
     Syntaxes were updated to versions corresponding to GNOME 2.28.  Two new files were added: for libsoup and libunique.
 
  syntax/atk.vim            |    4 +-
@@ -53,10 +57,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  35 files changed, 226 insertions(+), 138 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20090402)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Thu Apr 2 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20090402
+    
     All syntax files were updated to Gnome 2.26 versions; clutter and goocanvas syntax files were added.
 
  syntax/atk.vim            |    6 ++--
@@ -95,9 +101,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  33 files changed, 190 insertions(+), 90 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20090105)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Mon Jan 5 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     GObject syntax file missing in the last release was re-added.
 
@@ -135,10 +141,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  31 files changed, 82 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20090102)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Fri Jan 2 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20090102
+    
     Everything was updated to Gnome 2.24.  GIO and evince syntax files were added.
 
  README.orig               |    6 ++++--
@@ -176,10 +184,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  32 files changed, 309 insertions(+), 240 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20070925)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Tue Sep 25 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20070925
+    
     All files were updated to Gnome 2.20 versions of the respective libraries. (GLib to 2.14, Gtk+ to 2.12, ...). Syntax file for linc was dropped, files for at-spi, gail, dbus-glib, gtksourceview, gnome-desktop, gnome-vfs, liboil and poppler were added.
 
  README.orig               |    9 +++++-
@@ -216,10 +226,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  31 files changed, 482 insertions(+), 168 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20061121)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Tue Nov 21 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20061121
+    
     Variables (e.g. gtk_major_version or glib_mem_profiler_table) were added, they are highlighted as Identifiers by default (suggestions how to differentiate them from functions are welcome).
     
     The synax files were cleaned up bit: hi-links are created only for symbol classes actually present in the file, deprecation stuff is completely excluded from files that contain no deprecated symbols.
@@ -250,10 +262,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  23 files changed, 84 insertions(+), 468 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20061120)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Mon Nov 20 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20061120
+    
     Syntax highlighting files for librsvg, libwnck, libgsf and libnotify were added.
 
  README.orig               |    4 +++
@@ -282,10 +296,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  23 files changed, 273 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20061119)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Sun Nov 19 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20061119
+    
     atk syntax was updated to 1.12, cairo to 1.2, gdk, gdk-pixbuf and gtk+ to 2.10, glib and gobject to 2.12, libglade to 2.6, gnome libs to 2.16, pango to 1.14 and vte to 0.14.
 
  syntax/atk.vim            |   14 +++++++-------
@@ -309,9 +325,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  18 files changed, 76 insertions(+), 76 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20060423)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Sun Apr 23 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Syntax files for Gnome libs were updated to 2.14.
 
@@ -336,9 +352,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  18 files changed, 74 insertions(+), 72 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2006-03-20)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Mon Mar 20 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Pango syntax file was updated to 1.12.
 
@@ -364,9 +380,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  19 files changed, 37 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2006-03-19)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Sun Mar 19 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     GLib syntax file was updated to 2.10.
 
@@ -393,10 +409,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  20 files changed, 45 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2005-09-06)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Tue Sep 6 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2005-09-06
+    
     Deprecated symbol handling was improved.  Syntax items for deprecated symbols have their own groups (fooDeprecatedFunction instead of fooFunction) so it's possible to link them to something else than normal symbols.  By default, they are not highlighted at all (like before).  If you set
     
     :let foo_enable_deprecated = 1
@@ -431,10 +449,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  19 files changed, 620 insertions(+), 150 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20050308)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Tue Mar 8 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20050308
+    
     Functions taking filename arguments that were incorrectly highlighted as constants since GLib and Gtk+ 2.6 are highlighted as functions again.
 
  syntax/atk.vim            |    2 +-
@@ -457,9 +477,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  17 files changed, 21 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20050225)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Fri Feb 25 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Bug fixed: union types were not highlighted.
 
@@ -483,9 +503,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  17 files changed, 39 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20050123)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Sun Jan 23 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Libglade syntax highlighting was added.
 
@@ -510,10 +530,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  18 files changed, 55 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20041222)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Wed Dec 22 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20041222
+    
     Gtk+ and GLib syntax files were updated to 2.6, Pango and Atk to 1.8, Gimp to 2.2, Gnome to 2.8.
 
  syntax/atk.vim            |   10 +++++-----
@@ -535,9 +557,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  16 files changed, 94 insertions(+), 79 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20040815)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Sun Aug 15 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Syntax highlighting file for GtkGLExt was added.
 
@@ -561,9 +583,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  17 files changed, 52 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20040813)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Fri Aug 13 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed bug: many last enum values were not highlighted.
 
@@ -585,10 +607,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  15 files changed, 30 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20040611)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Fri Jun 11 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20040611
+    
     Quite a few missing enums were fixed.  Parameterless macros like
     
     #define gimp_get_data gimp_procedural_db_get_data
@@ -613,10 +637,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  15 files changed, 49 insertions(+), 50 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20040605)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Sat Jun 5 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 20040605
+    
     Parameterless macros were separated to somethingDefine syntax groups, highlighted as Constant by default.  This fixes highlighting of things like NULL or FALSE as macros and is more compatible with Hwanjin Choe's original files.
 
  syntax/atk.vim            |    6 ++++--
@@ -637,9 +663,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  15 files changed, 73 insertions(+), 39 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20040531)
-Author:     David Necas <yeti at physics.muni.cz>
+Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Mon May 31 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

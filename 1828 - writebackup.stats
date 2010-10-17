@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.10)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Thu May 28 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.10
+    
     Replaced simple filespec escaping with built-in fnameescape() function (or
     emulation for Vim 7.0 / 7.1) via escapings.vim wrapper.
 
@@ -13,10 +15,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 229 insertions(+), 37 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.00)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Thu Feb 26 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.00
+    
     - Using separate autoload script to help speed up VIM startup. This is an
       incompatible change that also requires the corresponding
       writebackupVersionControl plugin version. *** PLEASE UPDATE
@@ -33,9 +37,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 271 insertions(+), 103 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.31.013)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Mon Feb 16 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Split off documentation into separate help file. Now packaging as VimBall.
 
@@ -44,10 +48,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 176 insertions(+), 93 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.30.011)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Wed Feb 11 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.30.011
+    
     ENH: The backup directory can now be determined dynamically through a callback function.
     Renamed configuration variable from g:writebackup_BackupDir to g:WriteBackup_BackupDir. *** PLEASE UPDATE YOUR CONFIGURATION ***
     BF: Now also allowing relative backup dir in an upper directory (i.e. g:WriteBackup_BackupDir starting with '../'.
@@ -58,20 +64,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 96 insertions(+), 29 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.20.006)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Mon Jun 23 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.20.006
+    
     Minor change: Added -bar to :WriteBackup, so that commands can be chained together.
 
  plugin/writebackup.vim |    8 +++++---
  1 files changed, 5 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.20.005)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Tue Sep 18 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.20.005
+    
     ENH: Added support for writing backup files into a different directory (either one static backup dir or relative to the original file) via g:writebackup_BackupDir configuration, as suggested by Vincent DiCarlo.
     Now requiring VIM 7.0 or later, because it's using lists.
     BF: Special ex command characters ' \%#' must be escaped for ':w' command.
@@ -80,9 +90,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 99 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.00.004)
-Author:     Ingo Karkat <ingo at karkat.de>
+Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Fri Mar 16 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

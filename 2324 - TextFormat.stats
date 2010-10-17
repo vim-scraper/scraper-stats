@@ -1,7 +1,7 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1)
-Author:     Teemu Likonen <tlikonen at iki.fi>
+Author:     Teemu Likonen <tlikonen@iki.fi>
 AuthorDate: Sat Sep 13 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Minor internal cleanup
 
@@ -11,10 +11,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 59 insertions(+), 60 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     Teemu Likonen <tlikonen at iki.fi>
+Author:     Teemu Likonen <tlikonen@iki.fi>
 AuthorDate: Sun Aug 10 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     * \al and \aj now reformat text also in visual mode.
     * \al and \aj honor "w" in 'formatoptions' and detect paragraph boundaries accordingly.
     * :AlignLeft, :AlignJustify, \al and \aj recognize several paragraphs within the range and detect indent for each paragraph separately.
@@ -26,10 +28,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 512 insertions(+), 356 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Teemu Likonen <tlikonen at iki.fi>
+Author:     Teemu Likonen <tlikonen@iki.fi>
 AuthorDate: Sun Aug 3 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1
+    
     -- Keep cursor position more accurately when formatting a paragraph with \al and \aj.
     -- When 'joinspaces' is set insert two spaces after .?! punctuation with left-right justify. This is now similar to other commands.
 
@@ -39,10 +43,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 32 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     Teemu Likonen <tlikonen at iki.fi>
+Author:     Teemu Likonen <tlikonen@iki.fi>
 AuthorDate: Sat Aug 2 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.0
+    
     -- All the commands now follow user's 'expandtab' setting and print leading whitespaces accordingly. Now this works just like :left, :right and :center commands. -- The left-aligned last line in justified paragraph did not honor 'joinspaces'. Fixed.
 
  autoload/textformat.vim |  129 ++++++++++++++++++++++++++--------------------
@@ -51,9 +57,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 135 insertions(+), 79 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
-Author:     Teemu Likonen <tlikonen at iki.fi>
+Author:     Teemu Likonen <tlikonen@iki.fi>
 AuthorDate: Fri Aug 1 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

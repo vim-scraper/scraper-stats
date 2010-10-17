@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6)
-Author:     Neil Vice <sardonyx at swiftdsl.com.au>
+Author:     Neil Vice <sardonyx@swiftdsl.com.au>
 AuthorDate: Fri Dec 9 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.6
+    
     Defined g:h_extensions variable as a comma separated list of c++ header-file extentions that the script will support.
     Improved robustness and fixed some minor issues.
 
@@ -10,10 +12,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 80 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
-Author:     Neil Vice <sardonyx at swiftdsl.com.au>
+Author:     Neil Vice <sardonyx@swiftdsl.com.au>
 AuthorDate: Thu May 12 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.5
+    
     Fixed bug where if g:InterFunctionGap = 1 then no newline was inserted at the end of the file.
     Fixed bug where the header file was not #included if the implementation file began empty.
 
@@ -21,20 +25,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 9 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.1)
-Author:     Neil Vice <sardonyx at swiftdsl.com.au>
+Author:     Neil Vice <sardonyx@swiftdsl.com.au>
 AuthorDate: Thu May 12 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4.1
+    
     Added global variable \"g:cxx_extension\" (defaults to \"cpp\") to use as extension of generated source file.
 
  ftplugin/ccimpl.vim |   15 ++++++++++++---
  1 files changed, 12 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
-Author:     Neil Vice <sardonyx at swiftdsl.com.au>
+Author:     Neil Vice <sardonyx@swiftdsl.com.au>
 AuthorDate: Sat Apr 30 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4
+    
     Fixed to correctly handle destructors.
     Fixed bug where 'method-like' constructs in attribute comments would cause them to be treated as methods.
     No longer copies comments to the implementation by default - set g:implComments=1 to achieve the old functionality.
@@ -43,10 +51,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 48 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     Neil Vice <sardonyx at swiftdsl.com.au>
+Author:     Neil Vice <sardonyx@swiftdsl.com.au>
 AuthorDate: Wed Apr 27 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3
+    
     Improved window handling - may fix incompatibilities with other plugins.
     Handles default parameters.
     Ignores brackets in Doxygen comment blocks.
@@ -56,9 +66,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 63 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
-Author:     Neil Vice <sardonyx at swiftdsl.com.au>
+Author:     Neil Vice <sardonyx@swiftdsl.com.au>
 AuthorDate: Tue Apr 26 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Prevented the absence of a namespace declaration from causing errors.
 
@@ -66,19 +76,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 13 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Neil Vice <sardonyx at swiftdsl.com.au>
+Author:     Neil Vice <sardonyx@swiftdsl.com.au>
 AuthorDate: Thu Dec 9 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     Added support for namespaces.Improved comment indenting.Fixed bug: functions including namespace directives would be ignored.Fixed bug: the end of a class would be ignored if not at the start of the line.
 
  ftplugin/ccimpl.vim |   37 ++++++++++++++++++++++++++-----------
  1 files changed, 26 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     Neil Vice <sardonyx at swiftdsl.com.au>
+Author:     Neil Vice <sardonyx@swiftdsl.com.au>
 AuthorDate: Wed Dec 1 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

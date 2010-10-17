@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5)
-Author:     Timo Teifel <timo at teifel-net.de>
+Author:     Timo Teifel <timo@teifel-net.de>
 AuthorDate: Wed Sep 15 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.5
+    
     - Keeps the keyword case when toggling (thanks to Jan Christoph Ebersbach for this code)
     - bugfix for && and || toggling
 
@@ -10,23 +12,26 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 71 insertions(+), 58 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
-Author:     Timo Teifel <timo at teifel-net.de>
+Author:     Timo Teifel <timo@teifel-net.de>
 AuthorDate: Tue Sep 14 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4
+    
     default mapping uses + in normal and visual mode instead of <C-T>
     added toggle entries: && <--> ||   and & <--> |
     internal optimizations
 
- README            |    8 +++-
  plugin/toggle.vim |  118 ++++++++++++++++++++++++++++++++++++-----------------
- 2 files changed, 87 insertions(+), 39 deletions(-)
+ 1 files changed, 80 insertions(+), 38 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     Timo Teifel <timo at teifel-net.de>
+Author:     Timo Teifel <timo@teifel-net.de>
 AuthorDate: Fri Feb 6 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3
+    
     I added define/undef as new words.
     I added a mapping for visual mode (it actually quits visual mode and calls the Toggle function. But now it works, if you clicked with the mouse on the word and accidentally switched on visual mode...)
     I realised that <C-S-T> is the same than <C-T> I didn't intent to break these mappings, but since I didn't find another suitable keymapping, I now use <C-T>. Anyone who doesn't like that can change that easily.
@@ -35,12 +40,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 38 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Timo Teifel <timo at teifel-net.de>
+Author:     Timo Teifel <timo@teifel-net.de>
 AuthorDate: Mon Feb 2 00:00:00 2004 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
- README            |   16 +++++
+ README            |   22 ++++++
  plugin/toggle.vim |  195 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 211 insertions(+), 0 deletions(-)
+ 2 files changed, 217 insertions(+), 0 deletions(-)

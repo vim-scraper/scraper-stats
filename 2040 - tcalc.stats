@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.11)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Dec 5 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.11
+    
     - New words: all?, any?, array_*, and, or, !=
     - Curses frontend: Show possible completions; map 127 to backspace, F1
     to 'ls'; improved handling of cursor keys etc.
@@ -16,10 +18,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 442 insertions(+), 123 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Fri Nov 30 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.10
+    
     - rm,* ... Remove all words
     - If g:tcalc_lines < 0, use fixed window height.
     - VIM: use the tcalc window to display plots, lists etc.
@@ -34,10 +38,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 127 insertions(+), 65 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Nov 28 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.9
+    
     - FIX: Curses frontend: Display error messages properly
     - FIX: readline support.
     - FIX: sort words on completion
@@ -51,10 +57,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 1591 insertions(+), 1375 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Nov 27 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.8
+    
     - Named arguments: args is a synonym for assert but provides for named
     arguments.
     - New words: Sequence/seq, map, mmap, plot (a simple ASCII function
@@ -84,10 +92,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 911 insertions(+), 186 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Mon Oct 29 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.7
+    
     - Comments: /* ... */
     - New words:
         - assert: Display an error message if the stack doesn't match the
@@ -110,10 +120,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 492 insertions(+), 69 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Fri Oct 26 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.6
+    
     - Included support for rational and complex numbers
     - Included matrix support
     - Syntax for pushing arrays [ a b c ... ]
@@ -127,10 +139,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 450 insertions(+), 300 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Fri Oct 12 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.5
+    
     - Minor fix: command regexp
 
  autoload/tcalc.vim |   30 +++++++++-----
@@ -139,10 +153,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 102 insertions(+), 44 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Mon Oct 8 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4
+    
     - COUNT can be "#", in which case the top number on the stack will be
     used (e.g. "3 dup3" is the same as "3 3 dup#")
     - Disabled vars, (, ) commands
@@ -166,10 +182,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 313 insertions(+), 117 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Oct 7 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3
+    
     - The swap count argument is increased by one (for conformance with the
     rot command).
     - Shortcuts are now RPN expression (elements at the stack can be
@@ -189,10 +207,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 253 insertions(+), 119 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Oct 7 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     - Arguments were (not properly) reverted: 12 4 / now yields 3.
     - The input will be split into tokens, i.e. you can input "1 2 + <cr>"
     or "1<cr>2<cr>+<cr>". (Command-line completions doesn't work properly
@@ -204,9 +224,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 82 insertions(+), 63 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Oct 7 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

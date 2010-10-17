@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.5)
-Author:     Srinath Avadhanula <srinath at fastmail.fm>
+Author:     Srinath Avadhanula <srinath@fastmail.fm>
 AuthorDate: Mon Dec 1 00:00:00 2003 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.5
+    
     A vastly improved and bug-fixed version of latex-suite.
     
     See
@@ -32,6 +34,7 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  ftplugin/latex-suite/mathmacros-utf.vim            |  729 ++++
  ftplugin/latex-suite/mathmacros.vim                |  132 +-
  ftplugin/latex-suite/multicompile.vim              |  232 ++
+ ftplugin/latex-suite/packages.vim                  |  847 +++--
  ftplugin/latex-suite/packages/SIunits              |  612 ++--
  ftplugin/latex-suite/packages/accents              |   23 +
  ftplugin/latex-suite/packages/acromake             |    5 +
@@ -105,13 +108,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  ftplugin/latex-suite/packages/url                  |   16 +
  ftplugin/latex-suite/packages/verbatim             |   13 +
  ftplugin/latex-suite/packages/version              |    7 +
- ftplugin/latex-suite/packages.vim                  |  847 +++--
  ftplugin/latex-suite/projecttemplate.vim           |   11 +
+ ftplugin/latex-suite/templates.vim                 |   71 +-
  ftplugin/latex-suite/templates/IEEEtran.tex        |  146 +
  ftplugin/latex-suite/templates/article.tex         |    9 +-
  ftplugin/latex-suite/templates/report.tex          |    9 +-
  .../latex-suite/templates/report_two_column.tex    |    9 +-
- ftplugin/latex-suite/templates.vim                 |   71 +-
  ftplugin/latex-suite/texmenuconf.vim               |   93 +-
  ftplugin/latex-suite/texproject.vim                |   73 +
  ftplugin/latex-suite/texrc                         |  321 ++-
@@ -127,9 +129,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  109 files changed, 11742 insertions(+), 3221 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     Srinath Avadhanula <srinath at fastmail.fm>
+Author:     Srinath Avadhanula <srinath@fastmail.fm>
 AuthorDate: Thu Nov 7 00:00:00 2002 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
@@ -149,6 +151,7 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  ftplugin/latex-suite/macros/example                |   11 +
  ftplugin/latex-suite/main.vim                      |  484 ++++
  ftplugin/latex-suite/mathmacros.vim                |  672 ++++++
+ ftplugin/latex-suite/packages.vim                  |  368 +++
  ftplugin/latex-suite/packages/SIunits              |  310 +++
  ftplugin/latex-suite/packages/bar                  |   19 +
  ftplugin/latex-suite/packages/changebar            |   28 +
@@ -164,11 +167,10 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  ftplugin/latex-suite/packages/multicol             |   13 +
  ftplugin/latex-suite/packages/polski               |   23 +
  ftplugin/latex-suite/packages/ulem                 |   14 +
- ftplugin/latex-suite/packages.vim                  |  368 +++
+ ftplugin/latex-suite/templates.vim                 |   92 +
  ftplugin/latex-suite/templates/article.tex         |    8 +
  ftplugin/latex-suite/templates/report.tex          |    8 +
  .../latex-suite/templates/report_two_column.tex    |    8 +
- ftplugin/latex-suite/templates.vim                 |   92 +
  ftplugin/latex-suite/texmenuconf.vim               |  122 +
  ftplugin/latex-suite/texrc                         |  336 +++
  ftplugin/latex-suite/wizardfuncs.vim               |  423 ++++

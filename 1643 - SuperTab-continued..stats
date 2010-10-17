@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1)
-Author:     Eric Van Dewoestine <ervandew at gmail.com>
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
 AuthorDate: Mon Sep 27 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1
+    
     - added optional default <cr> mapping to end completion mode (enabled by default)
     - added support for an enhanced longest match completion (disabled by default)
     - other minor enhancements + bug fixes
@@ -12,10 +14,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 162 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     Eric Van Dewoestine <ervandew at gmail.com>
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
 AuthorDate: Thu Dec 3 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.0
+    
     - fixed reverse cycling through result when using <c-n> completion
     - now distributed as a vimball with a help file (:h supertab).  Thanks to Christophe-Marie Duquesne.
 
@@ -24,9 +28,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 320 insertions(+), 137 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.61)
-Author:     Eric Van Dewoestine <ervandew at gmail.com>
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
 AuthorDate: Fri Oct 16 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed a possible error that may occur in some rare conditions.
 
@@ -34,10 +38,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 3 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.60)
-Author:     Eric Van Dewoestine <ervandew at gmail.com>
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
 AuthorDate: Wed Sep 16 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.60
+    
     - Refactored the contextual completion and default discovery support.
       - Context completion now supports plugable functions to determine which
         completion type to use.
@@ -58,80 +64,96 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 250 insertions(+), 117 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.51)
-Author:     Eric Van Dewoestine <ervandew at gmail.com>
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
 AuthorDate: Sat Jul 11 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.51
+    
     Replaced internal function s:IsWordChar with vim's keyword character class (Thanks to Ingo Karkat for the patch).
 
  plugin/supertab.vim |   86 +++++++-------------------------------------------
  1 files changed, 12 insertions(+), 74 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.50)
-Author:     Eric Van Dewoestine <ervandew at gmail.com>
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
 AuthorDate: Fri Jun 26 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.50
+    
     Added check for vim 7 or greater, otherwise disable supertab support (suggested by Vincent Lee).  Also, removed any remaining pre vim 7 logic that is no longer applicable.
 
  plugin/supertab.vim |   41 ++++++++++++++++-------------------------
  1 files changed, 16 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.49)
-Author:     Eric Van Dewoestine <ervandew at gmail.com>
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
 AuthorDate: Thu Feb 5 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.49
+    
     fixed case where new buffer may not be initialized by super tab (thanks to Tammer Saleh for reporting the issue).
 
  plugin/supertab.vim |   11 ++++++++++-
  1 files changed, 10 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.48)
-Author:     Eric Van Dewoestine <ervandew at gmail.com>
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
 AuthorDate: Sun Jan 18 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.48
+    
     Fixed command line completion (ctrl-x ctrl-v) when invoked from supertab.  Thanks to Frank Chang for the patch.
 
  plugin/supertab.vim |   67 +++++++++++++++++++++++++++++++++++---------------
  1 files changed, 47 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.47)
-Author:     Eric Van Dewoestine <ervandew at gmail.com>
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
 AuthorDate: Sun Jan 11 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.47
+    
     fixed issue with default completion discovery option if desired type is dependent on file type plugins.  Thanks to Andreas Schneider for reporting the issue.
 
  plugin/supertab.vim |   11 ++++++++---
  1 files changed, 8 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.46)
-Author:     Eric Van Dewoestine <ervandew at gmail.com>
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
 AuthorDate: Sat Nov 15 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.46
+    
     Added support for default completion type 'context', which will result in super tab attempting to determine which completion type to use (file, user/omni, keyword) based on the text preceding the cursor (Based on suggestion by François Beaubert).
 
  plugin/supertab.vim |  170 +++++++++++++++++++++++++++++++++++---------------
  1 files changed, 119 insertions(+), 51 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.45)
-Author:     Eric Van Dewoestine <ervandew at gmail.com>
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
 AuthorDate: Tue Dec 18 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.45
+    
     - fixed possible completion error on first buffer as supertab may not have been properly initialized (thanks to bill emmons for discovering the error).
 
  plugin/supertab.vim |    4 +++-
  1 files changed, 3 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.44)
-Author:     Eric Van Dewoestine <ervandew at gmail.com>
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
 AuthorDate: Thu Nov 8 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.44
+    
     - added config variable to specify discovery list used to determine the default completion type to use for the current buffer. (based on request by Den Yao)
     - added config variables to changed the default mappings for forward backwards completion. (based on request by Li Chaoqun)
     - added config variable to preselect the first entry when completeopt has 'menu' and 'longest'. (based on suggestion and patch by Mike Lundy)
@@ -140,20 +162,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 194 insertions(+), 96 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.43)
-Author:     Eric Van Dewoestine <ervandew at gmail.com>
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
 AuthorDate: Thu Jul 12 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.43
+    
     With the permission of the original author, this script is now released under the BSD license.
 
  plugin/supertab.vim |   59 ++++++++++++++++++++++++++++++++------------------
  1 files changed, 38 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.42)
-Author:     Eric Van Dewoestine <ervandew at gmail.com>
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
 AuthorDate: Mon Jun 11 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.42
+    
     - Added g:SuperTabMidWordCompletion variable to determine if completion should be done within a word (enabled by default).  (based on request by Charles Gruenwald)
     - Applied patch to fix <s-tab> cycling through completion results. (submitted by Lukasz Krotowski)
 
@@ -161,9 +187,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 241 insertions(+), 106 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.41)
-Author:     Eric Van Dewoestine <ervandew at gmail.com>
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
 AuthorDate: Wed Aug 30 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

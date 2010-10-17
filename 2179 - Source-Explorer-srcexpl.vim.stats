@@ -1,48 +1,58 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.3)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Wed Oct 6 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.3
+    
     Fixed a bug when the working 'tags' file was created with the commands 'ctags -L cscope.files'. In this case, the plugin could not change the relative path to the absolute one. Thank Trevor Brown for reporting this bug.
 
  plugin/srcexpl.vim |  125 +++++++++++++++++++++++++--------------------------
  1 files changed, 61 insertions(+), 64 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Mon Mar 16 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.2
+    
     Bug fixed: In Linux or other *UNIX OS, Source Explorer v4.1 would change the 'current work directory' to '~/' when updating the tags file. Thanks to Ozan Sener for the bug-report.
 
  plugin/srcexpl.vim |   79 +++++++++++++++++++++++++--------------------------
  1 files changed, 39 insertions(+), 40 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Thu Mar 12 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.1
+    
     Fixed a bug in Version 4.0 which would make you jump into a empty file when listing multi-tags information.
 
  plugin/srcexpl.vim |  123 +++++++++++++++++++++++++++------------------------
  1 files changed, 65 insertions(+), 58 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Mon Mar 9 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.0
+    
     In this version, the taglist() interface do the binary searching in the exact tags file instead of a linear search, so each tagging responses much more quickly than before even though the tags file of the source code project is so large. All we have to do is add an option in your ctags ultility (--sort=foldcase).
 
  plugin/srcexpl.vim |   82 +++++++++++++++++++++++++--------------------------
  1 files changed, 40 insertions(+), 42 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.9)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Wed Mar 4 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.9
+    
     New features: --- The 1st anniversary
     1\ Manually updating or creating the 'tags' file using a new custom key named g:SrceExpl_updateTagsKey when you browse the source code without closing the Source Explorer window.
     2\ Dynamically loading the tags database from one source code project to another without closing the Source Explorer window.
@@ -51,40 +61,48 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 320 insertions(+), 327 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.8)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Mon Mar 2 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.8
+    
     I've implemented a local mark-stack mechanism using variable type of dictionary in this version, so you can trace into the source code more deeply without warring about the limit of 'A-Z' level using Vim's mark before.
 
  plugin/srcexpl.vim |  594 ++++++++++++++++++++++++----------------------------
  1 files changed, 273 insertions(+), 321 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.7)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Fri Feb 27 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.7
+    
     In this version, We do not try to tag something when we got the invalid symbol (only 0-9, a-z, A-Z, and '_' are valid) under the current cursor. So we should not feel unfrequently when we explore the huge source code project using "HJKL" to jump from a word to another.
 
  plugin/srcexpl.vim |   41 ++++++++++++++++++++++++-----------------
  1 files changed, 24 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.6)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Sun Dec 28 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.6
+    
     Let all the folds opened in order to avoid opening and closeing each fold every time.
 
  plugin/srcexpl.vim |   26 ++++++++++++--------------
  1 files changed, 12 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.5)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Sat Nov 8 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.5
+    
     1\ Add one new feature: Update different 'tags' file dynamically on different project PATH when opening the Source Explorer each time.
     2\ Add one user interface variable named g:SrcExpl_updateTagsCmd, which can be set to execute particular 'ctags' utility program, "ctags -R *" as default.
 
@@ -92,9 +110,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 294 insertions(+), 165 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.4)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Mon Nov 3 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Bug fixed: Make "Source_Explorer" not display on the buffers list and menu.
 
@@ -102,20 +120,24 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 117 insertions(+), 106 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Tue Sep 16 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.3
+    
     Bug fixed: The string of EX command is set to be case sensitive, so it is more accurate when excuting the EX command.
 
  plugin/srcexpl.vim |   59 +++++++++++++++++++--------------------------------
  1 files changed, 22 insertions(+), 37 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Thu Aug 28 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.2
+    
     1\ Added one user interface variable named g:SrcExpl_jumpKey, which can be mapped to jump into the exact definition context, "<ENTER>" as default.
     2\ Delete one user interface variable named g:SrcExpl_refreshKey, because it is almost not be used actually according to feedbacks from users.
     3\ Added the protect mechanism when running multiple tab pages.
@@ -126,10 +148,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 222 insertions(+), 160 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Mon Aug 18 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.1
+    
     Two bugs fixed:
     1\ Avoid highlight the whole EX command when previewing the definition.
     2\ Not update the Popup menu when the current word under the cursor
@@ -139,10 +163,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 79 insertions(+), 79 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Thu Aug 7 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.0
+    
     New feature: Local definition searching and preview using the interface of 'gd' command in VIM. Note that this is not guaranteed to work, the Source Explorer does not check the syntax for now, it only searches for a match with the keyword according to the command 'gd' when you enable the new variable named g:SrcExpl_searchLocalDef.
     Improvement: Reimplement the jump mechannism when going back from the preview context using the mark stack with 'A-Z' (26 depth actually). It is more accurate than using the 'Ctrl-o' command.
 
@@ -150,30 +176,36 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 511 insertions(+), 372 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Sat Jul 26 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.6
+    
     Update the mechanism and process when the Source Explorer work with other plugins, such as Taglist, NERD tree, etc. Of course, you must tell the Source Explorer what plugins are using the split windows according to a new MMI setting: g:SrcExpl_pluginList
 
  plugin/srcexpl.vim |  319 +++++++++++++++++++++++++++++++++-------------------
  1 files changed, 203 insertions(+), 116 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Tue Jul 15 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.5
+    
       In this version, I add a prompt line which contain the tag name and its counts when we do the multi-definition searching. A bug about folding in VIM is fixed. In srcexpl.vim, I desrcibed that how the Source Explorer works with the Taglist and the MiniBufExplorer on my platform.
 
  plugin/srcexpl.vim |  707 ++++++++++++++++++++++++++++++++--------------------
  1 files changed, 432 insertions(+), 275 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Tue Jul 8 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.4
+    
         In version 2.4, the srcexpl plugin should work more stable and more efficient than before.
         Firstly, I implemented the method of getting tags list without traversaling the 'tags' file. So parsing and showing the tags of whole project is more quickly, espacially in a large project. (e.g. The size of tags file in "Linux-2.4.0" is 19 MBytes which including more than 248000 lines data.)
         Secondly, it is more accurate to find the symbol definition because of the regular expression.
@@ -183,40 +215,48 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 245 insertions(+), 274 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Sat Apr 5 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.3
+    
     Bugfixed: When the current file which you are editing is not saved, the Source Explorer would not jump to the definition of the symbol under the cursor. This mechanism can handle the 'one-file-multi-buffers' situation very well.
 
  plugin/srcexpl.vim |   26 ++++++++++++++++----------
  1 files changed, 16 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Wed Mar 26 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.2
+    
     In this version(V2.2), I added a feature, which supported 'tags' file auto-updateing when you open the Source Explorer every time. And if the tags file  were not found, the Source Explorer would create one in the current directory according your choice. Besides, I fixed a bug of tags file loading on the mac OS X running enviorment. Thank Larry and Maqi for their freebacks and suggestions. :-)
 
  plugin/srcexpl.vim |  127 +++++++++++++++++++++++++++++++++++++++++-----------
  1 files changed, 101 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Sun Mar 23 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.1
+    
     In this version, I implemented the method to do the recursion for searching the 'tags' file from the current directory to the root directory. In addition, the mechanism for vim version inspection is added. Finally, I rewrote the function named g:SrcExpl_OtherPluginAdapter() in order to adapt the privious postion of the editor window when using the Taglist and MiniBufExpl Plugins.
 
  plugin/srcexpl.vim |  116 +++++++++++++++++++++++++++++++++++----------------
  1 files changed, 79 insertions(+), 37 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Fri Mar 14 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     Added an important feature, that is, multi-definitions list and explore.
     When the symbol under the cursor is defined in several places, the Source Explorer window will list them one by one. You can select one of them by a double-click or a <Enter> key onto the exact line, and then we jump to the place that match the definition.
     This feature is so important that you can only use one hand ( the one using the mouse :-) ) to explore the source code conveniently, and avoid the number selection when tagging a mulit-definition by <Left-Mouse> or <Ctrl-]>.
@@ -225,10 +265,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 308 insertions(+), 52 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Mon Mar 10 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.2
+    
     Add one feature and two user interfaces.
     You can use your own map key to force to complete one refreshing operation. And it will take a less waiting time sometimes.
     Additionally, users can set update time interval by themselves in this version.
@@ -237,10 +279,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 189 insertions(+), 89 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Thu Mar 6 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1
+    
     Inthis version(v1.1), I added the following features
     1\ add the 'SrcExplGoBack' item in popup menu when you click right button of your mouse. You will see that when you use srcexpl.vim for exploring the source code.
     2\ add an interface for users who want to map their own key for do the 'SrcExplGoBack' function.
@@ -250,9 +294,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 80 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     Wenlong Che <wenlong.che at gmail.com>
+Author:     Wenlong Che <wenlong.che@gmail.com>
 AuthorDate: Tue Mar 4 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
