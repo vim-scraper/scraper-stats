@@ -1,65 +1,29 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.0)
-Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+Author:     David Fishburn <dfishburn.vim@gmail.com>
 AuthorDate: Fri May 7 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.0
+    
     Updated the syntax files.
     Updated the indent files (Ingo Karkat).
     There were apparently some issues unzipping this file on *nix platforms related to the XML completion files.
     All files now use the unix fileformat (:set ff=unix) so there shouldn't be issues using this on *nix.
 
- autoload/xml/mxml32.vim                   |  578 +++++++++++++++
- autoload/xml/mxml32.xml                   |  875 ++++++++++++++++++++++
- autoload/xml/mxml_display.vim             |   52 ++
- autoload/xml/mxml_errors.vim              |   18 +
- autoload/xml/mxml_events.vim              |   78 ++
- autoload/xml/mxml_filters.vim             |   10 +
- autoload/xml/mxml_geom.vim                |   14 +
- autoload/xml/mxml_media.vim               |   12 +
- autoload/xml/mxml_mx.vim                  |  350 +++++++++
- autoload/xml/mxml_net.vim                 |   34 +
- autoload/xml/mxml_printing.vim            |    8 +
- autoload/xml/mxml_system.vim              |   10 +
- autoload/xml/mxml_text.vim                |   14 +
- autoload/xml/mxml_ui.vim                  |   12 +
- autoload/xml/mxml_utils.vim               |   10 +
- autoload/xml/mxml_xml.vim                 |    8 +
- "autoload\\xml\\mxml32.xml"               |  875 ----------------------
- doc/flex.txt                              | 1146 ++++++++++++++--------------
- ftplugin/actionscript.vim                 |  133 ++++
- ftplugin/mxml.vim                         |  172 +++++
- indent/actionscript.vim                   |   16 +
- indent/mxml.vim                           |  145 ++++
- "plugin/autoload\\xml\\mxml32.vim"        |  578 ---------------
- "plugin/autoload\\xml\\mxml_display.vim"  |   52 --
- "plugin/autoload\\xml\\mxml_errors.vim"   |   18 -
- "plugin/autoload\\xml\\mxml_events.vim"   |   78 --
- "plugin/autoload\\xml\\mxml_filters.vim"  |   10 -
- "plugin/autoload\\xml\\mxml_geom.vim"     |   14 -
- "plugin/autoload\\xml\\mxml_media.vim"    |   12 -
- "plugin/autoload\\xml\\mxml_mx.vim"       |  350 ---------
- "plugin/autoload\\xml\\mxml_net.vim"      |   34 -
- "plugin/autoload\\xml\\mxml_printing.vim" |    8 -
- "plugin/autoload\\xml\\mxml_system.vim"   |   10 -
- "plugin/autoload\\xml\\mxml_text.vim"     |   14 -
- "plugin/autoload\\xml\\mxml_ui.vim"       |   12 -
- "plugin/autoload\\xml\\mxml_utils.vim"    |   10 -
- "plugin/autoload\\xml\\mxml_xml.vim"      |    8 -
- "plugin/ftplugin\\actionscript.vim"       |  133 ----
- "plugin/ftplugin\\mxml.vim"               |  172 -----
- "plugin/indent\\actionscript.vim"         |   16 -
- "plugin/indent\\mxml.vim"                 |  145 ----
- "plugin/syntax\\actionscript.vim"         |  169 -----
- "plugin/syntax\\mxml.vim"                 |  402 ----------
- syntax/actionscript.vim                   |  173 +++++
- syntax/mxml.vim                           |  402 ++++++++++
- 45 files changed, 3697 insertions(+), 3693 deletions(-)
+ doc/flex.txt              | 1146 ++++++++++++++++++++++----------------------
+ ftplugin/actionscript.vim |  266 ++++++------
+ ftplugin/mxml.vim         |  344 +++++++-------
+ indent/mxml.vim           |   40 +-
+ syntax/actionscript.vim   |   10 +-
+ 5 files changed, 905 insertions(+), 901 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+Author:     David Fishburn <dfishburn.vim@gmail.com>
 AuthorDate: Wed Jan 13 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     The autoload/mxmlcomplete.vim file was missing.
     Minor update to the documentation.
 
@@ -68,36 +32,36 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 621 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     David Fishburn <dfishburn dot vim at gmail dot com>
+Author:     David Fishburn <dfishburn.vim@gmail.com>
 AuthorDate: Thu Dec 31 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
- README                                    |   41 ++
- "autoload\\xml\\mxml32.xml"               |  875 +++++++++++++++++++++++++++++
- compiler/flex.vim                         |   16 +
- compiler/mxmlc.vim                        |   69 +++
- doc/flex.txt                              |  560 ++++++++++++++++++
- "plugin/autoload\\xml\\mxml32.vim"        |  578 +++++++++++++++++++
- "plugin/autoload\\xml\\mxml_display.vim"  |   52 ++
- "plugin/autoload\\xml\\mxml_errors.vim"   |   18 +
- "plugin/autoload\\xml\\mxml_events.vim"   |   78 +++
- "plugin/autoload\\xml\\mxml_filters.vim"  |   10 +
- "plugin/autoload\\xml\\mxml_geom.vim"     |   14 +
- "plugin/autoload\\xml\\mxml_media.vim"    |   12 +
- "plugin/autoload\\xml\\mxml_mx.vim"       |  350 ++++++++++++
- "plugin/autoload\\xml\\mxml_net.vim"      |   34 ++
- "plugin/autoload\\xml\\mxml_printing.vim" |    8 +
- "plugin/autoload\\xml\\mxml_system.vim"   |   10 +
- "plugin/autoload\\xml\\mxml_text.vim"     |   14 +
- "plugin/autoload\\xml\\mxml_ui.vim"       |   12 +
- "plugin/autoload\\xml\\mxml_utils.vim"    |   10 +
- "plugin/autoload\\xml\\mxml_xml.vim"      |    8 +
- "plugin/ftplugin\\actionscript.vim"       |  133 +++++
- "plugin/ftplugin\\mxml.vim"               |  172 ++++++
- "plugin/indent\\actionscript.vim"         |   16 +
- "plugin/indent\\mxml.vim"                 |  145 +++++
- "plugin/syntax\\actionscript.vim"         |  169 ++++++
- "plugin/syntax\\mxml.vim"                 |  402 +++++++++++++
+ README                         |   41 ++
+ autoload/xml/mxml32.vim        |  578 ++++++++++++++++++++++++++
+ autoload/xml/mxml32.xml        |  875 ++++++++++++++++++++++++++++++++++++++++
+ autoload/xml/mxml_display.vim  |   52 +++
+ autoload/xml/mxml_errors.vim   |   18 +
+ autoload/xml/mxml_events.vim   |   78 ++++
+ autoload/xml/mxml_filters.vim  |   10 +
+ autoload/xml/mxml_geom.vim     |   14 +
+ autoload/xml/mxml_media.vim    |   12 +
+ autoload/xml/mxml_mx.vim       |  350 ++++++++++++++++
+ autoload/xml/mxml_net.vim      |   34 ++
+ autoload/xml/mxml_printing.vim |    8 +
+ autoload/xml/mxml_system.vim   |   10 +
+ autoload/xml/mxml_text.vim     |   14 +
+ autoload/xml/mxml_ui.vim       |   12 +
+ autoload/xml/mxml_utils.vim    |   10 +
+ autoload/xml/mxml_xml.vim      |    8 +
+ compiler/flex.vim              |   16 +
+ compiler/mxmlc.vim             |   69 ++++
+ doc/flex.txt                   |  560 +++++++++++++++++++++++++
+ ftplugin/actionscript.vim      |  133 ++++++
+ ftplugin/mxml.vim              |  172 ++++++++
+ indent/actionscript.vim        |   16 +
+ indent/mxml.vim                |  145 +++++++
+ syntax/actionscript.vim        |  169 ++++++++
+ syntax/mxml.vim                |  402 ++++++++++++++++++
  26 files changed, 3806 insertions(+), 0 deletions(-)

@@ -1,25 +1,26 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Jul 13 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     - Language patterns are stored in .../autoload/linglang/LANGUAGE.ENCODING
     - Respect encoding
     - Removed variables: g:linglang_words, g:linglang_patterns, g:linglang_filetypes
 
- autoload/linglang.vim       |  114 ----------------------------------------
- autoload/linglang/de.latin1 |   17 ++++++
- autoload/linglang/de.utf8   |   17 ++++++
- autoload/linglang/en.latin1 |   30 +++++++++++
- autoload/linglang.vim       |  122 +++++++++++++++++++++++++++++++++++++++++++
- doc/linglang.txt            |   46 +++++++++-------
- plugin/linglang.vim         |   59 ++++----------------
- 7 files changed, 224 insertions(+), 181 deletions(-)
+ autoload/linglang.vim       |   86 +++++++++++++++++++++++-------------------
+ autoload/linglang/de.latin1 |   17 ++++++++
+ autoload/linglang/de.utf8   |   17 ++++++++
+ autoload/linglang/en.latin1 |   30 +++++++++++++++
+ doc/linglang.txt            |   46 +++++++++++++----------
+ plugin/linglang.vim         |   59 ++++++-----------------------
+ 6 files changed, 149 insertions(+), 106 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Fri Jul 11 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

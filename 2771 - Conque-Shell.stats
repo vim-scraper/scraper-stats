@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2)
-Author:     Nico Raffo <nicoraffo at gmail.com>
+Author:     Nico Raffo <nicoraffo@gmail.com>
 AuthorDate: Tue Oct 12 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.2
+    
     Mostly bugfixes. New features include:
     
      * New API functions (BETA)
@@ -15,10 +17,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 824 insertions(+), 188 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Nico Raffo <nicoraffo at gmail.com>
+Author:     Nico Raffo <nicoraffo@gmail.com>
 AuthorDate: Fri May 28 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1
+    
      * Allow shell buffer to be hidden
      * Fix xterm colors
      * Allow custom key for leaving insert mode
@@ -31,18 +35,18 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 342 insertions(+), 1821 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     Nico Raffo <nicoraffo at gmail.com>
+Author:     Nico Raffo <nicoraffo@gmail.com>
 AuthorDate: Wed Feb 3 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Same as above.
 
  README.orig                             |  107 --
  autoload/conque.vim                     |  718 -------------
  autoload/conque_term.vim                | 1378 +++++++++++++++++++++++++
+ autoload/subprocess.vim                 |   41 -
  autoload/subprocess/proc_py.vim         |  386 -------
  autoload/subprocess/shell_translate.vim |  457 ---------
- autoload/subprocess.vim                 |   41 -
  conque_1.0/conque_term.vba              | 1702 +++++++++++++++++++++++++++++++
  doc/conque_term.txt                     |  156 +++
  doc/license.txt                         |   23 -
@@ -53,19 +57,20 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  13 files changed, 3393 insertions(+), 1874 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
-Author:     Nico Raffo <nicoraffo at gmail.com>
+Author:     Nico Raffo <nicoraffo@gmail.com>
 AuthorDate: Fri Dec 18 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.6
+    
      * Fix GVim errors with non-english locale
      * No functional changes
 
  README.orig                                        |  107 +++++
  autoload/conque.vim                                |    7 +-
- autoload/subprocess.vim                            |   41 --
+ autoload/subprocess.vim                            |    4 +-
  autoload/subprocess/proc_py.vim                    |  386 +++++++++++++++++
  autoload/subprocess/shell_translate.vim            |  457 ++++++++++++++++++++
- autoload/subprocess.vim                            |   41 ++
  conque_0.5/README                                  |  112 -----
  conque_0.5/autoload/subprocess/proc_py.vim         |  369 ----------------
  conque_0.5/autoload/subprocess/shell_translate.vim |  456 -------------------
@@ -73,13 +78,15 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  doc/license.txt                                    |   23 +
  plugin/conque.vim                                  |    4 +-
  syntax/conque.vim                                  |    4 +-
- 13 files changed, 1023 insertions(+), 1007 deletions(-)
+ 12 files changed, 984 insertions(+), 968 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
-Author:     Nico Raffo <nicoraffo at gmail.com>
+Author:     Nico Raffo <nicoraffo@gmail.com>
 AuthorDate: Wed Dec 2 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.5
+    
      * Various performance enhancements and bugfixes. * Rewritten escape sequence processing
 
  autoload/conque.vim                                |  198 +++++-----
@@ -97,10 +104,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  12 files changed, 1065 insertions(+), 951 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
-Author:     Nico Raffo <nicoraffo at gmail.com>
+Author:     Nico Raffo <nicoraffo@gmail.com>
 AuthorDate: Fri Oct 30 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4
+    
         * Improved history and tab completion
         * Fix escape sequence formatting and improve highlighting
         * Send selected text to shell from any buffer
@@ -122,10 +131,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  12 files changed, 1195 insertions(+), 964 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     Nico Raffo <nicoraffo at gmail.com>
+Author:     Nico Raffo <nicoraffo@gmail.com>
 AuthorDate: Wed Oct 14 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3
+    
      * Apply escape sequence coloring to output, e.g. ls --color
      * Clean up syntax files for portability
      * Fix several Vim 7.1 bugs
@@ -146,10 +157,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  11 files changed, 736 insertions(+), 460 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Nico Raffo <nicoraffo at gmail.com>
+Author:     Nico Raffo <nicoraffo@gmail.com>
 AuthorDate: Fri Oct 2 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     * New subprocess management in Python instead of C
     * Stronger support in OS X and Windows
     * Faster/less buggy tab completion
@@ -183,9 +196,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  25 files changed, 808 insertions(+), 3191 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     Nico Raffo <nicoraffo at gmail.com>
+Author:     Nico Raffo <nicoraffo@gmail.com>
 AuthorDate: Thu Sep 3 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
