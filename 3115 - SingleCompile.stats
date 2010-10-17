@@ -1,7 +1,7 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0.4)
-Author:     H Xu <xuhdev at gmail.com>
+Author:     H Xu <xuhdev@gmail.com>
 AuthorDate: Wed Oct 6 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     fix some interpreting language problems on unix.
 
@@ -11,10 +11,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 27 insertions(+), 19 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.3)
-Author:     H Xu <xuhdev at gmail.com>
+Author:     H Xu <xuhdev@gmail.com>
 AuthorDate: Tue Oct 5 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0.3
+    
     fix bugs when the file path contains spaces(reported by Haoran) and several other bugs. Improve the document.
 
  autoload/SingleCompile.vim |  100 ++++++++++++++++++++++++--------------------
@@ -23,9 +25,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 95 insertions(+), 64 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.2)
-Author:     H Xu <xuhdev at gmail.com>
+Author:     H Xu <xuhdev@gmail.com>
 AuthorDate: Sat Oct 2 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     several bug fixes and some built-in template improvement.
 
@@ -35,9 +37,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 95 insertions(+), 69 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.1)
-Author:     H Xu <xuhdev at gmail.com>
+Author:     H Xu <xuhdev@gmail.com>
 AuthorDate: Fri Oct 1 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Improve the menus. Fix a compiler template bug.
 
@@ -47,22 +49,23 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 142 insertions(+), 125 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     H Xu <xuhdev at gmail.com>
+Author:     H Xu <xuhdev@gmail.com>
 AuthorDate: Fri Oct 1 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     Add multi compiler support, compiler autodetection support(although it's still not powerful enough), fortran built-in support.
 
- README                     |  106 ++++++++++--
  autoload/SingleCompile.vim |  394 ++++++++++++++++++++++++++++++++++++++++----
  doc/SingleCompile.txt      |  371 +++++++++++++++++++++++++++--------------
  plugin/SingleCompile.vim   |   99 +-----------
- 4 files changed, 702 insertions(+), 268 deletions(-)
+ 3 files changed, 611 insertions(+), 253 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
-Author:     H Xu <xuhdev at gmail.com>
+Author:     H Xu <xuhdev@gmail.com>
 AuthorDate: Fri Sep 3 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fix a minor document bug.
 
@@ -72,9 +75,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 10 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
-Author:     H Xu <xuhdev at gmail.com>
+Author:     H Xu <xuhdev@gmail.com>
 AuthorDate: Fri Aug 27 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Add menu support, add perl, ruby, lua built-in support, fix some bugs.
 
@@ -84,64 +87,14 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 120 insertions(+), 64 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     H Xu <xuhdev at gmail.com>
+Author:     H Xu <xuhdev@gmail.com>
 AuthorDate: Sun Aug 15 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Make quickfix feature works for interpreting language in UNIX/Linux.
 
- autoload/SingleCompile.vim |   40 ++++++++++++++++++++++++++++++++++++----
- doc/SingleCompile.txt      |    4 ++--
- plugin/SingleCompile.vim   |   12 ++++++------
- 3 files changed, 44 insertions(+), 12 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     H Xu <xuhdev at gmail.com>
-AuthorDate: Tue Aug 3 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
-
-    Add cmake built-in support and fix a minor bug: SingleCompile should not save the source file when it's not modified.
-
- autoload/SingleCompile.vim |   38 +++++++++-----
- doc/SingleCompile.txt      |  119 +++++++++++++++++++++++++++++++++++++++----
- plugin/SingleCompile.vim   |   19 +++----
- 3 files changed, 141 insertions(+), 35 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
-Author:     H Xu <xuhdev at gmail.com>
-AuthorDate: Mon Jul 5 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
-
-    add python and Makefile built-in support.
-
- autoload/SingleCompile.vim |    2 +-
- doc/SingleCompile.txt      |   25 +++++++++++++++++++++----
- plugin/SingleCompile.vim   |   15 +++++++++++++--
- 3 files changed, 35 insertions(+), 7 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/0.7.2)
-Author:     H Xu <xuhdev at gmail.com>
-AuthorDate: Wed Jun 30 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
-
-    fix a bug: when dealing with interpreting languages and quickfix is enabled for this plugin, nothing will be shown on the screen.
-    set g:SingleCompile_usedialog to 0 as default from now on.
-    add a quickfix check.
-
- autoload/SingleCompile.vim |   96 ++++++++++++++++++++++++++++++-----------
- doc/SingleCompile.txt      |   59 ++++++++++++++++++++-----
- plugin/SingleCompile.vim   |  103 ++++++++++++++++++++++----------------------
- 3 files changed, 169 insertions(+), 89 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
-Author:     H Xu <xuhdev at gmail.com>
-AuthorDate: Tue Jun 15 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
-
-    improve the structure of the plugin
-
- README                     |   35 ++++++++++
- autoload/SingleCompile.vim |  110 ++++++++++++++++++++++++++++++++
- doc/SingleCompile.txt      |  151 ++++++++++++++++++++++++++++++++++++++++++++
- plugin/SingleCompile.vim   |  109 +++++++++++++++++++++++++++++++
- 4 files changed, 405 insertions(+), 0 deletions(-)
+ README                     |  111 ++++++++++++++++
+ autoload/SingleCompile.vim |  196 ++++++++++++++++++++++++++++
+ doc/SingleCompile.txt      |  302 ++++++++++++++++++++++++++++++++++++++++++++
+ plugin/SingleCompile.vim   |  118 +++++++++++++++++
+ 4 files changed, 727 insertions(+), 0 deletions(-)

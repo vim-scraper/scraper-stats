@@ -1,7 +1,7 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/7.7.2)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Tue Oct 12 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     See :h atp-news (:DefiSearch fixed, but also more)
 
@@ -20,9 +20,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  12 files changed, 404 insertions(+), 285 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.7.1)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Thu Oct 7 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     A bug fixed reported by B. Garcia Carreras.
 
@@ -30,10 +30,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 3 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.7)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Thu Oct 7 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 7.7
+    
     Licence: GPL v3+.
     See :h atp-news
 
@@ -51,13 +53,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  11 files changed, 323 insertions(+), 83 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.6.1)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Thu Sep 30 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Read :h atp-news.
 
- README                                    |   11 +-
  autoload/atplib.vim                       |  114 +++++--
  colors/coots-beauty-256.vim               |   14 +-
  doc/automatic-tex-plugin.txt              |  287 +++++++++++++----
@@ -87,16 +88,15 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  syntax/labels_atp.vim                     |    9 +-
  syntax/log_atp.vim                        |    7 +-
  syntax/toc_atp.vim                        |    9 +-
- 30 files changed, 1991 insertions(+), 903 deletions(-)
+ 29 files changed, 1983 insertions(+), 900 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.5.3)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Tue Sep 14 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     * See :h atp-news
 
- README                                   |   35 +-
  autoload/atplib.vim                      |  224 ++++---
  colors/coots-beauty-256.vim              |    9 +-
  doc/automatic-tex-plugin.txt             | 1057 ++++++++++++++++--------------
@@ -115,12 +115,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  ftplugin/tex_atp.vim                     |   77 ++-
  ftplugin/toc_atp.vim                     |  109 ++--
  syntax/labels_atp.vim                    |    4 +-
- 19 files changed, 2068 insertions(+), 1430 deletions(-)
+ 18 files changed, 2060 insertions(+), 1403 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.5.2)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Fri Sep 3 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     A bug fixed in SyncTex (log file tool).
 
@@ -129,9 +129,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 42 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.5.1)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Fri Sep 3 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Bug fixes.
 
@@ -142,10 +142,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 29 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.5)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Thu Sep 2 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 7.5
+    
     See help file for release notes (:h atp-news). There are several new features!
 
  autoload/atplib.vim                      |  775 +++++++++++------
@@ -167,10 +169,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  16 files changed, 2621 insertions(+), 1190 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.4.1)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Mon Aug 23 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 7.4.1
+    
     * A bug fixed in :BibChoose command
     * and in tex_atp.vim file
 
@@ -185,10 +189,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  8 files changed, 176 insertions(+), 139 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.4)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Mon Aug 23 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 7.4
+    
     * <NEW FEATURE> TexAlign wrapper command around Align command (vimscript#884) see :h atp-news
     * TeXDoc -> TexDoc
     * History feature reviewed, now every file has separate history file (like for vim view files) see :h atp-news
@@ -208,10 +214,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  12 files changed, 738 insertions(+), 526 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.3.9)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Thu Aug 19 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 7.3.9
+    
     * Some fixes in GotoFile command and function which generates tree of project files (hopefully it will also work in plaintex files, but this is not tested).
     * Now the history feature stores only two variables b:atp_MainFile and atp_History. Storing more in one file was not the best idea (shortly time of loading history becomes quite big), nice solution for this is to make history file per buffer (like view files, which unfortunately don't have option to store local buffer variables).
 
@@ -223,9 +231,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 63 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.3.8)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Thu Aug 19 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     * a small fix.
 
@@ -243,10 +251,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  11 files changed, 299 insertions(+), 61 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.3.7)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Tue Aug 17 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 7.3.7
+    
     * <New Feature> Highlight for notification message (that TeX is processing the file) in status line (see :h atp-news).
     * Some fixes.
 
@@ -263,9 +273,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  10 files changed, 502 insertions(+), 220 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.3.6)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Sun Aug 15 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     * Some fixes in the new history feature. Read :h atp-news for changes.
 
@@ -280,10 +290,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  8 files changed, 99 insertions(+), 48 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.3.5)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Sat Aug 14 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 7.3.5
+    
      :Labels, map \L supports project files.
     * :TOC works in project files (but only if the toc lines are not inside a included file, make this better this is in my plans)
     * Completion for labels matches labels without pretended '^' in the beginning of the pattern.
@@ -316,10 +328,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  16 files changed, 2116 insertions(+), 1308 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.3.3)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Sun Aug 8 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 7.3.3
+    
     * The command :EditInputFile == :GotoFile and they both work in the same way as nmap gf (with small difference that they do not look what is under the cursor)
     * Small fixes.
 
@@ -342,10 +356,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  16 files changed, 534 insertions(+), 754 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.3.2)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Fri Aug 6 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 7.3.2
+    
      <NEW FEATURE> sync okular viewer with tex source, read :h atp-viewers-okular.
      * b:atp_ViewerOption removed, read: :h atp-Viewer_Option
      * and some bug fixes and small changes (especially in editing LaTeX project files)
@@ -367,10 +383,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  13 files changed, 972 insertions(+), 222 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.3.1)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Thu Aug 5 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 7.3.1
+    
      <NEW FEATURE> nmap gf, see ':h atp-news'.
      <NEW FEATURE> read ':h atp-viewers-okular' and learn how to sync gvim with okular.
     * Some changes in :S command, see ':h atp-S'.
@@ -392,10 +410,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  11 files changed, 780 insertions(+), 297 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.3)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Mon Aug 2 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 7.3
+    
     * <New Feature> MakeLatex[!] to make latex documents (bibliographies, index, table of contents, lists of: tables, figures, theorems [using ntheorem package]. See :h atp-news.
     * <New Feature> :S command to search in project files, which works like / command to search patterns. Supports almost all searching flags of the search() function, for example b (backward), wW (wrap/nowrap around the end of file), c (match at the cursor position). This allows for finding next '\input{' phrase in the source tree.
     * Delete[!] Bang [!] added, with bang delets also the output file (pdf or dvi)
@@ -425,10 +445,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  16 files changed, 1732 insertions(+), 498 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.2.1)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Mon Jul 26 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 7.2.1
+    
     * <New Feature> ToC allows to remove, paste section see ':h atp-news' for further info.
     * <New Feature> Completion of labels by numbers (from output file) added (see ':h atp-news') how to use it. The compiler is copying the aux file to the b:atp_OutDir iff the compilation was without errors /it is better this way for the completion/ Supported classes: article, amsart, book, report, memoir (probably also others), if you run into problems, just send an email with the class name.
     * <New Feature> Closing environemnts supports $$:$$ pairs (if filetype=="plaintex" or b:atp_TexFlavour=="plaintex")
@@ -479,9 +501,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  17 files changed, 2109 insertions(+), 1588 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.1.2)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Wed Jul 14 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     * ShowErrors o
 
@@ -502,9 +524,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  14 files changed, 861 insertions(+), 457 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.1.1)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Fri Jul 9 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     * A small bug fix.
 
@@ -512,10 +534,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 11 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.1)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Fri Jul 9 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 7.1
+    
     Please READ release notes for version 7.0
     * revisions in TabCompletion function
     * revisions in CloseLastEnvironment function    /they both use faster code/
@@ -531,10 +555,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 390 insertions(+), 412 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Tue Jul 6 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 7.0
+    
     * THE PLUGIN HAS A NEW LAYOUT (under your .vim directory! If you DO NOT WAN'T TO MESS YOUR .VIMRC directory, first use the old vimball file AutomaticTexPlugin.vba /version =< 6.7/ and the command RmVimball and then install the new version).
     * with the new version you can use $HOME/.atprc.vim file to set the variables (useful for the local-buffer variables).
     * TeXdoc command, mapped to <F1> with nice completion (which is using texdoc configuration files (texdoc.cnf)), you can also pass command line options to texdoc (for example ':TeXDoc -l -A lshort'), if run without any options prints the info message of texdoc (like texdoc or texdoc -h in the command line).
@@ -573,19 +599,23 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  22 files changed, 6598 insertions(+), 5701 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.7)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Mon Jun 28 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.7
+    
     * new CALL BACK mechanism as suggest by D.Munger (many thanks!)
     * CALL BACK and status line notification are now on by default - if (pdf)latex is working (pdf)latex is written in the status line together with number of insatnces (the value of b:atp_running variable).
     * local buffer variable names (:help b:) are chenged. If atp detects an old variable set by you it will ask you to change its name (and copy its value to the new variable!).
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.6)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Sat Jun 26 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.6
+    
     * a bug fixed in intedation file
     * tikz keyword completion adds unclosed bracket to the popup menu
 
@@ -595,10 +625,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 55 insertions(+), 38 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.5)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Sat Jun 26 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.5
+    
     see the DOCUMENTATION for more on new features:
     * FontPreview and FontSearch commands allow for previewing many font defition files at once.
     * new WrapSelection function, vmaps: \bf, \it, etc, but also some of \begin{}:\end{} pairs
@@ -618,10 +650,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 2146 insertions(+), 1080 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.4)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Fri Jun 18 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.4
+    
     * OmniCompletion for \ref and \eqref: you can complete either part of the label or the number of the environment/equation in your output file! by D.Munger (LatexBox plugin).
     * some other small changes in OmniCompletion by D.Munger.
     * small correction in main compiler function: if called by ViewOutput, when the output file did not exists, it will load the file regardless there were errors during compilation.
@@ -643,10 +677,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 1516 insertions(+), 1119 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.3)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Mon Jun 14 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.3
+    
     * Two new completion methods: for \documentclass and for \bibliographystyle.  They found all the files (classes, bib styles files) accessible in your tex distribution.
     * OmniCompletion written by D.Munger (the author of Latex-Box plugin) (omnicompletion for \cite{} works smoothly in gvim! is fast even with big bib data bases. In the popup menu shows the author and the title entries)
     * imap: ]e puts \end{} ]u puts \begin{enumerate}
@@ -665,10 +701,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 4001 insertions(+), 2814 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Sun Jun 6 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.2
+    
     * LocalCommands and DefiSearch functions both by default search for '\def' and '\newcommands' only up to first appearance of \begin{document}. A bug fixed in search function which makes both function work twice as fast.
     * BibSearch: If there are no flags given but only keyword flags BibSearch uses the default g:defaultbibflags.
     * BibSearch: speed up: search function is up to 5 times faster, when no arguments are supplied (which for example when completing '\cite{'). The function which shows results is now 3 times faster. For a file which has ~1700 bib fields it takes ~10 seconds to show all results.
@@ -682,9 +720,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 855 insertions(+), 536 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.1.1)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Wed Jun 2 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     * Fix of printing command ':SshPrint'.
 
@@ -692,10 +730,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 3 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.1)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Wed Jun 2 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.1
+    
     * Completion for keywords of tikz package added.
     * b:atp_local_completion=0 -- do not search for locally defined commands and environments, =1 search for them after first completion (default), =2 search at starup.
     * LocaCommands -- commands to update locally defined commands and environments.
@@ -706,10 +746,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 313 insertions(+), 79 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Mon May 31 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 6.0
+    
     * NEW FEATURE: FontSearch: finds fd files in your system and lists them, press <Enter> to open the fd file, <Tab> to list the fonts defined, p to PREVIEW the fonts, P to preview the fonts and open buffer with the tex source (useful to see errors using ShowErrors command), in all 3 kinds of windows (fd list,fd file, tex source) q deletes the buffer (so that your lists of buffers doesn't become too long, if you want the buffer to remain in the list use ':q'. Some might not work, but this is on the tex side (usually because lack of some other kings of files: encoding, font metrics, etc...). You can search CTAN archive to find them.
     * Final changes to completion (check the description of the algorithm of closing environments :h atp-completion-env)
     * Now the doc file appears in local additions (:h local-additions).
@@ -722,10 +764,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 1444 insertions(+), 520 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/5.0)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Mon May 24 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 5.0
+    
     * Change in the compilation algorithm: now it uses temporary directories rather than temporary files, what allows for externalisation in tikz (thanks to D.Munger for reporting). The jobname switch of tex is now not used (only -output-directory).
     * Tab completion supports CLOSING ENVIRONMENTS: \\begin{}\\end{} and mathematical ones: \\(:\\), \\[:\\] !!! Environments may be NESTED. See &#039:h atp-completion&#039. There are two modes of completion: expert mode (mapped to <Tab>) and non expert mode (mapped to  <Shift>+<Tab>), the first with fewer matches of commands, the second if you are searching for some command.  Completion of commands checks if you are in math mode (only if entire document is written without $:$ and $$:$$ math modes, as it is hard to implement such a feature for this opening/closing pairs.). You can switch it on/off in the menu. Completion supports: commands, inline_math (automatically closes &#039\\(&#039), displayed_math (closes &#039\\[&#039), package names, tikz libraries (for the tikz package), environment names, close, labels, bibitems (for \\cite and \\nocite commands), environments, names of input files (searches for file names under b:outdir and g:texmfdir), bibfiles.
     * Wrap selection due to D. Munger (thanks!).
@@ -740,10 +784,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 1805 insertions(+), 324 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.91)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Mon May 17 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.91
+    
     * Tab completion supports \bibitems (even if there are bibliographies across different input files).
 
  doc/automatic-tex-plugin.txt |   35 +-
@@ -752,10 +798,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 710 insertions(+), 88 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.9)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Sun May 16 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.9
+    
     * Tab -- intelligent completion for environments, commands, package names, labels and citations (still not in doc). If you want to use tab for its usual role put 'let g:atp_no_tab_maps = 1', into your vimrc file. Then the completion is mapped to F7. Also completes \begin{env} adding \end{env} in next line.
     * If you use amsmath package then the completion supports extra commands and environments defined in this package. In case you use a document class which silently loads the package you can set the variable g:atp_amsmath = 1 in your vimrc file.
     * If you have your own commands for which you want to add completion you can easily add them.
@@ -765,10 +813,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     * and other small changes and bug fixes.
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.6)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Fri May 7 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.6
+    
     * Files which name have white spaces are properly handled.
     * nice colors for diff mode in gui in terminal versions.
     * DefiSearch returns 'Definition not found' if it is not found.
@@ -780,10 +830,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 114 insertions(+), 49 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.5)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Mon Apr 26 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.5
+    
     * Corrections in Inverse/Reverse Searching for dvi.
        See the doc ':h atp-viewers-xdvi' for the functions.
     * ShowErrors works better (warning messages about references,
@@ -799,9 +851,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 157 insertions(+), 62 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.4)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Tue Apr 6 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     two small fixes, thanks to a user :) .
 
@@ -812,9 +864,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 259 insertions(+), 157 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.3)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Wed Mar 17 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     * another small fixes
 
@@ -822,9 +874,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 212 insertions(+), 197 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Wed Mar 17 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     * small fixes
 
@@ -832,10 +884,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 92 insertions(+), 35 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Mon Mar 15 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.1
+    
     * NEnv, PEnv - moving to next/previous environment (which is supplied as a command agrument [completion])
     * support for projects: when edditing an input file the g:mainfile will be processed by tex compiler, the value of g:mainfile is set automatically, but you have to first open the main project file.
     * EditInputFile has completion for the first argument which an imput file to open, the second argument is now the command for opening a buffer ('edit','split','vsplit', the default is 'edit') and the third one is the buffer name (default = current buffer)
@@ -858,10 +912,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 958 insertions(+), 417 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Mon Mar 1 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4
+    
     * TOC shows the short name of sections if it is non empty.
     * TOC, Labels, and BibSearch uses split/vsplit (instead of new/vnew) what increase the spead.
     * new commands: ShowErrors and SetErrors (see ':h atp-ShowErrors')
@@ -890,10 +946,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  7 files changed, 1302 insertions(+), 661 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Fri Feb 12 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.2
+    
     Two new functions:
         FindInputFiles
         EditInputFile
@@ -906,10 +964,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 485 insertions(+), 242 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Tue Feb 9 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.1
+    
     ToC (table of contents) supports multiple opened files. And allows to switch between buffers or windows.
 
  colors/coots-beauty-256.vim  |    2 +-
@@ -923,10 +983,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  8 files changed, 721 insertions(+), 384 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Thu Feb 4 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3
+    
     This version has several fixes, plus several new features:
     
     1) BibSearch opens now a new window, a syntax file for the results is provided, which is based on syntax file for bib files (see :h atp-bibsearch-highlight)
@@ -957,9 +1019,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  9 files changed, 985 insertions(+), 335 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Mon Feb 1 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     a small fix: the option g:vertical is now working as desired.
 
@@ -967,10 +1029,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 5 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Mon Feb 1 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2
+    
     I added a powerful functions to search in bibliographic files (*.bib) for entries which match a vim regexp. One choose which entries are shown (articles,books, etc..., but also author,title,etc...). The function can easily copy the bibfield key to a register or directly to the tex source file.
     
     I also supply a syntax file for output of this search function which is a small modification of the standard syntax file for bib files.
@@ -982,9 +1046,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 1555 insertions(+), 148 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Tue Jan 26 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     GetLatestScript support added.
 
@@ -992,14 +1056,14 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 3 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1)
-Author:     Marcin Szamotulski <mszamot at gmail.com>
+Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Tue Jan 26 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
- README                       |   99 ++
+ README                       |   85 ++
  doc/automatic-tex-plugin.txt |  561 ++++++++++
  doc/latexhelp.txt            | 2430 ++++++++++++++++++++++++++++++++++++++++++
  ftplugin/tex_atp.vim         |  659 ++++++++++++
- 4 files changed, 3749 insertions(+), 0 deletions(-)
+ 4 files changed, 3735 insertions(+), 0 deletions(-)

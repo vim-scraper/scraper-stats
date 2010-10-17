@@ -1,11 +1,12 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.0)
-Author:     Adam Lowe <adam at adamlowe.me>
+Author:     Adam Lowe <adam@adamlowe.me>
 AuthorDate: Tue Sep 7 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.0.0
+    
     Add auto indenting, updated macros to work anywhere in a story, and story folding.
 
- README                  |   89 +++++++++++++++++++++++++++++----------------
  ftdetect/slurper.vim    |    3 +-
  ftplugin/slurper.vim    |   88 +++++++++++++++++++++++++++------------------
  indent/slurper.vim      |   24 ++++++++++++
@@ -13,12 +14,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  vim-slurper/._.DS_Store |  Bin 82 -> 0 bytes
  vim-slurper/README.md   |   92 +++++++++++++++++++++++++++++++++++++++++++++++
  vim-slurper/README.rdoc |   75 --------------------------------------
- 8 files changed, 228 insertions(+), 143 deletions(-)
+ 7 files changed, 171 insertions(+), 111 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
-Author:     Adam Lowe <adam at adamlowe.me>
+Author:     Adam Lowe <adam@adamlowe.me>
 AuthorDate: Sat Mar 6 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Force 2 spaces for tab in .slurper files
 
@@ -28,10 +29,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 5 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.0)
-Author:     Adam Lowe <adam at adamlowe.me>
+Author:     Adam Lowe <adam@adamlowe.me>
 AuthorDate: Fri Feb 5 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3.0
+    
     Support chores, features, releases and bugs. Updated story format to match version 0.3.0 of the slurper gem.
 
  ._vim-slurper                                      |  Bin 161 -> 0 bytes
@@ -132,9 +135,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  95 files changed, 101 insertions(+), 537 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
-Author:     Adam Lowe <adam at adamlowe.me>
+Author:     Adam Lowe <adam@adamlowe.me>
 AuthorDate: Sun Jan 17 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Correct indenting issue for labels.
 
@@ -235,9 +238,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  94 files changed, 505 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.0)
-Author:     Adam Lowe <adam at adamlowe.me>
+Author:     Adam Lowe <adam@adamlowe.me>
 AuthorDate: Sat Dec 26 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added syntax highlighting and updated key maps to be less obtrusive.
 
@@ -252,17 +255,17 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  8 files changed, 115 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1.0)
-Author:     Adam Lowe <adam at adamlowe.me>
+Author:     Adam Lowe <adam@adamlowe.me>
 AuthorDate: Fri Dec 18 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
- README               |   58 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ README               |   83 ++++++++++++++++++++++++++++++++++++++++++++++++++
  ftdetect/.DS_Store   |  Bin 0 -> 6148 bytes
  ftdetect/._.DS_Store |  Bin 0 -> 82 bytes
  ftdetect/slurper.vim |    2 +
  ftplugin/.DS_Store   |  Bin 0 -> 6148 bytes
  ftplugin/._.DS_Store |  Bin 0 -> 82 bytes
- ftplugin/slurper.vim |   34 +++++++++++++++++++++++++++++
- 7 files changed, 94 insertions(+), 0 deletions(-)
+ ftplugin/slurper.vim |   34 ++++++++++++++++++++
+ 7 files changed, 119 insertions(+), 0 deletions(-)

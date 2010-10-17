@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.01)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Tue Oct 12 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.01
+    
     Add configuration option g:pyflakes_use_quickfix. Add
     
     let g:pyflakes_use_quickfix = 0
@@ -11,17 +13,18 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     
     http://github.com/kevinw/pyflakes-vim/commit/10fb7c382ce94470ae47848d1ac84925381c036f
 
- README                |    4 +---
  README.rst            |    9 +++++++++
  ftplugin/pyflakes.vim |   24 ++++++++++++++++--------
  pyflakes/README.rst   |    2 +-
- 4 files changed, 27 insertions(+), 12 deletions(-)
+ 3 files changed, 26 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Wed Jul 21 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     Add quickfix support! Thanks Phui Hock.
     
     You can now use quickfix commands like :cc to jump to errors.
@@ -34,10 +37,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 186 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.64)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Wed Jul 7 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.64
+    
     Do not decode source code encoding line and the lines preceed it, if found.
     
     Thanks phuihock.
@@ -48,10 +53,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 15 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.63)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Mon Jun 21 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.63
+    
     Don't warn about duplicate functions with property decorators @prop.setter and @prop.deleter.
 
  README.rst                   |    2 ++
@@ -59,9 +66,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 16 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.62)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Thu Jun 17 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Minor 2.5 compatibility fix.
 
@@ -69,9 +76,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.61)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Wed Jun 16 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Don't miss class decorators when walking the AST.
 
@@ -79,10 +86,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 8 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.60)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Thu Apr 1 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.60
+    
     Show a clear error message if vim was compiled without Python, or with a version of Python older than 2.5.
     
     http://github.com/kevinw/pyflakes-vim/commit/5eaf3bc1d7508da2994657c4f77458f4064d26e2
@@ -91,10 +100,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 14 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.59)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Thu Mar 4 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.59
+    
     Minor fix for an exception when opening files.
     
     http://github.com/kevinw/pyflakes-vim/commit/783b3aa3de1fddb082f0810300bac5a831a97941
@@ -104,9 +115,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 12 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.58)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Mon Jan 4 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fix for 1.57 file encoding exception.
 
@@ -115,10 +126,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 4 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.57)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Tue Dec 29 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.57
+    
     Fixes http://github.com/kevinw/pyflakes-vim/issues/#issue/7 and http://github.com/kevinw/pyflakes-vim/issues/#issue/8
     
     Files in unusual encodings should open correctly now.
@@ -129,10 +142,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 4 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.56)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Tue Oct 13 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.56
+    
     http://github.com/kevinw/pyflakes-vim/commit/f12c0881f83964e35b2d3ad2299d111cec53dd9f
     
     Fixes http://github.com/kevinw/pyflakes/issues#issue/1
@@ -146,10 +161,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 5 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.55)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Thu Sep 17 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.55
+    
     http://github.com/kevinw/pyflakes-vim/commit/083bc2e65649a9cf10a7c1bcd22151a4083ddeb7
     
     Highlight the whole line for SyntaxErrors.
@@ -158,10 +175,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Wed Jul 8 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.5
+    
     http://github.com/kevinw/pyflakes-vim/commit/b8f2f366b1322a5ffefede30ddb3339102d2f28c
     
     Ignore stderr during ast.parse, since it will otherwise show as VIM error
@@ -178,10 +197,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 27 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Wed May 6 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.4
+    
     http://github.com/kevinw/pyflakes-vim/commit/6ec1fbbce32876e315b370409ca55c97d232d125
     
     Restrict dd, dw, etc mappings to the local Python buffer.
@@ -192,10 +213,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 30 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Tue Apr 21 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.3
+    
     Some fixes based on suggestions from Brandon Low:
     
      - changed highlight call from hard coding a curly underline to linking with the "SpellBad" style. This is more friendly vim on terminals. If you'd like the old brighter orange undercurl from previous versions, add the following to your .vimrc:
@@ -211,10 +234,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 21 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Thu Mar 12 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.2
+    
     - Include compatibility fixes for Python 2.6's _ast changes in visit_FunctionDef and for visit_ExceptHandler. Thanks Herve Cauwelier.
     - Include pyflakes.scripts in the "packages" option for setup. Thanks Herve Cauwelier.
     - Fix for names incorrectly marked undefined in nested list comprehensions.
@@ -230,23 +255,25 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 67 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Wed Nov 19 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1
+    
     Updated pyflakes/checker.py to fix AST fixes from http://github.com/kevinw/pyflakes/commit/bdc1acde85df3bf0a8f5ef1ec26e9121667c9d0a
 
  pyflakes/pyflakes/checker.py |   27 ++++++++++++++++-----------
  1 files changed, 16 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     @kevinwatters   <kevin.watters at gmail.com>
+Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Sat Nov 15 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
- README                                         |   29 ++
+ README                                         |   27 ++
  README.rst                                     |   58 +++
  ftplugin/pyflakes.vim                          |  159 ++++++++
  pyflakes/LICENSE                               |   21 +
@@ -260,4 +287,4 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  pyflakes/pyflakes/test/test_other.py           |  227 +++++++++++
  pyflakes/pyflakes/test/test_script.py          |   48 +++
  pyflakes/pyflakes/test/test_undefined_names.py |  182 +++++++++
- 14 files changed, 2103 insertions(+), 0 deletions(-)
+ 14 files changed, 2101 insertions(+), 0 deletions(-)

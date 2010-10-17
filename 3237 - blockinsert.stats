@@ -1,7 +1,7 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.1)
-Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+Author:     Dimitar Dimitrov <mitkofr@yahoo.fr>
 AuthorDate: Mon Sep 20 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     A single line is a valid range now
 
@@ -9,10 +9,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
-Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+Author:     Dimitar Dimitrov <mitkofr@yahoo.fr>
 AuthorDate: Sat Sep 18 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.0
+    
     Deletion:
         made it work correctly in visual block mode
         repeating it doesn't require to re-enter empty text anymore
@@ -31,16 +33,17 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     Renamed the commands to begin with Block... & created Block[Q]BothSame.
     Updated the help file.
 
- README                 |   30 ++++++--
  doc/blockinsert.txt    |   78 ++++++++++++------
  plugin/blockinsert.vim |  215 ++++++++++++++++++++++++++++++++++++------------
- 3 files changed, 241 insertions(+), 82 deletions(-)
+ 2 files changed, 217 insertions(+), 76 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
-Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+Author:     Dimitar Dimitrov <mitkofr@yahoo.fr>
 AuthorDate: Fri Sep 17 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.2
+    
     The mappings can now operate on a visual block area defined anywhere.
     The . (dot) is able to repeat that action now.
 
@@ -48,9 +51,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 86 insertions(+), 73 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
-Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+Author:     Dimitar Dimitrov <mitkofr@yahoo.fr>
 AuthorDate: Thu Sep 16 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Corrected a small regression which made the use of . (dot) impossible.
 
@@ -58,10 +61,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 5 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
-Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+Author:     Dimitar Dimitrov <mitkofr@yahoo.fr>
 AuthorDate: Thu Sep 16 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.0
+    
     New feature:
     
     Added the possibility to define the boundaries of the text acted upon by drawing a visual block selection.
@@ -87,16 +92,17 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     todo: Add the possibility to repeat this action by typing . (dot)
     todo: Create \[[, \]], \q[[, \q]] for cases where we want the same text on both ends.
 
- README                 |   23 ++++++++++++-
  doc/blockinsert.txt    |   21 +++++++++++-
  plugin/blockinsert.vim |   86 +++++++++++++++++++++++++++++++-----------------
- 3 files changed, 98 insertions(+), 32 deletions(-)
+ 2 files changed, 76 insertions(+), 31 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
-Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+Author:     Dimitar Dimitrov <mitkofr@yahoo.fr>
 AuthorDate: Wed Sep 15 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.1
+    
     2 bug fixes:
     
     - If a count was used with \qi, \qa or \q[], it wasn't interpreted correctly.
@@ -106,10 +112,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 9 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+Author:     Dimitar Dimitrov <mitkofr@yahoo.fr>
 AuthorDate: Tue Sep 14 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     Improved integration with the 'repeat' plugin.
     
     The inserted / appended text is now remembered,
@@ -120,10 +128,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 112 insertions(+), 70 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+Author:     Dimitar Dimitrov <mitkofr@yahoo.fr>
 AuthorDate: Mon Sep 13 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1
+    
     Integrated blockinsert with Tim Pope's repeat plugin.
     It is now possible to repeat blockinsert mappings by pressing . (dot)
     
@@ -136,13 +146,13 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 13 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     Dimitar Dimitrov <mitkofr at yahoo.fr>
+Author:     Dimitar Dimitrov <mitkofr@yahoo.fr>
 AuthorDate: Mon Sep 13 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
- README                 |   82 ++++++++++++++++++++++++++
+ README                 |  121 ++++++++++++++++++++++++++++++++++++++
  doc/blockinsert.txt    |  140 +++++++++++++++++++++++++++++++++++++++++++
  plugin/blockinsert.vim |  153 ++++++++++++++++++++++++++++++++++++++++++++++++
- 3 files changed, 375 insertions(+), 0 deletions(-)
+ 3 files changed, 414 insertions(+), 0 deletions(-)

@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8.2)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sun Sep 19 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.8.2
+    
       Bug fix: %s/xolox#open#shell/xolox#open#file/:
        http://github.com/xolox/vim-shell/commit/452e951e2fcc4c7afa5a
     
@@ -19,31 +21,34 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 12 insertions(+), 78 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sat Sep 18 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.8
+    
     http://github.com/xolox/vim-shell/commit/4d2313b6508c26a1a843:
       Moved openurl() & open_with() to dedicated plug-in (included in ZIP archive)
       Simplified Mac OS X support
       Support command line web browsers in s:open_at_cursor()
 
- README                         |    2 +-
+ autoload/xolox.vim             |   15 ++-
  autoload/xolox/escape.vim      |    4 +-
  autoload/xolox/open.vim        |   75 +++++++++++++++++
  autoload/xolox/shell.dll       |  Bin 43520 -> 43520 bytes
  autoload/xolox/shell.vim       |  178 +++++++++-------------------------------
- autoload/xolox.vim             |   15 ++-
  doc/open-external-location.txt |   67 +++++++++++++++
  doc/shell.txt                  |   58 +++++++------
  plugin/shell.vim               |    9 +--
- 9 files changed, 226 insertions(+), 182 deletions(-)
+ 8 files changed, 225 insertions(+), 181 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.3)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Mon Aug 30 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.7.3
+    
     Bug fix: Only toggle active window using `wmctrl' and report errors from libcall('fullscreen'):
     http://github.com/xolox/vim-shell/commit/ca43642589089a29dc24f18e00a7edd04820bc9e
 
@@ -52,26 +57,30 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 8 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.2)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sun Aug 15 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.7.2
+    
     Bug fix for E33: No previous substitute regular expression:
     http://github.com/xolox/vim-shell/commit/8ab66c465f5f7e29cc7677b2d54012f0fe762576
     
     The packages for version 0.7 and 0.7.1 below should have included the "shell.dll" dynamic link library but I failed to include it. This has been fixed now. Sorry about that!
 
+ autoload/xolox.vim       |   12 +++++++++---
  autoload/xolox/shell.dll |  Bin 0 -> 43520 bytes
  autoload/xolox/shell.vim |    5 +++--
- autoload/xolox.vim       |   12 +++++++++---
  plugin/shell.vim         |    4 ++--
  4 files changed, 14 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Tue Aug 10 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.7.1
+    
     Enable passing stdin to xolox#shell#execute():
     http://github.com/xolox/vim-shell/commit/fc16d5c0e72d8ba4112d239f211cc0576640aaa3
 
@@ -80,10 +89,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 17 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Mon Aug 9 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.7
+    
      Full-screen mode now hides Vim's menu/toolbar/tabline by default. This makes it useful even when the actual full-screen state of Vim's GUI window can't be changed because the DLL/wmctrl is unavailable.
     
      Full-screen mode should now work in most graphical terminal emulators like xterm and gnome-terminal (though <F11> won't work in the latter).
@@ -96,10 +107,10 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     
     All from http://github.com/xolox/vim-shell/commit/2f6414109fa52b20c1a86faff215fe1329ba6eb8
 
+ autoload/xolox.vim        |   99 +++++++++++++
  autoload/xolox/escape.vim |   26 ++++
  autoload/xolox/shell.dll  |  Bin 43520 -> 0 bytes
  autoload/xolox/shell.vim  |  344 +++++++++++++++++++++++++++++++++------------
- autoload/xolox.vim        |   99 +++++++++++++
  doc/shell.txt             |  253 ++++++++++++++++++++++-----------
  etc/shell/Makefile        |   12 --
  etc/shell/readme.html     |  123 ----------------
@@ -108,10 +119,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  9 files changed, 610 insertions(+), 496 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.1)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Mon Jun 14 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.6.1
+    
     Bug fix: Updated instructions to match new execute() implementation. Sorry about that!
     http://github.com/xolox/vim-shell/commit/2cc68db470c974acbc4c43ea001536c1106ae0e2
 
@@ -120,10 +133,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 19 insertions(+), 19 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Mon Jun 14 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.6
+    
     * Improved test instructions for execute()
       http://github.com/xolox/vim-shell/commit/50453066d1d211cfa6e426b78f3e503e3f46c82e
     
@@ -141,10 +156,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 132 insertions(+), 80 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Mon Jun 14 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.5.2
+    
     Bug fix for execute() implementation in DLL
     http://github.com/xolox/vim-shell/commit/c46f8e522f53283528f1dc9ab58cc6eb0a9c5507
 
@@ -156,9 +173,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 55 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sun Jun 13 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed typo in NMAKE makefile and references to Vim scripts page.
 
@@ -167,9 +184,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 6 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
-Author:     Peter Odding <peter at peterodding.com>
+Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sun Jun 13 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

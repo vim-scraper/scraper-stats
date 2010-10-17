@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.4)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Sat Sep 18 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.4
+    
     *** TOKENS NOW COMPLETELY CONCEALED (with Vim 7.3) ***
     -Makes using the "conceal" feature the default for Vim versions >= 7.3.
     Important Note: If you have legacy files for which you do not wish to use "conceal", read the following:
@@ -11,17 +13,18 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     -Provides more accurate definition of "turquoise" color in default color map: LightGreen changed to DarkCyan.
     -Fixed handling of bad modeline options.
 
- README            |    4 +
  doc/txtfmt.txt    |  184 +++++++++++++++++++++++++++++++++++++-------------
  plugin/txtfmt.vim |  193 +++++++++++++++++++++++++++++++++++++++++++----------
  syntax/txtfmt.vim |    7 +-
- 4 files changed, 302 insertions(+), 86 deletions(-)
+ 3 files changed, 298 insertions(+), 86 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Tue Jun 8 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.3
+    
     Prevents E21 in several scenarios: e.g.,
     	-Txtfmt used within a Vim help buffer (e.g., ft=help.txtfmt)
     	-Txtfmt loaded when 'nomodifiable' is set globally.
@@ -32,10 +35,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 21 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Tue Feb 16 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.2
+    
     -Loading Txtfmt no longer makes all windows the same size when 'equalalways' is set
     -Fixed several anomalies caused by Txtfmt load when 'winfixheight' is set:
     	-"test page" displayed in 2 windows
@@ -49,10 +54,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 156 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Thu Nov 26 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.1
+    
     Minor fix in Define_syntax to ensure that 'containedin' clause does not refer to nonexistent "inner escape" region when there are no active foreground colors.
 
  doc/txtfmt.txt    |    2 +-
@@ -61,10 +68,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 6 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Tue Sep 29 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     !!!!! Formal Release of Version 2.0 (bg color and 'conceal' patch support) !!!!!
     Incorporated perl script used to generate large portion of Define_syntax into syntax/txtfmt.vim, and provided Vim command line used to update the auto-generated script block.
 
@@ -74,10 +83,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 501 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0b)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Wed Sep 16 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0b
+    
     !!!!! Version 2.0 beta release (background colors and 'conceal' patch) !!!!!
     Code cleanup (removed unused functions, streamlined color name lookup)
 
@@ -87,10 +98,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 14 insertions(+), 77 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0a)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Tue Aug 25 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0a
+    
     !!!!! MAJOR RELEASE !!!!!
     -Added support for background colors!!!
     -Added support for Vince Negri's 'conceal' patch, which can make Txtfmt tokens consume zero screen width
@@ -102,10 +115,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 4508 insertions(+), 1604 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Thu Mar 5 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.5
+    
     -Removed (obsolete) multibyte syntax patch from distribution
     -Updated help to reflect fact that several issues affecting Txtfmt have been eliminated in Vim 7.2
 
@@ -115,10 +130,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 31 insertions(+), 188 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Mon Feb 23 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.4
+    
     -Fixed several of the operator-pending "jump to token" maps
     -Added more robust mechanism for hiding tokens, eliminating dependence upon "Ignore" group whenever possible
     -Added help section "Color terminal pitfalls" containing...
@@ -134,10 +151,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 205 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Tue Dec 16 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.3
+    
     Fixed "bold" attribute display in color terminals. Prior to this fix, the default Txtfmt colors were unaffected by the bold attribute. With this fix, the bold attribute will cause dark colors to appear brighter (lighter) in a color terminal.
 
  plugin/txtfmt.vim |    4 ++--
@@ -145,9 +164,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 15 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Sun Aug 17 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added missing help tags for a number of options.
 
@@ -156,10 +175,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 4 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Wed Jun 4 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1
+    
     NOW WORKS WITH MULTIBYTE ENCODINGS!!! (no patch required)
     -Added logic to determine whether the running Vim treats syntax match offsets as byte or character offsets. (This logic renders the multi-byte syntax patch obsolete.)
     -Help file additions: added instructions for using Txtfmt with TVO (:help txtfmt-nesting-tvo-example), and outlined a strategy for achieving "colorscheme independence" by defining colors according to default highlighting groups (:help txtfmt-colorschemes)
@@ -170,10 +191,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 248 insertions(+), 235 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0e)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Sun May 11 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.0e
+    
     -Fixed bug that prevented buf-local color definitions from being used.
     -Added to the help file a description of a possible strategy for making txtfmt
      color definitions dependent upon current colorscheme.
@@ -188,10 +211,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 263 insertions(+), 149 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0d)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Mon Apr 28 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.0d
+    
     Applied the <silent> attribute to prevent the jump-to-token
     mappings from echoing to the command line
 
@@ -200,10 +225,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0c)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Sat Apr 19 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.0c
+    
     -Added buffer-local mapping (\ga) and command (:GetTokInfo) for obtaining
     information about a specific character/token in a txtfmt buffer.
     (Functionality is analogous to that of Vim's ga normal mode command.)
@@ -217,10 +244,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 185 insertions(+), 31 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0b)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Thu Apr 10 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.0b
+    
     Fixed bug in ftplugin that caused sample "user-maps" (defined for testing) to override any user-defined ones.
 
  ftplugin/txtfmt.vim |   82 ++++++++++++++++++++++++++++-----------------------
@@ -228,17 +257,17 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 46 insertions(+), 38 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0a)
-Author:     Brett Stahlman <brettstahlman at comcast.net>
+Author:     Brett Stahlman <brettstahlman@comcast.net>
 AuthorDate: Sun Apr 6 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
- README               |  232 +++++
+ README               |  222 +++++
  doc/indent_patch.txt |   50 ++
  doc/mb_patch.txt     |  159 ++++
  doc/txtfmt.txt       | 1871 ++++++++++++++++++++++++++++++++++++++++
  ftplugin/txtfmt.vim  | 2330 ++++++++++++++++++++++++++++++++++++++++++++++++++
  plugin/txtfmt.vim    | 1979 ++++++++++++++++++++++++++++++++++++++++++
  syntax/txtfmt.vim    |  590 +++++++++++++
- 7 files changed, 7211 insertions(+), 0 deletions(-)
+ 7 files changed, 7201 insertions(+), 0 deletions(-)

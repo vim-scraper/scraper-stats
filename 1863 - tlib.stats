@@ -1,13 +1,13 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.40)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sat Oct 2 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.40
+    
     - tlib#agent#ViewFile: Use split/sbuffer if nohidden && modified
     - tlib#buffer#GetList(): order by "basename"
 
- README                         |    3 +-
- autoload/tlib.vim              |   12 +++++++
  autoload/tlib/Filter_cnf.vim   |   17 +++++-----
  autoload/tlib/Filter_cnfd.vim  |   18 +++++-----
  autoload/tlib/Filter_fuzzy.vim |   29 +++++++++++------
@@ -19,16 +19,17 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  autoload/tlib/input.vim        |   11 ++++--
  autoload/tlib/normal.vim       |   14 +++++++--
  autoload/tlib/type.vim         |    9 +----
- autoload/tlib.vim              |   12 -------
  doc/tlib.txt                   |   29 ++++++++++++++++-
  plugin/02tlib.vim              |   19 +++++++++--
- 16 files changed, 201 insertions(+), 102 deletions(-)
+ 13 files changed, 188 insertions(+), 88 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.39)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Sep 14 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.39
+    
     - tlib#World#Resize: set winfix{height|width}
     - g:tlib#cache#dont_purge
     - tlib#vim#RestoreWindow()
@@ -52,10 +53,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  15 files changed, 1336 insertions(+), 849 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.37)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Mar 31 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.37
+    
     - g:tlib_inputlist_livesearch_threshold defaults to 1000
     - tlib#World: optional scratch_pos field
     - tlib#input#List: By default <m-NUMBER> selects by number but NUMBER is interpreted as string
@@ -77,14 +80,17 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  12 files changed, 264 insertions(+), 90 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.36)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sat Feb 20 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.36
+    
     - Display a message when the filter is for whatever reason invalid
     - Removed tlib#paragraph#Delete()
     - New: tlib#paragraph#Define(), tlib#textobjects#StandardParagraph()
 
+ autoload/tlib.vim              |    9 +-
  autoload/tlib/World.vim        |   71 +++++++---
  autoload/tlib/agent.vim        |    9 +-
  autoload/tlib/autocmdgroup.vim |    8 +-
@@ -96,15 +102,14 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  autoload/tlib/progressbar.vim  |   14 ++-
  autoload/tlib/textobjects.vim  |   45 ++++++
  autoload/tlib/url.vim          |    9 +-
- autoload/tlib.vim              |    9 +-
  doc/tlib.txt                   |  330 ++++++++++++++++++++++------------------
  plugin/02tlib.vim              |   14 ++-
  14 files changed, 459 insertions(+), 314 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.35)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Mon Dec 21 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     tlib#input#EditList(): return the list if the user presses esc
 
@@ -114,10 +119,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 23 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.34)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Mon Dec 7 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.34
+    
     - tlib#buffer#HighlightLine(line): call tlib#autocmdgroup#Init()  (reported by Sergey Khorev)
 
  autoload/tlib/World.vim        |    6 +-
@@ -132,10 +139,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  9 files changed, 212 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.33)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Oct 11 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.33
+    
     - tlib#agent#Exit: explicitly return empty value (as a consequence,
     pressing <esc> when browsing an index-list, returns 0 and not "")
     - tlib#signs
@@ -160,15 +169,18 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  12 files changed, 233 insertions(+), 107 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.31)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Feb 25 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.31
+    
     - :TRequire
     -tlib#input#List: For i-type list views, make sure agents are called
     with the base indices.
     - World#RestoreOrigin(): Don't assume &splitright
 
+ autoload/tlib.vim              |    6 +-
  autoload/tlib/Filter_cnf.vim   |    6 +-
  autoload/tlib/Filter_cnfd.vim  |    6 +-
  autoload/tlib/Filter_fuzzy.vim |    6 +-
@@ -205,16 +217,17 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  autoload/tlib/url.vim          |    6 +-
  autoload/tlib/var.vim          |    6 +-
  autoload/tlib/win.vim          |    6 +-
- autoload/tlib.vim              |    6 +-
  doc/tlib.txt                   |   87 ++++++++++++++++++++++++++++++++++++++--
  plugin/02tlib.vim              |   46 ++++++++++++++++++---
  39 files changed, 299 insertions(+), 157 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.29)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Thu Feb 12 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.29
+    
     - tlib#string#Strip(): Strip also control characters (newlines etc.)
     - tlib#rx#Suffixes(): 'suffixes' as Regexp
     - World#RestoreOrigin(): Don't assume &splitbelow
@@ -235,10 +248,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  13 files changed, 106 insertions(+), 142 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.28)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Dec 2 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.28
+    
     - tlib#input#List():
     -- Improved handling of sticky lists; <cr> and <Leftmouse> resume a suspended list and immediately selects the item under the cursor
     -- Experimental "seq" matching style: the conjunctions are sequentially ordered, they are combined with "OR" (disjunctions), the regexp is 'magic', and "." is expanded to '.\{-}'
@@ -267,10 +282,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  14 files changed, 776 insertions(+), 387 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.27)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Thu Oct 16 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.27
+    
     - NEW: tlib#normal#WithRegister()
     - FIX: Try not to change numbered registers
     - FIX: Cosmetic bug, wrong packaging (thanks Nathan Neff)
@@ -287,10 +304,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  7 files changed, 244 insertions(+), 106 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.25)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Oct 5 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.25
+    
     - NEW: tlib#notify#TrimMessage(): trim message to prevent "Press ENTER" messages (contributed by Erik Falor)
     - NEW: tlib#notify#Echo()
     - FIX: World.CloseScratch(): Set window
@@ -309,10 +328,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  10 files changed, 357 insertions(+), 108 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.24)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Aug 31 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.24
+    
     - s:prototype.SetInitialFilter: accept list as argument
     - Maintain buffer MRU if required
 
@@ -329,10 +350,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  10 files changed, 134 insertions(+), 49 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.23)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sat Jun 21 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.23
+    
     - FIX: very magic mode for tlib#rx#Escape()
     - FIX: tlib#arg#Ex: escape "!"
     - Respect the setting of g:tlib_inputlist_filename_indicators
@@ -356,10 +379,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  12 files changed, 245 insertions(+), 143 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.21)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Nov 21 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.21
+    
     - tlib#buffer#InsertText(): Respect tabs and (experimental) formatoptions+=or
     - tlib/syntax.vim: Syntax-related functions
 
@@ -373,10 +398,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  7 files changed, 353 insertions(+), 156 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.20)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Mon Nov 12 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.20
+    
     CHANGES:
     - The arguments of tlib#tag#Collect() have changed.
     - tlib#input#List(): The view can be "suspended" on initial display.
@@ -391,10 +418,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 358 insertions(+), 226 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.19)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Mon Nov 5 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.19
+    
     NEW:
         - tag.vim
     FIX:
@@ -420,10 +449,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  11 files changed, 469 insertions(+), 196 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.18)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Fri Oct 26 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.18
+    
     NEW:
         - tlib/time.vim
         - g:tlib_inputlist_livesearch_threshold (useful on slower systems)
@@ -442,10 +473,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 257 insertions(+), 97 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.17)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Fri Oct 12 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.17
+    
     NEW:
         - TBrowseOutput
     - Some minor changes
@@ -458,9 +491,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 120 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.16)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Oct 7 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     - tlib#string#Printf1()
 
@@ -474,10 +507,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  7 files changed, 89 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Sep 30 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.15
+    
     NEW:
         - tlib#string#TrimLeft(), tlib#string#TrimRight(), tlib#string#Strip()
         - Progress bar
@@ -492,10 +527,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  7 files changed, 224 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Sep 19 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.14
+    
     NEW:
         - tlib#buffer#InsertText()
     CHANGES:
@@ -503,6 +540,7 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     FIXES:
         - tlib#input#List(): Wrong order with pre-defined filters.
 
+ autoload/tlib.vim           |    6 +-
  autoload/tlib/Object.vim    |    6 +-
  autoload/tlib/Test.vim      |    6 +-
  autoload/tlib/TestChild.vim |    6 +-
@@ -526,16 +564,17 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  autoload/tlib/url.vim       |    6 +-
  autoload/tlib/var.vim       |    6 +-
  autoload/tlib/win.vim       |   20 +-
- autoload/tlib.vim           |    6 +-
  doc/tlib.txt                |  453 +++++++++++++++++++++++--------------------
  plugin/02tlib.vim           |   26 ++-
  26 files changed, 511 insertions(+), 295 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Sep 11 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.13
+    
     CHANGES:
         - Scratch: Set &fdc=0.
         - The cache directory can be configured via g:tlib_cache
@@ -556,10 +595,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  9 files changed, 107 insertions(+), 47 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sat Sep 8 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.12
+    
     NEW:
         - tlib/tab.vim
     CHANGES:
@@ -575,6 +616,7 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
         explicitly given as argument. Avoid double (back)slashes.
         - TLet: simplified
 
+ autoload/tlib.vim           |    6 ++--
  autoload/tlib/Object.vim    |   18 +++++++++--
  autoload/tlib/Test.vim      |    6 ++--
  autoload/tlib/TestChild.vim |    6 ++--
@@ -597,17 +639,18 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  autoload/tlib/url.vim       |   15 ++++++---
  autoload/tlib/var.vim       |    6 ++--
  autoload/tlib/win.vim       |   28 ++++++++++-------
- autoload/tlib.vim           |    6 ++--
  doc/tlib.txt                |   68 ++++++++++++++++++++++++++++++++++++++----
  plugin/02tlib.vim           |   39 +++++++++++++++++++------
  test/tlib.vim               |    6 ++--
  26 files changed, 388 insertions(+), 127 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Aug 26 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.11
+    
     NEW:
         - The :TLet command replaces :TLLet (which was removed)
         - :TScratch[!] command (with ! don't split but use the whole window)
@@ -662,10 +705,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  24 files changed, 2526 insertions(+), 435 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Jul 18 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.10
+    
     - tlib#input#List(): (v)split type of commands leave the original window
     untouched (you may use <c-w> to replace its contents)
     - tlib#file#With(): Check whether an existing buffer is loaded.
@@ -683,10 +728,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  7 files changed, 141 insertions(+), 76 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Jul 17 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.9
+    
     - Re-arrangements & modularization (this means many function names have
     changed, on the other hand only those functions are loaded that are
     actually needed)
@@ -697,6 +744,7 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     - tlib#input#EditList(): Now has cut, copy, paste functionality.
     - Added documentation and examples
 
+ autoload/tlib.vim           | 1203 +------------------------------------------
  autoload/tlib/TestChild.vim |   23 +
  autoload/tlib/World.vim     |  174 ++++++-
  autoload/tlib/agent.vim     |  249 +++++++++-
@@ -711,45 +759,50 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  autoload/tlib/string.vim    |   20 +
  autoload/tlib/url.vim       |   59 +++
  autoload/tlib/var.vim       |   67 +++
- autoload/tlib.vim           | 1203 +------------------------------------------
  plugin/02tlib.vim           |  173 ++++++-
  test/tlib.vim               |  118 +++--
  17 files changed, 1646 insertions(+), 1269 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Jun 24 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.8
+    
     - FIX: Return empty cache name for buffers that have no files attached to it
     - Some re-arranging
 
- autoload/tlib/agent.vim |   64 +++++++++++++++++++++++++++++++++++++++++++++++
  autoload/tlib.vim       |   53 ++++++++++++++++++++++++++++----------
+ autoload/tlib/agent.vim |   64 +++++++++++++++++++++++++++++++++++++++++++++++
  plugin/02tlib.vim       |    6 ++--
  3 files changed, 106 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Jun 20 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.7
+    
     - tlib#InputList(): <c-z> ... Suspend/Resume input loop
     - tlib#InputList(): <c-q> ... Input text on the command line (useful on slow systems when working with very large lists)
     - tlib#InputList(): AND-pattern starting with '!' will work as 'exclude matches'
     - tlib#InputList(): FIX <c-bs> pop OR-patterns properly
     - tlib#InputList(): display_format == filename: don't add '/' to directory names (avoid filesystem access)
 
- autoload/tlib/World.vim |   28 +++++++---
  autoload/tlib.vim       |  133 +++++++++++++++++++++++++++++++++++-----------
+ autoload/tlib/World.vim |   28 +++++++---
  plugin/02tlib.vim       |   10 ++--
  3 files changed, 127 insertions(+), 44 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed May 23 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.6
+    
     - tlib#InputList(): Disabled <c-space> map
     - tlib#InputList(): try to be smart about user itentions only if a
     list's length is < g:tlib_sortprefs_threshold (default: 200)
@@ -759,32 +812,36 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     - tlib#Args(), tlib#GetArg()
     - FIX: tlib#InputList(): Display problem with first item
 
+ autoload/tlib.vim        |  131 +++++++++++++++++++++++++++++++++++++++++++---
  autoload/tlib/Object.vim |   45 ++++++++++++++--
  autoload/tlib/Test.vim   |    8 ++-
  autoload/tlib/World.vim  |   16 +++++-
- autoload/tlib.vim        |  131 +++++++++++++++++++++++++++++++++++++++++++---
  plugin/02tlib.vim        |    9 ++--
  test/tlib.vim            |   65 +++++++++++++++++++++--
  6 files changed, 249 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Thu May 17 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.5
+    
     - tlib#InputList(): FIX: Selecting items in filtered view
     - tlib#InputList(): <c-bs>: Remove last AND pattern from filter
 
- autoload/tlib/World.vim |   13 ++++-
  autoload/tlib.vim       |  129 ++++++++++++++++++++++++++++++++++------------
+ autoload/tlib/World.vim |   13 ++++-
  plugin/02tlib.vim       |   50 +-----------------
  3 files changed, 109 insertions(+), 83 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue May 15 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.4
+    
     - tlib#InputList(): Up/Down keys wrap around list
     - tlib#InputList(): FIX: Problem when reducing the filter & using AND
     - tlib#InputList(): FIX: Problem when using shift-up/down with filtered lists
@@ -798,20 +855,21 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     - tlib#DirName(dir)
     - tlib#DecodeURL(url), tlib#EncodeChar(char), tlib#EncodeURL(url)
 
- autoload/tlib.vim        |  919 ---------------------------------------------
- autoload/tlib/Object.vim |   55 +++
- autoload/tlib/Test.vim   |   19 +
- autoload/tlib/World.vim  |  158 ++++++++
- autoload/tlib.vim        |  932 ++++++++++++++++++++++++++++++++++++++++++++++
- plugin/02tlib.vim        |   53 +++-
- test/tlib.vim            |   31 ++-
- 7 files changed, 1241 insertions(+), 926 deletions(-)
+ autoload/tlib.vim        |  501 ++++++++++++++++++++++++----------------------
+ autoload/tlib/Object.vim |   55 +++++
+ autoload/tlib/Test.vim   |   19 ++
+ autoload/tlib/World.vim  |  158 +++++++++++++++
+ plugin/02tlib.vim        |   53 +++++-
+ test/tlib.vim            |   31 +++-
+ 6 files changed, 566 insertions(+), 251 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Thu Apr 26 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3
+    
     - Show feedback in statusline instead of the echo area
     - tlib#GetVar(), tlib#GetValue()
 
@@ -821,10 +879,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 97 insertions(+), 38 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Apr 24 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     - More list convenience functions
     - tlib#EditList()
     - tlib#InputList(): properly handle duplicate items; it type contains
@@ -836,14 +896,14 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 585 insertions(+), 229 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Apr 18 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
- README            |   67 +++++++
+ README            |   66 +++++++
  autoload/tlib.vim |  547 +++++++++++++++++++++++++++++++++++++++++++++++++++++
  plugin/02tlib.vim |   31 +++
  test/tlib.vim     |   41 ++++
- 4 files changed, 686 insertions(+), 0 deletions(-)
+ 4 files changed, 685 insertions(+), 0 deletions(-)

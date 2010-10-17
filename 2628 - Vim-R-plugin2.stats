@@ -1,8 +1,36 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/100923)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
-AuthorDate: Thu Sep 23 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/101015)
+Author:     Jakson Aquino <jalvesaq@gmail.com>
+AuthorDate: Fri Oct 15 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 101015
+    
+    * New feature: Object browser.
+    * Conque Shell will be used if installed unless explicitly told otherwise in the vimrc.
+    * New valid value for vimrplugin_vimpager: "tabnew"
+
+ autoload/rcomplete.vim |    5 +-
+ autoload/rplugin.vim   |  152 ++++++++++++++---
+ doc/r-plugin.txt       |  460 +++++++++++++++++++++++++++---------------------
+ ftdetect/r.vim         |   12 +-
+ ftplugin/r.vim         |  390 ++++++++++++++++++++++++++++++-----------
+ ftplugin/rbrowser.vim  |  166 +++++++++++++++++
+ ftplugin/rdoc.vim      |  390 ++++++++++++++++++++++++++++++-----------
+ ftplugin/rhelp.vim     |  390 ++++++++++++++++++++++++++++++-----------
+ ftplugin/rnoweb.vim    |  390 ++++++++++++++++++++++++++++++-----------
+ r-plugin/vimbrowser.R  |   49 +++++
+ syntax/r.vim           |    6 +-
+ syntax/rbrowser.vim    |   39 ++++
+ syntax/rout.vim        |    4 +-
+ 13 files changed, 1812 insertions(+), 641 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/100923)
+Author:     Jakson Aquino <jalvesaq@gmail.com>
+AuthorDate: Thu Sep 23 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 100923
+    
     * New option: vimrplugin_vimpager.
     * Do not let Vim translate "File" in R menu.
     * Fixed bug when the option vimrplugin_r_path was used (thanks to Asis Hallab for reporting the bug),
@@ -18,17 +46,18 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  7 files changed, 1879 insertions(+), 607 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100917)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Fri Sep 17 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 100917
+    
     * Changed the use of vimrplugin_r_path: now the option includes only the directory part of the path.
     * Initial support to Conque Shell plugin. Thanks to "il_principe orange" for suggesting the use of Conque Shell, "ZyX-I" for writing the initial code to use Conque Shell, and Nico Raffo for writing the plugin and additional code to integrate both plugins.
     * New options: vimrplugin_conqueplugin and vimrplugin_conquevsplit, vimrplugin_r_args.
     * Initial support for Vim-R communication on Windows using Python.
     * Fixed bug when the plugin was installed in a directory other than ~/.vim (thanks to Tom Link).
 
- README                          |   88 +++++----
  autoload/rcomplete.vim          |   10 +-
  bitmaps/RClear.bmp              |  Bin 0 -> 702 bytes
  bitmaps/RClear.png              |  Bin 0 -> 1079 bytes
@@ -75,13 +104,15 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  r-plugin/vimActivate.js         |    4 +
  syntax/r.vim                    |   19 +-
  syntax/rout.vim                 |   65 +++++--
- 47 files changed, 1547 insertions(+), 1041 deletions(-)
+ 46 files changed, 1499 insertions(+), 1001 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100825)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Wed Aug 25 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 100825
+    
     * Minor improvements in syntax highlighting.
     * New option: vimrplugin_buildwait.
     * New option: vimrplugin_r_path (thanks to Asis Hallab).
@@ -95,9 +126,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 258 insertions(+), 87 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100803)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Tue Aug 3 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     * Fixed bug in .Rsource name making in some systems.
 
@@ -108,10 +139,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 11 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100801)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Sun Aug 1 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 100801
+    
     * Dropped options vimrplugin_hstart and vimrplugin_browser_time.
     * If ~/.vim/r-plugin/functions.vim is not found, try to copy it from  /usr/share/vim/addons/r-plugin/functions.vim.
     * Minor bug fixes.
@@ -123,10 +156,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 442 insertions(+), 332 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100730)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Sat Jul 31 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 100730
+    
     * Added menu item and key binding for run "R CMD BATCH" and open the resulting ".Rout" file.
      * Fixed bug when more than one Vim instance used the same file to send multiple lines of code to R (thanks to Bart for reporting the bug).
 
@@ -138,9 +173,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 280 insertions(+), 138 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100728)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Wed Jul 28 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     * Adapted the code to build a Debian package.
 
@@ -152,10 +187,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 111 insertions(+), 65 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100719)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Mon Jul 19 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 100719
+    
     * Renamed the directory "tools" and some files.
     * Added options vimrplugin_listmethods and vimrplugin_specialplot.
     * Improved syntax highlight of R batch output (.Rout files).
@@ -184,9 +221,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  20 files changed, 5763 insertions(+), 3452 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100710)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Sat Jul 10 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     * Fixed :RUpdateObjList bug when list had length 0.
 
@@ -195,10 +232,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 14 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100707)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Wed Jul 7 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 100707
+    
      * Fixed 'E329: No menu "R"' when more than one file were loaded simultaneously by calling vim with either -p or -o parameters. Thanks to Peng Yu for reporting the bug.
      * Correctly recognize a newly created file with extension ".R" as an R script file.
 
@@ -209,9 +248,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 116 insertions(+), 130 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100521)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Fri May 21 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     * Replaced "-t" with "--title" to make xfce4-terminal work again.
 
@@ -220,10 +259,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 7 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100512)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Wed May 12 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 100512
+    
     * Thanks to Tortonesi Mauro who wrote a patch to make the plugin work with pathogen.vim.
     * Added simple syntax hightlight for .Rout files.
     * Increased the time limit of RUpdateObjList to two minutes.
@@ -240,10 +281,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 162 insertions(+), 49 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/091223)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Wed Dec 23 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 091223
+    
     * Changes in omni completion: now using two tags files, one for .GlobalEnv and other for all other environments. The command :RUpdateObjList must be used to update the list of objects that are not in .Globalenv. Arguments of functions are displayed in a scratch window.
     * Syntax highlight for R functions. The command :RUpdateObjList must be used to update the list of functions to be highlighted.
 
@@ -257,10 +300,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  7 files changed, 3552 insertions(+), 373 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/091016)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Fri Oct 16 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 091016
+    
     * The plugin now can run together with screen.vim, thanks to Eric Van Dewoestine, the author of screen.vim, who added script integration to screen.vim.
     * Andy Choens has made many improvements on the documentation.
     * Added the possibility of custom key binding creation to call any R function with the word under cursor as argument.
@@ -277,10 +322,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 638 insertions(+), 869 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/091004)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Mon Oct 5 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 091004
+    
     * José Cláudio Faria has began to work in the project as co-author.
     * Some ideas from Tinn-R project were ported to the plugin.
     * The main menu has new items and the toolbar new icons.
@@ -312,10 +359,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  23 files changed, 1783 insertions(+), 1114 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/090828)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Fri Aug 28 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 090828
+    
      * Faster startup.
      * Better support for Rnoweb files: the cursor goes to '^<<' if the sent line is '^@$'.
 
@@ -325,10 +374,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 109 insertions(+), 40 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/090811)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Wed Aug 12 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 090811
+    
      * Now use screen instead of funnel.pl. The bugs and limitations related with funnel.pl are solved.
      * Deleted key binding for R-devel.
      * Automatically detect available terminal emulators and choose one of them.
@@ -342,10 +393,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 172 insertions(+), 1444 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/090810)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Mon Aug 10 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 090810
+    
      * Added R icons for some terminal emulators.
      * Removed the script open-gvim-here. You may use Vim's option autochdir.
      * Added option g:vimrplugin_term.
@@ -361,10 +414,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 199 insertions(+), 73 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/090610)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Thu Jun 11 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 090610
+    
     The options expandtab, shiftwidth and tabstop are no longer set by the plugin. Better word detection before calling R's help(). Fixed bug in underscore replacement. Fixed small bug in code indentation. Added scipt rpager.sh. Added two new plugin options: no underscore replacement and fixed name for the pipe file instead of random one.
 
  doc/r-plugin.txt |   28 +++++++++++++++-
@@ -374,10 +429,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 109 insertions(+), 31 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/090523)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Sat May 23 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 090523
+    
     * Key bindings now are customizable.
     * Default key binding for calling R's args() changed to <S-F1>.
     * New R script rargs.R gives better results for generic functions than R's args() called directly.
@@ -388,10 +445,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 339 insertions(+), 91 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/090519)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Wed May 20 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 090519
+    
     * Don't send large blocks of code to R to avoid xterm freezing.
     * Automatically call help.start() after <C-H> is pressed for the first time, and wait 4 seconds for the browser start before calling R's help(). These features are customizable.
     * Fixed tags file script.
@@ -405,10 +464,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 169 insertions(+), 85 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/090516)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Sat May 16 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 090516
+    
     * Added documentation.
     * Added ability to send function to R, revert the automatic convertion of "_" into "<-" and call R's help().
     * Added archive with some files to ease desktop integration, if desired.
@@ -420,13 +481,13 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 378 insertions(+), 45 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/090507)
-Author:     Jakson Aquino <jalvesaq at gmail.com>
+Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Fri May 8 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
- README                 |   55 +++++
+ README                 |   69 ++++++
  after/filetype.vim     |    6 +
  autoload/rcomplete.vim |   42 ++++
  bitmaps/rbuffer.xpm    |   30 +++
@@ -442,4 +503,4 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  syntax/r.vim           |    5 +
  tools/rfunnel.pl       |  567 ++++++++++++++++++++++++++++++++++++++++++++++++
  tools/rtags.R          |   43 ++++
- 16 files changed, 2486 insertions(+), 0 deletions(-)
+ 16 files changed, 2500 insertions(+), 0 deletions(-)

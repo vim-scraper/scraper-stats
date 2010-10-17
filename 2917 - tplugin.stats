@@ -1,23 +1,26 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.10)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sat Oct 2 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.10
+    
     - Make helptags of repositories that weren't yet loaded available to the user.
     - Renamed variables: g:tplugin#autoload_exclude, g:tplugin#scan
     - Custom autoload definitions for some 3rd party plugins (PoC)
 
- README               |    3 +-
  autoload/tplugin.vim |  473 +++++++++++++++++++++++++++++
  doc/tplugin.txt      |  134 +++++----
  macros/tplugin.vim   |  816 +++++++++++---------------------------------------
- 4 files changed, 725 insertions(+), 701 deletions(-)
+ 3 files changed, 724 insertions(+), 699 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Aug 24 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.9
+    
     - Renamed #TPluginInclude to @TPluginInclude
     - Added support for @TPluginMap, @TPluginBefore, @TPluginAfter annotations
     - TPluginMap() restores the proper mode
@@ -29,10 +32,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 294 insertions(+), 105 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Apr 14 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.8
+    
     - Delete commands only when they were defined without a bang; make sure all commands in a file defined without a bang are deleted
     - g:tplugin_scan defaults to 'cfpt'
     - Don't register each autoload function but deduce the repo/plugin from the prefix.
@@ -45,10 +50,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 631 insertions(+), 390 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sat Feb 20 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.7
+    
     - TPluginScan: try to maintain information about command-line completion (this won't work if a custom script-local completion function is used)
 
  doc/tplugin.txt    |    6 +++-
@@ -56,10 +63,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 73 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Feb 16 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.6
+    
     - CHANGE: The root specific autoload files are now called '_tplugin.vim'
     - Provide a poor-man implementation of fnameescape() for users of older versions of vim.
     - If the root name ends with '*', the root is no directory tree but a single directory (actually a plugin repo)
@@ -70,10 +79,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 173 insertions(+), 50 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Feb 2 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.5
+    
     - Support for ftdetect
     - Support for ftplugins in directories and named {&FT}_{NAME}.vim
     - :TPlugin accepts "-" as argument, which means load "NO PLUGIN".
@@ -99,10 +110,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 596 insertions(+), 441 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Jan 19 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.3
+    
     - TPluginBefore, TPluginAfter commands to define inter-repo dependencies
     - Support for autoloading filetypes
     - Support for autoloading <plug> maps
@@ -118,10 +131,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 327 insertions(+), 83 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Jan 10 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     - Experimental autoload for commands and functions (à la AsNeeded)
     - Improved command-line completion for :TPlugin
     - The after path is inserted at the second to last position
@@ -133,13 +148,13 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 576 insertions(+), 72 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Jan 5 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
- README             |   42 ++++++++++++++++
+ README             |   41 +++++++++++++++
  doc/tplugin.txt    |  139 ++++++++++++++++++++++++++++++++++++++++++++++++++++
  macros/tplugin.vim |  134 ++++++++++++++++++++++++++++++++++++++++++++++++++
- 3 files changed, 315 insertions(+), 0 deletions(-)
+ 3 files changed, 314 insertions(+), 0 deletions(-)

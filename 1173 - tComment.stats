@@ -1,21 +1,22 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sat Oct 2 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Minor bug fix.
 
- README                |   87 +++++--------------------------------
  autoload/tcomment.vim |  113 +++++++++++++++++++++++++++++++------------------
  doc/tcomment.txt      |   20 +++++----
  plugin/tcomment.vim   |    9 +++-
- 4 files changed, 102 insertions(+), 127 deletions(-)
+ 3 files changed, 90 insertions(+), 52 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Sep 14 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     - Support for erlang (thanks to Zhang Jinzhu)
     - Support for x86conf
     - Changed comment string for eruby (proposed by Vinicius Baggio)
@@ -32,10 +33,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 904 insertions(+), 702 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sun Oct 11 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.10
+    
     - tcomment#Operator defines w:tcommentPos if invoked repeatedly
     - s:GuessFileType: use len(getline()) instead of col()
 
@@ -44,10 +47,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 37 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Thu May 15 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.9
+    
     - Fix left offset for inline comments (via operator binding)
 
  autoload/tcomment.vim |   13 ++++++++++---
@@ -55,10 +60,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 21 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8a)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Fri May 2 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.8a
+    
     The file autoload/tcomment.vim was packed as autoload/tComment.vim. If you installed 1.8, please rename that file or remove autoload/tComment.vim and use this vimball.
 
  autoload/tComment.vim |  550 -------------------------------------------------
@@ -67,10 +74,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 552 insertions(+), 552 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Thu May 1 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.8
+    
     - Definitly require vim7
     - Split the plugin into autoload & plugin.
     - g:TCommentFileTypes is a list (this could cause problems when updating in certain situations)
@@ -84,10 +93,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 660 insertions(+), 583 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Thu Aug 30 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.7
+    
     - gc{motion} (see g:tcommentMapLeaderOp1) functions as a comment toggle
     operator (i.e., something like gcl... works, mostly); gC{motion} (see
     g:tcommentMapLeaderOp2) will unconditionally comment the text.
@@ -107,10 +118,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 251 insertions(+), 99 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue May 1 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.6
+    
     - Ignore sql when guessing the comment string in php files; tComment
     sometimes chooses the wrong comment string because the use of sql syntax
     is used too loosely in php files; if you want to comment embedded sql
@@ -126,10 +139,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 170 insertions(+), 129 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Mar 22 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.5
+    
     - "Inline" visual comments (uses the &filetype_inline style if
     available; doesn't check if the filetype actually supports this kind of
     comments); tComment can't currently deduce inline comment styles from
@@ -150,10 +165,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 342 insertions(+), 187 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Mar 16 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.4
+    
     - Fixed problem when &commentstring was invalid (e.g. lua)
     - perl_block
     - <c-_>s mapped to :TCommentAs <c-r>=&ft<cr>
@@ -163,10 +180,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 28 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Mon Mar 14 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.3
+    
     - slightly improved recognition of embedded syntax
     - if no commentstring is defined in whatever way, reconstruct one from
     &comments
@@ -184,10 +203,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 262 insertions(+), 76 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Tue Jan 11 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 0.2
+    
     - Fixed uncommenting of non-aligned comments
     - improved support for block comments (with middle lines and indentation)
     - using TCommentBlock for file types that don't have block comments creates
@@ -201,14 +222,14 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 210 insertions(+), 124 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     Tom Link <micathom at gmail.com>
+Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Fri Jan 7 00:00:00 2005 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
- README                    |  106 +++++++++++++++
+ README                    |   43 ++++++
  doc/tComment.txt          |   83 +++++++++++
  plugin/tComment.vim       |  331 +++++++++++++++++++++++++++++++++++++++++++++
  tComment/etc/tComment.lst |    3 +
- 4 files changed, 523 insertions(+), 0 deletions(-)
+ 4 files changed, 460 insertions(+), 0 deletions(-)

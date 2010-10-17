@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.3.2)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Mon Sep 27 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.3.2
+    
     Improved load#LoadFuncdict function, added load#SetOption and load#CreateDictFunction functions
 
  autoload/load.vim      |   45 +++-
@@ -21,9 +23,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  13 files changed, 4044 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.1)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Sun Sep 26 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed some mapping bugs
 
@@ -31,13 +33,14 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 26 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Sat Sep 25 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.3
+    
     Provided a way to register different plugin types and place plugin file not directly under plugin directoryAdded support for autoloading external dependenciesMade plugin reload itself without errors
 
- README          |   22 ++-
  doc/chk.txt     |   12 +-
  doc/load.txt    |   82 +++++---
  doc/oop.txt     |   93 ++++++++
@@ -47,12 +50,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  plugin/oop.vim  |   10 +-
  plugin/yaml.vim |  104 +++++++---
  syntax/yaml.vim |  168 ---------------
- 10 files changed, 783 insertions(+), 538 deletions(-)
+ 9 files changed, 770 insertions(+), 529 deletions(-)
 
-commit SHA1SHA1SHA1
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Sat Sep 11 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added session creation
 
@@ -64,11 +67,13 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  syntax/yaml.vim |  168 +++
  6 files changed, 4819 insertions(+), 6 deletions(-)
 
-commit SHA1SHA1SHA1
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.4)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Sat Sep 11 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1.4
+    
     Improved findnr action (now it takes a list of numbers separated by anything except spaces), improved autocmd[!] action (now it does not force you to escape spaces), improved error messages, some bug fixes
 
  doc/chk.txt     |   26 +++++-
@@ -81,10 +86,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  7 files changed, 555 insertions(+), 213 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.3)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Tue Aug 24 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.1.3
+    
     Added lazygetfunctions() and run() functions useful for cyclic dependency resolution
 
  doc/load.txt    |   13 ++
@@ -94,9 +101,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 598 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.2)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Wed Aug 18 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed completion for vim7.3
 
@@ -104,9 +111,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 4 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Wed Aug 11 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added `autocommands'
 
@@ -116,13 +123,13 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 168 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Tue Aug 10 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
- README            |   13 +
+ README            |   17 +
  autoload/load.vim |    5 +
  doc/chk.txt       |  422 +++++++++++++++
  doc/comp.txt      |  123 +++++
@@ -130,4 +137,4 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  plugin/chk.vim    | 1046 ++++++++++++++++++++++++++++++++++++++
  plugin/comp.vim   |  387 ++++++++++++++
  plugin/load.vim   | 1467 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- 8 files changed, 3798 insertions(+), 0 deletions(-)
+ 8 files changed, 3802 insertions(+), 0 deletions(-)

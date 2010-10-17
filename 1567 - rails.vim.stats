@@ -1,8 +1,10 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.3)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Fri Sep 10 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.3
+    
     Support :Rails new app for Rails 3.
     Add support for CoffeeScript, LESS CSS, and SCSS.
     Syntax highlighting updates for Rails 3 and RSpec 2.
@@ -19,17 +21,18 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
     Fix Windows "C:" versus "c:" issue.
     Change cookies abbreviation from co to coo (so one can type co.uk).
 
- README             |    4 +-
  autoload/rails.vim |  457 +++++++++++++++++++++++++++++-----------------------
  doc/rails.txt      |   28 ++--
  plugin/rails.vim   |   18 +-
- 4 files changed, 283 insertions(+), 224 deletions(-)
+ 3 files changed, 281 insertions(+), 222 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Sat Mar 13 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.2
+    
     Default :Rlib to db/seeds.rb.
     Default :Rplugin to Gemfile.
     :Renvironment prefers Rails 3's config/application.rb.
@@ -54,10 +57,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 409 insertions(+), 413 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Fri Dec 18 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.1
+    
     Completely eliminate usage of if_ruby.
     Highlight *_via_redirect in tests and raw in views.
     Support gf on stylesheets/javascripts when extension is given.
@@ -70,10 +75,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 58 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Sun Oct 4 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 4.0
+    
     Remove all deprecated commands.
     Update syntax highlighting for Rails 2.3.4.
     Fix bug when path to application contains whitespace.
@@ -102,10 +109,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 823 insertions(+), 690 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.4)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Fri Mar 27 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.4
+    
     Load rake stats, routes, notes, etc into quickfix window.
     :Rake! doesn't jump to first error.
     :Rmetal navigation command.
@@ -122,10 +131,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 289 insertions(+), 186 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Fri Jan 23 00:00:00 2009 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.3
+    
     :Rtags ignores jquery plugins (can trip up ctags).
     :Rtags indexes .rake, .rjs, and .builder files [Mark Wilden].
     :Rproject is more robust against missing directories [Mark Wilden].
@@ -142,10 +153,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 139 insertions(+), 118 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Thu Nov 13 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.2
+    
     Fix :Rview when the cwd isn't the rails root.
     Fix edge case with :Rscript family on Windows.
     Use new autocmd interface of dbext 8.00.
@@ -160,10 +173,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 108 insertions(+), 97 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Fri Oct 24 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.1
+    
     Update helpers to Edge Rails.
     :Rmigration 0 edits db/schema.rb.
     :Rake now defaults to full test/spec (:.Rake for a focused run).
@@ -178,10 +193,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 90 insertions(+), 120 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Fri Oct 17 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 3.0
+    
     Major refactoring to take advantage of Vim 7 features (please report any regressions).
     Smart, app dependent menus for generators and rake tasks.
     Smart, app dependent tab completion for generators, rake tasks, and environments.
@@ -208,10 +225,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 1205 insertions(+), 1131 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Thu Oct 9 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.1
+    
     Syntax highlighting updates.
     Tweaks to gf algorithm to find views and add include/extend support.
     :Rcd and :Rlcd tab completion.
@@ -226,10 +245,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 82 insertions(+), 82 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Mon May 26 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 2.0
+    
     New git friendly versioning scheme.
     Extract rails_tabstop feature to vimscript #2253.
     Tab completion of timestamped migrations.
@@ -242,10 +263,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 54 insertions(+), 122 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/256)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Sun Feb 17 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 256
+    
     Added an autoload file, greatly reducing the code loaded at startup.
     Highlight omitted assert_tag and assert_no_tag methods in tests.
     OS X now more liberally detected when choosing a browser.
@@ -257,10 +280,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 4502 insertions(+), 4421 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/239)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Thu Jan 3 00:00:00 2008 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 239
+    
     Miscellaneous Rails 2.0 related tweaks.
     Commands like :Rconsole now work with Cygwin Ruby.
     Rudimentary HAML support.
@@ -270,10 +295,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 67 insertions(+), 63 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/222)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Fri Nov 2 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 222
+    
     :Rake runs rake spec inside a spec.
     Rails 2.0 cleanups and tweaks
 
@@ -282,10 +309,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 90 insertions(+), 67 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/216)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Thu Sep 6 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 216
+    
     Refactoring.  Please report any regressions.
     :Rpreview utilizes "# GET /foos/1" style comments.
     :Rake in a migration defaults to migrating to the currently edited version.
@@ -295,10 +324,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 620 insertions(+), 577 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/200)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Thu May 31 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 200
+    
     Anniversary edition:
     Greatly enhanced documentation.
     Proper gf support for named route helpers (edit_post_url).
@@ -309,10 +340,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 535 insertions(+), 223 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/192)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Thu May 17 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 192
+    
     :Rails works again.
     :R jumps between config/database.yml and config/environments/*.rb
 
@@ -320,10 +353,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 19 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/190)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Tue May 15 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 190
+    
     Partial support for nested extensions from edge (index.html.erb)
     :Rpp and Ry evaluate ruby and pretty print/YAML dump the result.
     :Rplugin navigation command.
@@ -335,10 +370,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 337 insertions(+), 202 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/180)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Tue Apr 17 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 180
+    
     :Rtask now additionally looks in the currently edited plugin's task directory.
     :Rlib navigation command looks for files in the lib directory and the current plugin's lib directory.
     :Rcommand creates custom navigation commands.
@@ -350,10 +387,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 380 insertions(+), 103 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/175)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Fri Mar 30 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 175
+    
     Highlight user classes (models, etc.) with the railsUserClass group.
     Static list of highlighted helper methods (speeds up initialization).
     HTML highlighting occurs inside string literals like %Q<Hello <b>world</b>>.
@@ -365,10 +404,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 306 insertions(+), 125 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/166)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Tue Feb 27 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 166
+    
     Prototype syntax highlighting.
     Improved errorformat, and an alternate format on :Rake! for backtraces.
     More robust database.yml loading for dbext.
@@ -378,10 +419,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 150 insertions(+), 101 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/150)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Sun Jan 28 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 150
+    
     Fixed stack overflow when used in conjunction with rubycomplete.vim.
     Improved speed in certain setups on network file systems.
     More Rails 1.2 goodies, including limited gf on url helpers.
@@ -390,10 +433,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 66 insertions(+), 35 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/144)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Wed Jan 17 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 144
+    
     Syntax highlighting for routes.
     Updates for Ruby on Rails 1.2 (primarily syntax highlighting, and a few abbreviations).
     Tiny little bug fixes.
@@ -402,10 +447,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 38 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/140)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Fri Jan 5 00:00:00 2007 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 140
+    
     :Rstylesheet and :Rjavascript commands.
     Better tab completion for some file editing commands.
     GUI menu for recently edited projects.
@@ -416,10 +463,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 339 insertions(+), 147 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/132)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Wed Nov 1 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 132
+    
     ":Rmodel ." will open app/models.  Other commands follow suit.
     Support for surround.vim, vimscript#1697.
     Miscellaneous bug fixes and cleanups.
@@ -429,10 +478,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 105 insertions(+), 35 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/128)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Wed Aug 16 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 128
+    
     Improved documentation.
     Minor bug fixes.
     Deprecated :Rpartial in favor of :Rextract.
@@ -442,10 +493,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 342 insertions(+), 174 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/123)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Fri Aug 4 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 123
+    
     Quieter error messages (less "Press ENTER").
     Fully functional modelines, including method local modelines.
     :Rmodel, :Rview, :Rcontroller, plus 9 other similar commands.
@@ -455,9 +508,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 1096 insertions(+), 546 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/113)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Wed Jul 19 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Bugfix for error messages in 6.x (apparently string() was added in 7.0)
 
@@ -465,10 +518,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 22 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/111)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Mon Jul 17 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 111
+    
     Abbreviations.
     :Rinvert to write a self.down migration.
     :Rset for per-app/buffer/method configuration.
@@ -479,10 +534,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 1657 insertions(+), 848 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Sun Jul 2 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 100
+    
     :Rserver to start a new server, :Rserver! to kill old server first.
     Other new commands.
     Improved 'errorformat'.
@@ -497,10 +554,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 1380 insertions(+), 618 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/69)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Fri Jun 16 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 69
+    
     rails_level now defaults to 3.
     a.vim compatible commands (:A et al).
     autocmds for specific file types (e.g. models)
@@ -514,10 +573,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 826 insertions(+), 355 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/37)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Tue Jun 6 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 37
+    
     Lots of new features:
     Easy configuration with g:rails_level.
     :Rgenerate controller Foo generates and edits foo_controller.rb.
@@ -530,9 +591,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 1056 insertions(+), 241 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/18)
-Author:     Tim Pope <vimNOSPAM at tpope.org>
+Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Wed May 31 00:00:00 2006 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 

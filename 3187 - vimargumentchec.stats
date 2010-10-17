@@ -1,7 +1,7 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.12)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Mon Sep 27 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Made `eval' and `func' checks more safe
 
@@ -13,24 +13,23 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  5 files changed, 576 insertions(+), 270 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.11)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Sat Sep 25 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added `optlst' check (checks optional items in list)
 
- README          |    2 +
  doc/chk.txt     |   12 +++-
  doc/yaml.txt    |    4 +
  plugin/chk.vim  |   43 +++++++++++++-
  plugin/yaml.vim |  104 +++++++++++++++++++++++-----------
  syntax/yaml.vim |  168 -------------------------------------------------------
- 6 files changed, 128 insertions(+), 205 deletions(-)
+ 5 files changed, 126 insertions(+), 205 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.10)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Tue Sep 14 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed `func' transformation
 
@@ -40,9 +39,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 108 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.9)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Sat Sep 11 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Improved error messages
 
@@ -56,10 +55,12 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  7 files changed, 5029 insertions(+), 148 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.8)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Sat Sep 11 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
+    Version 1.0.8
+    
     Added `next' key to `optional' model: it may be used to describe non-fixed number of optional arguments
 
  doc/chk.txt     |   16 ++++++++---
@@ -69,9 +70,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  4 files changed, 97 insertions(+), 55 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.6)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Tue Aug 31 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added `isfunc' test (tests whether given function exists and is callable)
 
@@ -81,9 +82,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  3 files changed, 102 insertions(+), 55 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.5)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Sun Aug 29 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Added isdirectory and executable checks to file check
 
@@ -92,9 +93,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 8 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.4)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Sat Aug 28 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed some bugs
 
@@ -107,9 +108,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  6 files changed, 777 insertions(+), 34 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.3)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Sun Aug 22 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Removed redirection of error messages (that caused some bugs)
 
@@ -117,9 +118,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 34 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.2)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Wed Aug 18 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed nums check
 
@@ -128,9 +129,9 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  2 files changed, 169 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Wed Aug 11 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Fixed `ambigious prefix' error
 
@@ -138,13 +139,13 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  1 files changed, 3 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
-Author:     ZyX ZyX <kp-pav at yandex.ru>
+Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Tue Aug 10 00:00:00 2010 +0000
-Commit:     vim-scripts <vimscripts@rinspin.com>
+Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
- README            |   10 +
+ README            |   12 +
  autoload/load.vim |    5 +
  doc/chk.txt       |  422 +++++++++++++++
  doc/comp.txt      |  123 +++++
@@ -152,4 +153,4 @@ Commit:     vim-scripts <vimscripts@rinspin.com>
  plugin/chk.vim    | 1046 ++++++++++++++++++++++++++++++++++++++
  plugin/comp.vim   |  387 ++++++++++++++
  plugin/load.vim   | 1467 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- 8 files changed, 3795 insertions(+), 0 deletions(-)
+ 8 files changed, 3797 insertions(+), 0 deletions(-)
