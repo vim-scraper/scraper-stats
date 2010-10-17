@@ -7,19 +7,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added vimp3 script. Fixed some performance issues with the suite, added reverse sorting to scripts that have sortable tables, fixed a bug in cal with insertion of new entries after existing entries.
 
- ftdetect/potl.vim       |    2 +-
- ftdetect/vimp3.vim      |    2 +
- plugin/.pysuite.vim.swp |  Bin 0 -> 12288 bytes
- plugin/cal.vim          |   36 +++-------
- plugin/fin.vim          |   30 ++------
- plugin/pysuite.vim      |   20 +++++-
- plugin/vimject.vim      |  100 +++++++---------------------
- plugin/vimp3.vim        |  159 ++++++++++++++++++++++++++++++++++++++++++++
- plugin/wtodolist.vim    |   74 ++++-----------------
- pysuite/vimject.txt     |    8 ++-
- pysuite/vimp3.txt       |  167 +++++++++++++++++++++++++++++++++++++++++++++++
- syntax/vimp3.vim        |   29 ++++++++
- 12 files changed, 435 insertions(+), 192 deletions(-)
+ ftdetect/potl.vim    |    2 +-
+ ftdetect/vimp3.vim   |    2 +
+ plugin/cal.vim       |   36 +++--------
+ plugin/fin.vim       |   30 +++-------
+ plugin/pysuite.vim   |   20 +++++-
+ plugin/vimject.vim   |  100 ++++++++----------------------
+ plugin/vimp3.vim     |  159 +++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/wtodolist.vim |   74 ++++-------------------
+ pysuite/vimject.txt  |    8 ++-
+ pysuite/vimp3.txt    |  167 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/vimp3.vim     |   29 +++++++++
+ 11 files changed, 435 insertions(+), 192 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.6)
 Author:     A K <ak@lightbird.net>
@@ -50,53 +49,48 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Initial upload
 
- README                            |   20 +++++
- ftdetect/cal.vim                  |    2 +
- ftdetect/potl.vim                 |   24 ++++++
- ftdetect/proj.vim                 |    2 +
- ftdetect/todo.vim                 |    1 +
- plugin/cal.vim                    |   49 +++++++++++
- plugin/fin.vim                    |   41 ++++++++++
- plugin/pysuite.vim                |   39 +++++++++
- plugin/vimject.vim                |  117 +++++++++++++++++++++++++++
- plugin/wtodolist.vim              |  103 ++++++++++++++++++++++++
- pysuite/cal.txt                   |   13 +++
- pysuite/doc.potl                  |   22 +++++
- pysuite/fin.txt                   |   55 +++++++++++++
- pysuite/potl.txt                  |    8 ++
- pysuite/python/.copy.sh.swp       |  Bin 0 -> 12288 bytes
- pysuite/python/.todo_sort.py.swp  |  Bin 0 -> 12288 bytes
- pysuite/python/.todolist.py.swp   |  Bin 0 -> 12288 bytes
- pysuite/python/.vimject.txt.swp   |  Bin 0 -> 12288 bytes
- pysuite/python/.wtodolist.txt.swp |  Bin 0 -> 12288 bytes
- pysuite/python/aligncode.py       |   54 +++++++++++++
- pysuite/python/cal.txt            |   13 +++
- pysuite/python/cal_add_month.py   |   90 +++++++++++++++++++++
- pysuite/python/cal_back.py        |   33 ++++++++
- pysuite/python/cal_entry.py       |   74 +++++++++++++++++
- pysuite/python/cal_today.py       |   46 +++++++++++
- pysuite/python/fin_init.py        |   38 +++++++++
- pysuite/python/fin_new.py         |   35 ++++++++
- pysuite/python/fin_update.py      |   62 ++++++++++++++
- pysuite/python/helpgrep.py        |   22 +++++
- pysuite/python/proj_genpydoc.py   |  159 +++++++++++++++++++++++++++++++++++++
- pysuite/python/proj_grepall.py    |   19 +++++
- pysuite/python/proj_open.py       |   48 +++++++++++
- pysuite/python/proj_openall.py    |   59 ++++++++++++++
- pysuite/python/proj_unloadall.py  |   90 +++++++++++++++++++++
- pysuite/python/pydocfold.py       |   47 +++++++++++
- pysuite/python/pystripdoc.py      |   67 ++++++++++++++++
- pysuite/python/resize.py          |   40 +++++++++
- pysuite/python/searchcode.py      |  135 +++++++++++++++++++++++++++++++
- pysuite/python/sortable.py        |   82 +++++++++++++++++++
- pysuite/python/todo_new.py        |   29 +++++++
- pysuite/python/todo_open.py       |   26 ++++++
- pysuite/python/todo_sort.py       |   86 ++++++++++++++++++++
- pysuite/sortable.txt              |   22 +++++
- pysuite/vimject.txt               |   92 +++++++++++++++++++++
- pysuite/wtodolist.txt             |   69 ++++++++++++++++
- syntax/cal.vim                    |    7 ++
- syntax/potl.vim                   |   38 +++++++++
- syntax/vimject.vim                |   20 +++++
- syntax/wtodo.vim                  |   24 ++++++
- 49 files changed, 2122 insertions(+), 0 deletions(-)
+ README                           |   20 +++++
+ ftdetect/cal.vim                 |    2 +
+ ftdetect/potl.vim                |   24 ++++++
+ ftdetect/proj.vim                |    2 +
+ ftdetect/todo.vim                |    1 +
+ plugin/cal.vim                   |   49 ++++++++++++
+ plugin/fin.vim                   |   41 ++++++++++
+ plugin/pysuite.vim               |   39 +++++++++
+ plugin/vimject.vim               |  117 ++++++++++++++++++++++++++++
+ plugin/wtodolist.vim             |  103 ++++++++++++++++++++++++
+ pysuite/cal.txt                  |   13 +++
+ pysuite/doc.potl                 |   22 +++++
+ pysuite/fin.txt                  |   55 +++++++++++++
+ pysuite/potl.txt                 |    8 ++
+ pysuite/python/aligncode.py      |   54 +++++++++++++
+ pysuite/python/cal.txt           |   13 +++
+ pysuite/python/cal_add_month.py  |   90 +++++++++++++++++++++
+ pysuite/python/cal_back.py       |   33 ++++++++
+ pysuite/python/cal_entry.py      |   74 ++++++++++++++++++
+ pysuite/python/cal_today.py      |   46 +++++++++++
+ pysuite/python/fin_init.py       |   38 +++++++++
+ pysuite/python/fin_new.py        |   35 ++++++++
+ pysuite/python/fin_update.py     |   62 +++++++++++++++
+ pysuite/python/helpgrep.py       |   22 +++++
+ pysuite/python/proj_genpydoc.py  |  159 ++++++++++++++++++++++++++++++++++++++
+ pysuite/python/proj_grepall.py   |   19 +++++
+ pysuite/python/proj_open.py      |   48 ++++++++++++
+ pysuite/python/proj_openall.py   |   59 ++++++++++++++
+ pysuite/python/proj_unloadall.py |   90 +++++++++++++++++++++
+ pysuite/python/pydocfold.py      |   47 +++++++++++
+ pysuite/python/pystripdoc.py     |   67 ++++++++++++++++
+ pysuite/python/resize.py         |   40 ++++++++++
+ pysuite/python/searchcode.py     |  135 ++++++++++++++++++++++++++++++++
+ pysuite/python/sortable.py       |   82 +++++++++++++++++++
+ pysuite/python/todo_new.py       |   29 +++++++
+ pysuite/python/todo_open.py      |   26 ++++++
+ pysuite/python/todo_sort.py      |   86 ++++++++++++++++++++
+ pysuite/sortable.txt             |   22 +++++
+ pysuite/vimject.txt              |   92 ++++++++++++++++++++++
+ pysuite/wtodolist.txt            |   69 ++++++++++++++++
+ syntax/cal.vim                   |    7 ++
+ syntax/potl.vim                  |   38 +++++++++
+ syntax/vimject.vim               |   20 +++++
+ syntax/wtodo.vim                 |   24 ++++++
+ 44 files changed, 2122 insertions(+), 0 deletions(-)

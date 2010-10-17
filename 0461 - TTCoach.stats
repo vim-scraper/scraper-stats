@@ -5,8 +5,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Basic support for utf-8 &encoding - en and de work, pl and fr are broken.
 
- macros/ttcoach/.ttcoach_layout_fr.swp |  Bin 0 -> 12288 bytes
- macros/ttcoach/fr/.02mq.ttc.swp       |  Bin 0 -> 12288 bytes
  macros/ttcoach/ttc_plug_de.vim        |    1 +
  macros/ttcoach/ttc_plug_en.vim        |    4 ++
  macros/ttcoach/ttc_plug_fr.vim        |    1 +
@@ -15,7 +13,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  macros/ttcoach/ttc_plug_sk_keymap.vim |    1 +
  macros/ttcoach/ttcoach.vim            |   55 +++++++++++++++++++++++---------
  plugin/ttcplug.vim                    |    3 +-
- 10 files changed, 50 insertions(+), 17 deletions(-)
+ 8 files changed, 50 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
 Author:     Mikolaj Machowski <mikmach@wp.pl>
@@ -38,12 +36,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      - highlight bugs, not ":sleep" - goals system - two new exercise files with Vim exercises: colon and sqbrackets - fixed bug with multiple keyboards attached  - many small bugfixes  - Show only ttc files in Explorer commands - Save statistics always with generation - it will free one F-key - Add ! to all :normal commands - TTCustom works on copies, not original files. Shi^W:wq happens - improvements in editing custom files - Menus - Give possibility to save Custom files in separate dir
 
  doc/ttcoach.txt                   |  119 +-
- macros/ttcoach/.ttcoach.vim.swp   |  Bin 36864 -> 0 bytes
  macros/ttcoach/custom/bashman     | 4874 ------------------
  macros/ttcoach/custom/stats.dat   |   39 -
  macros/ttcoach/custom/ttbc.ttc    | 9749 -------------------------------------
  macros/ttcoach/de/stats.dat       |    2 -
- macros/ttcoach/en/.02kd.ttc.swp   |  Bin 12288 -> 0 bytes
  macros/ttcoach/en/stats.dat       |   22 -
  macros/ttcoach/finger/stats.dat   |    2 -
  macros/ttcoach/fr/stats.dat       |    2 -
@@ -55,7 +51,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  macros/ttcoach/vim/sqbrackets.ttc |   95 +
  macros/ttcoach/vim/stats.dat      |  111 -
  plugin/ttcplug.vim                |  107 +-
- 18 files changed, 761 insertions(+), 15175 deletions(-)
+ 16 files changed, 761 insertions(+), 15175 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
 Author:     Mikolaj Machowski <mikmach@wp.pl>
@@ -66,14 +62,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - drill: new exercise for Vim Normal mode commands- name of layout, exercise and accuracy in statusline- most important Fx shortcuts in statusline- add words per minute statistics- improved handling of small_help window- automatic highlighting with i,I commands (no need for F4)- remove blank lines in TTCustom files- silencing of preparation commands
 
- doc/ttcoach.txt                 |   23 ++++--
- macros/ttcoach/.ttcoach.vim.swp |  Bin 36864 -> 36864 bytes
- macros/ttcoach/en/.02kd.ttc.swp |  Bin 0 -> 12288 bytes
- macros/ttcoach/ttcoach.vim      |  164 ++++++++++++++++++++++++---------------
- macros/ttcoach/vim/drill.ttc    |  113 +++++++++++++++++++++++++++
- macros/ttcoach/vim/gcoms        |   25 ++++++
- plugin/ttcplug.vim              |    1 +
- 7 files changed, 257 insertions(+), 69 deletions(-)
+ doc/ttcoach.txt              |   23 ++++--
+ macros/ttcoach/ttcoach.vim   |  164 ++++++++++++++++++++++++++----------------
+ macros/ttcoach/vim/drill.ttc |  113 +++++++++++++++++++++++++++++
+ macros/ttcoach/vim/gcoms     |   25 +++++++
+ plugin/ttcplug.vim           |    1 +
+ 5 files changed, 257 insertions(+), 69 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
 Author:     Mikolaj Machowski <mikmach@wp.pl>
@@ -86,7 +80,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
  doc/ttcoach.txt                       |   63 +-
  macros/ttcoach.vim                    |  482 --
- macros/ttcoach/.ttcoach.vim.swp       |  Bin 0 -> 36864 bytes
  macros/ttcoach/custom/bashman         | 4874 ++++++++++++++++
  macros/ttcoach/custom/ttbc.ttc        | 9749 +++++++++++++++++++++++++++++++++
  macros/ttcoach/en/stats.dat           |   20 +
@@ -129,7 +122,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  macros/ttcoach/ttcoach_layout_sk      |    5 +
  macros/ttcoach/ttvim                  |    2 +
  plugin/ttcplug.vim                    |   28 +-
- 45 files changed, 17734 insertions(+), 507 deletions(-)
+ 44 files changed, 17734 insertions(+), 507 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1)
 Author:     Mikolaj Machowski <mikmach@wp.pl>

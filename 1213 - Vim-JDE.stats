@@ -84,28 +84,27 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     <c:<c-x><c-u>
     :h g:vjde_taglib_uri
 
- autoload/xml/jsf_c.vim                           |  126 ++
- autoload/xml/jsf_h.vim                           |  222 ++
- autoload/xml/stl_c.vim                           |   48 +-
- autoload/xml/stl_fmt.vim                         |   41 +-
- autoload/xml/stl_sql.vim                         |   26 +-
- autoload/xml/stl_x.vim                           |   38 +-
- autoload/xml/tc.vim                              |  463 ++++
- autoload/xml/tx.vim                              |  109 +
- doc/vjde.txt                                     |   20 +
- plugin/vjde.vim                                  |   17 +-
- plugin/vjde/readtags.exe                         |  Bin 31944 -> 32134 bytes
- plugin/vjde/tipswnd.dll                          |  Bin 42469 -> 71273 bytes
- plugin/vjde/tld2xmldata.rb                       |   51 +-
- plugin/vjde/vjde_completion.vim                  |   20 +-
- plugin/vjde/vjde_template.rb                     |   35 +-
- plugin/vjde/vjde_template.vim                    |    6 +-
- plugin/vjde/wspawn.exe                           |  Bin 128105 -> 128027 bytes
- src/Makefile                                     |    2 +-
- src/lex.yy.c                                     | 2447 ++++++++++++++++++++++
- src/my_system.o                                  |  Bin 0 -> 3118 bytes
- src/vjde/completion/.DynamicClassLoader.java.swp |  Bin 32768 -> 0 bytes
- 21 files changed, 3620 insertions(+), 51 deletions(-)
+ autoload/xml/jsf_c.vim          |  126 ++
+ autoload/xml/jsf_h.vim          |  222 ++++
+ autoload/xml/stl_c.vim          |   48 +-
+ autoload/xml/stl_fmt.vim        |   41 +-
+ autoload/xml/stl_sql.vim        |   26 +-
+ autoload/xml/stl_x.vim          |   38 +-
+ autoload/xml/tc.vim             |  463 ++++++++
+ autoload/xml/tx.vim             |  109 ++
+ doc/vjde.txt                    |   20 +
+ plugin/vjde.vim                 |   17 +-
+ plugin/vjde/readtags.exe        |  Bin 31944 -> 32134 bytes
+ plugin/vjde/tipswnd.dll         |  Bin 42469 -> 71273 bytes
+ plugin/vjde/tld2xmldata.rb      |   51 +-
+ plugin/vjde/vjde_completion.vim |   20 +-
+ plugin/vjde/vjde_template.rb    |   35 +-
+ plugin/vjde/vjde_template.vim   |    6 +-
+ plugin/vjde/wspawn.exe          |  Bin 128105 -> 128027 bytes
+ src/Makefile                    |    2 +-
+ src/lex.yy.c                    | 2447 +++++++++++++++++++++++++++++++++++++++
+ src/my_system.o                 |  Bin 0 -> 3118 bytes
+ 20 files changed, 3620 insertions(+), 51 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.14.6)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -117,14 +116,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     bug fix for package completion. tested on jdk.1.6.0_01,
     compiled with ant , options target="1.4" source="1.4"
 
- plugin/vjde/tlds/html.def                        |  175 -
- plugin/vjde/tlds/jdk1.5.lst                      | 8763 ----------------------
- plugin/vjde/tlds/jdk1.5.lst.idx                  |    4 -
- plugin/vjde/vjde.jar                             |  Bin 30780 -> 30655 bytes
- plugin/vjde/vjde_java_completion.vim             |    3 +
- src/vjde/completion/.DynamicClassLoader.java.swp |  Bin 0 -> 32768 bytes
- src/vjde/completion/DynamicClassLoader.java      |   91 +-
- 7 files changed, 54 insertions(+), 8982 deletions(-)
+ plugin/vjde/tlds/html.def                   |  175 -
+ plugin/vjde/tlds/jdk1.5.lst                 | 8763 ---------------------------
+ plugin/vjde/tlds/jdk1.5.lst.idx             |    4 -
+ plugin/vjde/vjde.jar                        |  Bin 30780 -> 30655 bytes
+ plugin/vjde/vjde_java_completion.vim        |    3 +
+ src/vjde/completion/DynamicClassLoader.java |   91 +-
+ 6 files changed, 54 insertions(+), 8982 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.14.4)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -308,10 +306,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Bug fix for java package completion. Thanks for Attila Piros. ^_^
 
- plugin/.vjde.vim.swp            |  Bin 16384 -> 0 bytes
  plugin/vjde/vjde_completion.vim |    2 +-
  plugin/vjde/vjde_java_utils.vim |   46 +++++++++++++++++++-------------------
- 3 files changed, 24 insertions(+), 24 deletions(-)
+ 2 files changed, 24 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.12.2)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -325,8 +322,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     you can remove this file by yourself.
 
  autoload/xml/stl_fn.vim |    2 --
- plugin/.vjde.vim.swp    |  Bin 0 -> 16384 bytes
- 2 files changed, 0 insertions(+), 2 deletions(-)
+ 1 files changed, 0 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.12.1)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -382,11 +378,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  doc/vcde.txt                           |   19 ++++-
  doc/vjde.txt                           |    2 +
  plugin/vjde.vim                        |   12 ++--
- plugin/vjde/.vjde_completion.vim.swp   |  Bin 61440 -> 0 bytes
  plugin/vjde/vjde_cs_completion.vim.bak |  147 --------------------------------
  plugin/vjde/vjde_ruby_completion.vim   |   79 +++++++++++++++--
  src/CSParser.exe                       |  Bin 5632 -> 4608 bytes
- 7 files changed, 96 insertions(+), 163 deletions(-)
+ 6 files changed, 96 insertions(+), 163 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.11.3)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -398,11 +393,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     bug fix for Project menu.
     remove ruby require for taglib completion.
 
- plugin/vjde.vim                      |    4 +-
- plugin/vjde/.vjde_completion.vim.swp |  Bin 0 -> 61440 bytes
- plugin/vjde/vjde_completion.vim      |   46 +---------------------------------
- plugin/vjde/vjde_menu_def.vim        |   12 ---------
- 4 files changed, 3 insertions(+), 59 deletions(-)
+ plugin/vjde.vim                 |    4 +-
+ plugin/vjde/vjde_completion.vim |   46 +--------------------------------------
+ plugin/vjde/vjde_menu_def.vim   |   12 ----------
+ 3 files changed, 3 insertions(+), 59 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.11.2)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -459,7 +453,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Remove My own Preview GUI support!!!
 
  doc/vjde.txt                          |   12 +++
- plugin/.vjde.vim.swp                  |  Bin 16384 -> 0 bytes
  plugin/vjde.vim                       |   21 +---
  plugin/vjde/CSParser.exe              |  Bin 0 -> 5632 bytes
  plugin/vjde/preview.dll               |  Bin 2640306 -> 0 bytes
@@ -474,7 +467,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  src/CSParser.cs                       |  165 +++++++++++++++++++++++++++++++++
  src/CSParser.exe                      |  Bin 0 -> 5632 bytes
  src/vjde/completion/Completion.java   |   80 ++++++++++++++++-
- 16 files changed, 513 insertions(+), 66 deletions(-)
+ 15 files changed, 513 insertions(+), 66 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.11.0)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -488,7 +481,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
  doc/vcde.txt                          |   17 +
  doc/vjde.txt                          |   18 +-
- plugin/.vjde.vim.swp                  |  Bin 0 -> 16384 bytes
  plugin/vjde.vim                       |   18 +-
  plugin/vjde/tlds/html.def             | 1350 ---------------------------------
  plugin/vjde/vjde_completion.vim       |  105 ++-
@@ -498,7 +490,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  plugin/vjde/vjde_java_completion.vim  |   11 +-
  plugin/vjde/vjde_java_utils.vim       |    2 +-
  plugin/vjde/vjde_xml_cfu.rb           |   53 ++-
- 12 files changed, 178 insertions(+), 1425 deletions(-)
+ 11 files changed, 178 insertions(+), 1425 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.10.01)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -547,8 +539,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     	std::auto_ptr
     	auto_ptr
 
- plugin/vjde/.vjde_completion.vim.swp        |  Bin 57344 -> 0 bytes
- plugin/vjde/.vjde_preview.vim.swp           |  Bin 16384 -> 0 bytes
  plugin/vjde/vjde_cpp_completion.vim         |    6 +-
  plugin/vjde/vjde_ctags_support.rb           |   99 +++++--
  plugin/vjde/vjde_ctags_support.vim          |  462 +++++++++++++-------------
@@ -557,7 +547,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  plugin/vjde/vjde_preview.vim                |   13 +-
  src/vjde/completion/Document.java           |    3 +-
  src/vjde/completion/DynamicClassLoader.java |    4 +-
- 10 files changed, 372 insertions(+), 296 deletions(-)
+ 8 files changed, 372 insertions(+), 296 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.02.09)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -570,8 +560,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     must be correctly.
     Fix it for VIM70aa-154
 
- plugin/vjde/.vjde_completion.vim.swp  |  Bin 65536 -> 57344 bytes
- plugin/vjde/.vjde_preview.vim.swp     |  Bin 0 -> 16384 bytes
  plugin/vjde/vjde_completion.vim       |    4 +
  plugin/vjde/vjde_cpp_completion.vim   |    6 +
  plugin/vjde/vjde_ctags_completion.vim |    3 +
@@ -586,7 +574,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  plugin/vjde/vjde_template_tool.vim    |    4 +-
  plugin/vjde_floatingwin.vim           |   17 +-
  src/readtags.c.bak                    |  958 ---------------------------------
- 16 files changed, 64 insertions(+), 966 deletions(-)
+ 14 files changed, 64 insertions(+), 966 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.02.08)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -600,7 +588,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     to VjdeCompletionFun0(findstart,base)
 
  plugin/vjde.vim                       |   25 +-
- plugin/vjde/.vjde_completion.vim.swp  |  Bin 0 -> 65536 bytes
  plugin/vjde/preview.dll               |  Bin 2637553 -> 2640306 bytes
  plugin/vjde/preview4gtk.so            |  Bin 155011 -> 155015 bytes
  plugin/vjde/tlds/gtkdoc.txt           | 4961 +++++++++++++++++++++++++++++++++
@@ -614,7 +601,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  plugin/vjde/wspawn.exe                |  Bin 127108 -> 128830 bytes
  src/previewwindow.cpp                 |   28 +-
  src/readtags.c.bak                    |  958 +++++++
- 15 files changed, 6639 insertions(+), 90 deletions(-)
+ 14 files changed, 6639 insertions(+), 90 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.02.07)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -627,9 +614,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     You can remove  it by your self .
     plugin/vjde/vjde_cpp_completion.vim  line 3 and line 4
 
- plugin/vjde/.vjde_ctags_support.vim.swp |  Bin 16384 -> 0 bytes
- plugin/vjde/readtags.exe                |  Bin 31656 -> 32586 bytes
- 2 files changed, 0 insertions(+), 0 deletions(-)
+ plugin/vjde/readtags.exe |  Bin 31656 -> 32586 bytes
+ 1 files changed, 0 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.02.06)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -643,14 +629,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     To  use this feature , for your vimrc , add this line
     g:vjde_ctags_ruby=0
 
- doc/vcde.txt                               |   17 ++-
- doc/vjde.txt                               |  142 +++++++++---------
- plugin/vjde.vim                            |    6 +-
- plugin/vjde/.vjde_ctags_completion.vim.swp |  Bin 16384 -> 0 bytes
- plugin/vjde/.vjde_ctags_support.vim.swp    |  Bin 0 -> 16384 bytes
- plugin/vjde/vjde_ctags_completion.vim      |   28 ++++-
- plugin/vjde/vjde_ctags_support.vim         |  227 ++++++++++++++++++++++++++++
- 7 files changed, 341 insertions(+), 79 deletions(-)
+ doc/vcde.txt                          |   17 ++-
+ doc/vjde.txt                          |  142 ++++++++++----------
+ plugin/vjde.vim                       |    6 +-
+ plugin/vjde/vjde_ctags_completion.vim |   28 ++++-
+ plugin/vjde/vjde_ctags_support.vim    |  227 +++++++++++++++++++++++++++++++++
+ 5 files changed, 341 insertions(+), 79 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.02.05)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -665,18 +649,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     use : gcc -static -o plugin/vjde/readtags src/readtags.c -DREADTAGS_MAIN
     compile readtags on win32 and mandrake
 
- plugin/vjde/.vjde_cpp_completion.vim.swp   |  Bin 16384 -> 0 bytes
- plugin/vjde/.vjde_ctags_completion.vim.swp |  Bin 0 -> 16384 bytes
- plugin/vjde/jcommenter.vim                 | 2498 ++++++++++++++--------------
- plugin/vjde/readtags                       |  Bin 0 -> 21490 bytes
- plugin/vjde/readtags.exe                   |  Bin 0 -> 31656 bytes
- plugin/vjde/vjde_cpp_completion.vim        |   12 +-
- plugin/vjde/vjde_ctags_completion.vim      |   90 +-
- plugin/vjde/vjde_ctags_support.rb          |  332 ++++-
- plugin/vjde/vjde_menu_def.vim              |    2 +-
- src/readtags.c                             | 1192 +++++++++++++
- src/readtags.h                             |  252 +++
- 11 files changed, 3040 insertions(+), 1338 deletions(-)
+ plugin/vjde/jcommenter.vim            | 2498 ++++++++++++++++----------------
+ plugin/vjde/readtags                  |  Bin 0 -> 21490 bytes
+ plugin/vjde/readtags.exe              |  Bin 0 -> 31656 bytes
+ plugin/vjde/vjde_cpp_completion.vim   |   12 +-
+ plugin/vjde/vjde_ctags_completion.vim |   90 +-
+ plugin/vjde/vjde_ctags_support.rb     |  332 ++++-
+ plugin/vjde/vjde_menu_def.vim         |    2 +-
+ src/readtags.c                        | 1192 ++++++++++++++++
+ src/readtags.h                        |  252 ++++
+ 9 files changed, 3040 insertions(+), 1338 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.02.04)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -691,15 +673,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
        idx.<c-space>
        boost::multi_index<string,char>::index::<c-space>
 
- plugin/vjde/.vjde_cpp_completion.vim.swp |  Bin 0 -> 16384 bytes
- plugin/vjde/preview.dll                  |  Bin 2637363 -> 2637553 bytes
- plugin/vjde/preview4gtk.so               |  Bin 154873 -> 155011 bytes
- plugin/vjde/vjde_cpp_completion.vim      |   85 +++++++++++++++++++++++++-----
- plugin/vjde/vjde_ctags_support.rb        |   29 ++++++----
- plugin/vjde/wspawn.exe                   |  Bin 127108 -> 127108 bytes
- src/.previewwindow.cpp.swp               |  Bin 40960 -> 0 bytes
- src/previewwindow.cpp                    |    8 +++-
- 8 files changed, 96 insertions(+), 26 deletions(-)
+ plugin/vjde/preview.dll             |  Bin 2637363 -> 2637553 bytes
+ plugin/vjde/preview4gtk.so          |  Bin 154873 -> 155011 bytes
+ plugin/vjde/vjde_cpp_completion.vim |   85 +++++++++++++++++++++++++++++-----
+ plugin/vjde/vjde_ctags_support.rb   |   29 +++++++-----
+ plugin/vjde/wspawn.exe              |  Bin 127108 -> 127108 bytes
+ src/previewwindow.cpp               |    8 +++-
+ 6 files changed, 96 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.02.03)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -711,9 +691,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  plugin/vjde/preview.dll             |  Bin 2637185 -> 2637363 bytes
  plugin/vjde/vjde_cpp_completion.vim |    2 +-
  plugin/vjde/wspawn.exe              |  Bin 127108 -> 127108 bytes
- src/.previewwindow.cpp.swp          |  Bin 40960 -> 40960 bytes
  src/previewwindow.cpp               |    4 ++++
- 5 files changed, 5 insertions(+), 1 deletions(-)
+ 4 files changed, 5 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.02.02)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -729,7 +708,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  compiler/javac_ex.vim                   |   19 +
  doc/vjde.txt                            |   12 +
  plugin/vjde.vim                         |   20 +-
- plugin/vjde/.vjde_iab.vim.swp           |  Bin 16384 -> 0 bytes
  plugin/vjde/preview4gtk.so              |  Bin 154454 -> 154873 bytes
  plugin/vjde/project.vim                 | 1299 +++++++++++++++++++++++++++++++
  plugin/vjde/vjde_completion.vim         |   10 +-
@@ -742,13 +720,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  plugin/vjde/vjde_template.rb            |    2 +-
  plugin/vjde/vjde_util.vim.bak           |  118 ---
  plugin/vjde_util.vim                    |    2 +-
- src/.previewwindow.cpp.swp              |  Bin 0 -> 40960 bytes
  src/doc_window.h                        |    5 -
  src/previewwindow.cpp                   |    6 +-
  src/tags                                |   82 --
  src/vjde/completion/Completion.java.old |  841 --------------------
  syntax/vjde.vim                         |   60 +-
- 22 files changed, 1594 insertions(+), 1300 deletions(-)
+ 20 files changed, 1594 insertions(+), 1300 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.02.01)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -774,7 +751,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  doc/vcde.txt                          |   16 ++++
  doc/vjde.txt                          |   12 +++-
  plugin/vjde.vim                       |    2 +-
- plugin/vjde/.vjde_iab.vim.swp         |  Bin 0 -> 16384 bytes
  plugin/vjde/preview.dll               |  Bin 2635690 -> 2637185 bytes
  plugin/vjde/tlds/iab.vjde             |  121 ----------------------------
  plugin/vjde/tlds/java.iab             |  121 ++++++++++++++++++++++++++++
@@ -790,7 +766,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  plugin/vjde_util.vim                  |    6 +-
  src/previewwindow.cpp                 |   21 ++++-
  src/vjde/completion/Document.java     |    3 +
- 19 files changed, 465 insertions(+), 187 deletions(-)
+ 18 files changed, 465 insertions(+), 187 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.02.00)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -807,7 +783,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  doc/vcde.txt                          |   34 ++
  doc/vjde.txt                          |   12 +-
  plugin/vjde.vim                       |    4 +
- plugin/vjde/.vjde_preview.vim.swp     |  Bin 24576 -> 0 bytes
  plugin/vjde/preview.dll               |  Bin 2631193 -> 2635690 bytes
  plugin/vjde/preview4gtk.so            |  Bin 149968 -> 154454 bytes
  plugin/vjde/vjde.jar                  |  Bin 29745 -> 30363 bytes
@@ -821,7 +796,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  plugin/vjde_util.vim                  |  120 ++++++++
  src/previewwindow.cpp                 |  142 ++++++++-
  src/vjde/completion/Document.java     |   40 +++-
- 17 files changed, 963 insertions(+), 429 deletions(-)
+ 16 files changed, 963 insertions(+), 429 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.01.00)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -837,7 +812,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
  doc/vjde.txt                             |  124 +++++++++++
  plugin/vjde.vim                          |   50 ++---
- plugin/vjde/.vjde_preview.vim.swp        |  Bin 0 -> 24576 bytes
  plugin/vjde/preview.dll                  |  Bin 524518 -> 2631193 bytes
  plugin/vjde/preview4gtk.so               |  Bin 46914 -> 149968 bytes
  plugin/vjde/vjde.jar                     |  Bin 24991 -> 29745 bytes
@@ -854,7 +828,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  src/vjde/completion/Document.java        |  121 ++++++++++
  src/vjde/completion/SourceDocReader.java |  260 ++++++++++++++++++++++
  src/wspawn.cpp                           |   74 ++++++
- 19 files changed, 1499 insertions(+), 369 deletions(-)
+ 18 files changed, 1499 insertions(+), 369 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.00.13)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -863,9 +837,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     minor changed
 
- plugin/vjde/.vjde_java_completion.vim.swp |  Bin 20480 -> 0 bytes
- plugin/vjde/tlds/iab.vjde                 |    1 +
- 2 files changed, 1 insertions(+), 0 deletions(-)
+ plugin/vjde/tlds/iab.vjde |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.00.12)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
@@ -874,9 +847,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     mirror bugfix for 2.00.12.
 
- plugin/vjde/.vjde_java_completion.vim.swp |  Bin 0 -> 20480 bytes
- plugin/vjde/vjde_java_completion.vim      |    4 ++--
- 2 files changed, 2 insertions(+), 2 deletions(-)
+ plugin/vjde/vjde_java_completion.vim |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.00.11)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
