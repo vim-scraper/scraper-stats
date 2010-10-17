@@ -1,4 +1,87 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2.0)
+Author:     Meikel Brandmeyer <Brandels_Mikesh at web.de>
+AuthorDate: Mon Oct 4 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Finally a new release. Bringing VimClojure up to date with 1.2 and 1.3 alpha. Please consult the README in the zip file for further installation instructions.
+
+ README.markdown                                    |  122 ++++
+ autoload/vimclojure.vim                            |  543 +++++++++++++----
+ bin/clj                                            |   80 +++
+ bin/clj.bat                                        |   55 ++
+ bin/ng-server                                      |   78 ++-
+ bin/ng-server.bat                                  |   57 ++
+ doc/LICENSE.txt                                    |   20 +
+ doc/clojure.txt                                    |  125 +++-
+ ftdetect/clojure.vim                               |    2 +-
+ ftplugin/clojure.vim                               |  101 ++--
+ ftplugin/clojure/completions-clojure.core.txt      |  526 ++++++++++++++++
+ ftplugin/clojure/completions-clojure.inspector.txt |   13 +
+ .../clojure/completions-clojure.java.browse.txt    |    2 +
+ ftplugin/clojure/completions-clojure.java.io.txt   |   19 +
+ .../clojure/completions-clojure.java.javadoc.txt   |    8 +
+ .../clojure/completions-clojure.java.shell.txt     |    4 +
+ ftplugin/clojure/completions-clojure.main.txt      |   10 +
+ ftplugin/clojure/completions-clojure.pprint.txt    |   23 +
+ ftplugin/clojure/completions-clojure.repl.txt      |    5 +
+ ftplugin/clojure/completions-clojure.set.txt       |   12 +
+ .../clojure/completions-clojure.stacktrace.txt     |    5 +
+ ftplugin/clojure/completions-clojure.string.txt    |   15 +
+ ftplugin/clojure/completions-clojure.template.txt  |    2 +
+ .../clojure/completions-clojure.test.junit.txt     |   18 +
+ ftplugin/clojure/completions-clojure.test.tap.txt  |    6 +
+ ftplugin/clojure/completions-clojure.test.txt      |   34 +
+ ftplugin/clojure/completions-clojure.walk.txt      |   10 +
+ ftplugin/clojure/completions-clojure.xml.txt       |   13 +
+ ftplugin/clojure/completions-clojure.zip.txt       |   27 +
+ indent/clojure.vim                                 |    8 +-
+ plugin/clojure.vim                                 |   57 ++
+ syntax/clojure.vim                                 |   96 ++-
+ vimclojure-2.1.2/LICENSE.txt                       |   20 -
+ vimclojure-2.1.2/Makefile                          |   30 -
+ vimclojure-2.1.2/README.txt                        |  109 ----
+ vimclojure-2.1.2/build/vimclojure.jar              |  Bin 226646 -> 0 bytes
+ vimclojure-2.1.2/build.xml                         |  243 --------
+ .../ftplugin/clojure/completions-clojure.core.txt  |  433 -------------
+ .../ftplugin/clojure/completions-clojure.set.txt   |   10 -
+ .../ftplugin/clojure/completions-clojure.xml.txt   |   13 -
+ .../ftplugin/clojure/completions-clojure.zip.txt   |   27 -
+ vimclojure-2.1.2/ivy.xml                           |   24 -
+ vimclojure-2.1.2/ivysettings.xml                   |    9 -
+ vimclojure-2.1.2/ng.exe                            |  Bin 15360 -> 0 bytes
+ vimclojure-2.1.2/ngclient/ng.c                     |  638 --------------------
+ .../src/com/martiansoftware/nailgun/Alias.java     |  113 ----
+ .../com/martiansoftware/nailgun/AliasManager.java  |  132 ----
+ .../src/com/martiansoftware/nailgun/LongUtils.java |   61 --
+ .../com/martiansoftware/nailgun/NGConstants.java   |  108 ----
+ .../src/com/martiansoftware/nailgun/NGContext.java |  261 --------
+ .../martiansoftware/nailgun/NGExitException.java   |   47 --
+ .../com/martiansoftware/nailgun/NGInputStream.java |  123 ----
+ .../martiansoftware/nailgun/NGOutputStream.java    |   76 ---
+ .../martiansoftware/nailgun/NGSecurityManager.java |   74 ---
+ .../src/com/martiansoftware/nailgun/NGServer.java  |  506 ----------------
+ .../src/com/martiansoftware/nailgun/NGSession.java |  337 -----------
+ .../com/martiansoftware/nailgun/NGSessionPool.java |  122 ----
+ .../src/com/martiansoftware/nailgun/NailStats.java |  130 ----
+ .../nailgun/ThreadLocalInputStream.java            |  144 -----
+ .../nailgun/ThreadLocalPrintStream.java            |  261 --------
+ .../nailgun/builtins/DefaultNail.java              |   37 --
+ .../martiansoftware/nailgun/builtins/NGAlias.java  |   82 ---
+ .../nailgun/builtins/NGClasspath.java              |   77 ---
+ .../nailgun/builtins/NGServerStats.java            |   54 --
+ .../martiansoftware/nailgun/builtins/NGStop.java   |   36 --
+ .../nailgun/builtins/NGVersion.java                |   16 -
+ .../nailgun/builtins/builtins.properties           |   14 -
+ .../nailgun/nailgun-version.properties             |    3 -
+ .../src/de/kotka/vimclojure/backend.clj            |  187 ------
+ .../src/de/kotka/vimclojure/gencompletions.clj     |   30 -
+ vimclojure-2.1.2/src/de/kotka/vimclojure/nails.clj |  236 --------
+ vimclojure-2.1.2/src/de/kotka/vimclojure/repl.clj  |  185 ------
+ vimclojure-2.1.2/src/de/kotka/vimclojure/util.clj  |  393 ------------
+ .../src/org/apache/tools/ant/ExitException.java    |   97 ---
+ 74 files changed, 1835 insertions(+), 5759 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.2)
 Author:     Meikel Brandmeyer <Brandels_Mikesh at web.de>
 AuthorDate: Sun Jul 26 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

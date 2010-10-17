@@ -1,4 +1,95 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/7.5.3)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/7.7.2)
+Author:     Marcin Szamotulski <mszamot at gmail.com>
+AuthorDate: Tue Oct 12 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    See :h atp-news (:DefiSearch fixed, but also more)
+
+ autoload/atplib.vim                    |    4 +-
+ doc/automatic-tex-plugin.txt           |   26 ++++-
+ ftplugin/ATP_files/LatexBox_motion.vim |   12 +-
+ ftplugin/ATP_files/common.vim          |   66 +++++++----
+ ftplugin/ATP_files/compiler.vim        |    6 +-
+ ftplugin/ATP_files/helpfunctions.vim   |    3 +
+ ftplugin/ATP_files/motion.vim          |   42 ++++---
+ ftplugin/ATP_files/options.vim         |  205 ++++++++++++++++----------------
+ ftplugin/ATP_files/project.vim         |    7 +-
+ ftplugin/ATP_files/search.vim          |  121 +++++++++++--------
+ ftplugin/ATP_files/various.vim         |  189 ++++++++++++++++++------------
+ ftplugin/tex_atp.vim                   |    8 +-
+ 12 files changed, 404 insertions(+), 285 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/7.7.1)
+Author:     Marcin Szamotulski <mszamot at gmail.com>
+AuthorDate: Thu Oct 7 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    A bug fixed reported by B. Garcia Carreras.
+
+ ftplugin/ATP_files/project.vim |    3 +++
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/7.7)
+Author:     Marcin Szamotulski <mszamot at gmail.com>
+AuthorDate: Thu Oct 7 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Licence: GPL v3+.
+    See :h atp-news
+
+ autoload/atplib.vim             |    8 +-
+ doc/automatic-tex-plugin.txt    |   30 +++++-
+ ftplugin/ATP_files/common.vim   |   36 +++----
+ ftplugin/ATP_files/compiler.vim |   37 ++++---
+ ftplugin/ATP_files/mappings.vim |    5 +
+ ftplugin/ATP_files/motion.vim   |  201 +++++++++++++++++++++++++++++++++++++-
+ ftplugin/ATP_files/options.vim  |   31 ++++---
+ ftplugin/ATP_files/project.vim  |   30 ++++--
+ ftplugin/ATP_files/search.vim   |    2 +-
+ ftplugin/ATP_files/various.vim  |   22 ++++-
+ ftplugin/tex_atp.vim            |    4 +-
+ 11 files changed, 323 insertions(+), 83 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/7.6.1)
+Author:     Marcin Szamotulski <mszamot at gmail.com>
+AuthorDate: Thu Sep 30 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Read :h atp-news.
+
+ README                                    |   11 +-
+ autoload/atplib.vim                       |  114 +++++--
+ colors/coots-beauty-256.vim               |   14 +-
+ doc/automatic-tex-plugin.txt              |  287 +++++++++++++----
+ ftplugin/ATP_files/LatexBox_common.vim    |   84 +++++-
+ ftplugin/ATP_files/LatexBox_complete.vim  |   28 +-
+ ftplugin/ATP_files/LatexBox_indent.vim    |   12 +-
+ ftplugin/ATP_files/LatexBox_latexmk.vim   |  215 +++++++++++++
+ ftplugin/ATP_files/LatexBox_mappings.vim  |    5 +
+ ftplugin/ATP_files/LatexBox_motion.vim    |   63 +++--
+ ftplugin/ATP_files/LatexBox_variables.vim |    8 +
+ ftplugin/ATP_files/common.vim             |  151 ++++++---
+ ftplugin/ATP_files/compiler.vim           |  100 ++++---
+ ftplugin/ATP_files/helpfunctions.vim      |   20 +-
+ ftplugin/ATP_files/mappings.vim           |   96 ++++--
+ ftplugin/ATP_files/menu.vim               |   12 +-
+ ftplugin/ATP_files/motion.vim             |  324 ++++++++++---------
+ ftplugin/ATP_files/options.vim            |  272 ++++++++++-------
+ ftplugin/ATP_files/project.vim            |  228 +++++++++-----
+ ftplugin/ATP_files/search.vim             |  487 ++++++++++++++++++++---------
+ ftplugin/ATP_files/various.vim            |  177 ++++++-----
+ ftplugin/bibsearch_atp.vim                |    3 +-
+ ftplugin/fd_atp.vim                       |    3 +-
+ ftplugin/plaintex_atp.vim                 |    3 +-
+ ftplugin/tex_atp.vim                      |   83 +++--
+ ftplugin/toc_atp.vim                      |   61 +++-
+ syntax/bibsearch_atp.vim                  |    8 +-
+ syntax/labels_atp.vim                     |    9 +-
+ syntax/log_atp.vim                        |    7 +-
+ syntax/toc_atp.vim                        |    9 +-
+ 30 files changed, 1991 insertions(+), 903 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/7.5.3)
 Author:     Marcin Szamotulski <mszamot at gmail.com>
 AuthorDate: Tue Sep 14 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

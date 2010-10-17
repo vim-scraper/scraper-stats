@@ -1,4 +1,38 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.0b1)
+Author:     Vlad Irnov <vlad.irnov at gmail.com>
+AuthorDate: Tue Sep 21 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Added support for headline markups other than start fold markers with levels. Available markup modes: wiki, vimwiki, viki, html.
+    
+    * Changed plugin directory structure. All Python files are now located in folder plugin/voom. You should delete old files in plugin folder: plugin/voom.py, plugin/voom.pyc, plugin/voomScript.py.
+
+ README                                       |   51 +-
+ VOoM-3.0/voom_addons/custom_headlines.vim    |   66 -
+ VOoM-3.0/voom_addons/voom_info.vim           |   56 -
+ VOoM-3.0/voom_samples/40_levels_deep.txt     |  127 --
+ VOoM-3.0/voom_samples/calendar_outline.zip   |  Bin 29162 -> 0 bytes
+ VOoM-3.0/voom_samples/test_outline.txt       |  238 ----
+ VOoM-4.0b1/plugin/voom/voom.py               | 1746 ++++++++++++++++++++++++++
+ VOoM-4.0b1/plugin/voom/voom_mode_html.py     |   77 ++
+ VOoM-4.0b1/plugin/voom/voom_mode_viki.py     |   72 ++
+ VOoM-4.0b1/plugin/voom/voom_mode_vimwiki.py  |   73 ++
+ VOoM-4.0b1/plugin/voom/voom_mode_wiki.py     |  100 ++
+ VOoM-4.0b1/voom_addons/custom_headlines.vim  |   69 +
+ VOoM-4.0b1/voom_addons/voom_info.vim         |   57 +
+ VOoM-4.0b1/voom_samples/40_levels_deep.txt   |  127 ++
+ VOoM-4.0b1/voom_samples/calendar_outline.zip |  Bin 0 -> 29162 bytes
+ VOoM-4.0b1/voom_samples/test_outline.html    |  238 ++++
+ VOoM-4.0b1/voom_samples/test_outline.txt     |  238 ++++
+ VOoM-4.0b1/voom_samples/test_outline.viki    |  238 ++++
+ VOoM-4.0b1/voom_samples/test_outline.vimwiki |  238 ++++
+ VOoM-4.0b1/voom_samples/test_outline.wiki    |  238 ++++
+ doc/voom.txt                                 |  256 ++++-
+ plugin/voom.py                               | 1685 -------------------------
+ plugin/voom.vim                              |  121 ++-
+ 23 files changed, 3844 insertions(+), 2267 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
 Author:     Vlad Irnov <vlad.irnov at gmail.com>
 AuthorDate: Sun Aug 1 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

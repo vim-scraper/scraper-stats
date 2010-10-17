@@ -1,4 +1,16 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6.3)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.0)
+Author:     Tamas Kovacs <kovisoft at gmail.com>
+AuthorDate: Sat Oct 2 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added package/namespace support, new way of refreshing the REPL buffer via autocommands, removed 'RUNNING' mode, cursor stays in the current buffer at evaluation, added option g:slimv_updatetime, removed options related to the old way of refreshing (g:slimv_repl_return and g:slimv_repl_wait), removed debug logging, updated Clojure API to version 1.2, extended keyword definition when selecting symbols, bugfix: defmacro detection problem (again).
+
+ doc/slimv.txt             |  124 ++++++------
+ ftplugin/slimv-cljapi.vim |   70 +------
+ ftplugin/slimv.vim        |  522 +++++++++++++++++----------------------------
+ 3 files changed, 268 insertions(+), 448 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.3)
 Author:     Tamas Kovacs <kovisoft at gmail.com>
 AuthorDate: Sat Sep 11 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

@@ -1,4 +1,23 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/100917)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/100923)
+Author:     Jakson Aquino <jalvesaq at gmail.com>
+AuthorDate: Thu Sep 23 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * New option: vimrplugin_vimpager.
+    * Do not let Vim translate "File" in R menu.
+    * Fixed bug when the option vimrplugin_r_path was used (thanks to Asis Hallab for reporting the bug),
+    * Fixed bug (E687) when user created custom key binding (thanks to Philippe Glaziou for reporting the bug).
+
+ autoload/rplugin.vim |  131 +++++
+ doc/r-plugin.txt     |   56 +++-
+ ftplugin/r.vim       |  323 +++++--------
+ ftplugin/rdoc.vim    | 1296 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ ftplugin/rhelp.vim   |  323 +++++--------
+ ftplugin/rnoweb.vim  |  323 +++++--------
+ syntax/rdoc.vim      |   34 ++
+ 7 files changed, 1879 insertions(+), 607 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/100917)
 Author:     Jakson Aquino <jalvesaq at gmail.com>
 AuthorDate: Fri Sep 17 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

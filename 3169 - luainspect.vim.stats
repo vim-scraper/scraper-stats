@@ -1,4 +1,32 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4.5)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4.7)
+Author:     Peter Odding <peter at peterodding.com>
+AuthorDate: Sat Oct 9 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+      Improve syntax error messages for unnamed buffers:
+       http://github.com/xolox/vim-lua-inspect/commit/3cbe412883edda9ce4cc
+    
+      Make parse_text() more robust against missing buffer variables:
+       http://github.com/xolox/vim-lua-inspect/commit/bc013227961f7dc24818
+    
+      Bug fix: Focus doesn't return to original window:
+       http://github.com/xolox/vim-lua-inspect/commit/806dcb21f9f7be1de715
+
+ autoload/luainspect.vim                  |   20 ++-
+ autoload/xolox.vim                       |  110 ++++++++++
+ autoload/xolox/escape.vim                |    4 +-
+ autoload/xolox.vim                       |  105 ----------
+ misc/luainspect/luainspect-copyright.txt |   26 +++
+ misc/luainspect/luainspect-readme.txt    |  325 ++++++++++++++++++++++++++++++
+ misc/luainspect/luainspect-copyright.txt |   26 ---
+ misc/luainspect/luainspect-readme.txt    |  325 ------------------------------
+ misc/luainspect/luainspect4vim.lua       |    4 +-
+ misc/luainspect/metalua-license.txt      |   35 ++++
+ misc/luainspect/metalua-license.txt      |   35 ----
+ plugin/luainspect.vim                    |    4 +-
+ 12 files changed, 517 insertions(+), 502 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.5)
 Author:     Peter Odding <peter at peterodding.com>
 AuthorDate: Thu Aug 19 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

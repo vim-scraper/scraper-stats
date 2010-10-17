@@ -1,4 +1,16 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.00)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.01)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Mon Sep 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Using separate autoload script to help speed up Vim startup.
+
+ autoload/SnippetComplete.vim |  242 ++++++++++++++++++++++++++++++++++++++++++
+ doc/SnippetComplete.txt      |   11 ++-
+ plugin/SnippetComplete.vim   |  229 ++--------------------------------------
+ 3 files changed, 256 insertions(+), 226 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.00)
 Author:     Ingo Karkat <ingo at karkat.de>
 AuthorDate: Thu Jan 14 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

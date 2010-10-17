@@ -1,4 +1,183 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.5)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.2.2)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Thu Sep 30 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed a bug that unloaded buffers weren't covered by FufBufferTagAll.
+
+ autoload/fuf.vim           |    7 +------
+ autoload/fuf/buffertag.vim |   28 ++++++++++++++++++++++++++--
+ doc/fuf.txt                |    7 +++++--
+ 3 files changed, 32 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.2.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Wed Sep 29 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Improved response of Buffer-Tag mode.
+    - Fixed a bug that buffers which had been opened weren't listed in
+      Coverage-File mode
+    - Fixed a bug that tag entries including tab characters weren't parsed
+      correctly in Coverage-File mode
+
+ autoload/fuf.vim              |   25 +++++++++++++++++--------
+ autoload/fuf/buffertag.vim    |   27 ++++++++++++++-------------
+ autoload/fuf/coveragefile.vim |   19 ++++++++++++-------
+ autoload/fuf/dir.vim          |    2 +-
+ autoload/fuf/givendir.vim     |    2 +-
+ autoload/fuf/mrufile.vim      |    4 ++--
+ doc/fuf.jax                   |   15 +++++++++------
+ doc/fuf.txt                   |   22 ++++++++++++++++------
+ 8 files changed, 72 insertions(+), 44 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Tue Sep 28 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - L9 library (vimscript #3252) version 1.1 is required.
+    - Added Buffer-Tag mode, inspired by taglist.vim (vimscript #273).
+    - Added :FufMruFileInCwd command.
+
+ autoload/fuf.vim              |   28 +++--
+ autoload/fuf/bookmarkdir.vim  |    4 +-
+ autoload/fuf/bookmarkfile.vim |    4 +-
+ autoload/fuf/buffer.vim       |    4 +-
+ autoload/fuf/buffertag.vim    |  275 +++++++++++++++++++++++++++++++++++++++++
+ autoload/fuf/callbackfile.vim |    2 +-
+ autoload/fuf/callbackitem.vim |    2 +-
+ autoload/fuf/changelist.vim   |    4 +-
+ autoload/fuf/coveragefile.vim |    6 +-
+ autoload/fuf/dir.vim          |    8 +-
+ autoload/fuf/file.vim         |    8 +-
+ autoload/fuf/givencmd.vim     |    2 +-
+ autoload/fuf/givendir.vim     |    2 +-
+ autoload/fuf/givenfile.vim    |    2 +-
+ autoload/fuf/help.vim         |    6 +-
+ autoload/fuf/jumplist.vim     |    4 +-
+ autoload/fuf/line.vim         |    4 +-
+ autoload/fuf/mrucmd.vim       |    4 +-
+ autoload/fuf/mrufile.vim      |   23 +++-
+ autoload/fuf/quickfix.vim     |    4 +-
+ autoload/fuf/tag.vim          |    6 +-
+ autoload/fuf/taggedfile.vim   |    4 +-
+ doc/fuf.jax                   |  109 +++++++++++++++--
+ doc/fuf.txt                   |  120 ++++++++++++++++--
+ plugin/fuf.vim                |   20 ++--
+ 25 files changed, 568 insertions(+), 87 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.1.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Mon Sep 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Fixed a bug causing a error in MRU-File mode.
+
+ autoload/fuf/mrufile.vim |    4 ++--
+ doc/fuf.txt              |    3 +++
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Mon Sep 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Added Bookmark-Dir mode.
+    - Added Bookmark-File mode and removed Bookmark mode.
+    - Changed the filename to store data of Coverage-File mode, from
+      '~/.vim-fuf-data/coveragefile/items' to
+      '~/.vim-fuf-data/coveragefile/coverages' .
+    - Fixed a bug that floating point numbers weren't evaluated correctly and
+      caused errors on some non-English locales.
+    - Removed Around-MRU-File mode and integrated its feature to MRU-File mode.
+
+ autoload/fuf.vim               |   37 ++++---
+ autoload/fuf/aroundmrufile.vim |  182 -----------------------------
+ autoload/fuf/bookmark.vim      |  194 -------------------------------
+ autoload/fuf/bookmarkdir.vim   |  163 ++++++++++++++++++++++++++
+ autoload/fuf/bookmarkfile.vim  |  199 ++++++++++++++++++++++++++++++++
+ autoload/fuf/buffer.vim        |    5 +
+ autoload/fuf/callbackfile.vim  |    5 +
+ autoload/fuf/callbackitem.vim  |    5 +
+ autoload/fuf/changelist.vim    |    5 +
+ autoload/fuf/coveragefile.vim  |   14 ++-
+ autoload/fuf/dir.vim           |    5 +
+ autoload/fuf/file.vim          |    5 +
+ autoload/fuf/givencmd.vim      |    5 +
+ autoload/fuf/givendir.vim      |    5 +
+ autoload/fuf/givenfile.vim     |    5 +
+ autoload/fuf/help.vim          |    5 +
+ autoload/fuf/jumplist.vim      |    5 +
+ autoload/fuf/line.vim          |    5 +
+ autoload/fuf/mrucmd.vim        |    5 +
+ autoload/fuf/mrufile.vim       |   82 ++++++++++++-
+ autoload/fuf/quickfix.vim      |    5 +
+ autoload/fuf/tag.vim           |    5 +
+ autoload/fuf/taggedfile.vim    |    5 +
+ doc/fuf.jax                    |  239 ++++++++++++++++++++------------------
+ doc/fuf.txt                    |  250 +++++++++++++++++++++-------------------
+ plugin/fuf.vim                 |   44 ++++----
+ 26 files changed, 830 insertions(+), 654 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
+Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
+AuthorDate: Fri Sep 24 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - From this version, L9 library (vimscript #3252) is required.
+    - Added Coverage-File mode for users wanting something like TextMate's
+      command-t. (But I've never used it.)
+    - Added Around-MRU-File mode. (Too slow. There is room for improvement.)
+    - Added new feature which deletes selected buffer with FuzzyFinder and
+      g:fuf_buffer_keyDelete option.
+    - Added new feature which allows to set one-time options/variables with
+      fuf#setOneTimeVariables() function.
+    - Added g:fuf_dataDir option and removed g:fuf_infoFile,
+      g:g:fuf_tag_cache_dir, g:fuf_taggedfile_cache_dir, and
+      g:fuf_help_cache_dir options.
+    - Added :FufEditDataFile command and removed :FufEditInfo command.
+    - Added g:fuf_fuzzyRefining option.
+    - Added new feature which is auto-preview and g:fuf_autoPreview option.
+    - Changed the default value of g:fuf_previewHeight to 0 in order to disable
+      preview feature. There is an unfixable problem which is caused by a Vim's
+      bug.
+    - Changed the default value of g:fuf_modesDisable option.
+    - Changed the default value of g:fuf_*_switchOrder options.
+    - Improved speed of changing buffers.
+    - Improved the way to add user-defined mode.
+    - Fixed a bug that FuzzyFinder caused reseting window layout.
+    - Removed g:fuf_smartBs option. Use <C-w> instead.
+
+ README                         |  205 ++++++--
+ autoload/fuf.vim               | 1023 +++++++++++++++++++++++++++++++++++
+ autoload/fuf/aroundmrufile.vim |  182 +++++++
+ autoload/fuf/bookmark.vim      |   59 +--
+ autoload/fuf/buffer.vim        |   30 +-
+ autoload/fuf/callbackfile.vim  |   15 +-
+ autoload/fuf/callbackitem.vim  |   13 +-
+ autoload/fuf/changelist.vim    |   11 +-
+ autoload/fuf/coveragefile.vim  |  188 +++++++
+ autoload/fuf/dir.vim           |   13 +-
+ autoload/fuf/file.vim          |   23 +-
+ autoload/fuf/givencmd.vim      |   11 +-
+ autoload/fuf/givendir.vim      |    9 +-
+ autoload/fuf/givenfile.vim     |    9 +-
+ autoload/fuf/help.vim          |   43 +-
+ autoload/fuf/jumplist.vim      |   11 +-
+ autoload/fuf/line.vim          |   11 +-
+ autoload/fuf/mrucmd.vim        |   21 +-
+ autoload/fuf/mrufile.vim       |   31 +-
+ autoload/fuf/quickfix.vim      |   11 +-
+ autoload/fuf/tag.vim           |   39 +-
+ autoload/fuf/taggedfile.vim    |   48 +-
+ autoload/fuf.vim               | 1155 ----------------------------------------
+ doc/fuf.jax                    |  329 +++++++++---
+ doc/fuf.txt                    |  393 ++++++++++----
+ plugin/fuf.vim                 |  265 +++++-----
+ 26 files changed, 2385 insertions(+), 1763 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.5)
 Author:     Takeshi NISHIDA <ns9tks at DELETE-ME.gmail.com>
 AuthorDate: Thu Dec 3 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

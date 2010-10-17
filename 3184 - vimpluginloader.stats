@@ -1,4 +1,55 @@
-commit SHA1SHA1SHA1 (HEAD)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.3.2)
+Author:     ZyX ZyX <kp-pav at yandex.ru>
+AuthorDate: Mon Sep 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Improved load#LoadFuncdict function, added load#SetOption and load#CreateDictFunction functions
+
+ autoload/load.vim      |   45 +++-
+ doc/chk.txt.html       |  448 ++++++++++++++++++++++++
+ doc/comp.txt.html      |  136 +++++++
+ doc/format.txt.html    |  703 +++++++++++++++++++++++++++++++++++++
+ doc/json.rux.html      |   90 +++++
+ doc/json.txt.html      |   82 +++++
+ doc/load.txt           |   31 ++-
+ doc/load.txt.html      |  452 ++++++++++++++++++++++++
+ doc/oop.txt.html       |   95 +++++
+ doc/translit3.rux.html |  911 ++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/translit3.txt.html |  811 ++++++++++++++++++++++++++++++++++++++++++
+ doc/yaml.txt.html      |  242 +++++++++++++
+ plugin/load.vim        |    2 +-
+ 13 files changed, 4044 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3.1)
+Author:     ZyX ZyX <kp-pav at yandex.ru>
+AuthorDate: Sun Sep 26 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed some mapping bugs
+
+ plugin/load.vim |   33 ++++++++++++++++++++++++++-------
+ 1 files changed, 26 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     ZyX ZyX <kp-pav at yandex.ru>
+AuthorDate: Sat Sep 25 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Provided a way to register different plugin types and place plugin file not directly under plugin directoryAdded support for autoloading external dependenciesMade plugin reload itself without errors
+
+ README          |   22 ++-
+ doc/chk.txt     |   12 +-
+ doc/load.txt    |   82 +++++---
+ doc/oop.txt     |   93 ++++++++
+ doc/yaml.txt    |    4 +
+ plugin/chk.vim  |  197 ++++++++++++------
+ plugin/load.vim |  629 +++++++++++++++++++++++++++++++++++--------------------
+ plugin/oop.vim  |   10 +-
+ plugin/yaml.vim |  104 +++++++---
+ syntax/yaml.vim |  168 ---------------
+ 10 files changed, 783 insertions(+), 538 deletions(-)
+
+commit SHA1SHA1SHA1
 Author:     ZyX ZyX <kp-pav at yandex.ru>
 AuthorDate: Sat Sep 11 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

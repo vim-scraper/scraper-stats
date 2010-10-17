@@ -1,4 +1,26 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9.3)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9.4)
+Author:     Derek Wyatt <derek at derekwyatt.org>
+AuthorDate: Wed Oct 13 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    	- Made sure that we need at least 7.0 (Timon Kelter)
+    	- Introduced the disable_protodef_sorting variable.
+    	- Added a fix to deal with default parameters that were class
+    	  instances (e.g. MyClass()) (Matt Spear)
+    	- Fixed function prototype parsing in pullproto.pl such that regex
+    	  special characters are deal with nicely (Matt Spear)
+    	- Handle template specializations properly (Matt Spear)
+    	- Ensure that implementations in the header file but outside the class
+    	  definition are not brought in to the implementation (Dmitry Bashkatov)
+
+ doc/protodef.txt          |   19 +++++++++
+ doc/tags                  |   19 +++++++++
+ plugin/protodef.vim       |   31 +++++++++++----
+ pullproto.pl              |   85 ---------------------------------------
+ vim-protodef/pullproto.pl |   96 +++++++++++++++++++++++++++++++++++++++++++++
+ 5 files changed, 157 insertions(+), 93 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.3)
 Author:     Derek Wyatt <derek at derekwyatt.org>
 AuthorDate: Mon Sep 14 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

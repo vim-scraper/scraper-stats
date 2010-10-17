@@ -1,0 +1,25 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2)
+Author:     Marc Weber <marco-oweber at gmx.de>
+AuthorDate: Mon Sep 27 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    new release as vim-addon-sql. Sqlite and Postgres are supported. Code import from tovl
+
+ README.orig                              |   39 +
+ autoload/vim_addon_sql.vim               |  547 ++++++
+ doc/vim-addon-sql-addon-info.txt         |   13 +
+ plugin/vim-addon-sql.vim                 |    6 +
+ plugin/vimlib_sql_installer_sourceme.vim | 2771 ------------------------------
+ 5 files changed, 605 insertions(+), 2771 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0)
+Author:     Marc Weber <marco-oweber at gmx.de>
+AuthorDate: Sun Sep 14 00:00:00 2008 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    fixed quoting of *, using stdin now to pass SQL command, vl#dev#sql#sql#ThisSQLCommand()
+     can be overridden now
+
+ README                                   |   42 +
+ plugin/vimlib_sql_installer_sourceme.vim | 2771 ++++++++++++++++++++++++++++++
+ 2 files changed, 2813 insertions(+), 0 deletions(-)

@@ -1,4 +1,14 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.3)
+Author:     Wenlong Che <wenlong.che at gmail.com>
+AuthorDate: Wed Oct 6 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed a bug when the working 'tags' file was created with the commands 'ctags -L cscope.files'. In this case, the plugin could not change the relative path to the absolute one. Thank Trevor Brown for reporting this bug.
+
+ plugin/srcexpl.vim |  125 +++++++++++++++++++++++++--------------------------
+ 1 files changed, 61 insertions(+), 64 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
 Author:     Wenlong Che <wenlong.che at gmail.com>
 AuthorDate: Mon Mar 16 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

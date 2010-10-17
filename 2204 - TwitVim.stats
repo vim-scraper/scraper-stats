@@ -1,4 +1,20 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5.5)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5.6)
+Author:     Po Shan Cheah <morton at mortonfox.com>
+AuthorDate: Sun Sep 26 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    * Exception handling for Python net interface.
+    * Added converter functions for non-UTF8 encoding by @mattn_jp.
+    * Convert entities in profile name, bio, and location. (Suggested by code933k)
+    * Fix for posting foreign chars when encoding is not UTF8 and net method is not Curl.
+    * Support twitvim_count in :DMTwitter and :DMSentTwitter.
+    * Added :FavTwitter and mappings to favorite and unfavorite tweets.
+
+ doc/twitvim.txt    |   40 ++++++++++++++
+ plugin/twitvim.vim |  144 ++++++++++++++++++++++++++++++++++++++++++++--------
+ 2 files changed, 162 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.5)
 Author:     Po Shan Cheah <morton at mortonfox.com>
 AuthorDate: Mon Aug 23 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

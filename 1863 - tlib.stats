@@ -1,4 +1,30 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.39)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.40)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sat Oct 2 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - tlib#agent#ViewFile: Use split/sbuffer if nohidden && modified
+    - tlib#buffer#GetList(): order by "basename"
+
+ README                         |    3 +-
+ autoload/tlib.vim              |   12 +++++++
+ autoload/tlib/Filter_cnf.vim   |   17 +++++-----
+ autoload/tlib/Filter_cnfd.vim  |   18 +++++-----
+ autoload/tlib/Filter_fuzzy.vim |   29 +++++++++++------
+ autoload/tlib/Filter_seq.vim   |   18 +++++------
+ autoload/tlib/World.vim        |    9 +++--
+ autoload/tlib/agent.vim        |   13 ++++++--
+ autoload/tlib/buffer.vim       |   25 ++++++++++++++-
+ autoload/tlib/date.vim         |   65 +++++++++++++++++++++++++++-------------
+ autoload/tlib/input.vim        |   11 ++++--
+ autoload/tlib/normal.vim       |   14 +++++++--
+ autoload/tlib/type.vim         |    9 +----
+ autoload/tlib.vim              |   12 -------
+ doc/tlib.txt                   |   29 ++++++++++++++++-
+ plugin/02tlib.vim              |   19 +++++++++--
+ 16 files changed, 201 insertions(+), 102 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.39)
 Author:     Tom Link <micathom at gmail.com>
 AuthorDate: Tue Sep 14 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

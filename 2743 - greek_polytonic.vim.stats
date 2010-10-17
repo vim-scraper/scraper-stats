@@ -1,4 +1,19 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1)
+Author:     andreas proteus <proteuss at sdf.lonestar.org>
+AuthorDate: Fri Oct 8 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Prefer symbols in the range UCS 0370 - 03FF when available.
+    i.e. all (vowel + oxia) symbols are represented
+    by their equivalent, identical in apearance (vowel + tonos).
+    This simplifies find/replace and spell checking.
+
+ README                     |    1 +
+ plugin/greek_polytonic.vim |   54 +++++++++++------------------
+ readme.orig                |   82 ++++++++++++++++++++++++++++++--------------
+ 3 files changed, 77 insertions(+), 60 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
 Author:     andreas proteus <proteuss at sdf.lonestar.org>
 AuthorDate: Mon Aug 17 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

@@ -1,4 +1,33 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.3.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.6.1)
+Author:     Niels Aan de Brugh <nielsadb at gmail.com>
+AuthorDate: Tue Oct 5 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Fixed strange resize behavior when refreshing results, and made resizing more robust for when search and/or original buffer are hidden.
+
+ plugin/filtering.vim |   44 +++++++++++++++++++++++++++++++++++---------
+ 1 files changed, 35 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.6)
+Author:     Niels Aan de Brugh <nielsadb at gmail.com>
+AuthorDate: Tue Oct 5 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    This version features:
+    
+    - Defaults for configuration have been moved to global variables so you specify them without changing the plug-in source.
+    - Filter a match only if it followed by another match (within a given number of lines). For example, aap|5|noot will match  "aap",  but only if it's followed by "noot" within 5 lines.
+    - Showing all context lines up to the second match can be switched on/off (regardless of the number of context lines showing already).
+    - The window size is by default no more than the minimum of the number of matches and half the window size. The maximum can also be configured (absolute or as a percentage of the original window size).
+    
+    Press ? in a filter window to show all default binding.
+    
+    I should probably write up some documentation for this some day. For now please refer to the topmost section of the source.
+
+ plugin/filtering.vim |  253 ++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 194 insertions(+), 59 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.3.2)
 Author:     Niels Aan de Brugh <nielsadb at gmail.com>
 AuthorDate: Fri Jul 30 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

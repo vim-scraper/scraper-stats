@@ -1,4 +1,28 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Thu Sep 30 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     New Release- Fix an issue with configuring the plugin (Thanks jgm)- Code cleanup- Make use of the preview window, when completing  Digraph or Unicode Glyphs- By default, the Digraph Glyphs will now be enabled  using |i_Ctrl-X_CTRL-G| instead of using  Ctrl-X_Ctrl-C which wouldn't work in a terminal- |:UnicodeName| now displays the hexadecimal Unicode  Codepoint instead of the decimal one (as this seems  to be the official way to display unicode  codepoints).
+
+ autoload/unicode.vim |   65 ++++++++++++++++++++++++-------------------------
+ doc/unicode.txt      |   32 ++++++++++++++++++++----
+ plugin/unicode.vim   |    6 ++--
+ 3 files changed, 61 insertions(+), 42 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
+Author:     Christian Brabandt <cb at 256bit.org>
+AuthorDate: Thu Sep 23 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Determine the Name of a Character using :UnicodeName- the global variable g:enableUnicodeCompletion determines, whether the completion will be loaded automatically
+
+ autoload/unicode.vim |   82 ++++++++++++++++++++++++++++++++++++--------------
+ doc/unicode.txt      |   58 +++++++++++++++++++++++++++--------
+ plugin/unicode.vim   |    7 ++--
+ 3 files changed, 107 insertions(+), 40 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
 Author:     Christian Brabandt <cb at 256bit.org>
 AuthorDate: Thu Aug 26 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

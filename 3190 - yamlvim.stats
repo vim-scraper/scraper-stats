@@ -1,4 +1,41 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.4.3)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.4.5)
+Author:     ZyX ZyX <kp-pav at yandex.ru>
+AuthorDate: Sun Oct 3 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Some bug fixes. Known bug: it is not able to dump strings with invalid (non-utf8) characters
+
+ autoload/load.vim      |   45 +++-
+ doc/chk.txt            |   20 +-
+ doc/chk.txt.html       |  452 ++++++++++++++++++++++++
+ doc/comp.txt.html      |  136 +++++++
+ doc/format.txt.html    |  703 +++++++++++++++++++++++++++++++++++++
+ doc/json.rux.html      |   90 +++++
+ doc/json.txt.html      |   82 +++++
+ doc/load.txt           |  113 +++++--
+ doc/load.txt.html      |  481 +++++++++++++++++++++++++
+ doc/oop.txt.html       |   95 +++++
+ doc/translit3.rux.html |  911 ++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/translit3.txt.html |  811 ++++++++++++++++++++++++++++++++++++++++++
+ doc/yaml.txt.html      |  242 +++++++++++++
+ plugin/chk.vim         |   69 ++++-
+ plugin/load.vim        |  654 ++++++++++++++++++++++------------
+ plugin/yaml.vim        |   38 ++-
+ 16 files changed, 4655 insertions(+), 287 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.4)
+Author:     ZyX ZyX <kp-pav at yandex.ru>
+AuthorDate: Sat Sep 25 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added all_flow dumper option, made memory leak much less huge
+
+ doc/yaml.txt    |    4 +
+ plugin/yaml.vim |   50 ++++++++++++++--
+ syntax/yaml.vim |  168 -------------------------------------------------------
+ 3 files changed, 48 insertions(+), 174 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.3)
 Author:     ZyX ZyX <kp-pav at yandex.ru>
 AuthorDate: Sat Sep 18 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

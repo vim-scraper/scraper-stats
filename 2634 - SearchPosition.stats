@@ -1,4 +1,30 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.11)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.13)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Fri Oct 8 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - BUG: The previous fix for the incorrect reporting of sole match in folded line was susceptible to non-local matches when current line is the first line.
+
+ autoload/SearchPosition.vim |   14 +++++++++++++-
+ doc/SearchPosition.txt      |    5 +++++
+ 2 files changed, 18 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
+Author:     Ingo Karkat <ingo at karkat.de>
+AuthorDate: Fri Oct 8 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - BUG: Visual mode <A-m> /Plug>SearchPositionCword mapping on multi-line selection searched for ^@, not the newline character \n.
+    - BUG: Incorrect reporting of sole match in folded line when the current line is empty and the pattern starts matching a newline character.
+    - Using SearchPosition#SavePosition() instead ofVim version-dependent) mark to keep the cursor at the position where the operator was invokedonly necessary with a backward {motion}).
+
+ autoload/EchoWithoutScrolling.vim |    7 ++++-
+ autoload/SearchPosition.vim       |   56 +++++++++++++++++++++++++++++++++----
+ doc/SearchPosition.txt            |   23 ++++++++++++--
+ plugin/SearchPosition.vim         |   16 ++++++----
+ 4 files changed, 85 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
 Author:     Ingo Karkat <ingo at karkat.de>
 AuthorDate: Wed Jun 2 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

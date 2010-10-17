@@ -1,4 +1,18 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2)
+Author:     ZyX ZyX <kp-pav at yandex.ru>
+AuthorDate: Wed Sep 22 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    Added replacements for r, t, T, f and F normal mode commands: so now if you want to replace character under cursor with ÃÂ«, you will need to type \tr<< in normal mode (works only for single character replacements).
+
+ README               |    3 +
+ doc/translit3.rux    |   22 ++++-
+ doc/translit3.txt    |   19 ++++-
+ plugin/translit3.vim |  248 +++++++++++++++++++++++++++++++++++---------------
+ plugin/yaml.vim      |   54 ++++++------
+ 5 files changed, 242 insertions(+), 104 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.1)
 Author:     ZyX ZyX <kp-pav at yandex.ru>
 AuthorDate: Wed Sep 15 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

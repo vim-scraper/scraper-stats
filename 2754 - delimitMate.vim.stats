@@ -1,4 +1,32 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.4.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.5.1)
+Author:     Israel Chauca Fuentes <israelvarios at fastmail.fm>
+AuthorDate: Thu Sep 30 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Remove visual wrapping. Surround.vim offers a much better implementation.
+    - Minor mods to DelimitMateTest.
+
+ autoload/delimitMate.vim |  161 +++++++++++++---------------------------------
+ doc/delimitMate.txt      |   58 ++++------------
+ plugin/delimitMate.vim   |   42 +-----------
+ 3 files changed, 64 insertions(+), 197 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
+Author:     Israel Chauca Fuentes <israelvarios at fastmail.fm>
+AuthorDate: Thu Sep 23 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+     - Better handling of mappings.
+     - Add report for mappings in :DelimitMateTest.
+     - Allow the use of "|" and multi-byte characters in 'delimitMate_quotes' and 'delimitMate_matchpairs'.
+     - Allow commands to be concatenated using |.
+
+ autoload/delimitMate.vim |  358 +++++++-------------------------
+ doc/delimitMate.txt      |  505 +++++++++++++++++++++++++---------------------
+ plugin/delimitMate.vim   |  357 +++++++++++++++++++++++++++++++--
+ 3 files changed, 690 insertions(+), 530 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.1)
 Author:     Israel Chauca Fuentes <israelvarios at fastmail.fm>
 AuthorDate: Sat Jul 31 00:00:00 2010 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>

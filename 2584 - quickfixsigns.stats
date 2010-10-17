@@ -1,4 +1,24 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9)
+Author:     Tom Link <micathom at gmail.com>
+AuthorDate: Sat Oct 2 00:00:00 2010 +0000
+Commit:     vim-scripts <vimscripts@rinspin.com>
+
+    - Don't require qfl.item.text to be set
+    - b:noquickfixsigns: If true, disable quickfixsigns for the current buffer (patch by Sergey Khorev; must be set before entering a buffer)
+    - b:quickfixsigns_ignore_marks: A list of ignored marks (per buffer)
+    - Support for relative line numbers
+    - QuickfixsignsSet command
+    - quickfixsigns#RelNumbersOnce()
+    - Support for vcs diff (this requires either b:vcs_type or b:VCSCommandVCSType to be set to a supported vcs, e.g. git)
+
+ autoload/quickfixsigns.vim         |   58 +++++++
+ autoload/quickfixsigns/marks.vim   |   87 ++++++++++
+ autoload/quickfixsigns/vcsdiff.vim |  139 +++++++++++++++
+ doc/quickfixsigns.txt              |  180 +++++++++++++++++---
+ plugin/quickfixsigns.vim           |  333 ++++++++++++++++++++++--------------
+ 5 files changed, 641 insertions(+), 156 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
 Author:     Tom Link <micathom at gmail.com>
 AuthorDate: Sat Sep 26 00:00:00 2009 +0000
 Commit:     vim-scripts <vimscripts@rinspin.com>
