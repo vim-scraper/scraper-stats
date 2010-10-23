@@ -1,4 +1,32 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4.2)
+Author:     thinca <thinca+vim@gmail.com>
+AuthorDate: Wed Oct 20 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.4.2
+    
+    - Added "_" to the default type name.
+    - Added perl6 support as default.
+    - Expand |quickrun-option-output|.
+    - Fixed a bug that "split" option doesn't work in twice or later.
+    - Changed g:quickrun_default_config to g:quickrun#default_config.
+    - Added the following values to |quickrun-option-runmode|.
+      - "async:vimproc"
+      - "async:python"
+      - These are experimental.
+    - Check hasmapto() before <Leader>r is defined.
+    - Improve the reading and writing of a file.
+
+ README                 |    1 +
+ autoload/quickrun.vim  |  424 ++++++++++++++++++++++++++++++++++++++++--------
+ doc/quicklaunch.jax    |    6 +-
+ doc/quickrun.jax       |   56 +++++--
+ doc/quickrun.txt       |   39 +++--
+ plugin/quicklaunch.vim |   12 +-
+ plugin/quickrun.vim    |  144 +----------------
+ 7 files changed, 447 insertions(+), 235 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.1)
 Author:     thinca <thinca+vim@gmail.com>
 AuthorDate: Sun Jul 11 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
