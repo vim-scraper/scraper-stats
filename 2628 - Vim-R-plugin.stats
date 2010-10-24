@@ -1,60 +1,36 @@
-commit SHA1SHA1SHA1 (HEAD)
-Author:     Able Scraper <scraper@vim-scripts.org>
-AuthorDate: Sun Oct 24 08:28:55 2010 -0700
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/101023)
+Author:     Jakson Aquino <jalvesaq@gmail.com>
+AuthorDate: Sat Oct 23 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
-    Renamed to Vim-R-plugin
+    Version 101023
+    
+    * New options: vimrplugin_objbr_place and vimrplugin_objbr_w.
+    * New default value: vimrplugin_vimpager = "vertical"
+    * The R help can now be seen in a Vim buffer on MS Windows.
+    * Fix width of help text when R version >= 2.12.0.
+    * Implemented actions in the object browser: summary, print, etc...
+    * Browse libraries objects in object browser.
 
- README                     |   70 +--
- autoload/rcomplete.vim     |   46 -
- autoload/rplugin.vim       |  239 -----
- bitmaps/RClear.bmp         |  Bin 702 -> 0 bytes
- bitmaps/RClear.png         |  Bin 1079 -> 0 bytes
- bitmaps/RClearAll.bmp      |  Bin 702 -> 0 bytes
- bitmaps/RClearAll.png      |  Bin 718 -> 0 bytes
- bitmaps/RClose.bmp         |  Bin 702 -> 0 bytes
- bitmaps/RClose.png         |  Bin 999 -> 0 bytes
- bitmaps/RListSpace.bmp     |  Bin 702 -> 0 bytes
- bitmaps/RListSpace.png     |  Bin 667 -> 0 bytes
- bitmaps/RSendBlock.bmp     |  Bin 702 -> 0 bytes
- bitmaps/RSendBlock.png     |  Bin 553 -> 0 bytes
- bitmaps/RSendFile.bmp      |  Bin 702 -> 0 bytes
- bitmaps/RSendFile.png      |  Bin 530 -> 0 bytes
- bitmaps/RSendFunction.bmp  |  Bin 702 -> 0 bytes
- bitmaps/RSendFunction.png  |  Bin 871 -> 0 bytes
- bitmaps/RSendLine.bmp      |  Bin 702 -> 0 bytes
- bitmaps/RSendLine.png      |  Bin 949 -> 0 bytes
- bitmaps/RSendParagraph.bmp |  Bin 702 -> 0 bytes
- bitmaps/RSendParagraph.png |  Bin 390 -> 0 bytes
- bitmaps/RSendSelection.bmp |  Bin 702 -> 0 bytes
- bitmaps/RSendSelection.png |  Bin 502 -> 0 bytes
- bitmaps/RStart.bmp         |  Bin 702 -> 0 bytes
- bitmaps/RStart.png         |  Bin 1050 -> 0 bytes
- bitmaps/ricon.png          |  Bin 904 -> 0 bytes
- bitmaps/ricon.xbm          |   10 -
- doc/r-plugin.txt           | 1174 --------------------
- ftdetect/r.vim             |   12 -
- ftplugin/r.vim             | 1484 --------------------------
- ftplugin/rbrowser.vim      |  166 ---
- ftplugin/rdoc.vim          | 1484 --------------------------
- ftplugin/rhelp.vim         | 1484 --------------------------
- ftplugin/rnoweb.vim        | 1484 --------------------------
- indent/r.vim               |  188 ----
- r-plugin/build_omni_list.R |  140 ---
- r-plugin/etags2ctags.R     |   71 --
- r-plugin/functions.vim     |  370 -------
- r-plugin/omnilist          | 2537 --------------------------------------------
- r-plugin/rpager.sh         |   14 -
- r-plugin/rperl.vim         |  110 --
- r-plugin/rpython.vim       |  136 ---
- r-plugin/specialfuns.R     |   55 -
- r-plugin/vimActivate.js    |    4 -
- r-plugin/vimbrowser.R      |   55 -
- syntax/r.vim               |  142 ---
- syntax/rbrowser.vim        |   45 -
- syntax/rdoc.vim            |   34 -
- syntax/rout.vim            |   82 --
- 49 files changed, 2 insertions(+), 11634 deletions(-)
+ README                 |   36 +-
+ autoload/rcomplete.vim |    8 +-
+ autoload/rplugin.vim   |  280 ++++--
+ doc/r-plugin.txt       |  141 ++-
+ ftdetect/r.vim         |    4 +
+ ftplugin/r.vim         |  498 ++++------
+ ftplugin/rbrowser.vim  |  310 ++++++-
+ ftplugin/rdoc.vim      |  498 ++++------
+ ftplugin/rhelp.vim     |  498 ++++------
+ ftplugin/rnoweb.vim    |  498 ++++------
+ r-plugin/functions.vim | 2422 ++++++++++++++++++++++++++++++++++++++++--------
+ r-plugin/omnilist      | 1419 +++++++++++++++--------------
+ r-plugin/rperl.vim     |  110 ---
+ r-plugin/vimbrowser.R  |    6 +-
+ r-plugin/vimhelp.R     |   24 +
+ syntax/r.vim           |    6 +-
+ syntax/rbrowser.vim    |   22 +-
+ syntax/rdoc.vim        |   10 +-
+ 18 files changed, 4267 insertions(+), 2523 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/101016)
 Author:     Jakson Aquino <jalvesaq@gmail.com>

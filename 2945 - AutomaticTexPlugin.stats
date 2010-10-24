@@ -1,4 +1,35 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/7.7.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/8)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Sun Oct 24 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 8
+    
+    Filetype plugin for bib files added.
+    Command to obtain bib data from amsref web page interface (for both bib files and bibliography environments)
+    For lots of other new stuff read :h atp-news
+
+ README                                   |    2 +
+ autoload/atplib.vim                      |   38 ++--
+ doc/automatic-tex-plugin.txt             |  110 +++++++++++--
+ ftplugin/ATP_files/LatexBox_complete.vim |    2 +-
+ ftplugin/ATP_files/LatexBox_motion.vim   |   62 ++++++-
+ ftplugin/ATP_files/common.vim            |    8 +-
+ ftplugin/ATP_files/compiler.vim          |   12 +-
+ ftplugin/ATP_files/helpfunctions.vim     |    2 +
+ ftplugin/ATP_files/mappings.vim          |   33 +++-
+ ftplugin/ATP_files/motion.vim            |   78 +++++++--
+ ftplugin/ATP_files/options.vim           |   38 ++++-
+ ftplugin/ATP_files/project.vim           |   31 ++--
+ ftplugin/ATP_files/search.vim            |   14 +-
+ ftplugin/ATP_files/various.vim           |  261 ++++++++++++++++++++++++----
+ ftplugin/bib_atp.vim                     |  272 ++++++++++++++++++++++++++++++
+ ftplugin/plaintex_atp.vim                |    3 +-
+ ftplugin/tex_atp.vim                     |   10 +-
+ syntax/bibsearch_atp.vim                 |    2 +-
+ 18 files changed, 831 insertions(+), 147 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/7.7.2)
 Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Tue Oct 12 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
