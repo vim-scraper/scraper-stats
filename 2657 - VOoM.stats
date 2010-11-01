@@ -1,4 +1,57 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.0b1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.0b2)
+Author:     Vlad Irnov <vlad.irnov@gmail.com>
+AuthorDate: Sun Oct 24 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.0b2
+    
+    * Added support for the following markups: reStructuredText, Python code, The Vim Outliner, VimOutliner.
+    * BUG FIX: indiscriminate use of 'noautocmd' was screwing up some autocommands.
+    * Option g:voom_verify_oop is now enabled by default.
+    * Option g:voom_rstrip_chars (dictionary) has been removed. Instead there are options g:voom_rstrip_chars_{filetype} for each filetype of interest.
+    * See CHANGELOG for other changes.
+
+ README                                             |    8 +-
+ VOoM-4.0b1/plugin/voom/voom.py                     | 1746 ------------------
+ VOoM-4.0b1/plugin/voom/voom_mode_html.py           |   77 -
+ VOoM-4.0b1/plugin/voom/voom_mode_viki.py           |   72 -
+ VOoM-4.0b1/plugin/voom/voom_mode_vimwiki.py        |   73 -
+ VOoM-4.0b1/plugin/voom/voom_mode_wiki.py           |  100 --
+ VOoM-4.0b1/voom_addons/custom_headlines.vim        |   69 -
+ VOoM-4.0b1/voom_addons/voom_info.vim               |   57 -
+ VOoM-4.0b1/voom_samples/40_levels_deep.txt         |  127 --
+ VOoM-4.0b1/voom_samples/calendar_outline.zip       |  Bin 29162 -> 0 bytes
+ VOoM-4.0b1/voom_samples/test_outline.html          |  238 ---
+ VOoM-4.0b1/voom_samples/test_outline.txt           |  238 ---
+ VOoM-4.0b1/voom_samples/test_outline.viki          |  238 ---
+ VOoM-4.0b1/voom_samples/test_outline.vimwiki       |  238 ---
+ VOoM-4.0b1/voom_samples/test_outline.wiki          |  238 ---
+ VOoM-4.0b2/plugin/voom/voom.py                     | 1850 ++++++++++++++++++++
+ VOoM-4.0b2/plugin/voom/voom_mode_html.py           |   74 +
+ VOoM-4.0b2/plugin/voom/voom_mode_python.py         |  203 +++
+ VOoM-4.0b2/plugin/voom/voom_mode_rest.py           |  369 ++++
+ VOoM-4.0b2/plugin/voom/voom_mode_thevimoutliner.py |   98 +
+ VOoM-4.0b2/plugin/voom/voom_mode_viki.py           |   74 +
+ VOoM-4.0b2/plugin/voom/voom_mode_vimoutliner.py    |   96 +
+ VOoM-4.0b2/plugin/voom/voom_mode_vimwiki.py        |   73 +
+ VOoM-4.0b2/plugin/voom/voom_mode_wiki.py           |   83 +
+ VOoM-4.0b2/voom_addons/custom_headlines.vim        |   69 +
+ VOoM-4.0b2/voom_addons/voom_info.vim               |   57 +
+ VOoM-4.0b2/voom_samples/40_levels_deep.txt         |  127 ++
+ VOoM-4.0b2/voom_samples/calendar_outline.zip       |  Bin 0 -> 29162 bytes
+ VOoM-4.0b2/voom_samples/test_outline.html          |  238 +++
+ VOoM-4.0b2/voom_samples/test_outline.otl           |  239 +++
+ VOoM-4.0b2/voom_samples/test_outline.py            |   94 +
+ VOoM-4.0b2/voom_samples/test_outline.rst           |  392 +++++
+ VOoM-4.0b2/voom_samples/test_outline.txt           |  238 +++
+ VOoM-4.0b2/voom_samples/test_outline.viki          |  238 +++
+ VOoM-4.0b2/voom_samples/test_outline.vimwiki       |  238 +++
+ VOoM-4.0b2/voom_samples/test_outline.wiki          |  238 +++
+ doc/voom.txt                                       |  635 +++++--
+ plugin/voom.vim                                    |  269 ++--
+ 38 files changed, 5735 insertions(+), 3776 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0b1)
 Author:     Vlad Irnov <vlad.irnov@gmail.com>
 AuthorDate: Tue Sep 21 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -222,9 +275,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fixed some bugs.
 
  doc/voof.txt    |  105 +++++-
- plugin/voof.vim | 1074 ++++++++++++++++++++++++++++++++-----------------------
+ plugin/voof.vim | 1032 ++++++++++++++++++++++++++++++++-----------------------
  voof.py         |   42 +--
- 3 files changed, 735 insertions(+), 486 deletions(-)
+ 3 files changed, 714 insertions(+), 465 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
 Author:     Vlad Irnov <vlad.irnov@gmail.com>

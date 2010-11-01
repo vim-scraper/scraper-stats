@@ -1,4 +1,47 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2.0)
+Author:     Marty Grenfell <martin.grenfell@gmail.com>
+AuthorDate: Thu Oct 28 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2.0
+    
+    - New syntax checkers from github:kongo2002
+      - c (thanks also to github:jperras)
+      - cpp
+      - lua
+      - sh (thanks also to github:jmcantrell)
+    - add coffee syntax checked by github:lstoll
+    - add tex syntax checker
+    - make html checker play nicer with html5, thanks to github:enaeseth
+    - escape filenames properly when invoking syntax checkers, thanks to
+      github:jmcantrell
+    - adjust the ruby syntax checker to avoid some common annoying warnings,
+      thanks to github:robertwahler
+
+ README                         |    2 +
+ doc/syntastic.txt              |   14 +++
+ plugin/syntastic.vim           |    8 +-
+ syntax_checkers/c.vim          |  242 ++++++++++++++++++++++++++++++++++++++++
+ syntax_checkers/coffee.vim     |   27 +++++
+ syntax_checkers/cpp.vim        |   40 +++++++
+ syntax_checkers/cucumber.vim   |    2 +-
+ syntax_checkers/eruby.vim      |    2 +-
+ syntax_checkers/haml.vim       |    2 +-
+ syntax_checkers/haskell.vim    |    2 +-
+ syntax_checkers/html.vim       |    2 +-
+ syntax_checkers/javascript.vim |    2 +-
+ syntax_checkers/lua.vim        |   37 ++++++
+ syntax_checkers/perl.vim       |    2 +-
+ syntax_checkers/php.vim        |    4 +-
+ syntax_checkers/python.vim     |    2 +-
+ syntax_checkers/ruby.vim       |    2 +-
+ syntax_checkers/sass.vim       |   18 ++--
+ syntax_checkers/sh.vim         |   52 +++++++++
+ syntax_checkers/tex.vim        |   26 +++++
+ syntax_checkers/xhtml.vim      |    2 +-
+ 21 files changed, 468 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.0)
 Author:     Marty Grenfell <martin.grenfell@gmail.com>
 AuthorDate: Wed Dec 16 00:00:00 2009 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

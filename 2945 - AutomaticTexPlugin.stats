@@ -1,4 +1,24 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/8)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/8.1)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Tue Oct 26 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 8.1
+    
+    Some fixes in the new command AMSRef, completion for :GotoFile, :EditIntpuFile commands.
+
+ autoload/atplib.vim                    |  822 ++++++++++++++++----------------
+ doc/automatic-tex-plugin.txt           |   16 +-
+ ftplugin/ATP_files/LatexBox_motion.vim |    1 +
+ ftplugin/ATP_files/mappings.vim        |    3 +
+ ftplugin/ATP_files/motion.vim          |   60 ++-
+ ftplugin/ATP_files/various.vim         |   45 ++-
+ ftplugin/bib_atp.vim                   |  121 +++--
+ ftplugin/plaintex_atp.vim              |    3 +-
+ ftplugin/tex_atp.vim                   |   50 +--
+ 9 files changed, 593 insertions(+), 528 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8)
 Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Sun Oct 24 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -727,9 +747,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  autoload/atplib.vim          | 2798 +++++++++++++++++++++++++++++++++
  colors/coots-beauty-256.vim  |    5 +
  doc/automatic-tex-plugin.txt |  404 +++---
- ftplugin/tex_atp.vim         | 3550 +++++++++++-------------------------------
+ ftplugin/tex_atp.vim         | 3524 +++++++++++-------------------------------
  ftplugin/toc_atp.vim         |   58 +-
- 5 files changed, 4001 insertions(+), 2814 deletions(-)
+ 5 files changed, 3988 insertions(+), 2801 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2)
 Author:     Marcin Szamotulski <mszamot@gmail.com>

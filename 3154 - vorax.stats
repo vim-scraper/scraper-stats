@@ -1,4 +1,42 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.4)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.5)
+Author:     Alexandru Tica <alexandru.tica@gmail.com>
+AuthorDate: Fri Oct 29 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.5
+    
+        * display the results of a query using a vertical column layout (thanks to Spratek)
+        * the ability to browse materialized views from dbExplorer (thanks to Ingo Olbrich)
+        * the possibility to define whenever or not after executing a statement the focus should return automatically to the originating window (thanks to koelner.r)
+        * command/shortcut to toggle the results window
+        * basic matchit functionality for plsql buffers
+        * bug fix: error when connecting to the default local database (thanks to marcin.wroblewski)
+        * bug fix: plsql packages comments are incorrectly removed
+        * bug fix: Issuing exit in Vorax disconnects from db, but "hangs" vorax (thanks to Ingo Olbrich)
+        * bug fix: Providing a complete connection string at "User: " prompt does not work
+        * bug fix: invalid behavior of dbms_xplan.display_cursor() (thanks to koelner.r)
+
+ autoload/fuf/voraxitem.vim           |    3 +-
+ autoload/vorax.vim                   |   63 +++++++++++++++++++++---
+ doc/vorax.txt                        |   44 ++++++++++++++++-
+ ftplugin/plsql.vim                   |   87 ++++++++++++++++++++++++++++++++++
+ plugin/vorax.vim                     |   34 ++++++++++++-
+ vorax/interface/cygwin/cygwin_if.vim |    7 ++-
+ vorax/interface/cygwin/vorax.rb      |    2 +-
+ vorax/interface/unix/unix_if.vim     |    8 ++--
+ vorax/interface/win/vorax.rb         |   25 +---------
+ vorax/interface/win/win_if.vim       |   10 +++-
+ vorax/lib/vim/dbexplorer.vim         |   18 +++++--
+ vorax/lib/vim/vorax_completion.vim   |    2 -
+ vorax/lib/vim/vorax_dblayer.vim      |   20 +++++---
+ vorax/lib/vim/vorax_oradoc.vim       |    6 ++-
+ vorax/lib/vim/vorax_rwin.vim         |   36 ++++++++++----
+ vorax/lib/vim/vorax_tree.vim         |    7 ++-
+ vorax/lib/vim/vorax_utils.vim        |   70 ++++++++++++++++++++++++++-
+ vorax/sql/vertical_query.sql         |   63 ++++++++++++++++++++++++
+ 18 files changed, 426 insertions(+), 79 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
 Author:     Alexandru Tica <alexandru.tica@gmail.com>
 AuthorDate: Sat Oct 2 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

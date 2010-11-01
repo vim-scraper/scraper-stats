@@ -1,4 +1,29 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/101023)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/101025)
+Author:     Jakson Aquino <jalvesaq@gmail.com>
+AuthorDate: Mon Oct 25 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 101025
+    
+    * New option: vimrplugin_routmorecolors.
+    * Fixed bug in the object browser when a data.frame or list had just one element (thanks to Jan Larres for reporting the bug).
+    * Do not copy omnilist and functions.vim to ~/.vim/r-plugin if the directory where the plugin is installed is writable (thanks to Jan Larres for the suggestion).
+
+ README                |    2 +-
+ autoload/rplugin.vim  |    4 +-
+ doc/r-plugin.txt      |  139 ++++++++++++++++++++++++++++++++++++++-----------
+ ftplugin/r.vim        |   79 +++++++++++++++-------------
+ ftplugin/rbrowser.vim |   36 ++++++++++++-
+ ftplugin/rdoc.vim     |   79 +++++++++++++++-------------
+ ftplugin/rhelp.vim    |   79 +++++++++++++++-------------
+ ftplugin/rnoweb.vim   |   79 +++++++++++++++-------------
+ r-plugin/vimbrowser.R |    2 +-
+ syntax/r.vim          |    2 +-
+ syntax/rbrowser.vim   |   10 ++--
+ syntax/rout.vim       |   23 ++++++--
+ 12 files changed, 341 insertions(+), 193 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/101023)
 Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Sat Oct 23 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -339,12 +364,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
  autoload/rcomplete.vim |   15 +-
  doc/r-plugin.txt       |  146 +++-
- ftplugin/r.vim         |  771 +++++++++------
+ ftplugin/r.vim         |  755 +++++++++------
  syntax/r.vim           |    9 +-
  tools/rfunctions       |  370 +++++++
  tools/rtags            | 2537 ++++++++++++++++++++++++++++++++++++++++++++++++
  tools/rtags.R          |   77 ++-
- 7 files changed, 3552 insertions(+), 373 deletions(-)
+ 7 files changed, 3544 insertions(+), 365 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/091016)
 Author:     Jakson Aquino <jalvesaq@gmail.com>
