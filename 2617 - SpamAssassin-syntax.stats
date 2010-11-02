@@ -1,4 +1,32 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.0.1)
+Author:     Adam Katz <vim@khopis.com>
+AuthorDate: Tue Nov 2 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.0.1: Removed some redundant code (second version check).
+
+ syntax/spamassassin.vim |  166 ++++++++++++++++++++++-------------------------
+ 1 files changed, 78 insertions(+), 88 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Adam Katz <vim@khopis.com>
+AuthorDate: Tue Nov 2 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.0
+    
+    MAJOR efficiency increase.  This is now usable on large files.
+    
+    Removed most \%(inefficient zero-width lookbehind\)\@<= portions in favor of using nextgroup since \%(this zero-width lookbehind can't contain ANY highlighting\)\zs  also fixed several outstanding minor bugs and added a few new highlighted areas (specifically for meta rules).
+    
+    Now that I've tested this with a genuine vim 5.8, I'm pretty sure it never worked.  Required vim version bumped to 6.0.
+    
+    Offline edits put this at 2.8 before 3.0, though 2.6+ were all very minor and I tend to err on the side of bumping up the version when my systems are out of sync.
+
+ syntax/spamassassin.vim |  331 ++++++++++++++++++++++++++++------------------
+ 1 files changed, 201 insertions(+), 130 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
 Author:     Adam Katz <vim@khopis.com>
 AuthorDate: Wed Nov 4 00:00:00 2009 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -99,6 +127,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2: Initial upload
 
- README                  |   10 ++
+ README                  |    9 ++
  syntax/spamassassin.vim |  307 +++++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 317 insertions(+), 0 deletions(-)
+ 2 files changed, 316 insertions(+), 0 deletions(-)
