@@ -80,71 +80,42 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     If you did not set g:ada_default_compiler and g:ada_default_compiler the scripts would fail miserable. Thank's to Taylor Venable for providing a patch to this problem.
 
- autoload/ada.vim         |  622 ++++++++++++++++++++++++++++++++++++++++++++++
- autoload/adacomplete.vim |  109 ++++++++
- autoload/decada.vim      |   75 ++++++
- autoload/gnat.vim        |  145 +++++++++++
- compiler/decada.vim      |   55 ++++
- compiler/gnat.vim        |   71 ++++++
- doc/ft_ada.txt           |  516 ++++++++++++++++++++++++++++++++++++++
- ftdetect/ada.vim         |   39 +++
- ftplugin/ada.vim         |  201 +++++++++++++++
- ftplugin/ada_options.vim |  105 ++++++++
- indent/ada.vim           |  300 ++++++++++++++++++++++
- syntax/ada.vim           |  367 +++++++++++++++++++++++++++
- 12 files changed, 2605 insertions(+), 0 deletions(-)
+ autoload/ada.vim         |   51 +++++++++++++++++-----
+ autoload/adacomplete.vim |   10 ++--
+ autoload/decada.vim      |   12 +++---
+ autoload/gnat.vim        |   30 ++++++++-----
+ compiler/decada.vim      |   10 ++--
+ compiler/gnat.vim        |   10 ++--
+ ftdetect/ada.vim         |   10 ++--
+ ftplugin/ada.vim         |   23 +++++++---
+ ftplugin/ada_options.vim |  105 ++++++++++++++++++++++++++++++++++++++++++++++
+ indent/ada.vim           |   12 +++---
+ syntax/ada.vim           |   12 +++---
+ 11 files changed, 217 insertions(+), 68 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.3.0)
 Author:     Martin Krischik <krischik@users.sourceforge.net>
-AuthorDate: Sat Nov 18 00:00:00 2006 +0000
+AuthorDate: Wed Nov 22 00:00:00 2006 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 4.3.0
     
-    Integrate Brams fixes. The Vim Ada Mode is not part of the standart runtime.
+    The VimBall is broken again. I like the VimBall idea if it only worked better. Anyway have a tar file in the meantime.
 
-commit SHA1SHA1SHA1 (tag: refs/tags/4.2.0)
-Author:     Martin Krischik <krischik@users.sourceforge.net>
-AuthorDate: Wed Nov 8 00:00:00 2006 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 4.2.0: More bug Fixes.
-
-commit SHA1SHA1SHA1 (tag: refs/tags/4.1.0)
-Author:     Martin Krischik <krischik@users.sourceforge.net>
-AuthorDate: Tue Nov 7 00:00:00 2006 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 4.1.0
-    
-    This version contains the latest fixed after suggestions from Bram. It does not provide new functionality but fixes quite a few hidden bugs.
-    
-    Ada users should also get yourself a new Ctags as the Ctags Ada Mode has been updated as well. We used a snapshot from the Ctags Subversion archive which means the lates Vim-Script fixes are included as well.
-    
-    As allways binary releases are available from the GNU Ada Project: http://gnuada.sf.net.
-
-commit SHA1SHA1SHA1 (tag: refs/tags/3.9)
-Author:     Martin Krischik <krischik@users.sourceforge.net>
-AuthorDate: Fri Oct 13 00:00:00 2006 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 3.9
-    
-    Fixed Bugs reported by Roman Marchenko. Changes Licence to Vim for runtime integration.
-
- autoload/ada.vim         |  604 ----------------------------------------------
- autoload/adacomplete.vim |  129 ----------
- autoload/decada.vim      |   96 --------
- autoload/gnat.vim        |  149 ------------
- compiler/decada.vim      |   66 -----
- compiler/gnat.vim        |   83 -------
- doc/ada.txt              |  514 ---------------------------------------
- ftdetect/ada.vim         |   47 ----
- ftplugin/ada.vim         |  198 ---------------
- ftplugin/ada_options.vim |   77 ------
- indent/ada.vim           |  311 ------------------------
- syntax/ada.vim           |  378 -----------------------------
- 12 files changed, 0 insertions(+), 2652 deletions(-)
+ autoload/ada.vim         | 1055 +++++++++++++++++++++++-----------------------
+ autoload/adacomplete.vim |  192 ++++-----
+ autoload/decada.vim      |  125 +++----
+ autoload/gnat.vim        |  236 +++++------
+ compiler/decada.vim      |   63 ++--
+ compiler/gnat.vim        |   64 ++--
+ doc/ada.txt              |  514 ----------------------
+ doc/ft_ada.txt           |  516 ++++++++++++++++++++++
+ ftdetect/ada.vim         |   50 +--
+ ftplugin/ada.vim         |  310 +++++++-------
+ ftplugin/ada_options.vim |   77 ----
+ indent/ada.vim           |  519 +++++++++++------------
+ syntax/ada.vim           |  693 +++++++++++++++---------------
+ 13 files changed, 2109 insertions(+), 2305 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.8.1)
 Author:     Martin Krischik <krischik@users.sourceforge.net>
@@ -155,44 +126,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Identical to the last release - only the 3.8 Vimball is dammaged. You should also use the newest Vimball release as older version have problems with the fold markers which Vimball now uses.
 
- autoload/ada.vim         |  604 ++++++++++++++++++++++++++++++++++++++++++++++
- autoload/adacomplete.vim |  129 ++++++++++
- autoload/decada.vim      |   96 ++++++++
- autoload/gnat.vim        |  149 ++++++++++++
- compiler/decada.vim      |   66 +++++
- compiler/gnat.vim        |   83 +++++++
- doc/ada.txt              |  514 +++++++++++++++++++++++++++++++++++++++
- ftdetect/ada.vim         |   47 ++++
- ftplugin/ada.vim         |  198 +++++++++++++++
- ftplugin/ada_options.vim |   77 ++++++
- indent/ada.vim           |  311 ++++++++++++++++++++++++
- syntax/ada.vim           |  378 +++++++++++++++++++++++++++++
- 12 files changed, 2652 insertions(+), 0 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/3.8)
-Author:     Martin Krischik <krischik@users.sourceforge.net>
-AuthorDate: Fri Oct 6 00:00:00 2006 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 3.8
-    
-    This version improves folding support for files which have been pretty printed by the GNAT pretty printer.
-    
-    Note: This Vimball comes in Unix text format. It will not work if your Vim is not set up to correctly detect unix text files.
-
- autoload/ada.vim         |  552 ----------------------------------------------
- autoload/adacomplete.vim |  129 -----------
- autoload/decada.vim      |   96 --------
- autoload/gnat.vim        |  163 --------------
- compiler/decada.vim      |   66 ------
- compiler/gnat.vim        |   83 -------
- doc/ada.txt              |  493 -----------------------------------------
- ftdetect/ada.vim         |   47 ----
- ftplugin/ada.vim         |  189 ----------------
- ftplugin/ada_options.vim |   72 ------
- indent/ada.vim           |  311 --------------------------
- syntax/ada.vim           |  342 ----------------------------
- 12 files changed, 0 insertions(+), 2543 deletions(-)
+ autoload/ada.vim         |   62 +++++++++++++++++++++++++++++++++++++++++---
+ autoload/gnat.vim        |   64 ++++++++++++++++++----------------------------
+ doc/ada.txt              |   27 +++++++++++++++++--
+ ftplugin/ada.vim         |   23 +++++++++++-----
+ ftplugin/ada_options.vim |   17 ++++++++----
+ syntax/ada.vim           |   56 +++++++++++++++++++++++++++++++++-------
+ 6 files changed, 179 insertions(+), 70 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.7)
 Author:     Martin Krischik <krischik@users.sourceforge.net>
