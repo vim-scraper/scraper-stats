@@ -5,7 +5,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 4.6.1-vba: Bram did some nitpicking - this is the improved version for Vim 7.2.
 
- ftplugin/ada_options.vim |  105 ++++++++++++++++++++++++++++++++++++++++++++++
+ ada_options.vim |  105 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
  1 files changed, 105 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.6.1-tar)
@@ -15,6 +15,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 4.6.1-tar: Bram did some nitpicking - this is the improved version for Vim 7.2.
 
+ ada_options.vim          |  105 ----------------------------------------------
  autoload/ada.vim         |   58 ++++++++++++++-----------
  autoload/adacomplete.vim |    8 ++--
  autoload/decada.vim      |    8 ++--
@@ -24,7 +25,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  doc/ft_ada.txt           |   12 +++---
  ftdetect/ada.vim         |    8 ++--
  ftplugin/ada.vim         |   19 ++++++--
- ftplugin/ada_options.vim |  105 ----------------------------------------------
  indent/ada.vim           |    8 ++--
  syntax/ada.vim           |   13 ++----
  12 files changed, 84 insertions(+), 179 deletions(-)
@@ -36,7 +36,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 4.6.0-vba: Mostly bug fixes. Also the version submitted for Vim 7.2.
 
- ftplugin/ada_options.vim |  105 ++++++++++++++++++++++++++++++++++++++++++++++
+ ada_options.vim |  105 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
  1 files changed, 105 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.6.0-tar)
@@ -46,8 +46,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 4.6.0-tar: Mostly bug fixes. Also the version submitted for Vim 7.2.
 
+ ada_options.vim          |  105 ----------------------------------------------
  autoload/adacomplete.vim |    8 ++--
- ftplugin/ada_options.vim |  105 ----------------------------------------------
  syntax/ada.vim           |    8 ++--
  3 files changed, 8 insertions(+), 113 deletions(-)
 
@@ -58,6 +58,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 4.5: Bug fixes in the areas of key mappings, indenting,
 
+ ada_options.vim          |   14 +++++++-------
  autoload/ada.vim         |   18 ++++++++++--------
  autoload/adacomplete.vim |   12 ++++++------
  autoload/decada.vim      |   12 ++++++------
@@ -66,7 +67,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  compiler/gnat.vim        |   14 ++++++++------
  ftdetect/ada.vim         |   14 +++++++-------
  ftplugin/ada.vim         |   14 +++++++-------
- ftplugin/ada_options.vim |   14 +++++++-------
  indent/ada.vim           |   27 +++++++++++++++------------
  syntax/ada.vim           |   13 +++++++------
  11 files changed, 87 insertions(+), 77 deletions(-)
@@ -80,6 +80,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     If you did not set g:ada_default_compiler and g:ada_default_compiler the scripts would fail miserable. Thank's to Taylor Venable for providing a patch to this problem.
 
+ ada_options.vim          |  105 ++++++++++++++++++++++++++++++++++++++++++++++
  autoload/ada.vim         |   51 +++++++++++++++++-----
  autoload/adacomplete.vim |   10 ++--
  autoload/decada.vim      |   12 +++---
@@ -88,7 +89,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  compiler/gnat.vim        |   10 ++--
  ftdetect/ada.vim         |   10 ++--
  ftplugin/ada.vim         |   23 +++++++---
- ftplugin/ada_options.vim |  105 ++++++++++++++++++++++++++++++++++++++++++++++
  indent/ada.vim           |   12 +++---
  syntax/ada.vim           |   12 +++---
  11 files changed, 217 insertions(+), 68 deletions(-)
@@ -102,6 +102,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     The VimBall is broken again. I like the VimBall idea if it only worked better. Anyway have a tar file in the meantime.
 
+ ada_options.vim          |   77 ----
  autoload/ada.vim         | 1055 +++++++++++++++++++++++-----------------------
  autoload/adacomplete.vim |  192 ++++-----
  autoload/decada.vim      |  125 +++----
@@ -112,7 +113,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  doc/ft_ada.txt           |  516 ++++++++++++++++++++++
  ftdetect/ada.vim         |   50 +--
  ftplugin/ada.vim         |  310 +++++++-------
- ftplugin/ada_options.vim |   77 ----
  indent/ada.vim           |  519 +++++++++++------------
  syntax/ada.vim           |  693 +++++++++++++++---------------
  13 files changed, 2109 insertions(+), 2305 deletions(-)
@@ -126,12 +126,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Identical to the last release - only the 3.8 Vimball is dammaged. You should also use the newest Vimball release as older version have problems with the fold markers which Vimball now uses.
 
- autoload/ada.vim         |   62 +++++++++++++++++++++++++++++++++++++++++---
- autoload/gnat.vim        |   64 ++++++++++++++++++----------------------------
- doc/ada.txt              |   27 +++++++++++++++++--
- ftplugin/ada.vim         |   23 +++++++++++-----
- ftplugin/ada_options.vim |   17 ++++++++----
- syntax/ada.vim           |   56 +++++++++++++++++++++++++++++++++-------
+ ada_options.vim   |   17 +++++++++-----
+ autoload/ada.vim  |   62 +++++++++++++++++++++++++++++++++++++++++++++++----
+ autoload/gnat.vim |   64 ++++++++++++++++++++--------------------------------
+ doc/ada.txt       |   27 +++++++++++++++++++--
+ ftplugin/ada.vim  |   23 +++++++++++++-----
+ syntax/ada.vim    |   56 ++++++++++++++++++++++++++++++++++++++--------
  6 files changed, 179 insertions(+), 70 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.7)
@@ -147,6 +147,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     http://sourceforge.net/project/showfiles.php?group_id=12974&package_id=191849
 
+ ada_options.vim          |   18 +++++++++---
  autoload/ada.vim         |   32 ++++++++++++++++++++---
  autoload/adacomplete.vim |    8 +++---
  autoload/decada.vim      |   38 ++++++++++++++++++++-------
@@ -155,7 +156,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  compiler/gnat.vim        |   63 +++++++++++++++++++++++++++-------------------
  ftdetect/ada.vim         |    8 +++---
  ftplugin/ada.vim         |   16 ++++++-----
- ftplugin/ada_options.vim |   18 +++++++++---
  indent/ada.vim           |    8 +++---
  syntax/ada.vim           |    8 +++---
  11 files changed, 179 insertions(+), 114 deletions(-)
@@ -175,6 +175,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     It's almost an IDE now ;-)
 
+ ada_options.vim          |    2 +-
  autoload/ada.vim         |    4 +-
  autoload/adacomplete.vim |    2 +-
  autoload/decada.vim      |    2 +-
@@ -184,7 +185,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  doc/ada.txt              |  164 +++++++++++++++++++++++++++++++++-------------
  ftdetect/ada.vim         |    2 +-
  ftplugin/ada.vim         |    6 +-
- ftplugin/ada_options.vim |    2 +-
  indent/ada.vim           |    2 +-
  syntax/ada.vim           |    2 +-
  12 files changed, 214 insertions(+), 77 deletions(-)
@@ -198,6 +198,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Maintanance Release: Bugfixes, Cleanup, remove dead code and add fold markers to all files. This release should be easier to maintain and extend now.
 
+ ada_options.vim          |   20 +++--
  autoload/ada.vim         |  155 +++++++++++++++++++---------
  autoload/adacomplete.vim |   47 +++------
  autoload/decada.vim      |   74 ++++++++------
@@ -207,7 +208,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  doc/ada.txt              |  107 ++++++++++++--------
  ftdetect/ada.vim         |   10 +-
  ftplugin/ada.vim         |   79 ++++++++++-----
- ftplugin/ada_options.vim |   20 +++--
  indent/ada.vim           |   20 +++-
  syntax/ada.vim           |  257 ++++++++++++++++++++++++----------------------
  12 files changed, 493 insertions(+), 344 deletions(-)
@@ -221,6 +221,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     This version of the Ada mode improves key-mappings, user defined commands and pull down menus.
 
+ ada_options.vim          |   38 +++++----
  autoload/ada.vim         |   98 +++++++++++++++++-----
  autoload/adacomplete.vim |   20 ++--
  autoload/decada.vim      |    6 +-
@@ -230,7 +231,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  doc/ada.txt              |    2 +-
  ftdetect/ada.vim         |   18 ++--
  ftplugin/ada.vim         |   75 +++++------------
- ftplugin/ada_options.vim |   38 +++++----
  indent/ada.vim           |   18 ++--
  syntax/ada.vim           |  206 +++++++++++++++++++++++-----------------------
  12 files changed, 327 insertions(+), 281 deletions(-)
@@ -244,6 +244,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     This release fixes quite a few bugs. Especially the GNAT compiler support and the help file where redone. This release also adds support for Dec Ada.
 
+ ada_options.vim          |   39 ++--
  autoload/ada.vim         |  163 ++++++++++++-----
  autoload/adacomplete.vim |   54 +++++-
  autoload/decada.vim      |   68 +++++++
@@ -253,7 +254,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  doc/ada.txt              |  458 ++++++++++++++++++++++++++++++++--------------
  ftdetect/ada.vim         |    8 +-
  ftplugin/ada.vim         |  134 ++++++++++----
- ftplugin/ada_options.vim |   39 ++--
  indent/ada.vim           |    8 +-
  syntax/ada.vim           |   10 +-
  12 files changed, 834 insertions(+), 305 deletions(-)
@@ -266,13 +266,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Version 3.0: Initial upload
 
  README                   |   38 +++++
+ ada_options.vim          |   47 +++++++
  autoload/ada.vim         |  346 ++++++++++++++++++++++++++++++++++++++++++++++
  autoload/adacomplete.vim |  114 +++++++++++++++
  compiler/gnat.vim        |   72 ++++++++++
  doc/ada.txt              |  218 +++++++++++++++++++++++++++++
  ftdetect/ada.vim         |   47 +++++++
  ftplugin/ada.vim         |  139 +++++++++++++++++++
- ftplugin/ada_options.vim |   47 +++++++
  indent/ada.vim           |  301 ++++++++++++++++++++++++++++++++++++++++
  syntax/ada.vim           |  333 ++++++++++++++++++++++++++++++++++++++++++++
  10 files changed, 1655 insertions(+), 0 deletions(-)
