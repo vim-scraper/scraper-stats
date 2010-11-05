@@ -23,13 +23,23 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fixed a misprint in CompleteKeywords function which failed omni-completion in unix platfom;
     - Fix a BUG in abbreviation that brings an extra space within parentheses.
 
- ftplugin/dml-unix.vim        |  135 ++++++++++++++++++++++++++++++------------
- ftplugin/dml-windows.vim     |  135 ++++++++++++++++++++++++++++++------------
- gembase-plugins/README.txt   |   85 ++++++++++++++++-----------
+ ftplugin/dml-unix.vim      |  135 ++++++++++++++++++++++++++++++++------------
+ ftplugin/dml-windows.vim   |  135 ++++++++++++++++++++++++++++++++------------
+ gembase-plugins/README.txt |   12 +++-
+ indent/dml.vim             |    4 -
+ 4 files changed, 204 insertions(+), 82 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.02@1)
+Author:     Frank Sun <frank.sun.319@gmail.com>
+AuthorDate: Fri Aug 29 00:00:00 2008 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.02@1: + ADD an installation script for unix.
+
+ gembase-plugins/README.txt   |   81 ++++++++++++++++++++++----------------
  gembase-plugins/filetype.vim |    4 +-
- gembase-plugins/gembase-unix |   87 +++++++++++++++++++++++++++
- indent/dml.vim               |    4 -
- 6 files changed, 337 insertions(+), 113 deletions(-)
+ gembase-plugins/gembase-unix |   87 ++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 137 insertions(+), 35 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.02)
 Author:     Frank Sun <frank.sun.319@gmail.com>

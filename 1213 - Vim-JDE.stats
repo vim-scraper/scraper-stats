@@ -587,21 +587,51 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     change VjdeCompletionFun(line,base,col,findstart)
     to VjdeCompletionFun0(findstart,base)
 
- plugin/vjde.vim                       |   25 +-
+ plugin/vjde.vim                       |   16 +-
  plugin/vjde/preview.dll               |  Bin 2637553 -> 2640306 bytes
  plugin/vjde/preview4gtk.so            |  Bin 155011 -> 155015 bytes
- plugin/vjde/tlds/gtkdoc.txt           | 4961 +++++++++++++++++++++++++++++++++
- plugin/vjde/vjde_completion.vim       |   51 +-
- plugin/vjde/vjde_cpp_completion.vim   |   32 +-
- plugin/vjde/vjde_cpp_doc_reader.rb    |  313 +++
- plugin/vjde/vjde_ctags_completion.vim |   35 +-
- plugin/vjde/vjde_ctags_support.rb     |  300 ++-
- plugin/vjde/vjde_menu_def.vim         |   20 +-
+ plugin/vjde/vjde_completion.vim       |   39 ++-
+ plugin/vjde/vjde_cpp_completion.vim   |   10 +-
+ plugin/vjde/vjde_cpp_doc_reader.rb    |    1 +
+ plugin/vjde/vjde_ctags_completion.vim |   33 +-
+ plugin/vjde/vjde_ctags_support.rb     |   23 +-
+ plugin/vjde/vjde_menu_def.vim         |    4 +-
  plugin/vjde/vjde_preview.vim          |    6 +-
  plugin/vjde/wspawn.exe                |  Bin 127108 -> 128830 bytes
- src/previewwindow.cpp                 |   28 +-
- src/readtags.c.bak                    |  958 +++++++
- 14 files changed, 6639 insertions(+), 90 deletions(-)
+ src/previewwindow.cpp                 |   25 +-
+ src/readtags.c.bak                    |  958 +++++++++++++++++++++++++++++++++
+ 13 files changed, 1078 insertions(+), 37 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.02.07@1)
+Author:     JiuTian Zhang <zhang9tian@gmail.com>
+AuthorDate: Sun Sep 11 00:00:00 2005 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.02.07@1
+    
+    Add gtk tags for window version.
+    Add more power full struct support which ctags not supported!
+    like
+       typedef struct {
+            int a;
+            int b;
+       } SA;
+       SA sa;
+       sa.<c-space>
+
+ plugin/vjde.vim                       |   11 +-
+ plugin/vjde/preview.dll               |  Bin 2637553 -> 2637553 bytes
+ plugin/vjde/preview4gtk.so            |  Bin 155011 -> 155011 bytes
+ plugin/vjde/tlds/gtkdoc.txt           | 4961 +++++++++++++++++++++++++++++++++
+ plugin/vjde/vjde_completion.vim       |   12 +-
+ plugin/vjde/vjde_cpp_completion.vim   |   24 +-
+ plugin/vjde/vjde_cpp_doc_reader.rb    |  312 +++
+ plugin/vjde/vjde_ctags_completion.vim |    2 +-
+ plugin/vjde/vjde_ctags_support.rb     |  279 ++-
+ plugin/vjde/vjde_menu_def.vim         |   16 +
+ plugin/vjde/wspawn.exe                |  Bin 127108 -> 127108 bytes
+ src/previewwindow.cpp                 |    3 +-
+ 12 files changed, 5564 insertions(+), 56 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.02.07)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>

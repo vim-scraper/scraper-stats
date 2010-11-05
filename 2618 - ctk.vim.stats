@@ -9,10 +9,28 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       - remain placeholder will substitute environment variables. add a option ctk_envvarfmt to detect the variable formant.
       - add RefreshCTK command, and auto refresh all buffer after EditCompilerInfo command.
 
- .compiler_info |   42 +++++++++++++++++-------
- doc/ctk.txt    |   28 +++++++++++++++-
- plugin/ctk.vim |   99 ++++++++++++++++++++++++++++++++++++++++---------------
- 3 files changed, 129 insertions(+), 40 deletions(-)
+ .compiler_info |   40 +++++++++++++++++++++++++++++-----------
+ doc/ctk.txt    |   24 +++++++++++++++++++++++-
+ plugin/ctk.vim |   55 ++++++++++++++++++++++++++++++++++++++++++++++---------
+ 3 files changed, 98 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4-bugfix@1)
+Author:     Wxyarv Wang <weasley_wx@qq.com>
+AuthorDate: Wed Oct 21 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.4-bugfix@1
+    
+    NOTE: if you have you own .compiler_info file, please backup it and install new version, and you can diff two info file and decide how to merge them.
+    
+      - add python support in .compiler_info file
+      - add a new "#RUN_DIRECT" syntax for support script file. see .compiler_info "Python" section and :h ctk-run-direct.
+      - fix the encoding conversion error in previous version
+
+ .compiler_info |    6 +++---
+ doc/ctk.txt    |    4 ++++
+ plugin/ctk.vim |   44 ++++++++++++++++++++++++++------------------
+ 3 files changed, 33 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4-bugfix)
 Author:     Wxyarv Wang <weasley_wx@qq.com>
@@ -42,10 +60,68 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       - add command ":SetExtensionName" command.
       - modfiy the document.
 
- .compiler_info |   58 ++--
- doc/ctk.txt    |  314 ++++++++++++++-------
- plugin/ctk.vim |  864 +++++++++++++++++++++++++++++++-------------------------
- 3 files changed, 718 insertions(+), 518 deletions(-)
+ .compiler_info |   55 +---
+ doc/ctk.txt    |  124 +++++++---
+ plugin/ctk.vim |  796 +++++++++++++++++++++++++++++---------------------------
+ 3 files changed, 525 insertions(+), 450 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3-bugfix@4)
+Author:     Wxyarv Wang <weasley_wx@qq.com>
+AuthorDate: Sat Jul 11 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.3-bugfix@4
+    
+    -- fix the bug 'gc' and 'gC' use previous entry (it's quite sick!)
+    -- fix the bug when the program name is same as Unix standard program (e.g. test), the Unix program will be run instead of ours.
+
+ .compiler_info |   19 ++++--
+ plugin/ctk.vim |  183 +++++++++++++++++++++++++++++++++++---------------------
+ 2 files changed, 127 insertions(+), 75 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3-bugfix@3)
+Author:     Wxyarv Wang <weasley_wx@qq.com>
+AuthorDate: Fri Jul 10 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.3-bugfix@3
+    
+    -- fixed the syntax error in doc file :-) thanks to yiran.
+    -- fixed the issue that ctk raise error when :RUN asm.
+    -- add quoted place-holder's doc describe.
+
+ .compiler_info |   24 ++++++-
+ doc/ctk.txt    |  206 ++++++++++++++++++++++++++++++++++---------------------
+ plugin/ctk.vim |   32 +++++----
+ 3 files changed, 165 insertions(+), 97 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3-bugfix@2)
+Author:     Wxyarv Wang <weasley_wx@qq.com>
+AuthorDate: Fri Jul 10 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.3-bugfix@2
+    
+    -- fix the bug when you press "gc" and there isn't any window has b:compiler_info, ctk will raise a error.
+    -- remove the process of autocmd FuncUndefined
+    -- remove s:find_source() function, and just find b:compiler_info when needed.
+
+ plugin/ctk.vim |   81 ++++++++++++++++++++++++++++---------------------------
+ 1 files changed, 41 insertions(+), 40 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3-bugfix@1)
+Author:     Wxyarv Wang <weasley_wx@qq.com>
+AuthorDate: Sun Jul 5 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.3-bugfix@1
+    
+      - thanks to lee, change a syntax error :-)
+      - correct all wrong marks in script.
+      - in linux console, the RUN can't stop after program runs, so didn't redraw in linux console.
+
+ plugin/ctk.vim |   36 ++++++++++++++++++++----------------
+ 1 files changed, 20 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3-bugfix)
 Author:     Wxyarv Wang <weasley_wx@qq.com>
@@ -70,9 +146,54 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     -- remove the '*' command-type. you can use :call foobar() to replace it.
 
  .compiler_info |   22 ++-
- doc/ctk.txt    |  334 +++++++++++++++++-------
- plugin/ctk.vim |  794 ++++++++++++++++++++++++++++++--------------------------
- 3 files changed, 688 insertions(+), 462 deletions(-)
+ doc/ctk.txt    |  334 ++++++++++++++++++-------
+ plugin/ctk.vim |  771 ++++++++++++++++++++++++++++++--------------------------
+ 3 files changed, 672 insertions(+), 455 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2-bugfix@4)
+Author:     Wxyarv Wang <weasley_wx@qq.com>
+AuthorDate: Fri May 8 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.2-bugfix@4: bugfix: autonamed file didn't use default output name.
+
+ plugin/ctk.vim |   11 +++++++----
+ 1 files changed, 7 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2-bugfix@3)
+Author:     Wxyarv Wang <weasley_wx@qq.com>
+AuthorDate: Wed Apr 29 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.2-bugfix@3
+    
+    -- fix the bug that quickfix window won't close when compiling success.
+
+ plugin/ctk.vim |    6 ++----
+ 1 files changed, 2 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2-bugfix@2)
+Author:     Wxyarv Wang <weasley_wx@qq.com>
+AuthorDate: Tue Apr 28 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.2-bugfix@2
+    
+    -- change the way to calculate the index of temporary file.
+    -- change the way to rename file. the file has its name won't rename now (it's my mistake...)
+
+ plugin/ctk.vim |   57 +++++++++++++++++++++++++++----------------------------
+ 1 files changed, 28 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2-bugfix@1)
+Author:     Wxyarv Wang <weasley_wx@qq.com>
+AuthorDate: Sun Apr 26 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.2-bugfix@1: sorry for forgot to turn-off the debug message...
+
+ plugin/ctk.vim |  111 ++++++++++++++++++++++++++++++--------------------------
+ 1 files changed, 60 insertions(+), 51 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2-bugfix)
 Author:     Wxyarv Wang <weasley_wx@qq.com>

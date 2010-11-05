@@ -1,4 +1,44 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.8.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.8.1@2)
+Author:     Wxyarv Wang <weasley_wx@qq.com>
+AuthorDate: Wed Dec 3 00:00:00 2008 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8.1@2
+    
+    bugfix, and change template marks diffevent with snippets marks. thanks to Scott Prager
+
+ plugin/code_complete.vim         |  180 +++++++++++++++++++++++++++++---------
+ plugin/default_snippets.template |  168 +++++++++++++++++++++++++++++++++++
+ plugin/my_snippets.template      |  166 -----------------------------------
+ templates/main.c                 |    5 +
+ templates/mian2.c                |    6 ++
+ templates/stdc.c                 |    2 +-
+ templates/stdc2.c                |    2 +-
+ templates/stdcpp.cpp             |    2 +-
+ templates/stdcpp2.cpp            |    2 +-
+ templates/stdwin.c               |    2 +-
+ 10 files changed, 321 insertions(+), 214 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.1@1)
+Author:     Wxyarv Wang <weasley_wx@qq.com>
+AuthorDate: Sat Nov 22 00:00:00 2008 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8.1@1
+    
+    add some helper function to build yourself snippets. and add some funny and useful snippets such as malloc, calloc and printf, you can try it youself, notice that they're only available when you set your filetype to c or cpp.
+    
+    add some snippet for coding vim script.
+    
+    all in all, this is just a little upgrade for more comfortable experience.
+
+ plugin/code_complete.vim    |   88 ++++++++++++++++++++++++++++---------------
+ plugin/my_snippets.template |   68 +++++++++++++++++++++++++++++----
+ templates/fheader.c         |    6 ---
+ templates/stdwin.c          |    2 +-
+ 4 files changed, 118 insertions(+), 46 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.1)
 Author:     Wxyarv Wang <weasley_wx@qq.com>
 AuthorDate: Tue Nov 11 00:00:00 2008 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -9,16 +49,39 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     make g:CodeCompl_SaveListInBuffer work, it replaced g:CodeCompl_UpdateAlways
 
- my_snippets.template        |  104 ------
- plugin/code_complete.vim    |  738 +++++++++++++++++++++++++++++++++----------
- plugin/my_snippets.template |  116 +++++++
+ plugin/code_complete.vim    |  224 ++++++++++++++++++++++++++----------------
+ plugin/my_snippets.template |    7 +-
+ templates/stdc2.c           |    1 -
+ templates/stdcpp.cpp        |    1 -
+ templates/stdcpp2.cpp       |    2 -
+ templates/stdwin.c          |   20 ++--
+ 6 files changed, 151 insertions(+), 104 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8@1)
+Author:     Wxyarv Wang <weasley_wx@qq.com>
+AuthorDate: Sat Nov 8 00:00:00 2008 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8@1
+    
+    still bugfix, now can input function declare like"func(int(*)(int,int),int) correctly.
+    
+    change some snippets in my_snippets.template, but you'd better backup yourself snippet file.
+    
+    add some user-command, you can read a short details in script file.
+    
+    next version will make "save dict in global" work, but at least this is a stable version.
+
+ my_snippets.template        |  104 -------
+ plugin/code_complete.vim    |  680 ++++++++++++++++++++++++++++++++-----------
+ plugin/my_snippets.template |  117 ++++++++
  templates/fheader.c         |    6 +
  templates/stdc.c            |    8 +
- templates/stdc2.c           |    8 +
- templates/stdcpp.cpp        |    8 +
- templates/stdcpp2.cpp       |    8 +
- templates/stdwin.c          |   48 +++
- 9 files changed, 775 insertions(+), 269 deletions(-)
+ templates/stdc2.c           |    9 +
+ templates/stdcpp.cpp        |    9 +
+ templates/stdcpp2.cpp       |   10 +
+ templates/stdwin.c          |   50 ++++
+ 9 files changed, 726 insertions(+), 267 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8)
 Author:     Wxyarv Wang <weasley_wx@qq.com>

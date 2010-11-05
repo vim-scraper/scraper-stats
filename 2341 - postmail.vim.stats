@@ -44,16 +44,44 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Change script name from 'sendmail' to 'postmail'.
     - Change from 'Vimball' to 'zip' archive distribution.
 
- doc/postmail.jax           |  365 +++++++++++++++++++++++++++++++++++
- doc/postmail.txt           |  357 ++++++++++++++++++++++++++++++++++
- doc/sendmail.jax           |  341 --------------------------------
+ doc/postmail.jax           |  365 +++++++++++++++++
+ doc/postmail.txt           |  357 +++++++++++++++++
  plugin/postmail.basic.conf |   11 +
  plugin/postmail.gmail.conf |   11 +
  plugin/postmail.op25b.conf |   11 +
- plugin/postmail.pop.conf   |   15 ++
- plugin/postmail.py         |  100 ++++++++++
- plugin/postmail.vim        |  459 ++++++++++++++++++++++++++++++++++++++++++++
- 9 files changed, 1329 insertions(+), 341 deletions(-)
+ plugin/postmail.pop.conf   |   15 +
+ plugin/postmail.py         |  100 +++++
+ plugin/postmail.vim        |  459 +++++++++++++++++++++
+ sendmail.vba               |  944 --------------------------------------------
+ syntax/help_ja.vim         |    3 +
+ 10 files changed, 1332 insertions(+), 944 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1@1)
+Author:     omi taku <mail@nanasi.jp>
+AuthorDate: Thu Aug 14 00:00:00 2008 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.5.1@1
+    
+    version : 0.5.1
+    
+    plugin/sendmail.vim
+    - Remove document. Move to document directory.
+    - Fix error check logic, 'sendmail.conf is not configured.'.
+    
+    doc/sendmail.txt
+    - Created.
+    
+    plugin/sendmail.py
+    - Send mail in background.
+    
+    plugin/sendmail.conf
+    - Removed.
+
+ doc/sendmail.jax   |  341 -------------------
+ sendmail.vba       |  944 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/help_ja.vim |    3 -
+ 3 files changed, 944 insertions(+), 344 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
 Author:     omi taku <mail@nanasi.jp>

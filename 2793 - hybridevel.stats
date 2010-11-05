@@ -1,4 +1,39 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/7.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/7.0@1)
+Author:     Zhenliang Ju <juzhenliang@gmail.com>
+AuthorDate: Wed Feb 3 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 7.0@1
+    
+    Its dependent plugin shellinsidevim.vim has been combined in this plugin.
+    So you can execute shell command directly with ex command :Shell,
+    and the output will display in the quickfix window.
+    
+    BTW, if the shell command is a compiler that your vim supports, the compiler will be sourced.
+
+ Hybridevel/development/ant.vim       |   22 -----
+ Hybridevel/development/c.vim         |   46 ----------
+ Hybridevel/development/cpp.vim       |   47 ----------
+ Hybridevel/development/flash.vim     |   75 ---------------
+ Hybridevel/development/java.vim      |   89 ------------------
+ Hybridevel/development/make.vim      |   22 -----
+ Hybridevel/development/matlab.vim    |  107 ----------------------
+ Hybridevel/development/sh.vim        |   26 ------
+ Hybridevel/development/tex.vim       |   41 ---------
+ plugin/hybridevel.vim                |  164 ++++++++++++++++++++++++++-------
+ syntax/qf.vim                        |   40 ++++++++
+ vimhybridevel/development/ant.vim    |   36 ++++++++
+ vimhybridevel/development/c.vim      |   46 ++++++++++
+ vimhybridevel/development/cpp.vim    |   46 ++++++++++
+ vimhybridevel/development/flash.vim  |   75 +++++++++++++++
+ vimhybridevel/development/java.vim   |   89 ++++++++++++++++++
+ vimhybridevel/development/make.vim   |   36 ++++++++
+ vimhybridevel/development/matlab.vim |  107 ++++++++++++++++++++++
+ vimhybridevel/development/sh.vim     |   26 ++++++
+ vimhybridevel/development/tex.vim    |   41 +++++++++
+ 20 files changed, 671 insertions(+), 510 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/7.0)
 Author:     Zhenliang Ju <juzhenliang@gmail.com>
 AuthorDate: Wed Sep 23 00:00:00 2009 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

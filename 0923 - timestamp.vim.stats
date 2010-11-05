@@ -59,9 +59,21 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Reduce Vim's initial load time significantly. On my system, Vim with timestamp-1.16 loads in about 1.1 seconds. With timestamp-1.17, it loads in only 0.3 seconds! The system calls to initialise the uid / username were taking time. Calls to these functions have been disabled by default, and further postponed untill the are necessary (and not on Vim startup). These calls can be enabled by setting the variable |timestamp_UseSystemCalls|.
 
- doc/timestamp.txt    |   88 ++++++++++++++++++++++++------
+ doc/timestamp.txt    |   73 +++++++++++++++++++------
  plugin/timestamp.vim |  146 ++++++++++++++++++++++++++++++-------------------
- 2 files changed, 159 insertions(+), 75 deletions(-)
+ 2 files changed, 145 insertions(+), 74 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.16@1)
+Author:     gi1242 gi1242 <gi1242@gmail.com>
+AuthorDate: Sat Sep 25 00:00:00 2004 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.16@1
+    
+    No changes in the script. Updated the documentation to include a note to windows users having trouble with the timezone. Thanks to Shishir Ramam for pointing this out.
+
+ doc/timestamp.txt |   17 +++++++++++++++--
+ 1 files changed, 15 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.16)
 Author:     gi1242 gi1242 <gi1242@gmail.com>

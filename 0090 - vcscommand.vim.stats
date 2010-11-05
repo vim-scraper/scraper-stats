@@ -265,6 +265,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  plugin/vcscommand.vim |   21 +++++++++++++++++++--
  2 files changed, 29 insertions(+), 2 deletions(-)
 
+commit SHA1SHA1SHA1 (tag: refs/tags/beta28@1)
+Author:     Bob Hiestand <bob.hiestand@gmail.com>
+AuthorDate: Wed Sep 24 00:00:00 2008 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version beta28@1
+    
+    Add 'VCSCommandDisableAll' variable to prevent the plugin or any extensions from loading.
+    
+    vcssvn:  prevent hangs caused by querying the user for input by specifying '--non-interactive' on the appropriate commands.
+    
+    Use &diffopt to seed the default DiffSplit orientation. (James Vega)
+
 commit SHA1SHA1SHA1 (tag: refs/tags/beta28)
 Author:     Bob Hiestand <bob.hiestand@gmail.com>
 AuthorDate: Wed Sep 24 00:00:00 2008 +0000

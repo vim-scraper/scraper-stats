@@ -550,6 +550,26 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  syntax/log_atp.vim                       |   46 +-
  17 files changed, 2109 insertions(+), 1588 deletions(-)
 
+commit SHA1SHA1SHA1 (tag: refs/tags/7.1.2@1)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Wed Jul 14 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 7.1.2@1
+    
+    * ':ShowErrors o' opens log file. I wrote a nice syntax file for the log so that it is easier to read it.
+    * Some changes in visual maps:
+       vie, vae     mark environment (but not mathematics) \begin:\end
+       vi$, va$     mark math modes: $:$, \(:\), \[:\], $$:$$ (only if b:atp_TexFlavour = "plaintex" which is done automatically if the filetype is set to plaintex)
+       vi), va)      mark brackets: (:), {:}, [:]
+       vI), vA)     mark brackets (as above) the inner and auter pair of the most auter bracket (in the nesting sence)
+       vis, vas (experimental)  mark by syntax, i - inner, a - outer but with a slightly different meening than above (inner for the most top syntax in the synstack, and outer for the most bottom syntax item) they exclude texDocZone and texSectionZones as they are not always synchronized (some times might be large)
+    
+    * ":InteligentWrapSelection" command: now \rm (in visual mode) will wrap with \textrm{...} in text and \mathrm{...} in math (also other wrapping maps defined in this way, read ":h atp-command-InteligentWrapSelection"
+    * ':TeXdoc 'command by default opens g:atp_TeXdocDefault (which by deafault is equal "-a lshort", you can set it to "-a lshort faq" or "-a faq" ...)
+    * Some minor bugs fixed.
+    * Enjoy :)
+
 commit SHA1SHA1SHA1 (tag: refs/tags/7.1.2)
 Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Wed Jul 14 00:00:00 2010 +0000
