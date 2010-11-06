@@ -64,13 +64,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.8.3: greatly enhanced the win32 cascading menus (when perl is available)
 
- doc/TagsBase.txt             |   23 ++-
- plugin/.tb.TagsBase.vim.tags |    9 -
+ doc/TagsBase.txt             |   23 +++++++++++++-
+ plugin/.tb.TagsBase.vim.tags |    9 -----
  plugin/TagsBase.vim          |    4 +-
- plugin/TagsBase.vim~         |  584 ------------------------------------------
- vimfiles/perl/TagsBase.pl    |   70 +++--
- vimfiles/perl/TagsBase.vim   |   56 +++--
- 6 files changed, 102 insertions(+), 644 deletions(-)
+ vimfiles/perl/TagsBase.pl    |   70 +++++++++++++++++++++++++-----------------
+ vimfiles/perl/TagsBase.vim   |   56 +++++++++++++++++++++------------
+ 5 files changed, 102 insertions(+), 60 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.2)
 Author:     Benoit Cerrina <benoit.cerrina@writeme.com>
@@ -108,10 +107,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     ^ITagsBase::GetTagName(391) called at (eval 15) line 1
     ^Ieval 'TagsBase::GetTagName 391
 
- perl/TagsBase.pl     |    2 +
- perl/TagsBase.vim    |    4 +-
- plugin/TagsBase.vim~ |  584 ++++++++++++++++++++++++++++++++++++++++++++++++++
- 3 files changed, 588 insertions(+), 2 deletions(-)
+ perl/TagsBase.pl  |    2 ++
+ perl/TagsBase.vim |    4 ++--
+ 2 files changed, 4 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
 Author:     Benoit Cerrina <benoit.cerrina@writeme.com>
