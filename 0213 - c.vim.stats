@@ -1179,10 +1179,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  c.3.4/wordlists/stl_index.list                     |  171 +++
  c.3.4/wordlists/xforms.list                        |  690 +++++++++
  costumization.gvimrc                               |   25 -
+ costumization.vimrc                                |  117 --
  doc/csupport.txt                                   |  616 ++++++++
  ftplugin/c.vim                                     |   41 +
  plugin/c.vim                                       | 1555 ++++++++++----------
- plugin/costumization.vimrc                         |  117 --
  templates/c-class-description                      |   11 -
  templates/c-file-header                            |   18 -
  templates/c-frame                                  |    3 -
@@ -1208,11 +1208,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + When the comment style "C" is active the menu entry "Comments.code->comment"   turns a marked region in one multiline C-comment.+ The menu entry "Comments.comment->code"  turns marked multiline C-comment   back into code.+ A marked region can be surrounded by a for-, if, if-else, while-, do-while-statement  (with indentation).+ The menu entry "Snippets.make prototype" makes a C- or C++-prototype from   the current line or marked region and puts it in an internal buffer.+ The menu entry "Snippets.add prototype" also makes a C- or C++-prototype from   the current line or a marked region and adds it to the internal buffer.+ The menu entry "Snippets.put prototype" inserts all gathered prototypes    below the current line. + Tag substitution rewritten (Some characters in a substitution text for a tag   prevented the tag from being substituted).
 
- README.orig                |   28 ++++-
- plugin/c.vim               |  287 ++++++++++++++++++++++++++++++++++++--------
- plugin/costumization.vimrc |    2 -
- templates/c-file-header    |    3 +-
- templates/cpp-file-header  |    3 +-
+ README.orig               |   28 ++++-
+ costumization.vimrc       |    2 -
+ plugin/c.vim              |  287 +++++++++++++++++++++++++++++++++++++--------
+ templates/c-file-header   |    3 +-
+ templates/cpp-file-header |    3 +-
  5 files changed, 267 insertions(+), 56 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
@@ -1224,35 +1224,29 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + C-style comments AND C++-style comments are supported now.+ The menu entry 'Comments->Comment style ..' switches the styles (toggle).+ Block comments are now read as templates or skeletons from files:    Frame Block,        Function Description,  Method Description,    Class Description,  H+file header,         C/C++-file header+ These templates can contain tags like |FILENAME|, |AUTHOR| etc. which are replaced  after reading (KDevelop templates can be used without any change).+ indentation: multiline inserts and code snippets will be indented after insertion.+ Most menu entries are now also active in normal mode.+ new menu items:  includes for the C99 header,   includes for the standard C++ header,   includes for the C++ version of the Standard C Library header,  multiline C comment,  vim modeline+ Reading the templates is done in one function which can be called in an autocmd.+ Code cleanup: register z no longer used. Most function calls are silent now.
 
- README.orig                                      |  286 ++++
- costumization.gvimrc                             |   25 +
- plugin/c.vim                                     | 1605 ++++++++++++++++++++++
- plugin/c.vim.2.8.1/README                        |   99 --
- plugin/c.vim.2.8.1/c.vim                         | 1365 ------------------
- plugin/c.vim.2.8.1/costumization.gvimrc          |   27 -
- plugin/c.vim.2.8.1/costumization.vimrc           |  103 --
- plugin/c.vim.2.8.1/word.list                     |  109 --
- plugin/c.vim.2.8.1/wordlists/c-c++-keywords.list |  109 --
- plugin/c.vim.2.8.1/wordlists/german.list         |  125 --
- plugin/c.vim.2.8.1/wordlists/k+r.list            |   68 -
- plugin/c.vim.2.8.1/wordlists/stl_index.list      |  171 ---
- plugin/c.vim.2.8.1/wordlists/xforms.list         |  690 ----------
- plugin/costumization.vimrc                       |  119 ++
- templates/c-class-description                    |   11 +
- templates/c-file-header                          |   19 +
- templates/c-frame                                |    3 +
- templates/c-function-description                 |   20 +
- templates/c-method-description                   |    7 +
- templates/cpp-class-description                  |    9 +
- templates/cpp-file-header                        |   17 +
- templates/cpp-frame                              |    3 +
- templates/cpp-function-description               |   18 +
- templates/cpp-method-description                 |    5 +
- templates/h-file-header                          |   19 +
- templates/hpp-file-header                        |   17 +
- word.list                                        |  109 ++
- wordlists.tar.gz                                 |  Bin 0 -> 5836 bytes
- 28 files changed, 2292 insertions(+), 2866 deletions(-)
+ README.orig                        |  385 +++++++---
+ costumization.gvimrc               |    8 +-
+ costumization.vimrc                |   44 +-
+ plugin/c.vim                       | 1484 +++++++++++++++++++++---------------
+ templates/c-class-description      |   11 +
+ templates/c-file-header            |   19 +
+ templates/c-frame                  |    3 +
+ templates/c-function-description   |   20 +
+ templates/c-method-description     |    7 +
+ templates/cpp-class-description    |    9 +
+ templates/cpp-file-header          |   17 +
+ templates/cpp-frame                |    3 +
+ templates/cpp-function-description |   18 +
+ templates/cpp-method-description   |    5 +
+ templates/h-file-header            |   19 +
+ templates/hpp-file-header          |   17 +
+ wordlists.tar.gz                   |  Bin 0 -> 5836 bytes
+ wordlists/c-c++-keywords.list      |  109 ---
+ wordlists/german.list              |  125 ---
+ wordlists/k+r.list                 |   68 --
+ wordlists/stl_index.list           |  171 -----
+ wordlists/xforms.list              |  690 -----------------
+ 22 files changed, 1329 insertions(+), 1903 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8.1)
 Author:     Fritz Mehner <mehner@fh-swf.de>
@@ -1263,18 +1257,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - menus appear immediately after loading the plugin- additional word lists for keyword completion (optional):    C/C++ -keywords    German words (for commenting sources)    K&R-Book: Words from the table of content (for commenting sources)    Standard Template Library (STL):  method names and type names    XFORMS library: macro and function names- additional settings for .vimrc and .gvimrc (optional)
 
- plugin/c.vim                                     | 1365 ----------------------
- plugin/c.vim.2.8.1/README                        |   99 ++
- plugin/c.vim.2.8.1/c.vim                         | 1365 ++++++++++++++++++++++
- plugin/c.vim.2.8.1/costumization.gvimrc          |   27 +
- plugin/c.vim.2.8.1/costumization.vimrc           |  103 ++
- plugin/c.vim.2.8.1/word.list                     |  109 ++
- plugin/c.vim.2.8.1/wordlists/c-c++-keywords.list |  109 ++
- plugin/c.vim.2.8.1/wordlists/german.list         |  125 ++
- plugin/c.vim.2.8.1/wordlists/k+r.list            |   68 ++
- plugin/c.vim.2.8.1/wordlists/stl_index.list      |  171 +++
- plugin/c.vim.2.8.1/wordlists/xforms.list         |  690 +++++++++++
- 11 files changed, 2866 insertions(+), 1365 deletions(-)
+ README.orig                   |   99 ++++++
+ costumization.gvimrc          |   27 ++
+ costumization.vimrc           |  103 ++++++
+ plugin/c.vim                  |  100 +++---
+ word.list                     |  109 +++++++
+ wordlists/c-c++-keywords.list |  109 +++++++
+ wordlists/german.list         |  125 ++++++++
+ wordlists/k+r.list            |   68 ++++
+ wordlists/stl_index.list      |  171 ++++++++++
+ wordlists/xforms.list         |  690 +++++++++++++++++++++++++++++++++++++++++
+ 10 files changed, 1551 insertions(+), 50 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8)
 Author:     Fritz Mehner <mehner@fh-swf.de>
@@ -1285,11 +1278,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - code snippet support: read, write, edit code snippets in a separate directory- specify command line arguments for make- hardcopy: print whole buffer or a highlighted part of it into a file (Postscript)- new menu entry  "fscanf( infile, "", & );"  after code for opening a file with pointer "infile" is inserted- new menu entry  "fprintf( outfile, "\n",  );"  after code for opening a file with pointer "outfile" is inserted
 
- README.orig                |   80 ----------
- costumization.gvimrc       |   61 --------
- plugin/c.vim               |  282 +++++++++++++++++++++++++++---------
- plugin/costumization.vimrc |   20 ---
- word.list                  |  348 --------------------------------------------
+ README.orig          |   80 ------------
+ costumization.gvimrc |   61 ---------
+ costumization.vimrc  |   20 ---
+ plugin/c.vim         |  282 +++++++++++++++++++++++++++++++----------
+ word.list            |  348 --------------------------------------------------
  5 files changed, 215 insertions(+), 576 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
@@ -1301,11 +1294,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - separation of file section comments in 2 new submenus   'C-File-Sections' and 'H-File-Sections'- class comment- method comment- keyword comments and special comments are now in submenus- new hot key to run make- word list for C/C++ word completion (optional)- some optional vimrc- and gvimrc-entries in two files (optional)- minor improvements and corrections
 
- README.orig                |   80 +++++
- costumization.gvimrc       |   61 ++++
- plugin/c.vim               |  811 +++++++++++++++++++++++---------------------
- plugin/costumization.vimrc |   20 ++
- word.list                  |  348 +++++++++++++++++++
+ README.orig          |   80 +++++
+ costumization.gvimrc |   61 ++++
+ costumization.vimrc  |   20 ++
+ plugin/c.vim         |  811 ++++++++++++++++++++++++++------------------------
+ word.list            |  348 +++++++++++++++++++++
  5 files changed, 935 insertions(+), 385 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)

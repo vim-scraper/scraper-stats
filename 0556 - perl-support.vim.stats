@@ -1175,6 +1175,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
  README.orig                                  |  190 ----
  costumization.gvimrc                         |   25 -
+ costumization.vimrc                          |  118 ---
  doc/perlsupport.txt                          |  298 ++++++
  perl.1.9/README                              |  235 +++++
  perl.1.9/costumization.gvimrc                |   25 +
@@ -1185,7 +1186,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  perl.1.9/templates/perl-frame                |    3 +
  perl.1.9/templates/perl-function-description |   13 +
  perl.1.9/word.list                           |  239 +++++
- plugin/costumization.vimrc                   |  118 ---
  plugin/perl-support.vim                      | 1022 ---------------------
  templates/perl-file-header                   |   22 -
  templates/perl-frame                         |    3 -
@@ -1202,9 +1202,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Tag substitution rewritten (Some characters in a substitution text for a tag   prevented the tag from being substituted).
 
- README.orig                |    9 +++-
- plugin/costumization.vimrc |    3 -
- plugin/perl-support.vim    |  105 +++++++++++++++++++++++++++++---------------
+ README.orig             |    9 ++++-
+ costumization.vimrc     |    3 -
+ plugin/perl-support.vim |  105 +++++++++++++++++++++++++++++++----------------
  3 files changed, 78 insertions(+), 39 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
@@ -1218,7 +1218,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
  README.orig                         |  183 ++++++++++
  costumization.gvimrc                |   25 ++
- plugin/costumization.vimrc          |  121 +++++++
+ costumization.vimrc                 |  121 +++++++
  plugin/perl-support.vim             |  649 ++++++++++++++++++++++-------------
  templates/perl-file-header          |   22 ++
  templates/perl-frame                |    3 +
