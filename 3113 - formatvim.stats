@@ -1,4 +1,32 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.3.4)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.4.1)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Fri Nov 5 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.1
+    
+    Moved color lists to config/formatvim/colors-*.yaml, made it possible to override colors
+
+ .hgignore                                |    2 -
+ autoload/load.vim                        |   45 +-
+ config/formatvim/colors-default-256.yaml |  261 ++
+ config/formatvim/colors-default-8.yaml   |   11 +
+ config/formatvim/colors-default-88.yaml  |   93 +
+ doc/chk.txt                              |   36 +-
+ doc/format.txt                           |   10 +-
+ doc/load.txt                             |  144 +-
+ doc/oop.txt                              |   93 +
+ doc/yaml.txt                             |  240 ++
+ plugin/chk.vim                           |  255 ++-
+ plugin/comp.vim                          |   25 +-
+ plugin/format.vim                        |  376 +---
+ plugin/load.vim                          |  896 +++++--
+ plugin/oop.vim                           |  237 ++
+ plugin/stuf.vim                          |  305 +--
+ plugin/yaml.vim                          | 4442 ++++++++++++++++++++++++++++++
+ 17 files changed, 6562 insertions(+), 909 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3.4)
 Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Thu Sep 9 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
