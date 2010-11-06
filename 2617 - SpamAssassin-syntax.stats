@@ -1,4 +1,45 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.1)
+Author:     Adam Katz <vim@khopis.com>
+AuthorDate: Wed Nov 3 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.1
+    
+    Extensive use of syn-cluster makes this more easily abstracted for additional plugins.  Plugin section broken into how it ships; enabled, disabled, not (third-party).  Each plugin section is fully independent and therefore can easily be deactivated or used as a model for a new plugin.  Rewrapped to wider view since lines were way over the 80-col size anyway.  Things are more properly contained now as well.  Removed abstraction for highlighting due to increased version dependency.  Added support for sa3.3 plugins and the remaining missing shipped plugins, plus iXhash.  Fixed regex detection (m// and friends were broken in 3.0).
+
+ syntax/spamassassin.vim |  405 ++++++++++++++++++++++++----------------------
+ 1 files changed, 211 insertions(+), 194 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0.1)
+Author:     Adam Katz <vim@khopis.com>
+AuthorDate: Tue Nov 2 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.0.1: Removed some redundant code (second version check).
+
+ syntax/spamassassin.vim |  166 ++++++++++++++++++++++-------------------------
+ 1 files changed, 78 insertions(+), 88 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Adam Katz <vim@khopis.com>
+AuthorDate: Tue Nov 2 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.0
+    
+    MAJOR efficiency increase.  This is now usable on large files.
+    
+    Removed most \%(inefficient zero-width lookbehind\)\@<= portions in favor of using nextgroup since \%(this zero-width lookbehind can't contain ANY highlighting\)\zs  also fixed several outstanding minor bugs and added a few new highlighted areas (specifically for meta rules).
+    
+    Now that I've tested this with a genuine vim 5.8, I'm pretty sure it never worked.  Required vim version bumped to 6.0.
+    
+    Offline edits put this at 2.8 before 3.0, though 2.6+ were all very minor and I tend to err on the side of bumping up the version when my systems are out of sync.
+
+ README                  |    1 -
+ syntax/spamassassin.vim |  331 ++++++++++++++++++++++++++++------------------
+ 2 files changed, 201 insertions(+), 131 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
 Author:     Adam Katz <vim@khopis.com>
 AuthorDate: Wed Nov 4 00:00:00 2009 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

@@ -1,4 +1,90 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.16.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.02.07@1)
+Author:     JiuTian Zhang <zhang9tian@gmail.com>
+AuthorDate: Sun Sep 11 00:00:00 2005 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.02.07@1
+    
+    Add gtk tags for window version.
+    Add more power full struct support which ctags not supported!
+    like
+       typedef struct {
+            int a;
+            int b;
+       } SA;
+       SA sa;
+       sa.<c-space>
+
+ autoload/xml/jsf_c.vim                      |  126 -
+ autoload/xml/jsf_h.vim                      |  222 -
+ autoload/xml/stl_c.vim                      |   95 -
+ autoload/xml/stl_fmt.vim                    |   88 -
+ autoload/xml/stl_sql.vim                    |   49 -
+ autoload/xml/stl_x.vim                      |   77 -
+ autoload/xml/tc.vim                         |  463 --
+ autoload/xml/tx.vim                         |  109 -
+ doc/vcde.txt                                |   23 +-
+ doc/vjde.txt                                |  222 +-
+ plugin/vjde.vim                             |  121 +-
+ plugin/vjde/genvimdata.rb                   |   64 -
+ plugin/vjde/preview.dll                     |  Bin 0 -> 2637553 bytes
+ plugin/vjde/preview4gtk.so                  |  Bin 0 -> 155011 bytes
+ plugin/vjde/readtags.exe                    |  Bin 32134 -> 32586 bytes
+ plugin/vjde/tipswnd.dll                     |  Bin 71273 -> 0 bytes
+ plugin/vjde/tld2xmldata.rb                  |   77 -
+ plugin/vjde/tlds/c.tld                      |  563 ++
+ plugin/vjde/tlds/fmt.tld                    |  671 ++
+ plugin/vjde/tlds/fn.tld                     |  207 +
+ plugin/vjde/tlds/html.def                   | 1525 +++++
+ plugin/vjde/tlds/java.iab                   |  242 +-
+ plugin/vjde/tlds/jdk1.5.lst                 | 8763 +++++++++++++++++++++++++++
+ plugin/vjde/tlds/jdk1.5.lst.idx             |    4 +
+ plugin/vjde/tlds/sql.tld                    |  289 +
+ plugin/vjde/tlds/x.tld                      |  448 ++
+ plugin/vjde/vjde.jar                        |  Bin 30994 -> 30414 bytes
+ plugin/vjde/vjde_completion.vim             |  829 +--
+ plugin/vjde/vjde_cpp_completion.vim         |   35 +-
+ plugin/vjde/vjde_cpp_doc_reader.rb          |    1 -
+ plugin/vjde/vjde_cs_completion.vim          |  147 -
+ plugin/vjde/vjde_ctags_completion.vim       |   52 +-
+ plugin/vjde/vjde_ctags_support.rb           |  174 +-
+ plugin/vjde/vjde_ctags_support.vim          |  460 +-
+ plugin/vjde/vjde_iab.vim                    |  149 +-
+ plugin/vjde/vjde_java_completion.vim        |  109 +-
+ plugin/vjde/vjde_java_utils.vim             |  198 +-
+ plugin/vjde/vjde_javadoc.vim                |  107 -
+ plugin/vjde/vjde_menu_def.vim               |   53 +-
+ plugin/vjde/vjde_preview.vim                |   27 +-
+ plugin/vjde/vjde_ruby_completion.vim        |  130 -
+ plugin/vjde/vjde_struts2.rb                 |  105 -
+ plugin/vjde/vjde_tag_loader.vim             |    8 +-
+ plugin/vjde/vjde_template.rb                |   37 +-
+ plugin/vjde/vjde_template.vim               |   11 +-
+ plugin/vjde/vjde_template_tool.vim          |   24 +-
+ plugin/vjde/vjde_window.vim                 |   80 -
+ plugin/vjde/vjde_xml_cfu.rb                 |   53 +-
+ plugin/vjde/wspawn.exe                      |  Bin 128027 -> 127108 bytes
+ plugin/vjde_floatingwin.vim                 |   17 +-
+ plugin/vjde_util.vim                        |   56 +-
+ src/CSParser.cs                             |  165 -
+ src/Makefile                                |   25 -
+ src/lex.yy.c                                | 2447 --------
+ src/previewwindow.cpp                       |   25 +-
+ src/readtags.c                              |    6 +-
+ src/tipswnd.c                               |  372 --
+ src/tipswnd.lex                             |  524 --
+ src/vjde/completion/ClassesByName.java      |   86 +-
+ src/vjde/completion/Completion.java         | 1783 +++---
+ src/vjde/completion/Document.java           |   27 +-
+ src/vjde/completion/Document.java.oooold    |  356 --
+ src/vjde/completion/DynamicClassLoader.java | 1043 ++--
+ src/vjde/completion/PackageClasses.java     |  141 +-
+ src/vjde/completion/PackageCompletion.java  |   70 +-
+ src/vjde/completion/Struts2Configure.java   |  460 --
+ src/wspawn.cpp                              |    1 -
+ 67 files changed, 14860 insertions(+), 9981 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.16.2)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
 AuthorDate: Sat Jul 11 00:00:00 2009 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

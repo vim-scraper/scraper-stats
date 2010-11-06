@@ -1,4 +1,96 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/8.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/8.2)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Thu Nov 4 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 8.2:  * Some fixes. As usual, check :h atp-news
+
+ colors/coots-beauty-256.vim               |  104 +-
+ doc/automatic-tex-plugin.txt              | 2767 +++++++++++++++++++++--------
+ ftplugin/ATP_files/LatexBox_common.vim    |  224 +++
+ ftplugin/ATP_files/LatexBox_complete.vim  |   80 +-
+ ftplugin/ATP_files/LatexBox_indent.vim    |   22 +-
+ ftplugin/ATP_files/LatexBox_latexmk.vim   |  215 +++
+ ftplugin/ATP_files/LatexBox_mappings.vim  |   13 +-
+ ftplugin/ATP_files/LatexBox_motion.vim    |  457 ++++--
+ ftplugin/ATP_files/LatexBox_variables.vim |    8 +
+ ftplugin/ATP_files/common.vim             |  866 +++++++--
+ ftplugin/ATP_files/compiler.vim           |  892 ++++++++--
+ ftplugin/ATP_files/helpfunctions.vim      |  169 ++
+ ftplugin/ATP_files/mappings.vim           |  474 ++++--
+ ftplugin/ATP_files/menu.vim               |  296 +++-
+ ftplugin/ATP_files/motion.vim             | 1842 ++++++++++++--------
+ ftplugin/ATP_files/options.vim            | 1714 ++++++++++++-------
+ ftplugin/ATP_files/project.vim            |  749 ++++++++
+ ftplugin/ATP_files/search.vim             | 1260 +++++++++++---
+ ftplugin/ATP_files/various.vim            | 1291 +++++++++++---
+ ftplugin/ATP_files/vimcomplete.bst        |  306 ++++
+ ftplugin/bib_atp.vim                      |  305 ++++
+ ftplugin/bibsearch_atp.vim                |  175 +-
+ ftplugin/fd_atp.vim                       |   23 +-
+ ftplugin/plaintex_atp.vim                 |    7 +-
+ ftplugin/tex_atp.vim                      |  208 ++-
+ ftplugin/toc_atp.vim                      |  753 ++++++---
+ syntax/bibsearch_atp.vim                  |   11 +-
+ syntax/labels_atp.vim                     |   27 +-
+ syntax/log_atp.vim                        |   57 +-
+ syntax/toc_atp.vim                        |   50 +-
+ 30 files changed, 11700 insertions(+), 3665 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/7.1.2@1)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Wed Jul 14 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 7.1.2@1
+    
+    * ':ShowErrors o' opens log file. I wrote a nice syntax file for the log so that it is easier to read it.
+    * Some changes in visual maps:
+       vie, vae     mark environment (but not mathematics) \begin:\end
+       vi$, va$     mark math modes: $:$, \(:\), \[:\], $$:$$ (only if b:atp_TexFlavour = "plaintex" which is done automatically if the filetype is set to plaintex)
+       vi), va)      mark brackets: (:), {:}, [:]
+       vI), vA)     mark brackets (as above) the inner and auter pair of the most auter bracket (in the nesting sence)
+       vis, vas (experimental)  mark by syntax, i - inner, a - outer but with a slightly different meening than above (inner for the most top syntax in the synstack, and outer for the most bottom syntax item) they exclude texDocZone and texSectionZones as they are not always synchronized (some times might be large)
+    
+    * ":InteligentWrapSelection" command: now \rm (in visual mode) will wrap with \textrm{...} in text and \mathrm{...} in math (also other wrapping maps defined in this way, read ":h atp-command-InteligentWrapSelection"
+    * ':TeXdoc 'command by default opens g:atp_TeXdocDefault (which by deafault is equal "-a lshort", you can set it to "-a lshort faq" or "-a faq" ...)
+    * Some minor bugs fixed.
+    * Enjoy :)
+
+ autoload/atplib.vim                       | 4182 -----------------------------
+ colors/coots-beauty-256.vim               |  104 +-
+ doc/automatic-tex-plugin.txt              | 2749 +++++--------------
+ ftplugin/ATP_files/LatexBox_common.vim    |  224 --
+ ftplugin/ATP_files/LatexBox_complete.vim  |   80 +-
+ ftplugin/ATP_files/LatexBox_indent.vim    |   22 +-
+ ftplugin/ATP_files/LatexBox_latexmk.vim   |  215 --
+ ftplugin/ATP_files/LatexBox_mappings.vim  |   13 +-
+ ftplugin/ATP_files/LatexBox_motion.vim    |  329 +--
+ ftplugin/ATP_files/LatexBox_variables.vim |    8 -
+ ftplugin/ATP_files/common.vim             |  866 ++-----
+ ftplugin/ATP_files/compiler.vim           |  892 +------
+ ftplugin/ATP_files/helpfunctions.vim      |  169 --
+ ftplugin/ATP_files/mappings.vim           |  474 ++---
+ ftplugin/ATP_files/menu.vim               |  296 +--
+ ftplugin/ATP_files/motion.vim             | 1842 +++++--------
+ ftplugin/ATP_files/options.vim            | 1714 +++++--------
+ ftplugin/ATP_files/project.vim            |  745 -----
+ ftplugin/ATP_files/search.vim             | 1260 ++--------
+ ftplugin/ATP_files/various.vim            | 1291 ++--------
+ ftplugin/ATP_files/vimcomplete.bst        |  306 ---
+ ftplugin/bib_atp.vim                      |  305 ---
+ ftplugin/bibsearch_atp.vim                |  175 +-
+ ftplugin/fd_atp.vim                       |   23 +-
+ ftplugin/plaintex_atp.vim                 |    7 +-
+ ftplugin/tex_atp.vim                      |  208 +--
+ ftplugin/toc_atp.vim                      |  753 ++----
+ syntax/bibsearch_atp.vim                  |   11 +-
+ syntax/labels_atp.vim                     |   27 +-
+ syntax/log_atp.vim                        |   57 +-
+ syntax/toc_atp.vim                        |   50 +-
+ 31 files changed, 3665 insertions(+), 15732 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8.1)
 Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Tue Oct 26 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

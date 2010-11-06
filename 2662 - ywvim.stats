@@ -1,4 +1,115 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.20)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.13@1)
+Author:     Yue Wu <ywupub@gmail.com>
+AuthorDate: Tue Jun 9 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.13@1
+    
+    1. g:ywvim_helpmbstatus 改名为 g:ywvim_helpim_on.
+    1. g:ywvim_helpmbstatus is renamed to g:ywvim_helpim_on.
+    
+    2. 改善了状态栏的颜色显示效果.
+    2. Improved some hightlights of statusline.
+
+ plugin/ywvim.vim |   92 ++++++++++++++++++++++++++----------------------------
+ 1 files changed, 44 insertions(+), 48 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.11@1)
+Author:     Yue Wu <ywupub@gmail.com>
+AuthorDate: Mon Jun 8 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.11@1
+    
+    1. 取消 g:ywvim_whitelstfile, 取消码表级别变量: whitelstfile, wlst. 增加 g:ywvim_gb 和码表级别变量 gb.
+    1. Abandon g:ywvim_whitelstfile, abandon local varible: whitelstfile, wlst. added g:ywvim_gb and local variable gb.
+    
+    2. added g:ywvim_conv.
+    2. added g:ywvim_conv.
+    
+    3. 取消 <C-m> 切换白名单. 增加 <C-^> g 切换 gb/gbk.
+    3. Adandon: <C-m> for toggling white list. Added <C-^> g to toggle gb/gbk.
+    
+    4. 修复 gbk encoding 输入法名称乱码 bug.
+    (感谢在 www.newsmth.net 上的 vace 反馈)
+    4. Fix bug on gbk encoding.
+    (Thanks for vace on www.newsmth.net's report.)
+
+ plugin/ywvim.vim |  370 ++++++++++++++++++++++++++++-------------------------
+ 1 files changed, 195 insertions(+), 175 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.8@1)
+Author:     Yue Wu <ywupub@gmail.com>
+AuthorDate: Sun Jun 7 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.8@1
+    
+    1. 去掉从中文标点转到英文标点错误的虫子.
+    (感谢在 #arch-cn@irc.oftc.net 上的 medicalwei 提供的信息.)
+    1. Fix a bug when switch punctuation from chinese to English.
+    (Thanks for medicalwei on #arch-cn@irc.oftc.net's catch.)
+    
+    2. 增加只显示全码匹配的字 let g:ywvim_matchexact = 1
+    2. Add a feature for showing the exact matched Chinese. g:ywvim_matchexact = 1.
+    
+    3. 增加中文字母显示支持: let g:ywvim_chinesecode = 1
+    3. Add a feature for displaying Chinese alphabets instead of English.
+
+ plugin/ywvim.vim |   56 ++++++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 40 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7@1)
+Author:     Yue Wu <ywupub@gmail.com>
+AuthorDate: Sun Jun 7 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.7@1
+    
+    1. 修复了 g:ywvim_autoinput 在注音上的 bug. (感谢在 #arch@irc.oftc.net 上的 medicalwei 提供的线索)
+    1. Fix g:ywvim_autoinput bug when using zhuyin.(Thanks to medicalwei on #arch-cn@irc.oftc.net who catch this bug.)
+    
+    2. g:ywvim_autoinput 现在支持两种程度的自动模式. 设为 2 为重度自动, 任何单码字都自动上屏. 2 为中度自动, 只在翻页时出现的单码字才上屏.
+    2. g:ywvim_autoinput now supports two extends of auto input, set it to 2 is high auto, every singe candiate is auto inputted, 1 is media auto, just auto input when pageup/down.
+
+ plugin/ywvim.vim |   24 +++++++++++++++++++++---
+ 1 files changed, 21 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6@1)
+Author:     Yue Wu <ywupub@gmail.com>
+AuthorDate: Sun Jun 7 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.6@1
+    
+    1. 废除 g:ywvim_phasemaxlen.
+    1. abandon g:ywvim_phasemaxlen.
+    
+    2. 增加 g:ywvim_helpmbstatus 控制反查码表开启.
+    2. Add g:ywvim_helpmbstatus for controling help mabiao.
+    
+    3. 增加 ; 选择第二候选词功能.
+    3. Add using ; to select the second candiate.
+
+ plugin/ywvim.vim |   97 ++++++++++++++++++++++++++++++++++++++++-------------
+ 1 files changed, 73 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4@1)
+Author:     Yue Wu <ywupub@gmail.com>
+AuthorDate: Sat Jun 6 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4@1
+    
+    1. 注音 support is added.
+       增加注音支持.
+    2. Support for new options in mabiao is added.
+       支持新增的码表选项.
+
+ plugin/ywvim.vim |  605 +++++++++++++++++++++---------------------------------
+ 1 files changed, 232 insertions(+), 373 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.20)
 Author:     Yue Wu <ywupub@gmail.com>
 AuthorDate: Sun Aug 2 00:00:00 2009 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

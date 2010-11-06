@@ -1,4 +1,22 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0b)
+Author:     Wincent Colaiuta <win@wincent.com>
+AuthorDate: Fri Nov 5 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0b
+    
+    - work around platform-specific Vim 7.3 bug seen by some users (wherein
+      Vim always falsely reports to Ruby that the buffer numbers is 0)
+    - re-use the buffer that is used to show the match listing, rather than
+      throwing it away and recreating it each time Command-T is shown; this
+      stops the buffer numbers from creeping up needlessly
+
+ doc/command-t.txt              |   15 ++++++++
+ ruby/command-t/controller.rb   |   23 ++++++++----
+ ruby/command-t/match_window.rb |   77 +++++++++++++++++++++++++--------------
+ 3 files changed, 80 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.1)
 Author:     Wincent Colaiuta <win@wincent.com>
 AuthorDate: Tue Sep 14 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

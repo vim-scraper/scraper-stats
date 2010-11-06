@@ -1,4 +1,115 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/16.3)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/16.3@1)
+Author:     Paul Contreras <pablo@ezrider.co.uk>
+AuthorDate: Fri Oct 8 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 16.3@1
+    
+    Cleared out a lot of the junk, like removing the two levels of calls to the main fnunction, now there's one, and no parameter, and pulled out all the logic for a gimicky effect based on this param.
+
+ colors/ChangingColor.vim  |  682 ++++++++++++++++++++++++++++++++++++++++
+ colors/changing-color.vim |  756 ---------------------------------------------
+ 2 files changed, 682 insertions(+), 756 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/15.8@1)
+Author:     Paul Contreras <pablo@ezrider.co.uk>
+AuthorDate: Mon Mar 22 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 15.8@1: 'Un-britishized' the name
+
+ colors/changing-color.vim  |  756 ++++++++++++++++++++++++++++++++++++++
+ colors/changing-colour.vim |  870 --------------------------------------------
+ 2 files changed, 756 insertions(+), 870 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6.1@1)
+Author:     Paul Contreras <pablo@ezrider.co.uk>
+AuthorDate: Wed Aug 26 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 6.1@1
+    
+    I forgot to take off the "debug" switch off the last one. Apologies. :)
+
+ colors/changing-colour.vim |  499 ++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 387 insertions(+), 112 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3@1)
+Author:     Paul Contreras <pablo@ezrider.co.uk>
+AuthorDate: Wed Jul 8 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.3@1
+    
+    Made the Constant look pretty at the lighter background area. Optimised as much as I could the visibility of Constant at lower background tones and the darker part of the clash-background area. Clash background is where background is very similar to text's colour and therefore is hardest for the eye to see.
+
+ colors/changing-colour.vim | 1133 +++++++++++++++++++++++---------------------
+ doc/readme.txt             |   94 ----
+ 2 files changed, 595 insertions(+), 632 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2@1)
+Author:     Paul Contreras <pablo@ezrider.co.uk>
+AuthorDate: Thu Jul 2 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2@1
+    
+    Once again forgot to take the debug switch off before I uploaded the script. Without switching it off the time is set to a global variable that should be commented out. I forgot to comment this out. Sorry.
+
+ colors/changing-colour.vim |   10 ++++++++--
+ 1 files changed, 8 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1@1)
+Author:     Paul Contreras <pablo@ezrider.co.uk>
+AuthorDate: Thu Jul 2 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.1@1
+    
+    Oops! corrected a slight but highly annoying glich in the way I formated the comment for the revision history.
+
+ colors/changing-colour.vim |   84 +++++++++++++++++++++++++++++++++----------
+ 1 files changed, 64 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.8@1)
+Author:     Paul Contreras <pablo@ezrider.co.uk>
+AuthorDate: Fri Jun 12 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.8@1
+    
+    Updated the readme.txt file to include some new information that might be useful.
+
+ colors/changing-colour.vim |   23 +++++++++++++++++------
+ doc/readme.txt             |   33 +++++++++++++++++++++++----------
+ 2 files changed, 40 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6@1)
+Author:     Paul Contreras <pablo@ezrider.co.uk>
+AuthorDate: Tue Jun 9 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.6@1: Improved the readme.txt file.
+
+ colors/changing-colour.vim |   67 +++++++++++++++++++++-----------------------
+ doc/readme.txt             |   28 +++++++++++++++--
+ 2 files changed, 56 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4@1)
+Author:     Paul Contreras <pablo@ezrider.co.uk>
+AuthorDate: Wed Jun 3 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4@1
+    
+    Forgot to switch debug off. Colours don't change automatically, with debug on - it appears fixed to one time/colour scheme, but can be moved manually. Good for spotting those hard-visibility cases.
+
+ colors/ChangingColor.vim   |  711 --------------------------------------------
+ colors/changing-colour.vim |  480 ++++++++++++++++++++++++++++++
+ doc/readme.txt             |   61 ++++
+ 3 files changed, 541 insertions(+), 711 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/16.3)
 Author:     Paul Contreras <pablo@ezrider.co.uk>
 AuthorDate: Fri Oct 1 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
