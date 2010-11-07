@@ -22,6 +22,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     -   Error message when trying to use completion on an file opened from
         a tselect command (reported by Henrique Andrade)
 
+ after/ftplugin/c.vim              |    2 +
  autoload/omni/common/debug.vim    |    2 +-
  autoload/omni/common/utils.vim    |    2 +-
  autoload/omni/cpp/complete.vim    |    8 ++-
@@ -33,7 +34,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  autoload/omni/cpp/tokenizer.vim   |    2 +-
  autoload/omni/cpp/utils.vim       |    2 +-
  doc/omnicppcomplete.txt           |  135 ++++++++++++++++++++++++++-------
- ftplugin/c.vim                    |    2 +
  12 files changed, 279 insertions(+), 70 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -79,6 +79,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     -   Fixed a bug where friend functions may crash the script and also crash vim.
 
  README                            |   32 ++
+ after/ftplugin/cpp.vim            |    2 +
  autoload/omni/common/debug.vim    |   32 ++
  autoload/omni/common/utils.vim    |   67 +++
  autoload/omni/cpp/complete.vim    |  565 +++++++++++++++++++++
@@ -90,5 +91,4 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  autoload/omni/cpp/tokenizer.vim   |   93 ++++
  autoload/omni/cpp/utils.vim       |  587 ++++++++++++++++++++++
  doc/omnicppcomplete.txt           |  999 +++++++++++++++++++++++++++++++++++++
- ftplugin/cpp.vim                  |    2 +
  13 files changed, 4055 insertions(+), 0 deletions(-)

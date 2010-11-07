@@ -187,13 +187,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * New option: vimrplugin_buildwait.
     * New option: vimrplugin_r_path (thanks to Asis Hallab).
 
- doc/r-plugin.txt    |   52 +++++++++++++----
+ after/syntax/r.vim  |   30 -----------
+ doc/r-plugin.txt    |   52 +++++++++++++++----
  ftdetect/r.vim      |    5 +-
- ftplugin/r.vim      |   45 +++++++++------
- ftplugin/rhelp.vim  |   45 +++++++++------
- ftplugin/rnoweb.vim |   45 +++++++++------
- syntax/r.vim        |  153 +++++++++++++++++++++++++++++++++++++++++++-------
- 6 files changed, 258 insertions(+), 87 deletions(-)
+ ftplugin/r.vim      |   45 ++++++++++------
+ ftplugin/rhelp.vim  |   45 ++++++++++------
+ ftplugin/rnoweb.vim |   45 ++++++++++------
+ syntax/r.vim        |  139 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 7 files changed, 266 insertions(+), 95 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100803)
 Author:     Jakson Aquino <jalvesaq@gmail.com>
@@ -235,11 +236,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Added menu item and key binding for run "R CMD BATCH" and open the resulting ".Rout" file.
      * Fixed bug when more than one Vim instance used the same file to send multiple lines of code to R (thanks to Bart for reporting the bug).
 
+ after/syntax/r.vim  |    9 ++--
  doc/r-plugin.txt    |   97 +++++++++++++++++++++++++++--------------------
  ftplugin/r.vim      |  104 +++++++++++++++++++++++++++++++++++---------------
  ftplugin/rhelp.vim  |  104 +++++++++++++++++++++++++++++++++++---------------
  ftplugin/rnoweb.vim |  104 +++++++++++++++++++++++++++++++++++---------------
- syntax/r.vim        |    9 ++--
  5 files changed, 280 insertions(+), 138 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100728)
@@ -249,11 +250,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 100728: * Adapted the code to build a Debian package.
 
+ after/syntax/r.vim  |    6 ++--
  doc/r-plugin.txt    |   86 +++++++++++++++++++++++----------------------------
  ftplugin/r.vim      |   28 +++++++++++++---
  ftplugin/rhelp.vim  |   28 +++++++++++++---
  ftplugin/rnoweb.vim |   28 +++++++++++++---
- syntax/r.vim        |    6 ++--
  5 files changed, 111 insertions(+), 65 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100719)
@@ -268,6 +269,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Improved syntax highlight of R batch output (.Rout files).
     * No longer uses the external programs grep, awk and sed to build the additional syntax file containing the list of functions.
 
+ after/syntax/r.vim         |    2 +-
  autoload/rcomplete.vim     |   18 +-
  doc/r-plugin.txt           |  214 +++--
  ftplugin/r.vim             |  270 +++---
@@ -279,7 +281,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  r-plugin/omnilist          | 2537 ++++++++++++++++++++++++++++++++++++++++++++
  r-plugin/rpager.sh         |   14 +
  r-plugin/specialfuns.R     |   55 +
- syntax/r.vim               |    2 +-
  syntax/rout.vim            |   19 +-
  tools/rargs.R              |   23 -
  tools/rfunctions           |  370 -------
@@ -343,9 +344,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Iago Mosqueira suggested that the plugin should be able to run one R process for each Vim instance, and his suggestion was implemented with the option g:vimrplugin_by_vim_instance.
 
  after/filetype.vim |    2 +-
+ after/syntax/r.vim |   16 ++++++--
  doc/r-plugin.txt   |   99 ++++++++++++++++++++++++++++++++++++---------------
  ftplugin/r.vim     |   51 +++++++++++++++++++--------
- syntax/r.vim       |   16 ++++++--
  syntax/rout.vim    |   36 +++++++++++++++++++
  tools/rtags.R      |    7 ++++
  6 files changed, 162 insertions(+), 49 deletions(-)
@@ -360,10 +361,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Changes in omni completion: now using two tags files, one for .GlobalEnv and other for all other environments. The command :RUpdateObjList must be used to update the list of objects that are not in .Globalenv. Arguments of functions are displayed in a scratch window.
     * Syntax highlight for R functions. The command :RUpdateObjList must be used to update the list of functions to be highlighted.
 
+ after/syntax/r.vim     |    9 +-
  autoload/rcomplete.vim |   15 +-
  doc/r-plugin.txt       |  146 +++-
  ftplugin/r.vim         |  755 +++++++++------
- syntax/r.vim           |    9 +-
  tools/rfunctions       |  370 +++++++
  tools/rtags            | 2537 ++++++++++++++++++++++++++++++++++++++++++++++++
  tools/rtags.R          |   77 ++-
@@ -384,10 +385,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Added "Send Paragraph" commands.
 
  after/filetype.vim           |    1 +
+ after/syntax/r.vim           |   13 +-
  bitmaps/r-send-paragraph.png |  Bin 0 -> 390 bytes
  doc/r-plugin.txt             |  405 +++++++++++-----
  ftplugin/r.vim               | 1087 +++++++++++++-----------------------------
- syntax/r.vim                 |   13 +-
  tools/rpager.sh              |    1 +
  6 files changed, 638 insertions(+), 869 deletions(-)
 
@@ -559,6 +560,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
  README                 |   87 ++++++++
  after/filetype.vim     |    6 +
+ after/syntax/r.vim     |    5 +
  autoload/rcomplete.vim |   42 ++++
  bitmaps/rbuffer.xpm    |   30 +++
  bitmaps/rcomplete.xpm  |  440 +++++++++++++++++++++++++++++++++++++
@@ -570,7 +572,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  bitmaps/rstop.xpm      |  280 ++++++++++++++++++++++++
  ftplugin/r.vim         |  407 ++++++++++++++++++++++++++++++++++
  indent/r.vim           |   94 ++++++++
- syntax/r.vim           |    5 +
  tools/rfunnel.pl       |  567 ++++++++++++++++++++++++++++++++++++++++++++++++
  tools/rtags.R          |   43 ++++
  16 files changed, 2518 insertions(+), 0 deletions(-)

@@ -1,4 +1,18 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2b)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.03)
+Author:     Tom Link <micathom@gmail.com>
+AuthorDate: Sat Nov 6 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.03
+    
+    - g:vikitasks#remove_unreadable_files: Remove unreadable files- FIX: remove buffers with no tasks from the list- g:vikitasks#use_unspecified_dates: Interpret entries with an unspecified date ("_") as current tasks- g:vikitasks_startup_alarms doesn't assume a special case for gtk- Load viki if it wasn't loaded yet- If g:vikitasks#intervikis == 2, scan all interviki pages (not just the homepage)- Run VimEnter command immediately if !has('vim_stating')- FIX: rx didn't match entries with no textMD5 checksum: b1157748e17e1f667c443d0e1d273e41
+
+ autoload/vikitasks.vim |  142 +++++++++++++++++++++++++++++++++++++-----------
+ doc/vikitasks.txt      |   65 +++++++++++++++--------
+ plugin/vikitasks.vim   |   38 +++++++++-----
+ 3 files changed, 178 insertions(+), 67 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2b)
 Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Mar 31 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -23,8 +37,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README                 |   62 +++++++++++++
+ README                 |   65 ++++++++++++++
  autoload/vikitasks.vim |  226 ++++++++++++++++++++++++++++++++++++++++++++++++
  doc/vikitasks.txt      |  206 +++++++++++++++++++++++++++++++++++++++++++
  plugin/vikitasks.vim   |  137 +++++++++++++++++++++++++++++
- 4 files changed, 631 insertions(+), 0 deletions(-)
+ 4 files changed, 634 insertions(+), 0 deletions(-)

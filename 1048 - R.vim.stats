@@ -47,13 +47,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Up-to-date version of the R help and R noweb syntax files. Both of them are now part of vim 7.
     - Added ftplugin/rnoweb.vim and Makefile.rnoweb for R noweb files.
 
- Makefile.rnoweb     |   27 +++++++++
- README.R_with_vim   |   19 ++----
- ftplugin/rnoweb.vim |   71 ++++++++++++++++++++++
- syntax/rd.vim       |  162 ---------------------------------------------------
- syntax/rhelp.vim    |  153 ++++++++++++++++++++++++++++++++++++++++++++++++
- syntax/rnoweb.vim   |   55 +++++++++++++++++
- syntax/rnw.vim      |   19 ------
+ Makefile.rnoweb      |   27 ++++++++
+ README.R_with_vim    |   19 ++----
+ after/syntax/rnw.vim |   19 ------
+ ftplugin/rnoweb.vim  |   71 ++++++++++++++++++++++
+ syntax/rd.vim        |  162 --------------------------------------------------
+ syntax/rhelp.vim     |  153 +++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/rnoweb.vim    |   55 +++++++++++++++++
  7 files changed, 313 insertions(+), 193 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5-38)
@@ -100,13 +100,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     plugin. Also added mixed syntax highlighting for Sweave files according
     to the tip of his.
 
- README.R_with_vim  |   63 +++++++++++++++++++++++++++++-------------------
- ftplugin/R-managed |   15 +++++++++++
- ftplugin/R.vim     |   59 ---------------------------------------------
- ftplugin/Rnw.vim   |   47 ------------------------------------
- ftplugin/r.vim     |   68 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- syntax/rd.vim      |    2 +-
- syntax/rnw.vim     |   19 ++++++++++++++
+ README.R_with_vim    |   63 ++++++++++++++++++++++++++++------------------
+ after/syntax/rnw.vim |   19 ++++++++++++++
+ ftplugin/R-managed   |   15 +++++++++++
+ ftplugin/R.vim       |   59 -------------------------------------------
+ ftplugin/Rnw.vim     |   47 ----------------------------------
+ ftplugin/r.vim       |   68 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/rd.vim        |    2 +-
  7 files changed, 141 insertions(+), 132 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.01-8)

@@ -7,10 +7,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added Direct Css omnicomplete swapping (see link in description). Added help file
 
- doc/swapit.txt                 |  189 ++++++++++++++++++++++++++++++++++++++++
- ftplugin/css_swapit.vim        |   12 +--
- ftplugin/htmldjango_swapit.vim |    6 +-
- plugin/swapit.vim              |   67 +++++++++++----
+ after/ftplugin/css_swapit.vim        |   12 +--
+ after/ftplugin/htmldjango_swapit.vim |    6 +-
+ doc/swapit.txt                       |  189 ++++++++++++++++++++++++++++++++++
+ plugin/swapit.vim                    |   67 +++++++++---
  4 files changed, 249 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -22,14 +22,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added html tag swap support, support for exclusive mode and some filetype examples
 
- ftplugin/css_swapit.vim        |    8 +
- ftplugin/django_swapit.vim     |   39 ++++
- ftplugin/html_swapit.vim       |   11 +
- ftplugin/htmldjango_swapit.vim |   11 +
- ftplugin/php_swapit.vim        |    3 +
- ftplugin/python_swapit.vim     |    3 +
- ftplugin/vim_swapit.vim        |    6 +
- plugin/swapit.vim              |  398 ++++++++++++++++++++++++++++------------
+ after/ftplugin/css_swapit.vim        |    8 +
+ after/ftplugin/django_swapit.vim     |   39 ++++
+ after/ftplugin/html_swapit.vim       |   11 +
+ after/ftplugin/htmldjango_swapit.vim |   11 +
+ after/ftplugin/php_swapit.vim        |    3 +
+ after/ftplugin/python_swapit.vim     |    3 +
+ after/ftplugin/vim_swapit.vim        |    6 +
+ plugin/swapit.vim                    |  398 ++++++++++++++++++++++++----------
  8 files changed, 362 insertions(+), 117 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1.2)

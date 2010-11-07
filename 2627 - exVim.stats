@@ -48,6 +48,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
        * fix exTagSelect show tags error when read preview from a file that already not exists.
 
  .vimrc_ex                                          |  132 ++-
+ after/syntax/c.vim                                 |   25 +-
+ after/syntax/cpp.vim                               |   17 +-
+ after/syntax/make.vim                              |   68 +-
  autoload/exUtility.vim                             |  110 +-
  plugin/exEnvironmentSetting.vim                    |   24 +-
  plugin/exGlobalSearch.vim                          |    6 +
@@ -158,9 +161,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  toolkit/vim/compile_vim.bat                        |   34 -
  vimfiles/after/compiler/exmsvc.vim                 |   55 +
  vimfiles/after/compiler/msvc2005.vim               |   55 -
- vimfiles/after/syntax/c.vim                        |   25 +-
- vimfiles/after/syntax/cpp.vim                      |   17 +-
- vimfiles/after/syntax/make.vim                     |   68 +-
  vimfiles/filetype.vim                              |   62 +-
  115 files changed, 3722 insertions(+), 6428 deletions(-)
 
@@ -198,6 +198,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
  .vimrc_ex                                          | 1090 ++++++
  _vimrc_ex                                          | 1058 ------
+ after/syntax/make.vim                              |   34 +
+ after/syntax/maxscript.vim                         |   66 +-
  autoload/exUtility.vim                             | 3807 ++++++++++++++++++++
  colors/ex.vim                                      |   86 +
  colors/ex_lightgray.vim                            |   86 +
@@ -325,14 +327,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  exDev/vim/vimfiles/after/compiler/exgcc.vim        |   29 -
  exDev/vim/vimfiles/after/compiler/hlsl.vim         |   15 -
  exDev/vim/vimfiles/after/compiler/msvc2005.vim     |   55 -
- exDev/vim/vimfiles/after/syntax/c.vim              |  129 -
- exDev/vim/vimfiles/after/syntax/cpp.vim            |   69 -
- exDev/vim/vimfiles/after/syntax/exUtility.vim      |   72 -
- exDev/vim/vimfiles/after/syntax/hlsl.vim           |  108 -
- exDev/vim/vimfiles/after/syntax/maxscript.vim      |   86 -
- exDev/vim/vimfiles/after/syntax/python.vim         |   29 -
- exDev/vim/vimfiles/after/syntax/syncolor.vim       |  100 -
- exDev/vim/vimfiles/after/syntax/vim.vim            |   28 -
  exDev/vim/vimfiles/autoload/exUtility.vim          | 3785 -------------------
  exDev/vim/vimfiles/colors/ex.vim                   |   86 -
  exDev/vim/vimfiles/doc/exVim.txt                   | 2963 ---------------
@@ -539,17 +533,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  vimfiles/after/compiler/exgcc.vim                  |   29 +
  vimfiles/after/compiler/hlsl.vim                   |   15 +
  vimfiles/after/compiler/msvc2005.vim               |   55 +
- vimfiles/after/syntax/c.vim                        |  129 +
- vimfiles/after/syntax/cpp.vim                      |   69 +
- vimfiles/after/syntax/exUtility.vim                |   72 +
- vimfiles/after/syntax/hlsl.vim                     |  108 +
- vimfiles/after/syntax/make.vim                     |   34 +
- vimfiles/after/syntax/maxscript.vim                |  132 +
- vimfiles/after/syntax/python.vim                   |   29 +
- vimfiles/after/syntax/syncolor.vim                 |  100 +
- vimfiles/after/syntax/vim.vim                      |   28 +
  vimfiles/filetype.vim                              |   34 +
- 353 files changed, 33565 insertions(+), 31057 deletions(-)
+ 338 files changed, 32954 insertions(+), 30446 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/8.02)
 Author:     Jie Wu <karasaya@gmail.com>
@@ -919,6 +904,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
               o Fix exMacroHighlight syntax highlight disappear when no any c-like file loaded.
 
  _vimrc_ex                                          |  952 ++
+ after/syntax/c.vim                                 |  129 +
+ after/syntax/cpp.vim                               |   69 +
+ after/syntax/exUtility.vim                         |   72 +
+ after/syntax/hlsl.vim                              |  108 +
+ after/syntax/maxscript.vim                         |   86 +
+ after/syntax/python.vim                            |   29 +
+ after/syntax/syncolor.vim                          |  100 +
+ after/syntax/vim.vim                               |   28 +
  autoload/genutils.vim                              | 1954 ---
  autoload/lookupfile.vim                            |  486 -
  doc/EnhancedCommentify.txt                         |  493 -
@@ -1034,14 +1027,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  exDev/vim/vimfiles/after/compiler/exgcc.vim        |   29 +
  exDev/vim/vimfiles/after/compiler/hlsl.vim         |   15 +
  exDev/vim/vimfiles/after/compiler/msvc2005.vim     |   55 +
- exDev/vim/vimfiles/after/syntax/c.vim              |  129 +
- exDev/vim/vimfiles/after/syntax/cpp.vim            |   69 +
- exDev/vim/vimfiles/after/syntax/exUtility.vim      |   72 +
- exDev/vim/vimfiles/after/syntax/hlsl.vim           |  108 +
- exDev/vim/vimfiles/after/syntax/maxscript.vim      |   86 +
- exDev/vim/vimfiles/after/syntax/python.vim         |   29 +
- exDev/vim/vimfiles/after/syntax/syncolor.vim       |  100 +
- exDev/vim/vimfiles/after/syntax/vim.vim            |   28 +
  exDev/vim/vimfiles/autoload/exUtility.vim          | 3446 +++++
  exDev/vim/vimfiles/colors/ex.vim                   |   96 +
  exDev/vim/vimfiles/doc/exVim.txt                   | 2632 ++++
@@ -1076,6 +1061,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Version 2.0: the patched third part plugins
 
  _vimrc_ex                                          |  952 --
+ after/syntax/c.vim                                 |  129 -
+ after/syntax/cpp.vim                               |   69 -
+ after/syntax/exUtility.vim                         |   72 -
+ after/syntax/hlsl.vim                              |  108 -
+ after/syntax/maxscript.vim                         |   86 -
+ after/syntax/python.vim                            |   29 -
+ after/syntax/syncolor.vim                          |  100 -
+ after/syntax/vim.vim                               |   28 -
  autoload/exUtility.vim                             | 2957 ----
  autoload/genutils.vim                              | 1954 +++
  autoload/lookupfile.vim                            |  486 +
@@ -1235,14 +1228,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  vimfiles/after/compiler/exgcc.vim                  |   29 -
  vimfiles/after/compiler/hlsl.vim                   |   15 -
  vimfiles/after/compiler/msvc2005.vim               |   55 -
- vimfiles/after/syntax/c.vim                        |  129 -
- vimfiles/after/syntax/cpp.vim                      |   69 -
- vimfiles/after/syntax/exUtility.vim                |   72 -
- vimfiles/after/syntax/hlsl.vim                     |  108 -
- vimfiles/after/syntax/maxscript.vim                |   86 -
- vimfiles/after/syntax/python.vim                   |   29 -
- vimfiles/after/syntax/syncolor.vim                 |  100 -
- vimfiles/after/syntax/vim.vim                      |   28 -
  vimfiles/filetype.vim                              |   28 -
  169 files changed, 35932 insertions(+), 25351 deletions(-)
 
@@ -1254,6 +1239,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Version 7.04a: fix some bugs
 
  _vimrc_ex                                          |  952 +++++++
+ after/ftplugin/c.vim                               |    2 -
+ after/ftplugin/cpp.vim                             |    2 -
+ after/syntax/__fxhlsl.vim                          |  196 --
+ after/syntax/doxygen.vim                           |  696 -----
+ after/syntax/gmsh.vim                              |  107 -
+ after/syntax/help.vim                              |  114 -
+ after/syntax/matlab.vim                            |   54 -
+ after/syntax/maxscript.vim                         |   11 +-
  autoload/exUtility.vim                             | 2957 +++++++++++++++++++
  colors/ex.vim                                      |   96 +
  doc/FAQ.txt                                        |  157 --
@@ -1388,21 +1381,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  ex_plugin_only/vimfiles/after/compiler/exgcc.vim   |   27 -
  ex_plugin_only/vimfiles/after/compiler/hlsl.vim    |   13 -
  .../vimfiles/after/compiler/msvc2005.vim           |   53 -
- ex_plugin_only/vimfiles/after/ftplugin/c.vim       |    2 -
- ex_plugin_only/vimfiles/after/ftplugin/cpp.vim     |    2 -
- ex_plugin_only/vimfiles/after/syntax/__fxhlsl.vim  |  196 --
- ex_plugin_only/vimfiles/after/syntax/c.vim         |  129 -
- ex_plugin_only/vimfiles/after/syntax/cpp.vim       |   69 -
- ex_plugin_only/vimfiles/after/syntax/doxygen.vim   |  696 -----
- ex_plugin_only/vimfiles/after/syntax/exUtility.vim |   72 -
- ex_plugin_only/vimfiles/after/syntax/gmsh.vim      |  107 -
- ex_plugin_only/vimfiles/after/syntax/help.vim      |  114 -
- ex_plugin_only/vimfiles/after/syntax/hlsl.vim      |  108 -
- ex_plugin_only/vimfiles/after/syntax/matlab.vim    |   54 -
- ex_plugin_only/vimfiles/after/syntax/maxscript.vim |   85 -
- ex_plugin_only/vimfiles/after/syntax/python.vim    |   29 -
- ex_plugin_only/vimfiles/after/syntax/syncolor.vim  |  100 -
- ex_plugin_only/vimfiles/after/syntax/vim.vim       |   28 -
  ex_plugin_only/vimfiles/autoload/exUtility.vim     | 2957 -------------------
  ex_plugin_only/vimfiles/colors/ex.vim              |   96 -
  ex_plugin_only/vimfiles/doc/exVim.txt              | 2632 -----------------
@@ -1551,16 +1529,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  vimfiles/after/compiler/exgcc.vim                  |   29 +
  vimfiles/after/compiler/hlsl.vim                   |   15 +
  vimfiles/after/compiler/msvc2005.vim               |   55 +
- vimfiles/after/syntax/c.vim                        |  129 +
- vimfiles/after/syntax/cpp.vim                      |   69 +
- vimfiles/after/syntax/exUtility.vim                |   72 +
- vimfiles/after/syntax/hlsl.vim                     |  108 +
- vimfiles/after/syntax/maxscript.vim                |   86 +
- vimfiles/after/syntax/python.vim                   |   29 +
- vimfiles/after/syntax/syncolor.vim                 |  100 +
- vimfiles/after/syntax/vim.vim                      |   28 +
  vimfiles/filetype.vim                              |   28 +
- 307 files changed, 25351 insertions(+), 29933 deletions(-)
+ 292 files changed, 24736 insertions(+), 29318 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0)
 Author:     Jie Wu <karasaya@gmail.com>
@@ -1570,6 +1540,21 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Version 7.0: Initial upload
 
  README                                             |   65 +
+ after/ftplugin/c.vim                               |    2 +
+ after/ftplugin/cpp.vim                             |    2 +
+ after/syntax/__fxhlsl.vim                          |  196 ++
+ after/syntax/c.vim                                 |  129 +
+ after/syntax/cpp.vim                               |   69 +
+ after/syntax/doxygen.vim                           |  696 +++++
+ after/syntax/exUtility.vim                         |   72 +
+ after/syntax/gmsh.vim                              |  107 +
+ after/syntax/help.vim                              |  114 +
+ after/syntax/hlsl.vim                              |  108 +
+ after/syntax/matlab.vim                            |   54 +
+ after/syntax/maxscript.vim                         |   85 +
+ after/syntax/python.vim                            |   29 +
+ after/syntax/syncolor.vim                          |  100 +
+ after/syntax/vim.vim                               |   28 +
  doc/FAQ.txt                                        |  157 ++
  doc/Makefile                                       | 2959 ++++++++++++++++++++
  doc/compile_vim.win32.bat                          |   24 +
@@ -1701,21 +1686,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  ex_plugin_only/vimfiles/after/compiler/exgcc.vim   |   27 +
  ex_plugin_only/vimfiles/after/compiler/hlsl.vim    |   13 +
  .../vimfiles/after/compiler/msvc2005.vim           |   53 +
- ex_plugin_only/vimfiles/after/ftplugin/c.vim       |    2 +
- ex_plugin_only/vimfiles/after/ftplugin/cpp.vim     |    2 +
- ex_plugin_only/vimfiles/after/syntax/__fxhlsl.vim  |  196 ++
- ex_plugin_only/vimfiles/after/syntax/c.vim         |  129 +
- ex_plugin_only/vimfiles/after/syntax/cpp.vim       |   69 +
- ex_plugin_only/vimfiles/after/syntax/doxygen.vim   |  696 +++++
- ex_plugin_only/vimfiles/after/syntax/exUtility.vim |   72 +
- ex_plugin_only/vimfiles/after/syntax/gmsh.vim      |  107 +
- ex_plugin_only/vimfiles/after/syntax/help.vim      |  114 +
- ex_plugin_only/vimfiles/after/syntax/hlsl.vim      |  108 +
- ex_plugin_only/vimfiles/after/syntax/matlab.vim    |   54 +
- ex_plugin_only/vimfiles/after/syntax/maxscript.vim |   85 +
- ex_plugin_only/vimfiles/after/syntax/python.vim    |   29 +
- ex_plugin_only/vimfiles/after/syntax/syncolor.vim  |  100 +
- ex_plugin_only/vimfiles/after/syntax/vim.vim       |   28 +
  ex_plugin_only/vimfiles/autoload/exUtility.vim     | 2957 +++++++++++++++++++
  ex_plugin_only/vimfiles/colors/ex.vim              |   96 +
  ex_plugin_only/vimfiles/doc/exVim.txt              | 2632 +++++++++++++++++

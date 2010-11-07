@@ -9,9 +9,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     upside down ? for vim execution.
     Harmony with other mark-jump implementation :-)
 
- plugin/mu-template.vim |   73 +++++++++++++++++++++++++++++++++++++----------
- template/template.vim  |   41 ++++++++++++++++++++++----
- 2 files changed, 91 insertions(+), 23 deletions(-)
+ after/plugin/mu-template.vim    |   97 +++++++++++++++++++++++++++++++++++++++
+ plugin/mu-template.vim          |   56 ----------------------
+ template/template.html          |    6 --
+ template/template.perl          |    4 --
+ template/template.tcl           |    3 -
+ template/template.vim           |    7 ---
+ vimfiles/template/template.html |    6 ++
+ vimfiles/template/template.perl |    4 ++
+ vimfiles/template/template.tcl  |    3 +
+ vimfiles/template/template.vim  |   34 ++++++++++++++
+ 10 files changed, 144 insertions(+), 76 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
 Author:     Gergely Kontra <pihentagy@gmail.com>
