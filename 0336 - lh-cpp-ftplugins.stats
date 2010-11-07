@@ -7,12 +7,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Many things have been enhanced. Several more options to tune the mappings. More complete documentation. Check the changelog for more info.
 
+ after/plugin/mu-template.vim                       |  738 ++++++++++---
  doc/lh-map-tools.txt                               |  717 +++++++------
  doc/mu-template.txt                                |  491 ++++++++
  doc/searchInRuntime.txt                            |  180 +++
  doc/system_utils.txt                               |  256 +++++
  ftplugin/template.vim                              |   43 +
- lh-cpp/after/plugin/mu-template.vim                |  738 ++++++++++---
  lh-cpp/after/template/cpp/template.class           |   50 +
  lh-cpp/after/template/cpp/template.singleton       |   53 +
  lh-cpp/after/template/lie-dans.sh                  |   10 +
@@ -87,10 +87,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Some annoying bugs fixed regarding Triggers.vim and pathnames ; folding enhanced ; documentation updated ; facilities to jump to functions (member or not) implementations, if the implementation does not exist yet, a default one is provided -- cf VIM TIP#135 ; plus some other minor bonuses.
 
+ after/plugin/mu-template.vim                     |    6 +-
  doc/c.html                                       |  500 --------------------
  doc/lh-cpp-readme.txt                            |  262 -----------
  doc/lh-map-tools.txt                             |  104 +++--
- lh-cpp/after/plugin/mu-template.vim              |    6 +-
  lh-cpp/fold/c-fold.vim                           |   62 ++-
  lh-cpp/ftplugin/c/c_set.vim                      |   28 +-
  lh-cpp/ftplugin/c/doc/c.html                     |  527 ++++++++++++++++++++++
@@ -162,7 +162,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Version 1.0: Initial upload
 
  README                                           |   30 ++
- lh-cpp/after/plugin/mu-template.vim              |  205 ++++++++++
+ after/plugin/mu-template.vim                     |  205 ++++++++++
  lh-cpp/fold/c-fold.vim                           |  153 ++++++++
  lh-cpp/fold/cpp-fold.vim                         |    7 +
  lh-cpp/ftplugin/c/LoadHeaderFile.vim             |   36 ++

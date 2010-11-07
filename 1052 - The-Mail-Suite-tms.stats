@@ -24,11 +24,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     See mail/release_notes:  The main new feature is an illustration of filtering, and the use of quickfix commands (:cn, :copen etc.) to visit mail folders which have new mail.
 
- ftplugin/mail.vim  |    3 +
- mail/release_notes |   30 ++++++
- mail/tms.vim       |  248 +++++++++++++++++++++++++++++++++++++++++++++++++---
- plugin/tms.vim     |  150 +++++++++++++++++++++----------
- syntax/index.vim   |    2 +-
+ after/ftplugin/mail.vim |    3 +
+ mail/release_notes      |   30 ++++++
+ mail/tms.vim            |  248 ++++++++++++++++++++++++++++++++++++++++++++---
+ plugin/tms.vim          |  150 +++++++++++++++++++---------
+ syntax/index.vim        |    2 +-
  5 files changed, 370 insertions(+), 63 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
@@ -42,11 +42,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     use of VimEnter event to capture passwords).
     Welcome all feedback.
 
- doc/tms.txt        |    2 +-
- ftplugin/index.vim |    1 +
- ftplugin/mail.vim  |    1 +
- mail/release_notes |   16 ++++++++++++++++
- plugin/tms.vim     |   32 ++++++++++++++++++++++----------
+ after/ftplugin/mail.vim |    1 +
+ doc/tms.txt             |    2 +-
+ ftplugin/index.vim      |    1 +
+ mail/release_notes      |   16 ++++++++++++++++
+ plugin/tms.vim          |   32 ++++++++++++++++++++++----------
  5 files changed, 41 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
@@ -65,10 +65,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     experience with using tms.)
 
  README                    |   44 +
+ after/ftplugin/mail.vim   |   88 ++
  doc/tms.txt               |  349 ++++++
  ftdetect/index.vim        |   13 +
  ftplugin/index.vim        |   41 +
- ftplugin/mail.vim         |   88 ++
  mail/_tmsrc.example       |   61 ++
  mail/release_notes        |   28 +
  mail/tms.vim              |  161 +++

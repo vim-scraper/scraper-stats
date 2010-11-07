@@ -5,37 +5,37 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.18: Initial upload
 
- README                                        |   25 +
- README.orig                                   |    9 +
- plugin/cons.vim                               |  310 +
- vim/after/ftplugin/docbk.vim                  |   10 +
- vim/ftplugin/xml/completions/chart-1.0        |  120 +
- vim/ftplugin/xml/completions/config-1.0       |   13 +
- vim/ftplugin/xml/completions/docbook-4.2      |20056 ++++++++++++++++++++
- vim/ftplugin/xml/completions/docbook-4.3      |23575 ++++++++++++++++++++++++
- vim/ftplugin/xml/completions/docbook-4.4      |24270 +++++++++++++++++++++++++
- vim/ftplugin/xml/completions/dr3d-1.0         |   89 +
- vim/ftplugin/xml/completions/draw-1.0         |  686 +
- vim/ftplugin/xml/completions/fo-1.0           | 6301 +++++++
- vim/ftplugin/xml/completions/form-1.0         |  132 +
- vim/ftplugin/xml/completions/meta-1.0         |   34 +
- vim/ftplugin/xml/completions/number-1.0       |  138 +
- vim/ftplugin/xml/completions/office-1.0       |   44 +
- vim/ftplugin/xml/completions/php-4.0.6.dict   | 2404 +++
- vim/ftplugin/xml/completions/presentation-1.0 |  317 +
- vim/ftplugin/xml/completions/relaxng-1.0      |   36 +
- vim/ftplugin/xml/completions/script-1.0       |   12 +
- vim/ftplugin/xml/completions/style-1.0        |  821 +
- vim/ftplugin/xml/completions/svg-1.1          | 6126 +++++++
- vim/ftplugin/xml/completions/table-1.0        |  337 +
- vim/ftplugin/xml/completions/text-1.0         |  742 +
- vim/ftplugin/xml/completions/wxs-1.0          |  287 +
- vim/ftplugin/xml/completions/xhtml-1.1        | 1557 ++
- vim/ftplugin/xml/completions/xinclude-1.0     |    8 +
- vim/ftplugin/xml/completions/xlink-1.0        |   16 +
- vim/ftplugin/xml/completions/xmlcatalog-1.0   |   18 +
- vim/ftplugin/xml/completions/xmldecl-1.0      |   17 +
- vim/ftplugin/xml/completions/xslt-1.0         |  385 +
- vim/ftplugin/xml/xml_completion.vim           | 1688 ++
- xml-compl-dtd.c                               |  185 +
+ README                                             |   25 +
+ after/ftplugin/docbk.vim                           |   10 +
+ xml_completion-1.18/README                         |    9 +
+ .../vim/ftplugin/xml/completions/chart-1.0         |  120 +
+ .../vim/ftplugin/xml/completions/config-1.0        |   13 +
+ .../vim/ftplugin/xml/completions/docbook-4.2       |20056 ++++++++++++++++
+ .../vim/ftplugin/xml/completions/docbook-4.3       |23575 +++++++++++++++++++
+ .../vim/ftplugin/xml/completions/docbook-4.4       |24270 ++++++++++++++++++++
+ .../vim/ftplugin/xml/completions/dr3d-1.0          |   89 +
+ .../vim/ftplugin/xml/completions/draw-1.0          |  686 +
+ .../vim/ftplugin/xml/completions/fo-1.0            | 6301 +++++
+ .../vim/ftplugin/xml/completions/form-1.0          |  132 +
+ .../vim/ftplugin/xml/completions/meta-1.0          |   34 +
+ .../vim/ftplugin/xml/completions/number-1.0        |  138 +
+ .../vim/ftplugin/xml/completions/office-1.0        |   44 +
+ .../vim/ftplugin/xml/completions/php-4.0.6.dict    | 2404 ++
+ .../vim/ftplugin/xml/completions/presentation-1.0  |  317 +
+ .../vim/ftplugin/xml/completions/relaxng-1.0       |   36 +
+ .../vim/ftplugin/xml/completions/script-1.0        |   12 +
+ .../vim/ftplugin/xml/completions/style-1.0         |  821 +
+ .../vim/ftplugin/xml/completions/svg-1.1           | 6126 +++++
+ .../vim/ftplugin/xml/completions/table-1.0         |  337 +
+ .../vim/ftplugin/xml/completions/text-1.0          |  742 +
+ .../vim/ftplugin/xml/completions/wxs-1.0           |  287 +
+ .../vim/ftplugin/xml/completions/xhtml-1.1         | 1557 ++
+ .../vim/ftplugin/xml/completions/xinclude-1.0      |    8 +
+ .../vim/ftplugin/xml/completions/xlink-1.0         |   16 +
+ .../vim/ftplugin/xml/completions/xmlcatalog-1.0    |   18 +
+ .../vim/ftplugin/xml/completions/xmldecl-1.0       |   17 +
+ .../vim/ftplugin/xml/completions/xslt-1.0          |  385 +
+ .../vim/ftplugin/xml/xml_completion.vim            | 1688 ++
+ xml_completion-1.18/vim/plugin/cons.vim            |  310 +
+ xml_completion-1.18/xml-compl-dtd.c                |  185 +
  33 files changed, 90768 insertions(+), 0 deletions(-)
