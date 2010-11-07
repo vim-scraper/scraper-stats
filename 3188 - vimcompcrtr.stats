@@ -1,22 +1,4 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0@1)
-Author:     ZyX ZyX <kp-pav@yandex.ru>
-AuthorDate: Sun Aug 22 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.0@1: Initial upload
-
- README            |   11 +-
- autoload/load.vim |    5 -
- doc/chk.txt       |   10 -
- doc/comp.txt      |   11 -
- doc/load.txt      |   13 -
- plugin/chk.vim    |  150 +++++--------
- plugin/comp.vim   |   86 ++-----
- plugin/load.vim   |   66 ++----
- plugin/stuf.vim   |  665 -----------------------------------------------------
- 9 files changed, 108 insertions(+), 909 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.1.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1.1)
 Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Fri Sep 10 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -50,12 +32,23 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0.1: Fixed dependency list
 
- doc/load.txt    |   78 ++++++++-
- plugin/chk.vim  |   46 ++++-
- plugin/comp.vim |    9 +-
- plugin/load.vim |  177 ++++++++++++++++---
+ doc/load.txt    |   13 ++
+ plugin/load.vim |   66 +++++---
  plugin/stuf.vim |  516 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 5 files changed, 787 insertions(+), 39 deletions(-)
+ 3 files changed, 574 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0@1)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Sun Aug 22 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0@1: Initial upload
+
+ doc/load.txt    |   65 ++++++++++++++++++++++++++++++--
+ plugin/chk.vim  |   46 ++++++++++++++++++----
+ plugin/comp.vim |    9 +++-
+ plugin/load.vim |  111 +++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 4 files changed, 213 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
 Author:     ZyX ZyX <kp-pav@yandex.ru>
@@ -64,7 +57,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README            |   10 +
+ README            |   15 +
  autoload/load.vim |    5 +
  doc/chk.txt       |  422 +++++++++++++++
  doc/comp.txt      |  123 +++++
@@ -72,4 +65,4 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  plugin/chk.vim    | 1046 ++++++++++++++++++++++++++++++++++++++
  plugin/comp.vim   |  382 ++++++++++++++
  plugin/load.vim   | 1467 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- 8 files changed, 3790 insertions(+), 0 deletions(-)
+ 8 files changed, 3795 insertions(+), 0 deletions(-)

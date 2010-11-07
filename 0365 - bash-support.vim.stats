@@ -777,11 +777,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  bash.1.7/rc/customization.vimrc                    |  130 +++
  bash.1.7/wordlists/bash.list                       |  105 ++
  costumization.gvimrc                               |   25 -
+ costumization.vimrc                                |  116 --
  doc/bash-hot-keys.pdf                              |  Bin 0 -> 40755 bytes
  doc/bashsupport.txt                                |  347 ++++++
  ftplugin/sh.vim                                    |   70 ++
  plugin/bash-support.vim                            | 1217 +++++++++++---------
- plugin/costumization.vimrc                         |  116 --
  templates/bash-file-header                         |   20 -
  templates/bash-frame                               |    3 -
  templates/bash-function-description                |   13 -
@@ -796,10 +796,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + Tag substitution rewritten (Some characters in a substitution text for a tag  prevented the tag from being substituted).+ All bash variables can now be inserted from the menus.+ A marked region can be surrounded by a for-, if, select- while- or until   statement (with indentation).+ A marked text can be surrounded with quotes.+ A marked region or a complete line can be surrounded with echo " ".+ The echo " " can be removed from a line.
 
- README.orig                |   20 +++-
- costumization.gvimrc       |    4 +-
- plugin/bash-support.vim    |  325 ++++++++++++++++++++++++++++++++++----------
- plugin/costumization.vimrc |   13 +--
+ README.orig             |   20 +++-
+ costumization.gvimrc    |    4 +-
+ costumization.vimrc     |   13 +--
+ plugin/bash-support.vim |  325 ++++++++++++++++++++++++++++++++++++-----------
  4 files changed, 278 insertions(+), 84 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -813,8 +813,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
  README.orig                         |  173 +++++++++++
  costumization.gvimrc                |   25 ++
+ costumization.vimrc                 |  121 +++++++
  plugin/bash-support.vim             |  584 ++++++++++++++++++++++++++---------
- plugin/costumization.vimrc          |  121 +++++++
  templates/bash-file-header          |   20 ++
  templates/bash-frame                |    3 +
  templates/bash-function-description |   13 +

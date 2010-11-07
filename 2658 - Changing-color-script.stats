@@ -7,107 +7,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Cleared out a lot of the junk, like removing the two levels of calls to the main fnunction, now there's one, and no parameter, and pulled out all the logic for a gimicky effect based on this param.
 
- colors/ChangingColor.vim  |  682 ++++++++++++++++++++++++++++++++++++++++
- colors/changing-color.vim |  756 ---------------------------------------------
- 2 files changed, 682 insertions(+), 756 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/15.8@1)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Mon Mar 22 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 15.8@1: 'Un-britishized' the name
-
- colors/changing-color.vim  |  756 ++++++++++++++++++++++++++++++++++++++
- colors/changing-colour.vim |  870 --------------------------------------------
- 2 files changed, 756 insertions(+), 870 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/6.1@1)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Wed Aug 26 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 6.1@1
-    
-    I forgot to take off the "debug" switch off the last one. Apologies. :)
-
- colors/changing-colour.vim |  499 ++++++++++++++++++++++++++++++++++----------
- 1 files changed, 387 insertions(+), 112 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.3@1)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Wed Jul 8 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.3@1
-    
-    Made the Constant look pretty at the lighter background area. Optimised as much as I could the visibility of Constant at lower background tones and the darker part of the clash-background area. Clash background is where background is very similar to text's colour and therefore is hardest for the eye to see.
-
- colors/changing-colour.vim | 1133 +++++++++++++++++++++++---------------------
- doc/readme.txt             |   94 ----
- 2 files changed, 595 insertions(+), 632 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.2@1)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Thu Jul 2 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.2@1
-    
-    Once again forgot to take the debug switch off before I uploaded the script. Without switching it off the time is set to a global variable that should be commented out. I forgot to comment this out. Sorry.
-
- colors/changing-colour.vim |   10 ++++++++--
- 1 files changed, 8 insertions(+), 2 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.1@1)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Thu Jul 2 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.1@1
-    
-    Oops! corrected a slight but highly annoying glich in the way I formated the comment for the revision history.
-
- colors/changing-colour.vim |   84 +++++++++++++++++++++++++++++++++----------
- 1 files changed, 64 insertions(+), 20 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.8@1)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Fri Jun 12 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.8@1
-    
-    Updated the readme.txt file to include some new information that might be useful.
-
- colors/changing-colour.vim |   23 +++++++++++++++++------
- doc/readme.txt             |   33 +++++++++++++++++++++++----------
- 2 files changed, 40 insertions(+), 16 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.6@1)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Tue Jun 9 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.6@1: Improved the readme.txt file.
-
- colors/changing-colour.vim |   67 +++++++++++++++++++++-----------------------
- doc/readme.txt             |   28 +++++++++++++++--
- 2 files changed, 56 insertions(+), 39 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.4@1)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Wed Jun 3 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.4@1
-    
-    Forgot to switch debug off. Colours don't change automatically, with debug on - it appears fixed to one time/colour scheme, but can be moved manually. Good for spotting those hard-visibility cases.
-
- colors/ChangingColor.vim   |  711 --------------------------------------------
- colors/changing-colour.vim |  480 ++++++++++++++++++++++++++++++
- doc/readme.txt             |   61 ++++
- 3 files changed, 541 insertions(+), 711 deletions(-)
+ colors/ChangingColor.vim |  185 +++++++++++++++++++--------------------------
+ 1 files changed, 78 insertions(+), 107 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/16.3)
 Author:     Paul Contreras <pablo@ezrider.co.uk>
@@ -166,9 +67,20 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Made FoldedColumn look the same as LineNr.  Obviously it was not looking good as a static-style color scheme.  It blends in at least.
 
- colors/ChangingColor.vim   |  701 ++++++++++++++++++++++++++++++++++++++++
- colors/changing-colour.vim |  756 --------------------------------------------
+ colors/ChangingColor.vim  |  701 +++++++++++++++++++++++++++++++++++++++++
+ colors/changing-color.vim |  756 ---------------------------------------------
  2 files changed, 701 insertions(+), 756 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/15.8@1)
+Author:     Paul Contreras <pablo@ezrider.co.uk>
+AuthorDate: Mon Mar 22 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 15.8@1: 'Un-britishized' the name
+
+ colors/changing-color.vim  |  756 ++++++++++++++++++++++++++++++++++++++++++++
+ colors/changing-colour.vim |  756 --------------------------------------------
+ 2 files changed, 756 insertions(+), 756 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/15.8)
 Author:     Paul Contreras <pablo@ezrider.co.uk>
@@ -1265,8 +1177,20 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     For some reason the Identifiers got some bad values, not very optimal. Must have had a bad day. This is quite nice now , tuned in at light and dark background ranges. Looks as it should. Sorry about this.
 
- colors/changing-colour.vim |   24 ++++++++++++++++--------
- 1 files changed, 16 insertions(+), 8 deletions(-)
+ colors/changing-colour.vim |   22 +++++++++++++++-------
+ 1 files changed, 15 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6.1@1)
+Author:     Paul Contreras <pablo@ezrider.co.uk>
+AuthorDate: Wed Aug 26 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 6.1@1
+    
+    I forgot to take off the "debug" switch off the last one. Apologies. :)
+
+ colors/changing-colour.vim |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.1)
 Author:     Paul Contreras <pablo@ezrider.co.uk>
@@ -1517,377 +1441,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     For some reason i missed that at the very darkest background Search was indistinguishable from the background - messed this up, my own fault i apologise. I focussed to narrowly on 'dark' and didn't go right down all the way down to black where Search got invisble (or indistinguishable from the background at any rate.) This is now fixed.
 
- colors/changing-colour.vim |   15 ++++++++++++---
- 1 files changed, 12 insertions(+), 3 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Mon Jul 27 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 4.0
-    
-    Realised that syntax element 'Search' was almost impossible to distinguish from general background at darker backgrounds. Fixed this so that Search now contrasts significantly from the general background at dark backgrounds without being too strong.
-
- colors/changing-colour.vim |   12 ++++++++++--
- 1 files changed, 10 insertions(+), 2 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/3.9)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Wed Jul 22 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 3.9
-    
-    Went over visibility of Identifier at lighter backgrounds. It was ok at the darker backgrounds, but lighter backgrounds were adjusted wrongly, making too much use of 'background-lightening' to bring out the colour of Identifier. Darkened this down and now it looks a lot more pleasant.
-
- colors/changing-colour.vim |   13 ++++++++++---
- 1 files changed, 10 insertions(+), 3 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/3.8)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Tue Jul 21 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 3.8
-    
-    Mildened-down the agressive dark-background 'enhancement' at the dark-background range of Identifier. It feels a lot smoother now because previously the darkening of the background effect kicked-in too heavily resulting in it being disorientating to look at. Now it just feels much smoother.
-
- colors/changing-colour.vim |   14 +++++++++++---
- 1 files changed, 11 insertions(+), 3 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/3.7)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Sat Jul 11 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 3.7
-    
-    Went over the contrast of Identifier at dark, medium, and light levels of background. Previously looked fuzzy in all areas. Contrast is quite strong now enhanced with plentiful helpings of 'back-lighting' and 'back-darkening' to bring out the green of the Identifier.
-
- colors/changing-colour.vim |   19 +++++++++++++------
- 1 files changed, 13 insertions(+), 6 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/3.6)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Fri Jul 10 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 3.6
-    
-    Made a tiny correction to the length of time before the Constant went into the clash-background 'danger' area from dark to light, went ahead and delayed it  by one minute. The change although small compared to  other changes i've made recently changes the change  (no pun intended) from a somewhat 'deadening' looking effect into as a lucid inversion of colour which is  more pleasing to look at.
-
- colors/changing-colour.vim |   19 ++++++++++++++-----
- 1 files changed, 14 insertions(+), 5 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/3.5)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Fri Jul 10 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 3.5
-    
-    Made the transition into 'danger' area from dark->light| of the Constant a bit more gradual so as to maintain an overall illusion of progress. Previously the change had been abrupt (Constants went quite dark suddenly) so this illusion was lost. To do this modified the start and end times of the 'danger' area. Went ahead and added new easeArea global variable to allow the easing length to be controlled. This allowed me to go ahead and create longer easing for the Constant from dark->light as well, again smoothing the change from non-'danger' to 'danger'.
-
- colors/changing-colour.vim |   41 ++++++++++++++++++++++++++++++++---------
- 1 files changed, 32 insertions(+), 9 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/3.4)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Thu Jul 9 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 3.4
-    
-    Added fading effect to the way backlighting engages so as background progresses darker->lighter or vice-versa for some elements the  acklighting doesn't instantly 'kick-in' but becomes stronger gradually. This affects Constant at darker background, Statement and Identifier. Also strengthened the contrast of StatusBar and StatusBarNC, as they were a bit blurry at darker background tones.
-
- colors/changing-colour.vim |  159 ++++++++++++++++++++++++++++----------------
- 1 files changed, 102 insertions(+), 57 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Wed Jul 8 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 3.3
-    
-    Oops! Sorry, made a mistake with the version numbering. This Constant pretty-ing and lower-light visibility improvement at around and the lower part of the clash background area was release 3.3. Sorry about that folks. :)
-
- colors/changing-colour.vim |   17 ++++++++++++-----
- 1 files changed, 12 insertions(+), 5 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Tue Jul 7 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 3.2
-    
-    Made it much simpler the way text is adjusted. Now it goes ahead and adjusts by a linear amount, not like a zig-zag.  This improves the quality of text 'darkening' at fuzzy visibility backgrounds. Removed uncessarily bright backgrounds,  now that text darkens more predictably.
-
- colors/changing-colour.vim |   85 +++++++++++++++++++++++---------------------
- 1 files changed, 44 insertions(+), 41 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Sun Jul 5 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 3.0
-    
-    I have to admit the visibility at low-light backgrounds of the Constant was still rubbish. I believe I fixed this now. It's sharp at the darker end and at the mid-end. Also fixed the visibility of Comment that was poor around the clash-background area and just below it.
-
- colors/changing-colour.vim |   28 +++++++++++++++++-----------
- 1 files changed, 17 insertions(+), 11 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.9)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Sun Jul 5 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.9
-    
-    Reduced the amount of backlight added to Statement when over the clash-background area. Previously was very agressive and was an complete overkill.
-
- colors/changing-colour.vim |    9 +++-
- doc/readme.txt             |   94 --------------------------------------------
- 2 files changed, 6 insertions(+), 97 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.8)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Sat Jul 4 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.8
-    
-    Darkened the back-darkening of Constant at the low end of the background spectrum, as it looks a bit fuzzy otherwise.
-
- colors/changing-colour.vim |   10 +++++++---
- 1 files changed, 7 insertions(+), 3 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.7)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Sat Jul 4 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.7
-    
-    Made a slight correction to the backlighting of the Constant that was looking way to bright at the high end of the background spectrum.
-
- colors/changing-colour.vim |   20 ++++++++++++--------
- 1 files changed, 12 insertions(+), 8 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Sat Jul 4 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.6
-    
-    Extensively tuned-up the interplay of Statement, Identifier, and specially Constant re. the changing background colour. C64 fans will love some of the funky colours at the darker end of the background spectrum.
-
- colors/changing-colour.vim | 1129 ++++++++++++++++++++++----------------------
- 1 files changed, 568 insertions(+), 561 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Fri Jul 3 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.5
-    
-    Darkened background back-lighting at the dark end of Constant because it was too hard to read. Darkened background back-lighting at the dark end of Identifier as it was a little fuzzy.
-
- colors/changing-colour.vim |   21 +++++++++++++--------
- 1 files changed, 13 insertions(+), 8 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Fri Jul 3 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.4
-    
-    Made statement backlighting effect less agressive, made the Constant text colour blue, not brown, as there were too many other browns and it got repetitive added a dab more backlighting to Identifier and darkened the text colour a shade reversed the order of the revision history comments.
-
- colors/changing-colour.vim |  123 +++++++++++++++++++++++---------------------
- 1 files changed, 65 insertions(+), 58 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Thu Jul 2 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.3
-    
-    Made the Constant text colour change more gradually as it goes over the 'danger' area. Previously the text colour went to jet-black suddenly as the background hit the dark boundary coming from from dark background. It looked silly, suddenly going black. Now the colour is a more nice dark-brown colour, not jet-black as it does this. Tuned-in the background 'down'-lighting of Constant at the dark boundary of the danger zone so it is exactly as dark as it needs to be, no more, and correspondingly tuned-in the in-the-danger-zone' background adjustment so that it brings out nicely the new non-jet-black text colour.
-
- colors/changing-colour.vim |   21 ++++++++++++++++-----
- 1 files changed, 16 insertions(+), 5 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Thu Jul 2 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.2
-    
-    Made the Constant background up-lighting a bit stronger as it was previously overcorrected and made *too* weak (oops!), and adjusted the 'dangerzone' background lighting of the same element to be not quite as bright, so that it looks more tastefully done
-
- colors/changing-colour.vim |   14 ++++++++++----
- 1 files changed, 10 insertions(+), 4 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Thu Jul 2 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.1
-    
-    Corrected slightly over-zealous background brightening in the lighter background of Constant highlight elem. Improved the clarity of the explantion of what the RGBEl4 function does removed variable s:oldhA that had originally been part of calculation for the timing of the change of colours, that gradually got replaced by the more accurate s:oldactontime. Added a proper description of what s:oldactontime does Improved clarity of description of what g:changefreq does.
-
- colors/changing-colour.vim |   97 ++++++++++++++++++++++++++------------------
- 1 files changed, 58 insertions(+), 39 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Sat Jun 13 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.0
-    
-    Made standard change freq. 1 min, not too often to annoy but often enough to remind you of time is passing
-
- colors/changing-colour.vim |    9 ++++++---
- 1 files changed, 6 insertions(+), 3 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Sat Jun 13 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.9
-    
-    Made it very easy for you to set your own preferred frequency for the script to change the colour
-
- colors/changing-colour.vim |   24 +++++++++++++++++++++++-
- doc/readme.txt             |   33 +++++++++++++++++++++++----------
- 2 files changed, 46 insertions(+), 11 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Fri Jun 12 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.8
-    
-    Removed accidental leaving-in of '+stopinsert' in an au CursorHold, sorry for this
-    Added comment to clearly show how to remove invert effect if desired
-
- colors/changing-colour.vim |   12 +++++++++++-
- 1 files changed, 11 insertions(+), 1 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Thu Jun 11 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.7: Corrected slightly glary Identifier at low light.
-
- colors/changing-colour.vim |   15 ++++++++-------
- doc/readme.txt             |   28 ++++++++++++++++++++++++----
- 2 files changed, 32 insertions(+), 11 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Thu Jun 4 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.6: Brightened Constant and Identifier background a tiny amount
-
- colors/changing-colour.vim |   20 +++++++++++---------
- 1 files changed, 11 insertions(+), 9 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Wed Jun 3 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.5
-    
-    Removed duplicate htmlComment and htmlCommentPart pair
-    Changed comment to a nice balanced-out grey
-
- colors/changing-colour.vim |   51 +++++++++++++++++++------------------------
- 1 files changed, 23 insertions(+), 28 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Wed Jun 3 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.4
-    
-    Improved the way backgrounds are enhanced
-    Corrected some mistakes, backgrounds were being brightened-up unecessarily.
-
- colors/changing-colour.vim |  292 +++++++++++++++++++++++---------------------
- 1 files changed, 153 insertions(+), 139 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Tue Jun 2 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.3
-    
-    Added pretty frames around function descriptions
-    Created new entry for Directory element in grassy green
-    Corrected bug: lo-lights not perfectly synchronising with text
-
- colors/changing-colour.vim |  125 +++++++++++++++++++++++++++++++-------------
- doc/readme.txt             |    4 +-
- 2 files changed, 91 insertions(+), 38 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Tue Jun 2 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.2
-    
-    Tidied-up, shortened names
-    added version history
-    Added another entry for Search, previously was perm. yellow
-
- colors/changing-colour.vim |  387 ++++++++++++++++++++++---------------------
- doc/readme.txt             |   52 ++----
- 2 files changed, 216 insertions(+), 223 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Tue Jun 2 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.1
-    
-    This now works. Sorry all who downloaded 1.0 and found it didn't work. I forgot to include some variables which enabled the script to determine whether to change the colours periodically. Sorry folks!! Also corrected a minor problem that the Question element would have been black-on-black at certain background colours.
-
- colors/changing-colour.vim                         |  406 ++++++++++++++++++++
- ...near-end-pref-near-other-lines-beginning-au.vim |    5 -
- ...ste-right-near-beginning-of-your-vimrc-file.vim |  388 -------------------
- doc/readme.txt                                     |   47 +--
- 4 files changed, 427 insertions(+), 419 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.00)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Wed May 27 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.00: Initial upload
-
- README                                             |   10 +
- ...near-end-pref-near-other-lines-beginning-au.vim |    5 +
- ...ste-right-near-beginning-of-your-vimrc-file.vim |  388 ++++++++++++++++++++
- doc/readme.txt                                     |   80 ++++
- 4 files changed, 483 insertions(+), 0 deletions(-)
+ README                     |   10 +
+ colors/changing-colour.vim |  711 ++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 721 insertions(+), 0 deletions(-)

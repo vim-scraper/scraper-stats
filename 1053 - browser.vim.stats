@@ -1,51 +1,4 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.1@1)
-Author:     moshe kamensky <samvimes@fastmail.fm>
-AuthorDate: Mon Aug 9 00:00:00 2004 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 0.1@1: Fixed the INSTALL file - forgot one dependancy
-
- INSTALL                                         |   35 +
- README.orig                                     |   23 +
- bin/gvimbrowse.1                                |  234 --
- bin/vimbrowse.1                                 |  234 --
- bin/vimbrowse.pl                                |  238 --
- browser-1.1/ChangeLog                           |  170 --
- browser-1.1/INSTALL                             |   87 -
- browser-1.1/README                              |   25 -
- browser-1.1/README.encoding                     |   30 -
- browser-1.1/browser.html                        | 1753 ---------------
- browser-1.1/browser.pod                         | 1638 --------------
- browser-1.1/extra/browser/addressbooks/_search  |    8 -
- browser-1.1/extra/browser/plugin/extra.vim      |   64 -
- browser-1.1/extra/browser/plugin/menus.vim      |   19 -
- browser-1.1/extra/browser/plugin/short.vim      |   49 -
- browser-1.1/extra/ftplugin/browser/mappings.vim |   39 -
- browser-1.1/extra/plugin/browser_extra.vim      |   69 -
- browser-1.1/extra/plugin/browser_menus.vim      |   17 -
- browser-1.1/extra/plugin/browser_short.vim      |   40 -
- browser-1.1/perl/HTML/FormatText/Vim.pm         | 1086 ---------
- browser-1.1/perl/Mailcap.pm                     | 1438 ------------
- browser-1.1/perl/VIM/Browser.pm                 | 2715 -----------------------
- browser-1.1/perl/Vim.pm                         |  460 ----
- browser-1.1/vim/browser/mailcap                 |   11 -
- browser-1.1/vim/browser/plugin/main.vim         |  366 ---
- browser-1.1/vim/doc/browser.txt                 | 1346 -----------
- browser-1.1/vim/ftplugin/browser.vim            |   76 -
- browser-1.1/vim/plugin/browser.vim              |   77 -
- browser-1.1/vim/syntax/browser.vim              |  118 -
- browser-1.1/vim/syntax/browserBkmkPage.vim      |   56 -
- browser.pod                                     |  423 ++++
- doc/browser.txt                                 |  398 ++++
- ftplugin/browser.vim                            |   25 +
- perl/HTML/FormatText/Vim.pm                     |  251 +++
- perl/VIM/Browser.pm                             | 1085 +++++++++
- perl/Vim.pm                                     |  147 ++
- plugin/browser.vim                              |  223 ++
- syntax/browser.vim                              |  113 +
- 38 files changed, 2723 insertions(+), 12463 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1)
 Author:     moshe kamensky <samvimes@fastmail.fm>
 AuthorDate: Tue Mar 15 00:00:00 2005 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -304,7 +257,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     See the file 'ChangeLog' for some more details
 
- INSTALL                                         |   34 -
+ INSTALL                                         |   35 -
  README.orig                                     |   23 -
  bin/vimbrowse.1                                 |  224 ++++
  bin/vimbrowse.pl                                |  203 ++++
@@ -331,7 +284,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  perl/Vim.pm                                     |  147 ---
  plugin/browser.vim                              |  223 ----
  syntax/browser.vim                              |  113 --
- 27 files changed, 4477 insertions(+), 2722 deletions(-)
+ 27 files changed, 4477 insertions(+), 2723 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1@1)
+Author:     moshe kamensky <samvimes@fastmail.fm>
+AuthorDate: Mon Aug 9 00:00:00 2004 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1@1: Fixed the INSTALL file - forgot one dependancy
+
+ INSTALL |    9 +++++----
+ 1 files changed, 5 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
 Author:     moshe kamensky <samvimes@fastmail.fm>

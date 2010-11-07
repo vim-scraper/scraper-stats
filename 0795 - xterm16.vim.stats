@@ -108,13 +108,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Changed the Diff / Fold highlighting groups. Added files to change default colors of ctheme (thanks to Juhapekka Tolvanen) and rxvt.
 
- colors/xterm16.vim      |   32 +++++++---
- colors/xterm16.vim.html |  149 --------------------------------------------
- doc/xterm16.txt         |  159 ++++++++++++++++++++++++++--------------------
- rxvt.ad                 |   25 +++++++
- tags                    |   17 -----
- xterm.ad                |   11 ++-
- xterm16.ct              |   20 ++++++
+ colors/xterm16.vim |   32 ++++++++---
+ doc/xterm16.txt    |  159 +++++++++++++++++++++++++++++----------------------
+ rxvt.ad            |   25 ++++++++
+ tags               |   17 ------
+ xterm.ad           |   11 ++-
+ xterm16.ct         |   20 +++++++
+ xterm16.vim.html   |  149 ------------------------------------------------
  7 files changed, 165 insertions(+), 248 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -126,10 +126,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added support to remap the unreadable darkblue on the linux console. Disabled HTML groups from using cterm attributes and used colors instead. Added options to customise GUI colors. All options added here can be disabled.
 
- colors/xterm16.vim      |   88 +++++++++++++++++++---------
- colors/xterm16.vim.html |  149 +++++++++++++++++++++++++++++++++++++++++++++++
- doc/xterm16.txt         |   39 +++++++++++-
- tags                    |    7 ++
+ colors/xterm16.vim |   88 +++++++++++++++++++++----------
+ doc/xterm16.txt    |   39 ++++++++++++--
+ tags               |    7 +++
+ xterm16.vim.html   |  149 ++++++++++++++++++++++++++++++++++++++++++++++++++++
  4 files changed, 251 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)

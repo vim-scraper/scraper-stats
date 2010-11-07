@@ -10,46 +10,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      * New API functions (BETA)
      * New ConqueTerm_CloseOnEnd? option
 
- doc/conque_term.txt    |  444 ++++++++++++++++++++++++++++++++++++-----------
- plugin/conque_term.vim |   28 +++-
- syntax/conque_term.vim |   18 ++-
- 3 files changed, 375 insertions(+), 115 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.1@1)
-Author:     Nico Raffo <nicoraffo@gmail.com>
-AuthorDate: Fri May 28 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.1@1
-    
-     * Allow shell buffer to be hidden
-     * Fix xterm colors
-     * Allow custom key for leaving insert mode
-     * Various other bugfixes
-
- plugin/conque_term.vim |   29 +++++++++++++++++++++--------
- syntax/conque_term.vim |    8 +++-----
- 2 files changed, 24 insertions(+), 13 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.0@1)
-Author:     Nico Raffo <nicoraffo@gmail.com>
-AuthorDate: Wed Feb 3 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.0@1
-    
-       * Complete python rewrite
-       * Add support for ncurses based applications
-       * Add continuous polling, instead of using <Tab>
-       * Improve speed
-       * Improve syntax highlighting
-
- autoload/conque_term.vim | 1966 ----------------------------------------------
- doc/conque_term.txt      |  444 +++--------
- plugin/conque_term.vim   |   47 +-
- syntax/conque_term.vim   |   24 +-
- 4 files changed, 122 insertions(+), 2359 deletions(-)
-
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
 Author:     Nico Raffo <nicoraffo@gmail.com>
 AuthorDate: Tue Oct 12 00:00:00 2010 +0000
@@ -68,6 +28,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  syntax/conque_term.vim   |   18 ++-
  4 files changed, 824 insertions(+), 188 deletions(-)
 
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1@1)
+Author:     Nico Raffo <nicoraffo@gmail.com>
+AuthorDate: Fri May 28 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1@1
+    
+     * Allow shell buffer to be hidden
+     * Fix xterm colors
+     * Allow custom key for leaving insert mode
+     * Various other bugfixes
+
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
 Author:     Nico Raffo <nicoraffo@gmail.com>
 AuthorDate: Fri May 28 00:00:00 2010 +0000
@@ -80,11 +52,26 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      * Allow custom key for leaving insert mode
      * Various other bugfixes
 
- autoload/conque_term.vim   |  424 +++++++++---
+ autoload/conque_term.vim |  424 ++++++++++++++++++++++++++++++++++------------
+ plugin/conque_term.vim   |   29 +++-
+ syntax/conque_term.vim   |    8 +-
+ 3 files changed, 342 insertions(+), 119 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0@1)
+Author:     Nico Raffo <nicoraffo@gmail.com>
+AuthorDate: Wed Feb 3 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0@1
+    
+       * Complete python rewrite
+       * Add support for ncurses based applications
+       * Add continuous polling, instead of using <Tab>
+       * Improve speed
+       * Improve syntax highlighting
+
  conque_1.0/conque_term.vba | 1702 --------------------------------------------
- plugin/conque_term.vim     |   29 +-
- syntax/conque_term.vim     |    8 +-
- 4 files changed, 342 insertions(+), 1821 deletions(-)
+ 1 files changed, 0 insertions(+), 1702 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
 Author:     Nico Raffo <nicoraffo@gmail.com>

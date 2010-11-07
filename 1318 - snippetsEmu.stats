@@ -1,4 +1,49 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2@1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2.3)
+Author:     Felix Ingram <F.ingram.lists@gmail.com>
+AuthorDate: Thu Mar 13 00:00:00 2008 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2.3
+    
+    Fixed jumping bug which caused problems with tags between two named tags being missed out. (really, really uploaded new version)
+
+ doc/snippets_emu.txt                   |  354 ++++++++++++
+ ftplugin/actionscript_snippets.vim     |    9 -
+ ftplugin/aspvbs_snippets.vim           |   17 -
+ ftplugin/c_snippets.vim                |   58 --
+ ftplugin/css_snippets.vim              |   30 -
+ ftplugin/django_model_snippets.vim     |   61 --
+ ftplugin/django_template_snippets.vim  |   32 -
+ ftplugin/f-script_snippets.vim         |   14 -
+ ftplugin/haskell_snippets.vim          |    9 -
+ ftplugin/html_snippets.vim             |   57 --
+ ftplugin/java_snippets.vim             |   52 --
+ ftplugin/javascript_snippets.vim       |   10 -
+ ftplugin/latex_snippets.vim            |   13 -
+ ftplugin/logo_snippets.vim             |    9 -
+ ftplugin/markdown_snippets.vim         |   10 -
+ ftplugin/movable_type_snippets.vim     |   14 -
+ ftplugin/objc_snippets.vim             |   53 --
+ ftplugin/ocaml_snippets.vim            |   26 -
+ ftplugin/perl_snippets.vim             |   23 -
+ ftplugin/php_snippets.vim              |   30 -
+ ftplugin/phpdoc_snippets.vim           |   19 -
+ ftplugin/propel_snippets.vim           |   14 -
+ ftplugin/python_snippets.vim           |  202 -------
+ ftplugin/rails_snippets.vim            |   54 --
+ ftplugin/ruby_snippets.vim             |   32 -
+ ftplugin/sh_snippets.vim               |   12 -
+ ftplugin/slate_snippets.vim            |   19 -
+ ftplugin/smarty_snippets.vim           |   35 --
+ ftplugin/symfony_snippets.vim          |   21 -
+ ftplugin/tcl_snippets.vim              |   14 -
+ ftplugin/template_toolkit_snippets.vim |   13 -
+ ftplugin/tex_snippets.vim              |   13 -
+ ftplugin/xhtml_snippets.vim            |   48 --
+ plugin/snippetsEmu.vim                 |  973 ++++++++++++++++++++++++++++++++
+ 34 files changed, 1327 insertions(+), 1023 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2@1)
 Author:     Felix Ingram <F.ingram.lists@gmail.com>
 AuthorDate: Thu Mar 13 00:00:00 2008 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -28,7 +73,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0@1: Filetype plugins for snippetsEmu
 
- doc/snippets_emu.txt                   |  354 ------------
+ doc/snippets_emu.txt                   |  353 ------------
  ftplugin/actionscript_snippets.vim     |    9 +
  ftplugin/aspvbs_snippets.vim           |   17 +
  ftplugin/c_snippets.vim                |   51 ++
@@ -61,21 +106,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  ftplugin/template_toolkit_snippets.vim |   13 +
  ftplugin/tex_snippets.vim              |   13 +
  ftplugin/xhtml_snippets.vim            |   48 ++
- plugin/snippetsEmu.vim                 |  973 --------------------------------
- 34 files changed, 1016 insertions(+), 1327 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.2.3)
-Author:     Felix Ingram <F.ingram.lists@gmail.com>
-AuthorDate: Thu Mar 13 00:00:00 2008 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.2.3
-    
-    Fixed jumping bug which caused problems with tags between two named tags being missed out. (really, really uploaded new version)
-
- doc/snippets_emu.txt   |    1 +
- plugin/snippetsEmu.vim |    3 +++
- 2 files changed, 4 insertions(+), 0 deletions(-)
+ plugin/snippetsEmu.vim                 |  970 --------------------------------
+ 34 files changed, 1016 insertions(+), 1323 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.2)
 Author:     Felix Ingram <F.ingram.lists@gmail.com>

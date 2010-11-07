@@ -1,26 +1,4 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5@1)
-Author:     Benoit Cerrina <benoit.cerrina@writeme.com>
-AuthorDate: Tue Oct 2 00:00:00 2001 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 0.5@1
-    
-    I'm having a problem with the vim online interface, the version 0.5 script is a zip file not a vim file.
-    Once you download it it should be renamed as TagsBase.zip and unpacked in your runtimepath.
-
- doc/TagsBase.txt         |  236 +--------------
- ftplugin/TagsBase.vim    |   10 -
- html/TagsBase.html       |  316 ++++++++++++++++++++
- html/TagsBase.vim.html   |  395 ++++++++++++++++++++++++
- plugin/TagsBase.vim      |  746 +++++++++++++++-------------------------------
- plugin/perl/TagsBase.pl  |  413 -------------------------
- plugin/perl/TagsBase.vim |  422 --------------------------
- plugin/perl/VIM.pm       |   61 ----
- plugin/perl/test.pl      |    1 -
- syntax/TagsBase.vim      |    7 -
- 10 files changed, 965 insertions(+), 1642 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/0.9.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9.2)
 Author:     Benoit Cerrina <benoit.cerrina@writeme.com>
 AuthorDate: Wed Nov 28 00:00:00 2001 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -86,13 +64,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.8.3: greatly enhanced the win32 cascading menus (when perl is available)
 
- doc/TagsBase.txt             |   23 ++-
- plugin/.tb.TagsBase.vim.tags |    9 -
+ doc/TagsBase.txt             |   23 +++++++++++++-
+ plugin/.tb.TagsBase.vim.tags |    9 -----
  plugin/TagsBase.vim          |    4 +-
- plugin/TagsBase.vim~         |  584 ------------------------------------------
- vimfiles/perl/TagsBase.pl    |   70 +++--
- vimfiles/perl/TagsBase.vim   |   56 +++--
- 6 files changed, 102 insertions(+), 644 deletions(-)
+ vimfiles/perl/TagsBase.pl    |   70 +++++++++++++++++++++++++-----------------
+ vimfiles/perl/TagsBase.vim   |   56 +++++++++++++++++++++------------
+ 5 files changed, 102 insertions(+), 60 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.2)
 Author:     Benoit Cerrina <benoit.cerrina@writeme.com>
@@ -130,10 +107,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     ^ITagsBase::GetTagName(391) called at (eval 15) line 1
     ^Ieval 'TagsBase::GetTagName 391
 
- perl/TagsBase.pl     |    2 +
- perl/TagsBase.vim    |    4 +-
- plugin/TagsBase.vim~ |  584 ++++++++++++++++++++++++++++++++++++++++++++++++++
- 3 files changed, 588 insertions(+), 2 deletions(-)
+ perl/TagsBase.pl  |    2 ++
+ perl/TagsBase.vim |    4 ++--
+ 2 files changed, 4 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
 Author:     Benoit Cerrina <benoit.cerrina@writeme.com>
@@ -259,6 +235,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
  plugin/TagsBase.vim |   28 +++++++++++++++++++++++-----
  1 files changed, 23 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5@1)
+Author:     Benoit Cerrina <benoit.cerrina@writeme.com>
+AuthorDate: Tue Oct 2 00:00:00 2001 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.5@1
+    
+    I'm having a problem with the vim online interface, the version 0.5 script is a zip file not a vim file.
+    Once you download it it should be renamed as TagsBase.zip and unpacked in your runtimepath.
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
 Author:     Benoit Cerrina <benoit.cerrina@writeme.com>

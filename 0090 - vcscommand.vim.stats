@@ -1,36 +1,4 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/beta28@1)
-Author:     Bob Hiestand <bob.hiestand@gmail.com>
-AuthorDate: Wed Sep 24 00:00:00 2008 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version beta28@1
-    
-    Add 'VCSCommandDisableAll' variable to prevent the plugin or any extensions from loading.
-    
-    vcssvn:  prevent hangs caused by querying the user for input by specifying '--non-interactive' on the appropriate commands.
-    
-    Use &diffopt to seed the default DiffSplit orientation. (James Vega)
-
- doc/vcscommand.txt     |   99 ++++--------
- plugin/vcsbzr.vim      |  262 --------------------------------
- plugin/vcscommand.vim  |  392 +++++++++++++++---------------------------------
- plugin/vcscvs.vim      |  104 ++++++-------
- plugin/vcsgit.vim      |   61 +++++---
- plugin/vcshg.vim       |  273 ---------------------------------
- plugin/vcssvk.vim      |   39 +++--
- plugin/vcssvn.vim      |   52 ++++---
- syntax/CVSAnnotate.vim |   45 ++++++
- syntax/SVKAnnotate.vim |   42 +++++
- syntax/SVNAnnotate.vim |   40 +++++
- syntax/cvsannotate.vim |   45 ------
- syntax/gitannotate.vim |   44 ------
- syntax/hgannotate.vim  |   40 -----
- syntax/svkannotate.vim |   42 -----
- syntax/svnannotate.vim |   40 -----
- syntax/vcscommit.vim   |    2 +-
- 17 files changed, 416 insertions(+), 1206 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.99.42)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.99.42)
 Author:     Bob Hiestand <bob.hiestand@gmail.com>
 AuthorDate: Fri Sep 3 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -296,6 +264,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  doc/vcscommand.txt    |   10 ++++++++++
  plugin/vcscommand.vim |   21 +++++++++++++++++++--
  2 files changed, 29 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/beta28@1)
+Author:     Bob Hiestand <bob.hiestand@gmail.com>
+AuthorDate: Wed Sep 24 00:00:00 2008 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version beta28@1
+    
+    Add 'VCSCommandDisableAll' variable to prevent the plugin or any extensions from loading.
+    
+    vcssvn:  prevent hangs caused by querying the user for input by specifying '--non-interactive' on the appropriate commands.
+    
+    Use &diffopt to seed the default DiffSplit orientation. (James Vega)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/beta28)
 Author:     Bob Hiestand <bob.hiestand@gmail.com>
