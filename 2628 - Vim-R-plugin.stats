@@ -1,4 +1,48 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/101025)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/101107)
+Author:     Jakson Aquino <jalvesaq@gmail.com>
+AuthorDate: Sun Nov 7 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 101107
+    
+    * New feature: complete chunk block when '<' is pressed in rnoweb files.
+    * New option: vimrplugin_rnowebchunk.
+    * New key bindings in Normal mode for Rnoweb files: gn (go to next R code chunk) and gN (go to previous R code chunk).
+    * New command:  :RBuildTags.
+    * Added fold capability to syntax/r.vim.
+    * Improved indentation of rnoweb files: thanks to Johannes Tanzler for writing the tex.vim indent script and for permitting its inclusion in the Vim-R-plugin.
+    * R CMD BATCH now is called with --no-restore --no-save (key binding \ro).
+    * The file r-plugin/omnilist now has an additional field and was renamed as omni_list.
+    * Use 64 bit version of R by default on Windows if the directory bin/x64 exists.
+    * New Windows only option: vimrplugin_i386.
+
+ autoload/rcomplete.vim     |   15 +-
+ autoload/rplugin.vim       |   78 ++-
+ doc/r-plugin.txt           |  464 ++++++---
+ ftplugin/r.vim             |  721 +++++++++----
+ ftplugin/rbrowser.vim      |  319 ++++--
+ ftplugin/rdoc.vim          |  721 +++++++++----
+ ftplugin/rhelp.vim         |  721 +++++++++----
+ ftplugin/rnoweb.vim        |  721 +++++++++----
+ indent/r.vim               |   12 +-
+ indent/rnoweb.vim          |   38 +
+ r-plugin/build_omni_list.R |  125 ++-
+ r-plugin/functions.vim     |   36 +
+ r-plugin/omni_list         | 2591 ++++++++++++++++++++++++++++++++++++++++++++
+ r-plugin/omnilist          | 2590 -------------------------------------------
+ r-plugin/r.snippets        |   33 +
+ r-plugin/rpython.vim       |   19 +
+ r-plugin/rsyntax.vim       |   34 +
+ r-plugin/tex_indent.vim    |  164 +++
+ r-plugin/vimbrowser.R      |   17 +-
+ r-plugin/vimhelp.R         |    6 +-
+ syntax/r.vim               |   54 +-
+ syntax/rbrowser.vim        |   67 +-
+ syntax/rdoc.vim            |    1 +
+ syntax/rout.vim            |   29 +-
+ 24 files changed, 5700 insertions(+), 3876 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/101025)
 Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Mon Oct 25 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -558,7 +602,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 090507: Initial upload
 
- README                 |   87 ++++++++
+ README                 |   92 ++++++++
  after/filetype.vim     |    6 +
  after/syntax/r.vim     |    5 +
  autoload/rcomplete.vim |   42 ++++
@@ -574,4 +618,4 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  indent/r.vim           |   94 ++++++++
  tools/rfunnel.pl       |  567 ++++++++++++++++++++++++++++++++++++++++++++++++
  tools/rtags.R          |   43 ++++
- 16 files changed, 2518 insertions(+), 0 deletions(-)
+ 16 files changed, 2523 insertions(+), 0 deletions(-)
