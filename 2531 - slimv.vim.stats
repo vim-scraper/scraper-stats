@@ -1,4 +1,18 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.1)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Sun Nov 7 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.1
+    
+    Added option g:slimv_browser_cmd for opening hyperspec in a custom webbrowser (on behalf of Andreas Salwasser), added paredit handling for d<motion>, c<motion>, p and P commands: keep paren balance when deleting and pasting text, Paredit Toggle function removes and re-adds paredit keybindings, bugfix: D and C deleted till beginning of line if () or [] found, handle escaped \" characters inside string.
+
+ doc/slimv.txt      |   76 +++++++++--
+ ftplugin/slimv.vim |   28 +++--
+ plugin/paredit.vim |  402 +++++++++++++++++++++++++++++++++++-----------------
+ 3 files changed, 355 insertions(+), 151 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.0)
 Author:     Tamas Kovacs <kovisoft@gmail.com>
 AuthorDate: Sat Oct 2 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

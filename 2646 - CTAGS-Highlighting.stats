@@ -96,10 +96,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added shellescape() to GUI types and tags files and moved them out of the main distribution (see update 7th August 2009 on the website).
 
- ftplugin/types_qt4.vim        | 1946 -----------------------------------------
- ftplugin/types_wx.vim         |  629 -------------
- ftplugin/types_wxpy.vim       |  596 -------------
  plugin/ctags_highlighting.vim |   24 +-
+ types_qt4.vim                 | 1946 -----------------------------------------
+ types_wx.vim                  |  629 -------------
+ types_wxpy.vim                |  596 -------------
  4 files changed, 15 insertions(+), 3180 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/r292)
@@ -159,9 +159,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
  README                        |   21 +
  extra_source/mktypes/setup.py |    5 +
- ftplugin/types_qt4.vim        | 1946 +++++++++++++++++++++++++++++++++++++++++
- ftplugin/types_wx.vim         |  629 +++++++++++++
- ftplugin/types_wxpy.vim       |  596 +++++++++++++
  mktypes.py                    |  527 +++++++++++
  plugin/ctags_highlighting.vim |  263 ++++++
+ types_qt4.vim                 | 1946 +++++++++++++++++++++++++++++++++++++++++
+ types_wx.vim                  |  629 +++++++++++++
+ types_wxpy.vim                |  596 +++++++++++++
  7 files changed, 3987 insertions(+), 0 deletions(-)
