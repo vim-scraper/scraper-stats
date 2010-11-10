@@ -9,10 +9,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Initial folding support (only for environments, for now)
 
- INSTALL               |    2 +-
- ftplugin/tablatex.vim |  103 +++++++++++++++++++++++++++---------------------
- tablatex.html         |   24 ++++++++++-
- 3 files changed, 80 insertions(+), 49 deletions(-)
+ TabLaTeX-1.1/INSTALL       |    7 ++
+ TabLaTeX-1.1/install.sh    |   18 ++++
+ TabLaTeX-1.1/tablatex.html |  206 ++++++++++++++++++++++++++++++++++++++++++++
+ TabLaTeX-1/INSTALL         |    7 --
+ TabLaTeX-1/install.sh      |   18 ----
+ TabLaTeX-1/tablatex.html   |  188 ----------------------------------------
+ ftplugin/tex/tablatex.vim  |  103 ++++++++++++----------
+ 7 files changed, 289 insertions(+), 258 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1)
 Author:     Pedro Diaz <tablatex@cavecanen.org>
@@ -21,9 +25,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1: Initial upload
 
- INSTALL               |    7 ++
- README                |    5 ++
- ftplugin/tablatex.vim |  140 ++++++++++++++++++++++++++++++++++++
- install.sh            |   18 +++++
- tablatex.html         |  188 +++++++++++++++++++++++++++++++++++++++++++++++++
+ README                    |    5 +
+ TabLaTeX-1/INSTALL        |    7 ++
+ TabLaTeX-1/install.sh     |   18 +++++
+ TabLaTeX-1/tablatex.html  |  188 +++++++++++++++++++++++++++++++++++++++++++++
+ ftplugin/tex/tablatex.vim |  140 +++++++++++++++++++++++++++++++++
  5 files changed, 358 insertions(+), 0 deletions(-)
