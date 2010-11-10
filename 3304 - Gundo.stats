@@ -1,4 +1,30 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0.0)
+Author:     Steve Losh <steve@stevelosh.com>
+AuthorDate: Wed Nov 10 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.0.0
+    
+    * Make GundoToggle close the Gundo windows if they're visible but not the current window, instead of moving to them.
+    * Add the g:gundo_help setting.
+    * Add the g:gundo_disable setting.
+    * Add the 'p' mapping to preview the result of reverting to the selected state.
+    * Fix movement commands with counts in the graph.
+
+ doc/gundo.txt             |   33 +++++-
+ gundo/.hg_archival.txt    |    5 -
+ gundo/.hgignore           |    5 -
+ gundo/.hgtags             |    4 -
+ gundo/README.markdown     |   35 +----
+ gundo/site/Essays1743.ttf |  Bin 110720 -> 0 bytes
+ gundo/site/index.html     |  317 ---------------------------------------------
+ gundo/site/less.js        |   67 ----------
+ gundo/site/publish.sh     |    5 -
+ gundo/site/style.less     |   99 --------------
+ plugin/gundo.vim          |  235 ++++++++++++++++++++++------------
+ 11 files changed, 193 insertions(+), 612 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.0)
 Author:     Steve Losh <steve@stevelosh.com>
 AuthorDate: Fri Oct 29 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
