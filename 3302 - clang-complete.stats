@@ -1,4 +1,22 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2)
+Author:     Xavier Deguillard <deguilx@gmail.com>
+AuthorDate: Thu Nov 11 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2
+    
+    - Added Objective-C and Objective-C++ support
+    - Correct a lot of bug
+    - Highlight of errors/warning when completing
+    - Add snippets on function parameters completion (not finished)
+    - Drop some system() call
+    - Add g:ClangUpdateQuickFix function, to be used on a mapping.
+
+ README                    |   29 +++-
+ plugin/clang_complete.vim |  396 ++++++++++++++++++++++++++++++++++-----------
+ 2 files changed, 330 insertions(+), 95 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
 Author:     Xavier Deguillard <deguilx@gmail.com>
 AuthorDate: Wed Oct 27 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
