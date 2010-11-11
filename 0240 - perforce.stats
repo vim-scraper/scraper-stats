@@ -204,9 +204,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  ftplugin/perforce.vim |   58 +
  perforce/bakup.sh     |  340 ++++
  perforce/restor.sh    |  112 ++
- plugin/perforce.vim   | 4333 ++++++++++++++++++++++++++++++++-----------------
+ plugin/perforce.vim   | 4345 ++++++++++++++++++++++++++++++++-----------------
  syntax/perforce.vim   |  111 +-
- 6 files changed, 5086 insertions(+), 1575 deletions(-)
+ 6 files changed, 5092 insertions(+), 1581 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
 Author:     Hari Krishna Dara <hari.vim@gmail.com>
@@ -242,8 +242,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     This is just a minor patch release. Added useful WQ command which is same as the W command but will also quit the window if there is no error. Speeds up making changes to labels, jobs etc. You might still want to use W for submits, as you can copy the output into your integration plans or something like that. Also I made a typo in my previous release notes about the variable name for passing default diff options. The correct name is g:p4DefaultDiffOptions. Please use the latest version of genutils.vim which fixes a typo resulting in an error message while quitting help windows.
 
- plugin/perforce.vim |  736 ++++++++++++++++++++++++++++-----------------------
- 1 files changed, 402 insertions(+), 334 deletions(-)
+ plugin/perforce.vim |  738 ++++++++++++++++++++++++++++-----------------------
+ 1 files changed, 403 insertions(+), 335 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.0)
 Author:     Hari Krishna Dara <hari.vim@gmail.com>

@@ -77,11 +77,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Needs fnameescape() and shellescape(), so you'll need an up-to-date vim with this one: vim v7.2b or later.
 
- autoload/netrw.vim         | 2464 +++++++++++++++++++++++++++-----------------
+ autoload/netrw.vim         | 2492 ++++++++++++++++++++++++++-----------------
  autoload/netrwSettings.vim |   20 +-
  doc/pi_netrw.txt           |  363 +++++--
  plugin/netrwPlugin.vim     |   18 +-
- 4 files changed, 1769 insertions(+), 1096 deletions(-)
+ 4 files changed, 1783 insertions(+), 1110 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/123)
 Author:     Charles Campbell <drchip@campbellfamily.biz>
@@ -136,12 +136,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Marked file system extended (mt, mh, mu, ms) and bugs removed.  One may now have multiple tree listings.  Bugfix: P works with trees.  Changed q -> qb for query-bookmarks, qf added to provide information about file under cursor.  Explore now has four special listing modes: */filepat, *//filepat, **/pattern, and **//pattern.  gh is now a shortcut for toggling hiding of files and directories which begin with a dot.  The menu now includes entries for Explore.
 
- autoload/netrw.vim         | 4097 ++++++++++++++++++++++++--------------------
+ autoload/netrw.vim         | 6681 +++++++++++++++++++++++---------------------
  autoload/netrwSettings.vim |    2 +
  doc/pi_netrw.txt           |  261 ++-
  plugin/netrwPlugin.vim     |    2 +-
  syntax/netrw.vim           |   59 +-
- 5 files changed, 2502 insertions(+), 1919 deletions(-)
+ 5 files changed, 3794 insertions(+), 3211 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/118)
 Author:     Charles Campbell <drchip@campbellfamily.biz>
@@ -248,12 +248,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     And, some bug fixes!
 
- autoload/netrw.vim         | 2070 +++++++++++++++++++++++++++-----------------
+ autoload/netrw.vim         | 2352 +++++++++++++++++++++++++++-----------------
  autoload/netrwSettings.vim |    5 +-
- doc/pi_netrw.txt           | 1309 +++++++++++++++-------------
+ doc/pi_netrw.txt           | 1309 ++++++++++++++-----------
  plugin/netrwPlugin.vim     |    3 +-
  syntax/netrw.vim           |    5 +-
- 5 files changed, 2018 insertions(+), 1374 deletions(-)
+ 5 files changed, 2159 insertions(+), 1515 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/110)
 Author:     Charles Campbell <drchip@campbellfamily.biz>
@@ -321,12 +321,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     (browser) amiga supported
     numerous bug fixes
 
- autoload/netrw.vim             | 2419 +++++++++++++++++++++-------------------
+ autoload/netrw.vim             | 2447 +++++++++++++++++++++-------------------
  autoload/netrwFileHandlers.vim |   52 +-
  doc/pi_netrw.txt               |  136 ++-
  plugin/netrwPlugin.vim         |   14 +-
  syntax/netrw.vim               |    7 +-
- 5 files changed, 1441 insertions(+), 1187 deletions(-)
+ 5 files changed, 1455 insertions(+), 1201 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/104)
 Author:     Charles Campbell <drchip@campbellfamily.biz>
@@ -392,13 +392,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - g:netrw_shq has a better default, and is tunable by the user
     - bugfix: hiding pattern candidate separators included some characters it shouldn't have (tnx to Osei Poku)
 
- autoload/netrw.vim             | 1367 ++++++++++++++++++++++------------------
+ autoload/netrw.vim             | 1731 ++++++++++++++++++++++------------------
  autoload/netrwFileHandlers.vim |   37 +-
  autoload/netrwSettings.vim     |   16 +-
- doc/pi_netrw.txt               |  145 ++++--
+ doc/pi_netrw.txt               |  145 +++-
  plugin/netrwPlugin.vim         |   10 +-
  syntax/netrw.vim               |   10 +-
- 6 files changed, 935 insertions(+), 650 deletions(-)
+ 6 files changed, 1117 insertions(+), 832 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/99)
 Author:     Charles Campbell <drchip@campbellfamily.biz>

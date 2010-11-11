@@ -227,8 +227,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Key prompts could not accept key after special keys such as "<S-CR>" were hit.
     * (single-window mode) Hitting "<C-W><CR>" / "<C-CR>" / "<S-CR>" on channels list now opens the channel in a new window.
 
- plugin/vimirc.vim | 1087 +++++++++++++++++++++++++++--------------------------
- 1 files changed, 555 insertions(+), 532 deletions(-)
+ plugin/vimirc.vim | 1169 +++++++++++++++++++++++++++--------------------------
+ 1 files changed, 596 insertions(+), 573 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.13)
 Author:     Madoka Machitani <madokam@zag.att.ne.jp>
@@ -389,8 +389,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Slightly changed the behavior of "i".  It now opens a new input line when typed on an already open command buffer (formerly it left the cursor on the same line, which wasn't very useful).
     * Removed the command "/SEARCH", which was not meaningful and had been made available probably by accident.  The functionality itself is available as a normal mode search command (/ or ?).
 
- plugin/vimirc.vim | 1149 +++++++++++++++++++++++++++--------------------------
- 1 files changed, 585 insertions(+), 564 deletions(-)
+ plugin/vimirc.vim | 1211 +++++++++++++++++++++++++++--------------------------
+ 1 files changed, 616 insertions(+), 595 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.2)
 Author:     Madoka Machitani <madokam@zag.att.ne.jp>
@@ -625,8 +625,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     A Fix: "/JOIN 0" was not working.
 
- plugin/vimirc.vim | 2283 ++++++++++++++++++++++++++++++++++++-----------------
- 1 files changed, 1569 insertions(+), 714 deletions(-)
+ plugin/vimirc.vim | 2297 ++++++++++++++++++++++++++++++++++++-----------------
+ 1 files changed, 1576 insertions(+), 721 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.2)
 Author:     Madoka Machitani <madokam@zag.att.ne.jp>
@@ -782,8 +782,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1. DCC CHAT/SEND.  Type "/dcc help" for the usage.  Also look into the plugin file for the .vimrc settings.  This is not much tested, so if you find any misbehaviors, or incompatibilities with other clients, let me know via e-mail.
     2. Single window mode.  .vimrc setting is: let vimirc_winmode = 'single'
 
- plugin/vimirc.vim | 2325 +++++++++++++++++++++++++++++++++++++++++++----------
- 1 files changed, 1880 insertions(+), 445 deletions(-)
+ plugin/vimirc.vim | 2421 ++++++++++++++++++++++++++++++++++++++++++-----------
+ 1 files changed, 1928 insertions(+), 493 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.3)
 Author:     Madoka Machitani <madokam@zag.att.ne.jp>
@@ -830,8 +830,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2. While connected to multiple servers, [iI] sometimes opened a command window for a wrong server.
     3. /list command did not open a list window on some servers.
 
- plugin/vimirc.vim |  856 +++++++++++++++++++++++++++++------------------------
- 1 files changed, 463 insertions(+), 393 deletions(-)
+ plugin/vimirc.vim |  858 +++++++++++++++++++++++++++++------------------------
+ 1 files changed, 464 insertions(+), 394 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
 Author:     Madoka Machitani <madokam@zag.att.ne.jp>
