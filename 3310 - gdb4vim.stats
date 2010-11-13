@@ -7,19 +7,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Enable you to edit value of a variable by hitting its line in the display window.
 
- dbus_gdb/.svn/all-wcprops                      |    2 +-
- dbus_gdb/.svn/entries                          |   12 ++++----
- dbus_gdb/.svn/text-base/gdb_helper.py.svn-base |    2 +-
- dbus_gdb/gdb_helper.py                         |    2 +-
- doc/.svn/all-wcprops                           |    4 +-
- doc/.svn/entries                               |   12 ++++----
- doc/.svn/text-base/gdb4vim.txt.svn-base        |   23 ++++++++++++++++--
- doc/gdb4vim.txt                                |   23 ++++++++++++++++--
- plugin/.svn/all-wcprops                        |    4 +-
- plugin/.svn/entries                            |   12 ++++----
- plugin/.svn/text-base/gdb4vim.vim.svn-base     |   30 +++++++++++++++++++++++-
- plugin/gdb4vim.vim                             |   30 +++++++++++++++++++++++-
- 12 files changed, 123 insertions(+), 33 deletions(-)
+ dbus_gdb/gdb_helper.py |    2 +-
+ doc/gdb4vim.txt        |   23 ++++++++++++++++++++---
+ plugin/gdb4vim.vim     |   30 +++++++++++++++++++++++++++++-
+ 3 files changed, 50 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.021)
 Author:     Bruce Li <leilmyxwz@gmail.com>
@@ -28,24 +19,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.021: Initial upload
 
- INSTALL                                            |   14 +
- README                                             |   14 +
- TODO                                               |   11 +
- dbus_gdb/.svn/all-wcprops                          |   23 ++
- dbus_gdb/.svn/dir-prop-revert                      |    1 +
- dbus_gdb/.svn/entries                              |  130 +++++++
- .../.svn/text-base/gdb_dbus_server.py.svn-base     |   54 +++
- dbus_gdb/.svn/text-base/gdb_helper.py.svn-base     |   13 +
- dbus_gdb/.svn/text-base/parser.py.svn-base         |   54 +++
- dbus_gdb/gdb_dbus_server.py                        |   54 +++
- dbus_gdb/gdb_helper.py                             |   13 +
- dbus_gdb/parser.py                                 |   54 +++
- doc/.svn/all-wcprops                               |   11 +
- doc/.svn/entries                                   |   62 ++++
- doc/.svn/text-base/gdb4vim.txt.svn-base            |  100 ++++++
- doc/gdb4vim.txt                                    |  100 ++++++
- plugin/.svn/all-wcprops                            |   11 +
- plugin/.svn/entries                                |   62 ++++
- plugin/.svn/text-base/gdb4vim.vim.svn-base         |  352 ++++++++++++++++++++
- plugin/gdb4vim.vim                                 |  352 ++++++++++++++++++++
- 20 files changed, 1485 insertions(+), 0 deletions(-)
+ INSTALL                     |   14 ++
+ README                      |   14 ++
+ TODO                        |   11 ++
+ dbus_gdb/gdb_dbus_server.py |   54 +++++++
+ dbus_gdb/gdb_helper.py      |   13 ++
+ dbus_gdb/parser.py          |   54 +++++++
+ doc/gdb4vim.txt             |  100 ++++++++++++
+ plugin/gdb4vim.vim          |  352 +++++++++++++++++++++++++++++++++++++++++++
+ 8 files changed, 612 insertions(+), 0 deletions(-)

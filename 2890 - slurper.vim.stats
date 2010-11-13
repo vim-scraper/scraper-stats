@@ -37,102 +37,21 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Support chores, features, releases and bugs. Updated story format to match version 0.3.0 of the slurper gem.
 
- ._vim-slurper                                      |  Bin 161 -> 0 bytes
- ftdetect/._slurper.vim                             |  Bin 161 -> 0 bytes
- ftplugin/slurper.vim                               |   72 +++++++--
- indent/._slurper.vim                               |  Bin 161 -> 0 bytes
- syntax/._slurper.vim                               |  Bin 161 -> 0 bytes
- syntax/slurper.vim                                 |   12 +-
- vim-slurper/._.git                                 |  Bin 161 -> 0 bytes
- vim-slurper/._.gitignore                           |  Bin 161 -> 0 bytes
- vim-slurper/._ftdetect                             |  Bin 161 -> 0 bytes
- vim-slurper/._ftplugin                             |  Bin 161 -> 0 bytes
- vim-slurper/._indent                               |  Bin 161 -> 0 bytes
- vim-slurper/._syntax                               |  Bin 161 -> 0 bytes
- vim-slurper/.git/._COMMIT_EDITMSG                  |  Bin 161 -> 0 bytes
- vim-slurper/.git/._FETCH_HEAD                      |  Bin 161 -> 0 bytes
- vim-slurper/.git/._branches                        |  Bin 161 -> 0 bytes
- vim-slurper/.git/._config                          |  Bin 161 -> 0 bytes
- vim-slurper/.git/._description                     |  Bin 161 -> 0 bytes
- vim-slurper/.git/._hooks                           |  Bin 161 -> 0 bytes
- vim-slurper/.git/._info                            |  Bin 161 -> 0 bytes
- vim-slurper/.git/._logs                            |  Bin 161 -> 0 bytes
- vim-slurper/.git/._objects                         |  Bin 161 -> 0 bytes
- vim-slurper/.git/._packed-refs                     |  Bin 161 -> 0 bytes
- vim-slurper/.git/._refs                            |  Bin 161 -> 0 bytes
- vim-slurper/.git/COMMIT_EDITMSG                    |    1 -
- vim-slurper/.git/FETCH_HEAD                        |    1 -
- vim-slurper/.git/HEAD                              |    1 -
- vim-slurper/.git/ORIG_HEAD                         |    1 -
- vim-slurper/.git/config                            |   12 --
- vim-slurper/.git/description                       |    1 -
- vim-slurper/.git/hooks/._applypatch-msg.sample     |  Bin 161 -> 0 bytes
- vim-slurper/.git/hooks/._commit-msg.sample         |  Bin 161 -> 0 bytes
- vim-slurper/.git/hooks/._post-commit.sample        |  Bin 161 -> 0 bytes
- vim-slurper/.git/hooks/._post-receive.sample       |  Bin 161 -> 0 bytes
- vim-slurper/.git/hooks/._post-update.sample        |  Bin 161 -> 0 bytes
- vim-slurper/.git/hooks/._pre-applypatch.sample     |  Bin 161 -> 0 bytes
- vim-slurper/.git/hooks/._pre-commit.sample         |  Bin 161 -> 0 bytes
- vim-slurper/.git/hooks/._pre-rebase.sample         |  Bin 161 -> 0 bytes
- vim-slurper/.git/hooks/._prepare-commit-msg.sample |  Bin 161 -> 0 bytes
- vim-slurper/.git/hooks/._update.sample             |  Bin 161 -> 0 bytes
- vim-slurper/.git/hooks/applypatch-msg.sample       |   15 --
- vim-slurper/.git/hooks/commit-msg.sample           |   24 ---
- vim-slurper/.git/hooks/post-commit.sample          |    8 -
- vim-slurper/.git/hooks/post-receive.sample         |   15 --
- vim-slurper/.git/hooks/post-update.sample          |    8 -
- vim-slurper/.git/hooks/pre-applypatch.sample       |   14 --
- vim-slurper/.git/hooks/pre-commit.sample           |   46 ------
- vim-slurper/.git/hooks/pre-rebase.sample           |  169 --------------------
- vim-slurper/.git/hooks/prepare-commit-msg.sample   |   36 ----
- vim-slurper/.git/hooks/update.sample               |  128 ---------------
- vim-slurper/.git/index                             |  Bin 544 -> 0 bytes
- vim-slurper/.git/info/._exclude                    |  Bin 161 -> 0 bytes
- vim-slurper/.git/info/exclude                      |    6 -
- vim-slurper/.git/logs/._HEAD                       |  Bin 161 -> 0 bytes
- vim-slurper/.git/logs/._refs                       |  Bin 161 -> 0 bytes
- vim-slurper/.git/logs/HEAD                         |    3 -
- vim-slurper/.git/logs/refs/._heads                 |  Bin 161 -> 0 bytes
- vim-slurper/.git/logs/refs/._remotes               |  Bin 161 -> 0 bytes
- vim-slurper/.git/logs/refs/heads/._master          |  Bin 161 -> 0 bytes
- vim-slurper/.git/logs/refs/heads/master            |    3 -
- vim-slurper/.git/logs/refs/remotes/._origin        |  Bin 161 -> 0 bytes
- vim-slurper/.git/logs/refs/remotes/origin/._master |  Bin 161 -> 0 bytes
- vim-slurper/.git/logs/refs/remotes/origin/master   |    2 -
- vim-slurper/.git/objects/._89                      |  Bin 161 -> 0 bytes
- vim-slurper/.git/objects/._db                      |  Bin 161 -> 0 bytes
- vim-slurper/.git/objects/._ee                      |  Bin 161 -> 0 bytes
- vim-slurper/.git/objects/._info                    |  Bin 161 -> 0 bytes
- vim-slurper/.git/objects/._pack                    |  Bin 161 -> 0 bytes
- .../1c/0c7387f9d61cfa922720d401067dd8b18f35d1      |  Bin 55 -> 0 bytes
- .../45/2bd5eb22a97cd0bb77734404b423a0c2c8ad84      |  Bin 881 -> 0 bytes
- .../4f/9272fc49cec105a678ff97d3b88f12ffedf506      |  Bin 167 -> 0 bytes
- .../7e/220ade51203e216d89041e513965adb2f67e7d      |  Bin 185 -> 0 bytes
- .../7e/318a4a75563975ff15cbce15fab87ace4e8ae7      |  Bin 216 -> 0 bytes
- .../89/._a583699eaa7cc99e7b531a5218bd9c723dbebd    |  Bin 161 -> 0 bytes
- .../89/a583699eaa7cc99e7b531a5218bd9c723dbebd      |    2 -
- .../c6/3d2610c56d5025096f3ecd3fb013dfff7f5da5      |  Bin 216 -> 0 bytes
- .../cb/5132157aa04f6e9caa22687428643f492502b9      |  Bin 335 -> 0 bytes
- .../db/._b3c46359c2d241f3675504ee3e0157950249e0    |  Bin 161 -> 0 bytes
- .../db/b3c46359c2d241f3675504ee3e0157950249e0      |  Bin 890 -> 0 bytes
- .../ee/._7f431f589e6727a801579b2f0408d876337099    |  Bin 161 -> 0 bytes
- .../ee/7f431f589e6727a801579b2f0408d876337099      |  Bin 216 -> 0 bytes
- ...ck-7b6addb05c88d7272fa727da6d13d4e268973c0f.idx |  Bin 161 -> 0 bytes
- ...k-7b6addb05c88d7272fa727da6d13d4e268973c0f.pack |  Bin 161 -> 0 bytes
- ...ck-7b6addb05c88d7272fa727da6d13d4e268973c0f.idx |  Bin 1912 -> 0 bytes
- ...k-7b6addb05c88d7272fa727da6d13d4e268973c0f.pack |  Bin 2876 -> 0 bytes
- vim-slurper/.git/packed-refs                       |    2 -
- vim-slurper/.git/refs/._heads                      |  Bin 161 -> 0 bytes
- vim-slurper/.git/refs/._remotes                    |  Bin 161 -> 0 bytes
- vim-slurper/.git/refs/._tags                       |  Bin 161 -> 0 bytes
- vim-slurper/.git/refs/heads/master                 |    1 -
- vim-slurper/.git/refs/remotes/._origin             |  Bin 161 -> 0 bytes
- vim-slurper/.git/refs/remotes/origin/._HEAD        |  Bin 161 -> 0 bytes
- vim-slurper/.git/refs/remotes/origin/HEAD          |    1 -
- vim-slurper/.git/refs/remotes/origin/master        |    1 -
- vim-slurper/.gitignore                             |    1 -
- vim-slurper/README.rdoc                            |   52 +++++--
- 95 files changed, 101 insertions(+), 537 deletions(-)
+ ._vim-slurper            |  Bin 161 -> 0 bytes
+ ftdetect/._slurper.vim   |  Bin 161 -> 0 bytes
+ ftplugin/slurper.vim     |   72 +++++++++++++++++++++++++++++++++++-----------
+ indent/._slurper.vim     |  Bin 161 -> 0 bytes
+ syntax/._slurper.vim     |  Bin 161 -> 0 bytes
+ syntax/slurper.vim       |   12 ++++++--
+ vim-slurper/._.git       |  Bin 161 -> 0 bytes
+ vim-slurper/._.gitignore |  Bin 161 -> 0 bytes
+ vim-slurper/._ftdetect   |  Bin 161 -> 0 bytes
+ vim-slurper/._ftplugin   |  Bin 161 -> 0 bytes
+ vim-slurper/._indent     |  Bin 161 -> 0 bytes
+ vim-slurper/._syntax     |  Bin 161 -> 0 bytes
+ vim-slurper/.gitignore   |    1 -
+ vim-slurper/README.rdoc  |   52 +++++++++++++++++++++++---------
+ 14 files changed, 101 insertions(+), 36 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
 Author:     Adam Lowe <adam@adamlowe.me>
@@ -141,101 +60,20 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2.1: Correct indenting issue for labels.
 
- ._vim-slurper                                      |  Bin 0 -> 161 bytes
- ftdetect/._slurper.vim                             |  Bin 0 -> 161 bytes
- ftplugin/slurper.vim                               |    4 +-
- indent/._slurper.vim                               |  Bin 0 -> 161 bytes
- syntax/._slurper.vim                               |  Bin 0 -> 161 bytes
- vim-slurper/._.git                                 |  Bin 0 -> 161 bytes
- vim-slurper/._.gitignore                           |  Bin 0 -> 161 bytes
- vim-slurper/._ftdetect                             |  Bin 0 -> 161 bytes
- vim-slurper/._ftplugin                             |  Bin 0 -> 161 bytes
- vim-slurper/._indent                               |  Bin 0 -> 161 bytes
- vim-slurper/._syntax                               |  Bin 0 -> 161 bytes
- vim-slurper/.git/._COMMIT_EDITMSG                  |  Bin 0 -> 161 bytes
- vim-slurper/.git/._FETCH_HEAD                      |  Bin 0 -> 161 bytes
- vim-slurper/.git/._branches                        |  Bin 0 -> 161 bytes
- vim-slurper/.git/._config                          |  Bin 0 -> 161 bytes
- vim-slurper/.git/._description                     |  Bin 0 -> 161 bytes
- vim-slurper/.git/._hooks                           |  Bin 0 -> 161 bytes
- vim-slurper/.git/._info                            |  Bin 0 -> 161 bytes
- vim-slurper/.git/._logs                            |  Bin 0 -> 161 bytes
- vim-slurper/.git/._objects                         |  Bin 0 -> 161 bytes
- vim-slurper/.git/._packed-refs                     |  Bin 0 -> 161 bytes
- vim-slurper/.git/._refs                            |  Bin 0 -> 161 bytes
- vim-slurper/.git/COMMIT_EDITMSG                    |    1 +
- vim-slurper/.git/FETCH_HEAD                        |    1 +
- vim-slurper/.git/HEAD                              |    1 +
- vim-slurper/.git/ORIG_HEAD                         |    1 +
- vim-slurper/.git/config                            |   12 ++
- vim-slurper/.git/description                       |    1 +
- vim-slurper/.git/hooks/._applypatch-msg.sample     |  Bin 0 -> 161 bytes
- vim-slurper/.git/hooks/._commit-msg.sample         |  Bin 0 -> 161 bytes
- vim-slurper/.git/hooks/._post-commit.sample        |  Bin 0 -> 161 bytes
- vim-slurper/.git/hooks/._post-receive.sample       |  Bin 0 -> 161 bytes
- vim-slurper/.git/hooks/._post-update.sample        |  Bin 0 -> 161 bytes
- vim-slurper/.git/hooks/._pre-applypatch.sample     |  Bin 0 -> 161 bytes
- vim-slurper/.git/hooks/._pre-commit.sample         |  Bin 0 -> 161 bytes
- vim-slurper/.git/hooks/._pre-rebase.sample         |  Bin 0 -> 161 bytes
- vim-slurper/.git/hooks/._prepare-commit-msg.sample |  Bin 0 -> 161 bytes
- vim-slurper/.git/hooks/._update.sample             |  Bin 0 -> 161 bytes
- vim-slurper/.git/hooks/applypatch-msg.sample       |   15 ++
- vim-slurper/.git/hooks/commit-msg.sample           |   24 +++
- vim-slurper/.git/hooks/post-commit.sample          |    8 +
- vim-slurper/.git/hooks/post-receive.sample         |   15 ++
- vim-slurper/.git/hooks/post-update.sample          |    8 +
- vim-slurper/.git/hooks/pre-applypatch.sample       |   14 ++
- vim-slurper/.git/hooks/pre-commit.sample           |   46 ++++++
- vim-slurper/.git/hooks/pre-rebase.sample           |  169 ++++++++++++++++++++
- vim-slurper/.git/hooks/prepare-commit-msg.sample   |   36 ++++
- vim-slurper/.git/hooks/update.sample               |  128 +++++++++++++++
- vim-slurper/.git/index                             |  Bin 0 -> 544 bytes
- vim-slurper/.git/info/._exclude                    |  Bin 0 -> 161 bytes
- vim-slurper/.git/info/exclude                      |    6 +
- vim-slurper/.git/logs/._HEAD                       |  Bin 0 -> 161 bytes
- vim-slurper/.git/logs/._refs                       |  Bin 0 -> 161 bytes
- vim-slurper/.git/logs/HEAD                         |    3 +
- vim-slurper/.git/logs/refs/._heads                 |  Bin 0 -> 161 bytes
- vim-slurper/.git/logs/refs/._remotes               |  Bin 0 -> 161 bytes
- vim-slurper/.git/logs/refs/heads/._master          |  Bin 0 -> 161 bytes
- vim-slurper/.git/logs/refs/heads/master            |    3 +
- vim-slurper/.git/logs/refs/remotes/._origin        |  Bin 0 -> 161 bytes
- vim-slurper/.git/logs/refs/remotes/origin/._master |  Bin 0 -> 161 bytes
- vim-slurper/.git/logs/refs/remotes/origin/master   |    2 +
- vim-slurper/.git/objects/._89                      |  Bin 0 -> 161 bytes
- vim-slurper/.git/objects/._db                      |  Bin 0 -> 161 bytes
- vim-slurper/.git/objects/._ee                      |  Bin 0 -> 161 bytes
- vim-slurper/.git/objects/._info                    |  Bin 0 -> 161 bytes
- vim-slurper/.git/objects/._pack                    |  Bin 0 -> 161 bytes
- .../1c/0c7387f9d61cfa922720d401067dd8b18f35d1      |  Bin 0 -> 55 bytes
- .../45/2bd5eb22a97cd0bb77734404b423a0c2c8ad84      |  Bin 0 -> 881 bytes
- .../4f/9272fc49cec105a678ff97d3b88f12ffedf506      |  Bin 0 -> 167 bytes
- .../7e/220ade51203e216d89041e513965adb2f67e7d      |  Bin 0 -> 185 bytes
- .../7e/318a4a75563975ff15cbce15fab87ace4e8ae7      |  Bin 0 -> 216 bytes
- .../89/._a583699eaa7cc99e7b531a5218bd9c723dbebd    |  Bin 0 -> 161 bytes
- .../89/a583699eaa7cc99e7b531a5218bd9c723dbebd      |    2 +
- .../c6/3d2610c56d5025096f3ecd3fb013dfff7f5da5      |  Bin 0 -> 216 bytes
- .../cb/5132157aa04f6e9caa22687428643f492502b9      |  Bin 0 -> 335 bytes
- .../db/._b3c46359c2d241f3675504ee3e0157950249e0    |  Bin 0 -> 161 bytes
- .../db/b3c46359c2d241f3675504ee3e0157950249e0      |  Bin 0 -> 890 bytes
- .../ee/._7f431f589e6727a801579b2f0408d876337099    |  Bin 0 -> 161 bytes
- .../ee/7f431f589e6727a801579b2f0408d876337099      |  Bin 0 -> 216 bytes
- ...ck-7b6addb05c88d7272fa727da6d13d4e268973c0f.idx |  Bin 0 -> 161 bytes
- ...k-7b6addb05c88d7272fa727da6d13d4e268973c0f.pack |  Bin 0 -> 161 bytes
- ...ck-7b6addb05c88d7272fa727da6d13d4e268973c0f.idx |  Bin 0 -> 1912 bytes
- ...k-7b6addb05c88d7272fa727da6d13d4e268973c0f.pack |  Bin 0 -> 2876 bytes
- vim-slurper/.git/packed-refs                       |    2 +
- vim-slurper/.git/refs/._heads                      |  Bin 0 -> 161 bytes
- vim-slurper/.git/refs/._remotes                    |  Bin 0 -> 161 bytes
- vim-slurper/.git/refs/._tags                       |  Bin 0 -> 161 bytes
- vim-slurper/.git/refs/heads/master                 |    1 +
- vim-slurper/.git/refs/remotes/._origin             |  Bin 0 -> 161 bytes
- vim-slurper/.git/refs/remotes/origin/._HEAD        |  Bin 0 -> 161 bytes
- vim-slurper/.git/refs/remotes/origin/HEAD          |    1 +
- vim-slurper/.git/refs/remotes/origin/master        |    1 +
- vim-slurper/.gitignore                             |    1 +
- vim-slurper/README.rdoc                            |    2 +-
- 94 files changed, 505 insertions(+), 3 deletions(-)
+ ._vim-slurper            |  Bin 0 -> 161 bytes
+ ftdetect/._slurper.vim   |  Bin 0 -> 161 bytes
+ ftplugin/slurper.vim     |    4 ++--
+ indent/._slurper.vim     |  Bin 0 -> 161 bytes
+ syntax/._slurper.vim     |  Bin 0 -> 161 bytes
+ vim-slurper/._.git       |  Bin 0 -> 161 bytes
+ vim-slurper/._.gitignore |  Bin 0 -> 161 bytes
+ vim-slurper/._ftdetect   |  Bin 0 -> 161 bytes
+ vim-slurper/._ftplugin   |  Bin 0 -> 161 bytes
+ vim-slurper/._indent     |  Bin 0 -> 161 bytes
+ vim-slurper/._syntax     |  Bin 0 -> 161 bytes
+ vim-slurper/.gitignore   |    1 +
+ vim-slurper/README.rdoc  |    2 +-
+ 13 files changed, 4 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.0)
 Author:     Adam Lowe <adam@adamlowe.me>
