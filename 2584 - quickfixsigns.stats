@@ -1,4 +1,19 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.10)
+Author:     Tom Link <micathom@gmail.com>
+AuthorDate: Thu Nov 11 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.10
+    
+    - quickfixsigns#vcsdiff#GuessType(): use b:git_dir if set (by fugitive)- vcsdiff: Support for hg, svn- run qfl/loc checks more also on CursorHold & QuickfixCommandPost events- Experimental support for icons (currently assumes that gnome icons 16x16 are ok)- Support for sign classes that affect all buffers (all_buffers != 0)- Avoid unnecessary updates- Simplify handling of ids (construct a global id based on the sign definition)- Include icons from the open icon library- marks: Don't use own ID generator- s:PruneRegister()- Don't display icons on windowsMD5 checksum: 2ba95f98307ea61db8de28d6e60fb61b
+
+ autoload/quickfixsigns/marks.vim   |   25 +----
+ autoload/quickfixsigns/vcsdiff.vim |   35 +++++--
+ doc/quickfixsigns.txt              |   33 +++++--
+ plugin/quickfixsigns.vim           |  191 ++++++++++++++++++++++--------------
+ 4 files changed, 171 insertions(+), 113 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
 Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sat Oct 2 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

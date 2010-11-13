@@ -1,4 +1,23 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.18)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.19)
+Author:     Tom Link <micathom@gmail.com>
+AuthorDate: Thu Nov 11 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.19
+    
+    - Use tlib#balloon#Register() if available- viki#Edit(): Switch to homepage only if we are in a viki-enabled buffer- Run VimEnter command immediately if !has('vim_starting')- Transcode balloon text (guess the file encoding based on the value of &fenc)- Don't rely on g:vikiEnabled to be set when loading syntax/viki.vim- Removed g:vikiEnabled variable (use g:viki#quit for checking when to quit)- Act more graciously if g:vikiHomePage is emptyMD5 checksum: 64ebd14609764e98b91f1e233e121e32
+
+ autoload/viki.vim      |  107 +++++++++++++++++++++++++++++++++--------------
+ autoload/viki_viki.vim |   12 +----
+ doc/viki.txt           |   44 ++++++++++----------
+ ftplugin/bib/viki.vim  |    6 +-
+ ftplugin/viki.vim      |   15 ++----
+ indent/viki.vim        |   10 +---
+ plugin/viki.vim        |   41 ++++++++++--------
+ syntax/viki.vim        |   10 +---
+ 8 files changed, 137 insertions(+), 108 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.18)
 Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Mar 31 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
