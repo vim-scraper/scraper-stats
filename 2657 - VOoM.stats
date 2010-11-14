@@ -11,44 +11,28 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Option g:voom_rstrip_chars (dictionary) has been removed. Instead there are options g:voom_rstrip_chars_{filetype} for each filetype of interest.
     * See CHANGELOG for other changes.
 
- VOoM-4.0b1/plugin/voom/voom.py                     | 1746 ------------------
- VOoM-4.0b1/plugin/voom/voom_mode_html.py           |   77 -
- VOoM-4.0b1/plugin/voom/voom_mode_viki.py           |   72 -
- VOoM-4.0b1/plugin/voom/voom_mode_vimwiki.py        |   73 -
- VOoM-4.0b1/plugin/voom/voom_mode_wiki.py           |  100 --
- VOoM-4.0b1/voom_addons/custom_headlines.vim        |   69 -
- VOoM-4.0b1/voom_addons/voom_info.vim               |   57 -
- VOoM-4.0b1/voom_samples/40_levels_deep.txt         |  127 --
- VOoM-4.0b1/voom_samples/calendar_outline.zip       |  Bin 29162 -> 0 bytes
- VOoM-4.0b1/voom_samples/test_outline.html          |  238 ---
- VOoM-4.0b1/voom_samples/test_outline.txt           |  238 ---
- VOoM-4.0b1/voom_samples/test_outline.viki          |  238 ---
- VOoM-4.0b1/voom_samples/test_outline.vimwiki       |  238 ---
- VOoM-4.0b1/voom_samples/test_outline.wiki          |  238 ---
- VOoM-4.0b2/plugin/voom/voom.py                     | 1850 ++++++++++++++++++++
- VOoM-4.0b2/plugin/voom/voom_mode_html.py           |   74 +
- VOoM-4.0b2/plugin/voom/voom_mode_python.py         |  203 +++
- VOoM-4.0b2/plugin/voom/voom_mode_rest.py           |  369 ++++
- VOoM-4.0b2/plugin/voom/voom_mode_thevimoutliner.py |   98 +
- VOoM-4.0b2/plugin/voom/voom_mode_viki.py           |   74 +
- VOoM-4.0b2/plugin/voom/voom_mode_vimoutliner.py    |   96 +
- VOoM-4.0b2/plugin/voom/voom_mode_vimwiki.py        |   73 +
- VOoM-4.0b2/plugin/voom/voom_mode_wiki.py           |   83 +
- VOoM-4.0b2/voom_addons/custom_headlines.vim        |   69 +
- VOoM-4.0b2/voom_addons/voom_info.vim               |   57 +
- VOoM-4.0b2/voom_samples/40_levels_deep.txt         |  127 ++
- VOoM-4.0b2/voom_samples/calendar_outline.zip       |  Bin 0 -> 29162 bytes
- VOoM-4.0b2/voom_samples/test_outline.html          |  238 +++
- VOoM-4.0b2/voom_samples/test_outline.otl           |  239 +++
- VOoM-4.0b2/voom_samples/test_outline.py            |   94 +
- VOoM-4.0b2/voom_samples/test_outline.rst           |  392 +++++
- VOoM-4.0b2/voom_samples/test_outline.txt           |  238 +++
- VOoM-4.0b2/voom_samples/test_outline.viki          |  238 +++
- VOoM-4.0b2/voom_samples/test_outline.vimwiki       |  238 +++
- VOoM-4.0b2/voom_samples/test_outline.wiki          |  238 +++
- doc/voom.txt                                       |  635 +++++--
- plugin/voom.vim                                    |  269 ++--
- 37 files changed, 5729 insertions(+), 3774 deletions(-)
+ doc/voom.txt                            |  635 +++++++++++++++++++-------
+ plugin/voom.vim                         |  269 +++++++----
+ plugin/voom/voom.py                     |  786 +++++++++++++++++-------------
+ plugin/voom/voom_mode_html.py           |   43 +-
+ plugin/voom/voom_mode_python.py         |  203 ++++++++
+ plugin/voom/voom_mode_rest.py           |  369 +++++++++++++++
+ plugin/voom/voom_mode_thevimoutliner.py |   98 ++++
+ plugin/voom/voom_mode_viki.py           |   40 +-
+ plugin/voom/voom_mode_vimoutliner.py    |   96 ++++
+ plugin/voom/voom_mode_vimwiki.py        |   46 +-
+ plugin/voom/voom_mode_wiki.py           |   67 +--
+ voom_addons/custom_headlines.vim        |    6 +-
+ voom_addons/voom_info.vim               |    6 +-
+ voom_samples/calendar_outline.zip       |  Bin 29162 -> 29162 bytes
+ voom_samples/test_outline.html          |    4 +-
+ voom_samples/test_outline.otl           |  239 ++++++++++
+ voom_samples/test_outline.py            |   94 ++++
+ voom_samples/test_outline.rst           |  392 +++++++++++++++
+ voom_samples/test_outline.viki          |    4 +-
+ voom_samples/test_outline.vimwiki       |    4 +-
+ voom_samples/test_outline.wiki          |    4 +-
+ 21 files changed, 2680 insertions(+), 725 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.0b1)
 Author:     Vlad Irnov <vlad.irnov@gmail.com>
@@ -61,29 +45,22 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * Changed plugin directory structure. All Python files are now located in folder plugin/voom. You should delete old files in plugin folder: plugin/voom.py, plugin/voom.pyc, plugin/voomScript.py.
 
- VOoM-3.0/voom_addons/custom_headlines.vim    |   66 -
- VOoM-3.0/voom_addons/voom_info.vim           |   56 -
- VOoM-3.0/voom_samples/40_levels_deep.txt     |  127 --
- VOoM-3.0/voom_samples/calendar_outline.zip   |  Bin 29162 -> 0 bytes
- VOoM-3.0/voom_samples/test_outline.txt       |  238 ----
- VOoM-4.0b1/plugin/voom/voom.py               | 1746 ++++++++++++++++++++++++++
- VOoM-4.0b1/plugin/voom/voom_mode_html.py     |   77 ++
- VOoM-4.0b1/plugin/voom/voom_mode_viki.py     |   72 ++
- VOoM-4.0b1/plugin/voom/voom_mode_vimwiki.py  |   73 ++
- VOoM-4.0b1/plugin/voom/voom_mode_wiki.py     |  100 ++
- VOoM-4.0b1/voom_addons/custom_headlines.vim  |   69 +
- VOoM-4.0b1/voom_addons/voom_info.vim         |   57 +
- VOoM-4.0b1/voom_samples/40_levels_deep.txt   |  127 ++
- VOoM-4.0b1/voom_samples/calendar_outline.zip |  Bin 0 -> 29162 bytes
- VOoM-4.0b1/voom_samples/test_outline.html    |  238 ++++
- VOoM-4.0b1/voom_samples/test_outline.txt     |  238 ++++
- VOoM-4.0b1/voom_samples/test_outline.viki    |  238 ++++
- VOoM-4.0b1/voom_samples/test_outline.vimwiki |  238 ++++
- VOoM-4.0b1/voom_samples/test_outline.wiki    |  238 ++++
- doc/voom.txt                                 |  256 ++++-
- plugin/voom.py                               | 1685 -------------------------
- plugin/voom.vim                              |  121 ++-
- 22 files changed, 3806 insertions(+), 2254 deletions(-)
+ doc/voom.txt                      |  256 +++++-
+ plugin/voom.py                    | 1685 -----------------------------------
+ plugin/voom.vim                   |  121 ++-
+ plugin/voom/voom.py               | 1746 +++++++++++++++++++++++++++++++++++++
+ plugin/voom/voom_mode_html.py     |   77 ++
+ plugin/voom/voom_mode_viki.py     |   72 ++
+ plugin/voom/voom_mode_vimwiki.py  |   73 ++
+ plugin/voom/voom_mode_wiki.py     |  100 +++
+ voom_addons/custom_headlines.vim  |    7 +-
+ voom_addons/voom_info.vim         |   11 +-
+ voom_samples/calendar_outline.zip |  Bin 29162 -> 29162 bytes
+ voom_samples/test_outline.html    |  238 +++++
+ voom_samples/test_outline.viki    |  238 +++++
+ voom_samples/test_outline.vimwiki |  238 +++++
+ voom_samples/test_outline.wiki    |  238 +++++
+ 15 files changed, 3326 insertions(+), 1774 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
 Author:     Vlad Irnov <vlad.irnov@gmail.com>
@@ -100,20 +77,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * Various glitches fixed. Memory usage reduced, especially when outlining large buffers.
 
- VOoM-2.1/voom_addons/custom_headlines.vim  |   66 --
- VOoM-2.1/voom_addons/voom_info.vim         |   55 --
- VOoM-2.1/voom_samples/40_levels_deep.txt   |  127 ----
- VOoM-2.1/voom_samples/calendar_outline.zip |  Bin 29162 -> 0 bytes
- VOoM-2.1/voom_samples/test_outline.txt     |  160 -----
- VOoM-3.0/voom_addons/custom_headlines.vim  |   66 ++
- VOoM-3.0/voom_addons/voom_info.vim         |   56 ++
- VOoM-3.0/voom_samples/40_levels_deep.txt   |  127 ++++
- VOoM-3.0/voom_samples/calendar_outline.zip |  Bin 0 -> 29162 bytes
- VOoM-3.0/voom_samples/test_outline.txt     |  238 +++++++
- doc/voom.txt                               |  599 +++++++++++++---
- plugin/voom.py                             |  918 ++++++++++++++++---------
- plugin/voom.vim                            | 1064 +++++++++++++++-------------
- 13 files changed, 2141 insertions(+), 1335 deletions(-)
+ doc/voom.txt                      |  599 +++++++++++++++++----
+ plugin/voom.py                    |  918 +++++++++++++++++++++-----------
+ plugin/voom.vim                   | 1064 ++++++++++++++++++++-----------------
+ voom_addons/voom_info.vim         |   11 +-
+ voom_samples/calendar_outline.zip |  Bin 29162 -> 29162 bytes
+ voom_samples/test_outline.txt     |   78 +++
+ 6 files changed, 1738 insertions(+), 932 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
 Author:     Vlad Irnov <vlad.irnov@gmail.com>
@@ -128,19 +98,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * Fixed bug in PyLog buffer: original sys.stdout and sys.stderr could be lost after some actions.
 
- VOoM-2.0/voom_samples/40_levels_deep.txt   |  127 --------------
- VOoM-2.0/voom_samples/calendar_outline.zip |  Bin 29162 -> 0 bytes
- VOoM-2.0/voom_samples/test_outline.txt     |  157 -----------------
- VOoM-2.0/voom_samples/voom_info.vim        |   55 ------
- VOoM-2.1/voom_addons/custom_headlines.vim  |   66 ++++++++
- VOoM-2.1/voom_addons/voom_info.vim         |   55 ++++++
- VOoM-2.1/voom_samples/40_levels_deep.txt   |  127 ++++++++++++++
- VOoM-2.1/voom_samples/calendar_outline.zip |  Bin 0 -> 29162 bytes
- VOoM-2.1/voom_samples/test_outline.txt     |  160 ++++++++++++++++++
- doc/voom.txt                               |  249 +++++++++++++++++++---------
- plugin/voom.py                             |  213 +++++++++++++++---------
- plugin/voom.vim                            |   72 +++++----
- 12 files changed, 756 insertions(+), 525 deletions(-)
+ doc/voom.txt                      |  249 +++++++++++++++++++++++++------------
+ plugin/voom.py                    |  213 ++++++++++++++++++++------------
+ plugin/voom.vim                   |   72 ++++++-----
+ voom_addons/custom_headlines.vim  |   66 ++++++++++
+ voom_addons/voom_info.vim         |   55 ++++++++
+ voom_samples/calendar_outline.zip |  Bin 29162 -> 29162 bytes
+ voom_samples/test_outline.txt     |    3 +
+ voom_samples/voom_info.vim        |   55 --------
+ 8 files changed, 472 insertions(+), 241 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
 Author:     Vlad Irnov <vlad.irnov@gmail.com>
@@ -152,19 +118,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - This plugin was renamed from VOOF to VOoM. All commands start with "Voom" instead of "Voof", files were renamed, and so on. Please see Install section for instructions on how to upgrade from previous versions.
     - Added rudimentary support for add-ons, a sample add-on. Fixed probable bug in mouse click mapping.
 
- VOOF-1.92/voof_samples/40_levels_deep.txt   |  127 --
- VOOF-1.92/voof_samples/calendar_outline.zip |  Bin 29162 -> 0 bytes
- VOOF-1.92/voof_samples/test_outline.txt     |  154 --
- VOoM-2.0/voom_samples/40_levels_deep.txt    |  127 ++
- VOoM-2.0/voom_samples/calendar_outline.zip  |  Bin 0 -> 29162 bytes
- VOoM-2.0/voom_samples/test_outline.txt      |  157 ++
- VOoM-2.0/voom_samples/voom_info.vim         |   55 +
- doc/voof.txt                                | 1844 ----------------------
- doc/voom.txt                                | 1981 +++++++++++++++++++++++
- plugin/voof.py                              | 1363 ----------------
- plugin/voof.vim                             | 2240 --------------------------
- plugin/voom.py                              | 1354 ++++++++++++++++
- plugin/voom.vim                             | 2281 +++++++++++++++++++++++++++
+ doc/voof.txt                      | 1844 ------------------------------
+ doc/voom.txt                      | 1981 ++++++++++++++++++++++++++++++++
+ plugin/voof.py                    | 1363 ----------------------
+ plugin/voof.vim                   | 2240 ------------------------------------
+ plugin/voom.py                    | 1354 ++++++++++++++++++++++
+ plugin/voom.vim                   | 2281 +++++++++++++++++++++++++++++++++++++
+ voof_samples/40_levels_deep.txt   |  127 --
+ voof_samples/calendar_outline.zip |  Bin 29162 -> 0 bytes
+ voof_samples/test_outline.txt     |  154 ---
+ voom_samples/40_levels_deep.txt   |  127 ++
+ voom_samples/calendar_outline.zip |  Bin 0 -> 29162 bytes
+ voom_samples/test_outline.txt     |  157 +++
+ voom_samples/voom_info.vim        |   55 +
  13 files changed, 5955 insertions(+), 5728 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.92)
@@ -176,16 +142,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Improved performance of several outline operations when working with very large outlines. Optimized some code.
 
- VOOF-1.91/voof_samples/40_levels_deep.txt   |  127 -------
- VOOF-1.91/voof_samples/calendar_outline.zip |  Bin 29162 -> 0 bytes
- VOOF-1.91/voof_samples/test_outline.txt     |  154 --------
- VOOF-1.92/voof_samples/40_levels_deep.txt   |  127 +++++++
- VOOF-1.92/voof_samples/calendar_outline.zip |  Bin 0 -> 29162 bytes
- VOOF-1.92/voof_samples/test_outline.txt     |  154 ++++++++
- doc/voof.txt                                |  154 ++++++---
- plugin/voof.py                              |  503 ++++++++++++---------------
- plugin/voof.vim                             |  121 +++----
- 9 files changed, 656 insertions(+), 684 deletions(-)
+ doc/voof.txt                      |  154 ++++++++----
+ plugin/voof.py                    |  503 ++++++++++++++++---------------------
+ plugin/voof.vim                   |  121 +++++-----
+ voof_samples/calendar_outline.zip |  Bin 29162 -> 29162 bytes
+ 4 files changed, 375 insertions(+), 403 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.91)
 Author:     Vlad Irnov <vlad.irnov@gmail.com>
@@ -194,16 +155,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.91: Voofgrep can perform boolean AND and NOT searches.
 
- VOOF-1.9/voof_samples/40_levels_deep.txt    |  127 ----
- VOOF-1.9/voof_samples/calendar_outline.zip  |  Bin 29162 -> 0 bytes
- VOOF-1.9/voof_samples/test_outline.txt      |  127 ----
- VOOF-1.91/voof_samples/40_levels_deep.txt   |  127 ++++
- VOOF-1.91/voof_samples/calendar_outline.zip |  Bin 0 -> 29162 bytes
- VOOF-1.91/voof_samples/test_outline.txt     |  154 +++++
- doc/voof.txt                                |  949 +++++++++++++++------------
- plugin/voof.py                              |  113 +++-
- plugin/voof.vim                             |  220 ++++---
- 9 files changed, 1017 insertions(+), 800 deletions(-)
+ doc/voof.txt                      |  949 ++++++++++++++++++++-----------------
+ plugin/voof.py                    |  113 ++++--
+ plugin/voof.vim                   |  220 ++++++----
+ voof_samples/calendar_outline.zip |  Bin 29162 -> 29162 bytes
+ voof_samples/test_outline.txt     |   27 +
+ 5 files changed, 763 insertions(+), 546 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
 Author:     Vlad Irnov <vlad.irnov@gmail.com>
@@ -216,15 +173,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Command "Voofrun" was renamed "Voofexec".
     Several other small changes.
 
- VOOF-1.8/sample_outlines/40_levels_deep.txt   |  127 ---
- VOOF-1.8/sample_outlines/calendar_outline.zip |  Bin 29160 -> 0 bytes
- VOOF-1.8/sample_outlines/test_outline.txt     |  120 ---
- VOOF-1.9/voof_samples/40_levels_deep.txt      |  127 +++
- VOOF-1.9/voof_samples/calendar_outline.zip    |  Bin 0 -> 29162 bytes
- VOOF-1.9/voof_samples/test_outline.txt        |  127 +++
- doc/voof.txt                                  | 1041 +++++++++++++++----------
- plugin/voof.py                                |  329 +++++++--
- plugin/voof.vim                               |  315 +++++---
+ doc/voof.txt                         | 1041 +++++++++++++++++++++-------------
+ plugin/voof.py                       |  329 +++++++++--
+ plugin/voof.vim                      |  315 +++++++----
+ sample_outlines/40_levels_deep.txt   |  127 ----
+ sample_outlines/calendar_outline.zip |  Bin 29160 -> 0 bytes
+ sample_outlines/test_outline.txt     |  120 ----
+ voof_samples/40_levels_deep.txt      |  127 ++++
+ voof_samples/calendar_outline.zip    |  Bin 0 -> 29162 bytes
+ voof_samples/test_outline.txt        |  127 ++++
  9 files changed, 1383 insertions(+), 803 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
@@ -239,17 +196,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Distribution now follows Vim directory structure: there are plugin and doc folders.
     Changed license to WTFPL, version 2.
 
- VOOF-1.8/sample_outlines/40_levels_deep.txt   |  127 +++
- VOOF-1.8/sample_outlines/calendar_outline.zip |  Bin 0 -> 29160 bytes
- VOOF-1.8/sample_outlines/test_outline.txt     |  120 +++
- doc/voof.txt                                  |  173 +++--
- plugin/voof.py                                | 1154 +++++++++++++++++++++++++
- plugin/voof.vim                               |  262 +++---
- sample_outlines/40_levels_deep.txt            |  127 ---
- sample_outlines/calendar_outline.zip          |  Bin 28900 -> 0 bytes
- sample_outlines/test_outline.txt              |  120 ---
- voof.py                                       | 1140 ------------------------
- 10 files changed, 1634 insertions(+), 1589 deletions(-)
+ doc/voof.txt                         |  173 +++---
+ plugin/voof.py                       | 1154 ++++++++++++++++++++++++++++++++++
+ plugin/voof.vim                      |  262 ++++----
+ sample_outlines/calendar_outline.zip |  Bin 28900 -> 29160 bytes
+ voof.py                              | 1140 ---------------------------------
+ 5 files changed, 1387 insertions(+), 1342 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
 Author:     Vlad Irnov <vlad.irnov@gmail.com>

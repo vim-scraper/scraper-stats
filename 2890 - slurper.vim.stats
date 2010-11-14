@@ -7,13 +7,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Add auto indenting, updated macros to work anywhere in a story, and story folding.
 
- ftdetect/slurper.vim    |    3 +-
- ftplugin/slurper.vim    |   88 +++++++++++++++++++++++++++------------------
- indent/slurper.vim      |   24 ++++++++++++
- vim-slurper/.DS_Store   |  Bin 6148 -> 0 bytes
- vim-slurper/._.DS_Store |  Bin 82 -> 0 bytes
- vim-slurper/README.md   |   92 +++++++++++++++++++++++++++++++++++++++++++++++
- vim-slurper/README.rdoc |   75 --------------------------------------
+ .DS_Store            |  Bin 6148 -> 0 bytes
+ ._.DS_Store          |  Bin 82 -> 0 bytes
+ README.md            |   92 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ README.rdoc          |   75 ----------------------------------------
+ ftdetect/slurper.vim |    3 +-
+ ftplugin/slurper.vim |   88 +++++++++++++++++++++++++++++-------------------
+ indent/slurper.vim   |   24 +++++++++++++
  7 files changed, 171 insertions(+), 111 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
@@ -23,9 +23,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.3.1: Force 2 spaces for tab in .slurper files
 
- indent/slurper.vim      |    7 +++++--
- vim-slurper/.DS_Store   |  Bin 0 -> 6148 bytes
- vim-slurper/._.DS_Store |  Bin 0 -> 82 bytes
+ .DS_Store          |  Bin 0 -> 6148 bytes
+ ._.DS_Store        |  Bin 0 -> 82 bytes
+ indent/slurper.vim |    7 +++++--
  3 files changed, 5 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.0)
@@ -38,11 +38,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Support chores, features, releases and bugs. Updated story format to match version 0.3.0 of the slurper gem.
 
  ._vim-slurper            |  Bin 161 -> 0 bytes
+ README.rdoc              |   75 ++++++++++++++++++++++++++++++++++++++++++++++
  ftdetect/._slurper.vim   |  Bin 161 -> 0 bytes
- ftplugin/slurper.vim     |   72 +++++++++++++++++++++++++++++++++++-----------
+ ftplugin/slurper.vim     |   72 +++++++++++++++++++++++++++++++++----------
  indent/._slurper.vim     |  Bin 161 -> 0 bytes
  syntax/._slurper.vim     |  Bin 161 -> 0 bytes
- syntax/slurper.vim       |   12 ++++++--
+ syntax/slurper.vim       |   12 +++++--
  vim-slurper/._.git       |  Bin 161 -> 0 bytes
  vim-slurper/._.gitignore |  Bin 161 -> 0 bytes
  vim-slurper/._ftdetect   |  Bin 161 -> 0 bytes
@@ -50,8 +51,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  vim-slurper/._indent     |  Bin 161 -> 0 bytes
  vim-slurper/._syntax     |  Bin 161 -> 0 bytes
  vim-slurper/.gitignore   |    1 -
- vim-slurper/README.rdoc  |   52 +++++++++++++++++++++++---------
- 14 files changed, 101 insertions(+), 36 deletions(-)
+ vim-slurper/README.rdoc  |   53 --------------------------------
+ 15 files changed, 139 insertions(+), 74 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
 Author:     Adam Lowe <adam@adamlowe.me>
@@ -61,8 +62,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Version 0.2.1: Correct indenting issue for labels.
 
  ._vim-slurper            |  Bin 0 -> 161 bytes
+ README.rdoc              |   53 ----------------------------------------------
  ftdetect/._slurper.vim   |  Bin 0 -> 161 bytes
- ftplugin/slurper.vim     |    4 ++--
+ ftplugin/slurper.vim     |    4 +-
  indent/._slurper.vim     |  Bin 0 -> 161 bytes
  syntax/._slurper.vim     |  Bin 0 -> 161 bytes
  vim-slurper/._.git       |  Bin 0 -> 161 bytes
@@ -72,8 +74,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  vim-slurper/._indent     |  Bin 0 -> 161 bytes
  vim-slurper/._syntax     |  Bin 0 -> 161 bytes
  vim-slurper/.gitignore   |    1 +
- vim-slurper/README.rdoc  |    2 +-
- 13 files changed, 4 insertions(+), 3 deletions(-)
+ vim-slurper/README.rdoc  |   53 ++++++++++++++++++++++++++++++++++++++++++++++
+ 14 files changed, 56 insertions(+), 55 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.0)
 Author:     Adam Lowe <adam@adamlowe.me>
@@ -82,14 +84,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2.0: Added syntax highlighting and updated key maps to be less obtrusive.
 
- ftdetect/.DS_Store      |  Bin 6148 -> 0 bytes
- ftdetect/._.DS_Store    |  Bin 82 -> 0 bytes
- ftplugin/.DS_Store      |  Bin 6148 -> 0 bytes
- ftplugin/._.DS_Store    |  Bin 82 -> 0 bytes
- ftplugin/slurper.vim    |   26 ++++++++++++++++++++--
- indent/slurper.vim      |   13 +++++++++++
- syntax/slurper.vim      |   26 +++++++++++++++++++++++
- vim-slurper/README.rdoc |   53 +++++++++++++++++++++++++++++++++++++++++++++++
+ README.rdoc          |   53 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ ftdetect/.DS_Store   |  Bin 6148 -> 0 bytes
+ ftdetect/._.DS_Store |  Bin 82 -> 0 bytes
+ ftplugin/.DS_Store   |  Bin 6148 -> 0 bytes
+ ftplugin/._.DS_Store |  Bin 82 -> 0 bytes
+ ftplugin/slurper.vim |   26 +++++++++++++++++++++--
+ indent/slurper.vim   |   13 ++++++++++++
+ syntax/slurper.vim   |   26 ++++++++++++++++++++++++
  8 files changed, 115 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1.0)

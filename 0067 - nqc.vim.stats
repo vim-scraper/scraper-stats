@@ -7,25 +7,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + Aligned line end comments for consecutive lines.+ Uncomment more than one block at once.+ The dialog windows (GUI) have been replaced by more flexible command line inputs.+ Online documentation improved.
 
- README.nqc                                    |  178 +++++++++++++
- doc/nqcsupport.txt                            |  275 ++++++++++++--------
- ftplugin/nqc.vim                              |    6 +-
- nqc.3.0/README                                |  334 ------------------------
- nqc.3.0/install.sh                            |   97 -------
- nqc.3.0/plugin/templates/nqc-file-header      |   10 -
- nqc.3.0/plugin/templates/nqc-frame            |    3 -
- nqc.3.0/plugin/templates/nqc-task-description |   16 --
- nqc.3.0/rc/customization.gvimrc               |   33 ---
- nqc.3.0/rc/customization.vimrc                |  140 ----------
- nqc.3.0/rc/nqc.vimrc                          |   15 -
- plugin/nqc.vim                                |  343 ++++++++++++++++++++-----
- plugin/templates/nqc-file-header              |   10 +
- plugin/templates/nqc-frame                    |    3 +
- plugin/templates/nqc-task-description         |   16 ++
- rc/customization.gvimrc                       |   25 ++
- rc/customization.vimrc                        |  131 ++++++++++
- rc/nqc.vimrc                                  |   10 +
- 18 files changed, 823 insertions(+), 822 deletions(-)
+ README.nqc              |  178 ++++++++++++++++++++++++
+ README.orig             |  334 ---------------------------------------------
+ doc/nqcsupport.txt      |  275 +++++++++++++++++++++++---------------
+ ftplugin/nqc.vim        |    6 +-
+ install.sh              |   97 -------------
+ plugin/nqc.vim          |  343 ++++++++++++++++++++++++++++++++++++++---------
+ rc/customization.gvimrc |    8 -
+ rc/customization.vimrc  |  113 +++++++---------
+ rc/nqc.vimrc            |    5 -
+ 9 files changed, 680 insertions(+), 679 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
 Author:     Fritz Mehner <mehner@fh-swf.de>
@@ -36,17 +27,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
      + Only one NQC root menu entry in the gVim root menu. + A marked region can be surrounded by a for-, if, if-else, while-,   do-while-statement (with indentation). + 3 block comments are now read as templates or skeletons from files + The NQC root menu can be changed or disabled. + All hotkeys are only defined for NQC files (file type plugin added). + Install script added. + Customization improved. + Documentation improved (help file added).
 
- doc/nqcsupport.txt                            |  373 +++++
- ftplugin/nqc.vim                              |   23 +
- nqc.3.0/README                                |  334 +++++
- nqc.3.0/install.sh                            |   97 ++
- nqc.3.0/plugin/templates/nqc-file-header      |   10 +
- nqc.3.0/plugin/templates/nqc-frame            |    3 +
- nqc.3.0/plugin/templates/nqc-task-description |   16 +
- nqc.3.0/rc/customization.gvimrc               |   33 +
- nqc.3.0/rc/customization.vimrc                |  140 ++
- nqc.3.0/rc/nqc.vimrc                          |   15 +
- plugin/nqc.vim                                | 1860 +++++++++++++------------
+ README.orig                           |  334 ++++++
+ doc/nqcsupport.txt                    |  373 +++++++
+ ftplugin/nqc.vim                      |   23 +
+ install.sh                            |   97 ++
+ plugin/nqc.vim                        | 1860 ++++++++++++++++++---------------
+ plugin/templates/nqc-file-header      |   10 +
+ plugin/templates/nqc-frame            |    3 +
+ plugin/templates/nqc-task-description |   16 +
+ rc/customization.gvimrc               |   33 +
+ rc/customization.vimrc                |  140 +++
+ rc/nqc.vimrc                          |   15 +
  11 files changed, 2042 insertions(+), 862 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)

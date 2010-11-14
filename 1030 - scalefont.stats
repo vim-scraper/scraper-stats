@@ -24,9 +24,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Load only in gui
     - s:ScaleFontSetSize(mode, ...): Arguments have changed
 
- doc/scalefont.txt           |  160 ++++++------
- plugin/scalefont.vim        |  596 ++++++++++++++++++++++++++-----------------
- scalefont/etc/scalefont.lst |    3 -
+ doc/scalefont.txt    |  160 +++++++-------
+ etc/scalefont.lst    |    3 -
+ plugin/scalefont.vim |  596 ++++++++++++++++++++++++++++++-------------------
  3 files changed, 443 insertions(+), 316 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -64,9 +64,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Take care of whether the font size is increased or decreased; command line completion for ScaleFontMode; ability to define the desired lines and cols parameters per mode (if one of these variables is -1, the window will be maximized; on non-Windows systems you have to define ScaleFontMaximizeWindow() first); new standard modes "largeMax" and "LargeMax" (maximize the window)
 
- doc/scalefont.txt           |  136 +++++++++++++++++++
- plugin/scalefont.vim        |  307 +++++++++++++++++++++++++------------------
- scalefont/etc/scalefont.lst |    3 +
+ doc/scalefont.txt    |  136 ++++++++++++++++++++++
+ etc/scalefont.lst    |    3 +
+ plugin/scalefont.vim |  307 +++++++++++++++++++++++++++++---------------------
  3 files changed, 318 insertions(+), 128 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)

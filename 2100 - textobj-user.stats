@@ -7,16 +7,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - |textobj#user#plugin()|: Fix not to define key mappings in Select mode if appropriate.  Now it works smoothly with plugins which utilize and depend on the default behavior in Select mode.
 
- doc/tags                                           |   28 +
- doc/textobj-user.txt                               |   13 +-
- vim-textobj-user-0.3.8/autoload/textobj/user.vim   |  560 -------------------
- .../.mduem/cache/Makefile.variables                |    6 +
- vim-textobj-user-0.3.9/Makefile                    |   13 +
- vim-textobj-user-0.3.9/autoload/textobj/user.vim   |  587 ++++++++++++++++++++
- vim-textobj-user-0.3.9/mduem/Makefile              |  431 ++++++++++++++
- vim-textobj-user-0.3.9/test/plugin.expected        |   16 +
- vim-textobj-user-0.3.9/test/plugin.input           |   67 +++
- 9 files changed, 1157 insertions(+), 564 deletions(-)
+ .mduem/cache/Makefile.variables |    6 +
+ Makefile                        |   13 ++
+ autoload/textobj/user.vim       |   41 +++-
+ doc/tags                        |   28 +++
+ doc/textobj-user.txt            |   13 +-
+ mduem/Makefile                  |  431 +++++++++++++++++++++++++++++++++++++++
+ test/plugin.expected            |   16 ++
+ test/plugin.input               |   67 ++++++
+ 8 files changed, 604 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.8)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -27,10 +26,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Fix a bug that it was not possible to select any range which starts with the end of a line.- |textobj#user#plugin()|: Fix a bug that it did not accept any function which is not script-local as a value for "*{spec}-function*".
 
- doc/textobj-user.txt                             |   43 ++-
- vim-textobj-user-0.3.7/autoload/textobj/user.vim |  549 ---------------------
- vim-textobj-user-0.3.8/autoload/textobj/user.vim |  560 ++++++++++++++++++++++
- 3 files changed, 588 insertions(+), 564 deletions(-)
+ autoload/textobj/user.vim |   27 +++++++++++++++++++--------
+ doc/textobj-user.txt      |   43 ++++++++++++++++++++++++++++---------------
+ 2 files changed, 47 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.7)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -41,10 +39,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - |textobj#user#select()|: Fix a bug that it didn't select an object  which: (1) matches to multiple lines and (2) contains the cursor.- |textobj#user#select()|, |textobj#user#select_pair()|,  |textobj#user#plugin()| with "*{spec}-function*":  Support |o_v| and others.  To use this feature, you have to apply  the following patch to Vim:  http://github.com/kana/vim/commits/hack/vimvar-motion_force
 
- doc/textobj-user.txt                             |   26 +-
- vim-textobj-user-0.3.5/autoload/textobj/user.vim |  534 ---------------------
- vim-textobj-user-0.3.7/autoload/textobj/user.vim |  549 ++++++++++++++++++++++
- 3 files changed, 572 insertions(+), 537 deletions(-)
+ autoload/textobj/user.vim |   37 ++++++++++++++++++++++++++-----------
+ doc/textobj-user.txt      |   26 +++++++++++++++++++++++---
+ 2 files changed, 49 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.5)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -59,10 +56,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Other changes:
     - |textobj#user#plugin()|: Add missing description of functions for "*{spec}-function*".
 
- doc/textobj-user.txt                             |   69 +++-
- vim-textobj-user-0.3.4/autoload/textobj/user.vim |  497 --------------------
- vim-textobj-user-0.3.5/autoload/textobj/user.vim |  534 ++++++++++++++++++++++
- 3 files changed, 599 insertions(+), 501 deletions(-)
+ autoload/textobj/user.vim |   49 ++++++++++++++++++++++++++++----
+ doc/textobj-user.txt      |   69 ++++++++++++++++++++++++++++++++++++++++++--
+ 2 files changed, 108 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.4)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -73,10 +69,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fix several bugs.  Add textobj#user#plugin() to define key mappings and a command to support writing a plugin which provides various user-defined text objects.
 
- doc/textobj-user.txt                             |  197 ++++++++-
- vim-textobj-user-0.1/autoload/textobj/user.vim   |  255 -----------
- vim-textobj-user-0.3.4/autoload/textobj/user.vim |  497 ++++++++++++++++++++++
- 3 files changed, 676 insertions(+), 273 deletions(-)
+ autoload/textobj/user.vim |  270 ++++++++++++++++++++++++++++++++++++++++++---
+ doc/textobj-user.txt      |  197 ++++++++++++++++++++++++++++++---
+ 2 files changed, 435 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -85,7 +80,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README                                         |   18 ++
- doc/textobj-user.txt                           |  141 +++++++++++++
- vim-textobj-user-0.1/autoload/textobj/user.vim |  255 ++++++++++++++++++++++++
+ README                    |   18 +++
+ autoload/textobj/user.vim |  255 +++++++++++++++++++++++++++++++++++++++++++++
+ doc/textobj-user.txt      |  141 +++++++++++++++++++++++++
  3 files changed, 414 insertions(+), 0 deletions(-)

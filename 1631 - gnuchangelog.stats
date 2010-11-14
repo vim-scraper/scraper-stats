@@ -7,7 +7,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Build the path name of the edited file in the entry title relative to the directory where the ChangeLog file is, an emacs ChangeLog behavior I missed.  Thanks to Donald Curtis <donald-curtis@uiowa.edu> for catching that and providing a patch.
 
- gnuchlog/ChangeLog  |   23 +++++++++++++++++++++++
+ ChangeLog           |   23 +++++++++++++++++++++++
  plugin/gnuchlog.vim |   29 ++++++++++++++++++++++++++---
  2 files changed, 49 insertions(+), 3 deletions(-)
 
@@ -21,9 +21,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Added ';' to findfile() call to make sure we always search upwards.  There are some cases where findfile() doesn't find the ChangeLog file if the semicolon is not added to the path to search.
 
  README                       |   13 +
+ doc/INSTALL.txt              |   33 +++
  ftplugin/changelog.vim       |   46 +++
  ftplugin/python_gnuchlog.vim |   36 +++
- gnuchlog/INSTALL.txt         |   33 +++
  plugin/gnuchlog.vim          |  315 +++++++++++++++++++++
  plugin/pythonhelper.vim      |  636 ++++++++++++++++++++++++++++++++++++++++++
  6 files changed, 1079 insertions(+), 0 deletions(-)

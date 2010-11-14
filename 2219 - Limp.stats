@@ -45,38 +45,38 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  0.3.4/vim/mode.vim                                 |  118 ++
  0.3.4/vim/sexp.vim                                 |  308 ++++
  bin/lisp.sh                                        |   42 +-
+ docs/index.txt                                     |  543 ------
+ docs/screenshots/connecting.png                    |  Bin 7395 -> 0 bytes
+ docs/screenshots/custom-core.png                   |  Bin 6666 -> 0 bytes
+ docs/screenshots/defun-with-documentation.png      |  Bin 8192 -> 0 bytes
+ docs/screenshots/describe-results.png              |  Bin 13303 -> 0 bytes
+ docs/screenshots/describe-symbol.png               |  Bin 7650 -> 0 bytes
+ docs/screenshots/disconnected.png                  |  Bin 7257 -> 0 bytes
+ docs/screenshots/evaluate-prompt.png               |  Bin 7899 -> 0 bytes
+ docs/screenshots/evaluate-saved-code.png           |  Bin 6510 -> 0 bytes
+ docs/screenshots/evaluating-current-form.png       |  Bin 8352 -> 0 bytes
+ docs/screenshots/expression-sent.png               |  Bin 8723 -> 0 bytes
+ docs/screenshots/highlighting-current-form.png     |  Bin 8441 -> 0 bytes
+ docs/screenshots/listener-from-core.png            |  Bin 8084 -> 0 bytes
+ docs/screenshots/listener-with-defun.png           |  Bin 7642 -> 0 bytes
+ docs/screenshots/listener.png                      |  Bin 6971 -> 0 bytes
+ docs/screenshots/listing-lisps.png                 |  Bin 5306 -> 0 bytes
+ docs/screenshots/name-completion-popup.png         |  Bin 14522 -> 0 bytes
+ docs/screenshots/name-completion.png               |  Bin 7110 -> 0 bytes
+ docs/screenshots/name-expansion-popup.png          |  Bin 12424 -> 0 bytes
+ docs/screenshots/name-expansion.png                |  Bin 7024 -> 0 bytes
+ docs/screenshots/save-lisp-and-die.png             |  Bin 7686 -> 0 bytes
+ docs/screenshots/sending-code.png                  |  Bin 7387 -> 0 bytes
  install.sh                                         |   43 +
- limp-0.3.3/docs/index.txt                          |  543 ------
- limp-0.3.3/docs/screenshots/connecting.png         |  Bin 7395 -> 0 bytes
- limp-0.3.3/docs/screenshots/custom-core.png        |  Bin 6666 -> 0 bytes
- .../docs/screenshots/defun-with-documentation.png  |  Bin 8192 -> 0 bytes
- limp-0.3.3/docs/screenshots/describe-results.png   |  Bin 13303 -> 0 bytes
- limp-0.3.3/docs/screenshots/describe-symbol.png    |  Bin 7650 -> 0 bytes
- limp-0.3.3/docs/screenshots/disconnected.png       |  Bin 7257 -> 0 bytes
- limp-0.3.3/docs/screenshots/evaluate-prompt.png    |  Bin 7899 -> 0 bytes
- .../docs/screenshots/evaluate-saved-code.png       |  Bin 6510 -> 0 bytes
- .../docs/screenshots/evaluating-current-form.png   |  Bin 8352 -> 0 bytes
- limp-0.3.3/docs/screenshots/expression-sent.png    |  Bin 8723 -> 0 bytes
- .../docs/screenshots/highlighting-current-form.png |  Bin 8441 -> 0 bytes
- limp-0.3.3/docs/screenshots/listener-from-core.png |  Bin 8084 -> 0 bytes
- .../docs/screenshots/listener-with-defun.png       |  Bin 7642 -> 0 bytes
- limp-0.3.3/docs/screenshots/listener.png           |  Bin 6971 -> 0 bytes
- limp-0.3.3/docs/screenshots/listing-lisps.png      |  Bin 5306 -> 0 bytes
- .../docs/screenshots/name-completion-popup.png     |  Bin 14522 -> 0 bytes
- limp-0.3.3/docs/screenshots/name-completion.png    |  Bin 7110 -> 0 bytes
- .../docs/screenshots/name-expansion-popup.png      |  Bin 12424 -> 0 bytes
- limp-0.3.3/docs/screenshots/name-expansion.png     |  Bin 7024 -> 0 bytes
- limp-0.3.3/docs/screenshots/save-lisp-and-die.png  |  Bin 7686 -> 0 bytes
- limp-0.3.3/docs/screenshots/sending-code.png       |  Bin 7387 -> 0 bytes
- limp-0.3.3/vim/autoclose.vim                       |  208 ---
- limp-0.3.3/vim/bridge.vim                          |  489 -----
- limp-0.3.3/vim/cursor.vim                          |  207 ---
- limp-0.3.3/vim/desert256.vim                       |  338 ----
- limp-0.3.3/vim/highlight.vim                       |  236 ---
- limp-0.3.3/vim/keys.vim                            |   87 -
- limp-0.3.3/vim/limp.vim                            |   53 -
- limp-0.3.3/vim/mode.vim                            |  118 --
- limp-0.3.3/vim/sexp.vim                            |   42 -
+ vim/autoclose.vim                                  |  208 ---
+ vim/bridge.vim                                     |  489 -----
+ vim/cursor.vim                                     |  207 ---
+ vim/desert256.vim                                  |  338 ----
+ vim/highlight.vim                                  |  236 ---
+ vim/keys.vim                                       |   87 -
+ vim/limp.vim                                       |   53 -
+ vim/mode.vim                                       |  118 --
+ vim/sexp.vim                                       |   42 -
  68 files changed, 5218 insertions(+), 2334 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.3)
@@ -93,72 +93,21 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Configurable location of SBCL in lisp.sh
     * Updated documentation about Cmd for Fn-keys in OS X
 
- bin/lisp.sh                                        |   29 +-
- bin/make-thesaurus.sh                              |    4 +
- limp-0.3.2/docs/README.txt                         |  454 -------
- limp-0.3.2/docs/TODO                               |   21 -
- limp-0.3.2/docs/screenshots/connecting.png         |  Bin 7395 -> 0 bytes
- limp-0.3.2/docs/screenshots/custom-core.png        |  Bin 6666 -> 0 bytes
- .../docs/screenshots/defun-with-documentation.png  |  Bin 8192 -> 0 bytes
- limp-0.3.2/docs/screenshots/describe-results.png   |  Bin 13303 -> 0 bytes
- limp-0.3.2/docs/screenshots/describe-symbol.png    |  Bin 7650 -> 0 bytes
- limp-0.3.2/docs/screenshots/disconnected.png       |  Bin 7257 -> 0 bytes
- limp-0.3.2/docs/screenshots/evaluate-prompt.png    |  Bin 7899 -> 0 bytes
- .../docs/screenshots/evaluate-saved-code.png       |  Bin 6510 -> 0 bytes
- .../docs/screenshots/evaluating-current-form.png   |  Bin 8352 -> 0 bytes
- limp-0.3.2/docs/screenshots/expression-sent.png    |  Bin 8723 -> 0 bytes
- .../docs/screenshots/highlighting-current-form.png |  Bin 8441 -> 0 bytes
- limp-0.3.2/docs/screenshots/listener-from-core.png |  Bin 8084 -> 0 bytes
- .../docs/screenshots/listener-with-defun.png       |  Bin 7642 -> 0 bytes
- limp-0.3.2/docs/screenshots/listener.png           |  Bin 6971 -> 0 bytes
- limp-0.3.2/docs/screenshots/listing-lisps.png      |  Bin 5306 -> 0 bytes
- .../docs/screenshots/name-completion-popup.png     |  Bin 14522 -> 0 bytes
- limp-0.3.2/docs/screenshots/name-completion.png    |  Bin 7110 -> 0 bytes
- .../docs/screenshots/name-expansion-popup.png      |  Bin 12424 -> 0 bytes
- limp-0.3.2/docs/screenshots/name-expansion.png     |  Bin 7024 -> 0 bytes
- limp-0.3.2/docs/screenshots/save-lisp-and-die.png  |  Bin 7686 -> 0 bytes
- limp-0.3.2/docs/screenshots/sending-code.png       |  Bin 7387 -> 0 bytes
- limp-0.3.2/vim/autoclose.vim                       |  194 ---
- limp-0.3.2/vim/bridge.vim                          |  431 -------
- limp-0.3.2/vim/cursor.vim                          |  203 ---
- limp-0.3.2/vim/desert256.vim                       |  338 -----
- limp-0.3.2/vim/highlight.vim                       |  252 ----
- limp-0.3.2/vim/limp.vim                            |  139 --
- limp-0.3.2/vim/mode.vim                            |   46 -
- limp-0.3.2/vim/sexp.vim                            |   40 -
- limp-0.3.2/vim/thesaurus                           | 1339 --------------------
- limp-0.3.3/docs/index.txt                          |  543 ++++++++
- limp-0.3.3/docs/screenshots/connecting.png         |  Bin 0 -> 7395 bytes
- limp-0.3.3/docs/screenshots/custom-core.png        |  Bin 0 -> 6666 bytes
- .../docs/screenshots/defun-with-documentation.png  |  Bin 0 -> 8192 bytes
- limp-0.3.3/docs/screenshots/describe-results.png   |  Bin 0 -> 13303 bytes
- limp-0.3.3/docs/screenshots/describe-symbol.png    |  Bin 0 -> 7650 bytes
- limp-0.3.3/docs/screenshots/disconnected.png       |  Bin 0 -> 7257 bytes
- limp-0.3.3/docs/screenshots/evaluate-prompt.png    |  Bin 0 -> 7899 bytes
- .../docs/screenshots/evaluate-saved-code.png       |  Bin 0 -> 6510 bytes
- .../docs/screenshots/evaluating-current-form.png   |  Bin 0 -> 8352 bytes
- limp-0.3.3/docs/screenshots/expression-sent.png    |  Bin 0 -> 8723 bytes
- .../docs/screenshots/highlighting-current-form.png |  Bin 0 -> 8441 bytes
- limp-0.3.3/docs/screenshots/listener-from-core.png |  Bin 0 -> 8084 bytes
- .../docs/screenshots/listener-with-defun.png       |  Bin 0 -> 7642 bytes
- limp-0.3.3/docs/screenshots/listener.png           |  Bin 0 -> 6971 bytes
- limp-0.3.3/docs/screenshots/listing-lisps.png      |  Bin 0 -> 5306 bytes
- .../docs/screenshots/name-completion-popup.png     |  Bin 0 -> 14522 bytes
- limp-0.3.3/docs/screenshots/name-completion.png    |  Bin 0 -> 7110 bytes
- .../docs/screenshots/name-expansion-popup.png      |  Bin 0 -> 12424 bytes
- limp-0.3.3/docs/screenshots/name-expansion.png     |  Bin 0 -> 7024 bytes
- limp-0.3.3/docs/screenshots/save-lisp-and-die.png  |  Bin 0 -> 7686 bytes
- limp-0.3.3/docs/screenshots/sending-code.png       |  Bin 0 -> 7387 bytes
- limp-0.3.3/vim/autoclose.vim                       |  208 +++
- limp-0.3.3/vim/bridge.vim                          |  489 +++++++
- limp-0.3.3/vim/cursor.vim                          |  207 +++
- limp-0.3.3/vim/desert256.vim                       |  338 +++++
- limp-0.3.3/vim/highlight.vim                       |  236 ++++
- limp-0.3.3/vim/keys.vim                            |   87 ++
- limp-0.3.3/vim/limp.vim                            |   53 +
- limp-0.3.3/vim/mode.vim                            |  118 ++
- limp-0.3.3/vim/sexp.vim                            |   42 +
- 65 files changed, 2352 insertions(+), 3459 deletions(-)
+ bin/lisp.sh           |   29 +-
+ bin/make-thesaurus.sh |    4 +
+ docs/README.txt       |  454 -----------------
+ docs/TODO             |   21 -
+ docs/index.txt        |  543 ++++++++++++++++++++
+ vim/autoclose.vim     |   58 ++-
+ vim/bridge.vim        |  158 ++++--
+ vim/cursor.vim        |   12 +-
+ vim/highlight.vim     |   42 +--
+ vim/keys.vim          |   87 ++++
+ vim/limp.vim          |  108 +----
+ vim/mode.vim          |  134 ++++--
+ vim/sexp.vim          |   18 +-
+ vim/thesaurus         | 1339 -------------------------------------------------
+ 14 files changed, 950 insertions(+), 2057 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.2)
 Author:     Mikael Jansson <mail@mikael.jansson.be>
@@ -178,70 +127,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
       + *FIXED*: Connect-or-boot, without a name given to boot.
 
- limp-0.3.1/docs/README.txt                         |  448 -------
- limp-0.3.1/docs/screenshots/connecting.png         |  Bin 7395 -> 0 bytes
- limp-0.3.1/docs/screenshots/custom-core.png        |  Bin 6666 -> 0 bytes
- .../docs/screenshots/defun-with-documentation.png  |  Bin 8192 -> 0 bytes
- limp-0.3.1/docs/screenshots/describe-results.png   |  Bin 13303 -> 0 bytes
- limp-0.3.1/docs/screenshots/describe-symbol.png    |  Bin 7650 -> 0 bytes
- limp-0.3.1/docs/screenshots/disconnected.png       |  Bin 7257 -> 0 bytes
- limp-0.3.1/docs/screenshots/evaluate-prompt.png    |  Bin 7899 -> 0 bytes
- .../docs/screenshots/evaluate-saved-code.png       |  Bin 6510 -> 0 bytes
- .../docs/screenshots/evaluating-current-form.png   |  Bin 8352 -> 0 bytes
- limp-0.3.1/docs/screenshots/expression-sent.png    |  Bin 8723 -> 0 bytes
- .../docs/screenshots/highlighting-current-form.png |  Bin 8441 -> 0 bytes
- limp-0.3.1/docs/screenshots/listener-from-core.png |  Bin 8084 -> 0 bytes
- .../docs/screenshots/listener-with-defun.png       |  Bin 7642 -> 0 bytes
- limp-0.3.1/docs/screenshots/listener.png           |  Bin 6971 -> 0 bytes
- limp-0.3.1/docs/screenshots/listing-lisps.png      |  Bin 5306 -> 0 bytes
- .../docs/screenshots/name-completion-popup.png     |  Bin 14522 -> 0 bytes
- limp-0.3.1/docs/screenshots/name-completion.png    |  Bin 7110 -> 0 bytes
- .../docs/screenshots/name-expansion-popup.png      |  Bin 12424 -> 0 bytes
- limp-0.3.1/docs/screenshots/name-expansion.png     |  Bin 7024 -> 0 bytes
- limp-0.3.1/docs/screenshots/save-lisp-and-die.png  |  Bin 7686 -> 0 bytes
- limp-0.3.1/docs/screenshots/sending-code.png       |  Bin 7387 -> 0 bytes
- limp-0.3.1/vim/autoclose.vim                       |  194 ---
- limp-0.3.1/vim/bridge.vim                          |  431 -------
- limp-0.3.1/vim/cursor.vim                          |  203 ---
- limp-0.3.1/vim/desert256.vim                       |  338 -----
- limp-0.3.1/vim/highlight.vim                       |  252 ----
- limp-0.3.1/vim/limp.vim                            |  132 --
- limp-0.3.1/vim/mode.vim                            |   46 -
- limp-0.3.1/vim/sexp.vim                            |   40 -
- limp-0.3.1/vim/thesaurus                           | 1339 --------------------
- limp-0.3.2/docs/README.txt                         |  454 +++++++
- limp-0.3.2/docs/TODO                               |   21 +
- limp-0.3.2/docs/screenshots/connecting.png         |  Bin 0 -> 7395 bytes
- limp-0.3.2/docs/screenshots/custom-core.png        |  Bin 0 -> 6666 bytes
- .../docs/screenshots/defun-with-documentation.png  |  Bin 0 -> 8192 bytes
- limp-0.3.2/docs/screenshots/describe-results.png   |  Bin 0 -> 13303 bytes
- limp-0.3.2/docs/screenshots/describe-symbol.png    |  Bin 0 -> 7650 bytes
- limp-0.3.2/docs/screenshots/disconnected.png       |  Bin 0 -> 7257 bytes
- limp-0.3.2/docs/screenshots/evaluate-prompt.png    |  Bin 0 -> 7899 bytes
- .../docs/screenshots/evaluate-saved-code.png       |  Bin 0 -> 6510 bytes
- .../docs/screenshots/evaluating-current-form.png   |  Bin 0 -> 8352 bytes
- limp-0.3.2/docs/screenshots/expression-sent.png    |  Bin 0 -> 8723 bytes
- .../docs/screenshots/highlighting-current-form.png |  Bin 0 -> 8441 bytes
- limp-0.3.2/docs/screenshots/listener-from-core.png |  Bin 0 -> 8084 bytes
- .../docs/screenshots/listener-with-defun.png       |  Bin 0 -> 7642 bytes
- limp-0.3.2/docs/screenshots/listener.png           |  Bin 0 -> 6971 bytes
- limp-0.3.2/docs/screenshots/listing-lisps.png      |  Bin 0 -> 5306 bytes
- .../docs/screenshots/name-completion-popup.png     |  Bin 0 -> 14522 bytes
- limp-0.3.2/docs/screenshots/name-completion.png    |  Bin 0 -> 7110 bytes
- .../docs/screenshots/name-expansion-popup.png      |  Bin 0 -> 12424 bytes
- limp-0.3.2/docs/screenshots/name-expansion.png     |  Bin 0 -> 7024 bytes
- limp-0.3.2/docs/screenshots/save-lisp-and-die.png  |  Bin 0 -> 7686 bytes
- limp-0.3.2/docs/screenshots/sending-code.png       |  Bin 0 -> 7387 bytes
- limp-0.3.2/vim/autoclose.vim                       |  194 +++
- limp-0.3.2/vim/bridge.vim                          |  431 +++++++
- limp-0.3.2/vim/cursor.vim                          |  203 +++
- limp-0.3.2/vim/desert256.vim                       |  338 +++++
- limp-0.3.2/vim/highlight.vim                       |  252 ++++
- limp-0.3.2/vim/limp.vim                            |  139 ++
- limp-0.3.2/vim/mode.vim                            |   46 +
- limp-0.3.2/vim/sexp.vim                            |   40 +
- limp-0.3.2/vim/thesaurus                           | 1339 ++++++++++++++++++++
- 63 files changed, 3457 insertions(+), 3423 deletions(-)
+ docs/README.txt |   90 +++++++++++++++++++++++++++++-------------------------
+ docs/TODO       |   21 +++++++++++++
+ vim/bridge.vim  |    4 +-
+ vim/limp.vim    |   13 ++++++--
+ 4 files changed, 81 insertions(+), 47 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
 Author:     Mikael Jansson <mail@mikael.jansson.be>
@@ -250,39 +140,39 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.3.1: Initial upload
 
- README                                             |   36 +
- bin/limp-hyperspec.pl                              |  323 +++++
- bin/lisp.sh                                        |  215 ++++
- bin/regenerate-hyperspec-thesaurus.pl              |   86 ++
- limp-0.3.1/docs/README.txt                         |  448 +++++++
- limp-0.3.1/docs/screenshots/connecting.png         |  Bin 0 -> 7395 bytes
- limp-0.3.1/docs/screenshots/custom-core.png        |  Bin 0 -> 6666 bytes
- .../docs/screenshots/defun-with-documentation.png  |  Bin 0 -> 8192 bytes
- limp-0.3.1/docs/screenshots/describe-results.png   |  Bin 0 -> 13303 bytes
- limp-0.3.1/docs/screenshots/describe-symbol.png    |  Bin 0 -> 7650 bytes
- limp-0.3.1/docs/screenshots/disconnected.png       |  Bin 0 -> 7257 bytes
- limp-0.3.1/docs/screenshots/evaluate-prompt.png    |  Bin 0 -> 7899 bytes
- .../docs/screenshots/evaluate-saved-code.png       |  Bin 0 -> 6510 bytes
- .../docs/screenshots/evaluating-current-form.png   |  Bin 0 -> 8352 bytes
- limp-0.3.1/docs/screenshots/expression-sent.png    |  Bin 0 -> 8723 bytes
- .../docs/screenshots/highlighting-current-form.png |  Bin 0 -> 8441 bytes
- limp-0.3.1/docs/screenshots/listener-from-core.png |  Bin 0 -> 8084 bytes
- .../docs/screenshots/listener-with-defun.png       |  Bin 0 -> 7642 bytes
- limp-0.3.1/docs/screenshots/listener.png           |  Bin 0 -> 6971 bytes
- limp-0.3.1/docs/screenshots/listing-lisps.png      |  Bin 0 -> 5306 bytes
- .../docs/screenshots/name-completion-popup.png     |  Bin 0 -> 14522 bytes
- limp-0.3.1/docs/screenshots/name-completion.png    |  Bin 0 -> 7110 bytes
- .../docs/screenshots/name-expansion-popup.png      |  Bin 0 -> 12424 bytes
- limp-0.3.1/docs/screenshots/name-expansion.png     |  Bin 0 -> 7024 bytes
- limp-0.3.1/docs/screenshots/save-lisp-and-die.png  |  Bin 0 -> 7686 bytes
- limp-0.3.1/docs/screenshots/sending-code.png       |  Bin 0 -> 7387 bytes
- limp-0.3.1/vim/autoclose.vim                       |  194 +++
- limp-0.3.1/vim/bridge.vim                          |  431 +++++++
- limp-0.3.1/vim/cursor.vim                          |  203 +++
- limp-0.3.1/vim/desert256.vim                       |  338 +++++
- limp-0.3.1/vim/highlight.vim                       |  252 ++++
- limp-0.3.1/vim/limp.vim                            |  132 ++
- limp-0.3.1/vim/mode.vim                            |   46 +
- limp-0.3.1/vim/sexp.vim                            |   40 +
- limp-0.3.1/vim/thesaurus                           | 1339 ++++++++++++++++++++
+ README                                         |   36 +
+ bin/limp-hyperspec.pl                          |  323 ++++++
+ bin/lisp.sh                                    |  215 ++++
+ bin/regenerate-hyperspec-thesaurus.pl          |   86 ++
+ docs/README.txt                                |  448 ++++++++
+ docs/screenshots/connecting.png                |  Bin 0 -> 7395 bytes
+ docs/screenshots/custom-core.png               |  Bin 0 -> 6666 bytes
+ docs/screenshots/defun-with-documentation.png  |  Bin 0 -> 8192 bytes
+ docs/screenshots/describe-results.png          |  Bin 0 -> 13303 bytes
+ docs/screenshots/describe-symbol.png           |  Bin 0 -> 7650 bytes
+ docs/screenshots/disconnected.png              |  Bin 0 -> 7257 bytes
+ docs/screenshots/evaluate-prompt.png           |  Bin 0 -> 7899 bytes
+ docs/screenshots/evaluate-saved-code.png       |  Bin 0 -> 6510 bytes
+ docs/screenshots/evaluating-current-form.png   |  Bin 0 -> 8352 bytes
+ docs/screenshots/expression-sent.png           |  Bin 0 -> 8723 bytes
+ docs/screenshots/highlighting-current-form.png |  Bin 0 -> 8441 bytes
+ docs/screenshots/listener-from-core.png        |  Bin 0 -> 8084 bytes
+ docs/screenshots/listener-with-defun.png       |  Bin 0 -> 7642 bytes
+ docs/screenshots/listener.png                  |  Bin 0 -> 6971 bytes
+ docs/screenshots/listing-lisps.png             |  Bin 0 -> 5306 bytes
+ docs/screenshots/name-completion-popup.png     |  Bin 0 -> 14522 bytes
+ docs/screenshots/name-completion.png           |  Bin 0 -> 7110 bytes
+ docs/screenshots/name-expansion-popup.png      |  Bin 0 -> 12424 bytes
+ docs/screenshots/name-expansion.png            |  Bin 0 -> 7024 bytes
+ docs/screenshots/save-lisp-and-die.png         |  Bin 0 -> 7686 bytes
+ docs/screenshots/sending-code.png              |  Bin 0 -> 7387 bytes
+ vim/autoclose.vim                              |  194 ++++
+ vim/bridge.vim                                 |  431 ++++++++
+ vim/cursor.vim                                 |  203 ++++
+ vim/desert256.vim                              |  338 ++++++
+ vim/highlight.vim                              |  252 +++++
+ vim/limp.vim                                   |  132 +++
+ vim/mode.vim                                   |   46 +
+ vim/sexp.vim                                   |   40 +
+ vim/thesaurus                                  | 1339 ++++++++++++++++++++++++
  35 files changed, 4083 insertions(+), 0 deletions(-)

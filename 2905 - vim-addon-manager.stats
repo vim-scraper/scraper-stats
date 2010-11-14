@@ -76,11 +76,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.4.1: addons can be installed by url now - many small enhancements by ZyX
 
- .../vim-addon-manager-addon-info.txt               |    9 -
- autoload/scriptmanager.vim                         |  229 +++++++++++++++-----
- doc/vim-addon-manager-addon-info.txt               |    9 +
- doc/vim-addon-manager.txt                          |   57 +++++-
- 4 files changed, 232 insertions(+), 72 deletions(-)
+ autoload/scriptmanager.vim |  229 ++++++++++++++++++++++++++++++++------------
+ doc/vim-addon-manager.txt  |   57 ++++++++++-
+ 2 files changed, 223 insertions(+), 63 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
 Author:     Marc Weber <marco-oweber@gmx.de>
@@ -94,11 +92,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     support runtimepath being subdirectories.
     support .tar.gz plugins
 
- .../vim-addon-manager-addon-info.txt               |    9 ++
- .../vim-addon-manager-addon-info.txt               |    9 --
- autoload/scriptmanager.vim                         |  109 +++++++++++++++-----
- doc/vim-addon-manager.txt                          |   39 +++++--
- 4 files changed, 119 insertions(+), 47 deletions(-)
+ autoload/scriptmanager.vim |  109 +++++++++++++++++++++++++++++++++----------
+ doc/vim-addon-manager.txt  |   39 +++++++++++-----
+ 2 files changed, 110 insertions(+), 38 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
 Author:     Marc Weber <marco-oweber@gmx.de>
@@ -110,12 +106,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     new command to uninstall a addon
     completion for commands
 
- .../vim-addon-manager-addon-info.txt               |    9 +
- MarcWeber-vim-plugin-manager-b59dda9/README        |    1 -
- .../plugin-info.txt                                |    9 -
- autoload/scriptmanager.vim                         |  173 ++++++++++++++++++--
- doc/vim-addon-manager.txt                          |  104 ++++++++++++
- doc/vim-plugin-manager.txt                         |   80 ---------
+ autoload/scriptmanager.vim             |  173 +++++++++++++++++++++++++++++---
+ doc/vim-addon-manager-addon-info.txt   |    9 ++
+ doc/vim-addon-manager.txt              |  104 +++++++++++++++++++
+ doc/vim-plugin-manager.txt             |   80 ---------------
+ plugin-manager-b59dda9/README          |    1 -
+ plugin-manager-b59dda9/plugin-info.txt |    9 --
  6 files changed, 271 insertions(+), 105 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -127,12 +123,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     supporting installing vimballs from www.vim.org site (tested with library: tlib)
 
- MarcWeber-vim-plugin-manager-9388433/README        |    1 -
- .../plugin-info.txt                                |    9 ---------
- MarcWeber-vim-plugin-manager-b59dda9/README        |    1 +
- .../plugin-info.txt                                |    9 +++++++++
- autoload/scriptmanager.vim                         |   15 ++++++++++++++-
- doc/vim-plugin-manager.txt                         |    3 +++
+ autoload/scriptmanager.vim             |   15 ++++++++++++++-
+ doc/vim-plugin-manager.txt             |    3 +++
+ plugin-manager-9388433/README          |    1 -
+ plugin-manager-9388433/plugin-info.txt |    9 ---------
+ plugin-manager-b59dda9/README          |    1 +
+ plugin-manager-b59dda9/plugin-info.txt |    9 +++++++++
  6 files changed, 27 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -145,12 +141,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     fixed handling of plugin/*.vim after/plugin/*.vim files
     Support downloading .zip files from this site.
 
- MarcWeber-vim-plugin-manager-9388433/README        |    1 +
- .../plugin-info.txt                                |    9 ++
- MarcWeber-vim-plugin-manager-eb92729/README        |    1 -
- .../plugin-info.txt                                |    9 --
- autoload/scriptmanager.vim                         |  101 ++++++++++++++++----
- doc/vim-plugin-manager.txt                         |    6 +-
+ autoload/scriptmanager.vim             |  101 ++++++++++++++++++++++++++-----
+ doc/vim-plugin-manager.txt             |    6 +-
+ plugin-manager-9388433/README          |    1 +
+ plugin-manager-9388433/plugin-info.txt |    9 +++
+ plugin-manager-eb92729/README          |    1 -
+ plugin-manager-eb92729/plugin-info.txt |    9 ---
  6 files changed, 96 insertions(+), 31 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0)
@@ -160,9 +156,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0: Initial upload
 
- MarcWeber-vim-plugin-manager-eb92729/README        |    1 +
- .../plugin-info.txt                                |    9 ++
- README                                             |   59 +++++++++++
- autoload/scriptmanager.vim                         |  110 ++++++++++++++++++++
- doc/vim-plugin-manager.txt                         |   79 ++++++++++++++
+ README                                 |   59 +++++++++++++++++
+ autoload/scriptmanager.vim             |  110 ++++++++++++++++++++++++++++++++
+ doc/vim-plugin-manager.txt             |   79 +++++++++++++++++++++++
+ plugin-manager-eb92729/README          |    1 +
+ plugin-manager-eb92729/plugin-info.txt |    9 +++
  5 files changed, 258 insertions(+), 0 deletions(-)

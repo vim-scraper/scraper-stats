@@ -7,10 +7,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - When completing branches, remove "remotes/" prefix from remote-tracking branches.- Fix not to complete wrong or unnecessary stuffs as branches.  For example, "(no branch)", "origin/HEAD -> origin/master", etc.
 
- doc/metarw-git.txt                           |   11 +-
- vim-metarw-git-0.0.2/autoload/metarw/git.vim |  299 -------------------------
- vim-metarw-git-0.0.3/autoload/metarw/git.vim |  310 ++++++++++++++++++++++++++
- 3 files changed, 320 insertions(+), 300 deletions(-)
+ autoload/metarw/git.vim |   25 ++++++++++++++++++-------
+ doc/metarw-git.txt      |   11 ++++++++++-
+ 2 files changed, 28 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.2)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -21,11 +20,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Fix a bug that metarw-git uses wrong function to escape file-like arguments to shells.  Thanks @thinca for reporting this.
 
- doc/metarw-git.txt                           |  122 +++++++++++
- doc/metarw_git.txt                           |  114 ----------
- vim-metarw-git-0.0.1/autoload/metarw/git.vim |  299 --------------------------
- vim-metarw-git-0.0.2/autoload/metarw/git.vim |  299 ++++++++++++++++++++++++++
- 4 files changed, 421 insertions(+), 413 deletions(-)
+ autoload/metarw/git.vim |   22 ++++----
+ doc/metarw-git.txt      |  122 +++++++++++++++++++++++++++++++++++++++++++++++
+ doc/metarw_git.txt      |  114 -------------------------------------------
+ 3 files changed, 133 insertions(+), 125 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -37,10 +35,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fix requirements - metarw-git uses |fnameescape()| which is added
       since Vim 7.1.299.  (thanks to id:thinca)
 
- doc/metarw_git.txt                           |    8 +-
- vim-metarw-git-0.0.0/autoload/metarw/git.vim |  299 --------------------------
- vim-metarw-git-0.0.1/autoload/metarw/git.vim |  299 ++++++++++++++++++++++++++
- 3 files changed, 305 insertions(+), 301 deletions(-)
+ autoload/metarw/git.vim |    2 +-
+ doc/metarw_git.txt      |    8 ++++++--
+ 2 files changed, 7 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.0)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -49,7 +46,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.0: Initial upload.
 
- README                                       |   18 ++
- doc/metarw_git.txt                           |  110 ++++++++++
- vim-metarw-git-0.0.0/autoload/metarw/git.vim |  299 ++++++++++++++++++++++++++
+ README                  |   18 +++
+ autoload/metarw/git.vim |  299 +++++++++++++++++++++++++++++++++++++++++++++++
+ doc/metarw_git.txt      |  110 +++++++++++++++++
  3 files changed, 427 insertions(+), 0 deletions(-)

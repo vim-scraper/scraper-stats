@@ -13,14 +13,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Removed ARRAYMAN use
     documentation instead.
 
- doc/arrayman.doc                     |  Bin 47104 -> 48640 bytes
- doc/arrayman.html                    |   70 ++-
- doc/arrayman.rtf                     |  216 ++++---
- plugin/array.vim                     |  102 +++-
- plugin/arrayman                      | 1092 ----------------------------------
- plugin/example/addrbook.vim          |   60 ++
- vimfiles/plugin/example/addrbook.vim |   60 --
- 7 files changed, 317 insertions(+), 1283 deletions(-)
+ doc/arrayman.doc  |  Bin 47104 -> 48640 bytes
+ doc/arrayman.html |   70 +++-
+ doc/arrayman.rtf  |  216 ++++++-----
+ plugin/array.vim  |  102 ++++--
+ plugin/arrayman   | 1092 -----------------------------------------------------
+ 5 files changed, 257 insertions(+), 1223 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1-c)
 Author:     Dave Silvia <dsilvia@mchsi.com>
@@ -68,9 +66,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README                               |    7 +
- plugin/array.vim                     |  914 ++++++++++++++++++++++++++++
- plugin/arrayman                      | 1092 ++++++++++++++++++++++++++++++++++
- plugin/vsutil.vim                    |   47 ++
- vimfiles/plugin/example/addrbook.vim |   60 ++
+ README                      |    7 +
+ plugin/array.vim            |  914 ++++++++++++++++++++++++++++++++++++
+ plugin/arrayman             | 1092 +++++++++++++++++++++++++++++++++++++++++++
+ plugin/example/addrbook.vim |   60 +++
+ plugin/vsutil.vim           |   47 ++
  5 files changed, 2120 insertions(+), 0 deletions(-)

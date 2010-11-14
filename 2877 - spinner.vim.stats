@@ -5,23 +5,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: to vimball archive.
 
- autoload/spinner/buffer.vim                       |   12 +
- autoload/spinner/most_recently_edited.vim         |  175 ++++++++++++
- autoload/spinner/quickfix.vim                     |   12 +
- autoload/spinner/quickfix_file.vim                |   12 +
- autoload/spinner/same_directory_file.vim          |  116 ++++++++
- autoload/spinner/tab.vim                          |   12 +
- autoload/spinner/window.vim                       |   12 +
- doc/spinner.txt                                   |  317 ++++++++++-----------
- plugin/spinner.vim                                |    5 +-
- spinner/autoload/spinner/buffer.vim               |   12 -
- spinner/autoload/spinner/most_recently_edited.vim |  175 ------------
- spinner/autoload/spinner/quickfix.vim             |   12 -
- spinner/autoload/spinner/quickfix_file.vim        |   12 -
- spinner/autoload/spinner/same_directory_file.vim  |  116 --------
- spinner/autoload/spinner/tab.vim                  |   12 -
- spinner/autoload/spinner/window.vim               |   12 -
- 16 files changed, 511 insertions(+), 513 deletions(-)
+ doc/spinner.txt    |  317 ++++++++++++++++++++++++++--------------------------
+ plugin/spinner.vim |    5 +-
+ 2 files changed, 160 insertions(+), 162 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
 Author:     omi taku <mail@nanasi.jp>
@@ -34,15 +20,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - same_directory_file mode will not open $PATHEXT extension file.
       (for Windows)
 
- doc/spinner.txt                                   |   13 +++-
- plugin/spinner.vim                                |    7 +--
- spinner/autoload/spinner/buffer.vim               |    3 +
- spinner/autoload/spinner/most_recently_edited.vim |   25 ++++---
- spinner/autoload/spinner/quickfix.vim             |    3 +
- spinner/autoload/spinner/quickfix_file.vim        |    3 +
- spinner/autoload/spinner/same_directory_file.vim  |   80 ++++++++++++---------
- spinner/autoload/spinner/tab.vim                  |    3 +
- spinner/autoload/spinner/window.vim               |    3 +
+ autoload/spinner/buffer.vim               |    3 +
+ autoload/spinner/most_recently_edited.vim |   25 +++++----
+ autoload/spinner/quickfix.vim             |    3 +
+ autoload/spinner/quickfix_file.vim        |    3 +
+ autoload/spinner/same_directory_file.vim  |   80 +++++++++++++++++------------
+ autoload/spinner/tab.vim                  |    3 +
+ autoload/spinner/window.vim               |    3 +
+ doc/spinner.txt                           |   13 ++++-
+ plugin/spinner.vim                        |    7 +--
  9 files changed, 90 insertions(+), 50 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
@@ -56,9 +42,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - add spinner.vim help document.
     - fix most_recently_edited mode initialize bug.
 
- doc/spinner.txt                                   |  149 +++++++++++++++++++++
- plugin/spinner.vim                                |  132 ++-----------------
- spinner/autoload/spinner/most_recently_edited.vim |    4 -
+ autoload/spinner/most_recently_edited.vim |    4 -
+ doc/spinner.txt                           |  149 +++++++++++++++++++++++++++++
+ plugin/spinner.vim                        |  132 ++-----------------------
  3 files changed, 160 insertions(+), 125 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -68,13 +54,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.5: Initial upload
 
- README                                            |  118 ++++++++++
- plugin/spinner.vim                                |  245 +++++++++++++++++++++
- spinner/autoload/spinner/buffer.vim               |    9 +
- spinner/autoload/spinner/most_recently_edited.vim |  176 +++++++++++++++
- spinner/autoload/spinner/quickfix.vim             |    9 +
- spinner/autoload/spinner/quickfix_file.vim        |    9 +
- spinner/autoload/spinner/same_directory_file.vim  |  102 +++++++++
- spinner/autoload/spinner/tab.vim                  |    9 +
- spinner/autoload/spinner/window.vim               |    9 +
+ README                                    |  118 ++++++++++++++
+ autoload/spinner/buffer.vim               |    9 +
+ autoload/spinner/most_recently_edited.vim |  176 +++++++++++++++++++++
+ autoload/spinner/quickfix.vim             |    9 +
+ autoload/spinner/quickfix_file.vim        |    9 +
+ autoload/spinner/same_directory_file.vim  |  102 ++++++++++++
+ autoload/spinner/tab.vim                  |    9 +
+ autoload/spinner/window.vim               |    9 +
+ plugin/spinner.vim                        |  245 +++++++++++++++++++++++++++++
  9 files changed, 686 insertions(+), 0 deletions(-)

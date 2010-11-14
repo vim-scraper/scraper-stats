@@ -5,31 +5,31 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.4: Updated codebase to fpdf1.6.
 
- autoload/fpdf.vim                       | 1248 ++++++++++++++++---------------
- fpdf-vim/autoload/font/cjk-template.vim |   31 +-
- fpdf-vim/autoload/font/courier.vim      |   13 +-
- fpdf-vim/autoload/font/courierb.vim     |   10 +
- fpdf-vim/autoload/font/courierbi.vim    |   10 +
- fpdf-vim/autoload/font/courieri.vim     |   10 +
- fpdf-vim/autoload/font/helvetica.vim    |   21 +-
- fpdf-vim/autoload/font/helveticab.vim   |   21 +-
- fpdf-vim/autoload/font/helveticabi.vim  |   21 +-
- fpdf-vim/autoload/font/helveticai.vim   |   21 +-
- fpdf-vim/autoload/font/ms-mincho.vim    |   26 +-
- fpdf-vim/autoload/font/ms-pmincho.vim   |    9 +-
- fpdf-vim/autoload/font/symbol.vim       |   21 +-
- fpdf-vim/autoload/font/times.vim        |   21 +-
- fpdf-vim/autoload/font/timesb.vim       |   21 +-
- fpdf-vim/autoload/font/timesbi.vim      |   21 +-
- fpdf-vim/autoload/font/timesi.vim       |   21 +-
- fpdf-vim/autoload/font/zapfdingbats.vim |   21 +-
- fpdf-vim/readme.txt                     |    5 +
- fpdf-vim/tutorial/calligra.vim          |   15 +-
- fpdf-vim/tutorial/exja.vim              |    2 +
- fpdf-vim/tutorial/tuto3.vim             |    2 +-
- fpdf-vim/tutorial/tuto4.vim             |    2 +-
- fpdf-vim/tutorial/tuto7.vim             |    2 +
- syntax/2pdf.vim                         |   24 +-
+ autoload/font/cjk-template.vim |   31 +-
+ autoload/font/courier.vim      |   13 +-
+ autoload/font/courierb.vim     |   10 +
+ autoload/font/courierbi.vim    |   10 +
+ autoload/font/courieri.vim     |   10 +
+ autoload/font/helvetica.vim    |   21 +-
+ autoload/font/helveticab.vim   |   21 +-
+ autoload/font/helveticabi.vim  |   21 +-
+ autoload/font/helveticai.vim   |   21 +-
+ autoload/font/ms-mincho.vim    |   26 +-
+ autoload/font/ms-pmincho.vim   |    9 +-
+ autoload/font/symbol.vim       |   21 +-
+ autoload/font/times.vim        |   21 +-
+ autoload/font/timesb.vim       |   21 +-
+ autoload/font/timesbi.vim      |   21 +-
+ autoload/font/timesi.vim       |   21 +-
+ autoload/font/zapfdingbats.vim |   21 +-
+ autoload/fpdf.vim              | 1248 ++++++++++++++++++++--------------------
+ doc/readme.txt                 |    5 +
+ syntax/2pdf.vim                |   24 +-
+ tutorial/calligra.vim          |   15 +-
+ tutorial/exja.vim              |    2 +
+ tutorial/tuto3.vim             |    2 +-
+ tutorial/tuto4.vim             |    2 +-
+ tutorial/tuto7.vim             |    2 +
  25 files changed, 784 insertions(+), 835 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -42,24 +42,24 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Changed to use Vim7.2 floating point feature.
     Added :TOpdf command.
 
- autoload/float.vim                      |  132 -
- autoload/fpdf.vim                       |  957 +-
- fpdf-vim/autoload/font/cjk-template.vim |   64 +
- fpdf-vim/autoload/font/courier.vim      |   14 +-
- fpdf-vim/autoload/font/ms-mincho.vim    |   69 +
- fpdf-vim/autoload/font/ms-pmincho.vim   |  140 +
- fpdf-vim/autoload/font/uni2cid_ac15.vim |23608 ++++++++++++++++++++++++
- fpdf-vim/autoload/font/uni2cid_ag15.vim |30217 +++++++++++++++++++++++++++++++
- fpdf-vim/autoload/font/uni2cid_aj16.vim |15700 ++++++++++++++++
- fpdf-vim/autoload/font/uni2cid_ak12.vim |17525 ++++++++++++++++++
- fpdf-vim/tutorial/calligra.vim          |   26 +-
- fpdf-vim/tutorial/exja.vim              |   19 +-
- fpdf-vim/tutorial/tuto3.vim             |    5 +-
- fpdf-vim/tutorial/tuto4.vim             |    7 +-
- fpdf-vim/tutorial/tuto5.vim             |    1 -
- fpdf-vim/tutorial/tuto6.vim             |    1 -
- plugin/topdf.vim                        |   21 +
- syntax/2pdf.vim                         |  208 +
+ autoload/float.vim             |  132 -
+ autoload/font/cjk-template.vim |   64 +
+ autoload/font/courier.vim      |   14 +-
+ autoload/font/ms-mincho.vim    |   69 +
+ autoload/font/ms-pmincho.vim   |  140 +
+ autoload/font/uni2cid_ac15.vim |23608 +++++++++++++++++++++++++++++++
+ autoload/font/uni2cid_ag15.vim |30217 ++++++++++++++++++++++++++++++++++++++++
+ autoload/font/uni2cid_aj16.vim |15700 +++++++++++++++++++++
+ autoload/font/uni2cid_ak12.vim |17525 +++++++++++++++++++++++
+ autoload/fpdf.vim              |  957 +-
+ plugin/topdf.vim               |   21 +
+ syntax/2pdf.vim                |  208 +
+ tutorial/calligra.vim          |   26 +-
+ tutorial/exja.vim              |   19 +-
+ tutorial/tuto3.vim             |    5 +-
+ tutorial/tuto4.vim             |    7 +-
+ tutorial/tuto5.vim             |    1 -
+ tutorial/tuto6.vim             |    1 -
  18 files changed, 88058 insertions(+), 656 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -69,12 +69,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2: Added support embedding font and image (require xxd)
 
- autoload/fpdf.vim              |  563 ++++++++++++++++++++++++++--------------
- fpdf-vim/readme.txt            |    2 +-
- fpdf-vim/tutorial/calligra.vim |   28 ++
- fpdf-vim/tutorial/tuto2.vim    |    5 +-
- fpdf-vim/tutorial/tuto6.vim    |    3 +-
- fpdf-vim/tutorial/tuto7.vim    |   15 +
+ autoload/fpdf.vim     |  563 +++++++++++++++++++++++++++++++------------------
+ doc/readme.txt        |    2 +-
+ tutorial/calligra.vim |   28 +++
+ tutorial/tuto2.vim    |    5 +-
+ tutorial/tuto6.vim    |    3 +-
+ tutorial/tuto7.vim    |   15 ++
  6 files changed, 410 insertions(+), 206 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -84,33 +84,33 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README                                  |   29 +
- autoload/float.vim                      |  132 +++
- autoload/fpdf.vim                       | 1856 +++++++++++++++++++++++++++++++
- fpdf-vim/autoload/font/courier.vim      |    7 +
- fpdf-vim/autoload/font/helvetica.vim    |   14 +
- fpdf-vim/autoload/font/helveticab.vim   |   14 +
- fpdf-vim/autoload/font/helveticabi.vim  |   14 +
- fpdf-vim/autoload/font/helveticai.vim   |   14 +
- fpdf-vim/autoload/font/symbol.vim       |   14 +
- fpdf-vim/autoload/font/times.vim        |   14 +
- fpdf-vim/autoload/font/timesb.vim       |   14 +
- fpdf-vim/autoload/font/timesbi.vim      |   14 +
- fpdf-vim/autoload/font/timesi.vim       |   14 +
- fpdf-vim/autoload/font/zapfdingbats.vim |   14 +
- fpdf-vim/readme.txt                     |   18 +
- fpdf-vim/tutorial/20k_c1.txt            |   10 +
- fpdf-vim/tutorial/20k_c2.txt            |   23 +
- fpdf-vim/tutorial/calligra.ttf          |  Bin 0 -> 40120 bytes
- fpdf-vim/tutorial/calligra.z            |  Bin 0 -> 25604 bytes
- fpdf-vim/tutorial/countries.txt         |   15 +
- fpdf-vim/tutorial/exja.vim              |   35 +
- fpdf-vim/tutorial/logo.png              |  Bin 0 -> 2373 bytes
- fpdf-vim/tutorial/logo_pb.png           |  Bin 0 -> 2656 bytes
- fpdf-vim/tutorial/tuto1.vim             |   13 +
- fpdf-vim/tutorial/tuto2.vim             |   44 +
- fpdf-vim/tutorial/tuto3.vim             |   81 ++
- fpdf-vim/tutorial/tuto4.vim             |  106 ++
- fpdf-vim/tutorial/tuto5.vim             |  117 ++
- fpdf-vim/tutorial/tuto6.vim             |  149 +++
+ README                         |   29 +
+ autoload/float.vim             |  132 +++
+ autoload/font/courier.vim      |    7 +
+ autoload/font/helvetica.vim    |   14 +
+ autoload/font/helveticab.vim   |   14 +
+ autoload/font/helveticabi.vim  |   14 +
+ autoload/font/helveticai.vim   |   14 +
+ autoload/font/symbol.vim       |   14 +
+ autoload/font/times.vim        |   14 +
+ autoload/font/timesb.vim       |   14 +
+ autoload/font/timesbi.vim      |   14 +
+ autoload/font/timesi.vim       |   14 +
+ autoload/font/zapfdingbats.vim |   14 +
+ autoload/fpdf.vim              | 1856 ++++++++++++++++++++++++++++++++++++++++
+ doc/readme.txt                 |   18 +
+ tutorial/20k_c1.txt            |   10 +
+ tutorial/20k_c2.txt            |   23 +
+ tutorial/calligra.ttf          |  Bin 0 -> 40120 bytes
+ tutorial/calligra.z            |  Bin 0 -> 25604 bytes
+ tutorial/countries.txt         |   15 +
+ tutorial/exja.vim              |   35 +
+ tutorial/logo.png              |  Bin 0 -> 2373 bytes
+ tutorial/logo_pb.png           |  Bin 0 -> 2656 bytes
+ tutorial/tuto1.vim             |   13 +
+ tutorial/tuto2.vim             |   44 +
+ tutorial/tuto3.vim             |   81 ++
+ tutorial/tuto4.vim             |  106 +++
+ tutorial/tuto5.vim             |  117 +++
+ tutorial/tuto6.vim             |  149 ++++
  29 files changed, 2775 insertions(+), 0 deletions(-)

@@ -40,19 +40,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: -
 
- .gitignore                                         |    1 +
- .../vim-addon-sbt-addon-info.txt                   |   12 -
- autoload/sbt.py                                    |  183 +++++++++++
- autoload/sbt.vim                                   |  334 +++++++++++++++-----
- doc/vim-addon-fcsh.txt                             |    5 -
- doc/vim-addon-sbt-addon-info.txt                   |   12 +
- doc/vim-addon-sbt.txt                              |   76 +++++
- plugin/sbt.vim                                     |   60 ++++-
- sbt-extensions/codefellow.txt                      |    5 +
- sbt-extensions/executable_archive.txt              |   71 ++++
- sbt-extensions/sbteclipsify.txt                    |    8 +
- sbt-extensions/sbtidea                             |    7 +
- 12 files changed, 676 insertions(+), 98 deletions(-)
+ .gitignore                            |    1 +
+ autoload/sbt.py                       |  183 ++++++++++++++++++
+ autoload/sbt.vim                      |  334 +++++++++++++++++++++++++--------
+ doc/vim-addon-fcsh.txt                |    5 -
+ doc/vim-addon-sbt.txt                 |   76 ++++++++
+ plugin/sbt.vim                        |   60 ++++++-
+ sbt-extensions/codefellow.txt         |    5 +
+ sbt-extensions/executable_archive.txt |   71 +++++++
+ sbt-extensions/sbteclipsify.txt       |    8 +
+ sbt-extensions/sbtidea                |    7 +
+ 10 files changed, 664 insertions(+), 86 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0)
 Author:     Marc Weber <marco-oweber@gmx.de>
@@ -61,9 +59,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0: Initial upload
 
- .../vim-addon-sbt-addon-info.txt                   |   12 ++
- README                                             |    8 ++
- autoload/sbt.vim                                   |  133 ++++++++++++++++++++
- doc/vim-addon-fcsh.txt                             |    5 +
- plugin/sbt.vim                                     |   24 ++++
+ README                           |    8 ++
+ autoload/sbt.vim                 |  133 ++++++++++++++++++++++++++++++++++++++
+ doc/vim-addon-fcsh.txt           |    5 ++
+ doc/vim-addon-sbt-addon-info.txt |   12 ++++
+ plugin/sbt.vim                   |   24 +++++++
  5 files changed, 182 insertions(+), 0 deletions(-)
