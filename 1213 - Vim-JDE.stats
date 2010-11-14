@@ -1,4 +1,32 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.16.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.16.4)
+Author:     JiuTian Zhang <zhang9tian@gmail.com>
+AuthorDate: Sun Nov 14 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.16.4
+    
+    1. improved for completion :
+    new java.<c-x><c-u>
+    2. add <leader>ii to implements a interface with an anonymous class.
+    new Thread(new Runnable() {   <--here ,<leader>ii
+    
+    would add the function of Runnable.
+
+ doc/vjde.txt                                  |    8 +-
+ plugin/vjde/vjde_completion.vim               |    3 +-
+ plugin/vjde/vjde_cs_completion.vim            |   71 ++++++++-
+ plugin/vjde/vjde_ctags_support.rb             |    4 +-
+ plugin/vjde/vjde_iab.vim                      |    2 +-
+ plugin/vjde/vjde_java_utils.vim               |   53 ++++++
+ plugin/vjde/vjde_menu_def.vim                 |    3 +-
+ src/CSParser.cs                               |   17 ++-
+ src/TypeFinder.cs                             |  101 ++++++++++++
+ src/UsingFinder.cs                            |  102 ++++++++++++
+ src/vjde/completion/Struts2ConfigureMain.java |   12 ++
+ src/vjde_cs_completion.vim                    |  214 +++++++++++++++++++++++++
+ 12 files changed, 578 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.16.2)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
 AuthorDate: Sat Jul 11 00:00:00 2009 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
