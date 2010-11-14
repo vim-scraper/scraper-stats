@@ -7,17 +7,20 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Finally a new release. Bringing VimClojure up to date with 1.2 and 1.3 alpha. Please consult the README in the zip file for further installation instructions.
 
+ Makefile                                           |   30 -
  README.markdown                                    |  122 ++++
  autoload/vimclojure.vim                            |  543 +++++++++++++----
  bin/clj                                            |   80 +++
  bin/clj.bat                                        |   55 ++
  bin/ng-server                                      |   78 ++-
  bin/ng-server.bat                                  |   57 ++
- doc/LICENSE.txt                                    |   20 +
+ build.xml                                          |  243 --------
+ build/vimclojure.jar                               |  Bin 226646 -> 0 bytes
+ doc/README.txt                                     |  109 ----
  doc/clojure.txt                                    |  125 +++-
  ftdetect/clojure.vim                               |    2 +-
  ftplugin/clojure.vim                               |  101 ++--
- ftplugin/clojure/completions-clojure.core.txt      |  526 ++++++++++++++++
+ ftplugin/clojure/completions-clojure.core.txt      |   99 +++-
  ftplugin/clojure/completions-clojure.inspector.txt |   13 +
  .../clojure/completions-clojure.java.browse.txt    |    2 +
  ftplugin/clojure/completions-clojure.java.io.txt   |   19 +
@@ -26,7 +29,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  ftplugin/clojure/completions-clojure.main.txt      |   10 +
  ftplugin/clojure/completions-clojure.pprint.txt    |   23 +
  ftplugin/clojure/completions-clojure.repl.txt      |    5 +
- ftplugin/clojure/completions-clojure.set.txt       |   12 +
+ ftplugin/clojure/completions-clojure.set.txt       |    2 +
  .../clojure/completions-clojure.stacktrace.txt     |    5 +
  ftplugin/clojure/completions-clojure.string.txt    |   15 +
  ftplugin/clojure/completions-clojure.template.txt  |    2 +
@@ -34,37 +37,25 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  ftplugin/clojure/completions-clojure.test.tap.txt  |    6 +
  ftplugin/clojure/completions-clojure.test.txt      |   34 +
  ftplugin/clojure/completions-clojure.walk.txt      |   10 +
- ftplugin/clojure/completions-clojure.xml.txt       |   13 +
- ftplugin/clojure/completions-clojure.zip.txt       |   27 +
  indent/clojure.vim                                 |    8 +-
+ ivy.xml                                            |   24 -
+ ivysettings.xml                                    |    9 -
+ ng.exe                                             |  Bin 15360 -> 0 bytes
+ ngclient/ng.c                                      |  638 --------------------
  plugin/clojure.vim                                 |   57 ++
- syntax/clojure.vim                                 |   96 ++-
- vimclojure-2.1.2/LICENSE.txt                       |   20 -
- vimclojure-2.1.2/Makefile                          |   30 -
- vimclojure-2.1.2/README.txt                        |  109 ----
- vimclojure-2.1.2/build.xml                         |  243 --------
- vimclojure-2.1.2/build/vimclojure.jar              |  Bin 226646 -> 0 bytes
- .../ftplugin/clojure/completions-clojure.core.txt  |  433 -------------
- .../ftplugin/clojure/completions-clojure.set.txt   |   10 -
- .../ftplugin/clojure/completions-clojure.xml.txt   |   13 -
- .../ftplugin/clojure/completions-clojure.zip.txt   |   27 -
- vimclojure-2.1.2/ivy.xml                           |   24 -
- vimclojure-2.1.2/ivysettings.xml                   |    9 -
- vimclojure-2.1.2/ng.exe                            |  Bin 15360 -> 0 bytes
- vimclojure-2.1.2/ngclient/ng.c                     |  638 --------------------
- .../src/com/martiansoftware/nailgun/Alias.java     |  113 ----
- .../com/martiansoftware/nailgun/AliasManager.java  |  132 ----
- .../src/com/martiansoftware/nailgun/LongUtils.java |   61 --
- .../com/martiansoftware/nailgun/NGConstants.java   |  108 ----
- .../src/com/martiansoftware/nailgun/NGContext.java |  261 --------
+ src/com/martiansoftware/nailgun/Alias.java         |  113 ----
+ src/com/martiansoftware/nailgun/AliasManager.java  |  132 ----
+ src/com/martiansoftware/nailgun/LongUtils.java     |   61 --
+ src/com/martiansoftware/nailgun/NGConstants.java   |  108 ----
+ src/com/martiansoftware/nailgun/NGContext.java     |  261 --------
  .../martiansoftware/nailgun/NGExitException.java   |   47 --
- .../com/martiansoftware/nailgun/NGInputStream.java |  123 ----
+ src/com/martiansoftware/nailgun/NGInputStream.java |  123 ----
  .../martiansoftware/nailgun/NGOutputStream.java    |   76 ---
  .../martiansoftware/nailgun/NGSecurityManager.java |   74 ---
- .../src/com/martiansoftware/nailgun/NGServer.java  |  506 ----------------
- .../src/com/martiansoftware/nailgun/NGSession.java |  337 -----------
- .../com/martiansoftware/nailgun/NGSessionPool.java |  122 ----
- .../src/com/martiansoftware/nailgun/NailStats.java |  130 ----
+ src/com/martiansoftware/nailgun/NGServer.java      |  506 ----------------
+ src/com/martiansoftware/nailgun/NGSession.java     |  337 -----------
+ src/com/martiansoftware/nailgun/NGSessionPool.java |  122 ----
+ src/com/martiansoftware/nailgun/NailStats.java     |  130 ----
  .../nailgun/ThreadLocalInputStream.java            |  144 -----
  .../nailgun/ThreadLocalPrintStream.java            |  261 --------
  .../nailgun/builtins/DefaultNail.java              |   37 --
@@ -75,13 +66,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  .../nailgun/builtins/NGVersion.java                |   16 -
  .../nailgun/builtins/builtins.properties           |   14 -
  .../nailgun/nailgun-version.properties             |    3 -
- .../src/de/kotka/vimclojure/backend.clj            |  187 ------
- .../src/de/kotka/vimclojure/gencompletions.clj     |   30 -
- vimclojure-2.1.2/src/de/kotka/vimclojure/nails.clj |  236 --------
- vimclojure-2.1.2/src/de/kotka/vimclojure/repl.clj  |  185 ------
- vimclojure-2.1.2/src/de/kotka/vimclojure/util.clj  |  393 ------------
- .../src/org/apache/tools/ant/ExitException.java    |   97 ---
- 74 files changed, 1835 insertions(+), 5759 deletions(-)
+ src/de/kotka/vimclojure/backend.clj                |  187 ------
+ src/de/kotka/vimclojure/gencompletions.clj         |   30 -
+ src/de/kotka/vimclojure/nails.clj                  |  236 --------
+ src/de/kotka/vimclojure/repl.clj                   |  185 ------
+ src/de/kotka/vimclojure/util.clj                   |  393 ------------
+ src/org/apache/tools/ant/ExitException.java        |   97 ---
+ syntax/clojure.vim                                 |   96 ++-
+ 66 files changed, 1335 insertions(+), 5259 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1.2)
 Author:     Meikel Brandmeyer <Brandels_Mikesh@web.de>
@@ -118,94 +110,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Fixed annoying o/O delay bug
     * Simplified plugin installation
 
- autoload/vimclojure.vim                            |   46 +-
- ftplugin/clojure.vim                               |    2 +-
- indent/clojure.vim                                 |   69 +--
- syntax/clojure.vim                                 |    6 +-
- vimclojure-2.1.1/LICENSE.txt                       |   20 -
- vimclojure-2.1.1/Makefile                          |   26 -
- vimclojure-2.1.1/README.txt                        |  103 ----
- vimclojure-2.1.1/build.xml                         |  207 -------
- .../ftplugin/clojure/completions-clojure.core.txt  |  433 -------------
- .../ftplugin/clojure/completions-clojure.set.txt   |   10 -
- .../ftplugin/clojure/completions-clojure.xml.txt   |   13 -
- .../ftplugin/clojure/completions-clojure.zip.txt   |   27 -
- vimclojure-2.1.1/ivy.xml                           |   23 -
- vimclojure-2.1.1/ivysettings.xml                   |    9 -
- vimclojure-2.1.1/ng.exe                            |  Bin 15360 -> 0 bytes
- vimclojure-2.1.1/ngclient/ng.c                     |  638 --------------------
- .../src/com/martiansoftware/nailgun/Alias.java     |  113 ----
- .../com/martiansoftware/nailgun/AliasManager.java  |  132 ----
- .../src/com/martiansoftware/nailgun/LongUtils.java |   61 --
- .../com/martiansoftware/nailgun/NGConstants.java   |  108 ----
- .../src/com/martiansoftware/nailgun/NGContext.java |  261 --------
- .../martiansoftware/nailgun/NGExitException.java   |   47 --
- .../com/martiansoftware/nailgun/NGInputStream.java |  123 ----
- .../martiansoftware/nailgun/NGOutputStream.java    |   76 ---
- .../martiansoftware/nailgun/NGSecurityManager.java |   74 ---
- .../src/com/martiansoftware/nailgun/NGServer.java  |  506 ----------------
- .../src/com/martiansoftware/nailgun/NGSession.java |  337 -----------
- .../com/martiansoftware/nailgun/NGSessionPool.java |  122 ----
- .../src/com/martiansoftware/nailgun/NailStats.java |  130 ----
- .../nailgun/ThreadLocalInputStream.java            |  144 -----
- .../nailgun/ThreadLocalPrintStream.java            |  261 --------
- .../nailgun/builtins/DefaultNail.java              |   37 --
- .../martiansoftware/nailgun/builtins/NGAlias.java  |   82 ---
- .../nailgun/builtins/NGClasspath.java              |   77 ---
- .../nailgun/builtins/NGServerStats.java            |   54 --
- .../martiansoftware/nailgun/builtins/NGStop.java   |   36 --
- .../nailgun/builtins/NGVersion.java                |   16 -
- .../nailgun/builtins/builtins.properties           |   14 -
- .../nailgun/nailgun-version.properties             |    3 -
- .../src/de/kotka/vimclojure/backend.clj            |  187 ------
- .../src/de/kotka/vimclojure/gencompletions.clj     |   30 -
- vimclojure-2.1.1/src/de/kotka/vimclojure/nails.clj |  236 --------
- vimclojure-2.1.1/src/de/kotka/vimclojure/repl.clj  |  185 ------
- vimclojure-2.1.1/src/de/kotka/vimclojure/util.clj  |  393 ------------
- .../src/org/apache/tools/ant/ExitException.java    |   97 ---
- vimclojure-2.1.2/LICENSE.txt                       |   20 +
- vimclojure-2.1.2/Makefile                          |   30 +
- vimclojure-2.1.2/README.txt                        |  109 ++++
- vimclojure-2.1.2/build.xml                         |  243 ++++++++
- vimclojure-2.1.2/build/vimclojure.jar              |  Bin 0 -> 226646 bytes
- .../ftplugin/clojure/completions-clojure.core.txt  |  433 +++++++++++++
- .../ftplugin/clojure/completions-clojure.set.txt   |   10 +
- .../ftplugin/clojure/completions-clojure.xml.txt   |   13 +
- .../ftplugin/clojure/completions-clojure.zip.txt   |   27 +
- vimclojure-2.1.2/ivy.xml                           |   24 +
- vimclojure-2.1.2/ivysettings.xml                   |    9 +
- vimclojure-2.1.2/ng.exe                            |  Bin 0 -> 15360 bytes
- vimclojure-2.1.2/ngclient/ng.c                     |  638 ++++++++++++++++++++
- .../src/com/martiansoftware/nailgun/Alias.java     |  113 ++++
- .../com/martiansoftware/nailgun/AliasManager.java  |  132 ++++
- .../src/com/martiansoftware/nailgun/LongUtils.java |   61 ++
- .../com/martiansoftware/nailgun/NGConstants.java   |  108 ++++
- .../src/com/martiansoftware/nailgun/NGContext.java |  261 ++++++++
- .../martiansoftware/nailgun/NGExitException.java   |   47 ++
- .../com/martiansoftware/nailgun/NGInputStream.java |  123 ++++
- .../martiansoftware/nailgun/NGOutputStream.java    |   76 +++
- .../martiansoftware/nailgun/NGSecurityManager.java |   74 +++
- .../src/com/martiansoftware/nailgun/NGServer.java  |  506 ++++++++++++++++
- .../src/com/martiansoftware/nailgun/NGSession.java |  337 +++++++++++
- .../com/martiansoftware/nailgun/NGSessionPool.java |  122 ++++
- .../src/com/martiansoftware/nailgun/NailStats.java |  130 ++++
- .../nailgun/ThreadLocalInputStream.java            |  144 +++++
- .../nailgun/ThreadLocalPrintStream.java            |  261 ++++++++
- .../nailgun/builtins/DefaultNail.java              |   37 ++
- .../martiansoftware/nailgun/builtins/NGAlias.java  |   82 +++
- .../nailgun/builtins/NGClasspath.java              |   77 +++
- .../nailgun/builtins/NGServerStats.java            |   54 ++
- .../martiansoftware/nailgun/builtins/NGStop.java   |   36 ++
- .../nailgun/builtins/NGVersion.java                |   16 +
- .../nailgun/builtins/builtins.properties           |   14 +
- .../nailgun/nailgun-version.properties             |    3 +
- .../src/de/kotka/vimclojure/backend.clj            |  187 ++++++
- .../src/de/kotka/vimclojure/gencompletions.clj     |   30 +
- vimclojure-2.1.2/src/de/kotka/vimclojure/nails.clj |  236 ++++++++
- vimclojure-2.1.2/src/de/kotka/vimclojure/repl.clj  |  185 ++++++
- vimclojure-2.1.2/src/de/kotka/vimclojure/util.clj  |  393 ++++++++++++
- .../src/org/apache/tools/ant/ExitException.java    |   97 +++
- 87 files changed, 5567 insertions(+), 5505 deletions(-)
+ Makefile                |   18 +++++++-----
+ autoload/vimclojure.vim |   46 +++++++++++++++++++++----------
+ build.xml               |   38 +++++++++++++++++++++++++-
+ build/vimclojure.jar    |  Bin 0 -> 226646 bytes
+ doc/README.txt          |    8 +++++-
+ ftplugin/clojure.vim    |    2 +-
+ indent/clojure.vim      |   69 ++++++++++++++++++++++------------------------
+ ivy.xml                 |   15 +++++-----
+ syntax/clojure.vim      |    6 +++-
+ 9 files changed, 132 insertions(+), 70 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1.1)
 Author:     Meikel Brandmeyer <Brandels_Mikesh@web.de>
@@ -223,93 +137,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * fixed find invocation in launcher
     * fixed spurious -1 in EvalLine
 
- autoload/vimclojure.vim                            |    2 +-
- bin/ng-server                                      |    2 +-
- indent/clojure.vim                                 |    4 +-
- syntax/clojure.vim                                 |   16 +-
- vimclojure-2.1.0/LICENSE.txt                       |   20 -
- vimclojure-2.1.0/Makefile                          |   26 -
- vimclojure-2.1.0/README.txt                        |  103 ----
- vimclojure-2.1.0/build.xml                         |  207 -------
- .../ftplugin/clojure/completions-clojure.core.txt  |  433 -------------
- .../ftplugin/clojure/completions-clojure.set.txt   |   10 -
- .../ftplugin/clojure/completions-clojure.xml.txt   |   13 -
- .../ftplugin/clojure/completions-clojure.zip.txt   |   27 -
- vimclojure-2.1.0/ivy.xml                           |   23 -
- vimclojure-2.1.0/ivysettings.xml                   |    9 -
- vimclojure-2.1.0/ng.exe                            |  Bin 15360 -> 0 bytes
- vimclojure-2.1.0/ngclient/ng.c                     |  638 --------------------
- .../src/com/martiansoftware/nailgun/Alias.java     |  113 ----
- .../com/martiansoftware/nailgun/AliasManager.java  |  132 ----
- .../src/com/martiansoftware/nailgun/LongUtils.java |   61 --
- .../com/martiansoftware/nailgun/NGConstants.java   |  108 ----
- .../src/com/martiansoftware/nailgun/NGContext.java |  261 --------
- .../martiansoftware/nailgun/NGExitException.java   |   47 --
- .../com/martiansoftware/nailgun/NGInputStream.java |  123 ----
- .../martiansoftware/nailgun/NGOutputStream.java    |   76 ---
- .../martiansoftware/nailgun/NGSecurityManager.java |   74 ---
- .../src/com/martiansoftware/nailgun/NGServer.java  |  506 ----------------
- .../src/com/martiansoftware/nailgun/NGSession.java |  337 -----------
- .../com/martiansoftware/nailgun/NGSessionPool.java |  122 ----
- .../src/com/martiansoftware/nailgun/NailStats.java |  130 ----
- .../nailgun/ThreadLocalInputStream.java            |  144 -----
- .../nailgun/ThreadLocalPrintStream.java            |  261 --------
- .../nailgun/builtins/DefaultNail.java              |   37 --
- .../martiansoftware/nailgun/builtins/NGAlias.java  |   82 ---
- .../nailgun/builtins/NGClasspath.java              |   77 ---
- .../nailgun/builtins/NGServerStats.java            |   54 --
- .../martiansoftware/nailgun/builtins/NGStop.java   |   36 --
- .../nailgun/builtins/NGVersion.java                |   16 -
- .../nailgun/builtins/builtins.properties           |   14 -
- .../nailgun/nailgun-version.properties             |    3 -
- .../src/de/kotka/vimclojure/backend.clj            |  187 ------
- .../src/de/kotka/vimclojure/gencompletions.clj     |   30 -
- vimclojure-2.1.0/src/de/kotka/vimclojure/nails.clj |  236 --------
- vimclojure-2.1.0/src/de/kotka/vimclojure/repl.clj  |  185 ------
- vimclojure-2.1.0/src/de/kotka/vimclojure/util.clj  |  393 ------------
- .../src/org/apache/tools/ant/ExitException.java    |   97 ---
- vimclojure-2.1.1/LICENSE.txt                       |   20 +
- vimclojure-2.1.1/Makefile                          |   26 +
- vimclojure-2.1.1/README.txt                        |  103 ++++
- vimclojure-2.1.1/build.xml                         |  207 +++++++
- .../ftplugin/clojure/completions-clojure.core.txt  |  433 +++++++++++++
- .../ftplugin/clojure/completions-clojure.set.txt   |   10 +
- .../ftplugin/clojure/completions-clojure.xml.txt   |   13 +
- .../ftplugin/clojure/completions-clojure.zip.txt   |   27 +
- vimclojure-2.1.1/ivy.xml                           |   23 +
- vimclojure-2.1.1/ivysettings.xml                   |    9 +
- vimclojure-2.1.1/ng.exe                            |  Bin 0 -> 15360 bytes
- vimclojure-2.1.1/ngclient/ng.c                     |  638 ++++++++++++++++++++
- .../src/com/martiansoftware/nailgun/Alias.java     |  113 ++++
- .../com/martiansoftware/nailgun/AliasManager.java  |  132 ++++
- .../src/com/martiansoftware/nailgun/LongUtils.java |   61 ++
- .../com/martiansoftware/nailgun/NGConstants.java   |  108 ++++
- .../src/com/martiansoftware/nailgun/NGContext.java |  261 ++++++++
- .../martiansoftware/nailgun/NGExitException.java   |   47 ++
- .../com/martiansoftware/nailgun/NGInputStream.java |  123 ++++
- .../martiansoftware/nailgun/NGOutputStream.java    |   76 +++
- .../martiansoftware/nailgun/NGSecurityManager.java |   74 +++
- .../src/com/martiansoftware/nailgun/NGServer.java  |  506 ++++++++++++++++
- .../src/com/martiansoftware/nailgun/NGSession.java |  337 +++++++++++
- .../com/martiansoftware/nailgun/NGSessionPool.java |  122 ++++
- .../src/com/martiansoftware/nailgun/NailStats.java |  130 ++++
- .../nailgun/ThreadLocalInputStream.java            |  144 +++++
- .../nailgun/ThreadLocalPrintStream.java            |  261 ++++++++
- .../nailgun/builtins/DefaultNail.java              |   37 ++
- .../martiansoftware/nailgun/builtins/NGAlias.java  |   82 +++
- .../nailgun/builtins/NGClasspath.java              |   77 +++
- .../nailgun/builtins/NGServerStats.java            |   54 ++
- .../martiansoftware/nailgun/builtins/NGStop.java   |   36 ++
- .../nailgun/builtins/NGVersion.java                |   16 +
- .../nailgun/builtins/builtins.properties           |   14 +
- .../nailgun/nailgun-version.properties             |    3 +
- .../src/de/kotka/vimclojure/backend.clj            |  187 ++++++
- .../src/de/kotka/vimclojure/gencompletions.clj     |   30 +
- vimclojure-2.1.1/src/de/kotka/vimclojure/nails.clj |  236 ++++++++
- vimclojure-2.1.1/src/de/kotka/vimclojure/repl.clj  |  185 ++++++
- vimclojure-2.1.1/src/de/kotka/vimclojure/util.clj  |  393 ++++++++++++
- .../src/org/apache/tools/ant/ExitException.java    |   97 +++
- 86 files changed, 5467 insertions(+), 5459 deletions(-)
+ autoload/vimclojure.vim |    2 +-
+ bin/ng-server           |    2 +-
+ indent/clojure.vim      |    4 ++--
+ ivy.xml                 |    4 ++--
+ syntax/clojure.vim      |   16 ++++++++++++----
+ 5 files changed, 18 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1.0)
 Author:     Meikel Brandmeyer <Brandels_Mikesh@web.de>
@@ -335,91 +168,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * EvalToplevel evaluated more than one expression
     * Line and File number information is now correctly when sending expressions
 
- autoload/vimclojure.vim                            |  205 ++++---
- doc/clojure.txt                                    |   87 +++-
- ftplugin/clojure.vim                               |   34 +-
- syntax/clojure.vim                                 |  275 ++++-----
- vimclojure-2.0.0/LICENSE.txt                       |   20 -
- vimclojure-2.0.0/Makefile                          |   26 -
- vimclojure-2.0.0/README.txt                        |   79 ---
- vimclojure-2.0.0/build.xml                         |   85 ---
- .../ftplugin/clojure/completions-clojure.core.txt  |  433 -------------
- .../ftplugin/clojure/completions-clojure.set.txt   |   10 -
- .../ftplugin/clojure/completions-clojure.xml.txt   |   13 -
- .../ftplugin/clojure/completions-clojure.zip.txt   |   27 -
- vimclojure-2.0.0/ng.exe                            |  Bin 15360 -> 0 bytes
- vimclojure-2.0.0/ngclient/ng.c                     |  638 --------------------
- .../src/com/martiansoftware/nailgun/Alias.java     |  113 ----
- .../com/martiansoftware/nailgun/AliasManager.java  |  132 ----
- .../src/com/martiansoftware/nailgun/LongUtils.java |   61 --
- .../com/martiansoftware/nailgun/NGConstants.java   |  108 ----
- .../src/com/martiansoftware/nailgun/NGContext.java |  261 --------
- .../martiansoftware/nailgun/NGExitException.java   |   47 --
- .../com/martiansoftware/nailgun/NGInputStream.java |  123 ----
- .../martiansoftware/nailgun/NGOutputStream.java    |   76 ---
- .../martiansoftware/nailgun/NGSecurityManager.java |   74 ---
- .../src/com/martiansoftware/nailgun/NGServer.java  |  506 ----------------
- .../src/com/martiansoftware/nailgun/NGSession.java |  337 -----------
- .../com/martiansoftware/nailgun/NGSessionPool.java |  122 ----
- .../src/com/martiansoftware/nailgun/NailStats.java |  130 ----
- .../nailgun/ThreadLocalInputStream.java            |  144 -----
- .../nailgun/ThreadLocalPrintStream.java            |  261 --------
- .../nailgun/builtins/DefaultNail.java              |   37 --
- .../martiansoftware/nailgun/builtins/NGAlias.java  |   82 ---
- .../nailgun/builtins/NGClasspath.java              |   77 ---
- .../nailgun/builtins/NGServerStats.java            |   54 --
- .../martiansoftware/nailgun/builtins/NGStop.java   |   36 --
- .../nailgun/builtins/NGVersion.java                |   16 -
- .../nailgun/builtins/builtins.properties           |   14 -
- .../nailgun/nailgun-version.properties             |    3 -
- .../src/de/kotka/vimclojure/backend.clj            |   97 ---
- .../src/de/kotka/vimclojure/gencompletions.clj     |   30 -
- vimclojure-2.0.0/src/de/kotka/vimclojure/nails.clj |  172 ------
- vimclojure-2.0.0/src/de/kotka/vimclojure/repl.clj  |  177 ------
- vimclojure-2.0.0/src/de/kotka/vimclojure/util.clj  |  331 ----------
- .../src/org/apache/tools/ant/ExitException.java    |   97 ---
- vimclojure-2.1.0/LICENSE.txt                       |   20 +
- vimclojure-2.1.0/Makefile                          |   26 +
- vimclojure-2.1.0/README.txt                        |  103 ++++
- vimclojure-2.1.0/build.xml                         |  207 +++++++
- .../ftplugin/clojure/completions-clojure.core.txt  |  433 +++++++++++++
- .../ftplugin/clojure/completions-clojure.set.txt   |   10 +
- .../ftplugin/clojure/completions-clojure.xml.txt   |   13 +
- .../ftplugin/clojure/completions-clojure.zip.txt   |   27 +
- vimclojure-2.1.0/ivy.xml                           |   23 +
- vimclojure-2.1.0/ivysettings.xml                   |    9 +
- vimclojure-2.1.0/ng.exe                            |  Bin 0 -> 15360 bytes
- vimclojure-2.1.0/ngclient/ng.c                     |  638 ++++++++++++++++++++
- .../src/com/martiansoftware/nailgun/Alias.java     |  113 ++++
- .../com/martiansoftware/nailgun/AliasManager.java  |  132 ++++
- .../src/com/martiansoftware/nailgun/LongUtils.java |   61 ++
- .../com/martiansoftware/nailgun/NGConstants.java   |  108 ++++
- .../src/com/martiansoftware/nailgun/NGContext.java |  261 ++++++++
- .../martiansoftware/nailgun/NGExitException.java   |   47 ++
- .../com/martiansoftware/nailgun/NGInputStream.java |  123 ++++
- .../martiansoftware/nailgun/NGOutputStream.java    |   76 +++
- .../martiansoftware/nailgun/NGSecurityManager.java |   74 +++
- .../src/com/martiansoftware/nailgun/NGServer.java  |  506 ++++++++++++++++
- .../src/com/martiansoftware/nailgun/NGSession.java |  337 +++++++++++
- .../com/martiansoftware/nailgun/NGSessionPool.java |  122 ++++
- .../src/com/martiansoftware/nailgun/NailStats.java |  130 ++++
- .../nailgun/ThreadLocalInputStream.java            |  144 +++++
- .../nailgun/ThreadLocalPrintStream.java            |  261 ++++++++
- .../nailgun/builtins/DefaultNail.java              |   37 ++
- .../martiansoftware/nailgun/builtins/NGAlias.java  |   82 +++
- .../nailgun/builtins/NGClasspath.java              |   77 +++
- .../nailgun/builtins/NGServerStats.java            |   54 ++
- .../martiansoftware/nailgun/builtins/NGStop.java   |   36 ++
- .../nailgun/builtins/NGVersion.java                |   16 +
- .../nailgun/builtins/builtins.properties           |   14 +
- .../nailgun/nailgun-version.properties             |    3 +
- .../src/de/kotka/vimclojure/backend.clj            |  187 ++++++
- .../src/de/kotka/vimclojure/gencompletions.clj     |   30 +
- vimclojure-2.1.0/src/de/kotka/vimclojure/nails.clj |  236 ++++++++
- vimclojure-2.1.0/src/de/kotka/vimclojure/repl.clj  |  185 ++++++
- vimclojure-2.1.0/src/de/kotka/vimclojure/util.clj  |  393 ++++++++++++
- .../src/org/apache/tools/ant/ExitException.java    |   97 +++
- 84 files changed, 5803 insertions(+), 5298 deletions(-)
+ autoload/vimclojure.vim             |  205 +++++++++++++++----------
+ build.xml                           |  288 +++++++++++++++++++++++++----------
+ doc/README.txt                      |   26 +++-
+ doc/clojure.txt                     |   87 ++++++++++-
+ ftplugin/clojure.vim                |   34 ++++-
+ ivy.xml                             |   23 +++
+ ivysettings.xml                     |    9 +
+ src/de/kotka/vimclojure/backend.clj |  116 +++++++++++++--
+ src/de/kotka/vimclojure/nails.clj   |  132 ++++++++++++----
+ src/de/kotka/vimclojure/repl.clj    |   20 ++-
+ src/de/kotka/vimclojure/util.clj    |   94 ++++++++++--
+ syntax/clojure.vim                  |  275 ++++++++++++++--------------------
+ 12 files changed, 907 insertions(+), 402 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.0)
 Author:     Meikel Brandmeyer <Brandels_Mikesh@web.de>
@@ -428,42 +189,34 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.0.0: Updated for latest Clojure SVN. Merged with Gorilla.
 
+ Makefile                                           |   26 +
  autoload/vimclojure.vim                            |  530 ++++++++++++++++-
  bin/ng-server                                      |   55 ++
+ build.xml                                          |   85 +++
+ de/kotka/vimclojure/gencompletions.clj             |   30 -
+ doc/LICENSE.txt                                    |   20 +
+ doc/README.txt                                     |   91 +++-
  doc/clojure.txt                                    |  192 ++++++-
+ doc/version.txt                                    |    6 -
  ftplugin/clojure.vim                               |   79 +++
+ ftplugin/clojure/completions-clojure.core.txt      |   35 +-
+ ftplugin/clojure/completions-clojure.zip.txt       |    3 +
  indent/clojure.vim                                 |   16 +-
- syntax/clojure.vim                                 |   24 +-
- vimclojure-1.3.0/README.txt                        |   26 -
- .../de/kotka/vimclojure/gencompletions.clj         |   30 -
- .../ftplugin/clojure/completions-clojure.core.txt  |  414 -------------
- .../ftplugin/clojure/completions-clojure.set.txt   |   10 -
- .../ftplugin/clojure/completions-clojure.xml.txt   |   13 -
- .../ftplugin/clojure/completions-clojure.zip.txt   |   24 -
- vimclojure-1.3.0/version.txt                       |    6 -
- vimclojure-2.0.0/LICENSE.txt                       |   20 +
- vimclojure-2.0.0/Makefile                          |   26 +
- vimclojure-2.0.0/README.txt                        |   79 +++
- vimclojure-2.0.0/build.xml                         |   85 +++
- .../ftplugin/clojure/completions-clojure.core.txt  |  433 +++++++++++++
- .../ftplugin/clojure/completions-clojure.set.txt   |   10 +
- .../ftplugin/clojure/completions-clojure.xml.txt   |   13 +
- .../ftplugin/clojure/completions-clojure.zip.txt   |   27 +
- vimclojure-2.0.0/ng.exe                            |  Bin 0 -> 15360 bytes
- vimclojure-2.0.0/ngclient/ng.c                     |  638 ++++++++++++++++++++
- .../src/com/martiansoftware/nailgun/Alias.java     |  113 ++++
- .../com/martiansoftware/nailgun/AliasManager.java  |  132 ++++
- .../src/com/martiansoftware/nailgun/LongUtils.java |   61 ++
- .../com/martiansoftware/nailgun/NGConstants.java   |  108 ++++
- .../src/com/martiansoftware/nailgun/NGContext.java |  261 ++++++++
+ ng.exe                                             |  Bin 0 -> 15360 bytes
+ ngclient/ng.c                                      |  638 ++++++++++++++++++++
+ src/com/martiansoftware/nailgun/Alias.java         |  113 ++++
+ src/com/martiansoftware/nailgun/AliasManager.java  |  132 ++++
+ src/com/martiansoftware/nailgun/LongUtils.java     |   61 ++
+ src/com/martiansoftware/nailgun/NGConstants.java   |  108 ++++
+ src/com/martiansoftware/nailgun/NGContext.java     |  261 ++++++++
  .../martiansoftware/nailgun/NGExitException.java   |   47 ++
- .../com/martiansoftware/nailgun/NGInputStream.java |  123 ++++
+ src/com/martiansoftware/nailgun/NGInputStream.java |  123 ++++
  .../martiansoftware/nailgun/NGOutputStream.java    |   76 +++
  .../martiansoftware/nailgun/NGSecurityManager.java |   74 +++
- .../src/com/martiansoftware/nailgun/NGServer.java  |  506 ++++++++++++++++
- .../src/com/martiansoftware/nailgun/NGSession.java |  337 +++++++++++
- .../com/martiansoftware/nailgun/NGSessionPool.java |  122 ++++
- .../src/com/martiansoftware/nailgun/NailStats.java |  130 ++++
+ src/com/martiansoftware/nailgun/NGServer.java      |  506 ++++++++++++++++
+ src/com/martiansoftware/nailgun/NGSession.java     |  337 +++++++++++
+ src/com/martiansoftware/nailgun/NGSessionPool.java |  122 ++++
+ src/com/martiansoftware/nailgun/NailStats.java     |  130 ++++
  .../nailgun/ThreadLocalInputStream.java            |  144 +++++
  .../nailgun/ThreadLocalPrintStream.java            |  261 ++++++++
  .../nailgun/builtins/DefaultNail.java              |   37 ++
@@ -474,13 +227,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  .../nailgun/builtins/NGVersion.java                |   16 +
  .../nailgun/builtins/builtins.properties           |   14 +
  .../nailgun/nailgun-version.properties             |    3 +
- .../src/de/kotka/vimclojure/backend.clj            |   97 +++
- .../src/de/kotka/vimclojure/gencompletions.clj     |   30 +
- vimclojure-2.0.0/src/de/kotka/vimclojure/nails.clj |  172 ++++++
- vimclojure-2.0.0/src/de/kotka/vimclojure/repl.clj  |  177 ++++++
- vimclojure-2.0.0/src/de/kotka/vimclojure/util.clj  |  331 ++++++++++
- .../src/org/apache/tools/ant/ExitException.java    |   97 +++
- 52 files changed, 5903 insertions(+), 565 deletions(-)
+ src/de/kotka/vimclojure/backend.clj                |   97 +++
+ src/de/kotka/vimclojure/gencompletions.clj         |   30 +
+ src/de/kotka/vimclojure/nails.clj                  |  172 ++++++
+ src/de/kotka/vimclojure/repl.clj                   |  177 ++++++
+ src/de/kotka/vimclojure/util.clj                   |  331 ++++++++++
+ src/org/apache/tools/ant/ExitException.java        |   97 +++
+ syntax/clojure.vim                                 |   24 +-
+ 45 files changed, 5443 insertions(+), 105 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.0)
 Author:     Meikel Brandmeyer <Brandels_Mikesh@web.de>
@@ -489,18 +243,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3.0: Initial upload
 
- README                                             |   13 +
- autoload/vimclojure.vim                            |   93 +++++
- doc/clojure.txt                                    |   23 ++
- ftdetect/clojure.vim                               |    1 +
- ftplugin/clojure.vim                               |   56 +++
- indent/clojure.vim                                 |  213 ++++++++++
- syntax/clojure.vim                                 |  299 ++++++++++++++
- vimclojure-1.3.0/README.txt                        |   26 ++
- .../de/kotka/vimclojure/gencompletions.clj         |   30 ++
- .../ftplugin/clojure/completions-clojure.core.txt  |  414 ++++++++++++++++++++
- .../ftplugin/clojure/completions-clojure.set.txt   |   10 +
- .../ftplugin/clojure/completions-clojure.xml.txt   |   13 +
- .../ftplugin/clojure/completions-clojure.zip.txt   |   24 ++
- vimclojure-1.3.0/version.txt                       |    6 +
+ README                                        |   13 +
+ autoload/vimclojure.vim                       |   93 ++++++
+ de/kotka/vimclojure/gencompletions.clj        |   30 ++
+ doc/README.txt                                |   26 ++
+ doc/clojure.txt                               |   23 ++
+ doc/version.txt                               |    6 +
+ ftdetect/clojure.vim                          |    1 +
+ ftplugin/clojure.vim                          |   56 ++++
+ ftplugin/clojure/completions-clojure.core.txt |  414 +++++++++++++++++++++++++
+ ftplugin/clojure/completions-clojure.set.txt  |   10 +
+ ftplugin/clojure/completions-clojure.xml.txt  |   13 +
+ ftplugin/clojure/completions-clojure.zip.txt  |   24 ++
+ indent/clojure.vim                            |  213 +++++++++++++
+ syntax/clojure.vim                            |  299 ++++++++++++++++++
  14 files changed, 1221 insertions(+), 0 deletions(-)

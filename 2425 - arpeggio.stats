@@ -7,18 +7,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Fix |arpeggio-commands| to behave the same as |:map| commands.  In other words, " and keys after " in {rhs} for |arpeggio-commands| are treated as a part of {rhs}.  Old versions don't behave so.- Fix minor bugs.- Revise the document a bit.- Revise additional syntax highlighting a bit.
 
- autoload/arpeggio.vim                              |   13 +-
- doc/arpeggio.txt                                   |   58 ++--
- doc/tags                                           |   67 +++
- plugin/arpeggio.vim                                |   12 +-
- vim-arpeggio-0.0.5/after/syntax/vim/arpeggio.vim   |   49 ---
- vim-arpeggio-0.0.6/.mduem/cache/Makefile.variables |    6 +
- vim-arpeggio-0.0.6/Makefile                        |   13 +
- vim-arpeggio-0.0.6/after/syntax/vim/arpeggio.vim   |   43 ++
- vim-arpeggio-0.0.6/mduem/Makefile                  |  431 ++++++++++++++++++++
- vim-arpeggio-0.0.6/test/ui.expected                |   10 +
- vim-arpeggio-0.0.6/test/ui.input                   |   46 ++
- 11 files changed, 664 insertions(+), 84 deletions(-)
+ .mduem/cache/Makefile.variables |    6 +
+ Makefile                        |   13 ++
+ after/syntax/vim/arpeggio.vim   |   14 +-
+ autoload/arpeggio.vim           |   13 +-
+ doc/arpeggio.txt                |   58 +++---
+ doc/tags                        |   67 ++++++
+ mduem/Makefile                  |  431 +++++++++++++++++++++++++++++++++++++++
+ plugin/arpeggio.vim             |   12 +-
+ test/ui.expected                |   10 +
+ test/ui.input                   |   46 ++++
+ 10 files changed, 625 insertions(+), 45 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.5)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -29,12 +28,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Remove the assumption on 'timeout' and 'ttimeout'.  Old version  assumes that "set timeout notimeout", but now their values can be  arbitrary.- Fix the bug that 'ttimeoutlen' can be interpreted as an unexpected  value because of the adjustment of 'timeout' and 'timeoutlen' for  arpeggio key mappings.
 
- autoload/arpeggio.vim                            |   12 +++++-
- doc/arpeggio.txt                                 |   22 ++++------
- plugin/arpeggio.vim                              |    2 +-
- vim-arpeggio-0.0.4/after/syntax/vim/arpeggio.vim |   49 ----------------------
- vim-arpeggio-0.0.5/after/syntax/vim/arpeggio.vim |   49 ++++++++++++++++++++++
- 5 files changed, 70 insertions(+), 64 deletions(-)
+ after/syntax/vim/arpeggio.vim |    2 +-
+ autoload/arpeggio.vim         |   12 +++++++++++-
+ doc/arpeggio.txt              |   22 +++++++++-------------
+ plugin/arpeggio.vim           |    2 +-
+ 4 files changed, 22 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.4)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -45,10 +43,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Add syntax highlighting for |arpeggio-commands|.- Fix bugs of "noremap" version of |arpeggio-commands| such as  |:Arpeggionoremap| that {rhs} are remapped despite the meaning of  the commands.  (Thanks for id:ampmmn)
 
- autoload/arpeggio.vim                            |    2 +-
- doc/arpeggio.txt                                 |    8 +++-
- plugin/arpeggio.vim                              |   20 ++++----
- vim-arpeggio-0.0.4/after/syntax/vim/arpeggio.vim |   49 ++++++++++++++++++++++
+ after/syntax/vim/arpeggio.vim |   49 +++++++++++++++++++++++++++++++++++++++++
+ autoload/arpeggio.vim         |    2 +-
+ doc/arpeggio.txt              |    8 ++++++-
+ plugin/arpeggio.vim           |   20 ++++++++--------
  4 files changed, 67 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.3)

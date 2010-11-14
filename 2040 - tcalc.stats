@@ -11,10 +11,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Debugger (sort of)
     - FIX: Nested blocks & more
 
- doc/tcalc.txt       |   48 +++++
- plugin/tcalc.vim    |   14 ++-
- syntax/tcalc.vim    |    6 +-
- tcalc/ruby/tcalc.rb |  497 +++++++++++++++++++++++++++++++++++++++------------
+ doc/tcalc.txt    |   48 ++++++
+ plugin/tcalc.vim |   14 ++-
+ ruby/tcalc.rb    |  497 +++++++++++++++++++++++++++++++++++++++++-------------
+ syntax/tcalc.vim |    6 +-
  4 files changed, 442 insertions(+), 123 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
@@ -29,12 +29,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - VIM: use the tcalc window to display plots, lists etc.
     - FIX: Nested words and some more
 
- autoload/tcalc.vim  |   35 +++++++++++++++++------
- doc/tcalc.txt       |   41 +++++++++++++--------------
- ftplugin/tcalc.vim  |   15 ++++++++++
- plugin/tcalc.vim    |   19 ++++++++-----
- syntax/tcalc.vim    |    6 ++--
- tcalc/ruby/tcalc.rb |   76 ++++++++++++++++++++++++++++++++++-----------------
+ autoload/tcalc.vim |   35 ++++++++++++++++++------
+ doc/tcalc.txt      |   41 +++++++++++++--------------
+ ftplugin/tcalc.vim |   15 ++++++++++
+ plugin/tcalc.vim   |   19 ++++++++-----
+ ruby/tcalc.rb      |   76 +++++++++++++++++++++++++++++++++++-----------------
+ syntax/tcalc.vim   |    6 ++--
  6 files changed, 127 insertions(+), 65 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
@@ -49,12 +49,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - FIX: sort words on completion
     - Distribute as zip
 
- doc/tcalc.txt       |  266 +++++++++--
- plugin/tcalc.vim    |   14 +-
- ruby/tcalc.rb       | 1328 --------------------------------------------------
- syntax/tcalc.vim    |    9 +-
- tcalc/ruby/tcalc.rb | 1349 +++++++++++++++++++++++++++++++++++++++++++++++++++
- 5 files changed, 1591 insertions(+), 1375 deletions(-)
+ doc/tcalc.txt    |  266 ++++++++++++++++++++++++++++++++++++++++++++++--------
+ plugin/tcalc.vim |   14 ++-
+ ruby/tcalc.rb    |   61 +++++++++----
+ syntax/tcalc.vim |    9 +-
+ 4 files changed, 283 insertions(+), 67 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
 Author:     Tom Link <micathom@gmail.com>

@@ -5,10 +5,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1.1: - Update for ku 0.2.1.
 
- doc/ku-bundle.txt                          |    5 +-
- vim-ku-bundle-0.1.0/autoload/ku/bundle.vim |  214 --------------------------
- vim-ku-bundle-0.1.1/autoload/ku/bundle.vim |  229 ++++++++++++++++++++++++++++
- 3 files changed, 233 insertions(+), 215 deletions(-)
+ autoload/ku/bundle.vim |   55 ++++++++++++++++++++++++++++++-----------------
+ doc/ku-bundle.txt      |    5 +++-
+ 2 files changed, 39 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1.0)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -17,10 +16,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1.0: - Update for ku 0.2.0.
 
- doc/ku-bundle.txt                          |    9 +-
- vim-ku-bundle-0.0.2/autoload/ku/bundle.vim |  206 --------------------------
- vim-ku-bundle-0.1.0/autoload/ku/bundle.vim |  214 ++++++++++++++++++++++++++++
- 3 files changed, 220 insertions(+), 209 deletions(-)
+ autoload/ku/bundle.vim |   54 +++++++++++++++++++++++++++--------------------
+ doc/ku-bundle.txt      |    9 +++++--
+ 2 files changed, 37 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.2)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -31,11 +29,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Change |ku-bundle-action-default|.  Now it does the same as |ku-bundle-action-args| instead of |ku-bundle-action-load-or-args|.
 
- doc/ku-bundle.txt                          |  143 +++++++++++++++++++
- doc/ku_bundle.txt                          |  136 ------------------
- vim-ku-bundle-0.0.1/autoload/ku/bundle.vim |  206 ----------------------------
- vim-ku-bundle-0.0.2/autoload/ku/bundle.vim |  206 ++++++++++++++++++++++++++++
- 4 files changed, 349 insertions(+), 342 deletions(-)
+ autoload/ku/bundle.vim |    4 +-
+ doc/ku-bundle.txt      |  143 ++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/ku_bundle.txt      |  136 ---------------------------------------------
+ 3 files changed, 145 insertions(+), 138 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -44,7 +41,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.1: Initial upload
 
- README                                     |   16 ++
- doc/ku_bundle.txt                          |  136 ++++++++++++++++++
- vim-ku-bundle-0.0.1/autoload/ku/bundle.vim |  206 ++++++++++++++++++++++++++++
+ README                 |   16 ++++
+ autoload/ku/bundle.vim |  206 ++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/ku_bundle.txt      |  136 +++++++++++++++++++++++++++++++
  3 files changed, 358 insertions(+), 0 deletions(-)

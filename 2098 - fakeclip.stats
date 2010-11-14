@@ -5,45 +5,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2.8: - |:FakeclipDefaultKeyMappings|: Fix to regard a given bang.
 
- autoload/fakeclip.vim                              |    2 +-
- doc/fakeclip.txt                                   |   17 +-
- doc/tags                                           |    1 +
- plugin/fakeclip.vim                                |  115 +++---
- vim-fakeclip-0.2.7/.mduem/cache/Makefile.variables |    6 -
- vim-fakeclip-0.2.7/Makefile                        |   13 -
- vim-fakeclip-0.2.7/mduem/Makefile                  |  428 --------------------
- vim-fakeclip-0.2.7/test/clipboard-cygwin.expected  |   10 -
- vim-fakeclip-0.2.7/test/clipboard-cygwin.input     |   22 -
- vim-fakeclip-0.2.7/test/clipboard-mac.expected     |   10 -
- vim-fakeclip-0.2.7/test/clipboard-mac.input        |   22 -
- vim-fakeclip-0.2.7/test/clipboard-x.expected       |   10 -
- vim-fakeclip-0.2.7/test/clipboard-x.input          |   22 -
- vim-fakeclip-0.2.7/test/misc.expected              |   40 --
- vim-fakeclip-0.2.7/test/misc.input                 |  127 ------
- .../test/pastebuffer-gnuscreen.expected            |   42 --
- .../test/pastebuffer-gnuscreen.input               |  145 -------
- vim-fakeclip-0.2.7/test/pastebuffer-tmux.expected  |   14 -
- vim-fakeclip-0.2.7/test/pastebuffer-tmux.input     |   36 --
- vim-fakeclip-0.2.7/test/ui.expected                |   12 -
- vim-fakeclip-0.2.7/test/ui.input                   |   29 --
- vim-fakeclip-0.2.8/.mduem/cache/Makefile.variables |    6 +
- vim-fakeclip-0.2.8/Makefile                        |   13 +
- vim-fakeclip-0.2.8/mduem/Makefile                  |  428 ++++++++++++++++++++
- vim-fakeclip-0.2.8/test/clipboard-cygwin.expected  |   10 +
- vim-fakeclip-0.2.8/test/clipboard-cygwin.input     |   22 +
- vim-fakeclip-0.2.8/test/clipboard-mac.expected     |   10 +
- vim-fakeclip-0.2.8/test/clipboard-mac.input        |   22 +
- vim-fakeclip-0.2.8/test/clipboard-x.expected       |   10 +
- vim-fakeclip-0.2.8/test/clipboard-x.input          |   22 +
- vim-fakeclip-0.2.8/test/misc.expected              |   40 ++
- vim-fakeclip-0.2.8/test/misc.input                 |  127 ++++++
- .../test/pastebuffer-gnuscreen.expected            |   42 ++
- .../test/pastebuffer-gnuscreen.input               |  145 +++++++
- vim-fakeclip-0.2.8/test/pastebuffer-tmux.expected  |   14 +
- vim-fakeclip-0.2.8/test/pastebuffer-tmux.input     |   36 ++
- vim-fakeclip-0.2.8/test/ui.expected                |   12 +
- vim-fakeclip-0.2.8/test/ui.input                   |   29 ++
- 38 files changed, 1060 insertions(+), 1051 deletions(-)
+ .mduem/cache/Makefile.variables |    2 +-
+ autoload/fakeclip.vim           |    2 +-
+ doc/fakeclip.txt                |   17 ++++--
+ doc/tags                        |    1 +
+ mduem/Makefile                  |    2 +-
+ plugin/fakeclip.vim             |  115 ++++++++++++++++++++-------------------
+ 6 files changed, 74 insertions(+), 65 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.7)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -54,27 +22,27 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Fix to read/write the paste buffer of GNU screen outside a session.  Old versions allow to read/write the paste buffer only if Vim is running in a session of GNU screen.
 
- autoload/fakeclip.vim                              |   11 +-
- doc/fakeclip.txt                                   |   13 +-
- doc/tags                                           |   59 +++
- plugin/fakeclip.vim                                |    6 +-
- vim-fakeclip-0.2.7/.mduem/cache/Makefile.variables |    6 +
- vim-fakeclip-0.2.7/Makefile                        |   13 +
- vim-fakeclip-0.2.7/mduem/Makefile                  |  428 ++++++++++++++++++++
- vim-fakeclip-0.2.7/test/clipboard-cygwin.expected  |   10 +
- vim-fakeclip-0.2.7/test/clipboard-cygwin.input     |   22 +
- vim-fakeclip-0.2.7/test/clipboard-mac.expected     |   10 +
- vim-fakeclip-0.2.7/test/clipboard-mac.input        |   22 +
- vim-fakeclip-0.2.7/test/clipboard-x.expected       |   10 +
- vim-fakeclip-0.2.7/test/clipboard-x.input          |   22 +
- vim-fakeclip-0.2.7/test/misc.expected              |   40 ++
- vim-fakeclip-0.2.7/test/misc.input                 |  127 ++++++
- .../test/pastebuffer-gnuscreen.expected            |   42 ++
- .../test/pastebuffer-gnuscreen.input               |  145 +++++++
- vim-fakeclip-0.2.7/test/pastebuffer-tmux.expected  |   14 +
- vim-fakeclip-0.2.7/test/pastebuffer-tmux.input     |   36 ++
- vim-fakeclip-0.2.7/test/ui.expected                |   12 +
- vim-fakeclip-0.2.7/test/ui.input                   |   29 ++
+ .mduem/cache/Makefile.variables     |    6 +
+ Makefile                            |   13 +
+ autoload/fakeclip.vim               |   11 +-
+ doc/fakeclip.txt                    |   13 +-
+ doc/tags                            |   59 +++++
+ mduem/Makefile                      |  428 +++++++++++++++++++++++++++++++++++
+ plugin/fakeclip.vim                 |    6 +-
+ test/clipboard-cygwin.expected      |   10 +
+ test/clipboard-cygwin.input         |   22 ++
+ test/clipboard-mac.expected         |   10 +
+ test/clipboard-mac.input            |   22 ++
+ test/clipboard-x.expected           |   10 +
+ test/clipboard-x.input              |   22 ++
+ test/misc.expected                  |   40 ++++
+ test/misc.input                     |  127 +++++++++++
+ test/pastebuffer-gnuscreen.expected |   42 ++++
+ test/pastebuffer-gnuscreen.input    |  145 ++++++++++++
+ test/pastebuffer-tmux.expected      |   14 ++
+ test/pastebuffer-tmux.input         |   36 +++
+ test/ui.expected                    |   12 +
+ test/ui.input                       |   29 +++
  21 files changed, 1066 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.6)

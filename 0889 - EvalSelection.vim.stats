@@ -23,12 +23,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Escape backslashes in EvalSelectionTalk()
     - SPSS: Insert a space before variable names (like SPSS itself)
 
- EvalSelection/etc/EvalSelection.lst |    5 -
- EvalSelection/ruby/EvalSelection.rb |  417 ----------------------------------
- doc/EvalSelection.txt               |   47 +---
- plugin/EvalSelection.vim            |  137 ++++++++----
- ruby/EvalSelection.rb               |  420 +++++++++++++++++++++++++++++++++++
- 5 files changed, 531 insertions(+), 495 deletions(-)
+ doc/EvalSelection.txt    |   47 ++++------------
+ etc/EvalSelection.lst    |    5 --
+ plugin/EvalSelection.vim |  137 +++++++++++++++++++++++++++++++++-------------
+ ruby/EvalSelection.rb    |   17 +++--
+ 4 files changed, 121 insertions(+), 85 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
 Author:     Tom Link <micathom@gmail.com>
@@ -39,9 +38,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed some menu-related problems; <LocalLeader>r shortkey for SPSS  andR (work similarly to ctrl-r in the spss editor); display a more usefulerror message when communication via OLE goes wrong; possibility to savethe interaction log; post setup & tear down hooks for externalinterpreters
 
- EvalSelection/ruby/EvalSelection.rb |  164 ++++++--
- doc/EvalSelection.txt               |   33 ++-
- plugin/EvalSelection.vim            |  769 +++++++++++++++++++++--------------
+ doc/EvalSelection.txt    |   33 ++-
+ plugin/EvalSelection.vim |  769 +++++++++++++++++++++++++++-------------------
+ ruby/EvalSelection.rb    |  164 ++++++++---
  3 files changed, 613 insertions(+), 353 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
@@ -53,11 +52,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     R: set working directory and load .Rdata if available, word completion, catch errors, build objects menu; SPSS: show data window, build menu; g:evalSelectionLogCommands defaults to 1; revamped log
 
- EvalSelection/etc/EvalSelection.lst |    1 +
- EvalSelection/ruby/EvalSelection.rb |   61 ++++++--
- doc/EvalSelection.txt               |    9 +-
- plugin/EvalSelection.vim            |  280 +++++++++++++++++++++++++++++++----
- syntax/EvalSelectionLog.vim         |   33 ++++
+ doc/EvalSelection.txt       |    9 ++-
+ etc/EvalSelection.lst       |    1 +
+ plugin/EvalSelection.vim    |  280 ++++++++++++++++++++++++++++++++++++++-----
+ ruby/EvalSelection.rb       |   61 ++++++++--
+ syntax/EvalSelectionLog.vim |   33 +++++
  5 files changed, 341 insertions(+), 43 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
@@ -69,9 +68,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     capture interaction with R via R(D)COM; "RDCOM" uses a 2nd instance of gvim as a pager (it doesn't start RCmdr any more); "RDCOM Commander" uses RCmdr; "RDCOM Clean" and "RDCOM Commander Clean" modes; take care of R functions with void results (like data, help.search ...)
 
- EvalSelection/ruby/EvalSelection.rb |   75 ++++++++++++------
- doc/EvalSelection.txt               |   68 +++++++++++------
- plugin/EvalSelection.vim            |  145 +++++++++++++++++++++++------------
+ doc/EvalSelection.txt    |   68 ++++++++++++++--------
+ plugin/EvalSelection.vim |  145 ++++++++++++++++++++++++++++++----------------
+ ruby/EvalSelection.rb    |   75 ++++++++++++++++--------
  3 files changed, 190 insertions(+), 98 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
@@ -83,10 +82,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     support for interaction with R and SPSS via win32 COM/OLE; calculator shortcuts
 
- EvalSelection/etc/EvalSelection.lst |    4 +
- EvalSelection/ruby/EvalSelection.rb |  185 +++++++++++++----
- doc/EvalSelection.txt               |  157 +++++++++------
- plugin/EvalSelection.vim            |  398 ++++++++++++++++++++++++++---------
+ doc/EvalSelection.txt    |  157 +++++++++++-------
+ etc/EvalSelection.lst    |    4 +
+ plugin/EvalSelection.vim |  398 ++++++++++++++++++++++++++++++++++------------
+ ruby/EvalSelection.rb    |  185 +++++++++++++++++-----
  4 files changed, 543 insertions(+), 201 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
@@ -98,10 +97,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     improved interaction with external interpreters (still not fully usable but it's getting better); reunified EvalSelection.vim and EvalSelectionRuby.vim
 
- EvalSelection/ruby/EvalSelection.rb |   93 +++++++++--------
- doc/EvalSelection.txt               |   37 +++++--
- plugin/EvalSelection.vim            |  190 +++++++++++++++++++++++++++++++++-
- plugin/EvalSelectionRuby.vim        |  195 -----------------------------------
+ doc/EvalSelection.txt        |   37 ++++++---
+ plugin/EvalSelection.vim     |  190 ++++++++++++++++++++++++++++++++++++++++-
+ plugin/EvalSelectionRuby.vim |  195 ------------------------------------------
+ ruby/EvalSelection.rb        |   93 ++++++++++----------
  4 files changed, 261 insertions(+), 254 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
@@ -113,10 +112,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Small improvements with external interpreters (e.g., multi-line commands in R); moved code depending on +ruby to EvalSelectionRuby.vim (thanks to Grant  Bowman for pointing out this problem); saved all files in unix  format; added python, perl, and tcl (but I can't tell if they work)
 
- EvalSelection/ruby/EvalSelection.rb |  155 ++++++
- doc/EvalSelection.txt               |  319 +++++++++++
- plugin/EvalSelection.vim            |  985 ++++++++++-------------------------
- plugin/EvalSelectionRuby.vim        |  195 +++++++
+ doc/EvalSelection.txt        |  319 ++++++++++++++
+ plugin/EvalSelection.vim     |  985 ++++++++++++------------------------------
+ plugin/EvalSelectionRuby.vim |  195 +++++++++
+ ruby/EvalSelection.rb        |  155 +++++++
  4 files changed, 937 insertions(+), 717 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)

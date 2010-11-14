@@ -7,12 +7,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Fix edge case bugs.  Now replaacing at the end of line or the end of buffer work as you expect.
 
- doc/operator-replace.txt                           |    9 +-
- .../autoload/operator/replace.vim                  |   79 ---------------
- .../plugin/operator/replace.vim                    |   40 --------
- .../autoload/operator/replace.vim                  |  104 ++++++++++++++++++++
- .../plugin/operator/replace.vim                    |   40 ++++++++
- 5 files changed, 149 insertions(+), 123 deletions(-)
+ autoload/operator/replace.vim |   33 +++++++++++++++++++++++++++++----
+ doc/operator-replace.txt      |    9 +++++----
+ plugin/operator/replace.vim   |    2 +-
+ 3 files changed, 35 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.0)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -21,8 +19,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.0: Initial upload
 
- README                                             |   16 +++
- doc/operator-replace.txt                           |  130 ++++++++++++++++++++
- .../autoload/operator/replace.vim                  |   79 ++++++++++++
- .../plugin/operator/replace.vim                    |   40 ++++++
+ README                        |   16 +++++
+ autoload/operator/replace.vim |   79 +++++++++++++++++++++++++
+ doc/operator-replace.txt      |  130 +++++++++++++++++++++++++++++++++++++++++
+ plugin/operator/replace.vim   |   40 +++++++++++++
  4 files changed, 265 insertions(+), 0 deletions(-)

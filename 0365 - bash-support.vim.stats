@@ -734,28 +734,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + Installation simplified.+ Run syntax check / list errors in an error window.+ Append aligned comments to all lines of a marked block.+ The root menu can be removed.+ The dialog windows (GUI) have been replaced by more flexible command line inputs.+ The undocumented and unnecessary hot key F12 has been removed.
 
- README.bashsupport                                 |  162 ++
- bash.1.7/README                                    |  334 -----
- bash.1.7/install.sh                                |   98 --
- bash.1.7/plugin/templates/bash-file-header         |   21 -
- bash.1.7/plugin/templates/bash-frame               |    3 -
- .../plugin/templates/bash-function-description     |   13 -
- bash.1.7/rc/bash.vimrc                             |   20 -
- bash.1.7/rc/customization.gvimrc                   |   25 -
- bash.1.7/rc/customization.vimrc                    |  130 --
- bash.1.7/wordlists/bash.list                       |  105 --
- codesnippets-bash/free-software-comment            |    8 +
- doc/bash-hot-keys.pdf                              |  Bin 40755 -> 40744 bytes
- doc/bashsupport.txt                                |  301 +++--
- ftplugin/sh.vim                                    |   53 +-
- plugin/bash-support.vim                            | 1551 +++++++++++---------
- plugin/templates/bash-file-header                  |   20 +
- plugin/templates/bash-frame                        |    3 +
- plugin/templates/bash-function-description         |   13 +
- rc/customization.gvimrc                            |   23 +
- rc/customization.vimrc                             |  120 ++
- wordlists/bash.list                                |  105 ++
- 21 files changed, 1539 insertions(+), 1569 deletions(-)
+ README.bashsupport                      |  162 ++++
+ README.orig                             |  334 -------
+ codesnippets-bash/free-software-comment |    8 +
+ doc/bash-hot-keys.pdf                   |  Bin 40755 -> 40744 bytes
+ doc/bashsupport.txt                     |  301 ++++---
+ ftplugin/sh.vim                         |   53 +-
+ install.sh                              |   98 --
+ plugin/bash-support.vim                 | 1551 +++++++++++++++++--------------
+ plugin/templates/bash-file-header       |    3 +-
+ rc/bash.vimrc                           |   20 -
+ rc/customization.gvimrc                 |    6 +-
+ rc/customization.vimrc                  |   64 +-
+ 12 files changed, 1285 insertions(+), 1315 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
 Author:     Fritz Mehner <mehner@fh-swf.de>
@@ -766,26 +757,25 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + Only one entry in the gVim root menu.+ 28 key mappings for Vim without GUI. See bash-hot-keys.pdf (reference card).+ All hotkeys are only defined for bash files.+ Install script added.+ Customization improved. + Vim doc added (file bashsupport.txt).+ Documentation improved.+ Bug fix (template file handling)
 
- README.orig                                        |  191 ---
- bash.1.7/README                                    |  334 ++++++
- bash.1.7/install.sh                                |   98 ++
- bash.1.7/plugin/templates/bash-file-header         |   21 +
- bash.1.7/plugin/templates/bash-frame               |    3 +
- .../plugin/templates/bash-function-description     |   13 +
- bash.1.7/rc/bash.vimrc                             |   20 +
- bash.1.7/rc/customization.gvimrc                   |   25 +
- bash.1.7/rc/customization.vimrc                    |  130 +++
- bash.1.7/wordlists/bash.list                       |  105 ++
- costumization.gvimrc                               |   25 -
- costumization.vimrc                                |  116 --
- doc/bash-hot-keys.pdf                              |  Bin 0 -> 40755 bytes
- doc/bashsupport.txt                                |  347 ++++++
- ftplugin/sh.vim                                    |   70 ++
- plugin/bash-support.vim                            | 1217 +++++++++++---------
- templates/bash-file-header                         |   20 -
- templates/bash-frame                               |    3 -
- templates/bash-function-description                |   13 -
- 19 files changed, 1822 insertions(+), 929 deletions(-)
+ README.orig                                |  345 ++++++---
+ costumization.gvimrc                       |   25 -
+ costumization.vimrc                        |  116 ---
+ doc/bash-hot-keys.pdf                      |  Bin 0 -> 40755 bytes
+ doc/bashsupport.txt                        |  347 ++++++++
+ ftplugin/sh.vim                            |   70 ++
+ install.sh                                 |   98 +++
+ plugin/bash-support.vim                    | 1217 +++++++++++++++-------------
+ plugin/templates/bash-file-header          |   21 +
+ plugin/templates/bash-frame                |    3 +
+ plugin/templates/bash-function-description |   13 +
+ rc/bash.vimrc                              |   20 +
+ rc/customization.gvimrc                    |   25 +
+ rc/customization.vimrc                     |  130 +++
+ templates/bash-file-header                 |   20 -
+ templates/bash-frame                       |    3 -
+ templates/bash-function-description        |   13 -
+ wordlists/bash.list                        |  105 +++
+ 18 files changed, 1732 insertions(+), 839 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
 Author:     Fritz Mehner <mehner@fh-swf.de>

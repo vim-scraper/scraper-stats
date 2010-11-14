@@ -19,80 +19,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Added the g:woc_mappings option, to let the user define more easily its own
     mappings.
 
- woc-1.1/.woc/index.woc.bz2         |  Bin 438 -> 0 bytes
- woc-1.1/COPYING                    |  340 -
- woc-1.1/INSTALL                    |    5 -
- woc-1.1/README                     |  162 -
- woc-1.1/TODO                       |   35 -
- woc-1.1/demo/.realstart            |   29 -
- woc-1.1/demo/.woc/index.woc.bz2    |  Bin 415 -> 0 bytes
- woc-1.1/demo/README                |    4 -
- woc-1.1/demo/index.woc             |   20 -
- woc-1.1/demo/rmt/.cmds             |   34 -
- woc-1.1/demo/rmt/.faraway2         |   29 -
- woc-1.1/demo/rmt/.secret           |    6 -
- woc-1.1/demo/rmt/code/.cscope      |   19 -
- woc-1.1/demo/rmt/code/cscope.out   |44923 ------------------------------------
- woc-1.1/demo/rmt/code/neve.c       |   55 -
- woc-1.1/demo/rmt/code/rand_range.c |  163 -
- woc-1.1/demo/rmt/code/tags.rev.woc |   10 -
- woc-1.1/demo/rmt/code/tags.woc     |    7 -
- woc-1.1/demo/rmt/code/wave.c       |   46 -
- woc-1.1/demo/rmt/faraway           |   20 -
- woc-1.1/demo/rmt/tags.rev.woc      |   25 -
- woc-1.1/demo/rmt/tags.woc          |   10 -
- woc-1.1/demo/start                 |   15 -
- woc-1.1/demo/tags.rev.woc          |   12 -
- woc-1.1/demo/tags.woc              |    8 -
- woc-1.1/dev/index.woc              |   72 -
- woc-1.1/install.sh                 |   11 -
- woc-1.1/readme                     |  162 -
- woc-1.1/tags                       |   34 -
- woc-1.1/tags.rev.woc               |   33 -
- woc-1.1/tags.woc                   |   15 -
- woc-1.1/version                    |    1 -
- woc-1.1/woc.psy                    |  119 -
- woc-1.1/woc.vim                    |  826 -
- woc-1.1/wocdownloader              |  135 -
- woc-1.1/woctags.sh                 |   64 -
- woc-1.2/.woc/index.woc.bz2         |  Bin 0 -> 483 bytes
- woc-1.2/COPYING                    |  340 +
- woc-1.2/ChangeLog                  |   23 +
- woc-1.2/INSTALL                    |    5 +
- woc-1.2/README                     |  162 +
- woc-1.2/TODO                       |   35 +
- woc-1.2/demo/.realstart            |   29 +
- woc-1.2/demo/.woc/index.woc.bz2    |  Bin 0 -> 415 bytes
- woc-1.2/demo/README                |    4 +
- woc-1.2/demo/index.woc             |   20 +
- woc-1.2/demo/rmt/.cmds             |   34 +
- woc-1.2/demo/rmt/.faraway2         |   29 +
- woc-1.2/demo/rmt/.secret           |    6 +
- woc-1.2/demo/rmt/code/.cscope      |   19 +
- woc-1.2/demo/rmt/code/cscope.out   |44923 ++++++++++++++++++++++++++++++++++++
- woc-1.2/demo/rmt/code/neve.c       |   55 +
- woc-1.2/demo/rmt/code/rand_range.c |  163 +
- woc-1.2/demo/rmt/code/tags.rev.woc |   10 +
- woc-1.2/demo/rmt/code/tags.woc     |    7 +
- woc-1.2/demo/rmt/code/wave.c       |   46 +
- woc-1.2/demo/rmt/faraway           |   20 +
- woc-1.2/demo/rmt/tags.rev.woc      |   25 +
- woc-1.2/demo/rmt/tags.woc          |   10 +
- woc-1.2/demo/start                 |   15 +
- woc-1.2/demo/tags.rev.woc          |   12 +
- woc-1.2/demo/tags.woc              |    8 +
- woc-1.2/dev/index.woc              |   72 +
- woc-1.2/install.sh                 |   11 +
- woc-1.2/readme                     |  162 +
- woc-1.2/tags                       |   37 +
- woc-1.2/tags.rev.woc               |   57 +
- woc-1.2/tags.woc                   |   28 +
- woc-1.2/version                    |    1 +
- woc-1.2/woc.psy                    |  119 +
- woc-1.2/woc.vim                    |  872 +
- woc-1.2/wocdownloader              |  149 +
- woc-1.2/woctags.sh                 |   64 +
- 73 files changed, 47572 insertions(+), 47449 deletions(-)
+ .woc/index.woc.bz2 |  Bin 438 -> 483 bytes
+ ChangeLog          |   23 +++++++++++
+ plugin/woc.vim     |  110 +++++++++++++++++++++++++++++++++++++---------------
+ tags               |   15 ++++---
+ tags.rev.woc       |   26 ++++++++++++-
+ tags.woc           |   13 ++++++
+ version            |    2 +-
+ wocdownloader      |   14 +++++++
+ 8 files changed, 163 insertions(+), 40 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
 Author:     AlpT Aliptah <alpt@freaknet.org>
@@ -104,80 +39,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     A little bit of documentation added.
     Read the README ;)
 
- doc/woc_protocol                   |    2 +-
- woc-1.0/.woc/index.woc.bz2         |  Bin 438 -> 0 bytes
- woc-1.0/COPYING                    |  340 -
- woc-1.0/INSTALL                    |    5 -
- woc-1.0/README                     |   70 -
- woc-1.0/TODO                       |   35 -
- woc-1.0/demo/.realstart            |   29 -
- woc-1.0/demo/.woc/index.woc.bz2    |  Bin 415 -> 0 bytes
- woc-1.0/demo/README                |    4 -
- woc-1.0/demo/index.woc             |   20 -
- woc-1.0/demo/rmt/.cmds             |   34 -
- woc-1.0/demo/rmt/.faraway2         |   29 -
- woc-1.0/demo/rmt/.secret           |    6 -
- woc-1.0/demo/rmt/code/.cscope      |   19 -
- woc-1.0/demo/rmt/code/cscope.out   |44923 ------------------------------------
- woc-1.0/demo/rmt/code/neve.c       |   55 -
- woc-1.0/demo/rmt/code/rand_range.c |  163 -
- woc-1.0/demo/rmt/code/tags.rev.woc |   10 -
- woc-1.0/demo/rmt/code/tags.woc     |    7 -
- woc-1.0/demo/rmt/code/wave.c       |   46 -
- woc-1.0/demo/rmt/faraway           |   20 -
- woc-1.0/demo/rmt/tags.rev.woc      |   25 -
- woc-1.0/demo/rmt/tags.woc          |   10 -
- woc-1.0/demo/start                 |   15 -
- woc-1.0/demo/tags.rev.woc          |   12 -
- woc-1.0/demo/tags.woc              |    8 -
- woc-1.0/dev/index.woc              |   72 -
- woc-1.0/install.sh                 |   11 -
- woc-1.0/readme                     |   70 -
- woc-1.0/tags                       |   34 -
- woc-1.0/tags.rev.woc               |   33 -
- woc-1.0/tags.woc                   |   15 -
- woc-1.0/version                    |    1 -
- woc-1.0/woc.psy                    |  119 -
- woc-1.0/woc.vim                    |  826 -
- woc-1.0/wocdownloader              |  135 -
- woc-1.0/woctags.sh                 |   46 -
- woc-1.1/.woc/index.woc.bz2         |  Bin 0 -> 438 bytes
- woc-1.1/COPYING                    |  340 +
- woc-1.1/INSTALL                    |    5 +
- woc-1.1/README                     |  162 +
- woc-1.1/TODO                       |   35 +
- woc-1.1/demo/.realstart            |   29 +
- woc-1.1/demo/.woc/index.woc.bz2    |  Bin 0 -> 415 bytes
- woc-1.1/demo/README                |    4 +
- woc-1.1/demo/index.woc             |   20 +
- woc-1.1/demo/rmt/.cmds             |   34 +
- woc-1.1/demo/rmt/.faraway2         |   29 +
- woc-1.1/demo/rmt/.secret           |    6 +
- woc-1.1/demo/rmt/code/.cscope      |   19 +
- woc-1.1/demo/rmt/code/cscope.out   |44923 ++++++++++++++++++++++++++++++++++++
- woc-1.1/demo/rmt/code/neve.c       |   55 +
- woc-1.1/demo/rmt/code/rand_range.c |  163 +
- woc-1.1/demo/rmt/code/tags.rev.woc |   10 +
- woc-1.1/demo/rmt/code/tags.woc     |    7 +
- woc-1.1/demo/rmt/code/wave.c       |   46 +
- woc-1.1/demo/rmt/faraway           |   20 +
- woc-1.1/demo/rmt/tags.rev.woc      |   25 +
- woc-1.1/demo/rmt/tags.woc          |   10 +
- woc-1.1/demo/start                 |   15 +
- woc-1.1/demo/tags.rev.woc          |   12 +
- woc-1.1/demo/tags.woc              |    8 +
- woc-1.1/dev/index.woc              |   72 +
- woc-1.1/install.sh                 |   11 +
- woc-1.1/readme                     |  162 +
- woc-1.1/tags                       |   34 +
- woc-1.1/tags.rev.woc               |   33 +
- woc-1.1/tags.woc                   |   15 +
- woc-1.1/version                    |    1 +
- woc-1.1/woc.psy                    |  119 +
- woc-1.1/woc.vim                    |  826 +
- woc-1.1/wocdownloader              |  135 +
- woc-1.1/woctags.sh                 |   64 +
- 73 files changed, 47450 insertions(+), 47248 deletions(-)
+ README.orig      |  100 +++++++++++++++++++++++++++++++++++++++++++++++++++--
+ doc/woc_protocol |    2 +-
+ version          |    2 +-
+ woctags.sh       |   24 +++++++++++--
+ 4 files changed, 119 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
 Author:     AlpT Aliptah <alpt@freaknet.org>
@@ -186,42 +52,41 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README                             |   16 +
- doc/woc_protocol                   |  275 +
- woc-1.0/.woc/index.woc.bz2         |  Bin 0 -> 438 bytes
- woc-1.0/COPYING                    |  340 +
- woc-1.0/INSTALL                    |    5 +
- woc-1.0/README                     |   70 +
- woc-1.0/TODO                       |   35 +
- woc-1.0/demo/.realstart            |   29 +
- woc-1.0/demo/.woc/index.woc.bz2    |  Bin 0 -> 415 bytes
- woc-1.0/demo/README                |    4 +
- woc-1.0/demo/index.woc             |   20 +
- woc-1.0/demo/rmt/.cmds             |   34 +
- woc-1.0/demo/rmt/.faraway2         |   29 +
- woc-1.0/demo/rmt/.secret           |    6 +
- woc-1.0/demo/rmt/code/.cscope      |   19 +
- woc-1.0/demo/rmt/code/cscope.out   |44923 ++++++++++++++++++++++++++++++++++++
- woc-1.0/demo/rmt/code/neve.c       |   55 +
- woc-1.0/demo/rmt/code/rand_range.c |  163 +
- woc-1.0/demo/rmt/code/tags.rev.woc |   10 +
- woc-1.0/demo/rmt/code/tags.woc     |    7 +
- woc-1.0/demo/rmt/code/wave.c       |   46 +
- woc-1.0/demo/rmt/faraway           |   20 +
- woc-1.0/demo/rmt/tags.rev.woc      |   25 +
- woc-1.0/demo/rmt/tags.woc          |   10 +
- woc-1.0/demo/start                 |   15 +
- woc-1.0/demo/tags.rev.woc          |   12 +
- woc-1.0/demo/tags.woc              |    8 +
- woc-1.0/dev/index.woc              |   72 +
- woc-1.0/install.sh                 |   11 +
- woc-1.0/readme                     |   70 +
- woc-1.0/tags                       |   34 +
- woc-1.0/tags.rev.woc               |   33 +
- woc-1.0/tags.woc                   |   15 +
- woc-1.0/version                    |    1 +
- woc-1.0/woc.psy                    |  119 +
- woc-1.0/woc.vim                    |  826 +
- woc-1.0/wocdownloader              |  135 +
- woc-1.0/woctags.sh                 |   46 +
- 38 files changed, 47538 insertions(+), 0 deletions(-)
+ .woc/index.woc.bz2         |  Bin 0 -> 438 bytes
+ COPYING                    |  340 +
+ INSTALL                    |    5 +
+ README                     |   16 +
+ README.orig                |   70 +
+ TODO                       |   35 +
+ demo/.realstart            |   29 +
+ demo/.woc/index.woc.bz2    |  Bin 0 -> 415 bytes
+ demo/README                |    4 +
+ demo/index.woc             |   20 +
+ demo/rmt/.cmds             |   34 +
+ demo/rmt/.faraway2         |   29 +
+ demo/rmt/.secret           |    6 +
+ demo/rmt/code/.cscope      |   19 +
+ demo/rmt/code/cscope.out   |44923 ++++++++++++++++++++++++++++++++++++++++++++
+ demo/rmt/code/neve.c       |   55 +
+ demo/rmt/code/rand_range.c |  163 +
+ demo/rmt/code/tags.rev.woc |   10 +
+ demo/rmt/code/tags.woc     |    7 +
+ demo/rmt/code/wave.c       |   46 +
+ demo/rmt/faraway           |   20 +
+ demo/rmt/tags.rev.woc      |   25 +
+ demo/rmt/tags.woc          |   10 +
+ demo/start                 |   15 +
+ demo/tags.rev.woc          |   12 +
+ demo/tags.woc              |    8 +
+ dev/index.woc              |   72 +
+ doc/woc_protocol           |  275 +
+ install.sh                 |   11 +
+ plugin/woc.vim             |  826 +
+ tags                       |   34 +
+ tags.rev.woc               |   33 +
+ tags.woc                   |   15 +
+ version                    |    1 +
+ woc.psy                    |  119 +
+ wocdownloader              |  135 +
+ woctags.sh                 |   46 +
+ 37 files changed, 47468 insertions(+), 0 deletions(-)

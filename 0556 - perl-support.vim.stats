@@ -1048,39 +1048,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + Installation simplified. + The generation of the module list is a magnitude faster.+ The version of a module is now shown in the module list. + The perl documentation (pod::perl*) appears in the module list.+ The dialog windows (GUI) have been replaced by more flexible command line inputs.+ User will now be asked before a snippet file will be overwritten.+ The undocumented and unnecessary hot key F12 has been removed.
 
- README.perlsupport                                 |  189 +++++++++
- codesnippets-perl/free-software-comment            |    8 +
- codesnippets-perl/module-interface.pl              |   30 ++
- codesnippets-perl/pod-to-append.pl                 |   41 ++
- ...process-all-files-in-a-directory-recursively.pl |   31 ++
- doc/perlsupport.txt                                |  155 +++++--
- perl.2.0/README                                    |  436 --------------------
- perl.2.0/codesnippets-perl/free-software-comment   |    8 -
- perl.2.0/codesnippets-perl/module-interface.pl     |   30 --
- perl.2.0/codesnippets-perl/pod-to-append.pl        |   41 --
- ...process-all-files-in-a-directory-recursively.pl |   31 --
- perl.2.0/install.sh                                |  101 -----
- perl.2.0/plugin/templates/perl-file-header         |   24 --
- perl.2.0/plugin/templates/perl-frame               |    3 -
- .../plugin/templates/perl-function-description     |    6 -
- perl.2.0/plugin/templates/perl-module-header       |   21 -
- perl.2.0/rc/customization.ctags                    |    7 -
- perl.2.0/rc/customization.gvimrc                   |   23 -
- perl.2.0/rc/customization.vimrc                    |  157 -------
- perl.2.0/rc/perl.vimrc                             |   20 -
- perl.2.0/wordlists/perl.list                       |  239 -----------
- plugin/perl-support.vim                            |  169 +++++----
- plugin/pmdesc                                      |  142 -------
- plugin/pmdesc3                                     |  172 ++++++++
- plugin/templates/perl-file-header                  |   24 ++
- plugin/templates/perl-frame                        |    3 +
- plugin/templates/perl-function-description         |    6 +
- plugin/templates/perl-module-header                |   21 +
- rc/customization.ctags                             |    7 +
- rc/customization.gvimrc                            |   23 +
- rc/customization.vimrc                             |  150 +++++++
- wordlists/perl.list                                |  239 +++++++++++
- 32 files changed, 1154 insertions(+), 1403 deletions(-)
+ README.orig             |  436 -----------------------------------------------
+ README.perlsupport      |  189 ++++++++++++++++++++
+ doc/perlsupport.txt     |  155 ++++++++++++-----
+ install.sh              |  101 -----------
+ plugin/perl-support.vim |  169 +++++++++++--------
+ plugin/pmdesc           |  142 ---------------
+ plugin/pmdesc3          |  172 +++++++++++++++++++
+ rc/customization.vimrc  |   33 ++---
+ rc/perl.vimrc           |   20 ---
+ 9 files changed, 584 insertions(+), 833 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
 Author:     Fritz Mehner <mehner@fh-swf.de>
@@ -1100,36 +1077,26 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Bug fix (template file handling).
     + Install script improved.
 
+ README.orig                                        |  229 +++-
+ codesnippets-perl/free-software-comment            |    8 +
+ codesnippets-perl/module-interface.pl              |   30 +
+ codesnippets-perl/pod-to-append.pl                 |   41 +
+ ...process-all-files-in-a-directory-recursively.pl |   31 +
  doc/perl-hot-keys.pdf                              |  Bin 45747 -> 45667 bytes
  doc/perlsupport.txt                                |  579 ++++++++--
  ftplugin/perl.vim                                  |   40 +-
- perl.1.9.2/README                                  |  319 -----
- perl.1.9.2/install.sh                              |   59 -
- perl.1.9.2/plugin/templates/perl-file-header       |   21 -
- perl.1.9.2/plugin/templates/perl-frame             |    3 -
- .../plugin/templates/perl-function-description     |   13 -
- perl.1.9.2/rc/customization.gvimrc                 |   25 -
- perl.1.9.2/rc/customization.vimrc                  |  128 --
- perl.1.9.2/rc/perl.vimrc                           |   20 -
- perl.1.9.2/wordlists/perl.list                     |  239 ----
- perl.2.0/README                                    |  436 +++++++
- perl.2.0/codesnippets-perl/free-software-comment   |    8 +
- perl.2.0/codesnippets-perl/module-interface.pl     |   30 +
- perl.2.0/codesnippets-perl/pod-to-append.pl        |   41 +
- ...process-all-files-in-a-directory-recursively.pl |   31 +
- perl.2.0/install.sh                                |  101 ++
- perl.2.0/plugin/templates/perl-file-header         |   24 +
- perl.2.0/plugin/templates/perl-frame               |    3 +
- .../plugin/templates/perl-function-description     |    6 +
- perl.2.0/plugin/templates/perl-module-header       |   21 +
- perl.2.0/rc/customization.ctags                    |    7 +
- perl.2.0/rc/customization.gvimrc                   |   23 +
- perl.2.0/rc/customization.vimrc                    |  157 +++
- perl.2.0/rc/perl.vimrc                             |   20 +
- perl.2.0/wordlists/perl.list                       |  239 ++++
+ install.sh                                         |  100 ++-
  plugin/perl-support.vim                            | 1305 ++++++++++++--------
  plugin/pmdesc                                      |  142 +++
- 29 files changed, 2567 insertions(+), 1473 deletions(-)
+ plugin/templates/perl-file-header                  |    9 +-
+ plugin/templates/perl-frame                        |    4 +-
+ plugin/templates/perl-function-description         |   11 +-
+ plugin/templates/perl-module-header                |   21 +
+ rc/customization.ctags                             |    7 +
+ rc/customization.gvimrc                            |    2 -
+ rc/customization.vimrc                             |   33 +-
+ rc/perl.vimrc                                      |    2 +-
+ 19 files changed, 1844 insertions(+), 750 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9.2)
 Author:     Fritz Mehner <mehner@fh-swf.de>
@@ -1140,29 +1107,27 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + Only one entry in the gVim root menu.+ All hotkeys are only defined for Perl files.+ Install script added.+ Customization improved. + Documentation improved.
 
- doc/perl-hot-keys.pdf                              |  Bin 0 -> 45747 bytes
- doc/perlsupport.txt                                |  262 +++--
- ftplugin/perl.vim                                  |  109 ++
- perl.1.9.2/README                                  |  319 +++++
- perl.1.9.2/install.sh                              |   59 +
- perl.1.9.2/plugin/templates/perl-file-header       |   21 +
- perl.1.9.2/plugin/templates/perl-frame             |    3 +
- .../plugin/templates/perl-function-description     |   13 +
- perl.1.9.2/rc/customization.gvimrc                 |   25 +
- perl.1.9.2/rc/customization.vimrc                  |  128 ++
- perl.1.9.2/rc/perl.vimrc                           |   20 +
- perl.1.9.2/wordlists/perl.list                     |  239 ++++
- perl.1.9/README                                    |  235 ----
- perl.1.9/costumization.gvimrc                      |   25 -
- perl.1.9/costumization.vimrc                       |  116 --
- perl.1.9/perl-hot-keys.pdf                         |  Bin 45747 -> 0 bytes
- perl.1.9/perl-support.vim                          | 1251 --------------------
- perl.1.9/templates/perl-file-header                |   21 -
- perl.1.9/templates/perl-frame                      |    3 -
- perl.1.9/templates/perl-function-description       |   13 -
- perl.1.9/word.list                                 |  239 ----
- plugin/perl-support.vim                            | 1132 ++++++++++++++++++
- 22 files changed, 2230 insertions(+), 2003 deletions(-)
+ README.orig                                |  324 ++++++----
+ costumization.gvimrc                       |   25 -
+ costumization.vimrc                        |  116 ---
+ doc/perl-hot-keys.pdf                      |  Bin 0 -> 45747 bytes
+ doc/perlsupport.txt                        |  262 +++++---
+ ftplugin/perl.vim                          |  109 +++
+ install.sh                                 |   59 ++
+ perl-hot-keys.pdf                          |  Bin 45747 -> 0 bytes
+ plugin/perl-support.vim                    | 1039 ++++++++++++----------------
+ plugin/templates/perl-file-header          |   21 +
+ plugin/templates/perl-frame                |    3 +
+ plugin/templates/perl-function-description |   13 +
+ rc/customization.gvimrc                    |   25 +
+ rc/customization.vimrc                     |  128 ++++
+ rc/perl.vimrc                              |   20 +
+ templates/perl-file-header                 |   21 -
+ templates/perl-frame                       |    3 -
+ templates/perl-function-description        |   13 -
+ word.list                                  |  239 -------
+ wordlists/perl.list                        |  239 +++++++
+ 20 files changed, 1443 insertions(+), 1216 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
 Author:     Fritz Mehner <mehner@fh-swf.de>
@@ -1173,25 +1138,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + 58 key mappings for Vim without GUI.  See perl-hot-keys.pdf  (reference card).+ A marked region can be surrounded by a for-, if-, do-while- , until-, ...   statements (with indentation).+ The Perl special variables have been added to the file word.list  for dictionary completion.+ Vim doc added (file perlsupport.txt).
 
- README.orig                                  |  190 ----
- costumization.gvimrc                         |   25 -
- costumization.vimrc                          |  118 ---
- doc/perlsupport.txt                          |  298 ++++++
- perl.1.9/README                              |  235 +++++
- perl.1.9/costumization.gvimrc                |   25 +
- perl.1.9/costumization.vimrc                 |  116 +++
- perl.1.9/perl-hot-keys.pdf                   |  Bin 0 -> 45747 bytes
- perl.1.9/perl-support.vim                    | 1251 ++++++++++++++++++++++++++
- perl.1.9/templates/perl-file-header          |   21 +
- perl.1.9/templates/perl-frame                |    3 +
- perl.1.9/templates/perl-function-description |   13 +
- perl.1.9/word.list                           |  239 +++++
- plugin/perl-support.vim                      | 1022 ---------------------
- templates/perl-file-header                   |   22 -
- templates/perl-frame                         |    3 -
- templates/perl-function-description          |   13 -
- word.list                                    |  178 ----
- 18 files changed, 2201 insertions(+), 1571 deletions(-)
+ README.orig                |   97 ++++--
+ costumization.vimrc        |   14 +-
+ doc/perlsupport.txt        |  298 +++++++++++++++++
+ perl-hot-keys.pdf          |  Bin 0 -> 45747 bytes
+ plugin/perl-support.vim    |  757 ++++++++++++++++++++++++++++---------------
+ templates/perl-file-header |    3 +-
+ word.list                  |   61 ++++
+ 7 files changed, 930 insertions(+), 300 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
 Author:     Fritz Mehner <mehner@fh-swf.de>

@@ -7,40 +7,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Add additional syntax file for |vspec-commands|.- |:Should|: Provide expression completion for convenience.- Improve minor stuffs.
 
- autoload/vspec.vim                              |    6 +-
- bin/vspec                                       |   26 ++-
- doc/tags                                        |    1 +
- doc/vspec.txt                                   |    9 +-
- vim-vspec-0.0.3/.mduem/cache/Makefile.variables |    6 -
- vim-vspec-0.0.3/Makefile                        |   12 -
- vim-vspec-0.0.3/mduem/Makefile                  |  423 ----------------------
- vim-vspec-0.0.3/test/context.expected           |   18 -
- vim-vspec-0.0.3/test/context.input              |   65 ----
- vim-vspec-0.0.3/test/custom-matcher.expected    |   30 --
- vim-vspec-0.0.3/test/custom-matcher.input       |   99 ------
- vim-vspec-0.0.3/test/no-test.expected           |    7 -
- vim-vspec-0.0.3/test/no-test.input              |    2 -
- vim-vspec-0.0.3/test/tools.expected             |   20 -
- vim-vspec-0.0.3/test/tools.input                |   46 ---
- vim-vspec-0.0.3/test/typical-content.expected   |  193 ----------
- vim-vspec-0.0.3/test/typical-content.input      |  109 ------
- vim-vspec-0.0.4/.mduem/cache/Makefile.variables |    6 +
- vim-vspec-0.0.4/Makefile                        |   13 +
- vim-vspec-0.0.4/after/syntax/vim/vspec.vim      |   39 ++
- vim-vspec-0.0.4/mduem/Makefile                  |  428 +++++++++++++++++++++++
- vim-vspec-0.0.4/test/context.expected           |   18 +
- vim-vspec-0.0.4/test/context.input              |   65 ++++
- vim-vspec-0.0.4/test/custom-matcher.expected    |   30 ++
- vim-vspec-0.0.4/test/custom-matcher.input       |   99 ++++++
- vim-vspec-0.0.4/test/no-test.expected           |    7 +
- vim-vspec-0.0.4/test/no-test.input              |    2 +
- vim-vspec-0.0.4/test/syntax.expected            |   12 +
- vim-vspec-0.0.4/test/syntax.input               |  105 ++++++
- vim-vspec-0.0.4/test/tools.expected             |   20 +
- vim-vspec-0.0.4/test/tools.input                |   46 +++
- vim-vspec-0.0.4/test/typical-content.expected   |  193 ++++++++++
- vim-vspec-0.0.4/test/typical-content.input      |  109 ++++++
- 33 files changed, 1228 insertions(+), 1036 deletions(-)
+ .mduem/cache/Makefile.variables |    4 +-
+ Makefile                        |    1 +
+ after/syntax/vim/vspec.vim      |   39 ++++++++++++++
+ autoload/vspec.vim              |    6 +-
+ bin/vspec                       |   26 +++++++++-
+ doc/tags                        |    1 +
+ doc/vspec.txt                   |    9 +++-
+ mduem/Makefile                  |   15 ++++--
+ test/syntax.expected            |   12 +++++
+ test/syntax.input               |  105 +++++++++++++++++++++++++++++++++++++++
+ 10 files changed, 205 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.3)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -49,22 +26,22 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.3: Initial upload
 
- README                                          |   13 +
- autoload/vspec.vim                              |  526 +++++++++++++++++++++++
- bin/vspec                                       |   39 ++
- doc/tags                                        |   31 ++
- doc/vspec.txt                                   |  302 +++++++++++++
- vim-vspec-0.0.3/.mduem/cache/Makefile.variables |    6 +
- vim-vspec-0.0.3/Makefile                        |   12 +
- vim-vspec-0.0.3/mduem/Makefile                  |  423 ++++++++++++++++++
- vim-vspec-0.0.3/test/context.expected           |   18 +
- vim-vspec-0.0.3/test/context.input              |   65 +++
- vim-vspec-0.0.3/test/custom-matcher.expected    |   30 ++
- vim-vspec-0.0.3/test/custom-matcher.input       |   99 +++++
- vim-vspec-0.0.3/test/no-test.expected           |    7 +
- vim-vspec-0.0.3/test/no-test.input              |    2 +
- vim-vspec-0.0.3/test/tools.expected             |   20 +
- vim-vspec-0.0.3/test/tools.input                |   46 ++
- vim-vspec-0.0.3/test/typical-content.expected   |  193 +++++++++
- vim-vspec-0.0.3/test/typical-content.input      |  109 +++++
+ .mduem/cache/Makefile.variables |    6 +
+ Makefile                        |   12 +
+ README                          |   13 +
+ autoload/vspec.vim              |  526 +++++++++++++++++++++++++++++++++++++++
+ bin/vspec                       |   39 +++
+ doc/tags                        |   31 +++
+ doc/vspec.txt                   |  302 ++++++++++++++++++++++
+ mduem/Makefile                  |  423 +++++++++++++++++++++++++++++++
+ test/context.expected           |   18 ++
+ test/context.input              |   65 +++++
+ test/custom-matcher.expected    |   30 +++
+ test/custom-matcher.input       |   99 ++++++++
+ test/no-test.expected           |    7 +
+ test/no-test.input              |    2 +
+ test/tools.expected             |   20 ++
+ test/tools.input                |   46 ++++
+ test/typical-content.expected   |  193 ++++++++++++++
+ test/typical-content.input      |  109 ++++++++
  18 files changed, 1941 insertions(+), 0 deletions(-)

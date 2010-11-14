@@ -7,7 +7,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Use tlib#balloon#Register() if available- viki#Edit(): Switch to homepage only if we are in a viki-enabled buffer- Run VimEnter command immediately if !has('vim_starting')- Transcode balloon text (guess the file encoding based on the value of &fenc)- Don't rely on g:vikiEnabled to be set when loading syntax/viki.vim- Removed g:vikiEnabled variable (use g:viki#quit for checking when to quit)- Act more graciously if g:vikiHomePage is emptyMD5 checksum: 64ebd14609764e98b91f1e233e121e32
 
- README                 |    3 +
  autoload/viki.vim      |  107 +++++++++++++++++++++++++++++++++--------------
  autoload/viki_viki.vim |   12 +----
  doc/viki.txt           |   44 ++++++++++----------
@@ -16,7 +15,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  indent/viki.vim        |   10 +---
  plugin/viki.vim        |   41 ++++++++++--------
  syntax/viki.vim        |   10 +---
- 9 files changed, 140 insertions(+), 108 deletions(-)
+ 8 files changed, 137 insertions(+), 108 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.18)
 Author:     Tom Link <micathom@gmail.com>
@@ -470,19 +469,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     with an external viewer
     - FIX: VikiEdit completion, which is more usable now
 
- autoload/viki.vim          |  331 ++++++++++++
- compiler/deplate.vim       |   43 ++
- doc/viki.txt               |  121 ++++-
- ftplugin/bib/viki.vim      |   10 +
- ftplugin/viki.vim          |  191 +++++---
- indent/viki.vim            |    8 +-
- plugin/viki.vim            | 1190 ++++++++++++++++++++++++++------------------
- plugin/vikiLatex.vim       |    2 +-
- syntax/viki.vim            |   37 +-
- viki/compiler/deplate.vim  |   43 --
- viki/etc/Viki.lst          |   10 -
- viki/ftplugin/bib/viki.vim |   10 -
- 12 files changed, 1337 insertions(+), 659 deletions(-)
+ autoload/viki.vim    |  331 ++++++++++++++
+ doc/viki.txt         |  121 ++++-
+ etc/Viki.lst         |   10 -
+ ftplugin/viki.vim    |  191 ++++++---
+ indent/viki.vim      |    8 +-
+ plugin/viki.vim      | 1190 +++++++++++++++++++++++++++++---------------------
+ plugin/vikiLatex.vim |    2 +-
+ syntax/viki.vim      |   37 ++-
+ 8 files changed, 1284 insertions(+), 606 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.13)
 Author:     Tom Link <micathom@gmail.com>
@@ -524,18 +519,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - FIX: disabling simple names (s) also properly disables the name types:
     Scwf
 
- Viki/compiler/deplate.vim  |   43 ----
- Viki/etc/Viki.lst          |   10 -
- Viki/ftplugin/bib/viki.vim |   10 -
- doc/viki.txt               |   44 ++++-
- ftplugin/viki.vim          |  166 ++++++++--------
- indent/viki.vim            |  241 +++++++++++-----------
- plugin/viki.vim            |  477 +++++++++++++++++++++++++++++++++++---------
- syntax/viki.vim            |   38 +++-
- viki/compiler/deplate.vim  |   43 ++++
- viki/etc/Viki.lst          |   10 +
- viki/ftplugin/bib/viki.vim |   10 +
- 11 files changed, 718 insertions(+), 374 deletions(-)
+ doc/viki.txt      |   44 +++++-
+ ftplugin/viki.vim |  166 ++++++++++---------
+ indent/viki.vim   |  241 ++++++++++++++--------------
+ plugin/viki.vim   |  477 ++++++++++++++++++++++++++++++++++++++++++-----------
+ syntax/viki.vim   |   38 +++--
+ 5 files changed, 655 insertions(+), 311 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
 Author:     Tom Link <micathom@gmail.com>
@@ -655,12 +644,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     default=Index) and automatically creates a vim command with the name of
     the interviki that opens this index file
 
- Viki/compiler/deplate.vim |   33 +-
- ftplugin/viki.vim         |   88 ++++--
- plugin/viki.vim           |  865 ++++++++++++++++++++++++++++-----------------
- plugin/vikiAnyWord.vim    |   23 +-
- plugin/vikiLatex.vim      |   14 +-
- syntax/viki.vim           |   17 +-
+ compiler/deplate.vim   |   33 ++-
+ ftplugin/viki.vim      |   88 ++++--
+ plugin/viki.vim        |  865 ++++++++++++++++++++++++++++++------------------
+ plugin/vikiAnyWord.vim |   23 +-
+ plugin/vikiLatex.vim   |   14 +-
+ syntax/viki.vim        |   17 +-
  6 files changed, 650 insertions(+), 390 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
@@ -745,8 +734,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - renamed <SID>DecodeFileUrl(dest) to VikiDecomposeUrl()
     - fixed problem with table highlighting
 
- Viki/etc/Viki.lst      |    1 +
  doc/viki.txt           |    8 +
+ etc/Viki.lst           |    1 +
  ftplugin/viki.vim      |   54 ++++--
  indent/viki.vim        |   55 ++++--
  plugin/viki.vim        |  466 ++++++++++++++++++++++++------------------------
@@ -787,13 +776,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - fixed moving cursor on <SID>VikiMarkInexistent()
     - fixed typo: b:VikiEnabled, which should be b:vikiEnabled (thanks to Ned Konz)
 
- Viki/compiler/deplate.vim |    6 +-
- doc/viki.txt              |   90 +++++++-
- ftplugin/viki.vim         |   20 ++-
- indent/viki.vim           |   19 +-
- plugin/viki.vim           |  503 ++++++++++++++++++++++++++++++--------------
- plugin/vikiLatex.vim      |   66 +++----
- syntax/viki.vim           |   18 +-
+ compiler/deplate.vim |    6 +-
+ doc/viki.txt         |   90 ++++++++-
+ ftplugin/viki.vim    |   20 ++-
+ indent/viki.vim      |   19 ++-
+ plugin/viki.vim      |  503 ++++++++++++++++++++++++++++++++++----------------
+ plugin/vikiLatex.vim |   66 +++----
+ syntax/viki.vim      |   18 +-
  7 files changed, 494 insertions(+), 228 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5.2)
@@ -808,8 +797,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - fixed problem with VikiQuote
     - on follow-link, check for yet unsaved buffers too
 
- Viki/etc/Viki.lst |    9 +++++++
  doc/viki.txt      |   62 ++++++++++++++++++++++++++++++++++++++++++--------
+ etc/Viki.lst      |    9 +++++++
  ftplugin/viki.vim |    8 ++++--
  indent/viki.vim   |   39 +++++++++++++++++++++----------
  plugin/viki.vim   |   65 +++++++++++++++++++++++++++++++---------------------
@@ -875,13 +864,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - it is now possible to selectivly disable simple or quoted viki names
     - indent plugin
 
- Viki/compiler/deplate.vim |    4 +-
- doc/viki.txt              |   24 +++++++++-----
- ftplugin/viki.vim         |    4 +-
- indent/viki.vim           |   76 +++++++++++++++++++++++++++++++++++++++++++++
- plugin/viki.vim           |   57 ++++++++++++++++++++-------------
- plugin/vikiLatex.vim      |    4 +-
- syntax/viki.vim           |   21 +++---------
+ compiler/deplate.vim |    4 +-
+ doc/viki.txt         |   24 ++++++++++------
+ ftplugin/viki.vim    |    4 +-
+ indent/viki.vim      |   76 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/viki.vim      |   57 +++++++++++++++++++++++--------------
+ plugin/vikiLatex.vim |    4 +-
+ syntax/viki.vim      |   21 ++++----------
  7 files changed, 138 insertions(+), 52 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.1)
@@ -914,13 +903,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - the ftplugin doesn't set deplate as the compiler; renamed the compiler plugin to deplate
     - fix: VikiFoldLevel()
 
- Viki/compiler/deplate.vim  |   36 ++++++++++
- Viki/compiler/viki.vim     |   28 --------
- Viki/ftplugin/bib/viki.vim |   10 +++
- doc/viki.txt               |  132 ++++++++++++++++++++++++++++++-----
- ftplugin/viki.vim          |   17 ++++-
- plugin/viki.vim            |  164 +++++++++++++++++++++++---------------------
- syntax/viki.vim            |   41 ++++++-----
+ compiler/deplate.vim  |   36 +++++++++++
+ compiler/viki.vim     |   28 --------
+ doc/viki.txt          |  132 +++++++++++++++++++++++++++++++++------
+ ftplugin/bib/viki.vim |   10 +++
+ ftplugin/viki.vim     |   17 ++++-
+ plugin/viki.vim       |  164 ++++++++++++++++++++++++++-----------------------
+ syntax/viki.vim       |   41 +++++++------
  7 files changed, 283 insertions(+), 145 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.103)
@@ -951,12 +940,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - some support for Mozilla ThunderBird mailbox-URLs (this requires spaces to be encoded as %20)
     - changed g:vikiDefSep to ''
 
- Viki/compiler/viki.vim |   28 +
- doc/viki.txt           | 1197 +++++++++++++++++++--------------
- ftplugin/viki.vim      |   59 +-
- plugin/viki.vim        | 1733 ++++++++++++++++++++++++++----------------------
- plugin/vikiLatex.vim   |  242 ++++---
- syntax/viki.vim        |  253 ++++----
+ compiler/viki.vim    |   28 +
+ doc/viki.txt         | 1197 ++++++++++++++++++++---------------
+ ftplugin/viki.vim    |   59 +-
+ plugin/viki.vim      | 1733 +++++++++++++++++++++++++++-----------------------
+ plugin/vikiLatex.vim |  242 ++++----
+ syntax/viki.vim      |  253 ++++----
  6 files changed, 1950 insertions(+), 1562 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.5)
@@ -1010,6 +999,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 380: Initial upload
 
- README          |   34 ++++
+ README          |   37 +++++
  plugin/Viki.vim |  458 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 492 insertions(+), 0 deletions(-)
+ 2 files changed, 495 insertions(+), 0 deletions(-)

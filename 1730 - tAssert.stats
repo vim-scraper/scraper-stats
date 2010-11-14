@@ -41,15 +41,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - TAssertComment! & TAssertUncomment! (with [!]) also call
     TLog(Un)Comment.
 
- doc/tAssert.txt          |    4 +-
- plugin/00tAssert.vim     |  289 ----------------------------------
- plugin/00tLog.vim        |   62 --------
- plugin/05tLog.vim        |   96 ++++++++++++
- plugin/07tAssert.vim     |  386 ++++++++++++++++++++++++++++++++++++++++++++++
- tAssert/etc/tAssert.lst  |    5 -
- tAssert/test/tAssert.vim |   51 ------
- test/tAssert.vim         |   68 ++++++++
- 8 files changed, 553 insertions(+), 408 deletions(-)
+ doc/tAssert.txt      |    4 +-
+ etc/tAssert.lst      |    5 -
+ plugin/00tAssert.vim |  289 -------------------------------------
+ plugin/00tLog.vim    |   62 --------
+ plugin/05tLog.vim    |   96 +++++++++++++
+ plugin/07tAssert.vim |  386 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ test/tAssert.vim     |   27 +++-
+ 7 files changed, 507 insertions(+), 362 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
 Author:     Tom Link <micathom@gmail.com>
@@ -68,11 +67,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - s:ResolveSIDs() caches scriptnames
     - Moved logging code to 00tLog.vim
 
- doc/tAssert.txt          |   43 +++++++--
- plugin/00tAssert.vim     |  238 ++++++++++++++++++++++++++++++++++++---------
- plugin/00tLog.vim        |   62 ++++++++++++
- tAssert/etc/tAssert.lst  |    1 +
- tAssert/test/tAssert.vim |   54 +++++++----
+ doc/tAssert.txt      |   43 +++++++--
+ etc/tAssert.lst      |    1 +
+ plugin/00tAssert.vim |  238 ++++++++++++++++++++++++++++++++++++++++----------
+ plugin/00tLog.vim    |   62 +++++++++++++
+ test/tAssert.vim     |   54 ++++++++----
  5 files changed, 322 insertions(+), 76 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -82,9 +81,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README                   |   39 ++++++++++++
- doc/tAssert.txt          |  113 +++++++++++++++++++++++++++++++++++
- plugin/00tAssert.vim     |  147 ++++++++++++++++++++++++++++++++++++++++++++++
- tAssert/etc/tAssert.lst  |    4 +
- tAssert/test/tAssert.vim |   33 ++++++++++
+ README               |   39 +++++++++++++
+ doc/tAssert.txt      |  113 ++++++++++++++++++++++++++++++++++++++
+ etc/tAssert.lst      |    4 ++
+ plugin/00tAssert.vim |  147 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ test/tAssert.vim     |   33 +++++++++++
  5 files changed, 336 insertions(+), 0 deletions(-)

@@ -433,15 +433,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Added VCSRemove as alias for VCSDelete.
     Added VCSBlame as alias for VCSAnnotate.
 
- doc/.gitignore         |    2 +
- doc/CHANGES.txt        |   40 ++++++++
- doc/tags               |   67 ++++++++++++++
- doc/vcscommand.txt     |   13 +++
- plugin/vcscommand.vim  |  118 +++++++++++--------------
- plugin/vcscvs.vim      |   18 ++++-
- plugin/vcsgit.vim      |  234 ++++++++++++++++++++++++++++++++++++++++++++++++
- vcscommand/CHANGES.txt |   40 --------
- 8 files changed, 424 insertions(+), 108 deletions(-)
+ doc/.gitignore        |    2 +
+ doc/tags              |   67 ++++++++++++++
+ doc/vcscommand.txt    |   13 +++
+ plugin/vcscommand.vim |  118 +++++++++++--------------
+ plugin/vcscvs.vim     |   18 ++++-
+ plugin/vcsgit.vim     |  234 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 6 files changed, 384 insertions(+), 68 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/beta19)
 Author:     Bob Hiestand <bob.hiestand@gmail.com>
@@ -583,6 +581,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added check to disable individual VCS extension plugins.
 
+ doc/CHANGES.txt        |    2 +
  doc/vcscommand.txt     |   43 +++---
  plugin/vcscommand.vim  |  347 +++++++++++++++++++++++++++---------------------
  plugin/vcscvs.vim      |   81 ++++++------
@@ -591,7 +590,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  syntax/CVSAnnotate.vim |    1 -
  syntax/SVKAnnotate.vim |   42 ++++++
  syntax/SVNAnnotate.vim |    2 +-
- vcscommand/CHANGES.txt |    2 +
  9 files changed, 618 insertions(+), 304 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/beta11)
@@ -655,9 +653,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Changed behavior of plugin within Explorer/netrw -style directory buffers.  Commands within such a buffer now act as though invoked on that directory, and so affect all files (and subdirectories), regardless of where the cursor is within the directory buffer.
 
- doc/vcscommand.txt     |    3 ++-
- plugin/vcscommand.vim  |   13 +++++++------
- vcscommand/CHANGES.txt |   17 +++++++----------
+ doc/CHANGES.txt       |   17 +++++++----------
+ doc/vcscommand.txt    |    3 ++-
+ plugin/vcscommand.vim |   13 +++++++------
  3 files changed, 16 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/Beta5)
@@ -682,13 +680,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Removed special characters other than parentheses from output buffer names.  This is to address buffer name problems on Windows.
 
- doc/vcscommand.txt           |   37 +++++++++++-------
- plugin/vcscommand.vim        |   86 ++++++++++++++++++++++++++---------------
- plugin/vcscvs.vim            |   63 ++++++++++++-------------------
- plugin/vcssvn.vim            |   22 ++++++----
- vcscommand-beta3/CHANGES.txt |   41 --------------------
- vcscommand/CHANGES.txt       |   41 ++++++++++++++++++++
- 6 files changed, 155 insertions(+), 135 deletions(-)
+ doc/vcscommand.txt    |   37 +++++++++++++--------
+ plugin/vcscommand.vim |   86 ++++++++++++++++++++++++++++++------------------
+ plugin/vcscvs.vim     |   63 +++++++++++++----------------------
+ plugin/vcssvn.vim     |   22 +++++++-----
+ 4 files changed, 114 insertions(+), 94 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/Beta3)
 Author:     Bob Hiestand <bob.hiestand@gmail.com>
@@ -699,16 +695,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Initial public release of vcscommand (based on cvscommand) to integrate subversion (SVN) and utilize VIM 7.0 features.
 
- doc/cvscommand.txt           |  617 -------------------
- doc/vcscommand.txt           |  643 +++++++++++++++++++
- plugin/cvscommand.vim        | 1387 ------------------------------------------
- plugin/vcscommand.vim        | 1022 +++++++++++++++++++++++++++++++
- plugin/vcscvs.vim            |  377 ++++++++++++
- plugin/vcssvn.vim            |  270 ++++++++
- syntax/CVSAnnotate.vim       |    5 +-
- syntax/SVNAnnotate.vim       |   20 +
- syntax/vcscommit.vim         |   14 +
- vcscommand-beta3/CHANGES.txt |   41 ++
+ doc/CHANGES.txt        |   41 ++
+ doc/cvscommand.txt     |  617 ---------------------
+ doc/vcscommand.txt     |  643 ++++++++++++++++++++++
+ plugin/cvscommand.vim  | 1387 ------------------------------------------------
+ plugin/vcscommand.vim  | 1022 +++++++++++++++++++++++++++++++++++
+ plugin/vcscvs.vim      |  377 +++++++++++++
+ plugin/vcssvn.vim      |  270 ++++++++++
+ syntax/CVSAnnotate.vim |    5 +-
+ syntax/SVNAnnotate.vim |   20 +
+ syntax/vcscommit.vim   |   14 +
  10 files changed, 2389 insertions(+), 2007 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.76)
