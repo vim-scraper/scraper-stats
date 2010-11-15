@@ -1,4 +1,19 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.10)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.11)
+Author:     Tom Link <micathom@gmail.com>
+AuthorDate: Mon Nov 15 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.11
+    
+    - Don't check the buffer number in s:ClearBuffer()- Improved handling of scopes (vim, buffer)- Always include the bufnr in the ID- FIX: upper case marks- Increase g:quickfixsigns_max = 500MD5 checksum: 6fa3a5dd60e62af094f7f7fe41d8695f
+
+ autoload/quickfixsigns.vim       |    5 +-
+ autoload/quickfixsigns/marks.vim |   21 +++++++--
+ doc/quickfixsigns.txt            |   14 ++++--
+ plugin/quickfixsigns.vim         |   95 +++++++++++++++++++++++++------------
+ 4 files changed, 94 insertions(+), 41 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
 Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Thu Nov 11 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
