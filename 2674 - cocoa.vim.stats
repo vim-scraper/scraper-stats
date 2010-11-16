@@ -41,14 +41,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
  after/objc_enhanced.vim                           |   59 +
  after/syntax/cocoa_keywords.vim                   |   18 +-
- autoload/.DS_Store                                |  Bin 6148 -> 0 bytes
  autoload/objc/man.vim                             |   43 +-
  autoload/objc/method_builder.vim                  |    1 +
  autoload/objc/method_list.vim                     |    3 +-
  autoload/objc/pum_snippet.vim                     |   14 +-
  doc/cocoa.txt                                     |   76 +-
  ftplugin/objc_cocoa_mappings.vim                  |   48 +-
- lib/.DS_Store                                     |  Bin 6148 -> 0 bytes
  lib/cocoa_indexes/classes.txt                     |   78 +
  lib/cocoa_indexes/cocoa_indexes/classes.txt       |  637 +++++++
  lib/cocoa_indexes/cocoa_indexes/constants.txt     | 1888 +++++++++++++++++++++
@@ -67,7 +65,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  lib/extras/cocoa_definitions.py                   |   39 +-
  lib/extras/cocoa_definitions.pyc                  |  Bin 4944 -> 5190 bytes
  plugin/cocoa.vim                                  |    5 +-
- 28 files changed, 4125 insertions(+), 382 deletions(-)
+ 26 files changed, 4125 insertions(+), 382 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
 Author:     Michael Sanders <msanders42+vim@gmail.com>
@@ -107,7 +105,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  README                              |   18 +
  after/syntax/cocoa_keywords.vim     |   28 +
  after/syntax/objc_enhanced.vim      |   55 ++
- autoload/.DS_Store                  |  Bin 0 -> 6148 bytes
  autoload/objc/cocoacomplete.vim     |  187 +++++
  autoload/objc/man.vim               |  110 +++
  autoload/objc/method_builder.vim    |  116 +++
@@ -115,7 +112,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  autoload/objc/pum_snippet.vim       |   87 +++
  doc/cocoa.txt                       |  109 +++
  ftplugin/objc_cocoa_mappings.vim    |   50 ++
- lib/.DS_Store                       |  Bin 0 -> 6148 bytes
  lib/cocoa_indexes/classes.txt       |  559 ++++++++++++++
  lib/cocoa_indexes/constants.txt     | 1449 +++++++++++++++++++++++++++++++++++
  lib/cocoa_indexes/functions.txt     |  278 +++++++
@@ -131,4 +127,4 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  lib/extras/superclasses.m           |   47 ++
  lib/get_methods.sh                  |    3 +
  plugin/cocoa.vim                    |   16 +
- 27 files changed, 3843 insertions(+), 0 deletions(-)
+ 25 files changed, 3843 insertions(+), 0 deletions(-)

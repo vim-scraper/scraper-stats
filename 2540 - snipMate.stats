@@ -363,12 +363,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added support for 'virtualedit=all' and 'virtualedit=onemore'. Thanks Mikhail Daen for the bug report.
 
- after/.DS_Store            |  Bin 6148 -> 0 bytes
- after/._.DS_Store          |  Bin 82 -> 0 bytes
  after/.zip                 |  Bin 0 -> 22 bytes
  after/ftplugin/c_snips.vim |    2 +-
  plugin/snipMate.vim        |   21 ++++++++++++---------
- 5 files changed, 13 insertions(+), 10 deletions(-)
+ 3 files changed, 13 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.618033)
 Author:     Michael Sanders <msanders42+vim@gmail.com>
@@ -402,7 +400,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     I also changed the "Snip" command to "Snipp" to maintain compatibility with vimscript #244 (imaps.vim). Unfortunately this breaks backward compatibility; to update any snippets you have added, just execute this regex on the appropriate files: ":%s/exe \(.\)Snip /exe \1Snipp /g"
 
- after/.DS_Store                     |  Bin 6148 -> 6148 bytes
  after/ftplugin/c_snips.vim          |   49 ++++----
  after/ftplugin/html_snips.vim       |   95 +++++++-------
  after/ftplugin/java_snips.vim       |   75 ++++++------
@@ -417,7 +414,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  after/plugin/global_snips.vim       |    3 +-
  doc/snipMate.txt                    |   57 +++++----
  plugin/snipMate.vim                 |   17 ++--
- 15 files changed, 414 insertions(+), 390 deletions(-)
+ 14 files changed, 414 insertions(+), 390 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6180)
 Author:     Michael Sanders <msanders42+vim@gmail.com>
@@ -426,13 +423,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.6180: Added support for 'set expandtab', supertab.vim, and fixed some bugs.
 
- after/.DS_Store               |  Bin 0 -> 6148 bytes
- after/._.DS_Store             |  Bin 0 -> 82 bytes
  after/ftplugin/html_snips.vim |   12 ++++----
  after/ftplugin/perl_snips.vim |    2 +-
  after/plugin/snipMate.vim     |   13 ++++++++
  plugin/snipMate.vim           |   62 +++++++++++++++++++++++-----------------
- 6 files changed, 56 insertions(+), 33 deletions(-)
+ 4 files changed, 56 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.42)
 Author:     Michael Sanders <msanders42+vim@gmail.com>
