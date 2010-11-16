@@ -7,12 +7,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added a check so the script doesn't load if python is not compiled in. (Contributed by Lars Becker.)
 
- plugin/.DS_Store                    |  Bin 0 -> 6148 bytes
- plugin/._.DS_Store                  |  Bin 0 -> 82 bytes
- plugin/debugger.py                  | 1191 +++++++++++++++++++++++++++++++++++
- plugin/debugger.vim                 |  178 ++++++
- share/vim/vim71/plugin/debugger.py  | 1191 -----------------------------------
- share/vim/vim71/plugin/debugger.vim |  166 -----
+ local/share/vim/vim71/plugin/debugger.py  | 1191 -----------------------------
+ local/share/vim/vim71/plugin/debugger.vim |  166 ----
+ plugin/.DS_Store                          |  Bin 0 -> 6148 bytes
+ plugin/._.DS_Store                        |  Bin 0 -> 82 bytes
+ plugin/debugger.py                        | 1191 +++++++++++++++++++++++++++++
+ plugin/debugger.vim                       |  178 +++++
  6 files changed, 1369 insertions(+), 1357 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -22,7 +22,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.1: Initial upload
 
- README                              |    5 +
- share/vim/vim71/plugin/debugger.py  | 1191 +++++++++++++++++++++++++++++++++++
- share/vim/vim71/plugin/debugger.vim |  166 +++++
+ README                                    |    5 +
+ local/share/vim/vim71/plugin/debugger.py  | 1191 +++++++++++++++++++++++++++++
+ local/share/vim/vim71/plugin/debugger.vim |  166 ++++
  3 files changed, 1362 insertions(+), 0 deletions(-)

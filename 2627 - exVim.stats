@@ -1232,29 +1232,70 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 7.04a: fix some bugs
 
- _vimrc_ex                                          |  952 +++++++
- after/compiler/exgcc.vim                           |   10 +-
- after/compiler/hlsl.vim                            |   10 +-
- after/compiler/msvc2005.vim                        |   10 +-
- after/ftplugin/c.vim                               |    2 -
- after/ftplugin/cpp.vim                             |    2 -
- after/syntax/__fxhlsl.vim                          |  196 --
- after/syntax/doxygen.vim                           |  696 -----
- after/syntax/gmsh.vim                              |  107 -
- after/syntax/help.vim                              |  114 -
- after/syntax/matlab.vim                            |   54 -
- after/syntax/maxscript.vim                         |   11 +-
+ _vimrc                      |  952 --------------
+ _vimrc_ex                   |  952 ++++++++++++++
+ after/compiler/exgcc.vim    |   10 +-
+ after/compiler/hlsl.vim     |   10 +-
+ after/compiler/msvc2005.vim |   10 +-
+ after/ftplugin/c.vim        |    2 -
+ after/ftplugin/cpp.vim      |    2 -
+ after/syntax/__fxhlsl.vim   |  196 ---
+ after/syntax/doxygen.vim    |  696 ----------
+ after/syntax/gmsh.vim       |  107 --
+ after/syntax/help.vim       |  114 --
+ after/syntax/matlab.vim     |   54 -
+ after/syntax/maxscript.vim  |   11 +-
+ autoload/exUtility.vim      |    2 +-
+ doc/FAQ.txt                 |  157 ---
+ doc/Makefile                | 2959 -------------------------------------------
+ doc/compile_vim.win32.bat   |   24 -
+ doc/install.unix.txt        |   36 -
+ doc/install.win32.txt       |   78 --
+ doc/quick_start.txt         |   52 -
+ doc/showmarks.vim.patch     |   84 --
+ doc/vim_plugins.txt         |   30 -
+ plugin/exProject.vim        |    2 +-
+ vimfiles/filetype.vim       |    2 +
+ 24 files changed, 980 insertions(+), 5562 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/7.0)
+Author:     Jie Wu <karasaya@gmail.com>
+AuthorDate: Wed May 6 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 7.0: Initial upload
+
+ README                                             |   65 +
+ _vimrc                                             |  952 +++++++
+ after/compiler/exgcc.vim                           |   27 +
+ after/compiler/hlsl.vim                            |   13 +
+ after/compiler/msvc2005.vim                        |   53 +
+ after/ftplugin/c.vim                               |    2 +
+ after/ftplugin/cpp.vim                             |    2 +
+ after/syntax/__fxhlsl.vim                          |  196 ++
+ after/syntax/c.vim                                 |  129 +
+ after/syntax/cpp.vim                               |   69 +
+ after/syntax/doxygen.vim                           |  696 +++++
+ after/syntax/exUtility.vim                         |   72 +
+ after/syntax/gmsh.vim                              |  107 +
+ after/syntax/help.vim                              |  114 +
+ after/syntax/hlsl.vim                              |  108 +
+ after/syntax/matlab.vim                            |   54 +
+ after/syntax/maxscript.vim                         |   85 +
+ after/syntax/python.vim                            |   29 +
+ after/syntax/syncolor.vim                          |  100 +
+ after/syntax/vim.vim                               |   28 +
  autoload/exUtility.vim                             | 2957 +++++++++++++++++++
  colors/ex.vim                                      |   96 +
- doc/FAQ.txt                                        |  157 --
- doc/Makefile                                       | 2959 --------------------
- doc/compile_vim.win32.bat                          |   24 -
+ doc/FAQ.txt                                        |  157 ++
+ doc/Makefile                                       | 2959 ++++++++++++++++++++
+ doc/compile_vim.win32.bat                          |   24 +
  doc/exVim.txt                                      | 2632 +++++++++++++++++
- doc/install.unix.txt                               |   36 -
- doc/install.win32.txt                              |   78 -
- doc/quick_start.txt                                |   52 -
- doc/showmarks.vim.patch                            |   84 -
- doc/vim_plugins.txt                                |   30 -
+ doc/install.unix.txt                               |   36 +
+ doc/install.win32.txt                              |   78 +
+ doc/quick_start.txt                                |   52 +
+ doc/showmarks.vim.patch                            |   84 +
+ doc/vim_plugins.txt                                |   30 +
  plugin/exCscope.vim                                |  777 +++++
  plugin/exEnvironmentSetting.vim                    |  366 +++
  plugin/exGlobalSearch.vim                          | 1032 +++++++
@@ -1266,141 +1307,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  plugin/exSymbolTable.vim                           |  498 ++++
  plugin/exTagSelect.vim                             |  715 +++++
  plugin/exUtility.vim                               |  209 ++
- plugin_only/_vimrc                                 |  952 -------
- .../SyntaxHighlighter/scripts/clipboard.swf        |  Bin 1361 -> 0 bytes
- .../SyntaxHighlighter/scripts/shBrushBash.js       |   59 -
- .../SyntaxHighlighter/scripts/shBrushCSharp.js     |   64 -
- .../SyntaxHighlighter/scripts/shBrushCpp.js        |   99 -
- .../SyntaxHighlighter/scripts/shBrushCss.js        |   93 -
- .../SyntaxHighlighter/scripts/shBrushDelphi.js     |   57 -
- .../SyntaxHighlighter/scripts/shBrushDiff.js       |   43 -
- .../SyntaxHighlighter/scripts/shBrushGroovy.js     |   69 -
- .../SyntaxHighlighter/scripts/shBrushJScript.js    |   51 -
- .../SyntaxHighlighter/scripts/shBrushJava.js       |   55 -
- .../SyntaxHighlighter/scripts/shBrushPerl.js       |   74 -
- .../SyntaxHighlighter/scripts/shBrushPhp.js        |   91 -
- .../SyntaxHighlighter/scripts/shBrushPlain.js      |   35 -
- .../SyntaxHighlighter/scripts/shBrushPython.js     |   56 -
- .../SyntaxHighlighter/scripts/shBrushRuby.js       |   57 -
- .../SyntaxHighlighter/scripts/shBrushScala.js      |   53 -
- .../SyntaxHighlighter/scripts/shBrushSql.js        |   68 -
- .../toolkit/SyntaxHighlighter/scripts/shBrushVb.js |   58 -
- .../SyntaxHighlighter/scripts/shBrushXml.js        |   71 -
- .../toolkit/SyntaxHighlighter/scripts/shCore.js    |   30 -
- .../toolkit/SyntaxHighlighter/scripts/shLegacy.js  |   30 -
- .../toolkit/SyntaxHighlighter/styles/help.png      |  Bin 786 -> 0 bytes
- .../toolkit/SyntaxHighlighter/styles/magnifier.png |  Bin 615 -> 0 bytes
- .../SyntaxHighlighter/styles/page_white_code.png   |  Bin 603 -> 0 bytes
- .../SyntaxHighlighter/styles/page_white_copy.png   |  Bin 309 -> 0 bytes
- .../toolkit/SyntaxHighlighter/styles/printer.png   |  Bin 731 -> 0 bytes
- .../toolkit/SyntaxHighlighter/styles/shCore.css    |  321 ---
- .../SyntaxHighlighter/styles/shThemeDefault.css    |  191 --
- .../SyntaxHighlighter/styles/shThemeDjango.css     |  193 --
- .../toolkit/SyntaxHighlighter/styles/shThemeEX.css |  163 --
- .../SyntaxHighlighter/styles/shThemeEmacs.css      |  192 --
- .../SyntaxHighlighter/styles/shThemeFadeToGrey.css |  193 --
- .../SyntaxHighlighter/styles/shThemeMidnight.css   |  192 --
- .../SyntaxHighlighter/styles/shThemeRDark.css      |  192 --
- .../toolkit/SyntaxHighlighter/styles/wrapping.png  |  Bin 631 -> 0 bytes
- plugin_only/toolkit/cTags/.ctags                   |   17 -
- plugin_only/toolkit/cTags/command.txt              |   15 -
- plugin_only/toolkit/doxygen/CodeGen/config.cfg     | 1310 ---------
- plugin_only/toolkit/doxygen/CodeGen/footer.html    |    5 -
- .../toolkit/doxygen/CodeGen/generate_doc.bat       |   21 -
- plugin_only/toolkit/doxygen/CodeGen/header.html    |    9 -
- plugin_only/toolkit/doxygen/CodeGen/hhc.exe        |  Bin 51472 -> 0 bytes
- plugin_only/toolkit/doxygen/CodeGen/logo.gif       |  Bin 4475 -> 0 bytes
- plugin_only/toolkit/doxygen/CodeGen/ubisoft.css    |  359 ---
- plugin_only/toolkit/gawk/command.txt               |   22 -
- plugin_only/toolkit/gawk/prg_ConvertLog.awk        |   20 -
- plugin_only/toolkit/gawk/prg_Inherits.awk          |   30 -
- plugin_only/toolkit/gawk/prg_InheritsDot.awk       |   29 -
- plugin_only/toolkit/gawk/prg_NoStripSymbol.awk     |   22 -
- plugin_only/toolkit/gawk/prg_StripSymbol.awk       |   27 -
- plugin_only/toolkit/iconv/command.txt              |   14 -
- plugin_only/toolkit/iconv/iconv_big5-to-gb.bat     |   20 -
- .../toolkit/iconv/iconv_cp932-to-EUC_JP.bat        |   21 -
- .../toolkit/iconv/iconv_latin1-to-cp936.bat        |   21 -
- .../toolkit/iconv/iconv_latin1-to-utf-8.bat        |   21 -
- plugin_only/toolkit/idutils/command.txt            |   22 -
- plugin_only/toolkit/idutils/id-lang-default.map    |  101 -
- plugin_only/toolkit/idutils/id-lang.map            |  124 -
- plugin_only/toolkit/idutils/readme.txt             |    1 -
- plugin_only/toolkit/makefile/gcc/gcc_config.mk     |  217 --
- plugin_only/toolkit/makefile/gcc/gcc_entry_m.mk    |  153 -
- plugin_only/toolkit/makefile/gcc/gcc_entry_s.mk    |   99 -
- plugin_only/toolkit/makefile/gcc/gcc_project.mk    |   98 -
- plugin_only/toolkit/makefile/gcc/gcc_rule.mk       |  624 -----
- plugin_only/toolkit/makefile/msvc/make_vs.bat      |   76 -
- plugin_only/toolkit/makefile/msvc/msvc_config.mk   |  109 -
- plugin_only/toolkit/makefile/msvc/msvc_entry.mk    |  120 -
- plugin_only/toolkit/makefile/msvc/msvc_tmpl.txt    |    9 -
- .../toolkit/makefile/msvc/vc_project/project.sln   |   46 -
- .../msvc/vc_project/project_exe/project_exe.cpp    |   28 -
- .../msvc/vc_project/project_exe/project_exe.h      |   14 -
- .../msvc/vc_project/project_exe/project_exe.vcproj |  749 -----
- .../project_exe.vcproj.EXPC.Johnny.user            |  177 --
- .../msvc/vc_project/project_lib/project_lib.cpp    |   13 -
- .../msvc/vc_project/project_lib/project_lib.h      |   14 -
- .../msvc/vc_project/project_lib/project_lib.vcproj |  708 -----
- .../project_lib.vcproj.EXPC.Johnny.user            |  177 --
- .../toolkit/makefile/ref/gcc_rule_multi_logs.mk    |  405 ---
- .../toolkit/makefile/shader/shader_config.mk       |  266 --
- .../toolkit/makefile/shader/shader_entry_m.mk      |  130 -
- .../toolkit/makefile/shader/shader_entry_s.mk      |  106 -
- .../toolkit/makefile/shader/shader_project.mk      |  104 -
- plugin_only/toolkit/makefile/shader/shader_rule.mk |  320 ---
- plugin_only/toolkit/octave/.octaverc               |   19 -
- .../toolkit/quickgen/bash/quick_gen_project.sh     |  323 ---
- .../toolkit/quickgen/bash/quick_gen_project_all.sh |   14 -
- .../quickgen/bash/quick_gen_project_c_only.sh      |   14 -
- .../quickgen/bash/quick_gen_project_cpp_only.sh    |   14 -
- .../quickgen/bash/quick_gen_project_csharp_only.sh |   14 -
- .../quickgen/bash/quick_gen_project_general.sh     |   14 -
- .../quickgen/bash/quick_gen_project_html_only.sh   |   14 -
- .../bash/quick_gen_project_javascript_only.sh      |   14 -
- .../quickgen/bash/quick_gen_project_lua_only.sh    |   14 -
- .../quickgen/bash/quick_gen_project_math_only.sh   |   14 -
- .../quickgen/bash/quick_gen_project_python_only.sh |   14 -
- .../quickgen/bash/quick_gen_project_uc_only.sh     |   14 -
- .../quickgen/bash/quick_gen_project_vim_only.sh    |   14 -
- .../toolkit/quickgen/batch/quick_gen_project.bat   |  357 ---
- .../quickgen/batch/quick_gen_project_all.bat       |   16 -
- .../quickgen/batch/quick_gen_project_c_only.bat    |   16 -
- .../quickgen/batch/quick_gen_project_cpp_only.bat  |   16 -
- .../batch/quick_gen_project_csharp_only.bat        |   16 -
- .../quickgen/batch/quick_gen_project_general.bat   |   16 -
- .../quickgen/batch/quick_gen_project_html_only.bat |   16 -
- .../batch/quick_gen_project_javascript_only.bat    |   16 -
- .../quickgen/batch/quick_gen_project_lua_only.bat  |   16 -
- .../quickgen/batch/quick_gen_project_math_only.bat |   16 -
- .../batch/quick_gen_project_python_only.bat        |   16 -
- .../quickgen/batch/quick_gen_project_uc_only.bat   |   16 -
- .../quickgen/batch/quick_gen_project_vim_only.bat  |   16 -
- plugin_only/toolkit/src-highlight/command.txt      |   15 -
- .../toolkit/src-highlight/default/default.style    |   34 -
- plugin_only/toolkit/src-highlight/default/lang.map |   47 -
- plugin_only/toolkit/src-highlight/ex/default.style |   34 -
- plugin_only/toolkit/src-highlight/ex/ex.css        |  289 --
- plugin_only/toolkit/src-highlight/ex/ex_cpp.lang   |   18 -
- plugin_only/toolkit/src-highlight/ex/lang.map      |   48 -
- plugin_only/toolkit/vim/command.txt                |   23 -
- plugin_only/toolkit/vim/compile_vim.bat            |   34 -
- plugin_only/vimfiles/autoload/exUtility.vim        | 2957 -------------------
- plugin_only/vimfiles/colors/ex.vim                 |   96 -
- plugin_only/vimfiles/doc/exVim.txt                 | 2632 -----------------
- plugin_only/vimfiles/filetype.vim                  |   26 -
- plugin_only/vimfiles/plugin/exCscope.vim           |  777 -----
- .../vimfiles/plugin/exEnvironmentSetting.vim       |  366 ---
- plugin_only/vimfiles/plugin/exGlobalSearch.vim     | 1032 -------
- plugin_only/vimfiles/plugin/exMacroHighlight.vim   |  755 -----
- plugin_only/vimfiles/plugin/exMarksBrowser.vim     |  480 ----
- plugin_only/vimfiles/plugin/exProject.vim          |  994 -------
- plugin_only/vimfiles/plugin/exQuickFix.vim         |  586 ----
- plugin_only/vimfiles/plugin/exSearchComplete.vim   |  110 -
- plugin_only/vimfiles/plugin/exSymbolTable.vim      |  498 ----
- plugin_only/vimfiles/plugin/exTagSelect.vim        |  715 -----
- plugin_only/vimfiles/plugin/exUtility.vim          |  209 --
  toolkit/SyntaxHighlighter/scripts/clipboard.swf    |  Bin 0 -> 1361 bytes
  toolkit/SyntaxHighlighter/scripts/shBrushBash.js   |   59 +
  toolkit/SyntaxHighlighter/scripts/shBrushCSharp.js |   64 +
@@ -1520,176 +1426,5 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  toolkit/src-highlight/ex/lang.map                  |   48 +
  toolkit/vim/command.txt                            |   23 +
  toolkit/vim/compile_vim.bat                        |   34 +
- vimfiles/filetype.vim                              |   28 +
- 289 files changed, 24655 insertions(+), 29237 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.0)
-Author:     Jie Wu <karasaya@gmail.com>
-AuthorDate: Wed May 6 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.0: Initial upload
-
- README                                             |   65 +
- after/compiler/exgcc.vim                           |   27 +
- after/compiler/hlsl.vim                            |   13 +
- after/compiler/msvc2005.vim                        |   53 +
- after/ftplugin/c.vim                               |    2 +
- after/ftplugin/cpp.vim                             |    2 +
- after/syntax/__fxhlsl.vim                          |  196 ++
- after/syntax/c.vim                                 |  129 +
- after/syntax/cpp.vim                               |   69 +
- after/syntax/doxygen.vim                           |  696 +++++
- after/syntax/exUtility.vim                         |   72 +
- after/syntax/gmsh.vim                              |  107 +
- after/syntax/help.vim                              |  114 +
- after/syntax/hlsl.vim                              |  108 +
- after/syntax/matlab.vim                            |   54 +
- after/syntax/maxscript.vim                         |   85 +
- after/syntax/python.vim                            |   29 +
- after/syntax/syncolor.vim                          |  100 +
- after/syntax/vim.vim                               |   28 +
- doc/FAQ.txt                                        |  157 ++
- doc/Makefile                                       | 2959 ++++++++++++++++++++
- doc/compile_vim.win32.bat                          |   24 +
- doc/install.unix.txt                               |   36 +
- doc/install.win32.txt                              |   78 +
- doc/quick_start.txt                                |   52 +
- doc/showmarks.vim.patch                            |   84 +
- doc/vim_plugins.txt                                |   30 +
- plugin_only/_vimrc                                 |  952 +++++++
- .../SyntaxHighlighter/scripts/clipboard.swf        |  Bin 0 -> 1361 bytes
- .../SyntaxHighlighter/scripts/shBrushBash.js       |   59 +
- .../SyntaxHighlighter/scripts/shBrushCSharp.js     |   64 +
- .../SyntaxHighlighter/scripts/shBrushCpp.js        |   99 +
- .../SyntaxHighlighter/scripts/shBrushCss.js        |   93 +
- .../SyntaxHighlighter/scripts/shBrushDelphi.js     |   57 +
- .../SyntaxHighlighter/scripts/shBrushDiff.js       |   43 +
- .../SyntaxHighlighter/scripts/shBrushGroovy.js     |   69 +
- .../SyntaxHighlighter/scripts/shBrushJScript.js    |   51 +
- .../SyntaxHighlighter/scripts/shBrushJava.js       |   55 +
- .../SyntaxHighlighter/scripts/shBrushPerl.js       |   74 +
- .../SyntaxHighlighter/scripts/shBrushPhp.js        |   91 +
- .../SyntaxHighlighter/scripts/shBrushPlain.js      |   35 +
- .../SyntaxHighlighter/scripts/shBrushPython.js     |   56 +
- .../SyntaxHighlighter/scripts/shBrushRuby.js       |   57 +
- .../SyntaxHighlighter/scripts/shBrushScala.js      |   53 +
- .../SyntaxHighlighter/scripts/shBrushSql.js        |   68 +
- .../toolkit/SyntaxHighlighter/scripts/shBrushVb.js |   58 +
- .../SyntaxHighlighter/scripts/shBrushXml.js        |   71 +
- .../toolkit/SyntaxHighlighter/scripts/shCore.js    |   30 +
- .../toolkit/SyntaxHighlighter/scripts/shLegacy.js  |   30 +
- .../toolkit/SyntaxHighlighter/styles/help.png      |  Bin 0 -> 786 bytes
- .../toolkit/SyntaxHighlighter/styles/magnifier.png |  Bin 0 -> 615 bytes
- .../SyntaxHighlighter/styles/page_white_code.png   |  Bin 0 -> 603 bytes
- .../SyntaxHighlighter/styles/page_white_copy.png   |  Bin 0 -> 309 bytes
- .../toolkit/SyntaxHighlighter/styles/printer.png   |  Bin 0 -> 731 bytes
- .../toolkit/SyntaxHighlighter/styles/shCore.css    |  321 +++
- .../SyntaxHighlighter/styles/shThemeDefault.css    |  191 ++
- .../SyntaxHighlighter/styles/shThemeDjango.css     |  193 ++
- .../toolkit/SyntaxHighlighter/styles/shThemeEX.css |  163 ++
- .../SyntaxHighlighter/styles/shThemeEmacs.css      |  192 ++
- .../SyntaxHighlighter/styles/shThemeFadeToGrey.css |  193 ++
- .../SyntaxHighlighter/styles/shThemeMidnight.css   |  192 ++
- .../SyntaxHighlighter/styles/shThemeRDark.css      |  192 ++
- .../toolkit/SyntaxHighlighter/styles/wrapping.png  |  Bin 0 -> 631 bytes
- plugin_only/toolkit/cTags/.ctags                   |   17 +
- plugin_only/toolkit/cTags/command.txt              |   15 +
- plugin_only/toolkit/doxygen/CodeGen/config.cfg     | 1310 +++++++++
- plugin_only/toolkit/doxygen/CodeGen/footer.html    |    5 +
- .../toolkit/doxygen/CodeGen/generate_doc.bat       |   21 +
- plugin_only/toolkit/doxygen/CodeGen/header.html    |    9 +
- plugin_only/toolkit/doxygen/CodeGen/hhc.exe        |  Bin 0 -> 51472 bytes
- plugin_only/toolkit/doxygen/CodeGen/logo.gif       |  Bin 0 -> 4475 bytes
- plugin_only/toolkit/doxygen/CodeGen/ubisoft.css    |  359 +++
- plugin_only/toolkit/gawk/command.txt               |   22 +
- plugin_only/toolkit/gawk/prg_ConvertLog.awk        |   20 +
- plugin_only/toolkit/gawk/prg_Inherits.awk          |   30 +
- plugin_only/toolkit/gawk/prg_InheritsDot.awk       |   29 +
- plugin_only/toolkit/gawk/prg_NoStripSymbol.awk     |   22 +
- plugin_only/toolkit/gawk/prg_StripSymbol.awk       |   27 +
- plugin_only/toolkit/iconv/command.txt              |   14 +
- plugin_only/toolkit/iconv/iconv_big5-to-gb.bat     |   20 +
- .../toolkit/iconv/iconv_cp932-to-EUC_JP.bat        |   21 +
- .../toolkit/iconv/iconv_latin1-to-cp936.bat        |   21 +
- .../toolkit/iconv/iconv_latin1-to-utf-8.bat        |   21 +
- plugin_only/toolkit/idutils/command.txt            |   22 +
- plugin_only/toolkit/idutils/id-lang-default.map    |  101 +
- plugin_only/toolkit/idutils/id-lang.map            |  124 +
- plugin_only/toolkit/idutils/readme.txt             |    1 +
- plugin_only/toolkit/makefile/gcc/gcc_config.mk     |  217 ++
- plugin_only/toolkit/makefile/gcc/gcc_entry_m.mk    |  153 +
- plugin_only/toolkit/makefile/gcc/gcc_entry_s.mk    |   99 +
- plugin_only/toolkit/makefile/gcc/gcc_project.mk    |   98 +
- plugin_only/toolkit/makefile/gcc/gcc_rule.mk       |  624 +++++
- plugin_only/toolkit/makefile/msvc/make_vs.bat      |   76 +
- plugin_only/toolkit/makefile/msvc/msvc_config.mk   |  109 +
- plugin_only/toolkit/makefile/msvc/msvc_entry.mk    |  120 +
- plugin_only/toolkit/makefile/msvc/msvc_tmpl.txt    |    9 +
- .../toolkit/makefile/msvc/vc_project/project.sln   |   46 +
- .../msvc/vc_project/project_exe/project_exe.cpp    |   28 +
- .../msvc/vc_project/project_exe/project_exe.h      |   14 +
- .../msvc/vc_project/project_exe/project_exe.vcproj |  749 +++++
- .../project_exe.vcproj.EXPC.Johnny.user            |  177 ++
- .../msvc/vc_project/project_lib/project_lib.cpp    |   13 +
- .../msvc/vc_project/project_lib/project_lib.h      |   14 +
- .../msvc/vc_project/project_lib/project_lib.vcproj |  708 +++++
- .../project_lib.vcproj.EXPC.Johnny.user            |  177 ++
- .../toolkit/makefile/ref/gcc_rule_multi_logs.mk    |  405 +++
- .../toolkit/makefile/shader/shader_config.mk       |  266 ++
- .../toolkit/makefile/shader/shader_entry_m.mk      |  130 +
- .../toolkit/makefile/shader/shader_entry_s.mk      |  106 +
- .../toolkit/makefile/shader/shader_project.mk      |  104 +
- plugin_only/toolkit/makefile/shader/shader_rule.mk |  320 +++
- plugin_only/toolkit/octave/.octaverc               |   19 +
- .../toolkit/quickgen/bash/quick_gen_project.sh     |  323 +++
- .../toolkit/quickgen/bash/quick_gen_project_all.sh |   14 +
- .../quickgen/bash/quick_gen_project_c_only.sh      |   14 +
- .../quickgen/bash/quick_gen_project_cpp_only.sh    |   14 +
- .../quickgen/bash/quick_gen_project_csharp_only.sh |   14 +
- .../quickgen/bash/quick_gen_project_general.sh     |   14 +
- .../quickgen/bash/quick_gen_project_html_only.sh   |   14 +
- .../bash/quick_gen_project_javascript_only.sh      |   14 +
- .../quickgen/bash/quick_gen_project_lua_only.sh    |   14 +
- .../quickgen/bash/quick_gen_project_math_only.sh   |   14 +
- .../quickgen/bash/quick_gen_project_python_only.sh |   14 +
- .../quickgen/bash/quick_gen_project_uc_only.sh     |   14 +
- .../quickgen/bash/quick_gen_project_vim_only.sh    |   14 +
- .../toolkit/quickgen/batch/quick_gen_project.bat   |  357 +++
- .../quickgen/batch/quick_gen_project_all.bat       |   16 +
- .../quickgen/batch/quick_gen_project_c_only.bat    |   16 +
- .../quickgen/batch/quick_gen_project_cpp_only.bat  |   16 +
- .../batch/quick_gen_project_csharp_only.bat        |   16 +
- .../quickgen/batch/quick_gen_project_general.bat   |   16 +
- .../quickgen/batch/quick_gen_project_html_only.bat |   16 +
- .../batch/quick_gen_project_javascript_only.bat    |   16 +
- .../quickgen/batch/quick_gen_project_lua_only.bat  |   16 +
- .../quickgen/batch/quick_gen_project_math_only.bat |   16 +
- .../batch/quick_gen_project_python_only.bat        |   16 +
- .../quickgen/batch/quick_gen_project_uc_only.bat   |   16 +
- .../quickgen/batch/quick_gen_project_vim_only.bat  |   16 +
- plugin_only/toolkit/src-highlight/command.txt      |   15 +
- .../toolkit/src-highlight/default/default.style    |   34 +
- plugin_only/toolkit/src-highlight/default/lang.map |   47 +
- plugin_only/toolkit/src-highlight/ex/default.style |   34 +
- plugin_only/toolkit/src-highlight/ex/ex.css        |  289 ++
- plugin_only/toolkit/src-highlight/ex/ex_cpp.lang   |   18 +
- plugin_only/toolkit/src-highlight/ex/lang.map      |   48 +
- plugin_only/toolkit/vim/command.txt                |   23 +
- plugin_only/toolkit/vim/compile_vim.bat            |   34 +
- plugin_only/vimfiles/autoload/exUtility.vim        | 2957 +++++++++++++++++++
- plugin_only/vimfiles/colors/ex.vim                 |   96 +
- plugin_only/vimfiles/doc/exVim.txt                 | 2632 +++++++++++++++++
- plugin_only/vimfiles/filetype.vim                  |   26 +
- plugin_only/vimfiles/plugin/exCscope.vim           |  777 +++++
- .../vimfiles/plugin/exEnvironmentSetting.vim       |  366 +++
- plugin_only/vimfiles/plugin/exGlobalSearch.vim     | 1032 +++++++
- plugin_only/vimfiles/plugin/exMacroHighlight.vim   |  755 +++++
- plugin_only/vimfiles/plugin/exMarksBrowser.vim     |  480 ++++
- plugin_only/vimfiles/plugin/exProject.vim          |  994 +++++++
- plugin_only/vimfiles/plugin/exQuickFix.vim         |  586 ++++
- plugin_only/vimfiles/plugin/exSearchComplete.vim   |  110 +
- plugin_only/vimfiles/plugin/exSymbolTable.vim      |  498 ++++
- plugin_only/vimfiles/plugin/exTagSelect.vim        |  715 +++++
- plugin_only/vimfiles/plugin/exUtility.vim          |  209 ++
+ vimfiles/filetype.vim                              |   26 +
  162 files changed, 29998 insertions(+), 0 deletions(-)

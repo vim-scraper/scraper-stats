@@ -7,11 +7,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Incompatible changes:- Requrie |textobj-user| 0.3.8 or later.Major improvements:- Add |<Plug>(textobj-indent-same-a)| and |<Plug>(textobj-indent-same-i)|.Minor improvements:- Revise the document a bit.- Add tests.- Fix a minor bug.- Revise to be autoloaded.
 
- doc/textobj-indent.txt                   |  106 +++++++++++++++-----
- indent-0.0.2/plugin/textobj/indent.vim   |  157 ------------------------------
- indent-0.0.3/autoload/textobj/indent.vim |  155 +++++++++++++++++++++++++++++
- indent-0.0.3/plugin/textobj/indent.vim   |   69 +++++++++++++
- 4 files changed, 305 insertions(+), 182 deletions(-)
+ autoload/textobj/indent.vim |  155 +++++++++++++++++++++++++++++++++++++++++++
+ doc/textobj-indent.txt      |  106 ++++++++++++++++++++++-------
+ plugin/textobj/indent.vim   |  108 +++---------------------------
+ 3 files changed, 246 insertions(+), 123 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.2)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -22,10 +21,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Fix the bug to calculate indentation levels.  Now these text objects target a set of lines with the same indentation as you see.
 
- doc/textobj-indent.txt                 |    6 +-
- indent-0.0.1/plugin/textobj/indent.vim |  157 --------------------------------
- indent-0.0.2/plugin/textobj/indent.vim |  157 ++++++++++++++++++++++++++++++++
- 3 files changed, 162 insertions(+), 158 deletions(-)
+ doc/textobj-indent.txt    |    6 +++++-
+ plugin/textobj/indent.vim |    4 ++--
+ 2 files changed, 7 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -36,10 +34,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Add |<Plug>(textobj-indent-a)| and |<Plug>(textobj-indent-i)|.- Remove |<Plug>(textobj-indent)|.  Use |<Plug>(textobj-indent-a)| instead.
 
- doc/textobj-indent.txt                 |   40 +++++++--
- indent-0.0.0/plugin/textobj/indent.vim |  121 ------------------------
- indent-0.0.1/plugin/textobj/indent.vim |  157 ++++++++++++++++++++++++++++++++
- 3 files changed, 189 insertions(+), 129 deletions(-)
+ doc/textobj-indent.txt    |   40 ++++++++++++++++++++++++++------
+ plugin/textobj/indent.vim |   54 +++++++++++++++++++++++++++++++++++++-------
+ 2 files changed, 77 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.0)
 Author:     Kana Natsuno <whileimautomaton+vim@gmail.com>
@@ -48,7 +45,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.0: Initial upload
 
- README                                 |   60 ++++++++++++
- doc/textobj-indent.txt                 |  155 ++++++++++++++++++++++++++++++++
- indent-0.0.0/plugin/textobj/indent.vim |  121 +++++++++++++++++++++++++
+ README                    |   60 +++++++++++++++++
+ doc/textobj-indent.txt    |  155 +++++++++++++++++++++++++++++++++++++++++++++
+ plugin/textobj/indent.vim |  121 +++++++++++++++++++++++++++++++++++
  3 files changed, 336 insertions(+), 0 deletions(-)
