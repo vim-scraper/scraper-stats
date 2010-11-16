@@ -23,10 +23,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fixed a misprint in CompleteKeywords function which failed omni-completion in unix platfom;
     - Fix a BUG in abbreviation that brings an extra space within parentheses.
 
+ doc/README.txt           |   12 +++--
  ftplugin/dml-unix.vim    |  135 +++++++++++++++++++++++++++++++++-------------
  ftplugin/dml-windows.vim |  135 +++++++++++++++++++++++++++++++++-------------
  indent/dml.vim           |    4 --
- plugins/README.txt       |   12 +++--
  4 files changed, 204 insertions(+), 82 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.02@1)
@@ -36,9 +36,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.02@1: + ADD an installation script for unix.
 
- plugins/README.txt   |   81 +++++++++++++++++++++++++++-------------------
- plugins/filetype.vim |    4 ++-
- plugins/gembase-unix |   87 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/README.txt      |   81 +++++++++++++++++++++++++++--------------------
+ gembase-unix        |   87 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/filetype.vim |    4 ++-
  3 files changed, 137 insertions(+), 35 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.02)
@@ -51,11 +51,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fixed a BUG: change the dict path for unix platform
     + ADD a function: enhance omni-completion to SuperCleverTab(), so as to use "Tab" to auto-complete
 
- ftplugin/dml-unix.vim         |  214 +++++++++++
- ftplugin/dml-windows.vim      |  214 +++++++++++
- ftplugin/dml.vim              |  211 -----------
- plugins/README.txt            |   21 +-
- plugins/ftplugin/gembase/dict |  827 +++++++++++++++++++++--------------------
+ doc/README.txt           |   21 +-
+ ftplugin/dml-unix.vim    |  214 ++++++++++++
+ ftplugin/dml-windows.vim |  214 ++++++++++++
+ ftplugin/dml.vim         |  211 ------------
+ ftplugin/gembase/dict    |  827 +++++++++++++++++++++++-----------------------
  5 files changed, 861 insertions(+), 626 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -68,11 +68,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fixed a BUG: suited declaration auto-completion conflicts with comment.
     + ADD: omni-completion functionality.
 
- ftplugin/dml.vim              |  148 +++++++++++----
- indent/dml.vim                |   54 +++---
- plugins/README.txt            |   31 ++--
- plugins/ftplugin/gembase/dict |  407 +++++++++++++++++++++++++++++++++++++++++
- syntax/dml.vim                |    2 -
+ doc/README.txt        |   31 +++--
+ ftplugin/dml.vim      |  148 +++++++++++++-----
+ ftplugin/gembase/dict |  407 +++++++++++++++++++++++++++++++++++++++++++++++++
+ indent/dml.vim        |   54 ++++---
+ syntax/dml.vim        |    2 -
  5 files changed, 561 insertions(+), 81 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.09)
@@ -86,9 +86,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + show help tip balloon when cursor hangs over a folder;
     + parenthesis auto-complete
 
- ftplugin/dml.vim   |  101 ++++++++++++++++++++++++++++++++++++++++++++++++----
- plugins/README.txt |   14 +++++---
- syntax/dml.vim     |    2 +-
+ doc/README.txt   |   14 +++++---
+ ftplugin/dml.vim |  101 ++++++++++++++++++++++++++++++++++++++++++++++++++----
+ syntax/dml.vim   |    2 +-
  3 files changed, 104 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.06)
@@ -105,10 +105,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     add a menu "Gembase".
 
- ftplugin/dml.vim   |   58 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- indent/dml.vim     |   54 +++++++++++++++++++++++++-----------------------
- plugins/README.txt |   28 +++++++++++++++++--------
- syntax/dml.vim     |    7 +++--
+ doc/README.txt   |   28 +++++++++++++++++--------
+ ftplugin/dml.vim |   58 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ indent/dml.vim   |   54 ++++++++++++++++++++++++++------------------------
+ syntax/dml.vim   |    7 +++--
  4 files changed, 109 insertions(+), 38 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.03)
@@ -120,9 +120,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Add some local vim options into indent script, and most metadata keywords into syntax script.
 
- README               |   65 +++++++++++
- indent/dml.vim       |  185 +++++++++++++++++++++++++++++++
- plugins/README.txt   |   50 +++++++++
- plugins/filetype.vim |    1 +
- syntax/dml.vim       |  295 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ README              |   65 +++++++++++
+ doc/README.txt      |   50 +++++++++
+ indent/dml.vim      |  185 ++++++++++++++++++++++++++++++++
+ plugin/filetype.vim |    1 +
+ syntax/dml.vim      |  295 +++++++++++++++++++++++++++++++++++++++++++++++++++
  5 files changed, 596 insertions(+), 0 deletions(-)
