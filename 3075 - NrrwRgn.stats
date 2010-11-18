@@ -1,4 +1,18 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.15)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/16)
+Author:     Christian Brabandt <cb@256bit.org>
+AuthorDate: Wed Nov 17 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 16
+    
+    - Bugfix: copy all local options to the narrowed window (reported by Xu Hong, Thanks)- Make :q quit the narrowed window correctly(automatically uploaded)
+
+ autoload/nrrwrgn.vim |   73 ++++++++++++++++++++++++++++++++++++++++++-------
+ doc/NarrowRegion.txt |    6 +++-
+ plugin/NrrwRgn.vim   |    6 ++--
+ 3 files changed, 70 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
 Author:     Christian Brabandt <cb@256bit.org>
 AuthorDate: Thu Aug 26 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

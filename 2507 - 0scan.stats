@@ -98,7 +98,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     :OScan<CR> now lists all available scans. :OScan <Tab> now complete with available scans. Thanks Vasilii Pascal for feedback.
 
  autoload/railmoon/oscan.vim                        |  133 ++++++++++++++++++--
- autoload/railmoon/oscan/extractor/ctags/.DS_Store  |  Bin 6148 -> 0 bytes
  autoload/railmoon/oscan/extractor/sco.vim          |    4 +-
  .../railmoon/oscan/extractor/search_in_windows.vim |   83 +------------
  .../railmoon/oscan/extractor/search_on_screen.vim  |    2 +-
@@ -107,7 +106,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  .../oscan/extractor/taglist_under_cursor.vim       |    2 +-
  autoload/railmoon/oscan/extractor/vims.vim         |    2 +-
  plugin/oscan.vim                                   |    2 +-
- 10 files changed, 140 insertions(+), 142 deletions(-)
+ 9 files changed, 140 insertions(+), 142 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.1)
 Author:     Mykola Golubyev <golubev.nikolay@gmail.com>
@@ -115,11 +114,6 @@ AuthorDate: Sun Jan 4 00:00:00 2009 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.4.1: clean up zip archive from swap files.
-
- autoload/railmoon/.DS_Store                 |  Bin 6148 -> 0 bytes
- autoload/railmoon/oscan/extractor/.DS_Store |  Bin 6148 -> 0 bytes
- autoload/railmoon/widget/.DS_Store          |  Bin 6148 -> 0 bytes
- 3 files changed, 0 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
 Author:     Mykola Golubyev <golubev.nikolay@gmail.com>
@@ -129,14 +123,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Version 0.4: Initial upload
 
  README                                             |   26 +
- autoload/railmoon/.DS_Store                        |  Bin 0 -> 6148 bytes
  autoload/railmoon/ctags_util.vim                   |   35 ++
  autoload/railmoon/id.vim                           |  115 ++++
  autoload/railmoon/oscan.vim                        |  564 +++++++++++++++++++
- autoload/railmoon/oscan/extractor/.DS_Store        |  Bin 0 -> 6148 bytes
  autoload/railmoon/oscan/extractor/buffers.vim      |   75 +++
  autoload/railmoon/oscan/extractor/ctags.vim        |  123 +++++
- autoload/railmoon/oscan/extractor/ctags/.DS_Store  |  Bin 0 -> 6148 bytes
  autoload/railmoon/oscan/extractor/ctags/cpp.vim    |  144 +++++
  autoload/railmoon/oscan/extractor/ctags/vim.vim    |   39 ++
  .../oscan/extractor/definition_declaration.vim     |  127 +++++
@@ -160,11 +151,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  autoload/railmoon/trace.vim                        |   45 ++
  autoload/railmoon/unit_test.vim                    |   69 +++
  autoload/railmoon/widget.vim                       |   21 +
- autoload/railmoon/widget/.DS_Store                 |  Bin 0 -> 6148 bytes
  autoload/railmoon/widget/base.vim                  |  571 ++++++++++++++++++++
  autoload/railmoon/widget/canvas.vim                |   82 +++
  autoload/railmoon/widget/edit_line_window.vim      |  207 +++++++
  autoload/railmoon/widget/selection_window.vim      |  408 ++++++++++++++
  autoload/railmoon/widget/window.vim                |  167 ++++++
  plugin/oscan.vim                                   |   32 ++
- 39 files changed, 4169 insertions(+), 0 deletions(-)
+ 35 files changed, 4169 insertions(+), 0 deletions(-)

@@ -1,4 +1,37 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1-12)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.15)
+Author:     michael lear <mikeofthenight2003@yahoo.com>
+AuthorDate: Wed Nov 17 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.15
+    
+    Fixed BUG where viclean removed any executable shell scripts from the project dir. This was because stat
+    returns true on all executable files. Added further test to skip all exectable shell scripts.
+    Replaced incorrect version of utils.cc with latest version.
+    A full installation guide  and tutorial is included in the doc directory. To build this version copy the package to your home directory then run: tar zxvf vimake-1.15.tar.gz.
+
+ vimake-1.14.tar |  Bin 1136640 -> 0 bytes
+ vimake-1.15.tar |  Bin 0 -> 1146880 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.14)
+Author:     michael lear <mikeofthenight2003@yahoo.com>
+AuthorDate: Mon Nov 15 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.14
+    
+    Vimake,    compile-assemble-link-run-debug a file or files in a vim session with hot keys.
+    This version of vimake has many improvements over the earlier version. It now can load,build and run
+    in a vim session lua. It can automatically switch the ddd front end debugger to load the following
+    file types. Asm, C/CPP, Bash, Python and Perl. It can also run the ruby debugger and the other script languages  in a vim shell. A full installation guide  and tutorial is included in the doc directory. To build this version copy the package to your home directory then run: tar zxvf vimake-1.14.tar.gz.
+    Change directory to $HOME/vimake-1.14 and follow the README instructions.
+
+ vimake-1.12.tar |  Bin 686080 -> 0 bytes
+ vimake-1.14.tar |  Bin 0 -> 1136640 bytes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1-12)
 Author:     michael lear <mikeofthenight2003@yahoo.com>
 AuthorDate: Sat Mar 20 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

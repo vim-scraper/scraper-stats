@@ -1,4 +1,33 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1a)
+Author:     Daniel Price <vim@danprice.fastmail.net>
+AuthorDate: Thu Nov 18 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1a: Fixed a typo that prevented Visual Studio parsing from working
+
+ doc/ProjectParse.txt    |   26 ++++++++++++++++++--------
+ plugin/ProjectParse.vim |    2 +-
+ 2 files changed, 19 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Daniel Price <vim@danprice.fastmail.net>
+AuthorDate: Wed Nov 17 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1
+    
+    Added automatic update of projects upon a change to the project file.
+      - Projects will need to be reparsed to support this functionality
+    Added support for CodeLite projects
+    Added support for MPLAB projects
+    Improved other parsers
+
+ README                  |   13 +-
+ doc/ProjectParse.txt    |   49 +++--
+ plugin/ProjectParse.vim |  537 ++++++++++++++++++++++++++++++++++-------------
+ 3 files changed, 436 insertions(+), 163 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
 Author:     Daniel Price <vim@danprice.fastmail.net>
 AuthorDate: Fri Oct 15 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

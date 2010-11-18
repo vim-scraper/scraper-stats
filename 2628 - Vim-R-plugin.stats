@@ -1,4 +1,43 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/101107)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/101118)
+Author:     Jakson Aquino <jalvesaq@gmail.com>
+AuthorDate: Thu Nov 18 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 101118
+    
+    * New command:  :RUpdateObjListAll.
+    * New option: vimrplugin_allnames.
+    * Allow the use of Python 3.1 on Windows.
+    * Minor improvements in indentation of R code.
+    * The file r-plugin/omni_list was renamed to r-plugin/omniList because its field separator changed to ";".
+    * Fixed bug that was causing ^H to be exhibited in the R documentation in some systems. (Thanks to Helge Liebert for reporting the problem).
+
+ README                     |   25 +-
+ autoload/rcomplete.vim     |    8 +-
+ autoload/rplugin.vim       |  423 -------
+ doc/r-plugin.txt           |  323 +++---
+ ftplugin/r.vim             | 1603 +------------------------
+ ftplugin/rbrowser.vim      |   63 +-
+ ftplugin/rdoc.vim          | 1644 +-------------------------
+ ftplugin/rhelp.vim         | 1609 +------------------------
+ ftplugin/rnoweb.vim        | 1587 +-----------------------
+ indent/r.vim               |   82 +-
+ r-plugin/build_omniList.R  |  195 +++
+ r-plugin/build_omni_list.R |  185 ---
+ r-plugin/common_buffer.vim |  114 ++
+ r-plugin/common_global.vim | 1979 ++++++++++++++++++++++++++++++
+ r-plugin/functions.vim     | 2395 +++++-------------------------------
+ r-plugin/omniList          | 2910 ++++++++++++++++++++++++++++++++++++++++++++
+ r-plugin/omni_list         | 2591 ---------------------------------------
+ r-plugin/rpython.vim       |  155 ---
+ r-plugin/vimbrowser.R      |   99 +-
+ r-plugin/vimhelp.R         |    2 +-
+ r-plugin/windows.py        |  111 ++
+ syntax/r.vim               |    4 +-
+ syntax/rbrowser.vim        |   10 +-
+ 23 files changed, 6052 insertions(+), 12065 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/101107)
 Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Sun Nov 7 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
