@@ -1,4 +1,19 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.2)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Tue Nov 16 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.2
+    
+    Added autodetection for /usr/local/bin/clojure on Linux, added special characters to Lisp keyword selection (iskeyword), run Vim's original ftplugin/lisp.vim for Clojure filetype, bugfixes: PareditWrap error when g:paredit_shortmaps=1 (thanks to Jon Thacker), buffer selection problems in case of three of more buffers (thanks to Philipp Marek), conflicting keybindings for SlimvGenerateTags, unmap error messages when g:paredit_mode=0.
+
+ doc/slimv.txt                      |   16 ++++++++--
+ ftplugin/clojure/slimv-clojure.vim |   10 ++++--
+ ftplugin/slimv.vim                 |   31 +++++++++++---------
+ plugin/paredit.vim                 |   54 ++++++++++++++++++++---------------
+ 4 files changed, 68 insertions(+), 43 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1)
 Author:     Tamas Kovacs <kovisoft@gmail.com>
 AuthorDate: Sun Nov 7 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

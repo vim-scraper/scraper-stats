@@ -1,4 +1,38 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.02)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.0)
+Author:     @kevinwatters <kevin.watters@gmail.com>
+AuthorDate: Wed Nov 17 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.0
+    
+    Upgraded the included pyflakes module to trunk r17946 from http://divmod.org/trac/wiki/DivmodPyflakes, which adds support for Python 2.7 constructs like set comprehensions and dict comprehensions.  Modified pyflakes 0.4.0 to retain column information.
+    
+    Modified pyflakes.vim to be compatible with "stock" PyFlakes.
+    
+    Changes in pyflakes.vim: https://github.com/kevinw/pyflakes-vim/commit/8a7e19b6578b0986cb7a88a6c10d6cd907af2057
+    
+    Changes to stock PyFlakes 0.4.0: https://github.com/kevinw/pyflakes/commit/8f62656c96b7cf66b7ad6cac0d9e3881e55f389f#
+
+ README.rst                                     |    7 +-
+ ftplugin/pyflakes.vim                          |   37 +-
+ pyflakes/NEWS.txt                              |   29 +
+ pyflakes/README.rst                            |   36 --
+ pyflakes/TODO                                  |   11 -
+ pyflakes/pyflakes/__init__.py                  |    2 +
+ pyflakes/pyflakes/ast.py                       |  311 ----------
+ pyflakes/pyflakes/checker.py                   |  777 +++++++++++++++---------
+ pyflakes/pyflakes/messages.py                  |   77 ++-
+ pyflakes/pyflakes/scripts/pyflakes.py          |   61 ++-
+ pyflakes/pyflakes/test/harness.py              |    9 +-
+ pyflakes/pyflakes/test/test_imports.py         |  183 ++++++-
+ pyflakes/pyflakes/test/test_other.py           |  349 +++++++++++-
+ pyflakes/pyflakes/test/test_script.py          |  139 +++++-
+ pyflakes/pyflakes/test/test_undefined_names.py |  107 +++-
+ pyflakes/setup.py                              |   19 +-
+ quickfix.diff                                  |  124 ----
+ 17 files changed, 1418 insertions(+), 860 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.02)
 Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Tue Nov 9 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

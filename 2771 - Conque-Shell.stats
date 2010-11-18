@@ -1,4 +1,44 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2@1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0@2)
+Author:     Nico Raffo <nicoraffo@gmail.com>
+AuthorDate: Wed Nov 17 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.0@2
+    
+     * Windows support!
+     * Python 3 support
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0@1)
+Author:     Nico Raffo <nicoraffo@gmail.com>
+AuthorDate: Wed Nov 17 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.0@1: See above
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Nico Raffo <nicoraffo@gmail.com>
+AuthorDate: Wed Nov 17 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.0: See above
+
+ autoload/conque_term.vim                          | 2110 +++++++--------------
+ autoload/conque_term/conque.py                    |  975 ++++++++++
+ autoload/conque_term/conque_globals.py            |  287 +++
+ autoload/conque_term/conque_screen.py             |  209 ++
+ autoload/conque_term/conque_sole.py               |  459 +++++
+ autoload/conque_term/conque_sole_communicator.py  |  183 ++
+ autoload/conque_term/conque_sole_shared_memory.py |  202 ++
+ autoload/conque_term/conque_sole_subprocess.py    |  753 ++++++++
+ autoload/conque_term/conque_sole_wrapper.py       |  304 +++
+ autoload/conque_term/conque_subprocess.py         |  195 ++
+ autoload/conque_term/conque_win32_util.py         |  473 +++++
+ doc/conque_term.txt                               |  126 +-
+ plugin/conque_term.vim                            |   38 +-
+ syntax/conque_term.vim                            |   30 +
+ 14 files changed, 4910 insertions(+), 1434 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2@1)
 Author:     Nico Raffo <nicoraffo@gmail.com>
 AuthorDate: Tue Oct 12 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -224,7 +264,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Version 0.1: Initial upload
 
  INSTALL                |   30 ++
- README                 |   33 +++
+ README                 |   32 ++
  autoload/conque.vim    |  531 ++++++++++++++++++++++++++++++++++
  autoload/fakepoll.h    |  163 +++++++++++
  autoload/proc.c        |  676 +++++++++++++++++++++++++++++++++++++++++++
@@ -245,4 +285,4 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  vimproc/test/test4.vim |   19 ++
  vimproc/test/test5.vim |   13 +
  vimproc/test/test6.vim |   13 +
- 22 files changed, 3653 insertions(+), 0 deletions(-)
+ 22 files changed, 3652 insertions(+), 0 deletions(-)

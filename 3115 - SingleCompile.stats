@@ -5,88 +5,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.1.1: fix a serious bug: to show an error message will cause problems.
 
- autoload/SingleCompile.vim |   52 ++++++++++++++++++++++++-------------------
- doc/SingleCompile.txt      |   33 ++++++++++++++++-----------
- plugin/SingleCompile.vim   |    2 +-
- 3 files changed, 49 insertions(+), 38 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
-Author:     H Xu <xuhdev@gmail.com>
-AuthorDate: Mon Oct 25 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.1
-    
-    add SCComplieAF command and SCCompileRunAF command. add several language templates(lisp, javascript) and some new compiler templates. improve the document.
-
- autoload/SingleCompile.vim |   75 ++++++++++++++++++++++++++------
- doc/SingleCompile.txt      |  102 ++++++++++++++++++++++++++++++++++++-------
- plugin/SingleCompile.vim   |    4 +-
- 3 files changed, 149 insertions(+), 32 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.0.4)
-Author:     H Xu <xuhdev@gmail.com>
-AuthorDate: Wed Oct 6 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.0.4: fix some interpreting language problems on unix.
-
- autoload/SingleCompile.vim |   40 ++++++++++++++++++++++++----------------
- doc/SingleCompile.txt      |    4 ++--
- plugin/SingleCompile.vim   |    2 +-
- 3 files changed, 27 insertions(+), 19 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.0.3)
-Author:     H Xu <xuhdev@gmail.com>
-AuthorDate: Tue Oct 5 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.0.3
-    
-    fix bugs when the file path contains spaces(reported by Haoran) and several other bugs. Improve the document.
-
- autoload/SingleCompile.vim |  100 ++++++++++++++++++++++++--------------------
- doc/SingleCompile.txt      |   57 +++++++++++++++++--------
- plugin/SingleCompile.vim   |    2 +-
- 3 files changed, 95 insertions(+), 64 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.0.2)
-Author:     H Xu <xuhdev@gmail.com>
-AuthorDate: Sat Oct 2 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.0.2: several bug fixes and some built-in template improvement.
-
- autoload/SingleCompile.vim |  123 ++++++++++++++++++++++++++------------------
- doc/SingleCompile.txt      |   37 +++++++------
- plugin/SingleCompile.vim   |    4 +-
- 3 files changed, 95 insertions(+), 69 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.0.1)
-Author:     H Xu <xuhdev@gmail.com>
-AuthorDate: Fri Oct 1 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.0.1: Improve the menus. Fix a compiler template bug.
-
- autoload/SingleCompile.vim |  231 +++++++++++++++++++++++---------------------
- doc/SingleCompile.txt      |    4 +-
- plugin/SingleCompile.vim   |   32 ++++---
- 3 files changed, 142 insertions(+), 125 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     H Xu <xuhdev@gmail.com>
-AuthorDate: Fri Oct 1 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.0
-    
-    Add multi compiler support, compiler autodetection support(although it's still not powerful enough), fortran built-in support.
-
- autoload/SingleCompile.vim |  394 ++++++++++++++++++++++++++++++++++++++++----
- doc/SingleCompile.txt      |  371 +++++++++++++++++++++++++++--------------
- plugin/SingleCompile.vim   |   99 +-----------
- 3 files changed, 611 insertions(+), 253 deletions(-)
+ autoload/SingleCompile.vim |  525 ++++++++++++++++++++++++++++++++++++++++----
+ doc/SingleCompile.txt      |  482 +++++++++++++++++++++++++++++-----------
+ plugin/SingleCompile.vim   |  133 ++---------
+ 3 files changed, 854 insertions(+), 286 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
 Author:     H Xu <xuhdev@gmail.com>
@@ -95,32 +17,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2.1: Fix a minor document bug.
 
- autoload/SingleCompile.vim |    2 +-
- doc/SingleCompile.txt      |   10 ++++++++--
- plugin/SingleCompile.vim   |    2 +-
- 3 files changed, 10 insertions(+), 4 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
-Author:     H Xu <xuhdev@gmail.com>
-AuthorDate: Fri Aug 27 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.2: Add menu support, add perl, ruby, lua built-in support, fix some bugs.
-
- autoload/SingleCompile.vim |   16 +++---
- doc/SingleCompile.txt      |  122 +++++++++++++++++++++++++-------------------
- plugin/SingleCompile.vim   |   46 +++++++++++++++--
- 3 files changed, 120 insertions(+), 64 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     H Xu <xuhdev@gmail.com>
-AuthorDate: Sun Aug 15 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.1: Make quickfix feature works for interpreting language in UNIX/Linux.
-
- README                     |  130 +++++++++++++++++++
- autoload/SingleCompile.vim |  196 ++++++++++++++++++++++++++++
- doc/SingleCompile.txt      |  302 ++++++++++++++++++++++++++++++++++++++++++++
- plugin/SingleCompile.vim   |  118 +++++++++++++++++
- 4 files changed, 746 insertions(+), 0 deletions(-)
+ README                     |  130 ++++++++++++++++++
+ autoload/SingleCompile.vim |  198 +++++++++++++++++++++++++++
+ doc/SingleCompile.txt      |  324 ++++++++++++++++++++++++++++++++++++++++++++
+ plugin/SingleCompile.vim   |  156 +++++++++++++++++++++
+ 4 files changed, 808 insertions(+), 0 deletions(-)
