@@ -1,4 +1,22 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Tue Nov 23 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2
+    
+    Add "Predo", "Postdo" features;
+    makes template smarter(such as automatically add "-lm" flag on UNIX when using some C compilers if math.h is included);
+    add some new template(Haskell, etc);
+    improve the document;
+    fix some bugs.
+
+ autoload/SingleCompile.vim |  167 +++++++++++++++++++++++----
+ doc/SingleCompile.txt      |  284 +++++++++++++++++++++++++++++++++----------
+ plugin/SingleCompile.vim   |   29 +++--
+ 3 files changed, 379 insertions(+), 101 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.1)
 Author:     H Xu <xuhdev@gmail.com>
 AuthorDate: Sun Oct 31 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -17,8 +35,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2.1: Fix a minor document bug.
 
- README                     |  130 ++++++++++++++++++
+ README                     |  149 ++++++++++++++++++++
  autoload/SingleCompile.vim |  198 +++++++++++++++++++++++++++
  doc/SingleCompile.txt      |  324 ++++++++++++++++++++++++++++++++++++++++++++
  plugin/SingleCompile.vim   |  156 +++++++++++++++++++++
- 4 files changed, 808 insertions(+), 0 deletions(-)
+ 4 files changed, 827 insertions(+), 0 deletions(-)
