@@ -1,0 +1,63 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.1210)
+Author:     Herbert Sitz <hesitz@gmail.com>
+AuthorDate: Tue Nov 30 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1210
+    
+    Fix for bug in calendar-related code where function needed to be global. Fix in sample vimrc for org_tag_setup string.
+
+ _vimrc           |    2 +-
+ ftplugin/org.vim |   11 ++++++++---
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
+Author:     Herbert Sitz <hesitz@gmail.com>
+AuthorDate: Tue Nov 30 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.12
+    
+    Fixes to make plugin cooperate with other plugins (i.e., make most settings and variables local to VimOrganizer buffers) and to simplify and explain installation better (in vimrc and org_dark.vim color file).
+
+ README              |    4 +-
+ _vimrc              |  111 ++--
+ autoload/org.vim    |   29 +
+ colors/org_dark.vim |   94 +--
+ ftplugin/org.vim    | 2423 +++++++++++++++++++++++++--------------------------
+ syntax/org.vim      |   67 +-
+ 6 files changed, 1355 insertions(+), 1373 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
+Author:     Herbert Sitz <hesitz@gmail.com>
+AuthorDate: Fri Nov 26 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.11
+    
+    Fixed backslash reference in syntax vim that caused problems on non-Windows machines.
+
+ ftplugin/org.vim |   13 +++++++++----
+ syntax/org.vim   |    4 ++--
+ 2 files changed, 11 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
+Author:     Herbert Sitz <hesitz@gmail.com>
+AuthorDate: Fri Nov 26 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.10: Initial upload
+
+ README                     |   34 +
+ README.orig                |   13 +
+ VimOrganizerCheatsheet.org |  146 ++
+ _vimrc                     |   84 +
+ autoload/calutil.vim       |  171 ++
+ colors/org_dark.vim        |   67 +
+ contrib/vim72.diff         |   79 +
+ contrib/vim73.diff         |   89 +
+ ftplugin/org.vim           | 5035 ++++++++++++++++++++++++++++++++++++++++++++
+ indent/org.vim             |  245 +++
+ org_mode.org               | 3641 ++++++++++++++++++++++++++++++++
+ syntax/org.vim             |   80 +
+ 12 files changed, 9684 insertions(+), 0 deletions(-)

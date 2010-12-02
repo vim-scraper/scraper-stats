@@ -1,4 +1,50 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.01)
+Author:     @kevinwatters <kevin.watters@gmail.com>
+AuthorDate: Tue Nov 30 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.01
+    
+    Add __file__ as an automatic builtin.
+    
+    https://github.com/kevinw/pyflakes-vim/commit/5dc4416f6434fd0db12d21b6c1f4d0764c8757fe
+    
+    Move pyflakes.vim and pyflakes library into ftplugin/python for easier pathogen installation.
+    
+    https://github.com/kevinw/pyflakes-vim/commit/086d5e1d5f87f7cdd0588f8149bf08115a8ae229
+
+ README.rst                                         |   20 +-
+ bin/pyflakes                                       |    4 -
+ ftplugin/pyflakes.vim                              |  321 ----------
+ ftplugin/python/pyflakes.vim                       |  321 ++++++++++
+ ftplugin/python/pyflakes/LICENSE                   |   21 +
+ ftplugin/python/pyflakes/NEWS.txt                  |   29 +
+ ftplugin/python/pyflakes/bin/pyflakes              |    4 +
+ ftplugin/python/pyflakes/pyflakes/__init__.py      |    2 +
+ ftplugin/python/pyflakes/pyflakes/checker.py       |  625 ++++++++++++++++++
+ ftplugin/python/pyflakes/pyflakes/messages.py      |   96 +++
+ .../python/pyflakes/pyflakes/scripts/pyflakes.py   |   90 +++
+ ftplugin/python/pyflakes/pyflakes/test/harness.py  |   27 +
+ .../python/pyflakes/pyflakes/test/test_imports.py  |  673 ++++++++++++++++++++
+ .../python/pyflakes/pyflakes/test/test_other.py    |  575 +++++++++++++++++
+ .../python/pyflakes/pyflakes/test/test_script.py   |  185 ++++++
+ .../pyflakes/pyflakes/test/test_undefined_names.py |  265 ++++++++
+ ftplugin/python/pyflakes/setup.py                  |   28 +
+ pyflakes/LICENSE                                   |   21 -
+ pyflakes/NEWS.txt                                  |   29 -
+ pyflakes/pyflakes/__init__.py                      |    2 -
+ pyflakes/pyflakes/checker.py                       |  625 ------------------
+ pyflakes/pyflakes/messages.py                      |   96 ---
+ pyflakes/pyflakes/scripts/pyflakes.py              |   90 ---
+ pyflakes/pyflakes/test/harness.py                  |   27 -
+ pyflakes/pyflakes/test/test_imports.py             |  673 --------------------
+ pyflakes/pyflakes/test/test_other.py               |  575 -----------------
+ pyflakes/pyflakes/test/test_script.py              |  185 ------
+ pyflakes/pyflakes/test/test_undefined_names.py     |  265 --------
+ pyflakes/setup.py                                  |   28 -
+ 29 files changed, 2952 insertions(+), 2950 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
 Author:     @kevinwatters <kevin.watters@gmail.com>
 AuthorDate: Wed Nov 17 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
