@@ -1,4 +1,18 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/r398)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/r431)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Fri Dec 3 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r431
+    
+    Better support for paths with spaces in them.  Added support for Android SDK and Java JDK (requires latest gui_types_and_tags from the website).  Optional local variable highlighting (see caveats on the website) for Java, C# and C++ as well as C.
+
+ doc/ctags_highlighting.txt    |   80 ++++++++++++++++++---------------
+ mktypes.py                    |   19 ++++++--
+ plugin/ctags_highlighting.vim |   99 +++++++++++++++++++++++++++++------------
+ 3 files changed, 127 insertions(+), 71 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r398)
 Author:     Al Budden <abudden@gmail.com>
 AuthorDate: Tue Mar 30 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

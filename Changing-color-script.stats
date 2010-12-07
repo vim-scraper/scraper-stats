@@ -1,4 +1,16 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/16.3@1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/16.4)
+Author:     Paul Contreras <pablo@ezrider.co.uk>
+AuthorDate: Wed Nov 24 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 16.4
+    
+    Made improvements to visibility adjustments of Normal and Constant because it is very important that they remain strong. The default 'color change' frequency is now ~15 seconds, not 1.5 mins.  I thought it was a bit more exciting and seems to work ok. Have been testing it for months on four computers running XP. Made Cursor a bit more visible too.
+
+ colors/ChangingColor.vim |   28 +++++++++++++++++++---------
+ 1 files changed, 19 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/16.3@1)
 Author:     Paul Contreras <pablo@ezrider.co.uk>
 AuthorDate: Fri Oct 8 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -1429,18 +1441,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added a pleasant (i hope not too bad at least) selection of background (shades) along with the one that was there before. Now, on hour 1 the back- ground sticks to a normal (looking from dark-light) blue to light-yellow scheme, and on hour 2 as usual in reverse (same but going from light to dark), then on hour 3 going to light again the background shades green to light-blue, then in reverse on hour 4, then finally on 5 going to light the background shades green to light-pink, then in reverse in reverse on hour 6.
 
- colors/changing-colour.vim |   71 +++++++++++++++++++++++++++++++------------
- 1 files changed, 51 insertions(+), 20 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
-Author:     Paul Contreras <pablo@ezrider.co.uk>
-AuthorDate: Tue Jul 28 00:00:00 2009 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 4.1
-    
-    For some reason i missed that at the very darkest background Search was indistinguishable from the background - messed this up, my own fault i apologise. I focussed to narrowly on 'dark' and didn't go right down all the way down to black where Search got invisble (or indistinguishable from the background at any rate.) This is now fixed.
-
- README                     |   10 +
- colors/changing-colour.vim |  711 ++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 721 insertions(+), 0 deletions(-)
+ README                     |   13 +
+ colors/changing-colour.vim |  742 ++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 755 insertions(+), 0 deletions(-)

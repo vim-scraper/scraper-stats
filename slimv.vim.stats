@@ -1,4 +1,18 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.3)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Sun Dec 5 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.3
+    
+    Added compatibility with Python 3.x, bugfixes: input lines for REPL were doubled on Linux (thanks to Andrew Hills), however not yet fixed for SBCL, enclose Slimv path in double quotes if contains space, select form when standing on prefix character (e.g. ' or `).
+
+ doc/slimv.txt      |   13 +++++-
+ ftplugin/slimv.py  |  110 ++++++++++++++++++++++++++++++----------------------
+ ftplugin/slimv.vim |   17 +++++---
+ 3 files changed, 84 insertions(+), 56 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.2)
 Author:     Tamas Kovacs <kovisoft@gmail.com>
 AuthorDate: Tue Nov 16 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

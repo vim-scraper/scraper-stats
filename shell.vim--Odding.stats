@@ -1,4 +1,23 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Dec 4 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9
+    
+    Support for Windows x64, improved error handling (thanks to Stan Angeloff for getting me to build an x64 DLL and helping me test the DLL and automatic bitness detection):
+    https://github.com/xolox/vim-shell/commit/669a9f2d5cce67b34599
+
+ autoload/xolox/open.vim      |    6 +++---
+ autoload/xolox/shell-x64.dll |  Bin 0 -> 41984 bytes
+ autoload/xolox/shell-x86.dll |  Bin 0 -> 43520 bytes
+ autoload/xolox/shell.dll     |  Bin 43520 -> 0 bytes
+ autoload/xolox/shell.vim     |   35 ++++++++++++++++++++---------------
+ doc/shell.txt                |   37 ++++++++++++++++++-------------------
+ plugin/shell.vim             |    4 ++--
+ 7 files changed, 43 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.2)
 Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sun Sep 19 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
