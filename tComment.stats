@@ -1,4 +1,36 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.03)
+Author:     Tom Link <micathom@gmail.com>
+AuthorDate: Tue Dec 7 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.03
+    
+    - s:PrintF(): Silently ignore malformed format strings- Deal with major.minor pseudo-filetypes- go-lang- Remove s:SPrintF() since vim now has printf()MD5 checksum: 4a13ffb1b1d46bbd2dc8dcee77507983
+
+ autoload/tcommand.vim |  253 -------------
+ autoload/tcomment.vim |  940 +++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/tcommand.txt      |   76 ----
+ doc/tcomment.txt      |  322 +++++++++++++++++
+ plugin/tcommand.vim   |   43 ---
+ plugin/tcomment.vim   |  143 ++++++++
+ 6 files changed, 1405 insertions(+), 372 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.02)
+Author:     Tom Link <micathom@gmail.com>
+AuthorDate: Thu Dec 2 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.02: - Support for matlab (contributed by D Fong)
+
+ autoload/tcommand.vim |  253 ++++++++++++++
+ autoload/tcomment.vim |  917 -------------------------------------------------
+ doc/tcommand.txt      |   76 ++++
+ doc/tcomment.txt      |  237 -------------
+ plugin/tcommand.vim   |   43 +++
+ plugin/tcomment.vim   |  255 --------------
+ 6 files changed, 372 insertions(+), 1409 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
 Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Sat Oct 2 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
