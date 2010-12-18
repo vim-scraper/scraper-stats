@@ -1,4 +1,35 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.5)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.6)
+Author:     Alexandru Tica <alexandru.tica@gmail.com>
+AuthorDate: Tue Dec 14 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.6
+    
+        * after exec statement hook event (thanks to Spratek)
+        * add geometry to quick fix window (thanks to koelner.r)
+        * bug fix: Omni completion does not work for schema prefixed objects
+        * bug fix: Incorrect order of columns in composite indexes
+        * bug fix: refreshing the results window with g:vorax_restore_focus does not work correctly
+        * bug fix: DBExplorer, ResultWindow and ConnWindow change their buffer # / window buf # after connection. (thanks to koelner.r)
+
+ autoload/vorax.vim                 |   27 ++++++++--------
+ doc/vorax.txt                      |   59 +++++++++++++++++++++++-------------
+ plugin/vorax.vim                   |   53 +++++++++++++++++++++++++++++++-
+ vorax/lib/ruby/alias_resolver.rb   |    2 +-
+ vorax/lib/vim/dbexplorer.vim       |   10 +++---
+ vorax/lib/vim/vorax_completion.vim |    4 +-
+ vorax/lib/vim/vorax_conwin.vim     |   10 +++---
+ vorax/lib/vim/vorax_dblayer.vim    |    4 +-
+ vorax/lib/vim/vorax_oradoc.vim     |    9 +++--
+ vorax/lib/vim/vorax_parser.vim     |    4 +-
+ vorax/lib/vim/vorax_rwin.vim       |   34 +++++++++++++-------
+ vorax/lib/vim/vorax_search.vim     |    4 +-
+ vorax/lib/vim/vorax_tree.vim       |   22 ++++++++-----
+ vorax/lib/vim/vorax_utils.vim      |    5 +--
+ vorax/sql/desc_table.sql           |    2 +-
+ 15 files changed, 166 insertions(+), 83 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
 Author:     Alexandru Tica <alexandru.tica@gmail.com>
 AuthorDate: Fri Oct 29 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

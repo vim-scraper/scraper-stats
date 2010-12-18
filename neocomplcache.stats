@@ -1,4 +1,53 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/5.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/5.3)
+Author:     Shougo Matsushita <Shougo.Matsu@gmail.com>
+AuthorDate: Fri Dec 10 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 5.3
+    
+    - Added zimbu support.
+    - Fixed :Neco.
+    - Fixed :NeoComplCacheEnableCaching error.
+    - Fixed buffer caching bug.
+    - Fixed examples.
+    - Fixed g:neocomplcache_plugin_rank error.
+    - Fixed vim_complete error.
+    - Implemented colorscheme completion.
+    - Implemented ignore source.
+    - Improved Perl6 support.
+    - Improved clojure and lisp support.
+    - Improved error check.
+    - Improved g:neocomplcache_omni_patterns description.
+    - Improved haskell keyword pattern.
+    - Improved modeline.
+    - Improved python snippets.
+    - Improved sid functions support.
+    - Improved snippet_complete manual.
+    - Improved snippets expand.
+    - Improved snippets include syntax.
+    - Improved snippets search.
+    - Improved vim keyword pattern.
+    - Independent +reltime.
+    - Supported Konoha language.
+
+ README                                             |   20 ++-
+ autoload/neocomplcache.vim                         |  140 +++++++++++---------
+ autoload/neocomplcache/sources/buffer_complete.vim |   31 +++--
+ .../neocomplcache/sources/keyword_complete.vim     |   11 +-
+ autoload/neocomplcache/sources/omni_complete.vim   |    4 +-
+ .../neocomplcache/sources/snippets_complete.vim    |   49 ++++----
+ .../sources/snippets_complete/cpp.snip             |    2 +-
+ .../neocomplcache/sources/snippets_complete/d.snip |    2 +-
+ .../sources/snippets_complete/python.snip          |   76 ++++++------
+ autoload/neocomplcache/sources/vim_complete.vim    |   16 ++-
+ .../neocomplcache/sources/vim_complete/helper.vim  |   18 ++-
+ doc/neocomplcache.jax                              |   20 ++-
+ doc/neocomplcache.txt                              |  135 +++++++++++++++----
+ doc/tags-ja                                        |  109 ---------------
+ plugin/neocomplcache.vim                           |    7 +-
+ 15 files changed, 333 insertions(+), 307 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.2)
 Author:     Shougo Matsushita <Shougo.Matsu@gmail.com>
 AuthorDate: Sat Oct 2 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

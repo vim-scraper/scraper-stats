@@ -1,4 +1,19 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.3)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.4)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Thu Dec 16 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.4
+    
+    Added autodetection for simple 'clojure' command on Linux, removed duplicates from history of commands entered in REPL buffer (those recallable with <Up>), bugfixes: infinite loop during eval when 'in-package' or 'in-ns' was in comment, Lisp prompt identification problems in REPL buffer, input line duplication in SBCL on Linux (assigned "*debug-io*" to stdin), Eval Defun sometimes missed last ")".
+
+ doc/slimv.txt                      |   14 +++++-
+ ftplugin/clojure/slimv-clojure.vim |    7 ++-
+ ftplugin/slimv.py                  |   36 +++++++---------
+ ftplugin/slimv.vim                 |   81 ++++++++++++++++++++----------------
+ 4 files changed, 77 insertions(+), 61 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.3)
 Author:     Tamas Kovacs <kovisoft@gmail.com>
 AuthorDate: Sun Dec 5 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

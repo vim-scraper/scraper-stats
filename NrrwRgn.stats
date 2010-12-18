@@ -1,4 +1,18 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/17)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/18)
+Author:     Christian Brabandt <cb@256bit.org>
+AuthorDate: Sat Dec 11 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 18
+    
+    Experimental version:- experimental feature: Allow to Narrow several different regions at once using :g/pattern/NRP and afterwards calling :NRM (This only works linewise. Should that be made possible for any reagion?)- disable folds, before writing changes back, otherwise chances are, you'll lose more data then wanted- code cleanup(automatically uploaded)
+
+ autoload/nrrwrgn.vim |  500 +++++++++++++++++++++++++++++++++----------------
+ doc/NarrowRegion.txt |   84 +++++++--
+ plugin/NrrwRgn.vim   |   26 ++-
+ 3 files changed, 422 insertions(+), 188 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/17)
 Author:     Christian Brabandt <cb@256bit.org>
 AuthorDate: Tue Nov 30 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

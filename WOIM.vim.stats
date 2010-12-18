@@ -1,4 +1,19 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9.6)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9.8)
+Author:     Geir Isene <g@isene.com>
+AuthorDate: Tue Dec 14 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.8
+    
+    Feature: States (S:) is underlined by default.  <leader>s removes the underlining, while <leader>S turns on underlining of States.  Transitions are not underlined by default.  <leader>T turns on underlining, while <leader>t removes the underlining of Transitions.
+    Fix: Removed unnecessary "contained" to make lists syntax marked even within stub lists.
+    Fix: Small fixes in grouping and containing of elements.
+
+ README            |   22 +++++++++++-
+ ftplugin/woim.vim |   96 ++++++++++++++++++++++++++++++++--------------------
+ 2 files changed, 79 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.6)
 Author:     Geir Isene <g@isene.com>
 AuthorDate: Fri Dec 3 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
