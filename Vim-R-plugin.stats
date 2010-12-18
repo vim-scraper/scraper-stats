@@ -1,4 +1,25 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/101121)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/101217)
+Author:     Jakson Aquino <jalvesaq@gmail.com>
+AuthorDate: Fri Dec 17 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 101217
+    
+    * Renamed the function SendCmdToScreen to SendCmdToR.
+    * Clear the current line in the R console before sending a new line.
+    * Always starts R on the script's directory.
+    * Don't send "^@$" as part of a paragraph in rnoweb files (thanks to Fabio Correa for reporting the bug).
+    * More useful warning message when PyWin32 isn't installed.
+    * Initial support to Apple Script on Mac OS X (thanks to Vincent Nijs for writing and testing the code).
+
+ doc/r-plugin.txt           |   53 ++++++++++++----
+ ftplugin/rnoweb.vim        |    6 +-
+ indent/r.vim               |    7 +-
+ r-plugin/common_global.vim |  145 +++++++++++++++++++++++++++++--------------
+ r-plugin/windows.py        |   19 ++++--
+ 5 files changed, 160 insertions(+), 70 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/101121)
 Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Sun Nov 21 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

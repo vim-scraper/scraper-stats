@@ -1,10 +1,49 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.01)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.04)
+Author:     Matt Spear <batman900@gmail.com>
+AuthorDate: Sat Dec 18 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.04
+    
+    Fixed overwriting the @y register.  Made the cmap silent.  Thanks to Peter for the patch!
+
+ doc/qnamebuf.txt    |    7 ++++++-
+ plugin/qnamebuf.vim |    8 +++++---
+ 2 files changed, 11 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.03)
+Author:     Matt Spear <batman900@gmail.com>
+AuthorDate: Fri Dec 17 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.03
+    
+    Made a mistake to always define the mapping for QNameBufInit even if a mapping to it existed.
+
+ doc/qnamebuf.txt    |    4 +++-
+ plugin/qnamebuf.vim |    6 ++++--
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.02)
+Author:     Matt Spear <batman900@gmail.com>
+AuthorDate: Fri Dec 17 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.02
+    
+    Added support for <LEADER>X being a synonym for <M-X>.  Some minor code cleanup.
+
+ doc/qnamebuf.txt    |  127 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/qnamebuf.vim |  100 ++++++++++++++++++++++------------------
+ 2 files changed, 181 insertions(+), 46 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.01)
 Author:     Matt Spear <batman900@gmail.com>
 AuthorDate: Tue Aug 24 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.01: Initial upload
 
- README              |   47 +++++++
+ README              |   50 +++++++
  plugin/qnamebuf.vim |  380 +++++++++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 427 insertions(+), 0 deletions(-)
+ 2 files changed, 430 insertions(+), 0 deletions(-)
