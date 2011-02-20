@@ -1,4 +1,50 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4)
+Author:     Ryan Mechelke <rfmechelke@gmail.com>
+AuthorDate: Thu Feb 10 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.4
+    
+    * Added syntax highlighting to changeset details
+    * Added a navigation pane for navigating large diffs
+
+ after/syntax/diff.vim  |   10 +++
+ ftdetect/diff_fold.vim |    7 +-
+ ftplugin/diff_fold.vim |  190 ++++++++++++++++++++++++++++++++++++++++++++++--
+ syntax/diffnav.vim     |   14 ++++
+ 4 files changed, 213 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
+Author:     Ryan Mechelke <rfmechelke@gmail.com>
+AuthorDate: Tue Jan 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.3.1
+    
+    * Fixed a bug with 'hg export' style changsets
+    * Added foldtext for 'hg export' style changesets
+    * Made global commands silent
+
+ ftdetect/diff_fold.vim |    7 +++++++
+ ftplugin/diff_fold.vim |   19 ++++++++++++++-----
+ 2 files changed, 21 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Ryan Mechelke <rfmechelke@gmail.com>
+AuthorDate: Fri Jan 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.3
+    
+    * Adding an ftdetect script so that hg output is recognized automatically. '-c "setlocal ft=diff"' no longer required
+    * Adding support for folding changesets produced by 'hg export' command
+    * More error handling
+
+ ftdetect/diff_fold.vim |   38 ++++++++++++++++++++++++++++++++++++++
+ ftplugin/diff_fold.vim |   36 +++++++++++++++++++++++-------------
+ 2 files changed, 61 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
 Author:     Ryan Mechelke <rfmechelke@gmail.com>
 AuthorDate: Fri Oct 1 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -22,6 +68,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README            |   14 +++++++++
+ README            |   30 ++++++++++++++++++
  ftplugin/diff.vim |   85 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 99 insertions(+), 0 deletions(-)
+ 2 files changed, 115 insertions(+), 0 deletions(-)

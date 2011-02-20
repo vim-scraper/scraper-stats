@@ -1,4 +1,19 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.1.9)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.1.10)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Thu Feb 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.10
+    
+    Also handle the situation when ctags doesn't return 0;
+    Improve the error messages.
+
+ doc/ProjectTag.txt              |    4 +-
+ plugin/ProjectTag.vim           |   25 ++++++++++++++++------
+ plugin/ProjectTag/ProjectTag.py |   43 ++++++++++++++++++++++++++++----------
+ 3 files changed, 51 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.9)
 Author:     H Xu <xuhdev@gmail.com>
 AuthorDate: Sun Dec 5 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -126,7 +141,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Version 0.1: Initial upload
 
  ProjectTag/ProjectTag.py |  227 ++++++++++++++++++++++++++++++++++++++++++++++
- README                   |   81 ++++++++++++++++
+ README                   |   86 +++++++++++++++++
  doc/ProjectTag.txt       |   83 +++++++++++++++++
  plugin/ProjectTag.vim    |  102 +++++++++++++++++++++
- 4 files changed, 493 insertions(+), 0 deletions(-)
+ 4 files changed, 498 insertions(+), 0 deletions(-)

@@ -1,4 +1,128 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2.6)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.4beta)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Tue Feb 8 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4beta
+    
+    Add SCViewResult command, which allows you see the output result of last run command;
+    if tee command is available, also use 'tee' to redirect the output result on Windows.
+
+ autoload/SingleCompile.vim |  123 ++++++++++++++++++++++++++++++++------------
+ doc/SingleCompile.txt      |   13 ++++-
+ plugin/SingleCompile.vim   |    3 +-
+ 3 files changed, 102 insertions(+), 37 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3.4)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Mon Feb 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.3.4
+    
+    Add R and zsh built-in template.
+    Update the document.
+
+ autoload/SingleCompile.vim |   11 +++++++++--
+ doc/SingleCompile.txt      |   31 +++++++++++++++++++++++++++++--
+ plugin/SingleCompile.vim   |    2 +-
+ 3 files changed, 39 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3.3)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Tue Feb 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.3.3: Fix some problems when the source file name contains spaces.
+
+ autoload/SingleCompile.vim |   86 ++++++++++++++++++++++++++------------------
+ doc/SingleCompile.txt      |   23 ++++++++----
+ plugin/SingleCompile.vim   |    3 +-
+ 3 files changed, 68 insertions(+), 44 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3.2)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Fri Jan 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.3.2
+    
+    Add csh and tcsh built-in template;
+    improve sh built-in template;
+    gives an error message when choose a compiler/interpreter whose template is not set.
+
+ autoload/SingleCompile.vim |   51 ++++++++++++++++++++++++++++++++++++-------
+ doc/SingleCompile.txt      |   48 +++++++++++++++++++++++++++++++----------
+ plugin/SingleCompile.vim   |    2 +-
+ 3 files changed, 79 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3beta)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Fri Jan 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.3beta
+    
+    Add out-file feature. out-file feature is a feature which will detect whether the current file requires compilation according to the last modification time of the source file and the output file.
+    Makes gfortran available on Windows for built-in template.
+
+ autoload/SingleCompile.vim |  477 ++++++++++++++++++++++++++++---------------
+ doc/SingleCompile.txt      |   87 ++++++---
+ plugin/SingleCompile.vim   |    4 +-
+ 3 files changed, 371 insertions(+), 197 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.10)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Wed Jan 12 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2.10: fix a bug when showing some specific messages.
+
+ autoload/SingleCompile.vim |   17 ++++++++++-------
+ doc/SingleCompile.txt      |    4 ++--
+ plugin/SingleCompile.vim   |    2 +-
+ 3 files changed, 13 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.9)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Tue Dec 28 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2.9: Fix a bug when quickfix for this plugin is set to be unused.
+
+ autoload/SingleCompile.vim |   10 +++++-----
+ doc/SingleCompile.txt      |   25 +++++++++++++------------
+ plugin/SingleCompile.vim   |    2 +-
+ 3 files changed, 19 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.8)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Mon Dec 27 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2.8: fix a language template bug.
+
+ autoload/SingleCompile.vim |    8 ++++----
+ doc/SingleCompile.txt      |    4 ++--
+ plugin/SingleCompile.vim   |    2 +-
+ 3 files changed, 7 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.7)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Fri Dec 24 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2.7
+    
+    Add D language support.(Thanks, sky hi!)
+    Fix a bug about math.h recognization for C and C++.
+
+ autoload/SingleCompile.vim |   10 +++++++---
+ doc/SingleCompile.txt      |   28 ++++++++++++++++------------
+ plugin/SingleCompile.vim   |    2 +-
+ 3 files changed, 24 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.6)
 Author:     H Xu <xuhdev@gmail.com>
 AuthorDate: Thu Dec 9 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -92,8 +216,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2.1: Fix a minor document bug.
 
- README                     |  151 ++++++++++++++++++++
+ README                     |  179 ++++++++++++++++++++++++
  autoload/SingleCompile.vim |  198 +++++++++++++++++++++++++++
  doc/SingleCompile.txt      |  324 ++++++++++++++++++++++++++++++++++++++++++++
  plugin/SingleCompile.vim   |  156 +++++++++++++++++++++
- 4 files changed, 829 insertions(+), 0 deletions(-)
+ 4 files changed, 857 insertions(+), 0 deletions(-)

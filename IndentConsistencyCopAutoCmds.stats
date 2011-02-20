@@ -1,4 +1,37 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.10.004)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.31)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Sun Jan 9 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.31
+    
+    BUG: "E216: No such group or event: IndentConsistencyCopBufferCmds" on :IndentConsistencyCopAutoCmdsOff.
+
+ doc/IndentConsistencyCopAutoCmds.txt    |    6 +++++-
+ plugin/IndentConsistencyCopAutoCmds.vim |    9 +++++++--
+ 2 files changed, 12 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.30)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Fri Dec 31 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.30
+    
+    - ENH: Do not invoke the IndentConsistencyCop if the user chose to ignore the cop's report of an inconsistency. Requires b:indentconsistencycop_result.isIgnore flag introduced in IndentConsistencyCop 1.21.
+    - ENH: Only check indent consistency after a write of the buffer, not consistency with buffer settings.
+    - BUG: :IndentConsistencyCopAutoCmdsOff only works for future buffers, but does not turn off the cop in existing buffers. Must remove all buffer-local autocmds, too.
+    - Allowing to just run indent consistency check, not buffer settings at all times via g:indentconsistencycop_AutoRunCmd.
+    - Added separate help file and packaging the plugin as a vimball.
+    - ENH: Added "check after write" feature, which triggers the IndentConsistencyCop whenever the buffer is written. To avoid blocking the user, in large buffers the check is only scheduled to run on the next 'CursorHold' event.
+    - BUG: The same buffer-local autocmd could be created multiple times when the filetype is set repeatedly.
+    - BUG: By clearing the entire IndentConsistencyCopBufferCmds augroup, pending autocmds for other buffers were deleted by an autocmd run in the current buffer. Now deleting only the buffer-local autocmds for the events that fired.
+
+ doc/IndentConsistencyCopAutoCmds.txt    |  155 +++++++++++++++++++++++++++++
+ plugin/IndentConsistencyCopAutoCmds.vim |  162 +++++++++++++++++++++----------
+ 2 files changed, 266 insertions(+), 51 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10.004)
 Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Mon Jun 23 00:00:00 2008 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -30,6 +63,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.01: Initial upload
 
- README                                  |   16 +++++++
+ README                                  |   29 ++++++++++++
  plugin/IndentConsistencyCopAutoCmds.vim |   73 +++++++++++++++++++++++++++++++
- 2 files changed, 89 insertions(+), 0 deletions(-)
+ 2 files changed, 102 insertions(+), 0 deletions(-)

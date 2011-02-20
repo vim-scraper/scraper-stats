@@ -1,4 +1,32 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2.0)
+Author:     tyru <tyru.exe@gmail.com>
+AuthorDate: Sat Feb 19 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.2.0
+    
+    - change the specification of |savemap#save_map()|, |savemap#save_abbr()|.
+    	- Even if {lhs} was omitted, Returns |Dictionary| not |List|.
+    - fix the bug ignoring a non-<buffer> mapping when a <buffer> mapping exists with same lhs-es.
+    - improve |savemap#save_map()| and |savemap#save_abbr()|.
+    	- you can filter mappings you want by following conditions:
+    		- lhs (literaly, regexp)
+    		- rhs (literaly, regexp)
+    		- <silent>
+    		- remap
+    		- <expr>
+    		- <buffer>
+    		- modes
+    - add some methods of the return value of
+      |savemap#save_map()| and |savemap#save_abbr()|.
+    	- see |savemap-restore-object| for details.
+    - change the license.
+
+ autoload/savemap.vim |  296 +++++++++++++++++++++++++++++++++++++++++++-------
+ doc/savemap.txt      |  152 ++++++++++++++++++++++++-
+ 2 files changed, 403 insertions(+), 45 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.0)
 Author:     tyru <tyru.exe@gmail.com>
 AuthorDate: Sun Nov 7 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

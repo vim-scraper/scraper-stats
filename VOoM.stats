@@ -1,4 +1,65 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.0b2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.0b4)
+Author:     Vlad Irnov <vlad.irnov@gmail.com>
+AuthorDate: Mon Jan 31 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.0b4
+    
+    * New Tree mappings for navigating outline:
+        P (go to parent node),
+        c (go to parent and contract it),
+        C (contract siblings or everything in Visual selection),
+        o (go to first child),
+        O (expand siblings or everything in Visual selection),
+        K/J/U/D (go to previous/next/uppermost/downmost sibling),
+        s (show headline text), S (show UNL).
+    * Fixed some bugs.
+
+ doc/voom.txt                      |  537 +++++++++++++++--------
+ plugin/voom.vim                   |  872 +++++++++++++++++++++++--------------
+ plugin/voom/voom.py               |   44 +-
+ plugin/voom/voom_mode_markdown.py |    6 +-
+ plugin/voom/voom_mode_rest.py     |    6 +-
+ voom_addons/custom_headlines.vim  |   19 +-
+ voom_addons/voom_info.vim         |   12 +-
+ voom_samples/calendar_outline.zip |  Bin 29162 -> 29162 bytes
+ 8 files changed, 936 insertions(+), 560 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0b3)
+Author:     Vlad Irnov <vlad.irnov@gmail.com>
+AuthorDate: Wed Jan 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.0b3
+    
+    * Added mode for Markdown markup.
+    * Fixed severe bug in reST mode.
+    * Sorting can now be done for any range of sibling nodes.
+
+ doc/voom.txt                            |  708 +++++++++++++++++++++----------
+ plugin/voom.vim                         |  105 +++--
+ plugin/voom/voom.py                     |  204 ++++++---
+ plugin/voom/voom_mode_html.py           |   12 +-
+ plugin/voom/voom_mode_markdown.py       |  327 ++++++++++++++
+ plugin/voom/voom_mode_python.py         |   23 +-
+ plugin/voom/voom_mode_rest.py           |   79 ++--
+ plugin/voom/voom_mode_thevimoutliner.py |   16 +-
+ plugin/voom/voom_mode_viki.py           |   16 +-
+ plugin/voom/voom_mode_vimoutliner.py    |   14 +-
+ plugin/voom/voom_mode_vimwiki.py        |   11 +-
+ plugin/voom/voom_mode_wiki.py           |   12 +-
+ voom_samples/calendar_outline.zip       |  Bin 29162 -> 29162 bytes
+ voom_samples/test_outline.html          |    4 +-
+ voom_samples/test_outline.mkd           |  259 +++++++++++
+ voom_samples/test_outline.otl           |    9 +-
+ voom_samples/test_outline.py            |    1 +
+ voom_samples/test_outline.rst           |    5 +-
+ voom_samples/test_outline.viki          |    4 +-
+ voom_samples/test_outline.vimwiki       |    4 +-
+ voom_samples/test_outline.wiki          |    5 +-
+ 21 files changed, 1388 insertions(+), 430 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0b2)
 Author:     Vlad Irnov <vlad.irnov@gmail.com>
 AuthorDate: Sun Oct 24 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -317,11 +378,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README                |  106 ++++
+ README                |  110 ++++
  doc/voof.txt          |  864 ++++++++++++++++++++++++++
  plugin/voof.vim       | 1620 +++++++++++++++++++++++++++++++++++++++++++++++++
  sample_outlines.zip   |  Bin 0 -> 29237 bytes
  screenshots/voof1.png |  Bin 0 -> 109591 bytes
  screenshots/voof2.png |  Bin 0 -> 107940 bytes
  voof.py               |  925 ++++++++++++++++++++++++++++
- 7 files changed, 3515 insertions(+), 0 deletions(-)
+ 7 files changed, 3519 insertions(+), 0 deletions(-)

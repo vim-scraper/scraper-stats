@@ -1,4 +1,19 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.3)
+Author:     JiHwan Lee <moonz.net@gmail.com>
+AuthorDate: Sat Jan 22 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0.3
+    
+    minor improvements and bug fixes, including
+    - handles "hilight" with bang(!)
+    - fix a bug that g:colors_name goes wrong when &background set after g:colors_name
+    - lazy load script variables for faster start-up
+
+ plugin/colorsupport.vim |  269 ++++++++++++++++++++++++++---------------------
+ 1 files changed, 151 insertions(+), 118 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.2)
 Author:     JiHwan Lee <moonz.net@gmail.com>
 AuthorDate: Thu Jun 25 00:00:00 2009 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -31,6 +46,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README                  |  102 +++++++++++
+ README                  |  103 +++++++++++
  plugin/colorsupport.vim |  445 +++++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 547 insertions(+), 0 deletions(-)
+ 2 files changed, 548 insertions(+), 0 deletions(-)

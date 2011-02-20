@@ -1,4 +1,21 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9.2)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Fri Feb 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.2
+    
+    Use Vim's "shell" and "shellcmdflag" options:
+    https://github.com/xolox/vim-shell/commit/993f941c76e70f7f717c
+    
+    Also the character encoding of the included help file was changed to ASCII to accommodate users that don't have Unicode support (enabled).
+
+ autoload/xolox/shell.vim |    4 ++--
+ doc/shell.txt            |   17 ++++++++++-------
+ plugin/shell.vim         |    4 ++--
+ 3 files changed, 14 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.1)
 Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sat Dec 18 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

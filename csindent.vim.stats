@@ -1,0 +1,98 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2.0)
+Author:     Konstantin Lepa <konstantin.lepa@gmail.com>
+AuthorDate: Tue Feb 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2.0
+    
+    Added support of Windows.
+    Removed g:csindent_dir. Used 'runtimepath' instead it.
+    Added support of expanding environment variables in g:csindent_ini.
+
+ indent/csindent.vim |   42 ++++++++++++++++++++++++++++--------------
+ 1 files changed, 28 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.2)
+Author:     Konstantin Lepa <konstantin.lepa@gmail.com>
+AuthorDate: Mon Jan 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1.2: Fixed syntax errors in SelectCodingStyleIndent().
+
+ indent/csindent.vim |   12 ++++++++----
+ 1 files changed, 8 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.1)
+Author:     Konstantin Lepa <konstantin.lepa@gmail.com>
+AuthorDate: Mon Jan 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1.1: Fixed problem of detecting of invalid indent filename.
+
+ indent/csindent.vim |   18 +++++++++++++-----
+ 1 files changed, 13 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.0)
+Author:     Konstantin Lepa <konstantin.lepa@gmail.com>
+AuthorDate: Sun Jan 16 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1.0
+    
+    Renamed script name from coding_style to csindent.
+    Added support of default coding style.
+    Added support of `filetype indent on` by default.
+    Renamed g:coding_style_ini to g:csindent_ini (~/.vim_csindent.ini).
+    Renamed g:coding_style_dir to g:csindent_dir (~/.vim/csindent).
+    Changed indent file path to `g:csindent_dir` + `filetype` + `indent file`.
+    Changed comment char from '#' to ';' in g:csindent_ini file.
+
+ indent/coding_style.vim |   96 ----------------------------
+ indent/csindent.vim     |  160 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 160 insertions(+), 96 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.3)
+Author:     Konstantin Lepa <konstantin.lepa@gmail.com>
+AuthorDate: Wed Nov 18 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0.3: Added support of comments in the g:coding_style_ini file.
+
+ indent/coding_style.vim |   10 ++++++++--
+ 1 files changed, 8 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.2)
+Author:     Konstantin Lepa <konstantin.lepa@gmail.com>
+AuthorDate: Sun May 17 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0.2
+    
+    Renamed the folder cs_indent to coding_styles.
+    Removed styles.txt.
+    Added g:coding_style_ini (default ~/.coding_style.ini).
+    Added g:coding_style_dir (default ~/.vim/coding_styles).
+
+ indent/coding_style.vim |   22 ++++++++++++++++------
+ 1 files changed, 16 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     Konstantin Lepa <konstantin.lepa@gmail.com>
+AuthorDate: Sat May 16 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0.1: Added CodingStyle() for checking of current coding style.
+
+ indent/coding_style.vim |   18 +++++++++++++++---
+ 1 files changed, 15 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.0)
+Author:     Konstantin Lepa <konstantin.lepa@gmail.com>
+AuthorDate: Fri May 15 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0.0: Initial upload
+
+ README                  |   37 +++++++++++++++++++++++++
+ indent/coding_style.vim |   68 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 105 insertions(+), 0 deletions(-)

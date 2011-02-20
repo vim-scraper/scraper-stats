@@ -1,0 +1,21 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0)
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
+AuthorDate: Sat Jan 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0: New and improved archive viewer broken out from eclim.
+
+ README                                      |    7 +
+ autoload/archive/ArchiveListAllCommand.java |  252 +++++++++++
+ autoload/archive/ArchiveListCommand.java    |  116 +++++
+ autoload/archive/ArchiveReadCommand.java    |  119 ++++++
+ autoload/archive/ArchiveUtils.java          |   71 +++
+ autoload/archive/ant-compress-1.8.1.jar     |  Bin 0 -> 102726 bytes
+ autoload/archive/commons-logging-1.1.1.jar  |  Bin 0 -> 60841 bytes
+ autoload/archive/commons-vfs-1.0.jar        |  Bin 0 -> 362717 bytes
+ autoload/archive/tree.vim                   |  492 +++++++++++++++++++++
+ autoload/archive/viewer.vim                 |  612 +++++++++++++++++++++++++++
+ autoload/commons-logging.properties         |    1 +
+ doc/archive.txt                             |   55 +++
+ plugin/archive.vim                          |   82 ++++
+ 13 files changed, 1807 insertions(+), 0 deletions(-)

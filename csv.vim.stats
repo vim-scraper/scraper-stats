@@ -1,4 +1,60 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/9)
+Author:     Christian Brabandt <cb@256bit.org>
+AuthorDate: Sat Feb 19 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 9
+    
+    -use conceal char depending on encoding-Map normal mode keys also for visual/select and operator pending mode(automatically uploaded)
+
+ doc/ft_csv.txt   |    8 +++++---
+ ftplugin/csv.vim |   22 +++++++++++-----------
+ syntax/csv.vim   |    2 +-
+ 3 files changed, 17 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8)
+Author:     Christian Brabandt <cb@256bit.org>
+AuthorDate: Thu Feb 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 8
+    
+    -Better Error handling-HiColumn! removes highlighting-Enable NrColumns, that was deactivated in v.0.7-a ColorScheme autocommand makes sure, that the syntax highlighting is reapplied, after changing the colorscheme.-small performance improvements for |ArrangeColumn_CSV|-Syntax Highlighting conceales delimiter-A lot more documentation-SearchInColumn now searches in the current column, if no column has been specified(automatically uploaded)
+
+ doc/ft_csv.txt   |  252 +++++++++++++++++++++++++++++++++++++++++-------------
+ ftplugin/csv.vim |  160 ++++++++++++++++++++++++++--------
+ syntax/csv.vim   |   50 ++++++++++--
+ 3 files changed, 357 insertions(+), 105 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/7)
+Author:     Christian Brabandt <cb@256bit.org>
+AuthorDate: Wed Feb 16 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 7
+    
+    -Make the motion commands 'W' and 'E' work more reliable-Document how to setup filetype plugins-Make |WhatColumn_CSV| work more reliable (report from http://vim.wikia.com/Script:3280)-DeleteColumn deletes current column, if no argument given-|ArrangeColumn_CSV| handles errors better-Code cleanup-Syntax highlighting-'H' and 'L' move forward/backwards between csv fields-'K' and 'J' move upwards/downwards within the same column-|Sort_CSV| to sort on a certain column-|csv-tips| on how to colorize the statusline(automatically uploaded)
+
+ doc/ft_csv.txt   |  106 +++++++++++---
+ ftplugin/csv.vim |  455 ++++++++++++++++++++++++++++++++----------------------
+ syntax/csv.vim   |   22 +++
+ 3 files changed, 377 insertions(+), 206 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6)
+Author:     Christian Brabandt <cb@256bit.org>
+AuthorDate: Tue Feb 15 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 6
+    
+    -Make |ArrangeColumn| work more reliable (had problems with multibyte chars before)-Add |Header| function-'W' and 'E' move forward/backwards between csv fields(automatically uploaded)
+
+ doc/ft_csv.txt   |  141 +++++++++++++++++++++++++++---------------
+ ftdetect/csv.vim |    2 +
+ ftplugin/csv.vim |  179 +++++++++++++++++++++++++++++++++++++++---------------
+ 3 files changed, 222 insertions(+), 100 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
 Author:     Christian Brabandt <cb@256bit.org>
 AuthorDate: Tue Apr 20 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

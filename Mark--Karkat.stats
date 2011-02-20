@@ -1,4 +1,17 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.4.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.4.1)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Thu Jan 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.1
+    
+    - FIX: Using a named register for capturing the visual selection on {Visual}<Leader>m and {Visual}<Leader>r clobbered the unnamed register. Now using the unnamed register.
+
+ autoload/mark.vim |   20 ++++++++++++++------
+ doc/mark.txt      |   32 ++++++++++++++++++--------------
+ 2 files changed, 32 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.0)
 Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Thu Jul 29 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

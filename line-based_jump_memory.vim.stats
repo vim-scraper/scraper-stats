@@ -1,0 +1,38 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2.1)
+Author:     Douglas Augusto <daaugusto@gmail.com>
+AuthorDate: Fri Jan 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.2.1
+    
+    Fixes the proper handling of the double-quote char (") argument in the commands f,t,F,T.
+
+ plugin/line-based_jump_memory.vim |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.0)
+Author:     Douglas Augusto <daaugusto@gmail.com>
+AuthorDate: Fri Jan 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.2.0
+    
+    - Fixed the plug-in file name.
+    - Added two user-configurable variables: (i) The minimum character motion (distance) needed to produce a mark; (ii) Whether a jump that exits the current line is going to be marked or not.
+    - Support for mouse click jumps.
+    - Code reorganization, improvements and clean up.
+
+ plugin/line-based_jump_list.vim   |  101 -------------------------
+ plugin/line-based_jump_memory.vim |  151 +++++++++++++++++++++++++++++++++++++
+ 2 files changed, 151 insertions(+), 101 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.0)
+Author:     Douglas Augusto <daaugusto@gmail.com>
+AuthorDate: Wed Jan 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.0: Initial upload
+
+ README                          |    3 +
+ plugin/line-based_jump_list.vim |  101 +++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 104 insertions(+), 0 deletions(-)

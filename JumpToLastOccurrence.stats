@@ -1,0 +1,26 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.10)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Thu Dec 30 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.10
+    
+    - Moved functions from plugin to separate autoload script.
+    - Made mappings configurable, both via the customary <Plug> mappings and alternatively in bulk through the g:JumpToLastOccurrence_Leader setting.
+
+ autoload/JumpToLastOccurrence.vim |  104 ++++++++++++++++++++++++++++++
+ doc/JumpToLastOccurrence.txt      |   27 ++++++++
+ plugin/JumpToLastOccurrence.vim   |  127 +++++++++----------------------------
+ 3 files changed, 162 insertions(+), 96 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.00)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Wed Dec 29 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.00: Initial upload
+
+ README                          |   32 ++++++++++
+ doc/JumpToLastOccurrence.txt    |  104 +++++++++++++++++++++++++++++++++
+ plugin/JumpToLastOccurrence.vim |  123 +++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 259 insertions(+), 0 deletions(-)

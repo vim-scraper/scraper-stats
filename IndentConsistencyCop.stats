@@ -1,4 +1,21 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.20.017)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.21)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Fri Dec 31 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.21
+    
+    - Added b:indentconsistencycop_result.isIgnore to allow the IndentConsistencyCopAutoCmds integration to suspend further invocations of the cop in the buffer.
+    - BUG: :IndentRangeConsistencyCop didn't report inconsistencies at all because of a bad conditional statement introduced in 1.20.014.
+    - Using separate autoload script to help speed up Vim startup.
+    - Added separate help file and packaging the plugin as a vimball.
+
+ autoload/IndentConsistencyCop.vim | 2072 +++++++++++++++++++++++++++++++++++
+ doc/IndentConsistencyCop.txt      |  315 ++++++
+ plugin/IndentConsistencyCop.vim   | 2185 +------------------------------------
+ 3 files changed, 2407 insertions(+), 2165 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.20.017)
 Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Tue Jul 22 00:00:00 2008 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -118,6 +135,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.04: Initial upload
 
- README                          |   66 ++
+ README                          |   72 ++
  plugin/IndentConsistencyCop.vim | 1534 +++++++++++++++++++++++++++++++++++++++
- 2 files changed, 1600 insertions(+), 0 deletions(-)
+ 2 files changed, 1606 insertions(+), 0 deletions(-)

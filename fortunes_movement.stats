@@ -1,4 +1,16 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.00)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.10)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Mon Dec 20 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.10
+    
+    Switched definition of motion mappings from patterns to begin and end to a region of continguous lines defined by a non-matching pattern (representing the fortune separator line). This should make it more correct with corner cases. Requires CountJump version 1.30.
+
+ ftplugin/fortunes_movement.vim |   11 +++++++----
+ 1 files changed, 7 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.00)
 Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Tue Aug 3 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
