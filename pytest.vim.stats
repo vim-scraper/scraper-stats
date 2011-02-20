@@ -1,0 +1,77 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.5)
+Author:     Alfredo Deza <alfredodeza@gmail.com>
+AuthorDate: Thu Feb 10 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.0.5
+    
+    Adds Syntax Highlighting for saved py.test sessions.
+    You can now edit other files with errors in split buffers.
+    Separate error and exception buffers for better readability.
+    Better error handling and parsing.
+
+ README            |    2 +-
+ plugin/pytest.vim |  360 ++++++++++++++++++++++++++++++++++++++---------------
+ 2 files changed, 261 insertions(+), 101 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     Alfredo Deza <alfredodeza@gmail.com>
+AuthorDate: Fri Feb 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.4
+    
+    A *ton* of changes:
+    
+    * Adds buffers for last failed errors and full py.test output for last session
+    * Adds syntax highlighting for py.test session and failed buffers
+    * Makes the above buffers toggable
+    * You can now jump to errors! In split buffers! OMG!
+    * You can CIRCLE around the next, previous, last or first errors in the same split buffer!
+    * You can go the "end" file where the error ended (if it is not your current file).
+
+ README            |   56 ++--------
+ README.rst        |   54 +++++++++-
+ doc/pytest.txt    |   64 +++++++++--
+ plugin/pytest.vim |  308 +++++++++++++++++++++++++++++++++++++++++++++++------
+ 4 files changed, 391 insertions(+), 91 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     Alfredo Deza <alfredodeza@gmail.com>
+AuthorDate: Sat Jan 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.3
+    
+    Adds support for native py.test errors and provides error messages when the plugin can't match the class or method you are requesting for testing.
+
+ plugin/pytest.vim |   31 +++++++++++++++++++++++++------
+ 1 files changed, 25 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     Alfredo Deza <alfredodeza@gmail.com>
+AuthorDate: Sat Jan 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.2
+    
+    Getts better information output when tests are failing (Line:  1    ==>> AssertionError) and it introduces a "verbose" mode where you can see full results in a split window
+
+ README            |    7 +++-
+ README.rst        |   10 +++++++
+ doc/pytest.txt    |   10 +++++++
+ plugin/pytest.vim |   78 ++++++++++++++++++++++++++++++++++++++--------------
+ 4 files changed, 82 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     Alfredo Deza <alfredodeza@gmail.com>
+AuthorDate: Fri Jan 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1: Initial upload
+
+ README            |   59 ++++++++++++++++++
+ README.rst        |   81 +++++++++++++++++++++++++
+ doc/pytest.txt    |  103 ++++++++++++++++++++++++++++++++
+ plugin/pytest.vim |  172 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 415 insertions(+), 0 deletions(-)

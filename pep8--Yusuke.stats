@@ -1,0 +1,42 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3)
+Author:     MURAOKA Yusuke <yusuke@jbking.org>
+AuthorDate: Wed Feb 2 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.3
+    
+    - Caching pep8 report. So, checking at unchanged must be fast finished. Thanks to OrderedDict.
+    - Share a checker instance over buffers.
+    - Simplify code...
+
+ ftplugin/python/ordered_dict.py |  103 +++++++++++++++++++++++++++++++++++++++
+ ftplugin/python/pep8.vim        |   20 +++++---
+ ftplugin/python/pep8checker.py  |   70 ++++++++++++---------------
+ 3 files changed, 146 insertions(+), 47 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     MURAOKA Yusuke <yusuke@jbking.org>
+AuthorDate: Mon Jan 31 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.2
+    
+    Fixed a bug related to display pep8 error message.
+    Split python code of this plug-in into a module from vim-script.
+
+ .gitignore                     |    2 +
+ ftplugin/pep8.vim              |  173 ----------------------------------------
+ ftplugin/python/pep8.vim       |  138 ++++++++++++++++++++++++++++++++
+ ftplugin/python/pep8checker.py |   90 +++++++++++++++++++++
+ 4 files changed, 230 insertions(+), 173 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     MURAOKA Yusuke <yusuke@jbking.org>
+AuthorDate: Sun Jan 30 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1: Initial upload
+
+ README            |   10 +++
+ ftplugin/pep8.vim |  173 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 183 insertions(+), 0 deletions(-)

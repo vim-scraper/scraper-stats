@@ -1,0 +1,38 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0)
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
+AuthorDate: Sat Jan 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0: New and improved archive viewer broken out from eclim.
+
+ README                                      |   95 +---
+ autoload/archive/ArchiveListAllCommand.java |  252 +++++++
+ autoload/archive/ArchiveListCommand.java    |  116 ++++
+ autoload/archive/ArchiveReadCommand.java    |  119 ++++
+ autoload/archive/ArchiveUtils.java          |   71 ++
+ autoload/archive/ant-compress-1.8.1.jar     |  Bin 0 -> 102726 bytes
+ autoload/archive/commons-logging-1.1.1.jar  |  Bin 0 -> 60841 bytes
+ autoload/archive/commons-vfs-1.0.jar        |  Bin 0 -> 362717 bytes
+ autoload/archive/tree.vim                   |  492 +++++++++++++
+ autoload/archive/viewer.vim                 |  612 +++++++++++++++++
+ autoload/commons-logging.properties         |    1 +
+ doc/archive.txt                             |   55 ++
+ plugin/archive.vim                          |   82 +++
+ plugin/archive_viewer.vim                   |  991 ---------------------------
+ 14 files changed, 1804 insertions(+), 1082 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     Eric Van Dewoestine <ervandew@gmail.com>
+AuthorDate: Sun Dec 5 00:00:00 2004 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.5
+    
+    - Now supported on Windows.
+    - Added 'e' mapping so files can be edited striaght from the archive (without viewing it first)
+    - Added public function to open a file using a jar file url.
+    - Now it can use table_format.vim OR Align.vim as it's alignment dependency
+
+ README                    |   94 +++++
+ plugin/archive_viewer.vim |  991 +++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 1085 insertions(+), 0 deletions(-)

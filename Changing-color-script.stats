@@ -1,4 +1,30 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/16.4)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/16.6)
+Author:     Paul Contreras <pablo@ezrider.co.uk>
+AuthorDate: Wed Jan 19 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 16.6
+    
+    Removed what appears to be a glitch at lighter end of  the background spectrum.  This affected selections of text done at the very lightest background, they were invisible.  It now works as it should.
+
+ colors/changingColor.vim |    8 ++++++--
+ 1 files changed, 6 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/16.5)
+Author:     Paul Contreras <pablo@ezrider.co.uk>
+AuthorDate: Mon Jan 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 16.5
+    
+    Revved up the visibility of PreProc. PreProc is the 'function' keyword in php so it now brightens nicer and doesn't become hard-to-see. Similarly with Identifier, and Special.  Identifier in PHP obviously means the variables. Not sure if its used in other languages but at least if you use PHP it now looks nice and strong.
+
+ README                   |    3 +
+ colors/ChangingColor.vim |  692 ---------------------------------------------
+ colors/changingColor.vim |  699 ++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 702 insertions(+), 692 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/16.4)
 Author:     Paul Contreras <pablo@ezrider.co.uk>
 AuthorDate: Wed Nov 24 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

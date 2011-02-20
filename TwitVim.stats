@@ -1,4 +1,19 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6.1)
+Author:     Po Shan Cheah <morton@mortonfox.com>
+AuthorDate: Thu Jan 6 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6.1
+    
+    * Fix for buffer stack bug if user closes a window manually.
+    * Use https OAuth endpoints if user has set up https API root.
+    * Match a URL even if prefix is in mixed case.
+
+ doc/twitvim.txt    |   13 +++++++
+ plugin/twitvim.vim |   92 ++++++++++++++++++++++++++++++++--------------------
+ 2 files changed, 70 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.0)
 Author:     Po Shan Cheah <morton@mortonfox.com>
 AuthorDate: Wed Oct 27 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

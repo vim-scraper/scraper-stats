@@ -1,4 +1,70 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/101217)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/110208)
+Author:     Jakson Aquino <jalvesaq@gmail.com>
+AuthorDate: Tue Feb 8 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 110208
+    
+    * Fixed bug in "else if" constructions (thanks to Dan Kelley for reporting the bug).
+    * Support for commenting/uncommenting lines.
+
+ doc/r-plugin.txt           |  130 ++-
+ ftplugin/r.vim             |   70 +-
+ ftplugin/rdoc.vim          |    4 +-
+ ftplugin/rhelp.vim         |   57 +-
+ ftplugin/rnoweb.vim        |  119 +-
+ indent/r.vim               |   23 +-
+ indent/rhelp.vim           |    3 +-
+ indent/rnoweb.vim          |   17 +-
+ r-plugin/common_buffer.vim |    9 +-
+ r-plugin/common_global.vim | 3291 +++++++++++++++++++++++---------------------
+ r-plugin/tex_indent.vim    |   12 +-
+ syntax/r.vim               |    6 +-
+ 12 files changed, 2004 insertions(+), 1737 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/110203)
+Author:     Jakson Aquino <jalvesaq@gmail.com>
+AuthorDate: Thu Feb 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 110203
+    
+    * Fixed bug in  :RUpdateObjList  when the function arguments included S4 objects (thanks to Gerhard Schöfl for reporting the bug).
+    * Improvements in indentation of R code (thanks to Dan Kelley for finding and reporting indentation bugs and testing many versions of indent/r.vim).
+    * New indentation options: r_indent_align_args, r_indent_ess_comments, r_indent_comment_column, and r_indent_ess_compatible.
+    * New file: indent/rhelp.vim.
+
+ README                     |    1 +
+ autoload/rcomplete.vim     |    3 +-
+ doc/r-plugin.txt           |  135 ++-
+ indent/r.vim               |  568 ++++++++---
+ indent/rhelp.vim           |  113 +++
+ indent/rnoweb.vim          |   15 +-
+ r-plugin/build_omniList.R  |   39 +-
+ r-plugin/common_global.vim |   14 +-
+ r-plugin/omniList          | 2355 ++++++++++++++++++++++----------------------
+ r-plugin/tex_indent.vim    |   12 +-
+ r-plugin/vimbrowser.R      |    3 +-
+ syntax/r.vim               |   17 +-
+ 12 files changed, 1853 insertions(+), 1422 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/110117)
+Author:     Jakson Aquino <jalvesaq@gmail.com>
+AuthorDate: Mon Jan 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 110117
+    
+    * Fixed indentation bug in Rnoweb files (thanks to Dan Kelley for reporting the bug).
+
+ doc/r-plugin.txt           |   29 +++++++++++++++++++++++++----
+ ftplugin/rnoweb.vim        |   23 +++--------------------
+ indent/rnoweb.vim          |   18 ++++++++----------
+ r-plugin/common_global.vim |   28 ++++++++--------------------
+ r-plugin/tex_indent.vim    |   12 +++++++++++-
+ 5 files changed, 55 insertions(+), 55 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/101217)
 Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Fri Dec 17 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

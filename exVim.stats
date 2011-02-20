@@ -1,4 +1,228 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/8.04)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/8.05_b2@1)
+Author:     Jie Wu <karasaya@gmail.com>
+AuthorDate: Wed Jan 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 8.05_b2@1: The package is used in unix, linux, mac-osx
+
+ .vimrc_ex                                          | 2454 ++++----
+ after/compiler/exgcc.vim                           |   58 +-
+ after/compiler/exmsvc.vim                          |  110 +-
+ after/compiler/hlsl.vim                            |   30 +-
+ after/syntax/c.vim                                 |  248 +-
+ after/syntax/cpp.vim                               |  156 +-
+ after/syntax/cs.vim                                |  210 +-
+ after/syntax/exUtility.vim                         |  144 +-
+ after/syntax/hlsl.vim                              |  216 +-
+ after/syntax/javascript.vim                        |   68 +-
+ after/syntax/lua.vim                               |   72 +-
+ after/syntax/maxscript.vim                         |  264 +-
+ after/syntax/python.vim                            |   56 +-
+ after/syntax/syncolor.vim                          |  200 +-
+ after/syntax/vim.vim                               |   56 +-
+ autoload/exUtility.vim                             | 7738 ++++++++++----------
+ colors/ex.vim                                      |  174 +-
+ colors/ex_lightgray.vim                            |  172 +-
+ doc/exVim.txt                                      | 5938 ++++++++--------
+ plugin/exBufExplorer.vim                           |  828 ++--
+ plugin/exCscope.vim                                | 1728 +++---
+ plugin/exEnvironmentSetting.vim                    |  890 ++--
+ plugin/exGlobalSearch.vim                          | 1862 +++---
+ plugin/exJumpStack.vim                             | 1288 ++--
+ plugin/exMacroHighlight.vim                        | 1494 ++--
+ plugin/exMarksBrowser.vim                          |  968 ++--
+ plugin/exProject.vim                               | 2122 +++---
+ plugin/exQuickFix.vim                              | 1358 ++--
+ plugin/exSearchComplete.vim                        |  244 +-
+ plugin/exSymbolTable.vim                           | 1102 ++--
+ plugin/exTagSelect.vim                             | 1128 ++--
+ plugin/exUtility.vim                               |  846 ++--
+ toolkit/SyntaxHighlighter/scripts/shBrushBash.js   |  132 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushCSharp.js |  134 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushCpp.js    |  198 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushCss.js    |  186 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushDelphi.js |  114 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushDiff.js   |   86 +-
+ .../SyntaxHighlighter/scripts/shBrushJScript.js    |  104 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushJava.js   |  118 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushPerl.js   |  146 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushPhp.js    |  182 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushPlain.js  |   70 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushPython.js |  132 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushRuby.js   |  114 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushScala.js  |  106 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushSql.js    |  136 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushVb.js     |  116 +-
+ toolkit/SyntaxHighlighter/scripts/shBrushXml.js    |  142 +-
+ toolkit/SyntaxHighlighter/styles/shCore.css        |  660 +-
+ .../SyntaxHighlighter/styles/shThemeDefault.css    |  346 +-
+ toolkit/SyntaxHighlighter/styles/shThemeEX.css     |  290 +-
+ toolkit/gawk/prg_ConvertLog.awk                    |   40 +-
+ toolkit/gawk/prg_FileFilterWithQuotes.awk          |   42 +-
+ toolkit/gawk/prg_FilenameTagLinux.awk              |   52 +-
+ toolkit/gawk/prg_FilenameTagWin.awk                |   52 +-
+ toolkit/gawk/prg_Inherits.awk                      |   60 +-
+ toolkit/gawk/prg_InheritsDot.awk                   |   58 +-
+ toolkit/gawk/prg_NoStripSymbol.awk                 |   44 +-
+ toolkit/gawk/prg_StripSymbol.awk                   |   54 +-
+ toolkit/idutils/id-lang-default.map                |  202 +-
+ toolkit/idutils/id-lang.map                        |  248 +-
+ toolkit/idutils/readme.txt                         |    2 +-
+ toolkit/makefile/gcc/gcc_config.mk                 |  434 +-
+ toolkit/makefile/gcc/gcc_entry_m.mk                |   84 +-
+ toolkit/makefile/gcc/gcc_entry_s.mk                |  230 +-
+ toolkit/makefile/gcc/gcc_project.mk                |  228 +-
+ toolkit/makefile/gcc/gcc_rule_m.mk                 |  264 +-
+ toolkit/makefile/gcc/gcc_rule_s.mk                 | 1264 ++--
+ toolkit/makefile/msvc/make_vs.bat                  |  152 +-
+ toolkit/makefile/msvc/msvc_config.mk               |  218 +-
+ toolkit/makefile/msvc/msvc_entry.mk                |  240 +-
+ toolkit/makefile/msvc/msvc_tmpl.txt                |   18 +-
+ toolkit/makefile/msvc/vc_project/project.sln       |   92 +-
+ .../msvc/vc_project/project_exe/project_exe.cpp    |   56 +-
+ .../msvc/vc_project/project_exe/project_exe.h      |   28 +-
+ .../msvc/vc_project/project_exe/project_exe.vcproj | 1498 ++--
+ .../project_exe.vcproj.EXPC.Johnny.user            |  354 +-
+ .../msvc/vc_project/project_lib/project_lib.cpp    |   26 +-
+ .../msvc/vc_project/project_lib/project_lib.h      |   28 +-
+ .../msvc/vc_project/project_lib/project_lib.vcproj | 1416 ++--
+ .../project_lib.vcproj.EXPC.Johnny.user            |  354 +-
+ toolkit/makefile/ref/gcc_rule_multi_logs.mk        |  810 +-
+ toolkit/makefile/shader/shader_config.mk           |  532 +-
+ toolkit/makefile/shader/shader_entry_m.mk          |  260 +-
+ toolkit/makefile/shader/shader_entry_s.mk          |  212 +-
+ toolkit/makefile/shader/shader_project.mk          |  208 +-
+ toolkit/makefile/shader/shader_rule.mk             |  640 +-
+ toolkit/octave/.octaverc                           |   38 +-
+ toolkit/quickgen/bash/quick_gen_project.sh         |  928 ++--
+ toolkit/quickgen/batch/quick_gen_project.bat       | 1026 ++--
+ toolkit/snippets/_.snippets                        |   14 +-
+ toolkit/snippets/autoit.snippets                   |  132 +-
+ toolkit/snippets/c.snippets                        |  420 +-
+ toolkit/snippets/cpp.snippets                      |  202 +-
+ toolkit/snippets/html.snippets                     |  552 +-
+ toolkit/snippets/htmldjango.snippets               |  572 +-
+ toolkit/snippets/java.snippets                     |  156 +-
+ toolkit/snippets/javascript.snippets               |  148 +-
+ toolkit/snippets/mako.snippets                     |  108 +-
+ toolkit/snippets/objc.snippets                     |  368 +-
+ toolkit/snippets/perl.snippets                     |  182 +-
+ toolkit/snippets/php.snippets                      |  432 +-
+ toolkit/snippets/python.snippets                   |  172 +-
+ toolkit/snippets/ruby.snippets                     |  840 ++--
+ toolkit/snippets/sh.snippets                       |   56 +-
+ toolkit/snippets/snippet.snippets                  |   14 +-
+ toolkit/snippets/tcl.snippets                      |  184 +-
+ toolkit/snippets/tex.snippets                      |  230 +-
+ toolkit/snippets/vim.snippets                      |  136 +-
+ toolkit/snippets/zsh.snippets                      |  116 +-
+ toolkit/src-highlight/command.txt                  |   30 +-
+ toolkit/src-highlight/data/bison.lang              |    4 +-
+ toolkit/src-highlight/data/c_comment.lang          |   24 +-
+ toolkit/src-highlight/data/caml.lang               |   32 +-
+ toolkit/src-highlight/data/changelog.lang          |   32 +-
+ toolkit/src-highlight/data/cpp.lang                |   64 +-
+ toolkit/src-highlight/data/css_common.outlang      |   34 +-
+ toolkit/src-highlight/data/cssdoc.outlang          |   46 +-
+ toolkit/src-highlight/data/esc.outlang             |   92 +-
+ toolkit/src-highlight/data/esc.style               |   26 +-
+ toolkit/src-highlight/data/flex.lang               |   72 +-
+ toolkit/src-highlight/data/fortran.lang            |   48 +-
+ toolkit/src-highlight/data/function.lang           |    2 +-
+ toolkit/src-highlight/data/html.lang               |   30 +-
+ toolkit/src-highlight/data/html.outlang            |   18 +-
+ toolkit/src-highlight/data/html_common.outlang     |   68 +-
+ toolkit/src-highlight/data/htmldoc.outlang         |   38 +-
+ toolkit/src-highlight/data/java.lang               |   46 +-
+ toolkit/src-highlight/data/javascript.lang         |    8 +-
+ toolkit/src-highlight/data/latex.lang              |  104 +-
+ toolkit/src-highlight/data/latex.outlang           |   74 +-
+ toolkit/src-highlight/data/latexcolor.outlang      |   50 +-
+ toolkit/src-highlight/data/latexcolordoc.outlang   |   42 +-
+ toolkit/src-highlight/data/latexdoc.outlang        |   40 +-
+ toolkit/src-highlight/data/log.lang                |  108 +-
+ toolkit/src-highlight/data/logtalk.lang            |  154 +-
+ toolkit/src-highlight/data/lua.lang                |   52 +-
+ toolkit/src-highlight/data/number.lang             |    2 +-
+ toolkit/src-highlight/data/outlang.map             |   28 +-
+ toolkit/src-highlight/data/pascal.lang             |   40 +-
+ toolkit/src-highlight/data/perl.lang               |   46 +-
+ toolkit/src-highlight/data/php.lang                |   46 +-
+ toolkit/src-highlight/data/prolog.lang             |   72 +-
+ toolkit/src-highlight/data/python.lang             |   58 +-
+ toolkit/src-highlight/data/ruby.lang               |   46 +-
+ toolkit/src-highlight/data/sml.lang                |    8 +-
+ toolkit/src-highlight/data/style2.style            |   18 +-
+ toolkit/src-highlight/data/style3.style            |   18 +-
+ toolkit/src-highlight/data/symbols.lang            |   44 +-
+ toolkit/src-highlight/data/texinfo.outlang         |   40 +-
+ toolkit/src-highlight/data/texinfo.style           |   24 +-
+ toolkit/src-highlight/data/url.lang                |    2 +-
+ toolkit/src-highlight/data/xhtml.outlang           |   24 +-
+ toolkit/src-highlight/data/xhtmlcss.outlang        |   48 +-
+ toolkit/src-highlight/data/xhtmldoc.outlang        |   46 +-
+ toolkit/src-highlight/default/default.style        |   66 +-
+ toolkit/src-highlight/default/lang.map             |   92 +-
+ toolkit/src-highlight/ex/default.style             |   68 +-
+ toolkit/src-highlight/ex/ex.css                    |  578 +-
+ toolkit/src-highlight/ex/ex_cpp.lang               |   36 +-
+ toolkit/src-highlight/ex/lang.map                  |   96 +-
+ vimfiles/filetype.vim                              |  158 +-
+ 163 files changed, 29151 insertions(+), 29151 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8.05_b2)
+Author:     Jie Wu <karasaya@gmail.com>
+AuthorDate: Wed Jan 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 8.05_b2
+    
+    * New features
+    ** upgrade vim from 7.2 to 7.3
+    ** add javascript indent plugin. http://www.vim.org/scripts/script.php?script_id=1936
+    ** add AutoComplPop-2.14.1 plugin. http://www.vim.org/scripts/script.php?script_id=1879 &nbsp;
+    ** add EXTC command for easy writting extern "C" { } code block in c/cpp files.
+    * Changes
+    ** update .vimentry version from '24' to '25'.
+    ** disable auto-comment in javascript.
+    ** make vimwiki as an option plugin for user.
+    ** update zencoding to 0.43.
+    ** remove django syntax (not too much use).
+    ** update surround to 1.90.
+    ** set default encoding to utf-8.
+    * Bug fix
+    ** fix visual studio unicode encoding error.
+    ** fix GSF,GSFW result can't jump.
+    ** fix acp conflict with lookupfile.
+    ** fix tag select can't parse lua function with white space
+    ** fix vimentryRefs not working in linux and mac OS.
+
+ .vimrc_ex                                    |  155 ++++++++++++++++++-------
+ after/syntax/c.vim                           |   10 +-
+ after/syntax/cpp.vim                         |   12 +-
+ after/syntax/cs.vim                          |  105 +++++++++++++++++
+ after/syntax/javascript.vim                  |   34 ++++++
+ after/syntax/lua.vim                         |   36 ++++++
+ after/syntax/python.vim                      |    1 -
+ autoload/exUtility.vim                       |   86 ++++++++++-----
+ colors/ex.vim                                |    5 +-
+ colors/ex_lightgray.vim                      |    4 +-
+ plugin/exBufExplorer.vim                     |    2 +-
+ plugin/exEnvironmentSetting.vim              |   18 ++--
+ plugin/exGlobalSearch.vim                    |  116 ++++++++++---------
+ plugin/exJumpStack.vim                       |    4 +-
+ plugin/exMarksBrowser.vim                    |    6 +-
+ plugin/exTagSelect.vim                       |   18 ++-
+ plugin/exUtility.vim                         |   23 +++-
+ toolkit/makefile/gcc/gcc_entry_m.mk          |    2 +-
+ toolkit/makefile/gcc/gcc_entry_s.mk          |    2 +-
+ toolkit/makefile/gcc/gcc_project.mk          |    2 +-
+ toolkit/quickgen/bash/quick_gen_project.sh   |    2 +-
+ toolkit/quickgen/batch/quick_gen_project.bat |    2 +-
+ vimfiles/filetype.vim                        |    3 +
+ 23 files changed, 477 insertions(+), 171 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8.04)
 Author:     Jie Wu <karasaya@gmail.com>
 AuthorDate: Wed May 26 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

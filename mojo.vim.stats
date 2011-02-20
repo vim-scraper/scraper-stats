@@ -1,4 +1,43 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.4)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.03@1)
+Author:     Yaroslav Korshak <ykorshak@gmail.com>
+AuthorDate: Sun Dec 26 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.03@1: VimBall of 0.03, see below
+
+ Changes                 |   27 ----------
+ Makefile                |   23 --------
+ README.orig             |   30 -----------
+ t/01_epl.t              |  128 -----------------------------------------------
+ t/02_lite.t             |   47 -----------------
+ t/lib/Test/VimSyntax.pm |   64 -----------------------
+ 6 files changed, 0 insertions(+), 319 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.03)
+Author:     Yaroslav Korshak <ykorshak@gmail.com>
+AuthorDate: Sun Dec 26 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.03
+    
+    New improved Mojolicious epl syntax
+    Much more organic structure
+    Tests!
+
+ Changes                               |   27 +++++++
+ Makefile                              |   23 ++++++
+ README                                |    6 +-
+ README.orig                           |   15 +++--
+ after/syntax/perl/MojoliciousLite.vim |   49 +++++++++++++
+ ftdetect/epl.vim                      |    4 +-
+ syntax/MojoliciousTemplate.vim        |   80 --------------------
+ syntax/epl.vim                        |   84 +++++++++-------------
+ t/01_epl.t                            |  128 +++++++++++++++++++++++++++++++++
+ t/02_lite.t                           |   47 ++++++++++++
+ t/lib/Test/VimSyntax.pm               |   64 ++++++++++++++++
+ 11 files changed, 385 insertions(+), 142 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.4)
 Author:     Yaroslav Korshak <ykorshak@gmail.com>
 AuthorDate: Thu Aug 12 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

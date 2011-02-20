@@ -1,4 +1,25 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.1)
+Author:     Wincent Colaiuta <win@wincent.com>
+AuthorDate: Wed Jan 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0.1
+    
+    - work around bug when mapping |:CommandTFlush|, wherein the default mapping
+      for |:CommandT| would not be set up
+    - clean up when leaving the Command-T buffer via unexpected means (such as
+      with <C-W k> or similar)
+
+ doc/command-t.txt              |    9 ++++++++-
+ plugin/command-t.vim           |    2 +-
+ ruby/command-t/controller.rb   |    8 ++++++++
+ ruby/command-t/ext.c           |    2 +-
+ ruby/command-t/match_window.rb |   18 ++++++++++++++++--
+ ruby/command-t/matcher.c       |    4 ++--
+ ruby/command-t/matcher.h       |    2 +-
+ 7 files changed, 37 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
 Author:     Wincent Colaiuta <win@wincent.com>
 AuthorDate: Fri Nov 26 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

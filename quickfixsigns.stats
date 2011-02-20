@@ -1,4 +1,32 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.11)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.13)
+Author:     Tom Link <micathom@gmail.com>
+AuthorDate: Wed Dec 29 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.13
+    
+    - QuickfixsignsSelect(): check if g:quickfixsigns_class_{what} existsMD5 checksum: 833e1a48f7a3d7460ae29795fb328be4
+
+ autoload/quickfixsigns/breakpoints.vim |   80 ++++++++++++++++++++++++++++++++
+ plugin/quickfixsigns.vim               |    8 ++--
+ 2 files changed, 84 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
+Author:     Tom Link <micathom@gmail.com>
+AuthorDate: Tue Dec 28 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.12
+    
+    - 'test' field; additional test if a sign should be updated (e.g. update _cursor only if lnum has changed)- breakpoints (currently vim only)- set g:quickfixsigns#vcsdiff#loaded- g:quickfixsigns_class_cursor: remove test (interferes with put & delete-like commands)- breakpoints: test for a known filetype- QuickfixsignsSet(event, ?classes=[])- Disable the 'cursor' class by default.- Set b:quickfixsigns_last_lineMD5 checksum: 936abcfd67be7efe52fb0f85481c8665
+
+ autoload/quickfixsigns/marks.vim   |    4 +-
+ autoload/quickfixsigns/vcsdiff.vim |   10 ++++-
+ doc/quickfixsigns.txt              |   81 ++++++++++++++++++++++-------------
+ plugin/quickfixsigns.vim           |   81 ++++++++++++------------------------
+ 4 files changed, 88 insertions(+), 88 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
 Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Mon Nov 15 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

@@ -1,4 +1,33 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.4)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.6)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Mon Jan 24 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.6
+    
+    Cursor position is kept during evaluation, most Slimv commands made silent, bugfixes: find defun start when cursor is on a comment, keep newlines in Compile-Region, infinite loop when selecting form in empty buffer, error when opening REPL buffer with g:slimv_repl_split=0, REPL blinking in insert mode when visualbell is on, added the comma to the list of macro prefix characters (thanks to John Obbele), long/short Windows filename problem for REPL buffer.
+
+ doc/slimv.txt      |   21 ++++-
+ ftplugin/slimv.vim |  230 ++++++++++++++++++++++++++++++----------------------
+ plugin/paredit.vim |    6 +-
+ 3 files changed, 154 insertions(+), 103 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.5)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Wed Jan 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.5
+    
+    Added Cygwin compatibility using the Windows Python (thanks to Jerome Baum), display client error message when eval was not successful, form is passed to client via stdin instead of temp file, bugfixes: automatic reconnection when server closed and reopened, delete and yank also via named registers in paredit.vim, handle double quotes in Compile-Defun and Compile-Region.
+
+ doc/slimv.txt      |   49 ++++++++++++++++++++++----------
+ ftplugin/slimv.py  |   61 ++++++++++++++++++++++------------------
+ ftplugin/slimv.vim |   78 +++++++++++++++++++++++----------------------------
+ plugin/paredit.vim |    9 +++--
+ 4 files changed, 107 insertions(+), 90 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.4)
 Author:     Tamas Kovacs <kovisoft@gmail.com>
 AuthorDate: Thu Dec 16 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

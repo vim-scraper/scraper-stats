@@ -1,4 +1,88 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2.10@1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2.15)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Thu Jan 27 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2.15
+    
+    Added `TransliterateMotion' actionAdded box drawing symbolsImproved handling of transliteration tables from buffer variablesImproved replace actionSome Tr3Command fixes
+
+ config/translit3/transsymb-box.json |    1 +
+ config/translit3/transsymb-ru.json  |    2 +-
+ config/translit3/transsymb.json     |    2 +-
+ doc/load.txt                        |   80 ++++++--
+ doc/translit3.rux                   |  167 ++++++++++++++--
+ doc/translit3.txt                   |  163 ++++++++++++++--
+ plugin/load.vim                     |  343 ++++++++++++++++++++-------------
+ plugin/translit3.vim                |  365 ++++++++++++++++++++++++++---------
+ 8 files changed, 850 insertions(+), 273 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.14)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Sat Jan 15 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2.14: Made plugin use new vimpluginloader features, some fixes
+
+ autoload/load.vim    |   48 +++++
+ doc/load.txt         |  104 +++++++++-
+ plugin/chk.vim       |  566 +++++++++++++++++++++++++++-----------------------
+ plugin/load.vim      |  392 ++++++++++++++++++++++++++---------
+ plugin/translit3.vim |  305 +++++++++++----------------
+ plugin/yaml.vim      |  286 ++++++++++++--------------
+ 6 files changed, 1018 insertions(+), 683 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.13@1)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Tue Dec 28 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2.13@1: Reposting bundle due to core plugins update
+
+ doc/load.txt    |    8 ++-
+ plugin/load.vim |  134 +++++++++++++++++++++++++++++++++----------------------
+ 2 files changed, 86 insertions(+), 56 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.13)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Tue Dec 28 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2.13: Fixed session support
+
+ plugin/translit3.vim |   78 +++++++++++++++++++++++++++++---------------------
+ 1 files changed, 45 insertions(+), 33 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.12)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Sun Dec 26 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2.12
+    
+    Added support for empty NoTransWord, EscSeq, BrkSeq and StopTrSymbs options
+
+ doc/translit3.rux    |    7 +++++
+ doc/translit3.txt    |   10 ++++++-
+ plugin/translit3.vim |   69 ++++++++++++++++++++++++++++++++++----------------
+ 3 files changed, 63 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.11)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Tue Dec 21 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2.11
+    
+    Added BreakFunc optionMade conque_w function use new documented conque API (note that it is incompatible with old versions of conque)Some bug fixes
+
+ doc/translit3.rux    |   20 ++++++-
+ doc/translit3.txt    |   17 +++++-
+ plugin/comp.vim      |    7 +-
+ plugin/translit3.vim |  162 ++++++++++++++++++++++++++++++++------------------
+ 4 files changed, 143 insertions(+), 63 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.10@1)
 Author:     ZyX ZyX <kp-pav@yandex.ru>
 AuthorDate: Sat Dec 18 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

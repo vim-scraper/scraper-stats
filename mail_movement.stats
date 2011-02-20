@@ -1,4 +1,30 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.00)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.52)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Mon Dec 20 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.52
+    
+    Adapted to CountJump#Region#JumpToNextRegion() again returning jump position in version 1.40.
+
+ ftplugin/mail_movement.vim |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.51)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Mon Dec 20 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.51
+    
+    - ENH: ][ mapping in operator-pending and visual mode now also operates over / select the last line of the quote. This is what the user expects.
+    - Adapted to changed interface of CountJump.vim; now requires version 1.30.
+
+ README                     |   28 +++++++--
+ ftplugin/mail_movement.vim |  154 +++++++++++++++++++++++++++++++++++++++----
+ 2 files changed, 162 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.00)
 Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Tue Aug 3 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

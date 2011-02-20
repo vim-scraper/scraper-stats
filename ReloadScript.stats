@@ -1,4 +1,20 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.10.005)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.20)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Sun Jan 9 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.20
+    
+    - BUG: Avoiding "E471: Argument required" error on empty buffer name.
+    - ENH: Explicitly checking for the existence of the file, as we don't want to put the :source command inside try...catch (it would stop showing all resulting errors and show only the first), and because :runtime doesn't complain at all.
+    - Added separate help file and packaging the plugin as a vimball.
+
+ README                  |   43 +++++++++---------
+ doc/ReloadScript.txt    |  106 ++++++++++++++++++++++++++++++++++++++++++++
+ plugin/ReloadScript.vim |  112 +++++++++++++++++++++++-----------------------
+ 3 files changed, 183 insertions(+), 78 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10.005)
 Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Tue Jul 29 00:00:00 2008 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

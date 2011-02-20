@@ -1,0 +1,175 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.07)
+Author:     Ran Bi <biran0079@gmail.com>
+AuthorDate: Sun Feb 6 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.07: Now does not create new window when current buffer is empty
+
+ plugin/hjkl.vim |   13 ++++++++-----
+ 1 files changed, 8 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.06)
+Author:     Ran Bi <biran0079@gmail.com>
+AuthorDate: Fri Jan 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.06: Thanks to Xavier Wang's patch! the maze looks better now
+
+ plugin/hjkl.vim |   16 ++++++++++------
+ 1 files changed, 10 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.04)
+Author:     Ran Bi <biran0079@gmail.com>
+AuthorDate: Wed Jan 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.04
+    
+    show progress bar when constructing maze
+    quite game automatically after winning(and press any key)
+
+ plugin/hjkl.vim |   47 ++++++++++++++++++++++++++++++++++++++++++-----
+ 1 files changed, 42 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.02)
+Author:     Ran Bi <biran0079@gmail.com>
+AuthorDate: Fri Jan 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.02
+    
+    Make &#039@&#039 and &#039X&#039 bold to make them easy to find.
+    Change size constrain on maze: depends on the size of vim window now.
+
+ plugin/hjkl.vim |   77 ++++++++++++++++++++++++++++++++++++++++---------------
+ 1 files changed, 56 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.01)
+Author:     Ran Bi <biran0079@gmail.com>
+AuthorDate: Fri Jan 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.01
+    
+    Fix a bug in "konami mode".
+    Want Faster? type konami code multiple times !
+    It becomes much more tricky when your target gets faster
+
+ plugin/hjkl.vim |    8 +++++---
+ 1 files changed, 5 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Ran Bi <biran0079@gmail.com>
+AuthorDate: Fri Jan 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0
+    
+    Tired of static target?
+    Try to type vim's konami code(kkjjhlhlba), see what would happen !
+
+ plugin/hjkl.vim |   68 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 68 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.99)
+Author:     Ran Bi <biran0079@gmail.com>
+AuthorDate: Fri Jan 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.99
+    
+    Improved the maze generating algorithm, and now it runs faster(hopefully).
+
+ plugin/hjkl.vim |  605 ++++++++++++++++++++++++++++---------------------------
+ 1 files changed, 312 insertions(+), 293 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.98)
+Author:     Ran Bi <biran0079@gmail.com>
+AuthorDate: Thu Jan 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.98
+    
+    Simple modification on algorithm, hopefully make the game more challenging
+
+ plugin/hjkl.vim |   25 ++++++++++++++++---------
+ 1 files changed, 16 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.97)
+Author:     Ran Bi <biran0079@gmail.com>
+AuthorDate: Thu Jan 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.97
+    
+    In order to make the game more challenging, more complicated algorithm is used to generate maze, and determine target. However, this slow the script down drastically, especially when generating large maze. If you find it too slow, you may want to use older version(0.96) of the script.
+    Now the constrain of row is [5,30] and column is [5,40]. Please choose appropriate size according to the size of your vim window and the code's running time you can tolerate.
+
+ plugin/hjkl.vim |  493 ++++++++++++++++++++++++++++++++-----------------------
+ 1 files changed, 286 insertions(+), 207 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.96)
+Author:     Ran Bi <biran0079@gmail.com>
+AuthorDate: Thu Jan 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.96: Use syntax highlight to make the maze looks better
+
+ plugin/hjkl.vim |   16 +++++++++++++---
+ 1 files changed, 13 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.95)
+Author:     Ran Bi <biran0079@gmail.com>
+AuthorDate: Thu Jan 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.95
+    
+    HJKL command can have 2 arguments: Row and Column, which specify size of maze. Both number should in [5,20]
+
+ plugin/hjkl.vim |   15 ++++++++++++---
+ 1 files changed, 12 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.93)
+Author:     Ran Bi <biran0079@gmail.com>
+AuthorDate: Thu Jan 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.93
+    
+    Fix a bug: when row number and column number are different, it fails to generate random maze
+
+ plugin/hjkl.vim |   12 ++++++------
+ 1 files changed, 6 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.92)
+Author:     Ran Bi <biran0079@gmail.com>
+AuthorDate: Thu Jan 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.92: Remove duplicated "press any key to continue"
+
+ plugin/hjkl.vim |    3 +--
+ 1 files changed, 1 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.91)
+Author:     Ran Bi <biran0079@gmail.com>
+AuthorDate: Thu Jan 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.91: change file format to unix
+
+ README          |    8 +-
+ plugin/hjkl.vim |  378 +++++++++++++++++++++++++++---------------------------
+ 2 files changed, 195 insertions(+), 191 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     Ran Bi <biran0079@gmail.com>
+AuthorDate: Wed Jan 19 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9: Initial upload
+
+ README          |   19 ++++++
+ plugin/hjkl.vim |  189 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 208 insertions(+), 0 deletions(-)

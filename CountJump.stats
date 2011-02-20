@@ -1,4 +1,43 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.22)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.40)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Mon Dec 20 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.40
+    
+    - ENH: Added CountJump#Region#TextObject#Make() to easily define text objects for regions.
+    - Interface change: Jump functions again return position (and actual, corrected one for a:isToEndOfLine). Though the position is not used for motions, it is necessary for text objects to differentiate between "already at the begin/end position" and "no such position".
+
+ autoload/CountJump/Region.vim            |   18 ++++-
+ autoload/CountJump/Region/Motion.vim     |    1 +
+ autoload/CountJump/Region/TextObject.vim |  121 ++++++++++++++++++++++++++++++
+ autoload/CountJump/TextObject.vim        |   31 ++++----
+ doc/CountJump.txt                        |   17 ++++
+ 5 files changed, 167 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.30)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Mon Dec 20 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.30
+    
+    - ENH: Added CountJump#Region#Motion#MakeBracketMotion() to easily define bracket motions for regions.
+    - Interface changes:
+      - Jump functions don't necessarily return jump position any more; this special case is only required for text objects.
+      - Moved CountJump#Region#Jump() to CountJump#JumpFunc().
+      - Added a:isToEndOfLine argument to CountJump#Region#JumpToRegionEnd() and CountJump#Region#JumpToNextRegion(), which is useful for operator-pending and characterwise visual mode mappings; the entire last line will then be operated on / selected.
+      - Added a:isMatch argument to CountJump#Region#SearchForRegionEnd(), CountJump#Region#JumpToRegionEnd(), CountJump#Region#SearchForNextRegion(), CountJump#Region#JumpToNextRegion(). This allows definition of regions via non-matches, which can be substantially simpler (and faster to match) than coming up with a "negative" regular expression.
+
+ README                               |   25 +++--
+ autoload/CountJump.vim               |  101 +++++++++++++++++--
+ autoload/CountJump/Motion.vim        |    8 +-
+ autoload/CountJump/Region.vim        |  180 ++++++++++++++--------------------
+ autoload/CountJump/Region/Motion.vim |  125 +++++++++++++++++++++++
+ doc/CountJump.txt                    |   51 ++++++----
+ 6 files changed, 341 insertions(+), 149 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.22)
 Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Fri Aug 6 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

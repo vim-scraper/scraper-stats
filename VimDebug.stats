@@ -1,4 +1,52 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5)
+Author:     eric johnson <vim@iijo.org>
+AuthorDate: Wed Jan 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.5
+    
+    Warns if you don't have IO::Pty installed; fixed newline problems for a number of people; fixed tab problems for people who use SuperTab plugin
+
+ ACKNOWLEDGEMENTS                                   |    9 -
+ ARCHITECTURE                                       |   67 --
+ BUGS                                               |    9 -
+ DEVELOPER.HOWOTO                                   |   32 -
+ INSTALL                                            |   65 --
+ LICENSE                                            |  377 ++++++++++
+ MANIFEST                                           |   46 +-
+ MANIFEST.skip                                      |    2 -
+ META.yml                                           |   28 +
+ Makefile.PL                                        |   90 ++-
+ README                                             |   44 +-
+ README.md                                          |   63 ++
+ README.orig                                        |   10 -
+ TODO                                               |   28 -
+ USAGE                                              |   24 -
+ VERSION                                            |    1 -
+ bin/vdd                                            |    5 -
+ bin/vddTester                                      |    5 -
+ dist.ini                                           |   26 +
+ documentation/ACKNOWLEDGEMENTS                     |   12 +
+ documentation/ARCHITECTURE                         |   67 ++
+ documentation/DEVELOPER.HOWOTO                     |   21 +
+ documentation/TODO                                 |   32 +
+ lib/VimDebug/DebuggerInterface.pm                  |    7 +-
+ lib/VimDebug/DebuggerInterface/Base.pm             |   12 +-
+ .../DebuggerInterface/CompilerErrorTest.pm         |    3 +
+ lib/VimDebug/DebuggerInterface/Gdb.pm              |   12 +-
+ lib/VimDebug/DebuggerInterface/Perl.pm             |   27 +-
+ lib/VimDebug/DebuggerInterface/Python.pm           |   11 +-
+ lib/VimDebug/DebuggerInterface/Ruby.pm             |   11 +-
+ lib/VimDebug/DebuggerInterface/RuntimeErrorTest.pm |    3 +
+ lib/VimDebug/DebuggerInterface/Test.pm             |    7 +-
+ plugin/VimDebug.vim                                |  616 +++++++++++++++++
+ plugin/vimDebug.vim                                |  728 --------------------
+ t/author-critic.t                                  |   20 +
+ t/release-pod-coverage.t                           |   21 +
+ t/release-pod-syntax.t                             |   15 +
+ 37 files changed, 1436 insertions(+), 1120 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
 Author:     eric johnson <vim@iijo.org>
 AuthorDate: Sun Jan 6 00:00:00 2008 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
