@@ -1,4 +1,28 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1.9)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Thu Feb 24 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2
+    
+      Bug fix for alias handling:
+       https://github.com/xolox/vim-easytags/commit/3b4db424731f952050b9
+    
+      Don't highlight PHP functions not followed by `(':
+       https://github.com/xolox/vim-easytags/commit/d8a8c5ef9d2d9c48767b
+    
+      Highlight C# classes, structs and methods (thanks to feedback from Aleksey Baibarin):
+       https://github.com/xolox/vim-easytags/commit/98780b1904c066a510ba
+    
+      Added caveat about Cygwin (thanks to feedback from Alex Zuroff!), updated to-do list:
+       https://github.com/xolox/vim-easytags/commit/d8a8c5ef9d2d9c48767b
+
+ autoload/easytags.vim |   31 +++++++++++++++++++++++++++----
+ doc/easytags.txt      |   13 ++++++++++---
+ plugin/easytags.vim   |    4 ++--
+ 3 files changed, 39 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.9)
 Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sat Dec 4 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

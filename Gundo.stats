@@ -1,4 +1,31 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1.1)
+Author:     Steve Losh <steve@stevelosh.com>
+AuthorDate: Sun Mar 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.1.1: * Fix a bug with the movement mapping keys.
+
+ doc/gundo.txt    |    2 ++
+ plugin/gundo.vim |    4 ++--
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.0)
+Author:     Steve Losh <steve@stevelosh.com>
+AuthorDate: Thu Mar 10 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.1.0
+    
+    * Warnings about having an incompatible Vim and/or Python installation are now deferred until the first time you try to use Gundo, instead of being displayed on launch.
+    * The <j> and <k> mappings are now configurable with g:gundo_map_move_older and g:gundo_map_move_newer.
+    * The o, <Up> and <Down> keys are now mapped in the Gundo pane.
+    * Improve and add several unit tests for Gundo.
+
+ doc/gundo.txt    |   20 +++++++
+ plugin/gundo.vim |  145 +++++++++++------------------------------------------
+ 2 files changed, 50 insertions(+), 115 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0.0)
 Author:     Steve Losh <steve@stevelosh.com>
 AuthorDate: Wed Nov 10 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

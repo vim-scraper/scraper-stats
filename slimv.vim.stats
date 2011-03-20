@@ -1,4 +1,19 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.6)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.7)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Sat Feb 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.7
+    
+    Find next closing paren when using ,< or ,> in Paredit and not standing on a paren, open REPL buffer upon connecting server, bugfixes: REPL buffer prompt identification was sometimes missing, switch off REPL refresh mode when REPL buffer is not visible (thanks to Philipp Marek), convert Python path on Windows to short 8.3 filename format if it contains space (thanks to Razvan Rotaru).
+
+ doc/slimv.txt      |   19 +++++++++++++++++--
+ ftplugin/slimv.py  |    9 ++-------
+ ftplugin/slimv.vim |   39 ++++++++++++++++++++++++---------------
+ plugin/paredit.vim |    9 +++++++--
+ 4 files changed, 50 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.6)
 Author:     Tamas Kovacs <kovisoft@gmail.com>
 AuthorDate: Mon Jan 24 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

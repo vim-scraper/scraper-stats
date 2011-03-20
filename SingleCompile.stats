@@ -1,4 +1,69 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.4beta)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.6)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Sat Mar 19 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.6
+    
+    Add option g:SingleCompile_showquickfixiferror;
+    fix a few bugs in the built-in template including templates for g++, clang and dosbatch.
+
+ README                     |   14 +++++--
+ autoload/SingleCompile.vim |   37 +++++++++++++++---
+ doc/SingleCompile.txt      |   89 +++++++++++++++++++++++++-------------------
+ plugin/SingleCompile.vim   |    2 +-
+ 4 files changed, 92 insertions(+), 50 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Mon Mar 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.5
+    
+    Integrate with vim's compiler feature;
+    add G95 and Microsoft Visual C# built-in template;
+    fix some minor bugs.
+
+ README                     |    8 +++--
+ autoload/SingleCompile.vim |   62 +++++++++++++++++++++++++++++++++++++++-----
+ doc/SingleCompile.txt      |   27 ++++++++++++++++---
+ plugin/SingleCompile.vim   |    2 +-
+ 4 files changed, 84 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.2)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Mon Mar 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.2
+    
+    Fix a bug which may cause some programs of some language, such as java, c#, may not run properly;
+    Add C#(mono) built-in template.
+
+ README                     |    3 +++
+ autoload/SingleCompile.vim |   38 +++++++++++++++++---------------------
+ doc/SingleCompile.txt      |   10 ++++++++--
+ plugin/SingleCompile.vim   |    2 +-
+ 4 files changed, 29 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.1)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Sat Mar 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.1
+    
+    Add g:SingleCompile_resultheight option;
+    add TCL language built-in template.
+
+ README                     |    9 ++++++++
+ autoload/SingleCompile.vim |   45 ++++++++++++++++++++++++++++++++++++------
+ doc/SingleCompile.txt      |   46 ++++++++++++++++++++++++++++++++++++-------
+ plugin/SingleCompile.vim   |   14 ++++++++++++-
+ 4 files changed, 98 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4beta)
 Author:     H Xu <xuhdev@gmail.com>
 AuthorDate: Tue Feb 8 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

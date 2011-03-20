@@ -1,4 +1,29 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/5.03)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/5.2)
+Author:     Jonathan Filip <jfilip1024@gmail.com>
+AuthorDate: Fri Mar 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 5.2
+    
+    Tried to port the blue scheme to 256 colors, however it mostly stayed similar to the dark one with some adjustments for the text highlighting (not enough choices in 256 colors to match the blues that are used). Changed a few more colors on the light scheme as well.
+
+ colors/lucius.vim |  109 ++++++++++++++++++++++++++++++++++-------------------
+ 1 files changed, 70 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.1)
+Author:     Jonathan Filip <jfilip1024@gmail.com>
+AuthorDate: Fri Mar 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 5.1
+    
+    Finished making changes to the light version. Also added a blue variant of the normal, dark scheme. Removed the non-primary highlight groups (Label, Operator, etc) to make the file a little smaller. Also added commands to change between the different schemes (LuciusLight, LuciusDark, LuciusBlue).
+
+ README            |   27 +++-
+ colors/lucius.vim |  539 +++++++++++++++++++++++++---------------------------
+ 2 files changed, 282 insertions(+), 284 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.03)
 Author:     Jonathan Filip <jfilip1024@gmail.com>
 AuthorDate: Wed Feb 23 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
