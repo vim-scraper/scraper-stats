@@ -1,4 +1,28 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.26.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.27.0)
+Author:     tyru <tyru.exe@gmail.com>
+AuthorDate: Thu Mar 10 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.27.0
+    
+    - Apply the changes of Anyakichi repository. thanks Anyakichi.
+    -- Add g:skk_external_prog_encoding option.
+    -- Improve text-wrapping behavior.
+    -- Add <C-c> as cancel key for word-registration.
+    -- Fix ";hass;uru" conversion problem when using sticky shift.
+    -- Do ":redraw" before showing conversion candidates.
+    - Move syntax/skkdict.vim to https://github.com/tyru/skkdict.vim
+    -- Bundle syntax/skkdict.vim and ftdetect/skkdict.vim
+    into zip file uploaded to www.vim.org
+
+ doc/skk.jax          |   37 +++++++++++++++++++++++++++++++++++++
+ ftdetect/skkdict.vim |    1 +
+ plugin/skk.vim       |   49 ++++++++++++++++++++++++++++++++++++++++++++-----
+ syntax/skk.vim       |   34 ----------------------------------
+ syntax/skkdict.vim   |   34 ++++++++++++++++++++++++++++++++++
+ 5 files changed, 116 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.26.2)
 Author:     tyru <tyru.exe@gmail.com>
 AuthorDate: Fri Sep 3 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

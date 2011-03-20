@@ -1,4 +1,65 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.4beta)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.6)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Sat Mar 19 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.6
+    
+    Add option g:SingleCompile_showquickfixiferror;
+    fix a few bugs in the built-in template including templates for g++, clang and dosbatch.
+
+ autoload/SingleCompile.vim |   37 +++++++++++++++---
+ doc/SingleCompile.txt      |   89 +++++++++++++++++++++++++-------------------
+ plugin/SingleCompile.vim   |    2 +-
+ 3 files changed, 82 insertions(+), 46 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Mon Mar 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.5
+    
+    Integrate with vim's compiler feature;
+    add G95 and Microsoft Visual C# built-in template;
+    fix some minor bugs.
+
+ autoload/SingleCompile.vim |   62 +++++++++++++++++++++++++++++++++++++++-----
+ doc/SingleCompile.txt      |   27 ++++++++++++++++---
+ plugin/SingleCompile.vim   |    2 +-
+ 3 files changed, 79 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.2)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Mon Mar 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.2
+    
+    Fix a bug which may cause some programs of some language, such as java, c#, may not run properly;
+    Add C#(mono) built-in template.
+
+ autoload/SingleCompile.vim |   38 +++++++++++++++++---------------------
+ doc/SingleCompile.txt      |   10 ++++++++--
+ plugin/SingleCompile.vim   |    2 +-
+ 3 files changed, 26 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.1)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Sat Mar 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.1
+    
+    Add g:SingleCompile_resultheight option;
+    add TCL language built-in template.
+
+ autoload/SingleCompile.vim |   45 ++++++++++++++++++++++++++++++++++++------
+ doc/SingleCompile.txt      |   46 ++++++++++++++++++++++++++++++++++++-------
+ plugin/SingleCompile.vim   |   14 ++++++++++++-
+ 3 files changed, 89 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4beta)
 Author:     H Xu <xuhdev@gmail.com>
 AuthorDate: Tue Feb 8 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -192,22 +253,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     improve the document;
     fix some bugs.
 
- autoload/SingleCompile.vim |  167 +++++++++++++++++++++++----
- doc/SingleCompile.txt      |  284 +++++++++++++++++++++++++++++++++----------
- plugin/SingleCompile.vim   |   29 +++--
- 3 files changed, 379 insertions(+), 101 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.1.1)
-Author:     H Xu <xuhdev@gmail.com>
-AuthorDate: Sun Oct 31 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.1.1: fix a serious bug: to show an error message will cause problems.
-
- autoload/SingleCompile.vim |  525 ++++++++++++++++++++++++++++++++++++++++----
- doc/SingleCompile.txt      |  482 +++++++++++++++++++++++++++++-----------
- plugin/SingleCompile.vim   |  133 ++---------
- 3 files changed, 854 insertions(+), 286 deletions(-)
+ autoload/SingleCompile.vim |  656 ++++++++++++++++++++++++++++++++++++++++---
+ doc/SingleCompile.txt      |  656 ++++++++++++++++++++++++++++++++++----------
+ plugin/SingleCompile.vim   |  136 ++--------
+ 3 files changed, 1147 insertions(+), 301 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
 Author:     H Xu <xuhdev@gmail.com>
@@ -216,8 +265,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2.1: Fix a minor document bug.
 
- README                     |  179 ++++++++++++++++++++++++
+ README                     |  199 +++++++++++++++++++++++++++
  autoload/SingleCompile.vim |  198 +++++++++++++++++++++++++++
  doc/SingleCompile.txt      |  324 ++++++++++++++++++++++++++++++++++++++++++++
  plugin/SingleCompile.vim   |  156 +++++++++++++++++++++
- 4 files changed, 857 insertions(+), 0 deletions(-)
+ 4 files changed, 877 insertions(+), 0 deletions(-)

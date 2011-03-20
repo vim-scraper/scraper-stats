@@ -1,4 +1,30 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/110208)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/110222)
+Author:     Jakson Aquino <jalvesaq@gmail.com>
+AuthorDate: Tue Feb 22 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 110222
+    
+    * Added syntax/rhelp.vim.
+    * New command for rnoweb files: BibTeX current file (\sb).
+    * New commands for the object browser: open visible lists (\r=) and close visible lists (\r-).
+    * Reorganization of the GUI menu.
+
+ doc/r-plugin.txt           |   62 ++-
+ ftplugin/rbrowser.vim      |  895 +++++++++++++++++++++++++-------------------
+ ftplugin/rnoweb.vim        |   25 +-
+ r-plugin/common_global.vim |  193 ++++++----
+ r-plugin/rsyntax.vim       |   34 --
+ r-plugin/tex_indent.vim    |    5 +-
+ r-plugin/vimSweave.R       |   13 +
+ r-plugin/vimbrowser.R      |  123 ++++---
+ syntax/r.vim               |   77 ++++-
+ syntax/rbrowser.vim        |   40 +-
+ syntax/rhelp.vim           |  236 ++++++++++++
+ syntax/rout.vim            |   33 ++-
+ 12 files changed, 1110 insertions(+), 626 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/110208)
 Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Tue Feb 8 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -740,7 +766,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 090507: Initial upload
 
- README                 |   96 ++++++++
+ README                 |   98 +++++++++
  after/filetype.vim     |    6 +
  after/syntax/r.vim     |    5 +
  autoload/rcomplete.vim |   42 ++++
@@ -756,4 +782,4 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  indent/r.vim           |   94 ++++++++
  tools/rfunnel.pl       |  567 ++++++++++++++++++++++++++++++++++++++++++++++++
  tools/rtags.R          |   43 ++++
- 16 files changed, 2527 insertions(+), 0 deletions(-)
+ 16 files changed, 2529 insertions(+), 0 deletions(-)

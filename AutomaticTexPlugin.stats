@@ -1,4 +1,59 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/8.6)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/9.0)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Fri Mar 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 9.0
+    
+    See :h atp-news for changes [ there are some NEW features :), and many fixes! ]
+
+ autoload/atplib.vim                    |  162 ++++++++++-----
+ colors/coots-beauty-256.vim            |    2 +-
+ doc/automatic-tex-plugin.txt           |  352 +++++++++++++++++++++-----------
+ ftplugin/ATP_files/LatexBox_common.vim |    6 +-
+ ftplugin/ATP_files/LatexBox_motion.vim |   73 ++++----
+ ftplugin/ATP_files/common.vim          |    4 +-
+ ftplugin/ATP_files/compiler.vim        |   54 +++---
+ ftplugin/ATP_files/mappings.vim        |  162 ++++++++-------
+ ftplugin/ATP_files/motion.vim          |  228 +++++++++++++++------
+ ftplugin/ATP_files/options.vim         |  145 +++++++++----
+ ftplugin/ATP_files/search.vim          |    6 +-
+ ftplugin/ATP_files/various.vim         |  312 ++++++++++++++++++++--------
+ ftplugin/bib_atp.vim                   |   49 ++---
+ ftplugin/tex_atp.vim                   |   43 +++--
+ 14 files changed, 1052 insertions(+), 546 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8.7)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Sat Mar 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 8.7
+    
+    * for the changes see :h atp-news. Probably the most important is that completion supports beamer commands and environments.
+
+ autoload/atplib.vim                       |  170 +++++++++++++++--
+ colors/coots-beauty-256.vim               |   10 +-
+ doc/automatic-tex-plugin.txt              |   62 +++++--
+ doc/latexhelp.txt                         |    7 +
+ ftplugin/ATP_files/LatexBox_common.vim    |  180 ++++++++++++++-----
+ ftplugin/ATP_files/LatexBox_complete.vim  |   58 ++-----
+ ftplugin/ATP_files/LatexBox_latexmk.vim   |    9 +-
+ ftplugin/ATP_files/LatexBox_mappings.vim  |    1 -
+ ftplugin/ATP_files/LatexBox_motion.vim    |   41 +++--
+ ftplugin/ATP_files/LatexBox_variables.vim |   54 ------
+ ftplugin/ATP_files/common.vim             |    6 +-
+ ftplugin/ATP_files/compiler.vim           |   16 +-
+ ftplugin/ATP_files/mappings.vim           |    4 +-
+ ftplugin/ATP_files/motion.vim             |    2 +-
+ ftplugin/ATP_files/options.vim            |  126 ++++++++++---
+ ftplugin/ATP_files/search.vim             |   26 ++-
+ ftplugin/ATP_files/various.vim            |  287 +++++++++++++++++++++--------
+ ftplugin/tex_atp.vim                      |    4 +-
+ ftplugin/toc_atp.vim                      |    4 +-
+ 19 files changed, 735 insertions(+), 332 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/8.6)
 Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Sun Jan 23 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -1236,8 +1291,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1: Initial upload
 
- README                       |   88 ++
+ README                       |   21 +
  doc/automatic-tex-plugin.txt |  561 ++++++++++
  doc/latexhelp.txt            | 2430 ++++++++++++++++++++++++++++++++++++++++++
  ftplugin/tex_atp.vim         |  659 ++++++++++++
- 4 files changed, 3738 insertions(+), 0 deletions(-)
+ 4 files changed, 3671 insertions(+), 0 deletions(-)

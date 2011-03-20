@@ -1,0 +1,65 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.6)
+Author:     Josh Kenzer <jkenzer@gmail.com>
+AuthorDate: Thu Mar 10 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.6
+    
+    Added one new feature: When you use :BlogSend, your default browser will open either the preview URL or the actual URL in your default browser (I have not tested this in Windows). If it is a published post, it will use the "?p=id" URL format. Note that this doesn't affect how you have your wordpress default URL slug setup.
+    
+    You can configure the plugin to not open a browser window by changing the enable_preview setting to 0. Currently, it will open a new window/tab everytime you do :BlogSend. I hope to modify this to only do it once per post in the future.
+    
+    I also now show the appropriate url in the Preview line based on whether it is a draft or published post.
+
+ plugin/blog.vim |   79 ++++++++++++++++++++++++++++---------------------------
+ 1 files changed, 40 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Josh Kenzer <jkenzer@gmail.com>
+AuthorDate: Mon Mar 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.5
+    
+    I added the capability to auto-complete categories. The command, while in insert mode, is <leader>c. This is the same as <ctrl>x <ctrl>u for a user defined auto-complete list.
+    
+    I also added some plugin checks to make sure it wasn't previously loaded.
+
+ plugin/blog.vim |   93 ++++++++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 75 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Josh Kenzer <jkenzer@gmail.com>
+AuthorDate: Wed Mar 2 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2
+    
+    Bug Fix.
+    Added the ability to define an image template to use. This template is inserted into the buffer after the :BlogUp has uploaded your image. %s is replaced with the img url. This should speed up time for inserting images into your posts.
+
+ plugin/blog.vim |   25 +++++++++++++++++--------
+ 1 files changed, 17 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Josh Kenzer <jkenzer@gmail.com>
+AuthorDate: Tue Mar 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1
+    
+    Added BlogDel and revised BlogList to return a specified number of posts (default is 10). Thanks to http://wiki.yepn.net/vimpress for the code. Thanks to Carson for the tip.
+
+ plugin/blog.vim |   67 +++++++++++++++++++++++++++++++++++-------------------
+ 1 files changed, 43 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Josh Kenzer <jkenzer@gmail.com>
+AuthorDate: Mon Feb 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0: Fixed documentation
+
+ README          |   26 ++++++
+ plugin/blog.vim |  240 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 266 insertions(+), 0 deletions(-)

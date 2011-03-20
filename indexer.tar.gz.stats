@@ -1,4 +1,20 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.01)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.0)
+Author:     Dmitry Frank <dimon.frank@gmail.com>
+AuthorDate: Thu Mar 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.0
+    
+    * Multiple projects supported. For example, you open file1 from one project, and then you open file2 from second project. Then, when you switch to file1, &tags will be set to tags file for first project, and when you switch to file2, then &tags will be set back for second project. You should not care about it.
+    * Background tags generation (thanks to Thiago Bellini for pointing me at needed script). You have not to wait every time while ctags is working.
+    * By default, on Windows tags generates always for whole project, because of bugs in all Windows versions of Sed i have. Actually, now this isn't problem, because of tags generates in background.
+    * Tags file is sorted now. In Indexer 2.x it was unsorted because of bugs in Sed, and to make tags unsorted was workaround. As i already said, in Linux Sed works fine, and on Windows Sed doesn't uses by default, so, tags file can be sorted.
+
+ doc/indexer.txt    |  104 +++-
+ plugin/indexer.vim | 1589 +++++++++++++++++++++++++++++++++++++---------------
+ 2 files changed, 1200 insertions(+), 493 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.01)
 Author:     Dmitry Frank <dimon.frank@gmail.com>
 AuthorDate: Mon Nov 15 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -113,7 +129,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2: Initial upload
 
- README             |   55 +++++
+ README             |   82 ++++++++
  doc/indexer.txt    |  210 +++++++++++++++++++
  plugin/indexer.vim |  574 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- 3 files changed, 839 insertions(+), 0 deletions(-)
+ 3 files changed, 866 insertions(+), 0 deletions(-)

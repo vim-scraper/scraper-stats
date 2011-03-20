@@ -1,4 +1,55 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/20110214)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/20110314)
+Author:     David Necas <yeti@physics.muni.cz>
+AuthorDate: Mon Mar 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 20110314
+    
+    Syntax names of gobject-introspection and json-glib introduced in the previous release contained dashes which made them invalid vim identifiers.  They were renamed to gobjectintrospection and jsonglib.
+
+ syntax/atk.vim                   |    2 +-
+ syntax/atspi.vim                 |    2 +-
+ syntax/cairo.vim                 |    2 +-
+ syntax/clutter.vim               |    4 +-
+ syntax/dbusglib.vim              |    2 +-
+ syntax/evince.vim                |    2 +-
+ syntax/gail.vim                  |    2 +-
+ syntax/gconf.vim                 |    2 +-
+ syntax/gdk.vim                   |    2 +-
+ syntax/gdkpixbuf.vim             |    2 +-
+ syntax/gimp.vim                  |    2 +-
+ syntax/gio.vim                   |    2 +-
+ syntax/glib.vim                  |    2 +-
+ syntax/gnomedesktop.vim          |    2 +-
+ syntax/gnomevfs.vim              |    2 +-
+ syntax/gobject-introspection.vim |   36 -----------------------------
+ syntax/gobject.vim               |    4 +-
+ syntax/gobjectintrospection.vim  |   36 +++++++++++++++++++++++++++++
+ syntax/goocanvas.vim             |    2 +-
+ syntax/gstreamer.vim             |    2 +-
+ syntax/gtk.vim                   |    2 +-
+ syntax/gtkglext.vim              |    2 +-
+ syntax/gtksourceview.vim         |    2 +-
+ syntax/json-glib.vim             |   46 --------------------------------------
+ syntax/jsonglib.vim              |   46 ++++++++++++++++++++++++++++++++++++++
+ syntax/libglade.vim              |    2 +-
+ syntax/libgnome.vim              |    2 +-
+ syntax/libgnomecanvas.vim        |    2 +-
+ syntax/libgnomeui.vim            |    2 +-
+ syntax/libgsf.vim                |    2 +-
+ syntax/libnotify.vim             |    2 +-
+ syntax/liboil.vim                |    2 +-
+ syntax/librsvg.vim               |    2 +-
+ syntax/libsoup.vim               |    2 +-
+ syntax/libunique.vim             |    2 +-
+ syntax/libwnck.vim               |    2 +-
+ syntax/orbit2.vim                |    2 +-
+ syntax/pango.vim                 |    2 +-
+ syntax/poppler.vim               |    2 +-
+ syntax/vte.vim                   |    2 +-
+ 40 files changed, 120 insertions(+), 120 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20110214)
 Author:     David Necas <yeti@physics.muni.cz>
 AuthorDate: Wed Feb 16 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

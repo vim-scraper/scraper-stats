@@ -1,4 +1,58 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/9)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/13)
+Author:     Christian Brabandt <cb@256bit.org>
+AuthorDate: Mon Mar 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 13
+    
+    -documentation update-https://github.com/chrisbra/csv.vim/issues#issue/2 thanks lespea!-https://github.com/chrisbra/csv.vim/issues#issue/3 thanks lespea!-https://github.com/chrisbra/csv.vim/issues#issue/1 thanks lespea!-fix some small annoying bugs-WhatColumn! displays column name(automatically uploaded)
+
+ doc/ft_csv.txt   |   23 ++++++++++--
+ ftplugin/csv.vim |   58 ++++++++++++++++++++++-------
+ syntax/csv.vim   |  106 +++++++++++++++++++++++++++++++++++++-----------------
+ 3 files changed, 137 insertions(+), 50 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/12)
+Author:     Christian Brabandt <cb@256bit.org>
+AuthorDate: Thu Feb 24 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 12
+    
+    -don't use :noa when switching between windows-make sure, colwidth() doesn't throw an error(automatically uploaded)
+
+ doc/ft_csv.txt   |    5 ++++-
+ ftplugin/csv.vim |   16 +++++++++-------
+ 2 files changed, 13 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/11)
+Author:     Christian Brabandt <cb@256bit.org>
+AuthorDate: Thu Feb 24 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 11
+    
+    -new command :Column-:SearchInColumn did not find anything in the last if no delimiter was given (reported by chroyer)-:VHeader displays the first column as Header similar to how :Header works-:HeaderToggle and VHeaderToggle commands that toggles displaying the header lines/columns(automatically uploaded)
+
+ doc/ft_csv.txt   |   42 +++++++++++++++++++-
+ ftplugin/csv.vim |  112 +++++++++++++++++++++++++++++++++++++++++++----------
+ 2 files changed, 130 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/10)
+Author:     Christian Brabandt <cb@256bit.org>
+AuthorDate: Wed Feb 23 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 10
+    
+    -Only conceal real delimiters-document g:csv_no_conceal variable-document g:csv_nl variable-document conceal feature and syntax highlighting-Normal mode command <Up>/<Down> work like K/J-More robust regular expression engine, that can also handle newlines inside quoted strings.-Slightly adjusted syntax highlighting(automatically uploaded)
+
+ doc/ft_csv.txt   |   72 ++++++++++++++++++++++++++++++++++++++++++++++++++---
+ ftplugin/csv.vim |   53 +++++++++++++++++++++++++--------------
+ syntax/csv.vim   |   47 ++++++++++++++++++++++------------
+ 3 files changed, 131 insertions(+), 41 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/9)
 Author:     Christian Brabandt <cb@256bit.org>
 AuthorDate: Sat Feb 19 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -101,7 +155,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.3: Initial upload
 
- README           |  173 ++++++++++++++++++++++++++++++++++++++++++
- doc/ft_csv.txt   |  177 +++++++++++++++++++++++++++++++++++++++++++
- ftplugin/csv.vim |  219 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 3 files changed, 569 insertions(+), 0 deletions(-)
+ README           |  484 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/ft_csv.txt   |  177 ++++++++++++++++++++
+ ftplugin/csv.vim |  219 ++++++++++++++++++++++++
+ 3 files changed, 880 insertions(+), 0 deletions(-)

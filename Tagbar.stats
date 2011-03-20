@@ -1,0 +1,65 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.5)
+Author:     Jan Larres <jan@majutsushi.net>
+AuthorDate: Sun Mar 6 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.5
+    
+    - Type definitions can now include a path to a file with the ctags definition. This is especially useful for ftplugins that can now ship with a complete ctags and Tagbar configuration without requiring user intervention. Thanks to Jan Christoph Ebersbach for the suggestion.
+    
+    - Added autofocus setting by Taybin Rutkin. This will put the cursor in the Tagbar window when it is opened.
+    
+    - The "scopes" field is no longer needed in type definitions, the information is already there in "scope2kind". Existing definitions will be ignored.
+    
+    - Some fixes and improvements related to redrawing and window switching.
+
+ doc/tagbar.txt    |   80 +++++++++++++++++++++++++++++++-------------
+ plugin/tagbar.vim |   96 ++++++++++++++++++++++++----------------------------
+ syntax/tagbar.vim |    2 +-
+ 3 files changed, 101 insertions(+), 77 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Jan Larres <jan@majutsushi.net>
+AuthorDate: Mon Feb 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2
+    
+    - Fix typo in Ruby definition
+    
+    Thanks to Mishail for reporting.
+
+ doc/tagbar.txt    |    5 ++++-
+ plugin/tagbar.vim |   17 ++++++++---------
+ syntax/tagbar.vim |    2 +-
+ 3 files changed, 13 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Jan Larres <jan@majutsushi.net>
+AuthorDate: Sat Feb 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1
+    
+    - Don't lose syntax highlighting when ':syntax enable' is called
+    
+    - Allow expanding the Vim window when Tagbar is opened
+    
+    Thanks to Hansi for reporting.
+
+ doc/tagbar.txt    |   21 ++++++++++++++++++++-
+ plugin/tagbar.vim |   45 +++++++++++++++++++++++++++++----------------
+ syntax/tagbar.vim |   27 +++++++++++++++++++++++++++
+ 3 files changed, 76 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Jan Larres <jan@majutsushi.net>
+AuthorDate: Wed Feb 23 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0: Initial upload
+
+ README            |   13 +
+ doc/tagbar.txt    |  609 ++++++++++++++++++
+ plugin/tagbar.vim | 1838 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 2460 insertions(+), 0 deletions(-)

@@ -1,4 +1,40 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/5.02)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/5.2)
+Author:     Jonathan Filip <jfilip1024@gmail.com>
+AuthorDate: Fri Mar 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 5.2
+    
+    Tried to port the blue scheme to 256 colors, however it mostly stayed similar to the dark one with some adjustments for the text highlighting (not enough choices in 256 colors to match the blues that are used). Changed a few more colors on the light scheme as well.
+
+ colors/lucius.vim |  109 ++++++++++++++++++++++++++++++++++-------------------
+ 1 files changed, 70 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.1)
+Author:     Jonathan Filip <jfilip1024@gmail.com>
+AuthorDate: Fri Mar 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 5.1
+    
+    Finished making changes to the light version. Also added a blue variant of the normal, dark scheme. Removed the non-primary highlight groups (Label, Operator, etc) to make the file a little smaller. Also added commands to change between the different schemes (LuciusLight, LuciusDark, LuciusBlue).
+
+ colors/lucius.vim |  539 +++++++++++++++++++++++++---------------------------
+ 1 files changed, 259 insertions(+), 280 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.03)
+Author:     Jonathan Filip <jfilip1024@gmail.com>
+AuthorDate: Wed Feb 23 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 5.03
+    
+    A few more tweaks to colors for the light version. Also changed the MatchParen to use a background color.
+
+ colors/lucius.vim |   46 +++++++++++++++++++++++-----------------------
+ 1 files changed, 23 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.02)
 Author:     Jonathan Filip <jfilip1024@gmail.com>
 AuthorDate: Wed Feb 16 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -192,6 +228,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README            |    9 ++
+ README            |   28 ++++++
  colors/lucius.vim |  264 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 273 insertions(+), 0 deletions(-)
+ 2 files changed, 292 insertions(+), 0 deletions(-)
