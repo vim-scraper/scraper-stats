@@ -1,4 +1,40 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/9.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/9.1.1)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Mon Mar 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 9.1.1: See ver 9.1 (important fix in doc file, thanks to I.Lopez)
+
+ autoload/atplib.vim                      |   32 ++++++++++++++++++++++-----
+ doc/automatic-tex-plugin.txt             |    7 +++++-
+ ftplugin/ATP_files/LatexBox_complete.vim |    2 +-
+ ftplugin/ATP_files/atp_RevSearch.py      |   34 +++++++++++++++++++++++++++++
+ ftplugin/ATP_files/compiler.vim          |   35 ++++++++++++++++-------------
+ ftplugin/ATP_files/mappings.vim          |    4 +-
+ 6 files changed, 88 insertions(+), 26 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/9.1)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Sun Mar 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 9.1
+    
+    * Support for forward searching (VIM->VIEWER) for Okular (now default viewer), xdvi (use SetXdvi to set it), and Xpdf
+    * Support for reverse searching (VIEWER->VIM) for Okular (you need to set it up: read :help atp-viewers-Okular) and for Xdvi
+    * There are some other changes and fixes: see :help atp-news for changes in ver 9.0 and 9.1.
+
+ autoload/atplib.vim             |   17 ++-
+ doc/automatic-tex-plugin.txt    |  288 +++++++++++++++++++---------------
+ ftplugin/ATP_files/compiler.vim |  326 ++++++++++++++++++++++++++++-----------
+ ftplugin/ATP_files/mappings.vim |    4 +
+ ftplugin/ATP_files/menu.vim     |   18 ++-
+ ftplugin/ATP_files/options.vim  |  185 ++++++++++------------
+ ftplugin/ATP_files/various.vim  |   28 ++--
+ ftplugin/tex_atp.vim            |   12 +-
+ 8 files changed, 523 insertions(+), 355 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/9.0)
 Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Fri Mar 18 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
