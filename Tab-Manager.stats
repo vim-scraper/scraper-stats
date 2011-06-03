@@ -1,0 +1,237 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.8)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Sat May 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.8: No change in functionality. Just added a proper help file.
+
+ doc/TabManager.txt    |  188 ++++++++++
+ plugin/TabManager.vim |  990 ++++++++++++++++++++++++------------------------
+ 2 files changed, 683 insertions(+), 495 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Thu May 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.7
+    
+    No real change; has a dependency upon my GetVar autoload script which I had forgotten to mention before. Sorry if this caused problems.
+
+ plugin/TabManager.vim |   11 ++++++++++-
+ 1 files changed, 10 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Mon Apr 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.6
+    
+    Added a new command: Rearrangetabsbypackage: Works just like Rearrangetabsbypath, except uses the package the files are in. Only useful for files that specify a package (falls back to the entire file path otherwise).
+
+ plugin/TabManager.vim |   51 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 51 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.55)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Sat Apr 16 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.55
+    
+    Rearrangetabsbypath now also takes a second parameter which determines how many components from the path to consider.
+
+ plugin/TabManager.vim |   45 ++++++++++++++++++++++++++++++++++++++++++++-
+ 1 files changed, 44 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Wed Apr 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.5
+    
+    Added the ability to set custom "keys" to be used when rearranging files into tabs. For example, given the following list of files:
+    
+    /progs/com/test/Abcd.java
+    /progs/com/test/ProgramRunner.java
+    /progs/com/abc/Test.java
+    /vim/plugin/TabManager.vim
+    /webFiles/root/test.html
+    /webFiles/root/css/styles.css
+    
+    The default behaviour, when arranging by path, extension or first letters, is to always place test.html and styles.css in separate tabs. (Unless calling
+    Tiletabs, which just tiles all windows blindly.) However, if both these files have a manually set key of, say, "web", then any other criteria will be ignored
+    and these two files will always be placed together because they have the same key. This allows grouping some windows by functionality while continuing to
+    group others by whatever rearrange command is actually called.
+    
+    Of course, different sets of windows may have different keys and they will all be grouped together accordingly.
+    
+    All of the standard Rearrange* commands now take an optional bang (!)--for example, Rearrangetabsbyextension!--that will, for just this rearrangement, IGNORE
+    any local keys and treat all windows as if there were no keys.
+    
+    If you have multiple windows where you're editing the same buffer, they will almost always end up together after any rearrangement (unless they are split
+    across tabs that become full). You can avoid this by setting different window-level local keys for the buffers.
+    
+    Added four new commands--the set and remove key commands can be combined with windo and tabdo to set or remove the same key for more than one window at a time:
+    
+    Settabmanagerwindowkey <key>: Sets the window-level local key for the current window to <key>.
+    
+    Settabmanagerbufferkey <key>: Sets the buffer-level local key for the current buffer to <key>.
+    
+    Removetabmanagerkey: Removes the currently set key for the current window; will remove BOTH buffer and window level keys. (Doesn't take any arguments.)
+    
+    Redorearrangetabs: Redoes the last tab rearrangement command (by extension, simple tiling, by first letters, etc.). Useful for incorporating new windows into
+    the currenty "scheme". If local keys have changed, the layout may end up being different. If new windows have been added, the layout may be different, also,
+    but that may be what you want. By default, it obeys local keys (even if the last command was called with a bang and did not). Accepts a bang (!) to ignore
+    local keys.
+    
+    If you call this before you've run any actual rearrangement commands, you will most likely (deservedly) get an error.
+
+ plugin/TabManager.vim |  101 +++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 81 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.45)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Thu Apr 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.45
+    
+    Added new command:
+    
+    Copytotab: copies the current file to the specified tab (just like Movetotab except that the original tab also contains the file).
+
+ plugin/TabManager.vim |   22 ++++++++++++++++------
+ 1 files changed, 16 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Thu Apr 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4
+    
+    Added new command:
+    
+    Movetotab: moves the current file to the specified tab; understands absolute numbers (1 for the first tab, for example) as well as:
+    
+    - n: next tab
+    - p: previous tab
+    - $: last tab
+
+ plugin/TabManager.vim |   73 +++++++++++++++++++++++++++++++++++++++++++++----
+ 1 files changed, 67 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.37)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Tue Apr 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.37
+    
+    Fixed a problem where newly created tabs always had an empty window at the bottom. (Executes an :e the first time in a new tab instead of an :sp.)
+
+ plugin/TabManager.vim |   10 ++++++----
+ 1 files changed, 6 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.36)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Tue Apr 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.36: Fixed typo; thank you, Christophe.
+
+ plugin/TabManager.vim |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.35)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Mon Apr 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.35
+    
+    Version 1.35:
+    
+    Takes 'ignorecase' into consideration for matching extensions, first letters and complete file paths (but not for matching roots and "types").
+
+ plugin/TabManager.vim |   19 ++++++++++++-------
+ 1 files changed, 12 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Mon Apr 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.3
+    
+    Version 1.3:
+    
+    Rearrangetabsbyfirstletter renamed to Rearrangetabsbyfirstletters: If called with no parameters, considers the first character of the file name, as before. If
+    called with one parameter, the specified number of characters is considered. For example, with no parameters, "Test.java" and "Touring.java" would be placed
+    together because both start with a T. With 2 as the parameter value, they would be separated ("Te" vs. "To").
+    
+    If called with 2 parameters, the first parameter is the number of windows to place in one tab, as always (0 meaning to throw them all together).
+
+ plugin/TabManager.vim |   32 +++++++++++++++++++++++++++-----
+ 1 files changed, 27 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.25)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Mon Apr 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.25
+    
+    Removed debug statements left in by mistake and fixed a conversion error.
+
+ plugin/TabManager.vim |   10 +++-------
+ 1 files changed, 3 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Mon Apr 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2
+    
+    Version 1.2:
+    
+    New variable: g:TabManager_fileTypeExtension (defaults to "java") to use when determining the Rearrangetabsbytype; can be passed to the command on the
+    command-line as an override.
+    
+    Rearrangetabsbytype now takes an extension (other than the default "java" or g:TabManager_fileTypeExtension) to use when sorting the files.
+
+ plugin/TabManager.vim |   46 +++++++++++++++++++++++++++++++++++++++++++---
+ 1 files changed, 43 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Sun Apr 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1
+    
+    Added two new commands:
+    
+    Rearrangetabsbytype: If it's a Java file, returns the last word that's not a part of the extension. For example, CopyAction.java returns Action and
+    CopyForm.java returns Form. This should probably be reworked to allow the setting of the extension upon which to filter or to not look at extensions at all.
+    
+    Rearrangetabsbyroot: Groups files with similarly named roots together. For example, CopyAction.java, CopyForm.java and CopyResults.jsp will end up together
+    because they all have "Copy" as the root.
+
+ plugin/TabManager.vim |   39 ++++++++++++++++++++++++++++++++++++++-
+ 1 files changed, 38 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Sun Apr 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0: Initial upload
+
+ README                |  162 +++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/TabManager.vim |  158 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 320 insertions(+), 0 deletions(-)

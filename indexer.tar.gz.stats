@@ -1,4 +1,58 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.14)
+Author:     Dmitry Frank <dimon.frank@gmail.com>
+AuthorDate: Tue Apr 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.14
+    
+    * Bugfix: $INDEXER_PROJECT_ROOT wasn't work in .vimprojects file. Thanks to Alexander Pazdnikov for bugreport.
+
+ doc/indexer.txt    |  135 +++++++++++++++++++++++---
+ plugin/indexer.vim |  271 +++++++++++++++++++++++++++++++++++++++++++++-------
+ 2 files changed, 357 insertions(+), 49 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.12)
+Author:     Dmitry Frank <dimon.frank@gmail.com>
+AuthorDate: Sat Mar 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.12
+    
+    Some improvements in error reporting:
+    * error if no ctags is available in the PATH,
+    * warning when ctags returns error.
+
+ plugin/indexer.vim |  290 ++++++++++++++++++++++++++++++++++++++++------------
+ 1 files changed, 226 insertions(+), 64 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.11)
+Author:     Dmitry Frank <dimon.frank@gmail.com>
+AuthorDate: Thu Mar 24 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.11
+    
+    * Bugfix: if "noswapfile" option is set, then tags wasn't generated. Thanks to Thiago Bellini for help and persistence =)
+    * Bugfix: :IndexerFiles command didn't work.
+
+ plugin/indexer.vim |   20 ++++++++++++++------
+ 1 files changed, 14 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
+Author:     Dmitry Frank <dimon.frank@gmail.com>
+AuthorDate: Mon Mar 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.1
+    
+    * Bugfixes
+    * When no servername is present, tags generate in Vim thread, not in background. (because i don't know how to execute remote command in Vim without servername. If anyone know, please contact me)
+
+ doc/indexer.txt    |   15 +++++++++
+ plugin/indexer.vim |   90 +++++++++++++++++++++++++++++++++++----------------
+ 2 files changed, 77 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
 Author:     Dmitry Frank <dimon.frank@gmail.com>
 AuthorDate: Thu Mar 17 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -129,7 +183,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2: Initial upload
 
- README             |   82 ++++++++
+ README             |   88 ++++++++
  doc/indexer.txt    |  210 +++++++++++++++++++
  plugin/indexer.vim |  574 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- 3 files changed, 866 insertions(+), 0 deletions(-)
+ 3 files changed, 872 insertions(+), 0 deletions(-)

@@ -1,4 +1,48 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.13)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.16)
+Author:     Rafael Kitover <rkitover@io.com>
+AuthorDate: Fri Apr 22 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.16: * fix comments before opening brace after a sub declaration
+
+ syntax/perl.vim |  608 ++++++++++++++++++++++++++++---------------------------
+ syntax/pod.vim  |   46 ++--
+ 2 files changed, 329 insertions(+), 325 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
+Author:     Rafael Kitover <rkitover@io.com>
+AuthorDate: Thu Apr 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.15: * fix comments before opening brace after a method signature
+
+ syntax/perl.vim |    3 ++-
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
+Author:     Rafael Kitover <rkitover@io.com>
+AuthorDate: Tue Mar 22 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.14
+    
+    * merged with http://github.com/petdance/vim-perl
+    * better support for parameterized roles (github issue #7)
+
+ ftplugin/perl.vim  |   71 ++
+ ftplugin/perl6.vim |   49 ++
+ ftplugin/xs.vim    |   14 +
+ indent/perl.vim    |  186 +++++
+ indent/perl6.vim   |  137 ++++
+ syntax/perl.vim    |  730 +++++++++---------
+ syntax/perl6.vim   | 2250 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/pod.vim     |   77 +-
+ syntax/tt2.vim     |  202 +++++
+ syntax/tt2html.vim |   20 +
+ syntax/xs.vim      |   40 +
+ 11 files changed, 3377 insertions(+), 399 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
 Author:     Rafael Kitover <rkitover@io.com>
 AuthorDate: Wed Jan 19 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -91,6 +135,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.05: Fixed code attributes on methods, added type library keywords.
 
- README          |    9 +
+ README          |    5 +
  syntax/perl.vim |  578 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 587 insertions(+), 0 deletions(-)
+ 2 files changed, 583 insertions(+), 0 deletions(-)

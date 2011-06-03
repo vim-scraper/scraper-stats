@@ -1,4 +1,40 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.5)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0.1)
+Author:     Jan Larres <jan@majutsushi.net>
+AuthorDate: Tue Apr 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.0.1: - Fixed sorting bug when 'ignorecase' is set
+
+ doc/tagbar.txt    |    9 +++++++--
+ plugin/tagbar.vim |   24 ++++++++++++------------
+ syntax/tagbar.vim |    2 +-
+ 3 files changed, 20 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Jan Larres <jan@majutsushi.net>
+AuthorDate: Tue Apr 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.0
+    
+    - Folding now works correctly. Folds will be preserved when leaving the Tagbar window and when switching between files. Also tag types can be configured to be folded by default, which is useful for things like includes and imports.
+    
+    - DoctorJS/jsctags and other compatible programs are now supported.
+    
+    - All of the highlight groups can now be overridden.
+    
+    - Added keybinding to quickly jump to next/previous top-level tag.
+    
+    - Added Taglist's "p" keybinding for jumping to a tag without leaving the Tagbar window.
+    
+    - Several bugfixes and other small improvements.
+
+ doc/tagbar.txt    |  263 +++++++--
+ plugin/tagbar.vim | 1880 +++++++++++++++++++++++++++++++++++++----------------
+ syntax/tagbar.vim |   55 ++-
+ 3 files changed, 1586 insertions(+), 612 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
 Author:     Jan Larres <jan@majutsushi.net>
 AuthorDate: Sun Mar 6 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

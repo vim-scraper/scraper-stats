@@ -1,4 +1,144 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.7)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8.2)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Sun May 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.2
+    
+    Added Paredit and g:lisp_rainbow support for Scheme files, added SWANK support for MIT Scheme on Linux, added frame call information to SLDB (thanks to Philipp Marek), check for unbalanced form before evaluation, reconnect SWANK server in Connect-Server if already connected (thanks to Philipp Marek), select current form instead of top level form in Macroexpand, bugfixes: Paredit handling of escaped matched characters (e.g. \"), cursor positioning problems when debugger activated, print prompt after Describe.
+
+ doc/paredit.txt                       |    6 +-
+ doc/slimv.txt                         |   39 +-
+ doc/swank.txt                         |   21 +-
+ ftplugin/scheme/slimv-scheme.vim      |   55 +
+ ftplugin/slimv.vim                    |   76 +-
+ ftplugin/swank.py                     |   73 +-
+ plugin/paredit.vim                    |   69 +-
+ slime/contrib/swank-kawa.scm          | 2307 +++++++++++++++++++++++++++++++++
+ slime/contrib/swank-larceny.scm       |  176 +++
+ slime/contrib/swank-mit-scheme.scm    |  909 +++++++++++++
+ slime/contrib/swank-r6rs.scm          |  416 ++++++
+ syntax/scheme/slimv-syntax-scheme.vim |   64 +
+ 12 files changed, 4124 insertions(+), 87 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.1)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Wed Apr 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.1
+    
+    Added action handling to Inspector, fixed Inspector output, bugfixes: read-string mode was stuck, buffer corruption with two source windows (thanks to Philipp Marek), eliminate multiple CursorHold autocommands (thanks to Philipp Marek), completion with special characters in symbol name (thanks to Philipp Marek), sometimes cursor went to the start of line in insert mode, syntax error in Untrace All (thanks to Philipp Marek), removed ' prefix from symbol selection (except for Inspect), keep cursor position in Describe and Compile-Region.
+
+ doc/slimv.txt      |   17 ++++++++-
+ doc/swank.txt      |    8 +++-
+ ftplugin/slimv.vim |   94 +++++++++++++++++++++++++++++++++++++--------------
+ ftplugin/swank.py  |   58 +++++++++++++++++++-------------
+ 4 files changed, 124 insertions(+), 53 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.0)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Fri Apr 15 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.0
+    
+    Major update: added SWANK client (many thanks to Philipp Marek), additional changes: split documentation into three parts, added keymapping hints to GUI menu items, renamed Eval-Last-Expression to Eval-Current-Expression, REPL buffer is not syntax highlighted anymore, switch on filetype plugins, autodetection for Allegro CL, Lisp Cabinet and Leiningen, ask for save before compiling file, map <Tab> for completion, bugfixes: finding start of keyword in completion, deleting escaped " inside string, Up/Down/Enter handling in popup menu.
+
+ doc/paredit.txt                                    |  324 +
+ doc/slimv.txt                                      |  541 +-
+ doc/swank.txt                                      |  334 +
+ ftplugin/clojure/slimv-clojure.vim                 |   39 +-
+ ftplugin/lisp/slimv-lisp.vim                       |   46 +-
+ ftplugin/metering.lisp                             | 1227 --
+ ftplugin/slimv.vim                                 | 1277 +-
+ ftplugin/swank.py                                  |  782 +
+ plugin/paredit.vim                                 |   13 +-
+ slime/ChangeLog                                    |20255 ++++++++++++++++++++
+ slime/README                                       |   48 +
+ slime/contrib/README                               |   30 +
+ slime/contrib/swank-arglists.lisp                  | 1547 ++
+ slime/contrib/swank-asdf.lisp                      |  214 +
+ slime/contrib/swank-c-p-c.lisp                     |  291 +
+ slime/contrib/swank-clipboard.lisp                 |   69 +
+ slime/contrib/swank-fancy-inspector.lisp           |  871 +
+ slime/contrib/swank-fuzzy.lisp                     |  629 +
+ slime/contrib/swank-hyperdoc.lisp                  |   16 +
+ slime/contrib/swank-indentation.lisp               |   46 +
+ slime/contrib/swank-listener-hooks.lisp            |   85 +
+ slime/contrib/swank-media.lisp                     |   23 +
+ slime/contrib/swank-motd.lisp                      |   66 +
+ slime/contrib/swank-package-fu.lisp                |   64 +
+ slime/contrib/swank-presentation-streams.lisp      |  320 +
+ slime/contrib/swank-presentations.lisp             |  237 +
+ slime/contrib/swank-sbcl-exts.lisp                 |   54 +
+ slime/contrib/swank-snapshot.lisp                  |   68 +
+ slime/contrib/swank-sprof.lisp                     |  144 +
+ slime/metering.lisp                                | 1227 ++
+ slime/nregex.lisp                                  |  523 +
+ slime/sbcl-pprint-patch.lisp                       |  332 +
+ slime/start-swank.lisp                             |   29 +
+ slime/swank-abcl.lisp                              |  719 +
+ slime/swank-allegro.lisp                           |  908 +
+ slime/swank-backend.lisp                           | 1327 ++
+ slime/swank-ccl.lisp                               |  770 +
+ slime/swank-clisp.lisp                             |  850 +
+ slime/swank-cmucl.lisp                             | 2591 +++
+ slime/swank-corman.lisp                            |  568 +
+ slime/swank-ecl.lisp                               |  791 +
+ slime/swank-gray.lisp                              |  166 +
+ slime/swank-lispworks.lisp                         |  951 +
+ slime/swank-loader.lisp                            |  281 +
+ slime/swank-match.lisp                             |  246 +
+ slime/swank-rpc.lisp                               |  124 +
+ slime/swank-sbcl.lisp                              | 1666 ++
+ slime/swank-scl.lisp                               | 2030 ++
+ slime/swank-source-file-cache.lisp                 |  122 +
+ slime/swank-source-path-parser.lisp                |  148 +
+ slime/swank.asd                                    |   39 +
+ slime/swank.lisp                                   | 3994 ++++
+ slime/xref.lisp                                    | 2891 +++
+ swank-clojure/COPYING                              |  227 +
+ swank-clojure/README.md                            |  152 +
+ swank-clojure/leiningen/swank.clj                  |   30 +
+ swank-clojure/project.clj                          |    9 +
+ swank-clojure/swank/clj_contrib/macroexpand.clj    |   17 +
+ swank-clojure/swank/clj_contrib/pprint.clj         |   34 +
+ swank-clojure/swank/commands.clj                   |   14 +
+ swank-clojure/swank/commands/basic.clj             |  601 +
+ swank-clojure/swank/commands/completion.clj        |  103 +
+ swank-clojure/swank/commands/contrib.clj           |    9 +
+ .../swank/commands/contrib/swank_arglists.clj      |  123 +
+ .../swank/commands/contrib/swank_c_p_c.clj         |   21 +
+ .../commands/contrib/swank_c_p_c/internal.clj      |   59 +
+ .../swank/commands/contrib/swank_fuzzy.clj         |  428 +
+ swank-clojure/swank/commands/indent.clj            |  100 +
+ swank-clojure/swank/commands/inspector.clj         |  323 +
+ swank-clojure/swank/commands/xref.clj              |   51 +
+ swank-clojure/swank/core.clj                       |  388 +
+ swank-clojure/swank/core/connection.clj            |   68 +
+ swank-clojure/swank/core/hooks.clj                 |    4 +
+ swank-clojure/swank/core/protocol.clj              |   50 +
+ swank-clojure/swank/core/server.clj                |  102 +
+ swank-clojure/swank/core/threadmap.clj             |   29 +
+ swank-clojure/swank/dev.clj                        |    6 +
+ swank-clojure/swank/loader.clj                     |  101 +
+ swank-clojure/swank/rpc.clj                        |  159 +
+ swank-clojure/swank/swank.clj                      |   92 +
+ swank-clojure/swank/util.clj                       |   72 +
+ swank-clojure/swank/util/class_browse.clj          |  149 +
+ swank-clojure/swank/util/clojure.clj               |   33 +
+ swank-clojure/swank/util/concurrent/mbox.clj       |   31 +
+ swank-clojure/swank/util/concurrent/thread.clj     |   50 +
+ swank-clojure/swank/util/hooks.clj                 |   12 +
+ swank-clojure/swank/util/io.clj                    |   40 +
+ swank-clojure/swank/util/java.clj                  |   16 +
+ swank-clojure/swank/util/net/sockets.clj           |   57 +
+ swank-clojure/swank/util/string.clj                |   16 +
+ swank-clojure/swank/util/sys.clj                   |   13 +
+ 91 files changed, 54794 insertions(+), 1948 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.7)
 Author:     Tamas Kovacs <kovisoft@gmail.com>
 AuthorDate: Sat Feb 26 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

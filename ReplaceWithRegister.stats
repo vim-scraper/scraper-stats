@@ -1,4 +1,32 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.03)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.20)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Thu Apr 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.20
+    
+    - BUG: ReplaceWithRegisterOperator didn't work correctly with linewise motions (like "+"); need to use a linewise visual selection in this case.
+    - BUG: Text duplicated from yanked previous lines is inserted on a replacement of a visual blockwise selection. Switch replacement mechanism to a put in visual mode in combination with a save and restore of the unnamed register. This should handle all cases and doesn't require the autoindent workaround, neither.
+
+ doc/ReplaceWithRegister.txt    |    9 ++++
+ plugin/ReplaceWithRegister.vim |   85 +++++++++++++++++++++++----------------
+ 2 files changed, 59 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Thu Apr 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.10
+    
+    - The operator-pending mapping now also handles 'nomodifiable' and 'readonly' buffers without function errors.
+    - Add experimental support for repeating the replacement also in visual mode through visualrepeat.vim. Renamed vmap <Plug>ReplaceWithRegisterOperator toPlug>ReplaceWithRegisterVisual for that. *** PLEASE UPDATE YOUR CUSTOM MAPPINGS ***
+
+ doc/ReplaceWithRegister.txt    |   23 +++++++++++++++++-
+ plugin/ReplaceWithRegister.vim |   51 +++++++++++++++++++++++++++++++++------
+ 2 files changed, 65 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.03)
 Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Sun Jan 9 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -43,6 +71,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.00: Initial upload
 
- README                         |   34 ++++++++
+ README                         |   37 +++++++++
  plugin/ReplaceWithRegister.vim |  175 ++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 209 insertions(+), 0 deletions(-)
+ 2 files changed, 212 insertions(+), 0 deletions(-)

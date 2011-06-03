@@ -1,4 +1,51 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.4.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.5.0)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Sat May 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.5.0
+    
+    - ENH: Add explicit mark persistence via :MarkLoad and :MarkSave commands and automatic persistence via the g:mwAutoLoadMarks and g:mwAutoSaveMarks configuration flags. (Request from Mun Johl, 16-Apr-2010)
+    - Expose toggling of mark display (keeping the mark patterns) via new <Plug>MarkToggle mapping. Offer :MarkClear command as a replacement for the old argumentless :Mark command, which now just disables, but not clears all marks.
+
+ autoload/mark.vim |  277 +++++++++++++++++++++++++++++++++++++++++++++-------
+ doc/mark.txt      |   90 ++++++++++++++----
+ plugin/mark.vim   |   72 +++++++++++++-
+ 3 files changed, 381 insertions(+), 58 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.4)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Tue Apr 19 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.4
+    
+    - BUG: Include trailing newline character in check for current mark, so that a mark that matches the entire line (e.g. created by V<Leader>m) can be cleared via <Leader>n. Thanks to ping for reporting this.
+    - FIX: On overlapping marks, mark#CurrentMark() returned the lowest, not the highest visible mark. So on overlapping marks, the one that was not visible at the cursor position was removed; very confusing! Use reverse iteration order.
+    - FIX: To avoid an arbitrary ordering of highlightings when the highlighting group names roll over, and to avoid order inconsistencies across different windows and tabs, we assign a different priority based on the highlighting group.
+
+ autoload/mark.vim |   99 ++++++++++++++++++++++++++++++++++------------------
+ doc/mark.txt      |   34 +++++++++++++++---
+ 2 files changed, 94 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.3)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Sat Apr 16 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.3
+    
+    - Avoid losing the mark highlightings on :syn on or :colorscheme commands. Thanks to Zhou YiChao for alerting me to this issue and suggesting a fix.
+    - Made the script more robust when somehow no highlightings have been defined or when the window-local reckoning of match IDs got lost. I had very occasionally encountered such script errors in the past.
+    - Made global housekeeping variables script-local, only g:mwHistAdd is used for configuration.
+    - FIX: Capturing the visual selection could still clobber the blockwise yank mode of the unnamed register.
+
+ autoload/mark.vim |  152 ++++++++++++++++++++++++++++++-----------------------
+ doc/mark.txt      |   19 ++++++-
+ plugin/mark.vim   |   38 +++++++++----
+ 3 files changed, 130 insertions(+), 79 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.1)
 Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Thu Jan 13 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -138,6 +185,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.6.1: Initial upload
 
- README          |   65 ++++++
+ README          |   85 ++++++++
  plugin/mark.vim |  637 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 702 insertions(+), 0 deletions(-)
+ 2 files changed, 722 insertions(+), 0 deletions(-)

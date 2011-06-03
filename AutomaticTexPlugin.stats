@@ -1,4 +1,211 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/9.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/9.4.3)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Tue May 10 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 9.4.3: Patches for 9.4 release.
+
+ autoload/atplib.vim             |  259 ++++++++++++++++++++++++++-------------
+ doc/automatic-tex-plugin.txt    |   19 +--
+ ftplugin/ATP_files/compiler.vim |    7 +-
+ ftplugin/ATP_files/motion.vim   |  229 +++++++++++++++++++++--------------
+ ftplugin/ATP_files/options.vim  |   75 ++++++++----
+ ftplugin/tex_atp.vim            |    2 +-
+ 6 files changed, 374 insertions(+), 217 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/9.4.2)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Sun May 8 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 9.4.2: Fixes for 9.4 release.
+
+ doc/automatic-tex-plugin.txt    |   10 ++++--
+ ftplugin/ATP_files/compiler.vim |   35 ++++++++++++++-------
+ ftplugin/ATP_files/mappings.vim |   63 ---------------------------------------
+ ftplugin/ATP_files/motion.vim   |    7 +++-
+ ftplugin/ATP_files/options.vim  |   17 ++++++++--
+ ftplugin/tex_atp.vim            |    2 +-
+ 6 files changed, 48 insertions(+), 86 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/9.4.1)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Sun May 8 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 9.4.1: Small fixes for 9.4 release.
+
+ doc/automatic-tex-plugin.txt    |    2 +-
+ ftplugin/ATP_files/compiler.vim |    9 ++++-----
+ ftplugin/ATP_files/options.vim  |   13 ++++++++-----
+ ftplugin/tex_atp.vim            |    2 +-
+ 4 files changed, 14 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/9.4)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Sun May 8 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 9.4: See :help atp-news
+
+ autoload/atplib.vim                            |  343 +++++++--
+ colors/coots-beauty-256.vim                    |    4 +
+ doc/automatic-tex-plugin.txt                   |  738 +++++++++++++------
+ ftplugin/ATP_files/LatexBox_common.vim         |    6 +-
+ ftplugin/ATP_files/LatexBox_complete.vim       |    2 +-
+ ftplugin/ATP_files/LatexBox_indent.vim         |    6 +-
+ ftplugin/ATP_files/LatexBox_latexmk.vim        |    2 +-
+ ftplugin/ATP_files/LatexBox_motion.vim         |    4 +-
+ ftplugin/ATP_files/abbreviations.vim           |    1 +
+ ftplugin/ATP_files/atp_RevSearch.py            |   10 +-
+ ftplugin/ATP_files/common.vim                  |  143 ++--
+ ftplugin/ATP_files/compile.py                  |  416 ++++++-----
+ ftplugin/ATP_files/compile_ml.py               |  169 -----
+ ftplugin/ATP_files/compiler.vim                |  773 +++++++-------------
+ ftplugin/ATP_files/dictionaries/SIunits        |  289 ++++++++
+ ftplugin/ATP_files/dictionaries/ams_dictionary |  161 ++++
+ ftplugin/ATP_files/dictionaries/dictionary     |  937 ++++++++++++++++++++++++
+ ftplugin/ATP_files/dictionaries/greek          |   38 +
+ ftplugin/ATP_files/helpfunctions.vim           |   26 +-
+ ftplugin/ATP_files/makelatex.py                |  511 +++++++++++++
+ ftplugin/ATP_files/mappings.vim                |  498 +++++++------
+ ftplugin/ATP_files/menu.vim                    |    9 +-
+ ftplugin/ATP_files/motion.vim                  |  142 +++--
+ ftplugin/ATP_files/options.vim                 |  765 +++++++++++++++-----
+ ftplugin/ATP_files/project.vim                 |   26 +-
+ ftplugin/ATP_files/search.vim                  |   39 +-
+ ftplugin/ATP_files/url_query.py                |   24 +-
+ ftplugin/ATP_files/various.vim                 |  202 +++++-
+ ftplugin/tex_atp.vim                           |   15 +-
+ ftplugin/toc_atp.vim                           |   14 +-
+ 30 files changed, 4506 insertions(+), 1807 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/9.3.5)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Fri Apr 22 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 9.3.5: see :help atp-news
+
+ autoload/atplib.vim              |   14 +-
+ doc/automatic-tex-plugin.txt     |  369 +++++++++++++++----------
+ ftplugin/ATP_files/common.vim    |   63 ++++-
+ ftplugin/ATP_files/compile.py    |   36 ++-
+ ftplugin/ATP_files/compile_ml.py |   14 +-
+ ftplugin/ATP_files/compiler.vim  |  143 ++++++++---
+ ftplugin/ATP_files/mappings.vim  |  550 +++++++++++++++++++-------------------
+ ftplugin/ATP_files/menu.vim      |    3 -
+ ftplugin/ATP_files/motion.vim    |    7 +-
+ ftplugin/ATP_files/options.vim   |   52 +++--
+ ftplugin/ATP_files/project.vim   |    8 +-
+ ftplugin/ATP_files/various.vim   |   44 ++--
+ ftplugin/tex_atp.vim             |    6 +-
+ 13 files changed, 764 insertions(+), 545 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/9.3)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Sun Apr 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 9.3: see :help atp-news for changes.
+
+ autoload/atplib.vim             |   50 ++--
+ doc/automatic-tex-plugin.txt    |  638 ++++++++++++++++++++-------------------
+ ftplugin/ATP_files/common.vim   |   21 +-
+ ftplugin/ATP_files/compile.py   |   22 +-
+ ftplugin/ATP_files/compiler.vim |   54 +++-
+ ftplugin/ATP_files/mappings.vim |   88 +++++--
+ ftplugin/ATP_files/motion.vim   |  281 +++++++++++------
+ ftplugin/ATP_files/options.vim  |  243 +++++++++++-----
+ ftplugin/ATP_files/project.vim  |   30 +-
+ ftplugin/ATP_files/search.vim   |    4 +-
+ ftplugin/ATP_files/various.vim  |  113 +------
+ ftplugin/bib_atp.vim            |    4 +-
+ ftplugin/tex_atp.vim            |   63 ++--
+ 13 files changed, 911 insertions(+), 700 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/9.2.7)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Wed Apr 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 9.2.7
+    
+    - This update contains several small changes and one important fix (for those who do not use bibtex). See :help atp-news.
+
+ autoload/atplib.vim                 |   24 ++-
+ doc/automatic-tex-plugin.txt        |  344 ++++++++++++++++++++--------------
+ ftplugin/ATP_files/atp_RevSearch.py |    5 +-
+ ftplugin/ATP_files/compile.py       |   26 ++--
+ ftplugin/ATP_files/compiler.vim     |   47 +++---
+ ftplugin/ATP_files/mappings.vim     |   82 +++++----
+ ftplugin/ATP_files/motion.vim       |    4 +-
+ ftplugin/ATP_files/options.vim      |  113 ++++++++----
+ ftplugin/ATP_files/url_query.py     |    2 +-
+ ftplugin/ATP_files/various.vim      |  242 ++++++++++++++-----------
+ ftplugin/tex_atp.vim                |    2 +-
+ 11 files changed, 526 insertions(+), 365 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/9.2)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Sat Apr 9 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 9.2
+    
+    * This release is a major step forward ;) see long list of changes :help atp-news, thanks for Ivo Lopez for the help!
+    Major news:
+    - new compelation using python script
+    - progress bar for compelation
+    - UpdateATP[!]    = to get new Stable/Unstable release directly from SourceForge project hosting site.
+
+ autoload/atplib.vim                      |  482 +++++++++++---
+ doc/automatic-tex-plugin.txt             | 1075 ++++++++++++++++++------------
+ doc/latexhelp.txt                        |   10 +
+ ftplugin/ATP_files/LatexBox_common.vim   |    4 +-
+ ftplugin/ATP_files/LatexBox_complete.vim |    4 +-
+ ftplugin/ATP_files/LatexBox_latexmk.vim  |   12 +-
+ ftplugin/ATP_files/atp_RevSearch.py      |   43 +-
+ ftplugin/ATP_files/common.vim            |   58 ++-
+ ftplugin/ATP_files/compile.py            |  462 +++++++++++++
+ ftplugin/ATP_files/compile_ml.py         |  163 +++++
+ ftplugin/ATP_files/compiler.vim          |  714 ++++++++++++++-------
+ ftplugin/ATP_files/helpfunctions.vim     |    6 +-
+ ftplugin/ATP_files/mappings.vim          |   61 +-
+ ftplugin/ATP_files/menu.vim              |    8 +-
+ ftplugin/ATP_files/motion.vim            |  247 +++++---
+ ftplugin/ATP_files/options.vim           |  373 +++++++++--
+ ftplugin/ATP_files/project.vim           |   28 +-
+ ftplugin/ATP_files/search.vim            |   69 ++-
+ ftplugin/ATP_files/url_query.py          |    9 +
+ ftplugin/ATP_files/various.vim           |  450 +++++++++++--
+ ftplugin/bib_atp.vim                     |   20 +-
+ ftplugin/bibsearch_atp.vim               |    5 +-
+ ftplugin/fd_atp.vim                      |    3 +-
+ ftplugin/tex_atp.vim                     |   10 +-
+ ftplugin/toc_atp.vim                     |  118 +++-
+ 25 files changed, 3372 insertions(+), 1062 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/9.1.1)
+Author:     Marcin Szamotulski <mszamot@gmail.com>
+AuthorDate: Mon Mar 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 9.1.1: See ver 9.1 (important fix in doc file, thanks to I.Lopez)
+
+ autoload/atplib.vim                      |   41 ++++-
+ doc/automatic-tex-plugin.txt             |  289 +++++++++++++++------------
+ ftplugin/ATP_files/LatexBox_complete.vim |    2 +-
+ ftplugin/ATP_files/atp_RevSearch.py      |   34 +++
+ ftplugin/ATP_files/compiler.vim          |  329 +++++++++++++++++++++---------
+ ftplugin/ATP_files/mappings.vim          |    4 +
+ ftplugin/ATP_files/menu.vim              |   18 +-
+ ftplugin/ATP_files/options.vim           |  185 ++++++++---------
+ ftplugin/ATP_files/various.vim           |   28 ++--
+ ftplugin/tex_atp.vim                     |   12 +-
+ 10 files changed, 586 insertions(+), 356 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/9.0)
 Author:     Marcin Szamotulski <mszamot@gmail.com>
 AuthorDate: Fri Mar 18 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -7,1292 +214,38 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     See :h atp-news for changes [ there are some NEW features :), and many fixes! ]
 
- autoload/atplib.vim                    |  162 ++++++++++-----
- colors/coots-beauty-256.vim            |    2 +-
- doc/automatic-tex-plugin.txt           |  352 +++++++++++++++++++++-----------
- ftplugin/ATP_files/LatexBox_common.vim |    6 +-
- ftplugin/ATP_files/LatexBox_motion.vim |   73 ++++----
- ftplugin/ATP_files/common.vim          |    4 +-
- ftplugin/ATP_files/compiler.vim        |   54 +++---
- ftplugin/ATP_files/mappings.vim        |  162 ++++++++-------
- ftplugin/ATP_files/motion.vim          |  228 +++++++++++++++------
- ftplugin/ATP_files/options.vim         |  145 +++++++++----
- ftplugin/ATP_files/search.vim          |    6 +-
- ftplugin/ATP_files/various.vim         |  312 ++++++++++++++++++++--------
- ftplugin/bib_atp.vim                   |   49 ++---
- ftplugin/tex_atp.vim                   |   43 +++--
- 14 files changed, 1052 insertions(+), 546 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/8.7)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Sat Mar 5 00:00:00 2011 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 8.7
-    
-    * for the changes see :h atp-news. Probably the most important is that completion supports beamer commands and environments.
-
- autoload/atplib.vim                       |  170 +++++++++++++++--
- colors/coots-beauty-256.vim               |   10 +-
- doc/automatic-tex-plugin.txt              |   62 +++++--
- doc/latexhelp.txt                         |    7 +
- ftplugin/ATP_files/LatexBox_common.vim    |  180 ++++++++++++++-----
- ftplugin/ATP_files/LatexBox_complete.vim  |   58 ++-----
- ftplugin/ATP_files/LatexBox_latexmk.vim   |    9 +-
- ftplugin/ATP_files/LatexBox_mappings.vim  |    1 -
- ftplugin/ATP_files/LatexBox_motion.vim    |   41 +++--
- ftplugin/ATP_files/LatexBox_variables.vim |   54 ------
- ftplugin/ATP_files/common.vim             |    6 +-
- ftplugin/ATP_files/compiler.vim           |   16 +-
- ftplugin/ATP_files/mappings.vim           |    4 +-
- ftplugin/ATP_files/motion.vim             |    2 +-
- ftplugin/ATP_files/options.vim            |  126 ++++++++++---
- ftplugin/ATP_files/search.vim             |   26 ++-
- ftplugin/ATP_files/various.vim            |  287 +++++++++++++++++++++--------
- ftplugin/tex_atp.vim                      |    4 +-
- ftplugin/toc_atp.vim                      |    4 +-
- 19 files changed, 735 insertions(+), 332 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/8.6)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Sun Jan 23 00:00:00 2011 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 8.6: See the help file for changes.
-
- autoload/atplib.vim             |    4 ++--
- doc/automatic-tex-plugin.txt    |   18 ++++++++++++++++--
- ftplugin/ATP_files/mappings.vim |   17 +++++++++--------
- ftplugin/ATP_files/motion.vim   |   27 +++++++++++++--------------
- ftplugin/ATP_files/options.vim  |   11 ++++++-----
- ftplugin/ATP_files/project.vim  |    6 ++++--
- ftplugin/ATP_files/various.vim  |    4 ++--
- ftplugin/bibsearch_atp.vim      |    4 ++--
- ftplugin/tex_atp.vim            |    4 ++--
- 9 files changed, 56 insertions(+), 39 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/8.5)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Tue Dec 14 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 8.5
-    
-    * AMSRef : bang has opposite meaning now.
-    * Many small fixes.
-
- autoload/atplib.vim                       |   64 +++++++++++++++++-----------
- doc/automatic-tex-plugin.txt              |   31 +++++++++-----
- ftplugin/ATP_files/LatexBox_common.vim    |   13 +++---
- ftplugin/ATP_files/LatexBox_complete.vim  |    1 +
- ftplugin/ATP_files/LatexBox_indent.vim    |    1 +
- ftplugin/ATP_files/LatexBox_latexmk.vim   |    1 +
- ftplugin/ATP_files/LatexBox_mappings.vim  |    1 +
- ftplugin/ATP_files/LatexBox_motion.vim    |    6 ++-
- ftplugin/ATP_files/LatexBox_variables.vim |    1 +
- ftplugin/ATP_files/abbreviations.vim      |    9 +---
- ftplugin/ATP_files/compiler.vim           |    1 +
- ftplugin/ATP_files/helpfunctions.vim      |    1 +
- ftplugin/ATP_files/mappings.vim           |    3 +-
- ftplugin/ATP_files/menu.vim               |    1 +
- ftplugin/ATP_files/motion.vim             |   13 +++---
- ftplugin/ATP_files/options.vim            |    3 +-
- ftplugin/ATP_files/project.vim            |    3 +-
- ftplugin/ATP_files/search.vim             |    1 +
- ftplugin/ATP_files/various.vim            |   13 +++---
- ftplugin/bib_atp.vim                      |   16 ++++----
- ftplugin/bibsearch_atp.vim                |    2 +-
- ftplugin/fd_atp.vim                       |   10 ++--
- ftplugin/plaintex_atp.vim                 |    1 +
- ftplugin/tex_atp.vim                      |    4 +-
- ftplugin/toc_atp.vim                      |   10 ++--
- 25 files changed, 125 insertions(+), 85 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/8.4)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Sun Nov 21 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 8.4: * Small fixes.
-
- autoload/atplib.vim             |   15 +++++++++++++-
- doc/automatic-tex-plugin.txt    |   42 ++++++++++++++++++++++++++------------
- ftplugin/ATP_files/compiler.vim |   14 ++++++++++++-
- ftplugin/ATP_files/project.vim  |    4 ++-
- ftplugin/tex_atp.vim            |    4 +-
- 5 files changed, 61 insertions(+), 18 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/8.3)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Wed Nov 10 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 8.3: * Abbreviations (see :h atp-news) and fixes of vip.
-
- autoload/atplib.vim                    |   95 +++++++++++++-----
- doc/automatic-tex-plugin.txt           |  129 +++++++++++++++++-------
- doc/bibtex_atp.txt                     |   62 +++++++++++
- ftplugin/ATP_files/LatexBox_motion.vim |   18 ++--
- ftplugin/ATP_files/abbreviations.vim   |  177 ++++++++++++++++++++++++++++++++
- ftplugin/ATP_files/compiler.vim        |    3 +-
- ftplugin/ATP_files/mappings.vim        |    7 ++
- ftplugin/ATP_files/options.vim         |    6 +-
- ftplugin/bib_atp.vim                   |   13 ++-
- ftplugin/tex_atp.vim                   |   92 +----------------
- 10 files changed, 443 insertions(+), 159 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/8.2)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Thu Nov 4 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 8.2:  * Some fixes. As usual, check :h atp-news
-
- doc/automatic-tex-plugin.txt           |   28 +++++-
- ftplugin/ATP_files/LatexBox_motion.vim |  152 +++++++++++++++++++++++++++++---
- ftplugin/ATP_files/mappings.vim        |    2 +-
- ftplugin/ATP_files/motion.vim          |    2 +-
- ftplugin/ATP_files/options.vim         |    2 +-
- ftplugin/ATP_files/project.vim         |    6 +-
- ftplugin/tex_atp.vim                   |    4 +-
- 7 files changed, 173 insertions(+), 23 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/8.1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Tue Oct 26 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 8.1
-    
-    Some fixes in the new command AMSRef, completion for :GotoFile, :EditIntpuFile commands.
-
- autoload/atplib.vim                    |  822 ++++++++++++++++----------------
- doc/automatic-tex-plugin.txt           |   16 +-
- ftplugin/ATP_files/LatexBox_motion.vim |    1 +
- ftplugin/ATP_files/mappings.vim        |    3 +
- ftplugin/ATP_files/motion.vim          |   60 ++-
- ftplugin/ATP_files/various.vim         |   45 ++-
- ftplugin/bib_atp.vim                   |  121 +++--
- ftplugin/plaintex_atp.vim              |    3 +-
- ftplugin/tex_atp.vim                   |   50 +--
- 9 files changed, 593 insertions(+), 528 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/8)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Sun Oct 24 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 8
-    
-    Filetype plugin for bib files added.
-    Command to obtain bib data from amsref web page interface (for both bib files and bibliography environments)
-    For lots of other new stuff read :h atp-news
-
- autoload/atplib.vim                      |   38 ++--
- doc/automatic-tex-plugin.txt             |  110 +++++++++++--
- ftplugin/ATP_files/LatexBox_complete.vim |    2 +-
- ftplugin/ATP_files/LatexBox_motion.vim   |   62 ++++++-
- ftplugin/ATP_files/common.vim            |    8 +-
- ftplugin/ATP_files/compiler.vim          |   12 +-
- ftplugin/ATP_files/helpfunctions.vim     |    2 +
- ftplugin/ATP_files/mappings.vim          |   33 +++-
- ftplugin/ATP_files/motion.vim            |   78 +++++++--
- ftplugin/ATP_files/options.vim           |   38 ++++-
- ftplugin/ATP_files/project.vim           |   31 ++--
- ftplugin/ATP_files/search.vim            |   14 +-
- ftplugin/ATP_files/various.vim           |  261 ++++++++++++++++++++++++----
- ftplugin/bib_atp.vim                     |  272 ++++++++++++++++++++++++++++++
- ftplugin/plaintex_atp.vim                |    3 +-
- ftplugin/tex_atp.vim                     |   10 +-
- syntax/bibsearch_atp.vim                 |    2 +-
- 17 files changed, 829 insertions(+), 147 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.7.2)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Tue Oct 12 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.7.2: See :h atp-news (:DefiSearch fixed, but also more)
-
- autoload/atplib.vim                    |    4 +-
- doc/automatic-tex-plugin.txt           |   26 ++++-
- ftplugin/ATP_files/LatexBox_motion.vim |   12 +-
- ftplugin/ATP_files/common.vim          |   66 +++++++----
- ftplugin/ATP_files/compiler.vim        |    6 +-
- ftplugin/ATP_files/helpfunctions.vim   |    3 +
- ftplugin/ATP_files/motion.vim          |   42 ++++---
- ftplugin/ATP_files/options.vim         |  205 ++++++++++++++++----------------
- ftplugin/ATP_files/project.vim         |    7 +-
- ftplugin/ATP_files/search.vim          |  121 +++++++++++--------
- ftplugin/ATP_files/various.vim         |  189 ++++++++++++++++++------------
- ftplugin/tex_atp.vim                   |    8 +-
- 12 files changed, 404 insertions(+), 285 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.7.1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Thu Oct 7 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.7.1: A bug fixed reported by B. Garcia Carreras.
-
- ftplugin/ATP_files/project.vim |    3 +++
- 1 files changed, 3 insertions(+), 0 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.7)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Thu Oct 7 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.7
-    
-    Licence: GPL v3+.
-    See :h atp-news
-
- autoload/atplib.vim             |    8 +-
- doc/automatic-tex-plugin.txt    |   30 +++++-
- ftplugin/ATP_files/common.vim   |   36 +++----
- ftplugin/ATP_files/compiler.vim |   37 ++++---
- ftplugin/ATP_files/mappings.vim |    5 +
- ftplugin/ATP_files/motion.vim   |  201 +++++++++++++++++++++++++++++++++++++-
- ftplugin/ATP_files/options.vim  |   31 ++++---
- ftplugin/ATP_files/project.vim  |   30 ++++--
- ftplugin/ATP_files/search.vim   |    2 +-
- ftplugin/ATP_files/various.vim  |   22 ++++-
- ftplugin/tex_atp.vim            |    4 +-
- 11 files changed, 323 insertions(+), 83 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.6.1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Thu Sep 30 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.6.1: Read :h atp-news.
-
- autoload/atplib.vim                       |  114 +++++--
- colors/coots-beauty-256.vim               |   14 +-
- doc/automatic-tex-plugin.txt              |  287 +++++++++++++----
- ftplugin/ATP_files/LatexBox_common.vim    |   84 +++++-
- ftplugin/ATP_files/LatexBox_complete.vim  |   28 +-
- ftplugin/ATP_files/LatexBox_indent.vim    |   12 +-
- ftplugin/ATP_files/LatexBox_latexmk.vim   |  215 +++++++++++++
- ftplugin/ATP_files/LatexBox_mappings.vim  |    5 +
- ftplugin/ATP_files/LatexBox_motion.vim    |   63 +++--
- ftplugin/ATP_files/LatexBox_variables.vim |    8 +
- ftplugin/ATP_files/common.vim             |  151 ++++++---
- ftplugin/ATP_files/compiler.vim           |  100 ++++---
- ftplugin/ATP_files/helpfunctions.vim      |   20 +-
- ftplugin/ATP_files/mappings.vim           |   96 ++++--
- ftplugin/ATP_files/menu.vim               |   12 +-
- ftplugin/ATP_files/motion.vim             |  324 ++++++++++---------
- ftplugin/ATP_files/options.vim            |  272 ++++++++++-------
- ftplugin/ATP_files/project.vim            |  228 +++++++++-----
- ftplugin/ATP_files/search.vim             |  487 ++++++++++++++++++++---------
- ftplugin/ATP_files/various.vim            |  177 ++++++-----
- ftplugin/bibsearch_atp.vim                |    3 +-
- ftplugin/fd_atp.vim                       |    3 +-
- ftplugin/plaintex_atp.vim                 |    3 +-
- ftplugin/tex_atp.vim                      |   83 +++--
- ftplugin/toc_atp.vim                      |   61 +++-
- syntax/bibsearch_atp.vim                  |    8 +-
- syntax/labels_atp.vim                     |    9 +-
- syntax/log_atp.vim                        |    7 +-
- syntax/toc_atp.vim                        |    9 +-
- 29 files changed, 1983 insertions(+), 900 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.5.3)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Tue Sep 14 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.5.3: * See :h atp-news
-
- autoload/atplib.vim                      |  224 ++++---
- colors/coots-beauty-256.vim              |    9 +-
- doc/automatic-tex-plugin.txt             | 1057 ++++++++++++++++--------------
- ftplugin/ATP_files/LatexBox_complete.vim |   32 +-
- ftplugin/ATP_files/common.vim            |  130 ++++-
- ftplugin/ATP_files/compiler.vim          |   75 ++-
- ftplugin/ATP_files/helpfunctions.vim     |    3 +-
- ftplugin/ATP_files/history.vim           |  391 -----------
- ftplugin/ATP_files/mappings.vim          |    1 +
- ftplugin/ATP_files/motion.vim            |   59 +-
- ftplugin/ATP_files/options.vim           |  452 ++++++-------
- ftplugin/ATP_files/project.vim           |  644 ++++++++++++++++++
- ftplugin/ATP_files/search.vim            |   50 +-
- ftplugin/ATP_files/various.vim           |  144 +++--
- ftplugin/plaintex_atp.vim                |    2 +-
- ftplugin/tex_atp.vim                     |   77 ++-
- ftplugin/toc_atp.vim                     |  109 ++--
- syntax/labels_atp.vim                    |    4 +-
- 18 files changed, 2060 insertions(+), 1403 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.5.2)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Fri Sep 3 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.5.2: A bug fixed in SyncTex (log file tool).
-
- ftplugin/ATP_files/various.vim |   47 ++++++++++++++++++++++++++++++++++-----
- ftplugin/tex_atp.vim           |    2 +-
- 2 files changed, 42 insertions(+), 7 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.5.1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Fri Sep 3 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.5.1: Bug fixes.
-
- doc/automatic-tex-plugin.txt   |    2 +-
- ftplugin/ATP_files/history.vim |   18 +++++++++++++-----
- ftplugin/ATP_files/various.vim |   16 +++++++++++++---
- ftplugin/tex_atp.vim           |    4 ++--
- 4 files changed, 29 insertions(+), 11 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.5)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Thu Sep 2 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.5
-    
-    See help file for release notes (:h atp-news). There are several new features!
-
- autoload/atplib.vim                      |  775 +++++++++++------
- colors/coots-beauty-256.vim              |    2 +-
- doc/automatic-tex-plugin.txt             | 1390 ++++++++++++++++++------------
- ftplugin/ATP_files/LatexBox_complete.vim |    2 +-
- ftplugin/ATP_files/common.vim            |   28 +-
- ftplugin/ATP_files/compiler.vim          |   67 +-
- ftplugin/ATP_files/helpfunctions.vim     |  153 ++++
- ftplugin/ATP_files/history.vim           |  212 ++++-
- ftplugin/ATP_files/mappings.vim          |   96 ++-
- ftplugin/ATP_files/menu.vim              |    7 +-
- ftplugin/ATP_files/motion.vim            |  180 +++--
- ftplugin/ATP_files/options.vim           |  275 +++++--
- ftplugin/ATP_files/search.vim            |   36 +-
- ftplugin/ATP_files/various.vim           |  376 +++++++--
- ftplugin/tex_atp.vim                     |  123 ++--
- ftplugin/toc_atp.vim                     |   89 +-
- 16 files changed, 2621 insertions(+), 1190 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.4.1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Mon Aug 23 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.4.1
-    
-    * A bug fixed in :BibChoose command
-    * and in tex_atp.vim file
-
- autoload/atplib.vim             |   13 +++-
- doc/automatic-tex-plugin.txt    |   79 +++++++++++-------
- ftplugin/ATP_files/compiler.vim |    5 +-
- ftplugin/ATP_files/motion.vim   |   30 ++-----
- ftplugin/ATP_files/options.vim  |    4 +-
- ftplugin/ATP_files/search.vim   |    6 +-
- ftplugin/bibsearch_atp.vim      |  172 ++++++++++++++++++++++-----------------
- ftplugin/tex_atp.vim            |    6 +-
- 8 files changed, 176 insertions(+), 139 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.4)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Mon Aug 23 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.4
-    
-    * <NEW FEATURE> TexAlign wrapper command around Align command (vimscript#884) see :h atp-news
-    * TeXDoc -> TexDoc
-    * History feature reviewed, now every file has separate history file (like for vim view files) see :h atp-news
-
- autoload/atplib.vim                    |   24 ++-
- doc/automatic-tex-plugin.txt           |  259 ++++++++++++++---------
- ftplugin/ATP_files/LatexBox_motion.vim |    6 +-
- ftplugin/ATP_files/common.vim          |    2 +-
- ftplugin/ATP_files/compiler.vim        |   74 +++++--
- ftplugin/ATP_files/history.vim         |  373 ++++++++++++++------------------
- ftplugin/ATP_files/mappings.vim        |   10 +-
- ftplugin/ATP_files/motion.vim          |  157 +++++++++-----
- ftplugin/ATP_files/options.vim         |  146 ++++----------
- ftplugin/ATP_files/search.vim          |   50 ++++-
- ftplugin/ATP_files/various.vim         |   85 +++++++-
- ftplugin/tex_atp.vim                   |   78 +++++++-
- 12 files changed, 738 insertions(+), 526 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.3.9)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Thu Aug 19 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.3.9
-    
-    * Some fixes in GotoFile command and function which generates tree of project files (hopefully it will also work in plaintex files, but this is not tested).
-    * Now the history feature stores only two variables b:atp_MainFile and atp_History. Storing more in one file was not the best idea (shortly time of loading history becomes quite big), nice solution for this is to make history file per buffer (like view files, which unfortunately don't have option to store local buffer variables).
-
- ftplugin/ATP_files/common.vim  |   43 +++++++++++++++++++++++++++++++--------
- ftplugin/ATP_files/history.vim |   13 ++++++-----
- ftplugin/ATP_files/motion.vim  |   35 ++++++++++++++++++--------------
- ftplugin/ATP_files/options.vim |    2 +-
- ftplugin/tex_atp.vim           |    2 +-
- 5 files changed, 63 insertions(+), 32 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.3.8)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Thu Aug 19 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.3.8: * a small fix.
-
- autoload/atplib.vim                    |    8 +-
- colors/coots-beauty-256.vim            |    1 +
- doc/automatic-tex-plugin.txt           |    2 +-
- ftplugin/ATP_files/LatexBox_motion.vim |   13 ++-
- ftplugin/ATP_files/common.vim          |    2 +-
- ftplugin/ATP_files/history.vim         |   12 ++-
- ftplugin/ATP_files/mappings.vim        |    4 +-
- ftplugin/ATP_files/menu.vim            |  160 +++++++++++++++++++++++++++++---
- ftplugin/ATP_files/options.vim         |  148 +++++++++++++++++++++++-------
- ftplugin/ATP_files/search.vim          |    6 +-
- ftplugin/tex_atp.vim                   |    4 +-
- 11 files changed, 299 insertions(+), 61 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.3.7)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Tue Aug 17 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.3.7
-    
-    * <New Feature> Highlight for notification message (that TeX is processing the file) in status line (see :h atp-news).
-    * Some fixes.
-
- autoload/atplib.vim                    |  209 +++++++++++++++++++-------------
- colors/coots-beauty-256.vim            |    3 +-
- doc/automatic-tex-plugin.txt           |   79 ++++++++++--
- ftplugin/ATP_files/LatexBox_motion.vim |   20 ++-
- ftplugin/ATP_files/common.vim          |  134 ++++++++++++++-------
- ftplugin/ATP_files/compiler.vim        |    9 +-
- ftplugin/ATP_files/history.vim         |  170 ++++++++++++++++++++++----
- ftplugin/ATP_files/options.vim         |   83 ++++++++-----
- ftplugin/ATP_files/search.vim          |    5 +-
- ftplugin/tex_atp.vim                   |   10 +-
- 10 files changed, 502 insertions(+), 220 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.3.6)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Sun Aug 15 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.3.6: * Some fixes in the new history feature. Read :h atp-news for changes.
-
- autoload/atplib.vim             |   12 ++++----
- doc/automatic-tex-plugin.txt    |   22 +++++++++++++----
- ftplugin/ATP_files/common.vim   |   13 +++++++---
- ftplugin/ATP_files/compiler.vim |    6 ++--
- ftplugin/ATP_files/history.vim  |   51 ++++++++++++++++++++++++++++++++-------
- ftplugin/ATP_files/options.vim  |    4 +-
- ftplugin/ATP_files/search.vim   |    6 ++--
- ftplugin/tex_atp.vim            |   33 +++++++++++++------------
- 8 files changed, 99 insertions(+), 48 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.3.5)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Sat Aug 14 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.3.5
-    
-     :Labels, map \L supports project files.
-    * :TOC works in project files (but only if the toc lines are not inside a included file, make this better this is in my plans)
-    * Completion for labels matches labels without pretended '^' in the beginning of the pattern.
-    * Added a section in doc with tips: ':h atp-tips' You are cordially invited to contribute to this section!
-    * <NEW FEATURE> history file wich cache some variables, which makes a better support for project files (among other variables b:atp_MainFile is remebered)
-    * doc file show highlight color for atp syntax groups, see :h atp-highlight
-    * ToggleNn command (toggles if vim normal commands are vim or from atp. In the second case :S command is used. This is (by default) on in project files.
-    * :ShowOptions[!] [pattern] 	without bang it shows all values of local variables matching [pattern], with bang also global variables set by atp are shown. This helps to find a variable. For more details see :h atp-:ShowOptions
-    * BibSearch[!] [pattern] [flag]	bang added, with it it regenerates the tree of files (only important in some situtation in project files). Secondly, it removes ligatures before the pattern is matched.
-    * vip, vap and related maps see :h atp-news and :h atp-tips.
-    * :Viewer, :DebugMode, :Compiler commands, see :h atp-news
-    * menu key has changed from L to X (press Ctrl-x to see the menu). Menu now shows your compiler and current viewer.
-
- autoload/atplib.vim                    |  397 ++++++++++--------
- colors/coots-beauty-256.vim            |   25 +-
- doc/automatic-tex-plugin.txt           |  698 +++++++++++++++++++++----------
- ftplugin/ATP_files/LatexBox_motion.vim |  137 +++----
- ftplugin/ATP_files/common.vim          |  211 ++++++++---
- ftplugin/ATP_files/compiler.vim        |  145 ++++---
- ftplugin/ATP_files/history.vim         |  122 ++++++
- ftplugin/ATP_files/mappings.vim        |  207 ++++++-----
- ftplugin/ATP_files/menu.vim            |  148 ++++----
- ftplugin/ATP_files/motion.vim          |  137 +++++--
- ftplugin/ATP_files/options.vim         |  312 +++++++++++----
- ftplugin/ATP_files/search.vim          |  484 ++++++++++++-----------
- ftplugin/ATP_files/various.vim         |    4 +-
- ftplugin/tex_atp.vim                   |   67 ++-
- ftplugin/toc_atp.vim                   |  329 ++++++++--------
- syntax/bibsearch_atp.vim               |    1 +
- 16 files changed, 2116 insertions(+), 1308 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.3.3)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Sun Aug 8 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.3.3
-    
-    * The command :EditInputFile == :GotoFile and they both work in the same way as nmap gf (with small difference that they do not look what is under the cursor)
-    * Small fixes.
-
- autoload/atplib.vim                      |  138 ++++++----
- colors/coots-beauty-256.vim              |   22 +-
- doc/automatic-tex-plugin.txt             |   92 +++++---
- ftplugin/ATP_files/LatexBox_common.vim   |    2 +-
- ftplugin/ATP_files/LatexBox_complete.vim |   10 +-
- ftplugin/ATP_files/common.vim            |  407 ++++++++++++++++++------------
- ftplugin/ATP_files/compiler.vim          |    6 +-
- ftplugin/ATP_files/menu.vim              |    3 +-
- ftplugin/ATP_files/motion.vim            |  294 ++++++----------------
- ftplugin/ATP_files/options.vim           |  104 +--------
- ftplugin/ATP_files/search.vim            |  130 +---------
- ftplugin/ATP_files/various.vim           |    7 +-
- ftplugin/tex_atp.vim                     |    4 +-
- ftplugin/toc_atp.vim                     |    4 +-
- syntax/labels_atp.vim                    |   22 +-
- syntax/toc_atp.vim                       |   43 ++--
- 16 files changed, 534 insertions(+), 754 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.3.2)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Fri Aug 6 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.3.2
-    
-     <NEW FEATURE> sync okular viewer with tex source, read :h atp-viewers-okular.
-     * b:atp_ViewerOption removed, read: :h atp-Viewer_Option
-     * and some bug fixes and small changes (especially in editing LaTeX project files)
-     * Note: some tools for editing TeX project files might not work that fast: for example the ':S' command, which relied on making tree of input files, in TeX there is no method of distiguishing between input packages and input parts of the book. Packages are can have its own dependencies so scanning them all might take some time. As for know there is no solution for that.
-
- autoload/atplib.vim                      |  264 ++++++++++++++++++++------
- doc/automatic-tex-plugin.txt             |  109 +++++++----
- ftplugin/ATP_files/LatexBox_common.vim   |  142 ++++++++++++++
- ftplugin/ATP_files/LatexBox_complete.vim |    4 +-
- ftplugin/ATP_files/LatexBox_indent.vim   |    6 +-
- ftplugin/ATP_files/LatexBox_motion.vim   |    4 +
- ftplugin/ATP_files/common.vim            |   17 +-
- ftplugin/ATP_files/compiler.vim          |   22 ++-
- ftplugin/ATP_files/motion.vim            |   60 ++++---
- ftplugin/ATP_files/options.vim           |  139 +++++++++-----
- ftplugin/ATP_files/search.vim            |  112 ++++++++----
- ftplugin/ATP_files/vimcomplete.bst       |  306 ++++++++++++++++++++++++++++++
- ftplugin/tex_atp.vim                     |    9 +-
- 13 files changed, 972 insertions(+), 222 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.3.1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Thu Aug 5 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.3.1
-    
-     <NEW FEATURE> nmap gf, see ':h atp-news'.
-     <NEW FEATURE> read ':h atp-viewers-okular' and learn how to sync gvim with okular.
-    * Some changes in :S command, see ':h atp-S'.
-    * Speed up of :Labels command, some work done to support projects.
-    * Labels by number completion support one more layout of aux file.
-    * Several bug fixes.
-
- autoload/atplib.vim             |  231 +++++++++++++++++++++++++----
- colors/coots-beauty-256.vim     |    2 +
- doc/automatic-tex-plugin.txt    |  129 +++++++++++------
- ftplugin/ATP_files/common.vim   |   46 +++---
- ftplugin/ATP_files/compiler.vim |   38 +++++-
- ftplugin/ATP_files/mappings.vim |   10 +-
- ftplugin/ATP_files/motion.vim   |  253 +++++++++++++++++++++++--------
- ftplugin/ATP_files/options.vim  |   23 +++
- ftplugin/ATP_files/search.vim   |  311 ++++++++++++++++++++++++---------------
- ftplugin/tex_atp.vim            |   24 ++--
- ftplugin/toc_atp.vim            |   10 +-
- 11 files changed, 780 insertions(+), 297 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.3)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Mon Aug 2 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.3
-    
-    * <New Feature> MakeLatex[!] to make latex documents (bibliographies, index, table of contents, lists of: tables, figures, theorems [using ntheorem package]. See :h atp-news.
-    * <New Feature> :S command to search in project files, which works like / command to search patterns. Supports almost all searching flags of the search() function, for example b (backward), wW (wrap/nowrap around the end of file), c (match at the cursor position). This allows for finding next '\input{' phrase in the source tree.
-    * Delete[!] Bang [!] added, with bang delets also the output file (pdf or dvi)
-    * HihglightMatchingPair functionn supports '\big' commands (and friends). Also highlights \begin{env_name} when the cursor is on the env_name.
-    * Some changes in the list of labels (take a try with \L).
-    * FontSearch[!], FontPreview[!] bang [!] added, with bang mathes the full path of fd file against the supplied pattern, without just the name.
-    * The file is not process also in Insert mode but with different value of 'updatetime' vim option, you can configure it with g:atp_insert_updatetime (if it is set to 0 the file will not be processed while vim is in the Insert mode). The default value is 2sec.
-    * Default value of updatetime is 800 (set only if when you have not changed the default value, if you want to use the default just set it to 4001) (This means that after 800milisec after CursorHold the file will be processed by LaTeX).
-    * Some other fixes.
-
- autoload/atplib.vim                      |  352 +++++++++----------
- colors/coots-beauty-256.vim              |    3 +
- doc/automatic-tex-plugin.txt             |  338 +++++++++++-------
- ftplugin/ATP_files/LatexBox_complete.vim |    4 +-
- ftplugin/ATP_files/LatexBox_indent.vim   |    2 +-
- ftplugin/ATP_files/LatexBox_motion.vim   |   29 ++-
- ftplugin/ATP_files/common.vim            |   50 ++--
- ftplugin/ATP_files/compiler.vim          |  516 ++++++++++++++++++++++++---
- ftplugin/ATP_files/mappings.vim          |    6 +-
- ftplugin/ATP_files/motion.vim            |  102 ++++--
- ftplugin/ATP_files/options.vim           |   98 ++++--
- ftplugin/ATP_files/search.vim            |  566 +++++++++++++++++++++++++++++-
- ftplugin/ATP_files/various.vim           |  128 ++++++-
- ftplugin/fd_atp.vim                      |   20 +-
- ftplugin/tex_atp.vim                     |    2 +-
- syntax/log_atp.vim                       |   14 +-
- 16 files changed, 1732 insertions(+), 498 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.2.1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Mon Jul 26 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.2.1
-    
-    * <New Feature> ToC allows to remove, paste section see ':h atp-news' for further info.
-    * <New Feature> Completion of labels by numbers (from output file) added (see ':h atp-news') how to use it. The compiler is copying the aux file to the b:atp_OutDir iff the compilation was without errors /it is better this way for the completion/ Supported classes: article, amsart, book, report, memoir (probably also others), if you run into problems, just send an email with the class name.
-    * <New Feature> Closing environemnts supports $$:$$ pairs (if filetype=="plaintex" or b:atp_TexFlavour=="plaintex")
-    * <New Feature> Input() function which inserts text depending on math/text mode: there are now only maps:
-      imap \rm	to insert \textrm{ or \mathrm accordingly
-      		also other maps defined in this way:
-      imap \it	\textit:\mathit
-      imap \sf	\textsf:\mathsf
-      imap \tt	\texttt:\mathtt
-      imap \no	\textnormal:\mathnormal
-    * Furhter changes in imaps:
-      imap ]I	inserts itemize,
-      imap ]E	inserts enumerate,
-      imap ]i	inserts \item,
-      imap ]T	inserts tikzpicture environment,
-      imap ]L	inserts lemma environment
-      imap \cal	inserts \mathcal{
-      vmap \un	wrap with \underline{:}
-    * vim, vam mappings inseted of vi$, va$ (to mark the inside/auther math evnironments)
-    
-    * atprc.vim file can be also placed under the path: ftplugin/ATP_Files/atprc.vim
-    * syntax file for log messages + changes in coots-beauty color file.
-    * \lpr mapping removed (you can use the command :SshPrint, \lpr was interfering with \l)
-    * added some bracket sizes to closing of brackets
-    * \ne, \pe maps to search for next/previous environment (search pattern is added to the search history: thus the commands allows for 'n', and 'N' normal vim maps (alos after '/' the pattern will be present in the search history).
-    * NextSection, PreviousSection commands and maps works in visual and operator pending modes.
-    * variable change g:atp_math_opened -> g:atp_MathOpened with default value 1.
-    * indent key added "O" (':h indentkeys')
-    * some changes in doc (colorful titles :)
-
- autoload/atplib.vim                      |  888 ++++++++++++-----------
- colors/coots-beauty-256.vim              |   83 ++-
- doc/automatic-tex-plugin.txt             |  272 +++++---
- ftplugin/ATP_files/LatexBox_indent.vim   |    4 +-
- ftplugin/ATP_files/LatexBox_mappings.vim |    8 +-
- ftplugin/ATP_files/LatexBox_motion.vim   |   46 +-
- ftplugin/ATP_files/compiler.vim          |  102 ++--
- ftplugin/ATP_files/mappings.vim          |  157 ++---
- ftplugin/ATP_files/menu.vim              |    6 +-
- ftplugin/ATP_files/motion.vim            | 1152 ++++++++++++++----------------
- ftplugin/ATP_files/options.vim           |  386 ++++++----
- ftplugin/ATP_files/search.vim            |   22 +-
- ftplugin/ATP_files/various.vim           |   96 ++-
- ftplugin/tex_atp.vim                     |   18 +-
- ftplugin/toc_atp.vim                     |  391 +++++++++--
- syntax/labels_atp.vim                    |   20 +-
- syntax/log_atp.vim                       |   46 +-
- 17 files changed, 2109 insertions(+), 1588 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.1.2@1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Wed Jul 14 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.1.2@1
-    
-    * ':ShowErrors o' opens log file. I wrote a nice syntax file for the log so that it is easier to read it.
-    * Some changes in visual maps:
-       vie, vae     mark environment (but not mathematics) \begin:\end
-       vi$, va$     mark math modes: $:$, \(:\), \[:\], $$:$$ (only if b:atp_TexFlavour = "plaintex" which is done automatically if the filetype is set to plaintex)
-       vi), va)      mark brackets: (:), {:}, [:]
-       vI), vA)     mark brackets (as above) the inner and auter pair of the most auter bracket (in the nesting sence)
-       vis, vas (experimental)  mark by syntax, i - inner, a - outer but with a slightly different meening than above (inner for the most top syntax in the synstack, and outer for the most bottom syntax item) they exclude texDocZone and texSectionZones as they are not always synchronized (some times might be large)
-    
-    * ":InteligentWrapSelection" command: now \rm (in visual mode) will wrap with \textrm{...} in text and \mathrm{...} in math (also other wrapping maps defined in this way, read ":h atp-command-InteligentWrapSelection"
-    * ':TeXdoc 'command by default opens g:atp_TeXdocDefault (which by deafault is equal "-a lshort", you can set it to "-a lshort faq" or "-a faq" ...)
-    * Some minor bugs fixed.
-    * Enjoy :)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.1.2)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Wed Jul 14 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.1.2: * ShowErrors o
-
- autoload/atplib.vim                      |   63 ++++----
- colors/coots-beauty-256.vim              |   23 +++
- doc/automatic-tex-plugin.txt             |  270 +++++++++++++++---------------
- ftplugin/ATP_files/LatexBox_complete.vim |    1 -
- ftplugin/ATP_files/LatexBox_mappings.vim |    7 +
- ftplugin/ATP_files/LatexBox_motion.vim   |  257 +++++++++++++++++++++++++++--
- ftplugin/ATP_files/compiler.vim          |   61 +++----
- ftplugin/ATP_files/mappings.vim          |  119 ++++++++------
- ftplugin/ATP_files/motion.vim            |   11 +-
- ftplugin/ATP_files/options.vim           |   38 +++--
- ftplugin/ATP_files/various.vim           |  257 +++++++++++++++++------------
- ftplugin/fd_atp.vim                      |   96 +++++------
- ftplugin/tex_atp.vim                     |   11 +-
- syntax/log_atp.vim                       |  104 ++++++++++++
- 14 files changed, 861 insertions(+), 457 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.1.1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Fri Jul 9 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.1.1: * A small bug fix.
-
- ftplugin/ATP_files/options.vim |   15 +++++++++++----
- 1 files changed, 11 insertions(+), 4 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Fri Jul 9 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.1
-    
-    Please READ release notes for version 7.0
-    * revisions in TabCompletion function
-    * revisions in CloseLastEnvironment function    /they both use faster code/
-    * g:atp_MathVimOptions variable: it is a dictionary with entries: vim_option_name : [ value_in_math_mode, value_in_non_math ] for example { 'textwidth' : [0, 78], 'linebreak' : [ 'nolinebreak', 'linebreak'] }
-    Function which sets the values is set using autocommands with groups: InsertLeave, InsertEnter, CursorMovedI, using CursorMoved seems to slow down vim to much.
-
- autoload/atplib.vim             |  535 +++++++++++++++++++--------------------
- doc/automatic-tex-plugin.txt    |  126 ++++------
- ftplugin/ATP_files/mappings.vim |    1 +
- ftplugin/ATP_files/options.vim  |   77 ++++--
- ftplugin/ATP_files/search.vim   |    1 +
- ftplugin/ATP_files/various.vim  |   62 +++---
- 6 files changed, 390 insertions(+), 412 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/7.0)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Tue Jul 6 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 7.0
-    
-    * THE PLUGIN HAS A NEW LAYOUT (under your .vim directory! If you DO NOT WAN'T TO MESS YOUR .VIMRC directory, first use the old vimball file AutomaticTexPlugin.vba /version =< 6.7/ and the command RmVimball and then install the new version).
-    * with the new version you can use $HOME/.atprc.vim file to set the variables (useful for the local-buffer variables).
-    * TeXdoc command, mapped to <F1> with nice completion (which is using texdoc configuration files (texdoc.cnf)), you can also pass command line options to texdoc (for example ':TeXDoc -l -A lshort'), if run without any options prints the info message of texdoc (like texdoc or texdoc -h in the command line).
-    * t:atp_DebugMode and g:atp_DefaultDebugMode variables with possible values: 'silent', 'debug', 'verbose'.
-    * Changes in ShowError (new flag 'all' and some other things ... )
-    * NEnv, PEnv commands set the last pattern, if you want to search further (forward or backward) you can use 'n' and 'N' vim keys.
-    * When the cursor is positioned on \begin:\end, \left:\right, $:$ the mathing pairs are highlighted like the matching pairs of brackets (with the same highlight group) (by D. Munger).
-    * Hihglighting of \begin:\end, $:$, \[:\], \(:\) and if filetype is 'plaintex' (or the variable b:atp_TexFlavour = 'plaintex') also $$:$$ (based on function written by D. Munger)
-    * Select environment with "vie" "vae" /or "ie" "ae" in visual mode/ (by D. Munger)
-    * Select inline math environments ($:$, \(:\) and \[:\]) with "vi$" and "va$" (by D. Munger)
-    * Simplifications of SshPrint command
-    * g:atp_ToggleMathTextWidth - if set to 1 ( the default is 1 if textwidth != 0 and 0 other wise ) vim textwidth option will be set to 0 if the cursor stands in math environment (currently works only for $:$, \(:\), \[:\], and $$:$$ ).
-
- autoload/atplib.vim                       |  986 +++---
- colors/coots-beauty-256.vim               |    6 +
- doc/automatic-tex-plugin.txt              |  395 ++-
- ftplugin/ATP_files/LatexBox_complete.vim  |  387 +++
- ftplugin/ATP_files/LatexBox_indent.vim    |   75 +
- ftplugin/ATP_files/LatexBox_mappings.vim  |   12 +
- ftplugin/ATP_files/LatexBox_motion.vim    |  439 +++
- ftplugin/ATP_files/LatexBox_variables.vim |   45 +
- ftplugin/ATP_files/common.vim             |  269 ++
- ftplugin/ATP_files/compiler.vim           |  805 +++++
- ftplugin/ATP_files/mappings.vim           |  290 ++
- ftplugin/ATP_files/menu.vim               |  101 +
- ftplugin/ATP_files/motion.vim             | 1026 ++++++
- ftplugin/ATP_files/options.vim            | 1249 ++++++++
- ftplugin/ATP_files/search.vim             |  355 +++
- ftplugin/ATP_files/various.vim            |  754 +++++
- ftplugin/bibsearch_atp.vim                |   24 +-
- ftplugin/fd_atp.vim                       |   25 +-
- ftplugin/plaintex_atp.vim                 |    4 +
- ftplugin/tex_atp.vim                      | 4787 +----------------------------
- ftplugin/toc_atp.vim                      |   35 +-
- indent/tex_atp.vim                        |  230 --
- 22 files changed, 6598 insertions(+), 5701 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/6.7)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Mon Jun 28 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 6.7
-    
-    * new CALL BACK mechanism as suggest by D.Munger (many thanks!)
-    * CALL BACK and status line notification are now on by default - if (pdf)latex is working (pdf)latex is written in the status line together with number of insatnces (the value of b:atp_running variable).
-    * local buffer variable names (:help b:) are chenged. If atp detects an old variable set by you it will ask you to change its name (and copy its value to the new variable!).
-
-commit SHA1SHA1SHA1 (tag: refs/tags/6.6)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Sat Jun 26 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 6.6
-    
-    * a bug fixed in intedation file
-    * tikz keyword completion adds unclosed bracket to the popup menu
-
- autoload/atplib.vim  |   48 ++++++++++++++++++++++++++++++++++++------------
- ftplugin/tex_atp.vim |   27 ++++++++++++++-------------
- indent/tex_atp.vim   |   18 +++++-------------
- 3 files changed, 55 insertions(+), 38 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/6.5)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Sat Jun 26 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 6.5
-    
-    see the DOCUMENTATION for more on new features:
-    * FontPreview and FontSearch commands allow for previewing many font defition files at once.
-    * new WrapSelection function, vmaps: \bf, \it, etc, but also some of \begin{}:\end{} pairs
-    * \s adds a star to an environment
-    * <F4> cycles through environment names of the current environment  (if g:atp_toggle_labels = 1 it also changes the prefix of a label, for example from 'thm:' -> 'lem:' ).
-    * color completion for the \textcolor{}{} command (it finds defined colors in tex file and in input files as well)
-    * smart completion for all arguments of \usefont{}{}{}{} command, and for commands \fontencoding{}, \fontfamily{}, \fontseries{}, \fontshape{} and \DecalreFixedFont.
-    * More nice features from David Munger (LatexBox plugin): % operates also on \begin{}:\end{} paris, some changes in omnicompletion.
-    * motion maps: <LocalLeader>NS, <LocalLeader>PS, <LocalLeader>NC, <LocalLeader>PC, <LocalLeader>NP, <LocalLeader>PP  - N/P next previous S/C/P - section/chapter/part
-    * g:atp_imap_first_leader="#" g:atp_imap_second_leader="##", g:atp_imap_third_leader="]", g:atp_imap_fourth_leader="[",  variables which let you configure the leaders for imaps. There are also leaders for vmaps: g:atp_vmap_text_font_leader = "<LocalLeader>", g:atp_vmap_math_font_leader = "<LocalLeader>m", g:atp_vmap_environment_leader = "" (empty),g:atp_vmap_bracket_leader ="<LocalLeader>" and g:atp_vmap_big_bracket_leader	= "<LocalLeader>b".
-
- autoload/atplib.vim          |  829 +++++++++++++++++---------
- doc/automatic-tex-plugin.txt |  755 ++++++++++++++++--------
- ftplugin/fd_atp.vim          |   56 ++-
- ftplugin/tex_atp.vim         | 1348 ++++++++++++++++++++++++++----------------
- indent/tex_atp.vim           |  238 ++++++++
- 5 files changed, 2146 insertions(+), 1080 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/6.4)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Fri Jun 18 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 6.4
-    
-    * OmniCompletion for \ref and \eqref: you can complete either part of the label or the number of the environment/equation in your output file! by D.Munger (LatexBox plugin).
-    * some other small changes in OmniCompletion by D.Munger.
-    * small correction in main compiler function: if called by ViewOutput, when the output file did not exists, it will load the file regardless there were errors during compilation.
-    * some nice changes in completion (both usual and omni) for \cite command. Now the output of both looks the same: in the popup menu you will see the one abbreviation letter (a - article, B - book, b - booklet, etc...), author (authors) year, and the title.
-    * \cite{<vim-pattern><Tab> !!! for example '.*author1\&.*author2' (a feature taken from LatexBox by D.Munger)
-    * I renamed the variables g:texextensions to g:atp_tex_extensions.
-    * g:atp_delete_output if equal 1 Delete function (mapped to <F6>d) will remove also output file (pdf or dvi according to b:atp_texcompiler variable).
-    * g:atp_package_list is now generated according to the list of available packages in your tex distribution (used by tab completion for \usepackage).
-    * ]m  imaps to \(:\) and ]M imaps to \[:\]
-    * FontPreview command (see :] atp-FontPreview).
-    * b:autex is set to 0 for files under any tex directory as returned by 'kpsewhich -show-path tex' (except the current dir) otherwise b:autex=1 (b:autex toggles on/off the automatic tex processing).
-
- autoload/atplib.vim          | 1124 ++++++++++++++++++++++++++----------------
- colors/coots-beauty-256.vim  |   10 +-
- doc/automatic-tex-plugin.txt |  197 +++++++-
- ftplugin/bibsearch_atp.vim   |    8 +-
- ftplugin/fd_atp.vim          |  195 +-------
- ftplugin/tex_atp.vim         | 1101 ++++++++++++++++++++++-------------------
- 6 files changed, 1516 insertions(+), 1119 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/6.3)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Mon Jun 14 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 6.3
-    
-    * Two new completion methods: for \documentclass and for \bibliographystyle.  They found all the files (classes, bib styles files) accessible in your tex distribution.
-    * OmniCompletion written by D.Munger (the author of Latex-Box plugin) (omnicompletion for \cite{} works smoothly in gvim! is fast even with big bib data bases. In the popup menu shows the author and the title entries)
-    * imap: ]e puts \end{} ]u puts \begin{enumerate}
-    * CloseLastBracket() - a function integrated into tab completion: closes brackets (:), \{:\} and \[:\] presrves the size commands: \left:\right, \bigl:\bigr, etc...  , and preserves nested brackets (but do not checks if the bracket is put in the right place, like CloseLastEnv() function).
-    * Tab_Completion is now much much faster !!!
-    * TOC map \t : doesn't regenerate the toc data base (unless if it doesn't exist), while :TOC command does. This makes the TOC work faster.
-    * TOC some corections and a great speed up.
-    * Some fixes in the algorithm which closes environments.
-    * atplib.vim -- some function are now in the library atplib.vim, atp loads faster!
-
- autoload/atplib.vim          | 2798 +++++++++++++++++++++++++++++++++
- colors/coots-beauty-256.vim  |    5 +
- doc/automatic-tex-plugin.txt |  404 +++---
- ftplugin/tex_atp.vim         | 3550 +++++++++++-------------------------------
- ftplugin/toc_atp.vim         |   58 +-
- 5 files changed, 4001 insertions(+), 2814 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/6.2)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Sun Jun 6 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 6.2
-    
-    * LocalCommands and DefiSearch functions both by default search for '\def' and '\newcommands' only up to first appearance of \begin{document}. A bug fixed in search function which makes both function work twice as fast.
-    * BibSearch: If there are no flags given but only keyword flags BibSearch uses the default g:defaultbibflags.
-    * BibSearch: speed up: search function is up to 5 times faster, when no arguments are supplied (which for example when completing '\cite{'). The function which shows results is now 3 times faster. For a file which has ~1700 bib fields it takes ~10 seconds to show all results.
-    * BibSearch: a flag 'k' added for lines 'key = {...}' in a bib file.
-    * IMAPs are CHANGED!, there are no imaps with [, only with ], which makes it more convenient to write latex optional arguments. If you want to use old maps put: "let g:atp_env_maps_old=1" in your vimrc file. See ":h atp-mappings-environments".
-    * Small Changes in the menu. (Toggle function works better).
-    * Completion supports comment lines (i.e. now, it is not closing opened environments which start in a comment line)
-
- doc/automatic-tex-plugin.txt |  126 +++--
- ftplugin/tex_atp.vim         | 1265 ++++++++++++++++++++++++++----------------
- 2 files changed, 855 insertions(+), 536 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/6.1.1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Wed Jun 2 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 6.1.1: * Fix of printing command ':SshPrint'.
-
- ftplugin/tex_atp.vim |    5 +++--
- 1 files changed, 3 insertions(+), 2 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/6.1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Wed Jun 2 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 6.1
-    
-    * Completion for keywords of tikz package added.
-    * b:atp_local_completion=0 -- do not search for locally defined commands and environments, =1 search for them after first completion (default), =2 search at starup.
-    * LocaCommands -- commands to update locally defined commands and environments.
-    * Do not close environments which are opened in the lines \def, \newcommand, \renewcommand.
-
- doc/automatic-tex-plugin.txt |   32 ++++-
- ftplugin/tex_atp.vim         |  360 +++++++++++++++++++++++++++++++++---------
- 2 files changed, 313 insertions(+), 79 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/6.0)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Mon May 31 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 6.0
-    
-    * NEW FEATURE: FontSearch: finds fd files in your system and lists them, press <Enter> to open the fd file, <Tab> to list the fonts defined, p to PREVIEW the fonts, P to preview the fonts and open buffer with the tex source (useful to see errors using ShowErrors command), in all 3 kinds of windows (fd list,fd file, tex source) q deletes the buffer (so that your lists of buffers doesn't become too long, if you want the buffer to remain in the list use ':q'. Some might not work, but this is on the tex side (usually because lack of some other kings of files: encoding, font metrics, etc...). You can search CTAN archive to find them.
-    * Final changes to completion (check the description of the algorithm of closing environments :h atp-completion-env)
-    * Now the doc file appears in local additions (:h local-additions).
-
- doc/automatic-tex-plugin.txt |  318 +++++++---
- ftplugin/bibsearch_atp.vim   |   10 +-
- ftplugin/fd_atp.vim          |  234 +++++++
- ftplugin/tex_atp.vim         | 1397 +++++++++++++++++++++++++++++-------------
- ftplugin/toc_atp.vim         |    5 +-
- 5 files changed, 1444 insertions(+), 520 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/5.0)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Mon May 24 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 5.0
-    
-    * Change in the compilation algorithm: now it uses temporary directories rather than temporary files, what allows for externalisation in tikz (thanks to D.Munger for reporting). The jobname switch of tex is now not used (only -output-directory).
-    * Tab completion supports CLOSING ENVIRONMENTS: \\begin{}\\end{} and mathematical ones: \\(:\\), \\[:\\] !!! Environments may be NESTED. See &#039:h atp-completion&#039. There are two modes of completion: expert mode (mapped to <Tab>) and non expert mode (mapped to  <Shift>+<Tab>), the first with fewer matches of commands, the second if you are searching for some command.  Completion of commands checks if you are in math mode (only if entire document is written without $:$ and $$:$$ math modes, as it is hard to implement such a feature for this opening/closing pairs.). You can switch it on/off in the menu. Completion supports: commands, inline_math (automatically closes &#039\\(&#039), displayed_math (closes &#039\\[&#039), package names, tikz libraries (for the tikz package), environment names, close, labels, bibitems (for \\cite and \\nocite commands), environments, names of input files (searches for file names under b:outdir and g:texmfdir), bibfiles.
-    * Wrap selection due to D. Munger (thanks!).
-    The following are yet in the help file:
-    * The status line notification that tex is working (you need to set g:atp_status_notification=1 and g:atp_callback=1), by default is off (this changes mode from input to normal when tex ends).
-    * Debug mode: you can set g:atp_show_errors=1 (and g:atp_callback=1) by default is off. You can open the log file (using :copen), and after tex ends the log file will be reread and the log will be updates. (As with status line notification: call back mechanism switches the mode from input to normal).
-
- colors/coots-beauty-256.vim  |    8 +-
- doc/automatic-tex-plugin.txt |  245 ++++++-
- ftplugin/tex_atp.vim         | 1818 ++++++++++++++++++++++++++++++++++--------
- ftplugin/toc_atp.vim         |   58 ++-
- 4 files changed, 1805 insertions(+), 324 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/4.91)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Mon May 17 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 4.91
-    
-    * Tab completion supports \bibitems (even if there are bibliographies across different input files).
-
- doc/automatic-tex-plugin.txt |   35 +-
- ftplugin/plaintex_atp.vim    |    1 +
- ftplugin/tex_atp.vim         |  762 ++++++++++++++++++++++++++++++++++++++----
- 3 files changed, 710 insertions(+), 88 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/4.9)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Sun May 16 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 4.9
-    
-    * Tab -- intelligent completion for environments, commands, package names, labels and citations (still not in doc). If you want to use tab for its usual role put 'let g:atp_no_tab_maps = 1', into your vimrc file. Then the completion is mapped to F7. Also completes \begin{env} adding \end{env} in next line.
-    * If you use amsmath package then the completion supports extra commands and environments defined in this package. In case you use a document class which silently loads the package you can set the variable g:atp_amsmath = 1 in your vimrc file.
-    * If you have your own commands for which you want to add completion you can easily add them.
-    * special space map for command line searching under F2 (still not in doc)
-    * Menu (still not in doc)
-    * EditInputFile allows to switch between input files and the main file.
-    * and other small changes and bug fixes.
-
-commit SHA1SHA1SHA1 (tag: refs/tags/4.6)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Fri May 7 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 4.6
-    
-    * Files which name have white spaces are properly handled.
-    * nice colors for diff mode in gui in terminal versions.
-    * DefiSearch returns 'Definition not found' if it is not found.
-    * NextSection, PrevSection function and corresponding commands to move between parts, chapters and sections.
-
- colors/coots-beauty-256.vim  |   20 ++++----
- doc/automatic-tex-plugin.txt |   25 ++++++++-
- ftplugin/tex_atp.vim         |  118 +++++++++++++++++++++++++++++-------------
- 3 files changed, 114 insertions(+), 49 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/4.5)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Mon Apr 26 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 4.5
-    
-    * Corrections in Inverse/Reverse Searching for dvi.
-       See the doc ':h atp-viewers-xdvi' for the functions.
-    * ShowErrors works better (warning messages about references,
-      citations and fonts), new flags fi,p and F to show font info messages,
-      which packages are loaded, and which files are loaded by tex.
-      See the doc ':h atp-ShowErrors'
-    * and some other small corrections.
-
- colors/coots-beauty-256.vim  |    8 +-
- doc/automatic-tex-plugin.txt |   65 ++++++++++++++++----
- ftplugin/bibsearch_atp.vim   |    9 ++-
- ftplugin/tex_atp.vim         |  137 ++++++++++++++++++++++++++++-------------
- 4 files changed, 157 insertions(+), 62 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/4.4)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Tue Apr 6 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 4.4: two small fixes, thanks to a user :) .
-
- colors/coots-beauty-256.vim  |   13 ++-
- doc/automatic-tex-plugin.txt |    4 +
- ftplugin/tex_atp.vim         |  393 +++++++++++++++++++++++++-----------------
- ftplugin/toc_atp.vim         |    6 +-
- 4 files changed, 259 insertions(+), 157 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/4.3)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Wed Mar 17 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 4.3: * another small fixes
-
- ftplugin/tex_atp.vim |  409 ++++++++++++++++++++++++++------------------------
- 1 files changed, 212 insertions(+), 197 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Wed Mar 17 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 4.2: * small fixes
-
- ftplugin/tex_atp.vim |  127 ++++++++++++++++++++++++++++++++++++--------------
- 1 files changed, 92 insertions(+), 35 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Mon Mar 15 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 4.1
-    
-    * NEnv, PEnv - moving to next/previous environment (which is supplied as a command agrument [completion])
-    * support for projects: when edditing an input file the g:mainfile will be processed by tex compiler, the value of g:mainfile is set automatically, but you have to first open the main project file.
-    * EditInputFile has completion for the first argument which an imput file to open, the second argument is now the command for opening a buffer ('edit','split','vsplit', the default is 'edit') and the third one is the buffer name (default = current buffer)
-    * EditInputFile allows to open bibfiles
-    * $TEXMFOUTPUT variable integrated (if it is set then it its used to set  b:outdir variable)
-    * $BIBINPUTS variable integrated
-    * ShowErrors fixed, custom completion added
-    * SShPrint prints over ssh
-    		g:atp_printer_options
-    		g:atp_ssh
-      it has a custom complition set which help to choose the printer
-    * b:ViewerOptions
-    * g:{b:Viewer}Options
-    * SetXdvi - sets all the option for xdvi viewer (including inverse/reversesearching)
-    * SetXpdv - sets the options for xpdf viewer (inverse/reverse searching is not supported yet)
-
- colors/coots-beauty-256.vim  |    4 +-
- doc/automatic-tex-plugin.txt |   72 ++-
- ftplugin/tex_atp.vim         | 1299 +++++++++++++++++++++++++++++-------------
- 3 files changed, 958 insertions(+), 417 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/4)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Mon Mar 1 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 4
-    
-    * TOC shows the short name of sections if it is non empty.
-    * TOC, Labels, and BibSearch uses split/vsplit (instead of new/vnew) what increase the spead.
-    * new commands: ShowErrors and SetErrors (see ':h atp-ShowErrors')
-    * map 2\l :2TEX
-    * imap [i \item  'now without spaces after \item'
-    * CTOC value appears in the status line
-    * CTOC is using t:toc if it exists
-    * a small change in syntax file bibsearch_atp.vim
-    * change of a map: TOC is now mapped to \t (not T, which is a useful vim map)
-    * g:toc_window_width, g:labels_window_width
-    * t:buflist stores now full path, t:bufname is a full path
-    * some changes in status line
-    * a nice status line of ToC, Labels and Bibsearch windows
-    * some language corrections in doc file
-    * Labels window: setl nospell
-    * Input files appear corectly in ToC
-    * b:auruns variable (see :h atp-auruns)
-
- colors/coots-beauty-256.vim  |   56 +--
- doc/automatic-tex-plugin.txt |  914 ++++++++++++++++++++++++------------------
- doc/latexhelp.txt            |    2 +-
- ftplugin/bibsearch_atp.vim   |    7 +-
- ftplugin/tex_atp.vim         |  921 ++++++++++++++++++++++++++++++++----------
- ftplugin/toc_atp.vim         |   48 ++-
- syntax/bibsearch_atp.vim     |   15 +-
- 7 files changed, 1302 insertions(+), 661 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Fri Feb 12 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 3.2
-    
-    Two new functions:
-        FindInputFiles
-        EditInputFile
-    color scheme supports gui version.
-
- colors/coots-beauty-256.vim  |  137 +++++++------
- doc/automatic-tex-plugin.txt |  123 ++++++++++--
- ftplugin/tex_atp.vim         |  461 ++++++++++++++++++++++++++++--------------
- ftplugin/toc_atp.vim         |    6 +-
- 4 files changed, 485 insertions(+), 242 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Tue Feb 9 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 3.1
-    
-    ToC (table of contents) supports multiple opened files. And allows to switch between buffers or windows.
-
- colors/coots-beauty-256.vim  |    2 +-
- doc/automatic-tex-plugin.txt |  120 ++++---
- ftplugin/bibsearch_atp.vim   |    5 +-
- ftplugin/tex_atp.vim         |  751 +++++++++++++++++++++++++-----------------
- ftplugin/toc_atp.vim         |  197 ++++++++++--
- syntax/bibsearch_atp.vim     |    3 +-
- syntax/labels_atp.vim        |    7 +-
- syntax/toc_atp.vim           |   20 +-
- 8 files changed, 721 insertions(+), 384 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/3)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Thu Feb 4 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 3
-    
-    This version has several fixes, plus several new features:
-    
-    1) BibSearch opens now a new window, a syntax file for the results is provided, which is based on syntax file for bib files (see :h atp-bibsearch-highlight)
-    2) TOC command, which displays in seperate window interactive table of contents (wich the same numbering as in the output file),
-         I also provide a syntax file for TOC files
-    3) Lables command which dispalys in a seprate interactiv window lables found in your file
-    
-    Windows openned by TOC and Labels commands have functions which make it easy to copy the label (of chapter or of the label) to a registar or directly to you file, or to move to the label, or to echo the line with the label and to split the window of your tex file and one of them move to the label, to see its contens.
-    
-    If you open table of contents or the list of labels cursor position is set to the chapter (label) which you are currently editing.
-    
-    see :h atp-TOC() and :h atp-Labels()
-    
-    Best regards and happy texing :)
-    Marcin Szamotulski
-    4) I provide a color file, called coot-beauty-256 (it needs support for 256 colors).
-    4) Status line now shows the current chapter/section of the edited tex file.
-
- colors/coots-beauty-256.vim  |  198 ++++++++++++++++
- doc/automatic-tex-plugin.txt |  191 ++++++++++++----
- ftplugin/bibsearch_atp.vim   |   24 +--
- ftplugin/tex_atp.vim         |  518 ++++++++++++++++++++++++++++--------------
- ftplugin/toc_atp.vim         |  161 +++++++++++++
- syntax/bibsearch.vim         |  100 --------
- syntax/bibsearch_atp.vim     |   99 ++++++++
- syntax/labels_atp.vim        |   10 +
- syntax/toc_atp.vim           |   19 ++
- 9 files changed, 985 insertions(+), 335 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Mon Feb 1 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.1: a small fix: the option g:vertical is now working as desired.
-
- ftplugin/tex_atp.vim |    8 +++++---
- 1 files changed, 5 insertions(+), 3 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Mon Feb 1 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2
-    
-    I added a powerful functions to search in bibliographic files (*.bib) for entries which match a vim regexp. One choose which entries are shown (articles,books, etc..., but also author,title,etc...). The function can easily copy the bibfield key to a register or directly to the tex source file.
-    
-    I also supply a syntax file for output of this search function which is a small modification of the standard syntax file for bib files.
-
- doc/automatic-tex-plugin.txt |  442 +++++++++++++++++-
- ftplugin/bibsearch_atp.vim   |  101 ++++
- ftplugin/tex_atp.vim         | 1060 ++++++++++++++++++++++++++++++++++++------
- syntax/bibsearch.vim         |  100 ++++
- 4 files changed, 1555 insertions(+), 148 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Tue Jan 26 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1.1: GetLatestScript support added.
-
- ftplugin/tex_atp.vim |    3 +++
- 1 files changed, 3 insertions(+), 0 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/1)
-Author:     Marcin Szamotulski <mszamot@gmail.com>
-AuthorDate: Tue Jan 26 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 1: Initial upload
-
- README                       |   21 +
- doc/automatic-tex-plugin.txt |  561 ++++++++++
- doc/latexhelp.txt            | 2430 ++++++++++++++++++++++++++++++++++++++++++
- ftplugin/tex_atp.vim         |  659 ++++++++++++
- 4 files changed, 3671 insertions(+), 0 deletions(-)
+ README                                   |   39 +
+ autoload/atplib.vim                      | 4456 ++++++++++++++++++++++++++++++
+ colors/coots-beauty-256.vim              |  262 ++
+ doc/automatic-tex-plugin.txt             | 3875 ++++++++++++++++++++++++++
+ doc/bibtex_atp.txt                       |   62 +
+ doc/latexhelp.txt                        | 2437 ++++++++++++++++
+ ftplugin/ATP_files/LatexBox_common.vim   |  313 +++
+ ftplugin/ATP_files/LatexBox_complete.vim |  383 +++
+ ftplugin/ATP_files/LatexBox_indent.vim   |   84 +
+ ftplugin/ATP_files/LatexBox_latexmk.vim  |  219 ++
+ ftplugin/ATP_files/LatexBox_mappings.vim |   24 +
+ ftplugin/ATP_files/LatexBox_motion.vim   |  873 ++++++
+ ftplugin/ATP_files/abbreviations.vim     |  174 ++
+ ftplugin/ATP_files/common.vim            |  743 +++++
+ ftplugin/ATP_files/compiler.vim          | 1434 ++++++++++
+ ftplugin/ATP_files/helpfunctions.vim     |  170 ++
+ ftplugin/ATP_files/mappings.vim          |  475 ++++
+ ftplugin/ATP_files/menu.vim              |  252 ++
+ ftplugin/ATP_files/motion.vim            | 1537 ++++++++++
+ ftplugin/ATP_files/options.vim           | 1938 +++++++++++++
+ ftplugin/ATP_files/project.vim           |  754 +++++
+ ftplugin/ATP_files/search.vim            | 1205 ++++++++
+ ftplugin/ATP_files/various.vim           | 1920 +++++++++++++
+ ftplugin/ATP_files/vimcomplete.bst       |  306 ++
+ ftplugin/bib_atp.vim                     |  311 +++
+ ftplugin/bibsearch_atp.vim               |  135 +
+ ftplugin/fd_atp.vim                      |   77 +
+ ftplugin/plaintex_atp.vim                |    7 +
+ ftplugin/tex_atp.vim                     |  128 +
+ ftplugin/toc_atp.vim                     |  721 +++++
+ syntax/bibsearch_atp.vim                 |  100 +
+ syntax/labels_atp.vim                    |   16 +
+ syntax/log_atp.vim                       |  123 +
+ syntax/toc_atp.vim                       |   31 +
+ 34 files changed, 25584 insertions(+), 0 deletions(-)

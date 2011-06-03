@@ -1,4 +1,67 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2.1)
+Author:     Wincent Colaiuta <win@wincent.com>
+AuthorDate: Sun May 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2.1
+    
+    - Remove duplicate copy of the documentation that was causing "Duplicate tag"  errors- Mitigate issue with distracting blinking cursor in non-GUI versions of Vim  (patch from Steven Moazami)
+
+ doc/README.txt                 |  779 ----------------------------------------
+ doc/command-t.txt              |  190 ++++++----
+ ruby/command-t/match_window.rb |   10 +
+ 3 files changed, 130 insertions(+), 849 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Wincent Colaiuta <win@wincent.com>
+AuthorDate: Sat Apr 30 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2
+    
+    - added |g:CommandTMatchWindowReverse| option, to reverse the order of items  in the match listing (patch from Steven Moazami)
+
+ doc/README.txt                 |  779 ++++++++++++++++++++++++++++++++++++++++
+ doc/command-t.txt              |   99 ++----
+ ruby/command-t/controller.rb   |    3 +-
+ ruby/command-t/match_window.rb |    8 +-
+ 4 files changed, 823 insertions(+), 66 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1b2)
+Author:     Wincent Colaiuta <win@wincent.com>
+AuthorDate: Sun Mar 27 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1b2
+    
+    - fix a glitch in the release process; the plugin itself is unchanged since 1.1b
+
+ doc/command-t.txt |    5 +++++
+ 1 files changed, 5 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1b)
+Author:     Wincent Colaiuta <win@wincent.com>
+AuthorDate: Sun Mar 27 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1b
+    
+    - add |:CommandTBuffer| command for quickly selecting among open buffers
+
+ doc/command-t.txt                        |   94 ++++++++++++++++++------------
+ plugin/command-t.vim                     |   21 +++++-
+ ruby/command-t/controller.rb             |   61 +++++++++++--------
+ ruby/command-t/finder.rb                 |    9 ++-
+ ruby/command-t/finder/buffer_finder.rb   |   35 +++++++++++
+ ruby/command-t/finder/file_finder.rb     |   35 +++++++++++
+ ruby/command-t/scanner.rb                |   69 +---------------------
+ ruby/command-t/scanner/buffer_scanner.rb |   42 +++++++++++++
+ ruby/command-t/scanner/file_scanner.rb   |   94 ++++++++++++++++++++++++++++++
+ ruby/command-t/stub.rb                   |    4 +-
+ ruby/command-t/vim/path_utilities.rb     |   40 +++++++++++++
+ 11 files changed, 364 insertions(+), 140 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
 Author:     Wincent Colaiuta <win@wincent.com>
 AuthorDate: Wed Jan 5 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

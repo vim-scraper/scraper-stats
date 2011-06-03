@@ -1,4 +1,51 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.6)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.7.3)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Mon May 9 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.7.3
+    
+    Fix a bug in IDL built-in template;
+    add pascal and erlang built-in template by Zhou Yichao;
+    some minor bug-fixes and improvements by Zhou Yichao.
+
+ autoload/SingleCompile.vim |  318 ++++++++++++++++++++++++--------------------
+ doc/SingleCompile.txt      |   30 ++++-
+ plugin/SingleCompile.vim   |    2 +-
+ 3 files changed, 198 insertions(+), 152 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.7.2)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Sun Apr 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.7.2
+    
+    Fix a problem when compiling if using the deprecated way to add templates;
+    fix a shell determination problem;
+    add IDL built-in template;
+
+ autoload/SingleCompile.vim |   79 ++++++++++++++++++++++++++++++-------------
+ doc/SingleCompile.txt      |   65 ++++++++++++++++++++++++++----------
+ plugin/SingleCompile.vim   |    2 +-
+ 3 files changed, 103 insertions(+), 43 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.7.1)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Tue Mar 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.7.1
+    
+    Fix redirection issues under csh and tcsh;
+    add option g:SingleCompile_showresultafterrun.
+
+ autoload/SingleCompile.vim |  111 +++++++++++++++++++++++++++++---------------
+ doc/SingleCompile.txt      |   19 +++++++-
+ plugin/SingleCompile.vim   |    2 +-
+ 3 files changed, 92 insertions(+), 40 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
 Author:     H Xu <xuhdev@gmail.com>
 AuthorDate: Sat Mar 19 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -220,25 +267,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.2.4: still fix directory switching problem.
 
- autoload/SingleCompile.vim |   12 +++++-------
- doc/SingleCompile.txt      |    4 ++--
- plugin/SingleCompile.vim   |    2 +-
- 3 files changed, 8 insertions(+), 10 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/2.2.1)
-Author:     H Xu <xuhdev@gmail.com>
-AuthorDate: Tue Nov 30 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 2.2.1
-    
-    Fix a minor bug: use local 'makeprg' and 'shellpipe' variable instead of the global ones;
-    add clang( for C, C++ ) built-in template.
-
- autoload/SingleCompile.vim |  610 +++++++++++++++++++++++++++++++-------------
+ autoload/SingleCompile.vim |  620 +++++++++++++++++++++++++++++++-------------
  doc/SingleCompile.txt      |    8 +-
  plugin/SingleCompile.vim   |   75 ++++--
- 3 files changed, 485 insertions(+), 208 deletions(-)
+ 3 files changed, 489 insertions(+), 214 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
 Author:     H Xu <xuhdev@gmail.com>
@@ -265,8 +297,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2.1: Fix a minor document bug.
 
- README                     |  199 +++++++++++++++++++++++++++
+ README                     |  211 ++++++++++++++++++++++++++++
  autoload/SingleCompile.vim |  198 +++++++++++++++++++++++++++
  doc/SingleCompile.txt      |  324 ++++++++++++++++++++++++++++++++++++++++++++
  plugin/SingleCompile.vim   |  156 +++++++++++++++++++++
- 4 files changed, 877 insertions(+), 0 deletions(-)
+ 4 files changed, 889 insertions(+), 0 deletions(-)

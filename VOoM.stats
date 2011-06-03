@@ -1,4 +1,41 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.0b4)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.0b5)
+Author:     Vlad Irnov <vlad.irnov@gmail.com>
+AuthorDate: Thu Mar 24 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.0b5
+    
+    * New markup mode: txt2tags.
+    * Added support for sessions (:mksession).
+    * Fixed some bugs.
+
+ doc/voom.txt                            |  189 +++++++++++----
+ plugin/voom.vim                         |  410 +++++++++++++++++++------------
+ plugin/voom/voom.py                     |   92 ++++----
+ plugin/voom/voom_mode_html.py           |   10 +-
+ plugin/voom/voom_mode_markdown.py       |   16 +-
+ plugin/voom/voom_mode_python.py         |   35 ++--
+ plugin/voom/voom_mode_rest.py           |   12 +-
+ plugin/voom/voom_mode_thevimoutliner.py |   10 +-
+ plugin/voom/voom_mode_txt2tags.py       |  106 ++++++++
+ plugin/voom/voom_mode_viki.py           |   10 +-
+ plugin/voom/voom_mode_vimoutliner.py    |    9 +-
+ plugin/voom/voom_mode_vimwiki.py        |   13 +-
+ plugin/voom/voom_mode_wiki.py           |   10 +-
+ voom_samples/calendar_outline.zip       |  Bin 29162 -> 29162 bytes
+ voom_samples/test_outline.html          |   20 +-
+ voom_samples/test_outline.mkd           |   20 +-
+ voom_samples/test_outline.otl           |   20 +-
+ voom_samples/test_outline.py            |    2 +
+ voom_samples/test_outline.rst           |   26 ++-
+ voom_samples/test_outline.t2t           |  246 ++++++++++++++++++
+ voom_samples/test_outline.txt           |   20 +-
+ voom_samples/test_outline.viki          |   20 +-
+ voom_samples/test_outline.vimwiki       |   20 +-
+ voom_samples/test_outline.wiki          |   20 +-
+ 24 files changed, 969 insertions(+), 367 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0b4)
 Author:     Vlad Irnov <vlad.irnov@gmail.com>
 AuthorDate: Mon Jan 31 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -378,11 +415,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README                |  109 ++++
+ README                |  110 ++++
  doc/voof.txt          |  864 ++++++++++++++++++++++++++
  plugin/voof.vim       | 1620 +++++++++++++++++++++++++++++++++++++++++++++++++
  sample_outlines.zip   |  Bin 0 -> 29237 bytes
  screenshots/voof1.png |  Bin 0 -> 109591 bytes
  screenshots/voof2.png |  Bin 0 -> 107940 bytes
  voof.py               |  925 ++++++++++++++++++++++++++++
- 7 files changed, 3518 insertions(+), 0 deletions(-)
+ 7 files changed, 3519 insertions(+), 0 deletions(-)

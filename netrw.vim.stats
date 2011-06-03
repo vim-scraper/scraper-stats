@@ -1,4 +1,23 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/136)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/141)
+Author:     Charles Campbell <drchip@campbellfamily.biz>
+AuthorDate: Fri Apr 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 141
+    
+    included -s:... support for Windows ftp
+    restored 2-leftmouse for :Rex-like return
+    added balloon help for items in banner
+    g:netrw_cursor (g:netrw_cursorcolumn is deprecated) supports additional argument values for cursorline and cursorcolumn control in netrw directory listings.
+    :Texplore starts from netrw's idea of the current directory rather than pwd's
+
+ autoload/netrw.vim     | 2244 ++++++++++++++++++++++++++++--------------------
+ doc/pi_netrw.txt       |  456 +++++++---
+ plugin/netrwPlugin.vim |   32 +-
+ syntax/netrw.vim       |    2 +-
+ 4 files changed, 1670 insertions(+), 1064 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/136)
 Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Tue Dec 29 00:00:00 2009 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

@@ -1,4 +1,18 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/30)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/33)
+Author:     Charles Campbell <drchip@campbellfamily.biz>
+AuthorDate: Sat Apr 2 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 33
+    
+    Added support for xz compression.  Supports *.vmb as well as *.vba for extraction; creates *.vmb files.  Bugfixes: zero-length file handling, a problem with fenc.
+
+ autoload/vimball.vim     |  113 +++++++++++++++++++++++++--------------------
+ doc/pi_vimball.txt       |   40 +++++++++++++++-
+ plugin/vimballPlugin.vim |   20 +++++---
+ 3 files changed, 112 insertions(+), 61 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/30)
 Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Tue Dec 29 00:00:00 2009 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

@@ -1,4 +1,22 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.02)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.10)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Wed Mar 30 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.10
+    
+    - Split off separate documentation and autoload script. Now publishing as Vimball.
+    - BUG: Only report changes if more than 'report' lines where indented; I got the meaning of 'report' wrong the first time.
+    - BUG: Could not use 999>> to indent all remaining lines.
+    - BUG: Normal-mode mapping didn't necessarily put the cursor on the first non-blank character after the comment prefix if 'nostartofline' is set.
+    - ENH: In normal and visual mode, set the change marks '[ and ]' similar to what Vim does.
+
+ autoload/IndentCommentPrefix.vim |  308 ++++++++++++++++++++++++++++++++
+ doc/IndentCommentPrefix.txt      |  166 ++++++++++++++++++
+ plugin/IndentCommentPrefix.vim   |  356 ++------------------------------------
+ 3 files changed, 485 insertions(+), 345 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.02)
 Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Tue Oct 6 00:00:00 2009 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -42,6 +60,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.00.007: Initial upload
 
- README                         |   40 +++++
+ README                         |   45 +++++
  plugin/IndentCommentPrefix.vim |  355 ++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 395 insertions(+), 0 deletions(-)
+ 2 files changed, 400 insertions(+), 0 deletions(-)
