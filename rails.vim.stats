@@ -21,9 +21,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fix Windows "C:" versus "c:" issue.
     Change cookies abbreviation from co to coo (so one can type co.uk).
 
- autoload/rails.vim |  457 +++++++++++++++++++++++++++++-----------------------
- doc/rails.txt      |   28 ++--
- plugin/rails.vim   |   18 +-
+ autoload/rails.vim |  457
+ doc/rails.txt      |   28
+ plugin/rails.vim   |   18
  3 files changed, 281 insertions(+), 222 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
@@ -51,9 +51,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Disable menu in MacVim by default to eliminate weird terminal output.
     Eliminate g:rails_expensive, g:rails_dbext, and g:rails_default_database.
 
- autoload/rails.vim |  378 ++++++++++++++++++++++++++++-----------------------
- doc/rails.txt      |  384 +++++++++++++++++++++------------------------------
- plugin/rails.vim   |   60 ++++++---
+ autoload/rails.vim |  378
+ doc/rails.txt      |  384
+ plugin/rails.vim   |   60
  3 files changed, 409 insertions(+), 413 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
@@ -69,9 +69,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     License clarification to enable distribution in Debian.
     Explain that donations on Github through Pledgie are matched and given to ICCF.
 
- autoload/rails.vim |   56 ++++++++++++++++++++++++++++++++++++++++++++-------
- doc/rails.txt      |   10 +++++++++
- plugin/rails.vim   |    9 --------
+ autoload/rails.vim |   56
+ doc/rails.txt      |   10
+ plugin/rails.vim   |    9
  3 files changed, 58 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
@@ -103,9 +103,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     :.Rake in controller runs rake routes CONTROLLER=.
     Document :Rake default tasks.
 
- autoload/rails.vim | 1286 ++++++++++++++++++++++++++++------------------------
- doc/rails.txt      |  225 ++++++----
- plugin/rails.vim   |    2 +-
+ autoload/rails.vim | 1286
+ doc/rails.txt      |  225
+ plugin/rails.vim   |    2
  3 files changed, 823 insertions(+), 690 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.4)
@@ -125,9 +125,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Rails 2.3 gf support: render 'foo', ApplicationController.
     Rails 2.3 and additional rspec syntax highlighting.
 
- autoload/rails.vim |  441 +++++++++++++++++++++++++++++++---------------------
- doc/rails.txt      |   33 +++-
- plugin/rails.vim   |    1 +
+ autoload/rails.vim |  441
+ doc/rails.txt      |   33
+ plugin/rails.vim   |    1
  3 files changed, 289 insertions(+), 186 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
@@ -148,8 +148,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     :Rmigration with no argument always jumps to latest migration.
     :Renvironment and :Rinitializer navigation commands.
 
- autoload/rails.vim |  208 ++++++++++++++++++++++++++++------------------------
- doc/rails.txt      |   49 +++++++------
+ autoload/rails.vim |  208
+ doc/rails.txt      |   49
  2 files changed, 139 insertions(+), 118 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
@@ -167,9 +167,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     :Rake in a cucumber feature runs that feature.
     Pluralization for alias, status, index, and vertex.
 
- autoload/rails.vim |  178 +++++++++++++++++++++++++++-------------------------
- doc/rails.txt      |   25 ++++---
- plugin/rails.vim   |    2 +-
+ autoload/rails.vim |  178
+ doc/rails.txt      |   25
+ plugin/rails.vim   |    2
  3 files changed, 108 insertions(+), 97 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
@@ -187,9 +187,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fix tab completion bugs.
     Fix :Rails command.
 
- autoload/rails.vim |  123 ++++++++++++++++++++++++----------------------------
- doc/rails.txt      |   66 ++++++++++++----------------
- plugin/rails.vim   |   21 ++-------
+ autoload/rails.vim |  123
+ doc/rails.txt      |   66
+ plugin/rails.vim   |   21
  3 files changed, 90 insertions(+), 120 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
@@ -219,9 +219,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     :Rtags now creates tags file in tmp (for easier SCM ignoring).
     Fix :Rgenerate migration to properly jump to timestamped migrations.
 
- autoload/rails.vim | 2106 ++++++++++++++++++++++++++--------------------------
- doc/rails.txt      |  153 +++--
- plugin/rails.vim   |   77 ++-
+ autoload/rails.vim | 2106
+ doc/rails.txt      |  153
+ plugin/rails.vim   |   77
  3 files changed, 1205 insertions(+), 1131 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
@@ -239,9 +239,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Detect model name in object daddy exemplars (for use with :Rmodel, etc)
     Point docs at github repository.
 
- autoload/rails.vim |  143 ++++++++++++++++++++++++++--------------------------
- doc/rails.txt      |   19 ++++---
- plugin/rails.vim   |    2 +-
+ autoload/rails.vim |  143
+ doc/rails.txt      |   19
+ plugin/rails.vim   |    2
  3 files changed, 82 insertions(+), 82 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -257,9 +257,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Work around nonzero exit status on Leopard.
     Minor bug fixes.
 
- autoload/rails.vim |   69 ++++++++++++++++++++++++------------------------
- doc/rails.txt      |   33 +++++++----------------
- plugin/rails.vim   |   74 +++++++---------------------------------------------
+ autoload/rails.vim |   69
+ doc/rails.txt      |   33
+ plugin/rails.vim   |   74
  3 files changed, 54 insertions(+), 122 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/256)
@@ -274,9 +274,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     OS X now more liberally detected when choosing a browser.
     Handle plain files with gf.
 
- autoload/rails.vim | 4379 ++++++++++++++++++++++++++++++++++++++++++++++++++
- doc/rails.txt      |    8 +-
- plugin/rails.vim   | 4536 ++--------------------------------------------------
+ autoload/rails.vim | 4379
+ doc/rails.txt      |    8
+ plugin/rails.vim   | 4536
  3 files changed, 4502 insertions(+), 4421 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/239)
@@ -290,8 +290,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Commands like :Rconsole now work with Cygwin Ruby.
     Rudimentary HAML support.
 
- doc/rails.txt    |    5 +-
- plugin/rails.vim |  125 +++++++++++++++++++++++++++--------------------------
+ doc/rails.txt    |    5
+ plugin/rails.vim |  125
  2 files changed, 67 insertions(+), 63 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/222)
@@ -304,8 +304,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     :Rake runs rake spec inside a spec.
     Rails 2.0 cleanups and tweaks
 
- doc/rails.txt    |   32 ++++++++------
- plugin/rails.vim |  125 +++++++++++++++++++++++++++++++-----------------------
+ doc/rails.txt    |   32
+ plugin/rails.vim |  125
  2 files changed, 90 insertions(+), 67 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/216)
@@ -319,8 +319,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     :Rpreview utilizes "# GET /foos/1" style comments.
     :Rake in a migration defaults to migrating to the currently edited version.
 
- doc/rails.txt    |   38 ++-
- plugin/rails.vim | 1159 +++++++++++++++++++++++++++---------------------------
+ doc/rails.txt    |   38
+ plugin/rails.vim | 1159
  2 files changed, 620 insertions(+), 577 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/200)
@@ -335,8 +335,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Proper gf support for named route helpers (edit_post_url).
     Syntax highlighting for custom assertions from test_helper.rb.
 
- doc/rails.txt    |  266 ++++++++++++++++++++---------
- plugin/rails.vim |  492 ++++++++++++++++++++++++++++++++++++++---------------
+ doc/rails.txt    |  266
+ plugin/rails.vim |  492
  2 files changed, 535 insertions(+), 223 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/192)
@@ -349,7 +349,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     :Rails works again.
     :R jumps between config/database.yml and config/environments/*.rb
 
- plugin/rails.vim |   30 +++++++++++++++++++-----------
+ plugin/rails.vim |   30
  1 files changed, 19 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/190)
@@ -365,8 +365,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fixed multiple bugs peculiar to Vim 6.2.
     Other small bug fixes and enhancements.
 
- doc/rails.txt    |   63 +++-----
- plugin/rails.vim |  476 +++++++++++++++++++++++++++++++++++-------------------
+ doc/rails.txt    |   63
+ plugin/rails.vim |  476
  2 files changed, 337 insertions(+), 202 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/180)
@@ -382,8 +382,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     :Rrefresh clears certain cached data. :Rrefresh! reloads rails.vim.
     Added a browsefilter (for win32 file dialogs).
 
- doc/rails.txt    |  110 +++++++++++++---
- plugin/rails.vim |  373 ++++++++++++++++++++++++++++++++++++++++++------------
+ doc/rails.txt    |  110
+ plugin/rails.vim |  373
  2 files changed, 380 insertions(+), 103 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/175)
@@ -399,8 +399,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Recognize .erb and .builder extensions from edge Rails.
     :Rtask navigation command.
 
- doc/rails.txt    |   21 ++--
- plugin/rails.vim |  410 +++++++++++++++++++++++++++++++++++++++---------------
+ doc/rails.txt    |   21
+ plugin/rails.vim |  410
  2 files changed, 306 insertions(+), 125 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/166)
@@ -414,8 +414,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Improved errorformat, and an alternate format on :Rake! for backtraces.
     More robust database.yml loading for dbext.
 
- doc/rails.txt    |    9 ++-
- plugin/rails.vim |  242 ++++++++++++++++++++++++++++++++----------------------
+ doc/rails.txt    |    9
+ plugin/rails.vim |  242
  2 files changed, 150 insertions(+), 101 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/150)
@@ -429,7 +429,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Improved speed in certain setups on network file systems.
     More Rails 1.2 goodies, including limited gf on url helpers.
 
- plugin/rails.vim |  101 +++++++++++++++++++++++++++++++++++-------------------
+ plugin/rails.vim |  101
  1 files changed, 66 insertions(+), 35 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/144)
@@ -443,7 +443,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Updates for Ruby on Rails 1.2 (primarily syntax highlighting, and a few abbreviations).
     Tiny little bug fixes.
 
- plugin/rails.vim |   64 ++++++++++++++++++++++++++++++++----------------------
+ plugin/rails.vim |   64
  1 files changed, 38 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/140)
@@ -458,8 +458,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     GUI menu for recently edited projects.
     Certain expensive operations now enabled by default.  See :help rails-slow if you have any noticable delays.
 
- doc/rails.txt    |  103 +++++++++------
- plugin/rails.vim |  383 +++++++++++++++++++++++++++++++++++++++---------------
+ doc/rails.txt    |  103
+ plugin/rails.vim |  383
  2 files changed, 339 insertions(+), 147 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/132)
@@ -473,8 +473,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Support for surround.vim, vimscript#1697.
     Miscellaneous bug fixes and cleanups.
 
- doc/rails.txt    |   36 ++++++++++++++----
- plugin/rails.vim |  104 ++++++++++++++++++++++++++++++++++++++++--------------
+ doc/rails.txt    |   36
+ plugin/rails.vim |  104
  2 files changed, 105 insertions(+), 35 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/128)
@@ -488,8 +488,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Minor bug fixes.
     Deprecated :Rpartial in favor of :Rextract.
 
- doc/rails.txt    |  205 +++++++++++++++++++++++++++---------
- plugin/rails.vim |  311 ++++++++++++++++++++++++++++++++---------------------
+ doc/rails.txt    |  205
+ plugin/rails.vim |  311
  2 files changed, 342 insertions(+), 174 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/123)
@@ -503,8 +503,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fully functional modelines, including method local modelines.
     :Rmodel, :Rview, :Rcontroller, plus 9 other similar commands.
 
- doc/rails.txt    |  164 ++++--
- plugin/rails.vim | 1478 ++++++++++++++++++++++++++++++++++++------------------
+ doc/rails.txt    |  164
+ plugin/rails.vim | 1478
  2 files changed, 1096 insertions(+), 546 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/113)
@@ -516,7 +516,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Bugfix for error messages in 6.x (apparently string() was added in 7.0)
 
- plugin/rails.vim |   31 ++++++++++++++++++++++---------
+ plugin/rails.vim |   31
  1 files changed, 22 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/111)
@@ -531,8 +531,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     :Rset for per-app/buffer/method configuration.
     Preliminary modelines (disabled by default).
 
- doc/rails.txt    |  270 +++++---
- plugin/rails.vim | 2235 ++++++++++++++++++++++++++++++++++++------------------
+ doc/rails.txt    |  270
+ plugin/rails.vim | 2235
  2 files changed, 1657 insertions(+), 848 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100)
@@ -551,8 +551,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Miscellaneous bug fixes and tweaks.
     And as always, more...
 
- doc/rails.txt    |  744 ++++++++++++++++++++-------------
- plugin/rails.vim | 1254 ++++++++++++++++++++++++++++++++++++++++--------------
+ doc/rails.txt    |  744
+ plugin/rails.vim | 1254
  2 files changed, 1380 insertions(+), 618 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/69)
@@ -570,8 +570,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     :Rproject - create/find a project.vim project.
     and more...
 
- doc/rails.txt    |  218 ++++++++++---
- plugin/rails.vim |  963 +++++++++++++++++++++++++++++++++++++-----------------
+ doc/rails.txt    |  218
+ plugin/rails.vim |  963
  2 files changed, 826 insertions(+), 355 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/37)
@@ -588,8 +588,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Smarter partial extraction with :Rpartial.
     And more...
 
- doc/rails.txt    |  163 ++++++--
- plugin/rails.vim | 1134 ++++++++++++++++++++++++++++++++++++++++++++----------
+ doc/rails.txt    |  163
+ plugin/rails.vim | 1134
  2 files changed, 1056 insertions(+), 241 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/18)
@@ -599,7 +599,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 18: Initial upload
 
- README           |   21 ++
- doc/rails.txt    |  274 +++++++++++++++++++++++++
- plugin/rails.vim |  598 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README           |   21
+ doc/rails.txt    |  274
+ plugin/rails.vim |  598
  3 files changed, 893 insertions(+), 0 deletions(-)

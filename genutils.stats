@@ -19,8 +19,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Minor improvements in genutils#PathIsAbsolute() and
       genutils#GetVimCmdOutput()
 
- autoload/genutils.vim |  152 ++++++++++++++++++++++++++++--------------------
- plugin/genutils.vim   |   99 ++++++++++++++++++++++++--------
+ autoload/genutils.vim |  152
+ plugin/genutils.vim   |   99
  2 files changed, 164 insertions(+), 87 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
@@ -33,8 +33,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fixed some corner cases in RelPathFromDir()/RelPathFromFile().
     - Made the default comparators sort() function friendly.
 
- autoload/genutils.vim |   93 ++++++++++++++++++++++--------------------------
- plugin/genutils.vim   |   86 ++++++++-------------------------------------
+ autoload/genutils.vim |   93
+ plugin/genutils.vim   |   86
  2 files changed, 58 insertions(+), 121 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
@@ -48,8 +48,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - CleanupFileName() should also remove any leading or trailing
       whitespace.
 
- autoload/genutils.vim |    8 +++++++-
- plugin/genutils.vim   |   13 ++++++++-----
+ autoload/genutils.vim |    8
+ plugin/genutils.vim   |   13
  2 files changed, 15 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
@@ -64,8 +64,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       argument.
     - Renamed PromptForElement2 to PromptForElement. It was a typo.
 
- autoload/genutils.vim |   63 +++++++++++++++++++++++++++++++++---------------
- plugin/genutils.vim   |   25 ++++++++++++-------
+ autoload/genutils.vim |   63
+ plugin/genutils.vim   |   25
  2 files changed, 59 insertions(+), 29 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
@@ -79,8 +79,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Added BinSearchList() function.
     (uploading again to correct the Vim compatibility information, sorry to bump up)
 
- autoload/genutils.vim |   48 +++++++-----
- plugin/genutils.vim   |  204 ++++++++++++++++---------------------------------
+ autoload/genutils.vim |   48
+ plugin/genutils.vim   |  204
  2 files changed, 93 insertions(+), 159 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -118,8 +118,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       FileChangedShell autocommand. Use AddToFcShellPre and
       RemoveFromFCShellPre functions instead.
 
- autoload/genutils.vim | 1926 ++++++++++++++++++++++++++++++++++
- plugin/genutils.vim   | 2726 +++++++++----------------------------------------
+ autoload/genutils.vim | 1926
+ plugin/genutils.vim   | 2726
  2 files changed, 2409 insertions(+), 2243 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.20)
@@ -132,7 +132,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Release 1.20 for fixing an issue with my previous release. Thanks to
     Niels, Delphin and Craig for reporting the problem. If you downloaded the latest selectbuf, please download this version of genutils.
 
- plugin/genutils.vim |    8 ++++----
+ plugin/genutils.vim |    8
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.19)
@@ -142,7 +142,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.19: Now Vim7 compatible, no functionality change.
 
- plugin/genutils.vim |  332 ++++++++++++++++++++++++++-------------------------
+ plugin/genutils.vim |  332
  1 files changed, 170 insertions(+), 162 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.18)
@@ -161,7 +161,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - GetShellEnvType() is now public. Useful in conjunction with the
       EscapeCommand() function.
 
- plugin/genutils.vim |   94 ++++++++++++++++++++++++++++++++++++++++++++------
+ plugin/genutils.vim |   94
  1 files changed, 82 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.17)
@@ -174,7 +174,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Minor corrections to the FindBufferForName() function to work well
       with filenames containing backslashes (see doc).
 
- plugin/genutils.vim |   23 +++++++++++++++--------
+ plugin/genutils.vim |   23
  1 files changed, 15 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.16)
@@ -187,7 +187,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fast BinInsertSort() based on the BISort() by Peit Delport's.
     - Slightly improved QSort().
 
- plugin/genutils.vim |  106 ++++++++++++++++++++++++++++++++++++++++++++------
+ plugin/genutils.vim |  106
  1 files changed, 93 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.15)
@@ -208,7 +208,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       MarkActiveWindow() and RestoreActiveWindow() to avoid corrupting the
       "previous-window".
 
- plugin/genutils.vim |  166 ++++++++++++++++++++++++++++++++++++++++-----------
+ plugin/genutils.vim |  166
  1 files changed, 132 insertions(+), 34 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.14)
@@ -225,7 +225,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Save/Restore functions for cursor positions now create marks in the buffer context. This means, you can use the same name to create marks in different buffers, without overwriting each other. This is how Vim works for lowercase marks anyway.
     - Misc. other improvements/bugfixes.
 
- plugin/genutils.vim |  353 ++++++++++++++++++++++++++++++++++++++++++---------
+ plugin/genutils.vim |  353
  1 files changed, 294 insertions(+), 59 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.13)
@@ -243,7 +243,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Some clarifications on EscapeCommand().
     - Improved CleanFileName() to work with Windows UNC paths.
 
- plugin/genutils.vim |  283 ++++++++++++++++++++++++++++++++++++++++++++-------
+ plugin/genutils.vim |  283
  1 files changed, 244 insertions(+), 39 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
@@ -261,7 +261,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - More documentation on GetPreviewWinnr(), DefFileChangedShell(),
       MakeArgumentString(), MakeArgumentList(), UnEscape(), GetSpacer()
 
- plugin/genutils.vim |  490 ++++++++++++++++++++++++++++++++++++---------------
+ plugin/genutils.vim |  490
  1 files changed, 347 insertions(+), 143 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
@@ -274,7 +274,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Most important change is a lot of documentation with function prototypes. Now it is not necessary to look into the code to see the help and usage information. I also documented a lot of functions that lacked documentation earlier.
     - A few minor fixes to bugs/inconsistencies and other improvements in Escape(), RestoreSoftPosition, Notify window close related functionality. Also added a patch from Bram for persistence related funcationality.
 
- plugin/genutils.vim |  993 +++++++++++++++++++++++++++++++--------------------
+ plugin/genutils.vim |  993
  1 files changed, 611 insertions(+), 382 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
@@ -287,7 +287,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fixed bugs in the RelPathFromFile and RelPathFromDir functions.
     - The g:loaded_genutils variable now contains the version number for dependency checking (see ":help v:version" for format). If your plugin depends on genutils.vim, it is now easy and safe to check if the user has at least the minimum base version.
 
- plugin/genutils.vim |   46 +++++++++++++++++++++++++++++++---------------
+ plugin/genutils.vim |   46
  1 files changed, 31 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
@@ -299,7 +299,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Misc. functions added: GetSpacer, GetPreviewWinnr, ExtractFuncListing, UnEscape, GetLine/ColPosition. Removed undocumented IsPreviewWindowOpen function. See description for more details.
 
- plugin/genutils.vim |  118 +++++++++++++++++++++++++++++----------------------
+ plugin/genutils.vim |  118
  1 files changed, 67 insertions(+), 51 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
@@ -311,7 +311,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     When disabling persistence feature using g:genutilsNoPersist, it is possible for the plugins that depend on it to fail. Fixed it.
 
- plugin/genutils.vim |   48 +++++++++++++++++++++++++++---------------------
+ plugin/genutils.vim |   48
  1 files changed, 27 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
@@ -330,7 +330,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Some improvements for Vim6.2, but it should still work with Vim6.0.
     - Fixed a few bugs.
 
- plugin/genutils.vim |  492 +++++++++++++++++++++++++++++++++++----------------
+ plugin/genutils.vim |  492
  1 files changed, 339 insertions(+), 153 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -342,7 +342,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Minor fixes/updates. Fixed a bug in restoring line position with respect to window. Users of FileChangedShell functionality provided by the plugin (and thus the perforce plugin), should download this version only if the 6.1.220 patch is installed.
 
- plugin/genutils.vim |   23 +++++++++++------------
+ plugin/genutils.vim |   23
  1 files changed, 11 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -354,7 +354,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     My earlier version was using :normal instead of :normal! command, so user's mapping will interfere with it. If you have downloaded 1.4 earlier, please download it again. Thanks to David Rennalls for reporting the problem.
 
- plugin/genutils.vim |   20 ++++++++++----------
+ plugin/genutils.vim |   20
  1 files changed, 10 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -373,7 +373,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fixed some bugs in MoveCurLineToWinLine(). It works better now.
     - Added a functions to handle FileChangedShell autocommand and emulate the default vim behavior.
 
- plugin/genutils.vim |  310 ++++++++++++++++++++++++++++++++++++---------------
+ plugin/genutils.vim |  310
  1 files changed, 220 insertions(+), 90 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -385,7 +385,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     GPLed it for the use by Cream project. See http://cream.sf.net for information on Cream for Vim.
 
- plugin/genutils.vim |   10 +++++++---
+ plugin/genutils.vim |   10
  1 files changed, 7 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -404,7 +404,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       This groups the imports from the same package pretty well together.
     - Minor fixes in FindWindowForBuffer() and FindBufferForWindow()
 
- plugin/genutils.vim |  233 +++++++++++++++++++++++++++++++++++++++------------
+ plugin/genutils.vim |  233
  1 files changed, 178 insertions(+), 55 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -421,7 +421,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       - New persistence functions, PutPersistenceVar() and GetPersistenceVar() functions to save and retrieve your script variables across vim sessions without stepping on another script's name space.
       -- Minor fixes in CleanupFileName() function.
 
- plugin/genutils.vim |  317 +++++++++++++++++++++++++++++++++++++++++++++-----
+ plugin/genutils.vim |  317
  1 files changed, 285 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.24)
@@ -433,7 +433,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     New function, AlignWordWithWordInPreviousLine(). Improved ExecMap(), it is now much more useful. Added new scriptlet, g:makeArgumentList and its companion function, CreateArgString().
 
- plugin/genutils.vim |  230 ++++++++++++++++++++++++++++++++++++++++++---------
+ plugin/genutils.vim |  230
  1 files changed, 192 insertions(+), 38 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.20)
@@ -445,7 +445,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed a typo in ResetWindowSettings(). Update the previous version to fix an error while quitting selectbuf or perforce help window.
 
- plugin/genutils.vim |    8 ++++----
+ plugin/genutils.vim |    8
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.19)
@@ -457,7 +457,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Minor changes. Fixed FindWindowForBuffer and other functions to take care of the extra backslashes in the filenames protecting the spaces etc. Save/RestoreWindowSettings functions now have a variant that takes in a key. This key can be used to call these function from multiple scripts at the same time without overwriting each other's settings. Some new functions.
 
- plugin/genutils.vim | 1546 ++++++++++++++++++++++++++++-----------------------
+ plugin/genutils.vim | 1546
  1 files changed, 851 insertions(+), 695 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.15)
@@ -471,7 +471,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - New functions to do quick sort on the current window contents. A command to sort lines by their length.
     - A Basic help/description is added at the start of the script.
 
- plugin/genutils.vim | 1260 ++++++++++++++++++++++++++++-----------------------
+ plugin/genutils.vim | 1260
  1 files changed, 695 insertions(+), 565 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.11)
@@ -492,7 +492,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     noremap <silent> <C-Space> :call ShiftWordInSpace(1)<CR>
     noremap <silent> <C-BS> :call ShiftWordInSpace(-1)<CR>
 
- plugin/genutils.vim |  118 +++++++++++++++++++++++++++++++++++++++++++++++----
+ plugin/genutils.vim |  118
  1 files changed, 109 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.8)
@@ -504,7 +504,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Improved the save/restore position to even save/restore the line position in the window. Take a look at the set of Save/Restore/ResetSoft/HardPosition() functions.
 
- plugin/genutils.vim |  891 +++++++++++++++++++++++++++------------------------
+ plugin/genutils.vim |  891
  1 files changed, 465 insertions(+), 426 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.7)
@@ -514,6 +514,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0.7: Initial upload
 
- README              |  204 ++++++++++++++++++++++++
- plugin/genutils.vim |  426 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ README              |  204
+ plugin/genutils.vim |  426
  2 files changed, 630 insertions(+), 0 deletions(-)

@@ -9,7 +9,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     open  sco_command_feature.sco from sco.zip arhcive with vim to read about new feature.
     Bug fix with sco options parse.
 
- ftplugin/sco.vim |    4 +++-
+ ftplugin/sco.vim |    4
  1 files changed, 3 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.01)
@@ -19,7 +19,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 4.01: small bug fix. remove error messages that wasn't at previous versions.
 
- ftplugin/sco.vim |    6 +++---
+ ftplugin/sco.vim |    6
  1 files changed, 3 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
@@ -32,9 +32,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Mark with command ability added.
     open  sco_command_feature.sco from sco.zip arhcive with vim to read about new feature.
 
- ftplugin/sco.vim        |  218 +++++++++++++++++++++++++++++++++++++++++------
- ftplugin/sco_keys.vim   |    1 +
- sco_command_feature.sco |  203 +++++++++++++++++++++++++++++++++++++++++++
+ ftplugin/sco.vim        |  218
+ ftplugin/sco_keys.vim   |    1
+ sco_command_feature.sco |  203
  3 files changed, 397 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
@@ -46,7 +46,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     result output headers changed to be with tags: information. SCOSaveSearch rewrited to work faster and  without bugs. changed colors for tag list in tags: line
 
- ftplugin/sco.vim |  111 +++++++++++++++++++++++++++++++++++++++--------------
+ ftplugin/sco.vim |  111
  1 files changed, 81 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.241)
@@ -56,7 +56,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 3.241: :SCOSaveSearch bugged on linux. Fixed. Please check.
 
- ftplugin/sco.vim |    6 +++---
+ ftplugin/sco.vim |    6
  1 files changed, 3 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.24)
@@ -68,8 +68,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     :SCOMarkSmart changed to work with :g/pattern/SCOMarkSmart. :SCOSaveSearch (c<space>s by default) command added to store all lines with last pattern to sco buffer as marks. create new .sco file and read help.
 
- ftplugin/sco.vim      |   54 +++++++++++++++++++++++++++++++++++++++++++-----
- ftplugin/sco_keys.vim |    1 +
+ ftplugin/sco.vim      |   54
+ ftplugin/sco_keys.vim |    1
  2 files changed, 49 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
@@ -82,8 +82,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     :AppendPlace added. Select place where you want to add marks in sco file. Execute :AppendPlace on any line in sco buffer. Every :AddMark[Smart]  will add marks staring from that line and exactly in that sco buffer.
     sco_keys.vim added to change hot keys.
 
- ftplugin/sco.vim      |  105 ++++++++++++++++++++++++++++++-------------------
- ftplugin/sco_keys.vim |   28 +++++++++++++
+ ftplugin/sco.vim      |  105
+ ftplugin/sco_keys.vim |   28
  2 files changed, 93 insertions(+), 40 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3)
@@ -95,7 +95,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     :TransferToMarks command to convert back trace ( tested on gdb ) to smart marks. Create new sco file and read help
 
- ftplugin/sco.vim |   45 +++++++++++++++++++++++++++++++++++++++++++++
+ ftplugin/sco.vim |   45
  1 files changed, 45 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.92)
@@ -107,7 +107,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     :SCOReMark added ( c<Space>r ) to point current mark to another place: for repair broken marks
 
- ftplugin/sco.vim |   29 +++++++++++++++++++++++++++++
+ ftplugin/sco.vim |   29
  1 files changed, 29 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.9)
@@ -119,7 +119,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     :FileNameCaption added ( create new .sco file ( [g]vim newfile.sco ) and read help )
 
- ftplugin/sco.vim |   26 +++++++++++++++++++++++++-
+ ftplugin/sco.vim |   26
  1 files changed, 25 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.81)
@@ -131,7 +131,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     remove bug with :SCONext in cases when there is only one .sco file in buffer list and it is first
 
- ftplugin/sco.vim |    8 ++++++++
+ ftplugin/sco.vim |    8
  1 files changed, 8 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8)
@@ -141,7 +141,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.8: added :header highlight for use with tagscan.vim
 
- ftplugin/sco.vim |    8 ++++++--
+ ftplugin/sco.vim |    8
  1 files changed, 6 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.7)
@@ -156,7 +156,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     tags: create, gui, file
     to use with tagscan.vim
 
- ftplugin/sco.vim |    8 ++++++++
+ ftplugin/sco.vim |    8
  1 files changed, 8 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
@@ -169,7 +169,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     :SCOPrevious :SCONext commands added to switch between different sco buffers ( interfaces.sco; bugs.sco; breakpoints.sco; etc.. ) Map them on <C-Left> <C-Right> for example.
     Create new sco file and read help.
 
- ftplugin/sco.vim |   81 +++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ ftplugin/sco.vim |   81
  1 files changed, 80 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
@@ -183,7 +183,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Try it.
      ( Create new .sco file and read help )
 
- ftplugin/sco.vim |   62 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ ftplugin/sco.vim |   62
  1 files changed, 62 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.41)
@@ -193,7 +193,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.41: Removed bug with smart mark lines with '||' symbol
 
- ftplugin/sco.vim |    2 +-
+ ftplugin/sco.vim |    2
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
@@ -209,7 +209,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     ( create new .sco file and read help )
     Map them for example to <C-Up> and <C-Down> for fast browsing
 
- ftplugin/sco.vim |   63 ++++++++++++++++++++++++++++++++++++++++++++++++++---
+ ftplugin/sco.vim |   63
  1 files changed, 59 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
@@ -222,7 +222,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     :SCOTag 'tag_regexp' - add tags information to sco buffer.
     :SCOTag '' - add information about tag under cursor (c<Space>t)
 
- ftplugin/sco.vim |  110 +++++++++++++++++++++++++++++++++++++++++++++++++----
+ ftplugin/sco.vim |  110
  1 files changed, 101 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
@@ -235,7 +235,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Command :SCOClassInfo '' generate information about all classes.
     Fix Bug with "can't find pattern" (unescape '/' symbol when jump to tag)
 
- ftplugin/sco.vim |  157 ++++++++++++++++++++++++++++++++++++++++++++++++------
+ ftplugin/sco.vim |  157
  1 files changed, 141 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
@@ -247,7 +247,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added command :SCOClassInfo 'class[stuct]name' which build tree info (members, methods, inner classes with methods and members) about class. Command used tag file builded with ctags. Tested for c++. Execution of this command can take some time. Create new .sco file and set parametr tags_db equal to path for your tag file.
 
- ftplugin/sco.vim |  354 ++++++++++++++++++++++++++++++++++++++++++++++++++---
+ ftplugin/sco.vim |  354
  1 files changed, 334 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -260,7 +260,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     New appearance of smart marks. New appearance of folds at all.
     Added captions to smart marks. Added hot keys to work in visual mode. Create new file with sco extension and read help
 
- ftplugin/sco.vim |  292 +++++++++++++++++++++++++++++++++++++++++++-----------
+ ftplugin/sco.vim |  292
  1 files changed, 235 insertions(+), 57 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.1)
@@ -270,7 +270,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.1.1: Fix bug. Smart marks didn't worked at lines with " * [ ] " symbols
 
- ftplugin/sco.vim |    2 +-
+ ftplugin/sco.vim |    2
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -283,7 +283,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     New kind of marks added (smart marks).
     :Allign command added. (create new sco file and read help for details)
 
- ftplugin/sco.vim |  264 +++++++++++++++++++++++++++++++++++++++++++++++-------
+ ftplugin/sco.vim |  264
  1 files changed, 232 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -296,6 +296,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Rewrited in pure vim language. Not need vim's perl support. Not need vim's cscope support.
     Added auto align of marks.
 
- README           |  105 +++++++++++++
- ftplugin/sco.vim |  447 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README           |  105
+ ftplugin/sco.vim |  447
  2 files changed, 552 insertions(+), 0 deletions(-)

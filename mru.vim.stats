@@ -13,7 +13,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Increase the default MRU list size to 100 from 10.
     * Support for opening multiple files from the MRU list.
 
- plugin/mru.vim |  351 ++++++++++++++++++++++++++++++++++++++-----------------
+ plugin/mru.vim |  351
  1 files changed, 242 insertions(+), 109 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
@@ -25,7 +25,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Escape special characters in filenames for security reasons. On MS-Windows, use the _vim_mru_files file from the $USERPROFILE directory. When the ':vimgrep' command is used, don't add the files to the MRU list. When getting the files matching a pattern, first try it as a literal string. Show tooltip text for MRU menu entries.
 
- plugin/mru.vim |  168 ++++++++++++++++++++++++++++++++++++++++++--------------
+ plugin/mru.vim |  168
  1 files changed, 127 insertions(+), 41 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
@@ -37,7 +37,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Support for completion of filenames from the MRU file list for the :MRU command. Split the MRU menu into submenus when a large number of filenames are present in the MRU list. Fix for the placement of the MRU menu when Vim is running in compatible mode. New option to disable the MRU menu. The :MRUedit command is replaced by the :MRU command.
 
- plugin/mru.vim |  217 +++++++++++++++++++++++++++++++++----------------------
+ plugin/mru.vim |  217
  1 files changed, 130 insertions(+), 87 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
@@ -49,7 +49,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Works only with Vim version 7.0 and above. Uses Vim 7.0 data structures and functions. Support for opening files in tabs. Support for displaying files matching a pattern in the MRU window.
 
- plugin/mru.vim |  291 +++++++++++++++++++++++++-------------------------------
+ plugin/mru.vim |  291
  1 files changed, 129 insertions(+), 162 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
@@ -61,7 +61,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Use <abuf> instead of <afile> in autocmds. Escape backslash while searching for partial filenames.
 
- plugin/mru.vim |   29 ++++++++++++++++-------------
+ plugin/mru.vim |   29
  1 files changed, 16 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
@@ -73,7 +73,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Escape the % and # characters in the MRU filenames. Don't open a selected file in the preview window or in a window used by a Vim plugin.
 
- plugin/mru.vim |   30 ++++++++++++++++++------------
+ plugin/mru.vim |   30
  1 files changed, 18 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
@@ -85,7 +85,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Escape single quote characters in filenames. Use exact match while searching for open files.
 
- plugin/mru.vim |   12 +++++++-----
+ plugin/mru.vim |   12
  1 files changed, 7 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
@@ -99,7 +99,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2. Escape space characters in file names.
     3. Add the :MRUedit command to edit files from the MRU list.
 
- plugin/mru.vim |  360 ++++++++++++++++++++++++++++++++++++++------------------
+ plugin/mru.vim |  360
  1 files changed, 243 insertions(+), 117 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
@@ -111,7 +111,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed a problem with handling space characters in the name of the MRU file. Modified the plugin to work in Vi compatible mode.
 
- plugin/mru.vim |   63 ++++++++++++++++++++++++++++++++++++++-----------------
+ plugin/mru.vim |   63
  1 files changed, 43 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -123,7 +123,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed the problem with one Vim session overwritting the MRU list from another Vim session. Added the MRU file list to the File menu in GUI Vim. Instead of using a Vim global variable to store the MRU list, used a separate file to store the MRU list.
 
- plugin/mru.vim |  337 +++++++++++++++++++++++++++++++++++++++++---------------
+ plugin/mru.vim |  337
  1 files changed, 246 insertions(+), 91 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -135,7 +135,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed the following bugs: Some filenames are added more than once to the MRU list and the MRU window is not closed when a file which already opened in one of the windows is selected from the MRU window.
 
- plugin/mru.vim |   19 +++++++++++++++----
+ plugin/mru.vim |   19
  1 files changed, 15 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -147,6 +147,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Open the selected file from the MRU list in the window from which the MRU window was opened.
 
- README         |  166 +++++++++++++++++++++++++
- plugin/mru.vim |  365 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README         |  166
+ plugin/mru.vim |  365
  2 files changed, 531 insertions(+), 0 deletions(-)

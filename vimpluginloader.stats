@@ -7,8 +7,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added `autocmd' constructed function (it is replacement for :autocmd command which has the only advantage: autocommands defined by autocmd() will get automatically removed on plugin unload)
 
- doc/load.txt    |   14 +++++++
- plugin/load.vim |  116 +++++++++++++++++++++++++++++++++++++++----------------
+ doc/load.txt    |   14
+ plugin/load.vim |  116
  2 files changed, 96 insertions(+), 34 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4.4)
@@ -20,8 +20,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added `operator' mapping option (defines operator mapping), some documentation improvements
 
- doc/load.txt    |   65 ++++++++++++++++++++++++++++++++++++++++++------------
- plugin/load.vim |   50 ++++++++++++++++++++++++++++++++++++++---
+ doc/load.txt    |   65
+ plugin/load.vim |   50
  2 files changed, 96 insertions(+), 19 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4.3)
@@ -33,8 +33,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added `remap' mapping optionAdded possibility to specify multiple mapping modesSome buf fixes
 
- doc/load.txt    |   17 ++-
- plugin/load.vim |  295 +++++++++++++++++++++++++++++++------------------------
+ doc/load.txt    |   17
+ plugin/load.vim |  295
  2 files changed, 177 insertions(+), 135 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4.2)
@@ -44,7 +44,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.4.2: Some bug fixes
 
- plugin/load.vim |    4 ++--
+ plugin/load.vim |    4
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4.1)
@@ -54,8 +54,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.4.1: Added `bufdict' reginfo function
 
- doc/load.txt    |   18 ++++++++++++++++
- plugin/load.vim |   60 +++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ doc/load.txt    |   18
+ plugin/load.vim |   60
  2 files changed, 76 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -65,9 +65,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.4: Added `getc' and `nochars' mapping dictionaries
 
- doc/load.txt    |   46 +++++++++-
- plugin/load.vim |   66 ++++++++++++-
- plugin/yaml.vim |  286 ++++++++++++++++++++++++++-----------------------------
+ doc/load.txt    |   46
+ plugin/load.vim |   66
+ plugin/yaml.vim |  286
  3 files changed, 242 insertions(+), 156 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.11)
@@ -77,8 +77,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3.11: Added function and breakadd actions, some fixes
 
- doc/load.txt    |    6 ++
- plugin/load.vim |  212 ++++++++++++++++++++++++++++++++++++------------------
+ doc/load.txt    |    6
+ plugin/load.vim |  212
  2 files changed, 147 insertions(+), 71 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.10)
@@ -88,8 +88,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3.10: Fixed an issue with using load#LoadFuncdict().getfunctions from vimrc
 
- plugin/chk.vim  |  566 ++++++++++++++++++++++++++++++-------------------------
- plugin/load.vim |    4 +-
+ plugin/chk.vim  |  566
+ plugin/load.vim |    4
  2 files changed, 312 insertions(+), 258 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.7)
@@ -99,9 +99,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3.7: Added load#Setup function, made error messages a bit more verbose
 
- autoload/load.vim |   48 +++++++++++++++++++++++++++++++++++++++++++++++
- doc/load.txt      |   34 +++++++++++++++++++++++++++++++++
- plugin/load.vim   |   54 +++++++++++++++++++++++++++++++++-------------------
+ autoload/load.vim |   48
+ doc/load.txt      |   34
+ plugin/load.vim   |   54
  3 files changed, 116 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.6)
@@ -111,9 +111,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3.6: Added sesreload action, some session and event fixes
 
- doc/load.txt    |    8 ++-
- plugin/comp.vim |    7 ++-
- plugin/load.vim |  134 +++++++++++++++++++++++++++++++++----------------------
+ doc/load.txt    |    8
+ plugin/comp.vim |    7
+ plugin/load.vim |  134
  3 files changed, 90 insertions(+), 59 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.5@1)
@@ -123,11 +123,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3.5@1: Reposting bundle due to core plugins update
 
- autoload/fileutils.vim |   28 +++++++----
- doc/chk.txt            |   16 ++++--
- doc/comp.txt           |    6 ++-
- plugin/chk.vim         |  125 +++++++++++++++++++++++++++++++++++++++++-------
- plugin/comp.vim        |  104 ++++++++++++++++++++++++++++------------
+ autoload/fileutils.vim |   28
+ doc/chk.txt            |   16
+ doc/comp.txt           |    6
+ plugin/chk.vim         |  125
+ plugin/comp.vim        |  104
  5 files changed, 215 insertions(+), 64 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.5)
@@ -137,11 +137,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3.5: Fixed reloading of chk plugin
 
- doc/chk.txt     |    6 +-
- doc/comp.txt    |   13 +++-
- plugin/chk.vim  |    2 +
- plugin/comp.vim |  214 ++++++++++++++++++++++++++++++++-----------------------
- plugin/load.vim |    6 +-
+ doc/chk.txt     |    6
+ doc/comp.txt    |   13
+ plugin/chk.vim  |    2
+ plugin/comp.vim |  214
+ plugin/load.vim |    6
  5 files changed, 143 insertions(+), 98 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.4)
@@ -153,11 +153,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Improved nrof completion, replaced echo with echomsg in eerror, fixed preload check
 
- autoload/fileutils.vim |   28 ++++-
- doc/comp.txt           |   52 ++++++--
- doc/vim-fileutils.txt  |   11 +-
- plugin/comp.vim        |  317 ++++++++++++++++++++++++++++++------------------
- plugin/load.vim        |    8 +-
+ autoload/fileutils.vim |   28
+ doc/comp.txt           |   52
+ doc/vim-fileutils.txt  |   11
+ plugin/comp.vim        |  317
+ plugin/load.vim        |    8
  5 files changed, 270 insertions(+), 146 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.3@1)
@@ -167,10 +167,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3.3@1: Reposting bundle due to core plugins update
 
- autoload/fileutils.vim |   78 ++++++++++++++++++++++++++++++++---------------
- autoload/os.vim        |    2 +-
- doc/vim-fileutils.txt  |    2 +-
- plugin/yaml.vim        |    6 ++--
+ autoload/fileutils.vim |   78
+ autoload/os.vim        |    2
+ doc/vim-fileutils.txt  |    2
+ plugin/yaml.vim        |    6
  4 files changed, 58 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.3)
@@ -180,28 +180,28 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3.3: Added DisableOptionChecks and _disable_option_checks options
 
- README                 |   25 +-
- autoload/fileutils.vim |   40 +++
- autoload/os.vim        |  132 +++++++
- doc/chk.txt            |    8 +-
- doc/chk.txt.html       |  448 ------------------------
- doc/comp.txt           |   48 +++-
- doc/comp.txt.html      |  136 -------
- doc/format.txt.html    |  703 -------------------------------------
- doc/json.rux.html      |   90 -----
- doc/json.txt.html      |   82 -----
- doc/load.txt           |   78 +++--
- doc/load.txt.html      |  452 ------------------------
- doc/oop.txt.html       |   95 -----
- doc/translit3.rux.html |  911 ------------------------------------------------
- doc/translit3.txt.html |  811 ------------------------------------------
- doc/vim-fileutils.txt  |   47 +++
- doc/yaml.txt.html      |  242 -------------
- plugin/chk.vim         |   26 +-
- plugin/comp.vim        |  263 +++++++++++----
- plugin/load.vim        |  297 ++++++++++------
- plugin/stuf.vim        |  242 ++++++-------
- plugin/yaml.vim        |  605 ++++++++++++++++++++++++++------
+ README                 |   25
+ autoload/fileutils.vim |   40
+ autoload/os.vim        |  132
+ doc/chk.txt            |    8
+ doc/chk.txt.html       |  448
+ doc/comp.txt           |   48
+ doc/comp.txt.html      |  136
+ doc/format.txt.html    |  703
+ doc/json.rux.html      |   90
+ doc/json.txt.html      |   82
+ doc/load.txt           |   78
+ doc/load.txt.html      |  452
+ doc/oop.txt.html       |   95
+ doc/translit3.rux.html |  911
+ doc/translit3.txt.html |  811
+ doc/vim-fileutils.txt  |   47
+ doc/yaml.txt.html      |  242
+ plugin/chk.vim         |   26
+ plugin/comp.vim        |  263
+ plugin/load.vim        |  297
+ plugin/stuf.vim        |  242
+ plugin/yaml.vim        |  605
  22 files changed, 1353 insertions(+), 4428 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.2)
@@ -213,19 +213,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Improved load#LoadFuncdict function, added load#SetOption and load#CreateDictFunction functions
 
- autoload/load.vim      |   45 +++-
- doc/chk.txt.html       |  448 ++++++++++++++++++++++++
- doc/comp.txt.html      |  136 +++++++
- doc/format.txt.html    |  703 +++++++++++++++++++++++++++++++++++++
- doc/json.rux.html      |   90 +++++
- doc/json.txt.html      |   82 +++++
- doc/load.txt           |   31 ++-
- doc/load.txt.html      |  452 ++++++++++++++++++++++++
- doc/oop.txt.html       |   95 +++++
- doc/translit3.rux.html |  911 ++++++++++++++++++++++++++++++++++++++++++++++++
- doc/translit3.txt.html |  811 ++++++++++++++++++++++++++++++++++++++++++
- doc/yaml.txt.html      |  242 +++++++++++++
- plugin/load.vim        |    2 +-
+ autoload/load.vim      |   45
+ doc/chk.txt.html       |  448
+ doc/comp.txt.html      |  136
+ doc/format.txt.html    |  703
+ doc/json.rux.html      |   90
+ doc/json.txt.html      |   82
+ doc/load.txt           |   31
+ doc/load.txt.html      |  452
+ doc/oop.txt.html       |   95
+ doc/translit3.rux.html |  911
+ doc/translit3.txt.html |  811
+ doc/yaml.txt.html      |  242
+ plugin/load.vim        |    2
  13 files changed, 4044 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.1)
@@ -235,7 +235,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3.1: Fixed some mapping bugs
 
- plugin/load.vim |   33 ++++++++++++++++++++++++++-------
+ plugin/load.vim |   33
  1 files changed, 26 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -247,15 +247,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Provided a way to register different plugin types and place plugin file not directly under plugin directoryAdded support for autoloading external dependenciesMade plugin reload itself without errors
 
- doc/chk.txt     |   12 +-
- doc/load.txt    |   82 +++++---
- doc/oop.txt     |   93 ++++++++
- doc/yaml.txt    |    4 +
- plugin/chk.vim  |  197 ++++++++++++------
- plugin/load.vim |  629 +++++++++++++++++++++++++++++++++++--------------------
- plugin/oop.vim  |   10 +-
- plugin/yaml.vim |  104 +++++++---
- syntax/yaml.vim |  168 ---------------
+ doc/chk.txt     |   12
+ doc/load.txt    |   82
+ doc/oop.txt     |   93
+ doc/yaml.txt    |    4
+ plugin/chk.vim  |  197
+ plugin/load.vim |  629
+ plugin/oop.vim  |   10
+ plugin/yaml.vim |  104
+ syntax/yaml.vim |  168
  9 files changed, 770 insertions(+), 529 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -265,12 +265,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2: Added session creation
 
- doc/load.txt    |   27 +-
- doc/yaml.txt    |  236 ++++
- plugin/load.vim |  128 ++-
- plugin/oop.vim  |  237 ++++
- plugin/yaml.vim | 4029 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
- syntax/yaml.vim |  168 +++
+ doc/load.txt    |   27
+ doc/yaml.txt    |  236
+ plugin/load.vim |  128
+ plugin/oop.vim  |  237
+ plugin/yaml.vim | 4029
+ syntax/yaml.vim |  168
  6 files changed, 4819 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.4)
@@ -282,13 +282,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Improved findnr action (now it takes a list of numbers separated by anything except spaces), improved autocmd[!] action (now it does not force you to escape spaces), improved error messages, some bug fixes
 
- doc/chk.txt     |   26 +++++-
- doc/comp.txt    |   11 +++
- doc/load.txt    |    4 +-
- plugin/chk.vim  |  184 +++++++++++++++++++++++++++------------
- plugin/comp.vim |   86 +++++++++++++------
- plugin/load.vim |  198 ++++++++++++++++++++++++++----------------
- plugin/stuf.vim |  259 ++++++++++++++++++++++++++++++++++++++++++++-----------
+ doc/chk.txt     |   26
+ doc/comp.txt    |   11
+ doc/load.txt    |    4
+ plugin/chk.vim  |  184
+ plugin/comp.vim |   86
+ plugin/load.vim |  198
+ plugin/stuf.vim |  259
  7 files changed, 555 insertions(+), 213 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.3)
@@ -300,10 +300,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added lazygetfunctions() and run() functions useful for cyclic dependency resolution
 
- doc/load.txt    |   13 ++
- plugin/chk.vim  |   43 ++++-
- plugin/load.vim |   66 +++++---
- plugin/stuf.vim |  506 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/load.txt    |   13
+ plugin/chk.vim  |   43
+ plugin/load.vim |   66
+ plugin/stuf.vim |  506
  4 files changed, 598 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.2)
@@ -313,7 +313,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.1.2: Fixed completion for vim7.3
 
- plugin/load.vim |    6 ++++--
+ plugin/load.vim |    6
  1 files changed, 4 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -323,9 +323,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.1: Added `autocommands'
 
- doc/load.txt    |   65 ++++++++++++++++++++++++++++++++--
- plugin/chk.vim  |    3 ++
- plugin/load.vim |  105 ++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ doc/load.txt    |   65
+ plugin/chk.vim  |    3
+ plugin/load.vim |  105
  3 files changed, 168 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -335,12 +335,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README            |   17 +
- autoload/load.vim |    5 +
- doc/chk.txt       |  422 +++++++++++++++
- doc/comp.txt      |  123 +++++
- doc/load.txt      |  335 ++++++++++++
- plugin/chk.vim    | 1046 ++++++++++++++++++++++++++++++++++++++
- plugin/comp.vim   |  387 ++++++++++++++
- plugin/load.vim   | 1467 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README            |   17
+ autoload/load.vim |    5
+ doc/chk.txt       |  422
+ doc/comp.txt      |  123
+ doc/load.txt      |  335
+ plugin/chk.vim    | 1046
+ plugin/comp.vim   |  387
+ plugin/load.vim   | 1467
  8 files changed, 3802 insertions(+), 0 deletions(-)

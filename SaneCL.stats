@@ -5,7 +5,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.0: Minor change - break the auto prefix loop correctly.
 
- indent/lisp.vim |    1 +
+ indent/lisp.vim |    1
  1 files changed, 1 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
@@ -15,7 +15,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.9: Bug fixes, and prefix based form handling.
 
- indent/lisp.vim |   85 ++++++++++++++++++++++++++++++++++++++----------------
+ indent/lisp.vim |   85
  1 files changed, 60 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
@@ -27,7 +27,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Proper comment handling. Added g:CL_define_keywords to handle multi-line variable lists.
 
- indent/lisp.vim |   46 +++++++++++++++++++++++++++++++++++-----------
+ indent/lisp.vim |   46
  1 files changed, 35 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
@@ -37,7 +37,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.7: Macrolets, flets, labels.
 
- indent/lisp.vim |   15 ++++++++++++++-
+ indent/lisp.vim |   15
  1 files changed, 14 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -47,7 +47,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.6: Loop form handling.
 
- indent/lisp.vim |   22 ++++++++++++++++++++++
+ indent/lisp.vim |   22
  1 files changed, 22 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -65,7 +65,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Changed the g:lispwords_file variable to g:CL_lispwords_file to avoid confusion.
     + Removed unused code
 
- indent/lisp.vim |   90 ++++++++++++++++++++++++++++++++----------------------
+ indent/lisp.vim |   90
  1 files changed, 53 insertions(+), 37 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -78,7 +78,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     More bug fixes regarding expandtab handling. It may be beneficial to issue :retab! if you transition from expanded tabs to hard tabs.
     New lines are now auto indented properly.
 
- indent/lisp.vim |   55 +++++++++++++++++++++++++++++++++++++++++++++++++------
+ indent/lisp.vim |   55
  1 files changed, 49 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -92,7 +92,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Minor bug fixes:
     A multi-line s-exp or string on the first line of it's parent will now indent correctly.
 
- indent/lisp.vim |   46 ++++++++++++++++++++++++++++------------------
+ indent/lisp.vim |   46
  1 files changed, 28 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -105,7 +105,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Persistent lisp words - saves on quit.
     <CLSetWord defun 2> sets a lisp word.
 
- indent/lisp.vim |   34 +++++++++++++++++++++++++++++-----
+ indent/lisp.vim |   34
  1 files changed, 29 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -122,7 +122,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Let me know if you find anything else wrong with it: <oconnore@gmail.com>
 
- indent/lisp.vim |   11 ++++++-----
+ indent/lisp.vim |   11
  1 files changed, 6 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -132,6 +132,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README          |   45 +++++
- indent/lisp.vim |  491 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README          |   45
+ indent/lisp.vim |  491
  2 files changed, 536 insertions(+), 0 deletions(-)

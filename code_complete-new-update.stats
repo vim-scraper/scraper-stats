@@ -7,16 +7,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     bugfix, and change template marks diffevent with snippets marks. thanks to Scott Prager
 
- plugin/code_complete.vim         |  180 +++++++++++++++++++++++++++++---------
- plugin/default_snippets.template |  168 +++++++++++++++++++++++++++++++++++
- plugin/my_snippets.template      |  166 -----------------------------------
- templates/main.c                 |    5 +
- templates/mian2.c                |    6 ++
- templates/stdc.c                 |    2 +-
- templates/stdc2.c                |    2 +-
- templates/stdcpp.cpp             |    2 +-
- templates/stdcpp2.cpp            |    2 +-
- templates/stdwin.c               |    2 +-
+ plugin/code_complete.vim         |  180
+ plugin/default_snippets.template |  168
+ plugin/my_snippets.template      |  166
+ templates/main.c                 |    5
+ templates/mian2.c                |    6
+ templates/stdc.c                 |    2
+ templates/stdc2.c                |    2
+ templates/stdcpp.cpp             |    2
+ templates/stdcpp2.cpp            |    2
+ templates/stdwin.c               |    2
  10 files changed, 321 insertions(+), 214 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8.1@1)
@@ -32,10 +32,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     all in all, this is just a little upgrade for more comfortable experience.
 
- plugin/code_complete.vim    |   88 ++++++++++++++++++++++++++++---------------
- plugin/my_snippets.template |   68 +++++++++++++++++++++++++++++----
- templates/fheader.c         |    6 ---
- templates/stdwin.c          |    2 +-
+ plugin/code_complete.vim    |   88
+ plugin/my_snippets.template |   68
+ templates/fheader.c         |    6
+ templates/stdwin.c          |    2
  4 files changed, 118 insertions(+), 46 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8.1)
@@ -49,12 +49,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     make g:CodeCompl_SaveListInBuffer work, it replaced g:CodeCompl_UpdateAlways
 
- plugin/code_complete.vim    |  224 ++++++++++++++++++++++++++----------------
- plugin/my_snippets.template |    7 +-
- templates/stdc2.c           |    1 -
- templates/stdcpp.cpp        |    1 -
- templates/stdcpp2.cpp       |    2 -
- templates/stdwin.c          |   20 ++--
+ plugin/code_complete.vim    |  224
+ plugin/my_snippets.template |    7
+ templates/stdc2.c           |    1
+ templates/stdcpp.cpp        |    1
+ templates/stdcpp2.cpp       |    2
+ templates/stdwin.c          |   20
  6 files changed, 151 insertions(+), 104 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8@1)
@@ -72,15 +72,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     next version will make "save dict in global" work, but at least this is a stable version.
 
- my_snippets.template        |  104 -------
- plugin/code_complete.vim    |  680 ++++++++++++++++++++++++++++++++-----------
- plugin/my_snippets.template |  117 ++++++++
- templates/fheader.c         |    6 +
- templates/stdc.c            |    8 +
- templates/stdc2.c           |    9 +
- templates/stdcpp.cpp        |    9 +
- templates/stdcpp2.cpp       |   10 +
- templates/stdwin.c          |   50 ++++
+ my_snippets.template        |  104
+ plugin/code_complete.vim    |  680
+ plugin/my_snippets.template |  117
+ templates/fheader.c         |    6
+ templates/stdc.c            |    8
+ templates/stdc2.c           |    9
+ templates/stdcpp.cpp        |    9
+ templates/stdcpp2.cpp       |   10
+ templates/stdwin.c          |   50
  9 files changed, 726 insertions(+), 267 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8)
@@ -90,7 +90,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.8: Initial upload
 
- README                   |   98 +++++++++++++++++
- my_snippets.template     |  104 ++++++++++++++++++
- plugin/code_complete.vim |  261 ++++++++++++++++++++++++++++++++++++++++++++++
+ README                   |   98
+ my_snippets.template     |  104
+ plugin/code_complete.vim |  261
  3 files changed, 463 insertions(+), 0 deletions(-)

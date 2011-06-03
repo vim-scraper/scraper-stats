@@ -9,7 +9,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Contrary to what I've said previously, erroneous nickname still caused endless loop when loggin-on.
     * When receiving chat messages or something, Vim would cause this error: "Usage: VIBUF::Append(vimbuf, lnum, @lines)".
 
- plugin/vimirc.vim |   58 ++++++++++++++++++++++++++++++++---------------------
+ plugin/vimirc.vim |   58
  1 files changed, 35 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.27)
@@ -28,7 +28,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Window resizing ("<C-L>") should perform a bit better now.
     * Added tips for opening hidden buffers.
 
- plugin/vimirc.vim |  359 ++++++++++++++++++++++++++++++++--------------------
+ plugin/vimirc.vim |  359
  1 files changed, 221 insertions(+), 138 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.26)
@@ -42,7 +42,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * When updating hidden buffers, "E19: Mark has invalid line number" could occur (quite rarely, I believe).
     * NOTICE messages sent from the one you were chatting with could not be displayed in the chat buffer.
 
- plugin/vimirc.vim |  240 ++++++++++++++++++++++++++++++++--------------------
+ plugin/vimirc.vim |  240
  1 files changed, 148 insertions(+), 92 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.25)
@@ -59,7 +59,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Added abbrev: "/MO[DE]"
     * The manner of beeping has become a bit modest.
 
- plugin/vimirc.vim |  395 +++++++++++++++++++++++++++++++----------------------
+ plugin/vimirc.vim |  395
  1 files changed, 231 insertions(+), 164 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.24)
@@ -73,7 +73,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * For some unknown reason (to me), cursor position could not be restored sometimes when re-opening hidden channels.  The issue itself might still remain for the time being.
     * Nick and command windows could embarrassingly remain open after parting channels with "q" key, for some event-related reason.
 
- plugin/vimirc.vim |  283 ++++++++++++++++++++++++++++++----------------------
+ plugin/vimirc.vim |  283
  1 files changed, 163 insertions(+), 120 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.23)
@@ -88,7 +88,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Timer-related functions (displaying the current time, auto-pinging to keep alive, etc.) will be executed while offline, too.
     * Fix on normal mode commands: "@" commands ("@:" etc.) weren't implemented; two-key commands ("f", "t", etc.) could not accept count.
 
- plugin/vimirc.vim |  324 +++++++++++++++++++++++++++++++----------------------
+ plugin/vimirc.vim |  324
  1 files changed, 191 insertions(+), 133 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.22)
@@ -106,7 +106,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * When opening hidden channels, cursor was moved to the bottom, which was bad for grasping the flow of conversation.
     * "/PART"ing channels with some particular multibyte characters could fail.
 
- plugin/vimirc.vim |  271 ++++++++++++++++++++++++++++++-----------------------
+ plugin/vimirc.vim |  271
  1 files changed, 152 insertions(+), 119 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.21)
@@ -121,7 +121,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Nicks window could become empty for some unknown reason.  I still don't know why, but tried to fix it.
     * Hitting "i" after key-prompt could result in insert mode on a non-command buffer.
 
- plugin/vimirc.vim |  201 ++++++++++++++++++++++++++++++++++++----------------
+ plugin/vimirc.vim |  201
  1 files changed, 139 insertions(+), 62 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.20)
@@ -137,7 +137,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Changed abbrev: "/T[OPIC]" => "/TO[PIC]", "/MS[G]" => "/M[SG]"
     * Added abbrev: "/T[IME]", "/WH[O]", "/WHOI[S]"
 
- plugin/vimirc.vim |  118 +++++++++++++++++++++++++++++++---------------------
+ plugin/vimirc.vim |  118
  1 files changed, 70 insertions(+), 48 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.19)
@@ -153,7 +153,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Cursor scrolled to the bottom when you executed "/list", which was not what I intended.
     * Made "/help" message not to disappear automatically.
 
- plugin/vimirc.vim |  446 ++++++++++++++++++++++++++++++++++-------------------
+ plugin/vimirc.vim |  446
  1 files changed, 284 insertions(+), 162 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.18)
@@ -167,7 +167,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * It is now possible to open, internally or externally, IRC server-like strings by hitting "<CR>" / "<C-CR>" / "<S-CR>" on them.
     * Channel-like strings in buffers other than channels-list are also made accessible with "<CR>" etc..
 
- plugin/vimirc.vim |  385 +++++++++++++++++++++++++++++++----------------------
+ plugin/vimirc.vim |  385
  1 files changed, 225 insertions(+), 160 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.17)
@@ -182,7 +182,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * When keys like "jk" were typed fast, the second key could not be processed.
     * If you (casually) kept pressing "<CR>" for a few seconds, the same URL was opened many many times.
 
- plugin/vimirc.vim |  225 ++++++++++++++++++++++++++++++-----------------------
+ plugin/vimirc.vim |  225
  1 files changed, 127 insertions(+), 98 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.16)
@@ -196,7 +196,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * DCC-chat buffers were not treated as such.
     * Subtle fixes/improvements have been done on buffer/window manipulation (closing command window quietly, etc.).
 
- plugin/vimirc.vim |  413 +++++++++++++++++++++++++++--------------------------
+ plugin/vimirc.vim |  413
  1 files changed, 211 insertions(+), 202 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.15)
@@ -211,7 +211,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Instead of the above, added a new command prefix "SPLIT".  Prepend it to commands such as "/JOIN", "/LIST", like this: "/split join #chan".  See Tip 6 & 7 for more.
     * Added normal-mode commands: "<C-W><C-N>", "<C-W><C-P>".  They do the same thing as "<C-N>" and "<C-P>" (walking through channels), with windows split open.
 
- plugin/vimirc.vim | 1004 ++++++++++++++++++++++++++++-------------------------
+ plugin/vimirc.vim | 1004
  1 files changed, 528 insertions(+), 476 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.14)
@@ -227,7 +227,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Key prompts could not accept key after special keys such as "<S-CR>" were hit.
     * (single-window mode) Hitting "<C-W><CR>" / "<C-CR>" / "<S-CR>" on channels list now opens the channel in a new window.
 
- plugin/vimirc.vim | 1169 +++++++++++++++++++++++++++--------------------------
+ plugin/vimirc.vim | 1169
  1 files changed, 596 insertions(+), 573 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.13)
@@ -241,7 +241,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Nicks including "_" or "|" were not considered to be nicks, which could lead to various troubles/misbehaviors.
     * (single-window mode) Hitting "<C-W><CR>" on the info-bar opened the specified channel etc. in a new window, but with bad window configuration.
 
- plugin/vimirc.vim |  231 +++++++++++++++++++++++++++++++----------------------
+ plugin/vimirc.vim |  231
  1 files changed, 135 insertions(+), 96 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.12)
@@ -255,7 +255,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Added a timeout feature to the "hit any key" prompt.  Prompts with rotating cursor automatically disappear after a few seconds if you give no response to them.  (This might save you from getting disconnected from servers.)
     * (GUI) When hiding Vim cursor, attributes such as underline still remained, which was annoying.
 
- plugin/vimirc.vim |  237 +++++++++++++++++++++++++++++++++--------------------
+ plugin/vimirc.vim |  237
  1 files changed, 147 insertions(+), 90 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.11)
@@ -270,7 +270,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Forgot to map "ZZ" and "ZQ" to VimIRC's quit function.
     * Quit keys could direct the quit command to a wrong server.
 
- plugin/vimirc.vim |  619 ++++++++++++++++++++++++++++++-----------------------
+ plugin/vimirc.vim |  619
  1 files changed, 347 insertions(+), 272 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.10)
@@ -286,7 +286,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Added new quit commands: "ZZ" and "ZQ".  (Equivalent to "q" and "Q" respectively.)
     * Special keys ("<BS>" etc.) are now safely handled (I should have read ":h getchar()" much earlier).
 
- plugin/vimirc.vim |  337 +++++++++++++++++++++++++++++++----------------------
+ plugin/vimirc.vim |  337
  1 files changed, 196 insertions(+), 141 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.9)
@@ -301,7 +301,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * (Ditto) Pressing "<F1>" opened Vim's help file, which was not what I expected.
     * Made Vim's cursor invisible while you are online.  The Annoying blinks now totally disappear (GUI only).
 
- plugin/vimirc.vim |  149 ++++++++++++++++++++++++++++++++++++++--------------
+ plugin/vimirc.vim |  149
  1 files changed, 109 insertions(+), 40 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.8)
@@ -315,7 +315,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Re-sorted key-handling order slightly, to achieve faster movement of motion commands.  (I'm not sure I did well.)
     * Added some error-handling, so as not to get thrown out of the loop for simple errors (e.g., pattern not found).
 
- plugin/vimirc.vim |  106 ++++++++++++++++++++++++++++++-----------------------
+ plugin/vimirc.vim |  106
  1 files changed, 60 insertions(+), 46 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.7)
@@ -329,7 +329,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Hitting "q" on command buffers sometimes failed to quit VimIRC.
     * "/WHOIS" command seems to have failed sometimes.
 
- plugin/vimirc.vim |   54 +++++++++++++++++++++++++++++-----------------------
+ plugin/vimirc.vim |   54
  1 files changed, 30 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.6)
@@ -342,7 +342,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * URLs starting with "www" couldn't be opened properly.
     * Added maps "q" and "Q".  Pressing "Q" will quit VimIRC, whereas "q" will just close chat/channel, if the cursor is on one.
 
- plugin/vimirc.vim |  337 +++++++++++++++++++++++++++++++----------------------
+ plugin/vimirc.vim |  337
  1 files changed, 200 insertions(+), 137 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.5)
@@ -357,7 +357,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * (single window) Highlights in the info-bar couldn't be cleared after bringing hidden channels (with new messages) to the foreground.
     * (single window) Attempts to highlight the current channel/server in the info-bar, so that you can easily locate where you are in (see the 3rd screenshot).
 
- plugin/vimirc.vim |  351 +++++++++++++++++++++++++++++++++++------------------
+ plugin/vimirc.vim |  351
  1 files changed, 234 insertions(+), 117 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.4)
@@ -372,7 +372,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Single-window mode: channels-list didn't show up in the info-bar.
     * DCC chat: Multibyte (Japanese) characters had not been decoded.
 
- plugin/vimirc.vim |  685 ++++++++++++++++++++++++++++++-----------------------
+ plugin/vimirc.vim |  685
  1 files changed, 388 insertions(+), 297 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.3)
@@ -389,7 +389,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Slightly changed the behavior of "i".  It now opens a new input line when typed on an already open command buffer (formerly it left the cursor on the same line, which wasn't very useful).
     * Removed the command "/SEARCH", which was not meaningful and had been made available probably by accident.  The functionality itself is available as a normal mode search command (/ or ?).
 
- plugin/vimirc.vim | 1211 +++++++++++++++++++++++++++--------------------------
+ plugin/vimirc.vim | 1211
  1 files changed, 616 insertions(+), 595 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.2)
@@ -404,7 +404,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     This is not much tested.  Feel free to notify me of any errors/misbehaviours you encounter with this feature.
 
- plugin/vimirc.vim |  229 ++++++++++++++++++++++++++++++++++++++++++-----------
+ plugin/vimirc.vim |  229
  1 files changed, 184 insertions(+), 45 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.1)
@@ -418,7 +418,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * (GUI) File selector dialog now pops up for DCC SEND.  Omit filename argument to use this feature, when executing from the command buffer (see "/dcc help" for syntax).
     * Tries to fix the annoying window scrolling you might have suffered when opening command buffers.
 
- plugin/vimirc.vim |  738 +++++++++++++++++++++++++++++-----------------------
+ plugin/vimirc.vim |  738
  1 files changed, 412 insertions(+), 326 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
@@ -433,7 +433,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       2. (in VimIRC's command buffer) /server irc.server.com password
       3. (in .vimrc) let vimirc_pass = 'password' or 'password1@server1,...'
 
- plugin/vimirc.vim |  611 ++++++++++++++++++++++++++++++++---------------------
+ plugin/vimirc.vim |  611
  1 files changed, 368 insertions(+), 243 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.12)
@@ -447,7 +447,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * I've made channels lists to be cached by default.  The variable "vimirc_listexpire", defaulting to a week, defines the longevity of them.  See the doc in the source for detail.
     * Added a window-size restoration functionality.  Hit <C-L> in normal mode when any window has got a bad width/height.
 
- plugin/vimirc.vim |  671 ++++++++++++++++++++++++++++++++++-------------------
+ plugin/vimirc.vim |  671
  1 files changed, 434 insertions(+), 237 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.11)
@@ -461,7 +461,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * As in Vim, key pressed after the 'Hit any key to continue' prompt will now be utilized as a normal mode command.
     * Added a mechanism of argument expansion, which currently expands only '%', into the current channel.  See Tip 5 in the source for usage.
 
- plugin/vimirc.vim |  353 +++++++++++++++++++++++++++++++++--------------------
+ plugin/vimirc.vim |  353
  1 files changed, 221 insertions(+), 132 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.10)
@@ -474,7 +474,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     In a recent update, I introduced a bug which could cause some difficulty in getting out of the main-loop (for writing messages etc.).  This has been fixed, I hope.
     Also, sending multiple messages at a time is now made possible.  See Tip 3 in the source.
 
- plugin/vimirc.vim |  647 ++++++++++++++++++++++++++++-------------------------
+ plugin/vimirc.vim |  647
  1 files changed, 346 insertions(+), 301 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.9)
@@ -491,7 +491,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Chat windows now have nicks window.
     * etc.
 
- plugin/vimirc.vim | 1106 +++++++++++++++++++++++++++++------------------------
+ plugin/vimirc.vim | 1106
  1 files changed, 600 insertions(+), 506 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.8)
@@ -504,7 +504,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Bug Fix: Horribly enough, sending "/ME" messages has been unable for quite some time (sorry!).
     No new features and no big improvements this time (sorry again!).
 
- plugin/vimirc.vim |   45 +++++++++++++++++++++++++++------------------
+ plugin/vimirc.vim |   45
  1 files changed, 27 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.7)
@@ -518,7 +518,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1. Channel-list buffers were not visited upon in the <C-P> / <C-N> walkthru.
     2. Cursor stayed on the command window after you finished sending messages/commands, which wasn't useful.
 
- plugin/vimirc.vim |   36 ++++++++++++++++++++++--------------
+ plugin/vimirc.vim |   36
  1 files changed, 22 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.6)
@@ -534,7 +534,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     3. Mode strings on channels were not handled properly (I didn't understand the syntax).
     4. You could not enter channels with correct keys (/join #chan key) after you first failed in entering.
 
- plugin/vimirc.vim |  349 +++++++++++++++++++++++++++++++----------------------
+ plugin/vimirc.vim |  349
  1 files changed, 202 insertions(+), 147 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.5)
@@ -548,7 +548,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     New commands: [DE]OP and [DE]VOICE.  See /help if you don't know of these commands.
     Change: g:vimirc_server and '-s' startup option can now have multiple server name, separated by commas.  Thanks again to alexander, by whom it was suggested.
 
- plugin/vimirc.vim |  141 +++++++++++++++++++++++++++++++++++++---------------
+ plugin/vimirc.vim |  141
  1 files changed, 100 insertions(+), 41 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.4)
@@ -564,7 +564,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1. topics etc. for not joined channels were displayed in newly, undesirably created channel buffers.
     2. Manual reconnection with "/server" (without arg) wasn't possible sometimes if multiple connections to servers had been opened.
 
- plugin/vimirc.vim |  281 ++++++++++++++++++++++++++---------------------------
+ plugin/vimirc.vim |  281
  1 files changed, 137 insertions(+), 144 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.3)
@@ -579,7 +579,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2. Characters other than alpha-numerics and underscore could not be used in command aliases.
     3. Command "ALIAS" will now accept definitions with and without leading slashes: "/alias /j /join", "/alias j join".
 
- plugin/vimirc.vim |  171 ++++++++++++++++++++++++++++++-----------------------
+ plugin/vimirc.vim |  171
  1 files changed, 96 insertions(+), 75 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.2)
@@ -591,7 +591,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     New commands: ALIAS/UNALIAS, with which you'll be able to define/undefine aliases of commands.  Example: /alias /j /join.  Definitions will be saved in a config file, and restored automatically on startup.
 
- plugin/vimirc.vim |  315 ++++++++++++++++++++++++++++++++++++-----------------
+ plugin/vimirc.vim |  315
  1 files changed, 213 insertions(+), 102 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.1)
@@ -606,7 +606,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2. netsplit handling wasn't working as expected.
     3. search() function caused an error with some special patterns such as "\z".
 
- plugin/vimirc.vim |  356 +++++++++++++++++++++++++++++-----------------------
+ plugin/vimirc.vim |  356
  1 files changed, 198 insertions(+), 158 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
@@ -625,7 +625,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     A Fix: "/JOIN 0" was not working.
 
- plugin/vimirc.vim | 2297 ++++++++++++++++++++++++++++++++++++-----------------
+ plugin/vimirc.vim | 2297
  1 files changed, 1576 insertions(+), 721 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.2)
@@ -639,7 +639,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1. Timestamps are added to separate each session.
     2. Logs for channels/chats will now be taken safely (well, in most cases) if those windows have been closed abnormally, i.e. with commands other than "/(QUIT|PART|QUERY)".
 
- plugin/vimirc.vim |   71 ++++++++++++++++++++++++++++++++++++++++++----------
+ plugin/vimirc.vim |   71
  1 files changed, 57 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1)
@@ -653,7 +653,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Some minor fixes/improvements have also been done.
 
- plugin/vimirc.vim |  469 +++++++++++++++++++++++++++++++----------------------
+ plugin/vimirc.vim |  469
  1 files changed, 274 insertions(+), 195 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
@@ -673,7 +673,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1. "/AWAY message" was sending "1" instead of "message".
     2. When a CTCP message was encountered which VimIRC didn't know of, ERRMSG response was always sent back to the originator, even if it was directed to channels.
 
- plugin/vimirc.vim |  925 ++++++++++++++++++++++++++++++++++++-----------------
+ plugin/vimirc.vim |  925
  1 files changed, 637 insertions(+), 288 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.7)
@@ -689,7 +689,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1. "/QUIT"ting caused an error when channels-list window was open.
     2. Quit messages like "Client Quit" was regarded as netsplit (silly!)
 
- plugin/vimirc.vim |  294 ++++++++++++++++++++++++++++++----------------------
+ plugin/vimirc.vim |  294
  1 files changed, 170 insertions(+), 124 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.6)
@@ -711,7 +711,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2. :VimIRCQuit could cause an endless loop.
     3. (Fixed in the previous ver.) Cooperation of vim and perl failed, if strings to be passed to vim contained double-quotes or backslashes.
 
- plugin/vimirc.vim |  492 ++++++++++++++++++++++++++++++++++-------------------
+ plugin/vimirc.vim |  492
  1 files changed, 317 insertions(+), 175 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.4)
@@ -728,7 +728,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     A change: the way nicks are displayed has been changed: newly entered, and actively speaking figures will now be displayed on top.  I did this partly for efficiency reason, among others.  If you prefer the older behavior though, wait for some time till I make it configurable.
 
- plugin/vimirc.vim |  945 ++++++++++++++++++++++++++++++++++++++---------------
+ plugin/vimirc.vim |  945
  1 files changed, 682 insertions(+), 263 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.3)
@@ -741,7 +741,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     A fix: "/me message" wasn't sending proper ACTION.  Sorry.
     A new feature: Direct conversation over IRC network (/query nick) will now be displayed in a separate window as with DCC Chat.
 
- plugin/vimirc.vim |  200 ++++++++++++++++++++++++++++++++++-------------------
+ plugin/vimirc.vim |  200
  1 files changed, 129 insertions(+), 71 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.2)
@@ -756,7 +756,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2. Fixed an issue of recursive call of the main-loop, which caused pressing i/I lead to a strange non-insert mode.
     3. When connected to multiple servers, "/quit"ting from one server resulted in all other windows but one being closed.
 
- plugin/vimirc.vim |  185 ++++++++++++++++++++++++++++-------------------------
+ plugin/vimirc.vim |  185
  1 files changed, 99 insertions(+), 86 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.1)
@@ -768,7 +768,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     A small bug-fix: Currently active window was not restored when someone joined/parted channels.
 
- plugin/vimirc.vim |    9 +++++----
+ plugin/vimirc.vim |    9
  1 files changed, 5 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -782,7 +782,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1. DCC CHAT/SEND.  Type "/dcc help" for the usage.  Also look into the plugin file for the .vimrc settings.  This is not much tested, so if you find any misbehaviors, or incompatibilities with other clients, let me know via e-mail.
     2. Single window mode.  .vimrc setting is: let vimirc_winmode = 'single'
 
- plugin/vimirc.vim | 2421 ++++++++++++++++++++++++++++++++++++++++++-----------
+ plugin/vimirc.vim | 2421
  1 files changed, 1928 insertions(+), 493 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.3)
@@ -800,7 +800,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2. Older nick was still used internally when you had to change nicks when logging on.
     3. Could not parse mode commands like "+vv nick1 nick2".  Characters @/+ will now be added/removed properly.
 
- plugin/vimirc.vim |  376 +++++++++++++++++++++++++++++++++++++----------------
+ plugin/vimirc.vim |  376
  1 files changed, 265 insertions(+), 111 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
@@ -815,7 +815,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     3. Made command windows appear just below the current window.  This is a tentative feature.
     4. And some other fixes/changes too trivial to mention.
 
- plugin/vimirc.vim |  277 +++++++++++++++++++++++++++++++++--------------------
+ plugin/vimirc.vim |  277
  1 files changed, 172 insertions(+), 105 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
@@ -830,7 +830,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2. While connected to multiple servers, [iI] sometimes opened a command window for a wrong server.
     3. /list command did not open a list window on some servers.
 
- plugin/vimirc.vim |  858 +++++++++++++++++++++++++++++------------------------
+ plugin/vimirc.vim |  858
  1 files changed, 464 insertions(+), 394 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -845,7 +845,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Did some minor fixes inculding: handle operator and voice privileges properly.
 
- plugin/vimirc.vim |  793 ++++++++++++++++++++++++++++++++++++++---------------
+ plugin/vimirc.vim |  793
  1 files changed, 566 insertions(+), 227 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -855,6 +855,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.4: Initial upload
 
- README            |   40 +
- plugin/vimirc.vim | 2167 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README            |   40
+ plugin/vimirc.vim | 2167
  2 files changed, 2207 insertions(+), 0 deletions(-)

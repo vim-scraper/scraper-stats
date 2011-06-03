@@ -7,10 +7,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - g:vikitasks#remove_unreadable_files: Remove unreadable files- FIX: remove buffers with no tasks from the list- g:vikitasks#use_unspecified_dates: Interpret entries with an unspecified date ("_") as current tasks- g:vikitasks_startup_alarms doesn't assume a special case for gtk- Load viki if it wasn't loaded yet- If g:vikitasks#intervikis == 2, scan all interviki pages (not just the homepage)- Run VimEnter command immediately if !has('vim_stating')- FIX: rx didn't match entries with no textMD5 checksum: b1157748e17e1f667c443d0e1d273e41
 
- README                 |    3 +
- autoload/vikitasks.vim |  142 +++++++++++++++++++++++++++++++++++++-----------
- doc/vikitasks.txt      |   65 +++++++++++++++--------
- plugin/vikitasks.vim   |   38 +++++++++-----
+ README                 |    3
+ autoload/vikitasks.vim |  142
+ doc/vikitasks.txt      |   65
+ plugin/vikitasks.vim   |   38
  4 files changed, 181 insertions(+), 67 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2b)
@@ -26,9 +26,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Require tlib 0.37
     - The arguments for :VikiTasks have changed
 
- autoload/vikitasks.vim |  549 +++++++++++++++++++++++++++++++++++++-----------
- doc/vikitasks.txt      |  193 +++++++++++-------
- plugin/vikitasks.vim   |  161 +++++++-------
+ autoload/vikitasks.vim |  549
+ doc/vikitasks.txt      |  193
+ plugin/vikitasks.vim   |  161
  3 files changed, 633 insertions(+), 270 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -38,8 +38,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README                 |   62 +++++++++++++
- autoload/vikitasks.vim |  226 ++++++++++++++++++++++++++++++++++++++++++++++++
- doc/vikitasks.txt      |  206 +++++++++++++++++++++++++++++++++++++++++++
- plugin/vikitasks.vim   |  137 +++++++++++++++++++++++++++++
+ README                 |   62
+ autoload/vikitasks.vim |  226
+ doc/vikitasks.txt      |  206
+ plugin/vikitasks.vim   |  137
  4 files changed, 631 insertions(+), 0 deletions(-)

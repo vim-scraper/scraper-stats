@@ -7,8 +7,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     HiMtchBrkt is faster (under vim v7) with the ability to restrict searches to only that which is currently visible.  Several bugfixes, too.  (works with both vim v6.0 and v7.0)
 
- doc/HiMtchBrkt.txt    |   18 +++++--
- plugin/HiMtchBrkt.vim |  129 ++++++++++++++++++++++++++++++++-----------------
+ doc/HiMtchBrkt.txt    |   18
+ plugin/HiMtchBrkt.vim |  129
  2 files changed, 99 insertions(+), 48 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/21)
@@ -22,8 +22,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     HiMtchBrkt's new :HMBsurround command triggers display of containing brackets
     HiMtchBrkt now comes with menus for gvim which show on/off choices for HMBsurround
 
- doc/HiMtchBrkt.txt    |   43 ++++---
- plugin/HiMtchBrkt.vim |  314 ++++++++++++++++++++++++++++---------------------
+ doc/HiMtchBrkt.txt    |   43
+ plugin/HiMtchBrkt.vim |  314
  2 files changed, 209 insertions(+), 148 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20)
@@ -37,9 +37,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Messages no longer cleared with vim7.0aa snapshot #185 or later.
     * :HMBsurround will cause surrounding brackets to be highlighted
 
- doc/HiMtchBrkt.txt    |   55 +++++++++-----
- plugin/HiMtchBrkt.vim |  185 +++++++++++++++++++++++++++++-------------------
- plugin/cecutil.vim    |  190 +++++++++++++++++++++++++++++++------------------
+ doc/HiMtchBrkt.txt    |   55
+ plugin/HiMtchBrkt.vim |  185
+ plugin/cecutil.vim    |  190
  3 files changed, 269 insertions(+), 161 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/19)
@@ -51,8 +51,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     HiMtchBrkt now appends its maps to any pre-existing maps.  The the help on "Installing HiMtchBrkt" tells you how to get it to start up automatically, if you wish; that way, HiMtchBrkt will work well with matchit and other plugins.  CusorHold timeout is now 2 seconds, implementing a tradeoff between seeing messages and getting CursorHold to call HiMtchBracket().  CursorHold on an empty buffer no longer calls HiMtchBracket().  Finally, various unwanted motions have been worked around (tnx to Mun Johl and Gary Johnson for testing & pointing things out).
 
- README                |   38 +++++
- doc/HiMtchBrkt.txt    |  254 +++++++++++++++++++++++++++++++
- plugin/HiMtchBrkt.vim |  344 ++++++++++++++++++++++++++++++++++++++++++
- plugin/cecutil.vim    |  401 +++++++++++++++++++++++++++++++++++++++++++++++++
+ README                |   38
+ doc/HiMtchBrkt.txt    |  254
+ plugin/HiMtchBrkt.vim |  344
+ plugin/cecutil.vim    |  401
  4 files changed, 1037 insertions(+), 0 deletions(-)

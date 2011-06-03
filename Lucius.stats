@@ -7,7 +7,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Tried to port the blue scheme to 256 colors, however it mostly stayed similar to the dark one with some adjustments for the text highlighting (not enough choices in 256 colors to match the blues that are used). Changed a few more colors on the light scheme as well.
 
- colors/lucius.vim |  109 ++++++++++++++++++++++++++++++++++-------------------
+ colors/lucius.vim |  109
  1 files changed, 70 insertions(+), 39 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/5.1)
@@ -19,8 +19,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Finished making changes to the light version. Also added a blue variant of the normal, dark scheme. Removed the non-primary highlight groups (Label, Operator, etc) to make the file a little smaller. Also added commands to change between the different schemes (LuciusLight, LuciusDark, LuciusBlue).
 
- README            |   27 +++-
- colors/lucius.vim |  539 +++++++++++++++++++++++++---------------------------
+ README            |   27
+ colors/lucius.vim |  539
  2 files changed, 282 insertions(+), 284 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/5.03)
@@ -32,7 +32,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     A few more tweaks to colors for the light version. Also changed the MatchParen to use a background color.
 
- colors/lucius.vim |   46 +++++++++++++++++++++++-----------------------
+ colors/lucius.vim |   46
  1 files changed, 23 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/5.02)
@@ -44,7 +44,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Tweaked the colors some more and refreshed the 256 term colors to match the new settings (for the light version only)
 
- colors/lucius.vim |  112 ++++++++++++++++++++++++++--------------------------
+ colors/lucius.vim |  112
  1 files changed, 56 insertions(+), 56 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/5.01)
@@ -54,7 +54,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 5.01: Some changes to colors in the light version
 
- colors/lucius.vim |  149 +++++++++++++++++++++++++++-------------------------
+ colors/lucius.vim |  149
  1 files changed, 77 insertions(+), 72 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/5.0)
@@ -66,7 +66,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added a light colorscheme option. This still defaults to the dark version, but you can set g:lucius_style to "light" for a light background scheme. More tweaks will come as I continue to use it.
 
- colors/lucius.vim |  894 +++++++++++++++++++++++++++++++++++------------------
+ colors/lucius.vim |  894
  1 files changed, 601 insertions(+), 293 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
@@ -78,7 +78,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     This version is tweaked a bit. I muted the colors a little and also eliminated some of the lower spectrum highlighting in favor of more blues and greens. This seems to be easier to look at, in my opinion. I also added some custom highlights for the vimwiki script (vimscript #2226).
 
- colors/lucius.vim |  367 +++++++++++++++++++++++------------------------------
+ colors/lucius.vim |  367
  1 files changed, 159 insertions(+), 208 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.6.1)
@@ -88,7 +88,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 3.6.1: Added ColorColumn for Vim 7.3
 
- colors/lucius.vim |    6 +++++-
+ colors/lucius.vim |    6
  1 files changed, 5 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.6)
@@ -101,7 +101,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Changed the cursor line/column to be a little more visible
     - Updated the fold line
 
- colors/lucius.vim |   11 +++++++----
+ colors/lucius.vim |   11
  1 files changed, 7 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.5)
@@ -113,7 +113,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Updated some of the cterm colors after applying colorsupport.vim to the scheme.
 
- colors/lucius.vim |   36 ++++++++++++++++++------------------
+ colors/lucius.vim |   36
  1 files changed, 18 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
@@ -123,7 +123,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 3.2: A few minor updates (SpecialKey, Identifier, PreProc)
 
- colors/lucius.vim |   20 ++++++++++----------
+ colors/lucius.vim |   20
  1 files changed, 10 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
@@ -133,7 +133,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 3.1: Got rid of bold for CursorLine and Pmenu stuff
 
- colors/lucius.vim |   16 ++++++++--------
+ colors/lucius.vim |   16
  1 files changed, 8 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
@@ -145,7 +145,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     This version has a lot of small changes. The colors are toned down some more and new colors exist for diffs, status line, popup menu, wild menu, cursor line and column, error, line numbers, splits, folds, etc. Many of the new colors are similar to what they were before, but work a little better with the scheme now.
 
- colors/lucius.vim |  250 +++++++++++++++++++++++++++--------------------------
+ colors/lucius.vim |  250
  1 files changed, 127 insertions(+), 123 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
@@ -155,7 +155,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.6: Toned down the saturation of some of the colors; other minor things
 
- colors/lucius.vim |  126 +++++++++++++++++++++++++++--------------------------
+ colors/lucius.vim |  126
  1 files changed, 64 insertions(+), 62 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
@@ -165,7 +165,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.5: Minor tweak to VertSplit
 
- colors/lucius.vim |    8 ++++----
+ colors/lucius.vim |    8
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
@@ -175,7 +175,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.4: Modified CursorColumn, CursorLine, and CursorIM
 
- colors/lucius.vim |   16 ++++++++--------
+ colors/lucius.vim |   16
  1 files changed, 8 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
@@ -185,7 +185,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.3: Changed the search highlight to something more visible.
 
- colors/lucius.vim |   12 ++++++------
+ colors/lucius.vim |   12
  1 files changed, 6 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
@@ -195,7 +195,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.2: Made the normal GUI text slightly brighter
 
- colors/lucius.vim |    6 +++---
+ colors/lucius.vim |    6
  1 files changed, 3 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
@@ -209,7 +209,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Removed yellow tint from normal text
     - Fixed status line in cterm
 
- colors/lucius.vim |   49 +++++++++++++++++++++++++++++++++----------------
+ colors/lucius.vim |   49
  1 files changed, 33 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -219,7 +219,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.0: Added 256 color terminal support.
 
- colors/lucius.vim |  125 +++++++++++++++++++++++++++++++++++++++--------------
+ colors/lucius.vim |  125
  1 files changed, 92 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -229,6 +229,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README            |    9 ++
- colors/lucius.vim |  264 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README            |    9
+ colors/lucius.vim |  264
  2 files changed, 273 insertions(+), 0 deletions(-)

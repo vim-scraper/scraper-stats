@@ -5,9 +5,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Renamed to Vim-R-plugin
 
- README                     |   70 +--
- autoload/rcomplete.vim     |   46 -
- autoload/rplugin.vim       |  239 -----
+ README                     |   70
+ autoload/rcomplete.vim     |   46
+ autoload/rplugin.vim       |  239
  bitmaps/RClear.bmp         |  Bin 702 -> 0 bytes
  bitmaps/RClear.png         |  Bin 1079 -> 0 bytes
  bitmaps/RClearAll.bmp      |  Bin 702 -> 0 bytes
@@ -31,29 +31,29 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  bitmaps/RStart.bmp         |  Bin 702 -> 0 bytes
  bitmaps/RStart.png         |  Bin 1050 -> 0 bytes
  bitmaps/ricon.png          |  Bin 904 -> 0 bytes
- bitmaps/ricon.xbm          |   10 -
- doc/r-plugin.txt           | 1174 --------------------
- ftdetect/r.vim             |   12 -
- ftplugin/r.vim             | 1484 --------------------------
- ftplugin/rbrowser.vim      |  166 ---
- ftplugin/rdoc.vim          | 1484 --------------------------
- ftplugin/rhelp.vim         | 1484 --------------------------
- ftplugin/rnoweb.vim        | 1484 --------------------------
- indent/r.vim               |  188 ----
- r-plugin/build_omni_list.R |  140 ---
- r-plugin/etags2ctags.R     |   71 --
- r-plugin/functions.vim     |  370 -------
- r-plugin/omnilist          | 2537 --------------------------------------------
- r-plugin/rpager.sh         |   14 -
- r-plugin/rperl.vim         |  110 --
- r-plugin/rpython.vim       |  136 ---
- r-plugin/specialfuns.R     |   55 -
- r-plugin/vimActivate.js    |    4 -
- r-plugin/vimbrowser.R      |   55 -
- syntax/r.vim               |  142 ---
- syntax/rbrowser.vim        |   45 -
- syntax/rdoc.vim            |   34 -
- syntax/rout.vim            |   82 --
+ bitmaps/ricon.xbm          |   10
+ doc/r-plugin.txt           | 1174
+ ftdetect/r.vim             |   12
+ ftplugin/r.vim             | 1484
+ ftplugin/rbrowser.vim      |  166
+ ftplugin/rdoc.vim          | 1484
+ ftplugin/rhelp.vim         | 1484
+ ftplugin/rnoweb.vim        | 1484
+ indent/r.vim               |  188
+ r-plugin/build_omni_list.R |  140
+ r-plugin/etags2ctags.R     |   71
+ r-plugin/functions.vim     |  370
+ r-plugin/omnilist          | 2537
+ r-plugin/rpager.sh         |   14
+ r-plugin/rperl.vim         |  110
+ r-plugin/rpython.vim       |  136
+ r-plugin/specialfuns.R     |   55
+ r-plugin/vimActivate.js    |    4
+ r-plugin/vimbrowser.R      |   55
+ syntax/r.vim               |  142
+ syntax/rbrowser.vim        |   45
+ syntax/rdoc.vim            |   34
+ syntax/rout.vim            |   82
  49 files changed, 2 insertions(+), 11634 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/101016)
@@ -63,10 +63,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 101016: * Minor bug fixes in the object browser.
 
- doc/r-plugin.txt      |   20 ++++++++++++++++----
- ftplugin/rbrowser.vim |    8 ++++----
- r-plugin/vimbrowser.R |    8 +++++++-
- syntax/rbrowser.vim   |    8 +++++++-
+ doc/r-plugin.txt      |   20
+ ftplugin/rbrowser.vim |    8
+ r-plugin/vimbrowser.R |    8
+ syntax/rbrowser.vim   |    8
  4 files changed, 34 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/101015)
@@ -80,19 +80,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Conque Shell will be used if installed unless explicitly told otherwise in the vimrc.
     * New valid value for vimrplugin_vimpager: "tabnew"
 
- autoload/rcomplete.vim |    5 +-
- autoload/rplugin.vim   |  152 ++++++++++++++---
- doc/r-plugin.txt       |  460 +++++++++++++++++++++++++++---------------------
- ftdetect/r.vim         |   12 +-
- ftplugin/r.vim         |  390 ++++++++++++++++++++++++++++++-----------
- ftplugin/rbrowser.vim  |  166 +++++++++++++++++
- ftplugin/rdoc.vim      |  390 ++++++++++++++++++++++++++++++-----------
- ftplugin/rhelp.vim     |  390 ++++++++++++++++++++++++++++++-----------
- ftplugin/rnoweb.vim    |  390 ++++++++++++++++++++++++++++++-----------
- r-plugin/vimbrowser.R  |   49 +++++
- syntax/r.vim           |    6 +-
- syntax/rbrowser.vim    |   39 ++++
- syntax/rout.vim        |    4 +-
+ autoload/rcomplete.vim |    5
+ autoload/rplugin.vim   |  152
+ doc/r-plugin.txt       |  460
+ ftdetect/r.vim         |   12
+ ftplugin/r.vim         |  390
+ ftplugin/rbrowser.vim  |  166
+ ftplugin/rdoc.vim      |  390
+ ftplugin/rhelp.vim     |  390
+ ftplugin/rnoweb.vim    |  390
+ r-plugin/vimbrowser.R  |   49
+ syntax/r.vim           |    6
+ syntax/rbrowser.vim    |   39
+ syntax/rout.vim        |    4
  13 files changed, 1812 insertions(+), 641 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100923)
@@ -107,13 +107,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Fixed bug when the option vimrplugin_r_path was used (thanks to Asis Hallab for reporting the bug),
     * Fixed bug (E687) when user created custom key binding (thanks to Philippe Glaziou for reporting the bug).
 
- autoload/rplugin.vim |  131 +++++
- doc/r-plugin.txt     |   56 +++-
- ftplugin/r.vim       |  323 +++++--------
- ftplugin/rdoc.vim    | 1296 ++++++++++++++++++++++++++++++++++++++++++++++++++
- ftplugin/rhelp.vim   |  323 +++++--------
- ftplugin/rnoweb.vim  |  323 +++++--------
- syntax/rdoc.vim      |   34 ++
+ autoload/rplugin.vim |  131
+ doc/r-plugin.txt     |   56
+ ftplugin/r.vim       |  323
+ ftplugin/rdoc.vim    | 1296
+ ftplugin/rhelp.vim   |  323
+ ftplugin/rnoweb.vim  |  323
+ syntax/rdoc.vim      |   34
  7 files changed, 1879 insertions(+), 607 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100917)
@@ -129,7 +129,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Initial support for Vim-R communication on Windows using Python.
     * Fixed bug when the plugin was installed in a directory other than ~/.vim (thanks to Tom Link).
 
- autoload/rcomplete.vim          |   10 +-
+ autoload/rcomplete.vim          |   10
  bitmaps/RClear.bmp              |  Bin 0 -> 702 bytes
  bitmaps/RClear.png              |  Bin 0 -> 1079 bytes
  bitmaps/RClearAll.bmp           |  Bin 0 -> 702 bytes
@@ -152,7 +152,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  bitmaps/RSendSelection.png      |  Bin 0 -> 502 bytes
  bitmaps/RStart.bmp              |  Bin 0 -> 702 bytes
  bitmaps/RStart.png              |  Bin 0 -> 1050 bytes
- bitmaps/r-close.xpm             |  160 ---------------
+ bitmaps/r-close.xpm             |  160
  bitmaps/r-control-clear.png     |  Bin 1079 -> 0 bytes
  bitmaps/r-control-clearall.png  |  Bin 718 -> 0 bytes
  bitmaps/r-control-listspace.png |  Bin 667 -> 0 bytes
@@ -162,19 +162,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  bitmaps/r-send-line.png         |  Bin 949 -> 0 bytes
  bitmaps/r-send-paragraph.png    |  Bin 390 -> 0 bytes
  bitmaps/r-send-selection.png    |  Bin 502 -> 0 bytes
- bitmaps/r-start.xpm             |  181 ----------------
- doc/r-plugin.txt                |  429 ++++++++++++++++++++++++++-------------
- ftdetect/r.vim                  |    2 +-
- ftplugin/r.vim                  |  417 +++++++++++++++++++++++++-------------
- ftplugin/rhelp.vim              |  417 +++++++++++++++++++++++++-------------
- ftplugin/rnoweb.vim             |  417 +++++++++++++++++++++++++-------------
- indent/r.vim                    |  131 +++++++------
- r-plugin/build_omni_list.R      |    2 +-
- r-plugin/rperl.vim              |  110 ++++++++++
- r-plugin/rpython.vim            |  136 ++++++++++++
- r-plugin/vimActivate.js         |    4 +
- syntax/r.vim                    |   19 +-
- syntax/rout.vim                 |   65 +++++--
+ bitmaps/r-start.xpm             |  181
+ doc/r-plugin.txt                |  429
+ ftdetect/r.vim                  |    2
+ ftplugin/r.vim                  |  417
+ ftplugin/rhelp.vim              |  417
+ ftplugin/rnoweb.vim             |  417
+ indent/r.vim                    |  131
+ r-plugin/build_omni_list.R      |    2
+ r-plugin/rperl.vim              |  110
+ r-plugin/rpython.vim            |  136
+ r-plugin/vimActivate.js         |    4
+ syntax/r.vim                    |   19
+ syntax/rout.vim                 |   65
  46 files changed, 1499 insertions(+), 1001 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100825)
@@ -188,12 +188,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * New option: vimrplugin_buildwait.
     * New option: vimrplugin_r_path (thanks to Asis Hallab).
 
- doc/r-plugin.txt    |   52 +++++++++++++----
- ftdetect/r.vim      |    5 +-
- ftplugin/r.vim      |   45 +++++++++------
- ftplugin/rhelp.vim  |   45 +++++++++------
- ftplugin/rnoweb.vim |   45 +++++++++------
- syntax/r.vim        |  153 +++++++++++++++++++++++++++++++++++++++++++-------
+ doc/r-plugin.txt    |   52
+ ftdetect/r.vim      |    5
+ ftplugin/r.vim      |   45
+ ftplugin/rhelp.vim  |   45
+ ftplugin/rnoweb.vim |   45
+ syntax/r.vim        |  153
  6 files changed, 258 insertions(+), 87 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100803)
@@ -203,10 +203,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 100803: * Fixed bug in .Rsource name making in some systems.
 
- doc/r-plugin.txt    |    7 +++++--
- ftplugin/r.vim      |    4 ++--
- ftplugin/rhelp.vim  |    4 ++--
- ftplugin/rnoweb.vim |    4 ++--
+ doc/r-plugin.txt    |    7
+ ftplugin/r.vim      |    4
+ ftplugin/rhelp.vim  |    4
+ ftplugin/rnoweb.vim |    4
  4 files changed, 11 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100801)
@@ -220,10 +220,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * If ~/.vim/r-plugin/functions.vim is not found, try to copy it from  /usr/share/vim/addons/r-plugin/functions.vim.
     * Minor bug fixes.
 
- doc/r-plugin.txt    |  276 ++++++++++++++++++++++++++-------------------------
- ftplugin/r.vim      |  166 +++++++++++++++++++------------
- ftplugin/rhelp.vim  |  166 +++++++++++++++++++------------
- ftplugin/rnoweb.vim |  166 +++++++++++++++++++------------
+ doc/r-plugin.txt    |  276
+ ftplugin/r.vim      |  166
+ ftplugin/rhelp.vim  |  166
+ ftplugin/rnoweb.vim |  166
  4 files changed, 442 insertions(+), 332 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100730)
@@ -236,11 +236,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Added menu item and key binding for run "R CMD BATCH" and open the resulting ".Rout" file.
      * Fixed bug when more than one Vim instance used the same file to send multiple lines of code to R (thanks to Bart for reporting the bug).
 
- doc/r-plugin.txt    |   97 +++++++++++++++++++++++++++--------------------
- ftplugin/r.vim      |  104 +++++++++++++++++++++++++++++++++++---------------
- ftplugin/rhelp.vim  |  104 +++++++++++++++++++++++++++++++++++---------------
- ftplugin/rnoweb.vim |  104 +++++++++++++++++++++++++++++++++++---------------
- syntax/r.vim        |    9 ++--
+ doc/r-plugin.txt    |   97
+ ftplugin/r.vim      |  104
+ ftplugin/rhelp.vim  |  104
+ ftplugin/rnoweb.vim |  104
+ syntax/r.vim        |    9
  5 files changed, 280 insertions(+), 138 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100728)
@@ -250,11 +250,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 100728: * Adapted the code to build a Debian package.
 
- doc/r-plugin.txt    |   86 +++++++++++++++++++++++----------------------------
- ftplugin/r.vim      |   28 +++++++++++++---
- ftplugin/rhelp.vim  |   28 +++++++++++++---
- ftplugin/rnoweb.vim |   28 +++++++++++++---
- syntax/r.vim        |    6 ++--
+ doc/r-plugin.txt    |   86
+ ftplugin/r.vim      |   28
+ ftplugin/rhelp.vim  |   28
+ ftplugin/rnoweb.vim |   28
+ syntax/r.vim        |    6
  5 files changed, 111 insertions(+), 65 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100719)
@@ -269,26 +269,26 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Improved syntax highlight of R batch output (.Rout files).
     * No longer uses the external programs grep, awk and sed to build the additional syntax file containing the list of functions.
 
- autoload/rcomplete.vim     |   18 +-
- doc/r-plugin.txt           |  214 +++--
- ftplugin/r.vim             |  270 +++---
- ftplugin/rhelp.vim         | 1135 ++++++++++++++++++++
- ftplugin/rnoweb.vim        | 1135 ++++++++++++++++++++
- r-plugin/build_omni_list.R |  140 +++
- r-plugin/etags2ctags.R     |   71 ++
- r-plugin/functions.vim     |  370 +++++++
- r-plugin/omnilist          | 2537 ++++++++++++++++++++++++++++++++++++++++++++
- r-plugin/rpager.sh         |   14 +
- r-plugin/specialfuns.R     |   55 +
- syntax/r.vim               |    2 +-
- syntax/rout.vim            |   19 +-
- tools/rargs.R              |   23 -
- tools/rfunctions           |  370 -------
- tools/rpager.sh            |   14 -
- tools/rtags                | 2537 --------------------------------------------
- tools/rtags.R              |  122 ---
- tools/rvimplot.R           |   15 -
- tools/rvimsource.R         |  154 ---
+ autoload/rcomplete.vim     |   18
+ doc/r-plugin.txt           |  214
+ ftplugin/r.vim             |  270
+ ftplugin/rhelp.vim         | 1135
+ ftplugin/rnoweb.vim        | 1135
+ r-plugin/build_omni_list.R |  140
+ r-plugin/etags2ctags.R     |   71
+ r-plugin/functions.vim     |  370
+ r-plugin/omnilist          | 2537
+ r-plugin/rpager.sh         |   14
+ r-plugin/specialfuns.R     |   55
+ syntax/r.vim               |    2
+ syntax/rout.vim            |   19
+ tools/rargs.R              |   23
+ tools/rfunctions           |  370
+ tools/rpager.sh            |   14
+ tools/rtags                | 2537
+ tools/rtags.R              |  122
+ tools/rvimplot.R           |   15
+ tools/rvimsource.R         |  154
  20 files changed, 5763 insertions(+), 3452 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100710)
@@ -298,8 +298,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 100710: * Fixed :RUpdateObjList bug when list had length 0.
 
- doc/r-plugin.txt |    5 ++++-
- tools/rtags.R    |   18 ++++++++++--------
+ doc/r-plugin.txt |    5
+ tools/rtags.R    |   18
  2 files changed, 14 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100707)
@@ -312,10 +312,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      * Fixed 'E329: No menu "R"' when more than one file were loaded simultaneously by calling vim with either -p or -o parameters. Thanks to Peng Yu for reporting the bug.
      * Correctly recognize a newly created file with extension ".R" as an R script file.
 
- after/filetype.vim |    9 ---
- doc/r-plugin.txt   |  165 +++++++++++++++++++++++++++++-----------------------
- ftdetect/r.vim     |    9 +++
- ftplugin/r.vim     |   63 +++++---------------
+ after/filetype.vim |    9
+ doc/r-plugin.txt   |  165
+ ftdetect/r.vim     |    9
+ ftplugin/r.vim     |   63
  4 files changed, 116 insertions(+), 130 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100521)
@@ -325,8 +325,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 100521: * Replaced "-t" with "--title" to make xfce4-terminal work again.
 
- doc/r-plugin.txt |    8 ++++----
- ftplugin/r.vim   |    6 +++---
+ doc/r-plugin.txt |    8
+ ftplugin/r.vim   |    6
  2 files changed, 7 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100512)
@@ -343,12 +343,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Thanks to Scott Kostyshak who helped to improve the documentation.
     * Iago Mosqueira suggested that the plugin should be able to run one R process for each Vim instance, and his suggestion was implemented with the option g:vimrplugin_by_vim_instance.
 
- after/filetype.vim |    2 +-
- doc/r-plugin.txt   |   99 ++++++++++++++++++++++++++++++++++++---------------
- ftplugin/r.vim     |   51 +++++++++++++++++++--------
- syntax/r.vim       |   16 ++++++--
- syntax/rout.vim    |   36 +++++++++++++++++++
- tools/rtags.R      |    7 ++++
+ after/filetype.vim |    2
+ doc/r-plugin.txt   |   99
+ ftplugin/r.vim     |   51
+ syntax/r.vim       |   16
+ syntax/rout.vim    |   36
+ tools/rtags.R      |    7
  6 files changed, 162 insertions(+), 49 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/091223)
@@ -361,13 +361,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Changes in omni completion: now using two tags files, one for .GlobalEnv and other for all other environments. The command :RUpdateObjList must be used to update the list of objects that are not in .Globalenv. Arguments of functions are displayed in a scratch window.
     * Syntax highlight for R functions. The command :RUpdateObjList must be used to update the list of functions to be highlighted.
 
- autoload/rcomplete.vim |   15 +-
- doc/r-plugin.txt       |  146 +++-
- ftplugin/r.vim         |  771 +++++++++------
- syntax/r.vim           |    9 +-
- tools/rfunctions       |  370 +++++++
- tools/rtags            | 2537 ++++++++++++++++++++++++++++++++++++++++++++++++
- tools/rtags.R          |   77 ++-
+ autoload/rcomplete.vim |   15
+ doc/r-plugin.txt       |  146
+ ftplugin/r.vim         |  771
+ syntax/r.vim           |    9
+ tools/rfunctions       |  370
+ tools/rtags            | 2537
+ tools/rtags.R          |   77
  7 files changed, 3552 insertions(+), 373 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/091016)
@@ -384,12 +384,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Replaced <Leader> with <LocalLeader> in the key bindings.
     * Added "Send Paragraph" commands.
 
- after/filetype.vim           |    1 +
+ after/filetype.vim           |    1
  bitmaps/r-send-paragraph.png |  Bin 0 -> 390 bytes
- doc/r-plugin.txt             |  405 +++++++++++-----
- ftplugin/r.vim               | 1087 +++++++++++++-----------------------------
- syntax/r.vim                 |   13 +-
- tools/rpager.sh              |    1 +
+ doc/r-plugin.txt             |  405
+ ftplugin/r.vim               | 1087
+ syntax/r.vim                 |   13
+ tools/rpager.sh              |    1
  6 files changed, 638 insertions(+), 869 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/091004)
@@ -404,8 +404,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * The main menu has new items and the toolbar new icons.
     * Documentation improvements.
 
- after/filetype.vim              |    2 +
- bitmaps/r-close.xpm             |  160 ++++++
+ after/filetype.vim              |    2
+ bitmaps/r-close.xpm             |  160
  bitmaps/r-control-clear.png     |  Bin 0 -> 1079 bytes
  bitmaps/r-control-clearall.png  |  Bin 0 -> 718 bytes
  bitmaps/r-control-listspace.png |  Bin 0 -> 667 bytes
@@ -414,19 +414,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  bitmaps/r-send-function.png     |  Bin 0 -> 871 bytes
  bitmaps/r-send-line.png         |  Bin 0 -> 949 bytes
  bitmaps/r-send-selection.png    |  Bin 0 -> 502 bytes
- bitmaps/r-start.xpm             |  181 +++++++
- bitmaps/rbuffer.xpm             |   30 -
- bitmaps/rcomplete.xpm           |  440 ---------------
- bitmaps/rfunction.xpm           |   45 --
- bitmaps/rline.xpm               |   30 -
- bitmaps/rregion.xpm             |   30 -
- bitmaps/rstart.xpm              |  161 ------
- doc/r-plugin.txt                |  504 ++++++++++++------
- ftplugin/r.vim                  | 1133 ++++++++++++++++++++++++++++++++-------
- tools/rargs.R                   |    2 +-
- tools/rtags.R                   |   10 +-
- tools/rvimplot.R                |   15 +
- tools/rvimsource.R              |  154 ++++++
+ bitmaps/r-start.xpm             |  181
+ bitmaps/rbuffer.xpm             |   30
+ bitmaps/rcomplete.xpm           |  440
+ bitmaps/rfunction.xpm           |   45
+ bitmaps/rline.xpm               |   30
+ bitmaps/rregion.xpm             |   30
+ bitmaps/rstart.xpm              |  161
+ doc/r-plugin.txt                |  504
+ ftplugin/r.vim                  | 1133
+ tools/rargs.R                   |    2
+ tools/rtags.R                   |   10
+ tools/rvimplot.R                |   15
+ tools/rvimsource.R              |  154
  23 files changed, 1783 insertions(+), 1114 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/090828)
@@ -439,9 +439,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      * Faster startup.
      * Better support for Rnoweb files: the cursor goes to '^<<' if the sent line is '^@$'.
 
- doc/r-plugin.txt |   37 ++++++++++++--------
- ftplugin/r.vim   |   97 ++++++++++++++++++++++++++++++++++++++++--------------
- indent/r.vim     |   15 ++++++++
+ doc/r-plugin.txt |   37
+ ftplugin/r.vim   |   97
+ indent/r.vim     |   15
  3 files changed, 109 insertions(+), 40 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/090811)
@@ -456,11 +456,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      * Automatically detect available terminal emulators and choose one of them.
      * By default, no longer calls help.start() the first time that <C-H> is pressed.
 
- bitmaps/rkill.xpm |  251 -----------------------
- bitmaps/rstop.xpm |  280 --------------------------
- doc/r-plugin.txt  |  181 ++++++-----------
- ftplugin/r.vim    |  337 +++++++++++---------------------
- tools/rfunnel.pl  |  567 -----------------------------------------------------
+ bitmaps/rkill.xpm |  251
+ bitmaps/rstop.xpm |  280
+ doc/r-plugin.txt  |  181
+ ftplugin/r.vim    |  337
+ tools/rfunnel.pl  |  567
  5 files changed, 172 insertions(+), 1444 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/090810)
@@ -477,11 +477,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      * Changed key binding from <S-Enter>, which doesn't work in any terminal, to <M-Enter>, which at least works in xterm.
 
  bitmaps/ricon.png    |  Bin 0 -> 904 bytes
- bitmaps/ricon.xbm    |   10 +++++
- doc/r-plugin.txt     |  100 +++++++++++++++++++++++++++++--------------------
- ftplugin/r.vim       |   57 +++++++++++++++++++++++-----
- indent/r.vim         |   96 +++++++++++++++++++++++++++++++++++++++++------
- tools/open-gvim-here |    9 ----
+ bitmaps/ricon.xbm    |   10
+ doc/r-plugin.txt     |  100
+ ftplugin/r.vim       |   57
+ indent/r.vim         |   96
+ tools/open-gvim-here |    9
  6 files changed, 199 insertions(+), 73 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/090610)
@@ -493,10 +493,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     The options expandtab, shiftwidth and tabstop are no longer set by the plugin. Better word detection before calling R's help(). Fixed bug in underscore replacement. Fixed small bug in code indentation. Added scipt rpager.sh. Added two new plugin options: no underscore replacement and fixed name for the pipe file instead of random one.
 
- doc/r-plugin.txt |   28 +++++++++++++++-
- ftplugin/r.vim   |   97 +++++++++++++++++++++++++++++++++++++----------------
- indent/r.vim     |    2 +-
- tools/rpager.sh  |   13 +++++++
+ doc/r-plugin.txt |   28
+ ftplugin/r.vim   |   97
+ indent/r.vim     |    2
+ tools/rpager.sh  |   13
  4 files changed, 109 insertions(+), 31 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/090523)
@@ -510,9 +510,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Default key binding for calling R's args() changed to <S-F1>.
     * New R script rargs.R gives better results for generic functions than R's args() called directly.
 
- doc/r-plugin.txt |  135 +++++++++++++++++++++------
- ftplugin/r.vim   |  272 ++++++++++++++++++++++++++++++++++++++++++------------
- tools/rargs.R    |   23 +++++
+ doc/r-plugin.txt |  135
+ ftplugin/r.vim   |  272
+ tools/rargs.R    |   23
  3 files changed, 339 insertions(+), 91 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/090519)
@@ -526,12 +526,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Automatically call help.start() after <C-H> is pressed for the first time, and wait 4 seconds for the browser start before calling R's help(). These features are customizable.
     * Fixed tags file script.
 
- doc/r-plugin.txt           |  117 ++++++++++++++++++++++++++------------------
- ftplugin/r.vim             |   85 +++++++++++++++++++++++--------
- indent/r.vim               |    2 +-
- tools/open-gvim-here       |    9 +++
+ doc/r-plugin.txt           |  117
+ ftplugin/r.vim             |   85
+ indent/r.vim               |    2
+ tools/open-gvim-here       |    9
  tools/r-plugin-desktop.tar |  Bin 10240 -> 0 bytes
- tools/rtags.R              |   41 ++++++++++------
+ tools/rtags.R              |   41
  6 files changed, 169 insertions(+), 85 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/090516)
@@ -545,9 +545,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Added ability to send function to R, revert the automatic convertion of "_" into "<-" and call R's help().
     * Added archive with some files to ease desktop integration, if desired.
 
- doc/r-plugin.txt           |  269 ++++++++++++++++++++++++++++++++++++++++++++
- ftplugin/r.vim             |  146 ++++++++++++++++++-------
- indent/r.vim               |    8 +-
+ doc/r-plugin.txt           |  269
+ ftplugin/r.vim             |  146
+ indent/r.vim               |    8
  tools/r-plugin-desktop.tar |  Bin 0 -> 10240 bytes
  4 files changed, 378 insertions(+), 45 deletions(-)
 
@@ -558,20 +558,20 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 090507: Initial upload
 
- README                 |   69 ++++++
- after/filetype.vim     |    6 +
- autoload/rcomplete.vim |   42 ++++
- bitmaps/rbuffer.xpm    |   30 +++
- bitmaps/rcomplete.xpm  |  440 +++++++++++++++++++++++++++++++++++++
- bitmaps/rfunction.xpm  |   45 ++++
- bitmaps/rkill.xpm      |  251 +++++++++++++++++++++
- bitmaps/rline.xpm      |   30 +++
- bitmaps/rregion.xpm    |   30 +++
- bitmaps/rstart.xpm     |  161 ++++++++++++++
- bitmaps/rstop.xpm      |  280 ++++++++++++++++++++++++
- ftplugin/r.vim         |  407 ++++++++++++++++++++++++++++++++++
- indent/r.vim           |   94 ++++++++
- syntax/r.vim           |    5 +
- tools/rfunnel.pl       |  567 ++++++++++++++++++++++++++++++++++++++++++++++++
- tools/rtags.R          |   43 ++++
+ README                 |   69
+ after/filetype.vim     |    6
+ autoload/rcomplete.vim |   42
+ bitmaps/rbuffer.xpm    |   30
+ bitmaps/rcomplete.xpm  |  440
+ bitmaps/rfunction.xpm  |   45
+ bitmaps/rkill.xpm      |  251
+ bitmaps/rline.xpm      |   30
+ bitmaps/rregion.xpm    |   30
+ bitmaps/rstart.xpm     |  161
+ bitmaps/rstop.xpm      |  280
+ ftplugin/r.vim         |  407
+ indent/r.vim           |   94
+ syntax/r.vim           |    5
+ tools/rfunnel.pl       |  567
+ tools/rtags.R          |   43
  16 files changed, 2500 insertions(+), 0 deletions(-)

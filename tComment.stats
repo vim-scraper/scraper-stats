@@ -7,9 +7,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Support for fstab- g:tcommentOptions: Other key-value options used by |tcomment#Comment()|.- Support for django (thanks to Jim Tinsky)- g:tcomment#syntax_substitute: Rewrite syntax names- django support: minor correctionMD5 checksum: 994e5886d185857848b5472d5457b232
 
- autoload/tcomment.vim |   55 ++++++++++++++++++++++++++++++++++++++++++------
- doc/tcomment.txt      |   22 ++++++++++++++++++-
- plugin/tcomment.vim   |    6 ++--
+ autoload/tcomment.vim |   55
+ doc/tcomment.txt      |   22
+ plugin/tcomment.vim   |    6
  3 files changed, 72 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.03)
@@ -21,12 +21,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - s:PrintF(): Silently ignore malformed format strings- Deal with major.minor pseudo-filetypes- go-lang- Remove s:SPrintF() since vim now has printf()MD5 checksum: 4a13ffb1b1d46bbd2dc8dcee77507983
 
- autoload/tcommand.vim |  253 -------------
- autoload/tcomment.vim |  940 +++++++++++++++++++++++++++++++++++++++++++++++++
- doc/tcommand.txt      |   76 ----
- doc/tcomment.txt      |  322 +++++++++++++++++
- plugin/tcommand.vim   |   43 ---
- plugin/tcomment.vim   |  143 ++++++++
+ autoload/tcommand.vim |  253
+ autoload/tcomment.vim |  940
+ doc/tcommand.txt      |   76
+ doc/tcomment.txt      |  322
+ plugin/tcommand.vim   |   43
+ plugin/tcomment.vim   |  143
  6 files changed, 1405 insertions(+), 372 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.02)
@@ -36,12 +36,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.02: - Support for matlab (contributed by D Fong)
 
- autoload/tcommand.vim |  253 ++++++++++++++
- autoload/tcomment.vim |  917 -------------------------------------------------
- doc/tcommand.txt      |   76 ++++
- doc/tcomment.txt      |  237 -------------
- plugin/tcommand.vim   |   43 +++
- plugin/tcomment.vim   |  255 --------------
+ autoload/tcommand.vim |  253
+ autoload/tcomment.vim |  917
+ doc/tcommand.txt      |   76
+ doc/tcomment.txt      |  237
+ plugin/tcommand.vim   |   43
+ plugin/tcomment.vim   |  255
  6 files changed, 372 insertions(+), 1409 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
@@ -51,9 +51,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.1: Minor bug fix.
 
- autoload/tcomment.vim |  113 +++++++++++++++++++++++++++++++------------------
- doc/tcomment.txt      |   20 +++++----
- plugin/tcomment.vim   |    9 +++-
+ autoload/tcomment.vim |  113
+ doc/tcomment.txt      |   20
+ plugin/tcomment.vim   |    9
  3 files changed, 90 insertions(+), 52 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -71,11 +71,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - CHANGE: Renamed the file plugin/tComment.vim to plugin/tcomment.vim
     - CHANGE: Renamed certain global functions to tcomment#...
 
- autoload/tcomment.vim |  528 +++++++++++++++++++++++++++++++++++++++----------
- doc/tComment.txt      |  208 -------------------
- doc/tcomment.txt      |  233 ++++++++++++++++++++++
- plugin/tComment.vim   |  385 -----------------------------------
- plugin/tcomment.vim   |  252 +++++++++++++++++++++++
+ autoload/tcomment.vim |  528
+ doc/tComment.txt      |  208
+ doc/tcomment.txt      |  233
+ plugin/tComment.vim   |  385
+ plugin/tcomment.vim   |  252
  5 files changed, 904 insertions(+), 702 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
@@ -88,8 +88,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - tcomment#Operator defines w:tcommentPos if invoked repeatedly
     - s:GuessFileType: use len(getline()) instead of col()
 
- autoload/tcomment.vim |   35 +++++++++++++++++++++++++++--------
- plugin/tComment.vim   |   13 ++++++++++---
+ autoload/tcomment.vim |   35
+ plugin/tComment.vim   |   13
  2 files changed, 37 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
@@ -101,8 +101,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Fix left offset for inline comments (via operator binding)
 
- autoload/tcomment.vim |   13 ++++++++++---
- plugin/tComment.vim   |   20 +++++++++++---------
+ autoload/tcomment.vim |   13
+ plugin/tComment.vim   |   20
  2 files changed, 21 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8a)
@@ -114,9 +114,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     The file autoload/tcomment.vim was packed as autoload/tComment.vim. If you installed 1.8, please rename that file or remove autoload/tComment.vim and use this vimball.
 
- autoload/tComment.vim |  550 -------------------------------------------------
- autoload/tcomment.vim |  550 +++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/tComment.vim   |    4 +-
+ autoload/tComment.vim |  550
+ autoload/tcomment.vim |  550
+ plugin/tComment.vim   |    4
  3 files changed, 552 insertions(+), 552 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
@@ -133,9 +133,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Removed extraneous newline in some block comments.
     - Maps for visal mode (thanks Krzysztof Goj)
 
- autoload/tComment.vim |  550 +++++++++++++++++++++++++++++++++++++++
- doc/tComment.txt      |    2 +-
- plugin/tComment.vim   |  691 ++++++++-----------------------------------------
+ autoload/tComment.vim |  550
+ doc/tComment.txt      |    2
+ plugin/tComment.vim   |  691
  3 files changed, 660 insertions(+), 583 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
@@ -159,8 +159,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - TComment: The use of the type argument has slightly changed (IG -> i,
     new: >)
 
- doc/tComment.txt    |   69 +++++++++----
- plugin/tComment.vim |  281 ++++++++++++++++++++++++++++++++++++--------------
+ doc/tComment.txt    |   69
+ plugin/tComment.vim |  281
  2 files changed, 251 insertions(+), 99 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -179,9 +179,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Made key maps configurable via g:tcommentMapLeader1 and
     g:tcommentMapLeader2
 
- doc/tComment.txt    |   34 ++++++-
- etc/tComment.lst    |    3 -
- plugin/tComment.vim |  262 +++++++++++++++++++++++++++------------------------
+ doc/tComment.txt    |   34
+ etc/tComment.lst    |    3
+ plugin/tComment.vim |  262
  3 files changed, 170 insertions(+), 129 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -206,8 +206,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Renamed TCommentVisualBlock to TCommentRight
     - FIX: Forgot 'x' in ExtractCommentsPart() (thanks to Fredrik Acosta)
 
- doc/tComment.txt    |   84 ++++++----
- plugin/tComment.vim |  445 +++++++++++++++++++++++++++++++++------------------
+ doc/tComment.txt    |   84
+ plugin/tComment.vim |  445
  2 files changed, 342 insertions(+), 187 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -221,8 +221,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - perl_block
     - <c-_>s mapped to :TCommentAs <c-r>=&ft<cr>
 
- doc/tComment.txt    |    1 +
- plugin/tComment.vim |   35 +++++++++++++++++++++++++++--------
+ doc/tComment.txt    |    1
+ plugin/tComment.vim |   35
  2 files changed, 28 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -244,8 +244,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - enable multimode for dsl, vim filetypes
     - added explicit support for some other file types I ran into
 
- doc/tComment.txt    |   46 +++++++-
- plugin/tComment.vim |  292 ++++++++++++++++++++++++++++++++++++++-------------
+ doc/tComment.txt    |   46
+ plugin/tComment.vim |  292
  2 files changed, 262 insertions(+), 76 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -263,8 +263,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - removed the TCommentAsBlock command (TCommentAs provides its functionality)
     - removed g:tcommentSetCMS
 
- doc/tComment.txt    |   27 +++--
- plugin/tComment.vim |  307 ++++++++++++++++++++++++++++++++-------------------
+ doc/tComment.txt    |   27
+ plugin/tComment.vim |  307
  2 files changed, 210 insertions(+), 124 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -274,8 +274,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README              |   48 ++++++++
- doc/tComment.txt    |   83 +++++++++++++
- etc/tComment.lst    |    3 +
- plugin/tComment.vim |  331 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ README              |   48
+ doc/tComment.txt    |   83
+ etc/tComment.lst    |    3
+ plugin/tComment.vim |  331
  4 files changed, 465 insertions(+), 0 deletions(-)

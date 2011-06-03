@@ -7,11 +7,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Alternative, slightly more robust approach- g:stakeholders#undo_breaks: Break undo sequences- Globally enable, disable stakeholders; Replace* functions became methods of the stakeholders prototype- If b:stakeholders_range is defined (e.g. by #EnableInRange()), replace placeholder only in that range.MD5 checksum: 9878bd0328b2abd4a162f9efa45d3599
 
- autoload/stakeholders.vim           |  380 +++++++++++++++++++----------------
- autoload/stakeholders/delayed.vim   |   23 +--
- autoload/stakeholders/immediate.vim |   52 +----
- doc/stakeholders.txt                |   28 +++-
- plugin/stakeholders.vim             |   42 ++++
+ autoload/stakeholders.vim           |  380
+ autoload/stakeholders/delayed.vim   |   23
+ autoload/stakeholders/immediate.vim |   52
+ doc/stakeholders.txt                |   28
+ plugin/stakeholders.vim             |   42
  5 files changed, 291 insertions(+), 234 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -21,9 +21,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README                              |   17 ++
- autoload/stakeholders.vim           |  285 +++++++++++++++++++++++++++++++++++
- autoload/stakeholders/delayed.vim   |   47 ++++++
- autoload/stakeholders/immediate.vim |   75 +++++++++
- doc/stakeholders.txt                |  102 +++++++++++++
+ README                              |   17
+ autoload/stakeholders.vim           |  285
+ autoload/stakeholders/delayed.vim   |   47
+ autoload/stakeholders/immediate.vim |   75
+ doc/stakeholders.txt                |  102
  5 files changed, 526 insertions(+), 0 deletions(-)

@@ -12,9 +12,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       * Feature: Add option *ub_save_after_opened* to control whether to save posts/pages to database right after they are fetched from blogs.
       * Feature: Add option *ub_save_after_sent* to control whether to save posts/pages to database right after they are sent to blogs.
 
- README               |   15 ++--
- doc/UltraBlog.txt    |  196 ++++++++++++++++++++++++++++++++++++++++----------
- plugin/UltraBlog.vim |  183 ++++++++++++++++++++++++++++++++++++++++-------
+ README               |   15
+ doc/UltraBlog.txt    |  196
+ plugin/UltraBlog.vim |  183
  3 files changed, 324 insertions(+), 70 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -26,9 +26,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Feature: Add commands :UBThis and :UBPageThis to create a new post or page with content in the current buffer.
 
- README               |   16 +++++++++++---
- doc/UltraBlog.txt    |   13 +++++++++++-
- plugin/UltraBlog.vim |   51 ++++++++++++++++++++++++++++++++++++++++++++-----
+ README               |   16
+ doc/UltraBlog.txt    |   13
+ plugin/UltraBlog.vim |   51
  3 files changed, 69 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -45,9 +45,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Feature: Check prerequesites in every top level functions.
     * Bugfix: Do not raise an error on startup when sqlalchemy is not installed.
 
- README               |    4 +-
- doc/UltraBlog.txt    |   22 +++-
- plugin/UltraBlog.vim |  334 ++++++++++++++++++++++++++++++++------------------
+ README               |    4
+ doc/UltraBlog.txt    |   22
+ plugin/UltraBlog.vim |  334
  3 files changed, 232 insertions(+), 128 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -59,8 +59,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * Feature: Column widths can be set to custom values, which keep post or page lists tidy. Two options added: ub_list_col1_width and ub_list_col2_width.
 
- doc/UltraBlog.txt    |   16 +++++++++++++++-
- plugin/UltraBlog.vim |   36 +++++++++++++++++++++++++++++-------
+ doc/UltraBlog.txt    |   16
+ plugin/UltraBlog.vim |   36
  2 files changed, 44 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -74,8 +74,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Feature: Add option ub_append_promotion_link to control whether to append a promotion link of UltraBlog.vim.
     * Bugfix: Wrong order for parameters of commands :UBOpen and :UBDel in documentation.
 
- doc/UltraBlog.txt    |   43 +++-
- plugin/UltraBlog.vim |  526 ++++++++++++++++++++++++++++++++++++++++++--------
+ doc/UltraBlog.txt    |   43
+ plugin/UltraBlog.vim |  526
  2 files changed, 478 insertions(+), 91 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.5)
@@ -89,8 +89,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Feature: Use Vimball as the default distribution format.
     * Feature: Add two options - |ub_local_pagesize| and |ub_remote_pagesize|.
 
- doc/UltraBlog.txt    |  235 ++++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/UltraBlog.vim |   56 ++++++++-----
+ doc/UltraBlog.txt    |  235
+ plugin/UltraBlog.vim |   56
  2 files changed, 270 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.4)
@@ -102,7 +102,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * Fix the problem that an unexpected type exception is raised when UBList is given some numbers as parameters.
 
- plugin/UltraBlog.vim |   10 ++++++----
+ plugin/UltraBlog.vim |   10
  1 files changed, 6 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.3)
@@ -116,7 +116,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Fix the problem that buffers can be reverted to what the previous views contain throught the undo action.
     * Fix the minor problem that text won't wrap automatically in views opened by the command :UBNew.
 
- plugin/UltraBlog.vim |   72 ++++++++++++++++++++++++++++++++-----------------
+ plugin/UltraBlog.vim |   72
  1 files changed, 47 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.2)
@@ -129,7 +129,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Fix the problem that Post.post_id won't be updated in database after a new post is sent to blog.
     * Fix the problem that it prompts for confirmation to delete the remote copy when deleting a post whose post_id is 0 from local post list.
 
- plugin/UltraBlog.vim |    8 +++++---
+ plugin/UltraBlog.vim |    8
  1 files changed, 5 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
@@ -141,7 +141,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Do not pop up an exception alert for the first time when Vim starts with UltraBlog.vim installed and no configurations added to the vimrc file.
 
- plugin/UltraBlog.vim |   18 ++++++++++--------
+ plugin/UltraBlog.vim |   18
  1 files changed, 10 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -151,6 +151,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README               |   27 ++
- plugin/UltraBlog.vim |  651 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ README               |   27
+ plugin/UltraBlog.vim |  651
  2 files changed, 678 insertions(+), 0 deletions(-)

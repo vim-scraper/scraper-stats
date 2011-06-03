@@ -7,20 +7,20 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Was added good syntax highlighting, ability to browse over all function names and a few new commands (Autocmd, Map and Map and Menu derivatives).
 
- ftplugin/autocmd_cmd.vim  |   16 ++++++++
- ftplugin/command_cmd.vim  |   14 +++++++
- ftplugin/function_cmd.vim |   21 +++++++++++
- ftplugin/map_cmd.vim      |   14 +++++++
- ftplugin/menu_cmd.vim     |   14 +++++++
- plugin/CommandOutput.vim  |   86 ++++++++++++++++++++++++++++++++++++++++-----
- syntax/autocmd_cmd.vim    |   41 +++++++++++++++++++++
- syntax/command_cmd.vim    |   40 +++++++++++++++++----
- syntax/function_cmd.vim   |   17 ++++++++-
- syntax/hi_cmd.vim         |   24 ------------
- syntax/highlight_cmd.vim  |   24 ++++++++++++
- syntax/map_cmd.vim        |   46 ++++++++++++++++++++++++
- syntax/menu_cmd.vim       |   29 ++++++++++++---
- syntax/syntax_cmd.vim     |    2 +-
+ ftplugin/autocmd_cmd.vim  |   16
+ ftplugin/command_cmd.vim  |   14
+ ftplugin/function_cmd.vim |   21
+ ftplugin/map_cmd.vim      |   14
+ ftplugin/menu_cmd.vim     |   14
+ plugin/CommandOutput.vim  |   86
+ syntax/autocmd_cmd.vim    |   41
+ syntax/command_cmd.vim    |   40
+ syntax/function_cmd.vim   |   17
+ syntax/hi_cmd.vim         |   24
+ syntax/highlight_cmd.vim  |   24
+ syntax/map_cmd.vim        |   46
+ syntax/menu_cmd.vim       |   29
+ syntax/syntax_cmd.vim     |    2
  14 files changed, 340 insertions(+), 48 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -30,13 +30,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README                   |   42 ++++++++++++++++++++++++++++++++++++++
- plugin/CommandOutput.vim |   50 ++++++++++++++++++++++++++++++++++++++++++++++
- syntax/changes_cmd.vim   |   28 +++++++++++++++++++++++++
- syntax/command_cmd.vim   |   29 ++++++++++++++++++++++++++
- syntax/function_cmd.vim  |   34 +++++++++++++++++++++++++++++++
- syntax/hi_cmd.vim        |   24 ++++++++++++++++++++++
- syntax/menu_cmd.vim      |   29 ++++++++++++++++++++++++++
- syntax/messages_cmd.vim  |   29 ++++++++++++++++++++++++++
- syntax/syntax_cmd.vim    |   27 ++++++++++++++++++++++++
+ README                   |   42
+ plugin/CommandOutput.vim |   50
+ syntax/changes_cmd.vim   |   28
+ syntax/command_cmd.vim   |   29
+ syntax/function_cmd.vim  |   34
+ syntax/hi_cmd.vim        |   24
+ syntax/menu_cmd.vim      |   29
+ syntax/messages_cmd.vim  |   29
+ syntax/syntax_cmd.vim    |   27
  9 files changed, 292 insertions(+), 0 deletions(-)

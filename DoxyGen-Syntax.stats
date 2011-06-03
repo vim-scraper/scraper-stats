@@ -15,7 +15,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     5.  The `Last Change' date is not updated in your file.
     6.  There are some trailing spaces in your file.
 
- syntax/doxygen.vim |   81 ++++++++++++++++++++++++++++++----------------------
+ syntax/doxygen.vim |   81
  1 files changed, 47 insertions(+), 34 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.14)
@@ -33,8 +33,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      - Highlight http[s] links (Wu Yongwei)
      - Various (Wu Yongwei)
 
- doc/doxygen.txt    |   12 ++++++------
- syntax/doxygen.vim |   38 +++++++++++++++++++++++++-------------
+ doc/doxygen.txt    |   12
+ syntax/doxygen.vim |   38
  2 files changed, 31 insertions(+), 19 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
@@ -46,8 +46,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Fixed up ending of brief lines with respect to line @ commands and  end-comment. Not ending a brief no longer produces an error-comment.
 
- doc/doxygen.txt    |    2 +-
- syntax/doxygen.vim |   17 +++++++++++------
+ doc/doxygen.txt    |    2
+ syntax/doxygen.vim |   17
  2 files changed, 12 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
@@ -65,8 +65,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1.11
        - Thanks to Joseph Barker for pointing out that I had a syntax error in  1.10
 
- doc/doxygen.txt    |    2 +
- syntax/doxygen.vim |   95 +++++++++++++++++++++++++++++-----------------------
+ doc/doxygen.txt    |    2
+ syntax/doxygen.vim |   95
  2 files changed, 55 insertions(+), 42 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
@@ -81,8 +81,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      - Move various definitions from single to multiline definitions
     Also added the .txt help file.
 
- doc/doxygen.txt    |   44 ++++++++++++++++++++++++++++++++++++++++++++
- syntax/doxygen.vim |   35 ++++++++++++++++++++++++++---------
+ doc/doxygen.txt    |   44
+ syntax/doxygen.vim |   35
  2 files changed, 70 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
@@ -94,7 +94,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
      - Fix up some regions not marked as contained (code, verbatim, dot being highlighted outside of the doxygen region) (Toby Allsopp) - Only mark recognised HTML tags (Suggested by Mike Anderson)
 
- syntax/doxygen.vim |  218 +++++++++++++++++++++++++---------------------------
+ syntax/doxygen.vim |  218
  1 files changed, 105 insertions(+), 113 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
@@ -117,7 +117,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       - highlight closing */ as error when found inside \code, \verbatim sections as well as \c, \ref sections with
         unmatched brackets.
 
- syntax/doxygen.vim |  337 ++++++++++++++++++++++++++++++++-------------------
+ syntax/doxygen.vim |  337
  1 files changed, 211 insertions(+), 126 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -131,7 +131,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      - Highlight \\endlink properly.
      - Don&#039t mark */ as an error where there is no brief, or @{ is used.
 
- syntax/doxygen.vim |   33 +++++++++++++++++++++++----------
+ syntax/doxygen.vim |   33
  1 files changed, 23 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -143,7 +143,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Make sure @c \c and friends are equivalent for the start of a brief section.- Allow @c \c and friends to cross lines. (Caveat, they can't be hard up  against a continuation '*' - it just gets tooo difficult).- Highlight a missing \endlink as an error.- Fix multiline description without a '*'
 
- syntax/doxygen.vim |  333 +++++++++++++++++++++++++++++-----------------------
+ syntax/doxygen.vim |  333
  1 files changed, 184 insertions(+), 149 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -169,6 +169,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fixed termination of multiline at start of new command.
     - Include John McGehee's instructions.
 
- README             |   12 ++
- syntax/doxygen.vim |  513 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README             |   12
+ syntax/doxygen.vim |  513
  2 files changed, 525 insertions(+), 0 deletions(-)

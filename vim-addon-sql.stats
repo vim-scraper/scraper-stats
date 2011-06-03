@@ -5,9 +5,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2.4: firebird support
 
- .gitignore                 |    1 +
- README.orig                |   11 +++-
- autoload/vim_addon_sql.vim |  172 ++++++++++++++++++++++++++++++++-----------
+ .gitignore                 |    1
+ README.orig                |   11
+ autoload/vim_addon_sql.vim |  172
  3 files changed, 138 insertions(+), 46 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.3)
@@ -17,9 +17,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2.3: mysql: also complete function names
 
- README                        |    7 +++--
+ README                        |    7
  autoload/mysql-functions.dump |  Bin 0 -> 199104 bytes
- autoload/vim_addon_sql.vim    |   44 +++++++++++++++++++++++++++++++++++++++-
+ autoload/vim_addon_sql.vim    |   44
  3 files changed, 46 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.2)
@@ -31,7 +31,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     fix CamelCase alias field completion. Allow _ in names. Close error buffer if no error occured
 
- autoload/vim_addon_sql.vim |   29 ++++++++++++++++++++---------
+ autoload/vim_addon_sql.vim |   29
  1 files changed, 20 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
@@ -41,7 +41,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2.1: bugfix on aliases
 
- autoload/vim_addon_sql.vim |    2 +-
+ autoload/vim_addon_sql.vim |    2
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -53,11 +53,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     new release as vim-addon-sql. Sqlite and Postgres are supported. Code import from tovl
 
- README.orig                              |   39 +
- autoload/vim_addon_sql.vim               |  547 ++++++
- doc/vim-addon-sql-addon-info.txt         |   13 +
- plugin/vim-addon-sql.vim                 |    6 +
- plugin/vimlib_sql_installer_sourceme.vim | 2771 ------------------------------
+ README.orig                              |   39
+ autoload/vim_addon_sql.vim               |  547
+ doc/vim-addon-sql-addon-info.txt         |   13
+ plugin/vim-addon-sql.vim                 |    6
+ plugin/vimlib_sql_installer_sourceme.vim | 2771
  5 files changed, 605 insertions(+), 2771 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0)
@@ -70,6 +70,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     fixed quoting of *, using stdin now to pass SQL command, vl#dev#sql#sql#ThisSQLCommand()
      can be overridden now
 
- README                                   |   42 +
- plugin/vimlib_sql_installer_sourceme.vim | 2771 ++++++++++++++++++++++++++++++
+ README                                   |   42
+ plugin/vimlib_sql_installer_sourceme.vim | 2771
  2 files changed, 2813 insertions(+), 0 deletions(-)

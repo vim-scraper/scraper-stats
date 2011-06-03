@@ -7,17 +7,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added vimp3 script. Fixed some performance issues with the suite, added reverse sorting to scripts that have sortable tables, fixed a bug in cal with insertion of new entries after existing entries.
 
- doc/vimject.txt      |    8 ++-
- doc/vimp3.txt        |  167 ++++++++++++++++++++++++++++++++++++++++++++++++++
- ftdetect/potl.vim    |    2 +-
- ftdetect/vimp3.vim   |    2 +
- plugin/cal.vim       |   36 +++--------
- plugin/fin.vim       |   30 +++-------
- plugin/pysuite.vim   |   20 +++++-
- plugin/vimject.vim   |  100 ++++++++----------------------
- plugin/vimp3.vim     |  159 +++++++++++++++++++++++++++++++++++++++++++++++
- plugin/wtodolist.vim |   74 ++++-------------------
- syntax/vimp3.vim     |   29 +++++++++
+ doc/vimject.txt      |    8
+ doc/vimp3.txt        |  167
+ ftdetect/potl.vim    |    2
+ ftdetect/vimp3.vim   |    2
+ plugin/cal.vim       |   36
+ plugin/fin.vim       |   30
+ plugin/pysuite.vim   |   20
+ plugin/vimject.vim   |  100
+ plugin/vimp3.vim     |  159
+ plugin/wtodolist.vim |   74
+ syntax/vimp3.vim     |   29
  11 files changed, 435 insertions(+), 192 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.6)
@@ -29,17 +29,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     A number of serious bugs fixed: missing potl script, old pysuite.vim (broke opening files in vimject and probably other things).
 
- ftdetect/potl.vim       |    2 +-
- ftplugin/potl.vim       |   83 +++++++++++++++++++++++++++++++++++++++++++++++
- plugin/pysuite.vim      |   60 +++++++++++++++++++++++++++++-----
- plugin/vimject.vim      |    4 ++-
- python/cal_add_month.py |    3 +-
- python/cal_back.py      |    3 +-
- python/cal_entry.py     |    3 +-
- python/cal_today.py     |    3 +-
- python/fin_init.py      |    3 +-
- python/fin_new.py       |    3 +-
- python/fin_update.py    |    3 +-
+ ftdetect/potl.vim       |    2
+ ftplugin/potl.vim       |   83
+ plugin/pysuite.vim      |   60
+ plugin/vimject.vim      |    4
+ python/cal_add_month.py |    3
+ python/cal_back.py      |    3
+ python/cal_entry.py     |    3
+ python/cal_today.py     |    3
+ python/fin_init.py      |    3
+ python/fin_new.py       |    3
+ python/fin_update.py    |    3
  11 files changed, 152 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.5)
@@ -49,48 +49,48 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2.5: Initial upload
 
- README                   |   20 ++++++
- doc.potl                 |   22 ++++++
- doc/cal.txt              |   13 ++++
- doc/fin.txt              |   55 ++++++++++++++++
- doc/potl.txt             |    8 ++
- doc/sortable.txt         |   22 ++++++
- doc/vimject.txt          |   92 ++++++++++++++++++++++++++
- doc/wtodolist.txt        |   69 ++++++++++++++++++++
- ftdetect/cal.vim         |    2 +
- ftdetect/potl.vim        |   24 +++++++
- ftdetect/proj.vim        |    2 +
- ftdetect/todo.vim        |    1 +
- plugin/cal.vim           |   49 ++++++++++++++
- plugin/fin.vim           |   41 ++++++++++++
- plugin/pysuite.vim       |   39 +++++++++++
- plugin/vimject.vim       |  117 ++++++++++++++++++++++++++++++++++
- plugin/wtodolist.vim     |  103 ++++++++++++++++++++++++++++++
- python/aligncode.py      |   54 ++++++++++++++++
- python/cal.txt           |   13 ++++
- python/cal_add_month.py  |   90 ++++++++++++++++++++++++++
- python/cal_back.py       |   33 ++++++++++
- python/cal_entry.py      |   74 +++++++++++++++++++++
- python/cal_today.py      |   46 +++++++++++++
- python/fin_init.py       |   38 +++++++++++
- python/fin_new.py        |   35 ++++++++++
- python/fin_update.py     |   62 ++++++++++++++++++
- python/helpgrep.py       |   22 ++++++
- python/proj_genpydoc.py  |  159 ++++++++++++++++++++++++++++++++++++++++++++++
- python/proj_grepall.py   |   19 ++++++
- python/proj_open.py      |   48 ++++++++++++++
- python/proj_openall.py   |   59 +++++++++++++++++
- python/proj_unloadall.py |   90 ++++++++++++++++++++++++++
- python/pydocfold.py      |   47 ++++++++++++++
- python/pystripdoc.py     |   67 +++++++++++++++++++
- python/resize.py         |   40 ++++++++++++
- python/searchcode.py     |  135 +++++++++++++++++++++++++++++++++++++++
- python/sortable.py       |   82 ++++++++++++++++++++++++
- python/todo_new.py       |   29 ++++++++
- python/todo_open.py      |   26 ++++++++
- python/todo_sort.py      |   86 +++++++++++++++++++++++++
- syntax/cal.vim           |    7 ++
- syntax/potl.vim          |   38 +++++++++++
- syntax/vimject.vim       |   20 ++++++
- syntax/wtodo.vim         |   24 +++++++
+ README                   |   20
+ doc.potl                 |   22
+ doc/cal.txt              |   13
+ doc/fin.txt              |   55
+ doc/potl.txt             |    8
+ doc/sortable.txt         |   22
+ doc/vimject.txt          |   92
+ doc/wtodolist.txt        |   69
+ ftdetect/cal.vim         |    2
+ ftdetect/potl.vim        |   24
+ ftdetect/proj.vim        |    2
+ ftdetect/todo.vim        |    1
+ plugin/cal.vim           |   49
+ plugin/fin.vim           |   41
+ plugin/pysuite.vim       |   39
+ plugin/vimject.vim       |  117
+ plugin/wtodolist.vim     |  103
+ python/aligncode.py      |   54
+ python/cal.txt           |   13
+ python/cal_add_month.py  |   90
+ python/cal_back.py       |   33
+ python/cal_entry.py      |   74
+ python/cal_today.py      |   46
+ python/fin_init.py       |   38
+ python/fin_new.py        |   35
+ python/fin_update.py     |   62
+ python/helpgrep.py       |   22
+ python/proj_genpydoc.py  |  159
+ python/proj_grepall.py   |   19
+ python/proj_open.py      |   48
+ python/proj_openall.py   |   59
+ python/proj_unloadall.py |   90
+ python/pydocfold.py      |   47
+ python/pystripdoc.py     |   67
+ python/resize.py         |   40
+ python/searchcode.py     |  135
+ python/sortable.py       |   82
+ python/todo_new.py       |   29
+ python/todo_open.py      |   26
+ python/todo_sort.py      |   86
+ syntax/cal.vim           |    7
+ syntax/potl.vim          |   38
+ syntax/vimject.vim       |   20
+ syntax/wtodo.vim         |   24
  44 files changed, 2122 insertions(+), 0 deletions(-)

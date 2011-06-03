@@ -8,9 +8,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Support for generic file type plug-ins (thanks to Britton Kerin for the suggestion):
     https://github.com/xolox/vim-reload/commit/b6b3952940e00c2f010e
 
- autoload/xolox/reload.vim |   43 ++++++++++++++++++++++++++-----------------
- doc/reload.txt            |   37 ++++++++++++++++++++-----------------
- plugin/reload.vim         |    4 ++--
+ autoload/xolox/reload.vim |   43
+ doc/reload.txt            |   37
+ plugin/reload.vim         |    4
  3 files changed, 48 insertions(+), 36 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
@@ -23,11 +23,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Bug fix for case insensitive filenames (reported by Jeff Bevis):
     http://github.com/xolox/vim-reload/commit/138e64dcc3770f3fb008
 
- autoload/xolox.vim        |   25 ++++++++++++++++------
- autoload/xolox/escape.vim |    4 +-
- autoload/xolox/reload.vim |   14 +++++++++---
- doc/reload.txt            |   50 ++++++++++++++++++++++----------------------
- plugin/reload.vim         |    4 +-
+ autoload/xolox.vim        |   25
+ autoload/xolox/escape.vim |    4
+ autoload/xolox/reload.vim |   14
+ doc/reload.txt            |   50
+ plugin/reload.vim         |    4
  5 files changed, 57 insertions(+), 40 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
@@ -40,8 +40,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Bug fix: Forgot that color scheme reloading can fail:
     http://github.com/xolox/vim-reload/commit/e2443ff27a07e15a94d7935ae202d69894b1ab50
 
- autoload/xolox/reload.vim |    6 +++++-
- plugin/reload.vim         |    2 +-
+ autoload/xolox/reload.vim |    6
+ plugin/reload.vim         |    2
  2 files changed, 6 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -57,11 +57,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       Shortened code by moving xolox#timer#stop() calls:
        http://github.com/xolox/vim-reload/commit/cd36d10f1f92a3b7e7d6c765e149af623772b3aa
 
- autoload/xolox.vim            |   18 +++++---
- autoload/xolox/reload.vim     |   93 +++++++++++++++-------------------------
- autoload/xolox/swapchoice.vim |   19 --------
- doc/reload.txt                |   44 ++++++++++----------
- plugin/reload.vim             |    8 ++-
+ autoload/xolox.vim            |   18
+ autoload/xolox/reload.vim     |   93
+ autoload/xolox/swapchoice.vim |   19
+ doc/reload.txt                |   44
+ plugin/reload.vim             |    8
  5 files changed, 73 insertions(+), 109 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -73,9 +73,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     The plug-in now clears inclusion guards before reloading plug-in scripts: http://github.com/xolox/vim-reload/commit/8fb0c8585c95056873bc2f4b4178cf874d97da20
 
- autoload/xolox/reload.vim |    7 ++++++-
- doc/reload.txt            |    9 ++++-----
- plugin/reload.vim         |    4 ++--
+ autoload/xolox/reload.vim |    7
+ doc/reload.txt            |    9
+ plugin/reload.vim         |    4
  3 files changed, 12 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
@@ -88,8 +88,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Automatic update support using GLVS and README updates:
     http://github.com/xolox/vim-reload/commit/5fc2712cede6af6ab27911e02142a0b26bae6620
 
- doc/reload.txt    |   21 +++++++++++++++------
- plugin/reload.vim |    7 +++++--
+ doc/reload.txt    |   21
+ plugin/reload.vim |    7
  2 files changed, 20 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -99,12 +99,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.3: Initial upload
 
- README                        |    8 ++
- autoload/xolox.vim            |   95 ++++++++++++++++++++
- autoload/xolox/escape.vim     |   26 ++++++
- autoload/xolox/reload.vim     |  195 +++++++++++++++++++++++++++++++++++++++++
- autoload/xolox/swapchoice.vim |   19 ++++
- autoload/xolox/timer.vim      |   79 +++++++++++++++++
- doc/reload.txt                |  143 ++++++++++++++++++++++++++++++
- plugin/reload.vim             |   38 ++++++++
+ README                        |    8
+ autoload/xolox.vim            |   95
+ autoload/xolox/escape.vim     |   26
+ autoload/xolox/reload.vim     |  195
+ autoload/xolox/swapchoice.vim |   19
+ autoload/xolox/timer.vim      |   79
+ doc/reload.txt                |  143
+ plugin/reload.vim             |   38
  8 files changed, 603 insertions(+), 0 deletions(-)

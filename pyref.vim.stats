@@ -8,11 +8,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Now with out of the box support for Django documentation:
     https://github.com/xolox/vim-pyref/commit/2982ea5c73d78d7d2b39
 
- autoload/xolox/open.vim  |    6 +-
- autoload/xolox/pyref.vim |  105 +-
- doc/pyref.txt            |   74 +-
- misc/pyref_index         |22360 ++++++++++++++++++++++++++++------------------
- plugin/pyref.vim         |   29 +-
+ autoload/xolox/open.vim  |    6
+ autoload/xolox/pyref.vim |  105
+ doc/pyref.txt            |   74
+ misc/pyref_index         |22360
+ plugin/pyref.vim         |   29
  5 files changed, 13765 insertions(+), 8809 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -28,16 +28,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       Added :PyRef command, converted to autoload script:
        http://github.com/xolox/vim-pyref/commit/a37a24fe6630f40d7145
 
- autoload/xolox.vim        |  110 +
- autoload/xolox/escape.vim |   26 +
- autoload/xolox/open.vim   |   75 +
- autoload/xolox/pyref.vim  |  145 +
- doc/pyref.txt             |  129 +-
- misc/pyref_index          | 8730 +++++++++++++++++++++++++++++++++++++++++++++
- plugin/pyref.vim          |  214 +--
- pyref/index               | 8730 ---------------------------------------------
- pyref/readme.html         |  118 -
- pyref/spider.py           |   89 -
+ autoload/xolox.vim        |  110
+ autoload/xolox/escape.vim |   26
+ autoload/xolox/open.vim   |   75
+ autoload/xolox/pyref.vim  |  145
+ doc/pyref.txt             |  129
+ misc/pyref_index          | 8730
+ plugin/pyref.vim          |  214
+ pyref/index               | 8730
+ pyref/readme.html         |  118
+ pyref/spider.py           |   89
  10 files changed, 9144 insertions(+), 9222 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -54,9 +54,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     See the changeset at http://github.com/xolox/vim-pyref/commit/175bf469a0c556f8596604892ce2c309f19582d7
 
- doc/pyref.txt     |    6 +++---
- plugin/pyref.vim  |   26 +++++++++++++++++---------
- pyref/readme.html |    6 +++---
+ doc/pyref.txt     |    6
+ plugin/pyref.vim  |   26
+ pyref/readme.html |    6
  3 files changed, 23 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2)
@@ -69,8 +69,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fixed broken links in README
     http://github.com/xolox/vim-pyref/commit/5dd2e8b539d73a1c7dd01688bb6947f46a827396
 
- doc/pyref.txt     |    6 +++---
- pyref/readme.html |   34 +++++++++++++++++-----------------
+ doc/pyref.txt     |    6
+ pyref/readme.html |   34
  2 files changed, 20 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.1)
@@ -80,9 +80,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.4.1: Includes generated Vim documentation based on README
 
- doc/pyref.txt     |  120 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- pyref/README.html |  118 ----------------------------------------------------
- pyref/readme.html |  118 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/pyref.txt     |  120
+ pyref/README.html |  118
+ pyref/readme.html |  118
  3 files changed, 238 insertions(+), 118 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -101,14 +101,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * Support for exceptions imported from the `exceptions` module
 
- README.html       |   32 -
- README.md         |   49 -
- create-index.py   |   89 -
- plugin/pyref.vim  |  192 +-
- pyref/README.html |  118 +
- pyref/index       | 8730 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- pyref/spider.py   |   89 +
- vimpythonindex    | 8730 -----------------------------------------------------
+ README.html       |   32
+ README.md         |   49
+ create-index.py   |   89
+ plugin/pyref.vim  |  192
+ pyref/README.html |  118
+ pyref/index       | 8730
+ pyref/spider.py   |   89
+ vimpythonindex    | 8730
  8 files changed, 9025 insertions(+), 9004 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -129,10 +129,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * Included README.html for people who don't like Markdown :-)
 
- README.html      |   32 ++++++++++++++++++++++++++++++++
- README.md        |   49 +++++++++++++++++++++++++++++++++++++++++++++++++
- README.orig      |   37 -------------------------------------
- plugin/pyref.vim |   43 ++++++++++++++++++++++++++++++++-----------
+ README.html      |   32
+ README.md        |   49
+ README.orig      |   37
+ plugin/pyref.vim |   43
  4 files changed, 113 insertions(+), 48 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -142,9 +142,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2: Initial upload
 
- README           |   11 +
- README.orig      |   37 +
- create-index.py  |   89 +
- plugin/pyref.vim |  209 ++
- vimpythonindex   | 8730 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README           |   11
+ README.orig      |   37
+ create-index.py  |   89
+ plugin/pyref.vim |  209
+ vimpythonindex   | 8730
  5 files changed, 9076 insertions(+), 0 deletions(-)

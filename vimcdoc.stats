@@ -10,87 +10,87 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     PLEASE NOTE that the attached package is a dummy one as the real one is too big. Please
     download from our website.
 
- AUTHORS            |   15 -
- ChangeLog          | 1485 ---------------------------------------
- INSTALL            |   82 ---
- LICENSE            |   26 -
- README.orig        |   50 +--
- TODO               |   72 --
- VERSION            |    1 -
- doc/autocmd.cnx    |  892 ------------------------
- doc/debugger.cnx   |  115 ---
- doc/develop.cnx    |  342 ---------
- doc/dict.txt       |  124 ----
- doc/diff.cnx       |  326 ---------
- doc/filetype.cnx   |  492 -------------
- doc/fold.cnx       |  496 -------------
- doc/gui_w16.cnx    |  168 -----
- doc/gui_w32.cnx    |  439 ------------
- doc/gui_x11.cnx    |  495 -------------
- doc/guides.txt     |  184 -----
- doc/help.cnx       |  200 ------
- doc/howto.cnx      |   94 ---
- doc/if_cscop.cnx   |  426 ------------
- doc/if_ole.cnx     |  158 -----
- doc/if_perl.cnx    |  221 ------
- doc/if_pyth.cnx    |  264 -------
- doc/indent.cnx     |  459 ------------
- doc/intro.cnx      |  794 ---------------------
- doc/map.cnx        |  928 -------------------------
- doc/mlang.cnx      |  183 -----
- doc/os_dos.cnx     |  280 --------
- doc/os_mac.cnx     |   88 ---
- doc/os_mint.cnx    |   31 -
- doc/os_msdos.cnx   |  241 -------
- doc/os_unix.cnx    |   57 --
- doc/os_win32.cnx   |  284 --------
- doc/pattern.cnx    | 1002 ---------------------------
- doc/pi_gzip.cnx    |   38 -
- doc/quickfix.cnx   |  843 ----------------------
- doc/quickref.cnx   | 1263 ---------------------------------
- doc/recover.cnx    |  141 ----
- doc/scroll.cnx     |  262 -------
- doc/sponsor.cnx    |  204 ------
- doc/tags-cn        | 1957 ----------------------------------------------------
- doc/tips.cnx       |  412 -----------
- doc/uganda.cnx     |  238 -------
- doc/undo.cnx       |  102 ---
- doc/usr_01.cnx     |  152 ----
- doc/usr_02.cnx     |  433 ------------
- doc/usr_03.cnx     |  568 ---------------
- doc/usr_04.cnx     |  454 ------------
- doc/usr_05.cnx     |  540 ---------------
- doc/usr_06.cnx     |  250 -------
- doc/usr_07.cnx     |  423 ------------
- doc/usr_08.cnx     |  461 ------------
- doc/usr_09.cnx     |  252 -------
- doc/usr_10.cnx     |  725 -------------------
- doc/usr_11.cnx     |  296 --------
- doc/usr_12.cnx     |  313 ---------
- doc/usr_20.cnx     |  344 ---------
- doc/usr_21.cnx     |  402 -----------
- doc/usr_22.cnx     |  324 ---------
- doc/usr_23.cnx     |  301 --------
- doc/usr_24.cnx     |  523 --------------
- doc/usr_25.cnx     |  529 --------------
- doc/usr_26.cnx     |  198 ------
- doc/usr_27.cnx     |  514 --------------
- doc/usr_28.cnx     |  387 -----------
- doc/usr_29.cnx     |  549 ---------------
- doc/usr_30.cnx     |  564 ---------------
- doc/usr_31.cnx     |  235 -------
- doc/usr_40.cnx     |  575 ---------------
- doc/usr_41.cnx     | 1538 -----------------------------------------
- doc/usr_42.cnx     |  321 ---------
- doc/usr_43.cnx     |  156 -----
- doc/usr_44.cnx     |  616 -----------------
- doc/usr_45.cnx     |  352 ----------
- doc/usr_90.cnx     |  435 ------------
- doc/usr_toc.cnx    |  342 ---------
- doc/visual.cnx     |  431 ------------
- doc/windows.cnx    |  971 --------------------------
- plugin/help_cn.vim |   21 -
- vimcdoc.sh         |  100 ---
+ AUTHORS            |   15
+ ChangeLog          | 1485
+ INSTALL            |   82
+ LICENSE            |   26
+ README.orig        |   50
+ TODO               |   72
+ VERSION            |    1
+ doc/autocmd.cnx    |  892
+ doc/debugger.cnx   |  115
+ doc/develop.cnx    |  342
+ doc/dict.txt       |  124
+ doc/diff.cnx       |  326
+ doc/filetype.cnx   |  492
+ doc/fold.cnx       |  496
+ doc/gui_w16.cnx    |  168
+ doc/gui_w32.cnx    |  439
+ doc/gui_x11.cnx    |  495
+ doc/guides.txt     |  184
+ doc/help.cnx       |  200
+ doc/howto.cnx      |   94
+ doc/if_cscop.cnx   |  426
+ doc/if_ole.cnx     |  158
+ doc/if_perl.cnx    |  221
+ doc/if_pyth.cnx    |  264
+ doc/indent.cnx     |  459
+ doc/intro.cnx      |  794
+ doc/map.cnx        |  928
+ doc/mlang.cnx      |  183
+ doc/os_dos.cnx     |  280
+ doc/os_mac.cnx     |   88
+ doc/os_mint.cnx    |   31
+ doc/os_msdos.cnx   |  241
+ doc/os_unix.cnx    |   57
+ doc/os_win32.cnx   |  284
+ doc/pattern.cnx    | 1002
+ doc/pi_gzip.cnx    |   38
+ doc/quickfix.cnx   |  843
+ doc/quickref.cnx   | 1263
+ doc/recover.cnx    |  141
+ doc/scroll.cnx     |  262
+ doc/sponsor.cnx    |  204
+ doc/tags-cn        | 1957
+ doc/tips.cnx       |  412
+ doc/uganda.cnx     |  238
+ doc/undo.cnx       |  102
+ doc/usr_01.cnx     |  152
+ doc/usr_02.cnx     |  433
+ doc/usr_03.cnx     |  568
+ doc/usr_04.cnx     |  454
+ doc/usr_05.cnx     |  540
+ doc/usr_06.cnx     |  250
+ doc/usr_07.cnx     |  423
+ doc/usr_08.cnx     |  461
+ doc/usr_09.cnx     |  252
+ doc/usr_10.cnx     |  725
+ doc/usr_11.cnx     |  296
+ doc/usr_12.cnx     |  313
+ doc/usr_20.cnx     |  344
+ doc/usr_21.cnx     |  402
+ doc/usr_22.cnx     |  324
+ doc/usr_23.cnx     |  301
+ doc/usr_24.cnx     |  523
+ doc/usr_25.cnx     |  529
+ doc/usr_26.cnx     |  198
+ doc/usr_27.cnx     |  514
+ doc/usr_28.cnx     |  387
+ doc/usr_29.cnx     |  549
+ doc/usr_30.cnx     |  564
+ doc/usr_31.cnx     |  235
+ doc/usr_40.cnx     |  575
+ doc/usr_41.cnx     | 1538
+ doc/usr_42.cnx     |  321
+ doc/usr_43.cnx     |  156
+ doc/usr_44.cnx     |  616
+ doc/usr_45.cnx     |  352
+ doc/usr_90.cnx     |  435
+ doc/usr_toc.cnx    |  342
+ doc/visual.cnx     |  431
+ doc/windows.cnx    |  971
+ plugin/help_cn.vim |   21
+ vimcdoc.sh         |  100
  81 files changed, 2 insertions(+), 32567 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.0)
@@ -100,85 +100,85 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.8.0: With four new files and many bug fixes.
 
- AUTHORS            |    3 +-
- ChangeLog          |  937 +++++++++++++++++++++++++++++++++++++---------------
- INSTALL            |   86 +++---
- LICENSE            |    4 +-
- README.orig        |   54 ++--
- VERSION            |    2 +-
- doc/autocmd.cnx    |  892 +++++++++++++++++++++++++++++++++++++++++++++++++
- doc/debugger.cnx   |    4 +-
- doc/develop.cnx    |    8 +-
- doc/dict.txt       |  154 +++++----
- doc/diff.cnx       |    8 +-
- doc/filetype.cnx   |  492 +++++++++++++++++++++++++++
- doc/fold.cnx       |   12 +-
- doc/gui_w16.cnx    |   38 +-
- doc/gui_w32.cnx    |  345 +++++++++++--------
- doc/gui_x11.cnx    |  459 +++++++++++++++-----------
- doc/guides.txt     |  134 ++++----
- doc/help.cnx       |    2 +-
- doc/howto.cnx      |    4 +-
- doc/if_cscop.cnx   |   14 +-
- doc/if_ole.cnx     |   43 ++-
- doc/if_perl.cnx    |   26 +-
- doc/if_pyth.cnx    |   16 +-
- doc/indent.cnx     |  459 +++++++++++++++++++++++++
- doc/intro.cnx      |  794 ++++++++++++++++++++++++++++++++++++++++++++
- doc/map.cnx        |   10 +-
- doc/mlang.cnx      |  113 ++++---
- doc/os_dos.cnx     |   74 ++--
- doc/os_mac.cnx     |    6 +-
- doc/os_mint.cnx    |    4 +-
- doc/os_msdos.cnx   |  102 +++---
- doc/os_unix.cnx    |    4 +-
- doc/os_win32.cnx   |   94 +++---
- doc/pattern.cnx    |   42 ++--
- doc/pi_gzip.cnx    |    4 +-
- doc/quickfix.cnx   |  242 ++++++++------
- doc/quickref.cnx   |    4 +-
- doc/recover.cnx    |    4 +-
- doc/scroll.cnx     |    8 +-
- doc/sponsor.cnx    |  204 ++++++++++++
- doc/tags-cn        |  363 ++++++++++++++++++++-
- doc/tips.cnx       |   16 +-
- doc/uganda.cnx     |  222 +++++++------
- doc/undo.cnx       |    2 +-
- doc/usr_01.cnx     |    6 +-
- doc/usr_02.cnx     |   12 +-
- doc/usr_03.cnx     |    6 +-
- doc/usr_04.cnx     |    2 +-
- doc/usr_05.cnx     |   16 +-
- doc/usr_07.cnx     |    8 +-
- doc/usr_08.cnx     |    4 +-
- doc/usr_09.cnx     |    4 +-
- doc/usr_10.cnx     |   24 +-
- doc/usr_11.cnx     |    4 +-
- doc/usr_12.cnx     |    6 +-
- doc/usr_20.cnx     |    8 +-
- doc/usr_21.cnx     |    4 +-
- doc/usr_22.cnx     |    6 +-
- doc/usr_23.cnx     |    4 +-
- doc/usr_24.cnx     |   10 +-
- doc/usr_25.cnx     |   14 +-
- doc/usr_26.cnx     |    4 +-
- doc/usr_27.cnx     |   16 +-
- doc/usr_28.cnx     |   10 +-
- doc/usr_29.cnx     |   12 +-
- doc/usr_30.cnx     |    4 +-
- doc/usr_31.cnx     |   10 +-
- doc/usr_40.cnx     |   10 +-
- doc/usr_41.cnx     |  173 +++++-----
- doc/usr_42.cnx     |    6 +-
- doc/usr_43.cnx     |    4 +-
- doc/usr_44.cnx     |   12 +-
- doc/usr_45.cnx     |   12 +-
- doc/usr_90.cnx     |    4 +-
- doc/usr_toc.cnx    |    6 +-
- doc/visual.cnx     |  431 ++++++++++++++++++++++++
- doc/windows.cnx    |  282 +++++++++--------
- plugin/help_cn.vim |   21 ++
- vimcdoc.sh         |   74 +++--
+ AUTHORS            |    3
+ ChangeLog          |  937
+ INSTALL            |   86
+ LICENSE            |    4
+ README.orig        |   54
+ VERSION            |    2
+ doc/autocmd.cnx    |  892
+ doc/debugger.cnx   |    4
+ doc/develop.cnx    |    8
+ doc/dict.txt       |  154
+ doc/diff.cnx       |    8
+ doc/filetype.cnx   |  492
+ doc/fold.cnx       |   12
+ doc/gui_w16.cnx    |   38
+ doc/gui_w32.cnx    |  345
+ doc/gui_x11.cnx    |  459
+ doc/guides.txt     |  134
+ doc/help.cnx       |    2
+ doc/howto.cnx      |    4
+ doc/if_cscop.cnx   |   14
+ doc/if_ole.cnx     |   43
+ doc/if_perl.cnx    |   26
+ doc/if_pyth.cnx    |   16
+ doc/indent.cnx     |  459
+ doc/intro.cnx      |  794
+ doc/map.cnx        |   10
+ doc/mlang.cnx      |  113
+ doc/os_dos.cnx     |   74
+ doc/os_mac.cnx     |    6
+ doc/os_mint.cnx    |    4
+ doc/os_msdos.cnx   |  102
+ doc/os_unix.cnx    |    4
+ doc/os_win32.cnx   |   94
+ doc/pattern.cnx    |   42
+ doc/pi_gzip.cnx    |    4
+ doc/quickfix.cnx   |  242
+ doc/quickref.cnx   |    4
+ doc/recover.cnx    |    4
+ doc/scroll.cnx     |    8
+ doc/sponsor.cnx    |  204
+ doc/tags-cn        |  363
+ doc/tips.cnx       |   16
+ doc/uganda.cnx     |  222
+ doc/undo.cnx       |    2
+ doc/usr_01.cnx     |    6
+ doc/usr_02.cnx     |   12
+ doc/usr_03.cnx     |    6
+ doc/usr_04.cnx     |    2
+ doc/usr_05.cnx     |   16
+ doc/usr_07.cnx     |    8
+ doc/usr_08.cnx     |    4
+ doc/usr_09.cnx     |    4
+ doc/usr_10.cnx     |   24
+ doc/usr_11.cnx     |    4
+ doc/usr_12.cnx     |    6
+ doc/usr_20.cnx     |    8
+ doc/usr_21.cnx     |    4
+ doc/usr_22.cnx     |    6
+ doc/usr_23.cnx     |    4
+ doc/usr_24.cnx     |   10
+ doc/usr_25.cnx     |   14
+ doc/usr_26.cnx     |    4
+ doc/usr_27.cnx     |   16
+ doc/usr_28.cnx     |   10
+ doc/usr_29.cnx     |   12
+ doc/usr_30.cnx     |    4
+ doc/usr_31.cnx     |   10
+ doc/usr_40.cnx     |   10
+ doc/usr_41.cnx     |  173
+ doc/usr_42.cnx     |    6
+ doc/usr_43.cnx     |    4
+ doc/usr_44.cnx     |   12
+ doc/usr_45.cnx     |   12
+ doc/usr_90.cnx     |    4
+ doc/usr_toc.cnx    |    6
+ doc/visual.cnx     |  431
+ doc/windows.cnx    |  282
+ plugin/help_cn.vim |   21
+ vimcdoc.sh         |   74
  79 files changed, 6024 insertions(+), 1713 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.0)
@@ -188,143 +188,143 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.7.0: Fully compatible with the new Vim 6.3.
 
- AUTHORS          |    3 +
- ChangeLog        | 1074 ++++++++++++++++++++++++++++++++++++
- INSTALL          |   83 ++-
- README.orig      |   44 ++-
- TODO             |   72 +++
- VERSION          |    2 +-
- doc/autocmd.txt  |  892 ------------------------------
- doc/debugger.cnx |  115 ++++
- doc/debugger.txt |  115 ----
- doc/develop.cnx  |  342 ++++++++++++
- doc/develop.txt  |  342 ------------
- doc/dict.txt     |   16 +-
- doc/diff.cnx     |  326 +++++++++++
- doc/diff.txt     |  324 -----------
- doc/filetype.txt |  492 -----------------
- doc/fold.cnx     |  496 +++++++++++++++++
- doc/fold.txt     |  486 -----------------
- doc/gui_w16.cnx  |  168 ++++++
- doc/gui_w16.txt  |  168 ------
- doc/gui_w32.cnx  |  382 +++++++++++++
- doc/gui_w32.txt  |  382 -------------
- doc/gui_x11.cnx  |  438 +++++++++++++++
- doc/gui_x11.txt  |  438 ---------------
- doc/guides.txt   |  172 ++++++
- doc/help.cnx     |  200 +++++++
- doc/help.txt     |  193 -------
- doc/howto.cnx    |   94 ++++
- doc/howto.txt    |   94 ----
- doc/if_cscop.cnx |  426 +++++++++++++++
- doc/if_ole.cnx   |  151 +++++
- doc/if_ole.txt   |  151 -----
- doc/if_perl.cnx  |  221 ++++++++
- doc/if_pyth.cnx  |  264 +++++++++
- doc/map.cnx      |  928 +++++++++++++++++++++++++++++++
- doc/map.txt      |  925 -------------------------------
- doc/mbyte.txt    | 1469 -------------------------------------------------
- doc/mlang.cnx    |  182 +++++++
- doc/mlang.txt    |  182 -------
- doc/os_dos.cnx   |  280 ++++++++++
- doc/os_dos.txt   |  280 ----------
- doc/os_mac.cnx   |   88 +++
- doc/os_mac.txt   |   88 ---
- doc/os_mint.cnx  |   31 +
- doc/os_mint.txt  |   31 -
- doc/os_msdos.cnx |  241 ++++++++
- doc/os_msdos.txt |  241 --------
- doc/os_unix.cnx  |   57 ++
- doc/os_unix.txt  |   55 --
- doc/os_win32.cnx |  284 ++++++++++
- doc/os_win32.txt |  284 ----------
- doc/pattern.cnx  | 1000 ++++++++++++++++++++++++++++++++++
- doc/pattern.txt  | 1000 ----------------------------------
- doc/pi_gzip.cnx  |   38 ++
- doc/pi_gzip.txt  |   38 --
- doc/quickfix.cnx |  817 ++++++++++++++++++++++++++++
- doc/quickfix.txt |  817 ----------------------------
- doc/quickref.cnx | 1263 ++++++++++++++++++++++++++++++++++++++++++
- doc/quickref.txt | 1243 ------------------------------------------
- doc/recover.cnx  |  141 +++++
- doc/recover.txt  |  141 -----
- doc/scroll.cnx   |  262 +++++++++
- doc/scroll.txt   |  262 ---------
- doc/tags-cn      | 1596 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
- doc/tips.cnx     |  412 ++++++++++++++
- doc/tips.txt     |  403 --------------
- doc/uganda.cnx   |  222 ++++++++
- doc/uganda.txt   |  222 --------
- doc/undo.cnx     |  102 ++++
- doc/undo.txt     |  102 ----
- doc/usr_01.cnx   |  152 ++++++
- doc/usr_01.txt   |  152 ------
- doc/usr_02.cnx   |  433 +++++++++++++++
- doc/usr_02.txt   |  433 ---------------
- doc/usr_03.cnx   |  568 +++++++++++++++++++
- doc/usr_03.txt   |  568 -------------------
- doc/usr_04.cnx   |  454 ++++++++++++++++
- doc/usr_04.txt   |  454 ----------------
- doc/usr_05.cnx   |  540 ++++++++++++++++++
- doc/usr_05.txt   |  540 ------------------
- doc/usr_06.cnx   |  250 +++++++++
- doc/usr_06.txt   |  250 ---------
- doc/usr_07.cnx   |  423 +++++++++++++++
- doc/usr_07.txt   |  423 ---------------
- doc/usr_08.cnx   |  461 ++++++++++++++++
- doc/usr_08.txt   |  461 ----------------
- doc/usr_09.cnx   |  252 +++++++++
- doc/usr_09.txt   |  252 ---------
- doc/usr_10.cnx   |  725 +++++++++++++++++++++++++
- doc/usr_10.txt   |  725 -------------------------
- doc/usr_11.cnx   |  296 ++++++++++
- doc/usr_11.txt   |  272 ----------
- doc/usr_12.cnx   |  313 +++++++++++
- doc/usr_12.txt   |  313 -----------
- doc/usr_20.cnx   |  344 ++++++++++++
- doc/usr_20.txt   |  344 ------------
- doc/usr_21.cnx   |  402 ++++++++++++++
- doc/usr_21.txt   |  405 --------------
- doc/usr_22.cnx   |  324 +++++++++++
- doc/usr_22.txt   |  324 -----------
- doc/usr_23.cnx   |  301 ++++++++++
- doc/usr_23.txt   |  301 ----------
- doc/usr_24.cnx   |  523 ++++++++++++++++++
- doc/usr_24.txt   |  524 ------------------
- doc/usr_25.cnx   |  529 ++++++++++++++++++
- doc/usr_25.txt   |  527 ------------------
- doc/usr_26.cnx   |  198 +++++++
- doc/usr_26.txt   |  198 -------
- doc/usr_27.cnx   |  514 ++++++++++++++++++
- doc/usr_27.txt   |  514 ------------------
- doc/usr_28.cnx   |  387 +++++++++++++
- doc/usr_28.txt   |  384 -------------
- doc/usr_29.cnx   |  549 +++++++++++++++++++
- doc/usr_29.txt   |  549 -------------------
- doc/usr_30.cnx   |  564 +++++++++++++++++++
- doc/usr_30.txt   |  564 -------------------
- doc/usr_31.cnx   |  235 ++++++++
- doc/usr_31.txt   |  235 --------
- doc/usr_40.cnx   |  575 ++++++++++++++++++++
- doc/usr_40.txt   |  572 -------------------
- doc/usr_41.cnx   | 1527 +++++++++++++++++++++++++++++++++++++++++++++++++++
- doc/usr_41.txt   | 1516 ---------------------------------------------------
- doc/usr_42.cnx   |  321 +++++++++++
- doc/usr_42.txt   |  321 -----------
- doc/usr_43.cnx   |  156 ++++++
- doc/usr_43.txt   |  156 ------
- doc/usr_44.cnx   |  616 +++++++++++++++++++++
- doc/usr_44.txt   |  616 ---------------------
- doc/usr_45.cnx   |  352 ++++++++++++
- doc/usr_45.txt   |  352 ------------
- doc/usr_90.cnx   |  435 +++++++++++++++
- doc/usr_90.txt   |  435 ---------------
- doc/usr_toc.cnx  |  342 ++++++++++++
- doc/usr_toc.txt  |  342 ------------
- doc/windows.cnx  |  955 ++++++++++++++++++++++++++++++++
- doc/windows.txt  |  955 --------------------------------
- vcd-setup.nsi    |  124 -----
- vimcdoc.sh       |   80 ++-
+ AUTHORS          |    3
+ ChangeLog        | 1074
+ INSTALL          |   83
+ README.orig      |   44
+ TODO             |   72
+ VERSION          |    2
+ doc/autocmd.txt  |  892
+ doc/debugger.cnx |  115
+ doc/debugger.txt |  115
+ doc/develop.cnx  |  342
+ doc/develop.txt  |  342
+ doc/dict.txt     |   16
+ doc/diff.cnx     |  326
+ doc/diff.txt     |  324
+ doc/filetype.txt |  492
+ doc/fold.cnx     |  496
+ doc/fold.txt     |  486
+ doc/gui_w16.cnx  |  168
+ doc/gui_w16.txt  |  168
+ doc/gui_w32.cnx  |  382
+ doc/gui_w32.txt  |  382
+ doc/gui_x11.cnx  |  438
+ doc/gui_x11.txt  |  438
+ doc/guides.txt   |  172
+ doc/help.cnx     |  200
+ doc/help.txt     |  193
+ doc/howto.cnx    |   94
+ doc/howto.txt    |   94
+ doc/if_cscop.cnx |  426
+ doc/if_ole.cnx   |  151
+ doc/if_ole.txt   |  151
+ doc/if_perl.cnx  |  221
+ doc/if_pyth.cnx  |  264
+ doc/map.cnx      |  928
+ doc/map.txt      |  925
+ doc/mbyte.txt    | 1469
+ doc/mlang.cnx    |  182
+ doc/mlang.txt    |  182
+ doc/os_dos.cnx   |  280
+ doc/os_dos.txt   |  280
+ doc/os_mac.cnx   |   88
+ doc/os_mac.txt   |   88
+ doc/os_mint.cnx  |   31
+ doc/os_mint.txt  |   31
+ doc/os_msdos.cnx |  241
+ doc/os_msdos.txt |  241
+ doc/os_unix.cnx  |   57
+ doc/os_unix.txt  |   55
+ doc/os_win32.cnx |  284
+ doc/os_win32.txt |  284
+ doc/pattern.cnx  | 1000
+ doc/pattern.txt  | 1000
+ doc/pi_gzip.cnx  |   38
+ doc/pi_gzip.txt  |   38
+ doc/quickfix.cnx |  817
+ doc/quickfix.txt |  817
+ doc/quickref.cnx | 1263
+ doc/quickref.txt | 1243
+ doc/recover.cnx  |  141
+ doc/recover.txt  |  141
+ doc/scroll.cnx   |  262
+ doc/scroll.txt   |  262
+ doc/tags-cn      | 1596
+ doc/tips.cnx     |  412
+ doc/tips.txt     |  403
+ doc/uganda.cnx   |  222
+ doc/uganda.txt   |  222
+ doc/undo.cnx     |  102
+ doc/undo.txt     |  102
+ doc/usr_01.cnx   |  152
+ doc/usr_01.txt   |  152
+ doc/usr_02.cnx   |  433
+ doc/usr_02.txt   |  433
+ doc/usr_03.cnx   |  568
+ doc/usr_03.txt   |  568
+ doc/usr_04.cnx   |  454
+ doc/usr_04.txt   |  454
+ doc/usr_05.cnx   |  540
+ doc/usr_05.txt   |  540
+ doc/usr_06.cnx   |  250
+ doc/usr_06.txt   |  250
+ doc/usr_07.cnx   |  423
+ doc/usr_07.txt   |  423
+ doc/usr_08.cnx   |  461
+ doc/usr_08.txt   |  461
+ doc/usr_09.cnx   |  252
+ doc/usr_09.txt   |  252
+ doc/usr_10.cnx   |  725
+ doc/usr_10.txt   |  725
+ doc/usr_11.cnx   |  296
+ doc/usr_11.txt   |  272
+ doc/usr_12.cnx   |  313
+ doc/usr_12.txt   |  313
+ doc/usr_20.cnx   |  344
+ doc/usr_20.txt   |  344
+ doc/usr_21.cnx   |  402
+ doc/usr_21.txt   |  405
+ doc/usr_22.cnx   |  324
+ doc/usr_22.txt   |  324
+ doc/usr_23.cnx   |  301
+ doc/usr_23.txt   |  301
+ doc/usr_24.cnx   |  523
+ doc/usr_24.txt   |  524
+ doc/usr_25.cnx   |  529
+ doc/usr_25.txt   |  527
+ doc/usr_26.cnx   |  198
+ doc/usr_26.txt   |  198
+ doc/usr_27.cnx   |  514
+ doc/usr_27.txt   |  514
+ doc/usr_28.cnx   |  387
+ doc/usr_28.txt   |  384
+ doc/usr_29.cnx   |  549
+ doc/usr_29.txt   |  549
+ doc/usr_30.cnx   |  564
+ doc/usr_30.txt   |  564
+ doc/usr_31.cnx   |  235
+ doc/usr_31.txt   |  235
+ doc/usr_40.cnx   |  575
+ doc/usr_40.txt   |  572
+ doc/usr_41.cnx   | 1527
+ doc/usr_41.txt   | 1516
+ doc/usr_42.cnx   |  321
+ doc/usr_42.txt   |  321
+ doc/usr_43.cnx   |  156
+ doc/usr_43.txt   |  156
+ doc/usr_44.cnx   |  616
+ doc/usr_44.txt   |  616
+ doc/usr_45.cnx   |  352
+ doc/usr_45.txt   |  352
+ doc/usr_90.cnx   |  435
+ doc/usr_90.txt   |  435
+ doc/usr_toc.cnx  |  342
+ doc/usr_toc.txt  |  342
+ doc/windows.cnx  |  955
+ doc/windows.txt  |  955
+ vcd-setup.nsi    |  124
+ vimcdoc.sh       |   80
  137 files changed, 28059 insertions(+), 27031 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.1)
@@ -338,22 +338,22 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Also, this would be the last vimcdoc release for Vim 6.2
     and below.
 
- README.orig        |    2 +-
- VERSION            |    2 +-
- doc/CVS/Entries    |   64 ----
- doc/CVS/Repository |    1 -
- doc/CVS/Root       |    1 -
- doc/filetype.txt   |  492 ++++++++++++++++++++++++++++
- doc/map.txt        |  925 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- doc/mbyte.txt      |  477 ++++++++++++++++++---------
- doc/pattern.txt    |    2 +-
- doc/quickref.txt   |  124 ++++----
- doc/uganda.txt     |  222 +++++++++++++
- doc/usr_05.txt     |   57 ++--
- doc/usr_24.txt     |   93 +++---
- doc/usr_30.txt     |   11 +-
- vcd-setup.nsi      |  124 +++++++
- vimcdoc.sh         |   12 +-
+ README.orig        |    2
+ VERSION            |    2
+ doc/CVS/Entries    |   64
+ doc/CVS/Repository |    1
+ doc/CVS/Root       |    1
+ doc/filetype.txt   |  492
+ doc/map.txt        |  925
+ doc/mbyte.txt      |  477
+ doc/pattern.txt    |    2
+ doc/quickref.txt   |  124
+ doc/uganda.txt     |  222
+ doc/usr_05.txt     |   57
+ doc/usr_24.txt     |   93
+ doc/usr_30.txt     |   11
+ vcd-setup.nsi      |  124
+ vimcdoc.sh         |   12
  16 files changed, 2234 insertions(+), 375 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.0)
@@ -365,15 +365,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Yet another major release from the hard working vimcdoc team! Three important pieces were finished: windows.txt, pattern.txt and quickfix.txt. Enjoy the new release and wish you a very happy new year!
 
- VERSION          |    2 +-
- doc/CVS/Entries  |   51 +-
- doc/diff.txt     |   89 ++--
- doc/os_unix.txt  |   60 ++--
- doc/pattern.txt  | 1377 ++++++++++++++++++++++++++----------------------------
- doc/quickfix.txt |  818 ++++++++++++++++++++++++++++++++-
- doc/usr_01.txt   |    6 +-
- doc/usr_02.txt   |    2 +-
- doc/windows.txt  |  955 +++++++++++++++++++++++++++++++++++++
+ VERSION          |    2
+ doc/CVS/Entries  |   51
+ doc/diff.txt     |   89
+ doc/os_unix.txt  |   60
+ doc/pattern.txt  | 1377
+ doc/quickfix.txt |  818
+ doc/usr_01.txt   |    6
+ doc/usr_02.txt   |    2
+ doc/windows.txt  |  955
  9 files changed, 2546 insertions(+), 814 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.0)
@@ -383,74 +383,74 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.5.0: Milestone release. All user manual are reviewed and of good quality.
 
- AUTHORS            |   11 +
- INSTALL            |   53 ++
- LICENSE            |   26 +
- README             |   13 +
- README.orig        |   13 +
- VERSION            |    1 +
- doc/CVS/Entries    |   63 +++
- doc/CVS/Repository |    1 +
- doc/CVS/Root       |    1 +
- doc/autocmd.txt    |  892 ++++++++++++++++++++++++++++++
- doc/debugger.txt   |  115 ++++
- doc/develop.txt    |  342 ++++++++++++
- doc/dict.txt       |  110 ++++
- doc/diff.txt       |  327 +++++++++++
- doc/fold.txt       |  486 +++++++++++++++++
- doc/gui_w16.txt    |  168 ++++++
- doc/gui_w32.txt    |  382 +++++++++++++
- doc/gui_x11.txt    |  438 +++++++++++++++
- doc/help.txt       |  193 +++++++
- doc/howto.txt      |   94 ++++
- doc/if_ole.txt     |  151 ++++++
- doc/mbyte.txt      | 1316 +++++++++++++++++++++++++++++++++++++++++++++
- doc/mlang.txt      |  182 +++++++
- doc/os_dos.txt     |  280 ++++++++++
- doc/os_mac.txt     |   88 +++
- doc/os_mint.txt    |   31 ++
- doc/os_msdos.txt   |  241 +++++++++
- doc/os_unix.txt    |   53 ++
- doc/os_win32.txt   |  284 ++++++++++
- doc/pattern.txt    | 1039 +++++++++++++++++++++++++++++++++++
- doc/pi_gzip.txt    |   38 ++
- doc/quickfix.txt   |    1 +
- doc/quickref.txt   | 1243 ++++++++++++++++++++++++++++++++++++++++++
- doc/recover.txt    |  141 +++++
- doc/scroll.txt     |  262 +++++++++
- doc/tips.txt       |  403 ++++++++++++++
- doc/undo.txt       |  102 ++++
- doc/usr_01.txt     |  152 ++++++
- doc/usr_02.txt     |  433 +++++++++++++++
- doc/usr_03.txt     |  568 ++++++++++++++++++++
- doc/usr_04.txt     |  454 ++++++++++++++++
- doc/usr_05.txt     |  539 +++++++++++++++++++
- doc/usr_06.txt     |  250 +++++++++
- doc/usr_07.txt     |  423 +++++++++++++++
- doc/usr_08.txt     |  461 ++++++++++++++++
- doc/usr_09.txt     |  252 +++++++++
- doc/usr_10.txt     |  725 +++++++++++++++++++++++++
- doc/usr_11.txt     |  272 ++++++++++
- doc/usr_12.txt     |  313 +++++++++++
- doc/usr_20.txt     |  344 ++++++++++++
- doc/usr_21.txt     |  405 ++++++++++++++
- doc/usr_22.txt     |  324 +++++++++++
- doc/usr_23.txt     |  301 +++++++++++
- doc/usr_24.txt     |  521 ++++++++++++++++++
- doc/usr_25.txt     |  527 ++++++++++++++++++
- doc/usr_26.txt     |  198 +++++++
- doc/usr_27.txt     |  514 ++++++++++++++++++
- doc/usr_28.txt     |  384 +++++++++++++
- doc/usr_29.txt     |  549 +++++++++++++++++++
- doc/usr_30.txt     |  563 +++++++++++++++++++
- doc/usr_31.txt     |  235 ++++++++
- doc/usr_40.txt     |  572 ++++++++++++++++++++
- doc/usr_41.txt     | 1516 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- doc/usr_42.txt     |  321 +++++++++++
- doc/usr_43.txt     |  156 ++++++
- doc/usr_44.txt     |  616 +++++++++++++++++++++
- doc/usr_45.txt     |  352 ++++++++++++
- doc/usr_90.txt     |  435 +++++++++++++++
- doc/usr_toc.txt    |  342 ++++++++++++
- vimcdoc.sh         |   50 ++
+ AUTHORS            |   11
+ INSTALL            |   53
+ LICENSE            |   26
+ README             |   13
+ README.orig        |   13
+ VERSION            |    1
+ doc/CVS/Entries    |   63
+ doc/CVS/Repository |    1
+ doc/CVS/Root       |    1
+ doc/autocmd.txt    |  892
+ doc/debugger.txt   |  115
+ doc/develop.txt    |  342
+ doc/dict.txt       |  110
+ doc/diff.txt       |  327
+ doc/fold.txt       |  486
+ doc/gui_w16.txt    |  168
+ doc/gui_w32.txt    |  382
+ doc/gui_x11.txt    |  438
+ doc/help.txt       |  193
+ doc/howto.txt      |   94
+ doc/if_ole.txt     |  151
+ doc/mbyte.txt      | 1316
+ doc/mlang.txt      |  182
+ doc/os_dos.txt     |  280
+ doc/os_mac.txt     |   88
+ doc/os_mint.txt    |   31
+ doc/os_msdos.txt   |  241
+ doc/os_unix.txt    |   53
+ doc/os_win32.txt   |  284
+ doc/pattern.txt    | 1039
+ doc/pi_gzip.txt    |   38
+ doc/quickfix.txt   |    1
+ doc/quickref.txt   | 1243
+ doc/recover.txt    |  141
+ doc/scroll.txt     |  262
+ doc/tips.txt       |  403
+ doc/undo.txt       |  102
+ doc/usr_01.txt     |  152
+ doc/usr_02.txt     |  433
+ doc/usr_03.txt     |  568
+ doc/usr_04.txt     |  454
+ doc/usr_05.txt     |  539
+ doc/usr_06.txt     |  250
+ doc/usr_07.txt     |  423
+ doc/usr_08.txt     |  461
+ doc/usr_09.txt     |  252
+ doc/usr_10.txt     |  725
+ doc/usr_11.txt     |  272
+ doc/usr_12.txt     |  313
+ doc/usr_20.txt     |  344
+ doc/usr_21.txt     |  405
+ doc/usr_22.txt     |  324
+ doc/usr_23.txt     |  301
+ doc/usr_24.txt     |  521
+ doc/usr_25.txt     |  527
+ doc/usr_26.txt     |  198
+ doc/usr_27.txt     |  514
+ doc/usr_28.txt     |  384
+ doc/usr_29.txt     |  549
+ doc/usr_30.txt     |  563
+ doc/usr_31.txt     |  235
+ doc/usr_40.txt     |  572
+ doc/usr_41.txt     | 1516
+ doc/usr_42.txt     |  321
+ doc/usr_43.txt     |  156
+ doc/usr_44.txt     |  616
+ doc/usr_45.txt     |  352
+ doc/usr_90.txt     |  435
+ doc/usr_toc.txt    |  342
+ vimcdoc.sh         |   50
  70 files changed, 23651 insertions(+), 0 deletions(-)

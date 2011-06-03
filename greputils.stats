@@ -8,7 +8,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Support for inversing the search pattern. You can pass "!" to built-in grep commands.
     - Fixed broken GrepBufs command.
 
- plugin/greputils.vim |   52 +++++++++++++++++++++++++-------------------------
+ plugin/greputils.vim |   52
  1 files changed, 26 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.7)
@@ -20,7 +20,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed broken Cfile command.
 
- plugin/greputils.vim |    5 +++--
+ plugin/greputils.vim |    5
  1 files changed, 3 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
@@ -32,7 +32,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Just added support for specifying range for all the built-in grep commands. Useful mainly for GrepBufs command.
 
- plugin/greputils.vim |   88 +++++++++++++++++++++++++++++++++++++------------
+ plugin/greputils.vim |   88
  1 files changed, 66 insertions(+), 22 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
@@ -52,7 +52,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       the latest version genutils.vim.
     - Misc. bug fixes. Update documentation.
 
- plugin/greputils.vim |  159 +++++++++++++++++++++++++++++++++-----------------
+ plugin/greputils.vim |  159
  1 files changed, 105 insertions(+), 54 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
@@ -72,7 +72,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       the :cnext, :cprev and :cc commands.
     - Fixed misc. bugs.
 
- plugin/greputils.vim |  208 ++++++++++++++++++++++++++++++++++++++++----------
+ plugin/greputils.vim |  208
  1 files changed, 166 insertions(+), 42 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
@@ -110,7 +110,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     	- See help on new settings g:greputilsVimGrepSepChar,
     	  g:greputilsPreviewCreateFolds and g:greputilsPreserveLastResults.
 
- plugin/greputils.vim |  347 ++++++++++++++++++++++++++++++++++++--------------
+ plugin/greputils.vim |  347
  1 files changed, 254 insertions(+), 93 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2)
@@ -123,7 +123,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Added BufGrep, WinGrep and ArgGrep commands that use the Vim's built-in g/re/p command with :bufdo, :windo and :argdo respectively to do search. This is an experimental feature, please try it and give feedback.
     - Also fixed a couple or more of minor bugs.
 
- plugin/greputils.vim |  101 ++++++++++++++++++++++++++++++++++++-------------
+ plugin/greputils.vim |  101
  1 files changed, 74 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
@@ -139,7 +139,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - The default completion mode for grep has been changed to "file" from "tag", which is what is more useful.
     - Fixed :Cfile and :Cgetfile to work correctly if the current directory has changed since the results are generated.
 
- plugin/greputils.vim |  319 ++++++++++++++++++++++++++++++++++++--------------
+ plugin/greputils.vim |  319
  1 files changed, 230 insertions(+), 89 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -151,6 +151,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     This is an enhanced version of idutils.vim, made more generic and supports regular :grep command too. See description for information on the new version. Needs Vim 6.3
 
- README               |  189 +++++++++++++++++
- plugin/greputils.vim |  566 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ README               |  189
+ plugin/greputils.vim |  566
  2 files changed, 755 insertions(+), 0 deletions(-)

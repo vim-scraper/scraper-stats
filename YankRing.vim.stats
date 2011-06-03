@@ -19,8 +19,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     BF: When pasting a string of 1111's, and additional -1 could also be included in the output.
 
- doc/yankring.txt    |   61 ++++++++++++++++++++++++++-
- plugin/yankring.vim |  114 ++++++++++++++++++++++++++++++++++-----------------
+ doc/yankring.txt    |   61
+ plugin/yankring.vim |  114
  2 files changed, 134 insertions(+), 41 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/10.0)
@@ -42,8 +42,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     BF: When overriding the default and setting g:yankring_window_use_bottom = 0, the YankRing would report the error (Sergey Khorev):  E21: Cannot make changes, 'modifiable' is off
 
- doc/yankring.txt    |   28 +++++++++++-
- plugin/yankring.vim |  129 +++++++++++++++++++++++++++++++++++----------------
+ doc/yankring.txt    |   28
+ plugin/yankring.vim |  129
  2 files changed, 116 insertions(+), 41 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9.0)
@@ -58,8 +58,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     BF: When replaying a macro which used any of the zap keys (f,F,t,T,/,?) you were prompted again for the string to match on (Ovidiu C).
     BF: When checking the clipboard for changes (g:yankring_clipboard_monitor == 1) only add the item if it is not already in the ring.  Previously, the item was moved to the top of the YankRing each time you flipped focus.
 
- doc/yankring.txt    |   19 ++++-
- plugin/yankring.vim |  209 ++++++++++++++++++++++++++++++++++++---------------
+ doc/yankring.txt    |   19
+ plugin/yankring.vim |  209
  2 files changed, 164 insertions(+), 64 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/8.0)
@@ -74,8 +74,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     BF: Yanking and pasting a line which ends in a backslash resulted in the backslash being replaced by "@@@".
     BF: When repeating a command (".") which used any of the zap keys (f,F,t,T,/,?) you were prompted again for the string to match on (Vasilii Pascal).
 
- doc/yankring.txt    |   15 +++-
- plugin/yankring.vim |  292 ++++++++++++++++++++++++++++++++++++++-------------
+ doc/yankring.txt    |   15
+ plugin/yankring.vim |  292
  2 files changed, 232 insertions(+), 75 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0)
@@ -96,8 +96,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     BF: Under particular circumstances, yanking text with embedded @ characters were not properly stored and retrieved from the YankRing (Andrew Long).
     BF: Changed to use xmaps instead of vmaps so that the maps only work in visual mode and not select mode (David Liang).
 
- doc/yankring.txt    |   68 ++++++++++++++++++----
- plugin/yankring.vim |  157 ++++++++++++++++++++++++++++++++++++++-------------
+ doc/yankring.txt    |   68
+ plugin/yankring.vim |  157
  2 files changed, 173 insertions(+), 52 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.1)
@@ -110,8 +110,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     BF: If the g:yankring_history_dir contains spaces (default on Windows) an error was reported.  A simple work around was to let g:yankring_history_dir = 'c:\Vim' or no spaces (Matt).
     All Windows users should download this version.
 
- doc/yankring.txt    |    5 +++++
- plugin/yankring.vim |   11 +++++------
+ doc/yankring.txt    |    5
+ plugin/yankring.vim |   11
  2 files changed, 10 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0)
@@ -130,8 +130,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     NF: The YankRing window can toggle the clipboard monitor by pressing 'c'.  See the help in the window by pressing ?.
     NF: Added some highlighting to the YankRing window (Marty Grenfell).
 
- doc/yankring.txt    |  440 ++++++++++++++++++++++-----------
- plugin/yankring.vim |  694 +++++++++++++++++++++++++--------------------------
+ doc/yankring.txt    |  440
+ plugin/yankring.vim |  694
  2 files changed, 643 insertions(+), 491 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/5.0)
@@ -146,8 +146,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     BF: If using <C-O> from within insert mode, the yankring inserted characters into the buffer instead of capturing the changes, this was fixed by Andy Wokula (Agathoklis Hatzimanikas).
     BF: The yankring did not properly account for all the different forms of counts "5yy" worked but "y5y" did not (Edwin Shao).
 
- doc/yankring.txt    |   17 ++++++-
- plugin/yankring.vim |  131 ++++++++++++++++++++++-----------------------------
+ doc/yankring.txt    |   17
+ plugin/yankring.vim |  131
  2 files changed, 72 insertions(+), 76 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
@@ -162,8 +162,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     BF: The expression register (quote=) was not accounted for correctly (Agathoklis Hatzimanikas).
     BF: Using the v:operator variable must be escaped when used in a regular expression.
 
- doc/yankring.txt    |   22 +++++++++++-
- plugin/yankring.vim |   88 +++++++++++++++++++++++++++++++++------------------
+ doc/yankring.txt    |   22
+ plugin/yankring.vim |   88
  2 files changed, 77 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
@@ -183,8 +183,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     BF: The yankring has an option to persist between instances of Vim by storing the values in global variables within the viminfo.  This has led to some unusual ordering of items in the ring from conflicts between instances.  This option has been turn off by default.
     BF: Their was an issue with yanking using y$.
 
- doc/yankring.txt    |   44 ++++-
- plugin/yankring.vim |  510 ++++++++++++++++++++++++++++++++++++++++-----------
+ doc/yankring.txt    |   44
+ plugin/yankring.vim |  510
  2 files changed, 442 insertions(+), 112 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
@@ -200,8 +200,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     BF: YRSearch prompted the user for a regex even if one was provided on the command line.
     BF: If g:yankring_manage_numbered_reg is enabled, the "." operator did not correctly repeat the previous action (Pedro DeRose).
 
- doc/yankring.txt    |   37 +++-
- plugin/yankring.vim |  569 ++++++++++++++++++++++++---------------------------
+ doc/yankring.txt    |   37
+ plugin/yankring.vim |  569
  2 files changed, 297 insertions(+), 309 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
@@ -215,8 +215,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     yankring window, the yankring window would close.  This also applied to
     'a', which allowed you to toggle the autoclose feature.
 
- doc/yankring.txt    |    9 +++++++--
- plugin/yankring.vim |   12 ++++++------
+ doc/yankring.txt    |    9
+ plugin/yankring.vim |   12
  2 files changed, 13 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
@@ -247,8 +247,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
         backwards and forwards (<C-P> and <C-N>) through the
         previous values.
 
- doc/yankring.txt    |   39 +++++++--
- plugin/yankring.vim |  230 +++++++++++++++++++++++++++++++++++++--------------
+ doc/yankring.txt    |   39
+ plugin/yankring.vim |  230
  2 files changed, 196 insertions(+), 73 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0-Beta1a)
@@ -260,7 +260,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Some people reported an error when selecting the first item from the yankring.
 
- plugin/yankring.vim |    4 ++--
+ plugin/yankring.vim |    4
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0-Beta1)
@@ -275,8 +275,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Feedback is greatly appreciated.
 
- doc/yankring.txt    |  708 +++++++++++++++++------------
- plugin/yankring.vim | 1274 +++++++++++++++++++++++++++++++++++++++------------
+ doc/yankring.txt    |  708
+ plugin/yankring.vim | 1274
  2 files changed, 1402 insertions(+), 580 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -292,8 +292,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     NF: Added support for the expression register (:h quote=).  Here is an example of how it is used:
            "="X"<CR>P
 
- doc/yankring.txt    |  100 +++++++++++++++++++++++++++----
- plugin/yankring.vim |  165 ++++++++++++++++++++++++++++++++++++++++++--------
+ doc/yankring.txt    |  100
+ plugin/yankring.vim |  165
  2 files changed, 227 insertions(+), 38 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -311,8 +311,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     BF: Regression from version 1.4, the '.' operator may incorrectly insert garbage.
 
- doc/yankring.txt    |   42 +++++++++++++++-
- plugin/yankring.vim |  138 ++++++++++++++++++++++++++++++++++++++++----------
+ doc/yankring.txt    |   42
+ plugin/yankring.vim |  138
  2 files changed, 151 insertions(+), 29 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -326,7 +326,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     BF: Using the '.' operator was not corrected replaying operations that did not move text in some way (g~t_) changed the case of the text but a '.' did not replay it.
     BF: When replacing previously pasted text the yankring did not respect what key was used to paste the text originally.  All replaced items were pasted using 'p', even if you had originally pasted the text with 'P'.
 
- README              |  125 ++++++++
- doc/yankring.txt    |  799 ++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/yankring.vim |  846 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ README              |  125
+ doc/yankring.txt    |  799
+ plugin/yankring.vim |  846
  3 files changed, 1770 insertions(+), 0 deletions(-)

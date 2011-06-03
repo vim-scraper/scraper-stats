@@ -8,10 +8,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Replaced simple filespec escaping with built-in fnameescape() function (or
     emulation for Vim 7.0 / 7.1) via escapings.vim wrapper.
 
- autoload/escapings.vim   |  195 ++++++++++++++++++++++++++++++++++++++++++++++
- autoload/writebackup.vim |   10 ++-
- doc/writebackup.txt      |   51 +++++-------
- plugin/writebackup.vim   |   10 ++-
+ autoload/escapings.vim   |  195
+ autoload/writebackup.vim |   10
+ doc/writebackup.txt      |   51
+ plugin/writebackup.vim   |   10
  4 files changed, 229 insertions(+), 37 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.00)
@@ -31,9 +31,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       requires the writebackupVersionControl plugin and can be configured via
       g:WriteBackup_AvoidIdenticalBackups.
 
- autoload/writebackup.vim |  214 ++++++++++++++++++++++++++++++++++++++++++++++
- doc/writebackup.txt      |   54 +++++++++---
- plugin/writebackup.vim   |  106 +++--------------------
+ autoload/writebackup.vim |  214
+ doc/writebackup.txt      |   54
+ plugin/writebackup.vim   |  106
  3 files changed, 271 insertions(+), 103 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.31.013)
@@ -45,8 +45,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Split off documentation into separate help file. Now packaging as VimBall.
 
- doc/writebackup.txt    |  168 ++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/writebackup.vim |  101 ++--------------------------
+ doc/writebackup.txt    |  168
+ plugin/writebackup.vim |  101
  2 files changed, 176 insertions(+), 93 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.30.011)
@@ -62,7 +62,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     BF: Unnamed buffers were backed up as '.YYYYMMDDa'.
     Now setting v:errmsg on errors and using ErrorMsg instead of Error highlight group.
 
- plugin/writebackup.vim |  125 +++++++++++++++++++++++++++++++++++++-----------
+ plugin/writebackup.vim |  125
  1 files changed, 96 insertions(+), 29 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.20.006)
@@ -74,7 +74,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Minor change: Added -bar to :WriteBackup, so that commands can be chained together.
 
- plugin/writebackup.vim |    8 +++++---
+ plugin/writebackup.vim |    8
  1 files changed, 5 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.20.005)
@@ -88,7 +88,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Now requiring VIM 7.0 or later, because it's using lists.
     BF: Special ex command characters ' \%#' must be escaped for ':w' command.
 
- plugin/writebackup.vim |  116 +++++++++++++++++++++++++++++++++++++++++-------
+ plugin/writebackup.vim |  116
  1 files changed, 99 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.00.004)
@@ -98,6 +98,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.00.004: Initial upload
 
- README                 |   32 +++++++++++++++++
- plugin/writebackup.vim |   88 ++++++++++++++++++++++++++++++++++++++++++++++++
+ README                 |   32
+ plugin/writebackup.vim |   88
  2 files changed, 120 insertions(+), 0 deletions(-)

@@ -15,7 +15,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Minor release to fix a bug that makes any plugin action that refers to "previous" not work properly. This is actually a VIM issue that
     corrupts a VIM variable (v:count and v:count1)
 
- ftplugin/python/chapa.vim |   36 ++++++++++++++++++++++++------------
+ ftplugin/python/chapa.vim |   36
  1 files changed, 24 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.0)
@@ -29,11 +29,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Makes the repeat mappings optional.
     Drops Ruby support (other plugins already take care of same overlapping functionality)
 
- README                    |   81 +-----
- README.rst                |   41 ++--
- doc/chapa.txt             |   33 ++-
- ftplugin/python/chapa.vim |  216 ++++++++++++-
- ftplugin/ruby/chapa.vim   |  748 ---------------------------------------------
+ README                    |   81
+ README.rst                |   41
+ doc/chapa.txt             |   33
+ ftplugin/python/chapa.vim |  216
+ ftplugin/ruby/chapa.vim   |  748
  5 files changed, 247 insertions(+), 872 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
@@ -45,10 +45,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Minor bug fixes that deal with object living at the end of the file. It also fixes weird comment toggling to match exactly what you are asking for and nothing else.
 
- README                        |    2 +
- README.rst                    |    2 +
- ftplugin/javascript/chapa.vim |    1 -
- ftplugin/python/chapa.vim     |   61 +++++++++++++++++++++++++++++++++++++---
+ README                        |    2
+ README.rst                    |    2
+ ftplugin/javascript/chapa.vim |    1
+ ftplugin/python/chapa.vim     |   61
  4 files changed, 60 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.0)
@@ -60,7 +60,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Adds JavasScript support! same features except only applied to functions (no classes or methods)
 
- ftplugin/javascript/chapa.vim |  375 +++++++++++++++++++++++++++++++++++++++++
+ ftplugin/javascript/chapa.vim |  375
  1 files changed, 375 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.9)
@@ -70,7 +70,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.9: Minor update that fixes better matching of Ruby end blocks.
 
- ftplugin/ruby/chapa.vim |    2 +-
+ ftplugin/ruby/chapa.vim |    2
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.8)
@@ -80,11 +80,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.8: Adds better support for Ruby and ending blocks.
 
- README.rst                |  123 +++++---
- doc/chapa.txt             |   28 ++-
- ftplugin/python/chapa.vim |  642 ++++++++++++++++++++++++++++++++++++++
- ftplugin/ruby/chapa.vim   |  748 +++++++++++++++++++++++++++++++++++++++++++++
- plugin/chapa.vim          |  642 --------------------------------------
+ README.rst                |  123
+ doc/chapa.txt             |   28
+ ftplugin/python/chapa.vim |  642
+ ftplugin/ruby/chapa.vim   |  748
+ plugin/chapa.vim          |  642
  5 files changed, 1488 insertions(+), 695 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.7)
@@ -96,10 +96,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixes a problem with moving from/to methods and makes the Repeat calls available as part of the Plugin
 
- README           |  131 +++++++++++++++++++++++-------------------------------
- README.rst       |    8 ++--
- doc/chapa.txt    |    6 +-
- plugin/chapa.vim |   31 +++++++++----
+ README           |  131
+ README.rst       |    8
+ doc/chapa.txt    |    6
+ plugin/chapa.vim |   31
  4 files changed, 84 insertions(+), 92 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.6)
@@ -112,11 +112,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     You can now toggle comments for the N class, method or function and repeat any movement command with <C-h> and <C-l>.
     It also fixes some issues with defining better being "inside" an actual object.
 
- README           |   34 +++++++-
- README.rst       |   33 +++++++--
- doc/chapa.txt    |   35 +++++++--
- doc/tags         |    7 --
- plugin/chapa.vim |  229 ++++++++++++++++++++++++++++++++++++++++++++++--------
+ README           |   34
+ README.rst       |   33
+ doc/chapa.txt    |   35
+ doc/tags         |    7
+ plugin/chapa.vim |  229
  5 files changed, 278 insertions(+), 60 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.5)
@@ -129,10 +129,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Adds commenting capabilities for next/previous N method, class, function and default mappings.
     Also provides more accurate visual selection by avoiding whitespace at the end of blocks.
 
- README.rst       |   78 +++++++---
- doc/chapa.txt    |   90 ++++++++---
- doc/tags         |    7 +
- plugin/chapa.vim |  467 +++++++++++++++++++++++++++++++++++++++++++++--------
+ README.rst       |   78
+ doc/chapa.txt    |   90
+ doc/tags         |    7
+ plugin/chapa.vim |  467
  4 files changed, 524 insertions(+), 118 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.4)
@@ -144,7 +144,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixes a bug with visual selection and adds count for visual selections (eg. visual select 3rd next method)
 
- plugin/chapa.vim |   32 +++++++++-----------------------
+ plugin/chapa.vim |   32
  1 files changed, 9 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.3)
@@ -157,9 +157,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Adds count for movements (e.g. move to 3 previous classes)
     Add <Plug> before each plugin call in your mappings. Breaks compatibility for earlier versions.
 
- README.rst       |   31 ++++++++++++++++---------------
- doc/chapa.txt    |   25 +++++++++++++++----------
- plugin/chapa.vim |   45 +++++++++++++++++++++++++++++++--------------
+ README.rst       |   31
+ doc/chapa.txt    |   25
+ plugin/chapa.vim |   45
  3 files changed, 62 insertions(+), 39 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.2)
@@ -171,10 +171,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Adds 8 public movement and selection calls to the plugin - but breaks compatibility with previous version
 
- README           |   89 ++++++++++++++++++++++++++++++++++++++++-------------
- README.rst       |   42 ++++++++++++++++++++-----
- doc/chapa.txt    |   45 +++++++++++++++++++++------
- plugin/chapa.vim |   70 +++++++++++++++++++++++++++++++-----------
+ README           |   89
+ README.rst       |   42
+ doc/chapa.txt    |   45
+ plugin/chapa.vim |   70
  4 files changed, 187 insertions(+), 59 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
@@ -184,8 +184,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.1: Initial upload
 
- README           |   36 ++++++++++++++++++
- README.rst       |   76 ++++++++++++++++++++++++++++++++++++++
- doc/chapa.txt    |   77 ++++++++++++++++++++++++++++++++++++++
- plugin/chapa.vim |  108 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README           |   36
+ README.rst       |   76
+ doc/chapa.txt    |   77
+ plugin/chapa.vim |  108
  4 files changed, 297 insertions(+), 0 deletions(-)

@@ -9,10 +9,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     similar to v2.7, but no change of 'timeoutlen' for Bufmru mode
     NF: variable g:bufmru_lazy_filetype
 
- autoload/anwolib.vim  |  212 --------------------------------
- autoload/wildmenu.vim |  123 ------------------
- doc/bufmru.txt        |  327 -------------------------------------------------
- plugin/bufmru.vim     |  246 +++++++++++++++++++-----------------
+ autoload/anwolib.vim  |  212
+ autoload/wildmenu.vim |  123
+ doc/bufmru.txt        |  327
+ plugin/bufmru.vim     |  246
  4 files changed, 130 insertions(+), 778 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.7)
@@ -29,10 +29,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     NF: variable g:bufmru_wilditems to customize wildmenu entries
     NF: 'timeoutlen' of Bufmru Mode set to 60000 ms
 
- autoload/anwolib.vim  |  382 +++++++++++++++++--------------
- autoload/wildmenu.vim |  241 ++++++++++----------
- doc/bufmru.txt        |  602 +++++++++++++++++++++++++++----------------------
- plugin/bufmru.vim     |  212 +++++++++---------
+ autoload/anwolib.vim  |  382
+ autoload/wildmenu.vim |  241
+ doc/bufmru.txt        |  602
+ plugin/bufmru.vim     |  212
  4 files changed, 766 insertions(+), 671 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -44,10 +44,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     like 1.0 but includes a help file and uses autoload/wildmenu.vim to show buffer names in a wildmenu like list
 
- autoload/anwolib.vim  |  170 ++++++++++++++++++++++++++++++
- autoload/wildmenu.vim |  118 +++++++++++++++++++++
- doc/bufmru.txt        |  275 +++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/bufmru.vim     |  107 ++++++++------------
+ autoload/anwolib.vim  |  170
+ autoload/wildmenu.vim |  118
+ doc/bufmru.txt        |  275
+ plugin/bufmru.vim     |  107
  4 files changed, 605 insertions(+), 65 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -67,7 +67,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Valid buffer number: now also 'buflisted' required
     Bug fixes ...
 
- plugin/bufmru.vim |  373 +++++++++++++++++++++++++++++++++++++++++------------
+ plugin/bufmru.vim |  373
  1 files changed, 292 insertions(+), 81 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -80,7 +80,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     now truncates too long buffer names
     added g:bufmru_nummarks
 
- plugin/bufmru.vim |   54 +++++++++++++++++++++++++++++++++++++++++++++-------
+ plugin/bufmru.vim |   54
  1 files changed, 46 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -92,7 +92,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     some config added, keys added, some obvious bugs fixed. recommended update
 
- plugin/bufmru.vim |  109 +++++++++++++++++++++++++++++++++++++++++-----------
+ plugin/bufmru.vim |  109
  1 files changed, 86 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -102,6 +102,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README            |   65 +++++++++++++++++++++++++++++++
- plugin/bufmru.vim |  109 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README            |   65
+ plugin/bufmru.vim |  109
  2 files changed, 174 insertions(+), 0 deletions(-)

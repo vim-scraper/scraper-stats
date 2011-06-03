@@ -7,8 +7,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed the behaviour of keywords after an equal sign is typed. Added search on the online docs at Rollyo.com.
 
- doc/rubysnippets.txt     |   21 +++++++++++++++++++++
- scripts/rubysnippets.vim |   34 ++++++++++++++++++++++++++++++----
+ doc/rubysnippets.txt     |   21
+ scripts/rubysnippets.vim |   34
  2 files changed, 51 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.9)
@@ -22,7 +22,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     // def a module class for each object
     they will not expand to the blocks.
 
- scripts/rubysnippets.vim |  135 +++++++++++++++++++++++++++------------------
+ scripts/rubysnippets.vim |  135
  1 files changed, 81 insertions(+), 54 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.8)
@@ -34,10 +34,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Defined signs. They can be simple text strings (>>) or a little Ruby icon when using GUI, and can be inserted on Normal Mode with "is" (insert sign) and removed with "rs" (remove sign).
 
- doc/rubysnippets.txt     |    9 ++
+ doc/rubysnippets.txt     |    9
  pixmaps/ruby.bmp         |  Bin 0 -> 1022 bytes
- pixmaps/ruby.xpm         |  201 ++++++++++++++++++++++++++++++++++++++++++++++
- scripts/rubysnippets.vim |   26 ++++++-
+ pixmaps/ruby.xpm         |  201
+ scripts/rubysnippets.vim |   26
  4 files changed, 234 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.7)
@@ -47,7 +47,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.7: Fixed some problems about indentation, spaces and tabs.
 
- scripts/rubysnippets.vim |   21 +++++++++++++++++----
+ scripts/rubysnippets.vim |   21
  1 files changed, 17 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.6)
@@ -59,8 +59,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added a configuration variable to skip the insertion of some structures (def, class, module) default names (method_name,ClassName,ModuleName).
 
- doc/rubysnippets.txt     |   13 ++++++++++++
- scripts/rubysnippets.vim |   47 ++++++++++++++++++++++++++++++++-------------
+ doc/rubysnippets.txt     |   13
+ scripts/rubysnippets.vim |   47
  2 files changed, 46 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.5)
@@ -72,8 +72,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed some problems with indentation. Now if you don't use some keywords like class, module and for on the start of the line, they will not expand to its structures. Changed the way to make hashes, they are created checking the nearest cursor position { and } pair.
 
- doc/rubysnippets.txt     |    6 +-
- scripts/rubysnippets.vim |  103 ++++++++++++++++++++++++++++++++-------------
+ doc/rubysnippets.txt     |    6
+ scripts/rubysnippets.vim |  103
  2 files changed, 76 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.4)
@@ -85,8 +85,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Changed the way to create hashes. Now it works on Insert and Normal modes,  with <C-H> formatting the content of a string like { key value } to the Ruby hash format. Added some documentation.
 
- doc/rubysnippets.txt     |    5 +++-
- scripts/rubysnippets.vim |   60 ++++++++++++++++++++++++++++++++-------------
+ doc/rubysnippets.txt     |    5
+ scripts/rubysnippets.vim |   60
  2 files changed, 46 insertions(+), 19 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.3)
@@ -98,9 +98,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added some features to create for loops and hashes with parameters from the current line.
 
- doc/rubysnippets.txt     |  111 ++++++++++++++++++++++++++++++++++++++++++++++
- plugin/rubysnippets.vim  |   39 ----------------
- scripts/rubysnippets.vim |  110 +++++++++++++++++++++++++++++++++++++++++++++
+ doc/rubysnippets.txt     |  111
+ plugin/rubysnippets.vim  |   39
+ scripts/rubysnippets.vim |  110
  3 files changed, 221 insertions(+), 39 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.2)
@@ -114,7 +114,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     http://www.vim.org/tips/tip.php?tip_id=153
     Is tested if some chars (like {) are mapped, if so the close pair is not inserted.
 
- plugin/rubysnippets.vim |   13 ++++++++++---
+ plugin/rubysnippets.vim |   13
  1 files changed, 10 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
@@ -124,6 +124,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.1: Initial upload
 
- README                  |   12 ++++++++++++
- plugin/rubysnippets.vim |   32 ++++++++++++++++++++++++++++++++
+ README                  |   12
+ plugin/rubysnippets.vim |   32
  2 files changed, 44 insertions(+), 0 deletions(-)

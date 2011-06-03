@@ -9,7 +9,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1. When UML visibility indicators are enabled, they were also included in syntax highlighting
     2. Sort by order not supported. But the window showed Sort by order at top. Changed that to Sort by name
 
- plugin/javabrowser.vim |   15 +++++++++++----
+ plugin/javabrowser.vim |   15
  1 files changed, 11 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.02@2)
@@ -19,7 +19,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.02@2: The zip file had lot of spurious files. Removed them.
 
- plugin/javabrowser.vim | 3598 ++++++++++++++++++++++++------------------------
+ plugin/javabrowser.vim | 3598
  1 files changed, 1799 insertions(+), 1799 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.02@1)
@@ -32,7 +32,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1. Added back the nice icons (tagindicator.xpm) and (tagindicator.bmp) with the script. When the zip file is unzipped in the $VIM directory (say c:\vim), it would put the images in the $VIM\pixmaps directory and the javabrowser.vim under $VIM\vimfiles\plugin directory. I like browsing the Java Tree with the image icon and I hope you would like that too.
 
  pixmaps/tagindicator.bmp |  Bin 0 -> 670 bytes
- pixmaps/tagindicator.xpm |   26 ++++++++++++++++++++++++++
+ pixmaps/tagindicator.xpm |   26
  2 files changed, 26 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.02)
@@ -44,7 +44,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Automatic tag highlighting supported now. Depending where the cursor is in the java file, corresponding tag is automatically hightlighed in the JavaBrowser window
 
- plugin/javabrowser.vim |   90 ++++++++++++++++++++----------------------------
+ plugin/javabrowser.vim |   90
  1 files changed, 37 insertions(+), 53 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.01)
@@ -59,7 +59,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2. The cache was not getting set for the tooltip correctly
     3. The tooltip was staring with the <TAB> character picked up from the ctags output. It has been removed now
 
- plugin/javabrowser.vim |   57 +++++++++++++++++++++++++++++------------------
+ plugin/javabrowser.vim |   57
  1 files changed, 35 insertions(+), 22 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -76,7 +76,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Hopefully will make that work pretty soon :)
     I have not tested it extensively. I would really appreciate it if you let me know about the bugs.
 
- plugin/javabrowser.vim |  689 +++++++++++++++++++----------------------------
+ plugin/javabrowser.vim |  689
  1 files changed, 279 insertions(+), 410 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.22)
@@ -92,7 +92,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      always see the syntax highlighting set for JavaBrowser syntax groups even if
      the color scheme is changed in the middle of an editing session.
 
- plugin/javabrowser.vim |  258 +++++++++++++++++++++++++++++-------------------
+ plugin/javabrowser.vim |  258
  1 files changed, 156 insertions(+), 102 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.21)
@@ -104,7 +104,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added option JavaBrowser_Show_UML_Visibility. If set, which is the default, JavaBrowser uses UML visibility indicators. + => public, - => private, # => protected in addition to the syntax highlighting.
 
- plugin/javabrowser.vim |   25 +++++++++++++++++++++++--
+ plugin/javabrowser.vim |   25
  1 files changed, 23 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.20)
@@ -118,7 +118,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2. Now also checking if the version > 700 before setting the bexpr option
     The script now does show an error if the verison < 7.0. However, to get the advantage of tooltip, verion >= 7.0 is needed.
 
- plugin/javabrowser.vim |    5 ++++-
+ plugin/javabrowser.vim |    5
  1 files changed, 4 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.19@1)
@@ -139,9 +139,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added nice tool-tip when mouse is over a function/variable name in the tag list window. Uses the ballon_eval feature for this. If this feature is not there, the tool-tip would not be shown. Shows a nice prototype for each tag in the tool-tip. An update after a loooong time.
 
- plugin/javabrowser.vim |   43 +++++++++++++++++++++++++++++++++++++++++--
+ plugin/javabrowser.vim |   43
  tagindicator.bmp       |  Bin 362 -> 0 bytes
- tagindicator.xpm       |   26 --------------------------
+ tagindicator.xpm       |   26
  3 files changed, 41 insertions(+), 28 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.18)
@@ -153,7 +153,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Bug fix when sorted by name. Fixed the tag position. Now it shows the arrow at correct position.
 
- plugin/javabrowser.vim |   90 +++++++++++++++++++++++++++++++++++++++--------
+ plugin/javabrowser.vim |   90
  1 files changed, 74 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.17)
@@ -171,7 +171,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      completely at :JavaBrowser command
     4. Bug fix: Now escaping the SPACES in $VIM so that sign will be read properly. If your $VIM looks like C:\Program Files\Vim, it will now work. Thanks to Doug McInns for feed back.
 
- plugin/javabrowser.vim |   69 +++++++++++++++++++++++++++++++++++++----------
+ plugin/javabrowser.vim |   69
  tagindicator.bmp       |  Bin 362 -> 362 bytes
  2 files changed, 54 insertions(+), 15 deletions(-)
 
@@ -184,7 +184,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added tagindicator.bmp for windows. Vim on Windows does not understand the xpms. Arrgghhh! So, now Windows users can also have icon to show the current tag.
 
- plugin/javabrowser.vim |   15 +++++++++++----
+ plugin/javabrowser.vim |   15
  tagindicator.bmp       |  Bin 0 -> 362 bytes
  2 files changed, 11 insertions(+), 4 deletions(-)
 
@@ -202,8 +202,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      'JavaBrowser_Use_Text_Icon' and 'JavaBrowser_Use_Highlight_Tag'
      3. All have default values
 
- plugin/javabrowser.vim |   78 ++++++++++++++++++++++++++++++++++++++++++-----
- tagindicator.xpm       |   26 ++++++++++++++++
+ plugin/javabrowser.vim |   78
+ tagindicator.xpm       |   26
  2 files changed, 95 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.14)
@@ -213,7 +213,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.14: Now automatically highlights the current tag.
 
- plugin/javabrowser.vim |  163 ++++++++++++++++++++++++------------------------
+ plugin/javabrowser.vim |  163
  1 files changed, 81 insertions(+), 82 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
@@ -223,7 +223,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.12: Small bug fix to remove unwanted echo for visibility.
 
- plugin/javabrowser.vim |    8 +++++---
+ plugin/javabrowser.vim |    8
  1 files changed, 5 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
@@ -236,6 +236,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1. Now interface methods are highlighted as public, abstract. I missed  the abstract part in  the previous version.
     2. The visibility modifier (public/protected/private) can now be anywhere in the method/field declaration and it will be highlighted correctly.
 
- README                 |   54 ++
- plugin/javabrowser.vim | 1651 ++++++++++++++++++++++++++++++++++++++++++++++++
+ README                 |   54
+ plugin/javabrowser.vim | 1651
  2 files changed, 1705 insertions(+), 0 deletions(-)

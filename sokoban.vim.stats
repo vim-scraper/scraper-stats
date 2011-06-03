@@ -7,7 +7,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     set buftype and nomodifiable, remeber progress though levels, record high scores for each level.
 
- plugin/sokoban.vim |  262 +++++++++++++++++++++++++++++++++++++++++++++++++++-
+ plugin/sokoban.vim |  262
  1 files changed, 259 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -19,7 +19,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     fix bug in routine which detected when a level was complete. This meant some levels were not detected as complete e.g. level 11.
 
- plugin/sokoban.vim |   27 +++++++++++++++------------
+ plugin/sokoban.vim |   27
  1 files changed, 15 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1b)
@@ -29,7 +29,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.1b: Use the <sfile> expansion to try to locate the level directory.
 
- plugin/sokoban.vim |   29 +++++++++++++++++++++++++----
+ plugin/sokoban.vim |   29
  1 files changed, 25 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1a)
@@ -42,7 +42,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Minor tweaks to help windows find the level
     directory a little more smoothly. I hope this works.
 
- plugin/sokoban.vim |    9 ++++++++-
+ plugin/sokoban.vim |    9
  1 files changed, 8 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -55,7 +55,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Map the j/k keys correctly.
     Added SokobanH and SokobanV commands which control how the screen is split
 
- plugin/sokoban.vim |   43 ++++++++++++++++++++++++++++++-------------
+ plugin/sokoban.vim |   43
  1 files changed, 30 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -65,96 +65,96 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README             |   25 +++
- level1.sok         |   11 +
- level10.sok        |   16 ++
- level11.sok        |   15 ++
- level12.sok        |   13 ++
- level13.sok        |   13 ++
- level14.sok        |   16 ++
- level15.sok        |   16 ++
- level16.sok        |   15 ++
- level17.sok        |   14 ++
- level18.sok        |   13 ++
- level19.sok        |   16 ++
- level2.sok         |   10 +
- level20.sok        |   16 ++
- level21.sok        |   15 ++
- level22.sok        |   16 ++
- level23.sok        |   14 ++
- level24.sok        |   16 ++
- level25.sok        |   16 ++
- level26.sok        |   12 +
- level27.sok        |   13 ++
- level28.sok        |   15 ++
- level29.sok        |   13 ++
- level3.sok         |   10 +
- level30.sok        |   14 ++
- level31.sok        |   16 ++
- level32.sok        |   15 ++
- level33.sok        |   15 ++
- level34.sok        |   15 ++
- level35.sok        |   16 ++
- level36.sok        |   16 ++
- level37.sok        |   15 ++
- level38.sok        |   11 +
- level39.sok        |   16 ++
- level4.sok         |   14 ++
- level40.sok        |   16 ++
- level41.sok        |   15 ++
- level42.sok        |   13 ++
- level43.sok        |   11 +
- level44.sok        |   15 ++
- level45.sok        |   14 ++
- level46.sok        |   16 ++
- level47.sok        |   11 +
- level48.sok        |   16 ++
- level49.sok        |   15 ++
- level5.sok         |   13 ++
- level50.sok        |   16 ++
- level51.sok        |   12 +
- level52.sok        |   17 ++
- level53.sok        |   12 +
- level54.sok        |   12 +
- level55.sok        |   12 +
- level56.sok        |   12 +
- level57.sok        |   12 +
- level58.sok        |   12 +
- level59.sok        |   12 +
- level6.sok         |   11 +
- level60.sok        |   12 +
- level61.sok        |   12 +
- level62.sok        |   12 +
- level63.sok        |   12 +
- level64.sok        |   12 +
- level65.sok        |   12 +
- level66.sok        |   12 +
- level67.sok        |   12 +
- level68.sok        |   12 +
- level69.sok        |   12 +
- level7.sok         |   12 +
- level70.sok        |   12 +
- level71.sok        |   12 +
- level72.sok        |   12 +
- level73.sok        |   12 +
- level74.sok        |   12 +
- level75.sok        |   12 +
- level76.sok        |   12 +
- level77.sok        |   15 ++
- level78.sok        |   12 +
- level79.sok        |   12 +
- level8.sok         |   16 ++
- level80.sok        |   13 ++
- level81.sok        |   13 ++
- level82.sok        |   13 ++
- level83.sok        |   13 ++
- level84.sok        |   12 +
- level85.sok        |   16 ++
- level86.sok        |   10 +
- level87.sok        |   14 ++
- level88.sok        |   16 ++
- level89.sok        |   17 ++
- level9.sok         |   14 ++
- level90.sok        |   17 ++
- plugin/sokoban.vim |  603 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README             |   25
+ level1.sok         |   11
+ level10.sok        |   16
+ level11.sok        |   15
+ level12.sok        |   13
+ level13.sok        |   13
+ level14.sok        |   16
+ level15.sok        |   16
+ level16.sok        |   15
+ level17.sok        |   14
+ level18.sok        |   13
+ level19.sok        |   16
+ level2.sok         |   10
+ level20.sok        |   16
+ level21.sok        |   15
+ level22.sok        |   16
+ level23.sok        |   14
+ level24.sok        |   16
+ level25.sok        |   16
+ level26.sok        |   12
+ level27.sok        |   13
+ level28.sok        |   15
+ level29.sok        |   13
+ level3.sok         |   10
+ level30.sok        |   14
+ level31.sok        |   16
+ level32.sok        |   15
+ level33.sok        |   15
+ level34.sok        |   15
+ level35.sok        |   16
+ level36.sok        |   16
+ level37.sok        |   15
+ level38.sok        |   11
+ level39.sok        |   16
+ level4.sok         |   14
+ level40.sok        |   16
+ level41.sok        |   15
+ level42.sok        |   13
+ level43.sok        |   11
+ level44.sok        |   15
+ level45.sok        |   14
+ level46.sok        |   16
+ level47.sok        |   11
+ level48.sok        |   16
+ level49.sok        |   15
+ level5.sok         |   13
+ level50.sok        |   16
+ level51.sok        |   12
+ level52.sok        |   17
+ level53.sok        |   12
+ level54.sok        |   12
+ level55.sok        |   12
+ level56.sok        |   12
+ level57.sok        |   12
+ level58.sok        |   12
+ level59.sok        |   12
+ level6.sok         |   11
+ level60.sok        |   12
+ level61.sok        |   12
+ level62.sok        |   12
+ level63.sok        |   12
+ level64.sok        |   12
+ level65.sok        |   12
+ level66.sok        |   12
+ level67.sok        |   12
+ level68.sok        |   12
+ level69.sok        |   12
+ level7.sok         |   12
+ level70.sok        |   12
+ level71.sok        |   12
+ level72.sok        |   12
+ level73.sok        |   12
+ level74.sok        |   12
+ level75.sok        |   12
+ level76.sok        |   12
+ level77.sok        |   15
+ level78.sok        |   12
+ level79.sok        |   12
+ level8.sok         |   16
+ level80.sok        |   13
+ level81.sok        |   13
+ level82.sok        |   13
+ level83.sok        |   13
+ level84.sok        |   12
+ level85.sok        |   16
+ level86.sok        |   10
+ level87.sok        |   14
+ level88.sok        |   16
+ level89.sok        |   17
+ level9.sok         |   14
+ level90.sok        |   17
+ plugin/sokoban.vim |  603
  92 files changed, 1849 insertions(+), 0 deletions(-)

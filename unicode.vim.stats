@@ -7,9 +7,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
      New Release- Fix an issue with configuring the plugin (Thanks jgm)- Code cleanup- Make use of the preview window, when completing  Digraph or Unicode Glyphs- By default, the Digraph Glyphs will now be enabled  using |i_Ctrl-X_CTRL-G| instead of using  Ctrl-X_Ctrl-C which wouldn't work in a terminal- |:UnicodeName| now displays the hexadecimal Unicode  Codepoint instead of the decimal one (as this seems  to be the official way to display unicode  codepoints).
 
- autoload/unicode.vim |   65 ++++++++++++++++++++++++-------------------------
- doc/unicode.txt      |   32 ++++++++++++++++++++----
- plugin/unicode.vim   |    6 ++--
+ autoload/unicode.vim |   65
+ doc/unicode.txt      |   32
+ plugin/unicode.vim   |    6
  3 files changed, 61 insertions(+), 42 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
@@ -21,9 +21,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Determine the Name of a Character using :UnicodeName- the global variable g:enableUnicodeCompletion determines, whether the completion will be loaded automatically
 
- autoload/unicode.vim |   82 ++++++++++++++++++++++++++++++++++++--------------
- doc/unicode.txt      |   58 +++++++++++++++++++++++++++--------
- plugin/unicode.vim   |    7 ++--
+ autoload/unicode.vim |   82
+ doc/unicode.txt      |   58
+ plugin/unicode.vim   |    7
  3 files changed, 107 insertions(+), 40 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -35,9 +35,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - many small bugfixes with regard to error-handling and error displaying- use default netrw_http_cmd (instead of hardwiring wget)- small documentation update (Inlude a snippet of UnicodeData.txt and get rid of Index.txt data)
 
- autoload/unicode.vim |  120 +++++++++++++++++++++++++-------------------------
- doc/unicode.txt      |   21 ++++++---
- plugin/unicode.vim   |    4 +-
+ autoload/unicode.vim |  120
+ doc/unicode.txt      |   21
+ plugin/unicode.vim   |    4
  3 files changed, 76 insertions(+), 69 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -47,9 +47,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.5: New public repository at http://github.com/chrisbra/unicode.vim
 
- autoload/unicode.vim |    4 ++--
- doc/unicode.txt      |    7 +++++--
- plugin/unicode.vim   |    4 ++--
+ autoload/unicode.vim |    4
+ doc/unicode.txt      |    7
+ plugin/unicode.vim   |    4
  3 files changed, 9 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -63,9 +63,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     (Index.txt does not contain all glyphs).
     Check for empty file UnicodeData.txt
 
- autoload/unicode.vim |   55 ++++++++++++++++++++++++++++++--------------------
- doc/unicode.txt      |   50 +++++++++++++++++++++++---------------------
- plugin/unicode.vim   |    3 +-
+ autoload/unicode.vim |   55
+ doc/unicode.txt      |   50
+ plugin/unicode.vim   |    3
  3 files changed, 61 insertions(+), 47 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -77,9 +77,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added digraph completion
 
- autoload/unicode.vim |   52 ++++++++++++++++++++++++++++++++++++++++++-------
- doc/unicode.txt      |   27 ++++++++++++++++++++-----
- plugin/unicode.vim   |    3 +-
+ autoload/unicode.vim |   52
+ doc/unicode.txt      |   27
+ plugin/unicode.vim   |    3
  3 files changed, 67 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -89,9 +89,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2: Enabled GetLatestVimScripts
 
- autoload/unicode.vim |   13 ++++++++++++-
- doc/unicode.txt      |    3 ++-
- plugin/unicode.vim   |    3 +--
+ autoload/unicode.vim |   13
+ doc/unicode.txt      |    3
+ plugin/unicode.vim   |    3
  3 files changed, 15 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -101,8 +101,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README               |   95 ++++++++++++++++++++++++++++++
- autoload/unicode.vim |  159 ++++++++++++++++++++++++++++++++++++++++++++++++++
- doc/unicode.txt      |  109 ++++++++++++++++++++++++++++++++++
- plugin/unicode.vim   |   38 ++++++++++++
+ README               |   95
+ autoload/unicode.vim |  159
+ doc/unicode.txt      |  109
+ plugin/unicode.vim   |   38
  4 files changed, 401 insertions(+), 0 deletions(-)

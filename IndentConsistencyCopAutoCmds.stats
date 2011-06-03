@@ -7,8 +7,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     BUG: "E216: No such group or event: IndentConsistencyCopBufferCmds" on :IndentConsistencyCopAutoCmdsOff.
 
- doc/IndentConsistencyCopAutoCmds.txt    |    6 +++++-
- plugin/IndentConsistencyCopAutoCmds.vim |    9 +++++++--
+ doc/IndentConsistencyCopAutoCmds.txt    |    6
+ plugin/IndentConsistencyCopAutoCmds.vim |    9
  2 files changed, 12 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.30)
@@ -27,9 +27,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - BUG: The same buffer-local autocmd could be created multiple times when the filetype is set repeatedly.
     - BUG: By clearing the entire IndentConsistencyCopBufferCmds augroup, pending autocmds for other buffers were deleted by an autocmd run in the current buffer. Now deleting only the buffer-local autocmds for the events that fired.
 
- README                                  |   37 +++++---
- doc/IndentConsistencyCopAutoCmds.txt    |  155 +++++++++++++++++++++++++++++
- plugin/IndentConsistencyCopAutoCmds.vim |  162 +++++++++++++++++++++----------
+ README                                  |   37
+ doc/IndentConsistencyCopAutoCmds.txt    |  155
+ plugin/IndentConsistencyCopAutoCmds.vim |  162
  3 files changed, 291 insertions(+), 63 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.10.004)
@@ -41,7 +41,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Minor change: Added -bar to all commands that do not take any arguments, so that these can be chained together.
 
- plugin/IndentConsistencyCopAutoCmds.vim |   12 +++++++-----
+ plugin/IndentConsistencyCopAutoCmds.vim |   12
  1 files changed, 7 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.10.003)
@@ -54,7 +54,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Avoiding multiple invocations of the IndentConsistencyCop when reloading or switching buffers. Now there's only one check per file and VIM session.
     Added commands :IndentConsistencyCopAutoCmdsOn and :IndentConsistencyCopAutoCmdsOff to re-enable/disable autocommands.
 
- plugin/IndentConsistencyCopAutoCmds.vim |   64 ++++++++++++++++++++++++++-----
+ plugin/IndentConsistencyCopAutoCmds.vim |   64
  1 files changed, 54 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.01)
@@ -64,6 +64,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.01: Initial upload
 
- README                                  |   16 +++++++
- plugin/IndentConsistencyCopAutoCmds.vim |   73 +++++++++++++++++++++++++++++++
+ README                                  |   16
+ plugin/IndentConsistencyCopAutoCmds.vim |   73
  2 files changed, 89 insertions(+), 0 deletions(-)

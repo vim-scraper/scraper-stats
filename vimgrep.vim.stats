@@ -13,12 +13,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
            VimgrepEditDel functionality
            also applies.
 
- doc/vimgrep.ans    |   33 ++++---
+ doc/vimgrep.ans    |   33
  doc/vimgrep.doc    |  Bin 60928 -> 63488 bytes
- doc/vimgrep.html   |  117 +++++++++++++++-----
- doc/vimgrep.rtf    |  298 +++++++++++++++++++++++++++-------------------------
- doc/vimgrep.txt    |   33 ++++---
- plugin/vimgrep.vim |   56 ++++++++++-
+ doc/vimgrep.html   |  117
+ doc/vimgrep.rtf    |  298
+ doc/vimgrep.txt    |   33
+ plugin/vimgrep.vim |   56
  6 files changed, 339 insertions(+), 198 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
@@ -33,7 +33,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
        -  Rewrote s:vimGrep() for
           search optimization.
 
- plugin/vimgrep.vim |  172 +++++++++++++++++-----------------------------------
+ plugin/vimgrep.vim |  172
  1 files changed, 57 insertions(+), 115 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0-b)
@@ -48,16 +48,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     these are now separate packages
 
  bitmaps/lightning.bmp |  Bin 1654 -> 0 bytes
- bitmaps/lightning.xpm |  188 -----------------
+ bitmaps/lightning.xpm |  188
  bitmaps/speed.bmp     |  Bin 1654 -> 0 bytes
- bitmaps/speed.xpm     |  167 ---------------
- doc/vsutil.ans        |  142 -------------
+ bitmaps/speed.xpm     |  167
+ doc/vsutil.ans        |  142
  doc/vsutil.doc        |  Bin 32256 -> 0 bytes
- doc/vsutil.html       |  541 -------------------------------------------------
- doc/vsutil.rtf        |  216 --------------------
- doc/vsutil.txt        |  142 -------------
- plugin/curBuf.vim     |  132 ------------
- plugin/vsutil.vim     |  321 -----------------------------
+ doc/vsutil.html       |  541
+ doc/vsutil.rtf        |  216
+ doc/vsutil.txt        |  142
+ plugin/curBuf.vim     |  132
+ plugin/vsutil.vim     |  321
  11 files changed, 0 insertions(+), 1849 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
@@ -80,13 +80,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
        -  Removed use of dummy file
           for empty Vim session.
 
- doc/vimgrep.ans    |  170 ++++----
+ doc/vimgrep.ans    |  170
  doc/vimgrep.doc    |  Bin 60928 -> 60928 bytes
- doc/vimgrep.html   | 1147 +++++++++++++++++++++++++---------------------------
- doc/vimgrep.rtf    |  592 ++++++++++++++-------------
- doc/vimgrep.txt    |  170 ++++----
- plugin/vimgrep.vim |  530 +++++++++++++-----------
- test/testVG.vim    |   37 +--
+ doc/vimgrep.html   | 1147
+ doc/vimgrep.rtf    |  592
+ doc/vimgrep.txt    |  170
+ plugin/vimgrep.vim |  530
+ test/testVG.vim    |   37
  7 files changed, 1310 insertions(+), 1336 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
@@ -118,21 +118,21 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
           file in an edit buffer.
 
  bitmaps/quest.bmp  |  Bin 0 -> 798 bytes
- bitmaps/quest.xpm  |   44 ++
- doc/vimgrep.ans    |  677 +++++++++----------
+ bitmaps/quest.xpm  |   44
+ doc/vimgrep.ans    |  677
  doc/vimgrep.doc    |  Bin 54784 -> 60928 bytes
- doc/vimgrep.html   | 1936 ++++++++++++++++++++++++++++------------------------
- doc/vimgrep.rtf    |  989 +++++++++++++--------------
- doc/vimgrep.txt    |  677 +++++++++----------
- doc/vsutil.ans     |    9 +-
+ doc/vimgrep.html   | 1936
+ doc/vimgrep.rtf    |  989
+ doc/vimgrep.txt    |  677
+ doc/vsutil.ans     |    9
  doc/vsutil.doc     |  Bin 31232 -> 32256 bytes
- doc/vsutil.html    |   15 +
- doc/vsutil.rtf     |   48 +-
- doc/vsutil.txt     |    9 +-
- plugin/curBuf.vim  |   14 +-
- plugin/vimgrep.vim |  597 ++++++++++++++---
- plugin/vsutil.vim  |  118 ++++-
- test/testVG.vim    |  126 +++--
+ doc/vsutil.html    |   15
+ doc/vsutil.rtf     |   48
+ doc/vsutil.txt     |    9
+ plugin/curBuf.vim  |   14
+ plugin/vimgrep.vim |  597
+ plugin/vsutil.vim  |  118
+ test/testVG.vim    |  126
  16 files changed, 2999 insertions(+), 2260 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1@1)
@@ -149,7 +149,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     got put into the zip
     This is the corrected one
 
- plugin/vimgrep.vim |    9 ++++++++-
+ plugin/vimgrep.vim |    9
  1 files changed, 8 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
@@ -178,18 +178,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
           (inspired by email from
             Hari Krishna Dara)
 
- doc/vimgrep.ans    |   43 ++++++++-
+ doc/vimgrep.ans    |   43
  doc/vimgrep.doc    |  Bin 51200 -> 54784 bytes
- doc/vimgrep.html   |  161 ++++++++++++++++++++++++++++---
- doc/vimgrep.rtf    |  271 +++++++++++++++++++++++++++++++---------------------
- doc/vimgrep.txt    |   43 ++++++++-
- doc/vsutil.ans     |   17 +++-
+ doc/vimgrep.html   |  161
+ doc/vimgrep.rtf    |  271
+ doc/vimgrep.txt    |   43
+ doc/vsutil.ans     |   17
  doc/vsutil.doc     |  Bin 30720 -> 31232 bytes
- doc/vsutil.html    |   20 ++++-
- doc/vsutil.rtf     |   95 ++++++++++---------
- doc/vsutil.txt     |   17 +++-
- plugin/vimgrep.vim |  198 ++++++++++++++++++++++++--------------
- plugin/vsutil.vim  |    9 ++
+ doc/vsutil.html    |   20
+ doc/vsutil.rtf     |   95
+ doc/vsutil.txt     |   17
+ plugin/vimgrep.vim |  198
+ plugin/vsutil.vim  |    9
  12 files changed, 618 insertions(+), 256 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -224,26 +224,26 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
           robust, and otherwise enhanced.
 
  bitmaps/lightning.bmp |  Bin 0 -> 1654 bytes
- bitmaps/lightning.xpm |  188 ++++++++
+ bitmaps/lightning.xpm |  188
  bitmaps/speed.bmp     |  Bin 0 -> 1654 bytes
- bitmaps/speed.xpm     |  167 +++++++
+ bitmaps/speed.xpm     |  167
  bitmaps/tb_close.bmp  |  Bin 0 -> 334 bytes
- bitmaps/tb_close.xpm  |   31 ++
- doc/vimgrep.ans       |  395 +++++++++++++++++
+ bitmaps/tb_close.xpm  |   31
+ doc/vimgrep.ans       |  395
  doc/vimgrep.doc       |  Bin 0 -> 51200 bytes
- doc/vimgrep.html      | 1172 +++++++++++++++++++++++++++++++++++++++++++++++++
- doc/vimgrep.rtf       |  482 ++++++++++++++++++++
- doc/vimgrep.txt       |  395 +++++++++++++++++
- doc/vsutil.ans        |  128 ++++++
+ doc/vimgrep.html      | 1172
+ doc/vimgrep.rtf       |  482
+ doc/vimgrep.txt       |  395
+ doc/vsutil.ans        |  128
  doc/vsutil.doc        |  Bin 0 -> 30720 bytes
- doc/vsutil.html       |  508 +++++++++++++++++++++
- doc/vsutil.rtf        |  203 +++++++++
- doc/vsutil.txt        |  128 ++++++
- plugin/curBuf.vim     |  124 ++++++
- plugin/minigrep.vim   |  246 -----------
- plugin/vimgrep.vim    |  932 +++++++++++++++++++++++++++++++++++++++
- plugin/vsutil.vim     |  200 +++++++++
- test/testVG.vim       |   47 ++
+ doc/vsutil.html       |  508
+ doc/vsutil.rtf        |  203
+ doc/vsutil.txt        |  128
+ plugin/curBuf.vim     |  124
+ plugin/minigrep.vim   |  246
+ plugin/vimgrep.vim    |  932
+ plugin/vsutil.vim     |  200
+ test/testVG.vim       |   47
  21 files changed, 5100 insertions(+), 246 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -291,7 +291,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
        -  Added code to test for empty files
        -  Added code to test for directories
 
- plugin/minigrep.vim |  229 ++++++++++++++++++++++++++++++++++++++++++++------
+ plugin/minigrep.vim |  229
  1 files changed, 201 insertions(+), 28 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -301,6 +301,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README              |    3 ++
- plugin/minigrep.vim |   73 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ README              |    3
+ plugin/minigrep.vim |   73
  2 files changed, 76 insertions(+), 0 deletions(-)

@@ -9,11 +9,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Added shiftwidth=2 and expandtab to ftplugin/rnoweb.vim
     - Added documentation on using vim-addon-manager to activate the plugin under Debian based distributions
 
- README.R_with_vim   |   19 ++++++++++++-------
- ftplugin/r.vim      |   25 +++++++++++++------------
- ftplugin/rhelp.vim  |   14 +++++++-------
- ftplugin/rnoweb.vim |   18 +++++++++++-------
- syntax/rnoweb.vim   |   30 +++++++++++++++---------------
+ README.R_with_vim   |   19
+ ftplugin/r.vim      |   25
+ ftplugin/rhelp.vim  |   14
+ ftplugin/rnoweb.vim |   18
+ syntax/rnoweb.vim   |   30
  5 files changed, 58 insertions(+), 48 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5-62)
@@ -28,13 +28,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Added a note about the problem with adjacent tabs being pasted to the R console (see README.R_with_vim)
     - Small fixes
 
- Makefile.rnoweb     |   12 +++++++++---
- README.R_with_vim   |   11 +++++++++--
- ftplugin/r.vim      |    6 +++---
- ftplugin/rhelp.vim  |   48 ++++++++++++++++++++++++++++++++++++++++++++++++
- ftplugin/rnoweb.vim |   20 ++------------------
- syntax/rhelp.vim    |   30 ++++++++++++++++--------------
- syntax/rnoweb.vim   |    7 ++++---
+ Makefile.rnoweb     |   12
+ README.R_with_vim   |   11
+ ftplugin/r.vim      |    6
+ ftplugin/rhelp.vim  |   48
+ ftplugin/rnoweb.vim |   20
+ syntax/rhelp.vim    |   30
+ syntax/rnoweb.vim   |    7
  7 files changed, 91 insertions(+), 43 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5-54)
@@ -47,13 +47,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Up-to-date version of the R help and R noweb syntax files. Both of them are now part of vim 7.
     - Added ftplugin/rnoweb.vim and Makefile.rnoweb for R noweb files.
 
- Makefile.rnoweb      |   27 ++++++++
- README.R_with_vim    |   19 ++----
- after/syntax/rnw.vim |   19 ------
- ftplugin/rnoweb.vim  |   71 ++++++++++++++++++++++
- syntax/rd.vim        |  162 --------------------------------------------------
- syntax/rhelp.vim     |  153 +++++++++++++++++++++++++++++++++++++++++++++++
- syntax/rnoweb.vim    |   55 +++++++++++++++++
+ Makefile.rnoweb      |   27
+ README.R_with_vim    |   19
+ after/syntax/rnw.vim |   19
+ ftplugin/rnoweb.vim  |   71
+ syntax/rd.vim        |  162
+ syntax/rhelp.vim     |  153
+ syntax/rnoweb.vim    |   55
  7 files changed, 313 insertions(+), 193 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5-38)
@@ -66,11 +66,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - switched to funnel.pl from VIlisp 2.3
     - carefully reviewed and extended the R help file syntax highlighting
 
- README.R_with_vim   |   21 +-
- ftplugin/funnel.pl  |  556 +++++++++++++++++++++++++++++++++++++++++++++++++++
- ftplugin/funnel2.pl |  512 -----------------------------------------------
- ftplugin/r.vim      |   10 +-
- syntax/rd.vim       |  140 ++++++++++---
+ README.R_with_vim   |   21
+ ftplugin/funnel.pl  |  556
+ ftplugin/funnel2.pl |  512
+ ftplugin/r.vim      |   10
+ syntax/rd.vim       |  140
  5 files changed, 681 insertions(+), 558 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.03-33)
@@ -82,11 +82,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed the problem with the xterm not closing. Installation is also easier now because the bash script R-managed is not needed any more.
 
- README.R_with_vim   |   56 +++---
- ftplugin/R-managed  |   15 --
- ftplugin/funnel.pl  |  503 --------------------------------------------------
- ftplugin/funnel2.pl |  512 +++++++++++++++++++++++++++++++++++++++++++++++++++
- ftplugin/r.vim      |   10 +-
+ README.R_with_vim   |   56
+ ftplugin/R-managed  |   15
+ ftplugin/funnel.pl  |  503
+ ftplugin/funnel2.pl |  512
+ ftplugin/r.vim      |   10
  5 files changed, 548 insertions(+), 548 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.03-29)
@@ -100,13 +100,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     plugin. Also added mixed syntax highlighting for Sweave files according
     to the tip of his.
 
- README.R_with_vim    |   63 ++++++++++++++++++++++++++++------------------
- after/syntax/rnw.vim |   19 ++++++++++++++
- ftplugin/R-managed   |   15 +++++++++++
- ftplugin/R.vim       |   59 -------------------------------------------
- ftplugin/Rnw.vim     |   47 ----------------------------------
- ftplugin/r.vim       |   68 ++++++++++++++++++++++++++++++++++++++++++++++++++
- syntax/rd.vim        |    2 +-
+ README.R_with_vim    |   63
+ after/syntax/rnw.vim |   19
+ ftplugin/R-managed   |   15
+ ftplugin/R.vim       |   59
+ ftplugin/Rnw.vim     |   47
+ ftplugin/r.vim       |   68
+ syntax/rd.vim        |    2
  7 files changed, 141 insertions(+), 132 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.01-8)
@@ -116,7 +116,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.01-8: Small improvement of README file
 
- README.R_with_vim |    9 +++++++--
+ README.R_with_vim |    9
  1 files changed, 7 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.01)
@@ -126,10 +126,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.01: Initial upload
 
- README             |   43 +++++
- README.R_with_vim  |   34 ++++
- ftplugin/R.vim     |   59 ++++++
- ftplugin/Rnw.vim   |   47 +++++
- ftplugin/funnel.pl |  503 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- syntax/rd.vim      |   84 +++++++++
+ README             |   43
+ README.R_with_vim  |   34
+ ftplugin/R.vim     |   59
+ ftplugin/Rnw.vim   |   47
+ ftplugin/funnel.pl |  503
+ syntax/rd.vim      |   84
  6 files changed, 770 insertions(+), 0 deletions(-)

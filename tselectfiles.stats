@@ -14,9 +14,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     provided as extra argument
     - tselectfiles_prefix is always evaluated
 
- autoload/tselectfiles.vim |   51 ++++++++++++-------
- doc/tselectfiles.txt      |  124 +++++++++++++++++++++++++++++++++++++++------
- plugin/tselectfiles.vim   |   26 +++++++--
+ autoload/tselectfiles.vim |   51
+ doc/tselectfiles.txt      |  124
+ plugin/tselectfiles.vim   |   26
  3 files changed, 162 insertions(+), 39 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
@@ -33,9 +33,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - FIX: If 'splitbelow' is false, opening buffers in split view didn't
     properly work (thanks to naquad/Daniil F.)
 
- autoload/tselectfiles.vim |   40 ++++++++++++++++++++++++++++------------
- doc/tselectfiles.txt      |   12 ++++++------
- plugin/tselectfiles.vim   |   30 ++++++++++++++++++++++--------
+ autoload/tselectfiles.vim |   40
+ doc/tselectfiles.txt      |   12
+ plugin/tselectfiles.vim   |   30
  3 files changed, 56 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
@@ -47,9 +47,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Require tlib 0.28
 
- autoload/tselectfiles.vim |   25 ++++++++++++++++++-------
- doc/tselectfiles.txt      |    5 +++++
- plugin/tselectfiles.vim   |   19 ++++++++++++-------
+ autoload/tselectfiles.vim |   25
+ doc/tselectfiles.txt      |    5
+ plugin/tselectfiles.vim   |   19
  3 files changed, 35 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
@@ -62,9 +62,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - NEW: g:tselectfiles_part_subst* variables (for use with tselectfiles#BaseFilter())
     - NEW: [bg]:tselectfiles_filter_basename variable (if true, match on basename only)
 
- autoload/tselectfiles.vim |   24 ++++++++++++++++++++----
- doc/tselectfiles.txt      |   31 ++++++++++++++++++++++++++++++-
- plugin/tselectfiles.vim   |   17 ++++++++++++++---
+ autoload/tselectfiles.vim |   24
+ doc/tselectfiles.txt      |   31
+ plugin/tselectfiles.vim   |   17
  3 files changed, 64 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -85,9 +85,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - tselectfiles_filter_rx: Set as array
     - Problem when browsing single directories
 
- autoload/tselectfiles.vim |  457 +++++++++++++++++++++++++++++++++++++++++++++
- doc/tselectfiles.txt      |   52 ++++--
- plugin/tselectfiles.vim   |  424 ++++++++----------------------------------
+ autoload/tselectfiles.vim |  457
+ doc/tselectfiles.txt      |   52
+ plugin/tselectfiles.vim   |  424
  3 files changed, 578 insertions(+), 355 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -110,8 +110,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Renamed some variables from tselectfile_* to tselectfiles_*.
     - Can be "suspended" (i.e. you can switch back to the orignal window)
 
- doc/tselectfiles.txt    |   98 +++++++++++++++++++++++
- plugin/tselectfiles.vim |  201 ++++++++++++++++++++++++++++-------------------
+ doc/tselectfiles.txt    |   98
+ plugin/tselectfiles.vim |  201
  2 files changed, 219 insertions(+), 80 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -124,7 +124,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Require tlib 0.9
     - "Delete file" will ask whether to delete a corresponding buffer too.
 
- plugin/tselectfiles.vim |  347 +++++++++++++++++++++++++++++++++--------------
+ plugin/tselectfiles.vim |  347
  1 files changed, 248 insertions(+), 99 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -134,6 +134,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README                  |   46 +++++++++
- plugin/tselectfiles.vim |  253 +++++++++++++++++++++++++++++++++++++++++++++++
+ README                  |   46
+ plugin/tselectfiles.vim |  253
  2 files changed, 299 insertions(+), 0 deletions(-)

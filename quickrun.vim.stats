@@ -10,11 +10,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Do not escape %c symbol if shebang line was used.
     - Fixed the "shebang" option always worked.
 
- README                |    2 +-
- autoload/quickrun.vim |   49 ++++++++++++++++++++++++++++++-------------------
- doc/quickrun.jax      |   17 +++++++++++++----
- doc/quickrun.txt      |   12 +++++++-----
- plugin/quickrun.vim   |    7 ++++---
+ README                |    2
+ autoload/quickrun.vim |   49
+ doc/quickrun.jax      |   17
+ doc/quickrun.txt      |   12
+ plugin/quickrun.vim   |    7
  5 files changed, 55 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.4)
@@ -29,10 +29,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Improved behavior in MS Windows.
     - Changed "%c" into symbol that specifies file.
 
- autoload/quickrun.vim |  106 +++++++++++++++++++++++++++++--------------------
- doc/quickrun.jax      |   22 ++++++----
- doc/quickrun.txt      |   22 +++++------
- plugin/quickrun.vim   |    2 +-
+ autoload/quickrun.vim |  106
+ doc/quickrun.jax      |   22
+ doc/quickrun.txt      |   22
+ plugin/quickrun.vim   |    2
  4 files changed, 87 insertions(+), 65 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.3)
@@ -49,11 +49,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - ":to" of output_encode is omissible.
     - Fixed a bug of infinity loop.
 
- README                |    1 +
- autoload/quickrun.vim |   48 ++++++++++++++++++++++++++++++------------------
- doc/quickrun.jax      |   28 +++++++++++++++++++++-------
- doc/quickrun.txt      |   20 +++++++++++++-------
- plugin/quickrun.vim   |    2 +-
+ README                |    1
+ autoload/quickrun.vim |   48
+ doc/quickrun.jax      |   28
+ doc/quickrun.txt      |   20
+ plugin/quickrun.vim   |    2
  5 files changed, 66 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2)
@@ -75,13 +75,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Check hasmapto() before <Leader>r is defined.
     - Improve the reading and writing of a file.
 
- README                 |    1 +
- autoload/quickrun.vim  |  424 ++++++++++++++++++++++++++++++++++++++++--------
- doc/quicklaunch.jax    |    6 +-
- doc/quickrun.jax       |   56 +++++--
- doc/quickrun.txt       |   39 +++--
- plugin/quicklaunch.vim |   12 +-
- plugin/quickrun.vim    |  144 +----------------
+ README                 |    1
+ autoload/quickrun.vim  |  424
+ doc/quicklaunch.jax    |    6
+ doc/quickrun.jax       |   56
+ doc/quickrun.txt       |   39
+ plugin/quicklaunch.vim |   12
+ plugin/quickrun.vim    |  144
  7 files changed, 447 insertions(+), 235 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.1)
@@ -91,11 +91,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.4.1: Initial upload
 
- README                 |   39 +++
- autoload/quickrun.vim  |  753 ++++++++++++++++++++++++++++++++++++++++++++++++
- doc/quicklaunch.jax    |   92 ++++++
- doc/quickrun.jax       |  457 +++++++++++++++++++++++++++++
- doc/quickrun.txt       |  391 +++++++++++++++++++++++++
- plugin/quicklaunch.vim |   80 +++++
- plugin/quickrun.vim    |  175 +++++++++++
+ README                 |   39
+ autoload/quickrun.vim  |  753
+ doc/quicklaunch.jax    |   92
+ doc/quickrun.jax       |  457
+ doc/quickrun.txt       |  391
+ plugin/quicklaunch.vim |   80
+ plugin/quickrun.vim    |  175
  7 files changed, 1987 insertions(+), 0 deletions(-)

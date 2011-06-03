@@ -16,8 +16,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fixed: indentkeys correctly invokes indent
     Fixed: Comment lines with keywords.  (Tentative fix)
 
- indent/javascript.vim |  190 ++++++++++++++++++-------------------------------
- test.js               |   26 ++++----
+ indent/javascript.vim |  190
+ test.js               |   26
  2 files changed, 81 insertions(+), 135 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/b2.2)
@@ -35,10 +35,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Added: Skeleton support for basic objects.
     Added: Tests for skeleton code.
 
- indent/html.vim       |   30 ++--
- indent/javascript.vim |  169 +++++++++++++--------
- test.html             |  399 +++++++++++++++++++++++++++++++++++++++++++++++++
- test.js               |   75 +++++++++
+ indent/html.vim       |   30
+ indent/javascript.vim |  169
+ test.html             |  399
+ test.js               |   75
  4 files changed, 593 insertions(+), 80 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/b2.1)
@@ -51,8 +51,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fixed: Object endings regex.  Now doesn't include preceding {, or [;
     Fixed: Multi-Line invocation (Caveat: Must end in a ; or ,)
 
- indent/javascript.vim |   37 +++++++++++-----
- test.js               |  113 +++++++++++++++++++++++++++++++++----------------
+ indent/javascript.vim |   37
+ test.js               |  113
  2 files changed, 102 insertions(+), 48 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/b2.0)
@@ -66,8 +66,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fixed: Determines comment lines by synIDAttr
     Added: Anonymous function handling
 
- README                |  144 +++++++++++++++++++++
- indent/html.vim       |  250 ++++++++++++++++++++++++++++++++++++
- indent/javascript.vim |  337 +++++++++++++++++++++++++++++++++++++++++++++++++
- test.js               |  296 +++++++++++++++++++++++++++++++++++++++++++
+ README                |  144
+ indent/html.vim       |  250
+ indent/javascript.vim |  337
+ test.js               |  296
  4 files changed, 1027 insertions(+), 0 deletions(-)

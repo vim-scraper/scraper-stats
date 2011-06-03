@@ -7,10 +7,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     support for optionally requiring commit comments; ideal for preventing accidental <Enter> or <Esc> at commit time; minor string/path compare patch for Windows users during workspace detection (thanks Charles Bates)
 
- CHANGES.vim4accurev |   11 +++++++-
- doc/accurev.txt     |   36 +++++++++++++++++---------
- plugin/accurev.vim  |   69 +++++++++++++++++++++++++++++++++++++++++++++++---
- syntax/accurev.vim  |    7 ++---
+ CHANGES.vim4accurev |   11
+ doc/accurev.txt     |   36
+ plugin/accurev.vim  |   69
+ syntax/accurev.vim  |    7
  4 files changed, 100 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.0)
@@ -22,14 +22,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     In-session plugin enable/disable useful on slow network connections; gvim per-buffer graphical menus; new annotate/blame feature; removed dependency on cwd allows editing workspace files from anywhere (user reported fix); ability to launch stream browser; ability to launch graphical merge on true conflict.  updated docs + more content.  General script refactoring and housecleaning.  enjoy!
 
- CHANGES.vim4accurev |   22 +
- INSTALL.vim4accurev |   85 ++--
- LICENSE.vim4accurev |  404 ++++++------
- README.vim4accurev  |   18 +-
- RELEASE.vim4accurev |   13 -
- doc/accurev.txt     |  376 ++++++++---
- plugin/accurev.vim  | 1907 ++++++++++++++++++++++++++++++++++-----------------
- syntax/accurev.vim  |   13 +-
+ CHANGES.vim4accurev |   22
+ INSTALL.vim4accurev |   85
+ LICENSE.vim4accurev |  404
+ README.vim4accurev  |   18
+ RELEASE.vim4accurev |   13
+ doc/accurev.txt     |  376
+ plugin/accurev.vim  | 1907
+ syntax/accurev.vim  |   13
  8 files changed, 1841 insertions(+), 997 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -39,13 +39,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial version.
 
- INSTALL.vim4accurev                  |   43 +
- LICENSE.vim4accurev                  |  202 ++
- README                               |   11 +
- README.vim4accurev                   |    9 +
- RELEASE.vim4accurev                  |   13 +
- autoload/vim/widgets/progressbar.vim |  112 +
- doc/accurev.txt                      |  589 ++++
- plugin/accurev.vim                   | 5212 ++++++++++++++++++++++++++++++++++
- syntax/accurev.vim                   |  138 +
+ INSTALL.vim4accurev                  |   43
+ LICENSE.vim4accurev                  |  202
+ README                               |   11
+ README.vim4accurev                   |    9
+ RELEASE.vim4accurev                  |   13
+ autoload/vim/widgets/progressbar.vim |  112
+ doc/accurev.txt                      |  589
+ plugin/accurev.vim                   | 5212
+ syntax/accurev.vim                   |  138
  9 files changed, 6329 insertions(+), 0 deletions(-)

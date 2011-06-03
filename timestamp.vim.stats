@@ -7,8 +7,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Add |DisableTimestamp|, |EnableTimestamp| and |b:timestamp_disable| to enable / disable time stamping temporarily.
 
- doc/timestamp.txt    |   30 +++++++++++++++++++++++++++---
- plugin/timestamp.vim |   48 ++++++++++++++++++++++++++++++------------------
+ doc/timestamp.txt    |   30
+ plugin/timestamp.vim |   48
  2 files changed, 57 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.20)
@@ -20,8 +20,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Optionally ignore missing "AM/PM" in default timestamp. Thanks to Fabian Holler for pointing this out.
 
- doc/timestamp.txt    |   45 +++++++++++++++++++++++++--------------------
- plugin/timestamp.vim |    4 ++--
+ doc/timestamp.txt    |   45
+ plugin/timestamp.vim |    4
  2 files changed, 27 insertions(+), 22 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.19)
@@ -33,8 +33,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Better preserves your undo history: Timestamping is not done unless writing the timestamp will cause a change.
 
- doc/timestamp.txt    |   12 ++++++++++--
- plugin/timestamp.vim |    8 ++++++--
+ doc/timestamp.txt    |   12
+ plugin/timestamp.vim |    8
  2 files changed, 16 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.18)
@@ -46,8 +46,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Minor bugfix: Timestamping now works with zipped files / netrw. Also your jumplist is preserved. (This version works on vim6.4 and vim7)
 
- doc/timestamp.txt    |    6 +++++-
- plugin/timestamp.vim |    8 ++++----
+ doc/timestamp.txt    |    6
+ plugin/timestamp.vim |    8
  2 files changed, 9 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.17)
@@ -59,8 +59,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Reduce Vim's initial load time significantly. On my system, Vim with timestamp-1.16 loads in about 1.1 seconds. With timestamp-1.17, it loads in only 0.3 seconds! The system calls to initialise the uid / username were taking time. Calls to these functions have been disabled by default, and further postponed untill the are necessary (and not on Vim startup). These calls can be enabled by setting the variable |timestamp_UseSystemCalls|.
 
- doc/timestamp.txt    |   73 +++++++++++++++++++------
- plugin/timestamp.vim |  146 ++++++++++++++++++++++++++++++-------------------
+ doc/timestamp.txt    |   73
+ plugin/timestamp.vim |  146
  2 files changed, 145 insertions(+), 74 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.16@1)
@@ -72,7 +72,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     No changes in the script. Updated the documentation to include a note to windows users having trouble with the timezone. Thanks to Shishir Ramam for pointing this out.
 
- doc/timestamp.txt |   17 +++++++++++++++--
+ doc/timestamp.txt |   17
  1 files changed, 15 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.16)
@@ -84,8 +84,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Made all g:timestamp_* variables also available as buffer local variables except for g:timestamp_automask. Thanks to Lars Wilke for doing this. Also fixed default values for |timestamp_hostname|, |timestamp_Hostname|, |timestamp_userid| and |timestamp_username|. Thanks again to Lars Wilke for testing on various platforms.
 
- doc/timestamp.txt    |   83 +++++++++++++++++++++++++++++++++---------------
- plugin/timestamp.vim |   85 ++++++++++++++++++++++++++++++++++----------------
+ doc/timestamp.txt    |   83
+ plugin/timestamp.vim |   85
  2 files changed, 115 insertions(+), 53 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.15)
@@ -97,8 +97,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Modified the default timestamp regexp to support timestamps in other languages by default. This only works if the day and month names in your language do not use accented characters. If accented characters are present you should set the default timestamp regexp in your .vimrc. English users should not notice any difference.
 
- doc/timestamp.txt    |   24 ++++++++++++++++--------
- plugin/timestamp.vim |    6 +++---
+ doc/timestamp.txt    |   24
+ plugin/timestamp.vim |    6
  2 files changed, 19 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.14)
@@ -108,8 +108,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.14: Now also works in compatible mode.
 
- doc/timestamp.txt    |    7 +++++--
- plugin/timestamp.vim |   10 ++++++++--
+ doc/timestamp.txt    |    7
+ plugin/timestamp.vim |   10
  2 files changed, 13 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.13)
@@ -121,8 +121,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     A bug caused timestamp.vim to make changes in all lines in the |timestamp_modelines| range. Corrected the code so that now changes are made only when there is a timestamp in a particular line. This makes undoing changes a lot nicer, and keeps timestamp-ing out of your way. Also cleaned up some code :)
 
- doc/timestamp.txt    |   11 +++++++++--
- plugin/timestamp.vim |   16 +++-------------
+ doc/timestamp.txt    |   11
+ plugin/timestamp.vim |   16
  2 files changed, 12 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
@@ -134,8 +134,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Some Micro$oft machines don't support the timezone ('%Z'). Made the timezone optional in the default settings. The script (with default settings) should now work on both Linux / Window$ machines. Thanks to Krall Ed-P27726 for testing this.
 
- doc/timestamp.txt    |   34 ++++++++++++++++++++++++++++++----
- plugin/timestamp.vim |   23 +++++------------------
+ doc/timestamp.txt    |   34
+ plugin/timestamp.vim |   23
  2 files changed, 35 insertions(+), 22 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
@@ -147,8 +147,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     The format of strftime("%c") is not standard among all systems / locales. This caused default timestamps on some systems to fail. Changed the default value of "timestamp_rep" to the expanded version of "%c", and included a note in the documentation on how to fix this problem.
 
- doc/timestamp.txt    |   20 ++++++++++++++++----
- plugin/timestamp.vim |   12 +++++++++---
+ doc/timestamp.txt    |   20
+ plugin/timestamp.vim |   12
  2 files changed, 25 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -160,7 +160,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Does not modify any marks or the search history list. Tries to make timestamping as "transparent" as possible.
 
- README               |   27 +++++++
- doc/timestamp.txt    |  212 ++++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/timestamp.vim |  124 +++++++++++++++++++++++++++++
+ README               |   27
+ doc/timestamp.txt    |  212
+ plugin/timestamp.vim |  124
  3 files changed, 363 insertions(+), 0 deletions(-)

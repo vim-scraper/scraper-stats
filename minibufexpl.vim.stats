@@ -7,7 +7,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     For some reason there was still a call to StopExplorer with 2 params. Many thanks to Jason Mills for reporting this!
 
- plugin/minibufexpl.vim |    9 ++++++---
+ plugin/minibufexpl.vim |    9
  1 files changed, 6 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.3.1)
@@ -21,7 +21,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Folded source so that it's easier to navigate
 
- plugin/minibufexpl.vim |  374 +++++++++++++++++++++++++++---------------------
+ plugin/minibufexpl.vim |  374
  1 files changed, 210 insertions(+), 164 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.3.0)
@@ -45,7 +45,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     The old settings are backwards compatible if you don't use the new settings. The old settings are depreciated.
 
- plugin/minibufexpl.vim |  323 +++++++++++++++++++++++++++++++++++++++--------
+ plugin/minibufexpl.vim |  323
  1 files changed, 268 insertions(+), 55 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.8)
@@ -57,7 +57,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added an option to stop MBE from targeting non-modifiable buffers when switching buffers. Those of you who use buffer explorers like taglist, project, etc and would like MBE to try not to place selected buffers into explorer windows will like this one :) To get this working download the latest version of minibufexpl.vim and put "let g:miniBufExplModSelTarget = 1" into your .vimrc. This is not a 100% guarantee, but it does a good job of trying to avoice explorer windows. Thanks to A.W. Law for the inspiration for this.
 
- plugin/minibufexpl.vim |   45 ++++++++++++++++++++++++++++++++++++---------
+ plugin/minibufexpl.vim |   45
  1 files changed, 36 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.7)
@@ -69,7 +69,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Very minor bug fix for people who want to set loaded_minibufexplorer in their .vimrc in order to stop MBE from loading. 99.99% of users do not need this update. Thanks to bash for finding this.
 
- plugin/minibufexpl.vim |    9 ++++++---
+ plugin/minibufexpl.vim |    9
  1 files changed, 6 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.6)
@@ -81,7 +81,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Very minor update: Moved history to end of source file. Updated highlighting documentation. Created global commands MBEbn and MBEbp that can be used in mappings if folks want to cycle buffers while skipping non-eligible buffers.
 
- plugin/minibufexpl.vim |  349 +++++++++++++++++++++++++++---------------------
+ plugin/minibufexpl.vim |  349
  1 files changed, 197 insertions(+), 152 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.5)
@@ -91,7 +91,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 6.2.5: Added a ToggleExplorer option and updated the documentation.
 
- plugin/minibufexpl.vim |  123 +++++++++++++++++++++++++++++++++++++-----------
+ plugin/minibufexpl.vim |  123
  1 files changed, 96 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.4)
@@ -101,7 +101,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 6.2.4: MiniBufExplorer is now compatible with :set hidden.
 
- plugin/minibufexpl.vim |   54 +++++++++++------------------------------------
+ plugin/minibufexpl.vim |   54
  1 files changed, 13 insertions(+), 41 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.3)
@@ -113,7 +113,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added an optional feature to cause tabs to wrap. i.e. you should never get a tab name split across two lines (there is a potential issue if you have filenames with spaces, but otherwise this works.)
 
- plugin/minibufexpl.vim |   59 ++++++++++++++++++++++++++++++++++++-----------
+ plugin/minibufexpl.vim |   59
  1 files changed, 45 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.2)
@@ -147,7 +147,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     of the screen (partly why the MinHeight option was
     added.)
 
- plugin/minibufexpl.vim |   89 ++++++++++++++++++++++++++++++++++++++++-------
+ plugin/minibufexpl.vim |   89
  1 files changed, 75 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.1)
@@ -165,7 +165,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added a new key binding ('p') in the MBE window to switch to the previous window (last edit window)
 
- plugin/minibufexpl.vim |   41 +++++++++++++++++++++++++++++++++++++----
+ plugin/minibufexpl.vim |   41
  1 files changed, 37 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.0)
@@ -183,7 +183,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added debug mode 3 which writes to a global variable this is fast and doesn't mess with the buffer/window lists.
 
- plugin/minibufexpl.vim |  297 +++++++++++++++++++++++++++++++++++-------------
+ plugin/minibufexpl.vim |  297
  1 files changed, 219 insertions(+), 78 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.1.0)
@@ -195,7 +195,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     <Leader>mbc was failing because I was calling one of my own functions with the wrong number of args. Thanks to Gerry Patterson and others for finding this!
 
- plugin/minibufexpl.vim |   35 ++++++++++++++++++++++++++++-------
+ plugin/minibufexpl.vim |   35
  1 files changed, 28 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.9)
@@ -207,7 +207,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Double clicking tabs was overwriting the clipboard register on MS Windows but not elsewhere... go figure :). This has now been fixed. Thanks to Shoeb Bhinderwala for reporting this one.
 
- plugin/minibufexpl.vim |   12 ++++++++----
+ plugin/minibufexpl.vim |   12
  1 files changed, 8 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.8)
@@ -224,7 +224,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Several people have had issues when the hidden option is turned on. So I have put in several checks to make sure folks know this if they try to use MBE with the option set.
 
- plugin/minibufexpl.vim |  376 ++++++++++++++++++++++++++++++++++++++----------
+ plugin/minibufexpl.vim |  376
  1 files changed, 297 insertions(+), 79 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.7)
@@ -236,7 +236,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Major update to how MBE handles buffer deletes. Now deletes are handled through an autocmd so you can now use :bd to delete buffers and the UI keeps in sync. Also made the MBE window go away when there is only one eligible buffer left to edit.
 
- plugin/minibufexpl.vim |  370 +++++++++++++++++++++++++++++++-----------------
+ plugin/minibufexpl.vim |  370
  1 files changed, 241 insertions(+), 129 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.6)
@@ -248,7 +248,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed register overwrite bug found by Sébastien Pierre. The @" register was being overwritten with the selected buffer name when switching buffers, the @" register is now preserved.
 
- plugin/minibufexpl.vim |   13 +++++++++----
+ plugin/minibufexpl.vim |   13
  1 files changed, 9 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.5)
@@ -266,7 +266,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed an issue with window sizing when we run out of buffers.
 
- plugin/minibufexpl.vim |  189 ++++++++++++++++++++++++++++++++++++++++++------
+ plugin/minibufexpl.vim |  189
  1 files changed, 165 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.4)
@@ -287,7 +287,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Our buffername [MiniBufExplorer] was being treated as a regular expression in some instances and matching several single character file names. Since escaping the '[' and ']' doesn't work on the windows version of vim 6.0 yet, I renamed the buffer -MiniBufExplorer-. This appears to have resolved the issue.
 
- plugin/minibufexpl.vim |   82 ++++++++++++++++++++++++-----------------------
+ plugin/minibufexpl.vim |   82
  1 files changed, 42 insertions(+), 40 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.2)
@@ -301,7 +301,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Added SplitToEdge option and set it on by default
     Added tab and shift-tab mappings in [MBE] window
 
- plugin/minibufexpl.vim |   49 ++++++++++++++++++++++++++++++++++++++++++-----
+ plugin/minibufexpl.vim |   49
  1 files changed, 43 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.0)
@@ -311,6 +311,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 6.0.0: Initial upload
 
- README                 |   18 ++
- plugin/minibufexpl.vim |  654 ++++++++++++++++++++++++++++++++++++++++++++++++
+ README                 |   18
+ plugin/minibufexpl.vim |  654
  2 files changed, 672 insertions(+), 0 deletions(-)

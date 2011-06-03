@@ -24,14 +24,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - More versatile scheme handler interface
     - Fixed Bugs
 
- autoload/utl_lib.vim |  170 +++
- doc/utl_ref.txt      |  323 -----
- doc/utl_usr.txt      | 3570 +++++++++++++++++++++++++++++++-------------------
- plugin/utl.vim       | 1946 +++++++++++++++++++---------
- plugin/utl_arr.vim   |  125 --
- plugin/utl_rc.vim    |  461 +++++--
- plugin/utl_scm.vim   |  702 ++++++++---
- plugin/utl_uri.vim   |   36 +-
+ autoload/utl_lib.vim |  170
+ doc/utl_ref.txt      |  323
+ doc/utl_usr.txt      | 3570
+ plugin/utl.vim       | 1946
+ plugin/utl_arr.vim   |  125
+ plugin/utl_rc.vim    |  461
+ plugin/utl_scm.vim   |  702
+ plugin/utl_uri.vim   |   36
  8 files changed, 4631 insertions(+), 2702 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -51,20 +51,20 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Support exeuction of URLs without <URL:...> embedding, e.g. "see www.vim.org"
     * Support multiline URLs, Smart setup and customization facility, bugs fixed.
 
- doc/thlnk_README.txt |  168 -----
- doc/thlnkref.txt     |  224 -------
- doc/thlnkusr.txt     | 1640 --------------------------------------------------
- doc/utl_ref.txt      |  323 ++++++++++
- doc/utl_usr.txt      | 1376 ++++++++++++++++++++++++++++++++++++++++++
- plugin/thlnk.vim     |  751 -----------------------
- plugin/thlnkarr.vim  |  135 -----
- plugin/thlnkscm.vim  |  281 ---------
- plugin/thlnkuri.vim  |  276 ---------
- plugin/utl.vim       | 1106 ++++++++++++++++++++++++++++++++++
- plugin/utl_arr.vim   |  125 ++++
- plugin/utl_rc.vim    |  162 +++++
- plugin/utl_scm.vim   |  352 +++++++++++
- plugin/utl_uri.vim   |  268 ++++++++
+ doc/thlnk_README.txt |  168
+ doc/thlnkref.txt     |  224
+ doc/thlnkusr.txt     | 1640
+ doc/utl_ref.txt      |  323
+ doc/utl_usr.txt      | 1376
+ plugin/thlnk.vim     |  751
+ plugin/thlnkarr.vim  |  135
+ plugin/thlnkscm.vim  |  281
+ plugin/thlnkuri.vim  |  276
+ plugin/utl.vim       | 1106
+ plugin/utl_arr.vim   |  125
+ plugin/utl_rc.vim    |  162
+ plugin/utl_scm.vim   |  352
+ plugin/utl_uri.vim   |  268
  14 files changed, 3712 insertions(+), 3475 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
@@ -77,11 +77,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Please see release notes for version 1.2. The reason for this version 1.2.1 is, that I
     packed the .vim files with the wrong 'fileformats' setting into the .zip file. Sorry!
 
- doc/thlnk_README.txt |  336 ++++++------
- plugin/thlnk.vim     | 1502 +++++++++++++++++++++++++-------------------------
- plugin/thlnkarr.vim  |  270 +++++-----
- plugin/thlnkscm.vim  |  562 ++++++++++----------
- plugin/thlnkuri.vim  |  552 +++++++++---------
+ doc/thlnk_README.txt |  336
+ plugin/thlnk.vim     | 1502
+ plugin/thlnkarr.vim  |  270
+ plugin/thlnkscm.vim  |  562
+ plugin/thlnkuri.vim  |  552
  5 files changed, 1611 insertions(+), 1611 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -99,12 +99,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       * Patrik Nyman <patrik.nyman@orient.su.se>: Non existing http: or rcp: URLs made thlnk
         list the current buffer.
 
- README               |   60 ++
- doc/thlnk_README.txt |  168 +++++
- doc/thlnkref.txt     |  224 +++++++
- doc/thlnkusr.txt     | 1640 ++++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/thlnk.vim     |  751 +++++++++++++++++++++++
- plugin/thlnkarr.vim  |  135 +++++
- plugin/thlnkscm.vim  |  281 +++++++++
- plugin/thlnkuri.vim  |  276 +++++++++
+ README               |   60
+ doc/thlnk_README.txt |  168
+ doc/thlnkref.txt     |  224
+ doc/thlnkusr.txt     | 1640
+ plugin/thlnk.vim     |  751
+ plugin/thlnkarr.vim  |  135
+ plugin/thlnkscm.vim  |  281
+ plugin/thlnkuri.vim  |  276
  8 files changed, 3535 insertions(+), 0 deletions(-)

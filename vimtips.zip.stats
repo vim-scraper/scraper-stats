@@ -7,7 +7,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     I applied a patch from Bill McCarthy:  set the 'linebreak' option in the help window in case there are tips with long lines, and add :silent when updating the line number.
 
- plugin/totd.vim |    8 ++++----
+ plugin/totd.vim |    8
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2.1)
@@ -19,9 +19,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     No new functionality:  I just updated the URL for getting a tips archive.
 
- doc/totd.txt               |    2 +-
- plugin/totd.vim            |    8 ++++----
- plugin/vimtips/vimtips.txt |    2 +-
+ doc/totd.txt               |    2
+ plugin/totd.vim            |    8
+ plugin/vimtips/vimtips.txt |    2
  3 files changed, 6 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
@@ -34,8 +34,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
          I changed the way that the script edits files.  Installation should be slightly smoother, and in rare cases opening the tips should be better.
          In previous versions, I accidentally included a moderately large, very old, tips file instead of a skeleton vimtips.txt.  This version contains a small skeleton file.
 
- plugin/totd.vim            |   31 +-
- plugin/vimtips/vimtips.txt | 3559 +-------------------------------------------
+ plugin/totd.vim            |   31
+ plugin/vimtips/vimtips.txt | 3559
  2 files changed, 37 insertions(+), 3553 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1.1)
@@ -47,7 +47,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     I fixed a tiny, silly bug that probably would never cause a problem anyway.  (OK, if "vimtips.txs" is in your tags file, the binary search would screw up.)
 
- plugin/totd.vim |    4 ++--
+ plugin/totd.vim |    4
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
@@ -60,7 +60,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Do not run :helptags automatically.  The user should install the docs (totd.txt) himself.  The tag for vimtips.txt is still inserted automatically.
     Reason:  as long as this is the only script that automatically edits the tags file, there is no problem, but what if someone else tries the same trick?  Each script runs :helptags, wiping out the other's customization, ...
 
- plugin/totd.vim |    4 +---
+ plugin/totd.vim |    4
  1 files changed, 1 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -78,11 +78,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     (or :Tip if that does not conflict with anything else, thanks to usual
     abbreviation rules) to get a tip on demand.
 
- doc/totd.txt               |   58 +
- doc/vimtips.txt            |  769 ----------
- plugin/totd.vim            |  152 ++
- plugin/vimtips.vim         |   87 --
- plugin/vimtips/vimtips.txt | 3543 ++++++++++++++++++++++++++++++++++++++++++++
+ doc/totd.txt               |   58
+ doc/vimtips.txt            |  769
+ plugin/totd.vim            |  152
+ plugin/vimtips.vim         |   87
+ plugin/vimtips/vimtips.txt | 3543
  5 files changed, 3753 insertions(+), 856 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -95,7 +95,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Bug fix:  Be more graceful if :helptag has not yet been used.  (See the
     installation intructions!)
 
- plugin/vimtips.vim |   33 +++++++++++++++++++--------------
+ plugin/vimtips.vim |   33
  1 files changed, 19 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -105,7 +105,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README             |   13 +
- doc/vimtips.txt    |  769 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/vimtips.vim |   82 ++++++
+ README             |   13
+ doc/vimtips.txt    |  769
+ plugin/vimtips.vim |   82
  3 files changed, 864 insertions(+), 0 deletions(-)

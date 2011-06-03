@@ -5,13 +5,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0.3@2: Reposting bundle due to core plugins update
 
- autoload/fileutils.vim |   56 ++++--
- doc/chk.txt            |   22 ++-
- doc/comp.txt           |   69 ++++++--
- doc/vim-fileutils.txt  |   11 +-
- plugin/chk.vim         |  127 +++++++++++--
- plugin/comp.vim        |  497 +++++++++++++++++++++++++++++++-----------------
- plugin/load.vim        |   14 +-
+ autoload/fileutils.vim |   56
+ doc/chk.txt            |   22
+ doc/comp.txt           |   69
+ doc/vim-fileutils.txt  |   11
+ plugin/chk.vim         |  127
+ plugin/comp.vim        |  497
+ plugin/load.vim        |   14
  7 files changed, 558 insertions(+), 238 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.3@1)
@@ -21,10 +21,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0.3@1: Reposting bundle due to core plugins update
 
- autoload/fileutils.vim |   78 ++++++++++++++++++++++++++++++++---------------
- autoload/os.vim        |    2 +-
- doc/vim-fileutils.txt  |    2 +-
- plugin/yaml.vim        |    6 ++--
+ autoload/fileutils.vim |   78
+ autoload/os.vim        |    2
+ doc/vim-fileutils.txt  |    2
+ plugin/yaml.vim        |    6
  4 files changed, 58 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.3)
@@ -34,25 +34,25 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0.3: Minor fix: removed escaping of `[' inside a collection
 
- README                 |    8 +-
- autoload/fileutils.vim |   40 +
- autoload/load.vim      |   45 +-
- autoload/os.vim        |  132 ++
- doc/chk.txt            |   46 +-
- doc/comp.txt           |   57 +
- doc/json.rux           |    5 +-
- doc/json.txt           |    4 +-
- doc/load.txt           |  210 ++-
- doc/oop.txt            |   93 +
- doc/vim-fileutils.txt  |   47 +
- doc/yaml.txt           |  240 +++
- plugin/chk.vim         |  401 +++--
- plugin/comp.vim        |  313 +++-
- plugin/json.vim        |    5 +-
- plugin/load.vim        | 1119 +++++++++----
- plugin/oop.vim         |  237 +++
- plugin/stuf.vim        |  445 ++++--
- plugin/yaml.vim        | 4442 ++++++++++++++++++++++++++++++++++++++++++++++++
+ README                 |    8
+ autoload/fileutils.vim |   40
+ autoload/load.vim      |   45
+ autoload/os.vim        |  132
+ doc/chk.txt            |   46
+ doc/comp.txt           |   57
+ doc/json.rux           |    5
+ doc/json.txt           |    4
+ doc/load.txt           |  210
+ doc/oop.txt            |   93
+ doc/vim-fileutils.txt  |   47
+ doc/yaml.txt           |  240
+ plugin/chk.vim         |  401
+ plugin/comp.vim        |  313
+ plugin/json.vim        |    5
+ plugin/load.vim        | 1119
+ plugin/oop.vim         |  237
+ plugin/stuf.vim        |  445
+ plugin/yaml.vim        | 4442
  19 files changed, 7128 insertions(+), 761 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.2)
@@ -64,9 +64,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Made plugin support other Python JSON implementations, including standart json
 
- doc/json.rux    |    8 +++++---
- doc/json.txt    |    6 +++---
- plugin/json.vim |   28 ++++++++++++++++++++++------
+ doc/json.rux    |    8
+ doc/json.txt    |    6
+ plugin/json.vim |   28
  3 files changed, 30 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
@@ -76,13 +76,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0.1: Added russian translation
 
- doc/json.rux    |   85 ++++++++++++++++++++++++++
- doc/json.txt    |   17 ++++--
- doc/load.txt    |   78 +++++++++++++++++++++++-
- plugin/chk.vim  |   46 ++++++++++++---
- plugin/json.vim |   39 ++++++++++++
- plugin/load.vim |  177 +++++++++++++++++++++++++++++++++++++++++++++++--------
- plugin/stuf.vim |   20 +++++--
+ doc/json.rux    |   85
+ doc/json.txt    |   17
+ doc/load.txt    |   78
+ plugin/chk.vim  |   46
+ plugin/json.vim |   39
+ plugin/load.vim |  177
+ plugin/stuf.vim |   20
  7 files changed, 414 insertions(+), 48 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -92,15 +92,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README            |   10 +
- autoload/load.vim |    5 +
- doc/chk.txt       |  422 +++++++++++++++
- doc/comp.txt      |  123 +++++
- doc/json.txt      |   75 +++
- doc/load.txt      |  335 ++++++++++++
- plugin/chk.vim    | 1046 ++++++++++++++++++++++++++++++++++++++
- plugin/comp.vim   |  387 ++++++++++++++
- plugin/json.vim   |  570 +++++++++++++++++++++
- plugin/load.vim   | 1467 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/stuf.vim   |  506 ++++++++++++++++++
+ README            |   10
+ autoload/load.vim |    5
+ doc/chk.txt       |  422
+ doc/comp.txt      |  123
+ doc/json.txt      |   75
+ doc/load.txt      |  335
+ plugin/chk.vim    | 1046
+ plugin/comp.vim   |  387
+ plugin/json.vim   |  570
+ plugin/load.vim   | 1467
+ plugin/stuf.vim   |  506
  11 files changed, 4946 insertions(+), 0 deletions(-)

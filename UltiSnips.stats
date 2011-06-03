@@ -19,24 +19,24 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       missing. (Rupa Deadwyler)
     - Added UltiSnipsReset and UltiSnipsEdit (Idea by JCEB)
 
- ChangeLog                       |   23 +-
- UltiSnips/c.snippets            |    6 +-
- UltiSnips/cpp.snippets          |    2 +-
- UltiSnips/erlang.snippets       |   97 +++++
- UltiSnips/eruby.snippets        |  277 ++++++++++++
- UltiSnips/java.snippets         |   41 ++-
- UltiSnips/python.snippets       |    6 +-
- UltiSnips/rails.snippets        |  894 +++++++++++++++++++++++++++++++++++++++
- UltiSnips/rst.snippets          |   12 +
- UltiSnips/tex.snippets          |   11 +-
- doc/UltiSnips.txt               |   65 +++-
- ftdetect/snippets.vim           |    4 +
- plugin/UltiSnips.vim            |   81 ++++-
- plugin/UltiSnips/Buffer.py      |    5 +
- plugin/UltiSnips/TextObjects.py |   31 +-
- plugin/UltiSnips/Util.py        |   44 ++
- plugin/UltiSnips/__init__.py    |   81 +++--
- test.py                         |  181 ++++++++-
+ ChangeLog                       |   23
+ UltiSnips/c.snippets            |    6
+ UltiSnips/cpp.snippets          |    2
+ UltiSnips/erlang.snippets       |   97
+ UltiSnips/eruby.snippets        |  277
+ UltiSnips/java.snippets         |   41
+ UltiSnips/python.snippets       |    6
+ UltiSnips/rails.snippets        |  894
+ UltiSnips/rst.snippets          |   12
+ UltiSnips/tex.snippets          |   11
+ doc/UltiSnips.txt               |   65
+ ftdetect/snippets.vim           |    4
+ plugin/UltiSnips.vim            |   81
+ plugin/UltiSnips/Buffer.py      |    5
+ plugin/UltiSnips/TextObjects.py |   31
+ plugin/UltiSnips/Util.py        |   44
+ plugin/UltiSnips/__init__.py    |   81
+ test.py                         |  181
  18 files changed, 1767 insertions(+), 94 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -64,39 +64,39 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
            in c, but a c trigger is valuable for cpp.
     - UltiSnips now adheres to expandtab and tabstop options of vim
 
- ChangeLog                        |   19 +
- UltiSnips/README                 |   15 +-
- UltiSnips/all.snippets           |   54 ++-
- UltiSnips/c.snippets             |   19 +-
- UltiSnips/cpp.snippets           |   11 +-
- UltiSnips/css.snippets           |  404 ++++++++++++++
- UltiSnips/help.snippets          |   28 +-
- UltiSnips/html.snippets          |  249 +++++++++
- UltiSnips/java.snippets          |  198 +++++++
- UltiSnips/javascript.snippets    |   64 +++
- UltiSnips/mkd.snippets           |   44 ++
- UltiSnips/objc.snippets          |  269 ++++++++++
- UltiSnips/python.snippets        |  116 ++++-
- UltiSnips/rst.snippets           |   33 ++
- UltiSnips/sh.snippets            |   11 +-
- UltiSnips/snippet.snippets       |    4 +-
- UltiSnips/tcl.snippets           |   49 ++
- UltiSnips/tex.snippets           |    9 +-
- UltiSnips/tm_css.snippets        |  411 ---------------
- UltiSnips/tm_html.snippets       |  224 --------
- UltiSnips/tm_java.snippets       |  194 -------
- UltiSnips/tm_javascript.snippets |   65 ---
- UltiSnips/tm_objc.snippets       |  346 ------------
- UltiSnips/tm_ruby.snippets       |  727 -------------------------
- UltiSnips/tm_tcl.snippets        |   46 --
- UltiSnips/vim.snippets           |    4 +-
- after/plugin/UltiSnips_after.vim |   14 +
- doc/UltiSnips.txt                |  293 ++++++++---
- plugin/UltiSnips.vim             |   81 ++-
- plugin/UltiSnips/TextObjects.py  |  288 +++++++++--
- plugin/UltiSnips/__init__.py     |  749 ++++++++++++++++++++++----
- test.py                          | 1078 ++++++++++++++++++++++++++++++++++++--
- utils/get_tm_snippets.py         |    2 +-
+ ChangeLog                        |   19
+ UltiSnips/README                 |   15
+ UltiSnips/all.snippets           |   54
+ UltiSnips/c.snippets             |   19
+ UltiSnips/cpp.snippets           |   11
+ UltiSnips/css.snippets           |  404
+ UltiSnips/help.snippets          |   28
+ UltiSnips/html.snippets          |  249
+ UltiSnips/java.snippets          |  198
+ UltiSnips/javascript.snippets    |   64
+ UltiSnips/mkd.snippets           |   44
+ UltiSnips/objc.snippets          |  269
+ UltiSnips/python.snippets        |  116
+ UltiSnips/rst.snippets           |   33
+ UltiSnips/sh.snippets            |   11
+ UltiSnips/snippet.snippets       |    4
+ UltiSnips/tcl.snippets           |   49
+ UltiSnips/tex.snippets           |    9
+ UltiSnips/tm_css.snippets        |  411
+ UltiSnips/tm_html.snippets       |  224
+ UltiSnips/tm_java.snippets       |  194
+ UltiSnips/tm_javascript.snippets |   65
+ UltiSnips/tm_objc.snippets       |  346
+ UltiSnips/tm_ruby.snippets       |  727
+ UltiSnips/tm_tcl.snippets        |   46
+ UltiSnips/vim.snippets           |    4
+ after/plugin/UltiSnips_after.vim |   14
+ doc/UltiSnips.txt                |  293
+ plugin/UltiSnips.vim             |   81
+ plugin/UltiSnips/TextObjects.py  |  288
+ plugin/UltiSnips/__init__.py     |  749
+ test.py                          | 1078
+ utils/get_tm_snippets.py         |    2
  33 files changed, 3739 insertions(+), 2379 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -113,30 +113,30 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Support for dotted filetype syntax. Now snippets for more than one filetype can be active ( *UltiSnips-adding-snippets* )
     Minor bug fixing.
 
- ChangeLog                       |   12 ++
- UltiSnips/README                |    5 +
- UltiSnips/all.snippets          |    4 +-
- UltiSnips/c.snippets            |   94 +++++++++
- UltiSnips/cpp.snippets          |   57 ++++++
- UltiSnips/help.snippets         |    6 +-
- UltiSnips/perl.snippets         |  126 ++++++++++++
- UltiSnips/python.snippets       |   36 ++--
- UltiSnips/sh.snippets           |   65 ++++++
- UltiSnips/sm_vim.snippets       |   40 ----
- UltiSnips/snippet.snippets      |   12 ++
- UltiSnips/tex.snippets          |   32 ++--
- UltiSnips/tm_c.snippets         |  136 -------------
- UltiSnips/tm_css.snippets       |  411 +++++++++++++++++++++++++++++++++++++++
- UltiSnips/tm_html.snippets      |  224 +++++++++++++++++++++
- UltiSnips/tm_perl.snippets      |  125 ------------
- UltiSnips/tm_sh.snippets        |   62 ------
- UltiSnips/vim.snippets          |   57 ++++++
- doc/UltiSnips.txt               |   72 ++++---
- plugin/UltiSnips.vim            |  104 +++++++----
- plugin/UltiSnips/TextObjects.py |   75 ++++++--
- plugin/UltiSnips/__init__.py    |  317 ++++++++++++++++++------------
- test.py                         |  112 +++++++++---
- utils/get_tm_snippets.py        |   37 +++-
+ ChangeLog                       |   12
+ UltiSnips/README                |    5
+ UltiSnips/all.snippets          |    4
+ UltiSnips/c.snippets            |   94
+ UltiSnips/cpp.snippets          |   57
+ UltiSnips/help.snippets         |    6
+ UltiSnips/perl.snippets         |  126
+ UltiSnips/python.snippets       |   36
+ UltiSnips/sh.snippets           |   65
+ UltiSnips/sm_vim.snippets       |   40
+ UltiSnips/snippet.snippets      |   12
+ UltiSnips/tex.snippets          |   32
+ UltiSnips/tm_c.snippets         |  136
+ UltiSnips/tm_css.snippets       |  411
+ UltiSnips/tm_html.snippets      |  224
+ UltiSnips/tm_perl.snippets      |  125
+ UltiSnips/tm_sh.snippets        |   62
+ UltiSnips/vim.snippets          |   57
+ doc/UltiSnips.txt               |   72
+ plugin/UltiSnips.vim            |  104
+ plugin/UltiSnips/TextObjects.py |   75
+ plugin/UltiSnips/__init__.py    |  317
+ test.py                         |  112
+ utils/get_tm_snippets.py        |   37
  24 files changed, 1577 insertions(+), 644 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -146,28 +146,28 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README                           |   47 ++
- UltiSnips/README                 |   14 +
- UltiSnips/all.snippets           |   43 ++
- UltiSnips/help.snippets          |   35 ++
- UltiSnips/python.snippets        |  120 +++++
- UltiSnips/sm_vim.snippets        |   40 ++
- UltiSnips/tex.snippets           |  151 ++++++
- UltiSnips/tm_c.snippets          |  136 +++++
- UltiSnips/tm_java.snippets       |  194 +++++++
- UltiSnips/tm_javascript.snippets |   65 +++
- UltiSnips/tm_objc.snippets       |  346 +++++++++++++
- UltiSnips/tm_perl.snippets       |  125 +++++
- UltiSnips/tm_ruby.snippets       |  727 +++++++++++++++++++++++++++
- UltiSnips/tm_sh.snippets         |   62 +++
- UltiSnips/tm_tcl.snippets        |   46 ++
- doc/UltiSnips.txt                |  481 ++++++++++++++++++
- plugin/UltiSnips.vim             |   69 +++
- plugin/UltiSnips/Buffer.py       |   73 +++
- plugin/UltiSnips/Geometry.py     |   77 +++
- plugin/UltiSnips/TextObjects.py  |  757 ++++++++++++++++++++++++++++
- plugin/UltiSnips/__init__.py     |  467 +++++++++++++++++
- plugin/UltiSnips/debug.py        |   11 +
- test.py                          | 1025 ++++++++++++++++++++++++++++++++++++++
- utils/get_tm_snippets.py         |   58 +++
+ README                           |   47
+ UltiSnips/README                 |   14
+ UltiSnips/all.snippets           |   43
+ UltiSnips/help.snippets          |   35
+ UltiSnips/python.snippets        |  120
+ UltiSnips/sm_vim.snippets        |   40
+ UltiSnips/tex.snippets           |  151
+ UltiSnips/tm_c.snippets          |  136
+ UltiSnips/tm_java.snippets       |  194
+ UltiSnips/tm_javascript.snippets |   65
+ UltiSnips/tm_objc.snippets       |  346
+ UltiSnips/tm_perl.snippets       |  125
+ UltiSnips/tm_ruby.snippets       |  727
+ UltiSnips/tm_sh.snippets         |   62
+ UltiSnips/tm_tcl.snippets        |   46
+ doc/UltiSnips.txt                |  481
+ plugin/UltiSnips.vim             |   69
+ plugin/UltiSnips/Buffer.py       |   73
+ plugin/UltiSnips/Geometry.py     |   77
+ plugin/UltiSnips/TextObjects.py  |  757
+ plugin/UltiSnips/__init__.py     |  467
+ plugin/UltiSnips/debug.py        |   11
+ test.py                          | 1025
+ utils/get_tm_snippets.py         |   58
  24 files changed, 5169 insertions(+), 0 deletions(-)

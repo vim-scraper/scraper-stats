@@ -7,7 +7,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     An other patch from O3. Make sure that buffer variable did_indent exists
 
- ftplugin/xml.vim |    2 +-
+ ftplugin/xml.vim |    2
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.38)
@@ -21,7 +21,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     update the empty tag list and fix a bug
     while using other indent plugin will make double indent.
 
- ftplugin/xml.vim |    8 ++++++--
+ ftplugin/xml.vim |    8
  1 files changed, 6 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.37)
@@ -35,7 +35,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2) filetype indent interferes with xml.vim thanks to Brandon Waskiewicz
     3) exe normal changed to exe normal! to avoid key remappings thanks to Roald de Vries
 
- ftplugin/xml.vim |  154 ++++++++++++++++++++++++++++--------------------------
+ ftplugin/xml.vim |  154
  1 files changed, 79 insertions(+), 75 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.36)
@@ -48,7 +48,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     xml-plugin-callbacks is defined twice by "Samuel Ferencik"
     CloseTag definiton had optional attribute
 
- ftplugin/xml.vim |   20 +++++---------------
+ ftplugin/xml.vim |   20
  1 files changed, 5 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.35)
@@ -62,7 +62,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
             Thanks Neil
     1.34 Had a variable CloseTag and a function CloseTag
 
- ftplugin/xml.vim |  108 +++++++++++++++++++++++++++---------------------------
+ ftplugin/xml.vim |  108
  1 files changed, 54 insertions(+), 54 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.33)
@@ -76,7 +76,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     <tag att="dc=rescomp,dc=berkeley,dc=edu">. The regular expresssion s:Attrib
     didn't work in that situation
 
- ftplugin/xml.vim |    8 ++++----
+ ftplugin/xml.vim |    8
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.32)
@@ -91,7 +91,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Thanks Guangde
     (and please do send  improvements if anyone stumbles over them)
 
- ftplugin/xml.vim |   36 ++++++++++++++++++++++++++++--------
+ ftplugin/xml.vim |   36
  1 files changed, 28 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.30)
@@ -113,7 +113,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Correct  typo in menu (Your welcome to point out more)
     Check  more strict to not match comments as closing tag
 
- ftplugin/xml.vim |  323 ++++++++++++++++++++++++++++++++++++++++++++++++++++--
+ ftplugin/xml.vim |  323
  1 files changed, 311 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.28)
@@ -135,8 +135,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - made \l cursor position end up after the closing </listitem> easier marking up by hand
     -updated the documentation
 
- ftplugin/xml.vim   |  321 ++++++++++++++++++++++++++++++----------------------
- plugin/dtdmenu.vim |  177 -----------------------------
+ ftplugin/xml.vim   |  321
+ plugin/dtdmenu.vim |  177
  2 files changed, 186 insertions(+), 312 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.27)
@@ -154,8 +154,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - convinience menu entry gvim fold comment section (just a simple :?<!--?,/-->/fold)
     - documentation updated
 
- ftplugin/xml.vim   |  511 ++++++++++++++++++++++++++++++++++++----------------
- plugin/dtdmenu.vim |  177 ++++++++++++++++++
+ ftplugin/xml.vim   |  511
+ plugin/dtdmenu.vim |  177
  2 files changed, 537 insertions(+), 151 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.16)
@@ -173,7 +173,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Function ShiftRight and ShiftLeft
     - Updated the docs
 
- ftplugin/xml.vim |  196 ++++++++++++++++++++++++++++++++++++++----------------
+ ftplugin/xml.vim |  196
  1 files changed, 138 insertions(+), 58 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
@@ -190,7 +190,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     made xml_use_xhtml a buffer variable set by g:xml_use_xhtml
     in it's absence by the fact that we are editing a xhtml filetype
 
- ftplugin/xml.vim |   85 +++++++++++++++++++++++++++++++++++++++++++++++------
+ ftplugin/xml.vim |   85
  1 files changed, 75 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
@@ -205,7 +205,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     error in BlockTag when visual selection is one line only
     after FoldTagAll, AfterTag, BeforeTag,FormatTagAll return to where the command was given from
 
- ftplugin/xml.vim |  258 +++++++++++++++++++++++++++++++++++++++++++----------
+ ftplugin/xml.vim |  258
  1 files changed, 209 insertions(+), 49 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -223,7 +223,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     visual block now uses append for top and bottom
     removed the use unmapgt & mapgt in favor of normal!
 
- ftplugin/xml.vim |  349 ++++++++++++++++++++++++++++++++++++++----------------
+ ftplugin/xml.vim |  349
  1 files changed, 248 insertions(+), 101 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -233,6 +233,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2: Initial upload
 
- README           |   21 ++
- ftplugin/xml.vim |  829 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README           |   21
+ ftplugin/xml.vim |  829
  2 files changed, 850 insertions(+), 0 deletions(-)

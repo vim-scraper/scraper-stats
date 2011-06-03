@@ -5,7 +5,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.7: Added a logic to recognize report function
 
- fgl.c |   21 ++++++++++++++++++++-
+ fgl.c |   21
  1 files changed, 20 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -15,7 +15,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.6: Fix for recognizing curly brackets for comments
 
- fgl.c |    8 +++++++-
+ fgl.c |    8
  1 files changed, 7 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -25,9 +25,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.5: A bug fix when comment finishes with a curly bracket.
 
- fgl.c      |  114 ++++++++++++++++++--------------
- parsers.h  |  114 ++++++++++++++++----------------
- source.mak |  214 ++++++++++++++++++++++++++++++------------------------------
+ fgl.c      |  114
+ parsers.h  |  114
+ source.mak |  214
  3 files changed, 229 insertions(+), 213 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -40,9 +40,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Catches variables ending with comment
     (ex. define  xxx char(1)   #bla blas)
 
- fgl.c      |   15 +++-
- parsers.h  |  114 ++++++++++++++++----------------
- source.mak |  214 ++++++++++++++++++++++++++++++------------------------------
+ fgl.c      |   15
+ parsers.h  |  114
+ source.mak |  214
  3 files changed, 175 insertions(+), 168 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -52,7 +52,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3: A few bugs fixed
 
- fgl.c |  349 ++++++++++++++++++++++++++++++++++++-----------------------------
+ fgl.c |  349
  1 files changed, 192 insertions(+), 157 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -62,7 +62,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2: Improved code efficiency -> faster to create tags
 
- fgl.c |  394 +++++++++++++++++++++++++++++++++--------------------------------
+ fgl.c |  394
  1 files changed, 200 insertions(+), 194 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -74,9 +74,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Cursor id, prepared statement id, variables are added for tag creation. (global and module scope variables are add. The names of variable should start g_xxx, m_xxx, respectively. Other naming conventions change the prefix in fgl.c)
 
- fgl.c      |  217 +++++++++++++++++++++++++++++++++++++++++++++++++++++-------
- parsers.h  |   72 +++++++++++---------
- source.mak |   23 +++++--
+ fgl.c      |  217
+ parsers.h  |   72
+ source.mak |   23
  3 files changed, 249 insertions(+), 63 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -86,8 +86,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README     |   13 ++++++++
- fgl.c      |   23 ++++++++++++++
- parsers.h  |   51 +++++++++++++++++++++++++++++++
- source.mak |   98 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README     |   13
+ fgl.c      |   23
+ parsers.h  |   51
+ source.mak |   98
  4 files changed, 185 insertions(+), 0 deletions(-)

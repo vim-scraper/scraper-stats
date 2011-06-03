@@ -10,14 +10,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * vxlib/cmd: #Edit sets buflisted for loaded buffers
     * fixed vxlib#python#prepare
 
- autoload/vxlib/cmd.vim    |    3 +-
- autoload/vxlib/menu.vim   |  221 +++++++++++++++++++++++++++++++++++++++++++++
- autoload/vxlib/plugin.vim |   26 ++++--
- autoload/vxlib/python.vim |    9 ++-
- doc/vxlib_utils.txt       |   24 +++++
- modpython/vxlib/plugin.py |    6 +-
- plugin/_au_vxlib.vim      |   88 ++++++++++++++++++
- plugin/vxlib.vim          |    2 +-
+ autoload/vxlib/cmd.vim    |    3
+ autoload/vxlib/menu.vim   |  221
+ autoload/vxlib/plugin.vim |   26
+ autoload/vxlib/python.vim |    9
+ doc/vxlib_utils.txt       |   24
+ modpython/vxlib/plugin.py |    6
+ plugin/_au_vxlib.vim      |   88
+ plugin/vxlib.vim          |    2
  8 files changed, 362 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.7a)
@@ -27,14 +27,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.6.7a: Support for developer-generated plugin initialization
 
- autoload/vxlib/pluggen.vim   |    2 +-
- doc/vxlib_plugin.txt         |  244 ++++++++++++++++++++++++++++++++++++++++++
- doc/vxlib_plugins.txt        |   15 +++
- doc/vxlib_utils.txt          |   98 +++++++++++++++++
- modpython/vxlib/mkplugins.sh |    2 +-
+ autoload/vxlib/pluggen.vim   |    2
+ doc/vxlib_plugin.txt         |  244
+ doc/vxlib_plugins.txt        |   15
+ doc/vxlib_utils.txt          |   98
+ modpython/vxlib/mkplugins.sh |    2
  modpython/vxlib/plugconf.pyc |  Bin 5118 -> 0 bytes
- modpython/vxlib/plugin.py    |   25 ++++-
- plugin/vxlib.vim             |   23 ++++-
+ modpython/vxlib/plugin.py    |   25
+ plugin/vxlib.vim             |   23
  8 files changed, 400 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.7)
@@ -44,18 +44,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.6.7: Initial upload
 
- README                       |   30 ++
- autoload/vxlib/cmd.vim       |  222 +++++++++++++++
- autoload/vxlib/context.vim   |  201 +++++++++++++
- autoload/vxlib/dlg.vim       |   71 +++++
- autoload/vxlib/hist.vim      |  141 +++++++++
- autoload/vxlib/pluggen.vim   |   70 +++++
- autoload/vxlib/plugin.vim    |  256 +++++++++++++++++
- autoload/vxlib/python.vim    |   31 ++
- autoload/vxlib/win.vim       |  102 +++++++
- modpython/vxlib/mkplugins.sh |    7 +
- modpython/vxlib/plugconf.py  |  124 ++++++++
+ README                       |   30
+ autoload/vxlib/cmd.vim       |  222
+ autoload/vxlib/context.vim   |  201
+ autoload/vxlib/dlg.vim       |   71
+ autoload/vxlib/hist.vim      |  141
+ autoload/vxlib/pluggen.vim   |   70
+ autoload/vxlib/plugin.vim    |  256
+ autoload/vxlib/python.vim    |   31
+ autoload/vxlib/win.vim       |  102
+ modpython/vxlib/mkplugins.sh |    7
+ modpython/vxlib/plugconf.py  |  124
  modpython/vxlib/plugconf.pyc |  Bin 0 -> 5118 bytes
- modpython/vxlib/plugin.py    |  646 ++++++++++++++++++++++++++++++++++++++++++
- plugin/vxlib.vim             |    3 +
+ modpython/vxlib/plugin.py    |  646
+ plugin/vxlib.vim             |    3
  14 files changed, 1904 insertions(+), 0 deletions(-)

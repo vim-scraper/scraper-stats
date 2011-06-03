@@ -8,8 +8,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Tabula() dialog fixed: Settings now change immediately.
     - Two more display options (bold, not enhanced) for Todos.
 
- colors/tabula.vim |  463 +++++++++++++++++++++++++++++++++--------------------
- doc/tabula.txt    |   68 ++++++--
+ colors/tabula.vim |  463
+ doc/tabula.txt    |   68
  2 files changed, 339 insertions(+), 192 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4.1)
@@ -24,8 +24,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - New option for typographic character values (bold, italic, underline) display.
     - Automatic effecting of color changes after Tabula() call does not work, removed.
 
- colors/tabula.vim |  267 ++++++++++++++++++++++++++++++++++++++++-------------
- doc/tabula.txt    |   28 ++++--
+ colors/tabula.vim |  267
+ doc/tabula.txt    |   28
  2 files changed, 224 insertions(+), 71 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -38,8 +38,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Tabula () options dialog changes options automatically when leaving.
     Colors optimized. VimWiki colors added.
 
- colors/tabula.vim |  293 +++++++++++++++++++++++++++++++++-------------------
- doc/tabula.txt    |   21 ++--
+ colors/tabula.vim |  293
+ doc/tabula.txt    |   21
  2 files changed, 198 insertions(+), 116 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.2)
@@ -49,7 +49,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3.2: VimOutliner colors optimized
 
- colors/tabula.vim |  101 ++++++++++++++++++++++++++---------------------------
+ colors/tabula.vim |  101
  1 files changed, 50 insertions(+), 51 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.1)
@@ -63,7 +63,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     foreground/background contrast optimized
     VimOutliner definitions added
 
- colors/tabula.vim |  129 ++++++++++++++++++++++++++++++++++++++++++----------
+ colors/tabula.vim |  129
  1 files changed, 104 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -76,8 +76,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Option for an even more prominent search display.
     Hint on forcing 256 xterm colors in help text.
 
- colors/tabula.vim |   34 +++++++++++++++++++++-------------
- doc/tabula.txt    |   34 +++++++++++++++++++++++++++++++---
+ colors/tabula.vim |   34
+ doc/tabula.txt    |   34
  2 files changed, 52 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -90,8 +90,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     more color adjustments;
     option to switch search highlight added
 
- colors/tabula.vim |  168 ++++++++++++++++++++++++++++++++++-------------------
- doc/tabula.txt    |   11 +++-
+ colors/tabula.vim |  168
+ doc/tabula.txt    |   11
  2 files changed, 116 insertions(+), 63 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.101)
@@ -105,8 +105,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Some small color adjustments;
     dark error background option added.
 
- colors/tabula.vim |   82 +++++++++++++++++++++++++++++++++++++++++++---------
- doc/tabula.txt    |   14 ++++++++-
+ colors/tabula.vim |   82
+ doc/tabula.txt    |   14
  2 files changed, 79 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -120,8 +120,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Constant colors option added.
     Provided a dialog to change the option settings on the fly.
 
- colors/tabula.vim |  337 ++++++++++++++++++++++++++++++++++++++++++++++-------
- doc/tabula.txt    |  102 ++++++++++++++++
+ colors/tabula.vim |  337
+ doc/tabula.txt    |  102
  2 files changed, 398 insertions(+), 41 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -134,7 +134,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Faulty group link definitions removed;
     Error group is now yellow on red background except if red cursor is used
 
- colors/tabula.vim |   64 +++++++++++++++-------------------------------------
+ colors/tabula.vim |   64
  1 files changed, 19 insertions(+), 45 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -147,7 +147,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     HTML colors added;
     Cursor color made configurable
 
- colors/tabula.vim |   65 ++++++++++++++++++++++++++++++++++++++++++++--------
+ colors/tabula.vim |   65
  1 files changed, 55 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -160,7 +160,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     colors slightly adjusted for a harmonic, yet easily distinguishable display on both GUI and xterm;
     introduced some display options
 
- colors/tabula.vim |  155 +++++++++++++++++++++++++++++++++++++++++++++++------
+ colors/tabula.vim |  155
  1 files changed, 138 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -170,6 +170,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README            |   90 ++++++++++++++++++++++++++++++++++++++++
- colors/tabula.vim |  119 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README            |   90
+ colors/tabula.vim |  119
  2 files changed, 209 insertions(+), 0 deletions(-)

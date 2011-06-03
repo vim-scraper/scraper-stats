@@ -11,10 +11,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - BUG: Normal-mode mapping didn't necessarily put the cursor on the first non-blank character after the comment prefix if 'nostartofline' is set.
     - ENH: In normal and visual mode, set the change marks '[ and ]' similar to what Vim does.
 
- README                           |   81 +++++----
- autoload/IndentCommentPrefix.vim |  308 ++++++++++++++++++++++++++++++++
- doc/IndentCommentPrefix.txt      |  166 ++++++++++++++++++
- plugin/IndentCommentPrefix.vim   |  356 ++------------------------------------
+ README                           |   81
+ autoload/IndentCommentPrefix.vim |  308
+ doc/IndentCommentPrefix.txt      |  166
+ plugin/IndentCommentPrefix.vim   |  356
  4 files changed, 528 insertions(+), 383 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.02)
@@ -26,7 +26,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Do not define mappings for select mode; printable characters should start insert mode.
 
- plugin/IndentCommentPrefix.vim |   12 +++++++-----
+ plugin/IndentCommentPrefix.vim |   12
  1 files changed, 7 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.01.009)
@@ -38,7 +38,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     BF: When 'report' is less than the default 2, the :substitute and << / >> commands created additional messages, causing a hit-enter prompt.  Now also reporting a single-line change when 'report' is 0 (to be consistent with the built-in indent commands).
 
- plugin/IndentCommentPrefix.vim |   40 +++++++++++++++++++++++++++-------------
+ plugin/IndentCommentPrefix.vim |   40
  1 files changed, 27 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.00.008)
@@ -51,7 +51,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     BF: Fixed "E61: Nested *" that occurred when shifting a line with a comment prefix containing multiple asterisks in a row (e.g. '**').
     BF: Info message (given when indenting multiple lines) always printed "1 time" even when a [count] was specified in visual mode.
 
- plugin/IndentCommentPrefix.vim |   22 +++++++++++++++++++---
+ plugin/IndentCommentPrefix.vim |   22
  1 files changed, 19 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.00.007)
@@ -61,6 +61,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.00.007: Initial upload
 
- README                         |   40 +++++
- plugin/IndentCommentPrefix.vim |  355 ++++++++++++++++++++++++++++++++++++++++
+ README                         |   40
+ plugin/IndentCommentPrefix.vim |  355
  2 files changed, 395 insertions(+), 0 deletions(-)

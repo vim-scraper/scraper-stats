@@ -9,9 +9,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     New features: Uses NERD_Commenter when available, fallback to &commentstring when not.
 
- autoload/modelines.vim |   94 ++++++++++++++++++++++++++++++++++++++++++++++++
- modelines_options.vim  |   54 +++++++++++++++++++++++++++
- plugin/modelines.vim   |   60 ++++++++-----------------------
+ autoload/modelines.vim |   94
+ modelines_options.vim  |   54
+ plugin/modelines.vim   |   60
  3 files changed, 163 insertions(+), 45 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -25,7 +25,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     It also uses not the "vim: set ... :" syntax so it will work fine with languages using something like "/* */".
 
- plugin/modelines.vim |   58 +++++++++++++++++++++++++++++++++----------------
+ plugin/modelines.vim |   58
  1 files changed, 39 insertions(+), 19 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -37,7 +37,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     This version does not need the NERD Commenter any more. It used the &commentstring instead.
 
- plugin/modelines.vim |   75 ++++++++++++++++++++++++++++---------------------
+ plugin/modelines.vim |   75
  1 files changed, 43 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -47,6 +47,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README               |   15 +++++++++++++++
- plugin/modelines.vim |   36 ++++++++++++++++++++++++++++++++++++
+ README               |   15
+ plugin/modelines.vim |   36
  2 files changed, 51 insertions(+), 0 deletions(-)

@@ -10,9 +10,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Also the character encoding of the included help file was changed to ASCII to accommodate users that don't have Unicode support (enabled).
 
- autoload/xolox/shell.vim |    4 ++--
- doc/shell.txt            |   17 ++++++++++-------
- plugin/shell.vim         |    4 ++--
+ autoload/xolox/shell.vim |    4
+ doc/shell.txt            |   17
+ plugin/shell.vim         |    4
  3 files changed, 14 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.1)
@@ -25,8 +25,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Restore window position/size on leaving full-screen (this fixes issue #2 reported by dionysiac- on GitHub):
     https://github.com/xolox/vim-shell/commit/681404594304bfa6a052
 
- autoload/xolox/shell.vim |   29 ++++++++++++++++++++++-------
- plugin/shell.vim         |    4 ++--
+ autoload/xolox/shell.vim |   29
+ plugin/shell.vim         |    4
  2 files changed, 24 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
@@ -39,13 +39,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Support for Windows x64, improved error handling (thanks to Stan Angeloff for getting me to build an x64 DLL and helping me test the DLL and automatic bitness detection):
     https://github.com/xolox/vim-shell/commit/669a9f2d5cce67b34599
 
- autoload/xolox/open.vim      |    6 +++---
+ autoload/xolox/open.vim      |    6
  autoload/xolox/shell-x64.dll |  Bin 0 -> 41984 bytes
  autoload/xolox/shell-x86.dll |  Bin 0 -> 43520 bytes
  autoload/xolox/shell.dll     |  Bin 43520 -> 0 bytes
- autoload/xolox/shell.vim     |   35 ++++++++++++++++++++---------------
- doc/shell.txt                |   37 ++++++++++++++++++-------------------
- plugin/shell.vim             |    4 ++--
+ autoload/xolox/shell.vim     |   35
+ doc/shell.txt                |   37
+ plugin/shell.vim             |    4
  7 files changed, 43 insertions(+), 39 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.2)
@@ -64,10 +64,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       Bug fix: Open either file or directory, but never both!
        http://github.com/xolox/vim-shell/commit/de1303de9b9317affe10
 
- autoload/xolox/open.vim        |    6 ++--
- autoload/xolox/shell.vim       |   13 ++++---
- doc/open-external-location.txt |   67 ----------------------------------------
- plugin/shell.vim               |    4 +-
+ autoload/xolox/open.vim        |    6
+ autoload/xolox/shell.vim       |   13
+ doc/open-external-location.txt |   67
+ plugin/shell.vim               |    4
  4 files changed, 12 insertions(+), 78 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
@@ -82,14 +82,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       Simplified Mac OS X support
       Support command line web browsers in s:open_at_cursor()
 
- autoload/xolox.vim             |   15 ++-
- autoload/xolox/escape.vim      |    4 +-
- autoload/xolox/open.vim        |   75 +++++++++++++++++
+ autoload/xolox.vim             |   15
+ autoload/xolox/escape.vim      |    4
+ autoload/xolox/open.vim        |   75
  autoload/xolox/shell.dll       |  Bin 43520 -> 43520 bytes
- autoload/xolox/shell.vim       |  178 +++++++++-------------------------------
- doc/open-external-location.txt |   67 +++++++++++++++
- doc/shell.txt                  |   58 +++++++------
- plugin/shell.vim               |    9 +--
+ autoload/xolox/shell.vim       |  178
+ doc/open-external-location.txt |   67
+ doc/shell.txt                  |   58
+ plugin/shell.vim               |    9
  8 files changed, 225 insertions(+), 181 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.3)
@@ -102,8 +102,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Bug fix: Only toggle active window using `wmctrl' and report errors from libcall('fullscreen'):
     http://github.com/xolox/vim-shell/commit/ca43642589089a29dc24f18e00a7edd04820bc9e
 
- autoload/xolox/shell.vim |   27 ++++++---------------------
- plugin/shell.vim         |    4 ++--
+ autoload/xolox/shell.vim |   27
+ plugin/shell.vim         |    4
  2 files changed, 8 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.2)
@@ -118,10 +118,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     The packages for version 0.7 and 0.7.1 below should have included the "shell.dll" dynamic link library but I failed to include it. This has been fixed now. Sorry about that!
 
- autoload/xolox.vim       |   12 +++++++++---
+ autoload/xolox.vim       |   12
  autoload/xolox/shell.dll |  Bin 0 -> 43520 bytes
- autoload/xolox/shell.vim |    5 +++--
- plugin/shell.vim         |    4 ++--
+ autoload/xolox/shell.vim |    5
+ plugin/shell.vim         |    4
  4 files changed, 14 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1)
@@ -134,8 +134,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Enable passing stdin to xolox#shell#execute():
     http://github.com/xolox/vim-shell/commit/fc16d5c0e72d8ba4112d239f211cc0576640aaa3
 
- autoload/xolox/shell.vim |   23 +++++++++++++++--------
- plugin/shell.vim         |    4 ++--
+ autoload/xolox/shell.vim |   23
+ plugin/shell.vim         |    4
  2 files changed, 17 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
@@ -157,15 +157,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     All from http://github.com/xolox/vim-shell/commit/2f6414109fa52b20c1a86faff215fe1329ba6eb8
 
- autoload/xolox.vim        |   99 +++++++++++++
- autoload/xolox/escape.vim |   26 ++++
+ autoload/xolox.vim        |   99
+ autoload/xolox/escape.vim |   26
  autoload/xolox/shell.dll  |  Bin 43520 -> 0 bytes
- autoload/xolox/shell.vim  |  344 +++++++++++++++++++++++++++++++++------------
- doc/shell.txt             |  253 ++++++++++++++++++++++-----------
- etc/shell/Makefile        |   12 --
- etc/shell/readme.html     |  123 ----------------
- etc/shell/shell.c         |  187 ------------------------
- plugin/shell.vim          |   62 ++++++++
+ autoload/xolox/shell.vim  |  344
+ doc/shell.txt             |  253
+ etc/shell/Makefile        |   12
+ etc/shell/readme.html     |  123
+ etc/shell/shell.c         |  187
+ plugin/shell.vim          |   62
  9 files changed, 610 insertions(+), 496 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.1)
@@ -178,8 +178,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Bug fix: Updated instructions to match new execute() implementation. Sorry about that!
     http://github.com/xolox/vim-shell/commit/2cc68db470c974acbc4c43ea001536c1106ae0e2
 
- doc/shell.txt         |   16 ++++++++--------
- etc/shell/readme.html |   22 +++++++++++-----------
+ doc/shell.txt         |   16
+ etc/shell/readme.html |   22
  2 files changed, 19 insertions(+), 19 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -199,10 +199,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       http://github.com/xolox/vim-shell/commit/364ceee3040e77f0a3fb8b4b657aac612f6dbcc4
 
  autoload/xolox/shell.dll |  Bin 43008 -> 43520 bytes
- autoload/xolox/shell.vim |   66 ++++++++++++++++++++++++++++++----------------
- doc/shell.txt            |   56 +++++++++++++++++++++------------------
- etc/shell/readme.html    |   28 ++++++++++---------
- etc/shell/shell.c        |   62 ++++++++++++++++++++++++++++++------------
+ autoload/xolox/shell.vim |   66
+ doc/shell.txt            |   56
+ etc/shell/readme.html    |   28
+ etc/shell/shell.c        |   62
  5 files changed, 132 insertions(+), 80 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
@@ -216,10 +216,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     http://github.com/xolox/vim-shell/commit/c46f8e522f53283528f1dc9ab58cc6eb0a9c5507
 
  autoload/xolox/shell.dll |  Bin 43008 -> 43008 bytes
- doc/shell.txt            |   38 ++++++++++++++++++++++++++------------
- etc/shell/Makefile       |    2 +-
- etc/shell/readme.html    |   39 +++++++++++++++++++++++++++------------
- etc/shell/shell.c        |    3 +--
+ doc/shell.txt            |   38
+ etc/shell/Makefile       |    2
+ etc/shell/readme.html    |   39
+ etc/shell/shell.c        |    3
  5 files changed, 55 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
@@ -229,8 +229,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.5.1: Fixed typo in NMAKE makefile and references to Vim scripts page.
 
- doc/shell.txt         |    2 +-
- etc/shell/readme.html |   10 +++++-----
+ doc/shell.txt         |    2
+ etc/shell/readme.html |   10
  2 files changed, 6 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -240,11 +240,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.5: Initial upload
 
- README                   |   13 ++++
+ README                   |   13
  autoload/xolox/shell.dll |  Bin 0 -> 43008 bytes
- autoload/xolox/shell.vim |  159 +++++++++++++++++++++++++++++++++++++++++++++
- doc/shell.txt            |   99 ++++++++++++++++++++++++++++
- etc/shell/Makefile       |   12 ++++
- etc/shell/readme.html    |  106 ++++++++++++++++++++++++++++++
- etc/shell/shell.c        |  162 ++++++++++++++++++++++++++++++++++++++++++++++
+ autoload/xolox/shell.vim |  159
+ doc/shell.txt            |   99
+ etc/shell/Makefile       |   12
+ etc/shell/readme.html    |  106
+ etc/shell/shell.c        |  162
  7 files changed, 551 insertions(+), 0 deletions(-)

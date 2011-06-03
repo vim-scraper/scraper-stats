@@ -8,8 +8,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     corrected several bugs when the file path contains some spaces
     corrected a bug with the TagsWindow
 
- doc/TagsBase.txt    |   59 ++++++++++++++++++++++++++++++--------------------
- plugin/TagsBase.vim |   42 +++++++++++++++++++-----------------
+ doc/TagsBase.txt    |   59
+ plugin/TagsBase.vim |   42
  2 files changed, 57 insertions(+), 44 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9.1)
@@ -19,9 +19,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.9.1: corrected a bug in the current tag lookup when perl is not available
 
- doc/TagsBase.txt             |  111 ++++++++++++++++++++++++++++++++++--------
- plugin/.tb.TagsBase.vim.tags |   38 --------------
- plugin/TagsBase.vim          |   16 +++++-
+ doc/TagsBase.txt             |  111
+ plugin/.tb.TagsBase.vim.tags |   38
+ plugin/TagsBase.vim          |   16
  3 files changed, 104 insertions(+), 61 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
@@ -36,17 +36,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     added a toc to the help.
     corrected the NT ACL bug.
 
- ftplugin/TagsBase.vim        |   10 +
- perl/TagsBase.pl             |  386 --------------------------------------
- perl/TagsBase.vim            |  411 ----------------------------------------
- perl/VIM.pm                  |   60 ------
- plugin/.tb.TagsBase.vim.tags |   38 ++++
- plugin/TagsBase.vim          |   80 +++++++--
- plugin/perl/TagsBase.pl      |  413 +++++++++++++++++++++++++++++++++++++++++
- plugin/perl/TagsBase.vim     |  422 ++++++++++++++++++++++++++++++++++++++++++
- plugin/perl/VIM.pm           |   61 ++++++
- plugin/perl/test.pl          |    1 +
- syntax/TagsBase.vim          |    7 +
+ ftplugin/TagsBase.vim        |   10
+ perl/TagsBase.pl             |  386
+ perl/TagsBase.vim            |  411
+ perl/VIM.pm                  |   60
+ plugin/.tb.TagsBase.vim.tags |   38
+ plugin/TagsBase.vim          |   80
+ plugin/perl/TagsBase.pl      |  413
+ plugin/perl/TagsBase.vim     |  422
+ plugin/perl/VIM.pm           |   61
+ plugin/perl/test.pl          |    1
+ syntax/TagsBase.vim          |    7
  11 files changed, 1016 insertions(+), 873 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.3)
@@ -56,11 +56,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.8.3: greatly enhanced the win32 cascading menus (when perl is available)
 
- doc/TagsBase.txt             |   23 +++++++++++++-
- perl/TagsBase.pl             |   70 +++++++++++++++++++++++++-----------------
- perl/TagsBase.vim            |   56 +++++++++++++++++++++------------
- plugin/.tb.TagsBase.vim.tags |    9 -----
- plugin/TagsBase.vim          |    4 +-
+ doc/TagsBase.txt             |   23
+ perl/TagsBase.pl             |   70
+ perl/TagsBase.vim            |   56
+ plugin/.tb.TagsBase.vim.tags |    9
+ plugin/TagsBase.vim          |    4
  5 files changed, 102 insertions(+), 60 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.2)
@@ -70,8 +70,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.8.2: bugfix removed some stray timing statements from the perl scripts
 
- perl/TagsBase.vim            |    8 ++++----
- plugin/.tb.TagsBase.vim.tags |    9 +++++++++
+ perl/TagsBase.vim            |    8
+ plugin/.tb.TagsBase.vim.tags |    9
  2 files changed, 13 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8.1)
@@ -94,8 +94,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     ^ITagsBase::GetTagName(391) called at (eval 15) line 1
     ^Ieval 'TagsBase::GetTagName 391
 
- perl/TagsBase.pl  |    2 ++
- perl/TagsBase.vim |    4 ++--
+ perl/TagsBase.pl  |    2
+ perl/TagsBase.vim |    4
  2 files changed, 4 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
@@ -113,11 +113,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Added the TagsBase.pl and VIM.pm file to the distribution, those are not needed for
     running the scripts but are usefull for debuging the perl parts.
 
- doc/TagsBase.txt    |   14 ++-
- perl/TagsBase.pl    |  370 ++++++++++++++++++++++++++++++++++++++++++++++++
- perl/TagsBase.vim   |  393 +++++++++++++++++++++++++++++++++++++++++++++++---
- perl/VIM.pm         |   60 ++++++++
- plugin/TagsBase.vim |  194 ++++++++++++++++----------
+ doc/TagsBase.txt    |   14
+ perl/TagsBase.pl    |  370
+ perl/TagsBase.vim   |  393
+ perl/VIM.pm         |   60
+ plugin/TagsBase.vim |  194
  5 files changed, 933 insertions(+), 98 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1)
@@ -130,9 +130,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      "Corrected some bugs regarding the situation when perl is not builtin.
       Corrected a bug when there is only one tag in the file repeated tag generation would interpret it as being overloaded.
 
- doc/TagsBase.txt    |    5 +++++
- perl/TagsBase.vim   |   50 ++++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/TagsBase.vim |   34 +++++++++-------------------------
+ doc/TagsBase.txt    |    5
+ perl/TagsBase.vim   |   50
+ plugin/TagsBase.vim |   34
  3 files changed, 64 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
@@ -147,8 +147,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Modified the doc to suggest using this function for displaying the tag name someplace else than the title bar.
     Corrected a bug regarding the cleanup code and editing read only files.
 
- doc/TagsBase.txt    |   24 ++++++++++++++++++-
- plugin/TagsBase.vim |   61 ++++++++++++++++++++++++++++----------------------
+ doc/TagsBase.txt    |   24
+ plugin/TagsBase.vim |   61
  2 files changed, 56 insertions(+), 29 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.1)
@@ -162,8 +162,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Keeps the menu generating command in a buffer variable to avoid the extra work of reparsing if it is not needed.
     Uses the perl interpreter if available to speed up the tags parsing.
 
- doc/TagsBase.txt    |   78 +++++-----
- plugin/TagsBase.vim |  437 +++++++++++++++++++++++++++++----------------------
+ doc/TagsBase.txt    |   78
+ plugin/TagsBase.vim |  437
  2 files changed, 288 insertions(+), 227 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -177,8 +177,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     changed the name of the g:CatProg variable to g:TagsBase_CatProg.
     See :help TagsBase for a descriptions of the new options
 
- doc/TagsBase.txt    |   64 +++++++++++------
- plugin/TagsBase.vim |  192 ++++++++++++++++++++++++++++++++++++---------------
+ doc/TagsBase.txt    |   64
+ plugin/TagsBase.vim |  192
  2 files changed, 179 insertions(+), 77 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.3)
@@ -195,10 +195,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     section to the help. Added a warning about the
     existence of the tags files"
 
- doc/TagsBase.txt       |   50 ++++++
- html/TagsBase.html     |  316 --------------------------------------
- html/TagsBase.vim.html |  395 ------------------------------------------------
- plugin/TagsBase.vim    |   12 +-
+ doc/TagsBase.txt       |   50
+ html/TagsBase.html     |  316
+ html/TagsBase.vim.html |  395
+ plugin/TagsBase.vim    |   12
  4 files changed, 58 insertions(+), 715 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
@@ -208,7 +208,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.5.2: bug fixes in the sorting of the lines array
 
- plugin/TagsBase.vim |    6 +++---
+ plugin/TagsBase.vim |    6
  1 files changed, 3 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
@@ -220,7 +220,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     bug correction
 
- plugin/TagsBase.vim |   28 +++++++++++++++++++++++-----
+ plugin/TagsBase.vim |   28
  1 files changed, 23 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5@1)
@@ -244,10 +244,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     To install unpack in a directory in your runtimepath (see :help runtimepath) and run
     :helptags $dirUnpacked/doc
 
- doc/TagsBase.txt       |   75 +++++++++
- html/TagsBase.html     |  316 ++++++++++++++++++++++++++++++++++++++
- html/TagsBase.vim.html |  395 ++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/TagsBase.vim    |   37 +++--
+ doc/TagsBase.txt       |   75
+ html/TagsBase.html     |  316
+ html/TagsBase.vim.html |  395
+ plugin/TagsBase.vim    |   37
  4 files changed, 810 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -259,7 +259,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     reorganized and commented the script, support for the builtin tags stack, support for ordered tag file generation, some bugs corrected.
 
- plugin/TagsBase.vim |  271 ++++++++++++++++++++++++++-------------------------
+ plugin/TagsBase.vim |  271
  1 files changed, 137 insertions(+), 134 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -269,7 +269,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.3: added a menu entry to toggle on and off the title string functionality
 
- plugin/TagsBase.vim |   23 +++++++++++++++++++++--
+ plugin/TagsBase.vim |   23
  1 files changed, 21 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -283,7 +283,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     corrected bug when on an ms system the shell used was a unix type shell, this generated problems due to the shell misinterpreting the '&#039 in a path.
     If you find any other bugs, please report it by mail to me (benoit.cerrina@writeme.com
 
- plugin/TagsBase.vim |  284 +++++++++++++++++++++++++++------------------------
+ plugin/TagsBase.vim |  284
  1 files changed, 149 insertions(+), 135 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -293,6 +293,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README              |   42 +++++++
- plugin/TagsBase.vim |  338 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ README              |   42
+ plugin/TagsBase.vim |  338
  2 files changed, 380 insertions(+), 0 deletions(-)

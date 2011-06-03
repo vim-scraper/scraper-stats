@@ -8,8 +8,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     BUG: Jump opened fold at current position when "No newer/older jump position"
     error occurred.
 
- doc/EnhancedJumps.txt    |    6 +++++-
- plugin/EnhancedJumps.vim |   25 +++++++++++++++++++++++--
+ doc/EnhancedJumps.txt    |    6
+ plugin/EnhancedJumps.vim |   25
  2 files changed, 28 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
@@ -21,8 +21,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     BF: Trailing space after the command to open the folds accidentally moved cursor one position to the right of the jump target.
 
- doc/EnhancedJumps.txt    |    4 ++++
- plugin/EnhancedJumps.vim |    5 ++++-
+ doc/EnhancedJumps.txt    |    4
+ plugin/EnhancedJumps.vim |    5
  2 files changed, 8 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
@@ -32,8 +32,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.11: BF: A '^\)' in the jump text caused "E55: Unmatched \)"
 
- doc/EnhancedJumps.txt    |    3 +++
- plugin/EnhancedJumps.vim |    8 +++++++-
+ doc/EnhancedJumps.txt    |    3
+ plugin/EnhancedJumps.vim |    8
  2 files changed, 10 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
@@ -46,8 +46,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - ENH: To overcome the next buffer warning, a previously given [count] need not be specified again. A jump command with a different [count] than last time now is treated as a separate jump command and thus doesn't overcome the next buffer warning.
     - BF: Folds at the jump target must be explicitly opened.
 
- doc/EnhancedJumps.txt    |   17 ++++++--
- plugin/EnhancedJumps.vim |  101 ++++++++++++++++++++++++++++++++++------------
+ doc/EnhancedJumps.txt    |   17
+ plugin/EnhancedJumps.vim |  101
  2 files changed, 88 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.00)
@@ -57,8 +57,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.00: Initial upload
 
- README                            |   27 ++++
- autoload/EchoWithoutScrolling.vim |  267 +++++++++++++++++++++++++++++++++++++
- doc/EnhancedJumps.txt             |   99 ++++++++++++++
- plugin/EnhancedJumps.vim          |  192 ++++++++++++++++++++++++++
+ README                            |   27
+ autoload/EchoWithoutScrolling.vim |  267
+ doc/EnhancedJumps.txt             |   99
+ plugin/EnhancedJumps.vim          |  192
  4 files changed, 585 insertions(+), 0 deletions(-)

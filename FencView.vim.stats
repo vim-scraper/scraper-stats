@@ -7,7 +7,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fix the bug that a modified buffer may be reloaded (:e!) unintentionally.
 
- plugin/fencview.vim |    8 ++++++--
+ plugin/fencview.vim |    8
  1 files changed, 6 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.6)
@@ -19,7 +19,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Progress bar no longer used for better compatibility; one may use  g:fencview_checklines=0 to check all lines; do not change the current file encoding if no valid multi-byte encoding is detected.
 
- plugin/fencview.vim |   55 ++++++++++++++++----------------------------------
+ plugin/fencview.vim |   55
  1 files changed, 18 insertions(+), 37 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.5)
@@ -31,7 +31,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Add a workaround (UNIX only) for earlier Vim versions where shellescape() is not defined; avoid using `y$' to prevent issues when folding is used (contributed by Ingo Karkat).
 
- plugin/fencview.vim |   19 ++++++++++++-------
+ plugin/fencview.vim |   19
  1 files changed, 12 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.4)
@@ -45,7 +45,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1) Big5 can be loosely used for CP950;
     2) g:legacy_encoding can be wrongly guessed (it should not be used).
 
- plugin/fencview.vim |   13 +++++++------
+ plugin/fencview.vim |   13
  1 files changed, 7 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.3)
@@ -57,7 +57,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Make it run more smoothly under Windows with my gVim build (http://wyw.dcweb.cn/#download).
 
- plugin/fencview.vim |   32 +++++++++++++++++++++++---------
+ plugin/fencview.vim |   32
  1 files changed, 23 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
@@ -67,7 +67,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 4.2: update
 
- plugin/fencview.vim |   46 +++++++++++++++++++++++-----------------------
+ plugin/fencview.vim |   46
  1 files changed, 23 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
@@ -77,7 +77,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 4.1: some improvements
 
- plugin/fencview.vim |  157 ++++++++++++++++++++++++++++++++++-----------------
+ plugin/fencview.vim |  157
  1 files changed, 105 insertions(+), 52 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
@@ -89,7 +89,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     It merges functionality in multienc.vim: allows the use of an external program to determine the file encoding; use the http-equiv meta tag to help decide the file encoding; use the fileencoding modeline to help decide the file encoding; autodetect the encoding of .txt, .htm, and .html files; add a new command FencManualEncoding to override the encoding where autodetection affects the normal ++enc. Also some minor fixes are made.
 
- plugin/fencview.vim |  365 +++++++++++++++++++++++++++++++++++++++++----------
+ plugin/fencview.vim |  365
  1 files changed, 295 insertions(+), 70 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
@@ -99,7 +99,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 3.2: bug fix: set syntax on after auto detect
 
- plugin/fencview.vim |   41 ++++++++++++++++++++++++++++-------------
+ plugin/fencview.vim |   41
  1 files changed, 28 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
@@ -109,7 +109,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 3.1: A lot of improvements.
 
- plugin/fencview.vim |  487 +++++++++++++++++++++++++++++++++++++++++++++++----
+ plugin/fencview.vim |  487
  1 files changed, 456 insertions(+), 31 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
@@ -126,7 +126,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     cp950(big5)
     cp932(sjis)
 
- plugin/fencview.vim |  545 +++++++++++++++++++++++++++++++++++++++++++++++++--
+ plugin/fencview.vim |  545
  1 files changed, 527 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -136,7 +136,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2: Some bug fix.
 
- plugin/fencview.vim |   47 +++++++++++++++++++++++++----------------------
+ plugin/fencview.vim |   47
  1 files changed, 25 insertions(+), 22 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -150,7 +150,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Screenshot:
     http://mbbill.googlepages.com/fenc.png
 
- plugin/fencview.vim |  184 ++++++++++++++++++++++++++++++++-------------------
+ plugin/fencview.vim |  184
  1 files changed, 116 insertions(+), 68 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -160,6 +160,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README              |   75 +++++++++++++++++++++++++++
- plugin/fencview.vim |  141 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ README              |   75
+ plugin/fencview.vim |  141
  2 files changed, 216 insertions(+), 0 deletions(-)

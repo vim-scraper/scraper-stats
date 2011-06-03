@@ -8,7 +8,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1.61 - Improved/Fixed cursor restore. Screen should not jump; ever.
     1.611 - bugfix for above for column jumping about, *sigh*.
 
- plugin/feraltogglecommentify.vim |  409 +++++++++++++++++++++++++++++++-------
+ plugin/feraltogglecommentify.vim |  409
  1 files changed, 335 insertions(+), 74 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.58)
@@ -20,7 +20,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added rebol ';' comment type, contribution by Tim Johnson
 
- plugin/feraltogglecommentify.vim |   33 ++++++++++++---------------------
+ plugin/feraltogglecommentify.vim |   33
  1 files changed, 12 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.57)
@@ -33,7 +33,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Added ruby &#039#&#039 comment type, contribution by Brett Williams
     Added sh &#039#&#039 comment type.
 
- plugin/feraltogglecommentify.vim |   23 +++++++++++++++++------
+ plugin/feraltogglecommentify.vim |   23
  1 files changed, 17 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.56)
@@ -45,7 +45,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     BUG FIX: Fixed silly cursor restore problem, screen no longer jumps on occasion.
 
- plugin/feraltogglecommentify.vim |   16 +++++++++++-----
+ plugin/feraltogglecommentify.vim |   16
  1 files changed, 11 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.55)
@@ -62,7 +62,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Change by JH, only add comment when not already commented
     Please see "Customizing:" (in the script file) for details and usage:
 
- plugin/feraltogglecommentify.vim |  286 +++++++++++++++++++++++++++++++-------
+ plugin/feraltogglecommentify.vim |  286
  1 files changed, 237 insertions(+), 49 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.54)
@@ -78,8 +78,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Improvement: Can now comment/uncomment a fold without opening it.  (courtesy of normal! zn and normal! zN)
     * Improvement: Changed DLAC into a proper command (:DLAC) (from mapping); map <Plug>FtcDLAC as desired, defaults to <C-c>. Ranges are supported (default current line) and you can specify the comment chars just as you can with :CC, :TC, :UC.
 
- plugin/FeralToggleCommentify.vim |  419 -----------------------------------
- plugin/feraltogglecommentify.vim |  453 ++++++++++++++++++++++++++++++++++++++
+ plugin/FeralToggleCommentify.vim |  419
+ plugin/feraltogglecommentify.vim |  453
  2 files changed, 453 insertions(+), 419 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.532)
@@ -89,6 +89,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.532: Initial upload
 
- README                           |   64 ++++++
- plugin/FeralToggleCommentify.vim |  419 ++++++++++++++++++++++++++++++++++++++
+ README                           |   64
+ plugin/FeralToggleCommentify.vim |  419
  2 files changed, 483 insertions(+), 0 deletions(-)

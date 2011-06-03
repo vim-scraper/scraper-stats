@@ -7,15 +7,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + Aligned line end comments for consecutive lines.+ Uncomment more than one block at once.+ The dialog windows (GUI) have been replaced by more flexible command line inputs.+ Online documentation improved.
 
- README.nqc              |  178 ++++++++++++++++++++++++
- README.orig             |  334 ---------------------------------------------
- doc/nqcsupport.txt      |  275 +++++++++++++++++++++++---------------
- ftplugin/nqc.vim        |    6 +-
- install.sh              |   97 -------------
- plugin/nqc.vim          |  343 ++++++++++++++++++++++++++++++++++++++---------
- rc/customization.gvimrc |    8 -
- rc/customization.vimrc  |  113 +++++++---------
- rc/nqc.vimrc            |    5 -
+ README.nqc              |  178
+ README.orig             |  334
+ doc/nqcsupport.txt      |  275
+ ftplugin/nqc.vim        |    6
+ install.sh              |   97
+ plugin/nqc.vim          |  343
+ rc/customization.gvimrc |    8
+ rc/customization.vimrc  |  113
+ rc/nqc.vimrc            |    5
  9 files changed, 680 insertions(+), 679 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
@@ -27,17 +27,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
      + Only one NQC root menu entry in the gVim root menu. + A marked region can be surrounded by a for-, if, if-else, while-,   do-while-statement (with indentation). + 3 block comments are now read as templates or skeletons from files + The NQC root menu can be changed or disabled. + All hotkeys are only defined for NQC files (file type plugin added). + Install script added. + Customization improved. + Documentation improved (help file added).
 
- README.orig                           |  334 ++++++
- doc/nqcsupport.txt                    |  373 +++++++
- ftplugin/nqc.vim                      |   23 +
- install.sh                            |   97 ++
- plugin/nqc.vim                        | 1860 ++++++++++++++++++---------------
- plugin/templates/nqc-file-header      |   10 +
- plugin/templates/nqc-frame            |    3 +
- plugin/templates/nqc-task-description |   16 +
- rc/customization.gvimrc               |   33 +
- rc/customization.vimrc                |  140 +++
- rc/nqc.vimrc                          |   15 +
+ README.orig                           |  334
+ doc/nqcsupport.txt                    |  373
+ ftplugin/nqc.vim                      |   23
+ install.sh                            |   97
+ plugin/nqc.vim                        | 1860
+ plugin/templates/nqc-file-header      |   10
+ plugin/templates/nqc-frame            |    3
+ plugin/templates/nqc-task-description |   16
+ rc/customization.gvimrc               |   33
+ rc/customization.vimrc                |  140
+ rc/nqc.vimrc                          |   15
  11 files changed, 2042 insertions(+), 862 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -49,7 +49,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + indentation: multiline inserts and code snippets will be indented after insertion.+ Most menu entries are now also active in normal mode.+ Code cleanup: register z no longer used. Most function calls are silent now.
 
- plugin/nqc.vim |  916 ++++++++++++++++++++++++++++++++++----------------------
+ plugin/nqc.vim |  916
  1 files changed, 561 insertions(+), 355 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
@@ -61,7 +61,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - maintain your own code snippets in a separate directory- additional for- and if-statements- new hotkey (save, open file, save buffer and compile)- analyse datalog with GNUPLOT  + upload datalog in a separate buffer  + show x- or x-y-plot   + configure plot (type: impulses, lines, lines+points, points, steps)  + set plot title  + save plot (Postscript) or print plot- make hardcopy of buffer or of a highlighted part (Postscript)- show settings (target, serial port, firmware, hotkeys)
 
- plugin/nqc.vim |  506 +++++++++++++++++++++++++++++++++++++++++++++-----------
+ plugin/nqc.vim |  506
  1 files changed, 405 insertions(+), 101 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6.3)
@@ -73,7 +73,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - menus can now be toggled (look for an entry in the Tools menu)- additional NQC-statements:  break unti continue start
 
- plugin/nqc.vim |  242 ++++++++++++++++++++++++++++++++++----------------------
+ plugin/nqc.vim |  242
  1 files changed, 146 insertions(+), 96 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -87,7 +87,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - configurability improved
     - minor bugfixes and improvements
 
- plugin/nqc.vim |  718 ++++++++++++++++++++++++++++++++------------------------
+ plugin/nqc.vim |  718
  1 files changed, 411 insertions(+), 307 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -97,7 +97,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.4: support for RCX, RCX2, CyberMaster, Scout
 
- plugin/nqc.vim |  467 +++++++++++++++++++++++++++++++++++++++-----------------
+ plugin/nqc.vim |  467
  1 files changed, 330 insertions(+), 137 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.1)
@@ -110,7 +110,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     bug fix:
     - datalog upload
 
- plugin/nqc.vim |   44 +++++++++++++++++++++++++-------------------
+ plugin/nqc.vim |   44
  1 files changed, 25 insertions(+), 19 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -120,6 +120,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3: Initial upload
 
- README         |   12 ++
- plugin/nqc.vim |  446 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README         |   12
+ plugin/nqc.vim |  446
  2 files changed, 458 insertions(+), 0 deletions(-)

@@ -5,16 +5,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.9: Added a tutorial and a way to call python functions
 
- FicIni.py            |  100 --------------
- Walk.py              |  265 +++++++++++++++++++++---------------
- doc/WalkTutorial.txt |  363 ++++++++++++++++++++++++++++++++++++++++++++++++++
- doc/walk.txt         |   31 ++++-
- exColTagGen.ini      |   23 ---
- exTagGen.ini         |   23 ---
- exTreeGen.ini        |   34 -----
- example.ini          |   63 ---------
- plugin/Walk.vim      |   33 +++++-
- skeleton.ini         |   37 -----
+ FicIni.py            |  100
+ Walk.py              |  265
+ doc/WalkTutorial.txt |  363
+ doc/walk.txt         |   31
+ exColTagGen.ini      |   23
+ exTagGen.ini         |   23
+ exTreeGen.ini        |   34
+ example.ini          |   63
+ plugin/Walk.vim      |   33
+ skeleton.ini         |   37
  10 files changed, 575 insertions(+), 397 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
@@ -26,14 +26,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     added vim help file, reduced use of registers, allowed use of multiple out files and other minor features
 
- Walk.py         |   60 ++++++-----
- doc/walk.txt    |  308 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
- exColTagGen.ini |    7 +-
- exTagGen.ini    |    7 +-
- exTreeGen.ini   |    7 +-
- example.ini     |   11 ++-
- plugin/Walk.vim |   20 ++--
- skeleton.ini    |    8 +-
+ Walk.py         |   60
+ doc/walk.txt    |  308
+ exColTagGen.ini |    7
+ exTagGen.ini    |    7
+ exTreeGen.ini   |    7
+ example.ini     |   11
+ plugin/Walk.vim |   20
+ skeleton.ini    |    8
  8 files changed, 378 insertions(+), 50 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -43,16 +43,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.6: Oups, i uploaded the wrong package
 
- FicIni.py          |  100 ++++++++++++++++++++++++++++
- VimWalk.py         |   35 ----------
- Walk.py            |  102 ++++++++++++++++++++++++++++
- exColTagGen.ini    |   22 ++++++
- exTagGen.ini       |   22 ++++++
- exTreeGen.ini      |   33 +++++++++
- example.ini        |   58 ++++++++++++++++
- plugin/VimWalk.vim |  170 -----------------------------------------------
- plugin/Walk.vim    |  186 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- skeleton.ini       |   37 ++++++++++
+ FicIni.py          |  100
+ VimWalk.py         |   35
+ Walk.py            |  102
+ exColTagGen.ini    |   22
+ exTagGen.ini       |   22
+ exTreeGen.ini      |   33
+ example.ini        |   58
+ plugin/VimWalk.vim |  170
+ plugin/Walk.vim    |  186
+ skeleton.ini       |   37
  10 files changed, 560 insertions(+), 205 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -62,7 +62,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.4: automaticaly opens the outfile at the end
 
- plugin/VimWalk.vim |    4 ++--
+ plugin/VimWalk.vim |    4
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -72,8 +72,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.3: Added commands to ease the parameters passing
 
- VimWalk.py         |    2 +-
- plugin/VimWalk.vim |  105 ++++++++++++++++++++++++++++++++++++++++++++++-----
+ VimWalk.py         |    2
+ plugin/VimWalk.vim |  105
  2 files changed, 95 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -85,7 +85,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Correction of a typing error in the description of the plugin : the register used for the directory was not "n" and is now "d"
 
- README             |   80 +++++++++++++++++++++++++++++++++++++++++++++++
- VimWalk.py         |   35 +++++++++++++++++++++
- plugin/VimWalk.vim |   87 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README             |   80
+ VimWalk.py         |   35
+ plugin/VimWalk.vim |   87
  3 files changed, 202 insertions(+), 0 deletions(-)

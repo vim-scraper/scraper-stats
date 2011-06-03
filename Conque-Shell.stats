@@ -11,7 +11,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      * New key shortcuts (execute current file in Conque, etc...)
      * Bugfixes
 
- doc/tags |   52 ----------------------------------------------------
+ doc/tags |   52
  1 files changed, 0 insertions(+), 52 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1@1)
@@ -28,21 +28,21 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.1: See above
 
- autoload/conque_term.vim                          |  654 ++++++++++++++-------
- autoload/conque_term/conque.py                    |  498 +++++++++++------
- autoload/conque_term/conque_globals.py            |  134 +++--
- autoload/conque_term/conque_screen.py             |  179 ++++---
- autoload/conque_term/conque_sole.py               |  329 +++++------
- autoload/conque_term/conque_sole_communicator.py  |   46 +-
- autoload/conque_term/conque_sole_shared_memory.py |  114 ++--
- autoload/conque_term/conque_sole_subprocess.py    |  305 +++++-----
- autoload/conque_term/conque_sole_wrapper.py       |  144 ++---
- autoload/conque_term/conque_subprocess.py         |   97 ++--
- autoload/conque_term/conque_win32_util.py         |   95 ++--
- doc/conque_term.txt                               |  375 +++++++++---
- doc/tags                                          |   52 ++
- plugin/conque_term.vim                            |   81 +++-
- syntax/conque_term.vim                            |    6 +-
+ autoload/conque_term.vim                          |  654
+ autoload/conque_term/conque.py                    |  498
+ autoload/conque_term/conque_globals.py            |  134
+ autoload/conque_term/conque_screen.py             |  179
+ autoload/conque_term/conque_sole.py               |  329
+ autoload/conque_term/conque_sole_communicator.py  |   46
+ autoload/conque_term/conque_sole_shared_memory.py |  114
+ autoload/conque_term/conque_sole_subprocess.py    |  305
+ autoload/conque_term/conque_sole_wrapper.py       |  144
+ autoload/conque_term/conque_subprocess.py         |   97
+ autoload/conque_term/conque_win32_util.py         |   95
+ doc/conque_term.txt                               |  375
+ doc/tags                                          |   52
+ plugin/conque_term.vim                            |   81
+ syntax/conque_term.vim                            |    6
  15 files changed, 1911 insertions(+), 1198 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0@2)
@@ -69,21 +69,21 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.0: See above
 
- README                                            |   11 +-
- autoload/conque_term.vim                          | 2110 +++++++--------------
- autoload/conque_term/conque.py                    |  975 ++++++++++
- autoload/conque_term/conque_globals.py            |  287 +++
- autoload/conque_term/conque_screen.py             |  209 ++
- autoload/conque_term/conque_sole.py               |  459 +++++
- autoload/conque_term/conque_sole_communicator.py  |  183 ++
- autoload/conque_term/conque_sole_shared_memory.py |  202 ++
- autoload/conque_term/conque_sole_subprocess.py    |  753 ++++++++
- autoload/conque_term/conque_sole_wrapper.py       |  304 +++
- autoload/conque_term/conque_subprocess.py         |  195 ++
- autoload/conque_term/conque_win32_util.py         |  473 +++++
- doc/conque_term.txt                               |  126 +-
- plugin/conque_term.vim                            |   38 +-
- syntax/conque_term.vim                            |   30 +
+ README                                            |   11
+ autoload/conque_term.vim                          | 2110
+ autoload/conque_term/conque.py                    |  975
+ autoload/conque_term/conque_globals.py            |  287
+ autoload/conque_term/conque_screen.py             |  209
+ autoload/conque_term/conque_sole.py               |  459
+ autoload/conque_term/conque_sole_communicator.py  |  183
+ autoload/conque_term/conque_sole_shared_memory.py |  202
+ autoload/conque_term/conque_sole_subprocess.py    |  753
+ autoload/conque_term/conque_sole_wrapper.py       |  304
+ autoload/conque_term/conque_subprocess.py         |  195
+ autoload/conque_term/conque_win32_util.py         |  473
+ doc/conque_term.txt                               |  126
+ plugin/conque_term.vim                            |   38
+ syntax/conque_term.vim                            |   30
  15 files changed, 4915 insertions(+), 1440 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2@1)
@@ -110,10 +110,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      * New API functions (BETA)
      * New ConqueTerm_CloseOnEnd? option
 
- autoload/conque_term.vim |  522 +++++++++++++++++++++++++++++++++++++++-------
- doc/conque_term.txt      |  444 ++++++++++++++++++++++++++++++---------
- plugin/conque_term.vim   |   28 ++-
- syntax/conque_term.vim   |   18 ++-
+ autoload/conque_term.vim |  522
+ doc/conque_term.txt      |  444
+ plugin/conque_term.vim   |   28
+ syntax/conque_term.vim   |   18
  4 files changed, 824 insertions(+), 188 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1@1)
@@ -140,9 +140,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      * Allow custom key for leaving insert mode
      * Various other bugfixes
 
- autoload/conque_term.vim |  424 ++++++++++++++++++++++++++++++++++------------
- plugin/conque_term.vim   |   29 +++-
- syntax/conque_term.vim   |    8 +-
+ autoload/conque_term.vim |  424
+ plugin/conque_term.vim   |   29
+ syntax/conque_term.vim   |    8
  3 files changed, 342 insertions(+), 119 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0@1)
@@ -158,7 +158,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
        * Improve speed
        * Improve syntax highlighting
 
- conque_term.vba | 1702 -------------------------------------------------------
+ conque_term.vba | 1702
  1 files changed, 0 insertions(+), 1702 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -168,19 +168,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Same as above.
 
- README.orig                             |  107 --
- autoload/conque.vim                     |  718 -------------
- autoload/conque_term.vim                | 1378 +++++++++++++++++++++++++
- autoload/subprocess.vim                 |   41 -
- autoload/subprocess/proc_py.vim         |  386 -------
- autoload/subprocess/shell_translate.vim |  457 ---------
- conque_term.vba                         | 1702 +++++++++++++++++++++++++++++++
- doc/conque_term.txt                     |  156 +++
- doc/license.txt                         |   23 -
- plugin/conque.vim                       |   66 --
- plugin/conque_term.vim                  |   80 ++
- syntax/conque.vim                       |   76 --
- syntax/conque_term.vim                  |   77 ++
+ README.orig                             |  107
+ autoload/conque.vim                     |  718
+ autoload/conque_term.vim                | 1378
+ autoload/subprocess.vim                 |   41
+ autoload/subprocess/proc_py.vim         |  386
+ autoload/subprocess/shell_translate.vim |  457
+ conque_term.vba                         | 1702
+ doc/conque_term.txt                     |  156
+ doc/license.txt                         |   23
+ plugin/conque.vim                       |   66
+ plugin/conque_term.vim                  |   80
+ syntax/conque.vim                       |   76
+ syntax/conque_term.vim                  |   77
  13 files changed, 3393 insertions(+), 1874 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -193,13 +193,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      * Fix GVim errors with non-english locale
      * No functional changes
 
- README.orig                             |   11 ++------
- autoload/conque.vim                     |    7 ++++-
- autoload/subprocess.vim                 |    4 +-
- autoload/subprocess/proc_py.vim         |   41 ++++++++++++++++++++++---------
- autoload/subprocess/shell_translate.vim |    5 ++-
- plugin/conque.vim                       |    4 +-
- syntax/conque.vim                       |    4 +-
+ README.orig                             |   11
+ autoload/conque.vim                     |    7
+ autoload/subprocess.vim                 |    4
+ autoload/subprocess/proc_py.vim         |   41
+ autoload/subprocess/shell_translate.vim |    5
+ plugin/conque.vim                       |    4
+ syntax/conque.vim                       |    4
  7 files changed, 46 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -211,13 +211,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
      * Various performance enhancements and bugfixes. * Rewritten escape sequence processing
 
- README.orig                             |   19 +-
- autoload/conque.vim                     |  198 +++++-----
- autoload/subprocess.vim                 |    4 +-
- autoload/subprocess/proc_py.vim         |   26 +-
- autoload/subprocess/shell_translate.vim |  643 ++++++++++++++++++-------------
- plugin/conque.vim                       |    4 +-
- syntax/conque.vim                       |    4 +-
+ README.orig                             |   19
+ autoload/conque.vim                     |  198
+ autoload/subprocess.vim                 |    4
+ autoload/subprocess/proc_py.vim         |   26
+ autoload/subprocess/shell_translate.vim |  643
+ plugin/conque.vim                       |    4
+ syntax/conque.vim                       |    4
  7 files changed, 506 insertions(+), 392 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -233,14 +233,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
         * Add special handling of "vi" and "man" commands
         * Various bugfixes
 
- README.orig                             |   40 ++-
- autoload/conque.vim                     |  613 +++++++++++++++++--------------
- autoload/subprocess.vim                 |    4 +-
- autoload/subprocess/proc_py.vim         |   73 +++-
- autoload/subprocess/shell_translate.vim |  171 ++++++++-
- doc/license.txt                         |    2 +-
- plugin/conque.vim                       |   20 +-
- syntax/conque.vim                       |   18 +-
+ README.orig                             |   40
+ autoload/conque.vim                     |  613
+ autoload/subprocess.vim                 |    4
+ autoload/subprocess/proc_py.vim         |   73
+ autoload/subprocess/shell_translate.vim |  171
+ doc/license.txt                         |    2
+ plugin/conque.vim                       |   20
+ syntax/conque.vim                       |   18
  8 files changed, 586 insertions(+), 355 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -256,14 +256,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      * Bugfixes for multiple shell buffers
      * Add experimental shell folding option
 
- INSTALL                                 |   46 -------
- README.orig                             |   89 +++++++++++++
- autoload/conque.vim                     |   68 +++++-----
- autoload/subprocess.vim                 |    6 +-
- autoload/subprocess/proc_py.vim         |   35 +++---
- autoload/subprocess/shell_translate.vim |  212 +++++++++++++++++++++++++++++++
- plugin/conque.vim                       |   12 +-
- syntax/conque.vim                       |   48 +++++---
+ INSTALL                                 |   46
+ README.orig                             |   89
+ autoload/conque.vim                     |   68
+ autoload/subprocess.vim                 |    6
+ autoload/subprocess/proc_py.vim         |   35
+ autoload/subprocess/shell_translate.vim |  212
+ plugin/conque.vim                       |   12
+ syntax/conque.vim                       |   48
  8 files changed, 396 insertions(+), 120 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -278,30 +278,30 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Faster/less buggy tab completion
     * Support for multiple shell buffers
 
- INSTALL                         |   30 ++-
- autoload/conque.vim             |  453 +++++++++++++++---------
- autoload/fakepoll.h             |  163 ---------
- autoload/proc.c                 |  676 -----------------------------------
+ INSTALL                         |   30
+ autoload/conque.vim             |  453
+ autoload/fakepoll.h             |  163
+ autoload/proc.c                 |  676
  autoload/proc.so                |  Bin 24096 -> 0 bytes
- autoload/proc.vim               |  325 -----------------
- autoload/proc_w32.c             |  745 ---------------------------------------
- autoload/subprocess.vim         |   43 +++
- autoload/subprocess/proc_py.vim |  335 ++++++++++++++++++
- autoload/vimstack.c             |  241 -------------
- conque/license.txt              |  674 -----------------------------------
- doc/license.txt                 |   23 ++
- plugin/conque.vim               |   63 +++-
- syntax/conque.vim               |   37 ++-
- vimproc/Makefile                |   38 --
- vimproc/README                  |    4 -
- vimproc/make_mac.mak            |   15 -
- vimproc/make_msvc.mak           |    6 -
- vimproc/test/test1.vim          |   10 -
- vimproc/test/test2.vim          |   13 -
- vimproc/test/test3.vim          |   14 -
- vimproc/test/test4.vim          |   19 -
- vimproc/test/test5.vim          |   13 -
- vimproc/test/test6.vim          |   13 -
+ autoload/proc.vim               |  325
+ autoload/proc_w32.c             |  745
+ autoload/subprocess.vim         |   43
+ autoload/subprocess/proc_py.vim |  335
+ autoload/vimstack.c             |  241
+ conque/license.txt              |  674
+ doc/license.txt                 |   23
+ plugin/conque.vim               |   63
+ syntax/conque.vim               |   37
+ vimproc/Makefile                |   38
+ vimproc/README                  |    4
+ vimproc/make_mac.mak            |   15
+ vimproc/make_msvc.mak           |    6
+ vimproc/test/test1.vim          |   10
+ vimproc/test/test2.vim          |   13
+ vimproc/test/test3.vim          |   14
+ vimproc/test/test4.vim          |   19
+ vimproc/test/test5.vim          |   13
+ vimproc/test/test6.vim          |   13
  24 files changed, 785 insertions(+), 3168 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -311,26 +311,26 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- INSTALL                |   30 ++
- README                 |   33 +++
- autoload/conque.vim    |  531 ++++++++++++++++++++++++++++++++++
- autoload/fakepoll.h    |  163 +++++++++++
- autoload/proc.c        |  676 +++++++++++++++++++++++++++++++++++++++++++
+ INSTALL                |   30
+ README                 |   33
+ autoload/conque.vim    |  531
+ autoload/fakepoll.h    |  163
+ autoload/proc.c        |  676
  autoload/proc.so       |  Bin 0 -> 24096 bytes
- autoload/proc.vim      |  325 +++++++++++++++++++++
- autoload/proc_w32.c    |  745 ++++++++++++++++++++++++++++++++++++++++++++++++
- autoload/vimstack.c    |  241 ++++++++++++++++
- conque/license.txt     |  674 +++++++++++++++++++++++++++++++++++++++++++
- plugin/conque.vim      |   33 +++
- syntax/conque.vim      |   57 ++++
- vimproc/Makefile       |   38 +++
- vimproc/README         |    4 +
- vimproc/make_mac.mak   |   15 +
- vimproc/make_msvc.mak  |    6 +
- vimproc/test/test1.vim |   10 +
- vimproc/test/test2.vim |   13 +
- vimproc/test/test3.vim |   14 +
- vimproc/test/test4.vim |   19 ++
- vimproc/test/test5.vim |   13 +
- vimproc/test/test6.vim |   13 +
+ autoload/proc.vim      |  325
+ autoload/proc_w32.c    |  745
+ autoload/vimstack.c    |  241
+ conque/license.txt     |  674
+ plugin/conque.vim      |   33
+ syntax/conque.vim      |   57
+ vimproc/Makefile       |   38
+ vimproc/README         |    4
+ vimproc/make_mac.mak   |   15
+ vimproc/make_msvc.mak  |    6
+ vimproc/test/test1.vim |   10
+ vimproc/test/test2.vim |   13
+ vimproc/test/test3.vim |   14
+ vimproc/test/test4.vim |   19
+ vimproc/test/test5.vim |   13
+ vimproc/test/test6.vim |   13
  22 files changed, 3653 insertions(+), 0 deletions(-)

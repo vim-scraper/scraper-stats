@@ -7,8 +7,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - QuickfixsignsSelect(): check if g:quickfixsigns_class_{what} existsMD5 checksum: 833e1a48f7a3d7460ae29795fb328be4
 
- autoload/quickfixsigns/breakpoints.vim |   80 ++++++++++++++++++++++++++++++++
- plugin/quickfixsigns.vim               |    8 ++--
+ autoload/quickfixsigns/breakpoints.vim |   80
+ plugin/quickfixsigns.vim               |    8
  2 files changed, 84 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
@@ -20,10 +20,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - 'test' field; additional test if a sign should be updated (e.g. update _cursor only if lnum has changed)- breakpoints (currently vim only)- set g:quickfixsigns#vcsdiff#loaded- g:quickfixsigns_class_cursor: remove test (interferes with put & delete-like commands)- breakpoints: test for a known filetype- QuickfixsignsSet(event, ?classes=[])- Disable the 'cursor' class by default.- Set b:quickfixsigns_last_lineMD5 checksum: 936abcfd67be7efe52fb0f85481c8665
 
- autoload/quickfixsigns/marks.vim   |    4 +-
- autoload/quickfixsigns/vcsdiff.vim |   10 ++++-
- doc/quickfixsigns.txt              |   81 ++++++++++++++++++++++-------------
- plugin/quickfixsigns.vim           |   81 ++++++++++++------------------------
+ autoload/quickfixsigns/marks.vim   |    4
+ autoload/quickfixsigns/vcsdiff.vim |   10
+ doc/quickfixsigns.txt              |   81
+ plugin/quickfixsigns.vim           |   81
  4 files changed, 88 insertions(+), 88 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
@@ -35,10 +35,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Don't check the buffer number in s:ClearBuffer()- Improved handling of scopes (vim, buffer)- Always include the bufnr in the ID- FIX: upper case marks- Increase g:quickfixsigns_max = 500MD5 checksum: 6fa3a5dd60e62af094f7f7fe41d8695f
 
- autoload/quickfixsigns.vim       |    5 +-
- autoload/quickfixsigns/marks.vim |   21 +++++++--
- doc/quickfixsigns.txt            |   14 ++++--
- plugin/quickfixsigns.vim         |   95 +++++++++++++++++++++++++------------
+ autoload/quickfixsigns.vim       |    5
+ autoload/quickfixsigns/marks.vim |   21
+ doc/quickfixsigns.txt            |   14
+ plugin/quickfixsigns.vim         |   95
  4 files changed, 94 insertions(+), 41 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
@@ -50,11 +50,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - quickfixsigns#vcsdiff#GuessType(): use b:git_dir if set (by fugitive)- vcsdiff: Support for hg, svn- run qfl/loc checks more also on CursorHold & QuickfixCommandPost events- Experimental support for icons (currently assumes that gnome icons 16x16 are ok)- Support for sign classes that affect all buffers (all_buffers != 0)- Avoid unnecessary updates- Simplify handling of ids (construct a global id based on the sign definition)- Include icons from the open icon library- marks: Don't use own ID generator- s:PruneRegister()- Don't display icons on windowsMD5 checksum: 2ba95f98307ea61db8de28d6e60fb61b
 
- README                             |   14 ++-
- autoload/quickfixsigns/marks.vim   |   25 +----
- autoload/quickfixsigns/vcsdiff.vim |   35 +++++--
- doc/quickfixsigns.txt              |   33 +++++--
- plugin/quickfixsigns.vim           |  191 ++++++++++++++++++++++--------------
+ README                             |   14
+ autoload/quickfixsigns/marks.vim   |   25
+ autoload/quickfixsigns/vcsdiff.vim |   35
+ doc/quickfixsigns.txt              |   33
+ plugin/quickfixsigns.vim           |  191
  5 files changed, 181 insertions(+), 117 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
@@ -72,11 +72,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - quickfixsigns#RelNumbersOnce()
     - Support for vcs diff (this requires either b:vcs_type or b:VCSCommandVCSType to be set to a supported vcs, e.g. git)
 
- autoload/quickfixsigns.vim         |   58 +++++++
- autoload/quickfixsigns/marks.vim   |   87 ++++++++++
- autoload/quickfixsigns/vcsdiff.vim |  139 +++++++++++++++
- doc/quickfixsigns.txt              |  180 +++++++++++++++++---
- plugin/quickfixsigns.vim           |  333 ++++++++++++++++++++++--------------
+ autoload/quickfixsigns.vim         |   58
+ autoload/quickfixsigns/marks.vim   |   87
+ autoload/quickfixsigns/vcsdiff.vim |  139
+ doc/quickfixsigns.txt              |  180
+ plugin/quickfixsigns.vim           |  333
  5 files changed, 641 insertions(+), 156 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -89,7 +89,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Set balloonexpr only if empty (don't try to be smart)
     - Disable CursorMoved(I) events, when &lazyredraw isn't set.
 
- plugin/quickfixsigns.vim |   52 +++++++++++++++++++++++++++++++---------------
+ plugin/quickfixsigns.vim |   52
  1 files changed, 35 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -103,8 +103,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - s:ClearBuffer: removed old code
     - QuickfixsignsMarks(state): Switch the display of marks on/off.
 
- doc/quickfixsigns.txt    |   28 +++++++++---
- plugin/quickfixsigns.vim |  113 ++++++++++++++++++++++++++++++----------------
+ doc/quickfixsigns.txt    |   28
+ plugin/quickfixsigns.vim |  113
  2 files changed, 96 insertions(+), 45 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -124,8 +124,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - g:quickfixsigns_lists: event field is a list
     - g:quickfixsigns_lists: timeout field: don't re-display this list more often than n seconds
 
- doc/quickfixsigns.txt    |   27 +++++---
- plugin/quickfixsigns.vim |  161 ++++++++++++++++++++++++++++++---------------
+ doc/quickfixsigns.txt    |   27
+ plugin/quickfixsigns.vim |  161
  2 files changed, 125 insertions(+), 63 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -135,7 +135,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2: GLVS, minor fix
 
- README                   |   10 ++
- doc/quickfixsigns.txt    |   74 ++++++++++++
- plugin/quickfixsigns.vim |  278 ++++++++++++++++++++++++++++++++++++++++++++++
+ README                   |   10
+ doc/quickfixsigns.txt    |   74
+ plugin/quickfixsigns.vim |  278
  3 files changed, 362 insertions(+), 0 deletions(-)

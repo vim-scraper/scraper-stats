@@ -5,8 +5,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.8: No change in functionality. Just added a proper help file.
 
- doc/TabManager.txt    |  188 ++++++++++
- plugin/TabManager.vim |  990 ++++++++++++++++++++++++------------------------
+ doc/TabManager.txt    |  188
+ plugin/TabManager.vim |  990
  2 files changed, 683 insertions(+), 495 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
@@ -18,7 +18,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     No real change; has a dependency upon my GetVar autoload script which I had forgotten to mention before. Sorry if this caused problems.
 
- plugin/TabManager.vim |   11 ++++++++++-
+ plugin/TabManager.vim |   11
  1 files changed, 10 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -30,8 +30,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added a new command: Rearrangetabsbypackage: Works just like Rearrangetabsbypath, except uses the package the files are in. Only useful for files that specify a package (falls back to the entire file path otherwise).
 
- README                |   17 ++++++++++++++++
- plugin/TabManager.vim |   51 +++++++++++++++++++++++++++++++++++++++++++++++++
+ README                |   17
+ plugin/TabManager.vim |   51
  2 files changed, 68 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.55)
@@ -43,8 +43,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Rearrangetabsbypath now also takes a second parameter which determines how many components from the path to consider.
 
- README                |   17 +++++++++++++++++
- plugin/TabManager.vim |   45 ++++++++++++++++++++++++++++++++++++++++++++-
+ README                |   17
+ plugin/TabManager.vim |   45
  2 files changed, 61 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -91,8 +91,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     If you call this before you've run any actual rearrangement commands, you will most likely (deservedly) get an error.
 
- README                |   39 +++++++++++++++++++
- plugin/TabManager.vim |  101 +++++++++++++++++++++++++++++++++++++++----------
+ README                |   39
+ plugin/TabManager.vim |  101
  2 files changed, 120 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.45)
@@ -106,7 +106,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Copytotab: copies the current file to the specified tab (just like Movetotab except that the original tab also contains the file).
 
- plugin/TabManager.vim |   22 ++++++++++++++++------
+ plugin/TabManager.vim |   22
  1 files changed, 16 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -124,8 +124,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - p: previous tab
     - $: last tab
 
- README                |   16 +++++++++++
- plugin/TabManager.vim |   73 +++++++++++++++++++++++++++++++++++++++++++++----
+ README                |   16
+ plugin/TabManager.vim |   73
  2 files changed, 83 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.37)
@@ -137,7 +137,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed a problem where newly created tabs always had an empty window at the bottom. (Executes an :e the first time in a new tab instead of an :sp.)
 
- plugin/TabManager.vim |   10 ++++++----
+ plugin/TabManager.vim |   10
  1 files changed, 6 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.36)
@@ -147,7 +147,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.36: Fixed typo; thank you, Christophe.
 
- plugin/TabManager.vim |    4 ++--
+ plugin/TabManager.vim |    4
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.35)
@@ -161,7 +161,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Takes 'ignorecase' into consideration for matching extensions, first letters and complete file paths (but not for matching roots and "types").
 
- plugin/TabManager.vim |   19 ++++++++++++-------
+ plugin/TabManager.vim |   19
  1 files changed, 12 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -179,7 +179,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     If called with 2 parameters, the first parameter is the number of windows to place in one tab, as always (0 meaning to throw them all together).
 
- plugin/TabManager.vim |   32 +++++++++++++++++++++++++++-----
+ plugin/TabManager.vim |   32
  1 files changed, 27 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.25)
@@ -191,7 +191,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Removed debug statements left in by mistake and fixed a conversion error.
 
- plugin/TabManager.vim |   10 +++-------
+ plugin/TabManager.vim |   10
  1 files changed, 3 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -208,7 +208,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Rearrangetabsbytype now takes an extension (other than the default "java" or g:TabManager_fileTypeExtension) to use when sorting the files.
 
- plugin/TabManager.vim |   46 +++++++++++++++++++++++++++++++++++++++++++---
+ plugin/TabManager.vim |   46
  1 files changed, 43 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -226,7 +226,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Rearrangetabsbyroot: Groups files with similarly named roots together. For example, CopyAction.java, CopyForm.java and CopyResults.jsp will end up together
     because they all have "Copy" as the root.
 
- plugin/TabManager.vim |   39 ++++++++++++++++++++++++++++++++++++++-
+ plugin/TabManager.vim |   39
  1 files changed, 38 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -236,6 +236,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README                |   73 +++++++++++++++++++++++
- plugin/TabManager.vim |  158 +++++++++++++++++++++++++++++++++++++++++++++++++
+ README                |   73
+ plugin/TabManager.vim |  158
  2 files changed, 231 insertions(+), 0 deletions(-)

@@ -5,7 +5,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.5.0: * set scrolloff-5
 
- vimpager |    6 +++---
+ vimpager |    6
  1 files changed, 3 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4.9)
@@ -18,7 +18,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * trap more signals for temp file removal
     * clear terminal on OSX only for terminal vim
 
- vimpager |  443 +++++++++++++++++++++++++++++++-------------------------------
+ vimpager |  443
  1 files changed, 224 insertions(+), 219 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4.8)
@@ -33,8 +33,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * detect ssh session on OSX and Cygwin
     * remove "Input not from a terminal" warning entirely
 
- README   |    2 +-
- vimpager |  342 +++++++++++++++++++++++++++++++++++++++----------------------
+ README   |    2
+ vimpager |  342
  2 files changed, 220 insertions(+), 124 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4.7)
@@ -47,7 +47,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * fix some "input not from terminal" warnings
     * fix for invocations on files not in current directory
 
- vimpager |    8 +++++---
+ vimpager |    8
  1 files changed, 5 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4.6)
@@ -62,8 +62,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * fix syntax highlighting for files opened directly
     * reset terminal on completion
 
- README   |    2 +-
- vimpager |   65 +++++++++++++++++++++++++++++++++++++++++++++++--------------
+ README   |    2
+ vimpager |   65
  2 files changed, 51 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4.5)
@@ -76,7 +76,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * fixes for Mac OSX
     * -X option to speed up startup (jdevera)
 
- vimpager |    9 +++++----
+ vimpager |    9
  1 files changed, 5 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4.4)
@@ -88,7 +88,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * .vimrc option let vimpager_use_gvim = 1 to use gvim as the pager window
 
- vimpager |   10 ++++++++--
+ vimpager |   10
  1 files changed, 8 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4.3)
@@ -98,7 +98,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.4.3: * Support for .Z and .gz files
 
- vimpager |   17 +++++++++--------
+ vimpager |   17
  1 files changed, 9 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4.2)
@@ -111,7 +111,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Extensive rewrite using awk for real Solaris compatibility by Wout Mertens.
     * Filter ANSI color codes and backspaces for all pager invocations (github issue #2)
 
- vimpager |  111 ++++++++++++++++++++++++++++---------------------------------
+ vimpager |  111
  1 files changed, 51 insertions(+), 60 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -121,8 +121,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.4: * fix for python2 docs on archlinux from Ivan S. Freitas
 
- README   |    3 +++
- vimpager |    8 +++++---
+ README   |    3
+ vimpager |    8
  2 files changed, 8 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -132,7 +132,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3: * added 'set nonu'
 
- vimpager |    3 ++-
+ vimpager |    3
  1 files changed, 2 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -145,7 +145,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * fix for FreeBSD
     * add esc-u mapping to turn off hlsearch
 
- vimpager |   12 +++++++++---
+ vimpager |   12
  1 files changed, 9 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -157,7 +157,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fix bug where it wouldn't move on searches at launch without moving the cursor first
 
- vimpager |    7 ++++---
+ vimpager |    7
  1 files changed, 4 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -167,7 +167,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Fix for perldoc on Cygwin
 
- vimpager |    6 +++---
+ vimpager |    6
  1 files changed, 3 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
@@ -177,7 +177,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.9: Fix for filenames with spaces.
 
- vimpager |   16 ++++++++--------
+ vimpager |   16
  1 files changed, 8 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
@@ -187,6 +187,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.8: Turn off folds (correctly this time.)
 
- README   |    5 ++++
- vimpager |   77 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README   |    5
+ vimpager |   77
  2 files changed, 82 insertions(+), 0 deletions(-)

@@ -7,7 +7,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed two bugs:Completing of all no* alternativesNot completing the only possible prefix if prefix truncating is allowed
 
- plugin/comp.vim |    7 ++++---
+ plugin/comp.vim |    7
  1 files changed, 4 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5.2@1)
@@ -24,12 +24,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.5.2: Added alternating prefixes support
 
- autoload/fileutils.vim |   28 +++++++----
- doc/chk.txt            |   16 ++++--
- doc/comp.txt           |    6 ++-
- plugin/chk.vim         |  125 +++++++++++++++++++++++++++++++++++++++++-------
- plugin/comp.vim        |  104 ++++++++++++++++++++++++++++------------
- plugin/load.vim        |    6 +--
+ autoload/fileutils.vim |   28
+ doc/chk.txt            |   16
+ doc/comp.txt           |    6
+ plugin/chk.vim         |  125
+ plugin/comp.vim        |  104
+ plugin/load.vim        |    6
  6 files changed, 217 insertions(+), 68 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -39,11 +39,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.5: Greatly improved `pref' model
 
- doc/chk.txt     |    6 +-
- doc/comp.txt    |   13 +++-
- plugin/chk.vim  |    2 +
- plugin/comp.vim |  214 ++++++++++++++++++++++++++++++++-----------------------
- plugin/load.vim |    8 +-
+ doc/chk.txt     |    6
+ doc/comp.txt    |   13
+ plugin/chk.vim  |    2
+ plugin/comp.vim |  214
+ plugin/load.vim |    8
  5 files changed, 145 insertions(+), 98 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.3)
@@ -53,8 +53,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3.3: Made pref model less strict about prefixes
 
- doc/vim-fileutils.txt |    8 ++++----
- plugin/comp.vim       |   10 +++++++++-
+ doc/vim-fileutils.txt |    8
+ plugin/comp.vim       |   10
  2 files changed, 13 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.2)
@@ -64,8 +64,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3.2: Made `escape' escape less characters by default
 
- doc/comp.txt    |    5 +++--
- plugin/comp.vim |    7 +++++--
+ doc/comp.txt    |    5
+ plugin/comp.vim |    7
  2 files changed, 8 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.1)
@@ -75,7 +75,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3.1: Fixed file completion
 
- plugin/comp.vim |   29 +++++++++++++++++++++--------
+ plugin/comp.vim |   29
  1 files changed, 21 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -87,8 +87,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     !!! Changed `file' argument description syntaxAdded =file and =file! argument descriptions (see documenation)
 
- doc/comp.txt    |   34 +++++++++++++-
- plugin/comp.vim |  126 +++++++++++++++++++++++++++++++++++++++---------------
+ doc/comp.txt    |   34
+ plugin/comp.vim |  126
  2 files changed, 122 insertions(+), 38 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.3)
@@ -98,10 +98,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2.3: Made file completion not prepend ./ when completing empty string
 
- autoload/fileutils.vim |    4 +++-
- doc/comp.txt           |   17 +++++++++--------
- doc/vim-fileutils.txt  |    3 ++-
- plugin/comp.vim        |   48 ++++++++++++++++++++++++++++--------------------
+ autoload/fileutils.vim |    4
+ doc/comp.txt           |   17
+ doc/vim-fileutils.txt  |    3
+ plugin/comp.vim        |   48
  4 files changed, 42 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.2)
@@ -111,8 +111,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2.2: Various file completion fixes
 
- autoload/fileutils.vim |   26 +++++++--
- plugin/comp.vim        |  151 ++++++++++++++++++++++--------------------------
+ autoload/fileutils.vim |   26
+ plugin/comp.vim        |  151
  2 files changed, 90 insertions(+), 87 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1@1)
@@ -122,12 +122,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2.1@1: Reposting bundle due to core plugins update
 
- autoload/fileutils.vim |   78 +++++++++----
- autoload/os.vim        |   38 ++++++-
- doc/load.txt           |   78 ++++++++-----
- doc/vim-fileutils.txt  |    5 +-
- plugin/load.vim        |  297 +++++++++++++++++++++++++++++++-----------------
- plugin/yaml.vim        |    6 +-
+ autoload/fileutils.vim |   78
+ autoload/os.vim        |   38
+ doc/load.txt           |   78
+ doc/vim-fileutils.txt  |    5
+ plugin/load.vim        |  297
+ plugin/yaml.vim        |    6
  6 files changed, 339 insertions(+), 163 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
@@ -137,12 +137,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2.1: Added TrailingSeparator option (affects directory completion)
 
- README                 |    3 +-
- autoload/fileutils.vim |   40 +++++++++++++++++++
- autoload/os.vim        |   98 ++++++++++++++++++++++++++++++++++++++++++++++++
- doc/comp.txt           |    9 ++++
- doc/vim-fileutils.txt  |   44 +++++++++++++++++++++
- plugin/comp.vim        |   16 +++++++-
+ README                 |    3
+ autoload/fileutils.vim |   40
+ autoload/os.vim        |   98
+ doc/comp.txt           |    9
+ doc/vim-fileutils.txt  |   44
+ plugin/comp.vim        |   16
  6 files changed, 208 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -152,18 +152,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2: Improved filename completion, added insert mode completion support
 
- autoload/load.vim |   45 +-
- doc/chk.txt       |   36 +-
- doc/comp.txt      |   39 +-
- doc/load.txt      |  144 ++-
- doc/oop.txt       |   93 ++
- doc/yaml.txt      |  240 +++
- plugin/chk.vim    |  255 +++-
- plugin/comp.vim   |  247 +++-
- plugin/load.vim   |  896 ++++++++----
- plugin/oop.vim    |  237 +++
- plugin/stuf.vim   |  242 ++--
- plugin/yaml.vim   | 4442 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ autoload/load.vim |   45
+ doc/chk.txt       |   36
+ doc/comp.txt      |   39
+ doc/load.txt      |  144
+ doc/oop.txt       |   93
+ doc/yaml.txt      |  240
+ plugin/chk.vim    |  255
+ plugin/comp.vim   |  247
+ plugin/load.vim   |  896
+ plugin/oop.vim    |  237
+ plugin/stuf.vim   |  242
+ plugin/yaml.vim   | 4442
  12 files changed, 6340 insertions(+), 576 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.1)
@@ -173,10 +173,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.1.1: Fixed filename completion
 
- doc/chk.txt     |   10 ++++
- plugin/chk.vim  |  150 +++++++++++++++++++++++++++++++++++--------------------
- plugin/comp.vim |   25 +++++----
- plugin/stuf.vim |  116 +++++++++++++++++++++++++++----------------
+ doc/chk.txt     |   10
+ plugin/chk.vim  |  150
+ plugin/comp.vim |   25
+ plugin/stuf.vim |  116
  4 files changed, 192 insertions(+), 109 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -188,9 +188,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added input() completion support and simple `words' model (argument model that ignores context)
 
- doc/comp.txt    |   11 +++++
- plugin/comp.vim |   61 ++++++++++++++++++++-----
- plugin/stuf.vim |  131 ++++++++++++++++++++++++++++++++++++++++++++++++++++---
+ doc/comp.txt    |   11
+ plugin/comp.vim |   61
+ plugin/stuf.vim |  131
  3 files changed, 184 insertions(+), 19 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
@@ -200,9 +200,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0.1: Fixed dependency list
 
- doc/load.txt    |   13 ++
- plugin/load.vim |   66 +++++---
- plugin/stuf.vim |  516 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/load.txt    |   13
+ plugin/load.vim |   66
+ plugin/stuf.vim |  516
  3 files changed, 574 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0@1)
@@ -212,10 +212,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0@1: Initial upload
 
- doc/load.txt    |   65 ++++++++++++++++++++++++++++++--
- plugin/chk.vim  |   46 ++++++++++++++++++----
- plugin/comp.vim |    9 +++-
- plugin/load.vim |  111 +++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ doc/load.txt    |   65
+ plugin/chk.vim  |   46
+ plugin/comp.vim |    9
+ plugin/load.vim |  111
  4 files changed, 213 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -225,12 +225,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README            |   15 +
- autoload/load.vim |    5 +
- doc/chk.txt       |  422 +++++++++++++++
- doc/comp.txt      |  123 +++++
- doc/load.txt      |  335 ++++++++++++
- plugin/chk.vim    | 1046 ++++++++++++++++++++++++++++++++++++++
- plugin/comp.vim   |  382 ++++++++++++++
- plugin/load.vim   | 1467 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README            |   15
+ autoload/load.vim |    5
+ doc/chk.txt       |  422
+ doc/comp.txt      |  123
+ doc/load.txt      |  335
+ plugin/chk.vim    | 1046
+ plugin/comp.vim   |  382
+ plugin/load.vim   | 1467
  8 files changed, 3795 insertions(+), 0 deletions(-)

@@ -5,13 +5,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.21: Back from the dead.  Windows is working again, and a few bugs fixed.
 
- CHANGELOG        |  273 ++++++++++++++++++++++++++
- ChangeLog        |  257 -------------------------
- README.orig      |  221 +++++++++++++++++++++
- TODO             |    3 +-
- plugin/vimsh.vim |   39 +++--
- vimsh.py         |  559 ++++++++++++++++++++++++++----------------------------
- vimsh.readme     |  204 --------------------
+ CHANGELOG        |  273
+ ChangeLog        |  257
+ README.orig      |  221
+ TODO             |    3
+ plugin/vimsh.vim |   39
+ vimsh.py         |  559
+ vimsh.readme     |  204
  7 files changed, 791 insertions(+), 765 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.20)
@@ -36,10 +36,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Ctrl-D (EOF) now closes buffer only when sent to initial spawned shell.
     * Fixed bug on Windows (pipes) for multiple line command or leading space in command.
 
- ChangeLog    |   14 ++
- TODO         |    9 +-
- vimsh.py     |  678 ++++++++++++++++++++++++++--------------------------------
- vimsh.readme |    9 +-
+ ChangeLog    |   14
+ TODO         |    9
+ vimsh.py     |  678
+ vimsh.readme |    9
  4 files changed, 324 insertions(+), 386 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.19)
@@ -55,9 +55,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Fix leading space in output when paging commands like ping(8).
     * Added some tips for [t]csh users to the readme.
 
- ChangeLog    |   23 ++++++++++++++++-------
- vimsh.py     |   31 ++++++++++++++++++-------------
- vimsh.readme |   30 ++++++++++++++++++++++++++----
+ ChangeLog    |   23
+ vimsh.py     |   31
+ vimsh.readme |   30
  3 files changed, 60 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.18)
@@ -77,11 +77,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       (multiple buf fix).
     * Fixed password regex for ssh, now handles leading spaces if present within vimsh.
 
- ChangeLog        |   12 +++++
- TODO             |    2 -
- plugin/vimsh.vim |   11 +++--
- vimsh.py         |  120 +++++++++++++++++++++++++++++++++++++-----------------
- vimsh.readme     |    2 +-
+ ChangeLog        |   12
+ TODO             |    2
+ plugin/vimsh.vim |   11
+ vimsh.py         |  120
+ vimsh.readme     |    2
  5 files changed, 102 insertions(+), 45 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.17)
@@ -100,11 +100,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * clear screen key mapping g:vimsh_clear_key (default F9) <ddarius@hotpop.com>
     * use startinsert! <ddarius@hotpop.com>
 
- ChangeLog        |   12 +++-
- TODO             |   18 +++--
- plugin/vimsh.vim |    8 ++-
- vimsh.py         |  203 ++++++++++++++++++++++++++++++++----------------------
- vimsh.readme     |   18 +++--
+ ChangeLog        |   12
+ TODO             |   18
+ plugin/vimsh.vim |    8
+ vimsh.py         |  203
+ vimsh.readme     |   18
  5 files changed, 163 insertions(+), 96 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.16)
@@ -117,8 +117,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Changed '^M' to '\n' for python 2.3.  Vimsh would not
       run w/ python 2.3. Backwards compatible change.
 
- ChangeLog |    3 +++
- vimsh.py  |    6 +++---
+ ChangeLog |    3
+ vimsh.py  |    6
  2 files changed, 6 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
@@ -130,11 +130,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Too many changes/bugfixes to list here, please see changelog for this version.
 
- ChangeLog        |   70 ++++++--
- TODO             |   11 +-
- plugin/vimsh.vim |    4 +-
- vimsh.py         |  496 ++++++++++++++++++++++++++++-------------------------
- vimsh.readme     |   38 +++--
+ ChangeLog        |   70
+ TODO             |   11
+ plugin/vimsh.vim |    4
+ vimsh.py         |  496
+ vimsh.readme     |   38
  5 files changed, 348 insertions(+), 271 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
@@ -156,8 +156,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Added a support routine to determine if last command
       executed is still running.
 
- ChangeLog |   17 +++++++++++-
- vimsh.py  |   80 ++++++++++++++++++++++++++++++++++++++++++++++++++++--------
+ ChangeLog |   17
+ vimsh.py  |   80
  2 files changed, 84 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
@@ -184,11 +184,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Removed duplicate sending of EOF in send_eof.
     * Fixed pty/# of proc detection
 
- ChangeLog        |   23 +++-
- TODO             |   13 ++-
- plugin/vimsh.vim |   65 ++++++++++-
- vimsh.py         |  179 +++++++++++++++++++++--------
- vimsh.readme     |  337 ++++++++++++++++++++++++++++--------------------------
+ ChangeLog        |   23
+ TODO             |   13
+ plugin/vimsh.vim |   65
+ vimsh.py         |  179
+ vimsh.readme     |  337
  5 files changed, 400 insertions(+), 217 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
@@ -230,10 +230,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
           - Changed redraw frequency for better interactive
             response.
 
- ChangeLog    |   46 ++++-
- TODO         |    4 +-
- vimsh.py     |  695 ++++++++++++++++++++++++++++-----------------------------
- vimsh.readme |  293 ++++++++++---------------
+ ChangeLog    |   46
+ TODO         |    4
+ vimsh.py     |  695
+ vimsh.readme |  293
  4 files changed, 499 insertions(+), 539 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
@@ -252,11 +252,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Made the signalling mechanism more generic so I can
        add more handlers in the future.
 
- ChangeLog        |   13 ++-
- TODO             |    2 +-
- plugin/vimsh.vim |   12 +-
- vimsh.py         |   49 ++++--
- vimsh.readme     |  446 +++++++++++++++++++++++++++---------------------------
+ ChangeLog        |   13
+ TODO             |    2
+ plugin/vimsh.vim |   12
+ vimsh.py         |   49
+ vimsh.readme     |  446
  5 files changed, 276 insertions(+), 246 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
@@ -281,11 +281,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       operations or continuous operations ( ie ping <host> or
       find /.
 
- ChangeLog        |   92 ++++++
- TODO             |   20 ++
- plugin/vimsh.vim |   16 +
- vimsh.py         |  830 ++++++++++++++++++++++++++++++------------------------
- vimsh.readme     |  223 +++++++++++++++
+ ChangeLog        |   92
+ TODO             |   20
+ plugin/vimsh.vim |   16
+ vimsh.py         |  830
+ vimsh.readme     |  223
  5 files changed, 814 insertions(+), 367 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
@@ -304,7 +304,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     ( partial list see:unsupp_regex )
     See NOTE for this version in script for more Windows specific information.
 
- vimsh.py |  301 ++++++++++++++++++++++++++++++++++++++++++++++---------------
+ vimsh.py |  301
  1 files changed, 227 insertions(+), 74 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
@@ -323,7 +323,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     I'm getting some good feedback from Windows users, are there any Unix
     vim people using it?
 
- vimsh.py |  547 +++++++++++++++++++++++++++++++++++++++-----------------------
+ vimsh.py |  547
  1 files changed, 346 insertions(+), 201 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
@@ -339,7 +339,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fixed output for lines crossing consecutive reads for pty
     Added map for starting a new prompt at bottom of buffer
 
- vimsh.py |  156 +++++++++++++++++++++++++++++++++++++++++++++-----------------
+ vimsh.py |  156
  1 files changed, 114 insertions(+), 42 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -356,7 +356,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Changed pty prompt to something useful
     - fixed clear
 
- vimsh.py |  194 +++++++++++++++++++++++++++++++++++++-------------------------
+ vimsh.py |  194
  1 files changed, 115 insertions(+), 79 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -371,7 +371,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     exits to parent, initial shell exit will delete buffer,
     Keep <Delete> from overwriting prompt
 
- vimsh.py |  144 ++++++++++++++++++++++++++++++++++++++++++++++++-------------
+ vimsh.py |  144
  1 files changed, 113 insertions(+), 31 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4a)
@@ -385,7 +385,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     pipes, i.e. WinXX, albiet the output isn't as pretty-formatted as with pty.  I cannot at the moment test on Windows
     and would like some feedback.  Shell commands clear and exit are also implemented.
 
- vimsh.py |  230 +++++++++++++++++++++++++++++++++++++++-----------------------
+ vimsh.py |  230
  1 files changed, 146 insertions(+), 84 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3a)
@@ -399,7 +399,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     going to next try to get it to work on windows.  Please send any feedback/issues not listed
     in the script.
 
- vimsh.py |   70 +++++++++++++++++++++++++++++++++++++++++--------------------
+ vimsh.py |   70
  1 files changed, 47 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2a)
@@ -411,7 +411,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed tabwidth, not on prompt message, handling of user input execution rm -i works, and shells now die via autocommand
 
- vimsh.py |  113 ++++++++++++++++++++++++++++++++++++++------------------------
+ vimsh.py |  113
  1 files changed, 69 insertions(+), 44 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1a)
@@ -421,6 +421,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1a: Initial upload
 
- README   |   34 +++++++++++
- vimsh.py |  194 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README   |   34
+ vimsh.py |  194
  2 files changed, 228 insertions(+), 0 deletions(-)

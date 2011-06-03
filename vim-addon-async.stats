@@ -5,7 +5,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.4.1: fix
 
- autoload/repl_python.vim |    2 +-
+ autoload/repl_python.vim |    2
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -17,13 +17,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     depend on signs addon, drop input > prefix, add > to reply lines. Keep track of last reply line. See docs
 
- README.orig                        |   67 +++++++++++++++++++++--------------
- autoload/async.vim                 |   15 +++-----
- autoload/async_porcelaine.vim      |   25 ++++++++-----
- autoload/py-helper-fun.py          |   15 +++++---
- autoload/repl_python.vim           |    8 ++--
- doc/vim-addon-async-addon-info.txt |   11 ++++++
- plugin/vim-addon-async.vim         |    6 +++-
+ README.orig                        |   67
+ autoload/async.vim                 |   15
+ autoload/async_porcelaine.vim      |   25
+ autoload/py-helper-fun.py          |   15
+ autoload/repl_python.vim           |    8
+ doc/vim-addon-async-addon-info.txt |   11
+ plugin/vim-addon-async.vim         |    6
  7 files changed, 91 insertions(+), 56 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.2)
@@ -33,10 +33,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.3.2: fix quoting bug
 
- C/vim-addon-async-helper.c         |    3 --
- autoload/py-helper-fun.py          |    9 ++++++-
- autoload/repl_python.vim           |    4 +-
- autoload/vim_addon_async_tests.vim |   43 +++++++++++++++++++++++++++--------
+ C/vim-addon-async-helper.c         |    3
+ autoload/py-helper-fun.py          |    9
+ autoload/repl_python.vim           |    4
+ autoload/vim_addon_async_tests.vim |   43
  4 files changed, 43 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
@@ -46,10 +46,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.3.1: python repl dict key completion support
 
- README.orig               |    5 ++-
- autoload/async.vim        |    3 +-
- autoload/py-helper-fun.py |   24 +++++++++
- autoload/repl_python.vim  |  123 +++++++++++++++------------------------------
+ README.orig               |    5
+ autoload/async.vim        |    3
+ autoload/py-helper-fun.py |   24
+ autoload/repl_python.vim  |  123
  4 files changed, 71 insertions(+), 84 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -59,12 +59,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.3: repls scala,python,irb and completion work fine now
 
- C/vim-addon-async-helper.c    |    2 +-
- README.orig                   |  128 ++++++++++++++++++++-------
- autoload/async.vim            |   15 +++-
- autoload/async_porcelaine.vim |   68 +++++++++-----
- autoload/repl_python.vim      |  196 +++++++++++++++++++++++++++++++++++++++++
- autoload/repl_ruby.vim        |    3 +-
+ C/vim-addon-async-helper.c    |    2
+ README.orig                   |  128
+ autoload/async.vim            |   15
+ autoload/async_porcelaine.vim |   68
+ autoload/repl_python.vim      |  196
+ autoload/repl_ruby.vim        |    3
  6 files changed, 351 insertions(+), 61 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -76,12 +76,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     speed improvements (pass huge chunks using files), 0 byte support (example xdebug), ruby REPL
 
- C/vim-addon-async-helper.c         |  145 +++++++++++++---
- README.orig                        |   34 ++++
- autoload/async.vim                 |  328 ++++++++++++++++++++++++++++++++++++
- autoload/async_porcelaine.vim      |  325 +++++++++++++++++++++++++++++++++++
- autoload/repl_ruby.vim             |  125 ++++++++++++++
- autoload/vim_addon_async_tests.vim |   56 ++++++
+ C/vim-addon-async-helper.c         |  145
+ README.orig                        |   34
+ autoload/async.vim                 |  328
+ autoload/async_porcelaine.vim      |  325
+ autoload/repl_ruby.vim             |  125
+ autoload/vim_addon_async_tests.vim |   56
  6 files changed, 986 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -91,9 +91,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: signal support, scala REPL completion, pid fix
 
- C/vim-addon-async-helper.c |   70 ++++++---
- README.orig                |   14 ++-
- autoload/async.vim         |  360 --------------------------------------------
+ C/vim-addon-async-helper.c |   70
+ README.orig                |   14
+ autoload/async.vim         |  360
  3 files changed, 59 insertions(+), 385 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0)
@@ -103,10 +103,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0: Initial upload
 
- .gitignore                 |    1 +
- C/vim-addon-async-helper.c |  303 +++++++++++++++++++++++++++++++++++++
- README                     |   13 ++
- README.orig                |  199 ++++++++++++++++++++++++
- autoload/async.vim         |  360 ++++++++++++++++++++++++++++++++++++++++++++
- plugin/vim-addon-async.vim |   13 ++
+ .gitignore                 |    1
+ C/vim-addon-async-helper.c |  303
+ README                     |   13
+ README.orig                |  199
+ autoload/async.vim         |  360
+ plugin/vim-addon-async.vim |   13
  6 files changed, 889 insertions(+), 0 deletions(-)
