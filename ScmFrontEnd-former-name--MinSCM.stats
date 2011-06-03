@@ -5,12 +5,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.7.2: - Fixed to correspond to API of Fuzzyfinder version 3.2.
 
- autoload/minscm.vim                |    3 +-
- autoload/minscm.vim.orig           |  883 ------------------------------------
- autoload/minscm/bazaar.vim.orig    |  233 ----------
- autoload/minscm/git.vim.orig       |  271 -----------
- autoload/minscm/mercurial.vim.orig |  246 ----------
- doc/minscm.txt                     |    3 +
+ autoload/minscm.vim                |    3
+ autoload/minscm.vim.orig           |  883
+ autoload/minscm/bazaar.vim.orig    |  233
+ autoload/minscm/git.vim.orig       |  271
+ autoload/minscm/mercurial.vim.orig |  246
+ doc/minscm.txt                     |    3
  6 files changed, 5 insertions(+), 1634 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1)
@@ -20,13 +20,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.7.1: - Fixed to correspond to API of Fuzzyfinder version 3.0.
 
- autoload/minscm.vim                |    2 +-
- autoload/minscm.vim.orig           |  883 ++++++++++++++++++++++++++++++++++++
- autoload/minscm/bazaar.vim.orig    |  233 ++++++++++
- autoload/minscm/git.vim.orig       |  271 +++++++++++
- autoload/minscm/mercurial.vim      |    4 +-
- autoload/minscm/mercurial.vim.orig |  246 ++++++++++
- doc/minscm.txt                     |    8 +
+ autoload/minscm.vim                |    2
+ autoload/minscm.vim.orig           |  883
+ autoload/minscm/bazaar.vim.orig    |  233
+ autoload/minscm/git.vim.orig       |  271
+ autoload/minscm/mercurial.vim      |    4
+ autoload/minscm/mercurial.vim.orig |  246
+ doc/minscm.txt                     |    8
  7 files changed, 1645 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.0)
@@ -47,13 +47,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Changed MinSCMCommand command to use :! command instead of system()
       function.
 
- autoload/minscm.vim           |  143 +++++++++++++++++++++++++++++++++++------
- autoload/minscm/bazaar.vim    |   26 +++++++-
- autoload/minscm/git.vim       |   26 +++++++-
- autoload/minscm/mercurial.vim |   36 ++++++++++-
- doc/minscm.jax                |   69 ++++++++++++++++++--
- doc/minscm.txt                |   98 +++++++++++++++++++++++++---
- plugin/minscm.vim             |   33 +++++++++-
+ autoload/minscm.vim           |  143
+ autoload/minscm/bazaar.vim    |   26
+ autoload/minscm/git.vim       |   26
+ autoload/minscm/mercurial.vim |   36
+ doc/minscm.jax                |   69
+ doc/minscm.txt                |   98
+ plugin/minscm.vim             |   33
  7 files changed, 388 insertions(+), 43 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.0)
@@ -69,14 +69,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Changed default values of g:minscm_hgLogOption, g:minscm_gitLogOption, and
       g:minscm_bzrLogOption to limit a number of revisions to show.
 
- autoload/minscm.vim           |   33 ++++++++++++++++++++++-------
- autoload/minscm/bazaar.vim    |   36 ++++++++++++++++++++++++++++---
- autoload/minscm/git.vim       |   46 +++++++++++++++++++++++++++++++++++-----
- autoload/minscm/mercurial.vim |   32 +++++++++++++++++++++++++--
- doc/minscm.jax                |   22 +++++++++++++++++--
- doc/minscm.txt                |   31 ++++++++++++++++++++++++---
- plugin/minscm.vim             |   10 ++++++--
- syntax/minscm-annotate.vim    |   29 +++++++++++++++++++++++++
+ autoload/minscm.vim           |   33
+ autoload/minscm/bazaar.vim    |   36
+ autoload/minscm/git.vim       |   46
+ autoload/minscm/mercurial.vim |   32
+ doc/minscm.jax                |   22
+ doc/minscm.txt                |   31
+ plugin/minscm.vim             |   10
+ syntax/minscm-annotate.vim    |   29
  8 files changed, 208 insertions(+), 31 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.0)
@@ -95,13 +95,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       g:minscm_mapKeyAnnotateFile, g:minscm_mapKeyStatus, g:minscm_mapKeyGrep,
       g:minscm_mapKeyLoadAll, and g:minscm_mapKeyFindFile options.
 
- autoload/minscm.vim           |   44 ++++++++++--
- autoload/minscm/bazaar.vim    |    7 ++
- autoload/minscm/git.vim       |   16 +++-
- autoload/minscm/mercurial.vim |   10 +++-
- doc/minscm.jax                |  103 +++++++++++++++++++++++------
- doc/minscm.txt                |  116 ++++++++++++++++++++++++++------
- plugin/minscm.vim             |  148 +++++++++++++++++++++++++++++------------
+ autoload/minscm.vim           |   44
+ autoload/minscm/bazaar.vim    |    7
+ autoload/minscm/git.vim       |   16
+ autoload/minscm/mercurial.vim |   10
+ doc/minscm.jax                |  103
+ doc/minscm.txt                |  116
+ plugin/minscm.vim             |  148
  7 files changed, 347 insertions(+), 97 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.0)
@@ -121,13 +121,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       MinSCMCommitAll commands for repositories which had not been committed
       didn't work.
 
- autoload/minscm.vim           |   65 +++++++++++++++++++++++++++++++---------
- autoload/minscm/bazaar.vim    |    4 +-
- autoload/minscm/git.vim       |   29 +++++++++++++-----
- autoload/minscm/mercurial.vim |   13 +++++---
- doc/minscm.jax                |   28 +++++++++++------
- doc/minscm.txt                |   40 +++++++++++++++++++------
- plugin/minscm.vim             |   11 ++++++-
+ autoload/minscm.vim           |   65
+ autoload/minscm/bazaar.vim    |    4
+ autoload/minscm/git.vim       |   29
+ autoload/minscm/mercurial.vim |   13
+ doc/minscm.jax                |   28
+ doc/minscm.txt                |   40
+ plugin/minscm.vim             |   11
  7 files changed, 139 insertions(+), 51 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
@@ -140,9 +140,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fixed a bug that the log command for Mercurial repositories didn't work on
       Windows.
 
- autoload/minscm.vim           |   10 ++++++++--
- autoload/minscm/mercurial.vim |    2 +-
- doc/minscm.txt                |    4 ++++
+ autoload/minscm.vim           |   10
+ autoload/minscm/mercurial.vim |    2
+ doc/minscm.txt                |    4
  3 files changed, 13 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.0)
@@ -157,14 +157,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Added MinSCMFindFile command.
     - Added Japanese help (doc/minscm.jax).
 
- autoload/minscm.vim           |   37 +++---
- autoload/minscm/bazaar.vim    |    4 +-
- autoload/minscm/git.vim       |    4 +-
- autoload/minscm/mercurial.vim |    4 +-
- doc/minscm.jax                |  266 +++++++++++++++++++++++++++++++++++++++++
- doc/minscm.txt                |  199 ++++++++++++++++++------------
- plugin/minscm.vim             |   42 ++++---
- syntax/minscm-commit.vim      |   10 +-
+ autoload/minscm.vim           |   37
+ autoload/minscm/bazaar.vim    |    4
+ autoload/minscm/git.vim       |    4
+ autoload/minscm/mercurial.vim |    4
+ doc/minscm.jax                |  266
+ doc/minscm.txt                |  199
+ plugin/minscm.vim             |   42
+ syntax/minscm-commit.vim      |   10
  8 files changed, 438 insertions(+), 128 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1.0)
@@ -174,12 +174,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1.0: Initial upload
 
- README                        |  308 ++++++++++++++++
- autoload/minscm.vim           |  801 +++++++++++++++++++++++++++++++++++++++++
- autoload/minscm/bazaar.vim    |  191 ++++++++++
- autoload/minscm/git.vim       |  203 +++++++++++
- autoload/minscm/mercurial.vim |  196 ++++++++++
- doc/minscm.txt                |  237 ++++++++++++
- plugin/minscm.vim             |   99 +++++
- syntax/minscm-commit.vim      |   46 +++
+ README                        |  308
+ autoload/minscm.vim           |  801
+ autoload/minscm/bazaar.vim    |  191
+ autoload/minscm/git.vim       |  203
+ autoload/minscm/mercurial.vim |  196
+ doc/minscm.txt                |  237
+ plugin/minscm.vim             |   99
+ syntax/minscm-commit.vim      |   46
  8 files changed, 2081 insertions(+), 0 deletions(-)

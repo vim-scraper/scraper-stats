@@ -7,9 +7,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - more standard like help files- make sure, the autoload script is only called when needed  (and not on startup)
 
- autoload/histwin.vim     |    4 +-
- doc/histwin.txt          |   80 +++++++++++++++++++++++----------------------
- plugin/histwinPlugin.vim |   39 ++++++++++++----------
+ autoload/histwin.vim     |    4
+ doc/histwin.txt          |   80
+ plugin/histwinPlugin.vim |   39
  3 files changed, 64 insertions(+), 59 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20)
@@ -21,9 +21,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     -Enable storing the tags as Dicionary in .viminfo  (this might not work as expected, cause we are storing a nested  Dictionary)- Show a diff in the preview window when pressing P (or on autocommand  CursorHold if enabled)- a little bit code cleanup (as always ;))- correctly catch E830 and give an error message (reported by D.  Fishburn)(automatically uploaded)
 
- autoload/histwin.vim     |  161 +++++++++++++++++++++++++++++++++++-----------
- doc/histwin.txt          |   62 +++++++++++++++--
- plugin/histwinPlugin.vim |    8 +-
+ autoload/histwin.vim     |  161
+ doc/histwin.txt          |   62
+ plugin/histwinPlugin.vim |    8
  3 files changed, 181 insertions(+), 50 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/19)
@@ -33,9 +33,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 19: Make sure the first entry will be tagged 'Start Editing'
 
- autoload/histwin.vim     |   32 ++++++++++++++++++--------------
- doc/histwin.txt          |    3 ++-
- plugin/histwinPlugin.vim |    6 +++---
+ autoload/histwin.vim     |   32
+ doc/histwin.txt          |    3
+ plugin/histwinPlugin.vim |    6
  3 files changed, 23 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/18)
@@ -45,9 +45,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 18: don't leave the buffer in nomodifiable state (reported by D. Doran)
 
- autoload/histwin.vim     |   28 ++++++++++++++++++++++++++--
- doc/histwin.txt          |    4 +++-
- plugin/histwinPlugin.vim |    8 ++++----
+ autoload/histwin.vim     |   28
+ doc/histwin.txt          |    4
+ plugin/histwinPlugin.vim |    8
  3 files changed, 33 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/17)
@@ -57,9 +57,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 17: the initial entry should be visible for Vim < 7.3.005
 
- autoload/histwin.vim     |    6 +++---
- doc/histwin.txt          |    6 ++++--
- plugin/histwinPlugin.vim |    8 ++++----
+ autoload/histwin.vim     |    6
+ doc/histwin.txt          |    6
+ plugin/histwinPlugin.vim |    8
  3 files changed, 11 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/16)
@@ -69,9 +69,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 16: -more bugfixing. :UB throws errors in Vim before 7.3.005 fix that
 
- autoload/histwin.vim     |   65 ++++++++++++++++++++++++---------------------
- doc/histwin.txt          |    9 +++++-
- plugin/histwinPlugin.vim |    8 +++---
+ autoload/histwin.vim     |   65
+ doc/histwin.txt          |    9
+ plugin/histwinPlugin.vim |    8
  3 files changed, 47 insertions(+), 35 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/15)
@@ -83,9 +83,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed bug when no undo-tree was available (partly by Ben Boeckel. Thanks!)-More error handling (when the cursor is not on a list item)-Commenting out the entry to store the histdict in a global variable, that should be written to the .viminfo file (but is not yet supported by plain vim)
 
- autoload/histwin.vim     |  184 +++++++++++++++++++++++++++++-----------------
- doc/histwin.txt          |    2 +-
- plugin/histwinPlugin.vim |    8 +-
+ autoload/histwin.vim     |  184
+ doc/histwin.txt          |    2
+ plugin/histwinPlugin.vim |    8
  3 files changed, 121 insertions(+), 73 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/14)
@@ -97,9 +97,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
      (experimental version):- don't fix the width of the histwin window- now use the undotree() function by default (if patch 7.3.005 is  included)- display save states in the detailed view- display the 'rehash' when a state is not accessible anymore- fixed an annoying bug, that when jumping to a particular undo state,  the plugin would jump to the wrong state (I hate octal mode)- Make displaying the time much more reliable and also don't display  the time, if the change happened more than 24h ago (instead, display  the date, when this change was done).- slightly improved error handling.- prepare plugin, to permantly store the undotags in the viminfo file  (this isn't supported by a plain vanilla vim and requires a patch)- A major rewrite (code cleanup, better documentation)
 
- autoload/histwin.vim     |  373 +++++++++++++++++++++++++++++++---------------
- doc/histwin.txt          |  107 +++++++++++---
- plugin/histwinPlugin.vim |    8 +-
+ autoload/histwin.vim     |  373
+ doc/histwin.txt          |  107
+ plugin/histwinPlugin.vim |    8
  3 files changed, 340 insertions(+), 148 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
@@ -111,9 +111,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - New version that uses Vim 7.3 persistent undo features |new-persistent-undo|- Display saved counter in detailed view- Display indicator for saved branches.- in diff mode, don't set the original buffer to be nomodifiable (so you can always merge chunks).- Check for Vim Version 7.3 (the plugin won't work with older versions of Vim)
 
- autoload/histwin.vim     |   36 +++++++++++++++++++------------
- doc/histwin.txt          |   52 +++++++++++++++++++++++++++++++++++----------
- plugin/histwinPlugin.vim |   20 +++++++++--------
+ autoload/histwin.vim     |   36
+ doc/histwin.txt          |   52
+ plugin/histwinPlugin.vim |   20
  3 files changed, 73 insertions(+), 35 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
@@ -128,9 +128,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Highlight the key binding using |hl-SpecialKey|
     - The help tag for the color configuration was wrong.
 
- autoload/histwin.vim     |   30 +++--------------
- doc/histwin.txt          |   84 ++++++++++++++++++++++++++++-----------------
- plugin/histwinPlugin.vim |    6 ++--
+ autoload/histwin.vim     |   30
+ doc/histwin.txt          |   84
+ plugin/histwinPlugin.vim |    6
  3 files changed, 60 insertions(+), 60 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
@@ -143,9 +143,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Set old buffers read only (disable the setting via the g:undo_tree_nomod variable
     - Make sure, Warning Messages are really displayed using :unsilent
 
- autoload/histwin.vim     |  112 +++++++++++++++++++++++++++++++---------------
- doc/histwin.txt          |   68 ++++++++++++++++++++++++----
- plugin/histwinPlugin.vim |    9 ++--
+ autoload/histwin.vim     |  112
+ doc/histwin.txt          |   68
+ plugin/histwinPlugin.vim |    9
  3 files changed, 138 insertions(+), 51 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
@@ -162,9 +162,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Bugfix: Always indicate the correct branch
     - Added a few try/catch statements and some error handling
 
- autoload/histwin.vim     |  142 ++++++++++++++++++++++++++++++++++------------
- doc/histwin.txt          |   11 +++-
- plugin/histwinPlugin.vim |   45 +++------------
+ autoload/histwin.vim     |  142
+ doc/histwin.txt          |   11
+ plugin/histwinPlugin.vim |   45
  3 files changed, 123 insertions(+), 75 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
@@ -179,9 +179,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     BF: Use syntax highlighting
     BF: Tagging finally works (you can now tag additional states)
 
- autoload/histwin.vim     |  320 +++++++++++++++++++++++++++++-----------------
- doc/histwin.txt          |  202 +++++++++++++++++++++++++++++
- plugin/histwinPlugin.vim |   10 +-
+ autoload/histwin.vim     |  320
+ doc/histwin.txt          |  202
+ plugin/histwinPlugin.vim |   10
  3 files changed, 409 insertions(+), 123 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
@@ -195,8 +195,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - BF: code cleanup
     - BF: highlighting should work better now.
 
- autoload/histwin.vim     |  128 ++++++++++++++++++++++++++++-----------------
- plugin/histwinPlugin.vim |   11 +++--
+ autoload/histwin.vim     |  128
+ plugin/histwinPlugin.vim |   11
  2 files changed, 87 insertions(+), 52 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.2.0)
@@ -209,8 +209,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - BF: Check undolevel Settings
     - BF: make sure when switching to a different undo branch, that the undo-tree will be updated
 
- autoload/histwin.vim     |   16 ++++++++++------
- plugin/histwinPlugin.vim |    6 ++++--
+ autoload/histwin.vim     |   16
+ plugin/histwinPlugin.vim |    6
  2 files changed, 14 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1)
@@ -222,8 +222,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     BF: fixed a problem with mapping the keys which broke the Undo-Tree keys (I guess I don't fully understand, when to use s: and <sid>)
 
- autoload/histwin.vim     |   10 +++++-----
- plugin/histwinPlugin.vim |    4 +++-
+ autoload/histwin.vim     |   10
+ plugin/histwinPlugin.vim |    4
  2 files changed, 8 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
@@ -241,9 +241,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - BF: deleted :noautocmd which could cause trouble with other plugins
     - BF: small changes in coding style (<sid> to s:, fun instead of fu)
 
- autoload/histwin.vim     |  258 ++++++++++++++++++++++++++++++++++++++++++
- plugin/histwin.vim       |  283 ----------------------------------------------
- plugin/histwinPlugin.vim |   59 ++++++++++
+ autoload/histwin.vim     |  258
+ plugin/histwin.vim       |  283
+ plugin/histwinPlugin.vim |   59
  3 files changed, 317 insertions(+), 283 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -256,7 +256,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     BF: fix missing bufname() when creating the undo_tree window
     NF: make undo_tree window a little bit smaller (size is adjustable via g:undo_tree_wdth variable)
 
- plugin/histwin.vim |   51 +++++++++++++++++++++------------------------------
+ plugin/histwin.vim |   51
  1 files changed, 21 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -274,7 +274,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     BF: Fix annoying bug, that displays --No lines in buffer--
     BF: fix several small annoying bugs
 
- plugin/histwin.vim |  206 +++++++++++++++++++++++++++++++++++++---------------
+ plugin/histwin.vim |  206
  1 files changed, 148 insertions(+), 58 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -284,6 +284,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2: Initial upload
 
- README             |   34 +++++++++
- plugin/histwin.vim |  202 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README             |   34
+ plugin/histwin.vim |  202
  2 files changed, 236 insertions(+), 0 deletions(-)

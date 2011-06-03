@@ -15,40 +15,40 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     There are a lot of changes from 0.3.1.  See :help ref-changelog .
 
- autoload/ku/ref.vim            |    4 +-
- autoload/ref.vim               |  650 ++++++++++++++++++++++++++++------------
- autoload/ref/alc.vim           |   23 +-
- autoload/ref/clojure.vim       |  146 +++++++++
- autoload/ref/erlang.vim        |  133 ++++++++
- autoload/ref/hoogle.vim        |  211 +++++++++++++
- autoload/ref/man.vim           |  237 ++++-----------
- autoload/ref/perldoc.vim       |   55 ++--
- autoload/ref/phpmanual.vim     |    9 +-
- autoload/ref/pydoc.vim         |  108 +++-----
- autoload/ref/refe.vim          |   53 +---
- autoload/unite/kinds/ref.vim   |   36 +++
- autoload/unite/sources/ref.vim |   49 +++
- doc/ku-ref.txt                 |    7 +-
- doc/ref-alc.jax                |   12 +-
- doc/ref-clojure.jax            |   78 +++++
- doc/ref-clojure.txt            |   79 +++++
- doc/ref-erlang.jax             |   75 +++++
- doc/ref-erlang.txt             |   76 +++++
- doc/ref-hoogle.txt             |   52 ++++
- doc/ref-man.jax                |   38 ++--
- doc/ref-man.txt                |   40 ++--
- doc/ref-perldoc.jax            |   33 ++-
- doc/ref-perldoc.txt            |   33 ++-
- doc/ref-phpmanual.jax          |    7 +-
- doc/ref-phpmanual.txt          |    7 +-
- doc/ref-pydoc.jax              |   18 +-
- doc/ref-pydoc.txt              |   19 +-
- doc/ref-refe.jax               |   10 +-
- doc/ref-refe.txt               |   10 +-
- doc/ref.jax                    |  190 ++++++++++--
- doc/ref.txt                    |  203 ++++++++++---
- doc/unite-ref.txt              |   58 ++++
- plugin/ref.vim                 |    2 +-
+ autoload/ku/ref.vim            |    4
+ autoload/ref.vim               |  650
+ autoload/ref/alc.vim           |   23
+ autoload/ref/clojure.vim       |  146
+ autoload/ref/erlang.vim        |  133
+ autoload/ref/hoogle.vim        |  211
+ autoload/ref/man.vim           |  237
+ autoload/ref/perldoc.vim       |   55
+ autoload/ref/phpmanual.vim     |    9
+ autoload/ref/pydoc.vim         |  108
+ autoload/ref/refe.vim          |   53
+ autoload/unite/kinds/ref.vim   |   36
+ autoload/unite/sources/ref.vim |   49
+ doc/ku-ref.txt                 |    7
+ doc/ref-alc.jax                |   12
+ doc/ref-clojure.jax            |   78
+ doc/ref-clojure.txt            |   79
+ doc/ref-erlang.jax             |   75
+ doc/ref-erlang.txt             |   76
+ doc/ref-hoogle.txt             |   52
+ doc/ref-man.jax                |   38
+ doc/ref-man.txt                |   40
+ doc/ref-perldoc.jax            |   33
+ doc/ref-perldoc.txt            |   33
+ doc/ref-phpmanual.jax          |    7
+ doc/ref-phpmanual.txt          |    7
+ doc/ref-pydoc.jax              |   18
+ doc/ref-pydoc.txt              |   19
+ doc/ref-refe.jax               |   10
+ doc/ref-refe.txt               |   10
+ doc/ref.jax                    |  190
+ doc/ref.txt                    |  203
+ doc/unite-ref.txt              |   58
+ plugin/ref.vim                 |    2
  34 files changed, 2088 insertions(+), 673 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
@@ -63,13 +63,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - refe
       - Fixed the collapses page of the method of refe1.
 
- autoload/ref.vim      |   24 ++++++++++++++++++++----
- autoload/ref/refe.vim |    9 +++++----
- doc/ref-refe.jax      |    3 +++
- doc/ref-refe.txt      |    3 +++
- doc/ref.jax           |   17 ++++++++++++-----
- doc/ref.txt           |   17 ++++++++++++-----
- plugin/ref.vim        |    2 +-
+ autoload/ref.vim      |   24
+ autoload/ref/refe.vim |    9
+ doc/ref-refe.jax      |    3
+ doc/ref-refe.txt      |    3
+ doc/ref.jax           |   17
+ doc/ref.txt           |   17
+ plugin/ref.vim        |    2
  7 files changed, 56 insertions(+), 19 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.0)
@@ -79,28 +79,28 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.3.0: Initial upload
 
- README                     |   25 ++
- autoload/ku/ref.vim        |   85 +++++++
- autoload/ref.vim           |  546 ++++++++++++++++++++++++++++++++++++++++++++
- autoload/ref/alc.vim       |  121 ++++++++++
- autoload/ref/man.vim       |  298 ++++++++++++++++++++++++
- autoload/ref/perldoc.vim   |  298 ++++++++++++++++++++++++
- autoload/ref/phpmanual.vim |  186 +++++++++++++++
- autoload/ref/pydoc.vim     |  266 +++++++++++++++++++++
- autoload/ref/refe.vim      |  384 +++++++++++++++++++++++++++++++
- doc/ku-ref.txt             |   78 +++++++
- doc/ref-alc.jax            |   84 +++++++
- doc/ref-man.jax            |  104 +++++++++
- doc/ref-man.txt            |  105 +++++++++
- doc/ref-perldoc.jax        |  111 +++++++++
- doc/ref-perldoc.txt        |  113 +++++++++
- doc/ref-phpmanual.jax      |   73 ++++++
- doc/ref-phpmanual.txt      |   75 ++++++
- doc/ref-pydoc.jax          |   75 ++++++
- doc/ref-pydoc.txt          |   76 ++++++
- doc/ref-refe.jax           |   90 ++++++++
- doc/ref-refe.txt           |   90 ++++++++
- doc/ref.jax                |  299 ++++++++++++++++++++++++
- doc/ref.txt                |  318 ++++++++++++++++++++++++++
- plugin/ref.vim             |   29 +++
+ README                     |   25
+ autoload/ku/ref.vim        |   85
+ autoload/ref.vim           |  546
+ autoload/ref/alc.vim       |  121
+ autoload/ref/man.vim       |  298
+ autoload/ref/perldoc.vim   |  298
+ autoload/ref/phpmanual.vim |  186
+ autoload/ref/pydoc.vim     |  266
+ autoload/ref/refe.vim      |  384
+ doc/ku-ref.txt             |   78
+ doc/ref-alc.jax            |   84
+ doc/ref-man.jax            |  104
+ doc/ref-man.txt            |  105
+ doc/ref-perldoc.jax        |  111
+ doc/ref-perldoc.txt        |  113
+ doc/ref-phpmanual.jax      |   73
+ doc/ref-phpmanual.txt      |   75
+ doc/ref-pydoc.jax          |   75
+ doc/ref-pydoc.txt          |   76
+ doc/ref-refe.jax           |   90
+ doc/ref-refe.txt           |   90
+ doc/ref.jax                |  299
+ doc/ref.txt                |  318
+ plugin/ref.vim             |   29
  24 files changed, 3929 insertions(+), 0 deletions(-)

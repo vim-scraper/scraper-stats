@@ -7,14 +7,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Basic support for utf-8 &encoding - en and de work, pl and fr are broken.
 
- macros/ttcoach/ttc_plug_de.vim        |    1 +
- macros/ttcoach/ttc_plug_en.vim        |    4 ++
- macros/ttcoach/ttc_plug_fr.vim        |    1 +
- macros/ttcoach/ttc_plug_pl.vim        |    1 +
- macros/ttcoach/ttc_plug_sk.vim        |    1 +
- macros/ttcoach/ttc_plug_sk_keymap.vim |    1 +
- macros/ttcoach/ttcoach.vim            |   55 +++++++++++++++++++++++---------
- plugin/ttcplug.vim                    |    3 +-
+ macros/ttcoach/ttc_plug_de.vim        |    1
+ macros/ttcoach/ttc_plug_en.vim        |    4
+ macros/ttcoach/ttc_plug_fr.vim        |    1
+ macros/ttcoach/ttc_plug_pl.vim        |    1
+ macros/ttcoach/ttc_plug_sk.vim        |    1
+ macros/ttcoach/ttc_plug_sk_keymap.vim |    1
+ macros/ttcoach/ttcoach.vim            |   55
+ plugin/ttcplug.vim                    |    3
  8 files changed, 50 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -24,8 +24,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.1: Major bugfixes (especially for Windows).
 
- macros/ttcoach/ttcoach.vim |   26 +++++++++++++++++---------
- plugin/ttcplug.vim         |   11 ++++++-----
+ macros/ttcoach/ttcoach.vim |   26
+ plugin/ttcplug.vim         |   11
  2 files changed, 23 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -37,22 +37,22 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
      - highlight bugs, not ":sleep" - goals system - two new exercise files with Vim exercises: colon and sqbrackets - fixed bug with multiple keyboards attached  - many small bugfixes  - Show only ttc files in Explorer commands - Save statistics always with generation - it will free one F-key - Add ! to all :normal commands - TTCustom works on copies, not original files. Shi^W:wq happens - improvements in editing custom files - Menus - Give possibility to save Custom files in separate dir
 
- doc/ttcoach.txt                   |  119 +-
- macros/ttcoach/custom/bashman     | 4874 ------------------
- macros/ttcoach/custom/stats.dat   |   39 -
- macros/ttcoach/custom/ttbc.ttc    | 9749 -------------------------------------
- macros/ttcoach/de/stats.dat       |    2 -
- macros/ttcoach/en/stats.dat       |   22 -
- macros/ttcoach/finger/stats.dat   |    2 -
- macros/ttcoach/fr/stats.dat       |    2 -
- macros/ttcoach/pl/stats.dat       |   45 -
- macros/ttcoach/short_help.vim     |   15 +-
- macros/ttcoach/ttcoach.vim        |  635 ++-
- macros/ttcoach/vim/colon.ttc      |   94 +
- macros/ttcoach/vim/gcoms          |   25 -
- macros/ttcoach/vim/sqbrackets.ttc |   95 +
- macros/ttcoach/vim/stats.dat      |  111 -
- plugin/ttcplug.vim                |  107 +-
+ doc/ttcoach.txt                   |  119
+ macros/ttcoach/custom/bashman     | 4874
+ macros/ttcoach/custom/stats.dat   |   39
+ macros/ttcoach/custom/ttbc.ttc    | 9749
+ macros/ttcoach/de/stats.dat       |    2
+ macros/ttcoach/en/stats.dat       |   22
+ macros/ttcoach/finger/stats.dat   |    2
+ macros/ttcoach/fr/stats.dat       |    2
+ macros/ttcoach/pl/stats.dat       |   45
+ macros/ttcoach/short_help.vim     |   15
+ macros/ttcoach/ttcoach.vim        |  635
+ macros/ttcoach/vim/colon.ttc      |   94
+ macros/ttcoach/vim/gcoms          |   25
+ macros/ttcoach/vim/sqbrackets.ttc |   95
+ macros/ttcoach/vim/stats.dat      |  111
+ plugin/ttcplug.vim                |  107
  16 files changed, 761 insertions(+), 15175 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
@@ -64,11 +64,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - drill: new exercise for Vim Normal mode commands- name of layout, exercise and accuracy in statusline- most important Fx shortcuts in statusline- add words per minute statistics- improved handling of small_help window- automatic highlighting with i,I commands (no need for F4)- remove blank lines in TTCustom files- silencing of preparation commands
 
- doc/ttcoach.txt              |   23 ++++--
- macros/ttcoach/ttcoach.vim   |  164 ++++++++++++++++++++++++++----------------
- macros/ttcoach/vim/drill.ttc |  113 +++++++++++++++++++++++++++++
- macros/ttcoach/vim/gcoms     |   25 +++++++
- plugin/ttcplug.vim           |    1 +
+ doc/ttcoach.txt              |   23
+ macros/ttcoach/ttcoach.vim   |  164
+ macros/ttcoach/vim/drill.ttc |  113
+ macros/ttcoach/vim/gcoms     |   25
+ plugin/ttcplug.vim           |    1
  5 files changed, 257 insertions(+), 69 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
@@ -80,50 +80,50 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Vim TTCoach v. 0.8New exercises:    SlovakNew command:    TTCustom - more in help fileNew shortcut:    F1 - short helpRemoved few bugs and moved ttcoach.vim to macros/ttcoach. Now only twoplaces to remove if you don't want to use TTCoach any longer :(Please remove old version of TTCoach before installing this one.
 
- doc/ttcoach.txt                       |   63 +-
- macros/ttcoach.vim                    |  482 --
- macros/ttcoach/custom/bashman         | 4874 ++++++++++++++++
- macros/ttcoach/custom/ttbc.ttc        | 9749 +++++++++++++++++++++++++++++++++
- macros/ttcoach/en/stats.dat           |   20 +
- macros/ttcoach/short_help.vim         |   13 +
- macros/ttcoach/sk/01asjk.ttc          |   37 +
- macros/ttcoach/sk/02dfl_o.ttc         |   49 +
- macros/ttcoach/sk/03e,.ttc            |   81 +
- macros/ttcoach/sk/04oxw.ttc           |   75 +
- macros/ttcoach/sk/05nt.ttc            |   87 +
- macros/ttcoach/sk/06ic.ttc            |   91 +
- macros/ttcoach/sk/07pyq.ttc           |  113 +
- macros/ttcoach/sk/08rm.ttc            |   81 +
- macros/ttcoach/sk/09vu.ttc            |  103 +
- macros/ttcoach/sk/10zb.ttc            |  105 +
- macros/ttcoach/sk/11h-.ttc            |  105 +
- macros/ttcoach/sk/12g_u.ttc           |   73 +
- macros/ttcoach/sk/13_lshift.ttc       |   25 +
- macros/ttcoach/sk/14_bodka.ttc        |   41 +
- macros/ttcoach/sk/15_pshift.ttc       |   29 +
- macros/ttcoach/sk/16_opakovanie1.ttc  |   45 +
- macros/ttcoach/sk/17_a.ttc            |   87 +
- macros/ttcoach/sk/18_y.ttc            |   67 +
- macros/ttcoach/sk/19_opakovanie2.ttc  |   33 +
- macros/ttcoach/sk/20_t.ttc            |  133 +
- macros/ttcoach/sk/21_c.ttc            |  101 +
- macros/ttcoach/sk/22_s.ttc            |   91 +
- macros/ttcoach/sk/23_l.ttc            |   77 +
- macros/ttcoach/sk/24_e.ttc            |   93 +
- macros/ttcoach/sk/25_i.ttc            |  111 +
- macros/ttcoach/sk/26_z.ttc            |   69 +
- macros/ttcoach/sk/27_opakovanie3.ttc  |   27 +
- macros/ttcoach/sk/28_n_a.ttc          |   51 +
- macros/ttcoach/sk/29_makcen.ttc       |   11 +
- macros/ttcoach/sk/30_dlzen.ttc        |   27 +
- macros/ttcoach/sk/31_capslock.ttc     |   27 +
- macros/ttcoach/sk/32_cislaznaky.ttc   |   25 +
- macros/ttcoach/ttc_plug_sk.vim        |  228 +
- macros/ttcoach/ttc_plug_sk_keymap.vim |  104 +
- macros/ttcoach/ttcoach.vim            |  503 ++
- macros/ttcoach/ttcoach_layout_sk      |    5 +
- macros/ttcoach/ttvim                  |    2 +
- plugin/ttcplug.vim                    |   28 +-
+ doc/ttcoach.txt                       |   63
+ macros/ttcoach.vim                    |  482
+ macros/ttcoach/custom/bashman         | 4874
+ macros/ttcoach/custom/ttbc.ttc        | 9749
+ macros/ttcoach/en/stats.dat           |   20
+ macros/ttcoach/short_help.vim         |   13
+ macros/ttcoach/sk/01asjk.ttc          |   37
+ macros/ttcoach/sk/02dfl_o.ttc         |   49
+ macros/ttcoach/sk/03e,.ttc            |   81
+ macros/ttcoach/sk/04oxw.ttc           |   75
+ macros/ttcoach/sk/05nt.ttc            |   87
+ macros/ttcoach/sk/06ic.ttc            |   91
+ macros/ttcoach/sk/07pyq.ttc           |  113
+ macros/ttcoach/sk/08rm.ttc            |   81
+ macros/ttcoach/sk/09vu.ttc            |  103
+ macros/ttcoach/sk/10zb.ttc            |  105
+ macros/ttcoach/sk/11h-.ttc            |  105
+ macros/ttcoach/sk/12g_u.ttc           |   73
+ macros/ttcoach/sk/13_lshift.ttc       |   25
+ macros/ttcoach/sk/14_bodka.ttc        |   41
+ macros/ttcoach/sk/15_pshift.ttc       |   29
+ macros/ttcoach/sk/16_opakovanie1.ttc  |   45
+ macros/ttcoach/sk/17_a.ttc            |   87
+ macros/ttcoach/sk/18_y.ttc            |   67
+ macros/ttcoach/sk/19_opakovanie2.ttc  |   33
+ macros/ttcoach/sk/20_t.ttc            |  133
+ macros/ttcoach/sk/21_c.ttc            |  101
+ macros/ttcoach/sk/22_s.ttc            |   91
+ macros/ttcoach/sk/23_l.ttc            |   77
+ macros/ttcoach/sk/24_e.ttc            |   93
+ macros/ttcoach/sk/25_i.ttc            |  111
+ macros/ttcoach/sk/26_z.ttc            |   69
+ macros/ttcoach/sk/27_opakovanie3.ttc  |   27
+ macros/ttcoach/sk/28_n_a.ttc          |   51
+ macros/ttcoach/sk/29_makcen.ttc       |   11
+ macros/ttcoach/sk/30_dlzen.ttc        |   27
+ macros/ttcoach/sk/31_capslock.ttc     |   27
+ macros/ttcoach/sk/32_cislaznaky.ttc   |   25
+ macros/ttcoach/ttc_plug_sk.vim        |  228
+ macros/ttcoach/ttc_plug_sk_keymap.vim |  104
+ macros/ttcoach/ttcoach.vim            |  503
+ macros/ttcoach/ttcoach_layout_sk      |    5
+ macros/ttcoach/ttvim                  |    2
+ plugin/ttcplug.vim                    |   28
  44 files changed, 17734 insertions(+), 507 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1)
@@ -133,8 +133,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.7.1: bug fix release: incorrect variables in ttc_plug_en.vim
 
- macros/ttcoach.vim             |    7 +-
- macros/ttcoach/ttc_plug_en.vim |  311 +++++++++++++++-------------------------
+ macros/ttcoach.vim             |    7
+ macros/ttcoach/ttc_plug_en.vim |  311
  2 files changed, 117 insertions(+), 201 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
@@ -146,114 +146,114 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - ttcoach.vim is now layout independent; really improved F3 mapping; better use of :TTexplore command
 
- README                                 |    6 +
- doc/ttcoach.txt                        |  269 ++++++++++++++++++
- macros/ttcoach.vim                     |  481 ++++++++++++++++++++++++++++++++
- macros/ttcoach/custom/here.ttc         |   28 ++
- macros/ttcoach/custom/stats.dat        |   39 +++
- macros/ttcoach/de/01fjkda.ttc          |   31 ++
- macros/ttcoach/de/02ls.ttc             |   47 +++
- macros/ttcoach/de/03ei.ttc             |   61 ++++
- macros/ttcoach/de/04ie.ttc             |   55 ++++
- macros/ttcoach/de/05ru.ttc             |   61 ++++
- macros/ttcoach/de/06gh.ttc             |   61 ++++
- macros/ttcoach/de/07tz.ttc             |   61 ++++
- macros/ttcoach/de/08tm.ttc             |   61 ++++
- macros/ttcoach/de/09bn.ttc             |   61 ++++
- macros/ttcoach/de/10.ttc               |   63 +++++
- macros/ttcoach/de/stats.dat            |    2 +
- macros/ttcoach/en/01fj.ttc             |   61 ++++
- macros/ttcoach/en/02kd.ttc             |   61 ++++
- macros/ttcoach/en/03ls.ttc             |   61 ++++
- macros/ttcoach/en/04ai.ttc             |   61 ++++
- macros/ttcoach/en/05en.ttc             |   61 ++++
- macros/ttcoach/en/06vu.ttc             |   61 ++++
- macros/ttcoach/en/07ir.ttc             |   61 ++++
- macros/ttcoach/en/08oc.ttc             |   61 ++++
- macros/ttcoach/en/09pq.ttc             |   61 ++++
- macros/ttcoach/en/10wm.ttc             |   61 ++++
- macros/ttcoach/en/11bm.ttc             |   61 ++++
- macros/ttcoach/en/12ty.ttc             |   61 ++++
- macros/ttcoach/en/13xz.ttc             |   61 ++++
- macros/ttcoach/en/14JF.ttc             |   61 ++++
- macros/ttcoach/en/15KD.ttc             |   61 ++++
- macros/ttcoach/en/16LS.ttc             |   61 ++++
- macros/ttcoach/en/17AI.ttc             |   61 ++++
- macros/ttcoach/en/18EN.ttc             |   61 ++++
- macros/ttcoach/en/19VU.ttc             |   61 ++++
- macros/ttcoach/en/20IR.ttc             |   61 ++++
- macros/ttcoach/en/21OC.ttc             |   61 ++++
- macros/ttcoach/en/22PQ.ttc             |   61 ++++
- macros/ttcoach/en/23WM.ttc             |   61 ++++
- macros/ttcoach/en/24BP.ttc             |   61 ++++
- macros/ttcoach/en/25TY.ttc             |   61 ++++
- macros/ttcoach/en/26XZ.ttc             |   61 ++++
- macros/ttcoach/en/sh1.ttc              |   27 ++
- macros/ttcoach/en/sh2.ttc              |   29 ++
- macros/ttcoach/en/sh3.ttc              |   29 ++
- macros/ttcoach/en/stats.dat            |    2 +
- macros/ttcoach/finger/left_index.ttc   |   15 +
- macros/ttcoach/finger/left_middle.ttc  |    9 +
- macros/ttcoach/finger/left_pinky.ttc   |   13 +
- macros/ttcoach/finger/left_ring.ttc    |    9 +
- macros/ttcoach/finger/right_index.ttc  |   15 +
- macros/ttcoach/finger/right_middle.ttc |    9 +
- macros/ttcoach/finger/right_pinky.ttc  |   23 ++
- macros/ttcoach/finger/right_ring.ttc   |    9 +
- macros/ttcoach/finger/stats.dat        |    2 +
- macros/ttcoach/fr/01jf.ttc             |   61 ++++
- macros/ttcoach/fr/02mq.ttc             |   61 ++++
- macros/ttcoach/fr/03kd.ttc             |   61 ++++
- macros/ttcoach/fr/04ls.ttc             |   61 ++++
- macros/ttcoach/fr/05ie.ttc             |   61 ++++
- macros/ttcoach/fr/06ur.ttc             |   61 ++++
- macros/ttcoach/fr/07gh.ttc             |   61 ++++
- macros/ttcoach/fr/08nb.ttc             |   61 ++++
- macros/ttcoach/fr/09vi.ttc             |   61 ++++
- macros/ttcoach/fr/10cp.ttc             |   61 ++++
- macros/ttcoach/fr/11yt.ttc             |   61 ++++
- macros/ttcoach/fr/12ou.ttc             |   61 ++++
- macros/ttcoach/fr/13az.ttc             |   61 ++++
- macros/ttcoach/fr/14wx.ttc             |   61 ++++
- macros/ttcoach/fr/15JF.ttc             |   61 ++++
- macros/ttcoach/fr/16MQ.ttc             |   61 ++++
- macros/ttcoach/fr/17KD.ttc             |   61 ++++
- macros/ttcoach/fr/18LS.ttc             |   61 ++++
- macros/ttcoach/fr/19IE.ttc             |   61 ++++
- macros/ttcoach/fr/20UR.ttc             |   61 ++++
- macros/ttcoach/fr/21HG.ttc             |   61 ++++
- macros/ttcoach/fr/22NB.ttc             |   61 ++++
- macros/ttcoach/fr/23VI.ttc             |   61 ++++
- macros/ttcoach/fr/24CP.ttc             |   61 ++++
- macros/ttcoach/fr/25YT.ttc             |   61 ++++
- macros/ttcoach/fr/26OU.ttc             |   61 ++++
- macros/ttcoach/fr/27AZ.ttc             |   61 ++++
- macros/ttcoach/fr/28WX.ttc             |   61 ++++
- macros/ttcoach/fr/stats.dat            |    2 +
- macros/ttcoach/pl/01ahomerow.ttc       |   51 ++++
- macros/ttcoach/pl/01bhomerow.ttc       |   33 +++
- macros/ttcoach/pl/02ghru.ttc           |   41 +++
- macros/ttcoach/pl/03iowe.ttc           |   35 +++
- macros/ttcoach/pl/04a-s-l-.ttc         |   63 +++++
- macros/ttcoach/pl/05qtpy.ttc           |   37 +++
- macros/ttcoach/pl/06o-e-.ttc           |   41 +++
- macros/ttcoach/pl/07vbnm.ttc           |   39 +++
- macros/ttcoach/pl/08xc--.ttc           |   41 +++
- macros/ttcoach/pl/09z.ttc              |   47 +++
- macros/ttcoach/pl/10z-z-n-.ttc         |   47 +++
- macros/ttcoach/pl/stats.dat            |   45 +++
- macros/ttcoach/ttc_plug_de.vim         |  156 +++++++++++
- macros/ttcoach/ttc_plug_en.vim         |  203 ++++++++++++++
- macros/ttcoach/ttc_plug_fr.vim         |  159 +++++++++++
- macros/ttcoach/ttc_plug_pl.vim         |  206 ++++++++++++++
- macros/ttcoach/ttcoach_layout_de       |    5 +
- macros/ttcoach/ttcoach_layout_en       |    5 +
- macros/ttcoach/ttcoach_layout_fr       |    5 +
- macros/ttcoach/ttcoach_layout_pl       |    5 +
- macros/ttcoach/ttcustom.pl             |   36 +++
- macros/ttcoach/vim/ex1.ttc             |   45 +++
- macros/ttcoach/vim/ex2.ttc             |   47 +++
- macros/ttcoach/vim/nv.ttc              |   29 ++
- macros/ttcoach/vim/stats.dat           |  111 ++++++++
- plugin/ttcplug.vim                     |   59 ++++
+ README                                 |    6
+ doc/ttcoach.txt                        |  269
+ macros/ttcoach.vim                     |  481
+ macros/ttcoach/custom/here.ttc         |   28
+ macros/ttcoach/custom/stats.dat        |   39
+ macros/ttcoach/de/01fjkda.ttc          |   31
+ macros/ttcoach/de/02ls.ttc             |   47
+ macros/ttcoach/de/03ei.ttc             |   61
+ macros/ttcoach/de/04ie.ttc             |   55
+ macros/ttcoach/de/05ru.ttc             |   61
+ macros/ttcoach/de/06gh.ttc             |   61
+ macros/ttcoach/de/07tz.ttc             |   61
+ macros/ttcoach/de/08tm.ttc             |   61
+ macros/ttcoach/de/09bn.ttc             |   61
+ macros/ttcoach/de/10.ttc               |   63
+ macros/ttcoach/de/stats.dat            |    2
+ macros/ttcoach/en/01fj.ttc             |   61
+ macros/ttcoach/en/02kd.ttc             |   61
+ macros/ttcoach/en/03ls.ttc             |   61
+ macros/ttcoach/en/04ai.ttc             |   61
+ macros/ttcoach/en/05en.ttc             |   61
+ macros/ttcoach/en/06vu.ttc             |   61
+ macros/ttcoach/en/07ir.ttc             |   61
+ macros/ttcoach/en/08oc.ttc             |   61
+ macros/ttcoach/en/09pq.ttc             |   61
+ macros/ttcoach/en/10wm.ttc             |   61
+ macros/ttcoach/en/11bm.ttc             |   61
+ macros/ttcoach/en/12ty.ttc             |   61
+ macros/ttcoach/en/13xz.ttc             |   61
+ macros/ttcoach/en/14JF.ttc             |   61
+ macros/ttcoach/en/15KD.ttc             |   61
+ macros/ttcoach/en/16LS.ttc             |   61
+ macros/ttcoach/en/17AI.ttc             |   61
+ macros/ttcoach/en/18EN.ttc             |   61
+ macros/ttcoach/en/19VU.ttc             |   61
+ macros/ttcoach/en/20IR.ttc             |   61
+ macros/ttcoach/en/21OC.ttc             |   61
+ macros/ttcoach/en/22PQ.ttc             |   61
+ macros/ttcoach/en/23WM.ttc             |   61
+ macros/ttcoach/en/24BP.ttc             |   61
+ macros/ttcoach/en/25TY.ttc             |   61
+ macros/ttcoach/en/26XZ.ttc             |   61
+ macros/ttcoach/en/sh1.ttc              |   27
+ macros/ttcoach/en/sh2.ttc              |   29
+ macros/ttcoach/en/sh3.ttc              |   29
+ macros/ttcoach/en/stats.dat            |    2
+ macros/ttcoach/finger/left_index.ttc   |   15
+ macros/ttcoach/finger/left_middle.ttc  |    9
+ macros/ttcoach/finger/left_pinky.ttc   |   13
+ macros/ttcoach/finger/left_ring.ttc    |    9
+ macros/ttcoach/finger/right_index.ttc  |   15
+ macros/ttcoach/finger/right_middle.ttc |    9
+ macros/ttcoach/finger/right_pinky.ttc  |   23
+ macros/ttcoach/finger/right_ring.ttc   |    9
+ macros/ttcoach/finger/stats.dat        |    2
+ macros/ttcoach/fr/01jf.ttc             |   61
+ macros/ttcoach/fr/02mq.ttc             |   61
+ macros/ttcoach/fr/03kd.ttc             |   61
+ macros/ttcoach/fr/04ls.ttc             |   61
+ macros/ttcoach/fr/05ie.ttc             |   61
+ macros/ttcoach/fr/06ur.ttc             |   61
+ macros/ttcoach/fr/07gh.ttc             |   61
+ macros/ttcoach/fr/08nb.ttc             |   61
+ macros/ttcoach/fr/09vi.ttc             |   61
+ macros/ttcoach/fr/10cp.ttc             |   61
+ macros/ttcoach/fr/11yt.ttc             |   61
+ macros/ttcoach/fr/12ou.ttc             |   61
+ macros/ttcoach/fr/13az.ttc             |   61
+ macros/ttcoach/fr/14wx.ttc             |   61
+ macros/ttcoach/fr/15JF.ttc             |   61
+ macros/ttcoach/fr/16MQ.ttc             |   61
+ macros/ttcoach/fr/17KD.ttc             |   61
+ macros/ttcoach/fr/18LS.ttc             |   61
+ macros/ttcoach/fr/19IE.ttc             |   61
+ macros/ttcoach/fr/20UR.ttc             |   61
+ macros/ttcoach/fr/21HG.ttc             |   61
+ macros/ttcoach/fr/22NB.ttc             |   61
+ macros/ttcoach/fr/23VI.ttc             |   61
+ macros/ttcoach/fr/24CP.ttc             |   61
+ macros/ttcoach/fr/25YT.ttc             |   61
+ macros/ttcoach/fr/26OU.ttc             |   61
+ macros/ttcoach/fr/27AZ.ttc             |   61
+ macros/ttcoach/fr/28WX.ttc             |   61
+ macros/ttcoach/fr/stats.dat            |    2
+ macros/ttcoach/pl/01ahomerow.ttc       |   51
+ macros/ttcoach/pl/01bhomerow.ttc       |   33
+ macros/ttcoach/pl/02ghru.ttc           |   41
+ macros/ttcoach/pl/03iowe.ttc           |   35
+ macros/ttcoach/pl/04a-s-l-.ttc         |   63
+ macros/ttcoach/pl/05qtpy.ttc           |   37
+ macros/ttcoach/pl/06o-e-.ttc           |   41
+ macros/ttcoach/pl/07vbnm.ttc           |   39
+ macros/ttcoach/pl/08xc--.ttc           |   41
+ macros/ttcoach/pl/09z.ttc              |   47
+ macros/ttcoach/pl/10z-z-n-.ttc         |   47
+ macros/ttcoach/pl/stats.dat            |   45
+ macros/ttcoach/ttc_plug_de.vim         |  156
+ macros/ttcoach/ttc_plug_en.vim         |  203
+ macros/ttcoach/ttc_plug_fr.vim         |  159
+ macros/ttcoach/ttc_plug_pl.vim         |  206
+ macros/ttcoach/ttcoach_layout_de       |    5
+ macros/ttcoach/ttcoach_layout_en       |    5
+ macros/ttcoach/ttcoach_layout_fr       |    5
+ macros/ttcoach/ttcoach_layout_pl       |    5
+ macros/ttcoach/ttcustom.pl             |   36
+ macros/ttcoach/vim/ex1.ttc             |   45
+ macros/ttcoach/vim/ex2.ttc             |   47
+ macros/ttcoach/vim/nv.ttc              |   29
+ macros/ttcoach/vim/stats.dat           |  111
+ plugin/ttcplug.vim                     |   59
  110 files changed, 6465 insertions(+), 0 deletions(-)

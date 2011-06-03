@@ -5,12 +5,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2.8: - |:FakeclipDefaultKeyMappings|: Fix to regard a given bang.
 
- .mduem/cache/Makefile.variables |    2 +-
- autoload/fakeclip.vim           |    2 +-
- doc/fakeclip.txt                |   17 ++++--
- doc/tags                        |    1 +
- mduem/Makefile                  |    2 +-
- plugin/fakeclip.vim             |  115 ++++++++++++++++++++-------------------
+ .mduem/cache/Makefile.variables |    2
+ autoload/fakeclip.vim           |    2
+ doc/fakeclip.txt                |   17
+ doc/tags                        |    1
+ mduem/Makefile                  |    2
+ plugin/fakeclip.vim             |  115
  6 files changed, 74 insertions(+), 65 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.7)
@@ -22,27 +22,27 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Fix to read/write the paste buffer of GNU screen outside a session.  Old versions allow to read/write the paste buffer only if Vim is running in a session of GNU screen.
 
- .mduem/cache/Makefile.variables     |    6 +
- Makefile                            |   13 +
- autoload/fakeclip.vim               |   11 +-
- doc/fakeclip.txt                    |   13 +-
- doc/tags                            |   59 +++++
- mduem/Makefile                      |  428 +++++++++++++++++++++++++++++++++++
- plugin/fakeclip.vim                 |    6 +-
- test/clipboard-cygwin.expected      |   10 +
- test/clipboard-cygwin.input         |   22 ++
- test/clipboard-mac.expected         |   10 +
- test/clipboard-mac.input            |   22 ++
- test/clipboard-x.expected           |   10 +
- test/clipboard-x.input              |   22 ++
- test/misc.expected                  |   40 ++++
- test/misc.input                     |  127 +++++++++++
- test/pastebuffer-gnuscreen.expected |   42 ++++
- test/pastebuffer-gnuscreen.input    |  145 ++++++++++++
- test/pastebuffer-tmux.expected      |   14 ++
- test/pastebuffer-tmux.input         |   36 +++
- test/ui.expected                    |   12 +
- test/ui.input                       |   29 +++
+ .mduem/cache/Makefile.variables     |    6
+ Makefile                            |   13
+ autoload/fakeclip.vim               |   11
+ doc/fakeclip.txt                    |   13
+ doc/tags                            |   59
+ mduem/Makefile                      |  428
+ plugin/fakeclip.vim                 |    6
+ test/clipboard-cygwin.expected      |   10
+ test/clipboard-cygwin.input         |   22
+ test/clipboard-mac.expected         |   10
+ test/clipboard-mac.input            |   22
+ test/clipboard-x.expected           |   10
+ test/clipboard-x.input              |   22
+ test/misc.expected                  |   40
+ test/misc.input                     |  127
+ test/pastebuffer-gnuscreen.expected |   42
+ test/pastebuffer-gnuscreen.input    |  145
+ test/pastebuffer-tmux.expected      |   14
+ test/pastebuffer-tmux.input         |   36
+ test/ui.expected                    |   12
+ test/ui.input                       |   29
  21 files changed, 1066 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.6)
@@ -54,9 +54,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Fix improper error message on putting to paste buffer.  (Thanks to @thinca for reporting)- Fix a bug that there is a possibility to fail to read the paste buffer of GNU screen if it is emptied by "register . ''".  (Thanks to @thinca for reporting)- Revise for race condition problem to read the paste buffer of GNU screen, though it's not perfect yet.
 
- autoload/fakeclip.vim |   11 ++++++++---
- doc/fakeclip.txt      |   11 ++++++++++-
- plugin/fakeclip.vim   |    2 +-
+ autoload/fakeclip.vim |   11
+ doc/fakeclip.txt      |   11
+ plugin/fakeclip.vim   |    2
  3 files changed, 19 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.5)
@@ -68,9 +68,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Revise the way to detect whether GNU screen is available or not.- Fix a bug to yank to string with newline character into paste buffer register.- Support X Window System by xclip.  (Thanks for @thinca)- Support tmux.  (Thanks for @thinca)
 
- autoload/fakeclip.vim |  116 ++++++++++++++++++++++++++++++++++++++-----------
- doc/fakeclip.txt      |   25 ++++++++---
- plugin/fakeclip.vim   |   52 +++++++++++-----------
+ autoload/fakeclip.vim |  116
+ doc/fakeclip.txt      |   25
+ plugin/fakeclip.vim   |   52
  3 files changed, 135 insertions(+), 58 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.4)
@@ -82,9 +82,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Revise on platforms where |+clipboard| is available:  - Define all stuffs such as |fakeclip-key-mappings| on all platforms.  Without this, the pseudo register for GNU screen's paste buffer is not available if |+clipboard| is available.  - |:FakeclipDefaultKeyMappings|: Don't define the default key mappings for clipboard to avoid confusion with the built-in key mappings.  For example, "*y and "+y are not mapped to |<Plug>(fakeclip-y)|.
 
- autoload/fakeclip.vim |    2 +-
- doc/fakeclip.txt      |   27 +++++++++++++++-----
- plugin/fakeclip.vim   |   64 +++++++++++++++++++++++++-----------------------
+ autoload/fakeclip.vim |    2
+ doc/fakeclip.txt      |   27
+ plugin/fakeclip.vim   |   64
  3 files changed, 54 insertions(+), 39 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.3)
@@ -96,9 +96,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Revise the documents on Mac OS X specific problems.  See |fakeclip-multibyte-on-mac| if you can't copy/paste with the clipboard on Mac OS X.- Fix a bug that fakeclip uses wrong function to escape file-like arguments to shells.  Thanks @thinca for reporting this.
 
- autoload/fakeclip.vim |    8 ++++----
- doc/fakeclip.txt      |   44 ++++++++++++++++++++++++++++++++++++--------
- plugin/fakeclip.vim   |    4 ++--
+ autoload/fakeclip.vim |    8
+ doc/fakeclip.txt      |   44
+ plugin/fakeclip.vim   |    4
  3 files changed, 42 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.2)
@@ -110,9 +110,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Add equivalents for the following commands: |]p|, |]P|, |[p|, |[P|, |i_CTRL-R_CTRL-R|, |i_CTRL-R_CTRL-O|, |i_CTRL-R_CTRL-P|, |c_CTRL-R_CTRL-R|, |c_CTRL-R_CTRL-O|.- Fix the way to detect the current platform.  For Mac OS X, it depended on some assumptions.  Thanks for someone who wrote about this bug at the Vim Tips Wiki.
 
- autoload/fakeclip.vim |    4 +-
- doc/fakeclip.txt      |  136 ++++++++++++++++++++++++++++++++++--------------
- plugin/fakeclip.vim   |   88 +++++++++++++++++++++++++++-----
+ autoload/fakeclip.vim |    4
+ doc/fakeclip.txt      |  136
+ plugin/fakeclip.vim   |   88
  3 files changed, 173 insertions(+), 55 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
@@ -124,9 +124,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Refactor.- Support the paste buffer of GNU screen as a pseudo register.
 
- autoload/fakeclip.vim |  207 ++++++++++++++++++++++++++++++++++++-------------
- doc/fakeclip.txt      |   51 +++++++++++--
- plugin/fakeclip.vim   |   84 ++++++++++++++++----
+ autoload/fakeclip.vim |  207
+ doc/fakeclip.txt      |   51
+ plugin/fakeclip.vim   |   84
  3 files changed, 265 insertions(+), 77 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.0)
@@ -140,11 +140,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Support Mac OS X.
     - Autoloaded.
 
- autoload/fakeclip.vim |  154 ++++++++++++++++++++++++++++++++++++++++++++
- doc/cygclip.txt       |   98 ----------------------------
- doc/fakeclip.txt      |  153 +++++++++++++++++++++++++++++++++++++++++++
- plugin/cygclip.vim    |  171 -------------------------------------------------
- plugin/fakeclip.vim   |  122 +++++++++++++++++++++++++++++++++++
+ autoload/fakeclip.vim |  154
+ doc/cygclip.txt       |   98
+ doc/fakeclip.txt      |  153
+ plugin/cygclip.vim    |  171
+ plugin/fakeclip.vim   |  122
  5 files changed, 429 insertions(+), 269 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -156,8 +156,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Modified to define the default key mappings as this plugin is loaded.  Add the way to suppress this behavior.
 
- doc/cygclip.txt    |   25 ++++++++++++++++++-------
- plugin/cygclip.vim |    9 +++++++--
+ doc/cygclip.txt    |   25
+ plugin/cygclip.vim |    9
  2 files changed, 25 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0)
@@ -167,7 +167,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0: Initial upload
 
- README             |   33 ++++++++++
- doc/cygclip.txt    |   87 +++++++++++++++++++++++++++
- plugin/cygclip.vim |  166 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README             |   33
+ doc/cygclip.txt    |   87
+ plugin/cygclip.vim |  166
  3 files changed, 286 insertions(+), 0 deletions(-)

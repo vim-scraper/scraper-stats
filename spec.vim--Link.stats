@@ -8,14 +8,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Display a message after having run all specs
     - Raise an error when :SpecBegin is not called in a spec context (i.e. via the :Spec command)
 
- autoload/should.vim          |    5 +-
- autoload/should/throw.vim    |   25 ++++++---
- autoload/spec.vim            |   23 ++++++-
- autoload/spec/speckiller.vim |   66 +++++++++++++++++++++-
- doc/spec.txt                 |  127 ++++++++++++++++++++++--------------------
- macros/spec.vim              |   33 +----------
- plugin/spec.vim              |   56 +++++++++++++++---
- spec/spec/speckiller.vim     |    2 +-
+ autoload/should.vim          |    5
+ autoload/should/throw.vim    |   25
+ autoload/spec.vim            |   23
+ autoload/spec/speckiller.vim |   66
+ doc/spec.txt                 |  127
+ macros/spec.vim              |   33
+ plugin/spec.vim              |   56
+ spec/spec/speckiller.vim     |    2
  8 files changed, 219 insertions(+), 118 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -25,29 +25,29 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README                       |   50 +++++
- autoload/should.vim          |   68 ++++++
- autoload/should/be.vim       |  239 +++++++++++++++++++++
- autoload/should/finish.vim   |   50 +++++
- autoload/should/maintain.vim |   46 ++++
- autoload/should/test.vim     |   27 +++
- autoload/should/throw.vim    |   46 ++++
- autoload/should/yield.vim    |   59 ++++++
- autoload/spec.vim            |  473 ++++++++++++++++++++++++++++++++++++++++++
- autoload/spec/speckiller.vim |   49 +++++
- doc/spec.txt                 |  410 ++++++++++++++++++++++++++++++++++++
- macros/spec.vim              |   99 +++++++++
- plugin/spec.vim              |   93 ++++++++
- spec/spec/_dont_include.vim  |   15 ++
- spec/spec/_include.vim       |   30 +++
- spec/spec/_included.vim      |   29 +++
- spec/spec/should_be.vim      |   89 ++++++++
- spec/spec/should_finish.vim  |   36 ++++
- spec/spec/should_throw.vim   |   23 ++
- spec/spec/should_yield.vim   |   25 +++
- spec/spec/spec.vim           |   91 ++++++++
- spec/spec/speckiller.vim     |   37 ++++
- spec/spec/test_yield.txt     |    7 +
- spec/spec/test_yield1.txt    |    4 +
- spec/spec/test_yield2.txt    |    4 +
+ README                       |   50
+ autoload/should.vim          |   68
+ autoload/should/be.vim       |  239
+ autoload/should/finish.vim   |   50
+ autoload/should/maintain.vim |   46
+ autoload/should/test.vim     |   27
+ autoload/should/throw.vim    |   46
+ autoload/should/yield.vim    |   59
+ autoload/spec.vim            |  473
+ autoload/spec/speckiller.vim |   49
+ doc/spec.txt                 |  410
+ macros/spec.vim              |   99
+ plugin/spec.vim              |   93
+ spec/spec/_dont_include.vim  |   15
+ spec/spec/_include.vim       |   30
+ spec/spec/_included.vim      |   29
+ spec/spec/should_be.vim      |   89
+ spec/spec/should_finish.vim  |   36
+ spec/spec/should_throw.vim   |   23
+ spec/spec/should_yield.vim   |   25
+ spec/spec/spec.vim           |   91
+ spec/spec/speckiller.vim     |   37
+ spec/spec/test_yield.txt     |    7
+ spec/spec/test_yield1.txt    |    4
+ spec/spec/test_yield2.txt    |    4
  25 files changed, 2099 insertions(+), 0 deletions(-)

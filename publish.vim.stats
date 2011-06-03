@@ -35,13 +35,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       Fixed easytags#update() to overcome argument limit:
        http://github.com/xolox/vim-publish/commit/87b0305bd27d4ee3715790cddc76cc2cfead7c14
 
- autoload/publish.vim      |  102 ++++++++++++++++++++++++++++---------------
- autoload/xolox.vim        |   94 +++++++++++++++++++++++++++++++--------
- autoload/xolox/escape.vim |    4 +-
- autoload/xolox/timer.vim  |    6 +-
- doc/publish.html          |  107 ---------------------------------------------
- doc/publish.txt           |  100 ++++++++++++++++++++---------------------
- plugin/publish.vim        |   30 ++++++++-----
+ autoload/publish.vim      |  102
+ autoload/xolox.vim        |   94
+ autoload/xolox/escape.vim |    4
+ autoload/xolox/timer.vim  |    6
+ doc/publish.html          |  107
+ doc/publish.txt           |  100
+ plugin/publish.vim        |   30
  7 files changed, 215 insertions(+), 228 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -66,13 +66,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Faster remote publishing using rsync (automatically enabled):
       http://github.com/xolox/vim-publish/commit/027a2f0f4f8ccd6a7f1739f023b4825944e71b57
 
- autoload/publish.vim     |  114 +++++++++++++++++++++++++++++++++-------------
- autoload/xolox.vim       |   50 ++++++++++++++++++++
- autoload/xolox/path.vim  |   30 ++++++++++++-
- autoload/xolox/timer.vim |   79 ++++++++++++++++++++++++++++++++
- doc/publish.html         |   42 ++++++++++++----
- doc/publish.txt          |   36 ++++++++++++--
- plugin/publish.vim       |   53 +++++++++++++--------
+ autoload/publish.vim     |  114
+ autoload/xolox.vim       |   50
+ autoload/xolox/path.vim  |   30
+ autoload/xolox/timer.vim |   79
+ doc/publish.html         |   42
+ doc/publish.txt          |   36
+ plugin/publish.vim       |   53
  7 files changed, 333 insertions(+), 71 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5.2)
@@ -82,8 +82,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.5.2: Now includes generated Vim documentation based on README
 
- doc/publish.html |   10 +++---
- doc/publish.txt  |   79 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/publish.html |   10
+ doc/publish.txt  |   79
  2 files changed, 84 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5.1)
@@ -96,8 +96,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Bug fix: Fixed usage instructions to include tags generation :-\
     http://github.com/xolox/vim-publish/commit/8eee22a18373125398d853dc3848d4101865576b
 
- doc/publish.html   |   36 ++++++++++++++++++++++++++----------
- plugin/publish.vim |    2 +-
+ doc/publish.html   |   36
+ plugin/publish.vim |    2
  2 files changed, 27 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -109,11 +109,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Completely switched directions by forgetting about incremental, automatic publishing (which interferes with the user because "2html.vim" is too slow) and instead focusing on batch publishing of multiple related files, which means the plug-in can now include hyperlinks between the published files based on tags.
 
- autoload/publish.vim      |  197 +++++++++++++++++++++++++++++++++++++
- autoload/xolox/escape.vim |   26 +++++
- autoload/xolox/path.vim   |  130 +++++++++++++++++++++++++
- doc/publish.html          |   71 ++++++++++++++
- plugin/publish.vim        |  237 +++++++++++++++++----------------------------
+ autoload/publish.vim      |  197
+ autoload/xolox/escape.vim |   26
+ autoload/xolox/path.vim   |  130
+ doc/publish.html          |   71
+ plugin/publish.vim        |  237
  5 files changed, 515 insertions(+), 146 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -123,6 +123,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README             |    8 +++
- plugin/publish.vim |  154 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README             |    8
+ plugin/publish.vim |  154
  2 files changed, 162 insertions(+), 0 deletions(-)

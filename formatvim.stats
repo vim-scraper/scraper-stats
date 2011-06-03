@@ -7,12 +7,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed error when creating side-by-side diff with difffillers at the end of buffers
 
- autoload/load.vim |   48 +++
- doc/load.txt      |  166 ++++++++++-
- plugin/chk.vim    |  566 ++++++++++++++++++---------------
- plugin/format.vim |   95 ++----
- plugin/load.vim   |  913 +++++++++++++++++++++++++++++++++++++----------------
- plugin/yaml.vim   |  286 ++++++++---------
+ autoload/load.vim |   48
+ doc/load.txt      |  166
+ plugin/chk.vim    |  566
+ plugin/format.vim |   95
+ plugin/load.vim   |  913
+ plugin/yaml.vim   |  286
  6 files changed, 1317 insertions(+), 757 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
@@ -22,9 +22,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.5: Switched to new FormatCommand arguments model
 
- doc/format.txt    |   39 ++++++----
- plugin/comp.vim   |    7 +-
- plugin/format.vim |  210 +++++++++++++++++++++++++----------------------------
+ doc/format.txt    |   39
+ plugin/comp.vim   |    7
+ plugin/format.vim |  210
  3 files changed, 128 insertions(+), 128 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4.3@1)
@@ -34,12 +34,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.4.3@1: Reposting bundle due to core plugins update
 
- autoload/fileutils.vim |   28 ++++--
- doc/chk.txt            |   22 +++--
- doc/comp.txt           |   17 +++-
- plugin/chk.vim         |  127 ++++++++++++++++++++----
- plugin/comp.vim        |  256 ++++++++++++++++++++++++++++++++----------------
- plugin/load.vim        |   14 +--
+ autoload/fileutils.vim |   28
+ doc/chk.txt            |   22
+ doc/comp.txt           |   17
+ plugin/chk.vim         |  127
+ plugin/comp.vim        |  256
+ plugin/load.vim        |   14
  6 files changed, 334 insertions(+), 130 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4.3)
@@ -51,18 +51,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Removed yamlvim dependency, added tokens format specification and @~@ and @^@, fixed formatting of closed folds
 
- autoload/fileutils.vim                             |   28 ++-
- config/formatvim/colors-konsole+screen-256.yaml    |  257 ++++++++++++++++
- config/formatvim/colors-konsole-256.yaml           |  257 ++++++++++++++++
- .../formatvim/colors-urxvt+xterm_colors-256.yaml   |  257 ++++++++++++++++
- config/formatvim/colors-urxvt-88.yaml              |   89 ++++++
- doc/comp.txt                                       |   52 +++-
- doc/format.txt                                     |   72 +++++-
- doc/vim-fileutils.txt                              |   11 +-
- plugin/comp.vim                                    |  307 ++++++++++++--------
- plugin/format.vim                                  |   64 ++++-
- tools/colortable.vim                               |   15 +
- tools/getcolors.pl                                 |   57 ++++
+ autoload/fileutils.vim                             |   28
+ config/formatvim/colors-konsole+screen-256.yaml    |  257
+ config/formatvim/colors-konsole-256.yaml           |  257
+ .../formatvim/colors-urxvt+xterm_colors-256.yaml   |  257
+ config/formatvim/colors-urxvt-88.yaml              |   89
+ doc/comp.txt                                       |   52
+ doc/format.txt                                     |   72
+ doc/vim-fileutils.txt                              |   11
+ plugin/comp.vim                                    |  307
+ plugin/format.vim                                  |   64
+ tools/colortable.vim                               |   15
+ tools/getcolors.pl                                 |   57
  12 files changed, 1308 insertions(+), 158 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4.2@1)
@@ -72,14 +72,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.4.2@1: Reposting bundle due to core plugins update
 
- autoload/fileutils.vim |   68 +++++++++++
- autoload/os.vim        |  132 +++++++++++++++++++++
- doc/comp.txt           |   48 ++++++++-
- doc/load.txt           |   78 ++++++++-----
- doc/vim-fileutils.txt  |   47 ++++++++
- plugin/comp.vim        |  263 ++++++++++++++++++++++++++++++++-----------
- plugin/load.vim        |  297 +++++++++++++++++++++++++++++++-----------------
- plugin/yaml.vim        |    6 +-
+ autoload/fileutils.vim |   68
+ autoload/os.vim        |  132
+ doc/comp.txt           |   48
+ doc/load.txt           |   78
+ doc/vim-fileutils.txt  |   47
+ plugin/comp.vim        |  263
+ plugin/load.vim        |  297
+ plugin/yaml.vim        |    6
  8 files changed, 739 insertions(+), 200 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4.2)
@@ -91,25 +91,25 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Moved color lists to config/formatvim/colors-*.yaml, made it possible to override colors
 
- .hgignore                                |    2 -
- autoload/load.vim                        |   45 +-
- config/formatvim/colors-default-16.yaml  |   19 +
- config/formatvim/colors-default-256.yaml |  261 ++
- config/formatvim/colors-default-8.yaml   |   11 +
- config/formatvim/colors-default-88.yaml  |   93 +
- config/formatvim/colors-default.yaml     |   19 +
- doc/chk.txt                              |   36 +-
- doc/format.txt                           |   10 +-
- doc/load.txt                             |  144 +-
- doc/oop.txt                              |   93 +
- doc/yaml.txt                             |  240 ++
- plugin/chk.vim                           |  255 ++-
- plugin/comp.vim                          |   25 +-
- plugin/format.vim                        |  386 +---
- plugin/load.vim                          |  896 +++++--
- plugin/oop.vim                           |  237 ++
- plugin/stuf.vim                          |  305 +--
- plugin/yaml.vim                          | 4442 ++++++++++++++++++++++++++++++
+ .hgignore                                |    2
+ autoload/load.vim                        |   45
+ config/formatvim/colors-default-16.yaml  |   19
+ config/formatvim/colors-default-256.yaml |  261
+ config/formatvim/colors-default-8.yaml   |   11
+ config/formatvim/colors-default-88.yaml  |   93
+ config/formatvim/colors-default.yaml     |   19
+ doc/chk.txt                              |   36
+ doc/format.txt                           |   10
+ doc/load.txt                             |  144
+ doc/oop.txt                              |   93
+ doc/yaml.txt                             |  240
+ plugin/chk.vim                           |  255
+ plugin/comp.vim                          |   25
+ plugin/format.vim                        |  386
+ plugin/load.vim                          |  896
+ plugin/oop.vim                           |  237
+ plugin/stuf.vim                          |  305
+ plugin/yaml.vim                          | 4442
  19 files changed, 6611 insertions(+), 908 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3.4)
@@ -121,12 +121,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added %!{cmd}!% format specification, added lcs:conceal support, added support for the case when 'lcs' does not have tab and 'list' is on, lots of bugfixes
 
- .hgignore         |    2 +
- doc/chk.txt       |   10 ++
- doc/format.txt    |   19 +++-
- plugin/chk.vim    |  150 +++++++++++++++++----------
- plugin/format.vim |  306 ++++++++++++++++++++++++++++++++++++-----------------
- plugin/stuf.vim   |   17 +++-
+ .hgignore         |    2
+ doc/chk.txt       |   10
+ doc/format.txt    |   19
+ plugin/chk.vim    |  150
+ plugin/format.vim |  306
+ plugin/stuf.vim   |   17
  6 files changed, 348 insertions(+), 156 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3.3)
@@ -136,7 +136,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.3.3: Added tests, fixed one bug
 
- plugin/format.vim |    6 +++---
+ plugin/format.vim |    6
  1 files changed, 3 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3.2)
@@ -146,7 +146,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.3.2: Fixed displaying of blank lines
 
- plugin/format.vim |    1 +
+ plugin/format.vim |    1
  1 files changed, 1 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3.1)
@@ -156,8 +156,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.3.1: Added relative numbering support
 
- doc/format.txt    |   15 ++++++--
- plugin/format.vim |   99 +++++++++++++++++++++++++++++++++++++++++-----------
+ doc/format.txt    |   15
+ plugin/format.vim |   99
  2 files changed, 90 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
@@ -167,14 +167,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.3: Added concealed characters support
 
- doc/comp.txt      |   11 ++
- doc/format.txt    |   54 ++++++-
- doc/load.txt      |   13 ++
- plugin/chk.vim    |   43 ++++-
- plugin/comp.vim   |   61 ++++++--
- plugin/format.vim |  440 ++++++++++++++++++++++++++++++++++++-----------------
- plugin/load.vim   |   66 ++++++---
- plugin/stuf.vim   |  173 +++++++++++++++++++--
+ doc/comp.txt      |   11
+ doc/format.txt    |   54
+ doc/load.txt      |   13
+ plugin/chk.vim    |   43
+ plugin/comp.vim   |   61
+ plugin/format.vim |  440
+ plugin/load.vim   |   66
+ plugin/stuf.vim   |  173
  8 files changed, 653 insertions(+), 208 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2.1)
@@ -184,9 +184,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.2.1: Fixed some validator errors
 
- doc/format.txt    |   23 ++++++++++++++++++-----
- plugin/format.vim |    5 +++--
- plugin/load.vim   |    4 +++-
+ doc/format.txt    |   23
+ plugin/format.vim |    5
+ plugin/load.vim   |    4
  3 files changed, 24 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
@@ -196,12 +196,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.2: Added support for tags
 
- doc/format.txt    |   50 +++++-
- doc/load.txt      |   65 +++++++-
- plugin/chk.vim    |    3 +
- plugin/format.vim |  475 +++++++++++++++++++++++++++++++++++++---------------
- plugin/load.vim   |  107 ++++++++++++-
- plugin/stuf.vim   |    2 +-
+ doc/format.txt    |   50
+ doc/load.txt      |   65
+ plugin/chk.vim    |    3
+ plugin/format.vim |  475
+ plugin/load.vim   |  107
+ plugin/stuf.vim   |    2
  6 files changed, 553 insertions(+), 149 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
@@ -211,10 +211,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.1: Added support for more then two diff windows, some other fixes
 
- doc/format.txt    |   17 ++-
- plugin/comp.vim   |    9 ++-
- plugin/format.vim |  301 +++++++++++++++++++++++++++++++----------------------
- plugin/stuf.vim   |    3 +-
+ doc/format.txt    |   17
+ plugin/comp.vim   |    9
+ plugin/format.vim |  301
+ plugin/stuf.vim   |    3
  4 files changed, 198 insertions(+), 132 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -226,15 +226,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added experimental side-by-side diff creation, added cursor position support (unfinished, disabled by default), major changes to format specification, some fixes
 
- doc/chk.txt       |   84 ++++-
- doc/comp.txt      |   26 +-
- doc/format.txt    |  214 +++++++--
- doc/load.txt      |  174 ++++++--
- plugin/chk.vim    |   40 ++-
- plugin/comp.vim   |  176 ++++++--
- plugin/format.vim | 1367 +++++++++++++++++++++++++++++++++++++++++------------
- plugin/load.vim   |  723 ++++++++++++++++++++++++-----
- plugin/stuf.vim   |  250 ++++++++++-
+ doc/chk.txt       |   84
+ doc/comp.txt      |   26
+ doc/format.txt    |  214
+ doc/load.txt      |  174
+ plugin/chk.vim    |   40
+ plugin/comp.vim   |  176
+ plugin/format.vim | 1367
+ plugin/load.vim   |  723
+ plugin/stuf.vim   |  250
  9 files changed, 2514 insertions(+), 540 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8.2)
@@ -246,8 +246,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added «KeepColorCache» option, improved «bbcode-unixforum» format specification, some other fixes.
 
- doc/format.txt    |   15 ++++-
- plugin/format.vim |  182 ++++++++++++++++++++++++++++++++--------------------
+ doc/format.txt    |   15
+ plugin/format.vim |  182
  2 files changed, 124 insertions(+), 73 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8.1)
@@ -257,8 +257,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.8.1: Made «linestart'»and «lineend» keys optional, some fixes
 
- doc/format.txt    |   16 ++--
- plugin/format.vim |  246 +++++++++++++++++++++++++++--------------------------
+ doc/format.txt    |   16
+ plugin/format.vim |  246
  2 files changed, 136 insertions(+), 126 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
@@ -270,9 +270,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added FormatCommand options that override both default and user settings.
 
- doc/format.txt    |   37 ++++++++++++------
- plugin/format.vim |  110 +++++++++++++++++++++++++++++++++++++++--------------
- plugin/stuf.vim   |    5 ++-
+ doc/format.txt    |   37
+ plugin/format.vim |  110
+ plugin/stuf.vim   |    5
  3 files changed, 110 insertions(+), 42 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
@@ -282,15 +282,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.7: Added «html-vimwiki» format.
 
- doc/chk.txt       |   36 +++++++----
- doc/comp.txt      |  107 +++++++++++++++++++++++++++++++++
- doc/format.txt    |   32 +++++++++-
- doc/load.txt      |   73 +++++++++++++----------
- plugin/chk.vim    |  160 +++++++++++++++++++++++++++++++------------------
- plugin/comp.vim   |   23 +++++--
- plugin/format.vim |  160 +++++++++++++++++++++++++++++++++++--------------
- plugin/load.vim   |  172 +++++++++++++++++++++++++++++++++++++++--------------
- plugin/stuf.vim   |   16 ++++--
+ doc/chk.txt       |   36
+ doc/comp.txt      |  107
+ doc/format.txt    |   32
+ doc/load.txt      |   73
+ plugin/chk.vim    |  160
+ plugin/comp.vim   |   23
+ plugin/format.vim |  160
+ plugin/load.vim   |  172
+ plugin/stuf.vim   |   16
  9 files changed, 571 insertions(+), 208 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -300,8 +300,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.6: Added commandline completion
 
- plugin/comp.vim   |  257 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/format.vim |   38 ++++++---
+ plugin/comp.vim   |  257
+ plugin/format.vim |   38
  2 files changed, 283 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -313,8 +313,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added AllFolds option (for html format specification it is just like g:html_dynamic_folds for 2html, but you are free to write something else), ~8% perfomance improvement.
 
- doc/format.txt    |   44 +++-
- plugin/format.vim |  805 +++++++++++++++++++++++++++++++++++------------------
+ doc/format.txt    |   44
+ plugin/format.vim |  805
  2 files changed, 570 insertions(+), 279 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -326,8 +326,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added "nolf" (joins everything in a single line) and "haslf" (allow format specification to define line breaks) format specification options.
 
- doc/format.txt    |   18 ++++++++++++++++--
- plugin/format.vim |   14 +++++++++++++-
+ doc/format.txt    |   18
+ plugin/format.vim |   14
  2 files changed, 29 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -337,7 +337,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3: Added lcs:nbsp handling, some fixes
 
- plugin/format.vim |   36 ++++++++++++++++++++++++++++--------
+ plugin/format.vim |   36
  1 files changed, 28 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
@@ -349,8 +349,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Greatly improved performance (~37% for ShowProgress=0, ~53% for ShowProgress=1 and ~43% for ShowProgress=2).
 
- doc/format.txt    |   17 +++++++++++---
- plugin/format.vim |   58 ++++++++++++++++++++++++++++------------------------
+ doc/format.txt    |   17
+ plugin/format.vim |   58
  2 files changed, 44 insertions(+), 31 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -362,8 +362,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added ShowProgress option (adds progressbar). Note that ShowProgress=2 makes my script ~30% slower while ShowProgress=1 slows down only for ~5%.
 
- doc/format.txt    |   12 +++++++++++
- plugin/format.vim |   54 ++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ doc/format.txt    |   12
+ plugin/format.vim |   54
  2 files changed, 65 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -375,9 +375,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added NoLineNR (removes line numbering) and CollapsFiller (collapses too long diff fillers) options.
 
- doc/format.txt    |   31 ++++++++++++++++++-
- plugin/format.vim |   82 ++++++++++++++++++++++++++++++++++------------------
- plugin/load.vim   |    2 +
+ doc/format.txt    |   31
+ plugin/format.vim |   82
+ plugin/load.vim   |    2
  3 files changed, 84 insertions(+), 31 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -387,13 +387,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README            |   28 ++
- autoload/load.vim |    5 +
- doc/chk.txt       |  334 ++++++++++++++++
- doc/format.txt    |  301 ++++++++++++++
- doc/load.txt      |  224 +++++++++++
- plugin/chk.vim    |  978 +++++++++++++++++++++++++++++++++++++++++++++
- plugin/format.vim | 1130 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/load.vim   |  894 ++++++++++++++++++++++++++++++++++++++++++
- plugin/stuf.vim   |  262 +++++++++++++
+ README            |   28
+ autoload/load.vim |    5
+ doc/chk.txt       |  334
+ doc/format.txt    |  301
+ doc/load.txt      |  224
+ plugin/chk.vim    |  978
+ plugin/format.vim | 1130
+ plugin/load.vim   |  894
+ plugin/stuf.vim   |  262
  9 files changed, 4156 insertions(+), 0 deletions(-)

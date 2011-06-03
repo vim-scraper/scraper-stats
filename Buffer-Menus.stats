@@ -11,7 +11,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Added a global option to use menu enable menu disable instead of unmenu.
     Added <unmenu> and <disable> options to specify explicitly whether to disable or unmenu the mapping.
 
- plugin/buffermenu.vim |  145 ++++++++++++++++++++++++++++++++++++++-----------
+ plugin/buffermenu.vim |  145
  1 files changed, 113 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -23,7 +23,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fix up a bug where spaces are used in the mapping part were causing an error to be reported.
 
- plugin/buffermenu.vim |   14 ++++++++++----
+ plugin/buffermenu.vim |   14
  1 files changed, 10 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -35,7 +35,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     For some reason when pressing ctrl+^  I was getting two buffer unloads - this was causing menus to be undone twice and lots of errors.  I have now fixed it to make sure it only undoes the menus once.
 
- plugin/buffermenu.vim |   24 +++++++++++++++++-------
+ plugin/buffermenu.vim |   24
  1 files changed, 17 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -48,7 +48,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Allow menus with spaces to work.
     Echo errors using echoerr so that they are reported properly
 
- plugin/buffermenu.vim |   21 ++++++++++++---------
+ plugin/buffermenu.vim |   21
  1 files changed, 12 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -60,7 +60,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Don't add menus to the buffer-list that produce an error when first adding.
 
- plugin/buffermenu.vim |   18 ++++++++++++++----
+ plugin/buffermenu.vim |   18
  1 files changed, 14 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -79,7 +79,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Bamenu Bcmenu Bnmenu  now pass the correct parameters and won't give an error
     - Bunmenuall now works.
 
- plugin/buffermenu.vim |   23 ++++++++++++++---------
+ plugin/buffermenu.vim |   23
  1 files changed, 14 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -89,6 +89,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README                |   51 ++++++++++++++++++
- plugin/buffermenu.vim |  139 +++++++++++++++++++++++++++++++++++++++++++++++++
+ README                |   51
+ plugin/buffermenu.vim |  139
  2 files changed, 190 insertions(+), 0 deletions(-)

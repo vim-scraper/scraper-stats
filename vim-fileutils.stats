@@ -5,7 +5,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.7.8: Fixed case when directory name contains wild characters
 
- autoload/fileutils.vim |    2 +-
+ autoload/fileutils.vim |    2
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.7)
@@ -15,7 +15,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.7.7: Fixed case when directory name contains wild characters
 
- autoload/fileutils.vim |   18 ++++++++----------
+ autoload/fileutils.vim |   18
  1 files changed, 8 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.6)
@@ -27,7 +27,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed case when directory name contains newline on unix and vimscript function is used
 
- autoload/fileutils.vim |   12 ++++++++++++
+ autoload/fileutils.vim |   12
  1 files changed, 12 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.3)
@@ -37,7 +37,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.7.3: Fixed contents in documentation
 
- doc/vim-fileutils.txt |    8 ++++----
+ doc/vim-fileutils.txt |    8
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.2)
@@ -47,8 +47,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.7.2: Made GetDirContents reliably treat empty string as '.'
 
- autoload/fileutils.vim |    4 +++-
- doc/vim-fileutils.txt  |    3 ++-
+ autoload/fileutils.vim |    4
+ doc/vim-fileutils.txt  |    3
  2 files changed, 5 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1)
@@ -58,7 +58,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.7.1: Fixed fileutils#GetDirContents('/') and fileutils#GetDirContents('~')
 
- autoload/fileutils.vim |   26 +++++++++++++++++++++-----
+ autoload/fileutils.vim |   26
  1 files changed, 21 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
@@ -70,9 +70,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Made fileutils#GetDirContents return a list of files, not a list of full paths (using python's os.listdir if possible), added more OSs to possible OS list
 
- autoload/fileutils.vim |   78 ++++++++++++++++++++++++++++++++---------------
- autoload/os.vim        |    2 +-
- doc/vim-fileutils.txt  |    2 +-
+ autoload/fileutils.vim |   78
+ autoload/os.vim        |    2
+ doc/vim-fileutils.txt  |    2
  3 files changed, 55 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.1)
@@ -82,8 +82,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.6.1: Added os#JoinPath function
 
- autoload/os.vim       |   36 +++++++++++++++++++++++++++++++++++-
- doc/vim-fileutils.txt |    3 +++
+ autoload/os.vim       |   36
+ doc/vim-fileutils.txt |    3
  2 files changed, 38 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
@@ -93,7 +93,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.5.1: Added documentation
 
- doc/vim-fileutils.txt |   44 ++++++++++++++++++++++++++++++++++++++++++++
+ doc/vim-fileutils.txt |   44
  1 files changed, 44 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -103,7 +103,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.5: Initial upload
 
- README                 |    8 ++++
- autoload/fileutils.vim |   40 +++++++++++++++++++
- autoload/os.vim        |   98 ++++++++++++++++++++++++++++++++++++++++++++++++
+ README                 |    8
+ autoload/fileutils.vim |   40
+ autoload/os.vim        |   98
  3 files changed, 146 insertions(+), 0 deletions(-)

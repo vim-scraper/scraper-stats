@@ -5,7 +5,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.1.3: Bug fix: regression introduced on gf and <c-w>f
 
- plugin/searchInRuntime.vim |   10 ++++++----
+ plugin/searchInRuntime.vim |   10
  1 files changed, 6 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1.2)
@@ -20,8 +20,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * New behavior for :G*split: we jump to the first matching window unless the command in banged ; in that latter case, the user is asked to choose the matching file to open/jump-to.
     * All these modifications concern only Vim7+ as the corresponding feature is not supported on 6.x versions of Vim.
 
- doc/searchInRuntime.txt    |   54 ++++++++++++------
- plugin/searchInRuntime.vim |  135 ++++++++++++++++++++++++++++++++++++-------
+ doc/searchInRuntime.txt    |   54
+ plugin/searchInRuntime.vim |  135
  2 files changed, 149 insertions(+), 40 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1.0)
@@ -33,8 +33,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Two minor bugfixes. New commands and overridden mappings for vim7+: :GSplit, :GVSplit, gf, CTRL-W_f and glf. When several matching files can be found in 'path', the user is asked which one to open. If it is already opened in a window, that window becomes active.
 
- doc/searchInRuntime.txt    |   56 ++++++++++++++--
- plugin/searchInRuntime.vim |  150 +++++++++++++++++++++++++++++++++++++-------
+ doc/searchInRuntime.txt    |   56
+ plugin/searchInRuntime.vim |  150
  2 files changed, 177 insertions(+), 29 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.3)
@@ -46,8 +46,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Support for "smart" auto-completion added for each command from the plugin -- "smart" means: "respect the parameter position". New commands: :Sp and :Vsp that split open files found into &path ; and :Runtime, another wrapper for :runtime with auto-completion.
 
- doc/searchInRuntime.txt    |   61 +++++++++--
- plugin/searchInRuntime.vim |  247 +++++++++++++++++++++++++++++++++++++++++---
+ doc/searchInRuntime.txt    |   61
+ plugin/searchInRuntime.vim |  247
  2 files changed, 281 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6c)
@@ -57,8 +57,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.6c: Bug fix for non-Windows users.
 
- doc/searchInRuntime.txt    |  349 +++++++++++++++++++++++---------------------
- plugin/searchInRuntime.vim |   12 +-
+ doc/searchInRuntime.txt    |  349
+ plugin/searchInRuntime.vim |   12
  2 files changed, 189 insertions(+), 172 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6@1)
@@ -68,8 +68,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.6@1: Tarball containing the plugin and its documentation.
 
- doc/searchInRuntime.txt    |  169 ++++++++++++++++++++++++++++++++++++++++++++
- plugin/searchInRuntime.vim |   32 ++++++--
+ doc/searchInRuntime.txt    |  169
+ plugin/searchInRuntime.vim |   32
  2 files changed, 193 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -81,7 +81,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     The :SearchIn* commands can pass any number of additional arguments to the "inner" command. SearchInENV changed in SearchInVar.
 
- plugin/searchInRuntime.vim |  101 ++++++++++++++++++++++++++++++++++++++------
+ plugin/searchInRuntime.vim |  101
  1 files changed, 88 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -93,7 +93,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Two more commands : ':SearchInENV' and ':SearchInPATH' ; '&verbose' is supported like with ':runtime'.
 
- plugin/searchInRuntime.vim |  129 ++++++++++++++++++++++++++++++++++++++-----
+ plugin/searchInRuntime.vim |  129
  1 files changed, 114 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -103,6 +103,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README                     |   54 ++++++++++++++++++++++++++++++++++++++++++++
- plugin/searchInRuntime.vim |   48 +++++++++++++++++++++++++++++++++++++++
+ README                     |   54
+ plugin/searchInRuntime.vim |   48
  2 files changed, 102 insertions(+), 0 deletions(-)

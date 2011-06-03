@@ -18,10 +18,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - If the word "profile" was used in a dbext profile name dbext would report the error: "dbext: Profiles cannot be nested" (Chris Cierpisz).
     - Corrected the regex used to find object owner names (Sergey Khorev).
 
- autoload/dbext.vim     |  142 ++++++++++++++++++++++++++++++++----------------
- autoload/dbext_dbi.vim |    8 ++-
- doc/dbext.txt          |   95 +++++++++++++++++---------------
- plugin/dbext.vim       |   36 ++-----------
+ autoload/dbext.vim     |  142
+ autoload/dbext_dbi.vim |    8
+ doc/dbext.txt          |   95
+ plugin/dbext.vim       |   36
  4 files changed, 155 insertions(+), 126 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/11.01)
@@ -37,10 +37,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - If a large result set is retrieved, there is a significant performance delay which was introduced in 11.00.  This was related to the new g:dbext_rows_affected feature (Tocer).
     - Error E15: Invalid expression: b:dbext_sqlvar_mv[var] is reported if you are using saved variables and then modified the query with a new variable.  Now the saved variables are used for the known variables and you are prompted for the unknown.
 
- autoload/dbext.vim     |   24 ++++++++++++++++--------
- autoload/dbext_dbi.vim |    6 +++---
- doc/dbext.txt          |   17 +++++++++++++++--
- plugin/dbext.vim       |    6 +++---
+ autoload/dbext.vim     |   24
+ autoload/dbext_dbi.vim |    6
+ doc/dbext.txt          |   17
+ plugin/dbext.vim       |    6
  4 files changed, 37 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/11.00)
@@ -65,10 +65,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Errors were reported about undefined variable, dbext_sqlvar_temp_mv,  if executing a SQL statement directly from a filetype which was not SQL (i.e. PHP, Java, csharp, ...).
     - If saved variables were in use, it was possible for dbext to used the replaced variables without the user knowing.  For example stored procedures could be created with the replaced strings instead of the variables.
 
- autoload/dbext.vim     |  391 ++++++++++++++++++++++++++++++++++++++++++-----
- autoload/dbext_dbi.vim |   18 ++-
- doc/dbext.txt          |  161 +++++++++++++++++---
- plugin/dbext.vim       |   27 ++--
+ autoload/dbext.vim     |  391
+ autoload/dbext_dbi.vim |   18
+ doc/dbext.txt          |  161
+ plugin/dbext.vim       |   27
  4 files changed, 515 insertions(+), 82 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/10.00)
@@ -94,10 +94,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - When listing variables the following error could be reported: E121: Undefined variable
     - It was not possible to retrieve more than 500 characters from a character or binary column in the database when using DBI or ODBC.  Adding driver_parms=LongReadLen=4096 now works correctly.  You can also change this after you are connected to the database using DBSetOption LongReadLen=4096.  Running DBListConnections will display the current setting for each database connection currently open.
 
- autoload/dbext.vim     |  413 +++++++++++++++++++++++++++++++++++++++++++-----
- autoload/dbext_dbi.vim |   15 +-
- doc/dbext.txt          |   51 ++++++-
- plugin/dbext.vim       |  100 ++++++------
+ autoload/dbext.vim     |  413
+ autoload/dbext_dbi.vim |   15
+ doc/dbext.txt          |   51
+ plugin/dbext.vim       |  100
  4 files changed, 480 insertions(+), 99 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9.0)
@@ -123,10 +123,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - You are often repeatedly prompted for connection information.  This change reduces the number and allows you to cancel out of the prompt dialogs.
     - Added an unconditional quit command to exit out of Oracle's SQLPlus (Anton Sharonov).
 
- autoload/dbext.vim     |  711 ++++++++++++++++++++++++++++++++++++++----------
- autoload/dbext_dbi.vim |    6 +-
- doc/dbext.txt          |  324 ++++++++++++++++------
- plugin/dbext.vim       |   94 ++++---
+ autoload/dbext.vim     |  711
+ autoload/dbext_dbi.vim |    6
+ doc/dbext.txt          |  324
+ plugin/dbext.vim       |   94
  4 files changed, 872 insertions(+), 263 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/8.00)
@@ -149,10 +149,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     ---------
     - Setting LongReadLen for DBI and ODBC connections did not work.
 
- autoload/dbext.vim     |  245 +++++++++++++++++++++++++++++++++++++-----------
- autoload/dbext_dbi.vim |  102 ++++++--------------
- doc/dbext.txt          |  117 +++++++++++++++++++++--
- plugin/dbext.vim       |    6 +-
+ autoload/dbext.vim     |  245
+ autoload/dbext_dbi.vim |  102
+ doc/dbext.txt          |  117
+ plugin/dbext.vim       |    6
  4 files changed, 331 insertions(+), 139 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.00)
@@ -173,10 +173,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Using ODBC to connect to SQL Server, dbext did not handle informational messages appropriately leading to "not connected" messages (Albie Janse van Rensburg).
     - When executing SQL if you were prompted for a variable replacement and cancelled the query the dbext history window was displayed instead of returning to the buffer.
 
- autoload/dbext.vim     |  145 ++---------
- autoload/dbext_dbi.vim |  740 +++++++++++++++++++++++++++++++++--------------
- doc/dbext.txt          |   29 ++-
- plugin/dbext.vim       |    6 +-
+ autoload/dbext.vim     |  145
+ autoload/dbext_dbi.vim |  740
+ doc/dbext.txt          |   29
+ plugin/dbext.vim       |    6
  4 files changed, 566 insertions(+), 354 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.20)
@@ -193,10 +193,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Changed the query used to retrieve the current line for DBExecSQLUnderCursor when no text is selected (Sergey Alekhin).
     - When parsing a SQL statement for host variables it was possible to miss excluding the INTO clause correctly (Sergey Alekhin).
 
- autoload/dbext.vim     |   24 ++++++++++++------------
- autoload/dbext_dbi.vim |   12 ++++++------
- doc/dbext.txt          |   23 +++++++++++++++++++----
- plugin/dbext.vim       |   16 ++++++++--------
+ autoload/dbext.vim     |   24
+ autoload/dbext_dbi.vim |   12
+ doc/dbext.txt          |   23
+ plugin/dbext.vim       |   16
  4 files changed, 45 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.10)
@@ -220,10 +220,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Tutorial update (Clinton Jones).
     - DBGetOption reported an exception E730: using List as a String.
 
- autoload/dbext.vim     |  281 +++++++++++++++++++++++++++++++++++++++---------
- autoload/dbext_dbi.vim |    6 +-
- doc/dbext.txt          |  132 ++++++++++++++++++++---
- plugin/dbext.vim       |   10 ++-
+ autoload/dbext.vim     |  281
+ autoload/dbext_dbi.vim |    6
+ doc/dbext.txt          |  132
+ plugin/dbext.vim       |   10
  4 files changed, 360 insertions(+), 69 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.01)
@@ -238,11 +238,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     ---------
     - On dbext startup an error was reported indicating mapleader was not defined (Matt).
 
- autoload/dbext.vim       |    6 +-
- autoload/dbext_dbi.vim   |    6 +-
- autoload/sqlcomplete.vim |  693 ----------------------------------------------
- doc/dbext.txt            |   12 +-
- plugin/dbext.vim         |   74 +++---
+ autoload/dbext.vim       |    6
+ autoload/dbext_dbi.vim   |    6
+ autoload/sqlcomplete.vim |  693
+ doc/dbext.txt            |   12
+ plugin/dbext.vim         |   74
  5 files changed, 53 insertions(+), 738 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.00)
@@ -272,11 +272,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - In some cases when using DBI or ODBC an error was not reported and only a blank result set was returned.  Now the database error is reported back to the user.
     - Data retrieved via DBI or ODBC which contained a backslash were not escaped properly and could disappear.
 
- autoload/dbext.vim       |  879 ++++++++++++++++++++++++++++++----------------
- autoload/dbext_dbi.vim   |  265 ++++++++++++---
- autoload/sqlcomplete.vim |  693 ++++++++++++++++++++++++++++++++++++
- doc/dbext.txt            |  252 ++++++++++----
- plugin/dbext.vim         |  259 +++++++-------
+ autoload/dbext.vim       |  879
+ autoload/dbext_dbi.vim   |  265
+ autoload/sqlcomplete.vim |  693
+ doc/dbext.txt            |  252
+ plugin/dbext.vim         |  259
  5 files changed, 1813 insertions(+), 535 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/5.20)
@@ -294,10 +294,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     :let g:dbext_default_dbi_column_delimiter="\t" (Jean-Christophe Clavier)
     - When using DBI or DBI::ODBC and you use a vertical orientation for the result set, if there are any embedded newline characters in your data this will be displayed and shifted to align with the column above.  Prior to this all newlines were stripped from the output when printing to preserve standard horizontal output (Jean-Christophe Clavier).
 
- autoload/dbext.vim     |    8 +++--
- autoload/dbext_dbi.vim |   69 ++++++++++++++++++++++++++++++++++--------------
- doc/dbext.txt          |   25 ++++++++++++++++-
- plugin/dbext.vim       |    6 ++--
+ autoload/dbext.vim     |    8
+ autoload/dbext_dbi.vim |   69
+ doc/dbext.txt          |   25
+ plugin/dbext.vim       |    6
  4 files changed, 80 insertions(+), 28 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/5.11)
@@ -314,10 +314,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     For Open VMS http://h71000.www7.hp.com/openvms/.
     Development of Rdb support by Andi Stern
 
- autoload/dbext.vim     |  277 ++++++++++++++++++++++++++++++++++++++++++++----
- autoload/dbext_dbi.vim |    6 +-
- doc/dbext.txt          |   14 ++-
- plugin/dbext.vim       |    6 +-
+ autoload/dbext.vim     |  277
+ autoload/dbext_dbi.vim |    6
+ doc/dbext.txt          |   14
+ plugin/dbext.vim       |    6
  4 files changed, 275 insertions(+), 28 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/5.06)
@@ -344,11 +344,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Oracle reported "rows will be truncated", added "set linesize 10000" to the Oracle headers (Stuart Brock)
     - When prompting for connection parameters if you choose a profile of "0" which is no profile, you had to re-run the wizard to prompt for the rest of the parameters, now the wizard continues as expected.
 
- autoload/dbext.vim     | 6381 ++++++++++++++++++++++++++++++++++++++++++++++++
- autoload/dbext_dbi.vim | 1220 +++++++++
- doc/dbext.txt          |  713 +++++-
- doc/dbext_gpl.dat      |  280 +++
- plugin/dbext.vim       | 4591 ++---------------------------------
+ autoload/dbext.vim     | 6381
+ autoload/dbext_dbi.vim | 1220
+ doc/dbext.txt          |  713
+ doc/dbext_gpl.dat      |  280
+ plugin/dbext.vim       | 4591
  5 files changed, 8695 insertions(+), 4490 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.20)
@@ -366,8 +366,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Bug Fixes
     - SQL Server support had issues with the queries when running DBCompleteTable, DBCompleteProcedure, DBCompleteView which also affected the sqlcomplete.vim plugin included with Vim7 (Albie Janse van Rensburg).
 
- doc/dbext.txt    |   32 ++++++++++++++++++++++++++++++--
- plugin/dbext.vim |   35 +++++++++++++++++++++++++++++------
+ doc/dbext.txt    |   32
+ plugin/dbext.vim |   35
  2 files changed, 59 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.10)
@@ -387,8 +387,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - db2 support had issues with the queries when running DBCompleteTable, DBCompleteProcedure, DBCompleteView which also affected the sqlcomplete.vim plugin included with Vim7 (Peter Princz).
     - The documentation was still indicating there was a plugin dependency which has been removed with Vim7.
 
- doc/dbext.txt    |   27 ++++++++++++---
- plugin/dbext.vim |   95 ++++++++++++++++++++++++++++++++++++++----------------
+ doc/dbext.txt    |   27
+ plugin/dbext.vim |   95
  2 files changed, 89 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.03)
@@ -411,8 +411,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     ------------
     - Added version support with MySQL to control what SQL is sent for version 4 and 5 servers.
 
- doc/dbext.txt    |   66 ++++++-
- plugin/dbext.vim |  616 ++++++++++++++++++++++++++----------------------------
+ doc/dbext.txt    |   66
+ plugin/dbext.vim |  616
  2 files changed, 358 insertions(+), 324 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.50)
@@ -432,8 +432,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     ------------
      - DBPromptForBufferParameters can report "E180: Invalid complete value: -1" if running the console version of Vim.  dbext will detect this problem and automatically set g:dbext_default_inputdialog_cancel_support = 0 to work around this Vim7 bug.
 
- doc/dbext.txt    |   84 +++++++++++++++++++++++++++++++++++--
- plugin/dbext.vim |  121 ++++++++++++++++++++++++++++++++++++++++--------------
+ doc/dbext.txt    |   84
+ plugin/dbext.vim |  121
  2 files changed, 169 insertions(+), 36 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.00)
@@ -458,8 +458,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - The "extra" feature did not add a leading space for MySQL.  Using the tabbed output required updates to the parsing of the output generated by MySQL.
     - Miscellaneous documentation updates.
 
- doc/dbext.txt    |  178 ++++++++++++--
- plugin/dbext.vim |  720 +++++++++++++++++++++++++++++++++++++++++++-----------
+ doc/dbext.txt    |  178
+ plugin/dbext.vim |  720
  2 files changed, 739 insertions(+), 159 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.30)
@@ -484,8 +484,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      - The connection string is displayed by both the Result buffer (first line) and the titlestring to the buffer (if enabled).  This was not correctly appending the user used to connect to the database.
      - When parsing Vim scripts we did not correctly remove a leading line continuation slash from the from of a query.
 
- doc/dbext.txt    |   49 +++++-
- plugin/dbext.vim |  486 +++++++++++++++++++++++++++++++++---------------------
+ doc/dbext.txt    |   49
+ plugin/dbext.vim |  486
  2 files changed, 340 insertions(+), 195 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.20)
@@ -538,8 +538,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     the INTO clause to ensure it does not interfer with an INSERT or MERGE
     statement.
 
- doc/dbext.txt    |   79 ++++++++++++++-
- plugin/dbext.vim |  274 ++++++++++++++++++++++++++++++++++++-----------------
+ doc/dbext.txt    |   79
+ plugin/dbext.vim |  274
  2 files changed, 259 insertions(+), 94 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.11)
@@ -552,8 +552,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Bug fix: On some platforms the temporary file created to execute SQL
     statements must end in ".sql".  Corrected this for all databases.
 
- doc/dbext.txt    |    6 ++--
- plugin/dbext.vim |   58 ++++++++++++++++++++++++++++++++++++++++--------------
+ doc/dbext.txt    |    6
+ plugin/dbext.vim |   58
  2 files changed, 46 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.10)
@@ -566,8 +566,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     New Features
     - Support for the SQLite database has been added (thanks to Ron Aaron).
 
- doc/dbext.txt    |  116 ++++++++++--
- plugin/dbext.vim |  577 ++++++++++++++++++++++++++++++++++++++++++++----------
+ doc/dbext.txt    |  116
+ plugin/dbext.vim |  577
  2 files changed, 576 insertions(+), 117 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.01)
@@ -603,8 +603,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Updated the connection text in the Result buffer.
     - Overhauled the DB2 support.
 
- doc/dbext.txt    |  742 ++++++++++++++++++++++++++++++++++++++++++++++++-----
- plugin/dbext.vim |  762 +++++++++++++++++++++++++++++++++++++-----------------
+ doc/dbext.txt    |  742
+ plugin/dbext.vim |  762
  2 files changed, 1202 insertions(+), 302 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.00)
@@ -639,7 +639,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Intellisense Addin Support
     The Intellisense  plugin now has SQL supported.  To enable greater functionality (table, procedure, view lists), it uses dbext.vim to retrieve this information.
 
- README           |  126 +++
- doc/dbext.txt    |  819 ++++++++++++++
- plugin/dbext.vim | 3278 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README           |  126
+ doc/dbext.txt    |  819
+ plugin/dbext.vim | 3278
  3 files changed, 4223 insertions(+), 0 deletions(-)

@@ -7,10 +7,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Refine the document.- |metarw#{scheme}#write()|:  - Fix a bug that some kind of errors are not handled properly.  - Add a way to execute a script after writing.  See |metarw#{scheme}#write()-write| for the details.
 
- autoload/metarw.vim |   14 ++++++--
- doc/metarw.txt      |   91 ++++++++++++++++++++++++++++++++++-----------------
- plugin/metarw.vim   |    4 +-
- syntax/metarw.vim   |    4 +-
+ autoload/metarw.vim |   14
+ doc/metarw.txt      |   91
+ plugin/metarw.vim   |    4
+ syntax/metarw.vim   |    4
  4 files changed, 76 insertions(+), 37 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.3)
@@ -22,10 +22,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - |metarw#{scheme}#write()|:  - Fix wrong implementation.  - Add new type of return value "done".
 
- autoload/metarw.vim |   37 +++++++++++++++++++++++++------------
- doc/metarw.txt      |   19 +++++++++++++------
- plugin/metarw.vim   |    2 +-
- syntax/metarw.vim   |    2 +-
+ autoload/metarw.vim |   37
+ doc/metarw.txt      |   19
+ plugin/metarw.vim   |    2
+ syntax/metarw.vim   |    2
  4 files changed, 40 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.2)
@@ -35,12 +35,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.2: - Separate |ku-source-metarw| as a independent package.
 
- autoload/ku/special/metarw.vim  |   87 ---------------------------------------
- autoload/ku/special/metarw_.vim |   37 ----------------
- autoload/metarw.vim             |    2 +-
- doc/metarw.txt                  |   21 ++++-----
- plugin/metarw.vim               |    2 +-
- syntax/metarw.vim               |    2 +-
+ autoload/ku/special/metarw.vim  |   87
+ autoload/ku/special/metarw_.vim |   37
+ autoload/metarw.vim             |    2
+ doc/metarw.txt                  |   21
+ plugin/metarw.vim               |    2
+ syntax/metarw.vim               |    2
  6 files changed, 12 insertions(+), 139 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
@@ -60,12 +60,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fix requirements - metarw uses |fnameescape()| which is added since
       Vim 7.1.299.  (thanks to id:thinca)
 
- autoload/ku/special/metarw.vim  |   87 +++++++++++++++++++++++++++++++++++++++
- autoload/ku/special/metarw_.vim |   37 ++++++++++++++++
- autoload/metarw.vim             |    2 +-
- doc/metarw.txt                  |   28 +++++++++++--
- plugin/metarw.vim               |   17 ++++---
- syntax/metarw.vim               |    2 +-
+ autoload/ku/special/metarw.vim  |   87
+ autoload/ku/special/metarw_.vim |   37
+ autoload/metarw.vim             |    2
+ doc/metarw.txt                  |   28
+ plugin/metarw.vim               |   17
+ syntax/metarw.vim               |    2
  6 files changed, 160 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.0)
@@ -75,9 +75,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.0: Initial upload.
 
- README              |   23 ++++
- autoload/metarw.vim |  309 +++++++++++++++++++++++++++++++++++++++++++++++++++
- doc/metarw.txt      |  278 +++++++++++++++++++++++++++++++++++++++++++++
- plugin/metarw.vim   |   45 ++++++++
- syntax/metarw.vim   |   66 +++++++++++
+ README              |   23
+ autoload/metarw.vim |  309
+ doc/metarw.txt      |  278
+ plugin/metarw.vim   |   45
+ syntax/metarw.vim   |   66
  5 files changed, 721 insertions(+), 0 deletions(-)

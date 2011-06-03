@@ -7,40 +7,40 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed jumping bug which caused problems with tags between two named tags being missed out. (really, really uploaded new version)
 
- after/ftplugin/actionscript_snippets.vim     |    9 -
- after/ftplugin/aspvbs_snippets.vim           |   17 -
- after/ftplugin/c_snippets.vim                |   58 --
- after/ftplugin/css_snippets.vim              |   30 -
- after/ftplugin/django_model_snippets.vim     |   61 --
- after/ftplugin/django_template_snippets.vim  |   32 -
- after/ftplugin/f-script_snippets.vim         |   14 -
- after/ftplugin/haskell_snippets.vim          |    9 -
- after/ftplugin/html_snippets.vim             |   57 --
- after/ftplugin/java_snippets.vim             |   52 --
- after/ftplugin/javascript_snippets.vim       |   10 -
- after/ftplugin/latex_snippets.vim            |   13 -
- after/ftplugin/logo_snippets.vim             |    9 -
- after/ftplugin/markdown_snippets.vim         |   10 -
- after/ftplugin/movable_type_snippets.vim     |   14 -
- after/ftplugin/objc_snippets.vim             |   53 --
- after/ftplugin/ocaml_snippets.vim            |   26 -
- after/ftplugin/perl_snippets.vim             |   23 -
- after/ftplugin/php_snippets.vim              |   30 -
- after/ftplugin/phpdoc_snippets.vim           |   19 -
- after/ftplugin/propel_snippets.vim           |   14 -
- after/ftplugin/python_snippets.vim           |  202 ------
- after/ftplugin/rails_snippets.vim            |   54 --
- after/ftplugin/ruby_snippets.vim             |   32 -
- after/ftplugin/sh_snippets.vim               |   12 -
- after/ftplugin/slate_snippets.vim            |   19 -
- after/ftplugin/smarty_snippets.vim           |   35 -
- after/ftplugin/symfony_snippets.vim          |   21 -
- after/ftplugin/tcl_snippets.vim              |   14 -
- after/ftplugin/template_toolkit_snippets.vim |   13 -
- after/ftplugin/tex_snippets.vim              |   13 -
- after/ftplugin/xhtml_snippets.vim            |   48 --
- doc/snippets_emu.txt                         |  354 ++++++++++
- plugin/snippetsEmu.vim                       |  973 ++++++++++++++++++++++++++
+ after/ftplugin/actionscript_snippets.vim     |    9
+ after/ftplugin/aspvbs_snippets.vim           |   17
+ after/ftplugin/c_snippets.vim                |   58
+ after/ftplugin/css_snippets.vim              |   30
+ after/ftplugin/django_model_snippets.vim     |   61
+ after/ftplugin/django_template_snippets.vim  |   32
+ after/ftplugin/f-script_snippets.vim         |   14
+ after/ftplugin/haskell_snippets.vim          |    9
+ after/ftplugin/html_snippets.vim             |   57
+ after/ftplugin/java_snippets.vim             |   52
+ after/ftplugin/javascript_snippets.vim       |   10
+ after/ftplugin/latex_snippets.vim            |   13
+ after/ftplugin/logo_snippets.vim             |    9
+ after/ftplugin/markdown_snippets.vim         |   10
+ after/ftplugin/movable_type_snippets.vim     |   14
+ after/ftplugin/objc_snippets.vim             |   53
+ after/ftplugin/ocaml_snippets.vim            |   26
+ after/ftplugin/perl_snippets.vim             |   23
+ after/ftplugin/php_snippets.vim              |   30
+ after/ftplugin/phpdoc_snippets.vim           |   19
+ after/ftplugin/propel_snippets.vim           |   14
+ after/ftplugin/python_snippets.vim           |  202
+ after/ftplugin/rails_snippets.vim            |   54
+ after/ftplugin/ruby_snippets.vim             |   32
+ after/ftplugin/sh_snippets.vim               |   12
+ after/ftplugin/slate_snippets.vim            |   19
+ after/ftplugin/smarty_snippets.vim           |   35
+ after/ftplugin/symfony_snippets.vim          |   21
+ after/ftplugin/tcl_snippets.vim              |   14
+ after/ftplugin/template_toolkit_snippets.vim |   13
+ after/ftplugin/tex_snippets.vim              |   13
+ after/ftplugin/xhtml_snippets.vim            |   48
+ doc/snippets_emu.txt                         |  354
+ plugin/snippetsEmu.vim                       |  973
  34 files changed, 1327 insertions(+), 1023 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2@1)
@@ -52,7 +52,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Small fix to php bundle. 'php' trigger is now 'phpp'. Previous version could too easily cause conflicts when using the 'incl' snippet.
 
- after/ftplugin/php_snippets.vim |    2 +-
+ after/ftplugin/php_snippets.vim |    2
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1@1)
@@ -62,8 +62,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.1@1: Updates to the C and HTML bundles
 
- after/ftplugin/c_snippets.vim    |    9 ++++++++-
- after/ftplugin/html_snippets.vim |    4 ++--
+ after/ftplugin/c_snippets.vim    |    9
+ after/ftplugin/html_snippets.vim |    4
  2 files changed, 10 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0@1)
@@ -73,40 +73,40 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0@1: Filetype plugins for snippetsEmu
 
- after/ftplugin/actionscript_snippets.vim     |    9 +
- after/ftplugin/aspvbs_snippets.vim           |   17 +
- after/ftplugin/c_snippets.vim                |   51 ++
- after/ftplugin/css_snippets.vim              |   30 +
- after/ftplugin/django_model_snippets.vim     |   61 ++
- after/ftplugin/django_template_snippets.vim  |   32 +
- after/ftplugin/f-script_snippets.vim         |   14 +
- after/ftplugin/haskell_snippets.vim          |    9 +
- after/ftplugin/html_snippets.vim             |   57 ++
- after/ftplugin/java_snippets.vim             |   52 ++
- after/ftplugin/javascript_snippets.vim       |   10 +
- after/ftplugin/latex_snippets.vim            |   13 +
- after/ftplugin/logo_snippets.vim             |    9 +
- after/ftplugin/markdown_snippets.vim         |   10 +
- after/ftplugin/movable_type_snippets.vim     |   14 +
- after/ftplugin/objc_snippets.vim             |   53 ++
- after/ftplugin/ocaml_snippets.vim            |   26 +
- after/ftplugin/perl_snippets.vim             |   23 +
- after/ftplugin/php_snippets.vim              |   30 +
- after/ftplugin/phpdoc_snippets.vim           |   19 +
- after/ftplugin/propel_snippets.vim           |   14 +
- after/ftplugin/python_snippets.vim           |  202 ++++++
- after/ftplugin/rails_snippets.vim            |   54 ++
- after/ftplugin/ruby_snippets.vim             |   32 +
- after/ftplugin/sh_snippets.vim               |   12 +
- after/ftplugin/slate_snippets.vim            |   19 +
- after/ftplugin/smarty_snippets.vim           |   35 +
- after/ftplugin/symfony_snippets.vim          |   21 +
- after/ftplugin/tcl_snippets.vim              |   14 +
- after/ftplugin/template_toolkit_snippets.vim |   13 +
- after/ftplugin/tex_snippets.vim              |   13 +
- after/ftplugin/xhtml_snippets.vim            |   48 ++
- doc/snippets_emu.txt                         |  353 ----------
- plugin/snippetsEmu.vim                       |  970 --------------------------
+ after/ftplugin/actionscript_snippets.vim     |    9
+ after/ftplugin/aspvbs_snippets.vim           |   17
+ after/ftplugin/c_snippets.vim                |   51
+ after/ftplugin/css_snippets.vim              |   30
+ after/ftplugin/django_model_snippets.vim     |   61
+ after/ftplugin/django_template_snippets.vim  |   32
+ after/ftplugin/f-script_snippets.vim         |   14
+ after/ftplugin/haskell_snippets.vim          |    9
+ after/ftplugin/html_snippets.vim             |   57
+ after/ftplugin/java_snippets.vim             |   52
+ after/ftplugin/javascript_snippets.vim       |   10
+ after/ftplugin/latex_snippets.vim            |   13
+ after/ftplugin/logo_snippets.vim             |    9
+ after/ftplugin/markdown_snippets.vim         |   10
+ after/ftplugin/movable_type_snippets.vim     |   14
+ after/ftplugin/objc_snippets.vim             |   53
+ after/ftplugin/ocaml_snippets.vim            |   26
+ after/ftplugin/perl_snippets.vim             |   23
+ after/ftplugin/php_snippets.vim              |   30
+ after/ftplugin/phpdoc_snippets.vim           |   19
+ after/ftplugin/propel_snippets.vim           |   14
+ after/ftplugin/python_snippets.vim           |  202
+ after/ftplugin/rails_snippets.vim            |   54
+ after/ftplugin/ruby_snippets.vim             |   32
+ after/ftplugin/sh_snippets.vim               |   12
+ after/ftplugin/slate_snippets.vim            |   19
+ after/ftplugin/smarty_snippets.vim           |   35
+ after/ftplugin/symfony_snippets.vim          |   21
+ after/ftplugin/tcl_snippets.vim              |   14
+ after/ftplugin/template_toolkit_snippets.vim |   13
+ after/ftplugin/tex_snippets.vim              |   13
+ after/ftplugin/xhtml_snippets.vim            |   48
+ doc/snippets_emu.txt                         |  353
+ plugin/snippetsEmu.vim                       |  970
  34 files changed, 1016 insertions(+), 1323 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.2)
@@ -118,40 +118,40 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Bug fix to plugin. Annoying window jumping sorted out. Bundles are now in a separate vimball.
 
- after/ftplugin/actionscript_snippets.vim     |    9 -
- after/ftplugin/asp_snippets.vim              |   17 --
- after/ftplugin/c_snippets.vim                |   51 -------
- after/ftplugin/css_snippets.vim              |   30 ----
- after/ftplugin/django_model_snippets.vim     |   61 --------
- after/ftplugin/django_template_snippets.vim  |   32 ----
- after/ftplugin/f-script_snippets.vim         |   14 --
- after/ftplugin/haskell_snippets.vim          |    9 -
- after/ftplugin/html_snippets.vim             |   57 -------
- after/ftplugin/java_snippets.vim             |   52 -------
- after/ftplugin/javascript_snippets.vim       |   10 --
- after/ftplugin/latex_snippets.vim            |   13 --
- after/ftplugin/logo_snippets.vim             |    9 -
- after/ftplugin/markdown_snippets.vim         |   10 --
- after/ftplugin/movable_type_snippets.vim     |   14 --
- after/ftplugin/objc_snippets.vim             |   53 -------
- after/ftplugin/ocaml_snippets.vim            |   26 ----
- after/ftplugin/perl_snippets.vim             |   23 ---
- after/ftplugin/php_snippets.vim              |   30 ----
- after/ftplugin/phpdoc_snippets.vim           |   19 ---
- after/ftplugin/propel_snippets.vim           |   14 --
- after/ftplugin/python_snippets.vim           |  202 --------------------------
- after/ftplugin/rails_snippets.vim            |   54 -------
- after/ftplugin/ruby_snippets.vim             |   32 ----
- after/ftplugin/sh_snippets.vim               |   12 --
- after/ftplugin/slate_snippets.vim            |   19 ---
- after/ftplugin/smarty_snippets.vim           |   35 -----
- after/ftplugin/symfony_snippets.vim          |   21 ---
- after/ftplugin/tcl_snippets.vim              |   14 --
- after/ftplugin/template_toolkit_snippets.vim |   13 --
- after/ftplugin/tex_snippets.vim              |   13 --
- after/ftplugin/xhtml_snippets.vim            |   48 ------
- doc/snippets_emu.txt                         |   30 +----
- plugin/snippetsEmu.vim                       |  189 +++++++++++++------------
+ after/ftplugin/actionscript_snippets.vim     |    9
+ after/ftplugin/asp_snippets.vim              |   17
+ after/ftplugin/c_snippets.vim                |   51
+ after/ftplugin/css_snippets.vim              |   30
+ after/ftplugin/django_model_snippets.vim     |   61
+ after/ftplugin/django_template_snippets.vim  |   32
+ after/ftplugin/f-script_snippets.vim         |   14
+ after/ftplugin/haskell_snippets.vim          |    9
+ after/ftplugin/html_snippets.vim             |   57
+ after/ftplugin/java_snippets.vim             |   52
+ after/ftplugin/javascript_snippets.vim       |   10
+ after/ftplugin/latex_snippets.vim            |   13
+ after/ftplugin/logo_snippets.vim             |    9
+ after/ftplugin/markdown_snippets.vim         |   10
+ after/ftplugin/movable_type_snippets.vim     |   14
+ after/ftplugin/objc_snippets.vim             |   53
+ after/ftplugin/ocaml_snippets.vim            |   26
+ after/ftplugin/perl_snippets.vim             |   23
+ after/ftplugin/php_snippets.vim              |   30
+ after/ftplugin/phpdoc_snippets.vim           |   19
+ after/ftplugin/propel_snippets.vim           |   14
+ after/ftplugin/python_snippets.vim           |  202
+ after/ftplugin/rails_snippets.vim            |   54
+ after/ftplugin/ruby_snippets.vim             |   32
+ after/ftplugin/sh_snippets.vim               |   12
+ after/ftplugin/slate_snippets.vim            |   19
+ after/ftplugin/smarty_snippets.vim           |   35
+ after/ftplugin/symfony_snippets.vim          |   21
+ after/ftplugin/tcl_snippets.vim              |   14
+ after/ftplugin/template_toolkit_snippets.vim |   13
+ after/ftplugin/tex_snippets.vim              |   13
+ after/ftplugin/xhtml_snippets.vim            |   48
+ doc/snippets_emu.txt                         |   30
+ plugin/snippetsEmu.vim                       |  189
  34 files changed, 103 insertions(+), 1132 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
@@ -172,30 +172,30 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Finally released new version. Big change: No more messing with iskeyword. Other stuff - Commands with autocomplete, new commands for creating snippets, updated bundles. Be sure to read the docs to see what's available.
 
- after/ftplugin/asp_snippets.vim             |    6 +-
- after/ftplugin/c_snippets.vim               |   21 +-
- after/ftplugin/css_snippets.vim             |   34 +-
- after/ftplugin/django_model_snippets.vim    |    2 +-
- after/ftplugin/django_template_snippets.vim |   18 +-
- after/ftplugin/f-script_snippets.vim        |   12 +-
- after/ftplugin/haskell_snippets.vim         |    2 +-
- after/ftplugin/html_snippets.vim            |   79 ++--
- after/ftplugin/java_snippets.vim            |    4 +-
- after/ftplugin/javascript_snippets.vim      |    2 +-
- after/ftplugin/movable type_snippets.vim    |   14 -
- after/ftplugin/movable_type_snippets.vim    |   14 +
- after/ftplugin/objc_snippets.vim            |    3 -
- after/ftplugin/ocaml_snippets.vim           |   16 +-
- after/ftplugin/perl_snippets.vim            |    8 +-
- after/ftplugin/php_snippets.vim             |    4 +-
- after/ftplugin/python_snippets.vim          |  207 ++++++--
- after/ftplugin/rails_snippets.vim           |   26 +-
- after/ftplugin/ruby_snippets.vim            |   32 +-
- after/ftplugin/smarty_snippets.vim          |    4 +-
- after/ftplugin/tcl_snippets.vim             |    2 +-
- after/ftplugin/xhtml_snippets.vim           |   18 +-
- doc/snippets_emu.txt                        |   84 +++-
- plugin/snippetsEmu.vim                      |  784 +++++++++++++++------------
+ after/ftplugin/asp_snippets.vim             |    6
+ after/ftplugin/c_snippets.vim               |   21
+ after/ftplugin/css_snippets.vim             |   34
+ after/ftplugin/django_model_snippets.vim    |    2
+ after/ftplugin/django_template_snippets.vim |   18
+ after/ftplugin/f-script_snippets.vim        |   12
+ after/ftplugin/haskell_snippets.vim         |    2
+ after/ftplugin/html_snippets.vim            |   79
+ after/ftplugin/java_snippets.vim            |    4
+ after/ftplugin/javascript_snippets.vim      |    2
+ after/ftplugin/movable type_snippets.vim    |   14
+ after/ftplugin/movable_type_snippets.vim    |   14
+ after/ftplugin/objc_snippets.vim            |    3
+ after/ftplugin/ocaml_snippets.vim           |   16
+ after/ftplugin/perl_snippets.vim            |    8
+ after/ftplugin/php_snippets.vim             |    4
+ after/ftplugin/python_snippets.vim          |  207
+ after/ftplugin/rails_snippets.vim           |   26
+ after/ftplugin/ruby_snippets.vim            |   32
+ after/ftplugin/smarty_snippets.vim          |    4
+ after/ftplugin/tcl_snippets.vim             |    2
+ after/ftplugin/xhtml_snippets.vim           |   18
+ doc/snippets_emu.txt                        |   84
+ plugin/snippetsEmu.vim                      |  784
  24 files changed, 835 insertions(+), 561 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -207,17 +207,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     New version contains several bug fixes, reverts start and end tags to more 'friendly' settings and tries to address indenting issues. Snippets must now define their own 'local' indenting. Make sure you create the after/ftplugin directories as described in the installation instructions.
 
- after/ftplugin/asp_snippets.vim             |   18 +-
- after/ftplugin/c_snippets.vim               |    8 +-
- after/ftplugin/django_model_snippets.vim    |    4 +-
- after/ftplugin/django_template_snippets.vim |   18 +-
- after/ftplugin/f-script_snippets.vim        |   12 +-
- after/ftplugin/haskell_snippets.vim         |    2 +-
- after/ftplugin/html_snippets.vim            |    8 +-
- after/ftplugin/python_snippets.vim          |   34 ++--
- after/ftplugin/ruby_snippets.vim            |   32 ++--
- doc/snippets_emu.txt                        |   69 ++++--
- plugin/snippetsEmu.vim                      |  336 ++++++++++++++-------------
+ after/ftplugin/asp_snippets.vim             |   18
+ after/ftplugin/c_snippets.vim               |    8
+ after/ftplugin/django_model_snippets.vim    |    4
+ after/ftplugin/django_template_snippets.vim |   18
+ after/ftplugin/f-script_snippets.vim        |   12
+ after/ftplugin/haskell_snippets.vim         |    2
+ after/ftplugin/html_snippets.vim            |    8
+ after/ftplugin/python_snippets.vim          |   34
+ after/ftplugin/ruby_snippets.vim            |   32
+ doc/snippets_emu.txt                        |   69
+ plugin/snippetsEmu.vim                      |  336
  11 files changed, 290 insertions(+), 251 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
@@ -238,41 +238,41 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Super new 1.0 version with many new features and improvements. New bundles also included.
 
- after/ftplugin/actionscript_snippets.vim     |    6 +-
- after/ftplugin/asp_snippets.vim              |   22 +-
- after/ftplugin/c_snippets.vim                |   44 +-
- after/ftplugin/css_snippets.vim              |   48 +-
- after/ftplugin/django_model_snippets.vim     |   61 ++
- after/ftplugin/django_snippets.vim           |   50 --
- after/ftplugin/django_template_snippets.vim  |   32 +
- after/ftplugin/f-script_snippets.vim         |   16 +-
- after/ftplugin/haskell_snippets.vim          |    6 +-
- after/ftplugin/html_snippets.vim             |   65 +-
- after/ftplugin/java_snippets.vim             |   36 +-
- after/ftplugin/javascript_snippets.vim       |    8 +-
- after/ftplugin/latex_snippets.vim            |   14 +-
- after/ftplugin/logo_snippets.vim             |    6 +-
- after/ftplugin/markdown_snippets.vim         |    8 +-
- after/ftplugin/movable type_snippets.vim     |   16 +-
- after/ftplugin/objc_snippets.vim             |   49 +-
- after/ftplugin/ocaml_snippets.vim            |   40 +-
- after/ftplugin/perl_snippets.vim             |   36 +-
- after/ftplugin/php_snippets.vim              |   48 +-
- after/ftplugin/phpdoc_snippets.vim           |   26 +-
- after/ftplugin/propel_snippets.vim           |   16 +-
- after/ftplugin/python_snippets.vim           |   51 +-
- after/ftplugin/rails_snippets.vim            |   96 ++--
- after/ftplugin/ruby_snippets.vim             |   52 +-
- after/ftplugin/sh_snippets.vim               |   10 +-
- after/ftplugin/slate_snippets.vim            |   26 +-
- after/ftplugin/smarty_snippets.vim           |   58 +-
- after/ftplugin/symfony_snippets.vim          |   30 +-
- after/ftplugin/tcl_snippets.vim              |   16 +-
- after/ftplugin/template_toolkit_snippets.vim |   14 +-
- after/ftplugin/tex_snippets.vim              |   14 +-
- after/ftplugin/xhtml_snippets.vim            |   84 ++-
- doc/snippets_emu.txt                         |  171 +++--
- plugin/snippetsEmu.vim                       | 1034 +++++++++++++-------------
+ after/ftplugin/actionscript_snippets.vim     |    6
+ after/ftplugin/asp_snippets.vim              |   22
+ after/ftplugin/c_snippets.vim                |   44
+ after/ftplugin/css_snippets.vim              |   48
+ after/ftplugin/django_model_snippets.vim     |   61
+ after/ftplugin/django_snippets.vim           |   50
+ after/ftplugin/django_template_snippets.vim  |   32
+ after/ftplugin/f-script_snippets.vim         |   16
+ after/ftplugin/haskell_snippets.vim          |    6
+ after/ftplugin/html_snippets.vim             |   65
+ after/ftplugin/java_snippets.vim             |   36
+ after/ftplugin/javascript_snippets.vim       |    8
+ after/ftplugin/latex_snippets.vim            |   14
+ after/ftplugin/logo_snippets.vim             |    6
+ after/ftplugin/markdown_snippets.vim         |    8
+ after/ftplugin/movable type_snippets.vim     |   16
+ after/ftplugin/objc_snippets.vim             |   49
+ after/ftplugin/ocaml_snippets.vim            |   40
+ after/ftplugin/perl_snippets.vim             |   36
+ after/ftplugin/php_snippets.vim              |   48
+ after/ftplugin/phpdoc_snippets.vim           |   26
+ after/ftplugin/propel_snippets.vim           |   16
+ after/ftplugin/python_snippets.vim           |   51
+ after/ftplugin/rails_snippets.vim            |   96
+ after/ftplugin/ruby_snippets.vim             |   52
+ after/ftplugin/sh_snippets.vim               |   10
+ after/ftplugin/slate_snippets.vim            |   26
+ after/ftplugin/smarty_snippets.vim           |   58
+ after/ftplugin/symfony_snippets.vim          |   30
+ after/ftplugin/tcl_snippets.vim              |   16
+ after/ftplugin/template_toolkit_snippets.vim |   14
+ after/ftplugin/tex_snippets.vim              |   14
+ after/ftplugin/xhtml_snippets.vim            |   84
+ doc/snippets_emu.txt                         |  171
+ plugin/snippetsEmu.vim                       | 1034
  35 files changed, 1268 insertions(+), 1041 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.1)
@@ -293,40 +293,40 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Bugs fixes as per usual but this new version includes a set of snippets bundles for use with various filetypes. Plugin is now a VimBall so everything is in one file.
 
- after/ftplugin/actionscript_snippets.vim     |    5 +
- after/ftplugin/asp_snippets.vim              |   13 +
- after/ftplugin/c_snippets.vim                |   44 ++
- after/ftplugin/css_snippets.vim              |   26 +
- after/ftplugin/django_snippets.vim           |   50 ++
- after/ftplugin/f-script_snippets.vim         |   10 +
- after/ftplugin/haskell_snippets.vim          |    5 +
- after/ftplugin/html_snippets.vim             |   43 ++
- after/ftplugin/java_snippets.vim             |   50 ++
- after/ftplugin/javascript_snippets.vim       |    6 +
- after/ftplugin/latex_snippets.vim            |    9 +
- after/ftplugin/logo_snippets.vim             |    5 +
- after/ftplugin/markdown_snippets.vim         |    6 +
- after/ftplugin/movable type_snippets.vim     |   10 +
- after/ftplugin/objc_snippets.vim             |   49 ++
- after/ftplugin/ocaml_snippets.vim            |   22 +
- after/ftplugin/perl_snippets.vim             |   23 +
- after/ftplugin/php_snippets.vim              |   26 +
- after/ftplugin/phpdoc_snippets.vim           |   15 +
- after/ftplugin/propel_snippets.vim           |   10 +
- after/ftplugin/python_snippets.vim           |   62 ++
- after/ftplugin/rails_snippets.vim            |   50 ++
- after/ftplugin/ruby_snippets.vim             |   28 +
- after/ftplugin/sh_snippets.vim               |    8 +
- after/ftplugin/slate_snippets.vim            |   15 +
- after/ftplugin/smarty_snippets.vim           |   31 +
- after/ftplugin/symfony_snippets.vim          |   17 +
- after/ftplugin/tcl_snippets.vim              |   10 +
- after/ftplugin/template_toolkit_snippets.vim |    9 +
- after/ftplugin/tex_snippets.vim              |    9 +
- after/ftplugin/xhtml_snippets.vim            |   44 ++
- doc/snippets_emu.txt                         |  275 +++++++++
- plugin/snippetEmu0.5.6.vim                   |  759 -----------------------
- plugin/snippetsEmu.vim                       |  827 ++++++++++++++++++++++++++
+ after/ftplugin/actionscript_snippets.vim     |    5
+ after/ftplugin/asp_snippets.vim              |   13
+ after/ftplugin/c_snippets.vim                |   44
+ after/ftplugin/css_snippets.vim              |   26
+ after/ftplugin/django_snippets.vim           |   50
+ after/ftplugin/f-script_snippets.vim         |   10
+ after/ftplugin/haskell_snippets.vim          |    5
+ after/ftplugin/html_snippets.vim             |   43
+ after/ftplugin/java_snippets.vim             |   50
+ after/ftplugin/javascript_snippets.vim       |    6
+ after/ftplugin/latex_snippets.vim            |    9
+ after/ftplugin/logo_snippets.vim             |    5
+ after/ftplugin/markdown_snippets.vim         |    6
+ after/ftplugin/movable type_snippets.vim     |   10
+ after/ftplugin/objc_snippets.vim             |   49
+ after/ftplugin/ocaml_snippets.vim            |   22
+ after/ftplugin/perl_snippets.vim             |   23
+ after/ftplugin/php_snippets.vim              |   26
+ after/ftplugin/phpdoc_snippets.vim           |   15
+ after/ftplugin/propel_snippets.vim           |   10
+ after/ftplugin/python_snippets.vim           |   62
+ after/ftplugin/rails_snippets.vim            |   50
+ after/ftplugin/ruby_snippets.vim             |   28
+ after/ftplugin/sh_snippets.vim               |    8
+ after/ftplugin/slate_snippets.vim            |   15
+ after/ftplugin/smarty_snippets.vim           |   31
+ after/ftplugin/symfony_snippets.vim          |   17
+ after/ftplugin/tcl_snippets.vim              |   10
+ after/ftplugin/template_toolkit_snippets.vim |    9
+ after/ftplugin/tex_snippets.vim              |    9
+ after/ftplugin/xhtml_snippets.vim            |   44
+ doc/snippets_emu.txt                         |  275
+ plugin/snippetEmu0.5.6.vim                   |  759
+ plugin/snippetsEmu.vim                       |  827
  34 files changed, 1812 insertions(+), 759 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.6)
@@ -338,8 +338,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed several bugs from the last version including random bug which prevented snippets from starting with 's'.
 
- plugin/snippetEmu0.5.5.vim |  745 -------------------------------------------
- plugin/snippetEmu0.5.6.vim |  759 ++++++++++++++++++++++++++++++++++++++++++++
+ plugin/snippetEmu0.5.5.vim |  745
+ plugin/snippetEmu0.5.6.vim |  759
  2 files changed, 759 insertions(+), 745 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.5)
@@ -351,8 +351,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed various bugs: s:search_str not being defined or being buffer specific and command tag execution not working with two tags on the same line.
 
- plugin/snippetEmu0.5.4.vim |  649 --------------------------------------
- plugin/snippetEmu0.5.5.vim |  745 ++++++++++++++++++++++++++++++++++++++++++++
+ plugin/snippetEmu0.5.4.vim |  649
+ plugin/snippetEmu0.5.5.vim |  745
  2 files changed, 745 insertions(+), 649 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.4)
@@ -362,8 +362,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.5.4: TextMate compatibile mode now works under linux.
 
- plugin/snippetEmu0.5.3.vim |  647 -------------------------------------------
- plugin/snippetEmu0.5.4.vim |  649 ++++++++++++++++++++++++++++++++++++++++++++
+ plugin/snippetEmu0.5.3.vim |  647
+ plugin/snippetEmu0.5.4.vim |  649
  2 files changed, 649 insertions(+), 647 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.3)
@@ -375,8 +375,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Bug fixes. Things are a lot better behaved. Edge cases should (should) work a lot better now. Highly recommended upgrade.
 
- plugin/snippetEmu0.5.2.vim |  615 -----------------------------------------
- plugin/snippetEmu0.5.3.vim |  647 ++++++++++++++++++++++++++++++++++++++++++++
+ plugin/snippetEmu0.5.2.vim |  615
+ plugin/snippetEmu0.5.3.vim |  647
  2 files changed, 647 insertions(+), 615 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
@@ -388,8 +388,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Minor bug fix. Textmate compatible mode did not allow quotes in expansions. Fixed
 
- plugin/snippetEmu0.5.1.vim |  615 --------------------------------------------
- plugin/snippetEmu0.5.2.vim |  615 ++++++++++++++++++++++++++++++++++++++++++++
+ plugin/snippetEmu0.5.1.vim |  615
+ plugin/snippetEmu0.5.2.vim |  615
  2 files changed, 615 insertions(+), 615 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
@@ -401,8 +401,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     This new version adds some bug fixes to the last release and adds the new functionality of being able to define multicharacter start and end tags. It is now easier to define tags which work across multiple languages.
 
- plugin/snippetEmu0.5.0.vim |  579 -----------------------------------------
- plugin/snippetEmu0.5.1.vim |  615 ++++++++++++++++++++++++++++++++++++++++++++
+ plugin/snippetEmu0.5.0.vim |  579
+ plugin/snippetEmu0.5.1.vim |  615
  2 files changed, 615 insertions(+), 579 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.0)
@@ -418,8 +418,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     This is a test release: please send bug reports.
 
- plugin/snippetEmu.vim      |  475 ------------------------------------
- plugin/snippetEmu0.5.0.vim |  579 ++++++++++++++++++++++++++++++++++++++++++++
+ plugin/snippetEmu.vim      |  475
+ plugin/snippetEmu0.5.0.vim |  579
  2 files changed, 579 insertions(+), 475 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.6)
@@ -431,7 +431,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Minor bug fix.  Replacement values modified by commands would be passed to future commands in their modified form, rather than with the original replacement value.
 
- plugin/snippetEmu.vim |    7 ++++---
+ plugin/snippetEmu.vim |    7
  1 files changed, 4 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.5)
@@ -443,7 +443,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fundamental change to the way the new commands feature works.  The command is now 'executed' and the result placed in the variable @z.  The intention is for the command to be a function call rather than a standard command.  I.e. using substitute() rather than :s///.  The value to be replaced is available to the function in @z (previous values of the variable are kept and restored once the command has been executed).  See the updated docs for examples.
 
- plugin/snippetEmu.vim |   14 +++++++++++---
+ plugin/snippetEmu.vim |   14
  1 files changed, 11 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
@@ -453,7 +453,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.3.1: Bug fix - Non-greedy matching is now done on the command searching.
 
- plugin/snippetEmu.vim |    3 ++-
+ plugin/snippetEmu.vim |    3
  1 files changed, 2 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -465,7 +465,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     New version allows commands to be included in named tags.  Experimental version - does not appear to break older functionality, however.
 
- plugin/snippetEmu.vim |  142 +++++++++++++++++++++++++++++++++++++++----------
+ plugin/snippetEmu.vim |  142
  1 files changed, 114 insertions(+), 28 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.5)
@@ -477,7 +477,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Tag delimiters can now be set with autocommands to allow for different filetypes.  I.e. '<' and '>' for programming and '@' for HTML.
 
- plugin/snippetEmu.vim |   27 +++++++++++++++++++++------
+ plugin/snippetEmu.vim |   27
  1 files changed, 21 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.4)
@@ -487,7 +487,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2.4: Fixed a bug where certain tags were not recognised
 
- plugin/snippetEmu.vim |   47 ++++++++++++++++++++++++++++++++++++-----------
+ plugin/snippetEmu.vim |   47
  1 files changed, 36 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.3)
@@ -497,7 +497,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2.3: Now works with autoindenting
 
- plugin/snippetEmu.vim |   81 ++++++++++++-------------------------------------
+ plugin/snippetEmu.vim |   81
  1 files changed, 20 insertions(+), 61 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.2)
@@ -507,7 +507,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2.2: Better behaved.  Couple of bug fixes.
 
- plugin/snippetEmu.vim |   48 ++++++++++++++++++++++++++++++++++++------------
+ plugin/snippetEmu.vim |   48
  1 files changed, 36 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
@@ -519,7 +519,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added check for the default key combo so that the user's settings aren't clobbered.
 
- plugin/snippetEmu.vim |   13 +++++++++++--
+ plugin/snippetEmu.vim |   13
  1 files changed, 11 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -531,7 +531,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     I've given this a full point release as it's a major rewrite.  Start and end tags can now be defined and default values can also be used.
 
- plugin/snippetEmu.vim |  302 ++++++++++++++++++++++++++++++++++++++++++-------
+ plugin/snippetEmu.vim |  302
  1 files changed, 260 insertions(+), 42 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -541,6 +541,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README                |   32 ++++++++++++
- plugin/snippetEmu.vim |  129 +++++++++++++++++++++++++++++++++++++++++++++++++
+ README                |   32
+ plugin/snippetEmu.vim |  129
  2 files changed, 161 insertions(+), 0 deletions(-)

@@ -12,25 +12,25 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Fixed time in blog posts;
     * Improved help file.
 
- doc/blogit.txt              |   33 ++--
- plugin/blogit.vim           |  391 ++++++++++++++++++++----------------------
- plugin/mock_vim.py          |   91 ----------
- po/Makefile                 |   38 ++++
- po/POTFILES.in              |    2 +
- po/POTFILES.skip            |    1 +
- po/po4a.cfg.in              |    8 +
- testing/README              |   48 ++++++
- testing/conftest.py         |  110 ++++++++++++
- testing/mock_vim.py         |   99 +++++++++++
- testing/socketserver.py     |   92 ++++++++++
- testing/t.html              |    4 +
- testing/t.mkd               |   48 ++++++
- testing/test_147.py         |  117 +++++++++++++
- testing/test_147_execnet.py |  306 +++++++++++++++++++++++++++++++++
- testing/test_blogit.py      |   78 +++++++++
- testing/test_vim_execnet.py |   26 +++
- testing/test_wordpress.py   |   61 +++++++
- testing/vim_execnet.py      |   27 +++
+ doc/blogit.txt              |   33
+ plugin/blogit.vim           |  391
+ plugin/mock_vim.py          |   91
+ po/Makefile                 |   38
+ po/POTFILES.in              |    2
+ po/POTFILES.skip            |    1
+ po/po4a.cfg.in              |    8
+ testing/README              |   48
+ testing/conftest.py         |  110
+ testing/mock_vim.py         |   99
+ testing/socketserver.py     |   92
+ testing/t.html              |    4
+ testing/t.mkd               |   48
+ testing/test_147.py         |  117
+ testing/test_147_execnet.py |  306
+ testing/test_blogit.py      |   78
+ testing/test_vim_execnet.py |   26
+ testing/test_wordpress.py   |   61
+ testing/vim_execnet.py      |   27
  19 files changed, 1268 insertions(+), 312 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4.2)
@@ -45,8 +45,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Fixed encoding issues;
     * Fixed omnicomplete issues.
 
- doc/blogit.txt    |    4 +-
- plugin/blogit.vim |   88 ++++++++++++++++++++++++++++++++++++++++++-----------
+ doc/blogit.txt    |    4
+ plugin/blogit.vim |   88
  2 files changed, 72 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4.1)
@@ -62,8 +62,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Implemented (un)pushing of pages;
     * Fixed dates.
 
- plugin/Session.vim |  375 ----------------------------------------------------
- plugin/blogit.vim  |   39 ++++--
+ plugin/Session.vim |  375
+ plugin/blogit.vim  |   39
  2 files changed, 29 insertions(+), 385 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -86,10 +86,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Really thanks to Adam who has still done a lot of work.
 
- doc/blogit.txt     |  145 ++++
- plugin/Session.vim |  375 +++++++++
- plugin/blogit.vim  | 2255 ++++++++++++++++++++++++++++++++-------------------
- plugin/mock_vim.py |    6 +-
+ doc/blogit.txt     |  145
+ plugin/Session.vim |  375
+ plugin/blogit.vim  | 2255
+ plugin/mock_vim.py |    6
  4 files changed, 1940 insertions(+), 841 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -110,8 +110,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Added command "preview";
     * Code cleanup.
 
- plugin/blogit.vim  |  823 +++++++++++++++++++++++++++++++++++++---------------
- plugin/mock_vim.py |   87 ++++++
+ plugin/blogit.vim  |  823
+ plugin/mock_vim.py |   87
  2 files changed, 679 insertions(+), 231 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -131,7 +131,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Adam Schmalhofer for contributing.
 
- plugin/blogit.vim |  715 +++++++++++++++++++++++++++++++++++++----------------
+ plugin/blogit.vim |  715
  1 files changed, 505 insertions(+), 210 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -153,7 +153,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Adam Schmalhofer for his patches.
 
- plugin/blogit.vim |  413 +++++++++++++++++++++++++++++++++++++++--------------
+ plugin/blogit.vim |  413
  1 files changed, 306 insertions(+), 107 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
@@ -167,7 +167,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * option to disable tags (which are a wordpress plugin)
     * datetime issues (datetime is now UTC)
 
- plugin/blogit.vim |   48 +++++++++++++++++++++++++++++++-----------------
+ plugin/blogit.vim |   48
  1 files changed, 31 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -177,6 +177,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial version.
 
- README            |   32 ++++++
- plugin/blogit.vim |  284 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README            |   32
+ plugin/blogit.vim |  284
  2 files changed, 316 insertions(+), 0 deletions(-)

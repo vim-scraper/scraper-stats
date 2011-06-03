@@ -158,62 +158,62 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Use strdisplaywidth().
     - gather_candidates attribute is optional.
 
- README.orig                                  |   83 ++
- autoload/unite.vim                           | 1196 +++++++++++++++++---------
- autoload/unite/filters/converter_default.vim |   63 ++
- autoload/unite/filters/converter_nothing.vim |   47 +
- autoload/unite/filters/default.vim           |   46 +
- autoload/unite/filters/matcher_default.vim   |   63 ++
- autoload/unite/filters/matcher_glob.vim      |   75 ++
- autoload/unite/filters/sorter_default.vim    |   63 ++
- autoload/unite/filters/sorter_nothing.vim    |   47 +
- autoload/unite/filters/sorter_word.vim       |   46 +
- autoload/unite/kinds/buffer.vim              |   46 +-
- autoload/unite/kinds/cdable.vim              |   39 +-
- autoload/unite/kinds/command.vim             |   24 +-
- autoload/unite/kinds/common.vim              |   29 +-
- autoload/unite/kinds/completion.vim          |   84 ++
- autoload/unite/kinds/directory.vim           |    6 +
- autoload/unite/kinds/file.vim                |   51 +-
- autoload/unite/kinds/jump_list.vim           |   31 +-
- autoload/unite/kinds/openable.vim            |    5 +
- autoload/unite/kinds/tab.vim                 |    6 +
- autoload/unite/kinds/window.vim              |    8 +-
- autoload/unite/kinds/word.vim                |    8 +-
- autoload/unite/mappings.vim                  |  491 ++++++++----
- autoload/unite/sources/bookmark.vim          |    6 +-
- autoload/unite/sources/buffer.vim            |   62 +-
- autoload/unite/sources/command.vim           |  133 +++
- autoload/unite/sources/directory_mru.vim     |   30 +-
- autoload/unite/sources/file.vim              |   48 +-
- autoload/unite/sources/file_mru.vim          |   52 +-
- autoload/unite/sources/file_rec.vim          |  130 +++-
- autoload/unite/sources/mapping.vim           |   73 ++
- autoload/unite/sources/output.vim            |   62 ++
- autoload/unite/sources/register.vim          |   40 +-
- autoload/unite/sources/source.vim            |   21 +-
- autoload/unite/sources/tab.vim               |   15 +-
- autoload/unite/sources/window.vim            |   23 +-
- autoload/unite/util.vim                      |  310 ++------
- autoload/unite/vital.vim                     |   66 ++
- autoload/vital.vim                           |   12 +
- autoload/vital/_4181e8.vim                   |  107 +++
- autoload/vital/_4181e8/data/list.vim         |   71 ++
- autoload/vital/_4181e8/data/ordered_set.vim  |   75 ++
- autoload/vital/_4181e8/prelude.vim           |  223 +++++
- autoload/vital/_4181e8/system/filepath.vim   |   81 ++
- autoload/vital/unite.vital                   |    1 +
- doc/unite.jax                                |  490 +++++++++--
- doc/unite.txt                                |  708 ++++++++++++++--
- plugin/unite.vim                             |   20 +-
- plugin/unite/bookmark.vim                    |    6 +
- plugin/unite/buffer.vim                      |    6 +
- plugin/unite/directory_mru.vim               |    6 +
- plugin/unite/file_mru.vim                    |    6 +
- plugin/unite/tab.vim                         |    6 +
- plugin/unite/window.vim                      |    8 +-
- syntax/unite.vim                             |   40 +-
- test/00-unite-source.vim                     |    2 +-
+ README.orig                                  |   83
+ autoload/unite.vim                           | 1196
+ autoload/unite/filters/converter_default.vim |   63
+ autoload/unite/filters/converter_nothing.vim |   47
+ autoload/unite/filters/default.vim           |   46
+ autoload/unite/filters/matcher_default.vim   |   63
+ autoload/unite/filters/matcher_glob.vim      |   75
+ autoload/unite/filters/sorter_default.vim    |   63
+ autoload/unite/filters/sorter_nothing.vim    |   47
+ autoload/unite/filters/sorter_word.vim       |   46
+ autoload/unite/kinds/buffer.vim              |   46
+ autoload/unite/kinds/cdable.vim              |   39
+ autoload/unite/kinds/command.vim             |   24
+ autoload/unite/kinds/common.vim              |   29
+ autoload/unite/kinds/completion.vim          |   84
+ autoload/unite/kinds/directory.vim           |    6
+ autoload/unite/kinds/file.vim                |   51
+ autoload/unite/kinds/jump_list.vim           |   31
+ autoload/unite/kinds/openable.vim            |    5
+ autoload/unite/kinds/tab.vim                 |    6
+ autoload/unite/kinds/window.vim              |    8
+ autoload/unite/kinds/word.vim                |    8
+ autoload/unite/mappings.vim                  |  491
+ autoload/unite/sources/bookmark.vim          |    6
+ autoload/unite/sources/buffer.vim            |   62
+ autoload/unite/sources/command.vim           |  133
+ autoload/unite/sources/directory_mru.vim     |   30
+ autoload/unite/sources/file.vim              |   48
+ autoload/unite/sources/file_mru.vim          |   52
+ autoload/unite/sources/file_rec.vim          |  130
+ autoload/unite/sources/mapping.vim           |   73
+ autoload/unite/sources/output.vim            |   62
+ autoload/unite/sources/register.vim          |   40
+ autoload/unite/sources/source.vim            |   21
+ autoload/unite/sources/tab.vim               |   15
+ autoload/unite/sources/window.vim            |   23
+ autoload/unite/util.vim                      |  310
+ autoload/unite/vital.vim                     |   66
+ autoload/vital.vim                           |   12
+ autoload/vital/_4181e8.vim                   |  107
+ autoload/vital/_4181e8/data/list.vim         |   71
+ autoload/vital/_4181e8/data/ordered_set.vim  |   75
+ autoload/vital/_4181e8/prelude.vim           |  223
+ autoload/vital/_4181e8/system/filepath.vim   |   81
+ autoload/vital/unite.vital                   |    1
+ doc/unite.jax                                |  490
+ doc/unite.txt                                |  708
+ plugin/unite.vim                             |   20
+ plugin/unite/bookmark.vim                    |    6
+ plugin/unite/buffer.vim                      |    6
+ plugin/unite/directory_mru.vim               |    6
+ plugin/unite/file_mru.vim                    |    6
+ plugin/unite/tab.vim                         |    6
+ plugin/unite/window.vim                      |    8
+ syntax/unite.vim                             |   40
+ test/00-unite-source.vim                     |    2
  56 files changed, 4393 insertions(+), 1103 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -223,40 +223,40 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README                                   |   74 ++
- autoload/unite.vim                       | 1133 ++++++++++++++++++++
- autoload/unite/kinds/buffer.vim          |  103 ++
- autoload/unite/kinds/cdable.vim          |  115 ++
- autoload/unite/kinds/command.vim         |   46 +
- autoload/unite/kinds/common.vim          |   93 ++
- autoload/unite/kinds/directory.vim       |   41 +
- autoload/unite/kinds/file.vim            |  128 +++
- autoload/unite/kinds/jump_list.vim       |  145 +++
- autoload/unite/kinds/openable.vim        |  116 ++
- autoload/unite/kinds/tab.vim             |   84 ++
- autoload/unite/kinds/window.vim          |   70 ++
- autoload/unite/kinds/word.vim            |   40 +
- autoload/unite/mappings.vim              |  453 ++++++++
- autoload/unite/sources/bookmark.vim      |  184 ++++
- autoload/unite/sources/buffer.vim        |  166 +++
- autoload/unite/sources/directory_mru.vim |  163 +++
- autoload/unite/sources/file.vim          |  101 ++
- autoload/unite/sources/file_mru.vim      |  163 +++
- autoload/unite/sources/file_rec.vim      |  108 ++
- autoload/unite/sources/register.vim      |   54 +
- autoload/unite/sources/source.vim        |   65 ++
- autoload/unite/sources/tab.vim           |  118 +++
- autoload/unite/sources/window.vim        |   99 ++
- autoload/unite/util.vim                  |  246 +++++
- doc/unite.jax                            | 1380 ++++++++++++++++++++++++
- doc/unite.txt                            | 1674 ++++++++++++++++++++++++++++++
- plugin/unite.vim                         |  182 ++++
- plugin/unite/bookmark.vim                |   36 +
- plugin/unite/buffer.vim                  |   39 +
- plugin/unite/directory_mru.vim           |   39 +
- plugin/unite/file_mru.vim                |   39 +
- plugin/unite/tab.vim                     |   39 +
- plugin/unite/window.vim                  |   39 +
- syntax/unite.vim                         |   66 ++
- test/00-unite-source.vim                 |   67 ++
+ README                                   |   74
+ autoload/unite.vim                       | 1133
+ autoload/unite/kinds/buffer.vim          |  103
+ autoload/unite/kinds/cdable.vim          |  115
+ autoload/unite/kinds/command.vim         |   46
+ autoload/unite/kinds/common.vim          |   93
+ autoload/unite/kinds/directory.vim       |   41
+ autoload/unite/kinds/file.vim            |  128
+ autoload/unite/kinds/jump_list.vim       |  145
+ autoload/unite/kinds/openable.vim        |  116
+ autoload/unite/kinds/tab.vim             |   84
+ autoload/unite/kinds/window.vim          |   70
+ autoload/unite/kinds/word.vim            |   40
+ autoload/unite/mappings.vim              |  453
+ autoload/unite/sources/bookmark.vim      |  184
+ autoload/unite/sources/buffer.vim        |  166
+ autoload/unite/sources/directory_mru.vim |  163
+ autoload/unite/sources/file.vim          |  101
+ autoload/unite/sources/file_mru.vim      |  163
+ autoload/unite/sources/file_rec.vim      |  108
+ autoload/unite/sources/register.vim      |   54
+ autoload/unite/sources/source.vim        |   65
+ autoload/unite/sources/tab.vim           |  118
+ autoload/unite/sources/window.vim        |   99
+ autoload/unite/util.vim                  |  246
+ doc/unite.jax                            | 1380
+ doc/unite.txt                            | 1674
+ plugin/unite.vim                         |  182
+ plugin/unite/bookmark.vim                |   36
+ plugin/unite/buffer.vim                  |   39
+ plugin/unite/directory_mru.vim           |   39
+ plugin/unite/file_mru.vim                |   39
+ plugin/unite/tab.vim                     |   39
+ plugin/unite/window.vim                  |   39
+ syntax/unite.vim                         |   66
+ test/00-unite-source.vim                 |   67
  36 files changed, 7708 insertions(+), 0 deletions(-)

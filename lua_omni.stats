@@ -11,13 +11,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       from documentation (html or text files)
     + changed licence to MIT
 
- LICENCE               |   10 +++-
- README.orig           |   11 +++--
- TODO                  |    3 +-
- doc/lua_omni.txt      |    1 +
- ftplugin/lua_omni.lua |   42 +++++++++++-----
- ftplugin/lua_omni.vim |   20 ++++----
- lapg.lua              |  131 +++++++++++++++++++++++++++++++++++++++++++++++++
+ LICENCE               |   10
+ README.orig           |   11
+ TODO                  |    3
+ doc/lua_omni.txt      |    1
+ ftplugin/lua_omni.lua |   42
+ ftplugin/lua_omni.vim |   20
+ lapg.lua              |  131
  7 files changed, 189 insertions(+), 29 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.163)
@@ -30,9 +30,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + new variable completion now can see variables names in function
       definitions too
 
- README.orig           |    9 ++++-----
- ftplugin/lua_omni.lua |   21 ++++++++++++++++-----
- ftplugin/lua_omni.vim |    4 ++--
+ README.orig           |    9
+ ftplugin/lua_omni.lua |   21
+ ftplugin/lua_omni.vim |    4
  3 files changed, 22 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.162)
@@ -46,12 +46,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       functions
     + added better variable assignments completion
 
- LICENCE               |   11 ++++++
- README.lua_omni       |   47 -------------------------
- README.orig           |   47 +++++++++++++++++++++++++
- TODO                  |    3 ++
- ftplugin/lua_omni.lua |   91 ++++++++++++++++++++++++++++++++++--------------
- ftplugin/lua_omni.vim |    2 +-
+ LICENCE               |   11
+ README.lua_omni       |   47
+ README.orig           |   47
+ TODO                  |    3
+ ftplugin/lua_omni.lua |   91
+ ftplugin/lua_omni.vim |    2
  6 files changed, 126 insertions(+), 75 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.16)
@@ -65,10 +65,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       b:lua_omni, g:lua_omni variables
       (useful when _G context can not have everything loaded)
 
- README.lua_omni       |   35 +++++++++++++++------------
- doc/lua_omni.txt      |   62 ++++++++++++++++++++++++++++++++++--------------
- ftplugin/lua_omni.lua |   37 ++++++++++++++++++++++++++---
- ftplugin/lua_omni.vim |    4 +-
+ README.lua_omni       |   35
+ doc/lua_omni.txt      |   62
+ ftplugin/lua_omni.lua |   37
+ ftplugin/lua_omni.vim |    4
  4 files changed, 98 insertions(+), 40 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.151)
@@ -80,9 +80,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + fixed small (thought irritating) bug in completion_findstart function
 
- README.lua_omni       |    8 +-
- ftplugin/lua_omni.lua |  481 +++++++++++++++++++++++++------------------------
- ftplugin/lua_omni.vim |    2 +-
+ README.lua_omni       |    8
+ ftplugin/lua_omni.lua |  481
+ ftplugin/lua_omni.vim |    2
  3 files changed, 248 insertions(+), 243 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
@@ -95,10 +95,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + More convenient completion where single words or asterisk less shortcuts
       will work too.
 
- README.lua_omni       |    9 +++++----
- doc/lua_omni.txt      |   12 ++++++++++++
- ftplugin/lua_omni.lua |   36 +++++++++++++++++++++++++++++++-----
- ftplugin/lua_omni.vim |    4 ++--
+ README.lua_omni       |    9
+ doc/lua_omni.txt      |   12
+ ftplugin/lua_omni.lua |   36
+ ftplugin/lua_omni.vim |    4
  4 files changed, 50 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.141)
@@ -111,9 +111,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Minor fix in completing function where was a chance to concat table with
       string.
 
- README.lua_omni       |    9 ++++-----
- ftplugin/lua_omni.lua |   16 ++++++++++++----
- ftplugin/lua_omni.vim |    4 ++--
+ README.lua_omni       |    9
+ ftplugin/lua_omni.lua |   16
+ ftplugin/lua_omni.vim |    4
  3 files changed, 18 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
@@ -127,9 +127,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       actually showed.
     + Fixed previously introduced bugs in Vim mappings.
 
- README.lua_omni       |   10 +++++-----
- ftplugin/lua_omni.lua |    6 +++---
- ftplugin/lua_omni.vim |   14 ++++++--------
+ README.lua_omni       |   10
+ ftplugin/lua_omni.lua |    6
+ ftplugin/lua_omni.vim |   14
  3 files changed, 14 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
@@ -143,10 +143,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     	  and "?" characters may be used when typing.
         + Few additions to abbreviations.
 
- README.lua_omni       |    9 ++--
- doc/lua_omni.txt      |   25 ++++++++---
- ftplugin/lua_omni.lua |  115 ++++++++++++++++++++++++++++++++++++++++++++++---
- ftplugin/lua_omni.vim |   19 +++++---
+ README.lua_omni       |    9
+ doc/lua_omni.txt      |   25
+ ftplugin/lua_omni.lua |  115
+ ftplugin/lua_omni.vim |   19
  4 files changed, 143 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
@@ -158,9 +158,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + improved Lua search_assignments1 function to search variable names in "for in" and function statements
 
- README.lua_omni       |   10 ++++------
- ftplugin/lua_omni.lua |   38 ++++++++++++++++++++++----------------
- ftplugin/lua_omni.vim |    4 ++--
+ README.lua_omni       |   10
+ ftplugin/lua_omni.lua |   38
+ ftplugin/lua_omni.vim |    4
  3 files changed, 28 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
@@ -178,10 +178,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     	+ expanded omnifunc functionality to scan local function variables (works
     	  for the most part)
 
- README.lua_omni       |   14 +++---
- doc/lua_omni.txt      |    3 +-
- ftplugin/lua_omni.lua |  118 +++++++++++++++++++++++++++++++++++++++++++++++-
- ftplugin/lua_omni.vim |    7 ++-
+ README.lua_omni       |   14
+ doc/lua_omni.txt      |    3
+ ftplugin/lua_omni.lua |  118
+ ftplugin/lua_omni.vim |    7
  4 files changed, 129 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -191,9 +191,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README                |   86 ++++++++++++++
- README.lua_omni       |   45 ++++++++
- doc/lua_omni.txt      |   38 ++++++
- ftplugin/lua_omni.lua |  298 +++++++++++++++++++++++++++++++++++++++++++++++++
- ftplugin/lua_omni.vim |  100 +++++++++++++++++
+ README                |   86
+ README.lua_omni       |   45
+ doc/lua_omni.txt      |   38
+ ftplugin/lua_omni.lua |  298
+ ftplugin/lua_omni.vim |  100
  5 files changed, 567 insertions(+), 0 deletions(-)

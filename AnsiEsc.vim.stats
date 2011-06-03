@@ -8,9 +8,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * changed conc -> cole for vim 7.3's built-in conceal mode
     * included some additional escape sequences
 
- autoload/AnsiEsc.vim     |  378 +++++++++++++++++++++++++---------------------
- doc/AnsiEsc.txt          |   36 ++++-
- plugin/AnsiEscPlugin.vim |    6 +-
+ autoload/AnsiEsc.vim     |  378
+ doc/AnsiEsc.txt          |   36
+ plugin/AnsiEscPlugin.vim |    6
  3 files changed, 243 insertions(+), 177 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/11)
@@ -22,10 +22,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     supports several escape sequences such as <esc>[m , <esc>[2J, and <esc>[H.
 
- autoload/AnsiEsc.vim     |  812 ++++++++++++++++++++++++++++++++++++++++++++++
- doc/AnsiEsc.txt          |    7 +-
- plugin/AnsiEsc.vim       |  795 ---------------------------------------------
- plugin/AnsiEscPlugin.vim |   30 ++
+ autoload/AnsiEsc.vim     |  812
+ doc/AnsiEsc.txt          |    7
+ plugin/AnsiEsc.vim       |  795
+ plugin/AnsiEscPlugin.vim |   30
  4 files changed, 847 insertions(+), 797 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/10)
@@ -37,11 +37,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     AnsiEsc has 1 and 2 Ansi escape code sequences supported by fixed syntax highlighting rules; it now also builds custom syntax highlighting to support 3 and 4 Ansi Escape code sequences based on your current document.  So  \e[48;5;16m will now cause correct highlighting to follow, for example.
 
- autoload/AnsiEsc.vim     |  597 ----------------------------------
- doc/AnsiEsc.txt          |   31 ++-
- plugin/AnsiEsc.vim       |  795 ++++++++++++++++++++++++++++++++++++++++++++++
- plugin/AnsiEscPlugin.vim |   22 --
- plugin/cecutil.vim       |  536 +++++++++++++++++++++++++++++++
+ autoload/AnsiEsc.vim     |  597
+ doc/AnsiEsc.txt          |   31
+ plugin/AnsiEsc.vim       |  795
+ plugin/AnsiEscPlugin.vim |   22
+ plugin/cecutil.vim       |  536
  5 files changed, 1353 insertions(+), 628 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9)
@@ -56,9 +56,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Works with Vince Negri's conceal patch (if your vim supports VN's conceal, then the ansi-escape sequences are suppressed except on the line you're editing).
 
- autoload/AnsiEsc.vim     |  597 ++++++++++++++++++++++++++++++++++++++++++++++
- doc/AnsiEsc.txt          |   47 +++-
- plugin/AnsiEscPlugin.vim |   22 ++
+ autoload/AnsiEsc.vim     |  597
+ doc/AnsiEsc.txt          |   47
+ plugin/AnsiEscPlugin.vim |   22
  3 files changed, 652 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/8)
@@ -70,8 +70,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Uses vim7.0's undercurl as a substitute for blinking (which Vim doesn't support), contains a small helpfile, and contains directions for getting Vince Negri's conceal patch for vim 7.0.
 
- doc/AnsiEsc.txt       |   69 ++++++++
- syntax/AnsiEsc_v2.vim |  411 -------------------------------------------------
+ doc/AnsiEsc.txt       |   69
+ syntax/AnsiEsc_v2.vim |  411
  2 files changed, 69 insertions(+), 411 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2)
@@ -83,6 +83,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     I mistakenly removed AnsiEsc v2 (which is the version which doesn't use Vince Negri's conceal).  This update restores it!
 
- README                |   34 ++++
- syntax/AnsiEsc_v2.vim |  411 +++++++++++++++++++++++++++++++++++++++++++++++++
+ README                |   34
+ syntax/AnsiEsc_v2.vim |  411
  2 files changed, 445 insertions(+), 0 deletions(-)

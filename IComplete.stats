@@ -11,18 +11,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
             * fixed some segfaults (thanks Johannes Winkelmann)
             * cleaned up the doc
 
- AUTHORS                |    2 ++
- ChangeLog              |    7 +++++++
- TODO                   |    3 ++-
- plugin/cppcomplete.vim |   35 ++++++++++++++++++++++++++++++++++-
- plugin/icomplete.vim   |    8 ++++++--
- src/list.c             |    3 ++-
- src/main.c             |   27 +++++++++++++++------------
- src/options.c          |    6 ++++++
- src/options.h          |    1 +
- src/parse.c            |    3 ++-
- src/tree.c             |    2 ++
- tags_my                |    6 ------
+ AUTHORS                |    2
+ ChangeLog              |    7
+ TODO                   |    3
+ plugin/cppcomplete.vim |   35
+ plugin/icomplete.vim   |    8
+ src/list.c             |    3
+ src/main.c             |   27
+ src/options.c          |    6
+ src/options.h          |    1
+ src/parse.c            |    3
+ src/tree.c             |    2
+ tags_my                |    6
  12 files changed, 79 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -45,48 +45,48 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     	* added sys/types.h in parse.h and tree.h which solves compiling under
     	MacOS X
 
- AUTHORS                      |   14 +
- COPYING                      |  340 +++
- ChangeLog                    |   59 +
- Dir.mk                       |    6 +
- README                       |   31 +
- README.orig                  |   33 +
- TODO                         |    5 +
- common.mk                    |    7 +
- configure                    |   58 +
- doxyfile                     | 1227 ++++++++
- icomplete.conf               |   29 +
- icomplete.log                | 6551 ++++++++++++++++++++++++++++++++++++++++++
- mkjavatags.sh                |   17 +
- plugin/cppcomplete.vim       |   88 +
- plugin/icomplete.vim         |   14 +
- scripts/checks.sh            |  318 ++
- scripts/configure-private.sh |  506 ++++
- scripts/configure.sh         |  341 +++
- scripts/dist                 |  124 +
- scripts/generate-tags        |   69 +
- scripts/install              |  263 ++
- scripts/lib.mk               |  156 +
- scripts/main.mk              |  110 +
- scripts/sedin                |   79 +
- scripts/sub.mk               |  194 ++
- scripts/top.mk               |   59 +
- scripts/utils.sh             |  338 +++
- src/Dir.mk                   |   12 +
- src/error.c                  |   34 +
- src/error.h                  |   17 +
- src/list.c                   |   81 +
- src/list.h                   |   83 +
- src/main.c                   |  391 +++
- src/options.c                |  203 ++
- src/options.h                |   60 +
- src/parse.c                  |  938 ++++++
- src/parse.h                  |   91 +
- src/readtags.c               |  959 ++++++
- src/readtags.h               |  252 ++
- src/tree.c                   |  130 +
- src/tree.h                   |   88 +
- src/treeold.c                |  499 ++++
- src/treeold.h                |   40 +
- tags_my                      |    6 +
+ AUTHORS                      |   14
+ COPYING                      |  340
+ ChangeLog                    |   59
+ Dir.mk                       |    6
+ README                       |   31
+ README.orig                  |   33
+ TODO                         |    5
+ common.mk                    |    7
+ configure                    |   58
+ doxyfile                     | 1227
+ icomplete.conf               |   29
+ icomplete.log                | 6551
+ mkjavatags.sh                |   17
+ plugin/cppcomplete.vim       |   88
+ plugin/icomplete.vim         |   14
+ scripts/checks.sh            |  318
+ scripts/configure-private.sh |  506
+ scripts/configure.sh         |  341
+ scripts/dist                 |  124
+ scripts/generate-tags        |   69
+ scripts/install              |  263
+ scripts/lib.mk               |  156
+ scripts/main.mk              |  110
+ scripts/sedin                |   79
+ scripts/sub.mk               |  194
+ scripts/top.mk               |   59
+ scripts/utils.sh             |  338
+ src/Dir.mk                   |   12
+ src/error.c                  |   34
+ src/error.h                  |   17
+ src/list.c                   |   81
+ src/list.h                   |   83
+ src/main.c                   |  391
+ src/options.c                |  203
+ src/options.h                |   60
+ src/parse.c                  |  938
+ src/parse.h                  |   91
+ src/readtags.c               |  959
+ src/readtags.h               |  252
+ src/tree.c                   |  130
+ src/tree.h                   |   88
+ src/treeold.c                |  499
+ src/treeold.h                |   40
+ tags_my                      |    6
  44 files changed, 14920 insertions(+), 0 deletions(-)

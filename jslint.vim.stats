@@ -15,18 +15,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       setting a value for the JS_CMD environment variable.
     - Fixes bugs when running in Windows.
 
- CHANGES                                   |   13 +
- README.markdown                           |  114 +-
- Rakefile                                  |   17 +-
- bin/jslint                                |    8 +-
- ftplugin/javascript/jslint.vim            |  187 +
- ftplugin/javascript/jslint/jslint-core.js | 5806 +++++++++++++++++++++++++++++
- ftplugin/javascript/jslint/runjslint.js   |   87 +
- ftplugin/javascript/jslint/runjslint.wsf  |   39 +
- plugin/jslint/fulljslint.js               | 4922 ------------------------
- plugin/jslint/jslint.vim                  |  112 -
- plugin/jslint/runjslint.js                |   41 -
- plugin/jslint/runjslint.wsf               |   40 -
+ CHANGES                                   |   13
+ README.markdown                           |  114
+ Rakefile                                  |   17
+ bin/jslint                                |    8
+ ftplugin/javascript/jslint.vim            |  187
+ ftplugin/javascript/jslint/jslint-core.js | 5806
+ ftplugin/javascript/jslint/runjslint.js   |   87
+ ftplugin/javascript/jslint/runjslint.wsf  |   39
+ plugin/jslint/fulljslint.js               | 4922
+ plugin/jslint/jslint.vim                  |  112
+ plugin/jslint/runjslint.js                |   41
+ plugin/jslint/runjslint.wsf               |   40
  12 files changed, 6204 insertions(+), 5182 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -36,8 +36,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.6: New features
 
- README.markdown          |   55 +++++++++++++++++++++++++++++++-------
- plugin/jslint/jslint.vim |   65 ++++++++++++++++++++++++++++++++++++++++-----
+ README.markdown          |   55
+ plugin/jslint/jslint.vim |   65
  2 files changed, 102 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -47,13 +47,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.5: Initial upload
 
- LICENSE                     |   22 +
- README                      |  101 +
- README.markdown             |  109 +
- Rakefile                    |   62 +
- bin/jslint                  |   21 +
- plugin/jslint/fulljslint.js | 4922 +++++++++++++++++++++++++++++++++++++++++++
- plugin/jslint/jslint.vim    |   63 +
- plugin/jslint/runjslint.js  |   41 +
- plugin/jslint/runjslint.wsf |   40 +
+ LICENSE                     |   22
+ README                      |  101
+ README.markdown             |  109
+ Rakefile                    |   62
+ bin/jslint                  |   21
+ plugin/jslint/fulljslint.js | 4922
+ plugin/jslint/jslint.vim    |   63
+ plugin/jslint/runjslint.js  |   41
+ plugin/jslint/runjslint.wsf |   40
  9 files changed, 5381 insertions(+), 0 deletions(-)

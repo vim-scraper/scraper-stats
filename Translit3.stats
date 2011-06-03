@@ -7,14 +7,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added `TransliterateMotion' actionAdded box drawing symbolsImproved handling of transliteration tables from buffer variablesImproved replace actionSome Tr3Command fixes
 
- config/translit3/transsymb-box.json |    1 +
- config/translit3/transsymb-ru.json  |    2 +-
- config/translit3/transsymb.json     |    2 +-
- doc/load.txt                        |   80 ++++++--
- doc/translit3.rux                   |  167 ++++++++++++++--
- doc/translit3.txt                   |  163 ++++++++++++++--
- plugin/load.vim                     |  343 ++++++++++++++++++++-------------
- plugin/translit3.vim                |  365 ++++++++++++++++++++++++++---------
+ config/translit3/transsymb-box.json |    1
+ config/translit3/transsymb-ru.json  |    2
+ config/translit3/transsymb.json     |    2
+ doc/load.txt                        |   80
+ doc/translit3.rux                   |  167
+ doc/translit3.txt                   |  163
+ plugin/load.vim                     |  343
+ plugin/translit3.vim                |  365
  8 files changed, 850 insertions(+), 273 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2.14)
@@ -24,12 +24,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.2.14: Made plugin use new vimpluginloader features, some fixes
 
- autoload/load.vim    |   48 +++++
- doc/load.txt         |  104 +++++++++-
- plugin/chk.vim       |  566 +++++++++++++++++++++++++++-----------------------
- plugin/load.vim      |  392 ++++++++++++++++++++++++++---------
- plugin/translit3.vim |  305 +++++++++++----------------
- plugin/yaml.vim      |  286 ++++++++++++--------------
+ autoload/load.vim    |   48
+ doc/load.txt         |  104
+ plugin/chk.vim       |  566
+ plugin/load.vim      |  392
+ plugin/translit3.vim |  305
+ plugin/yaml.vim      |  286
  6 files changed, 1018 insertions(+), 683 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2.13@1)
@@ -39,8 +39,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.2.13@1: Reposting bundle due to core plugins update
 
- doc/load.txt    |    8 ++-
- plugin/load.vim |  134 +++++++++++++++++++++++++++++++++----------------------
+ doc/load.txt    |    8
+ plugin/load.vim |  134
  2 files changed, 86 insertions(+), 56 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2.13)
@@ -50,7 +50,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.2.13: Fixed session support
 
- plugin/translit3.vim |   78 +++++++++++++++++++++++++++++---------------------
+ plugin/translit3.vim |   78
  1 files changed, 45 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2.12)
@@ -62,9 +62,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added support for empty NoTransWord, EscSeq, BrkSeq and StopTrSymbs options
 
- doc/translit3.rux    |    7 +++++
- doc/translit3.txt    |   10 ++++++-
- plugin/translit3.vim |   69 ++++++++++++++++++++++++++++++++++----------------
+ doc/translit3.rux    |    7
+ doc/translit3.txt    |   10
+ plugin/translit3.vim |   69
  3 files changed, 63 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2.11)
@@ -76,10 +76,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added BreakFunc optionMade conque_w function use new documented conque API (note that it is incompatible with old versions of conque)Some bug fixes
 
- doc/translit3.rux    |   20 ++++++-
- doc/translit3.txt    |   17 +++++-
- plugin/comp.vim      |    7 +-
- plugin/translit3.vim |  162 ++++++++++++++++++++++++++++++++------------------
+ doc/translit3.rux    |   20
+ doc/translit3.txt    |   17
+ plugin/comp.vim      |    7
+ plugin/translit3.vim |  162
  4 files changed, 143 insertions(+), 63 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2.10@1)
@@ -89,12 +89,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.2.10@1: Reposting bundle due to core plugins update
 
- autoload/fileutils.vim |   28 ++++--
- doc/chk.txt            |   16 ++-
- doc/comp.txt           |   17 +++-
- plugin/chk.vim         |  125 ++++++++++++++++++++----
- plugin/comp.vim        |  258 +++++++++++++++++++++++++++++++-----------------
- plugin/load.vim        |    6 +-
+ autoload/fileutils.vim |   28
+ doc/chk.txt            |   16
+ doc/comp.txt           |   17
+ plugin/chk.vim         |  125
+ plugin/comp.vim        |  258
+ plugin/load.vim        |    6
  6 files changed, 322 insertions(+), 128 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2.10)
@@ -104,15 +104,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.2.10: Fixed conque write function
 
- doc/chk.txt           |    6 +++---
- doc/comp.txt          |    5 +++--
- doc/translit3.rux     |   19 +++++++++++++++++--
- doc/translit3.txt     |   24 +++++++++++++++++-------
- doc/vim-fileutils.txt |    8 ++++----
- plugin/chk.vim        |    2 ++
- plugin/comp.vim       |   46 +++++++++++++++++++++++++++++++++++-----------
- plugin/load.vim       |    8 ++++----
- plugin/translit3.vim  |   43 +++++++++++++++++++++++++++++--------------
+ doc/chk.txt           |    6
+ doc/comp.txt          |    5
+ doc/translit3.rux     |   19
+ doc/translit3.txt     |   24
+ doc/vim-fileutils.txt |    8
+ plugin/chk.vim        |    2
+ plugin/comp.vim       |   46
+ plugin/load.vim       |    8
+ plugin/translit3.vim  |   43
  9 files changed, 114 insertions(+), 47 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2.6)
@@ -124,13 +124,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added support for multicharacter strings for \tr, \tt, \tT, \tf and \tF commands
 
- autoload/fileutils.vim |   28 ++++-
- doc/comp.txt           |   51 +++++++--
- doc/translit3.rux      |    4 +-
- doc/translit3.txt      |    4 +-
- doc/vim-fileutils.txt  |    3 +-
- plugin/comp.vim        |  283 ++++++++++++++++++++++++++++--------------------
- plugin/translit3.vim   |   67 +++++++++++-
+ autoload/fileutils.vim |   28
+ doc/comp.txt           |   51
+ doc/translit3.rux      |    4
+ doc/translit3.txt      |    4
+ doc/vim-fileutils.txt  |    3
+ plugin/comp.vim        |  283
+ plugin/translit3.vim   |   67
  7 files changed, 300 insertions(+), 140 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2.2@1)
@@ -140,27 +140,27 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.2.2@1: Reposting bundle due to core plugins update
 
- autoload/fileutils.vim |   68 ++++
- autoload/os.vim        |  132 +++++++
- doc/chk.txt.html       |  452 -----------------------
- doc/comp.txt           |   48 +++-
- doc/comp.txt.html      |  136 -------
- doc/format.txt.html    |  703 ------------------------------------
- doc/json.rux           |    5 +-
- doc/json.rux.html      |   90 -----
- doc/json.txt           |    4 +-
- doc/json.txt.html      |   82 -----
- doc/load.txt           |   78 +++--
- doc/load.txt.html      |  495 --------------------------
- doc/oop.txt.html       |   95 -----
- doc/translit3.rux.html |  924 ------------------------------------------------
- doc/translit3.txt.html |  829 -------------------------------------------
- doc/vim-fileutils.txt  |   47 +++
- doc/yaml.txt.html      |  242 -------------
- plugin/comp.vim        |  263 +++++++++++----
- plugin/json.vim        |    5 +-
- plugin/load.vim        |  297 ++++++++++------
- plugin/yaml.vim        |    6 +-
+ autoload/fileutils.vim |   68
+ autoload/os.vim        |  132
+ doc/chk.txt.html       |  452
+ doc/comp.txt           |   48
+ doc/comp.txt.html      |  136
+ doc/format.txt.html    |  703
+ doc/json.rux           |    5
+ doc/json.rux.html      |   90
+ doc/json.txt           |    4
+ doc/json.txt.html      |   82
+ doc/load.txt           |   78
+ doc/load.txt.html      |  495
+ doc/oop.txt.html       |   95
+ doc/translit3.rux.html |  924
+ doc/translit3.txt.html |  829
+ doc/vim-fileutils.txt  |   47
+ doc/yaml.txt.html      |  242
+ plugin/comp.vim        |  263
+ plugin/json.vim        |    5
+ plugin/load.vim        |  297
+ plugin/yaml.vim        |    6
  21 files changed, 745 insertions(+), 4256 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2.2)
@@ -172,17 +172,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Removed <Nop> mappings detection for <vim-7.3.32Fixed esc consuming after inputting multiple characters transliteration sequences
 
- doc/chk.txt.html       |  452 +++++++++++++++++++++++
- doc/comp.txt.html      |  136 +++++++
- doc/format.txt.html    |  703 ++++++++++++++++++++++++++++++++++++
- doc/json.rux.html      |   90 +++++
- doc/json.txt.html      |   82 +++++
- doc/load.txt.html      |  495 ++++++++++++++++++++++++++
- doc/oop.txt.html       |   95 +++++
- doc/translit3.rux.html |  924 ++++++++++++++++++++++++++++++++++++++++++++++++
- doc/translit3.txt.html |  829 +++++++++++++++++++++++++++++++++++++++++++
- doc/yaml.txt.html      |  242 +++++++++++++
- plugin/translit3.vim   |    5 +-
+ doc/chk.txt.html       |  452
+ doc/comp.txt.html      |  136
+ doc/format.txt.html    |  703
+ doc/json.rux.html      |   90
+ doc/json.txt.html      |   82
+ doc/load.txt.html      |  495
+ doc/oop.txt.html       |   95
+ doc/translit3.rux.html |  924
+ doc/translit3.txt.html |  829
+ doc/yaml.txt.html      |  242
+ plugin/translit3.vim   |    5
  11 files changed, 4049 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2.1)
@@ -194,18 +194,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added support for vim-7.3.32 patch. Note that format of the `exmaps' key of tof buffer dictionary changed
 
- autoload/load.vim    |   45 ++++-
- doc/chk.txt          |   20 ++-
- doc/load.txt         |  113 +++++++---
- doc/translit3.rux    |   19 ++-
- doc/translit3.txt    |   20 ++-
- doc/yaml.txt         |    4 +
- plugin/chk.vim       |   69 +++++-
- plugin/load.vim      |  654 ++++++++++++++++++++++++++++++++------------------
- plugin/stuf.vim      |  242 +++++++++----------
- plugin/translit3.vim |   68 ++++--
- plugin/yaml.vim      |  651 ++++++++++++++++++++++++++++++++++++++++---------
- syntax/yaml.vim      |  168 -------------
+ autoload/load.vim    |   45
+ doc/chk.txt          |   20
+ doc/load.txt         |  113
+ doc/translit3.rux    |   19
+ doc/translit3.txt    |   20
+ doc/yaml.txt         |    4
+ plugin/chk.vim       |   69
+ plugin/load.vim      |  654
+ plugin/stuf.vim      |  242
+ plugin/translit3.vim |   68
+ plugin/yaml.vim      |  651
+ syntax/yaml.vim      |  168
  12 files changed, 1366 insertions(+), 707 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
@@ -217,10 +217,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added replacements for r, t, T, f and F normal mode commands: so now if you want to replace character under cursor with ÃÂ«, you will need to type \tr<< in normal mode (works only for single character replacements).
 
- doc/translit3.rux    |   22 ++++-
- doc/translit3.txt    |   19 ++++-
- plugin/translit3.vim |  248 +++++++++++++++++++++++++++++++++++---------------
- plugin/yaml.vim      |   54 ++++++------
+ doc/translit3.rux    |   22
+ doc/translit3.txt    |   19
+ plugin/translit3.vim |  248
+ plugin/yaml.vim      |   54
  4 files changed, 239 insertions(+), 104 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1.1)
@@ -232,7 +232,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed bug with multicharacter source strings (like ÃÂ«ch Ã¢ÂÂ ÃÂÃÂ»)
 
- plugin/translit3.vim |   47 +++++++++++++----------------------------------
+ plugin/translit3.vim |   47
  1 files changed, 13 insertions(+), 34 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
@@ -244,22 +244,22 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added WriteFunc option (allows to override method used to send strings to buffer), added Conque Shell plugin support, fixed behavior when backspace option is not set
 
- doc/chk.txt              |   24 +-
- doc/load.txt             |   31 +-
- doc/oop.txt              |   93 ++
- doc/translit3.rux        |   16 +
- doc/translit3.txt        |   15 +
- doc/yaml.txt             |  236 +++
- ftplugin/conque_term.vim |    6 +
- ftplugin/tex.vim         |    6 +
- plugin/chk.vim           |  318 +++--
- plugin/comp.vim          |   25 +-
- plugin/load.vim          |  326 +++-
- plugin/oop.vim           |  237 +++
- plugin/stuf.vim          |   75 +-
- plugin/translit3.vim     |   74 +-
- plugin/yaml.vim          | 4029 ++++++++++++++++++++++++++++++++++++++++++++++
- syntax/yaml.vim          |  168 ++
+ doc/chk.txt              |   24
+ doc/load.txt             |   31
+ doc/oop.txt              |   93
+ doc/translit3.rux        |   16
+ doc/translit3.txt        |   15
+ doc/yaml.txt             |  236
+ ftplugin/conque_term.vim |    6
+ ftplugin/tex.vim         |    6
+ plugin/chk.vim           |  318
+ plugin/comp.vim          |   25
+ plugin/load.vim          |  326
+ plugin/oop.vim           |  237
+ plugin/stuf.vim          |   75
+ plugin/translit3.vim     |   74
+ plugin/yaml.vim          | 4029
+ syntax/yaml.vim          |  168
  16 files changed, 5409 insertions(+), 270 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.6)
@@ -269,12 +269,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.0.6: Added ConfigDir option, added tests, some bug fixes
 
- doc/chk.txt          |    2 +
- doc/translit3.rux    |   34 +++++++++++----
- doc/translit3.txt    |   27 +++++++++---
- plugin/chk.vim       |   20 ++++++++-
- plugin/stuf.vim      |   41 ++++++++++++++---
- plugin/translit3.vim |  117 +++++++++++++++++++++++++++++++++++---------------
+ doc/chk.txt          |    2
+ doc/translit3.rux    |   34
+ doc/translit3.txt    |   27
+ plugin/chk.vim       |   20
+ plugin/stuf.vim      |   41
+ plugin/translit3.vim |  117
  6 files changed, 182 insertions(+), 59 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.5)
@@ -286,13 +286,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Made `Transliterate' mapping (it shows prompt and transliterates user input) use stuf/cinput function (so that this prompts now have their own history) and new completion
 
- doc/comp.txt         |   11 ++++
- doc/json.rux         |    8 ++-
- doc/json.txt         |    6 +-
- plugin/comp.vim      |   61 ++++++++++++++++++-----
- plugin/json.vim      |   28 ++++++++--
- plugin/stuf.vim      |  131 +++++++++++++++++++++++++++++++++++++++++++++++--
- plugin/translit3.vim |   46 ++++++++++++++++--
+ doc/comp.txt         |   11
+ doc/json.rux         |    8
+ doc/json.txt         |    6
+ plugin/comp.vim      |   61
+ plugin/json.vim      |   28
+ plugin/stuf.vim      |  131
+ plugin/translit3.vim |   46
  7 files changed, 256 insertions(+), 35 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.3)
@@ -302,13 +302,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.0.3: Translated messages to Russian
 
- doc/json.rux         |   85 ++++++++++++++++++++++++++++++++++++++++++++++++++
- doc/json.txt         |   17 ++++++---
- doc/load.txt         |   13 ++++++++
- plugin/json.vim      |   39 +++++++++++++++++++++++
- plugin/load.vim      |   66 ++++++++++++++++++++++++++------------
- plugin/stuf.vim      |   18 ++++++++--
- plugin/translit3.vim |   60 ++++++++++++++++++++++++++++++++++-
+ doc/json.rux         |   85
+ doc/json.txt         |   17
+ doc/load.txt         |   13
+ plugin/json.vim      |   39
+ plugin/load.vim      |   66
+ plugin/stuf.vim      |   18
+ plugin/translit3.vim |   60
  7 files changed, 266 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.2)
@@ -318,8 +318,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.0.2: Some fixes to tof/notransword plugin
 
- plugin/chk.vim       |   43 ++++++++++++++++++++++++++++++++++---------
- plugin/translit3.vim |   43 ++++++++++++++++++++++++++-----------------
+ plugin/chk.vim       |   43
+ plugin/translit3.vim |   43
  2 files changed, 60 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.1)
@@ -329,12 +329,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.0.1: Updated russian documentation
 
- doc/load.txt      |   65 +++++++++++++++++++++++++++++--
- doc/translit3.rux |   36 ++++++-----------
- doc/translit3.txt |    3 +-
- plugin/chk.vim    |    3 +
- plugin/load.vim   |  111 +++++++++++++++++++++++++++++++++++++++++++++++++++-
- plugin/stuf.vim   |    2 +-
+ doc/load.txt      |   65
+ doc/translit3.rux |   36
+ doc/translit3.txt |    3
+ plugin/chk.vim    |    3
+ plugin/load.vim   |  111
+ plugin/stuf.vim   |    2
  6 files changed, 187 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0@1)
@@ -346,14 +346,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     This is the first version published here that contains translit3 splitted into 6 plugins
 
- config/translit3/transsymb-math:latex.json |    1 +
- config/translit3/transsymb-ru.json         |    1 +
- config/translit3/transsymb-ru:latex.json   |    1 +
- config/translit3/transsymb.json            |    1 +
- config/translit3/transsymb2.json           |    1 +
- doc/translit3.rux                          |  871 ++++++++++++++++++++++++++++
- plugin/comp.vim                            |    9 +-
- plugin/stuf.vim                            |    3 +-
+ config/translit3/transsymb-math:latex.json |    1
+ config/translit3/transsymb-ru.json         |    1
+ config/translit3/transsymb-ru:latex.json   |    1
+ config/translit3/transsymb.json            |    1
+ config/translit3/transsymb2.json           |    1
+ doc/translit3.rux                          |  871
+ plugin/comp.vim                            |    9
+ plugin/stuf.vim                            |    3
  8 files changed, 885 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -365,23 +365,23 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     This is the first version published here that contains translit3 splitted into 6 plugins
 
- autoload/load.vim                          |    5 +
- config/translit3/transsymb-math:latex.json |    1 -
- config/translit3/transsymb-ru.json         |    1 -
- config/translit3/transsymb-ru:latex.json   |    1 -
- config/translit3/transsymb.json            |    1 -
- doc/chk.txt                                |  422 ++++++
- doc/comp.txt                               |  123 ++
- doc/json.txt                               |   75 ++
- doc/load.txt                               |  335 +++++
- doc/translit3.rux                          |  870 ------------
- doc/translit3.txt                          |  120 +-
- plugin/chk.vim                             | 1046 +++++++++++++++
- plugin/comp.vim                            |  382 ++++++
- plugin/json.vim                            |  570 ++++++++
- plugin/load.vim                            | 1467 +++++++++++++++++++++
- plugin/stuf.vim                            |  505 +++++++
- plugin/translit3.vim                       | 1960 +++++++---------------------
+ autoload/load.vim                          |    5
+ config/translit3/transsymb-math:latex.json |    1
+ config/translit3/transsymb-ru.json         |    1
+ config/translit3/transsymb-ru:latex.json   |    1
+ config/translit3/transsymb.json            |    1
+ doc/chk.txt                                |  422
+ doc/comp.txt                               |  123
+ doc/json.txt                               |   75
+ doc/load.txt                               |  335
+ doc/translit3.rux                          |  870
+ doc/translit3.txt                          |  120
+ plugin/chk.vim                             | 1046
+ plugin/comp.vim                            |  382
+ plugin/json.vim                            |  570
+ plugin/load.vim                            | 1467
+ plugin/stuf.vim                            |  505
+ plugin/translit3.vim                       | 1960
  17 files changed, 5481 insertions(+), 2403 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1)
@@ -391,12 +391,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1: Initial upload
 
- README                                     |   29 +
- config/translit3/transsymb-math:latex.json |    1 +
- config/translit3/transsymb-ru.json         |    1 +
- config/translit3/transsymb-ru:latex.json   |    1 +
- config/translit3/transsymb.json            |    1 +
- doc/translit3.rux                          |  870 ++++++++
- doc/translit3.txt                          |  771 +++++++
- plugin/translit3.vim                       | 3051 ++++++++++++++++++++++++++++
+ README                                     |   29
+ config/translit3/transsymb-math:latex.json |    1
+ config/translit3/transsymb-ru.json         |    1
+ config/translit3/transsymb-ru:latex.json   |    1
+ config/translit3/transsymb.json            |    1
+ doc/translit3.rux                          |  870
+ doc/translit3.txt                          |  771
+ plugin/translit3.vim                       | 3051
  8 files changed, 4725 insertions(+), 0 deletions(-)

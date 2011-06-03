@@ -9,7 +9,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
         * Made it so window splitting is based on how wide your window currently is
         * Added g:nekthuth_updatetime (default 500) - sets how long vim waits when not moving cursor to check
 
- ftplugin/lisp/nekthuth.vim |  123 ++++++++++++++++++++++++++------------------
+ ftplugin/lisp/nekthuth.vim |  123
  1 files changed, 73 insertions(+), 50 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.2)
@@ -22,7 +22,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      * Another bug where mcclim confused vim with syntax additions. Functions with ] or [ in them will no longer show up as highlighted.
      * Install.sh in the vim plugin was using the wrong environment variable
 
- ftplugin/lisp/nekthuth/install.sh |   12 ++++++------
+ ftplugin/lisp/nekthuth/install.sh |   12
  1 files changed, 6 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
@@ -36,8 +36,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Added plugin installation.
     * Fixed how the main thread and repl thread share sender data, which should translate into faster bootup times.
 
- ftplugin/lisp/nekthuth.vim        |   10 ++++++++++
- ftplugin/lisp/nekthuth/install.sh |   18 ++++++++++++++++++
+ ftplugin/lisp/nekthuth.vim        |   10
+ ftplugin/lisp/nekthuth/install.sh |   18
  2 files changed, 28 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -54,7 +54,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
         * Added #'nekthuth:stop-remote to shut down the remote listener.
         * Find and open source locaton of symbol under cursor.
 
- ftplugin/lisp/nekthuth.vim |   48 +++++++++++++++++++++++++++++++++++++++++--
+ ftplugin/lisp/nekthuth.vim |   48
  1 files changed, 45 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -67,7 +67,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Remote execution in an already running sbcl instance. See setup in the manual for more information.
     * Fixed ClHelp not opening a window upon failure
 
- ftplugin/lisp/nekthuth.vim |   53 +++++++++++++++++++++++++++++++++++++------
+ ftplugin/lisp/nekthuth.vim |   53
  1 files changed, 45 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -77,7 +77,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README                                |   23 +
- ftplugin/lisp/nekthuth.vim            |  435 +++++++++++++++
- ftplugin/lisp/nekthuth/hyperspecTags  |  978 +++++++++++++++++++++++++++++++++
+ README                                |   23
+ ftplugin/lisp/nekthuth.vim            |  435
+ ftplugin/lisp/nekthuth/hyperspecTags  |  978
  3 files changed, 1436 insertions(+), 0 deletions(-)

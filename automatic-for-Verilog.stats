@@ -5,24 +5,24 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.55: Fix bugs, compatiable with designware IP.
 
- example/autoarg/after.v            |   43 --
- example/autoarg/before.v           |   37 --
- example/autoarg/readme.txt         |    2 -
- example/autodef/after.v            |  127 ------
- example/autodef/ahb/ahb_slave.v    |   37 --
- example/autodef/before.v           |  101 ----
- example/autodef/clk_gate_ran.v     |    8 -
- example/autodef/readme.txt         |   14 -
- example/autoinst/after.v           |   72 ---
- example/autoinst/ahb/ahb_arbiter.v |   34 --
- example/autoinst/ahb/ahb_master.v  |   39 --
- example/autoinst/ahb/ahb_slave.v   |   37 --
- example/autoinst/before.v          |   23 -
- example/autoinst/readme.txt        |    6 -
- example/autosense/after.v          |   69 ---
- example/autosense/before.v         |   51 --
- example/autosense/readme.txt       |    2 -
- ftplugin/automatic.vim             |  879 +++++++++++++++++++++++++++++++-----
+ example/autoarg/after.v            |   43
+ example/autoarg/before.v           |   37
+ example/autoarg/readme.txt         |    2
+ example/autodef/after.v            |  127
+ example/autodef/ahb/ahb_slave.v    |   37
+ example/autodef/before.v           |  101
+ example/autodef/clk_gate_ran.v     |    8
+ example/autodef/readme.txt         |   14
+ example/autoinst/after.v           |   72
+ example/autoinst/ahb/ahb_arbiter.v |   34
+ example/autoinst/ahb/ahb_master.v  |   39
+ example/autoinst/ahb/ahb_slave.v   |   37
+ example/autoinst/before.v          |   23
+ example/autoinst/readme.txt        |    6
+ example/autosense/after.v          |   69
+ example/autosense/before.v         |   51
+ example/autosense/readme.txt       |    2
+ ftplugin/automatic.vim             |  879
  18 files changed, 777 insertions(+), 804 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.50)
@@ -36,26 +36,26 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Add a new feature: automatic sensitive list, which is helpful for those do not support verilog 2001 yet.
     Give examples for all automatice functions.
 
- after.v                            |  176 --------
- before.v                           |  116 ------
- example/autoarg/after.v            |   43 ++
- example/autoarg/before.v           |   37 ++
- example/autoarg/readme.txt         |    2 +
- example/autodef/after.v            |  127 ++++++
- example/autodef/ahb/ahb_slave.v    |   37 ++
- example/autodef/before.v           |  101 +++++
- example/autodef/clk_gate_ran.v     |    8 +
- example/autodef/readme.txt         |   14 +
- example/autoinst/after.v           |   72 ++++
- example/autoinst/ahb/ahb_arbiter.v |   34 ++
- example/autoinst/ahb/ahb_master.v  |   39 ++
- example/autoinst/ahb/ahb_slave.v   |   37 ++
- example/autoinst/before.v          |   23 +
- example/autoinst/readme.txt        |    6 +
- example/autosense/after.v          |   69 ++++
- example/autosense/before.v         |   51 +++
- example/autosense/readme.txt       |    2 +
- ftplugin/automatic.vim             |  793 +++++++++++++++++++++++++++---------
+ after.v                            |  176
+ before.v                           |  116
+ example/autoarg/after.v            |   43
+ example/autoarg/before.v           |   37
+ example/autoarg/readme.txt         |    2
+ example/autodef/after.v            |  127
+ example/autodef/ahb/ahb_slave.v    |   37
+ example/autodef/before.v           |  101
+ example/autodef/clk_gate_ran.v     |    8
+ example/autodef/readme.txt         |   14
+ example/autoinst/after.v           |   72
+ example/autoinst/ahb/ahb_arbiter.v |   34
+ example/autoinst/ahb/ahb_master.v  |   39
+ example/autoinst/ahb/ahb_slave.v   |   37
+ example/autoinst/before.v          |   23
+ example/autoinst/readme.txt        |    6
+ example/autosense/after.v          |   69
+ example/autosense/before.v         |   51
+ example/autosense/readme.txt       |    2
+ ftplugin/automatic.vim             |  793
  20 files changed, 1302 insertions(+), 485 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.00)
@@ -65,8 +65,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.00: Initial upload
 
- README                 |   13 +
- after.v                |  176 +++++++++++++
- before.v               |  116 +++++++++
- ftplugin/automatic.vim |  641 ++++++++++++++++++++++++++++++++++++++++++++++++
+ README                 |   13
+ after.v                |  176
+ before.v               |  116
+ ftplugin/automatic.vim |  641
  4 files changed, 946 insertions(+), 0 deletions(-)

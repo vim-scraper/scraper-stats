@@ -9,32 +9,32 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added project search function.
 
- doc/tags                                   |   68 --
- doc/vimper.txt                             |  805 ++++++++++++++++-------
- make/cpp/global.mk                         |   57 ++
- make/cpp/macros.mk                         |   62 ++
- make/cpp/project.mk                        |   91 +++
- make/cpp/rules.mk                          |   32 +
- make/cpp/template.subdir.mk                |   20 +
- make/vim/global.mk                         |   31 +
- make/vim/project.mk                        |   38 ++
- make/vim/template.subdir.mk                |   32 +
- plugin/vimper/Utils.vim                    |  191 ++++++
- plugin/vimper/cpp/utils.vim                |  230 ++++----
- plugin/vimper/project/Utils.vim            |  511 ++++++++-------
- plugin/vimper/project/classexplorer.vim    |  782 ++++++++++++++++++++++
- plugin/vimper/project/common.vim           |  954 +++++++++++++++------------
- plugin/vimper/project/cpp/class_buffer.vim |  669 +++++++++++++++++++
- plugin/vimper/project/cpp/error_buffer.vim |  409 ++++++------
- plugin/vimper/project/cpp/functions.vim    |  981 ++++++++++++++--------------
- plugin/vimper/project/search_buffer.vim    |  215 ++++++
- plugin/vimper/project/vcpp/functions.vim   |  213 ++++++
- plugin/vimper/project/vim/functions.vim    |  952 ++++++++++++++--------------
- plugin/vtreeexplorer.vim                   |   49 ++-
- scripts/cpp/template.vimper.vim            |   76 ++-
- scripts/search.pl                          |  128 ++++
- scripts/vcpp/template.vimper.vim           |   51 ++
- scripts/vim/template.vimper.vim            |   40 +-
+ doc/tags                                   |   68
+ doc/vimper.txt                             |  805
+ make/cpp/global.mk                         |   57
+ make/cpp/macros.mk                         |   62
+ make/cpp/project.mk                        |   91
+ make/cpp/rules.mk                          |   32
+ make/cpp/template.subdir.mk                |   20
+ make/vim/global.mk                         |   31
+ make/vim/project.mk                        |   38
+ make/vim/template.subdir.mk                |   32
+ plugin/vimper/Utils.vim                    |  191
+ plugin/vimper/cpp/utils.vim                |  230
+ plugin/vimper/project/Utils.vim            |  511
+ plugin/vimper/project/classexplorer.vim    |  782
+ plugin/vimper/project/common.vim           |  954
+ plugin/vimper/project/cpp/class_buffer.vim |  669
+ plugin/vimper/project/cpp/error_buffer.vim |  409
+ plugin/vimper/project/cpp/functions.vim    |  981
+ plugin/vimper/project/search_buffer.vim    |  215
+ plugin/vimper/project/vcpp/functions.vim   |  213
+ plugin/vimper/project/vim/functions.vim    |  952
+ plugin/vtreeexplorer.vim                   |   49
+ scripts/cpp/template.vimper.vim            |   76
+ scripts/search.pl                          |  128
+ scripts/vcpp/template.vimper.vim           |   51
+ scripts/vim/template.vimper.vim            |   40
  26 files changed, 5358 insertions(+), 2329 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -48,34 +48,34 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added the omnicppcomplete files for C/C++ code completion.
 
- README                                     |   24 +
- after/ftplugin/c.vim                       |    2 +
- after/ftplugin/cpp.vim                     |    2 +
- autoload/omni/common/debug.vim             |   32 +
- autoload/omni/common/utils.vim             |   67 ++
- autoload/omni/cpp/complete.vim             |  569 +++++++++++++++
- autoload/omni/cpp/includes.vim             |  126 ++++
- autoload/omni/cpp/items.vim                |  660 +++++++++++++++++
- autoload/omni/cpp/maycomplete.vim          |   82 +++
- autoload/omni/cpp/namespaces.vim           |  838 +++++++++++++++++++++
- autoload/omni/cpp/settings.vim             |   96 +++
- autoload/omni/cpp/tokenizer.vim            |   93 +++
- autoload/omni/cpp/utils.vim                |  587 +++++++++++++++
- doc/omnicppcomplete.txt                    | 1078 ++++++++++++++++++++++++++++
- doc/tags                                   |   68 ++
- doc/vimper.html                            |  725 +++++++++++++++++++
- doc/vimper.txt                             |  250 +++++++
- doc/vtreeexplorer.txt                      |  226 ++++++
- ftdetect/makerr.vim                        |    7 +
- plugin/vimper/cpp/utils.vim                |  115 +++
- plugin/vimper/project/Utils.vim            |  244 +++++++
- plugin/vimper/project/common.vim           |  432 +++++++++++
- plugin/vimper/project/cpp/error_buffer.vim |  206 ++++++
- plugin/vimper/project/cpp/functions.vim    |  486 +++++++++++++
- plugin/vimper/project/vim/functions.vim    |  476 ++++++++++++
- plugin/vtreeexplorer.vim                   | 1058 +++++++++++++++++++++++++++
- scripts/cpp/template.vimper.vim            |   25 +
- scripts/cygwin.pl                          |   45 ++
- scripts/vim/template.vimper.vim            |   19 +
- syntax/makerr.vim                          |   51 ++
+ README                                     |   24
+ after/ftplugin/c.vim                       |    2
+ after/ftplugin/cpp.vim                     |    2
+ autoload/omni/common/debug.vim             |   32
+ autoload/omni/common/utils.vim             |   67
+ autoload/omni/cpp/complete.vim             |  569
+ autoload/omni/cpp/includes.vim             |  126
+ autoload/omni/cpp/items.vim                |  660
+ autoload/omni/cpp/maycomplete.vim          |   82
+ autoload/omni/cpp/namespaces.vim           |  838
+ autoload/omni/cpp/settings.vim             |   96
+ autoload/omni/cpp/tokenizer.vim            |   93
+ autoload/omni/cpp/utils.vim                |  587
+ doc/omnicppcomplete.txt                    | 1078
+ doc/tags                                   |   68
+ doc/vimper.html                            |  725
+ doc/vimper.txt                             |  250
+ doc/vtreeexplorer.txt                      |  226
+ ftdetect/makerr.vim                        |    7
+ plugin/vimper/cpp/utils.vim                |  115
+ plugin/vimper/project/Utils.vim            |  244
+ plugin/vimper/project/common.vim           |  432
+ plugin/vimper/project/cpp/error_buffer.vim |  206
+ plugin/vimper/project/cpp/functions.vim    |  486
+ plugin/vimper/project/vim/functions.vim    |  476
+ plugin/vtreeexplorer.vim                   | 1058
+ scripts/cpp/template.vimper.vim            |   25
+ scripts/cygwin.pl                          |   45
+ scripts/vim/template.vimper.vim            |   19
+ syntax/makerr.vim                          |   51
  30 files changed, 8689 insertions(+), 0 deletions(-)

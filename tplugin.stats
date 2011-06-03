@@ -5,9 +5,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.11: Please see http://github.com/tomtom/tplugin_vim/commits/master/
 
- autoload/tplugin.vim |    6 +-
- doc/tplugin.txt      |  107 +++++++++++++++++++++++++++++++++++---------------
- macros/tplugin.vim   |   53 +++++++++++++++++++++---
+ autoload/tplugin.vim |    6
+ doc/tplugin.txt      |  107
+ macros/tplugin.vim   |   53
  3 files changed, 124 insertions(+), 42 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
@@ -21,9 +21,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Renamed variables: g:tplugin#autoload_exclude, g:tplugin#scan
     - Custom autoload definitions for some 3rd party plugins (PoC)
 
- autoload/tplugin.vim |  473 +++++++++++++++++++++++++++++
- doc/tplugin.txt      |  134 +++++----
- macros/tplugin.vim   |  816 +++++++++++---------------------------------------
+ autoload/tplugin.vim |  473
+ doc/tplugin.txt      |  134
+ macros/tplugin.vim   |  816
  3 files changed, 724 insertions(+), 699 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
@@ -39,8 +39,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Load after/autoload/* files
     - ...
 
- doc/tplugin.txt    |   57 +++++----
- macros/tplugin.vim |  342 ++++++++++++++++++++++++++++++++++++++++------------
+ doc/tplugin.txt    |   57
+ macros/tplugin.vim |  342
  2 files changed, 294 insertions(+), 105 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
@@ -57,8 +57,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - TPluginCommand and TPluginFunction are functions. Removed the commands with the same name.
     - #TPluginInclude tag
 
- doc/tplugin.txt    |  158 ++++++-----
- macros/tplugin.vim |  863 +++++++++++++++++++++++++++++++++-------------------
+ doc/tplugin.txt    |  158
+ macros/tplugin.vim |  863
  2 files changed, 631 insertions(+), 390 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
@@ -70,8 +70,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - TPluginScan: try to maintain information about command-line completion (this won't work if a custom script-local completion function is used)
 
- doc/tplugin.txt    |    6 +++-
- macros/tplugin.vim |   88 ++++++++++++++++++++++++++++++++++++++++------------
+ doc/tplugin.txt    |    6
+ macros/tplugin.vim |   88
  2 files changed, 73 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -86,8 +86,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - If the root name ends with '*', the root is no directory tree but a single directory (actually a plugin repo)
     - s:TPluginComplete(): Hide tplugin autoload files.
 
- doc/tplugin.txt    |   33 ++++++++--
- macros/tplugin.vim |  190 +++++++++++++++++++++++++++++++++++++++------------
+ doc/tplugin.txt    |   33
+ macros/tplugin.vim |  190
  2 files changed, 173 insertions(+), 50 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -116,9 +116,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Speed up :TPluginScan (s:ScanRoots(): run glob() only once, filter file contents before passing it to s:ScanSource())
     - TPluginMap(): Don't map keys if the key already is mapped (via maparg())
 
- autoload/tplugin.vim |  326 -------------------------------
- doc/tplugin.txt      |  189 ++++++++++--------
- macros/tplugin.vim   |  522 +++++++++++++++++++++++++++++++++++++++++++++++---
+ autoload/tplugin.vim |  326
+ doc/tplugin.txt      |  189
+ macros/tplugin.vim   |  522
  3 files changed, 596 insertions(+), 441 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -137,9 +137,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - The autoload file was renamed to ROOT/tplugin.vim
     - When adding a repository to &rtp, ROOT/tplugin_REPO.vim is loaded
 
- autoload/tplugin.vim |  148 +++++++++++++++++++++++++++++++++++++++-----
- doc/tplugin.txt      |   93 ++++++++++++++++++++++-----
- macros/tplugin.vim   |  169 +++++++++++++++++++++++++++++++++++---------------
+ autoload/tplugin.vim |  148
+ doc/tplugin.txt      |   93
+ macros/tplugin.vim   |  169
  3 files changed, 327 insertions(+), 83 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -154,9 +154,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - The after path is inserted at the second to last position
     - When autoload is enabled and g:tplugin_menu_prefix is not empty, build a menu with available plugins (NOTE: this is disabled by default)
 
- autoload/tplugin.vim |  210 ++++++++++++++++++++++++++++++++++++++++++++
- doc/tplugin.txt      |  202 ++++++++++++++++++++++++++++++++++---------
- macros/tplugin.vim   |  236 +++++++++++++++++++++++++++++++++++++++++++-------
+ autoload/tplugin.vim |  210
+ doc/tplugin.txt      |  202
+ macros/tplugin.vim   |  236
  3 files changed, 576 insertions(+), 72 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -166,7 +166,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README             |   41 +++++++++++++++
- doc/tplugin.txt    |  139 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- macros/tplugin.vim |  134 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ README             |   41
+ doc/tplugin.txt    |  139
+ macros/tplugin.vim |  134
  3 files changed, 314 insertions(+), 0 deletions(-)

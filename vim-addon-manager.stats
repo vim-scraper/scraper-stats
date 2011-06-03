@@ -7,14 +7,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     automatic installation of some important windows dependencies such as tar, patch, diff, unzip etc, separate functions for download and unpacking so that they can be reused, comment for gvim usage
 
- autoload/sample_vimrc_for_new_users.vim |   20 +-
- autoload/scriptmanager.vim              |   56 ++-
- autoload/scriptmanager2.vim             |  213 +++++++---
- autoload/scriptmanager_test.vim         |   71 +++
- autoload/scriptmanager_util.vim         |  181 ++++++++
- autoload/vcs_checkouts.vim              |   17 +-
- doc/vim-addon-manager-addon-info.txt    |    2 +-
- doc/vim-addon-manager.txt               |  713 +++++++++++++++++++++++--------
+ autoload/sample_vimrc_for_new_users.vim |   20
+ autoload/scriptmanager.vim              |   56
+ autoload/scriptmanager2.vim             |  213
+ autoload/scriptmanager_test.vim         |   71
+ autoload/scriptmanager_util.vim         |  181
+ autoload/vcs_checkouts.vim              |   17
+ doc/vim-addon-manager-addon-info.txt    |    2
+ doc/vim-addon-manager.txt               |  713
  8 files changed, 1010 insertions(+), 263 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2.4)
@@ -24,11 +24,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.4.2.4: xcopy patch for Windows
 
- autoload/sample_vimrc_for_new_users.vim |    3 +-
- autoload/scriptmanager2.vim             |  219 ++++++++++++++++++++++---------
- autoload/vcs_checkouts.vim              |   82 ++++++++++++
- doc/vim-addon-manager.txt               |   45 +++++++
- vim-addon-manager-test.sh               |   53 ++++++++
+ autoload/sample_vimrc_for_new_users.vim |    3
+ autoload/scriptmanager2.vim             |  219
+ autoload/vcs_checkouts.vim              |   82
+ doc/vim-addon-manager.txt               |   45
+ vim-addon-manager-test.sh               |   53
  5 files changed, 337 insertions(+), 65 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2.2)
@@ -38,7 +38,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.4.2.2: fixes by TuxTom
 
- autoload/scriptmanager2.vim |    9 ++++-----
+ autoload/scriptmanager2.vim |    9
  1 files changed, 4 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2.1)
@@ -50,9 +50,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     fix cd bug on Windows - adding sample .vimrc file. If you have more suggestions I"ll add them
 
- autoload/sample_vimrc_for_new_users.vim |  200 +++++++++++++++++++++++++++++++
- autoload/scriptmanager2.vim             |   59 +++++++---
- doc/vim-addon-manager.txt               |    1 +
+ autoload/sample_vimrc_for_new_users.vim |  200
+ autoload/scriptmanager2.vim             |   59
+ doc/vim-addon-manager.txt               |    1
  3 files changed, 243 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.2)
@@ -64,9 +64,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     only load code which is always used on startup - when updating include known-repositories
 
- autoload/scriptmanager.vim  |  315 ++-----------------------------------------
- autoload/scriptmanager2.vim |  303 +++++++++++++++++++++++++++++++++++++++++
- doc/vim-addon-manager.txt   |    1 +
+ autoload/scriptmanager.vim  |  315
+ autoload/scriptmanager2.vim |  303
+ doc/vim-addon-manager.txt   |    1
  3 files changed, 315 insertions(+), 304 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.1)
@@ -76,8 +76,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.4.1: addons can be installed by url now - many small enhancements by ZyX
 
- autoload/scriptmanager.vim |  229 ++++++++++++++++++++++++++++++++------------
- doc/vim-addon-manager.txt  |   57 ++++++++++-
+ autoload/scriptmanager.vim |  229
+ doc/vim-addon-manager.txt  |   57
  2 files changed, 223 insertions(+), 63 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -92,8 +92,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     support runtimepath being subdirectories.
     support .tar.gz plugins
 
- autoload/scriptmanager.vim |  109 +++++++++++++++++++++++++++++++++----------
- doc/vim-addon-manager.txt  |   39 +++++++++++-----
+ autoload/scriptmanager.vim |  109
+ doc/vim-addon-manager.txt  |   39
  2 files changed, 110 insertions(+), 38 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -106,12 +106,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     new command to uninstall a addon
     completion for commands
 
- README.orig                          |    1 -
- autoload/scriptmanager.vim           |  173 +++++++++++++++++++++++++++++++---
- doc/plugin-info.txt                  |    9 --
- doc/vim-addon-manager-addon-info.txt |    9 ++
- doc/vim-addon-manager.txt            |  104 ++++++++++++++++++++
- doc/vim-plugin-manager.txt           |   80 ----------------
+ README.orig                          |    1
+ autoload/scriptmanager.vim           |  173
+ doc/plugin-info.txt                  |    9
+ doc/vim-addon-manager-addon-info.txt |    9
+ doc/vim-addon-manager.txt            |  104
+ doc/vim-plugin-manager.txt           |   80
  6 files changed, 271 insertions(+), 105 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -123,8 +123,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     supporting installing vimballs from www.vim.org site (tested with library: tlib)
 
- autoload/scriptmanager.vim |   15 ++++++++++++++-
- doc/vim-plugin-manager.txt |    3 +++
+ autoload/scriptmanager.vim |   15
+ doc/vim-plugin-manager.txt |    3
  2 files changed, 17 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -137,8 +137,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     fixed handling of plugin/*.vim after/plugin/*.vim files
     Support downloading .zip files from this site.
 
- autoload/scriptmanager.vim |  101 ++++++++++++++++++++++++++++++++++++-------
- doc/vim-plugin-manager.txt |    6 +--
+ autoload/scriptmanager.vim |  101
+ doc/vim-plugin-manager.txt |    6
  2 files changed, 86 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0)
@@ -148,9 +148,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0: Initial upload
 
- README                     |   50 ++++++++++++++++++++
- README.orig                |    1 +
- autoload/scriptmanager.vim |  110 ++++++++++++++++++++++++++++++++++++++++++++
- doc/plugin-info.txt        |    9 ++++
- doc/vim-plugin-manager.txt |   79 +++++++++++++++++++++++++++++++
+ README                     |   50
+ README.orig                |    1
+ autoload/scriptmanager.vim |  110
+ doc/plugin-info.txt        |    9
+ doc/vim-plugin-manager.txt |   79
  5 files changed, 249 insertions(+), 0 deletions(-)

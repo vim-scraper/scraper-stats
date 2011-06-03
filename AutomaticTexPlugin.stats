@@ -5,12 +5,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 9.4.3: Patches for 9.4 release.
 
- autoload/atplib.vim             |  259 ++++++++++++++++++++++++++-------------
- doc/automatic-tex-plugin.txt    |   19 +--
- ftplugin/ATP_files/compiler.vim |    7 +-
- ftplugin/ATP_files/motion.vim   |  229 +++++++++++++++++++++--------------
- ftplugin/ATP_files/options.vim  |   75 ++++++++----
- ftplugin/tex_atp.vim            |    2 +-
+ autoload/atplib.vim             |  259
+ doc/automatic-tex-plugin.txt    |   19
+ ftplugin/ATP_files/compiler.vim |    7
+ ftplugin/ATP_files/motion.vim   |  229
+ ftplugin/ATP_files/options.vim  |   75
+ ftplugin/tex_atp.vim            |    2
  6 files changed, 374 insertions(+), 217 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9.4.2)
@@ -20,12 +20,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 9.4.2: Fixes for 9.4 release.
 
- doc/automatic-tex-plugin.txt    |   10 ++++--
- ftplugin/ATP_files/compiler.vim |   35 ++++++++++++++-------
- ftplugin/ATP_files/mappings.vim |   63 ---------------------------------------
- ftplugin/ATP_files/motion.vim   |    7 +++-
- ftplugin/ATP_files/options.vim  |   17 ++++++++--
- ftplugin/tex_atp.vim            |    2 +-
+ doc/automatic-tex-plugin.txt    |   10
+ ftplugin/ATP_files/compiler.vim |   35
+ ftplugin/ATP_files/mappings.vim |   63
+ ftplugin/ATP_files/motion.vim   |    7
+ ftplugin/ATP_files/options.vim  |   17
+ ftplugin/tex_atp.vim            |    2
  6 files changed, 48 insertions(+), 86 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9.4.1)
@@ -35,10 +35,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 9.4.1: Small fixes for 9.4 release.
 
- doc/automatic-tex-plugin.txt    |    2 +-
- ftplugin/ATP_files/compiler.vim |    9 ++++-----
- ftplugin/ATP_files/options.vim  |   13 ++++++++-----
- ftplugin/tex_atp.vim            |    2 +-
+ doc/automatic-tex-plugin.txt    |    2
+ ftplugin/ATP_files/compiler.vim |    9
+ ftplugin/ATP_files/options.vim  |   13
+ ftplugin/tex_atp.vim            |    2
  4 files changed, 14 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9.4)
@@ -48,36 +48,36 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 9.4: See :help atp-news
 
- autoload/atplib.vim                            |  343 +++++++--
- colors/coots-beauty-256.vim                    |    4 +
- doc/automatic-tex-plugin.txt                   |  738 +++++++++++++------
- ftplugin/ATP_files/LatexBox_common.vim         |    6 +-
- ftplugin/ATP_files/LatexBox_complete.vim       |    2 +-
- ftplugin/ATP_files/LatexBox_indent.vim         |    6 +-
- ftplugin/ATP_files/LatexBox_latexmk.vim        |    2 +-
- ftplugin/ATP_files/LatexBox_motion.vim         |    4 +-
- ftplugin/ATP_files/abbreviations.vim           |    1 +
- ftplugin/ATP_files/atp_RevSearch.py            |   10 +-
- ftplugin/ATP_files/common.vim                  |  143 ++--
- ftplugin/ATP_files/compile.py                  |  416 ++++++-----
- ftplugin/ATP_files/compile_ml.py               |  169 -----
- ftplugin/ATP_files/compiler.vim                |  773 +++++++-------------
- ftplugin/ATP_files/dictionaries/SIunits        |  289 ++++++++
- ftplugin/ATP_files/dictionaries/ams_dictionary |  161 ++++
- ftplugin/ATP_files/dictionaries/dictionary     |  937 ++++++++++++++++++++++++
- ftplugin/ATP_files/dictionaries/greek          |   38 +
- ftplugin/ATP_files/helpfunctions.vim           |   26 +-
- ftplugin/ATP_files/makelatex.py                |  511 +++++++++++++
- ftplugin/ATP_files/mappings.vim                |  498 +++++++------
- ftplugin/ATP_files/menu.vim                    |    9 +-
- ftplugin/ATP_files/motion.vim                  |  142 +++--
- ftplugin/ATP_files/options.vim                 |  765 +++++++++++++++-----
- ftplugin/ATP_files/project.vim                 |   26 +-
- ftplugin/ATP_files/search.vim                  |   39 +-
- ftplugin/ATP_files/url_query.py                |   24 +-
- ftplugin/ATP_files/various.vim                 |  202 +++++-
- ftplugin/tex_atp.vim                           |   15 +-
- ftplugin/toc_atp.vim                           |   14 +-
+ autoload/atplib.vim                            |  343
+ colors/coots-beauty-256.vim                    |    4
+ doc/automatic-tex-plugin.txt                   |  738
+ ftplugin/ATP_files/LatexBox_common.vim         |    6
+ ftplugin/ATP_files/LatexBox_complete.vim       |    2
+ ftplugin/ATP_files/LatexBox_indent.vim         |    6
+ ftplugin/ATP_files/LatexBox_latexmk.vim        |    2
+ ftplugin/ATP_files/LatexBox_motion.vim         |    4
+ ftplugin/ATP_files/abbreviations.vim           |    1
+ ftplugin/ATP_files/atp_RevSearch.py            |   10
+ ftplugin/ATP_files/common.vim                  |  143
+ ftplugin/ATP_files/compile.py                  |  416
+ ftplugin/ATP_files/compile_ml.py               |  169
+ ftplugin/ATP_files/compiler.vim                |  773
+ ftplugin/ATP_files/dictionaries/SIunits        |  289
+ ftplugin/ATP_files/dictionaries/ams_dictionary |  161
+ ftplugin/ATP_files/dictionaries/dictionary     |  937
+ ftplugin/ATP_files/dictionaries/greek          |   38
+ ftplugin/ATP_files/helpfunctions.vim           |   26
+ ftplugin/ATP_files/makelatex.py                |  511
+ ftplugin/ATP_files/mappings.vim                |  498
+ ftplugin/ATP_files/menu.vim                    |    9
+ ftplugin/ATP_files/motion.vim                  |  142
+ ftplugin/ATP_files/options.vim                 |  765
+ ftplugin/ATP_files/project.vim                 |   26
+ ftplugin/ATP_files/search.vim                  |   39
+ ftplugin/ATP_files/url_query.py                |   24
+ ftplugin/ATP_files/various.vim                 |  202
+ ftplugin/tex_atp.vim                           |   15
+ ftplugin/toc_atp.vim                           |   14
  30 files changed, 4506 insertions(+), 1807 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9.3.5)
@@ -87,19 +87,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 9.3.5: see :help atp-news
 
- autoload/atplib.vim              |   14 +-
- doc/automatic-tex-plugin.txt     |  369 +++++++++++++++----------
- ftplugin/ATP_files/common.vim    |   63 ++++-
- ftplugin/ATP_files/compile.py    |   36 ++-
- ftplugin/ATP_files/compile_ml.py |   14 +-
- ftplugin/ATP_files/compiler.vim  |  143 ++++++++---
- ftplugin/ATP_files/mappings.vim  |  550 +++++++++++++++++++-------------------
- ftplugin/ATP_files/menu.vim      |    3 -
- ftplugin/ATP_files/motion.vim    |    7 +-
- ftplugin/ATP_files/options.vim   |   52 +++--
- ftplugin/ATP_files/project.vim   |    8 +-
- ftplugin/ATP_files/various.vim   |   44 ++--
- ftplugin/tex_atp.vim             |    6 +-
+ autoload/atplib.vim              |   14
+ doc/automatic-tex-plugin.txt     |  369
+ ftplugin/ATP_files/common.vim    |   63
+ ftplugin/ATP_files/compile.py    |   36
+ ftplugin/ATP_files/compile_ml.py |   14
+ ftplugin/ATP_files/compiler.vim  |  143
+ ftplugin/ATP_files/mappings.vim  |  550
+ ftplugin/ATP_files/menu.vim      |    3
+ ftplugin/ATP_files/motion.vim    |    7
+ ftplugin/ATP_files/options.vim   |   52
+ ftplugin/ATP_files/project.vim   |    8
+ ftplugin/ATP_files/various.vim   |   44
+ ftplugin/tex_atp.vim             |    6
  13 files changed, 764 insertions(+), 545 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9.3)
@@ -109,19 +109,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 9.3: see :help atp-news for changes.
 
- autoload/atplib.vim             |   50 ++--
- doc/automatic-tex-plugin.txt    |  638 ++++++++++++++++++++-------------------
- ftplugin/ATP_files/common.vim   |   21 +-
- ftplugin/ATP_files/compile.py   |   22 +-
- ftplugin/ATP_files/compiler.vim |   54 +++-
- ftplugin/ATP_files/mappings.vim |   88 +++++--
- ftplugin/ATP_files/motion.vim   |  281 +++++++++++------
- ftplugin/ATP_files/options.vim  |  243 +++++++++++-----
- ftplugin/ATP_files/project.vim  |   30 +-
- ftplugin/ATP_files/search.vim   |    4 +-
- ftplugin/ATP_files/various.vim  |  113 +------
- ftplugin/bib_atp.vim            |    4 +-
- ftplugin/tex_atp.vim            |   63 ++--
+ autoload/atplib.vim             |   50
+ doc/automatic-tex-plugin.txt    |  638
+ ftplugin/ATP_files/common.vim   |   21
+ ftplugin/ATP_files/compile.py   |   22
+ ftplugin/ATP_files/compiler.vim |   54
+ ftplugin/ATP_files/mappings.vim |   88
+ ftplugin/ATP_files/motion.vim   |  281
+ ftplugin/ATP_files/options.vim  |  243
+ ftplugin/ATP_files/project.vim  |   30
+ ftplugin/ATP_files/search.vim   |    4
+ ftplugin/ATP_files/various.vim  |  113
+ ftplugin/bib_atp.vim            |    4
+ ftplugin/tex_atp.vim            |   63
  13 files changed, 911 insertions(+), 700 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9.2.7)
@@ -133,17 +133,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - This update contains several small changes and one important fix (for those who do not use bibtex). See :help atp-news.
 
- autoload/atplib.vim                 |   24 ++-
- doc/automatic-tex-plugin.txt        |  344 ++++++++++++++++++++--------------
- ftplugin/ATP_files/atp_RevSearch.py |    5 +-
- ftplugin/ATP_files/compile.py       |   26 ++--
- ftplugin/ATP_files/compiler.vim     |   47 +++---
- ftplugin/ATP_files/mappings.vim     |   82 +++++----
- ftplugin/ATP_files/motion.vim       |    4 +-
- ftplugin/ATP_files/options.vim      |  113 ++++++++----
- ftplugin/ATP_files/url_query.py     |    2 +-
- ftplugin/ATP_files/various.vim      |  242 ++++++++++++++-----------
- ftplugin/tex_atp.vim                |    2 +-
+ autoload/atplib.vim                 |   24
+ doc/automatic-tex-plugin.txt        |  344
+ ftplugin/ATP_files/atp_RevSearch.py |    5
+ ftplugin/ATP_files/compile.py       |   26
+ ftplugin/ATP_files/compiler.vim     |   47
+ ftplugin/ATP_files/mappings.vim     |   82
+ ftplugin/ATP_files/motion.vim       |    4
+ ftplugin/ATP_files/options.vim      |  113
+ ftplugin/ATP_files/url_query.py     |    2
+ ftplugin/ATP_files/various.vim      |  242
+ ftplugin/tex_atp.vim                |    2
  11 files changed, 526 insertions(+), 365 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9.2)
@@ -159,31 +159,31 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - progress bar for compelation
     - UpdateATP[!]    = to get new Stable/Unstable release directly from SourceForge project hosting site.
 
- autoload/atplib.vim                      |  482 +++++++++++---
- doc/automatic-tex-plugin.txt             | 1075 ++++++++++++++++++------------
- doc/latexhelp.txt                        |   10 +
- ftplugin/ATP_files/LatexBox_common.vim   |    4 +-
- ftplugin/ATP_files/LatexBox_complete.vim |    4 +-
- ftplugin/ATP_files/LatexBox_latexmk.vim  |   12 +-
- ftplugin/ATP_files/atp_RevSearch.py      |   43 +-
- ftplugin/ATP_files/common.vim            |   58 ++-
- ftplugin/ATP_files/compile.py            |  462 +++++++++++++
- ftplugin/ATP_files/compile_ml.py         |  163 +++++
- ftplugin/ATP_files/compiler.vim          |  714 ++++++++++++++-------
- ftplugin/ATP_files/helpfunctions.vim     |    6 +-
- ftplugin/ATP_files/mappings.vim          |   61 +-
- ftplugin/ATP_files/menu.vim              |    8 +-
- ftplugin/ATP_files/motion.vim            |  247 +++++---
- ftplugin/ATP_files/options.vim           |  373 +++++++++--
- ftplugin/ATP_files/project.vim           |   28 +-
- ftplugin/ATP_files/search.vim            |   69 ++-
- ftplugin/ATP_files/url_query.py          |    9 +
- ftplugin/ATP_files/various.vim           |  450 +++++++++++--
- ftplugin/bib_atp.vim                     |   20 +-
- ftplugin/bibsearch_atp.vim               |    5 +-
- ftplugin/fd_atp.vim                      |    3 +-
- ftplugin/tex_atp.vim                     |   10 +-
- ftplugin/toc_atp.vim                     |  118 +++-
+ autoload/atplib.vim                      |  482
+ doc/automatic-tex-plugin.txt             | 1075
+ doc/latexhelp.txt                        |   10
+ ftplugin/ATP_files/LatexBox_common.vim   |    4
+ ftplugin/ATP_files/LatexBox_complete.vim |    4
+ ftplugin/ATP_files/LatexBox_latexmk.vim  |   12
+ ftplugin/ATP_files/atp_RevSearch.py      |   43
+ ftplugin/ATP_files/common.vim            |   58
+ ftplugin/ATP_files/compile.py            |  462
+ ftplugin/ATP_files/compile_ml.py         |  163
+ ftplugin/ATP_files/compiler.vim          |  714
+ ftplugin/ATP_files/helpfunctions.vim     |    6
+ ftplugin/ATP_files/mappings.vim          |   61
+ ftplugin/ATP_files/menu.vim              |    8
+ ftplugin/ATP_files/motion.vim            |  247
+ ftplugin/ATP_files/options.vim           |  373
+ ftplugin/ATP_files/project.vim           |   28
+ ftplugin/ATP_files/search.vim            |   69
+ ftplugin/ATP_files/url_query.py          |    9
+ ftplugin/ATP_files/various.vim           |  450
+ ftplugin/bib_atp.vim                     |   20
+ ftplugin/bibsearch_atp.vim               |    5
+ ftplugin/fd_atp.vim                      |    3
+ ftplugin/tex_atp.vim                     |   10
+ ftplugin/toc_atp.vim                     |  118
  25 files changed, 3372 insertions(+), 1062 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9.1.1)
@@ -193,16 +193,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 9.1.1: See ver 9.1 (important fix in doc file, thanks to I.Lopez)
 
- autoload/atplib.vim                      |   41 ++++-
- doc/automatic-tex-plugin.txt             |  289 +++++++++++++++------------
- ftplugin/ATP_files/LatexBox_complete.vim |    2 +-
- ftplugin/ATP_files/atp_RevSearch.py      |   34 +++
- ftplugin/ATP_files/compiler.vim          |  329 +++++++++++++++++++++---------
- ftplugin/ATP_files/mappings.vim          |    4 +
- ftplugin/ATP_files/menu.vim              |   18 +-
- ftplugin/ATP_files/options.vim           |  185 ++++++++---------
- ftplugin/ATP_files/various.vim           |   28 ++--
- ftplugin/tex_atp.vim                     |   12 +-
+ autoload/atplib.vim                      |   41
+ doc/automatic-tex-plugin.txt             |  289
+ ftplugin/ATP_files/LatexBox_complete.vim |    2
+ ftplugin/ATP_files/atp_RevSearch.py      |   34
+ ftplugin/ATP_files/compiler.vim          |  329
+ ftplugin/ATP_files/mappings.vim          |    4
+ ftplugin/ATP_files/menu.vim              |   18
+ ftplugin/ATP_files/options.vim           |  185
+ ftplugin/ATP_files/various.vim           |   28
+ ftplugin/tex_atp.vim                     |   12
  10 files changed, 586 insertions(+), 356 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9.0)
@@ -214,38 +214,38 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     See :h atp-news for changes [ there are some NEW features :), and many fixes! ]
 
- README                                   |   39 +
- autoload/atplib.vim                      | 4456 ++++++++++++++++++++++++++++++
- colors/coots-beauty-256.vim              |  262 ++
- doc/automatic-tex-plugin.txt             | 3875 ++++++++++++++++++++++++++
- doc/bibtex_atp.txt                       |   62 +
- doc/latexhelp.txt                        | 2437 ++++++++++++++++
- ftplugin/ATP_files/LatexBox_common.vim   |  313 +++
- ftplugin/ATP_files/LatexBox_complete.vim |  383 +++
- ftplugin/ATP_files/LatexBox_indent.vim   |   84 +
- ftplugin/ATP_files/LatexBox_latexmk.vim  |  219 ++
- ftplugin/ATP_files/LatexBox_mappings.vim |   24 +
- ftplugin/ATP_files/LatexBox_motion.vim   |  873 ++++++
- ftplugin/ATP_files/abbreviations.vim     |  174 ++
- ftplugin/ATP_files/common.vim            |  743 +++++
- ftplugin/ATP_files/compiler.vim          | 1434 ++++++++++
- ftplugin/ATP_files/helpfunctions.vim     |  170 ++
- ftplugin/ATP_files/mappings.vim          |  475 ++++
- ftplugin/ATP_files/menu.vim              |  252 ++
- ftplugin/ATP_files/motion.vim            | 1537 ++++++++++
- ftplugin/ATP_files/options.vim           | 1938 +++++++++++++
- ftplugin/ATP_files/project.vim           |  754 +++++
- ftplugin/ATP_files/search.vim            | 1205 ++++++++
- ftplugin/ATP_files/various.vim           | 1920 +++++++++++++
- ftplugin/ATP_files/vimcomplete.bst       |  306 ++
- ftplugin/bib_atp.vim                     |  311 +++
- ftplugin/bibsearch_atp.vim               |  135 +
- ftplugin/fd_atp.vim                      |   77 +
- ftplugin/plaintex_atp.vim                |    7 +
- ftplugin/tex_atp.vim                     |  128 +
- ftplugin/toc_atp.vim                     |  721 +++++
- syntax/bibsearch_atp.vim                 |  100 +
- syntax/labels_atp.vim                    |   16 +
- syntax/log_atp.vim                       |  123 +
- syntax/toc_atp.vim                       |   31 +
+ README                                   |   39
+ autoload/atplib.vim                      | 4456
+ colors/coots-beauty-256.vim              |  262
+ doc/automatic-tex-plugin.txt             | 3875
+ doc/bibtex_atp.txt                       |   62
+ doc/latexhelp.txt                        | 2437
+ ftplugin/ATP_files/LatexBox_common.vim   |  313
+ ftplugin/ATP_files/LatexBox_complete.vim |  383
+ ftplugin/ATP_files/LatexBox_indent.vim   |   84
+ ftplugin/ATP_files/LatexBox_latexmk.vim  |  219
+ ftplugin/ATP_files/LatexBox_mappings.vim |   24
+ ftplugin/ATP_files/LatexBox_motion.vim   |  873
+ ftplugin/ATP_files/abbreviations.vim     |  174
+ ftplugin/ATP_files/common.vim            |  743
+ ftplugin/ATP_files/compiler.vim          | 1434
+ ftplugin/ATP_files/helpfunctions.vim     |  170
+ ftplugin/ATP_files/mappings.vim          |  475
+ ftplugin/ATP_files/menu.vim              |  252
+ ftplugin/ATP_files/motion.vim            | 1537
+ ftplugin/ATP_files/options.vim           | 1938
+ ftplugin/ATP_files/project.vim           |  754
+ ftplugin/ATP_files/search.vim            | 1205
+ ftplugin/ATP_files/various.vim           | 1920
+ ftplugin/ATP_files/vimcomplete.bst       |  306
+ ftplugin/bib_atp.vim                     |  311
+ ftplugin/bibsearch_atp.vim               |  135
+ ftplugin/fd_atp.vim                      |   77
+ ftplugin/plaintex_atp.vim                |    7
+ ftplugin/tex_atp.vim                     |  128
+ ftplugin/toc_atp.vim                     |  721
+ syntax/bibsearch_atp.vim                 |  100
+ syntax/labels_atp.vim                    |   16
+ syntax/log_atp.vim                       |  123
+ syntax/toc_atp.vim                       |   31
  34 files changed, 25584 insertions(+), 0 deletions(-)

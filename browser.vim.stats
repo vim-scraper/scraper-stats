@@ -7,28 +7,28 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Mainly bug fixes. New features:- Added the uri history://n to access the n-th newest item in the history.   Similarly, the :History command may now accecpt a numeric argument.- The last access time for each link now appears on the history page- Added the g:browser_connect_timeout variable to control when we give up   connecting to a remote site- Added support for homepage in the plugin. :Browse and similar commands can   now be called with no arguments.- Changed the loading of the plugin so that vim startup time is improved.- Added a command for showing the current mappings, and a command to extend   this list for user defined mappings
 
- ChangeLog                           |   30 +
- bin/gvimbrowse.1                    |   13 +-
- bin/vimbrowse.1                     |   13 +-
- bin/vimbrowse.pl                    |   23 +-
- browser.html                        | 1753 +++++++++++++++++++++++++++++++++++
- browser.pod                         |  326 ++++++--
- doc/browser.txt                     |  368 ++++++--
- extra/browser/plugin/extra.vim      |   64 ++
- extra/browser/plugin/menus.vim      |   19 +
- extra/browser/plugin/short.vim      |   49 +
- extra/ftplugin/browser/mappings.vim |   41 +-
- ftplugin/browser.vim                |   49 +-
- perl/HTML/FormatText/Vim.pm         |   80 ++-
- perl/VIM/Browser.pm                 |  209 +++--
- perl/Vim.pm                         |   36 +-
- plugin/browser.vim                  |  375 +-------
- plugin/browser_extra.vim            |   62 +-
- plugin/browser_menus.vim            |   15 +-
- plugin/browser_short.vim            |   59 +-
- syntax/browser.vim                  |   10 +-
- syntax/browserBkmkPage.vim          |    7 +-
- vim/browser/plugin/main.vim         |  366 ++++++++
+ ChangeLog                           |   30
+ bin/gvimbrowse.1                    |   13
+ bin/vimbrowse.1                     |   13
+ bin/vimbrowse.pl                    |   23
+ browser.html                        | 1753
+ browser.pod                         |  326
+ doc/browser.txt                     |  368
+ extra/browser/plugin/extra.vim      |   64
+ extra/browser/plugin/menus.vim      |   19
+ extra/browser/plugin/short.vim      |   49
+ extra/ftplugin/browser/mappings.vim |   41
+ ftplugin/browser.vim                |   49
+ perl/HTML/FormatText/Vim.pm         |   80
+ perl/VIM/Browser.pm                 |  209
+ perl/Vim.pm                         |   36
+ plugin/browser.vim                  |  375
+ plugin/browser_extra.vim            |   62
+ plugin/browser_menus.vim            |   15
+ plugin/browser_short.vim            |   59
+ syntax/browser.vim                  |   10
+ syntax/browserBkmkPage.vim          |    7
+ vim/browser/plugin/main.vim         |  366
  22 files changed, 3230 insertions(+), 737 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -40,29 +40,29 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * Added a sidebar* Added context menu entries* Support for opening links with external applications (using mailcap)* The conceal patch is no longer used. The synmark.vim plugin is used instead.* Global browsing history* Both history and bookmarks can be viewed as browser pages* More support for inline images (viewing, etc.)* Page can be updated when modifying its source* Use vim commands as scheme handlers* Some improvements to standalone versions (vimbrowse)* Improved documentation, added glossary
 
- ChangeLog                           |   44 +
- INSTALL                             |   21 +-
- README.orig                         |   11 +-
- bin/gvimbrowse.1                    |  233 ++++
- bin/vimbrowse.1                     |   43 +-
- bin/vimbrowse.pl                    |  100 ++-
- browser.pod                         |  972 +++++++++++++----
- doc/browser.txt                     | 1222 ++++++++++++++--------
- extra/browser/addressbooks/_search  |    1 +
- extra/ftplugin/browser/mappings.vim |   29 +-
- ftplugin/browser.vim                |   14 +-
- perl/HTML/FormatText/Vim.pm         |  319 ++++---
- perl/Mailcap.pm                     | 1438 +++++++++++++++++++++++++
- perl/VIM/Browser.pm                 | 1986 ++++++++++++++++++++++++++---------
- perl/Vim.pm                         |  192 ++++-
- plugin/browser.vim                  |  140 ++-
- plugin/browser_extra.vim            |   65 +-
- plugin/browser_menus.vim            |   28 +
- plugin/browser_short.vim            |   25 +-
- syntax/browser.vim                  |  143 ++--
- syntax/browserBkmkPage.vim          |   53 +
- syntax/browser_highlight.vim        |   18 -
- vim/browser/mailcap                 |   11 +
+ ChangeLog                           |   44
+ INSTALL                             |   21
+ README.orig                         |   11
+ bin/gvimbrowse.1                    |  233
+ bin/vimbrowse.1                     |   43
+ bin/vimbrowse.pl                    |  100
+ browser.pod                         |  972
+ doc/browser.txt                     | 1222
+ extra/browser/addressbooks/_search  |    1
+ extra/ftplugin/browser/mappings.vim |   29
+ ftplugin/browser.vim                |   14
+ perl/HTML/FormatText/Vim.pm         |  319
+ perl/Mailcap.pm                     | 1438
+ perl/VIM/Browser.pm                 | 1986
+ perl/Vim.pm                         |  192
+ plugin/browser.vim                  |  140
+ plugin/browser_extra.vim            |   65
+ plugin/browser_menus.vim            |   28
+ plugin/browser_short.vim            |   25
+ syntax/browser.vim                  |  143
+ syntax/browserBkmkPage.vim          |   53
+ syntax/browser_highlight.vim        |   18
+ vim/browser/mailcap                 |   11
  23 files changed, 5565 insertions(+), 1543 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -74,23 +74,23 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Main Improvements:  - Added support for all inputs in a form (file, textarea, multi-options)  - Improved searching capabilities: Added the possibility to customize the     search engine, added :Dictionary and :Thesaurus commands. The searching     commands can now have no arguments, taking the word under the cursor, or      the visaully select words as arguments, instead (Thanks to Aditya Mahajan     for the ideas)  - The browser buffer is now non-modifiable by default. It becomes     modifiable only when changing form input values (again thanks to Aditya     Mahajan)  - Added the possibility to save inline images to a file  - Removed the dependence on HTML-Format. The only dependency that remains     for formatting is HTML::TreeBuilder (which is more widely available).  - There is no longer need to patch HTML::TreeBuilder to view encodings     correctly.  - I think vimbrowse.pl finally works on windows (didn't test, though). Some     environment variables might need to be set.  - Various other features and bug fixes - see the ChangeLog for details
 
- ChangeLog                           |   40 ++
- INSTALL                             |    6 +-
- README.encoding                     |   24 +-
- bin/vimbrowse.pl                    |   23 +-
- browser.pod                         |  276 ++++++++++---
- doc/browser.txt                     |  249 +++++++++---
- extra/browser/addressbooks/_search  |    7 +
- extra/ftplugin/browser/mappings.vim |   17 +-
- ftplugin/browser.vim                |   15 +-
- perl/HTML/FormatText/Vim.pm         |  740 +++++++++++++++++++++++++++++------
- perl/VIM/Browser.pm                 |  308 ++++++++++++---
- perl/Vim.pm                         |   10 +-
- plugin/browser.vim                  |   47 ++-
- plugin/browser_extra.vim            |   43 ++-
- plugin/browser_short.vim            |   10 +-
- syntax/browser.vim                  |   13 +-
- syntax/browser_highlight.vim        |    6 +-
+ ChangeLog                           |   40
+ INSTALL                             |    6
+ README.encoding                     |   24
+ bin/vimbrowse.pl                    |   23
+ browser.pod                         |  276
+ doc/browser.txt                     |  249
+ extra/browser/addressbooks/_search  |    7
+ extra/ftplugin/browser/mappings.vim |   17
+ ftplugin/browser.vim                |   15
+ perl/HTML/FormatText/Vim.pm         |  740
+ perl/VIM/Browser.pm                 |  308
+ perl/Vim.pm                         |   10
+ plugin/browser.vim                  |   47
+ plugin/browser_extra.vim            |   43
+ plugin/browser_short.vim            |   10
+ syntax/browser.vim                  |   13
+ syntax/browser_highlight.vim        |    6
  17 files changed, 1472 insertions(+), 362 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
@@ -100,8 +100,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.3.1: Fixed silly bug
 
- ChangeLog           |    5 +++++
- perl/VIM/Browser.pm |    4 ++--
+ ChangeLog           |    5
+ perl/VIM/Browser.pm |    4
  2 files changed, 7 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -114,22 +114,22 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Bugfix release: encoding works correctly; setting options has effect also after
     the plugin is loaded; Various other fixes - see the ChangeLog for details
 
- ChangeLog                           |   24 ++
- README.encoding                     |   44 ++
- bin/vimbrowse.1                     |    2 +-
- bin/vimbrowse.pl                    |   19 +-
- browser.pod                         |   11 +-
- doc/browser.txt                     |   35 +-
- extra/ftplugin/browser/mappings.vim |    5 +-
- ftplugin/browser.vim                |    4 +-
- perl/HTML/FormatText/Vim.pm         |  144 ++++++--
- perl/VIM/Browser.pm                 |  750 +++++++++++++++++++----------------
- perl/Vim.pm                         |  118 ++++++-
- plugin/browser.vim                  |   20 +-
- plugin/browser_extra.vim            |    4 +-
- plugin/browser_short.vim            |    4 +-
- syntax/browser.vim                  |    6 +-
- syntax/browser_highlight.vim        |    4 +-
+ ChangeLog                           |   24
+ README.encoding                     |   44
+ bin/vimbrowse.1                     |    2
+ bin/vimbrowse.pl                    |   19
+ browser.pod                         |   11
+ doc/browser.txt                     |   35
+ extra/ftplugin/browser/mappings.vim |    5
+ ftplugin/browser.vim                |    4
+ perl/HTML/FormatText/Vim.pm         |  144
+ perl/VIM/Browser.pm                 |  750
+ perl/Vim.pm                         |  118
+ plugin/browser.vim                  |   20
+ plugin/browser_extra.vim            |    4
+ plugin/browser_short.vim            |    4
+ syntax/browser.vim                  |    6
+ syntax/browser_highlight.vim        |    4
  16 files changed, 775 insertions(+), 419 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -150,23 +150,23 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     See the file 'ChangeLog' for some more details
 
- ChangeLog                           |   27 ++
- INSTALL                             |   59 ++++-
- README.orig                         |    5 +-
- bin/vimbrowse.1                     |  224 ++++++++++++++++
- bin/vimbrowse.pl                    |  203 ++++++++++++++
- browser.pod                         |  382 ++++++++++++++++++++++++--
- doc/browser.txt                     |  506 +++++++++++++++++++++++++++--------
- extra/ftplugin/browser/mappings.vim |   25 ++
- ftplugin/browser.vim                |   21 +-
- perl/HTML/FormatText/Vim.pm         |  184 ++++++++++++-
- perl/VIM/Browser.pm                 |  457 +++++++++++++++++++++++++-------
- perl/Vim.pm                         |   17 +-
- plugin/browser.vim                  |  182 ++++++++-----
- plugin/browser_extra.vim            |   45 +++
- plugin/browser_short.vim            |   46 ++++
- syntax/browser.vim                  |   33 ++-
- syntax/browser_highlight.vim        |   16 ++
+ ChangeLog                           |   27
+ INSTALL                             |   59
+ README.orig                         |    5
+ bin/vimbrowse.1                     |  224
+ bin/vimbrowse.pl                    |  203
+ browser.pod                         |  382
+ doc/browser.txt                     |  506
+ extra/ftplugin/browser/mappings.vim |   25
+ ftplugin/browser.vim                |   21
+ perl/HTML/FormatText/Vim.pm         |  184
+ perl/VIM/Browser.pm                 |  457
+ perl/Vim.pm                         |   17
+ plugin/browser.vim                  |  182
+ plugin/browser_extra.vim            |   45
+ plugin/browser_short.vim            |   46
+ syntax/browser.vim                  |   33
+ syntax/browser_highlight.vim        |   16
  17 files changed, 2093 insertions(+), 339 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1@1)
@@ -176,7 +176,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1@1: Fixed the INSTALL file - forgot one dependancy
 
- INSTALL |    9 +++++----
+ INSTALL |    9
  1 files changed, 5 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -186,15 +186,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- INSTALL                     |   34 ++
- README                      |   22 +
- README.orig                 |   23 +
- browser.pod                 |  423 +++++++++++++++++
- doc/browser.txt             |  398 ++++++++++++++++
- ftplugin/browser.vim        |   25 +
- perl/HTML/FormatText/Vim.pm |  251 ++++++++++
- perl/VIM/Browser.pm         | 1085 +++++++++++++++++++++++++++++++++++++++++++
- perl/Vim.pm                 |  147 ++++++
- plugin/browser.vim          |  223 +++++++++
- syntax/browser.vim          |  113 +++++
+ INSTALL                     |   34
+ README                      |   22
+ README.orig                 |   23
+ browser.pod                 |  423
+ doc/browser.txt             |  398
+ ftplugin/browser.vim        |   25
+ perl/HTML/FormatText/Vim.pm |  251
+ perl/VIM/Browser.pm         | 1085
+ perl/Vim.pm                 |  147
+ plugin/browser.vim          |  223
+ syntax/browser.vim          |  113
  11 files changed, 2744 insertions(+), 0 deletions(-)

@@ -11,10 +11,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     (This script _might_ run okay on Vim 7.0/7.1, but it has not been tested -- 7.3 is preferred.)
 
  bitmaps/Chrome.bmp          |  Bin 0 -> 1350 bytes
- bitmaps/Chrome.xpm          |  231 +++++++++++++++++++++++++++++++++++++++++++
- doc/HTML.txt                |   11 ++-
- ftplugin/html/HTML.vim      |   44 ++++++---
- plugin/browser_launcher.vim |   50 ++++++----
+ bitmaps/Chrome.xpm          |  231
+ doc/HTML.txt                |   11
+ ftplugin/html/HTML.vim      |   44
+ plugin/browser_launcher.vim |   50
  5 files changed, 304 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.36.4)
@@ -27,8 +27,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - More character entity mappings
     - Minor changes
 
- doc/HTML.txt           |    9 ++-
- ftplugin/html/HTML.vim |  144 ++++++++++++++++++++++++++----------------------
+ doc/HTML.txt           |    9
+ ftplugin/html/HTML.vim |  144
  2 files changed, 85 insertions(+), 68 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.36.3)
@@ -39,54 +39,54 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Version 0.36.3: - Various minor fixes
 
  bitmaps/Blist.bmp           |  Bin 1220 -> 334 bytes
- bitmaps/Blist.xpm           |   51 ++++-----
+ bitmaps/Blist.xpm           |   51
  bitmaps/Bold.bmp            |  Bin 1252 -> 134 bytes
- bitmaps/Bold.xpm            |   49 ++++-----
+ bitmaps/Bold.xpm            |   49
  bitmaps/Break.bmp           |  Bin 142 -> 134 bytes
- bitmaps/Break.xpm           |   40 +++----
+ bitmaps/Break.xpm           |   40
  bitmaps/Browser.bmp         |  Bin 1530 -> 334 bytes
- bitmaps/Browser.xpm         |   47 ++++----
+ bitmaps/Browser.xpm         |   47
  bitmaps/Firefox.bmp         |  Bin 654 -> 334 bytes
- bitmaps/Firefox.xpm         |  268 +++++++++++++++++++++++++++++++------------
+ bitmaps/Firefox.xpm         |  268
  bitmaps/Hline.bmp           |  Bin 1176 -> 334 bytes
- bitmaps/Hline.xpm           |   53 ++++-----
+ bitmaps/Hline.xpm           |   53
  bitmaps/IE.bmp              |  Bin 322 -> 334 bytes
- bitmaps/IE.xpm              |  117 ++++---------------
+ bitmaps/IE.xpm              |  117
  bitmaps/Image.bmp           |  Bin 1376 -> 334 bytes
- bitmaps/Image.xpm           |   63 +++++------
+ bitmaps/Image.xpm           |   63
  bitmaps/Italic.bmp          |  Bin 1252 -> 134 bytes
- bitmaps/Italic.xpm          |   49 ++++-----
+ bitmaps/Italic.xpm          |   49
  bitmaps/Link.bmp            |  Bin 1360 -> 334 bytes
- bitmaps/Link.xpm            |   51 ++++-----
+ bitmaps/Link.xpm            |   51
  bitmaps/Litem.bmp           |  Bin 142 -> 134 bytes
- bitmaps/Litem.xpm           |   42 +++----
+ bitmaps/Litem.xpm           |   42
  bitmaps/Lynx.bmp            |  Bin 1548 -> 334 bytes
- bitmaps/Lynx.xpm            |   55 +++++-----
+ bitmaps/Lynx.xpm            |   55
  bitmaps/Mozilla.bmp         |  Bin 306 -> 334 bytes
- bitmaps/Mozilla.xpm         |   40 +++----
+ bitmaps/Mozilla.xpm         |   40
  bitmaps/Netscape.bmp        |  Bin 1486 -> 334 bytes
- bitmaps/Netscape.xpm        |   63 +++++------
+ bitmaps/Netscape.xpm        |   63
  bitmaps/Nlist.bmp           |  Bin 1232 -> 134 bytes
- bitmaps/Nlist.xpm           |   49 ++++-----
+ bitmaps/Nlist.xpm           |   49
  bitmaps/Opera.bmp           |  Bin 1434 -> 334 bytes
- bitmaps/Opera.xpm           |   40 +++----
+ bitmaps/Opera.xpm           |   40
  bitmaps/Paragraph.bmp       |  Bin 142 -> 134 bytes
- bitmaps/Paragraph.xpm       |   40 +++----
+ bitmaps/Paragraph.xpm       |   40
  bitmaps/Preview.bmp         |  Bin 314 -> 334 bytes
- bitmaps/Preview.xpm         |   44 ++++----
+ bitmaps/Preview.xpm         |   44
  bitmaps/Table.bmp           |  Bin 1466 -> 334 bytes
- bitmaps/Table.xpm           |   55 ++++-----
+ bitmaps/Table.xpm           |   55
  bitmaps/Target.bmp          |  Bin 1288 -> 334 bytes
- bitmaps/Target.xpm          |   51 ++++-----
+ bitmaps/Target.xpm          |   51
  bitmaps/Template.bmp        |  Bin 1530 -> 334 bytes
- bitmaps/Template.xpm        |   61 +++++------
+ bitmaps/Template.xpm        |   61
  bitmaps/Underline.bmp       |  Bin 1256 -> 334 bytes
- bitmaps/Underline.xpm       |   51 ++++-----
+ bitmaps/Underline.xpm       |   51
  bitmaps/w3m.bmp             |  Bin 1316 -> 334 bytes
- bitmaps/w3m.xpm             |   42 +++----
- doc/HTML.txt                |   61 ++++++-----
- ftplugin/html/HTML.vim      |   59 +++++++---
- plugin/browser_launcher.vim |  129 ++++++++++++---------
+ bitmaps/w3m.xpm             |   42
+ doc/HTML.txt                |   61
+ ftplugin/html/HTML.vim      |   59
+ plugin/browser_launcher.vim |  129
  49 files changed, 855 insertions(+), 815 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.36.1)
@@ -100,10 +100,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Israel Chauca Fuentes provided MacOS browser control code
     - minor fixes and changes
 
- doc/HTML.txt                |   46 +++++++-
- ftplugin/html/HTML.vim      |   82 ++++++++++++---
- plugin/MangleImageTag.vim   |    7 +-
- plugin/browser_launcher.vim |  245 ++++++++++++++++++++++++++++++++++++------
+ doc/HTML.txt                |   46
+ ftplugin/html/HTML.vim      |   82
+ plugin/MangleImageTag.vim   |    7
+ plugin/browser_launcher.vim |  245
  4 files changed, 323 insertions(+), 57 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.35.1)
@@ -113,8 +113,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.35.1: - Try to safely escape shell commands
 
- ftplugin/html/HTML.vim      |   23 ++++++++++++++++----
- plugin/browser_launcher.vim |   46 +++++++++++++++++++++++++-----------------
+ ftplugin/html/HTML.vim      |   23
+ plugin/browser_launcher.vim |   46
  2 files changed, 45 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.35)
@@ -134,10 +134,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Miscellaneous fixes
     - Significant refactoring to make maintaining the plugin easier
 
- doc/HTML.txt                |  121 ++-
- ftplugin/html/HTML.vim      | 2579 ++++++++++++++++++++++---------------------
- plugin/MangleImageTag.vim   |   27 +-
- plugin/browser_launcher.vim |  422 +++----
+ doc/HTML.txt                |  121
+ ftplugin/html/HTML.vim      | 2579
+ plugin/MangleImageTag.vim   |   27
+ plugin/browser_launcher.vim |  422
  4 files changed, 1594 insertions(+), 1555 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.34)
@@ -151,9 +151,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       + MangleImageTag() used by ;mi mapping should now always compute correct size
       + Various code was simplified
 
- doc/HTML.txt              |   13 +--
- ftplugin/html/HTML.vim    |  318 ++++++++++++++++++++------------------------
- plugin/MangleImageTag.vim |  203 +++++++++++++----------------
+ doc/HTML.txt              |   13
+ ftplugin/html/HTML.vim    |  318
+ plugin/MangleImageTag.vim |  203
  3 files changed, 237 insertions(+), 297 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.33.1)
@@ -166,8 +166,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Character entities for arrows and the Greek alphabet added
     - This is the last version that will support Vim 6
 
- doc/HTML.txt           |  103 ++++++++++++++++++----
- ftplugin/html/HTML.vim |  228 +++++++++++++++++++++++++++++++++++++++++++++---
+ doc/HTML.txt           |  103
+ ftplugin/html/HTML.vim |  228
  2 files changed, 299 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.32.2)
@@ -186,8 +186,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       + :HTMLmappings reload/html/xhtml can force reloading of the entire script, or switch the mappings into html/xhtml mode
     - misc. minor fixes
 
- doc/HTML.txt           |   51 ++++++----
- ftplugin/html/HTML.vim |  242 +++++++++++++++++++++++++++++++++++++-----------
+ doc/HTML.txt           |   51
+ ftplugin/html/HTML.vim |  242
  2 files changed, 218 insertions(+), 75 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.30)
@@ -202,8 +202,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Added:
       + ;tH (<THEAD>), ;tf (<TFOOT>), and ;tb (<TBODY>) mappings added
 
- doc/HTML.txt           |   22 ++++++++++++++--------
- ftplugin/html/HTML.vim |   34 +++++++++++++++++++++++++++++-----
+ doc/HTML.txt           |   22
+ ftplugin/html/HTML.vim |   34
  2 files changed, 43 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.29.2)
@@ -218,7 +218,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Added:
       + Make the <html> tag include an xmlns attribute for XHTML
 
- ftplugin/html/HTML.vim |   78 ++++++++++++++++++++++++++++-------------------
+ ftplugin/html/HTML.vim |   78
  1 files changed, 46 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.29)
@@ -235,9 +235,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       + 'formatoptions' could make visual mappings behave wrong
     - Other minor additions and fixes
 
- doc/HTML.txt                |   70 +++++++++++---------
- ftplugin/html/HTML.vim      |  146 +++++++++++++++++++++++++++++++------------
- plugin/browser_launcher.vim |   55 +++++++++++-----
+ doc/HTML.txt                |   70
+ ftplugin/html/HTML.vim      |  146
+ plugin/browser_launcher.vim |   55
  3 files changed, 183 insertions(+), 88 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.28.2)
@@ -253,8 +253,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       + Add "Select Tag" and "Select Inner Tag" to the PopUp menu
       + Minor tweaks
 
- doc/HTML.txt           |   22 ++++++++--------
- ftplugin/html/HTML.vim |   66 ++++++++++++++++++++++++++++++-----------------
+ doc/HTML.txt           |   22
+ ftplugin/html/HTML.vim |   66
  2 files changed, 53 insertions(+), 35 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.28)
@@ -270,9 +270,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       + ;db -- default browser mapping for Windows
 
  bitmaps/Browser.bmp    |  Bin 0 -> 1530 bytes
- bitmaps/Browser.xpm    |   28 ++++++++++++++++
- doc/HTML.txt           |   11 ++++--
- ftplugin/html/HTML.vim |   85 ++++++++++++++++++++++++++++-------------------
+ bitmaps/Browser.xpm    |   28
+ doc/HTML.txt           |   11
+ ftplugin/html/HTML.vim |   85
  4 files changed, 87 insertions(+), 37 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.27.6)
@@ -289,8 +289,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       + ;;-style mapping for whatever g:html_map_leader is set to
       + Internal code changes
 
- doc/HTML.txt           |   34 ++-
- ftplugin/html/HTML.vim |  711 +++++++++++++++++++++++++-----------------------
+ doc/HTML.txt           |   34
+ ftplugin/html/HTML.vim |  711
  2 files changed, 390 insertions(+), 355 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.27.4)
@@ -306,8 +306,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Changed:
       + Moved ;ns / ;nns mappings to ;ne / ;nne, and moved ;nj mappings to ;ns
 
- doc/HTML.txt           |   77 +++++++++++++++++++++++++++++------------------
- ftplugin/html/HTML.vim |   62 ++++++++++++++++++++++++++------------
+ doc/HTML.txt           |   77
+ ftplugin/html/HTML.vim |   62
  2 files changed, 89 insertions(+), 50 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.27.1)
@@ -324,12 +324,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Minor changes and fixes
 
  bitmaps/Preview.bmp         |  Bin 0 -> 314 bytes
- bitmaps/Preview.xpm         |   28 ++++++++++++++++++++++++++++
+ bitmaps/Preview.xpm         |   28
  bitmaps/w3m.bmp             |  Bin 0 -> 1316 bytes
- bitmaps/w3m.xpm             |   33 +++++++++++++++++++++++++++++++++
- doc/HTML.txt                |   39 ++++++++++++++++++++++++++++++---------
- ftplugin/html/HTML.vim      |   43 ++++++++++++++++++++++++++++---------------
- plugin/browser_launcher.vim |   42 +++++++++++++++++++++++++++++++++++++++---
+ bitmaps/w3m.xpm             |   33
+ doc/HTML.txt                |   39
+ ftplugin/html/HTML.vim      |   43
+ plugin/browser_launcher.vim |   42
  7 files changed, 158 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.26.8)
@@ -345,9 +345,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       + Temporarily clear the 'comments' option for the ;js mapping so extraneous // comments weren't inserted
     - Various minor changes
 
- doc/HTML.txt              |    4 +-
- ftplugin/html/HTML.vim    |  138 +++++++++++++++++++++++----------------------
- plugin/MangleImageTag.vim |   17 ++++-
+ doc/HTML.txt              |    4
+ ftplugin/html/HTML.vim    |  138
+ plugin/MangleImageTag.vim |   17
  3 files changed, 85 insertions(+), 74 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.26.5)
@@ -366,8 +366,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       + visual and normal mode mappings for ;ob
     - Various minor changes and fixes
 
- doc/HTML.txt           |  200 ++++++++++++++++++++++++--------------------
- ftplugin/html/HTML.vim |  219 +++++++++++++++++++++++++++++++-----------------
+ doc/HTML.txt           |  200
+ ftplugin/html/HTML.vim |  219
  2 files changed, 251 insertions(+), 168 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.26)
@@ -384,8 +384,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       + Some recently added mappings weren't in the menu
       + Inserting the HTML template could trigger the "Press ENTER" prompt
 
- doc/HTML.txt           |   56 ++++++---
- ftplugin/html/HTML.vim |  330 +++++++++++++++++++++++++++++++-----------------
+ doc/HTML.txt           |   56
+ ftplugin/html/HTML.vim |  330
  2 files changed, 252 insertions(+), 134 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.25.5)
@@ -401,8 +401,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       + ;& in insert mode inserts a literal &
     - Minor changes
 
- doc/HTML.txt           |   47 +++++++++++++++++--------
- ftplugin/html/HTML.vim |   89 +++++++++++++++++++++++++++--------------------
+ doc/HTML.txt           |   47
+ ftplugin/html/HTML.vim |   89
  2 files changed, 83 insertions(+), 53 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.25.1)
@@ -418,8 +418,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - %time%, %time12%, and %time24% template tokens added, and %date% token is now customizable
     - b:do_xhtml_mappings was being ignored
 
- doc/HTML.txt           |   94 +++++++++++++++++++++----------
- ftplugin/html/HTML.vim |  143 +++++++++++++++++++++++++++++++++--------------
+ doc/HTML.txt           |   94
+ ftplugin/html/HTML.vim |  143
  2 files changed, 163 insertions(+), 74 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.24)
@@ -433,9 +433,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - g:no_html_tab_mapping can be defined to 'move' the <tab> mappings to ;<tab>
     - misc. fixes and additions
 
- doc/HTML.txt              |   71 ++++++++++++++++++++++++++++-----------------
- ftplugin/html/HTML.vim    |   34 +++++++++++++++------
- plugin/MangleImageTag.vim |    9 ++++--
+ doc/HTML.txt              |   71
+ ftplugin/html/HTML.vim    |   34
+ plugin/MangleImageTag.vim |    9
  3 files changed, 74 insertions(+), 40 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.23.2)
@@ -449,8 +449,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fix a couple of the forms mappings
     - Documentation updates and fixes
 
- doc/HTML.txt           |  372 +++++++++++++++++++++++++-----------------------
- ftplugin/html/HTML.vim |   16 ++-
+ doc/HTML.txt           |  372
+ ftplugin/html/HTML.vim |   16
  2 files changed, 205 insertions(+), 183 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.23.1)
@@ -463,8 +463,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Dynamic charset support for the template and the ;ct mapping, based on the 'fileencoding', and 'encoding' options (but the conversion table is limited, see ":help html-author-notes")
     - <option> tag wasn't properly closed
 
- doc/HTML.txt           |   83 +++++++++++++++++++++++++++++-------------------
- ftplugin/html/HTML.vim |   75 +++++++++++++++++++++++++++++++++++-------
+ doc/HTML.txt           |   83
+ ftplugin/html/HTML.vim |   75
  2 files changed, 112 insertions(+), 46 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.22.2)
@@ -478,9 +478,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - ;me mapping wasn't properly positioning the cursor
     - Minor documentation fixes
 
- doc/HTML.txt                |   36 ++++++++++++++++++------------------
- ftplugin/html/HTML.vim      |   24 ++++++++++++------------
- plugin/browser_launcher.vim |    2 +-
+ doc/HTML.txt                |   36
+ ftplugin/html/HTML.vim      |   24
+ plugin/browser_launcher.vim |    2
  3 files changed, 31 insertions(+), 31 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.22.1)
@@ -493,8 +493,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Make the leader of the ;-mappings configurable with g:html_map_leader
     - Fix error when g:no_html_toolbar is set
 
- doc/HTML.txt           |   39 ++-
- ftplugin/html/HTML.vim | 1345 ++++++++++++++++++++++++------------------------
+ doc/HTML.txt           |   39
+ ftplugin/html/HTML.vim | 1345
  2 files changed, 707 insertions(+), 677 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.21.2)
@@ -507,7 +507,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - ;im mapping wasn't properly positioning the cursor
     - Minor improvement to the HTMLnextInsertPoint function used by the tab mapping
 
- ftplugin/html/HTML.vim |   12 ++++++------
+ ftplugin/html/HTML.vim |   12
  1 files changed, 6 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.21)
@@ -520,10 +520,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Basic support for XHTML added--see ":help g:do_xhtml_mappings"
     - Misc. minor fixes
 
- doc/HTML.txt                |  144 ++++++++++++++++++++---------------
- ftplugin/html/HTML.vim      |  176 +++++++++++++++++++++++++-----------------
- plugin/MangleImageTag.vim   |   29 +++++++-
- plugin/browser_launcher.vim |   75 +++++++++---------
+ doc/HTML.txt                |  144
+ ftplugin/html/HTML.vim      |  176
+ plugin/MangleImageTag.vim   |   29
+ plugin/browser_launcher.vim |   75
  4 files changed, 252 insertions(+), 172 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.20.4)
@@ -539,10 +539,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Code improvements and bug fixes.
 
  bitmaps/Firefox.bmp         |  Bin 0 -> 654 bytes
- bitmaps/Firefox.xpm         |   74 ++++++++++
- doc/HTML.txt                |   24 +++-
- ftplugin/html/HTML.vim      |  326 ++++++++++++++++++++++++++-----------------
- plugin/browser_launcher.vim |  235 +++++++++++++++++++++++++------
+ bitmaps/Firefox.xpm         |   74
+ doc/HTML.txt                |   24
+ ftplugin/html/HTML.vim      |  326
+ plugin/browser_launcher.vim |  235
  5 files changed, 482 insertions(+), 177 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.19)
@@ -554,8 +554,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Smart-handling of certain tags (bold, italic, underline, comments) if syntax highlighting is on.
 
- doc/HTML.txt           |   27 +++++++++-----
- ftplugin/html/HTML.vim |   95 +++++++++++++++++++++++++++++++++++++-----------
+ doc/HTML.txt           |   27
+ ftplugin/html/HTML.vim |   95
  2 files changed, 91 insertions(+), 31 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.18)
@@ -567,8 +567,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Implemented normal mode mappings that take an operator (motion) for Vim 7.
 
- doc/HTML.txt           |    8 ++-
- ftplugin/html/HTML.vim |  175 +++++++++++++++++++++++++++++++++++++++++++++++-
+ doc/HTML.txt           |    8
+ ftplugin/html/HTML.vim |  175
  2 files changed, 178 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.17.1)
@@ -581,8 +581,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Some visual mappings had insert offset problems when 'indentexpr' was set.
     - Author email in templates wasn't being encoded (bug since the template became configurable).
 
- doc/HTML.txt           |   17 +++++++++++++-
- ftplugin/html/HTML.vim |   52 ++++++++++++++++++++++++++++++-----------------
+ doc/HTML.txt           |   17
+ ftplugin/html/HTML.vim |   52
  2 files changed, 48 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.16.2)
@@ -594,8 +594,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Some visual mappings didn't work with the extra code used to prevent a (visual)bell.
 
- doc/HTML.txt           |   17 ++++++---
- ftplugin/html/HTML.vim |   88 ++++++++++++++++++++++++++++++------------------
+ doc/HTML.txt           |   17
+ ftplugin/html/HTML.vim |   88
  2 files changed, 66 insertions(+), 39 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.16)
@@ -608,8 +608,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fixed some of the forms visual mappings.
     - Added code to prevent a (visual)bell with some of the visual mappings when 'showmatch' was enabled.
 
- doc/HTML.txt           |   52 ++++++++++++++++++---------
- ftplugin/html/HTML.vim |   92 ++++++++++++++++++++++++++++++------------------
+ doc/HTML.txt           |   52
+ ftplugin/html/HTML.vim |   92
  2 files changed, 93 insertions(+), 51 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15.1)
@@ -622,9 +622,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - MangleImageTag was getting the width and height of gifs reversed.
     - Other minor bugs fixed.
 
- doc/HTML.txt              |  877 ++++++++++++++++++++-------------------------
- ftplugin/html/HTML.vim    |   33 +-
- plugin/MangleImageTag.vim |    9 +-
+ doc/HTML.txt              |  877
+ ftplugin/html/HTML.vim    |   33
+ plugin/MangleImageTag.vim |    9
  3 files changed, 424 insertions(+), 495 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
@@ -636,7 +636,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - A bug crept in that prevented the work-around for the GTK2 toolbar pixmap bug from working.
 
- ftplugin/html/HTML.vim |    2 +-
+ ftplugin/html/HTML.vim |    2
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
@@ -650,10 +650,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - ;mi mapping to automatically update the WIDTH/HEIGHT attributes in an IMG tag. (MangleImageTag.vim included. -- Experimental! See ":help ;mi".)
     - Misc. bug fixes and tweaks.
 
- doc/HTML.txt                |  349 +++++++++++++++++++--------------------
- ftplugin/html/HTML.vim      |  383 ++++++++++++++++++++++++------------------
- plugin/MangleImageTag.vim   |  270 ++++++++++++++++++++++++++++++
- plugin/browser_launcher.vim |  207 +++++++++++++++++++++++
+ doc/HTML.txt                |  349
+ ftplugin/html/HTML.vim      |  383
+ plugin/MangleImageTag.vim   |  270
+ plugin/browser_launcher.vim |  207
  4 files changed, 863 insertions(+), 346 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
@@ -667,8 +667,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Colors menu changed from a cascading menu to an alphabetic menu.
     - Misc. tweaks.
 
- doc/HTML.txt           |  101 ++++++--
- ftplugin/html/HTML.vim |  734 ++++++++++++++++++++++++++----------------------
+ doc/HTML.txt           |  101
+ ftplugin/html/HTML.vim |  734
  2 files changed, 482 insertions(+), 353 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
@@ -680,8 +680,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Insert mode mappings weren't buffer-local. (Error when removing Vim5 support.)
 
- doc/HTML.txt           |    4 ++--
- ftplugin/html/HTML.vim |    2 +-
+ doc/HTML.txt           |    4
+ ftplugin/html/HTML.vim |    2
  2 files changed, 3 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
@@ -695,8 +695,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Abandoned support for vim versions prior to 6.
     - More minor changes.
 
- doc/HTML.txt           |    5 +-
- ftplugin/html/HTML.vim |  232 ++++++++++++++++++------------------------------
+ doc/HTML.txt           |    5
+ ftplugin/html/HTML.vim |  232
  2 files changed, 87 insertions(+), 150 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
@@ -711,45 +711,45 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Work-around for a bug in the Vim GTK2 toolbar interface that doesn't properly find icons.
     - Other minor changes.
 
- README                 |   17 +
+ README                 |   17
  bitmaps/Blist.bmp      |  Bin 0 -> 1220 bytes
- bitmaps/Blist.xpm      |   29 +
+ bitmaps/Blist.xpm      |   29
  bitmaps/Bold.bmp       |  Bin 0 -> 1252 bytes
- bitmaps/Bold.xpm       |   28 +
+ bitmaps/Bold.xpm       |   28
  bitmaps/Break.bmp      |  Bin 0 -> 142 bytes
- bitmaps/Break.xpm      |   25 +
+ bitmaps/Break.xpm      |   25
  bitmaps/Hline.bmp      |  Bin 0 -> 1176 bytes
- bitmaps/Hline.xpm      |   30 +
+ bitmaps/Hline.xpm      |   30
  bitmaps/IE.bmp         |  Bin 0 -> 322 bytes
- bitmaps/IE.xpm         |   95 +++
+ bitmaps/IE.xpm         |   95
  bitmaps/Image.bmp      |  Bin 0 -> 1376 bytes
- bitmaps/Image.xpm      |   35 +
+ bitmaps/Image.xpm      |   35
  bitmaps/Italic.bmp     |  Bin 0 -> 1252 bytes
- bitmaps/Italic.xpm     |   28 +
+ bitmaps/Italic.xpm     |   28
  bitmaps/Link.bmp       |  Bin 0 -> 1360 bytes
- bitmaps/Link.xpm       |   30 +
+ bitmaps/Link.xpm       |   30
  bitmaps/Litem.bmp      |  Bin 0 -> 142 bytes
- bitmaps/Litem.xpm      |   25 +
+ bitmaps/Litem.xpm      |   25
  bitmaps/Lynx.bmp       |  Bin 0 -> 1548 bytes
- bitmaps/Lynx.xpm       |   46 ++
+ bitmaps/Lynx.xpm       |   46
  bitmaps/Mozilla.bmp    |  Bin 0 -> 306 bytes
- bitmaps/Mozilla.xpm    |   26 +
+ bitmaps/Mozilla.xpm    |   26
  bitmaps/Netscape.bmp   |  Bin 0 -> 1486 bytes
- bitmaps/Netscape.xpm   |   35 +
+ bitmaps/Netscape.xpm   |   35
  bitmaps/Nlist.bmp      |  Bin 0 -> 1232 bytes
- bitmaps/Nlist.xpm      |   28 +
+ bitmaps/Nlist.xpm      |   28
  bitmaps/Opera.bmp      |  Bin 0 -> 1434 bytes
- bitmaps/Opera.xpm      |   28 +
+ bitmaps/Opera.xpm      |   28
  bitmaps/Paragraph.bmp  |  Bin 0 -> 142 bytes
- bitmaps/Paragraph.xpm  |   25 +
+ bitmaps/Paragraph.xpm  |   25
  bitmaps/Table.bmp      |  Bin 0 -> 1466 bytes
- bitmaps/Table.xpm      |   31 +
+ bitmaps/Table.xpm      |   31
  bitmaps/Target.bmp     |  Bin 0 -> 1288 bytes
- bitmaps/Target.xpm     |   29 +
+ bitmaps/Target.xpm     |   29
  bitmaps/Template.bmp   |  Bin 0 -> 1530 bytes
- bitmaps/Template.xpm   |   34 +
+ bitmaps/Template.xpm   |   34
  bitmaps/Underline.bmp  |  Bin 0 -> 1256 bytes
- bitmaps/Underline.xpm  |   29 +
- doc/HTML.txt           |  651 +++++++++++++++++
- ftplugin/html/HTML.vim | 1888 ++++++++++++++++++++++++++++++++++++++++++++++++
+ bitmaps/Underline.xpm  |   29
+ doc/HTML.txt           |  651
+ ftplugin/html/HTML.vim | 1888
  41 files changed, 3192 insertions(+), 0 deletions(-)

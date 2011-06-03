@@ -7,8 +7,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Arguments in the form of "guifg=#001234 guibg=White" are supported now and buffer detection was fixed.  Thanks to Ingo Karkat and Tom for the patches.
 
- autoload/colorsel.vim |   53 ++++++++++++++++++++++++++++++++++++++++++++----
- doc/colorsel.txt      |   11 +++++++--
+ autoload/colorsel.vim |   53
+ doc/colorsel.txt      |   11
  2 files changed, 56 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20100406)
@@ -20,9 +20,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     The plug-in now uses the autoload mechanism and, consequently, no longer comes in a single Vim file.  Pressing 'f' now also cycles through a state when no text displayed at all.  (Changes by Ingo Karkat)
 
- autoload/colorsel.vim |  992 +++++++++++++++++++++++++++++++++++++++++++++++
- doc/colorsel.txt      |  116 ++++++
- plugin/colorsel.vim   | 1028 +------------------------------------------------
+ autoload/colorsel.vim |  992
+ doc/colorsel.txt      |  116
+ plugin/colorsel.vim   | 1028
  3 files changed, 1111 insertions(+), 1025 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20100401)
@@ -34,7 +34,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     The color swatch shows text (with changeable proprties), ColorSel can directly edit a hlighlight group and there were several improvements to working with two colors. (Modifications by Ingo Karkat)
 
- plugin/colorsel.vim |  476 +++++++++++++++++++++++++++++++++++++--------------
+ plugin/colorsel.vim |  476
  1 files changed, 345 insertions(+), 131 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20090505)
@@ -46,7 +46,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Colours can be stored to a palette (vim registers are used for that).  The colour swatch can be split to show an alternate colour.  Vim 6.2 is required now.  A few small bugs were fixed.  (Enhancements thanks to Ingo Karkat.)
 
- plugin/colorsel.vim |  530 ++++++++++++++++++++++++++++++++-------------------
+ plugin/colorsel.vim |  530
  1 files changed, 336 insertions(+), 194 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20090428)
@@ -60,7 +60,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Improvements thanks to Martin Junger.
 
- plugin/colorsel.vim |  179 +++++++++++++++++++++++++++++++++++++++++++++++++--
+ plugin/colorsel.vim |  179
  1 files changed, 173 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20051121)
@@ -70,7 +70,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 20051121: Compatibility with Vim 7 was fixed (thanks to Markus Trenkwalder).
 
- plugin/colorsel.vim |    6 +++---
+ plugin/colorsel.vim |    6
  1 files changed, 3 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20040416)
@@ -82,7 +82,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     ColorSel now accepts an optional rrggbb color argument (with optional # prefix) to set the color to (either in an existing selector or when creating a new one). Thanks to Thomas Link for the idea.
 
- plugin/colorsel.vim |   25 +++++++++++++++++++------
+ plugin/colorsel.vim |   25
  1 files changed, 19 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20040303)
@@ -92,6 +92,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 20040303: Initial upload
 
- README              |   23 +++
- plugin/colorsel.vim |  508 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ README              |   23
+ plugin/colorsel.vim |  508
  2 files changed, 531 insertions(+), 0 deletions(-)

@@ -13,42 +13,42 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Keymaps: <Plug> versions added for most Vx commands
     * VxLib installed separately
 
- autoload/vimuiex/vxbuflist.vim         |    3 +
- autoload/vimuiex/vxcapture.vim         |    6 +
- autoload/vimuiex/vxcmdhist.vim         |   71 +++++
- autoload/vimuiex/vxdired.vim           |   14 +
- autoload/vimuiex/vxjump.vim            |    6 +
- autoload/vimuiex/vxlist.vim            |   12 +
- autoload/vimuiex/vxmap.vim             |  135 +++++++++
- autoload/vimuiex/vxoccur.vim           |  441 ++++++++++++++++++++++++++---
- autoload/vimuiex/vxoccur_defaults.vim  |   16 +
- autoload/vimuiex/vxrecentfile.vim      |   11 +
- autoload/vimuiex/vxtextmenu.vim        |   48 ++--
- autoload/vxlib/cmd.vim                 |  200 -------------
- autoload/vxlib/dlg.vim                 |   71 -----
- autoload/vxlib/hist.vim                |  141 ---------
- autoload/vxlib/mkplugins.sh            |    6 -
- autoload/vxlib/plugconf.py             |  124 --------
- autoload/vxlib/plugin.py               |  494 --------------------------------
- autoload/vxlib/plugin.vim              |  196 -------------
- autoload/vxlib/python.vim              |   31 --
- autoload/vxlib/win.vim                 |  102 -------
- doc/vimuiex.txt                        |  118 +++++---
- doc/vimuiex_plugins.txt                |  278 ++++++++++++++-----
- doc/vxlib_plugin.txt                   |  244 ----------------
- doc/vxlib_plugins.txt                  |   15 -
- doc/vxlib_utils.txt                    |   98 -------
- modpython/vimuiex/_popuplist_screen.py |    9 +-
- modpython/vimuiex/dired.py             |    2 +-
- modpython/vimuiex/ioutil/__init__.py   |   14 +-
- modpython/vimuiex/ioutil/winvim.py     |    2 +
- modpython/vimuiex/jumping.py           |    2 +
- modpython/vimuiex/popuplist.py         |   48 ++--
- modpython/vimuiex/showhelp.py          |   74 +++++
- modpython/vimuiex/simplekeymap.py      |   61 +++--
- modpython/vimuiex/textmenu.py          |   42 ++-
- plugin/_au_vimuiex.vim                 |  479 +++++++++++++++++++++++++++++++
- plugin/_vimuiex_autogen_.vim           |  357 -----------------------
+ autoload/vimuiex/vxbuflist.vim         |    3
+ autoload/vimuiex/vxcapture.vim         |    6
+ autoload/vimuiex/vxcmdhist.vim         |   71
+ autoload/vimuiex/vxdired.vim           |   14
+ autoload/vimuiex/vxjump.vim            |    6
+ autoload/vimuiex/vxlist.vim            |   12
+ autoload/vimuiex/vxmap.vim             |  135
+ autoload/vimuiex/vxoccur.vim           |  441
+ autoload/vimuiex/vxoccur_defaults.vim  |   16
+ autoload/vimuiex/vxrecentfile.vim      |   11
+ autoload/vimuiex/vxtextmenu.vim        |   48
+ autoload/vxlib/cmd.vim                 |  200
+ autoload/vxlib/dlg.vim                 |   71
+ autoload/vxlib/hist.vim                |  141
+ autoload/vxlib/mkplugins.sh            |    6
+ autoload/vxlib/plugconf.py             |  124
+ autoload/vxlib/plugin.py               |  494
+ autoload/vxlib/plugin.vim              |  196
+ autoload/vxlib/python.vim              |   31
+ autoload/vxlib/win.vim                 |  102
+ doc/vimuiex.txt                        |  118
+ doc/vimuiex_plugins.txt                |  278
+ doc/vxlib_plugin.txt                   |  244
+ doc/vxlib_plugins.txt                  |   15
+ doc/vxlib_utils.txt                    |   98
+ modpython/vimuiex/_popuplist_screen.py |    9
+ modpython/vimuiex/dired.py             |    2
+ modpython/vimuiex/ioutil/__init__.py   |   14
+ modpython/vimuiex/ioutil/winvim.py     |    2
+ modpython/vimuiex/jumping.py           |    2
+ modpython/vimuiex/popuplist.py         |   48
+ modpython/vimuiex/showhelp.py          |   74
+ modpython/vimuiex/simplekeymap.py      |   61
+ modpython/vimuiex/textmenu.py          |   42
+ plugin/_au_vimuiex.vim                 |  479
+ plugin/_vimuiex_autogen_.vim           |  357
  36 files changed, 1666 insertions(+), 2305 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.6)
@@ -63,15 +63,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * VxFileFilter: add pending items every 3-5s (gvim only)
     * fix in textfilter
 
- autoload/vimuiex/vxdired.vim           |   12 ++--
- doc/vimuiex.txt                        |    2 +-
- doc/vimuiex_plugins.txt                |   15 ++--
- modpython/vimuiex/_popuplist_screen.py |  134 ++++++++++++++++++++++++--------
- modpython/vimuiex/dired.py             |  128 ++++++++++++------------------
- modpython/vimuiex/popuplist.py         |   44 ++++++-----
- modpython/vimuiex/textfilter.py        |   14 +++-
- modpython/vimuiex/textmenu.py          |    8 +-
- plugin/_vimuiex_autogen_.vim           |    2 +-
+ autoload/vimuiex/vxdired.vim           |   12
+ doc/vimuiex.txt                        |    2
+ doc/vimuiex_plugins.txt                |   15
+ modpython/vimuiex/_popuplist_screen.py |  134
+ modpython/vimuiex/dired.py             |  128
+ modpython/vimuiex/popuplist.py         |   44
+ modpython/vimuiex/textfilter.py        |   14
+ modpython/vimuiex/textmenu.py          |    8
+ plugin/_vimuiex_autogen_.vim           |    2
  9 files changed, 211 insertions(+), 148 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.5)
@@ -86,14 +86,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * VxOccurRoutines: defaults for latex added
     * fix: crash after ou in VxBufferList
 
- autoload/vimuiex/vxdired.vim           |   28 +++-
- autoload/vimuiex/vxoccur_defaults.vim  |   41 ++++-
- doc/vimuiex_plugins.txt                |   56 +++++-
- modpython/vimuiex/_popuplist_screen.py |   91 ++++++----
- modpython/vimuiex/dired.py             |  329 ++++++++++++++++++++++++--------
- modpython/vimuiex/popuplist.py         |  137 ++++++++------
- modpython/vimuiex/textfilter.py        |   46 +++++
- plugin/_vimuiex_autogen_.vim           |   11 +-
+ autoload/vimuiex/vxdired.vim           |   28
+ autoload/vimuiex/vxoccur_defaults.vim  |   41
+ doc/vimuiex_plugins.txt                |   56
+ modpython/vimuiex/_popuplist_screen.py |   91
+ modpython/vimuiex/dired.py             |  329
+ modpython/vimuiex/popuplist.py         |  137
+ modpython/vimuiex/textfilter.py        |   46
+ plugin/_vimuiex_autogen_.vim           |   11
  8 files changed, 552 insertions(+), 187 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.4)
@@ -106,17 +106,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * fix: colour of first listbox line was wrong in curses
     * fix: locale was not set properly in curses
 
- autoload/vimuiex/vxgrep.vim            |   59 ----
- autoload/vimuiex/vxoccur_defaults.vim  |    8 +-
- autoload/vxlib/mkplugins.sh            |    3 +-
- autoload/vxlib/plugconf.py             |  124 ++++++++
- autoload/vxlib/plugin.py               |  486 ++++++++++++++++++++------------
- doc/vxlib_hist.txt                     |   49 ----
- doc/vxlib_utils.txt                    |   98 +++++++
- modpython/vimuiex/_popuplist_screen.py |    5 +-
- modpython/vimuiex/ioutil/__init__.py   |    9 +-
- modpython/vimuiex/ioutil/gcurses.py    |    2 +-
- plugin/_vimuiex_autogen_.vim           |  279 ++++++++++---------
+ autoload/vimuiex/vxgrep.vim            |   59
+ autoload/vimuiex/vxoccur_defaults.vim  |    8
+ autoload/vxlib/mkplugins.sh            |    3
+ autoload/vxlib/plugconf.py             |  124
+ autoload/vxlib/plugin.py               |  486
+ doc/vxlib_hist.txt                     |   49
+ doc/vxlib_utils.txt                    |   98
+ modpython/vimuiex/_popuplist_screen.py |    5
+ modpython/vimuiex/ioutil/__init__.py   |    9
+ modpython/vimuiex/ioutil/gcurses.py    |    2
+ plugin/_vimuiex_autogen_.vim           |  279
  11 files changed, 697 insertions(+), 425 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.3)
@@ -130,16 +130,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * fix: catch vim.errors in textmenu
     * VxOccur: special treatment of displayed filenames: new color; when filtering hide if no items match
 
- autoload/vimuiex/vxlist.vim            |   26 ++++++++++++----------
- autoload/vimuiex/vxoccur.vim           |    7 ++++++
- doc/vimuiex.txt                        |    2 +-
- doc/vimuiex_plugins.txt                |   12 +++++++---
- doc/vxlib_plugin.txt                   |   37 +++++++++++++++++++------------
- doc/vxlib_plugins.txt                  |    9 ++++---
- modpython/vimuiex/_popuplist_screen.py |   10 ++++++++
- modpython/vimuiex/popuplist.py         |   31 ++++++++++++++++++++++----
- modpython/vimuiex/textmenu.py          |    6 ++++-
- plugin/_vimuiex_autogen_.vim           |    2 +-
+ autoload/vimuiex/vxlist.vim            |   26
+ autoload/vimuiex/vxoccur.vim           |    7
+ doc/vimuiex.txt                        |    2
+ doc/vimuiex_plugins.txt                |   12
+ doc/vxlib_plugin.txt                   |   37
+ doc/vxlib_plugins.txt                  |    9
+ modpython/vimuiex/_popuplist_screen.py |   10
+ modpython/vimuiex/popuplist.py         |   31
+ modpython/vimuiex/textmenu.py          |    6
+ plugin/_vimuiex_autogen_.vim           |    2
  10 files changed, 100 insertions(+), 42 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.2)
@@ -156,28 +156,28 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * fix: default color attributes after colorscheme change
     * fix: quickfixpreview - map keys locally
 
- autoload/vimuiex/vxbuflist.vim         |   28 ++--
- autoload/vimuiex/vxcapture.vim         |   43 +++--
- autoload/vimuiex/vxdired.vim           |   52 +++++-
- autoload/vimuiex/vxgrep.vim            |   59 ++++++
- autoload/vimuiex/vxjump.vim            |   10 +-
- autoload/vimuiex/vxlist.vim            |  182 +++++++++++++++----
- autoload/vimuiex/vxoccur.vim           |  177 +++++++++++++-----
- autoload/vimuiex/vxquickfix.vim        |   64 +++++++
- autoload/vimuiex/vxrecentfile.vim      |   33 ++--
- autoload/vimuiex/vxtextmenu.vim        |    8 +-
- autoload/vxlib/cmd.vim                 |   21 ++-
- autoload/vxlib/hist.vim                |   27 ++--
- autoload/vxlib/plugin.py               |   43 ++++-
- autoload/vxlib/plugin.vim              |   18 ++-
- doc/vimuiex.txt                        |   22 +--
- doc/vimuiex_plugins.txt                |  109 +++++++++--
- doc/vxlib_plugin.txt                   |   40 +++--
- doc/vxlib_plugins.txt                  |    7 +-
- modpython/vimuiex/_popuplist_screen.py |   48 ++++--
- modpython/vimuiex/dired.py             |   15 +-
- modpython/vimuiex/popuplist.py         |   61 +++++--
- plugin/_vimuiex_autogen_.vim           |  322 +++++++++++++++-----------------
+ autoload/vimuiex/vxbuflist.vim         |   28
+ autoload/vimuiex/vxcapture.vim         |   43
+ autoload/vimuiex/vxdired.vim           |   52
+ autoload/vimuiex/vxgrep.vim            |   59
+ autoload/vimuiex/vxjump.vim            |   10
+ autoload/vimuiex/vxlist.vim            |  182
+ autoload/vimuiex/vxoccur.vim           |  177
+ autoload/vimuiex/vxquickfix.vim        |   64
+ autoload/vimuiex/vxrecentfile.vim      |   33
+ autoload/vimuiex/vxtextmenu.vim        |    8
+ autoload/vxlib/cmd.vim                 |   21
+ autoload/vxlib/hist.vim                |   27
+ autoload/vxlib/plugin.py               |   43
+ autoload/vxlib/plugin.vim              |   18
+ doc/vimuiex.txt                        |   22
+ doc/vimuiex_plugins.txt                |  109
+ doc/vxlib_plugin.txt                   |   40
+ doc/vxlib_plugins.txt                  |    7
+ modpython/vimuiex/_popuplist_screen.py |   48
+ modpython/vimuiex/dired.py             |   15
+ modpython/vimuiex/popuplist.py         |   61
+ plugin/_vimuiex_autogen_.vim           |  322
  22 files changed, 958 insertions(+), 431 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.1)
@@ -190,13 +190,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * fix: handle E490 in EditLine
     * listbox filter: multiple terms separated with ','; negate term with '-'
 
- autoload/vimuiex/vxrecentfile.vim  |    3 --
- autoload/vxlib/cmd.vim             |    4 ++-
- doc/vimuiex.txt                    |   13 +++++++++--
- modpython/vimuiex/_popuplist_wx.py |    4 +-
- modpython/vimuiex/dired.py         |   10 ++++----
- modpython/vimuiex/popuplist.py     |   38 +++++++++++++++++++++++++++++++----
- plugin/_vimuiex_autogen_.vim       |    2 +-
+ autoload/vimuiex/vxrecentfile.vim  |    3
+ autoload/vxlib/cmd.vim             |    4
+ doc/vimuiex.txt                    |   13
+ modpython/vimuiex/_popuplist_wx.py |    4
+ modpython/vimuiex/dired.py         |   10
+ modpython/vimuiex/popuplist.py     |   38
+ plugin/_vimuiex_autogen_.vim       |    2
  7 files changed, 54 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -214,35 +214,35 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * list contents is displayed using &encoding; (warning: double-width characers may cause wrong display; tested only with UTF)
     * vxlib plugin for previewing from QuickFix (map: <space>)
 
- autoload/vimuiex/vxbuflist.vim         |  135 ++++++++++---
- autoload/vimuiex/vxcapture.vim         |   34 ++--
- autoload/vimuiex/vxdired.vim           |   62 +++++-
- autoload/vimuiex/vxjump.vim            |    4 +-
- autoload/vimuiex/vxlist.vim            |   58 +++++-
- autoload/vimuiex/vxoccur.vim           |  199 ++++++++++++-------
- autoload/vimuiex/vxoccur_defaults.vim  |   46 +++--
- autoload/vimuiex/vxrecentfile.vim      |   47 +++--
- autoload/vimuiex/vxtextmenu.vim        |   22 +-
- autoload/vxlib/cmd.vim                 |  147 ++++++++++++--
- autoload/vxlib/dlg.vim                 |   16 +-
- autoload/vxlib/hist.vim                |   22 +-
- autoload/vxlib/mkplugins.sh            |    5 +
- autoload/vxlib/plugin.py               |   32 ++--
- autoload/vxlib/plugin.vim              |   65 ++++--
- autoload/vxlib/python.vim              |    6 +-
- autoload/vxlib/win.vim                 |  102 +++++++++
- doc/vimuiex.txt                        |   67 ++++++-
- doc/vimuiex_plugins.txt                |   62 +++++-
- doc/vxlib_plugin.txt                   |    8 +-
- doc/vxlib_plugins.txt                  |   13 ++
- modpython/vimuiex/_popuplist_screen.py |   57 ++++--
- modpython/vimuiex/_popuplist_wx.py     |   16 +-
- modpython/vimuiex/boxposition.py       |  301 +++++++++++++++++++++++++++
- modpython/vimuiex/dired.py             |  183 ++++++++++++----
- modpython/vimuiex/popuplist.py         |  169 +++++++---------
- modpython/vimuiex/textmenu.py          |    2 +-
- plugin/_vimuiex_autogen_.vim           |  353 ++++++++++++++++++++++++++++++++
- plugin/_vimuiex_generated_.vim         |  318 ----------------------------
+ autoload/vimuiex/vxbuflist.vim         |  135
+ autoload/vimuiex/vxcapture.vim         |   34
+ autoload/vimuiex/vxdired.vim           |   62
+ autoload/vimuiex/vxjump.vim            |    4
+ autoload/vimuiex/vxlist.vim            |   58
+ autoload/vimuiex/vxoccur.vim           |  199
+ autoload/vimuiex/vxoccur_defaults.vim  |   46
+ autoload/vimuiex/vxrecentfile.vim      |   47
+ autoload/vimuiex/vxtextmenu.vim        |   22
+ autoload/vxlib/cmd.vim                 |  147
+ autoload/vxlib/dlg.vim                 |   16
+ autoload/vxlib/hist.vim                |   22
+ autoload/vxlib/mkplugins.sh            |    5
+ autoload/vxlib/plugin.py               |   32
+ autoload/vxlib/plugin.vim              |   65
+ autoload/vxlib/python.vim              |    6
+ autoload/vxlib/win.vim                 |  102
+ doc/vimuiex.txt                        |   67
+ doc/vimuiex_plugins.txt                |   62
+ doc/vxlib_plugin.txt                   |    8
+ doc/vxlib_plugins.txt                  |   13
+ modpython/vimuiex/_popuplist_screen.py |   57
+ modpython/vimuiex/_popuplist_wx.py     |   16
+ modpython/vimuiex/boxposition.py       |  301
+ modpython/vimuiex/dired.py             |  183
+ modpython/vimuiex/popuplist.py         |  169
+ modpython/vimuiex/textmenu.py          |    2
+ plugin/_vimuiex_autogen_.vim           |  353
+ plugin/_vimuiex_generated_.vim         |  318
  29 files changed, 1788 insertions(+), 763 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -263,46 +263,46 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
        - history manager for input() command
        - ...
 
- autoload/modpython.vim                 |   33 ---
- autoload/vimuiex/vxbuflist.vim         |  100 ++++++++
- autoload/vimuiex/vxcapture.vim         |  122 +++++++++
- autoload/vimuiex/vxdired.vim           |   82 ++++++
- autoload/vimuiex/vxjump.vim            |   59 +++++
- autoload/vimuiex/vxlist.vim            |   71 +++++
- autoload/vimuiex/vxoccur.vim           |  217 ++++++++++++++++
- autoload/vimuiex/vxoccur_defaults.vim  |   87 +++++++
- autoload/vimuiex/vxrecentfile.vim      |  104 ++++++++
- autoload/vimuiex/vxtextmenu.vim        |   67 +++++
- autoload/vxlib/cmd.vim                 |   68 +++++
- autoload/vxlib/dlg.vim                 |   71 +++++
- autoload/vxlib/hist.vim                |  138 ++++++++++
- autoload/vxlib/plugin.py               |  333 ++++++++++++++++++++++++
- autoload/vxlib/plugin.vim              |  157 ++++++++++++
- autoload/vxlib/python.vim              |   31 +++
- doc/vimuiex.txt                        |  177 ++++++-------
- doc/vimuiex_plugins.txt                |  207 +++++++++++++++
- doc/vxlib_hist.txt                     |   49 ++++
- doc/vxlib_plugin.txt                   |  225 ++++++++++++++++
- modpython/globals/gcurses.py           |   29 --
- modpython/globals/gwx.py               |    8 -
- modpython/vimuiex/_popuplist_screen.py |  362 ++++++++++++++------------
- modpython/vimuiex/_popuplist_term.py   |  436 --------------------------------
- modpython/vimuiex/_popuplist_wx.py     |   14 +-
- modpython/vimuiex/_wxcontrols.py       |   63 -----
- modpython/vimuiex/dired.py             |  198 +++++++++++++++
- modpython/vimuiex/ioutil/__init__.py   |   48 ++++
- modpython/vimuiex/ioutil/gcurses.py    |   29 ++
- modpython/vimuiex/ioutil/gwx.py        |    8 +
- modpython/vimuiex/ioutil/wincurses.py  |   57 ++++
- modpython/vimuiex/ioutil/winvim.py     |  130 ++++++++++
- modpython/vimuiex/jumping.py           |  142 +++++++++++
- modpython/vimuiex/popuplist.py         |  133 +++++++---
- modpython/vimuiex/textmenu.py          |   67 ++++-
- plugin/_vimuiex_generated_.vim         |  318 +++++++++++++++++++++++
- plugin/vxbuflist.vim                   |   51 ----
- plugin/vxcolors.vim                    |   17 --
- plugin/vxrecentfile.vim                |  113 --------
- plugin/vxtextmenu.vim                  |   56 ----
+ autoload/modpython.vim                 |   33
+ autoload/vimuiex/vxbuflist.vim         |  100
+ autoload/vimuiex/vxcapture.vim         |  122
+ autoload/vimuiex/vxdired.vim           |   82
+ autoload/vimuiex/vxjump.vim            |   59
+ autoload/vimuiex/vxlist.vim            |   71
+ autoload/vimuiex/vxoccur.vim           |  217
+ autoload/vimuiex/vxoccur_defaults.vim  |   87
+ autoload/vimuiex/vxrecentfile.vim      |  104
+ autoload/vimuiex/vxtextmenu.vim        |   67
+ autoload/vxlib/cmd.vim                 |   68
+ autoload/vxlib/dlg.vim                 |   71
+ autoload/vxlib/hist.vim                |  138
+ autoload/vxlib/plugin.py               |  333
+ autoload/vxlib/plugin.vim              |  157
+ autoload/vxlib/python.vim              |   31
+ doc/vimuiex.txt                        |  177
+ doc/vimuiex_plugins.txt                |  207
+ doc/vxlib_hist.txt                     |   49
+ doc/vxlib_plugin.txt                   |  225
+ modpython/globals/gcurses.py           |   29
+ modpython/globals/gwx.py               |    8
+ modpython/vimuiex/_popuplist_screen.py |  362
+ modpython/vimuiex/_popuplist_term.py   |  436
+ modpython/vimuiex/_popuplist_wx.py     |   14
+ modpython/vimuiex/_wxcontrols.py       |   63
+ modpython/vimuiex/dired.py             |  198
+ modpython/vimuiex/ioutil/__init__.py   |   48
+ modpython/vimuiex/ioutil/gcurses.py    |   29
+ modpython/vimuiex/ioutil/gwx.py        |    8
+ modpython/vimuiex/ioutil/wincurses.py  |   57
+ modpython/vimuiex/ioutil/winvim.py     |  130
+ modpython/vimuiex/jumping.py           |  142
+ modpython/vimuiex/popuplist.py         |  133
+ modpython/vimuiex/textmenu.py          |   67
+ plugin/_vimuiex_generated_.vim         |  318
+ plugin/vxbuflist.vim                   |   51
+ plugin/vxcolors.vim                    |   17
+ plugin/vxrecentfile.vim                |  113
+ plugin/vxtextmenu.vim                  |   56
  40 files changed, 3555 insertions(+), 1122 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -318,23 +318,23 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * plugin scripts renamed (py->vx); functions renamed (Py->Vx)
     * hilight objects added for popup list
 
- autoload/modpython.vim                 |   33 +++
- doc/if_python.txt                      |   28 --
- doc/vimuiex.txt                        |  248 ++++++++++++++++
- if_python.patch                        |  129 ---------
- modpython/globals/gcurses.py           |   29 ++
- modpython/globals/gwx.py               |    8 +
- modpython/vimuiex/_popuplist_screen.py |  484 ++++++++++++++++++++++++++++++++
- modpython/vimuiex/_popuplist_term.py   |  436 ++++++++++++++++++++++++++++
- modpython/vimuiex/_popuplist_wx.py     |  287 +++++++++++++++++++
- modpython/vimuiex/_wxcontrols.py       |   63 ++++
- modpython/vimuiex/popuplist.py         |  332 ++++++++++++++++++++++
- modpython/vimuiex/simplekeymap.py      |   74 +++++
- modpython/vimuiex/textmenu.py          |  154 ++++++++++
- plugin/vxbuflist.vim                   |   51 ++++
- plugin/vxcolors.vim                    |   17 ++
- plugin/vxrecentfile.vim                |  113 ++++++++
- plugin/vxtextmenu.vim                  |   56 ++++
+ autoload/modpython.vim                 |   33
+ doc/if_python.txt                      |   28
+ doc/vimuiex.txt                        |  248
+ if_python.patch                        |  129
+ modpython/globals/gcurses.py           |   29
+ modpython/globals/gwx.py               |    8
+ modpython/vimuiex/_popuplist_screen.py |  484
+ modpython/vimuiex/_popuplist_term.py   |  436
+ modpython/vimuiex/_popuplist_wx.py     |  287
+ modpython/vimuiex/_wxcontrols.py       |   63
+ modpython/vimuiex/popuplist.py         |  332
+ modpython/vimuiex/simplekeymap.py      |   74
+ modpython/vimuiex/textmenu.py          |  154
+ plugin/vxbuflist.vim                   |   51
+ plugin/vxcolors.vim                    |   17
+ plugin/vxrecentfile.vim                |  113
+ plugin/vxtextmenu.vim                  |   56
  17 files changed, 2385 insertions(+), 157 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4p)
@@ -344,7 +344,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.4p: * vim patch for screen backend
 
- README            |   70 +++++++++++++++++++++++++++++
- doc/if_python.txt |   28 +++++++++++
- if_python.patch   |  129 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README            |   70
+ doc/if_python.txt |   28
+ if_python.patch   |  129
  3 files changed, 227 insertions(+), 0 deletions(-)

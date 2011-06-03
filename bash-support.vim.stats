@@ -8,10 +8,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Bugfix: detection of a system-wide installation can fail.
     - Minor improvements.
 
- README.bashsupport      |   10 ++--
- doc/ChangeLog           |    8 +++
- doc/bashsupport.txt     |   60 ++++++++++++++++----
- plugin/bash-support.vim |  139 +++++++++++++++++++++--------------------------
+ README.bashsupport      |   10
+ doc/ChangeLog           |    8
+ doc/bashsupport.txt     |   60
+ plugin/bash-support.vim |  139
  4 files changed, 122 insertions(+), 95 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.4)
@@ -26,14 +26,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Syntax check under Windows.
     - Several minor bugs fixed.
 
- README.bashsupport               |   95 ++++++++++---
- bash-support/wordlists/bash.list |    7 +-
- doc/ChangeLog                    |    8 +
+ README.bashsupport               |   95
+ bash-support/wordlists/bash.list |    7
+ doc/ChangeLog                    |    8
  doc/bash-hot-keys.pdf            |  Bin 27629 -> 28898 bytes
- doc/bash-hot-keys.tex            |  125 +++++++++--------
- doc/bashsupport.txt              |   53 +++++---
- ftplugin/sh.vim                  |   34 +++--
- plugin/bash-support.vim          |  277 ++++++++++++++++++++++++--------------
+ doc/bash-hot-keys.tex            |  125
+ doc/bashsupport.txt              |   53
+ ftplugin/sh.vim                  |   34
+ plugin/bash-support.vim          |  277
  8 files changed, 387 insertions(+), 212 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
@@ -48,13 +48,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - 1 new menu entry (Tests)
     - Minor improvements.
 
- README.bashsupport      |   12 +++---
- doc/ChangeLog           |    8 ++++
+ README.bashsupport      |   12
+ doc/ChangeLog           |    8
  doc/bash-hot-keys.pdf   |  Bin 27331 -> 27629 bytes
- doc/bash-hot-keys.tex   |   22 +++++++-----
- doc/bashsupport.txt     |   13 +++++--
- ftplugin/sh.vim         |   34 ++++++++++++------
- plugin/bash-support.vim |   87 +++++++++++++++++++++++++---------------------
+ doc/bash-hot-keys.tex   |   22
+ doc/bashsupport.txt     |   13
+ ftplugin/sh.vim         |   34
+ plugin/bash-support.vim |   87
  7 files changed, 105 insertions(+), 71 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
@@ -69,16 +69,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Bugfixes: local installation looks like a system-wide installation in seldom cases.
     - Bugfixes: typo in 4 menu entries.
 
- README.bashsupport                              |   10 ++-
- bash-support/templates/Templates                |    8 +-
- bash-support/templates/bash.statements.template |    2 +-
- bash-support/wordlists/bash.list                |    4 +
- doc/ChangeLog                                   |    6 ++
+ README.bashsupport                              |   10
+ bash-support/templates/Templates                |    8
+ bash-support/templates/bash.statements.template |    2
+ bash-support/wordlists/bash.list                |    4
+ doc/ChangeLog                                   |    6
  doc/bash-hot-keys.pdf                           |  Bin 26955 -> 27331 bytes
- doc/bash-hot-keys.tex                           |   14 +++--
- doc/bashsupport.txt                             |   10 ++-
- ftplugin/sh.vim                                 |    5 +-
- plugin/bash-support.vim                         |   76 ++++++++++-------------
+ doc/bash-hot-keys.tex                           |   14
+ doc/bashsupport.txt                             |   10
+ ftplugin/sh.vim                                 |    5
+ plugin/bash-support.vim                         |   76
  10 files changed, 73 insertions(+), 62 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.1.1)
@@ -91,10 +91,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Bugfixes: code snippets will not be found if plugin not installed beyond '$HOME/.vim'.
     - Bugfixes: undocumented global variable used in above non-standard installation.
 
- README.bashsupport      |   13 ++++---------
- doc/ChangeLog           |   11 +++++++++++
- doc/bashsupport.txt     |   17 +++++++++++++++--
- plugin/bash-support.vim |   22 +++++++---------------
+ README.bashsupport      |   13
+ doc/ChangeLog           |   11
+ doc/bashsupport.txt     |   17
+ plugin/bash-support.vim |   22
  4 files changed, 37 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
@@ -110,15 +110,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Minor improvements.
     - Bugfixes: missing redraws in some cases.
 
- README.bashsupport                                 |   27 ++-
- .../codesnippets/check-for-unsigned-integer        |    2 +-
- bash-support/wordlists/bash.list                   |   29 +++
- doc/ChangeLog                                      |    7 +
+ README.bashsupport                                 |   27
+ .../codesnippets/check-for-unsigned-integer        |    2
+ bash-support/wordlists/bash.list                   |   29
+ doc/ChangeLog                                      |    7
  doc/bash-hot-keys.pdf                              |  Bin 27019 -> 26955 bytes
- doc/bash-hot-keys.tex                              |  134 +++++------
- doc/bashsupport.txt                                |   95 +++++---
- ftplugin/sh.vim                                    |   92 ++++----
- plugin/bash-support.vim                            |  254 ++++++++++++++------
+ doc/bash-hot-keys.tex                              |  134
+ doc/bashsupport.txt                                |   95
+ ftplugin/sh.vim                                    |   92
+ plugin/bash-support.vim                            |  254
  9 files changed, 416 insertions(+), 224 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0.1)
@@ -132,10 +132,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       runtime messages to your locale setting.
     - Bugfix (Windows only): missing internal variable prevents proper initialization.
 
- README.bashsupport      |   11 +++++------
- doc/ChangeLog           |    8 ++++++++
- doc/bashsupport.txt     |   39 +++++++++++++++++++++++++++------------
- plugin/bash-support.vim |    8 +++++---
+ README.bashsupport      |   11
+ doc/ChangeLog           |    8
+ doc/bashsupport.txt     |   39
+ plugin/bash-support.vim |    8
  4 files changed, 45 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
@@ -150,21 +150,21 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + A few Posix character classes have better shortcuts.
     + Bugfix: insert mode for Posix character classes.
 
- README.bashsupport                               |   57 +-
- bash-support/templates/Templates                 |   19 +
- bash-support/templates/bash-file-header          |   22 -
- bash-support/templates/bash-frame                |    3 -
- bash-support/templates/bash-function-description |    6 -
- bash-support/templates/bash.comments.template    |   53 +
- bash-support/templates/bash.paramsub.template    |   64 ++
- bash-support/templates/bash.statements.template  |   61 +
- bash-support/wordlists/bash.list                 |  111 ++-
- doc/ChangeLog                                    |    9 +
+ README.bashsupport                               |   57
+ bash-support/templates/Templates                 |   19
+ bash-support/templates/bash-file-header          |   22
+ bash-support/templates/bash-frame                |    3
+ bash-support/templates/bash-function-description |    6
+ bash-support/templates/bash.comments.template    |   53
+ bash-support/templates/bash.paramsub.template    |   64
+ bash-support/templates/bash.statements.template  |   61
+ bash-support/wordlists/bash.list                 |  111
+ doc/ChangeLog                                    |    9
  doc/bash-hot-keys.pdf                            |  Bin 74797 -> 27019 bytes
- doc/bash-hot-keys.tex                            |   77 +-
- doc/bashsupport.txt                              |  652 +++++++++---
- ftplugin/sh.vim                                  |  174 ++--
- plugin/bash-support.vim                          | 1268 ++++++++++++++++------
+ doc/bash-hot-keys.tex                            |   77
+ doc/bashsupport.txt                              |  652
+ ftplugin/sh.vim                                  |  174
+ plugin/bash-support.vim                          | 1268
  15 files changed, 1885 insertions(+), 691 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.14)
@@ -180,12 +180,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       the directory of the current file.
     + Minor improvements.
 
- README.bashsupport      |   14 +-
- doc/ChangeLog           |   11 +
- doc/bash-hot-keys.pdf   |  534 +++++++++++++++++++++++-----------------------
- doc/bash-hot-keys.tex   |    6 +-
- doc/bashsupport.txt     |   31 ++--
- plugin/bash-support.vim |  171 ++++++++--------
+ README.bashsupport      |   14
+ doc/ChangeLog           |   11
+ doc/bash-hot-keys.pdf   |  534
+ doc/bash-hot-keys.tex   |    6
+ doc/bashsupport.txt     |   31
+ plugin/bash-support.vim |  171
  6 files changed, 387 insertions(+), 380 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.13)
@@ -203,19 +203,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Bugfix: 'Run->save + run script' (\rr, <C-F9>) : visual mode broken.
     + Minor improvements.
 
- README.bashsupport                                 |   18 +-
- bash-support/codesnippets/check-for-signed-integer |    3 +
- .../codesnippets/check-for-unsigned-integer        |    3 +
- bash-support/rc/customization.bashrc               |    9 +
- bash-support/rc/customization.gvimrc               |   49 +-
- bash-support/rc/customization.vimrc                |  188 +++--
- bash-support/templates/bash-file-header            |    4 +-
- doc/ChangeLog                                      |   10 +
- doc/bash-hot-keys.pdf                              |  795 ++++++++++++--------
- doc/bash-hot-keys.tex                              |   56 +-
- doc/bashsupport.txt                                |   95 ++-
- ftplugin/sh.vim                                    |   49 ++-
- plugin/bash-support.vim                            |  147 ++--
+ README.bashsupport                                 |   18
+ bash-support/codesnippets/check-for-signed-integer |    3
+ .../codesnippets/check-for-unsigned-integer        |    3
+ bash-support/rc/customization.bashrc               |    9
+ bash-support/rc/customization.gvimrc               |   49
+ bash-support/rc/customization.vimrc                |  188
+ bash-support/templates/bash-file-header            |    4
+ doc/ChangeLog                                      |   10
+ doc/bash-hot-keys.pdf                              |  795
+ doc/bash-hot-keys.tex                              |   56
+ doc/bashsupport.txt                                |   95
+ ftplugin/sh.vim                                    |   49
+ plugin/bash-support.vim                            |  147
  13 files changed, 865 insertions(+), 561 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.12)
@@ -232,17 +232,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Bugfix: wrapper script for use of a xterm could not handle parameters containing blanks.
     + Minor improvements.
 
- README.bashsupport                                 |   13 +-
- .../codesnippets/create-tempfile-in-secure-manner  |   18 +
- .../codesnippets/print-command-line-options        |    2 +
- bash-support/scripts/wrapper.sh                    |   29 +-
- bash-support/wordlists/bash.list                   |   56 ++-
- doc/ChangeLog                                      |    7 +
- doc/bash-hot-keys.pdf                              |  469 ++++++++++----------
- doc/bash-hot-keys.tex                              |   25 +-
- doc/bashsupport.txt                                |   20 +-
- ftplugin/sh.vim                                    |    8 +-
- plugin/bash-support.vim                            |  309 +++++++-------
+ README.bashsupport                                 |   13
+ .../codesnippets/create-tempfile-in-secure-manner  |   18
+ .../codesnippets/print-command-line-options        |    2
+ bash-support/scripts/wrapper.sh                    |   29
+ bash-support/wordlists/bash.list                   |   56
+ doc/ChangeLog                                      |    7
+ doc/bash-hot-keys.pdf                              |  469
+ doc/bash-hot-keys.tex                              |   25
+ doc/bashsupport.txt                                |   20
+ ftplugin/sh.vim                                    |    8
+ plugin/bash-support.vim                            |  309
  11 files changed, 501 insertions(+), 455 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.11)
@@ -256,14 +256,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Comments menu (\cj): adjustment of end-of-line comments improved.
     + Two submenus rearranged.
 
- README.bashsupport                                 |   12 +-
- .../check-number-of-command-line-arguments         |    6 +-
- bash-support/wordlists/bash.list                   |    8 +-
- doc/ChangeLog                                      |    9 +
- doc/bash-hot-keys.pdf                              |  477 ++++++++++----------
- doc/bash-hot-keys.tex                              |    6 +-
- doc/bashsupport.txt                                |   62 ++--
- plugin/bash-support.vim                            |  132 ++++--
+ README.bashsupport                                 |   12
+ .../check-number-of-command-line-arguments         |    6
+ bash-support/wordlists/bash.list                   |    8
+ doc/ChangeLog                                      |    9
+ doc/bash-hot-keys.pdf                              |  477
+ doc/bash-hot-keys.tex                              |    6
+ doc/bashsupport.txt                                |   62
+ plugin/bash-support.vim                            |  132
  8 files changed, 389 insertions(+), 323 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.10)
@@ -279,13 +279,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Bugfix: unnecessary submenu beyond 'Environ'.
     - Bugfix: shopt menu had no insert mode.
 
- README.bashsupport      |   11 +-
- doc/ChangeLog           |    6 +
- doc/bash-hot-keys.pdf   |  668 ++++++++++++++++++++++++-----------------------
- doc/bash-hot-keys.tex   |   13 +-
- doc/bashsupport.txt     |   30 ++-
- ftplugin/sh.vim         |   33 ++-
- plugin/bash-support.vim |   90 ++++---
+ README.bashsupport      |   11
+ doc/ChangeLog           |    6
+ doc/bash-hot-keys.pdf   |  668
+ doc/bash-hot-keys.tex   |   13
+ doc/bashsupport.txt     |   30
+ ftplugin/sh.vim         |   33
+ plugin/bash-support.vim |   90
  7 files changed, 460 insertions(+), 391 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.9.1)
@@ -298,13 +298,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Map leader for hotkeys now user definable: new global variable g:BASH_MapLeader.
     - Bugfix: 'Statements->no. of elem.s' inserts wrong text.
 
- README.bashsupport                          |    9 +-
- bash-support/codesnippets/basename+pathname |    6 +-
- bash-support/codesnippets/timestamp         |    2 +-
- doc/ChangeLog                               |    7 +
- doc/bashsupport.txt                         |   17 +-
- ftplugin/sh.vim                             |  208 ++--
- plugin/bash-support.vim                     | 1821 ++++++++++++---------------
+ README.bashsupport                          |    9
+ bash-support/codesnippets/basename+pathname |    6
+ bash-support/codesnippets/timestamp         |    2
+ doc/ChangeLog                               |    7
+ doc/bashsupport.txt                         |   17
+ ftplugin/sh.vim                             |  208
+ plugin/bash-support.vim                     | 1821
  7 files changed, 918 insertions(+), 1152 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.9)
@@ -318,16 +318,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Name completion when entering a builtin name.
     + Bugfix: help shows no selection when just 2 manuals are available.
 
- README.bashsupport                                 |    9 +-
- .../codesnippets/read-and-split-into-array         |    9 +
- bash-support/codesnippets/well-behaved-script      |   29 +
- bash-support/wordlists/bash.list                   |    1 -
- doc/ChangeLog                                      |    6 +
- doc/bash-hot-keys.pdf                              |  780 +++++++++++---------
- doc/bash-hot-keys.tex                              |   29 +-
- doc/bashsupport.txt                                |   52 ++-
- ftplugin/sh.vim                                    |   81 ++-
- plugin/bash-support.vim                            |  321 ++++++---
+ README.bashsupport                                 |    9
+ .../codesnippets/read-and-split-into-array         |    9
+ bash-support/codesnippets/well-behaved-script      |   29
+ bash-support/wordlists/bash.list                   |    1
+ doc/ChangeLog                                      |    6
+ doc/bash-hot-keys.pdf                              |  780
+ doc/bash-hot-keys.tex                              |   29
+ doc/bashsupport.txt                                |   52
+ ftplugin/sh.vim                                    |   81
+ plugin/bash-support.vim                            |  321
  10 files changed, 790 insertions(+), 527 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8)
@@ -340,13 +340,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + New help menu: help reorganized, 3 new help hotkeys.
     + The help hotkeys now also work when Vim is run on the console.
 
- README.bashsupport      |   10 ++--
- doc/ChangeLog           |    8 +++
+ README.bashsupport      |   10
+ doc/ChangeLog           |    8
  doc/bash-hot-keys.pdf   |  Bin 64909 -> 65695 bytes
- doc/bash-hot-keys.tex   |   12 +++--
- doc/bashsupport.txt     |   40 ++++++++++++--
- ftplugin/sh.vim         |   59 ++++++++++++---------
- plugin/bash-support.vim |  134 ++++++++++++++++++++++++++++++++--------------
+ doc/bash-hot-keys.tex   |   12
+ doc/bashsupport.txt     |   40
+ ftplugin/sh.vim         |   59
+ plugin/bash-support.vim |  134
  7 files changed, 180 insertions(+), 83 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.7.1)
@@ -361,15 +361,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + I/O-Redir-menu: here-document item has a vmode.
     + File name expansion for the first command line argument entered with <S-F9>.
 
- README.bashsupport                                 |   12 +-
- bash-support/codesnippets/use-file-descriptor      |   17 --
- bash-support/codesnippets/use-file-descriptor-read |   15 ++
- .../codesnippets/use-file-descriptor-write         |   13 ++
- doc/ChangeLog                                      |    8 +
- doc/bash-hot-keys.tex                              |  176 ++++++++++++++++++++
- doc/bashsupport.txt                                |   56 ++++--
- ftplugin/sh.vim                                    |    8 +-
- plugin/bash-support.vim                            |  104 ++++++------
+ README.bashsupport                                 |   12
+ bash-support/codesnippets/use-file-descriptor      |   17
+ bash-support/codesnippets/use-file-descriptor-read |   15
+ .../codesnippets/use-file-descriptor-write         |   13
+ doc/ChangeLog                                      |    8
+ doc/bash-hot-keys.tex                              |  176
+ doc/bashsupport.txt                                |   56
+ ftplugin/sh.vim                                    |    8
+ plugin/bash-support.vim                            |  104
  9 files changed, 314 insertions(+), 95 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.7)
@@ -384,13 +384,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Scripts which are not set executable can be run under Vim.
     + One new hotkey.
 
- README.bashsupport              |   10 +-
- bash-support/scripts/wrapper.sh |   33 +++---
- doc/ChangeLog                   |    6 +
+ README.bashsupport              |   10
+ bash-support/scripts/wrapper.sh |   33
+ doc/ChangeLog                   |    6
  doc/bash-hot-keys.pdf           |  Bin 64713 -> 64909 bytes
- doc/bashsupport.txt             |   16 ++-
- ftplugin/sh.vim                 |    6 +-
- plugin/bash-support.vim         |  226 ++++++++++++++++++++++-----------------
+ doc/bashsupport.txt             |   16
+ ftplugin/sh.vim                 |    6
+ plugin/bash-support.vim         |  226
  7 files changed, 176 insertions(+), 121 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
@@ -403,12 +403,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Superfluous control characters for mode switching (menus, hotkeys) removed. Caused beeps.
     + Most hotkeys now work in insert mode.
 
- README.bashsupport      |   11 +-
- doc/ChangeLog           |    9 +
+ README.bashsupport      |   11
+ doc/ChangeLog           |    9
  doc/bash-hot-keys.pdf   |  Bin 21242 -> 64713 bytes
- doc/bashsupport.txt     |  202 +++++-----
- ftplugin/sh.vim         |  189 +++++----
- plugin/bash-support.vim | 1009 +++++++++++++++++++++++++----------------------
+ doc/bashsupport.txt     |  202
+ ftplugin/sh.vim         |  189
+ plugin/bash-support.vim | 1009
  6 files changed, 760 insertions(+), 660 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
@@ -424,12 +424,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       regarded as a start of a comment.
     + Bugfix. \cl in insert mode called function for visual mode.
 
- README.bashsupport      |   13 +++--
- doc/ChangeLog           |    8 +++
+ README.bashsupport      |   13
+ doc/ChangeLog           |    8
  doc/bash-hot-keys.pdf   |  Bin 39506 -> 21242 bytes
- doc/bashsupport.txt     |   10 ++--
- ftplugin/sh.vim         |   12 ++---
- plugin/bash-support.vim |  127 +++++++++++++++++++++++++---------------------
+ doc/bashsupport.txt     |   10
+ ftplugin/sh.vim         |   12
+ plugin/bash-support.vim |  127
  6 files changed, 94 insertions(+), 76 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
@@ -444,15 +444,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Additional menu entries: 1 parameter substitution, 1 special variable, array index list.
     + Help text improved.
 
- README.bashsupport                            |    9 +-
- bash-support/codesnippets/basename+pathname   |    5 +-
- bash-support/codesnippets/use-file-descriptor |   17 ++
- bash-support/scripts/wrapper.sh               |    6 +-
- bash-support/templates/bash-file-header       |    2 +-
+ README.bashsupport                            |    9
+ bash-support/codesnippets/basename+pathname   |    5
+ bash-support/codesnippets/use-file-descriptor |   17
+ bash-support/scripts/wrapper.sh               |    6
+ bash-support/templates/bash-file-header       |    2
  doc/bash-hot-keys.pdf                         |  Bin 39346 -> 39506 bytes
- doc/bashsupport.txt                           |  125 ++++++-----
- ftplugin/sh.vim                               |   10 +-
- plugin/bash-support.vim                       |  295 ++++++++++++++-----------
+ doc/bashsupport.txt                           |  125
+ ftplugin/sh.vim                               |   10
+ plugin/bash-support.vim                       |  295
  9 files changed, 275 insertions(+), 194 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
@@ -464,10 +464,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + Changes to allow a system-wide installation (please see the help file 'doc/bashsupport.txt').
 
- README.bashsupport      |    8 +++-----
- doc/ChangeLog           |    5 +++++
- doc/bashsupport.txt     |   39 +++++++++++++++++++++++++++++++++++++--
- plugin/bash-support.vim |   32 ++++++++++++++++++++++----------
+ README.bashsupport      |    8
+ doc/ChangeLog           |    5
+ doc/bashsupport.txt     |   39
+ plugin/bash-support.vim |   32
  4 files changed, 67 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
@@ -481,13 +481,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Three new key mappings for snippet handling.
     + Three items from the statements menu removed (quoting; but see file customization.vimrc).
 
- README.bashsupport                  |   10 ++--
- bash-support/rc/customization.vimrc |   23 +++++++++++
- doc/ChangeLog                       |    7 +++
+ README.bashsupport                  |   10
+ bash-support/rc/customization.vimrc |   23
+ doc/ChangeLog                       |    7
  doc/bash-hot-keys.pdf               |  Bin 38583 -> 39346 bytes
- doc/bashsupport.txt                 |   14 ++++---
- ftplugin/sh.vim                     |   22 ++++++++--
- plugin/bash-support.vim             |   75 +++++++++++++++-------------------
+ doc/bashsupport.txt                 |   14
+ ftplugin/sh.vim                     |   22
+ plugin/bash-support.vim             |   75
  7 files changed, 93 insertions(+), 58 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
@@ -501,12 +501,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + New insert mode mappings.
     + A few mappings have been renamed (to bring them into line with my C/C++ and Perl plugin).
 
- README.bashsupport      |    9 +-
- doc/ChangeLog           |    6 +
+ README.bashsupport      |    9
+ doc/ChangeLog           |    6
  doc/bash-hot-keys.pdf   |  Bin 40291 -> 38583 bytes
- doc/bashsupport.txt     |   83 +++++----
- ftplugin/sh.vim         |   92 ++++++----
- plugin/bash-support.vim |  465 +++++++++++++++++++++++++++--------------------
+ doc/bashsupport.txt     |   83
+ ftplugin/sh.vim         |   92
+ plugin/bash-support.vim |  465
  6 files changed, 379 insertions(+), 276 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.1)
@@ -519,13 +519,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Bugfix: missing hotkey \ch added (Thanks to Ian Tegebo).
     + File wrapper.sh moved to the new directory 'bash-support/scripts'.
 
- README.bashsupport              |   14 ++++-------
- bash-support/scripts/wrapper.sh |   36 ++++++++++++++++++++++++++++
- doc/ChangeLog                   |    6 ++++
- doc/bashsupport.txt             |   21 ++++++++++++----
- ftplugin/sh.vim                 |   49 ++++++++++++++++++++-------------------
- plugin/bash-support.vim         |    7 +++--
- plugin/wrapper.sh               |   36 ----------------------------
+ README.bashsupport              |   14
+ bash-support/scripts/wrapper.sh |   36
+ doc/ChangeLog                   |    6
+ doc/bashsupport.txt             |   21
+ ftplugin/sh.vim                 |   49
+ plugin/bash-support.vim         |    7
+ plugin/wrapper.sh               |   36
  7 files changed, 91 insertions(+), 78 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -542,44 +542,44 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Bugfix: empty new file after removing the header template can't be closed.
     + Bugfix : Tools entry missing when root menu not shown from the start.
 
- ChangeLog                                          |  127 ----------
- README.bashsupport                                 |   55 ++---
- bash-support/codesnippets/assert                   |   20 ++
- bash-support/codesnippets/basename+pathname        |    2 +
- bash-support/codesnippets/basename-function        |   11 +
- .../check-number-of-command-line-arguments         |    9 +
- bash-support/codesnippets/create-tempfile          |    3 +
- .../codesnippets/create-tempfile-with-trap         |   19 ++
- bash-support/codesnippets/free-software-comment    |    8 +
- bash-support/codesnippets/timestamp                |    3 +
- .../usage-and-command-line-arguments.noindent      |   39 +++
- bash-support/rc/customization.gvimrc               |   54 +++++
- bash-support/rc/customization.vimrc                |  129 +++++++++++
- bash-support/templates/bash-file-header            |   20 ++
- bash-support/templates/bash-frame                  |    3 +
- bash-support/templates/bash-function-description   |    6 +
- bash-support/wordlists/bash.list                   |  163 +++++++++++++
- codesnippets-bash/RunInformation.sh                |   15 --
- codesnippets-bash/assert.sh                        |   20 --
- codesnippets-bash/create-tempfile-with-trap.sh     |   17 --
- codesnippets-bash/free-software-comment            |    8 -
- .../handle-command-line-arguments.noindent         |   42 ----
- codesnippets-bash/timestamp.sh                     |    3 -
- codesnippets-bash/trap_DEBUG                       |   18 --
- codesnippets-bash/trap_ERR                         |   15 --
- codesnippets-bash/trap_EXIT                        |   15 --
- codesnippets-bash/trap_RETURN                      |   17 --
- doc/ChangeLog                                      |  137 +++++++++++
+ ChangeLog                                          |  127
+ README.bashsupport                                 |   55
+ bash-support/codesnippets/assert                   |   20
+ bash-support/codesnippets/basename+pathname        |    2
+ bash-support/codesnippets/basename-function        |   11
+ .../check-number-of-command-line-arguments         |    9
+ bash-support/codesnippets/create-tempfile          |    3
+ .../codesnippets/create-tempfile-with-trap         |   19
+ bash-support/codesnippets/free-software-comment    |    8
+ bash-support/codesnippets/timestamp                |    3
+ .../usage-and-command-line-arguments.noindent      |   39
+ bash-support/rc/customization.gvimrc               |   54
+ bash-support/rc/customization.vimrc                |  129
+ bash-support/templates/bash-file-header            |   20
+ bash-support/templates/bash-frame                  |    3
+ bash-support/templates/bash-function-description   |    6
+ bash-support/wordlists/bash.list                   |  163
+ codesnippets-bash/RunInformation.sh                |   15
+ codesnippets-bash/assert.sh                        |   20
+ codesnippets-bash/create-tempfile-with-trap.sh     |   17
+ codesnippets-bash/free-software-comment            |    8
+ .../handle-command-line-arguments.noindent         |   42
+ codesnippets-bash/timestamp.sh                     |    3
+ codesnippets-bash/trap_DEBUG                       |   18
+ codesnippets-bash/trap_ERR                         |   15
+ codesnippets-bash/trap_EXIT                        |   15
+ codesnippets-bash/trap_RETURN                      |   17
+ doc/ChangeLog                                      |  137
  doc/bash-hot-keys.pdf                              |  Bin 36117 -> 40291 bytes
- doc/bashsupport.txt                                |  105 +++++----
- ftplugin/sh.vim                                    |   66 +++---
- plugin/bash-support.vim                            |  244 +++++++++++++-------
- plugin/templates/bash-file-header                  |   20 --
- plugin/templates/bash-frame                        |    3 -
- plugin/templates/bash-function-description         |    6 -
- rc/customization.gvimrc                            |   54 -----
- rc/customization.vimrc                             |  129 -----------
- wordlists/bash.list                                |  163 -------------
+ doc/bashsupport.txt                                |  105
+ ftplugin/sh.vim                                    |   66
+ plugin/bash-support.vim                            |  244
+ plugin/templates/bash-file-header                  |   20
+ plugin/templates/bash-frame                        |    3
+ plugin/templates/bash-function-description         |    6
+ rc/customization.gvimrc                            |   54
+ rc/customization.vimrc                             |  129
+ wordlists/bash.list                                |  163
  38 files changed, 907 insertions(+), 861 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.15)
@@ -593,15 +593,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Bugfix: cursor misplaced after some visual mode operations.
     + Needs Vim version 7.0+.
 
- ChangeLog                           |    7 +
- README.bashsupport                  |    9 +-
- codesnippets-bash/RunInformation.sh |   10 +-
- codesnippets-bash/assert.sh         |   20 +
+ ChangeLog                           |    7
+ README.bashsupport                  |    9
+ codesnippets-bash/RunInformation.sh |   10
+ codesnippets-bash/assert.sh         |   20
  doc/bash-hot-keys.pdf               |  Bin 35965 -> 36117 bytes
- doc/bashsupport.txt                 |   10 +-
- ftplugin/sh.vim                     |    6 +-
- plugin/bash-support.vim             | 1016 +++++++++++++++++------------------
- rc/customization.vimrc              |   24 +-
+ doc/bashsupport.txt                 |   10
+ ftplugin/sh.vim                     |    6
+ plugin/bash-support.vim             | 1016
+ rc/customization.vimrc              |   24
  9 files changed, 568 insertions(+), 534 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.14)
@@ -614,10 +614,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Setting the column for the start of line-end comments improved.
     + Mac OS X : circumvent a Vim bug which caused a crash when loading plugin version 1.13.
 
- ChangeLog               |    6 ++++++
- README.bashsupport      |   21 ++++++++++++++-------
- doc/bashsupport.txt     |   17 +++++++++++++----
- plugin/bash-support.vim |   28 ++++++++++++++++++++++------
+ ChangeLog               |    6
+ README.bashsupport      |   21
+ doc/bashsupport.txt     |   17
+ plugin/bash-support.vim |   28
  4 files changed, 55 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.13)
@@ -632,14 +632,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + New help entry in the main menu of this plugin (shows the plugin documentation).
     + A hardcopy shows the localized date and time in the header line.
 
- ChangeLog               |  114 ++++++++
- README.bashsupport      |  115 +-------
+ ChangeLog               |  114
+ README.bashsupport      |  115
  doc/bash-hot-keys.pdf   |  Bin 35774 -> 35965 bytes
- doc/bashsupport.txt     |   68 ++++-
- ftplugin/sh.vim         |   12 +-
- plugin/bash-support.vim |  730 +++++++++++++++++++++++++----------------------
- plugin/wrapper.sh       |   34 ++-
- wordlists/bash.list     |  192 +++++++------
+ doc/bashsupport.txt     |   68
+ ftplugin/sh.vim         |   12
+ plugin/bash-support.vim |  730
+ plugin/wrapper.sh       |   34
+ wordlists/bash.list     |  192
  8 files changed, 702 insertions(+), 563 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
@@ -653,15 +653,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Syntax check recognizes shopt options.
     + New regex menu: compose regular expressions with a few keystrokes from the menu.
 
- README.bashsupport                                 |   11 +-
- .../handle-command-line-arguments.noindent         |    2 +-
+ README.bashsupport                                 |   11
+ .../handle-command-line-arguments.noindent         |    2
  doc/bash-hot-keys.pdf                              |  Bin 35666 -> 35774 bytes
- doc/bashsupport.txt                                |   75 ++++--
- ftplugin/sh.vim                                    |   10 +-
- plugin/bash-support.vim                            |  283 +++++++++++++++-----
- plugin/templates/bash-file-header                  |   30 +-
- plugin/templates/bash-frame                        |    2 +-
- plugin/templates/bash-function-description         |    8 +-
+ doc/bashsupport.txt                                |   75
+ ftplugin/sh.vim                                    |   10
+ plugin/bash-support.vim                            |  283
+ plugin/templates/bash-file-header                  |   30
+ plugin/templates/bash-frame                        |    2
+ plugin/templates/bash-function-description         |    8
  9 files changed, 304 insertions(+), 117 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.11)
@@ -677,19 +677,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Insert/remove echo for commenting/uncommenting statements.
     + Script will be made executable before running it (e.g. after a "Save As...").
 
- README.bashsupport                                 |   14 +-
- codesnippets-bash/RunInformation                   |    8 -
- codesnippets-bash/RunInformation.sh                |   11 +
- .../handle-command-line-arguments.noindent         |   42 ++
- codesnippets-bash/use-tempfile                     |    3 -
+ README.bashsupport                                 |   14
+ codesnippets-bash/RunInformation                   |    8
+ codesnippets-bash/RunInformation.sh                |   11
+ .../handle-command-line-arguments.noindent         |   42
+ codesnippets-bash/use-tempfile                     |    3
  doc/bash-hot-keys.pdf                              |  Bin 35548 -> 35666 bytes
- doc/bashsupport.txt                                |  128 ++++---
- ftplugin/sh.vim                                    |   23 +-
- plugin/bash-support.vim                            |  428 ++++++++++++--------
- plugin/templates/bash-frame                        |    4 +-
- rc/customization.gvimrc                            |    2 +-
- rc/customization.vimrc                             |    8 +-
- wordlists/bash.list                                |    1 -
+ doc/bashsupport.txt                                |  128
+ ftplugin/sh.vim                                    |   23
+ plugin/bash-support.vim                            |  428
+ plugin/templates/bash-frame                        |    4
+ rc/customization.gvimrc                            |    2
+ rc/customization.vimrc                             |    8
+ wordlists/bash.list                                |    1
  13 files changed, 422 insertions(+), 250 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.10.1)
@@ -701,12 +701,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + Starting an xterm was not possible for some Linux/Unix installations (bugfix).
 
- README.bashsupport               |    7 ++-
- codesnippets-bash/RunInformation |    8 ++
- codesnippets-bash/use-tempfile   |    3 +
- doc/bashsupport.txt              |  136 +++++++++++++++++++-------------------
- ftplugin/sh.vim                  |    8 +-
- plugin/bash-support.vim          |   20 +++---
+ README.bashsupport               |    7
+ codesnippets-bash/RunInformation |    8
+ codesnippets-bash/use-tempfile   |    3
+ doc/bashsupport.txt              |  136
+ ftplugin/sh.vim                  |    8
+ plugin/bash-support.vim          |   20
  6 files changed, 101 insertions(+), 81 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
@@ -725,22 +725,22 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     + Spaces in path names and file names are now possible.
     + Template files and snippet files are no longer kept in the list of alternate files.
 
- README.bashsupport                             |   43 +-
- codesnippets-bash/create-tempfile-with-trap.sh |   17 +
- codesnippets-bash/timestamp.sh                 |    3 +-
- codesnippets-bash/trap_DEBUG                   |   18 +
- codesnippets-bash/trap_ERR                     |   15 +
- codesnippets-bash/trap_EXIT                    |   15 +
- codesnippets-bash/trap_RETURN                  |   17 +
+ README.bashsupport                             |   43
+ codesnippets-bash/create-tempfile-with-trap.sh |   17
+ codesnippets-bash/timestamp.sh                 |    3
+ codesnippets-bash/trap_DEBUG                   |   18
+ codesnippets-bash/trap_ERR                     |   15
+ codesnippets-bash/trap_EXIT                    |   15
+ codesnippets-bash/trap_RETURN                  |   17
  doc/bash-hot-keys.pdf                          |  Bin 40695 -> 35548 bytes
- doc/bashsupport.txt                            |  236 +++++---
- ftplugin/sh.vim                                |   25 +-
- plugin/bash-support.vim                        |  767 +++++++++++++++++-------
- plugin/templates/bash-function-description     |    4 +-
- plugin/wrapper.sh                              |   18 +-
- rc/customization.gvimrc                        |   35 +-
- rc/customization.vimrc                         |  117 ++--
- wordlists/bash.list                            |  215 ++++---
+ doc/bashsupport.txt                            |  236
+ ftplugin/sh.vim                                |   25
+ plugin/bash-support.vim                        |  767
+ plugin/templates/bash-function-description     |    4
+ plugin/wrapper.sh                              |   18
+ rc/customization.gvimrc                        |   35
+ rc/customization.vimrc                         |  117
+ wordlists/bash.list                            |  215
  16 files changed, 1071 insertions(+), 474 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
@@ -752,15 +752,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + Running a Bash-script   (1) The script can be run from the command line as usual.  (2) The output can be directed into a window with name "Bash-Output".   (3) The script can be run in a xterm.+ The new hotkey Shift-F9 or the "cmd. line arg." sets command line arguments for the  current buffer (that is, each buffer can have its own arguments).+ A code snippet with the file name extension "ni" or "noindent" will not be  indented on insertion.+ 'Line End Comments' ignores blank lines in a marked block.+ Calling a set-command (submenu "Set") for a marked block will set this option above  this block and unset it below.
 
- README.bashsupport                         |   33 ++-
- codesnippets-bash/timestamp.sh             |    4 +
+ README.bashsupport                         |   33
+ codesnippets-bash/timestamp.sh             |    4
  doc/bash-hot-keys.pdf                      |  Bin 40744 -> 40695 bytes
- doc/bashsupport.txt                        |  274 ++++++++++++--
- ftplugin/sh.vim                            |   24 +-
- plugin/bash-support.vim                    |  572 ++++++++++++++++++----------
- plugin/templates/bash-file-header          |    4 +-
- plugin/templates/bash-function-description |   15 +-
- plugin/wrapper.sh                          |   22 +
+ doc/bashsupport.txt                        |  274
+ ftplugin/sh.vim                            |   24
+ plugin/bash-support.vim                    |  572
+ plugin/templates/bash-file-header          |    4
+ plugin/templates/bash-function-description |   15
+ plugin/wrapper.sh                          |   22
  9 files changed, 682 insertions(+), 266 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
@@ -772,18 +772,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + Installation simplified.+ Run syntax check / list errors in an error window.+ Append aligned comments to all lines of a marked block.+ The root menu can be removed.+ The dialog windows (GUI) have been replaced by more flexible command line inputs.+ The undocumented and unnecessary hot key F12 has been removed.
 
- README.bashsupport                      |  162 ++++
- README.orig                             |  334 -------
- codesnippets-bash/free-software-comment |    8 +
+ README.bashsupport                      |  162
+ README.orig                             |  334
+ codesnippets-bash/free-software-comment |    8
  doc/bash-hot-keys.pdf                   |  Bin 40755 -> 40744 bytes
- doc/bashsupport.txt                     |  301 ++++---
- ftplugin/sh.vim                         |   53 +-
- install.sh                              |   98 --
- plugin/bash-support.vim                 | 1551 +++++++++++++++++--------------
- plugin/templates/bash-file-header       |    3 +-
- rc/bash.vimrc                           |   20 -
- rc/customization.gvimrc                 |    6 +-
- rc/customization.vimrc                  |   64 +-
+ doc/bashsupport.txt                     |  301
+ ftplugin/sh.vim                         |   53
+ install.sh                              |   98
+ plugin/bash-support.vim                 | 1551
+ plugin/templates/bash-file-header       |    3
+ rc/bash.vimrc                           |   20
+ rc/customization.gvimrc                 |    6
+ rc/customization.vimrc                  |   64
  12 files changed, 1285 insertions(+), 1315 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
@@ -795,24 +795,24 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + Only one entry in the gVim root menu.+ 28 key mappings for Vim without GUI. See bash-hot-keys.pdf (reference card).+ All hotkeys are only defined for bash files.+ Install script added.+ Customization improved. + Vim doc added (file bashsupport.txt).+ Documentation improved.+ Bug fix (template file handling)
 
- README.orig                                |  345 ++++++---
- costumization.gvimrc                       |   25 -
- costumization.vimrc                        |  116 ---
+ README.orig                                |  345
+ costumization.gvimrc                       |   25
+ costumization.vimrc                        |  116
  doc/bash-hot-keys.pdf                      |  Bin 0 -> 40755 bytes
- doc/bashsupport.txt                        |  347 ++++++++
- ftplugin/sh.vim                            |   70 ++
- install.sh                                 |   98 +++
- plugin/bash-support.vim                    | 1217 +++++++++++++++-------------
- plugin/templates/bash-file-header          |   21 +
- plugin/templates/bash-frame                |    3 +
- plugin/templates/bash-function-description |   13 +
- rc/bash.vimrc                              |   20 +
- rc/customization.gvimrc                    |   25 +
- rc/customization.vimrc                     |  130 +++
- templates/bash-file-header                 |   20 -
- templates/bash-frame                       |    3 -
- templates/bash-function-description        |   13 -
- wordlists/bash.list                        |  105 +++
+ doc/bashsupport.txt                        |  347
+ ftplugin/sh.vim                            |   70
+ install.sh                                 |   98
+ plugin/bash-support.vim                    | 1217
+ plugin/templates/bash-file-header          |   21
+ plugin/templates/bash-frame                |    3
+ plugin/templates/bash-function-description |   13
+ rc/bash.vimrc                              |   20
+ rc/customization.gvimrc                    |   25
+ rc/customization.vimrc                     |  130
+ templates/bash-file-header                 |   20
+ templates/bash-frame                       |    3
+ templates/bash-function-description        |   13
+ wordlists/bash.list                        |  105
  18 files changed, 1732 insertions(+), 839 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -824,10 +824,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + Tag substitution rewritten (Some characters in a substitution text for a tag  prevented the tag from being substituted).+ All bash variables can now be inserted from the menus.+ A marked region can be surrounded by a for-, if, select- while- or until   statement (with indentation).+ A marked text can be surrounded with quotes.+ A marked region or a complete line can be surrounded with echo " ".+ The echo " " can be removed from a line.
 
- README.orig             |   20 +++-
- costumization.gvimrc    |    4 +-
- costumization.vimrc     |   13 +--
- plugin/bash-support.vim |  325 ++++++++++++++++++++++++++++++++++++-----------
+ README.orig             |   20
+ costumization.gvimrc    |    4
+ costumization.vimrc     |   13
+ plugin/bash-support.vim |  325
  4 files changed, 278 insertions(+), 84 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -839,13 +839,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     + Block comments are now read as templates or skeletons from files:     frame Comment,  function description,  file header+ These templates can contain tags like |FILENAME|, |AUTHOR| etc. which are replaced   after reading.+ indentation: multiline inserts and code snippets will be indented after insertion.+ Most menu entries are now also active in normal mode.+ Reading the templates is done in one function which can be called in an autocmd.+ Code cleanup: register z no longer used. Most function calls are silent now.
 
- README.orig                         |  173 +++++++++++
- costumization.gvimrc                |   25 ++
- costumization.vimrc                 |  121 +++++++
- plugin/bash-support.vim             |  584 ++++++++++++++++++++++++++---------
- templates/bash-file-header          |   20 ++
- templates/bash-frame                |    3 +
- templates/bash-function-description |   13 +
+ README.orig                         |  173
+ costumization.gvimrc                |   25
+ costumization.vimrc                 |  121
+ plugin/bash-support.vim             |  584
+ templates/bash-file-header          |   20
+ templates/bash-frame                |    3
+ templates/bash-function-description |   13
  7 files changed, 795 insertions(+), 144 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -855,6 +855,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.3: Initial upload
 
- README                  |   41 +++++
- plugin/bash-support.vim |  440 +++++++++++++++++++++++++++++++++++++++++++++++
+ README                  |   41
+ plugin/bash-support.vim |  440
  2 files changed, 481 insertions(+), 0 deletions(-)

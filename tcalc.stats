@@ -11,10 +11,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Debugger (sort of)
     - FIX: Nested blocks & more
 
- doc/tcalc.txt    |   48 ++++++
- plugin/tcalc.vim |   14 ++-
- ruby/tcalc.rb    |  497 +++++++++++++++++++++++++++++++++++++++++-------------
- syntax/tcalc.vim |    6 +-
+ doc/tcalc.txt    |   48
+ plugin/tcalc.vim |   14
+ ruby/tcalc.rb    |  497
+ syntax/tcalc.vim |    6
  4 files changed, 442 insertions(+), 123 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
@@ -29,12 +29,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - VIM: use the tcalc window to display plots, lists etc.
     - FIX: Nested words and some more
 
- autoload/tcalc.vim |   35 ++++++++++++++++++------
- doc/tcalc.txt      |   41 +++++++++++++--------------
- ftplugin/tcalc.vim |   15 ++++++++++
- plugin/tcalc.vim   |   19 ++++++++-----
- ruby/tcalc.rb      |   76 +++++++++++++++++++++++++++++++++++-----------------
- syntax/tcalc.vim   |    6 ++--
+ autoload/tcalc.vim |   35
+ doc/tcalc.txt      |   41
+ ftplugin/tcalc.vim |   15
+ plugin/tcalc.vim   |   19
+ ruby/tcalc.rb      |   76
+ syntax/tcalc.vim   |    6
  6 files changed, 127 insertions(+), 65 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
@@ -49,10 +49,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - FIX: sort words on completion
     - Distribute as zip
 
- doc/tcalc.txt    |  266 ++++++++++++++++++++++++++++++++++++++++++++++--------
- plugin/tcalc.vim |   12 ++-
- ruby/tcalc.rb    |   59 ++++++++----
- syntax/tcalc.vim |    9 +-
+ doc/tcalc.txt    |  266
+ plugin/tcalc.vim |   12
+ ruby/tcalc.rb    |   59
+ syntax/tcalc.vim |    9
  4 files changed, 281 insertions(+), 65 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
@@ -84,10 +84,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - TCalc syntax file.
     - FIX: Command line completion
 
- autoload/tcalc.vim |   26 +-
- plugin/tcalc.vim   |   59 +++-
- ruby/tcalc.rb      |  943 +++++++++++++++++++++++++++++++++++++++++++---------
- syntax/tcalc.vim   |   69 ++++
+ autoload/tcalc.vim |   26
+ plugin/tcalc.vim   |   59
+ ruby/tcalc.rb      |  943
+ syntax/tcalc.vim   |   69
  4 files changed, 911 insertions(+), 186 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
@@ -112,10 +112,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - tcalc.rb can now be used as stand-alone program (a simple
     curses-based frontend).
 
- autoload/tcalc.vim |    8 +-
- doc/tcalc.txt      |   46 +++++-
- plugin/tcalc.vim   |   34 ++++-
- ruby/tcalc.rb      |  473 +++++++++++++++++++++++++++++++++++++++++++++-------
+ autoload/tcalc.vim |    8
+ doc/tcalc.txt      |   46
+ plugin/tcalc.vim   |   34
+ ruby/tcalc.rb      |  473
  4 files changed, 492 insertions(+), 69 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -131,10 +131,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - New "at" method to select an item from array-like objects
     - Removed shortcut variables.
 
- autoload/tcalc.vim |  283 +----------------------------------------
- doc/tcalc.txt      |   58 ++++++++-
- plugin/tcalc.vim   |   45 ++++---
- ruby/tcalc.rb      |  364 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ autoload/tcalc.vim |  283
+ doc/tcalc.txt      |   58
+ plugin/tcalc.vim   |   45
+ ruby/tcalc.rb      |  364
  4 files changed, 450 insertions(+), 300 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -146,9 +146,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Minor fix: command regexp
 
- autoload/tcalc.vim |   30 +++++++++-----
- doc/tcalc.txt      |  107 +++++++++++++++++++++++++++++++++++++--------------
- plugin/tcalc.vim   |    9 +++-
+ autoload/tcalc.vim |   30
+ doc/tcalc.txt      |  107
+ plugin/tcalc.vim   |    9
  3 files changed, 102 insertions(+), 44 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -175,9 +175,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Can push strings ("foo bar")
     - "Symbols" à la 'foo (actually a string)
 
- autoload/tcalc.vim |  229 +++++++++++++++++++++++++++++++++++++++-------------
- doc/tcalc.txt      |  111 +++++++++++++++++++++++++
- plugin/tcalc.vim   |   90 +++++++-------------
+ autoload/tcalc.vim |  229
+ doc/tcalc.txt      |  111
+ plugin/tcalc.vim   |   90
  3 files changed, 313 insertions(+), 117 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -201,8 +201,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Variables; ls, vars, let, =, rm commands
     - Command line completion for variables and commands
 
- autoload/tcalc.vim |  294 ++++++++++++++++++++++++++++++++++------------------
- plugin/tcalc.vim   |   78 ++++++++++----
+ autoload/tcalc.vim |  294
+ plugin/tcalc.vim   |   78
  2 files changed, 253 insertions(+), 119 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -218,8 +218,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     though.)
     - The syntax has slightly changed: "CmdCount,Arg", eg, "y3,a"
 
- autoload/tcalc.vim |  121 +++++++++++++++++++++++++++-------------------------
- plugin/tcalc.vim   |   24 ++++++++--
+ autoload/tcalc.vim |  121
+ plugin/tcalc.vim   |   24
  2 files changed, 82 insertions(+), 63 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -229,7 +229,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README             |   36 +++++++++++++++
- autoload/tcalc.vim |  125 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/tcalc.vim   |   65 +++++++++++++++++++++++++++
+ README             |   36
+ autoload/tcalc.vim |  125
+ plugin/tcalc.vim   |   65
  3 files changed, 226 insertions(+), 0 deletions(-)

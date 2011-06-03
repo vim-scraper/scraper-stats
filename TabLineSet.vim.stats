@@ -8,7 +8,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - startup bug with Tab.._min undefined
     [blah, sorry]
 
- plugin/TabLineSet.vim |    8 +++++---
+ plugin/TabLineSet.vim |    8
  1 files changed, 5 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -24,7 +24,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Added g:TabLineSet_max_cols to enable GUI tab
     scrolling
 
- plugin/TabLineSet.vim |  936 +++++++++++++++++++++++++++++++++++++------------
+ plugin/TabLineSet.vim |  936
  1 files changed, 703 insertions(+), 233 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8.3)
@@ -34,7 +34,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.8.3: - Checks for need to recalc, now ~instant return for page redraws
 
- plugin/TabLineSet.vim |  114 +++++++++++++++++++-----------------------------
+ plugin/TabLineSet.vim |  114
  1 files changed, 45 insertions(+), 69 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8.1.1)
@@ -44,7 +44,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.8.1.1: Added wrap-max-lines increase/decrease "buttons" on tabline.
 
- plugin/TabLineSet.vim |   10 ++++++++++
+ plugin/TabLineSet.vim |   10
  1 files changed, 10 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8.1)
@@ -54,7 +54,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.8.1: - Corrected indexing for mousefunc patch
 
- plugin/TabLineSet.vim |   31 +++++++++++++++++++------------
+ plugin/TabLineSet.vim |   31
  1 files changed, 19 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
@@ -66,7 +66,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Use the tabline wrapping patch if available.
 
- plugin/TabLineSet.vim |  134 ++++++++++++++++++++++++++++++-------------------
+ plugin/TabLineSet.vim |  134
  1 files changed, 82 insertions(+), 52 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7.1)
@@ -78,7 +78,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Reset highlighting based on synIDattr() and whether some external operation has cleared attributes.
 
- plugin/TabLineSet.vim |   10 +++++++---
+ plugin/TabLineSet.vim |   10
  1 files changed, 7 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
@@ -90,7 +90,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Added pre- and post-proc function hooks
 
- plugin/TabLineSet.vim |   62 +++++++++++++++++++++++++++++++++++++++++++++++-
+ plugin/TabLineSet.vim |   62
  1 files changed, 60 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.61)
@@ -105,7 +105,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     the toggle or rotate mappings/functions to reset the
     highlighting, if something clobbers it.
 
- plugin/TabLineSet.vim | 1568 ++++++++++++++++++++++++++-----------------------
+ plugin/TabLineSet.vim | 1568
  1 files changed, 837 insertions(+), 731 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.55)
@@ -117,7 +117,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - disable the g:TabLineSetFillerFunc per the performance problem with VIm70d.
 
- plugin/TabLineSet.vim |   26 +++++++++++++++++++++-----
+ plugin/TabLineSet.vim |   26
  1 files changed, 21 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -131,7 +131,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - re-arranged the close button, the window counter,
       and the (tab,win,buf) list
 
- plugin/TabLineSet.vim |  410 ++++++++++++++++++++++++++++++++++++++++---------
+ plugin/TabLineSet.vim |  410
  1 files changed, 334 insertions(+), 76 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -145,7 +145,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - changed toggle and rotate mapping functions to
       handle multiple option sets to switch through
 
- plugin/TabLineSet.vim |  398 +++++++++++++++++++++++++++++++------------------
+ plugin/TabLineSet.vim |  398
  1 files changed, 252 insertions(+), 146 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3.5)
@@ -157,7 +157,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added an autocommand to address problems of start up highlighting conflicts.
 
- plugin/TabLineSet.vim |   94 ++++++++++++++++++++++++++----------------------
+ plugin/TabLineSet.vim |   94
  1 files changed, 51 insertions(+), 43 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -174,8 +174,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Solidified the non-GUI color scheme.
     - Started some hooks to customize slack area.
 
- plugin/TabLineSet.vim |  343 +++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/tabset.vim     |  197 ----------------------------
+ plugin/TabLineSet.vim |  343
+ plugin/tabset.vim     |  197
  2 files changed, 343 insertions(+), 197 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -187,7 +187,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed some bugs, better width calc., more presentation and highlighting thingies.
 
- plugin/tabset.vim |  114 +++++++++++++++++++++++++++++++++++++---------------
+ plugin/tabset.vim |  114
  1 files changed, 81 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -197,6 +197,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.1: Initial upload
 
- README            |   59 +++++++++++++++++++++
- plugin/tabset.vim |  149 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README            |   59
+ plugin/tabset.vim |  149
  2 files changed, 208 insertions(+), 0 deletions(-)

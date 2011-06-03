@@ -10,16 +10,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - :TAssertType command (requires macros/tassert.vim)
     - Moved Is*() functions to macros/tassert.vim.
 
- autoload/tassert.vim |   62 ++++++++
- autoload/tlog.vim    |  123 ++++++++++++++++
- doc/tAssert.txt      |  138 ------------------
- doc/tassert.txt      |  305 +++++++++++++++++++++++++++++++++++++++
- macros/tassert.vim   |  142 ++++++++++++++++++
- plugin/05tLog.vim    |   96 -------------
- plugin/05tlog.vim    |   68 +++++++++
- plugin/07tAssert.vim |  386 --------------------------------------------------
- plugin/07tassert.vim |  146 +++++++++++++++++++
- test/tAssert.vim     |   68 ---------
+ autoload/tassert.vim |   62
+ autoload/tlog.vim    |  123
+ doc/tAssert.txt      |  138
+ doc/tassert.txt      |  305
+ macros/tassert.vim   |  142
+ plugin/05tLog.vim    |   96
+ plugin/05tlog.vim    |   68
+ plugin/07tAssert.vim |  386
+ plugin/07tassert.vim |  146
+ test/tAssert.vim     |   68
  10 files changed, 846 insertions(+), 688 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -41,13 +41,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - TAssertComment! & TAssertUncomment! (with [!]) also call
     TLog(Un)Comment.
 
- doc/tAssert.txt      |    4 +-
- etc/tAssert.lst      |    5 -
- plugin/00tAssert.vim |  289 -------------------------------------
- plugin/00tLog.vim    |   62 --------
- plugin/05tLog.vim    |   96 +++++++++++++
- plugin/07tAssert.vim |  386 ++++++++++++++++++++++++++++++++++++++++++++++++++
- test/tAssert.vim     |   27 +++-
+ doc/tAssert.txt      |    4
+ etc/tAssert.lst      |    5
+ plugin/00tAssert.vim |  289
+ plugin/00tLog.vim    |   62
+ plugin/05tLog.vim    |   96
+ plugin/07tAssert.vim |  386
+ test/tAssert.vim     |   27
  7 files changed, 507 insertions(+), 362 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -67,11 +67,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - s:ResolveSIDs() caches scriptnames
     - Moved logging code to 00tLog.vim
 
- doc/tAssert.txt      |   43 +++++++--
- etc/tAssert.lst      |    1 +
- plugin/00tAssert.vim |  238 ++++++++++++++++++++++++++++++++++++++++----------
- plugin/00tLog.vim    |   62 +++++++++++++
- test/tAssert.vim     |   54 ++++++++----
+ doc/tAssert.txt      |   43
+ etc/tAssert.lst      |    1
+ plugin/00tAssert.vim |  238
+ plugin/00tLog.vim    |   62
+ test/tAssert.vim     |   54
  5 files changed, 322 insertions(+), 76 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -81,9 +81,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README               |   39 +++++++++++++
- doc/tAssert.txt      |  113 ++++++++++++++++++++++++++++++++++++++
- etc/tAssert.lst      |    4 ++
- plugin/00tAssert.vim |  147 ++++++++++++++++++++++++++++++++++++++++++++++++++
- test/tAssert.vim     |   33 +++++++++++
+ README               |   39
+ doc/tAssert.txt      |  113
+ etc/tAssert.lst      |    4
+ plugin/00tAssert.vim |  147
+ test/tAssert.vim     |   33
  5 files changed, 336 insertions(+), 0 deletions(-)

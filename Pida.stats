@@ -28,83 +28,83 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     ;First time-run wizard to select required components.
 
- CHANGELOG                               | 2362 +++++++++++++++++++++++++++++++
- CONTRIBUTORS                            |   48 +
- MANIFEST.in                             |   11 +
- README                                  |   11 +
- README.orig                             |  113 ++
- RELNOTES                                |   35 +
- TODO                                    |   22 +
+ CHANGELOG                               | 2362
+ CONTRIBUTORS                            |   48
+ MANIFEST.in                             |   11
+ README                                  |   11
+ README.orig                             |  113
+ RELNOTES                                |   35
+ TODO                                    |   22
  data/icons.dat                          |  Bin 0 -> 225280 bytes
- data/pida.vim                           |   28 +
+ data/pida.vim                           |   28
  data/pidalogo.png                       |  Bin 0 -> 4752 bytes
- debian/changelog                        |   34 +
- debian/compat                           |    1 +
- debian/control                          |   46 +
- debian/control.in                       |   49 +
- debian/copyright                        |   26 +
+ debian/changelog                        |   34
+ debian/compat                           |    1
+ debian/control                          |   46
+ debian/control.in                       |   49
+ debian/copyright                        |   26
  debian/pida.1.gz                        |  Bin 0 -> 681 bytes
- debian/python2.3-pida.docs              |    3 +
- debian/python2.3-pida.menu              |    2 +
- debian/python2.4-pida.docs              |    3 +
- debian/python2.4-pida.menu              |    2 +
- debian/rules                            |   14 +
- debian/watch                            |    2 +
- extras/generate-api.py                  |  217 +++
- extras/iconmaker.data                   |   52 +
- extras/iconmaker.py                     |   49 +
- extras/pida-local.sh                    |   34 +
- scripts/pida                            |    4 +
- setup.py                                |   98 ++
- src/__init__.py                         |   24 +
- src/base.py                             |   84 ++
- src/configuration/__init__.py           |   22 +
- src/configuration/config.py             |  544 +++++++
- src/configuration/options.py            |  189 +++
- src/configuration/registry.py           |  306 ++++
- src/debugwindow.py                      |  239 ++++
- src/firstrun.py                         |  146 ++
- src/gobjectreactor.py                   |   86 ++
- src/gtkextra.py                         |  628 ++++++++
- src/main.py                             |  236 +++
- src/mainwindow.py                       |  229 +++
- src/plugin.py                           |  540 +++++++
- src/plugins/__init__.py                 |   23 +
- src/plugins/boss/__init__.py            |   23 +
- src/plugins/boss/plugin.py              |  186 +++
- src/plugins/buffer/__init__.py          |   23 +
- src/plugins/buffer/plugin.py            |  257 ++++
- src/plugins/culebra/__init__.py         |   23 +
- src/plugins/culebra/culebraBuffer.py    |   14 +
- src/plugins/culebra/dialogs.py          |   93 ++
- src/plugins/culebra/edit.py             | 1098 ++++++++++++++
- src/plugins/culebra/importsTipper.py    |   98 ++
- src/plugins/culebra/plugin.py           |  142 ++
- src/plugins/culebra/words.py            |   79 +
- src/plugins/emacs/__init__.py           |   24 +
- src/plugins/emacs/emacs.py              |  161 +++
- src/plugins/emacs/plugin.py             |   95 ++
- src/plugins/gazpacho/__init__.py        |   23 +
- src/plugins/gazpacho/gazpachembed.py    |  835 +++++++++++
- src/plugins/gazpacho/plugin.py          |  143 ++
- src/plugins/pastebin/__init__.py        |   23 +
- src/plugins/pastebin/plugin.py          |  231 +++
- src/plugins/project/__init__.py         |   23 +
- src/plugins/project/plugin.py           |  782 ++++++++++
- src/plugins/python_browser/__init__.py  |   23 +
- src/plugins/python_browser/plugin.py    |  244 ++++
- src/plugins/python_debugger/__init__.py |   23 +
- src/plugins/python_debugger/debugger.py |  161 +++
- src/plugins/python_debugger/plugin.py   |  421 ++++++
- src/plugins/python_profiler/__init__.py |   23 +
- src/plugins/python_profiler/plugin.py   |  208 +++
- src/plugins/python_profiler/profiler.py |   64 +
- src/plugins/shortcuts/__init__.py       |   23 +
- src/plugins/shortcuts/plugin.py         |  363 +++++
- src/plugins/terminal/__init__.py        |   23 +
- src/plugins/terminal/plugin.py          |  543 +++++++
- src/plugins/vim/__init__.py             |   23 +
- src/plugins/vim/gdkvim.py               |  583 ++++++++
- src/plugins/vim/plugin.py               |  397 ++++++
- src/plugins/vim/vimembed.py             |   93 ++
+ debian/python2.3-pida.docs              |    3
+ debian/python2.3-pida.menu              |    2
+ debian/python2.4-pida.docs              |    3
+ debian/python2.4-pida.menu              |    2
+ debian/rules                            |   14
+ debian/watch                            |    2
+ extras/generate-api.py                  |  217
+ extras/iconmaker.data                   |   52
+ extras/iconmaker.py                     |   49
+ extras/pida-local.sh                    |   34
+ scripts/pida                            |    4
+ setup.py                                |   98
+ src/__init__.py                         |   24
+ src/base.py                             |   84
+ src/configuration/__init__.py           |   22
+ src/configuration/config.py             |  544
+ src/configuration/options.py            |  189
+ src/configuration/registry.py           |  306
+ src/debugwindow.py                      |  239
+ src/firstrun.py                         |  146
+ src/gobjectreactor.py                   |   86
+ src/gtkextra.py                         |  628
+ src/main.py                             |  236
+ src/mainwindow.py                       |  229
+ src/plugin.py                           |  540
+ src/plugins/__init__.py                 |   23
+ src/plugins/boss/__init__.py            |   23
+ src/plugins/boss/plugin.py              |  186
+ src/plugins/buffer/__init__.py          |   23
+ src/plugins/buffer/plugin.py            |  257
+ src/plugins/culebra/__init__.py         |   23
+ src/plugins/culebra/culebraBuffer.py    |   14
+ src/plugins/culebra/dialogs.py          |   93
+ src/plugins/culebra/edit.py             | 1098
+ src/plugins/culebra/importsTipper.py    |   98
+ src/plugins/culebra/plugin.py           |  142
+ src/plugins/culebra/words.py            |   79
+ src/plugins/emacs/__init__.py           |   24
+ src/plugins/emacs/emacs.py              |  161
+ src/plugins/emacs/plugin.py             |   95
+ src/plugins/gazpacho/__init__.py        |   23
+ src/plugins/gazpacho/gazpachembed.py    |  835
+ src/plugins/gazpacho/plugin.py          |  143
+ src/plugins/pastebin/__init__.py        |   23
+ src/plugins/pastebin/plugin.py          |  231
+ src/plugins/project/__init__.py         |   23
+ src/plugins/project/plugin.py           |  782
+ src/plugins/python_browser/__init__.py  |   23
+ src/plugins/python_browser/plugin.py    |  244
+ src/plugins/python_debugger/__init__.py |   23
+ src/plugins/python_debugger/debugger.py |  161
+ src/plugins/python_debugger/plugin.py   |  421
+ src/plugins/python_profiler/__init__.py |   23
+ src/plugins/python_profiler/plugin.py   |  208
+ src/plugins/python_profiler/profiler.py |   64
+ src/plugins/shortcuts/__init__.py       |   23
+ src/plugins/shortcuts/plugin.py         |  363
+ src/plugins/terminal/__init__.py        |   23
+ src/plugins/terminal/plugin.py          |  543
+ src/plugins/vim/__init__.py             |   23
+ src/plugins/vim/gdkvim.py               |  583
+ src/plugins/vim/plugin.py               |  397
+ src/plugins/vim/vimembed.py             |   93
  79 files changed, 14153 insertions(+), 0 deletions(-)

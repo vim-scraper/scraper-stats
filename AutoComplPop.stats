@@ -8,8 +8,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Changed the way of auto-popup for avoiding an issue about filename completion.
     - Fixed a bug that popup menu was opened twice when auto-popup was done.
 
- autoload/acp.vim |   13 ++++++-------
- doc/acp.txt      |    5 +++++
+ autoload/acp.vim |   13
+ doc/acp.txt      |    5
  2 files changed, 11 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.14)
@@ -19,10 +19,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.14: - Added the support for perl-completion.vim.
 
- autoload/acp.vim |   18 +++++++++++++-----
- doc/acp.jax      |   18 ++++++++++++++++++
- doc/acp.txt      |   22 ++++++++++++++++++++++
- plugin/acp.vim   |    8 ++++++++
+ autoload/acp.vim |   18
+ doc/acp.jax      |   18
+ doc/acp.txt      |   22
+ plugin/acp.vim   |    8
  4 files changed, 61 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.13)
@@ -36,8 +36,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fixed a bug that a wasted character was inserted after snipMate's trigger
       completion.
 
- autoload/acp.vim |   11 +++++------
- doc/acp.txt      |    5 +++++
+ autoload/acp.vim |   11
+ doc/acp.txt      |    5
  2 files changed, 10 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.12.1)
@@ -47,8 +47,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.12.1: - Changed to avoid a strange behavior with Microsoft IME.
 
- autoload/acp.vim |   28 ++++++++++++++--------------
- doc/acp.txt      |    3 +++
+ autoload/acp.vim |   28
+ doc/acp.txt      |    3
  2 files changed, 17 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.12)
@@ -69,10 +69,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       completion were never attempted when no candidate for the former
       completions was found.
 
- autoload/acp.vim |  218 +++++++++++++++++++++++++++++++++++++++++++-----------
- doc/acp.jax      |   57 +++++++++-----
- doc/acp.txt      |   78 +++++++++++++-------
- plugin/acp.vim   |  147 ++++++++++++++----------------------
+ autoload/acp.vim |  218
+ doc/acp.jax      |   57
+ doc/acp.txt      |   78
+ plugin/acp.vim   |  147
  4 files changed, 317 insertions(+), 183 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.11.1)
@@ -85,8 +85,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fixed a bug that a snipMate's trigger could not be expanded when it was
       completed.
 
- autoload/acp.vim |    4 ++--
- doc/acp.txt      |    6 +++++-
+ autoload/acp.vim |    4
+ doc/acp.txt      |    6
  2 files changed, 7 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.11)
@@ -98,10 +98,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Implemented experimental feature which is snipMate's trigger completion.
 
- autoload/acp.vim |   65 +++++++++++++++++++++++++++++++++++++++++++++--------
- doc/acp.jax      |   38 +++++++++++++++++++++++++++++--
- doc/acp.txt      |   45 +++++++++++++++++++++++++++++++++----
- plugin/acp.vim   |   13 ++++++++++
+ autoload/acp.vim |   65
+ doc/acp.jax      |   38
+ doc/acp.txt      |   45
+ plugin/acp.vim   |   13
  4 files changed, 143 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.10)
@@ -118,8 +118,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       pressed and the text before the cursor would not match with the pattern of
       current behavior.
 
- autoload/acp.vim |   38 +++++++++++++++++++++++++++++++++++---
- doc/acp.txt      |    8 ++++++++
+ autoload/acp.vim |   38
+ doc/acp.txt      |    8
  2 files changed, 43 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.9)
@@ -135,9 +135,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       <CR> when 'dictionary' has been set and keyword completion is done.
     - Changed to show error message when incompatible with a installed vim.
 
- doc/acp.jax    |    9 ++++++++-
- doc/acp.txt    |   17 ++++++++++++++++-
- plugin/acp.vim |   18 ++++++++++++++++--
+ doc/acp.jax    |    9
+ doc/acp.txt    |   17
+ plugin/acp.vim |   18
  3 files changed, 40 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8.1)
@@ -150,8 +150,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fixed a bug which inserted a selected match to the next line when
       auto-wrapping (enabled with 'formatoptions') was performed.
 
- autoload/acp.vim |   41 ++++++++++++++++++++++++-----------------
- doc/acp.txt      |    4 ++++
+ autoload/acp.vim |   41
+ doc/acp.txt      |    4
  2 files changed, 28 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.8)
@@ -166,10 +166,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       completion auto-popup.
     - Fixed a bug that setting 'spell' on a new buffer made typing go crazy.
 
- autoload/acp.vim |  213 +++++++++++++++++++++++++++++++++++++++++
- doc/acp.jax      |   15 +++-
- doc/acp.txt      |   74 +++++++++-----
- plugin/acp.vim   |  281 ++++++++++--------------------------------------------
+ autoload/acp.vim |  213
+ doc/acp.jax      |   15
+ doc/acp.txt      |   74
+ plugin/acp.vim   |  281
  4 files changed, 325 insertions(+), 258 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.7)
@@ -201,10 +201,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       s:PopupFeeder.on_popup_post() did not due to its invocation via
       :map-expr.)
 
- doc/acp.jax             |  215 +++++++++++++++++
- doc/acp.txt             |  365 ++++++++++++++++++++++++++++
- plugin/acp.vim          |  347 +++++++++++++++++++++++++++
- plugin/autocomplpop.vim |  606 -----------------------------------------------
+ doc/acp.jax             |  215
+ doc/acp.txt             |  365
+ plugin/acp.vim          |  347
+ plugin/autocomplpop.vim |  606
  4 files changed, 927 insertions(+), 606 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
@@ -214,7 +214,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.6: - Improved the behavior of omni completion for HTML/XHTML.
 
- plugin/autocomplpop.vim |   41 ++++++++++++++++++++++-------------------
+ plugin/autocomplpop.vim |   41
  1 files changed, 22 insertions(+), 19 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
@@ -234,7 +234,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
         g:AutoComplPop_BehaviorCssOmniPropertyLength
         g:AutoComplPop_BehaviorCssOmniValueLength
 
- plugin/autocomplpop.vim |  344 ++++++++++++++++++++++++++---------------------
+ plugin/autocomplpop.vim |  344
  1 files changed, 190 insertions(+), 154 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
@@ -244,7 +244,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.4: - Added g:AutoComplPop_MappingDriven option.
 
- plugin/autocomplpop.vim |   84 ++++++++++++++++++++++++++++++++++++++++-------
+ plugin/autocomplpop.vim |   84
  1 files changed, 72 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3.1)
@@ -259,7 +259,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Changed a behavior for CSS.
     - Added support for GetLatestVimScripts.
 
- plugin/autocomplpop.vim |   26 +++++++++++++++++++-------
+ plugin/autocomplpop.vim |   26
  1 files changed, 19 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
@@ -272,7 +272,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Added a behavior for Python to support omni completion.
     - Added a behavior for CSS to support omni completion.
 
- plugin/autocomplpop.vim |  122 +++++++++++++++++++++++++++++++----------------
+ plugin/autocomplpop.vim |  122
  1 files changed, 80 insertions(+), 42 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
@@ -286,7 +286,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fixed AutoComplPopEnable command and AutoComplPopDisable command to
       map/unmap "i" and "R".
 
- plugin/autocomplpop.vim |   20 +++++++++++++++-----
+ plugin/autocomplpop.vim |   20
  1 files changed, 15 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
@@ -301,7 +301,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       Insert mode.
     - Avoided the problem caused by Windows IME.
 
- plugin/autocomplpop.vim |   46 +++++++++++++++++++++++++++++++---------------
+ plugin/autocomplpop.vim |   46
  1 files changed, 31 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -316,7 +316,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Changed to feed completion command after starting Insert mode.
     - Removed g:AutoComplPop_MapList option.
 
- plugin/autocomplpop.vim |  169 ++++++++++++++++-------------------------------
+ plugin/autocomplpop.vim |  169
  1 files changed, 56 insertions(+), 113 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
@@ -331,7 +331,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Changed not to show expressions for CTRL-R =.
     - Changed not to set 'nolazyredraw' while a popup menu is visible.
 
- plugin/autocomplpop.vim |  521 ++++++++++++++++++++++++++---------------------
+ plugin/autocomplpop.vim |  521
  1 files changed, 286 insertions(+), 235 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6.1)
@@ -344,7 +344,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Changed not to trigger the filename competion by a text which has
       multi-byte characters.
 
- plugin/autocomplpop.vim |   30 ++++++++++++++++++------------
+ plugin/autocomplpop.vim |   30
  1 files changed, 18 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -358,7 +358,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Changed default value of g:AutoComplPop_CompleteOption option.
     - Changed default value of g:AutoComplPop_MapList option.
 
- plugin/autocomplpop.vim |  121 +++++++++++++++++++++++++++++++++--------------
+ plugin/autocomplpop.vim |  121
  1 files changed, 86 insertions(+), 35 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -371,7 +371,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Implemented continuous-completion for the filename completion. And
       added new option to g:AutoComplPop_Behavior.
 
- plugin/autocomplpop.vim |  451 ++++++++++++++++++++++++-----------------------
+ plugin/autocomplpop.vim |  451
  1 files changed, 234 insertions(+), 217 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -385,7 +385,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fixed the bug that an error has occurred with Ruby-omni-completion
       unless Ruby interface.
 
- plugin/autocomplpop.vim |   54 ++++++++++++++++++++++++++++------------------
+ plugin/autocomplpop.vim |   54
  1 files changed, 33 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -403,7 +403,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Removed g:AutoComplPop_MaxLength option.
     - Removed g:AutoComplPop_PopupCmd option.
 
- plugin/autocomplpop.vim |  210 ++++++++++++++++++++++++++++-------------------
+ plugin/autocomplpop.vim |  210
  1 files changed, 126 insertions(+), 84 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -413,7 +413,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2: - Fixed bugs related to 'completeopt'.
 
- plugin/autocomplpop.vim |  145 +++++++++++++++++++++++++++++------------------
+ plugin/autocomplpop.vim |  145
  1 files changed, 90 insertions(+), 55 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -427,7 +427,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Added g:AutoComplPop_NotEnableAtStartup option.
     - Removed g:AutoComplPop_LoadAndEnable option.
 
- plugin/autocomplpop.vim |  292 +++++++++++++++++++++++++++--------------------
+ plugin/autocomplpop.vim |  292
  1 files changed, 167 insertions(+), 125 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -441,7 +441,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     AutoComplPopLock command and AutoComplPopUnlock command are added to suspend and resume.
     'completeopt' and 'complete' options are changed temporarily while completing by this script.
 
- plugin/autocomplpop.vim |  220 +++++++++++++++++++++++++----------------------
+ plugin/autocomplpop.vim |  220
  1 files changed, 119 insertions(+), 101 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -453,7 +453,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     The first match are selected when the popup menu is Opened. You can insert the first match with CTRL-Y.
 
- plugin/autocomplpop.vim |  131 ++++++++++++++++++++++++++++-------------------
+ plugin/autocomplpop.vim |  131
  1 files changed, 79 insertions(+), 52 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -465,7 +465,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed the problem that the original text is not restored if 'longest' is not set in 'completeopt'. Now the plugin works whether or not 'longest' is set in 'completeopt', and also 'menuone'.
 
- plugin/autocomplpop.vim |   41 +++++++++++++++++++++++++----------------
+ plugin/autocomplpop.vim |   41
  1 files changed, 25 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -479,7 +479,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Clear the echo area.
     Fixed the problem in case of dividing words by symbols, popup menu is not opened.
 
- plugin/autocomplpop.vim |   46 +++++++++++++++++++++++++++++++++-------------
+ plugin/autocomplpop.vim |   46
  1 files changed, 33 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -489,6 +489,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README                  |  101 ++++++++++++++++++++++++++++++
- plugin/autocomplpop.vim |  158 +++++++++++++++++++++++++++++++++++++++++++++++
+ README                  |  101
+ plugin/autocomplpop.vim |  158
  2 files changed, 259 insertions(+), 0 deletions(-)

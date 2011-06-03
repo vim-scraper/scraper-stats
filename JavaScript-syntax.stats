@@ -5,7 +5,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.7.7: Add "undefined" as a type keyword
 
- syntax/javascript.vim |    9 ++++-----
+ syntax/javascript.vim |    9
  1 files changed, 4 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.6)
@@ -18,7 +18,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Change the 'syntax sync' method to improve the performance with large JavaScript files.
     The old way 'syntax sync fromstart' is too slow to handle the files greater than 2000 lines.
 
- syntax/javascript.vim |   21 ++++++++-------------
+ syntax/javascript.vim |   21
  1 files changed, 8 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.5)
@@ -36,7 +36,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     3, Remove function FT_JavaScriptDoc(). Since VIM do the better than me.
 
- syntax/javascript.vim |  109 +++++++++++++++++++++----------------------------
+ syntax/javascript.vim |  109
  1 files changed, 47 insertions(+), 62 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.4)
@@ -51,7 +51,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     2, Add some more JSDoc tags which used by Yahoo! UI
 
- syntax/javascript.vim |   61 +++++++++++++++++++++++++++++--------------------
+ syntax/javascript.vim |   61
  1 files changed, 36 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.3)
@@ -61,7 +61,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.7.3: Add the keywords for JavaScript 1.7: let, yield,
 
- syntax/javascript.vim |   11 +++++------
+ syntax/javascript.vim |   11
  1 files changed, 5 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.2)
@@ -82,7 +82,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     ZHAOYI
 
- syntax/javascript.vim |   54 +++++++++++++++++++++++++-----------------------
+ syntax/javascript.vim |   54
  1 files changed, 28 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1)
@@ -112,7 +112,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Yi
 
- syntax/javascript.vim |   80 +++++++++++++++++++++++++++++++++++++++++++-----
+ syntax/javascript.vim |   80
  1 files changed, 71 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7.0)
@@ -124,7 +124,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Add all keywords/exceptions defined in ECMAScript Language Specification Edition 3.
 
- syntax/javascript.vim |   24 ++++++++++++------------
+ syntax/javascript.vim |   24
  1 files changed, 12 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.9)
@@ -137,7 +137,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1, Fix a bug of javaScriptLineComment which mark the code line which follows the indent empty // as comment.
     2, Modify the javaScriptLinecomment folding mode, line comments only fold start the full line comment.
 
- syntax/javascript.vim |   15 +++++++++------
+ syntax/javascript.vim |   15
  1 files changed, 9 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.8)
@@ -149,7 +149,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fix the function FT_JavaScriptDoc() redefine warning when switch the buffer in multi-buffer mode.
 
- syntax/javascript.vim |   13 ++++++-------
+ syntax/javascript.vim |   13
  1 files changed, 6 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.7)
@@ -163,7 +163,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2. The "$" can appear at any position of the function name.
     3. The continous line comments will be folding in fold mode.
 
- syntax/javascript.vim |   21 +++++++++++----------
+ syntax/javascript.vim |   21
  1 files changed, 11 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.6)
@@ -177,7 +177,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2, The unmached "[]", "()", and "{}" can be detected.
     3, A minor bug fix for the javaScriptNumber highlight.
 
- syntax/javascript.vim |  155 +++++++++++++++++++++++++------------------------
+ syntax/javascript.vim |  155
  1 files changed, 80 insertions(+), 75 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6.5)
@@ -199,7 +199,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
         In the Normal mode, zM to fold all.
 
- syntax/javascript.vim |   80 ++++++++++++++++++++++++++++++++----------------
+ syntax/javascript.vim |   80
  1 files changed, 53 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -213,7 +213,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     For more information about the JSDoc, refer to http://jsdoc.sf.net
 
- syntax/javascript.vim |   69 +++++++++++++++++++++++++++++++-----------------
+ syntax/javascript.vim |   69
  1 files changed, 44 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.2)
@@ -229,7 +229,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks "Nai chao Wu" <superwunc AT hotmail.com> for his help.
 
- syntax/javascript.vim |   16 ++++++++++------
+ syntax/javascript.vim |   16
  1 files changed, 10 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
@@ -239,7 +239,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.5.1: Minor upate on the jsRegexpString.
 
- syntax/javascript.vim |    6 +++---
+ syntax/javascript.vim |    6
  1 files changed, 3 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -259,7 +259,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     " HtmlHiLink javaScriptExpression   javaScript
     </pre>
 
- syntax/javascript.vim |   48 ++++++++++++++++++++++++++++--------------------
+ syntax/javascript.vim |   48
  1 files changed, 28 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.1)
@@ -273,7 +273,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     The dojo.js and dojo.js.uncompressed.js can be highlight properly.
 
- syntax/javascript.vim |   12 ++++++------
+ syntax/javascript.vim |   12
  1 files changed, 6 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -288,7 +288,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     If you are playing with the regexp string, try this version. :)
 
- syntax/javascript.vim |   12 ++++++------
+ syntax/javascript.vim |   12
  1 files changed, 6 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -302,7 +302,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2, Add all JavaScript keywords and Global Objects based on the JavaScript 1.5 reference at http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference
     3, Add jsBlock can be put in jsBracket .
 
- syntax/javascript.vim |   51 ++++++++++++++++++++++++++++--------------------
+ syntax/javascript.vim |   51
  1 files changed, 30 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -323,6 +323,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Yi Zhao
 
- README                |   16 +++++++
- syntax/javascript.vim |  119 +++++++++++++++++++++++++++++++++++++++++++++++++
+ README                |   16
+ syntax/javascript.vim |  119
  2 files changed, 135 insertions(+), 0 deletions(-)

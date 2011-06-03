@@ -10,8 +10,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     <*> MkAsNeeded creates a menu: DrChip.ANmenu full of commands that AsNeeded can load
     <*> Improved cmdsrch
 
- doc/AsNeeded.txt    |   78 +++++++++++++++++++-------
- plugin/AsNeeded.vim |  153 ++++++++++++++++++++++++++++++++++++++++-----------
+ doc/AsNeeded.txt    |   78
+ plugin/AsNeeded.vim |  153
  2 files changed, 176 insertions(+), 55 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/15)
@@ -23,8 +23,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Various bugfixes to automatic updating of ANtags and improvements to handling of no user-specified mapleader.
 
- doc/AsNeeded.txt    |   42 +++++++++++++++++----
- plugin/AsNeeded.vim |  104 +++++++++++++++++++++++++++++++++-----------------
+ doc/AsNeeded.txt    |   42
+ plugin/AsNeeded.vim |  104
  2 files changed, 102 insertions(+), 44 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/14)
@@ -39,8 +39,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     (bugfix) ei=all was inadvertently being left on; thus no autocmds were operational after AsNeeded successfully loaded a function.  Fixed!
     (bugfix) included |'patchmode'| in the SaveSettings() and RestoreSettings() bypass functions
 
- doc/AsNeeded.txt    |   33 ++++++++++++++++++--
- plugin/AsNeeded.vim |   82 ++++++++++++++++++++++++++++++++++++--------------
+ doc/AsNeeded.txt    |   33
+ plugin/AsNeeded.vim |   82
  2 files changed, 88 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/13)
@@ -52,8 +52,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     AsNeeded now uses Thomas's idea for producing a "ANcmds.vim" plugin with skeleton commands. Plus some bugfixes.  With this feature, commands in scripts in the AsNeeded/ directory act as if they're always available, even when the scripts haven't been loaded.
 
- doc/AsNeeded.txt    |  119 +++++++++++++++++++++++++
- plugin/AsNeeded.vim |  240 ++++++++++++---------------------------------------
+ doc/AsNeeded.txt    |  119
+ plugin/AsNeeded.vim |  240
  2 files changed, 174 insertions(+), 185 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/12)
@@ -65,7 +65,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     (bugfix) AsNeeded needs to work around several options that the user may set.  However, if a plugin changed one of these, AsNeeded "restored" the option at the time that AsNeeded was invoked, thereby overriding whatever the plugin/map etc may have set.  AsNeeded now restores the options, then sources the plugin/map etc.
 
- plugin/AsNeeded.vim |   69 +++++++++++++++++++++++++++++++--------------------
+ plugin/AsNeeded.vim |   69
  1 files changed, 42 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/11)
@@ -77,7 +77,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Bugfixes (success message itself sometimes caused an error, internally used buffers now wiped silently, keeps/restores lz)
 
- plugin/AsNeeded.vim |   63 ++++++++++++++++++++++++++++++++------------------
+ plugin/AsNeeded.vim |   63
  1 files changed, 40 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/10)
@@ -90,7 +90,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     bugfix: maps with backslashes are escaped so they can be found
     bugfix: report option workaround
 
- plugin/AsNeeded.vim |   74 +++++++++++++++++++++++++++++++++++++--------------
+ plugin/AsNeeded.vim |   74
  1 files changed, 54 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/9)
@@ -102,7 +102,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     MakeANtags command and function search patterns improved
 
- plugin/AsNeeded.vim |   74 +++++++++++++++++++++++++++++++++++++++++++-------
+ plugin/AsNeeded.vim |   74
  1 files changed, 63 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/8)
@@ -114,7 +114,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Another bug fix; this time, for some maps, tags were being generated but not executed.  Fixed!
 
- plugin/AsNeeded.vim |   14 ++++++++------
+ plugin/AsNeeded.vim |   14
  1 files changed, 8 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7)
@@ -127,6 +127,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     MakeANtags now warns the user when no tags were found for each scriptfile it examines in the AsNeeded directory.
     Two bugfixes: MakeANtags was missing some maps and, under Windows, was omitting backslashes in paths.  Fixed!
 
- README              |   40 +++++
- plugin/AsNeeded.vim |  422 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ README              |   40
+ plugin/AsNeeded.vim |  422
  2 files changed, 462 insertions(+), 0 deletions(-)

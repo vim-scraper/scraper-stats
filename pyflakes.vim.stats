@@ -13,35 +13,35 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     https://github.com/kevinw/pyflakes-vim/commit/086d5e1d5f87f7cdd0588f8149bf08115a8ae229
 
- README.rst                                         |   20 +-
- bin/pyflakes                                       |    4 -
- ftplugin/pyflakes.vim                              |  321 ----------
- ftplugin/python/pyflakes.vim                       |  321 ++++++++++
- ftplugin/python/pyflakes/LICENSE                   |   21 +
- ftplugin/python/pyflakes/NEWS.txt                  |   29 +
- ftplugin/python/pyflakes/bin/pyflakes              |    4 +
- ftplugin/python/pyflakes/pyflakes/__init__.py      |    2 +
- ftplugin/python/pyflakes/pyflakes/checker.py       |  625 ++++++++++++++++++
- ftplugin/python/pyflakes/pyflakes/messages.py      |   96 +++
- .../python/pyflakes/pyflakes/scripts/pyflakes.py   |   90 +++
- ftplugin/python/pyflakes/pyflakes/test/harness.py  |   27 +
- .../python/pyflakes/pyflakes/test/test_imports.py  |  673 ++++++++++++++++++++
- .../python/pyflakes/pyflakes/test/test_other.py    |  575 +++++++++++++++++
- .../python/pyflakes/pyflakes/test/test_script.py   |  185 ++++++
- .../pyflakes/pyflakes/test/test_undefined_names.py |  265 ++++++++
- ftplugin/python/pyflakes/setup.py                  |   28 +
- pyflakes/LICENSE                                   |   21 -
- pyflakes/NEWS.txt                                  |   29 -
- pyflakes/pyflakes/__init__.py                      |    2 -
- pyflakes/pyflakes/checker.py                       |  625 ------------------
- pyflakes/pyflakes/messages.py                      |   96 ---
- pyflakes/pyflakes/scripts/pyflakes.py              |   90 ---
- pyflakes/pyflakes/test/harness.py                  |   27 -
- pyflakes/pyflakes/test/test_imports.py             |  673 --------------------
- pyflakes/pyflakes/test/test_other.py               |  575 -----------------
- pyflakes/pyflakes/test/test_script.py              |  185 ------
- pyflakes/pyflakes/test/test_undefined_names.py     |  265 --------
- pyflakes/setup.py                                  |   28 -
+ README.rst                                         |   20
+ bin/pyflakes                                       |    4
+ ftplugin/pyflakes.vim                              |  321
+ ftplugin/python/pyflakes.vim                       |  321
+ ftplugin/python/pyflakes/LICENSE                   |   21
+ ftplugin/python/pyflakes/NEWS.txt                  |   29
+ ftplugin/python/pyflakes/bin/pyflakes              |    4
+ ftplugin/python/pyflakes/pyflakes/__init__.py      |    2
+ ftplugin/python/pyflakes/pyflakes/checker.py       |  625
+ ftplugin/python/pyflakes/pyflakes/messages.py      |   96
+ .../python/pyflakes/pyflakes/scripts/pyflakes.py   |   90
+ ftplugin/python/pyflakes/pyflakes/test/harness.py  |   27
+ .../python/pyflakes/pyflakes/test/test_imports.py  |  673
+ .../python/pyflakes/pyflakes/test/test_other.py    |  575
+ .../python/pyflakes/pyflakes/test/test_script.py   |  185
+ .../pyflakes/pyflakes/test/test_undefined_names.py |  265
+ ftplugin/python/pyflakes/setup.py                  |   28
+ pyflakes/LICENSE                                   |   21
+ pyflakes/NEWS.txt                                  |   29
+ pyflakes/pyflakes/__init__.py                      |    2
+ pyflakes/pyflakes/checker.py                       |  625
+ pyflakes/pyflakes/messages.py                      |   96
+ pyflakes/pyflakes/scripts/pyflakes.py              |   90
+ pyflakes/pyflakes/test/harness.py                  |   27
+ pyflakes/pyflakes/test/test_imports.py             |  673
+ pyflakes/pyflakes/test/test_other.py               |  575
+ pyflakes/pyflakes/test/test_script.py              |  185
+ pyflakes/pyflakes/test/test_undefined_names.py     |  265
+ pyflakes/setup.py                                  |   28
  29 files changed, 2952 insertions(+), 2950 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
@@ -59,23 +59,23 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Changes to stock PyFlakes 0.4.0: https://github.com/kevinw/pyflakes/commit/8f62656c96b7cf66b7ad6cac0d9e3881e55f389f#
 
- README.rst                                     |    7 +-
- ftplugin/pyflakes.vim                          |   37 +-
- pyflakes/NEWS.txt                              |   29 +
- pyflakes/README.rst                            |   36 --
- pyflakes/TODO                                  |   11 -
- pyflakes/pyflakes/__init__.py                  |    2 +
- pyflakes/pyflakes/ast.py                       |  311 ----------
- pyflakes/pyflakes/checker.py                   |  777 +++++++++++++++---------
- pyflakes/pyflakes/messages.py                  |   77 ++-
- pyflakes/pyflakes/scripts/pyflakes.py          |   61 ++-
- pyflakes/pyflakes/test/harness.py              |    9 +-
- pyflakes/pyflakes/test/test_imports.py         |  183 ++++++-
- pyflakes/pyflakes/test/test_other.py           |  349 +++++++++++-
- pyflakes/pyflakes/test/test_script.py          |  139 +++++-
- pyflakes/pyflakes/test/test_undefined_names.py |  107 +++-
- pyflakes/setup.py                              |   19 +-
- quickfix.diff                                  |  124 ----
+ README.rst                                     |    7
+ ftplugin/pyflakes.vim                          |   37
+ pyflakes/NEWS.txt                              |   29
+ pyflakes/README.rst                            |   36
+ pyflakes/TODO                                  |   11
+ pyflakes/pyflakes/__init__.py                  |    2
+ pyflakes/pyflakes/ast.py                       |  311
+ pyflakes/pyflakes/checker.py                   |  777
+ pyflakes/pyflakes/messages.py                  |   77
+ pyflakes/pyflakes/scripts/pyflakes.py          |   61
+ pyflakes/pyflakes/test/harness.py              |    9
+ pyflakes/pyflakes/test/test_imports.py         |  183
+ pyflakes/pyflakes/test/test_other.py           |  349
+ pyflakes/pyflakes/test/test_script.py          |  139
+ pyflakes/pyflakes/test/test_undefined_names.py |  107
+ pyflakes/setup.py                              |   19
+ quickfix.diff                                  |  124
  17 files changed, 1418 insertions(+), 860 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.02)
@@ -89,7 +89,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     https://github.com/kevinw/pyflakes-vim/commit/ddeb0bf2d7db7916a62339f42c18c7a12468cd37
 
- ftplugin/pyflakes.vim |    2 +-
+ ftplugin/pyflakes.vim |    2
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.01)
@@ -107,9 +107,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     http://github.com/kevinw/pyflakes-vim/commit/10fb7c382ce94470ae47848d1ac84925381c036f
 
- README.rst            |    9 +++++++++
- ftplugin/pyflakes.vim |   24 ++++++++++++++++--------
- pyflakes/README.rst   |    2 +-
+ README.rst            |    9
+ ftplugin/pyflakes.vim |   24
+ pyflakes/README.rst   |    2
  3 files changed, 26 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -125,9 +125,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     http://github.com/kevinw/pyflakes-vim/commit/64ebcffe3de49fe34ca12b11292b792dc323709f
 
- README.rst            |    4 +-
- ftplugin/pyflakes.vim |   60 ++++++++++++++++++++++++
- quickfix.diff         |  124 +++++++++++++++++++++++++++++++++++++++++++++++++
+ README.rst            |    4
+ ftplugin/pyflakes.vim |   60
+ quickfix.diff         |  124
  3 files changed, 186 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.64)
@@ -143,7 +143,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     http://github.com/kevinw/pyflakes-vim/commit/1dffdbe91034f7a2bb6a16efe43d9bd9a466d11a
 
- ftplugin/pyflakes.vim |   16 +++++++++++++++-
+ ftplugin/pyflakes.vim |   16
  1 files changed, 15 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.63)
@@ -155,8 +155,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Don't warn about duplicate functions with property decorators @prop.setter and @prop.deleter.
 
- README.rst                   |    2 ++
- pyflakes/pyflakes/checker.py |   17 ++++++++++++++---
+ README.rst                   |    2
+ pyflakes/pyflakes/checker.py |   17
  2 files changed, 16 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.62)
@@ -166,7 +166,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.62: Minor 2.5 compatibility fix.
 
- pyflakes/pyflakes/checker.py |    2 +-
+ pyflakes/pyflakes/checker.py |    2
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.61)
@@ -176,7 +176,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.61: Don't miss class decorators when walking the AST.
 
- pyflakes/pyflakes/checker.py |    8 ++++++++
+ pyflakes/pyflakes/checker.py |    8
  1 files changed, 8 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.60)
@@ -190,7 +190,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     http://github.com/kevinw/pyflakes-vim/commit/5eaf3bc1d7508da2994657c4f77458f4064d26e2
 
- ftplugin/pyflakes.vim |   14 ++++++++++++++
+ ftplugin/pyflakes.vim |   14
  1 files changed, 14 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.59)
@@ -204,8 +204,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     http://github.com/kevinw/pyflakes-vim/commit/783b3aa3de1fddb082f0810300bac5a831a97941
 
- ftplugin/pyflakes.vim |    2 +-
- pyflakes/TODO         |   11 +++++++++++
+ ftplugin/pyflakes.vim |    2
+ pyflakes/TODO         |   11
  2 files changed, 12 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.58)
@@ -215,7 +215,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.58: Fix for 1.57 file encoding exception.
 
- ftplugin/pyflakes.vim |    7 ++++---
+ ftplugin/pyflakes.vim |    7
  1 files changed, 4 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.57)
@@ -230,7 +230,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Files in unusual encodings should open correctly now.
     Files ending with a trailing comment and no newline should also compile correctly now.
 
- ftplugin/pyflakes.vim |    5 ++++-
+ ftplugin/pyflakes.vim |    5
  1 files changed, 4 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.56)
@@ -249,7 +249,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks EnTeQuAk.
 
- ftplugin/pyflakes.vim |    5 +++++
+ ftplugin/pyflakes.vim |    5
  1 files changed, 5 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.55)
@@ -263,7 +263,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Highlight the whole line for SyntaxErrors.
 
- ftplugin/pyflakes.vim |    4 ++--
+ ftplugin/pyflakes.vim |    4
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -284,8 +284,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     This could become a visible warning.
 
- README.rst            |   26 ++++++++++++++++++--------
- ftplugin/pyflakes.vim |   10 +++++++++-
+ README.rst            |   26
+ ftplugin/pyflakes.vim |   10
  2 files changed, 27 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -299,9 +299,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Restrict dd, dw, etc mappings to the local Python buffer.
 
- README.rst            |    7 +++++++
- ftplugin/pyflakes.vim |    8 ++++----
- pyflakes/README.rst   |   22 +++++++++++++++++++---
+ README.rst            |    7
+ ftplugin/pyflakes.vim |    8
+ pyflakes/README.rst   |   22
  3 files changed, 30 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -322,7 +322,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
      - added the :PyflakesUpdate command (runs pyflakes and updates the message area)
      - hooked dd, dw, u, and <C-R> to also call :PyflakesUpdate so common text operations will invoke PyFlakes
 
- ftplugin/pyflakes.vim |   22 +++++++++++++++++++++-
+ ftplugin/pyflakes.vim |   22
  1 files changed, 21 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -338,12 +338,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Add "__builtins__" to the list of predefined names.
     - Bind names for *args and **kwargs in functions and lambdas.
 
- README.rst                           |    5 -----
- bin/pyflakes                         |    4 ++++
- ftplugin/pyflakes.vim                |   28 ++++++++++++++++++++++------
- pyflakes/pyflakes/checker.py         |   18 +++++++++++++++---
- pyflakes/pyflakes/test/test_other.py |    7 +++++++
- pyflakes/setup.py                    |   19 +++++++++++++++++++
+ README.rst                           |    5
+ bin/pyflakes                         |    4
+ ftplugin/pyflakes.vim                |   28
+ pyflakes/pyflakes/checker.py         |   18
+ pyflakes/pyflakes/test/test_other.py |    7
+ pyflakes/setup.py                    |   19
  6 files changed, 67 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -355,7 +355,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Updated pyflakes/checker.py to fix AST fixes from http://github.com/kevinw/pyflakes/commit/bdc1acde85df3bf0a8f5ef1ec26e9121667c9d0a
 
- pyflakes/pyflakes/checker.py |   27 ++++++++++++++++-----------
+ pyflakes/pyflakes/checker.py |   27
  1 files changed, 16 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -365,18 +365,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README                                         |   29 ++
- README.rst                                     |   58 +++
- ftplugin/pyflakes.vim                          |  159 ++++++++
- pyflakes/LICENSE                               |   21 +
- pyflakes/README.rst                            |   20 +
- pyflakes/pyflakes/ast.py                       |  311 ++++++++++++++
- pyflakes/pyflakes/checker.py                   |  372 +++++++++++++++++
- pyflakes/pyflakes/messages.py                  |   77 ++++
- pyflakes/pyflakes/scripts/pyflakes.py          |   63 +++
- pyflakes/pyflakes/test/harness.py              |   24 ++
- pyflakes/pyflakes/test/test_imports.py         |  512 ++++++++++++++++++++++++
- pyflakes/pyflakes/test/test_other.py           |  227 +++++++++++
- pyflakes/pyflakes/test/test_script.py          |   48 +++
- pyflakes/pyflakes/test/test_undefined_names.py |  182 +++++++++
+ README                                         |   29
+ README.rst                                     |   58
+ ftplugin/pyflakes.vim                          |  159
+ pyflakes/LICENSE                               |   21
+ pyflakes/README.rst                            |   20
+ pyflakes/pyflakes/ast.py                       |  311
+ pyflakes/pyflakes/checker.py                   |  372
+ pyflakes/pyflakes/messages.py                  |   77
+ pyflakes/pyflakes/scripts/pyflakes.py          |   63
+ pyflakes/pyflakes/test/harness.py              |   24
+ pyflakes/pyflakes/test/test_imports.py         |  512
+ pyflakes/pyflakes/test/test_other.py           |  227
+ pyflakes/pyflakes/test/test_script.py          |   48
+ pyflakes/pyflakes/test/test_undefined_names.py |  182
  14 files changed, 2103 insertions(+), 0 deletions(-)

@@ -11,7 +11,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Reorganizing functions and moved another one to the public scope.
     - Implemented autogroup
 
- plugin/git-branch-info.vim |  240 +++++++++++++++++++++++---------------------
+ plugin/git-branch-info.vim |  240
  1 files changed, 126 insertions(+), 114 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1.4)
@@ -21,7 +21,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1.4: Allow for branch names with slashs in them. Thanks to Thomas Adam.
 
- plugin/git-branch-info.vim |    8 +++++---
+ plugin/git-branch-info.vim |    8
  1 files changed, 5 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1.3)
@@ -31,7 +31,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1.3: Fixes bug that prevents git-buffer-info from finding the git-dir.
 
- plugin/git-branch-info.vim |    8 ++++----
+ plugin/git-branch-info.vim |    8
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1.2)
@@ -43,7 +43,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Seems that there were a little bug when loading the file from some other plugin
 
- plugin/git-branch-info.vim |    4 ++--
+ plugin/git-branch-info.vim |    4
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1.1)
@@ -55,7 +55,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Changed the checking about the original branche while saving a file as a optional - and not default - option.
 
- plugin/git-branch-info.vim |   13 ++++++++++---
+ plugin/git-branch-info.vim |   13
  1 files changed, 10 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1.0)
@@ -65,7 +65,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1.0: Fixed the .git relative path, thanks to rtwo for the patch.
 
- plugin/git-branch-info.vim |    4 ++--
+ plugin/git-branch-info.vim |    4
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.9)
@@ -79,7 +79,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     I made a double check on the HEAD file. If there is not the information the script wants, a message about the condition is returned. If something also "explodes" there, there is a try/catch block.
     If detect this rebase/merge/bisect situation, the file will be always saved without the branch verification.
 
- plugin/git-branch-info.vim |   64 ++++++++++++++++++++++++++++----------------
+ plugin/git-branch-info.vim |   64
  1 files changed, 41 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.8)
@@ -91,7 +91,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Argh, another bug fixed. When trying to write to a file different from the current one, it was not saved. That happened because I was trying to save the file without it's name, presuming if we tell to save to another file with :w the name was correct.It was fixed using expand("<afile>"). Btw, there was another bug when trying to save to an existing file and need to use the bang (!) with write. It was fixed checking if a bang command was used and executing the bang version if needed.
 
- plugin/git-branch-info.vim |   11 ++++++-----
+ plugin/git-branch-info.vim |   11
  1 files changed, 6 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.7)
@@ -105,7 +105,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     buffer, it is written, if not, the GitBranchInfoWriteCheck() skip it.
     Useful with other scripts that use temporary buffers like VCSCommand.
 
- plugin/git-branch-info.vim |   33 +++++++++++++++++++++++++++------
+ plugin/git-branch-info.vim |   33
  1 files changed, 27 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.6)
@@ -115,7 +115,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.6: Extra check on permissions of the Git directory.
 
- plugin/git-branch-info.vim |    9 +++++++--
+ plugin/git-branch-info.vim |    9
  1 files changed, 7 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.5)
@@ -128,7 +128,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Removed remote branches on fetch menu, fetch just the remote repository
     reference.
 
- plugin/git-branch-info.vim |   15 ++++++++++-----
+ plugin/git-branch-info.vim |   15
  1 files changed, 10 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.4)
@@ -145,7 +145,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     If the current buffer is not on the local dir, make a CD to the buffer dir when need to make a checkout or a fetch.
     Changed to ask if we want to save a file loaded from one branch into another branch.
 
- plugin/git-branch-info.vim |  103 ++++++++++++++++++++++++++++++++++++++------
+ plugin/git-branch-info.vim |  103
  1 files changed, 89 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.3)
@@ -155,7 +155,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.3: Added a menu system with some features for branch changing.
 
- plugin/git-branch-info.vim |   87 +++++++++++++++++++++++++++++++++++---------
+ plugin/git-branch-info.vim |   87
  1 files changed, 69 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.2)
@@ -175,7 +175,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Changed the way GitBranchInfoString returns the info string, based on the configuration chosen.
     - GitBranchInfoTokens() was fully rewritten because of the previous poor performance.
 
- plugin/git-branch-info.vim |   44 +++++++++++++++++++++++++++-----------------
+ plugin/git-branch-info.vim |   44
  1 files changed, 27 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
@@ -185,6 +185,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.1: Initial upload
 
- README                     |   57 ++++++++++++++++++++++++++++
- plugin/git-branch-info.vim |   88 ++++++++++++++++++++++++++++++++++++++++++++
+ README                     |   57
+ plugin/git-branch-info.vim |   88
  2 files changed, 145 insertions(+), 0 deletions(-)

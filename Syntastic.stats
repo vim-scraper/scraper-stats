@@ -18,26 +18,26 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - adjust the ruby syntax checker to avoid some common annoying warnings,
       thanks to github:robertwahler
 
- doc/syntastic.txt              |   14 +++
- plugin/syntastic.vim           |    8 +-
- syntax_checkers/c.vim          |  242 ++++++++++++++++++++++++++++++++++++++++
- syntax_checkers/coffee.vim     |   27 +++++
- syntax_checkers/cpp.vim        |   40 +++++++
- syntax_checkers/cucumber.vim   |    2 +-
- syntax_checkers/eruby.vim      |    2 +-
- syntax_checkers/haml.vim       |    2 +-
- syntax_checkers/haskell.vim    |    2 +-
- syntax_checkers/html.vim       |    2 +-
- syntax_checkers/javascript.vim |    2 +-
- syntax_checkers/lua.vim        |   37 ++++++
- syntax_checkers/perl.vim       |    2 +-
- syntax_checkers/php.vim        |    4 +-
- syntax_checkers/python.vim     |    2 +-
- syntax_checkers/ruby.vim       |    2 +-
- syntax_checkers/sass.vim       |   18 ++--
- syntax_checkers/sh.vim         |   52 +++++++++
- syntax_checkers/tex.vim        |   26 +++++
- syntax_checkers/xhtml.vim      |    2 +-
+ doc/syntastic.txt              |   14
+ plugin/syntastic.vim           |    8
+ syntax_checkers/c.vim          |  242
+ syntax_checkers/coffee.vim     |   27
+ syntax_checkers/cpp.vim        |   40
+ syntax_checkers/cucumber.vim   |    2
+ syntax_checkers/eruby.vim      |    2
+ syntax_checkers/haml.vim       |    2
+ syntax_checkers/haskell.vim    |    2
+ syntax_checkers/html.vim       |    2
+ syntax_checkers/javascript.vim |    2
+ syntax_checkers/lua.vim        |   37
+ syntax_checkers/perl.vim       |    2
+ syntax_checkers/php.vim        |    4
+ syntax_checkers/python.vim     |    2
+ syntax_checkers/ruby.vim       |    2
+ syntax_checkers/sass.vim       |   18
+ syntax_checkers/sh.vim         |   52
+ syntax_checkers/tex.vim        |   26
+ syntax_checkers/xhtml.vim      |    2
  20 files changed, 466 insertions(+), 22 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1.0)
@@ -60,19 +60,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       be disabled by default. See :help syntastic_disabled_filetypes.
     - Dont use :signs if vim wasnt compiled with support for them.
 
- doc/syntastic.txt              |   73 ++++++++++++++++++++++++++++++++++-----
- plugin/syntastic.vim           |   66 ++++++++++++++++++++++++++++--------
- syntax_checkers/cucumber.vim   |   27 +++++++++++++++
- syntax_checkers/eruby.vim      |    4 +-
- syntax_checkers/haml.vim       |    5 +--
- syntax_checkers/haskell.vim    |   30 ++++++++++++++++
- syntax_checkers/html.vim       |    2 +-
- syntax_checkers/javascript.vim |    4 +-
- syntax_checkers/perl.vim       |   31 +++++++++++++++++
- syntax_checkers/php.vim        |    2 +-
- syntax_checkers/ruby.vim       |    4 +-
- syntax_checkers/sass.vim       |    2 +-
- syntax_checkers/xhtml.vim      |   34 ++++++++++++++++++
+ doc/syntastic.txt              |   73
+ plugin/syntastic.vim           |   66
+ syntax_checkers/cucumber.vim   |   27
+ syntax_checkers/eruby.vim      |    4
+ syntax_checkers/haml.vim       |    5
+ syntax_checkers/haskell.vim    |   30
+ syntax_checkers/html.vim       |    2
+ syntax_checkers/javascript.vim |    4
+ syntax_checkers/perl.vim       |   31
+ syntax_checkers/php.vim        |    2
+ syntax_checkers/ruby.vim       |    4
+ syntax_checkers/sass.vim       |    2
+ syntax_checkers/xhtml.vim      |   34
  13 files changed, 247 insertions(+), 37 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0.0)
@@ -82,15 +82,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0.0: Initial upload
 
- README                         |   32 ++++++
- doc/syntastic.txt              |  204 +++++++++++++++++++++++++++++++++++
- plugin/syntastic.vim           |  228 ++++++++++++++++++++++++++++++++++++++++
- syntax_checkers/eruby.vim      |   33 ++++++
- syntax_checkers/haml.vim       |   32 ++++++
- syntax_checkers/html.vim       |   36 +++++++
- syntax_checkers/javascript.vim |   26 +++++
- syntax_checkers/php.vim        |   26 +++++
- syntax_checkers/python.vim     |   24 ++++
- syntax_checkers/ruby.vim       |   27 +++++
- syntax_checkers/sass.vim       |   31 ++++++
+ README                         |   32
+ doc/syntastic.txt              |  204
+ plugin/syntastic.vim           |  228
+ syntax_checkers/eruby.vim      |   33
+ syntax_checkers/haml.vim       |   32
+ syntax_checkers/html.vim       |   36
+ syntax_checkers/javascript.vim |   26
+ syntax_checkers/php.vim        |   26
+ syntax_checkers/python.vim     |   24
+ syntax_checkers/ruby.vim       |   27
+ syntax_checkers/sass.vim       |   31
  11 files changed, 699 insertions(+), 0 deletions(-)

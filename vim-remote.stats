@@ -8,13 +8,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Changed API
     Added sample ruby server
 
- src/main.c            |    2 +-
- src/main.py           |   21 ++++++--
- src/main.rb           |  128 +++++++++++++++++++++++++++++++++++++++++++++++++
- src/vimremote.def     |    2 +-
- src/vimremote.h       |    2 +-
- src/vimremote_win32.c |    5 +-
- src/vimremote_x11.c   |    4 +-
+ src/main.c            |    2
+ src/main.py           |   21
+ src/main.rb           |  128
+ src/vimremote.def     |    2
+ src/vimremote.h       |    2
+ src/vimremote_win32.c |    5
+ src/vimremote_x11.c   |    4
  7 files changed, 151 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -24,18 +24,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- Makefile              |    5 +
- README                |   58 +++
- README.orig           |   54 +++
- src/Makefile.mingw    |   20 +
- src/Makefile.msvc     |   22 ++
- src/Makefile.x11      |   20 +
- src/main.c            |  144 ++++++++
- src/main.py           |  103 ++++++
- src/vimremote.def     |   10 +
- src/vimremote.h       |   17 +
- src/vimremote_win32.c |  651 +++++++++++++++++++++++++++++++++
- src/vimremote_x11.c   |  976 +++++++++++++++++++++++++++++++++++++++++++++++++
- src/vimthings.c       |  208 +++++++++++
- src/vimthings.h       |  105 ++++++
+ Makefile              |    5
+ README                |   58
+ README.orig           |   54
+ src/Makefile.mingw    |   20
+ src/Makefile.msvc     |   22
+ src/Makefile.x11      |   20
+ src/main.c            |  144
+ src/main.py           |  103
+ src/vimremote.def     |   10
+ src/vimremote.h       |   17
+ src/vimremote_win32.c |  651
+ src/vimremote_x11.c   |  976
+ src/vimthings.c       |  208
+ src/vimthings.h       |  105
  14 files changed, 2393 insertions(+), 0 deletions(-)

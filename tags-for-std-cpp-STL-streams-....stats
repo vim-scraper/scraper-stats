@@ -5,119 +5,119 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.9: Initial upload
 
- README                    |    4 +
- algorithm                 |   70 +
- allocator.h               |  163 ++
- basic_ios.h               |  468 ++++
- basic_ios.tcc             |  202 ++
- basic_string.h            | 2457 ++++++++++++++++++++
- basic_string.tcc          | 1012 +++++++++
- bitset                    | 1344 +++++++++++
- boost_concept_check.h     |  933 ++++++++
- cassert                   |   49 +
- cctype                    |   86 +
- cerrno                    |   57 +
- cfloat                    |   52 +
- char_traits.h             |  367 +++
- climits                   |   52 +
- clocale                   |   65 +
- cmath                     |  600 +++++
- cmath.tcc                 |   59 +
- codecvt.h                 |  474 ++++
- complex                   | 1489 ++++++++++++
- concept_check.h           |   85 +
- cpp_type_traits.h         |  403 ++++
- csetjmp                   |   68 +
- csignal                   |   64 +
- cstdarg                   |   64 +
- cstddef                   |   60 +
- cstdio                    |  191 ++
- cstdlib                   |  227 ++
- cstring                   |  130 ++
- ctime                     |   82 +
- cwchar                    |  282 +++
- cwctype                   |  112 +
- deque                     |   80 +
- deque.tcc                 |  778 +++++++
- exception                 |  135 ++
- exception_defines.h       |   51 +
- fstream                   |  808 +++++++
- fstream.tcc               |  908 ++++++++
- functexcept.h             |   95 +
- functional                |   57 +
- gslice.h                  |  170 ++
- gslice_array.h            |  214 ++
- indirect_array.h          |  208 ++
- iomanip                   |  300 +++
- ios                       |   52 +
- ios_base.h                |  968 ++++++++
- iosfwd                    |  168 ++
- iostream                  |   87 +
- istream                   |  848 +++++++
- istream.tcc               | 1047 +++++++++
- iterator                  |   75 +
- limits                    | 1160 ++++++++++
- list                      |   81 +
- list.tcc                  |  385 ++++
- locale                    |   48 +
- locale_classes.h          |  582 +++++
- locale_facets.h           | 4688 ++++++++++++++++++++++++++++++++++++++
- locale_facets.tcc         | 2879 ++++++++++++++++++++++++
- localefwd.h               |  197 ++
- map                       |   73 +
- mask_array.h              |  204 ++
- memory                    |  374 +++
- new                       |  116 +
- numeric                   |   71 +
- ostream                   |  575 +++++
- ostream.tcc               |  374 +++
- ostream_insert.h          |  126 +
- postypes.h                |  217 ++
- queue                     |   77 +
- set                       |   73 +
- slice_array.h             |  269 +++
- sstream                   |  591 +++++
- sstream.tcc               |  279 +++
- stack                     |   72 +
- stdexcept                 |  148 ++
- stl_algo.h                | 5504 +++++++++++++++++++++++++++++++++++++++++++++
- stl_algobase.h            |  935 ++++++++
- stl_bvector.h             | 1011 +++++++++
- stl_construct.h           |  188 ++
- stl_deque.h               | 1608 +++++++++++++
- stl_function.h            |  755 +++++++
- stl_heap.h                |  463 ++++
- stl_iterator.h            |  827 +++++++
- stl_iterator_base_funcs.h |  182 ++
- stl_iterator_base_types.h |  170 ++
- stl_list.h                | 1262 +++++++++++
- stl_map.h                 |  740 ++++++
- stl_multimap.h            |  670 ++++++
- stl_multiset.h            |  565 +++++
- stl_numeric.h             |  339 +++
- stl_pair.h                |  149 ++
- stl_queue.h               |  443 ++++
- stl_raw_storage_iter.h    |  110 +
- stl_relops.h              |  138 ++
- stl_set.h                 |  578 +++++
- stl_stack.h               |  261 +++
- stl_tempbuf.h             |  172 ++
- stl_tree.h                | 1557 +++++++++++++
- stl_uninitialized.h       |  392 ++++
- stl_vector.h              |  992 ++++++++
- stream_iterator.h         |  216 ++
- streambuf                 |  823 +++++++
- streambuf.tcc             |  179 ++
- streambuf_iterator.h      |  400 ++++
- string                    |   61 +
- stringfwd.h               |   70 +
- typeinfo                  |  169 ++
- utility                   |   69 +
- valarray                  | 1039 +++++++++
- valarray_after.h          |  554 +++++
- valarray_array.h          |  704 ++++++
- valarray_array.tcc        |  246 ++
- valarray_before.h         |  735 ++++++
- vector                    |   82 +
- vector.tcc                |  496 ++++
+ README                    |    4
+ algorithm                 |   70
+ allocator.h               |  163
+ basic_ios.h               |  468
+ basic_ios.tcc             |  202
+ basic_string.h            | 2457
+ basic_string.tcc          | 1012
+ bitset                    | 1344
+ boost_concept_check.h     |  933
+ cassert                   |   49
+ cctype                    |   86
+ cerrno                    |   57
+ cfloat                    |   52
+ char_traits.h             |  367
+ climits                   |   52
+ clocale                   |   65
+ cmath                     |  600
+ cmath.tcc                 |   59
+ codecvt.h                 |  474
+ complex                   | 1489
+ concept_check.h           |   85
+ cpp_type_traits.h         |  403
+ csetjmp                   |   68
+ csignal                   |   64
+ cstdarg                   |   64
+ cstddef                   |   60
+ cstdio                    |  191
+ cstdlib                   |  227
+ cstring                   |  130
+ ctime                     |   82
+ cwchar                    |  282
+ cwctype                   |  112
+ deque                     |   80
+ deque.tcc                 |  778
+ exception                 |  135
+ exception_defines.h       |   51
+ fstream                   |  808
+ fstream.tcc               |  908
+ functexcept.h             |   95
+ functional                |   57
+ gslice.h                  |  170
+ gslice_array.h            |  214
+ indirect_array.h          |  208
+ iomanip                   |  300
+ ios                       |   52
+ ios_base.h                |  968
+ iosfwd                    |  168
+ iostream                  |   87
+ istream                   |  848
+ istream.tcc               | 1047
+ iterator                  |   75
+ limits                    | 1160
+ list                      |   81
+ list.tcc                  |  385
+ locale                    |   48
+ locale_classes.h          |  582
+ locale_facets.h           | 4688
+ locale_facets.tcc         | 2879
+ localefwd.h               |  197
+ map                       |   73
+ mask_array.h              |  204
+ memory                    |  374
+ new                       |  116
+ numeric                   |   71
+ ostream                   |  575
+ ostream.tcc               |  374
+ ostream_insert.h          |  126
+ postypes.h                |  217
+ queue                     |   77
+ set                       |   73
+ slice_array.h             |  269
+ sstream                   |  591
+ sstream.tcc               |  279
+ stack                     |   72
+ stdexcept                 |  148
+ stl_algo.h                | 5504
+ stl_algobase.h            |  935
+ stl_bvector.h             | 1011
+ stl_construct.h           |  188
+ stl_deque.h               | 1608
+ stl_function.h            |  755
+ stl_heap.h                |  463
+ stl_iterator.h            |  827
+ stl_iterator_base_funcs.h |  182
+ stl_iterator_base_types.h |  170
+ stl_list.h                | 1262
+ stl_map.h                 |  740
+ stl_multimap.h            |  670
+ stl_multiset.h            |  565
+ stl_numeric.h             |  339
+ stl_pair.h                |  149
+ stl_queue.h               |  443
+ stl_raw_storage_iter.h    |  110
+ stl_relops.h              |  138
+ stl_set.h                 |  578
+ stl_stack.h               |  261
+ stl_tempbuf.h             |  172
+ stl_tree.h                | 1557
+ stl_uninitialized.h       |  392
+ stl_vector.h              |  992
+ stream_iterator.h         |  216
+ streambuf                 |  823
+ streambuf.tcc             |  179
+ streambuf_iterator.h      |  400
+ string                    |   61
+ stringfwd.h               |   70
+ typeinfo                  |  169
+ utility                   |   69
+ valarray                  | 1039
+ valarray_after.h          |  554
+ valarray_array.h          |  704
+ valarray_array.tcc        |  246
+ valarray_before.h         |  735
+ vector                    |   82
+ vector.tcc                |  496
  115 files changed, 58333 insertions(+), 0 deletions(-)

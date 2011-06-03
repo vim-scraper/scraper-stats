@@ -5,8 +5,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.16: * fix comments before opening brace after a sub declaration
 
- syntax/perl.vim |  608 ++++++++++++++++++++++++++++---------------------------
- syntax/pod.vim  |   46 ++--
+ syntax/perl.vim |  608
+ syntax/pod.vim  |   46
  2 files changed, 329 insertions(+), 325 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
@@ -16,7 +16,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.15: * fix comments before opening brace after a method signature
 
- syntax/perl.vim |    3 ++-
+ syntax/perl.vim |    3
  1 files changed, 2 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
@@ -29,17 +29,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * merged with http://github.com/petdance/vim-perl
     * better support for parameterized roles (github issue #7)
 
- ftplugin/perl.vim  |   71 ++
- ftplugin/perl6.vim |   49 ++
- ftplugin/xs.vim    |   14 +
- indent/perl.vim    |  186 +++++
- indent/perl6.vim   |  137 ++++
- syntax/perl.vim    |  730 +++++++++---------
- syntax/perl6.vim   | 2250 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- syntax/pod.vim     |   77 +-
- syntax/tt2.vim     |  202 +++++
- syntax/tt2html.vim |   20 +
- syntax/xs.vim      |   40 +
+ ftplugin/perl.vim  |   71
+ ftplugin/perl6.vim |   49
+ ftplugin/xs.vim    |   14
+ indent/perl.vim    |  186
+ indent/perl6.vim   |  137
+ syntax/perl.vim    |  730
+ syntax/perl6.vim   | 2250
+ syntax/pod.vim     |   77
+ syntax/tt2.vim     |  202
+ syntax/tt2html.vim |   20
+ syntax/xs.vim      |   40
  11 files changed, 3377 insertions(+), 399 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
@@ -49,7 +49,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.13: * more Test::* keywords
 
- syntax/perl.vim |   13 ++++++++++---
+ syntax/perl.vim |   13
  1 files changed, 10 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
@@ -59,8 +59,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.12: * better POD highlighting from cub-uanic
 
- syntax/perl.vim |    6 +--
- syntax/pod.vim  |   95 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ syntax/perl.vim |    6
+ syntax/pod.vim  |   95
  2 files changed, 97 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
@@ -70,7 +70,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.11: * some new keywords from cub-uanic on github
 
- syntax/perl.vim |   10 +++++-----
+ syntax/perl.vim |   10
  1 files changed, 5 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
@@ -83,7 +83,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * fix using a variable as method name (xenoterracide)
     * add Try::Tiny keywords
 
- syntax/perl.vim |    7 +++++--
+ syntax/perl.vim |    7
  1 files changed, 5 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.09)
@@ -93,7 +93,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.09: Fixed POD sync bug.
 
- syntax/perl.vim |   13 +++++++------
+ syntax/perl.vim |   13
  1 files changed, 7 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.08)
@@ -103,7 +103,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.08: Better defaults, added Test::* keywords
 
- syntax/perl.vim |   24 ++++++++++++++++++++----
+ syntax/perl.vim |   24
  1 files changed, 20 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.07)
@@ -113,7 +113,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.07: Added a couple more keywords..
 
- syntax/perl.vim |    4 ++--
+ syntax/perl.vim |    4
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.06)
@@ -125,7 +125,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Moved all Moose stuff to it's own section at the top of file. Fixed quoted method modifiers.
 
- syntax/perl.vim |   79 ++++++++++++++++++++++++++++++-------------------------
+ syntax/perl.vim |   79
  1 files changed, 43 insertions(+), 36 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.05)
@@ -135,6 +135,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.05: Fixed code attributes on methods, added type library keywords.
 
- README          |    5 +
- syntax/perl.vim |  578 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README          |    5
+ syntax/perl.vim |  578
  2 files changed, 583 insertions(+), 0 deletions(-)

@@ -5,9 +5,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 29: Another bugfix.
 
- autoload/getscript.vim     |    9 +++++----
- doc/pi_getscript.txt       |    4 +++-
- plugin/getscriptPlugin.vim |    9 ++++++---
+ autoload/getscript.vim     |    9
+ doc/pi_getscript.txt       |    4
+ plugin/getscriptPlugin.vim |    9
  3 files changed, 14 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/28)
@@ -19,9 +19,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Getscript has improved shell quote handling and avoids pop-up windows under WinXP more often
 
- autoload/getscript.vim     |  255 +++++++++++++++++++++++++++-----------------
- doc/pi_getscript.txt       |    8 +-
- plugin/getscriptPlugin.vim |    9 +-
+ autoload/getscript.vim     |  255
+ doc/pi_getscript.txt       |    8
+ plugin/getscriptPlugin.vim |    9
  3 files changed, 166 insertions(+), 106 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/25)
@@ -35,9 +35,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     ignores comments (#...) in GetLatestVimScripts.dat file
     supports vimballs (*.vba, *.vba.gz)
 
- autoload/getscript.vim     |  124 +++++++++++++++++++++++++++-----------------
- doc/pi_getscript.txt       |    2 +
- plugin/getscriptPlugin.vim |    2 +-
+ autoload/getscript.vim     |  124
+ doc/pi_getscript.txt       |    2
+ plugin/getscriptPlugin.vim |    2
  3 files changed, 80 insertions(+), 48 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/23)
@@ -47,8 +47,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 23: Autoinstall handles vimballs and ignores #... as comments
 
- autoload/getscript.vim |   62 ++++++++++++++++++++---------
- doc/pi_getscript.txt   |  101 ++++++++++++++++++++++++++++++-----------------
+ autoload/getscript.vim |   62
+ doc/pi_getscript.txt   |  101
  2 files changed, 106 insertions(+), 57 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/22)
@@ -61,11 +61,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Now takes advantage of autoloading.
     * Supports automatic use of curl if wget is not available.
 
- autoload/getscript.vim         |  479 ++++++++++++++++++++++++++++++++++++++++
- doc/GetLatestVimScripts.txt    |  328 ---------------------------
- doc/pi_getscript.txt           |  379 +++++++++++++++++++++++++++++++
- plugin/GetLatestVimScripts.vim |  468 ---------------------------------------
- plugin/getscriptPlugin.vim     |   38 ++++
+ autoload/getscript.vim         |  479
+ doc/GetLatestVimScripts.txt    |  328
+ doc/pi_getscript.txt           |  379
+ plugin/GetLatestVimScripts.vim |  468
+ plugin/getscriptPlugin.vim     |   38
  5 files changed, 896 insertions(+), 796 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/20)
@@ -77,8 +77,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     bugfix -- unzip needed the -o flag to overwrite
 
- doc/GetLatestVimScripts.txt    |    6 +++++-
- plugin/GetLatestVimScripts.vim |   10 +++++-----
+ doc/GetLatestVimScripts.txt    |    6
+ plugin/GetLatestVimScripts.vim |   10
  2 files changed, 10 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/18)
@@ -91,8 +91,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Bugfix release: improvement to automatic downloading database construction; nowrapscan no longer throws an error; with bash, mv instead of ren is used; and downloading problems are handled better.
     g:GetLatestVimScripts_autoinstall (default=1) can be used to prevent any :AutoInstall:s.
 
- doc/GetLatestVimScripts.txt    |  162 +++++++++++++++++++------------
- plugin/GetLatestVimScripts.vim |  210 +++++++++++++++++++++++++++-------------
+ doc/GetLatestVimScripts.txt    |  162
+ plugin/GetLatestVimScripts.vim |  210
  2 files changed, 242 insertions(+), 130 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/16)
@@ -106,9 +106,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Made execution of bunzip2/gunzip/tar/zip silent.
     bugfix: With :AutoInstall: use of helptags.  Fixed!
 
- GetLatest/GetLatestVimScripts.dist |   18 +++
- doc/GetLatestVimScripts.txt        |  218 +++++++++++++++++++++++++++++++-----
- plugin/GetLatestVimScripts.vim     |  179 ++++++++++++++++++++++--------
+ GetLatest/GetLatestVimScripts.dist |   18
+ doc/GetLatestVimScripts.txt        |  218
+ plugin/GetLatestVimScripts.vim     |  179
  3 files changed, 341 insertions(+), 74 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/11)
@@ -120,7 +120,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     The newest GetLatestVimScripts is a plugin!  Use :GetLatestVimScripts to get the latest versions of the scripts you're interested in.  Scriptnames and ids are now in a GetLatest/GetLatestVimScripts.dat datafile.  GetLatestVimScripts also examines cooperating plugins for dependencies, helps build the datafile, and keeps them up-to-date too!
 
- README                         |   70 +++++++++
- doc/GetLatestVimScripts.txt    |  130 +++++++++++++++++
- plugin/GetLatestVimScripts.vim |  301 ++++++++++++++++++++++++++++++++++++++++
+ README                         |   70
+ doc/GetLatestVimScripts.txt    |  130
+ plugin/GetLatestVimScripts.vim |  301
  3 files changed, 501 insertions(+), 0 deletions(-)

@@ -8,18 +8,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Canned forms
     - New "widgets": singlechoice, file, dir
 
- autoload/vimform.vim                      |  492 ++++++++++++++++++-----------
- autoload/vimform/forms/substitute.vim     |   61 ++++
- autoload/vimform/widget.vim               |  145 +++++++++
- autoload/vimform/widgets/checkbox.vim     |   96 ++++++
- autoload/vimform/widgets/dir.vim          |   72 +++++
- autoload/vimform/widgets/file.vim         |   72 +++++
- autoload/vimform/widgets/singlechoice.vim |   83 +++++
- autoload/vimform/widgets/text.vim         |   25 ++
- doc/vimform.txt                           |   75 ++++-
- ftplugin/vimform.vim                      |   46 ++-
- plugin/vimform.vim                        |   10 +-
- syntax/vimform.vim                        |   12 +-
+ autoload/vimform.vim                      |  492
+ autoload/vimform/forms/substitute.vim     |   61
+ autoload/vimform/widget.vim               |  145
+ autoload/vimform/widgets/checkbox.vim     |   96
+ autoload/vimform/widgets/dir.vim          |   72
+ autoload/vimform/widgets/file.vim         |   72
+ autoload/vimform/widgets/singlechoice.vim |   83
+ autoload/vimform/widgets/text.vim         |   25
+ doc/vimform.txt                           |   75
+ ftplugin/vimform.vim                      |   46
+ plugin/vimform.vim                        |   10
+ syntax/vimform.vim                        |   12
  12 files changed, 972 insertions(+), 217 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -29,11 +29,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2: Initial upload
 
- README               |   11 +
- autoload/vimform.vim |  651 ++++++++++++++++++++++++++++++++++++++++++++++++++
- doc/vimform.txt      |  147 ++++++++++++
- ftplugin/vimform.vim |   48 ++++
- indent/vimform.vim   |   16 ++
- plugin/vimform.vim   |   30 +++
- syntax/vimform.vim   |   39 +++
+ README               |   11
+ autoload/vimform.vim |  651
+ doc/vimform.txt      |  147
+ ftplugin/vimform.vim |   48
+ indent/vimform.vim   |   16
+ plugin/vimform.vim   |   30
+ syntax/vimform.vim   |   39
  7 files changed, 942 insertions(+), 0 deletions(-)

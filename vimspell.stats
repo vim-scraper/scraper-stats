@@ -12,7 +12,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Some corrections to better work under windows and notably, addition of   default shell handlling for windows thanks to Wojciech Pietron.
     - Silent some warnings.
 
- plugin/vimspell.vim |  145 +++++++++++++++++++++++++++++----------------------
+ plugin/vimspell.vim |  145
  1 files changed, 83 insertions(+), 62 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.95)
@@ -39,7 +39,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Addition of filetype "text" and "" to spell_markup_ft option.
     - Add some FAQ documentation, improve the documentation about spell_markup_ft
 
- plugin/vimspell.vim |  429 +++++++++++++++++++++++++++++++++++---------------
+ plugin/vimspell.vim |  429
  1 files changed, 300 insertions(+), 129 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.84)
@@ -51,7 +51,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Add mail to the default content of 'spell_markup_ft' variable (errors where not highlighted anymore during mail composition).
 
- plugin/vimspell.vim |   12 ++++++------
+ plugin/vimspell.vim |   12
  1 files changed, 6 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.83)
@@ -63,7 +63,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Bug correction - highlighting inside cluster was badly set, depending on when SpellSetupBuffer was calledAddition fo auto jump option (jump to next error after correction).Correction of a bug where cursor was jumping when on the last line of a file.Correction of html file highlightings.Correction of spell_guess_language_ft usage (wasn't taken into account).Performance issue : check of @Spell cluster existence in syntax highlightings was removed, and replaced by heuristic and manula configuration. see spell_markup_ft variable.Many thanks to  Paul Jolly, Tomas Hoger, Michaeljohn Clement, Hugo Haas and Markus Braun.
 
- plugin/vimspell.vim |  137 +++++++++++++++++++++++++++++++-------------------
+ plugin/vimspell.vim |  137
  1 files changed, 85 insertions(+), 52 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.78)
@@ -75,7 +75,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Add a language auto-detection function.- Corrects a bug which causes delays during buffer switching (function SpellTuneCommentSyntax).- Correction for bug wich prevents use of alternatives number 10 and 20- Use of alternatives usable even when spellchecking is not automatically done- Samm optimization to improve buffer switching latency.
 
- plugin/vimspell.vim |  232 ++++++++++++++++++++++++++++++++++----------------
+ plugin/vimspell.vim |  232
  1 files changed, 158 insertions(+), 74 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.73)
@@ -87,7 +87,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - at most 20 alternatives are now proposed (was 10)- 'r'eplace choice was remove (was broken, and of no much use).
 
- plugin/vimspell.vim |   30 ++++++++++++++++++++----------
+ plugin/vimspell.vim |   30
  1 files changed, 20 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.72)
@@ -99,7 +99,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Correction of a performance issue (syntax match was continuously append, which slow down vim after some times).- Correction of a bug, which cause unwanted behavior when the user hit another key than those proposed to correct spell errors.
 
- plugin/vimspell.vim |   96 +++++++++++++++++++++++++++++----------------------
+ plugin/vimspell.vim |   96
  1 files changed, 55 insertions(+), 41 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.70)
@@ -111,7 +111,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Spell checking in insert mode does not break undo stack anymore, thanks to  Hari Krishna Dara.- Jumping to next error now works, even if some text is not spellchecked  (like comments).- Bug with /si and aspell corrected- Use @Spell cluster to spell specific region according to the highlighting  definitions (Idea from vim@vim.org discussion and from engspchk.vim. Thanks  to Mr.Campbell)- Suppress menu bug, when changing language by calling directly  :SpellChangeLanguage.- Some minor documentation improvement.
 
- plugin/vimspell.vim |  120 +++++++++++++++++++++++++++++++++++---------------
+ plugin/vimspell.vim |  120
  1 files changed, 84 insertions(+), 36 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.68)
@@ -123,7 +123,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Remove "silent" keyword which (for some unknown reason) prevent mapping to  replaceword (1,2,..) to be removed,- Bug workaround to prevent coma to be added to 'iskeyword' option (thanks to  Mark Waggoner)- Bug correction when line contained \,- Bad filetype recognition bug correction,- SpellCheckLine correction. Spell checked was not done after each word,- aunmenu warning correction...- more menus,- more bugs to be corrected :(
 
- plugin/vimspell.vim |   75 ++++++++++++++++++++++++++++++++-------------------
+ plugin/vimspell.vim |   75
  1 files changed, 47 insertions(+), 28 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.67@1)
@@ -133,7 +133,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.67@1: previous upload failed...
 
- plugin/vimspell.vim | 1815 ++++++++++++++++++++++++++++++++++++++++++++++++++-
+ plugin/vimspell.vim | 1815
  1 files changed, 1814 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.67)
@@ -145,7 +145,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     New function: popup menu with <RightMouse> to select alternative.Make spell_filter option working.Ensure usage of /bin/sh instead of [t]csh variants (problem with doublequotes).Include Sandra schrödter patch for SpellCaseAccept problem.Add a map to '.' as a hook to spell check current line in insert mode.Documentation update.Cleaning of help autoinstallation functions (Guo Peng Wen).
 
- plugin/vimspell.vim | 1654 +--------------------------------------------------
+ plugin/vimspell.vim | 1654
  1 files changed, 1 insertions(+), 1653 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.64)
@@ -157,7 +157,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Include patch of Philippe Sum to make vimspell work with windows (untested).- Disable hlsearch when doing <leader>sp and <leader>sn.- Save and restore backspace option when spell_insert_mode is set.- Do not check current window if spell_auto_enable is not set or set to 0.- In insert mode, do not check current line when no new words were inserted (fastest operation when typing several spaces).- Correct bug where error highlighting vanished when reentering a buffer already checked (as a result, less computation are done when switching).Add Markus Braun patch to remove SpellProposeAlternatives mapping when hitting ESC key.
 
- plugin/vimspell.vim |  130 ++++++++++++++++++++++++++++++++++----------------
+ plugin/vimspell.vim |  130
  1 files changed, 88 insertions(+), 42 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.61)
@@ -169,7 +169,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Include Guopeng Wen to  - fix error in SpellCheckLanguage when there is no menu. - fix SpellSetupBuffer behaviuor when autocommand are enables.
 
- plugin/vimspell.vim |   17 +++++++++--------
+ plugin/vimspell.vim |   17
  1 files changed, 9 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.60)
@@ -181,7 +181,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Some escaping bug corrections.Documentation updated.Escape Space in filename.Cursor position restoring in SpellCheckWindow.Iskeyword is now set globally. LoadIsKeyword function is suppress. SpellSaveIskeyword is only call when setting up buffer.Inclusion of Guopeng Wen  patch to minimize overheadof vimspell use when no menu are used and when no autospell is done.Add faq about minimizing vimspell overhead.Inclusion of Markus Braun patch:- s:SpellSetupBuffer() call s:SpellSetSpellchecker() only when it was not called before- Right calculation of the window top and bottom position, even if fold are  present (idea from Mark Hillebrand, who used this in his FirstWinLine() and  LastWinLine())Verify that mapleader is defined before being used.Add language and filetype dependant 'iskeyword' options...Minor menu enhancment.Bug ands todolist update.
 
- plugin/vimspell.vim |  748 ++++++++++++++++++++++++++++++++-------------------
+ plugin/vimspell.vim |  748
  1 files changed, 471 insertions(+), 277 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.49)
@@ -193,7 +193,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Bug correction: SpellCheckLine didn't work when the line contained quotes.
 
- plugin/vimspell.vim |   17 ++++++++++-------
+ plugin/vimspell.vim |   17
  1 files changed, 10 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.48)
@@ -205,7 +205,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
       - Experimental on the fly spell checking in insert mode. Thanks to Mikolaj Machowski   (new options spell_insert_mode).  - Addition of "none" and "all" token for the spell_auto_type    variable.  - FAQ section in documentation.  - Beginning of a solution for auto help installation bug (the help    file was not installed when vimspell was not in a user writeable    directory. Thanks to Peter Kaagman  - Some documentation addition and correction.  - Some code cleaning and ordering.
 
- plugin/vimspell.vim |  790 +++++++++++++++++++++++++++++++++------------------
+ plugin/vimspell.vim |  790
  1 files changed, 509 insertions(+), 281 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.46)
@@ -217,7 +217,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Apply patches from Markus Braun (many thanks to him): - removed the need of sed, sort, awk external tools - removed the spell_fly_error variables - fixed small bug when proposing alternatives.Fix small bug when manually calling SpellSetLanguage. Kindly reported by JF L.Remove highlighting when changing language or spell checker.Minor cosmetic changes.Add Markus Braun Patch which display spell check stats.Do not load vimspell when 'compatible' is set.Small bug when unletting undefined variable.Language menu initialization is now correct.Update TODO list.
 
- plugin/vimspell.vim |  403 +++++++++++++++++++++++++++++++++++----------------
+ plugin/vimspell.vim |  403
  1 files changed, 278 insertions(+), 125 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.40)
@@ -229,7 +229,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     New feature : auto-installation of vimspell help file Documentation correction and polishing (it now follows the help format).Add <Leader>sA map for SpellAutoDisableRework of vimspell option documentation.Correct Spellexit function.<Leader>sq now call SpellAutoDisable instead of SpellExit.SpellChecker is call in auto mode when window loose focus.
 
- plugin/vimspell.vim |  650 ++++++++++++++++++++++++++++++++++-----------------
+ plugin/vimspell.vim |  650
  1 files changed, 433 insertions(+), 217 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.33)
@@ -241,7 +241,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Add preliminary support of spell errors highlighting in comments.Correct nasty bug, which causes lost of data when auto spell check wasselected and the number of lines of the text was less than the window height.Correct bug when serching for next or previous errors.Cursor position is now restored after a spell check.Thanks to Markus Braun <Markus.Braun@krawel.de> and Igor Goldenberg<igold@igold.pp.ru>.
 
- plugin/vimspell.vim |   95 +++++++++++++++++++++++++++++++++++++++++----------
+ plugin/vimspell.vim |   95
  1 files changed, 77 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.30)
@@ -253,7 +253,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Add parameters to tune vimspell menu position.Correct bug, which prevents user defined spell_language_list to be used.Correct a bug, which reactivate auto-spell when entering a buffer, even if itwas previously disable.
 
- plugin/vimspell.vim |   82 +++++++++++++++++++++++++++++++++------------------
+ plugin/vimspell.vim |   82
  1 files changed, 53 insertions(+), 29 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.28)
@@ -265,7 +265,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Small patch to 'spell_auto_type' usage (all buffer with no filetype were spellchecked by default).Add credits.
 
- plugin/vimspell.vim |    6 ++++--
+ plugin/vimspell.vim |    6
  1 files changed, 4 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.26)
@@ -277,7 +277,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Correct spell_auto_type behaviour. There was a bug which made AutoSpell enable for all file types.
 
- plugin/vimspell.vim |    4 ++--
+ plugin/vimspell.vim |    4
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.25)
@@ -289,7 +289,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Correct bug with aspell (add word to local dictionary didn't work), kindly reported by Andrew McCarthy <andrewmc-vim@celt.dias.ie> and Alberto Ornaghi <alor@sikurezza.org>
 
- plugin/vimspell.vim |   22 ++++++++--------------
+ plugin/vimspell.vim |   22
  1 files changed, 8 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.23)
@@ -301,7 +301,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Add (requested) documentation about setting up on-the-fly spell check,add spell_auto_type and spell_no_readonly variables to tune when on-the-flyspell checking is done.Still on bug about highlighting (see TODO list in documentation section), if someone wants to tackle it....
 
- plugin/vimspell.vim |   95 +++++++++++++++++++++++++++++++++++++-------------
+ plugin/vimspell.vim |   95
  1 files changed, 70 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.22)
@@ -313,7 +313,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Bug correction : Spellcheck on the fly for the visible window now preserveinformations from previous global spellcheck (<Leader>ss).Dictionnaries are rescan whenever the spellchecker is changed.
 
- plugin/vimspell.vim |   81 +++++++++++++++++++++++++++-----------------------
+ plugin/vimspell.vim |   81
  1 files changed, 44 insertions(+), 37 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.20)
@@ -325,7 +325,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Documentation and minor modifications.Add  filetype and spell checker dependant options (support by default tex,html,sgml, and nroff or email modes).English corrections.Make several variables bufferwise (language, spell_executable,...)Add functions and menu to change spellcheckerCorrect bugs.Add a better dictionaries detection for aspell.
 
- plugin/vimspell.vim |  357 ++++++++++++++++++++++++++++++++++-----------------
+ plugin/vimspell.vim |  357
  1 files changed, 242 insertions(+), 115 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.17)
@@ -337,7 +337,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Correct a bug when applying suggestion on a word at the beginning of the buffer.Thanks to Markus Braun.
 
- plugin/vimspell.vim |    4 ++--
+ plugin/vimspell.vim |    4
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.16)
@@ -349,7 +349,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Add credits,Use update instead of write,Replace <ESC> default mapping by <Leader>Correct nasty bug (SpellIgnore)Improve menus.Improve dictionnaries auto-detection.
 
- plugin/vimspell.vim |  131 +++++++++++++++++++++++++++++++-------------------
+ plugin/vimspell.vim |  131
  1 files changed, 81 insertions(+), 50 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.14)
@@ -361,7 +361,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Much more parametrization (see documentation at the beginning of the script).Use aspell or ispell.Use as many language as available. Auto detect availables dictionnaries.More functionnal menu.Bug correction.
 
- plugin/vimspell.vim |  453 +++++++++++++++++++++++++++++++++++++--------------
+ plugin/vimspell.vim |  453
  1 files changed, 328 insertions(+), 125 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.13)
@@ -373,7 +373,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Comments and a bit of documentation.Some cleaning.need some more parametrization and cleaning.
 
- plugin/vimspell.vim |  454 +++++++++++++++++++++++++++++++--------------------
+ plugin/vimspell.vim |  454
  1 files changed, 280 insertions(+), 174 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
@@ -383,6 +383,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.12: Initial upload
 
- README              |   24 ++++++
- plugin/vimspell.vim |  214 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ README              |   24
+ plugin/vimspell.vim |  214
  2 files changed, 238 insertions(+), 0 deletions(-)

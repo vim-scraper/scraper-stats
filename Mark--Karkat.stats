@@ -8,9 +8,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - ENH: Add explicit mark persistence via :MarkLoad and :MarkSave commands and automatic persistence via the g:mwAutoLoadMarks and g:mwAutoSaveMarks configuration flags. (Request from Mun Johl, 16-Apr-2010)
     - Expose toggling of mark display (keeping the mark patterns) via new <Plug>MarkToggle mapping. Offer :MarkClear command as a replacement for the old argumentless :Mark command, which now just disables, but not clears all marks.
 
- autoload/mark.vim |  277 +++++++++++++++++++++++++++++++++++++++++++++-------
- doc/mark.txt      |   90 ++++++++++++++----
- plugin/mark.vim   |   72 +++++++++++++-
+ autoload/mark.vim |  277
+ doc/mark.txt      |   90
+ plugin/mark.vim   |   72
  3 files changed, 381 insertions(+), 58 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4.4)
@@ -24,8 +24,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - FIX: On overlapping marks, mark#CurrentMark() returned the lowest, not the highest visible mark. So on overlapping marks, the one that was not visible at the cursor position was removed; very confusing! Use reverse iteration order.
     - FIX: To avoid an arbitrary ordering of highlightings when the highlighting group names roll over, and to avoid order inconsistencies across different windows and tabs, we assign a different priority based on the highlighting group.
 
- autoload/mark.vim |   99 ++++++++++++++++++++++++++++++++++------------------
- doc/mark.txt      |   34 +++++++++++++++---
+ autoload/mark.vim |   99
+ doc/mark.txt      |   34
  2 files changed, 94 insertions(+), 39 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4.3)
@@ -40,9 +40,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Made global housekeeping variables script-local, only g:mwHistAdd is used for configuration.
     - FIX: Capturing the visual selection could still clobber the blockwise yank mode of the unnamed register.
 
- autoload/mark.vim |  152 ++++++++++++++++++++++++++++++-----------------------
- doc/mark.txt      |   19 ++++++-
- plugin/mark.vim   |   38 +++++++++----
+ autoload/mark.vim |  152
+ doc/mark.txt      |   19
+ plugin/mark.vim   |   38
  3 files changed, 130 insertions(+), 79 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4.1)
@@ -54,8 +54,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - FIX: Using a named register for capturing the visual selection on {Visual}<Leader>m and {Visual}<Leader>r clobbered the unnamed register. Now using the unnamed register.
 
- autoload/mark.vim |   20 ++++++++++++++------
- doc/mark.txt      |   32 ++++++++++++++++++--------------
+ autoload/mark.vim |   20
+ doc/mark.txt      |   32
  2 files changed, 32 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4.0)
@@ -67,8 +67,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     ENH: The MarkSearch mappings (<Leader>[*#/?]) add the original cursor position to the jump list, like the built-in [/?*#nN] commands. This allows to use the regular jump commands for mark matches, like with regular search matches.
 
- autoload/mark.vim |   21 ++++++++++++++++++++-
- doc/mark.txt      |   23 ++++++++++++++++++++---
+ autoload/mark.vim |   21
+ doc/mark.txt      |   23
  2 files changed, 40 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3.3)
@@ -80,8 +80,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - BUG: Clearing of an accidental zero-width match (e.g. via :Mark \zs) results in endless loop. Thanks to Andy Wokula for the patch.
 
- autoload/mark.vim |   11 +++++++++--
- doc/mark.txt      |    7 ++++++-
+ autoload/mark.vim |   11
+ doc/mark.txt      |    7
  2 files changed, 15 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3.2)
@@ -93,9 +93,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     BUG: Creation of literal pattern via '\V' in {Visual}<Leader>m mapping collided with individual escaping done in <Leader>m mapping so that an escaped '\*' would be interpreted as a multi item when both modes are used for marking. Thanks to Andy Wokula for the patch.
 
- autoload/mark.vim |   39 ++++++++++++++++-----------------------
- doc/mark.txt      |    6 ++++++
- plugin/mark.vim   |   11 ++++++++---
+ autoload/mark.vim |   39
+ doc/mark.txt      |    6
+ plugin/mark.vim   |   11
  3 files changed, 30 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3.1)
@@ -107,8 +107,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Now working correctly when 'smartcase' is set. All mappings and the :Mark command use 'ignorecase', but not 'smartcase'.
 
- autoload/mark.vim |   40 ++++++++++++++++++++++++----------------
- doc/mark.txt      |   19 +++++++++++++++++--
+ autoload/mark.vim |   40
+ doc/mark.txt      |   19
  2 files changed, 41 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3.0)
@@ -121,9 +121,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - All jump commands now take an optional [count], so you can quickly skip over some marks, as with the built-in */# and n/N commands. For this, the entire core search algorithm has been rewritten. The script's logic has been simplified through the use of Vim 7 features like Lists.
     - Now also printing a Vim-alike search error message when 'nowrapscan' is set.
 
- autoload/mark.vim |  235 +++++++++++++++++++++++++++++++----------------------
- doc/mark.txt      |   48 +++++++++--
- plugin/mark.vim   |   35 +++++---
+ autoload/mark.vim |  235
+ doc/mark.txt      |   48
+ plugin/mark.vim   |   35
  3 files changed, 197 insertions(+), 121 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2.0)
@@ -139,9 +139,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       time and footprint as long as the functionality isn't yet used.
     - Split off documentation into separate help file. Now packaging as VimBall.
 
- autoload/mark.vim |  426 ++++++++++++++++++++++++++++++++++++++++
- doc/mark.txt      |  195 +++++++++++++++++++
- plugin/mark.vim   |  557 +++++------------------------------------------------
+ autoload/mark.vim |  426
+ doc/mark.txt      |  195
+ plugin/mark.vim   |  557
  3 files changed, 671 insertions(+), 507 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1.0)
@@ -160,7 +160,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       height is potentially increased from 0 to 1.
     - Handling multiple tabs by calling s:UpdateScope() on the TabEnter event.
 
- plugin/mark.vim |  202 +++++++++++++++++++++++++++++--------------------------
+ plugin/mark.vim |  202
  1 files changed, 107 insertions(+), 95 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.0)
@@ -175,7 +175,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Factored :syntax operations out of s:DoMark() and s:UpdateMark() so that they can all be done in a single :windo.
     - Normal mode <Plug>MarkSet now has the same semantics as its visual mode cousin: If the cursor is on an existing mark, the mark is removed. Beforehand, one could only remove a visually selected mark via again selecting it. Now, one simply can invoke the mapping when on such a mark.
 
- plugin/mark.vim |  251 ++++++++++++++++++++++++++++---------------------------
+ plugin/mark.vim |  251
  1 files changed, 127 insertions(+), 124 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6.1)
@@ -185,6 +185,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.6.1: Initial upload
 
- README          |   85 ++++++++
- plugin/mark.vim |  637 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README          |   85
+ plugin/mark.vim |  637
  2 files changed, 722 insertions(+), 0 deletions(-)

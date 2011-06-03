@@ -21,10 +21,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Remove g:CSApprox_extra_rgb_txt_dirs - not needed in light of the above change
 
- autoload/csapprox.vim |  810 +++++++++++++++++++++++++++++++++++++++++++++++++
- doc/CSApprox.txt      |  175 +++++++----
- doc/rgb.txt           |  752 ---------------------------------------------
- plugin/CSApprox.vim   |  388 +++++++++++++++---------
+ autoload/csapprox.vim |  810
+ doc/CSApprox.txt      |  175
+ doc/rgb.txt           |  752
+ plugin/CSApprox.vim   |  388
  4 files changed, 1161 insertions(+), 964 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.05)
@@ -38,8 +38,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fix a behavioral bug when dumping out colors defined external to the scheme.
 
- doc/CSApprox.txt    |    8 +++++++-
- plugin/CSApprox.vim |   41 +++++++++++++++++++++++++++++++++++------
+ doc/CSApprox.txt    |    8
+ plugin/CSApprox.vim |   41
  2 files changed, 42 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.00)
@@ -55,8 +55,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fix a bug causing a syntax error when using GVim while CSApprox was loaded.  (thanks again, David Majnemer!)
 
- doc/CSApprox.txt    |  276 +++++++++++++++++++++++++++++++++------------------
- plugin/CSApprox.vim |   93 +++++++++++++-----
+ doc/CSApprox.txt    |  276
+ plugin/CSApprox.vim |   93
  2 files changed, 249 insertions(+), 120 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.00)
@@ -70,8 +70,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Also rewrite :CSApproxSnapshot to be more maintainable and less of a hack, and fix several bugs that it contained.
 
- doc/CSApprox.txt    |   90 ++++++++++++++++++--
- plugin/CSApprox.vim |  231 +++++++++++++++++++++++++++++++++------------------
+ doc/CSApprox.txt    |   90
+ plugin/CSApprox.vim |  231
  2 files changed, 232 insertions(+), 89 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.50)
@@ -83,8 +83,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Add :CSApproxSnapshot for writing out a colorscheme file representing the current colors that will work in gvim, 88 color vim, or 256 color vim, even without +gui.  See :help :CSApproxSnapshot
 
- doc/CSApprox.txt    |   21 ++++++-
- plugin/CSApprox.vim |  160 ++++++++++++++++++++++++++++++++------------------
+ doc/CSApprox.txt    |   21
+ plugin/CSApprox.vim |  160
  2 files changed, 122 insertions(+), 59 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
@@ -96,9 +96,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Distribute an rgb.txt along with CSApprox, so that CSApprox can still be used on distributions where no rgb.txt is provided with the X server (like Ubuntu Intrepid Ibex).  Thanks to Penn Su for finding this!
 
- doc/CSApprox.txt    |   14 +-
- doc/rgb.txt         |  752 +++++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/CSApprox.vim |    5 +-
+ doc/CSApprox.txt    |   14
+ doc/rgb.txt         |  752
+ plugin/CSApprox.vim |    5
  3 files changed, 764 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.00)
@@ -108,7 +108,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.00: Initial upload
 
- README              |   54 ++++
- doc/CSApprox.txt    |  365 ++++++++++++++++++++++++++
- plugin/CSApprox.vim |  707 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ README              |   54
+ doc/CSApprox.txt    |  365
+ plugin/CSApprox.vim |  707
  3 files changed, 1126 insertions(+), 0 deletions(-)

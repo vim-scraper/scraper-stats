@@ -12,7 +12,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     GetVar#GetSafe
     GetVar#Allocate
 
- plugin/GetVar.vim |   32 ++++++++++++++++++++++----------
+ plugin/GetVar.vim |   32
  1 files changed, 22 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -22,7 +22,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.4: Added two new functions: GetSafe and Allocate.
 
- plugin/GetVar.vim |   18 +++++++++++++++++-
+ plugin/GetVar.vim |   18
  1 files changed, 17 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -35,8 +35,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Changed the plugin slightly to allow for a default value to continue working if the regular return value is a list (or dictionary; basically, not a simple
     scalar value). Then change, while bringing the plugin up to scratch with Vim 7.x, doesn't break Vim 6.x compatibility.
 
- plugin/GetVar.vim |   45 +++++++++++++++++++++++++++++++++++++++++++++
- plugin/getVar.vim |   39 ---------------------------------------
+ plugin/GetVar.vim |   45
+ plugin/getVar.vim |   39
  2 files changed, 45 insertions(+), 39 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -49,7 +49,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Updated to use Vim 7's t: (tab-specific) variables once buffer-specific variables aren't found.
     The new sequence is window -> buffer -> tab -> global.  (Just stick with 1.1 if not using Vim 7.)
 
- plugin/getVar.vim |   29 +++++++++++++++--------------
+ plugin/getVar.vim |   29
  1 files changed, 15 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
@@ -61,7 +61,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Updated to return window-specific variables, THEN buffer and then global variables.
 
- plugin/getVar.vim |   23 ++++++++++++++---------
+ plugin/getVar.vim |   23
  1 files changed, 14 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
@@ -71,6 +71,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README            |   14 ++++++++++++++
- plugin/getVar.vim |   33 +++++++++++++++++++++++++++++++++
+ README            |   14
+ plugin/getVar.vim |   33
  2 files changed, 47 insertions(+), 0 deletions(-)

@@ -8,7 +8,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Ben Fritz:
     RunLint() only called on a cursorhold event if the buffer has been changed.
 
- ftplugin/matlab.vim |   43 ++++++++++++++++++++++++++++---------------
+ ftplugin/matlab.vim |   43
  1 files changed, 28 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.1)
@@ -20,7 +20,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Another bug fix for deleting the temporary directory. Directory deletion was failing as there was still a '.m~' file in the directory. This is now deleted, allowing the directory to be deleted.
 
- ftplugin/matlab.vim |   14 ++++++++++++--
+ ftplugin/matlab.vim |   14
  1 files changed, 12 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -38,7 +38,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     of the directory after the deletion
     5.) show messages that mlint gives about line 0 (the filename)
 
- ftplugin/matlab.vim |   91 +++++++++++++++++++++++++++++++++++++++++---------
+ ftplugin/matlab.vim |   91
  1 files changed, 74 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
@@ -48,7 +48,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2.1: Fixed temporary directory deletion bug (as far as I have tested it).
 
- ftplugin/matlab.vim |   45 +++++++++++++++++++++++++++++----------------
+ ftplugin/matlab.vim |   45
  1 files changed, 29 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -60,8 +60,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added significant changes made by Benjamin Fritz. Now deletes the temporary folders it creates. the clearLint() function now only deletes the MLint matches rather than all of them as it had previously. Known bug: on unloading the buffer the temporary directory is deleted, reloading the buffer causes the script to error as it can't find the directory. I am working on a fix for this and should upload it soon. Also note that the script will on work with Vim 7.1 or higher.
 
- ftplugin/matlab.vim |  208 +++++++++++++++++++++++++++++++++++++++++++++++++++
- ftplugin/mlint.vim  |  121 -----------------------------
+ ftplugin/matlab.vim |  208
+ ftplugin/mlint.vim  |  121
  2 files changed, 208 insertions(+), 121 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -71,6 +71,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README             |   10 ++++
- ftplugin/mlint.vim |  121 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README             |   10
+ ftplugin/mlint.vim |  121
  2 files changed, 131 insertions(+), 0 deletions(-)

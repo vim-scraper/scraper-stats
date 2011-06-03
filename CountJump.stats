@@ -8,11 +8,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - ENH: Added CountJump#Region#TextObject#Make() to easily define text objects for regions.
     - Interface change: Jump functions again return position (and actual, corrected one for a:isToEndOfLine). Though the position is not used for motions, it is necessary for text objects to differentiate between "already at the begin/end position" and "no such position".
 
- autoload/CountJump/Region.vim            |   18 ++++-
- autoload/CountJump/Region/Motion.vim     |    1 +
- autoload/CountJump/Region/TextObject.vim |  121 ++++++++++++++++++++++++++++++
- autoload/CountJump/TextObject.vim        |   31 ++++----
- doc/CountJump.txt                        |   17 ++++
+ autoload/CountJump/Region.vim            |   18
+ autoload/CountJump/Region/Motion.vim     |    1
+ autoload/CountJump/Region/TextObject.vim |  121
+ autoload/CountJump/TextObject.vim        |   31
+ doc/CountJump.txt                        |   17
  5 files changed, 167 insertions(+), 21 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.30)
@@ -29,11 +29,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       - Added a:isToEndOfLine argument to CountJump#Region#JumpToRegionEnd() and CountJump#Region#JumpToNextRegion(), which is useful for operator-pending and characterwise visual mode mappings; the entire last line will then be operated on / selected.
       - Added a:isMatch argument to CountJump#Region#SearchForRegionEnd(), CountJump#Region#JumpToRegionEnd(), CountJump#Region#SearchForNextRegion(), CountJump#Region#JumpToNextRegion(). This allows definition of regions via non-matches, which can be substantially simpler (and faster to match) than coming up with a "negative" regular expression.
 
- autoload/CountJump.vim               |  101 +++++++++++++++++--
- autoload/CountJump/Motion.vim        |    8 +-
- autoload/CountJump/Region.vim        |  180 ++++++++++++++--------------------
- autoload/CountJump/Region/Motion.vim |  125 +++++++++++++++++++++++
- doc/CountJump.txt                    |   51 ++++++----
+ autoload/CountJump.vim               |  101
+ autoload/CountJump/Motion.vim        |    8
+ autoload/CountJump/Region.vim        |  180
+ autoload/CountJump/Region/Motion.vim |  125
+ doc/CountJump.txt                    |   51
  5 files changed, 326 insertions(+), 139 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.22)
@@ -45,9 +45,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - No more motion mappings and text objects for select mode; as the mappings start with a printable character, no select-mode mapping should be defined.
 
- autoload/CountJump/Motion.vim     |   20 ++++++++++++++------
- autoload/CountJump/TextObject.vim |   26 ++++++++++++++++++++++++--
- doc/CountJump.txt                 |   12 ++++++++++++
+ autoload/CountJump/Motion.vim     |   20
+ autoload/CountJump/TextObject.vim |   26
+ doc/CountJump.txt                 |   12
  3 files changed, 50 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.21)
@@ -61,9 +61,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - FIX: Must not do (characterwise) end position adaptation for linewise text object that does not exclude boundaries.
     - Switched example from email fortunes to Pascal begin..end blocks, as they are conceptually easier.
 
- autoload/CountJump/Region.vim     |   30 ++++++++++++++-----
- autoload/CountJump/TextObject.vim |   13 +++++++-
- doc/CountJump.txt                 |   56 +++++++++++++++++++-----------------
+ autoload/CountJump/Region.vim     |   30
+ autoload/CountJump/TextObject.vim |   13
+ doc/CountJump.txt                 |   56
  3 files changed, 63 insertions(+), 36 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.20)
@@ -80,11 +80,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - The previous visual selection is kept when the text object could not be selected. (Beforehand, a new selection of the text object's selection type was created.)
     - The adjustment movements after the jumps to the text object boundaries now do not cause beeps if that movement cannot be done (e.g. a 'j' at the end of the buffer).
 
- autoload/CountJump.vim            |   29 ++--
- autoload/CountJump/Motion.vim     |  142 ++++++++++++++++-
- autoload/CountJump/Region.vim     |  314 +++++++++++++++++++++++++++++++++++++
- autoload/CountJump/TextObject.vim |   90 ++++++++---
- doc/CountJump.txt                 |   65 ++++++++
+ autoload/CountJump.vim            |   29
+ autoload/CountJump/Motion.vim     |  142
+ autoload/CountJump/Region.vim     |  314
+ autoload/CountJump/TextObject.vim |   90
+ doc/CountJump.txt                 |   65
  5 files changed, 592 insertions(+), 48 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.10)
@@ -98,9 +98,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - ENH: Only adding to jump list if there actually is a match. This is like the built-in Vim motions work.
     - FIX: For a linewise text object, the end cursor column is not important; do not compare with the original cursor column in this case.
 
- autoload/CountJump.vim            |   57 +++++++++++++++++++++++++++++++++----
- autoload/CountJump/TextObject.vim |   16 +++++++++-
- doc/CountJump.txt                 |   19 ++++++++++++
+ autoload/CountJump.vim            |   57
+ autoload/CountJump/TextObject.vim |   16
+ doc/CountJump.txt                 |   19
  3 files changed, 84 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.00)
@@ -110,9 +110,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.00: Initial upload
 
- README                            |  132 +++++++++++++++
- autoload/CountJump.vim            |  120 ++++++++++++++
- autoload/CountJump/Motion.vim     |  128 +++++++++++++++
- autoload/CountJump/TextObject.vim |  319 +++++++++++++++++++++++++++++++++++++
- doc/CountJump.txt                 |  144 +++++++++++++++++
+ README                            |  132
+ autoload/CountJump.vim            |  120
+ autoload/CountJump/Motion.vim     |  128
+ autoload/CountJump/TextObject.vim |  319
+ doc/CountJump.txt                 |  144
  5 files changed, 843 insertions(+), 0 deletions(-)

@@ -8,14 +8,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Fix the flickering of c ftplugin
     - Add variables g:cfi_disable, g:loaded_cfi_ftplugin_{lang}.
 
- autoload/cfi.vim        |    5 +----
- doc/cfi.txt             |   29 ++++++++++++++++++++++++++++-
- ftplugin/c/cfi.vim      |   14 ++++++++++++--
- ftplugin/perl/cfi.vim   |    4 ++--
- ftplugin/php/cfi.vim    |    4 ++--
- ftplugin/python/cfi.vim |    4 ++--
- ftplugin/ruby/cfi.vim   |    4 ++--
- ftplugin/vim/cfi.vim    |    4 ++--
+ autoload/cfi.vim        |    5
+ doc/cfi.txt             |   29
+ ftplugin/c/cfi.vim      |   14
+ ftplugin/perl/cfi.vim   |    4
+ ftplugin/php/cfi.vim    |    4
+ ftplugin/python/cfi.vim |    4
+ ftplugin/ruby/cfi.vim   |    4
+ ftplugin/vim/cfi.vim    |    4
  8 files changed, 51 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.4)
@@ -25,12 +25,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.4: Include PHP support. Thanks Chris Ruzin.
 
- autoload/cfi.vim      |    3 +-
- doc/cfi.txt           |    6 +++-
- ftplugin/c/cfi.vim    |    2 -
- ftplugin/perl/cfi.vim |    6 +--
- ftplugin/php/cfi.vim  |   74 +++++++++++++++++++++++++++++++++++++++++++++++++
- ftplugin/vim/cfi.vim  |    3 +-
+ autoload/cfi.vim      |    3
+ doc/cfi.txt           |    6
+ ftplugin/c/cfi.vim    |    2
+ ftplugin/perl/cfi.vim |    6
+ ftplugin/php/cfi.vim  |   74
+ ftplugin/vim/cfi.vim  |    3
  6 files changed, 83 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.3)
@@ -40,9 +40,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.3: Fix bug: Ruby ftplugin did not work.
 
- autoload/cfi.vim      |   14 ++++----------
- doc/cfi.txt           |    2 +-
- ftplugin/ruby/cfi.vim |   16 +++++-----------
+ autoload/cfi.vim      |   14
+ doc/cfi.txt           |    2
+ ftplugin/ruby/cfi.vim |   16
  3 files changed, 10 insertions(+), 22 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.2)
@@ -55,9 +55,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Implement cfi#format()
     - Implement Python support
 
- autoload/cfi.vim        |    9 ++++
- doc/cfi.txt             |   13 +++++-
- ftplugin/python/cfi.vim |   99 +++++++++++++++++++++++++++++++++++++++++++++++
+ autoload/cfi.vim        |    9
+ doc/cfi.txt             |   13
+ ftplugin/python/cfi.vim |   99
  3 files changed, 119 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1)
@@ -69,8 +69,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - Fixed bug of ftplugin/vim/cfi.vim: couldn't get the name of last function in a file.
 
- doc/cfi.txt          |    4 +++-
- ftplugin/vim/cfi.vim |   40 ++++++++++++++++++++++++++++------------
+ doc/cfi.txt          |    4
+ ftplugin/vim/cfi.vim |   40
  2 files changed, 31 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.0.0)
@@ -80,11 +80,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.0: Initial upload
 
- README                |   38 +++++++++++
- autoload/cfi.vim      |  167 +++++++++++++++++++++++++++++++++++++++++++++++++
- doc/cfi.txt           |   73 +++++++++++++++++++++
- ftplugin/c/cfi.vim    |   75 ++++++++++++++++++++++
- ftplugin/perl/cfi.vim |   55 ++++++++++++++++
- ftplugin/ruby/cfi.vim |   44 +++++++++++++
- ftplugin/vim/cfi.vim  |   41 ++++++++++++
+ README                |   38
+ autoload/cfi.vim      |  167
+ doc/cfi.txt           |   73
+ ftplugin/c/cfi.vim    |   75
+ ftplugin/perl/cfi.vim |   55
+ ftplugin/ruby/cfi.vim |   44
+ ftplugin/vim/cfi.vim  |   41
  7 files changed, 493 insertions(+), 0 deletions(-)

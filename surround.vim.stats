@@ -9,8 +9,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Workaround for user remapped d. [Christian Oudard]
     Introduce vgS and begin phasing out vs.
 
- doc/surround.txt    |   40 ++-
- plugin/surround.vim | 1035 +++++++++++++++++++++++++--------------------------
+ doc/surround.txt    |   40
+ plugin/surround.vim | 1035
  2 files changed, 538 insertions(+), 537 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.34)
@@ -23,7 +23,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     One more regression fix.
     This is really really planned as the last release with partial Vim 6.0 compatibility  (third time's the charm).
 
- plugin/surround.vim |   10 ++++------
+ plugin/surround.vim |   10
  1 files changed, 4 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.33)
@@ -36,7 +36,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fixed regressions from previous release.
     This is really planned as the last release with partial Vim 6.0 compatibility.
 
- plugin/surround.vim |   22 ++++++++--------------
+ plugin/surround.vim |   22
  1 files changed, 8 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.30)
@@ -49,8 +49,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fixed edge case where ds could move a multiline inner text down one line.
     This is planned as the last release with partial Vim 6.0 compatibility.
 
- doc/surround.txt    |   12 +++---------
- plugin/surround.vim |   37 +++++++++++++++++++++----------------
+ doc/surround.txt    |   12
+ plugin/surround.vim |   37
  2 files changed, 24 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.27)
@@ -62,8 +62,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed multiline surrounds in insert mode
 
- doc/surround.txt    |  224 +++++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/surround.vim |    4 +-
+ doc/surround.txt    |  224
+ plugin/surround.vim |    4
  2 files changed, 226 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.26)
@@ -76,8 +76,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Added a /* C style comment */ target.
     Insert mode indenting limited to multiline insertions.
 
- doc/surround.txt    |  224 ---------------------------------------------------
- plugin/surround.vim |   27 +++++-
+ doc/surround.txt    |  224
+ plugin/surround.vim |   27
  2 files changed, 23 insertions(+), 228 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.24)
@@ -90,8 +90,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     surround_indent now works in insert mode.
     Added <C-]> to add braces on separate lines.
 
- doc/surround.txt    |   50 ++++++++++++++++++++++--------------------
- plugin/surround.vim |   59 ++++++++++++++++++++++++++++++++++----------------
+ doc/surround.txt    |   50
+ plugin/surround.vim |   59
  2 files changed, 66 insertions(+), 43 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.23)
@@ -104,8 +104,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     xmap rather than vmap, to avoid interfering with select mode.
     surround_insert_tail to specify a universal suffix for use in insert mode.
 
- doc/surround.txt    |    6 ++++++
- plugin/surround.vim |   18 +++++++++++++++---
+ doc/surround.txt    |    6
+ plugin/surround.vim |   18
  2 files changed, 21 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.22)
@@ -118,8 +118,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Function properly when clipboard=unnamed
     Very experimental custom prompting for substitution text
 
- doc/surround.txt    |   39 +++++++++++++++++++++--
- plugin/surround.vim |   85 +++++++++++++++++++++++++++++++++++++++++++--------
+ doc/surround.txt    |   39
+ plugin/surround.vim |   85
  2 files changed, 108 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.18)
@@ -129,8 +129,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.18: Zip file instead of documentation extraction hack
 
- doc/surround.txt    |  183 ++++++++++++++++++++++++++++++++++++++++++
- plugin/surround.vim |  222 ++-------------------------------------------------
+ doc/surround.txt    |  183
+ plugin/surround.vim |  222
  2 files changed, 190 insertions(+), 215 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.17)
@@ -143,7 +143,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Insert mode mapping that doesn't conflict with flow control.
     Fixed edge case with ys where one too many characters would be grabbed.
 
- plugin/surround.vim |   31 ++++++++++++++++---------------
+ plugin/surround.vim |   31
  1 files changed, 16 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.16)
@@ -153,7 +153,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.16: S in blockwise visual mode strips trailing whitespace.
 
- plugin/surround.vim |   39 +++++++++++++++++++++++++--------------
+ plugin/surround.vim |   39
  1 files changed, 25 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.12)
@@ -167,7 +167,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     "S" mappings to force surroundings onto a separate line.
     Support for blockwise visual mode.
 
- plugin/surround.vim |  365 +++++++++++++++++++++++++++++++++++----------------
+ plugin/surround.vim |  365
  1 files changed, 251 insertions(+), 114 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -177,6 +177,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.6: Initial upload
 
- README              |   66 ++++++
- plugin/surround.vim |  579 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ README              |   66
+ plugin/surround.vim |  579
  2 files changed, 645 insertions(+), 0 deletions(-)

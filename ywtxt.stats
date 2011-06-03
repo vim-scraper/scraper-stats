@@ -18,9 +18,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     5. Improved toc generation speed.
 
- ftplugin/ywtxt.vim |    2 +-
- plugin/ywtxt.vim   |  427 +++++++++++++++++++++++++++-------------------------
- syntax/ywtxt.vim   |    3 +-
+ ftplugin/ywtxt.vim |    2
+ plugin/ywtxt.vim   |  427
+ syntax/ywtxt.vim   |    3
  3 files changed, 222 insertions(+), 210 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.17)
@@ -39,9 +39,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     7. Fixed: bug in heading creation.
     8. Fixed: export2html bug in nohtml region
 
- ftplugin/ywtxt.vim |    8 +-
- plugin/ywtxt.vim   |  523 +++++++++++++++++++++++++++++++---------------------
- syntax/ywtxt.vim   |   15 ++-
+ ftplugin/ywtxt.vim |    8
+ plugin/ywtxt.vim   |  523
+ syntax/ywtxt.vim   |   15
  3 files changed, 334 insertions(+), 212 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.16_1)
@@ -61,8 +61,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed a heading level bug with the customized heading which contains "#.".
 
- plugin/ywtxt.vim |  116 +++++++++++++++++++++++++++++++++++++----------------
- syntax/ywtxt.vim |    2 +-
+ plugin/ywtxt.vim |  116
+ syntax/ywtxt.vim |    2
  2 files changed, 82 insertions(+), 36 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.16)
@@ -107,8 +107,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     17) Fixed error related to <tab> (reference recognization).
 
- plugin/ywtxt.vim |  353 ++++++++++++++++++++++++++++++++----------------------
- syntax/ywtxt.vim |    8 +-
+ plugin/ywtxt.vim |  353
+ syntax/ywtxt.vim |    8
  2 files changed, 213 insertions(+), 148 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15_6)
@@ -122,8 +122,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2) Added var for configuring auto-setting the heading number after creating a heading(set g:ywtxt_autonumber=1). Note it will be slow.
     3) Improved syntax bug for bold/underlined/italic/.
 
- plugin/ywtxt.vim |   58 +++++++++++++++++++++++++++++++++++++++++++----------
- syntax/ywtxt.vim |   15 +++++++++++--
+ plugin/ywtxt.vim |   58
+ syntax/ywtxt.vim |   15
  2 files changed, 59 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15_5)
@@ -133,7 +133,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.15_5: Fixed a bug of location with <space>, thanks Zhang Xin's good catch.
 
- plugin/ywtxt.vim |    8 ++++----
+ plugin/ywtxt.vim |    8
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15_4)
@@ -143,7 +143,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.15_4: Fixed snip inserting bug which is brought by the last update.
 
- plugin/ywtxt.vim |    8 +++++---
+ plugin/ywtxt.vim |    8
  1 files changed, 5 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15_3)
@@ -158,9 +158,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     3) Removed setting to nowrap in toc window.
     4) Removed '[' as a file name charactor, now <C-x><C-f> can complete the file name after '['.
 
- ftplugin/ywtxt.vim |    4 +++-
- plugin/ywtxt.vim   |    7 +++----
- syntax/ywtxt.vim   |    4 ++--
+ ftplugin/ywtxt.vim |    4
+ plugin/ywtxt.vim   |    7
+ syntax/ywtxt.vim   |    4
  3 files changed, 8 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15_2)
@@ -174,8 +174,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2) Changed highlight for anchor.
     3) Added keymap for insert mode: _{ _{}
 
- plugin/ywtxt.vim |   11 ++++++++---
- syntax/ywtxt.vim |    6 +++---
+ plugin/ywtxt.vim |   11
+ syntax/ywtxt.vim |    6
  2 files changed, 11 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15_1)
@@ -191,9 +191,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     4) Removed textwidth setting.
     5) Suppressed new file msg when open toc window.
 
- ftplugin/ywtxt.vim |    1 -
- plugin/ywtxt.vim   |  750 +++++++++++++++++++++++++++-------------------------
- syntax/ywtxt.vim   |    6 +-
+ ftplugin/ywtxt.vim |    1
+ plugin/ywtxt.vim   |  750
+ syntax/ywtxt.vim   |    6
  3 files changed, 391 insertions(+), 366 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
@@ -206,7 +206,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1) Added var g:ywtxt_browserapp to support opening html directly after export to html, see section "Misc vars" for detail.
     2) Added support for Cross-references(*[file#anchor]). Please see the section "ywtxt file format" for details.
 
- plugin/ywtxt.vim |   70 +++++++++++++++++++++++++++++++++++++++++++----------
+ plugin/ywtxt.vim |   70
  1 files changed, 56 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14_2)
@@ -219,7 +219,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1) Fixed outline/unoutline in toc window.
     2) Suppressed the not pattern found warning when exporting to html.
 
- plugin/ywtxt.vim |    5 +++--
+ plugin/ywtxt.vim |    5
  1 files changed, 3 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14_1)
@@ -229,7 +229,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.14_1: Fixed toc window not refresh after undo/redo
 
- plugin/ywtxt.vim |    2 +-
+ plugin/ywtxt.vim |    2
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
@@ -243,9 +243,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2) Added encoding declaration in syntax/ywtxt.vim and ftplugin/ywtxt.vim, to prevent encoding issue. thanks zhangxin's report.
     3) Improved italic, bold, and underlined definition to allow blank spaces in between.
 
- ftplugin/ywtxt.vim |    2 ++
- plugin/ywtxt.vim   |   31 +++++++++++++++++++++++++++++++
- syntax/ywtxt.vim   |   32 +++++---------------------------
+ ftplugin/ywtxt.vim |    2
+ plugin/ywtxt.vim   |   31
+ syntax/ywtxt.vim   |   32
  3 files changed, 38 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13_2)
@@ -259,8 +259,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2) Speeded up a little for the toc window opening and jumping.
     3) Added syntax: "图 #.  ",  "表 #.  ".
 
- plugin/ywtxt.vim |  143 ++++++++++++++++++++++++++++-------------------------
- syntax/ywtxt.vim |   16 +++---
+ plugin/ywtxt.vim |  143
+ syntax/ywtxt.vim |   16
  2 files changed, 84 insertions(+), 75 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13_1)
@@ -270,7 +270,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.13_1: Fixed bug: operations in toc winodow unworking.
 
- plugin/ywtxt.vim |   53 ++++++++++++++++++++++++++++-------------------------
+ plugin/ywtxt.vim |   53
  1 files changed, 28 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
@@ -287,8 +287,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     5) Ignore the unproper user setting for customized section pattern.
     6) Fixed a bug in keymap shift-x: Outline/un-outline.
 
- plugin/ywtxt.vim |   79 +++++++++++++++++++++++++++++++++++++++--------------
- syntax/ywtxt.vim |    9 +++++-
+ plugin/ywtxt.vim |   79
+ syntax/ywtxt.vim |    9
  2 files changed, 65 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12_3)
@@ -298,7 +298,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.12_3: Fixed a bug in customize section pattern which has spaces in name.
 
- plugin/ywtxt.vim |    2 +-
+ plugin/ywtxt.vim |    2
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12_2)
@@ -311,9 +311,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fixed a bug in bib generation.
     Fixed a heading syntax bug.
 
- ftplugin/ywtxt.vim |    3 +-
- plugin/ywtxt.vim   |   87 ++++++++++++++++++++++++++-------------------------
- syntax/ywtxt.vim   |    2 +
+ ftplugin/ywtxt.vim |    3
+ plugin/ywtxt.vim   |   87
+ syntax/ywtxt.vim   |    2
  3 files changed, 48 insertions(+), 44 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12_1)
@@ -326,7 +326,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fixed bug: toc location uncorrectly.
     Fixed reindent bug.
 
- plugin/ywtxt.vim |    8 ++++----
+ plugin/ywtxt.vim |    8
  1 files changed, 4 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
@@ -362,9 +362,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     9) Added support for the Multiple reference sections. Please see the
     advanced feature in document.
 
- ftplugin/ywtxt.vim |    5 +-
- plugin/ywtxt.vim   |  503 +++++++++++++++++++++++++++++++++++++++-------------
- syntax/ywtxt.vim   |   20 +--
+ ftplugin/ywtxt.vim |    5
+ plugin/ywtxt.vim   |  503
+ syntax/ywtxt.vim   |   20
  3 files changed, 393 insertions(+), 135 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.11_2)
@@ -378,8 +378,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2) Fixed references region identification. Thanks for pengo's catching.
     3) Improved toc window intendation. Thanks for pengo's suggestion.
 
- plugin/ywtxt.vim |   78 +++++++++++++++++++++++-------------------------------
- syntax/ywtxt.vim |    2 +-
+ plugin/ywtxt.vim |   78
+ syntax/ywtxt.vim |    2
  2 files changed, 34 insertions(+), 46 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.11_1)
@@ -389,8 +389,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.11_1: Fixed folding and toc highlighting bugs.
 
- plugin/ywtxt.vim |    2 +-
- syntax/ywtxt.vim |    2 +-
+ plugin/ywtxt.vim |    2
+ syntax/ywtxt.vim |    2
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
@@ -412,9 +412,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     7) Added done(DONE) syntax.
     8) Optimized the toc display.
 
- ftplugin/ywtxt.vim |    3 +-
- plugin/ywtxt.vim   |  233 +++++++++++++++++++++++++++++++---------------------
- syntax/ywtxt.vim   |   61 ++++++++------
+ ftplugin/ywtxt.vim |    3
+ plugin/ywtxt.vim   |  233
+ syntax/ywtxt.vim   |   61
  3 files changed, 175 insertions(+), 122 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10_3)
@@ -427,7 +427,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     This will be the last 0.10 series verion, please see all 0.10 series's changelog and the updated document to get how to update. Note again! you can use :call Ywtxt_old2new() then ggVG= to reformat the old version, but please care the inproperly reformat!!! Ywtxt_old2new() will be abandoned in next version! You've been warned.
     1) Fixed a heading determination error.
 
- plugin/ywtxt.vim |    2 +-
+ plugin/ywtxt.vim |    2
  1 files changed, 1 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10_2)
@@ -441,7 +441,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1) Improved heading determination
     2) Improved Indentation function
 
- plugin/ywtxt.vim |  136 +++++++++++++++++++++++-------------------------------
+ plugin/ywtxt.vim |  136
  1 files changed, 58 insertions(+), 78 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10_1)
@@ -454,7 +454,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fixed: a serious toc heading bug.
     Note!!! Please see the version *0.10*'s changelog and the updated document for detailed changes, otherwise ywtxt will not work properly with the older format in the new version!
 
- plugin/ywtxt.vim |   14 ++++++++------
+ plugin/ywtxt.vim |   14
  1 files changed, 8 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
@@ -477,9 +477,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     11) Improved: toc window cursorline.
     12) Improved: reindent func.
 
- ftplugin/ywtxt.vim |    6 +
- plugin/ywtxt.vim   |  363 ++++++++++++++++++++++++++++++++++------------------
- syntax/ywtxt.vim   |   51 ++++----
+ ftplugin/ywtxt.vim |    6
+ plugin/ywtxt.vim   |  363
+ syntax/ywtxt.vim   |   51
  3 files changed, 272 insertions(+), 148 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
@@ -496,8 +496,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     5) Improved reindent function.
     6) Suppressed the no folding found warning of <tab>.
 
- plugin/ywtxt.vim |  173 ++++++++++++++++++++++++++++++++----------------------
- syntax/ywtxt.vim |    8 +-
+ plugin/ywtxt.vim |  173
+ syntax/ywtxt.vim |    8
  2 files changed, 107 insertions(+), 74 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
@@ -510,8 +510,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1) Changed toc window openning from horizotally to vertically.
     2) Added syntax for TODO, NOTE.
 
- plugin/ywtxt.vim |   26 ++++++++++++++++++++------
- syntax/ywtxt.vim |    7 ++++++-
+ plugin/ywtxt.vim |   26
+ syntax/ywtxt.vim |    7
  2 files changed, 26 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
@@ -525,8 +525,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     2) Improved the header creation funtion.
     3) Added syntax for Figure capture.
 
- plugin/ywtxt.vim |  230 +++++++++++++++++++++++++++++++++++++++++++++++------
- syntax/ywtxt.vim |    6 +-
+ plugin/ywtxt.vim |  230
+ syntax/ywtxt.vim |    6
  2 files changed, 207 insertions(+), 29 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -541,8 +541,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     3) Fixed cursor location of toc window.
     4) Cleaned some unused vars.
 
- plugin/ywtxt.vim |   86 +++++++++++++++++++++++++++++++++++-------------------
- syntax/ywtxt.vim |    9 +++++
+ plugin/ywtxt.vim |   86
+ syntax/ywtxt.vim |    9
  2 files changed, 65 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -555,7 +555,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     1. Improved the toc refresh.
     2. Removed the dangerous saving operation when changing the level of header.
 
- plugin/ywtxt.vim |   16 +++++-----------
+ plugin/ywtxt.vim |   16
  1 files changed, 5 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -568,7 +568,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Added support for auto-generating numbered sections in toc window.
     Fixed unprecisely jumping from toc's bug.
 
- plugin/ywtxt.vim |   38 +++++++++++++++++++++++++++-----------
+ plugin/ywtxt.vim |   38
  1 files changed, 27 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -583,9 +583,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     3) Added keymap <enter>, x for toc window, see the document for detail.
     4) Added syntax for [keywords,keywords], figures(Fig. #.<space>) and tables(Table #).
 
- ftplugin/ywtxt.vim |    5 ----
- plugin/ywtxt.vim   |   61 ++++++++++++++++++++++++++++++++++++++++++++++++---
- syntax/ywtxt.vim   |   14 +++++++++--
+ ftplugin/ywtxt.vim |    5
+ plugin/ywtxt.vim   |   61
+ syntax/ywtxt.vim   |   14
  3 files changed, 68 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -602,9 +602,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     5) Added Function for refreshing the toc window(bind it to r in toc window).
     6) Added key map for normal window: \q      Close the toc window.
 
- ftplugin/ywtxt.vim |    6 +---
- plugin/ywtxt.vim   |   82 ++++++++++++++++++++++++++++++++++++----------------
- syntax/ywtxt.vim   |   34 +++++++++++++++++++--
+ ftplugin/ywtxt.vim |    6
+ plugin/ywtxt.vim   |   82
+ syntax/ywtxt.vim   |   34
  3 files changed, 89 insertions(+), 33 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -614,8 +614,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README             |  334 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- ftplugin/ywtxt.vim |   20 +++
- plugin/ywtxt.vim   |   97 +++++++++++++++
- syntax/ywtxt.vim   |   13 ++
+ README             |  334
+ ftplugin/ywtxt.vim |   20
+ plugin/ywtxt.vim   |   97
+ syntax/ywtxt.vim   |   13
  4 files changed, 464 insertions(+), 0 deletions(-)

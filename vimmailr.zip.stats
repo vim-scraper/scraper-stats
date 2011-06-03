@@ -16,10 +16,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Changed the _mmh command to _vmh (for vim mailer header) to be
       more consistent with the other commands in the script.
 
- doc/readme.txt      |    5 +-
- mailit.cpp          |   40 ++++++++
- plugin/vimmailr.vim |  247 ++++++++++++++++++++++++++++++++++++++++++---------
- vimmailr.cpp        |   84 +++++++-----------
+ doc/readme.txt      |    5
+ mailit.cpp          |   40
+ plugin/vimmailr.vim |  247
+ vimmailr.cpp        |   84
  vimmailr.dll        |  Bin 65536 -> 65536 bytes
  5 files changed, 278 insertions(+), 98 deletions(-)
 
@@ -32,8 +32,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added support for bcc and multiple file attachments. Fix for lines ending in 0x0A not being handled properly. I've been told this does not work in 6.0 and that it should be a "plugin". Till I make the leap to 6.0 and figure out what that means, anyone wishing to lend a hand on the conversion is most welcome to do so :)
 
- plugin/vimmailr.vim |   66 +++++++++++++-------
- vimmailr.cpp        |  165 +++++++++++++++++++++++++++++++++++++--------------
+ plugin/vimmailr.vim |   66
+ vimmailr.cpp        |  165
  vimmailr.dll        |  Bin 65536 -> 65536 bytes
  3 files changed, 164 insertions(+), 67 deletions(-)
 
@@ -44,11 +44,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.1: Initial upload
 
- README              |    5 +
- doc/readme.txt      |   12 ++
- plugin/vimmailr.vim |  209 +++++++++++++++++++++++++
- vimmailr.cpp        |  425 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ README              |    5
+ doc/readme.txt      |   12
+ plugin/vimmailr.vim |  209
+ vimmailr.cpp        |  425
  vimmailr.dll        |  Bin 0 -> 65536 bytes
- vimmailr.dsp        |  109 +++++++++++++
- vimmailr.dsw        |   29 ++++
+ vimmailr.dsp        |  109
+ vimmailr.dsw        |   29
  7 files changed, 789 insertions(+), 0 deletions(-)

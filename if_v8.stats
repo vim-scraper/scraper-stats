@@ -5,12 +5,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.6: maintenance release
 
- Makefile        |   14 ++++------
- if_v8.cpp       |   47 ++++++++++++++++-------------------
- make_ming.mak   |   32 ------------------------
- make_mvc.mak    |   46 +++++++++++++++++++++-------------
- plugin/init.vim |    9 ++----
- v8_mingw.diff   |   73 -------------------------------------------------------
+ Makefile        |   14
+ if_v8.cpp       |   47
+ make_ming.mak   |   32
+ make_mvc.mak    |   46
+ plugin/init.vim |    9
+ v8_mingw.diff   |   73
  6 files changed, 59 insertions(+), 162 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5.1)
@@ -20,22 +20,22 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.5.1: Added gc()
 
- Makefile                  |   23 +-
- doc/readme.txt            |   15 +-
- if_v8.cpp                 | 1095 +++++++++------------------------------------
+ Makefile                  |   23
+ doc/readme.txt            |   15
+ if_v8.cpp                 | 1095
  if_v8.dll                 |  Bin 1340416 -> 0 bytes
- license/assembler/LICENSE |   33 --
- license/dtoa/COPYING      |   15 -
- license/jscre/COPYING     |   35 --
- license/jscre/LICENSE     |   85 ----
- license/license.txt       |    1 -
- license/v8/LICENSE        |   46 --
- make_ming.mak             |   32 ++
- make_mvc.mak              |   40 ++-
- plugin/init.vim           |   17 +
- v8_mingw.diff             |   73 +++
- vim_export.def            |    3 +
- vimext.h                  |  778 ++++++++++++++++++++++++++++++++
+ license/assembler/LICENSE |   33
+ license/dtoa/COPYING      |   15
+ license/jscre/COPYING     |   35
+ license/jscre/LICENSE     |   85
+ license/license.txt       |    1
+ license/v8/LICENSE        |   46
+ make_ming.mak             |   32
+ make_mvc.mak              |   40
+ plugin/init.vim           |   17
+ v8_mingw.diff             |   73
+ vim_export.def            |    3
+ vimext.h                  |  778
  16 files changed, 1169 insertions(+), 1122 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -45,15 +45,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.5: Added Funcref.
 
- Makefile        |    2 +-
- doc/readme.txt  |   99 ++++-
- if_v8.cpp       | 1306 ++++++++++++++++++++++++++++++++-----------------------
+ Makefile        |    2
+ doc/readme.txt  |   99
+ if_v8.cpp       | 1306
  if_v8.dll       |  Bin 1274880 -> 1340416 bytes
- make_mvc.mak    |    8 +-
- plugin/init.vim |   96 +++--
- plugin/test.vim |  201 ++++++---
- runtime.js      |  502 +++++++++++-----------
- vim_export.def  |    3 +-
+ make_mvc.mak    |    8
+ plugin/init.vim |   96
+ plugin/test.vim |  201
+ runtime.js      |  502
+ vim_export.def  |    3
  9 files changed, 1303 insertions(+), 914 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.1)
@@ -63,7 +63,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.4.1: bug fix
 
- if_v8.cpp |   24 ++++++++++++++++++++++++
+ if_v8.cpp |   24
  if_v8.dll |  Bin 1274368 -> 1274880 bytes
  2 files changed, 24 insertions(+), 0 deletions(-)
 
@@ -77,22 +77,22 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Added Vim's builtin functions.
     Added VimList/VimDict class to provide direct access to VimL variable.
 
- Makefile                  |    6 +-
- doc/readme.txt            |   67 +++
- if_v8.cpp                 | 1241 ++++++++++++++++++++++++++++++++++++++++-----
+ Makefile                  |    6
+ doc/readme.txt            |   67
+ if_v8.cpp                 | 1241
  if_v8.dll                 |  Bin 1248256 -> 1274368 bytes
- license/assembler/LICENSE |   33 ++
- license/dtoa/COPYING      |   15 +
- license/jscre/COPYING     |   35 ++
- license/jscre/LICENSE     |   85 +++
- license/license.txt       |    1 +
- license/v8/LICENSE        |   46 ++
- make_mvc.mak              |    6 +-
- plugin/init.vim           |   44 ++
- plugin/test.vim           |  149 ++++++-
- runtime.js                |  311 ++++++++++++
- test.js                   |   19 -
- vim_export.def            |   19 +-
+ license/assembler/LICENSE |   33
+ license/dtoa/COPYING      |   15
+ license/jscre/COPYING     |   35
+ license/jscre/LICENSE     |   85
+ license/license.txt       |    1
+ license/v8/LICENSE        |   46
+ make_mvc.mak              |    6
+ plugin/init.vim           |   44
+ plugin/test.vim           |  149
+ runtime.js                |  311
+ test.js                   |   19
+ vim_export.def            |   19
  16 files changed, 1933 insertions(+), 144 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -102,11 +102,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.3: Added windows support.
 
- if_v8.cpp       |   48 +++++++++++++++++++++++++++++++++++++++++-------
+ if_v8.cpp       |   48
  if_v8.dll       |  Bin 0 -> 1248256 bytes
- make_mvc.mak    |   12 ++++++++++++
- plugin/test.vim |    2 +-
- vim_export.def  |    5 +++++
+ make_mvc.mak    |   12
+ plugin/test.vim |    2
+ vim_export.def  |    5
  5 files changed, 59 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -116,7 +116,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2: Removed FEAT_PYTHON dependency.
 
- if_v8.cpp |   26 +++++++++++++-------------
+ if_v8.cpp |   26
  1 files changed, 13 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -126,9 +126,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- Makefile        |   11 ++
- README          |   28 ++++
- if_v8.cpp       |  417 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/test.vim |    6 +
- test.js         |   19 +++
+ Makefile        |   11
+ README          |   28
+ if_v8.cpp       |  417
+ plugin/test.vim |    6
+ test.js         |   19
  5 files changed, 481 insertions(+), 0 deletions(-)

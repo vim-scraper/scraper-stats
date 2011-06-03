@@ -7,26 +7,26 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     This version has updated documentation and some bug fixes.
 
- CHANGELOG                         |   31 +-
- INSTALL                           |   22 +-
- README.detailed                   | 1300 ++++++++++++++++++++++++++++++++++++
- README.orig                       | 1335 ++-----------------------------------
- doc/vo_cheatsheet.txt             |    1 +
- doc/vo_readme.txt                 |  149 +++--
- ftdetect/vo_base.vim              |    2 +-
- ftplugin/vo_base.vim              |  114 ++--
- install.sh                        |   18 +-
- plugin/vo_checkbox.otl            |  267 --------
- plugin/vo_checkbox.vim            |  322 ---------
- plugin/vo_hoist.otl               |   83 ---
- plugin/vo_hoist.vim               |  293 --------
- plugin/vo_smart_paste.vim         |   74 --
- syntax/vo_base.vim                |    6 +-
- vimoutliner/scripts/otlreorder.py |  295 ++++++++
- vimoutliner/scripts/test.txt      |   17 +
- vimoutliner/scripts/test1.txt     |   17 +
- vimoutliner/scripts/test2.txt     |   17 +
- vimoutliner/scripts/vo_grep.vim   |   62 ++
+ CHANGELOG                         |   31
+ INSTALL                           |   22
+ README.detailed                   | 1300
+ README.orig                       | 1335
+ doc/vo_cheatsheet.txt             |    1
+ doc/vo_readme.txt                 |  149
+ ftdetect/vo_base.vim              |    2
+ ftplugin/vo_base.vim              |  114
+ install.sh                        |   18
+ plugin/vo_checkbox.otl            |  267
+ plugin/vo_checkbox.vim            |  322
+ plugin/vo_hoist.otl               |   83
+ plugin/vo_hoist.vim               |  293
+ plugin/vo_smart_paste.vim         |   74
+ syntax/vo_base.vim                |    6
+ vimoutliner/scripts/otlreorder.py |  295
+ vimoutliner/scripts/test.txt      |   17
+ vimoutliner/scripts/test1.txt     |   17
+ vimoutliner/scripts/test2.txt     |   17
+ vimoutliner/scripts/vo_grep.vim   |   62
  20 files changed, 1960 insertions(+), 2465 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.5)
@@ -65,82 +65,82 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Bug fixes:
     - ,,S did not work. Fixed
 
- CHANGELOG                                          | 1466 +++++++++++++++++++
- INSTALL                                            |  192 +++
- LICENSE                                            |   11 +
- README                                             |   28 +
- README.orig                                        | 1314 +++++++++++++++++
- colors/vo_dark.vim                                 |   81 ++
- colors/vo_light.vim                                |   81 ++
- doc/vo_cheatsheet.txt                              |   82 ++
- doc/vo_readme.txt                                  | 1314 +++++++++++++++++
- ftdetect/vo_base.vim                               |   81 ++
- ftplugin/vo_base.vim                               |  693 +++++++++
- install.sh                                         |  161 +++
- plugin/vo_checkbox.otl                             |  267 ++++
- plugin/vo_checkbox.vim                             |  322 +++++
- plugin/vo_hoist.otl                                |   83 ++
- plugin/vo_hoist.vim                                |  293 ++++
- plugin/vo_smart_paste.vim                          |   74 +
- syntax/vo_base.vim                                 |  313 +++++
- vimoutliner/scripts/Node/COPYING                   |  118 ++
- vimoutliner/scripts/Node/COPYING.GPL               |  340 +++++
- vimoutliner/scripts/Node/COPYING.LPDTL.1.0         |  118 ++
- vimoutliner/scripts/Node/INSTALL                   |   23 +
- vimoutliner/scripts/Node/LPDTL_discuss.txt         |   26 +
- vimoutliner/scripts/Node/Node.pm                   |  475 +++++++
- vimoutliner/scripts/Node/README.otl                |  177 +++
- vimoutliner/scripts/Node/deletetest.otl            |   18 +
- vimoutliner/scripts/Node/example_attribs.pl        |  162 +++
- vimoutliner/scripts/Node/example_bylevel.pl        |  227 +++
- vimoutliner/scripts/Node/example_delete.pl         |  107 ++
- vimoutliner/scripts/Node/example_hello.pl          |   15 +
- vimoutliner/scripts/Node/example_insert.pl         |  550 ++++++++
- vimoutliner/scripts/Node/example_nodepath.pl       |  135 ++
- vimoutliner/scripts/Node/example_otl2markup.pl     |  123 ++
- vimoutliner/scripts/Node/example_parse.pl          |  114 ++
- vimoutliner/scripts/Node/myapp.cfg                 |    4 +
- vimoutliner/scripts/fs2otl                         |    7 +
- vimoutliner/scripts/otl2aft.awk                    |  284 ++++
+ CHANGELOG                                          | 1466
+ INSTALL                                            |  192
+ LICENSE                                            |   11
+ README                                             |   28
+ README.orig                                        | 1314
+ colors/vo_dark.vim                                 |   81
+ colors/vo_light.vim                                |   81
+ doc/vo_cheatsheet.txt                              |   82
+ doc/vo_readme.txt                                  | 1314
+ ftdetect/vo_base.vim                               |   81
+ ftplugin/vo_base.vim                               |  693
+ install.sh                                         |  161
+ plugin/vo_checkbox.otl                             |  267
+ plugin/vo_checkbox.vim                             |  322
+ plugin/vo_hoist.otl                                |   83
+ plugin/vo_hoist.vim                                |  293
+ plugin/vo_smart_paste.vim                          |   74
+ syntax/vo_base.vim                                 |  313
+ vimoutliner/scripts/Node/COPYING                   |  118
+ vimoutliner/scripts/Node/COPYING.GPL               |  340
+ vimoutliner/scripts/Node/COPYING.LPDTL.1.0         |  118
+ vimoutliner/scripts/Node/INSTALL                   |   23
+ vimoutliner/scripts/Node/LPDTL_discuss.txt         |   26
+ vimoutliner/scripts/Node/Node.pm                   |  475
+ vimoutliner/scripts/Node/README.otl                |  177
+ vimoutliner/scripts/Node/deletetest.otl            |   18
+ vimoutliner/scripts/Node/example_attribs.pl        |  162
+ vimoutliner/scripts/Node/example_bylevel.pl        |  227
+ vimoutliner/scripts/Node/example_delete.pl         |  107
+ vimoutliner/scripts/Node/example_hello.pl          |   15
+ vimoutliner/scripts/Node/example_insert.pl         |  550
+ vimoutliner/scripts/Node/example_nodepath.pl       |  135
+ vimoutliner/scripts/Node/example_otl2markup.pl     |  123
+ vimoutliner/scripts/Node/example_parse.pl          |  114
+ vimoutliner/scripts/Node/myapp.cfg                 |    4
+ vimoutliner/scripts/fs2otl                         |    7
+ vimoutliner/scripts/otl2aft.awk                    |  284
  vimoutliner/scripts/otl2aft.pdf                    |  Bin 0 -> 82163 bytes
- vimoutliner/scripts/otl2docbook.pl                 |  270 ++++
- vimoutliner/scripts/otl2html.py                    | 1071 ++++++++++++++
- vimoutliner/scripts/otl2html_autonumbered.css      |  269 ++++
- vimoutliner/scripts/otl2html_nnnnnn.css            |  246 ++++
- vimoutliner/scripts/otl2lyx.awk                    |  149 ++
- vimoutliner/scripts/otl2ooimpress.py               |  263 ++++
- vimoutliner/scripts/otl2ooimpress.sh               |   37 +
- vimoutliner/scripts/otl2table.py                   |  222 +++
- vimoutliner/scripts/otl2tags.py                    |  756 ++++++++++
- vimoutliner/scripts/otl2tags_freemind.conf         |   96 ++
- vimoutliner/scripts/otl2tags_graphviz.conf         |  104 ++
- vimoutliner/scripts/otl_handler/Apache/OTL.pm      |  324 +++++
- vimoutliner/scripts/otl_handler/README             |  155 ++
- vimoutliner/scripts/otl_handler/devel-mode         |    5 +
- .../scripts/otl_handler/javascript/jquery.js       |   12 +
- .../scripts/otl_handler/javascript/theme2.js       |   38 +
- .../scripts/otl_handler/javascript/theme3.js       |   22 +
- vimoutliner/scripts/otl_handler/sample.otl         |   39 +
- vimoutliner/scripts/otl_handler/styles/theme1.css  |   88 ++
- vimoutliner/scripts/otl_handler/styles/theme2.css  |  152 ++
- vimoutliner/scripts/otl_handler/styles/theme3.css  |  109 ++
- vimoutliner/scripts/otlgrep.py                     |  228 +++
- vimoutliner/scripts/otlhead.sh                     |   12 +
- vimoutliner/scripts/otlsplit.py                    |  216 +++
- vimoutliner/scripts/otltail.sh                     |   15 +
- vimoutliner/scripts/outline_calendar/2005.otl      | 1472 ++++++++++++++++++++
- vimoutliner/scripts/outline_calendar/vimrc         |   31 +
- .../outline_calendar/vo_calendar_ctags.conf        |    9 +
- .../outline_calendar/vo_calendar_generator.rb      |  110 ++
- .../outline_calendar/vo_calendar_readme.otl        |  195 +++
- .../scripts/outline_calendar/vo_calendar_shelf.otl |    6 +
- .../scripts/outline_calendar/vo_calendar_ui.sh     |   39 +
- .../scripts/outline_freemind/freemind_outline.py   |   44 +
- vimoutliner/scripts/outline_freemind/otl.py        |   26 +
+ vimoutliner/scripts/otl2docbook.pl                 |  270
+ vimoutliner/scripts/otl2html.py                    | 1071
+ vimoutliner/scripts/otl2html_autonumbered.css      |  269
+ vimoutliner/scripts/otl2html_nnnnnn.css            |  246
+ vimoutliner/scripts/otl2lyx.awk                    |  149
+ vimoutliner/scripts/otl2ooimpress.py               |  263
+ vimoutliner/scripts/otl2ooimpress.sh               |   37
+ vimoutliner/scripts/otl2table.py                   |  222
+ vimoutliner/scripts/otl2tags.py                    |  756
+ vimoutliner/scripts/otl2tags_freemind.conf         |   96
+ vimoutliner/scripts/otl2tags_graphviz.conf         |  104
+ vimoutliner/scripts/otl_handler/Apache/OTL.pm      |  324
+ vimoutliner/scripts/otl_handler/README             |  155
+ vimoutliner/scripts/otl_handler/devel-mode         |    5
+ .../scripts/otl_handler/javascript/jquery.js       |   12
+ .../scripts/otl_handler/javascript/theme2.js       |   38
+ .../scripts/otl_handler/javascript/theme3.js       |   22
+ vimoutliner/scripts/otl_handler/sample.otl         |   39
+ vimoutliner/scripts/otl_handler/styles/theme1.css  |   88
+ vimoutliner/scripts/otl_handler/styles/theme2.css  |  152
+ vimoutliner/scripts/otl_handler/styles/theme3.css  |  109
+ vimoutliner/scripts/otlgrep.py                     |  228
+ vimoutliner/scripts/otlhead.sh                     |   12
+ vimoutliner/scripts/otlsplit.py                    |  216
+ vimoutliner/scripts/otltail.sh                     |   15
+ vimoutliner/scripts/outline_calendar/2005.otl      | 1472
+ vimoutliner/scripts/outline_calendar/vimrc         |   31
+ .../outline_calendar/vo_calendar_ctags.conf        |    9
+ .../outline_calendar/vo_calendar_generator.rb      |  110
+ .../outline_calendar/vo_calendar_readme.otl        |  195
+ .../scripts/outline_calendar/vo_calendar_shelf.otl |    6
+ .../scripts/outline_calendar/vo_calendar_ui.sh     |   39
+ .../scripts/outline_freemind/freemind_outline.py   |   44
+ vimoutliner/scripts/outline_freemind/otl.py        |   26
  vimoutliner/scripts/outline_freemind/otl.pyc       |  Bin 0 -> 1547 bytes
- .../scripts/outline_freemind/outline_freemind.py   |  113 ++
- vimoutliner/scripts/outline_freemind/test.otl      |   27 +
- vimoutliner/scripts/outline_freemind/test.sh       |    6 +
- vimoutliner/scripts/vo_maketags.pl                 |  339 +++++
- vimoutliner/vimoutlinerrc                          |   41 +
+ .../scripts/outline_freemind/outline_freemind.py   |  113
+ vimoutliner/scripts/outline_freemind/test.otl      |   27
+ vimoutliner/scripts/outline_freemind/test.sh       |    6
+ vimoutliner/scripts/vo_maketags.pl                 |  339
+ vimoutliner/vimoutlinerrc                          |   41
  78 files changed, 17235 insertions(+), 0 deletions(-)

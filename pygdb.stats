@@ -7,12 +7,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     bug fixes around breakpoint parsing, better backtrace view, dblclick on element navigates vim to source position. NOTE the change in install.txt!
 
- DbgTerminal.py         |    2 +
- GdbTerminal.py         |  110 ++++++++++++++++++++++++++++++++++-------------
- PositionFrame.py       |   93 +++++++++++++++++++++++++++++++++++------
- StatusWindow.py        |    8 +++-
- doc/INSTALL.txt        |    5 +--
- doc/featurerequest.txt |    3 +
+ DbgTerminal.py         |    2
+ GdbTerminal.py         |  110
+ PositionFrame.py       |   93
+ StatusWindow.py        |    8
+ doc/INSTALL.txt        |    5
+ doc/featurerequest.txt |    3
  6 files changed, 171 insertions(+), 50 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.99.3)
@@ -22,10 +22,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.99.3: fixing some bugs
 
- GdbTerminal.py   |    5 +++++
- doc/INSTALL.txt  |   12 +++++++-----
- plugin/pygdb.vim |    2 +-
- pygdb.py         |    4 +---
+ GdbTerminal.py   |    5
+ doc/INSTALL.txt  |   12
+ plugin/pygdb.vim |    2
+ pygdb.py         |    4
  4 files changed, 14 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.99.2)
@@ -37,15 +37,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     scrollbars for terminals, parametrizeable vim-servername, loading python via .vimrc only when filetype matches.
 
- Configuration.py       |   18 +++++++++
- DbgTerminal.py         |    4 --
- MainControlWindow.py   |   20 ++++++++--
- StatusFrame.py         |    2 +-
- StatusWindow.py        |   12 +++++-
- doc/INSTALL.txt        |   19 +++++-----
- doc/featurerequest.txt |    3 --
- plugin/pygdb.vim       |   37 +++++++++++++++----
- pygdb.py               |   92 +++++++++++++++++++++++++++++++++++++++--------
+ Configuration.py       |   18
+ DbgTerminal.py         |    4
+ MainControlWindow.py   |   20
+ StatusFrame.py         |    2
+ StatusWindow.py        |   12
+ doc/INSTALL.txt        |   19
+ doc/featurerequest.txt |    3
+ plugin/pygdb.vim       |   37
+ pygdb.py               |   92
  9 files changed, 160 insertions(+), 47 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.99.1)
@@ -55,19 +55,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.99.1: Initial upload
 
- BreakpointsFrame.py    |  233 ++++++++++++++++++++++++++++++++++++
- ClientIOTerminal.py    |   42 +++++++
- Configuration.py       |  188 +++++++++++++++++++++++++++++
- DbgTerminal.py         |  306 ++++++++++++++++++++++++++++++++++++++++++++++++
- GdbTerminal.py         |  229 ++++++++++++++++++++++++++++++++++++
- MainControlWindow.py   |  114 ++++++++++++++++++
- PositionFrame.py       |  110 +++++++++++++++++
- README                 |   18 +++
- StatusFrame.py         |   26 ++++
- StatusWindow.py        |  105 +++++++++++++++++
- WatchesFrame.py        |  129 ++++++++++++++++++++
- doc/INSTALL.txt        |   23 ++++
- doc/featurerequest.txt |   12 ++
- plugin/pygdb.vim       |  269 ++++++++++++++++++++++++++++++++++++++++++
- pygdb.py               |   56 +++++++++
+ BreakpointsFrame.py    |  233
+ ClientIOTerminal.py    |   42
+ Configuration.py       |  188
+ DbgTerminal.py         |  306
+ GdbTerminal.py         |  229
+ MainControlWindow.py   |  114
+ PositionFrame.py       |  110
+ README                 |   18
+ StatusFrame.py         |   26
+ StatusWindow.py        |  105
+ WatchesFrame.py        |  129
+ doc/INSTALL.txt        |   23
+ doc/featurerequest.txt |   12
+ plugin/pygdb.vim       |  269
+ pygdb.py               |   56
  15 files changed, 1860 insertions(+), 0 deletions(-)

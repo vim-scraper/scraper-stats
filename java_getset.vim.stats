@@ -7,7 +7,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed another bug, didn't properly escape the carriage return when used in the normal command.  Sorry about the numerous uploads, I'm a VIM newbie.
 
- plugin/java_getset.vim |    4 ++--
+ plugin/java_getset.vim |    4
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.9)
@@ -20,7 +20,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fixed a bug where the inserted methods were not positioned properly in some cases.
 
  java_getset.vim.macbinary |  Bin 28928 -> 0 bytes
- plugin/java_getset.vim    |  871 +++++++++++++++++++++++++++++++++++++++++++++
+ plugin/java_getset.vim    |  871
  2 files changed, 871 insertions(+), 0 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -33,7 +33,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Corrected the way the end of the current class was determined (previously, sometimes the inserted methods would be inserted outside of the class body).  Also, I changed the test to see if the script was previously loaded as it seems that the script was not loaded as the variable b:did_ftpplugin is set by lots of scripts.
 
  java_getset.vim.macbinary |  Bin 0 -> 28928 bytes
- plugin/java_getset.vim    |  869 ---------------------------------------------
+ plugin/java_getset.vim    |  869
  2 files changed, 0 insertions(+), 869 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -45,6 +45,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     User is now able to configure the position where getter/setters are inserted.  In addition, separate commands have been defined so users do not always have to be prompted (:InsertGetterOnly, :InsertSetterOnly, :InsertBothGetterSetter).  Key mappings have also be mapped for these commands by default.  Finally, more verbose documentation has been provided.  Thanks to Dan Sharp for his comments and suggestions.
 
- README                 |  192 +++++++++++
- plugin/java_getset.vim |  869 ++++++++++++++++++++++++++++++++++++++++++++++++
+ README                 |  192
+ plugin/java_getset.vim |  869
  2 files changed, 1061 insertions(+), 0 deletions(-)

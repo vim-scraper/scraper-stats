@@ -8,7 +8,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - New MvBISortElements() that uses the faster BinInsertSort2() function
       from genutils.vim plugin.
 
- plugin/multvals.vim |   52 +++++++++++++++++++++++++++++++++++++++-----------
+ plugin/multvals.vim |   52
  1 files changed, 40 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.9)
@@ -18,7 +18,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 3.9: - MvIterPeek made public. This was left private by accident.
 
- plugin/multvals.vim |   11 +++++++----
+ plugin/multvals.vim |   11
  1 files changed, 7 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.8)
@@ -33,7 +33,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     value). This will fix problems with a number of other functions that
     depend on them (such as MvPushToFront reported by Thomas Link).
 
- plugin/multvals.vim |   21 ++++++++++++++-------
+ plugin/multvals.vim |   21
  1 files changed, 14 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.6)
@@ -47,7 +47,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Work-around for a bug in MvNumberOfElements().
     - New utility function MvCrUnProtectedCharsPattern()
 
- plugin/multvals.vim |   58 ++++++++++++++++++++++++++++++++++++--------------
+ plugin/multvals.vim |   58
  1 files changed, 42 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.5)
@@ -69,7 +69,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       library.
     - Also added a new function MvIterPeek.
 
- plugin/multvals.vim |  338 +++++++++++++++++++++++++++++++++------------------
+ plugin/multvals.vim |  338
  1 files changed, 220 insertions(+), 118 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.4)
@@ -86,7 +86,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Added prototypes for the functions in the header as per the suggestion
       of Naveen Chandra.
 
- plugin/multvals.vim |  260 ++++++++++++++++++++++++++++++++-------------------
+ plugin/multvals.vim |  260
  1 files changed, 163 insertions(+), 97 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
@@ -98,7 +98,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Minor changes, added a new function MvElementLike and improved MvPromptForElement by adding a new companion function MvGetSelectedIndex, to be used when the array can contain empty elements.
 
- plugin/multvals.vim |   95 +++++++++++++++++++++++++++++++++-----------------
+ plugin/multvals.vim |   95
  1 files changed, 63 insertions(+), 32 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
@@ -110,7 +110,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     New function MvNumSearchNext. See the function header for details.
 
- plugin/multvals.vim |   79 +++++++++++++++++++++++++++++++++++---------------
+ plugin/multvals.vim |   79
  1 files changed, 55 insertions(+), 24 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
@@ -124,7 +124,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     call MvIterCreate(&tags, "\\\@<!\(\\\\\)*\zs,", "Tags", ',')
 
- plugin/multvals.vim |   35 +++++++++++++++++++++++------------
+ plugin/multvals.vim |   35
  1 files changed, 23 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
@@ -138,7 +138,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Added new functions MvRemovePattern, MvStrIndexOfPattern, MvStrIndexAfterPattern, MvIndexOfPattern, MvContainsPattern.
     - Fixed a bug in the new implementation of MvPromptForElement. This function now accepts only element index as selection. This makes it cleaner to implement and also makes it possible to have even numbers as values in the array.
 
- plugin/multvals.vim | 1117 +++++++++++++++++++++++++++------------------------
+ plugin/multvals.vim | 1117
  1 files changed, 596 insertions(+), 521 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
@@ -150,7 +150,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Just removed some debug echomsg which I forgot to remove. Sorry about it. I also added some more information on how to use MvQSortElements() method.
 
- plugin/multvals.vim |   33 +++++++++++++++++++++++++++------
+ plugin/multvals.vim |   33
  1 files changed, 27 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
@@ -167,7 +167,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - A variant of MvPromptForElement to specify the number of columns that you
       want the elements to be formatted in. The formatting is very nice now.
 
- plugin/multvals.vim |  273 +++++++++++++++++++++++++++++++++++++++++++++------
+ plugin/multvals.vim |  273
  1 files changed, 243 insertions(+), 30 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
@@ -179,7 +179,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     GPL'ed it mainly for the use by Creme project (http://cream.sf.net). Added MvRemoveElementAll and MvReplaceElementAt, contributed by Steve Hall <digitect at mindspring.com>
 
- plugin/multvals.vim |   40 ++++++++++++++++++++++++++++++++++++++--
+ plugin/multvals.vim |   40
  1 files changed, 38 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1.2)
@@ -191,7 +191,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     More robust iterator, now checks for maximum count. Reimplemented it to use the ElementAt() function and removed NextElement and NextIndex() functions that are not needed.
 
- plugin/multvals.vim |  112 +++++++++++++--------------------------------------
+ plugin/multvals.vim |  112
  1 files changed, 28 insertions(+), 84 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1.1@1)
@@ -203,7 +203,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     New functions MvRotateLeftAt() and MvRotateRight() to be used by the PushPop.vim script.
 
- plugin/multvals.vim | 1812 ++++++++++++++++++++++++++-------------------------
+ plugin/multvals.vim | 1812
  1 files changed, 933 insertions(+), 879 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1.1)
@@ -223,7 +223,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Also the script is now made as a plugin, so it works only 6.0
 
- plugin/multvals.vim | 1556 +++++++++++++++++++++++++++++----------------------
+ plugin/multvals.vim | 1556
  1 files changed, 879 insertions(+), 677 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.5)
@@ -235,7 +235,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed bugs in MvStrIndexOfElement(), MvIterHasNext() and MvCmpByPosition(). Now I have been using the script for quite some time and fixed all the bugs that I discovered. It should be quite robust and usable now. I have used the functions from here in selectbuf.vim for implementing MRU listing and also in the remcmd.vim for list selection, so check these scripts for a good usage. Also see the end of the script for test code that gives example usage of the script.
 
- plugin/multvals.vim |   33 ++++++++++++++++++++-------------
+ plugin/multvals.vim |   33
  1 files changed, 20 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.4)
@@ -276,7 +276,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
            MvCmpByPosition
            MvPromptForElement
 
- plugin/multvals.vim |  558 +++++++++++++++++++++++++++++++++++++++------------
+ plugin/multvals.vim |  558
  1 files changed, 428 insertions(+), 130 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.2)
@@ -286,6 +286,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 2.0.2: Initial upload
 
- README              |   55 ++++++++
- plugin/multvals.vim |  372 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ README              |   55
+ plugin/multvals.vim |  372
  2 files changed, 427 insertions(+), 0 deletions(-)

@@ -7,15 +7,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - VIM: Require tlib 0.9
 
- README_TBIBTOOLS.TXT              |   25 -
- doc/tbibtools.txt                 |   12 +-
- plugin/tbibtools.vim              |   18 +-
- ruby/Makefile.tbibtools           |   14 +
- ruby/tbibtools.rb                 |  927 +++++++++++++++++++++++++++++++++++++
- ruby/tvimtools.rb                 |   53 +++
- tbibtools/ruby/Makefile.tbibtools |   14 -
- tbibtools/ruby/tbibtools.rb       |  904 ------------------------------------
- tbibtools/ruby/tvimtools.rb       |   53 ---
+ README_TBIBTOOLS.TXT              |   25
+ doc/tbibtools.txt                 |   12
+ plugin/tbibtools.vim              |   18
+ ruby/Makefile.tbibtools           |   14
+ ruby/tbibtools.rb                 |  927
+ ruby/tvimtools.rb                 |   53
+ tbibtools/ruby/Makefile.tbibtools |   14
+ tbibtools/ruby/tbibtools.rb       |  904
+ tbibtools/ruby/tvimtools.rb       |   53
  9 files changed, 1014 insertions(+), 1006 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -29,10 +29,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - New format: (un)selectCrossref: View only entries that are (not) cross-referenced
     - Improved TBibList (include keywords in list; if g:tbibUseCache is set, the listing will be cached between editing sessions)
 
- doc/tbibtools.txt           |   91 ++++++++++++++------
- plugin/tbibtools.vim        |   97 +++++++++++++++------
- tbibtools/ruby/tbibtools.rb |  203 +++++++++++++++++++++++++------------------
- tbibtools/ruby/tvimtools.rb |    9 +-
+ doc/tbibtools.txt           |   91
+ plugin/tbibtools.vim        |   97
+ tbibtools/ruby/tbibtools.rb |  203
+ tbibtools/ruby/tvimtools.rb |    9
  4 files changed, 256 insertions(+), 144 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -47,11 +47,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Merge certain conflicting fields
     - FIX: Problem with --ls
 
- README                            |  152 +++++++
- README_TBIBTOOLS.TXT              |   25 +
- doc/tbibtools.txt                 |  245 +++++++++++
- plugin/tbibtools.vim              |   93 ++++
- tbibtools/ruby/Makefile.tbibtools |   14 +
- tbibtools/ruby/tbibtools.rb       |  873 +++++++++++++++++++++++++++++++++++++
- tbibtools/ruby/tvimtools.rb       |   54 +++
+ README                            |  152
+ README_TBIBTOOLS.TXT              |   25
+ doc/tbibtools.txt                 |  245
+ plugin/tbibtools.vim              |   93
+ tbibtools/ruby/Makefile.tbibtools |   14
+ tbibtools/ruby/tbibtools.rb       |  873
+ tbibtools/ruby/tvimtools.rb       |   54
  7 files changed, 1456 insertions(+), 0 deletions(-)

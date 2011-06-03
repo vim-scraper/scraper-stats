@@ -8,7 +8,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Made to work with Vim7. Also, it uses the Vim7 Lists instead of
     multvals, so it no longer depends on multvals and it is a lot cleaner.
 
- plugin/PushPop.vim |  460 +++++++++++++++++++++++++---------------------------
+ plugin/PushPop.vim |  460
  1 files changed, 225 insertions(+), 235 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
@@ -27,7 +27,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Please read the complete header in the script for changes and new usage.
 
- plugin/PushPop.vim |  496 +++++++++++++++++++++++++++++++++-------------------
+ plugin/PushPop.vim |  496
  1 files changed, 317 insertions(+), 179 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.3)
@@ -42,7 +42,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Minor improvements: Pushd also now takes -i argument. AddDir and RemoveDir take -l argument. Use g:pushpopPersistCdpath to control the persistnce of cdpath.
     - Requires the new version of multvals.vim
 
- plugin/PushPop.vim |  544 ++++++++++++++++++++++++++++++++--------------------
+ plugin/PushPop.vim |  544
  1 files changed, 339 insertions(+), 205 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
@@ -54,7 +54,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     I missed to do an integration, so ended up with a wrong file here. I apologize, please update your version with this.
 
- plugin/PushPop.vim |   11 +++++++----
+ plugin/PushPop.vim |   11
  1 files changed, 7 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
@@ -66,7 +66,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     I have totally redesigned it to work seamlessly with vim's cd and cdpath features. You can now pushd into a diretory that is in the cdpath. Also added new commands to manage the cdpath itself, without needing to change the .vimrc. Removed unnecessary command-line abbreviations. Removed Cdp command as it is a duplicate of "cd -" command and renamed Cdc command as Cdp. The script now requires genutils.vim for storing and retrieving cdpath.
 
- plugin/PushPop.vim |  638 ++++++++++++++++++++++++++++++++++++----------------
+ plugin/PushPop.vim |  638
  1 files changed, 449 insertions(+), 189 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.5)
@@ -78,7 +78,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed pushd with no-arg to switch between the top two dirs, instead of rotating (like with an index). Fixed cd to not to do a dirs. Added new commands cdp to quickly go back to the previous directory and cdc to pushd in to the directory of the currently open file.
 
- plugin/PushPop.vim |  118 ++++++++++++++++++++++++++++++++++++----------------
+ plugin/PushPop.vim |  118
  1 files changed, 82 insertions(+), 36 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0.2)
@@ -92,7 +92,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     It also provided an commandline abbreviation for cd command to adjust the top most directory. You can set the global variable pushpopNoAbbrev to disable the commandline abbreviations such as cd, dirs, pushd etc., if they interfere with your regular usage.
 
- plugin/PushPop.vim |  470 +++++++++++++++++++++++++++++----------------------
+ plugin/PushPop.vim |  470
  1 files changed, 267 insertions(+), 203 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.0beta5)
@@ -102,6 +102,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0beta5: Initial upload
 
- README             |  149 +++++++++++++++++++++++++++
- plugin/PushPop.vim |  284 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README             |  149
+ plugin/PushPop.vim |  284
  2 files changed, 433 insertions(+), 0 deletions(-)

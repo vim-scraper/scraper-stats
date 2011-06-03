@@ -14,11 +14,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       Bug fix: Focus doesn't return to original window:
        http://github.com/xolox/vim-lua-inspect/commit/806dcb21f9f7be1de715
 
- autoload/luainspect.vim            |   20 +++++++++++++++-----
- autoload/xolox.vim                 |   15 ++++++++++-----
- autoload/xolox/escape.vim          |    4 ++--
- misc/luainspect/luainspect4vim.lua |    4 ++--
- plugin/luainspect.vim              |    4 ++--
+ autoload/luainspect.vim            |   20
+ autoload/xolox.vim                 |   15
+ autoload/xolox/escape.vim          |    4
+ misc/luainspect/luainspect4vim.lua |    4
+ plugin/luainspect.vim              |    4
  5 files changed, 31 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.5)
@@ -39,19 +39,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Lots of miscellaneous changes (see http://github.com/xolox/vim-lua-inspect/commits/) to make the plug-in compatible with the newest release of LuaInspect, which itself includes bug fixes that fix bugs in this plug-in (e.g. when you add some empty lines to the start of a Lua buffer the highlighting would break, this turned out to be a bug in the Metalua lexer).
 
- autoload/luainspect.vim                  |   35 ++--
- misc/luainspect/lexer.lua                |    4 +-
- misc/luainspect/luainspect-readme.txt    |   33 +++
- misc/luainspect/luainspect/ast.lua       |  168 ++++++++-----
- misc/luainspect/luainspect/command.lua   |    6 +-
- misc/luainspect/luainspect/html.lua      |   12 +-
- misc/luainspect/luainspect/init.lua      |  406 +++++++++++++++++++++---------
- misc/luainspect/luainspect/scite.lua     |   62 ++++--
- misc/luainspect/luainspect/typecheck.lua |    4 +-
- misc/luainspect/luainspect/types.lua     |   86 ++++++-
- misc/luainspect/luainspect4vim.lua       |   86 +++----
- misc/luainspect/mlp_stat.lua             |    6 +-
- plugin/luainspect.vim                    |    4 +-
+ autoload/luainspect.vim                  |   35
+ misc/luainspect/lexer.lua                |    4
+ misc/luainspect/luainspect-readme.txt    |   33
+ misc/luainspect/luainspect/ast.lua       |  168
+ misc/luainspect/luainspect/command.lua   |    6
+ misc/luainspect/luainspect/html.lua      |   12
+ misc/luainspect/luainspect/init.lua      |  406
+ misc/luainspect/luainspect/scite.lua     |   62
+ misc/luainspect/luainspect/typecheck.lua |    4
+ misc/luainspect/luainspect/types.lua     |   86
+ misc/luainspect/luainspect4vim.lua       |   86
+ misc/luainspect/mlp_stat.lua             |    6
+ plugin/luainspect.vim                    |    4
  13 files changed, 630 insertions(+), 282 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4.3)
@@ -70,12 +70,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       Enable renaming variables that only differ in case:
        http://github.com/xolox/vim-lua-inspect/commit/14b1ff64e29b6333d492a9fc8dfddb0427ee449e
 
- autoload/luainspect.vim                   |    6 ++-
- misc/luainspect/luainspect/init.lua       |   56 +++++++++-------------------
- misc/luainspect/luainspect/signatures.lua |   56 +++++++++++++++++++++++++++++
- misc/luainspect/luainspect/types.lua      |   38 +++++++++++++++++++
- misc/luainspect/luainspect4vim.lua        |    7 +++-
- plugin/luainspect.vim                     |    4 +-
+ autoload/luainspect.vim                   |    6
+ misc/luainspect/luainspect/init.lua       |   56
+ misc/luainspect/luainspect/signatures.lua |   56
+ misc/luainspect/luainspect/types.lua      |   38
+ misc/luainspect/luainspect4vim.lua        |    7
+ plugin/luainspect.vim                     |    4
  6 files changed, 123 insertions(+), 44 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -119,20 +119,20 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
       The packages for version 0.3.3 and 0.3.6 below should have been self contained but I failed to include the LuaInspect sources. This has been fixed now. Sorry about that!
 
- autoload/luainspect.vim                   |  302 +++++++
- autoload/xolox/timer.vim                  |   79 ++
- doc/luainspect.txt                        |   14 +-
- misc/luainspect/luainspect-readme.txt     |   80 ++-
- misc/luainspect/luainspect/ast.lua        |  942 ++++++++++++++++++++
- misc/luainspect/luainspect/command.lua    |   46 +
- misc/luainspect/luainspect/globals.lua    |  214 +++++
- misc/luainspect/luainspect/html.lua       |  147 +++
- misc/luainspect/luainspect/init.lua       | 1101 +++++++++++++++++++++++
- misc/luainspect/luainspect/scite.lua      | 1372 +++++++++++++++++++++++++++++
- misc/luainspect/luainspect/signatures.lua |  376 ++++++++
- misc/luainspect/luainspect/typecheck.lua  |   30 +
- misc/luainspect/luainspect4vim.lua        |  215 ++---
- plugin/luainspect.vim                     |  268 +------
+ autoload/luainspect.vim                   |  302
+ autoload/xolox/timer.vim                  |   79
+ doc/luainspect.txt                        |   14
+ misc/luainspect/luainspect-readme.txt     |   80
+ misc/luainspect/luainspect/ast.lua        |  942
+ misc/luainspect/luainspect/command.lua    |   46
+ misc/luainspect/luainspect/globals.lua    |  214
+ misc/luainspect/luainspect/html.lua       |  147
+ misc/luainspect/luainspect/init.lua       | 1101
+ misc/luainspect/luainspect/scite.lua      | 1372
+ misc/luainspect/luainspect/signatures.lua |  376
+ misc/luainspect/luainspect/typecheck.lua  |   30
+ misc/luainspect/luainspect4vim.lua        |  215
+ plugin/luainspect.vim                     |  268
  14 files changed, 4764 insertions(+), 422 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.6)
@@ -151,10 +151,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       Highlight wrong function argument count:
        http://github.com/xolox/vim-lua-inspect/commit/72a058e773a97781eaa731567faf1f2268576563
 
- doc/luainspect.txt                    |    5 ++
- misc/luainspect/luainspect-readme.txt |    5 ++
- misc/luainspect/luainspect4vim.lua    |  109 +++++++++++++++++++-------------
- plugin/luainspect.vim                 |   32 +++++++---
+ doc/luainspect.txt                    |    5
+ misc/luainspect/luainspect-readme.txt |    5
+ misc/luainspect/luainspect4vim.lua    |  109
+ plugin/luainspect.vim                 |   32
  4 files changed, 98 insertions(+), 53 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3.3)
@@ -173,23 +173,23 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       Tooltips to show variable details like state/type/signature/value:
        http://github.com/xolox/vim-lua-inspect/commit/dc640de6799ba3da5f70073828da91ffaf0b596a
 
- autoload/xolox.vim                        |   12 +-
- doc/luainspect.txt                        |   32 +-
- misc/luainspect/LICENSE                   |   35 -
- misc/luainspect/README.TXT                |  397 ----------
- misc/luainspect/luainspect-copyright.txt  |   26 +
- misc/luainspect/luainspect-readme.txt     |  267 +++++++
- misc/luainspect/luainspect/ast.lua        |  873 ---------------------
- misc/luainspect/luainspect/command.lua    |   46 --
- misc/luainspect/luainspect/globals.lua    |  178 -----
- misc/luainspect/luainspect/html.lua       |  147 ----
- misc/luainspect/luainspect/init.lua       |  600 ---------------
- misc/luainspect/luainspect/scite.lua      | 1186 -----------------------------
- misc/luainspect/luainspect/signatures.lua |  185 -----
- misc/luainspect/luainspect/typecheck.lua  |   27 -
- misc/luainspect/luainspect4vim.lua        |  219 +++++-
- misc/luainspect/metalua-license.txt       |   35 +
- plugin/luainspect.vim                     |  148 +++-
+ autoload/xolox.vim                        |   12
+ doc/luainspect.txt                        |   32
+ misc/luainspect/LICENSE                   |   35
+ misc/luainspect/README.TXT                |  397
+ misc/luainspect/luainspect-copyright.txt  |   26
+ misc/luainspect/luainspect-readme.txt     |  267
+ misc/luainspect/luainspect/ast.lua        |  873
+ misc/luainspect/luainspect/command.lua    |   46
+ misc/luainspect/luainspect/globals.lua    |  178
+ misc/luainspect/luainspect/html.lua       |  147
+ misc/luainspect/luainspect/init.lua       |  600
+ misc/luainspect/luainspect/scite.lua      | 1186
+ misc/luainspect/luainspect/signatures.lua |  185
+ misc/luainspect/luainspect/typecheck.lua  |   27
+ misc/luainspect/luainspect4vim.lua        |  219
+ misc/luainspect/metalua-license.txt       |   35
+ plugin/luainspect.vim                     |  148
  17 files changed, 670 insertions(+), 3743 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.4)
@@ -205,9 +205,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       Support automatic updates using GLVS plug-in:
        http://github.com/xolox/vim-lua-inspect/commit/4c2c0bfd45e86dbfdbedf66c20425a3b4e9426a6
 
- doc/luainspect.txt                 |   30 ++++++++----------------------
- misc/luainspect/luainspect4vim.lua |   23 ++++++++++++++---------
- plugin/luainspect.vim              |   35 +++++++++++++++++++----------------
+ doc/luainspect.txt                 |   30
+ misc/luainspect/luainspect4vim.lua |   23
+ plugin/luainspect.vim              |   35
  3 files changed, 41 insertions(+), 47 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.2)
@@ -226,35 +226,35 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       Don't show command prompts on Windows (integration with my shell.vim plug-in):
        http://github.com/xolox/vim-lua-inspect/commit/2689c2d1896d47c6aa3fa2d919d06d353cf0c17f
 
- autoload/xolox.vim                        |   99 +++
- autoload/xolox/escape.vim                 |   26 +
- doc/luainspect.txt                        |   30 +-
- luainspect4vim.lua                        |  100 ---
- misc/luainspect/LICENSE                   |   35 +
- misc/luainspect/README.TXT                |  397 ++++++++++
- misc/luainspect/gg.lua                    |  747 ++++++++++++++++++
- misc/luainspect/lexer.lua                 |  510 +++++++++++++
- misc/luainspect/luainspect/ast.lua        |  873 +++++++++++++++++++++
- misc/luainspect/luainspect/command.lua    |   46 ++
- misc/luainspect/luainspect/globals.lua    |  178 +++++
- misc/luainspect/luainspect/html.lua       |  147 ++++
- misc/luainspect/luainspect/init.lua       |  600 +++++++++++++++
- misc/luainspect/luainspect/scite.lua      | 1186 +++++++++++++++++++++++++++++
- misc/luainspect/luainspect/signatures.lua |  185 +++++
- misc/luainspect/luainspect/typecheck.lua  |   27 +
- misc/luainspect/luainspect4vim.lua        |   93 +++
- misc/luainspect/metalua/base.lua          |  104 +++
- misc/luainspect/metalua/runtime.lua       |    3 +
- misc/luainspect/metalua/string2.lua       |   44 ++
- misc/luainspect/metalua/table2.lua        |  372 +++++++++
- misc/luainspect/mlp_expr.lua              |  204 +++++
- misc/luainspect/mlp_ext.lua               |   89 +++
- misc/luainspect/mlp_lexer.lua             |   32 +
- misc/luainspect/mlp_meta.lua              |  118 +++
- misc/luainspect/mlp_misc.lua              |  185 +++++
- misc/luainspect/mlp_stat.lua              |  217 ++++++
- misc/luainspect/mlp_table.lua             |   92 +++
- plugin/luainspect.vim                     |  165 +++--
+ autoload/xolox.vim                        |   99
+ autoload/xolox/escape.vim                 |   26
+ doc/luainspect.txt                        |   30
+ luainspect4vim.lua                        |  100
+ misc/luainspect/LICENSE                   |   35
+ misc/luainspect/README.TXT                |  397
+ misc/luainspect/gg.lua                    |  747
+ misc/luainspect/lexer.lua                 |  510
+ misc/luainspect/luainspect/ast.lua        |  873
+ misc/luainspect/luainspect/command.lua    |   46
+ misc/luainspect/luainspect/globals.lua    |  178
+ misc/luainspect/luainspect/html.lua       |  147
+ misc/luainspect/luainspect/init.lua       |  600
+ misc/luainspect/luainspect/scite.lua      | 1186
+ misc/luainspect/luainspect/signatures.lua |  185
+ misc/luainspect/luainspect/typecheck.lua  |   27
+ misc/luainspect/luainspect4vim.lua        |   93
+ misc/luainspect/metalua/base.lua          |  104
+ misc/luainspect/metalua/runtime.lua       |    3
+ misc/luainspect/metalua/string2.lua       |   44
+ misc/luainspect/metalua/table2.lua        |  372
+ misc/luainspect/mlp_expr.lua              |  204
+ misc/luainspect/mlp_ext.lua               |   89
+ misc/luainspect/mlp_lexer.lua             |   32
+ misc/luainspect/mlp_meta.lua              |  118
+ misc/luainspect/mlp_misc.lua              |  185
+ misc/luainspect/mlp_stat.lua              |  217
+ misc/luainspect/mlp_table.lua             |   92
+ plugin/luainspect.vim                     |  165
  29 files changed, 6727 insertions(+), 177 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
@@ -279,9 +279,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       Support disabling plug-in for specific buffers:
        http://github.com/xolox/vim-lua-inspect/commit/3e5967143918c6bc383fae0442f10210c81be0f8
 
- doc/luainspect.txt    |   71 +++++++++++++--------
- luainspect4vim.lua    |   78 ++++++++++++++++-------
- plugin/luainspect.vim |  166 +++++++++++++++++++++++++++++++------------------
+ doc/luainspect.txt    |   71
+ luainspect4vim.lua    |   78
+ plugin/luainspect.vim |  166
  3 files changed, 205 insertions(+), 110 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1.4)
@@ -306,9 +306,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       Simplified wrapper as suggested by David Manura:
        http://github.com/xolox/vim-lua-inspect/commit/ed34601710a09222ef3351082c40cc249eae9821
 
- doc/luainspect.txt    |    5 +-
- luainspect4vim.lua    |  102 ++++++++++++++++++++++---------------------------
- plugin/luainspect.vim |   10 ++--
+ doc/luainspect.txt    |    5
+ luainspect4vim.lua    |  102
+ plugin/luainspect.vim |   10
  3 files changed, 54 insertions(+), 63 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1.3)
@@ -324,8 +324,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       Enable highlighting on user defined events:
        http://github.com/xolox/vim-lua-inspect/commit/d07a1ff10cbd78d5e16c28d234b5e37bc0de88ad
 
- doc/luainspect.txt    |   58 ++++++++++++++++++++++++++++++------------------
- plugin/luainspect.vim |   57 +++++++++++++++++++++++++++++++++---------------
+ doc/luainspect.txt    |   58
+ plugin/luainspect.vim |   57
  2 files changed, 75 insertions(+), 40 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1.2)
@@ -337,9 +337,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     README improvements, miscellaneous other changes: http://github.com/xolox/vim-lua-inspect/commit/ec4e1c31facda80b316a5062fe71a4fe40e07f84
 
- doc/luainspect.txt    |   82 +++++++++++++++++++++++++++++++++++++++++++------
- luainspect4vim.lua    |   22 +++++++++---
- plugin/luainspect.vim |   26 ++++++++--------
+ doc/luainspect.txt    |   82
+ luainspect4vim.lua    |   22
+ plugin/luainspect.vim |   26
  3 files changed, 101 insertions(+), 29 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -349,8 +349,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README                |    8 ++++
- doc/luainspect.txt    |   43 +++++++++++++++++++++++
- luainspect4vim.lua    |   68 +++++++++++++++++++++++++++++++++++++
- plugin/luainspect.vim |   89 +++++++++++++++++++++++++++++++++++++++++++++++++
+ README                |    8
+ doc/luainspect.txt    |   43
+ luainspect4vim.lua    |   68
+ plugin/luainspect.vim |   89
  4 files changed, 208 insertions(+), 0 deletions(-)

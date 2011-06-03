@@ -9,7 +9,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
         on the next line.  If it is left empty, pressing enter again deletes the empty brackets and
         creates a new character element two lines down.
 
- ftplugin/pago.vim |   42 ++++++++++++++++++++++--------------------
+ ftplugin/pago.vim |   42
  1 files changed, 22 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.29)
@@ -19,7 +19,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2.29: Fixed a number of bus related to auto-formatting.
 
- ftplugin/pago.vim |   99 ++++++++++++++++++++++++++++++++++++++++------------
+ ftplugin/pago.vim |   99
  1 files changed, 76 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.25)
@@ -47,7 +47,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * Marked improvements in the auto-formatting function, using a filter of the fmt unix command.
 
- ftplugin/pago.vim |   39 ++++++++++++---------------------------
+ ftplugin/pago.vim |   39
  1 files changed, 12 insertions(+), 27 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.22)
@@ -57,7 +57,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2.22: * Status bar is activated on script initialization.
 
- ftplugin/pago.vim |    3 ++-
+ ftplugin/pago.vim |    3
  1 files changed, 2 insertions(+), 1 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.21)
@@ -69,7 +69,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * Fixed small bug from version 0.2.19 that effected formatting of PARENTHETICAL elements.
 
- ftplugin/pago.vim |    4 ++--
+ ftplugin/pago.vim |    4
  1 files changed, 2 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.20)
@@ -81,7 +81,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * <PageUp> and <PageDown> keys now detect the screenplay elements they land on as per the other direction and navigation keys.
 
- ftplugin/pago.vim |   14 +++++++++++---
+ ftplugin/pago.vim |   14
  1 files changed, 11 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.19)
@@ -93,7 +93,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * Fixed bug that affected automatic formatting of PARENTHETICAL elements.
 
- ftplugin/pago.vim |   19 +++++++++++++++----
+ ftplugin/pago.vim |   19
  1 files changed, 15 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.18)
@@ -103,7 +103,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2.18: * Empty files now start properly indented on an ACTION element.
 
- ftplugin/pago.vim |   13 ++++---------
+ ftplugin/pago.vim |   13
  1 files changed, 4 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.17)
@@ -115,7 +115,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * Fixed major bug of auto-formatting functionality that considered all ELEMENTS not seperated by a black line to be the same paragraph.  Consequently, PARENTHETICAL elements would be formatted into a DIALOGUE element if dialogue was added above or below the PARENTHETICAL element.
 
- ftplugin/pago.vim |   22 ++++++++++++++++++++--
+ ftplugin/pago.vim |   22
  1 files changed, 20 insertions(+), 2 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.16)
@@ -127,7 +127,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * Fixed bug in which current screenplay ELEMENT isn't established on script init.
 
- ftplugin/pago.vim |   30 +++++++++++++++++-------------
+ ftplugin/pago.vim |   30
  1 files changed, 17 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.15)
@@ -140,7 +140,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Fixed issues with <Space> bar not shifting text to the left when used within the TRANSITION element.
     * Fixed issues with <Backspace> deleting all text when used within the TRANSITION element.
 
- ftplugin/pago.vim |   40 ++++++++++++++++++++++++----------------
+ ftplugin/pago.vim |   40
  1 files changed, 24 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.14)
@@ -152,7 +152,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed bug: pressing backspace from the beginning of an action line containing text now brings the text from that line to the previous line and automatically formats the ACTION element.  This action would previously backspace the text beyond the 10-space padding for ACTION elements.
 
- ftplugin/pago.vim |    9 +++++----
+ ftplugin/pago.vim |    9
  1 files changed, 5 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2.13)
@@ -162,6 +162,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.2.13: Initial upload
 
- README            |  100 ++++++++
- ftplugin/pago.vim |  726 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README            |  100
+ ftplugin/pago.vim |  726
  2 files changed, 826 insertions(+), 0 deletions(-)

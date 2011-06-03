@@ -9,8 +9,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     (http://mysite.verizon.net/astronaut/vim/index.html#GDBMGR)
     * Fixed update date.
 
- doc/bufexplorer.txt    |   27 ++-
- plugin/bufexplorer.vim |  464 +++++++++++++++++++++++++-----------------------
+ doc/bufexplorer.txt    |   27
+ plugin/bufexplorer.vim |  464
  2 files changed, 262 insertions(+), 229 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.2.7)
@@ -22,8 +22,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     This is my first attempt to fix the "cache" issue where buffer information has changed but the cache/display does not reflect those changes. More work still needs to be done. More or less the cache has been disabled.
 
- doc/bufexplorer.txt    |    8 ++++++--
- plugin/bufexplorer.vim |   32 ++++++++++++++------------------
+ doc/bufexplorer.txt    |    8
+ plugin/bufexplorer.vim |   32
  2 files changed, 20 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.2.6)
@@ -35,8 +35,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Michael Henry for pointing out that I totally forgot to update the inline help to reflect the previous change to the 'd' and 'D' keys. Opps!
 
- doc/bufexplorer.txt    |    8 ++++++--
- plugin/bufexplorer.vim |   10 +++++-----
+ doc/bufexplorer.txt    |    8
+ plugin/bufexplorer.vim |   10
  2 files changed, 11 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.2.5)
@@ -48,8 +48,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Philip Morant suggested switching the command (bwipe) associated with the 'd' key with the command (bdelete) associated with the 'D' key. This made sense since the 'd' key is more likely to be used compared to the 'D' key.
 
- doc/bufexplorer.txt    |   13 +++++++++----
- plugin/bufexplorer.vim |   24 +++++++++++++++++-------
+ doc/bufexplorer.txt    |   13
+ plugin/bufexplorer.vim |   24
  2 files changed, 26 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.2.4)
@@ -61,8 +61,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fix: I did not implement the patch provided by Godefroid Chapelle correctly. I missed one line which happened to be the most important one :)
 
- doc/bufexplorer.txt    |    8 ++++++--
- plugin/bufexplorer.vim |    5 +++--
+ doc/bufexplorer.txt    |    8
+ plugin/bufexplorer.vim |    5
  2 files changed, 9 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.2.3)
@@ -91,8 +91,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
         * Thanks to Godefroid Chapelle for supplying a patch that fixed
            MRU sort order after loading a session.
 
- doc/bufexplorer.txt    |   83 ++++--
- plugin/bufexplorer.vim |  862 +++++++++++++++++++++++++++++++-----------------
+ doc/bufexplorer.txt    |   83
+ plugin/bufexplorer.vim |  862
  2 files changed, 626 insertions(+), 319 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.2.2)
@@ -104,8 +104,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to David L. Dight for spotting and fixing an issue when using ctrl^. bufexplorer would incorrectly handle the previous buffer so that when ctrl^ was pressed the incorrect file was opened.
 
- doc/bufexplorer.txt    |    8 ++++++--
- plugin/bufexplorer.vim |    7 +++++--
+ doc/bufexplorer.txt    |    8
+ plugin/bufexplorer.vim |    7
  2 files changed, 11 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.2.1)
@@ -117,8 +117,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     7.2.1  - Fix: * Thanks to Dimitar for spotting and fixing a feature that was inadvertently left out of the previous version. The feature was when bufexplorer was used together with WinManager, you could use the tab key to open a buffer in a split window.
 
- doc/bufexplorer.txt    |    9 +++++++--
- plugin/bufexplorer.vim |   14 +++++++++-----
+ doc/bufexplorer.txt    |    9
+ plugin/bufexplorer.vim |   14
  2 files changed, 16 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.2.0)
@@ -134,8 +134,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       * Fixed problem with the bufExplorerFindActive code not working correctly.
       * Fixed an incompatibility between bufexplorer and netrw that caused buffers to be incorrectly removed from the MRU list.
 
- doc/bufexplorer.txt    |   34 +++++++++-
- plugin/bufexplorer.vim |  171 +++++++++++++++++++++++++++++-------------------
+ doc/bufexplorer.txt    |   34
+ plugin/bufexplorer.vim |  171
  2 files changed, 134 insertions(+), 71 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.1.7)
@@ -147,8 +147,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     TaCahiroy fixed several issues related to opening a buffer in a tab.
 
- doc/bufexplorer.txt    |    7 +++-
- plugin/bufexplorer.vim |   64 ++++++++++++++++++++++++++++++++++++------------
+ doc/bufexplorer.txt    |    7
+ plugin/bufexplorer.vim |   64
  2 files changed, 53 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.1.6)
@@ -161,8 +161,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fixes:
       * Removed ff=unix from modeline in bufexplorer.txt. Found by Bill McCarthy.
 
- doc/bufexplorer.txt    |    9 ++++++---
- plugin/bufexplorer.vim |    4 ++--
+ doc/bufexplorer.txt    |    9
+ plugin/bufexplorer.vim |    4
  2 files changed, 8 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.1.5)
@@ -172,8 +172,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 7.1.5: Fixed: Could not open unnamed buffers. Fixed by TaCahiroy.
 
- doc/bufexplorer.txt    |    8 +++++---
- plugin/bufexplorer.vim |    7 ++++---
+ doc/bufexplorer.txt    |    8
+ plugin/bufexplorer.vim |    7
  2 files changed, 9 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.1.4)
@@ -186,8 +186,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fixes:
       * Sometimes when a file's path has 'white space' in it, extra buffers would be created containing each piece of the path. i.e: opening c:\document and settings\test.txt would create a buffer named "and" and a buffer named "Documents". This was reported and fixed by TaCa Yoss.
 
- doc/bufexplorer.txt    |   11 +++++++++--
- plugin/bufexplorer.vim |   10 ++++------
+ doc/bufexplorer.txt    |   11
+ plugin/bufexplorer.vim |   10
  2 files changed, 13 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.1.3)
@@ -199,8 +199,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added code to allow only one instance of the plugin to run at a time. Thanks Dennis Hostetler.
 
- doc/bufexplorer.txt    |    7 +++++--
- plugin/bufexplorer.vim |   17 +++++++++--------
+ doc/bufexplorer.txt    |    7
+ plugin/bufexplorer.vim |   17
  2 files changed, 14 insertions(+), 10 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.1.2)
@@ -219,8 +219,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Minor cosmetic changes.
     * Minor help file changes.
 
- doc/bufexplorer.txt    |  176 +++++++--------
- plugin/bufexplorer.vim |  594 ++++++++++++++++++++++--------------------------
+ doc/bufexplorer.txt    |  176
+ plugin/bufexplorer.vim |  594
  2 files changed, 352 insertions(+), 418 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.17)
@@ -232,8 +232,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed issue with 'drop' command. Various enhancements and improvements.
 
- doc/bufexplorer.txt    |   33 ++++++++--
- plugin/bufexplorer.vim |  182 +++++++++++++++++++++++------------------------
+ doc/bufexplorer.txt    |   33
+ plugin/bufexplorer.vim |  182
  2 files changed, 117 insertions(+), 98 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.15)
@@ -260,8 +260,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     E382: Cannot write, 'buftype' option is set
     --------8<--------
 
- doc/bufexplorer.txt    |   21 +++++++++++++++++++--
- plugin/bufexplorer.vim |   35 +++++++++++++++++------------------
+ doc/bufexplorer.txt    |   21
+ plugin/bufexplorer.vim |   35
  2 files changed, 36 insertions(+), 20 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.14)
@@ -273,8 +273,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Randall Hansen for removing the requirement of terminal versions to be recompiled with 'gui' support so the 'drop' command would work. The 'drop' command is really not needed in terminal versions.
 
- doc/bufexplorer.txt    |   10 ++++++----
- plugin/bufexplorer.vim |   13 +++++++++----
+ doc/bufexplorer.txt    |   10
+ plugin/bufexplorer.vim |   13
  2 files changed, 15 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.13)
@@ -286,8 +286,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed Winmanager integration. Thanks to Dave Eggum for another major update. Most notable changes are, improved speed and code clean up. Please see the bufexplorer help for a full list of changes and updates.
 
- doc/bufexplorer.txt    |  134 +++++++----
- plugin/bufexplorer.vim |  684 +++++++++++++++++++++---------------------------
+ doc/bufexplorer.txt    |  134
+ plugin/bufexplorer.vim |  684
  2 files changed, 384 insertions(+), 434 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.12)
@@ -311,8 +311,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
       - Changed the help key from '?' to <F1> to be more 'standard'.
       - Fixed splitting of vertical bufexplorer window.
 
- doc/bufexplorer.txt    |   94 +++--
- plugin/bufexplorer.vim | 1086 +++++++++++++++++++++---------------------------
+ doc/bufexplorer.txt    |   94
+ plugin/bufexplorer.vim | 1086
  2 files changed, 543 insertions(+), 637 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.11)
@@ -324,8 +324,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed a couple of highlighting bugs, reported by David Eggum. He also changed passive voice to active on a couple of warning messages.
 
- doc/bufexplorer.txt    |    8 +++++---
- plugin/bufexplorer.vim |    8 +++++---
+ doc/bufexplorer.txt    |    8
+ plugin/bufexplorer.vim |    8
  2 files changed, 10 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.10)
@@ -337,8 +337,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed bug report by Xiangjiang Ma. If the 'ssl' option is set, the slash character used when displaying the path was incorrect. Thanks Xiangjiang!
 
- doc/bufexplorer.txt    |    6 ++++--
- plugin/bufexplorer.vim |    7 ++++---
+ doc/bufexplorer.txt    |    6
+ plugin/bufexplorer.vim |    7
  2 files changed, 8 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.9)
@@ -350,8 +350,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Martin Grenfell found and eliminated an annoying bug in the bufexplorer/winmanager integration. The bug was were an annoying message would be displayed when a window was split or a new file was opened in a new window. Thanks Martin!
 
- doc/bufexplorer.txt    |   12 ++++++++----
- plugin/bufexplorer.vim |    8 ++++----
+ doc/bufexplorer.txt    |   12
+ plugin/bufexplorer.vim |    8
  2 files changed, 12 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.8)
@@ -363,8 +363,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Mike Li for catching a bug in the WinManager integration. The bug was related to the incorrect displaying of the buffer explorer's window title.
 
- doc/bufexplorer.txt    |    9 ++++++---
- plugin/bufexplorer.vim |    8 ++++----
+ doc/bufexplorer.txt    |    9
+ plugin/bufexplorer.vim |    8
  2 files changed, 10 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.7)
@@ -376,8 +376,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Jeremy Cowgar for adding a new enhancement. This enhancement allows the user to press 'S', that is capital S, which will open the buffer under the cursor in a newly created split window.
 
- doc/bufexplorer.txt    |   10 ++++++++--
- plugin/bufexplorer.vim |   14 +++++++++++---
+ doc/bufexplorer.txt    |   10
+ plugin/bufexplorer.vim |   14
  2 files changed, 19 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.6)
@@ -389,8 +389,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Larry Zhang for finding a bug in the "split" buffer code. If you force set g:bufExplorerSplitType='v' in your vimrc, and if you tried to do a \bs to split the bufexplorer window, it would always split horizontal, not vertical. He also found that I had a typeo in that the variable g:bufExplorerSplitVertSize was all lower case in the documentation which was incorrect.
 
- doc/bufexplorer.txt    |   12 +++++++++---
- plugin/bufexplorer.vim |    5 ++---
+ doc/bufexplorer.txt    |   12
+ plugin/bufexplorer.vim |    5
  2 files changed, 11 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.5)
@@ -402,8 +402,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Mun Johl for pointing out a bug that if a buffer was modified, the '+' was not showing up correctly.
 
- doc/bufexplorer.txt    |    6 ++++--
- plugin/bufexplorer.vim |   30 ++++++++++++++++--------------
+ doc/bufexplorer.txt    |    6
+ plugin/bufexplorer.vim |   30
  2 files changed, 20 insertions(+), 16 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.4)
@@ -415,8 +415,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed a problem discovered first by Xiangjiang Ma. Well since I've been using vim 7.0 and not 6.3, I started using a function (getftype) that is not in 6.3. So for backward compatibility, I conditionaly use this function now.  Thus, the g:bufExplorerShowDirectories feature is only available when using vim 7.0 and above.
 
- doc/bufexplorer.txt    |   10 ++++++++--
- plugin/bufexplorer.vim |   13 ++++++++-----
+ doc/bufexplorer.txt    |   10
+ plugin/bufexplorer.vim |   13
  2 files changed, 16 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.3)
@@ -429,8 +429,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Thanks to Erwin Waterlander for finding a problem when the last buffer was deleted. This issue got me to rewrite the buffer display logic (which I've wanted to do for sometime now).
     Also great thanks to Dave Eggum for coming up with idea for g:bufExplorerShowDirectories. Directories usually show up in the list from using a command like ":e .", this controls how those are displayed.
 
- doc/bufexplorer.txt    |   22 +++-
- plugin/bufexplorer.vim |  293 ++++++++++++++++++++++++++++++------------------
+ doc/bufexplorer.txt    |   22
+ plugin/bufexplorer.vim |  293
  2 files changed, 202 insertions(+), 113 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.2)
@@ -442,8 +442,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Thomas Arendsen Hein for finding a problem when a user has the default help turned off and then brought up the explorer. An E493 would be displayed.
 
- doc/bufexplorer.txt    |    7 +++++--
- plugin/bufexplorer.vim |   13 +++++++++----
+ doc/bufexplorer.txt    |    7
+ plugin/bufexplorer.vim |   13
  2 files changed, 14 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.1)
@@ -455,8 +455,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Erwin Waterlander for finding a couple problems. The first problem allowed a modified buffer to be deleted.  Opps! The second problem occured when several files were opened, BufExplorer was started, the current buffer was deleted using the 'd' option, and then BufExplorer was exited. The deleted buffer was still visible while it is not in the buffers list. Opps again!
 
- doc/bufexplorer.txt    |   10 ++++++++--
- plugin/bufexplorer.vim |   21 +++++++++++++++------
+ doc/bufexplorer.txt    |   10
+ plugin/bufexplorer.vim |   21
  2 files changed, 23 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7.0.0)
@@ -468,8 +468,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Shankar R. for suggesting to add the ability to set the fixed width (g:bufExplorerSplitVertSize) of a new window when opening bufexplorer vertically and fixed height (g:bufExplorerSplitHorzSize) of a new window when opening bufexplorer horizontally. By default, the windows are normally split to use half the existing width or height.
 
- doc/bufexplorer.txt    |   24 +++++++++++++++++++++---
- plugin/bufexplorer.vim |   34 +++++++++++++++++++++++++++++-----
+ doc/bufexplorer.txt    |   24
+ plugin/bufexplorer.vim |   34
  2 files changed, 50 insertions(+), 8 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.3.0)
@@ -481,8 +481,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added keepjumps so that the jumps list would not get clutered with bufexplorer related stuff.
 
- doc/bufexplorer.txt    |    6 ++++--
- plugin/bufexplorer.vim |   18 +++++++++---------
+ doc/bufexplorer.txt    |    6
+ plugin/bufexplorer.vim |   18
  2 files changed, 13 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.3)
@@ -494,8 +494,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Jay Logan for finding  a bug in the vertical split postion of the code. When selecting that the window was to be split vertically by doing a '\bv', from then on, all splits, i.e. '\bs', were split vertically, even though g:bufExplorerSplitType was not set to 'v'.
 
- doc/bufexplorer.txt    |    9 +++++++--
- plugin/bufexplorer.vim |    9 +++++++--
+ doc/bufexplorer.txt    |    9
+ plugin/bufexplorer.vim |    9
  2 files changed, 14 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.2)
@@ -507,8 +507,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Patrik Modesto for adding a small improvement. For some reason his bufexplorer window was always showing up folded. He added 'setlocal nofoldenable' and it was fixed. If you are having the same problem, this version is for you...
 
- doc/bufexplorer.txt    |    7 +++++--
- plugin/bufexplorer.vim |    7 ++++---
+ doc/bufexplorer.txt    |    7
+ plugin/bufexplorer.vim |    7
  2 files changed, 9 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.1)
@@ -520,8 +520,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks goes out to Takashi Matsuo for added the 'fullPath' sorting logic and option.
 
- doc/bufexplorer.txt    |    7 +++++--
- plugin/bufexplorer.vim |   24 +++++++++++++++++++-----
+ doc/bufexplorer.txt    |    7
+ plugin/bufexplorer.vim |   24
  2 files changed, 24 insertions(+), 7 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.2.0)
@@ -533,8 +533,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks goes out to Simon Johann-Günter for spotting and fixing a problem in that the last search pattern is overriden by the search pattern for blank lines.
 
- doc/bufexplorer.txt    |    7 +++++--
- plugin/bufexplorer.vim |    7 ++++---
+ doc/bufexplorer.txt    |    7
+ plugin/bufexplorer.vim |    7
  2 files changed, 9 insertions(+), 5 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.1.6)
@@ -546,8 +546,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Artem Chuprina for finding a pesky bug that has been around for sometime now. The <esc> key mapping was causing the buffer explored to close prematurely when vim was run in an xterm. The <esc> key mapping is now removed.
 
- doc/bufexplorer.txt    |   10 +++++++---
- plugin/bufexplorer.vim |   21 ++++++---------------
+ doc/bufexplorer.txt    |   10
+ plugin/bufexplorer.vim |   21
  2 files changed, 13 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.1.5)
@@ -557,8 +557,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 6.1.5: Thanks to Khorev Sergey. Added option to show default help or not.
 
- doc/bufexplorer.txt    |    5 +++--
- plugin/bufexplorer.vim |   29 +++++++++++++++++++++++++----
+ doc/bufexplorer.txt    |    5
+ plugin/bufexplorer.vim |   29
  2 files changed, 28 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.1.4)
@@ -570,8 +570,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks goes out to Valery Kondakoff for suggesting the addition of setlocal nonumber and foldcolumn=0. This allows for line numbering and folding to be turned off temporarily while in the explorer.
 
- doc/bufexplorer.txt    |    7 +++++--
- plugin/bufexplorer.vim |   15 ++++++++-------
+ doc/bufexplorer.txt    |    7
+ plugin/bufexplorer.vim |   15
  2 files changed, 13 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.1.3)
@@ -583,8 +583,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added the ability to force the newly split window to be temporarily vertical, which was suggested by Thomas Glanzmann. Added folding. Did some code cleanup.
 
- doc/bufexplorer.txt    |   11 ++-
- plugin/bufexplorer.vim |  255 ++++++++++++++++++++++++++----------------------
+ doc/bufexplorer.txt    |   11
+ plugin/bufexplorer.vim |  255
  2 files changed, 148 insertions(+), 118 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.1.2)
@@ -596,8 +596,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Now pressing the <esc> key will quit, just like 'q'. Added folds to hide winmanager configuration. If anyone had the 'C' option in their cpoptions they would receive a E10 error on startup of BufExplorer. cpo is now saved, updated and restored. Thanks to Charles E Campbell, Jr. Attempted to make sure there can only be one BufExplorer window open at a time.
 
- doc/bufexplorer.txt    |  349 ++++++++++++++++++++++++-----------------------
- plugin/bufexplorer.vim |   33 ++++-
+ doc/bufexplorer.txt    |  349
+ plugin/bufexplorer.vim |   33
  2 files changed, 204 insertions(+), 178 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.1.1)
@@ -609,8 +609,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Brian D. Goodwin for adding toupper to FileNameCmp. This way buffers sorted by name will be in the correct order regardless of case.
 
- doc/bufexplorer.txt    |    7 +++++--
- plugin/bufexplorer.vim |    9 +++++----
+ doc/bufexplorer.txt    |    7
+ plugin/bufexplorer.vim |    9
  2 files changed, 10 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.16)
@@ -622,8 +622,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Andre Pang for the original patch/idea to get bufexplorer to work in insertmode/modeless mode (evim). Added Initialize and Cleanup autocommands to handle commands that need to be performed when starting or leaving bufexplorer.
 
- doc/bufexplorer.txt    |  331 ++++++++++++++++++++++++------------------------
- plugin/bufexplorer.vim |   68 ++++------
+ doc/bufexplorer.txt    |  331
+ plugin/bufexplorer.vim |   68
  2 files changed, 193 insertions(+), 206 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.15)
@@ -633,8 +633,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 6.0.15: Srinath Avadhanulax added a patch for winmanager.vim.
 
- doc/bufexplorer.txt    |    3 ++-
- plugin/bufexplorer.vim |    5 +++--
+ doc/bufexplorer.txt    |    3
+ plugin/bufexplorer.vim |    5
  2 files changed, 5 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.14)
@@ -646,8 +646,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fix a yew more bug that I thought I already had fixed. Thanks to Eric Bloodworth for adding 'Open Mode/Edit in Place'. Added vertical splitting.
 
- doc/bufexplorer.txt    |   28 ++++++-
- plugin/bufexplorer.vim |  214 +++++++++++++++++++++++++++++++-----------------
+ doc/bufexplorer.txt    |   28
+ plugin/bufexplorer.vim |  214
  2 files changed, 163 insertions(+), 79 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.13)
@@ -659,8 +659,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Charles E Campbell, Jr. for pointing out some embarrassing typos that I had in the documentation. I guess I need to run the spell checker more :o)
 
- doc/bufexplorer.txt    |   21 ++++++++++++---------
- plugin/bufexplorer.vim |    4 ++--
+ doc/bufexplorer.txt    |   21
+ plugin/bufexplorer.vim |    4
  2 files changed, 14 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.12)
@@ -672,8 +672,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Madoka Machitani, for the tip on adding the augroup command around the MRUList autocommands.
 
- doc/bufexplorer.txt    |    6 ++++--
- plugin/bufexplorer.vim |   11 +++++++----
+ doc/bufexplorer.txt    |    6
+ plugin/bufexplorer.vim |   11
  2 files changed, 11 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.11)
@@ -685,8 +685,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed bug report by Xiangjiang Ma. '"=' was being added to the search history which messed up hlsearch.
 
- doc/bufexplorer.txt    |   58 +++++++++++++++++++++++++++++-------------------
- plugin/bufexplorer.vim |   13 ++++++++--
+ doc/bufexplorer.txt    |   58
+ plugin/bufexplorer.vim |   13
  2 files changed, 45 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.10)
@@ -700,8 +700,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Tried to improve performance.
     Remember to look at 'help: add-local-help' on how to add the help file into the vim help system.
 
- doc/bufexplorer.txt    |   46 ++++---
- plugin/bufexplorer.vim |  339 ++++++++++++++++++++++++++++++------------------
+ doc/bufexplorer.txt    |   46
+ plugin/bufexplorer.vim |  339
  2 files changed, 238 insertions(+), 147 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.9)
@@ -713,8 +713,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Now you can sort the buffer list by most recently used (MRU). Please note that this is now a .zip file. Please unzip in your vimfiles, ~/.vim or whatever directory you store your vim stuff in. This file contains \plugin\bufexplorer.vim and \doc\bufexplorer.txt. To add the nifty help to vim look under ':help add-local-help' for more information.
 
- doc/bufexplorer.txt    |    7 +++-
- plugin/bufexplorer.vim |   72 ++++++++++++++++++++++++++++++++++++++++-------
+ doc/bufexplorer.txt    |    7
+ plugin/bufexplorer.vim |   72
  2 files changed, 66 insertions(+), 13 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.8)
@@ -727,8 +727,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Was not resetting the showcmd command correctly.
     Added nifty help file.
 
- doc/bufexplorer.txt    |  118 ++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/bufexplorer.vim |   79 ++++++++------------------------
+ doc/bufexplorer.txt    |  118
+ plugin/bufexplorer.vim |   79
  2 files changed, 138 insertions(+), 59 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.7)
@@ -740,7 +740,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Brett Carlane for some great enhancements. Some are added, some are not, yet. Added highlighting of current and alternate filenames. Added spliting of path/filename toggle. Reworked ShowBuffers(). Changed my email address.
 
- plugin/bufexplorer.vim | 1369 +++++++++++++++++++++++++-----------------------
+ plugin/bufexplorer.vim | 1369
  1 files changed, 709 insertions(+), 660 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.6)
@@ -752,7 +752,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed problem with the SortListing() function failing when there was only one buffer to display.
 
- plugin/bufexplorer.vim |  106 +++++++++++++++++++++++++++--------------------
+ plugin/bufexplorer.vim |  106
  1 files changed, 61 insertions(+), 45 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.5)
@@ -764,7 +764,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed problems reported by David Pascoe, in that you where unable to hit 'd' on a buffer that belonged to a files that nolonger existed and that the 'yank' buffer was being overridden by the help text when the bufexplorer was opened.
 
- plugin/bufexplorer.vim |   56 +++++++++++++++++++++++++++++++----------------
+ plugin/bufexplorer.vim |   56
  1 files changed, 37 insertions(+), 19 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.4)
@@ -776,7 +776,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Thanks to Charles Campbell for making this plugin more plugin *compliant*, adding default keymappings of <Leader>be and <Leader>bs as well as fixing the 'w:sortDirLabel not being defined' bug.
 
- plugin/bufexplorer.vim |  136 +++++++++++++++++++++++++++++-------------------
+ plugin/bufexplorer.vim |  136
  1 files changed, 82 insertions(+), 54 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.3)
@@ -788,7 +788,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Added ability to sort buffers by 'buffer number' or 'name' in forward and reverse order.
 
- plugin/bufexplorer.vim |  219 +++++++++++++++++++++++++++++++++++++++++++++---
+ plugin/bufexplorer.vim |  219
  1 files changed, 207 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6.0.2)
@@ -798,6 +798,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 6.0.2: Initial upload
 
- README                 |   20 +++
- plugin/bufexplorer.vim |  403 ++++++++++++++++++++++++++++++++++++++++++++++++
+ README                 |   20
+ plugin/bufexplorer.vim |  403
  2 files changed, 423 insertions(+), 0 deletions(-)

@@ -9,17 +9,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Some bug fixes for C++'s > and < auto-aligning.
     AutoAlign now passes the pluginkiller test. (vimscript#1489)
 
- doc/AutoAlign.txt             |   17 ++++++++-
- ftplugin/bib/AutoAlign.vim    |   10 +++--
- ftplugin/c/AutoAlign.vim      |   12 +++--
- ftplugin/cpp/AutoAlign.vim    |   18 ++++++---
- ftplugin/html/AutoAlign.vim   |   10 +++--
- ftplugin/maple/AutoAlign.vim  |   16 +++----
- ftplugin/matlab/AutoAlign.vim |   10 +++--
- ftplugin/tex/AutoAlign.vim    |   11 +++--
- ftplugin/vim/AutoAlign.vim    |   11 +++--
- plugin/AutoAlign.vim          |   85 ++++++++++++++++++++++++++++------------
- plugin/cecutil.vim            |   33 +++++++++-------
+ doc/AutoAlign.txt             |   17
+ ftplugin/bib/AutoAlign.vim    |   10
+ ftplugin/c/AutoAlign.vim      |   12
+ ftplugin/cpp/AutoAlign.vim    |   18
+ ftplugin/html/AutoAlign.vim   |   10
+ ftplugin/maple/AutoAlign.vim  |   16
+ ftplugin/matlab/AutoAlign.vim |   10
+ ftplugin/tex/AutoAlign.vim    |   11
+ ftplugin/vim/AutoAlign.vim    |   11
+ plugin/AutoAlign.vim          |   85
+ plugin/cecutil.vim            |   33
  11 files changed, 151 insertions(+), 82 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/12)
@@ -31,17 +31,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed a bug with ftplugin/bib/AutoAlign.vim (ie. for LaTeX *.bib files)
 
- doc/AutoAlign.txt             |    3 ++-
- ftplugin/bib/AutoAlign.vim    |    9 +++++----
- ftplugin/c/AutoAlign.vim      |    6 +++---
- ftplugin/cpp/AutoAlign.vim    |    6 +++---
- ftplugin/html/AutoAlign.vim   |    6 +++---
- ftplugin/maple/AutoAlign.vim  |    6 +++---
- ftplugin/matlab/AutoAlign.vim |    8 ++++----
- ftplugin/tex/AutoAlign.vim    |    6 +++---
- ftplugin/vim/AutoAlign.vim    |    6 +++---
- plugin/AutoAlign.vim          |   31 +++++++++++++------------------
- plugin/cecutil.vim            |   10 ++++++----
+ doc/AutoAlign.txt             |    3
+ ftplugin/bib/AutoAlign.vim    |    9
+ ftplugin/c/AutoAlign.vim      |    6
+ ftplugin/cpp/AutoAlign.vim    |    6
+ ftplugin/html/AutoAlign.vim   |    6
+ ftplugin/maple/AutoAlign.vim  |    6
+ ftplugin/matlab/AutoAlign.vim |    8
+ ftplugin/tex/AutoAlign.vim    |    6
+ ftplugin/vim/AutoAlign.vim    |    6
+ plugin/AutoAlign.vim          |   31
+ plugin/cecutil.vim            |   10
  11 files changed, 48 insertions(+), 49 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/11)
@@ -54,16 +54,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     I inadvertently left debugging on in AutoAlign v10; this one has debugging de-activated.
     Plus some bugfixes.
 
- doc/AutoAlign.txt             |    7 ++++++
- ftplugin/bib/AutoAlign.vim    |    6 ++--
- ftplugin/c/AutoAlign.vim      |    6 ++--
- ftplugin/cpp/AutoAlign.vim    |    6 ++--
- ftplugin/html/AutoAlign.vim   |    8 +++---
- ftplugin/maple/AutoAlign.vim  |    6 ++--
- ftplugin/matlab/AutoAlign.vim |    6 ++--
- ftplugin/tex/AutoAlign.vim    |    8 +++---
- ftplugin/vim/AutoAlign.vim    |    6 ++--
- plugin/AutoAlign.vim          |   44 +++++++++++++++++++++-------------------
+ doc/AutoAlign.txt             |    7
+ ftplugin/bib/AutoAlign.vim    |    6
+ ftplugin/c/AutoAlign.vim      |    6
+ ftplugin/cpp/AutoAlign.vim    |    6
+ ftplugin/html/AutoAlign.vim   |    8
+ ftplugin/maple/AutoAlign.vim  |    6
+ ftplugin/matlab/AutoAlign.vim |    6
+ ftplugin/tex/AutoAlign.vim    |    8
+ ftplugin/vim/AutoAlign.vim    |    6
+ plugin/AutoAlign.vim          |   44
  10 files changed, 56 insertions(+), 47 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/10)
@@ -75,17 +75,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Works with ve= and ve=all.  Uses startinsert or startinsert!, depending on whether the cursor in inside the line or being used to append.
 
- doc/AutoAlign.txt             |   69 ++++++-----
- ftplugin/bib/AutoAlign.vim    |    8 +-
- ftplugin/c/AutoAlign.vim      |    8 +-
- ftplugin/cpp/AutoAlign.vim    |   12 +-
- ftplugin/html/AutoAlign.vim   |    8 +-
- ftplugin/maple/AutoAlign.vim  |    8 +-
- ftplugin/matlab/AutoAlign.vim |    8 +-
- ftplugin/tex/AutoAlign.vim    |    8 +-
- ftplugin/vim/AutoAlign.vim    |    8 +-
- plugin/AutoAlign.vim          |  118 ++++++++++++++++++
- plugin/cecutil.vim            |  276 ++++++++++++++++++++++++++++++++---------
+ doc/AutoAlign.txt             |   69
+ ftplugin/bib/AutoAlign.vim    |    8
+ ftplugin/c/AutoAlign.vim      |    8
+ ftplugin/cpp/AutoAlign.vim    |   12
+ ftplugin/html/AutoAlign.vim   |    8
+ ftplugin/maple/AutoAlign.vim  |    8
+ ftplugin/matlab/AutoAlign.vim |    8
+ ftplugin/tex/AutoAlign.vim    |    8
+ ftplugin/vim/AutoAlign.vim    |    8
+ plugin/AutoAlign.vim          |  118
+ plugin/cecutil.vim            |  276
  11 files changed, 406 insertions(+), 125 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/7)
@@ -99,16 +99,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     AutoAlign now has b:autoalign_suspend# for suspend-alignment patterns
     An undefined b:autoalign_reqdpat# no longer causes an error
 
- doc/AutoAlign.txt             |  196 +++++++++++++++++++++++++++++------------
- ftplugin/bib/AutoAlign.vim    |   14 ++-
- ftplugin/c/AutoAlign.vim      |   12 ++-
- ftplugin/cpp/AutoAlign.vim    |   31 +++++--
- ftplugin/html/AutoAlign.vim   |   17 ++++
- ftplugin/maple/AutoAlign.vim  |   13 ++-
- ftplugin/matlab/AutoAlign.vim |   13 ++-
- ftplugin/tex/AutoAlign.vim    |   15 ++--
- ftplugin/vim/AutoAlign.vim    |   12 ++-
- plugin/cecutil.vim            |   44 ++++++----
+ doc/AutoAlign.txt             |  196
+ ftplugin/bib/AutoAlign.vim    |   14
+ ftplugin/c/AutoAlign.vim      |   12
+ ftplugin/cpp/AutoAlign.vim    |   31
+ ftplugin/html/AutoAlign.vim   |   17
+ ftplugin/maple/AutoAlign.vim  |   13
+ ftplugin/matlab/AutoAlign.vim |   13
+ ftplugin/tex/AutoAlign.vim    |   15
+ ftplugin/vim/AutoAlign.vim    |   12
+ plugin/cecutil.vim            |   44
  10 files changed, 254 insertions(+), 113 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/6)
@@ -120,14 +120,14 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     AutoAlign is now split into a plugin containing the majority of vimscript; the supported ftplugins contain the invoking imaps and pattern definitions that the plugin uses.  Matlab support added.  Should be easy to add more languages should anyone wish to contribute the needed patterns!  Currently supported: bib c cpp maple matlab tex vim
 
- README                        |   32 +++++
- doc/AutoAlign.txt             |  139 +++++++++++++++++++
- ftplugin/bib/AutoAlign.vim    |   12 ++
- ftplugin/c/AutoAlign.vim      |   12 ++
- ftplugin/cpp/AutoAlign.vim    |   25 ++++
- ftplugin/maple/AutoAlign.vim  |   13 ++
- ftplugin/matlab/AutoAlign.vim |   13 ++
- ftplugin/tex/AutoAlign.vim    |   13 ++
- ftplugin/vim/AutoAlign.vim    |   12 ++
- plugin/cecutil.vim            |  296 +++++++++++++++++++++++++++++++++++++++++
+ README                        |   32
+ doc/AutoAlign.txt             |  139
+ ftplugin/bib/AutoAlign.vim    |   12
+ ftplugin/c/AutoAlign.vim      |   12
+ ftplugin/cpp/AutoAlign.vim    |   25
+ ftplugin/maple/AutoAlign.vim  |   13
+ ftplugin/matlab/AutoAlign.vim |   13
+ ftplugin/tex/AutoAlign.vim    |   13
+ ftplugin/vim/AutoAlign.vim    |   12
+ plugin/cecutil.vim            |  296
  10 files changed, 567 insertions(+), 0 deletions(-)

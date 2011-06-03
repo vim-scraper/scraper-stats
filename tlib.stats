@@ -7,11 +7,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - World.UseScratch(): keepalt- Really include balloon.vimMD5 checksum: 3fcbc4f7556f5378d39622e62ab8f379
 
- autoload/tlib/World.vim   |    6 ++--
- autoload/tlib/balloon.vim |   52 +++++++++++++++++++++++++++++++++++++++++++++
- autoload/tlib/input.vim   |    5 +--
- autoload/tlib/vim.vim     |    6 ++--
- plugin/02tlib.vim         |    6 ++--
+ autoload/tlib/World.vim   |    6
+ autoload/tlib/balloon.vim |   52
+ autoload/tlib/input.vim   |    5
+ autoload/tlib/vim.vim     |    6
+ plugin/02tlib.vim         |    6
  5 files changed, 63 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.40a)
@@ -21,10 +21,10 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.40a: Forgot to include autoload/tlib/balloon.vim (thanks Maciej)
 
- autoload/tlib/Filter_cnf.vim |    9 +++++++--
- autoload/tlib/input.vim      |   14 +++++++-------
- doc/tlib.txt                 |   27 ++++++++++++++++++---------
- plugin/02tlib.vim            |   15 ++++++++++-----
+ autoload/tlib/Filter_cnf.vim |    9
+ autoload/tlib/input.vim      |   14
+ doc/tlib.txt                 |   27
+ plugin/02tlib.vim            |   15
  4 files changed, 42 insertions(+), 23 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.40)
@@ -37,19 +37,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - tlib#agent#ViewFile: Use split/sbuffer if nohidden && modified
     - tlib#buffer#GetList(): order by "basename"
 
- autoload/tlib/Filter_cnf.vim   |   17 +++++-----
- autoload/tlib/Filter_cnfd.vim  |   18 +++++-----
- autoload/tlib/Filter_fuzzy.vim |   29 +++++++++++------
- autoload/tlib/Filter_seq.vim   |   18 +++++------
- autoload/tlib/World.vim        |    9 +++--
- autoload/tlib/agent.vim        |   13 ++++++--
- autoload/tlib/buffer.vim       |   25 ++++++++++++++-
- autoload/tlib/date.vim         |   65 +++++++++++++++++++++++++++-------------
- autoload/tlib/input.vim        |   11 ++++--
- autoload/tlib/normal.vim       |   14 +++++++--
- autoload/tlib/type.vim         |    9 +----
- doc/tlib.txt                   |   29 ++++++++++++++++-
- plugin/02tlib.vim              |   19 +++++++++--
+ autoload/tlib/Filter_cnf.vim   |   17
+ autoload/tlib/Filter_cnfd.vim  |   18
+ autoload/tlib/Filter_fuzzy.vim |   29
+ autoload/tlib/Filter_seq.vim   |   18
+ autoload/tlib/World.vim        |    9
+ autoload/tlib/agent.vim        |   13
+ autoload/tlib/buffer.vim       |   25
+ autoload/tlib/date.vim         |   65
+ autoload/tlib/input.vim        |   11
+ autoload/tlib/normal.vim       |   14
+ autoload/tlib/type.vim         |    9
+ doc/tlib.txt                   |   29
+ plugin/02tlib.vim              |   19
  13 files changed, 188 insertions(+), 88 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.39)
@@ -64,21 +64,21 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - tlib#vim#RestoreWindow()
     - tlib#ballon#...()
 
- autoload/tlib/Object.vim    |   10 +-
- autoload/tlib/Test.vim      |    6 +-
- autoload/tlib/TestChild.vim |    6 +-
- autoload/tlib/World.vim     |   52 ++-
- autoload/tlib/agent.vim     |    6 +-
- autoload/tlib/buffer.vim    |    8 +-
- autoload/tlib/cache.vim     |  201 +++++-
- autoload/tlib/date.vim      |    8 +-
- autoload/tlib/file.vim      |    5 +-
- autoload/tlib/input.vim     |   68 ++-
- autoload/tlib/list.vim      |   15 +-
- autoload/tlib/scratch.vim   |    6 +-
- autoload/tlib/vim.vim       |  107 +++
- doc/tlib.txt                | 1669 +++++++++++++++++++++++--------------------
- plugin/02tlib.vim           |   18 +-
+ autoload/tlib/Object.vim    |   10
+ autoload/tlib/Test.vim      |    6
+ autoload/tlib/TestChild.vim |    6
+ autoload/tlib/World.vim     |   52
+ autoload/tlib/agent.vim     |    6
+ autoload/tlib/buffer.vim    |    8
+ autoload/tlib/cache.vim     |  201
+ autoload/tlib/date.vim      |    8
+ autoload/tlib/file.vim      |    5
+ autoload/tlib/input.vim     |   68
+ autoload/tlib/list.vim      |   15
+ autoload/tlib/scratch.vim   |    6
+ autoload/tlib/vim.vim       |  107
+ doc/tlib.txt                | 1669
+ plugin/02tlib.vim           |   18
  15 files changed, 1336 insertions(+), 849 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.37)
@@ -94,18 +94,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - tlib#date
     - TTimeCommand
 
- autoload/tlib/Filter_cnf.vim |   21 +++++++--
- autoload/tlib/World.vim      |   43 ++++++++++--------
- autoload/tlib/agent.vim      |    6 ++-
- autoload/tlib/buffer.vim     |   27 ++++++++---
- autoload/tlib/cmd.vim        |   18 ++++++--
- autoload/tlib/date.vim       |   97 ++++++++++++++++++++++++++++++++++++++++++
- autoload/tlib/input.vim      |   21 +++++++--
- autoload/tlib/rx.vim         |    8 ++--
- autoload/tlib/scratch.vim    |    7 ++-
- autoload/tlib/win.vim        |   11 ++++-
- doc/tlib.txt                 |   41 +++++++++++++----
- plugin/02tlib.vim            |   54 ++++++++++++------------
+ autoload/tlib/Filter_cnf.vim |   21
+ autoload/tlib/World.vim      |   43
+ autoload/tlib/agent.vim      |    6
+ autoload/tlib/buffer.vim     |   27
+ autoload/tlib/cmd.vim        |   18
+ autoload/tlib/date.vim       |   97
+ autoload/tlib/input.vim      |   21
+ autoload/tlib/rx.vim         |    8
+ autoload/tlib/scratch.vim    |    7
+ autoload/tlib/win.vim        |   11
+ doc/tlib.txt                 |   41
+ plugin/02tlib.vim            |   54
  12 files changed, 264 insertions(+), 90 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.36)
@@ -119,20 +119,20 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Removed tlib#paragraph#Delete()
     - New: tlib#paragraph#Define(), tlib#textobjects#StandardParagraph()
 
- autoload/tlib.vim              |    9 +-
- autoload/tlib/World.vim        |   71 +++++++---
- autoload/tlib/agent.vim        |    9 +-
- autoload/tlib/autocmdgroup.vim |    8 +-
- autoload/tlib/buffer.vim       |    8 +-
- autoload/tlib/cache.vim        |    9 +-
- autoload/tlib/file.vim         |    4 +-
- autoload/tlib/input.vim        |  146 +++++++++---------
- autoload/tlib/paragraph.vim    |   97 +++++++++----
- autoload/tlib/progressbar.vim  |   14 ++-
- autoload/tlib/textobjects.vim  |   45 ++++++
- autoload/tlib/url.vim          |    9 +-
- doc/tlib.txt                   |  330 ++++++++++++++++++++++------------------
- plugin/02tlib.vim              |   14 ++-
+ autoload/tlib.vim              |    9
+ autoload/tlib/World.vim        |   71
+ autoload/tlib/agent.vim        |    9
+ autoload/tlib/autocmdgroup.vim |    8
+ autoload/tlib/buffer.vim       |    8
+ autoload/tlib/cache.vim        |    9
+ autoload/tlib/file.vim         |    4
+ autoload/tlib/input.vim        |  146
+ autoload/tlib/paragraph.vim    |   97
+ autoload/tlib/progressbar.vim  |   14
+ autoload/tlib/textobjects.vim  |   45
+ autoload/tlib/url.vim          |    9
+ doc/tlib.txt                   |  330
+ plugin/02tlib.vim              |   14
  14 files changed, 459 insertions(+), 314 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.35)
@@ -142,9 +142,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.35: tlib#input#EditList(): return the list if the user presses esc
 
- autoload/tlib/input.vim |   17 +++++++++++------
- doc/tlib.txt            |   12 ++++++------
- plugin/02tlib.vim       |    9 ++++++---
+ autoload/tlib/input.vim |   17
+ doc/tlib.txt            |   12
+ plugin/02tlib.vim       |    9
  3 files changed, 23 insertions(+), 15 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.34)
@@ -156,15 +156,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     - tlib#buffer#HighlightLine(line): call tlib#autocmdgroup#Init()  (reported by Sergey Khorev)
 
- autoload/tlib/World.vim        |    6 +-
- autoload/tlib/autocmdgroup.vim |    4 +-
- autoload/tlib/buffer.vim       |    6 ++-
- autoload/tlib/map.vim          |   23 +++++++++
- autoload/tlib/paragraph.vim    |   46 ++++++++++++++++++
- autoload/tlib/scratch.vim      |    5 +-
- autoload/tlib/signs.vim        |  103 ++++++++++++++++++++++++++++++++++++++++
- doc/tlib.txt                   |   18 ++++++-
- plugin/02tlib.vim              |   15 +++++-
+ autoload/tlib/World.vim        |    6
+ autoload/tlib/autocmdgroup.vim |    4
+ autoload/tlib/buffer.vim       |    6
+ autoload/tlib/map.vim          |   23
+ autoload/tlib/paragraph.vim    |   46
+ autoload/tlib/scratch.vim      |    5
+ autoload/tlib/signs.vim        |  103
+ doc/tlib.txt                   |   18
+ plugin/02tlib.vim              |   15
  9 files changed, 212 insertions(+), 14 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.33)
@@ -183,18 +183,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - scratch: Set ft after setting up scratch options
     - tlib#map#PumAccept(key)
 
- autoload/tlib/World.vim   |   73 +++++++++++++++++++++++++++++----------------
- autoload/tlib/agent.vim   |   12 ++++---
- autoload/tlib/buffer.vim  |   60 +++++++++++++++++++++++--------------
- autoload/tlib/dir.vim     |    8 ++--
- autoload/tlib/file.vim    |    7 ++--
- autoload/tlib/input.vim   |   31 +++++++++++++-----
- autoload/tlib/list.vim    |    8 ++--
- autoload/tlib/scratch.vim |   18 +++++++----
- autoload/tlib/tag.vim     |    5 ++-
- autoload/tlib/win.vim     |   16 +++++----
- doc/tlib.txt              |   53 ++++++++++++++++++++++++++++++++-
- plugin/02tlib.vim         |   49 ++++++++++++++++++++----------
+ autoload/tlib/World.vim   |   73
+ autoload/tlib/agent.vim   |   12
+ autoload/tlib/buffer.vim  |   60
+ autoload/tlib/dir.vim     |    8
+ autoload/tlib/file.vim    |    7
+ autoload/tlib/input.vim   |   31
+ autoload/tlib/list.vim    |    8
+ autoload/tlib/scratch.vim |   18
+ autoload/tlib/tag.vim     |    5
+ autoload/tlib/win.vim     |   16
+ doc/tlib.txt              |   53
+ plugin/02tlib.vim         |   49
  12 files changed, 233 insertions(+), 107 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.31)
@@ -209,45 +209,45 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     with the base indices.
     - World#RestoreOrigin(): Don't assume &splitright
 
- autoload/tlib.vim              |    6 +-
- autoload/tlib/Filter_cnf.vim   |    6 +-
- autoload/tlib/Filter_cnfd.vim  |    6 +-
- autoload/tlib/Filter_fuzzy.vim |    6 +-
- autoload/tlib/Filter_seq.vim   |    6 +-
- autoload/tlib/Object.vim       |    6 +-
- autoload/tlib/Test.vim         |    6 +-
- autoload/tlib/TestChild.vim    |    6 +-
- autoload/tlib/World.vim        |   68 +++++++++++++++++++------------
- autoload/tlib/agent.vim        |    7 ++-
- autoload/tlib/arg.vim          |    6 +-
- autoload/tlib/autocmdgroup.vim |    6 +-
- autoload/tlib/buffer.vim       |    6 +-
- autoload/tlib/cache.vim        |    7 ++-
- autoload/tlib/char.vim         |    6 +-
- autoload/tlib/cmd.vim          |    6 +-
- autoload/tlib/comments.vim     |    6 +-
- autoload/tlib/dir.vim          |    6 +-
- autoload/tlib/eval.vim         |    6 +-
- autoload/tlib/file.vim         |   21 ++++++----
- autoload/tlib/hook.vim         |    6 +-
- autoload/tlib/input.vim        |   18 ++++++--
- autoload/tlib/list.vim         |    6 +-
- autoload/tlib/normal.vim       |    6 +-
- autoload/tlib/notify.vim       |    6 +-
- autoload/tlib/progressbar.vim  |    6 +-
- autoload/tlib/rx.vim           |   14 +++---
- autoload/tlib/scratch.vim      |    6 +-
- autoload/tlib/string.vim       |    6 +-
- autoload/tlib/syntax.vim       |    6 +-
- autoload/tlib/tab.vim          |    6 +-
- autoload/tlib/tag.vim          |    6 +-
- autoload/tlib/time.vim         |    8 ++--
- autoload/tlib/type.vim         |    6 +-
- autoload/tlib/url.vim          |    6 +-
- autoload/tlib/var.vim          |    6 +-
- autoload/tlib/win.vim          |    6 +-
- doc/tlib.txt                   |   87 ++++++++++++++++++++++++++++++++++++++--
- plugin/02tlib.vim              |   46 ++++++++++++++++++---
+ autoload/tlib.vim              |    6
+ autoload/tlib/Filter_cnf.vim   |    6
+ autoload/tlib/Filter_cnfd.vim  |    6
+ autoload/tlib/Filter_fuzzy.vim |    6
+ autoload/tlib/Filter_seq.vim   |    6
+ autoload/tlib/Object.vim       |    6
+ autoload/tlib/Test.vim         |    6
+ autoload/tlib/TestChild.vim    |    6
+ autoload/tlib/World.vim        |   68
+ autoload/tlib/agent.vim        |    7
+ autoload/tlib/arg.vim          |    6
+ autoload/tlib/autocmdgroup.vim |    6
+ autoload/tlib/buffer.vim       |    6
+ autoload/tlib/cache.vim        |    7
+ autoload/tlib/char.vim         |    6
+ autoload/tlib/cmd.vim          |    6
+ autoload/tlib/comments.vim     |    6
+ autoload/tlib/dir.vim          |    6
+ autoload/tlib/eval.vim         |    6
+ autoload/tlib/file.vim         |   21
+ autoload/tlib/hook.vim         |    6
+ autoload/tlib/input.vim        |   18
+ autoload/tlib/list.vim         |    6
+ autoload/tlib/normal.vim       |    6
+ autoload/tlib/notify.vim       |    6
+ autoload/tlib/progressbar.vim  |    6
+ autoload/tlib/rx.vim           |   14
+ autoload/tlib/scratch.vim      |    6
+ autoload/tlib/string.vim       |    6
+ autoload/tlib/syntax.vim       |    6
+ autoload/tlib/tab.vim          |    6
+ autoload/tlib/tag.vim          |    6
+ autoload/tlib/time.vim         |    8
+ autoload/tlib/type.vim         |    6
+ autoload/tlib/url.vim          |    6
+ autoload/tlib/var.vim          |    6
+ autoload/tlib/win.vim          |    6
+ doc/tlib.txt                   |   87
+ plugin/02tlib.vim              |   46
  39 files changed, 299 insertions(+), 157 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.29)
@@ -261,19 +261,19 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - tlib#rx#Suffixes(): 'suffixes' as Regexp
     - World#RestoreOrigin(): Don't assume &splitbelow
 
- autoload/tlib/Filter_cnf.vim |    5 +-
- autoload/tlib/World.vim      |   30 +++++++++--
- autoload/tlib/agent.vim      |    8 ++--
- autoload/tlib/buffer.vim     |   11 +++--
- autoload/tlib/cache.vim      |    6 +-
- autoload/tlib/file.vim       |    5 +-
- autoload/tlib/input.vim      |    9 +++-
- autoload/tlib/rx.vim         |   18 ++++++-
- autoload/tlib/scratch.vim    |    7 ++-
- autoload/tlib/string.vim     |    8 ++--
- autoload/tlib/win.vim        |   17 ++++++-
- doc/tlib.txt                 |  113 +++---------------------------------------
- plugin/02tlib.vim            |   11 +++-
+ autoload/tlib/Filter_cnf.vim |    5
+ autoload/tlib/World.vim      |   30
+ autoload/tlib/agent.vim      |    8
+ autoload/tlib/buffer.vim     |   11
+ autoload/tlib/cache.vim      |    6
+ autoload/tlib/file.vim       |    5
+ autoload/tlib/input.vim      |    9
+ autoload/tlib/rx.vim         |   18
+ autoload/tlib/scratch.vim    |    7
+ autoload/tlib/string.vim     |    8
+ autoload/tlib/win.vim        |   17
+ doc/tlib.txt                 |  113
+ plugin/02tlib.vim            |   11
  13 files changed, 106 insertions(+), 142 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.28)
@@ -294,20 +294,20 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - NEW: tlib#buffer#KeepCursorPosition()
     - tlib#buffer#InsertText(): Take care of the extra line when appending text to an empty buffer.
 
- autoload/tlib/Filter_cnf.vim   |  129 ++++++++++++++++++
- autoload/tlib/Filter_cnfd.vim  |   54 ++++++++
- autoload/tlib/Filter_fuzzy.vim |   64 +++++++++
- autoload/tlib/Filter_seq.vim   |   94 +++++++++++++
- autoload/tlib/World.vim        |  235 +++++++++++++++++++++++-----------
- autoload/tlib/agent.vim        |   54 ++++++--
- autoload/tlib/buffer.vim       |   19 +++-
- autoload/tlib/file.vim         |    4 +-
- autoload/tlib/input.vim        |  146 ++++++++++-----------
- autoload/tlib/rx.vim           |   17 ++-
- autoload/tlib/string.vim       |   14 ++-
- doc/tlib.txt                   |  281 +++++++++++-----------------------------
- plugin/02tlib.vim              |   42 +++++-
- test/tlib.vim                  |   10 +-
+ autoload/tlib/Filter_cnf.vim   |  129
+ autoload/tlib/Filter_cnfd.vim  |   54
+ autoload/tlib/Filter_fuzzy.vim |   64
+ autoload/tlib/Filter_seq.vim   |   94
+ autoload/tlib/World.vim        |  235
+ autoload/tlib/agent.vim        |   54
+ autoload/tlib/buffer.vim       |   19
+ autoload/tlib/file.vim         |    4
+ autoload/tlib/input.vim        |  146
+ autoload/tlib/rx.vim           |   17
+ autoload/tlib/string.vim       |   14
+ doc/tlib.txt                   |  281
+ plugin/02tlib.vim              |   42
+ test/tlib.vim                  |   10
  14 files changed, 776 insertions(+), 387 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.27)
@@ -323,13 +323,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Meaning of World#filter_format changed; new World#filter_options
     - Filtering didn't work as advertised
 
- autoload/tlib/Object.vim |   13 ++-
- autoload/tlib/World.vim  |   67 ++++++++++++++---
- autoload/tlib/buffer.vim |   13 ++-
- autoload/tlib/input.vim  |  183 +++++++++++++++++++++++++---------------------
- autoload/tlib/normal.vim |   26 +++++++
- doc/tlib.txt             |   28 +++++++
- plugin/02tlib.vim        |   20 ++++-
+ autoload/tlib/Object.vim |   13
+ autoload/tlib/World.vim  |   67
+ autoload/tlib/buffer.vim |   13
+ autoload/tlib/input.vim  |  183
+ autoload/tlib/normal.vim |   26
+ doc/tlib.txt             |   28
+ plugin/02tlib.vim        |   20
  7 files changed, 244 insertions(+), 106 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.25)
@@ -344,16 +344,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - FIX: World.CloseScratch(): Set window
     - FIX: tlib#input#ListW(): Set initial_display = 1 on reset
 
- autoload/tlib/World.vim        |   25 +++++-
- autoload/tlib/agent.vim        |    5 +-
- autoload/tlib/autocmdgroup.vim |   27 ++++++
- autoload/tlib/input.vim        |  183 ++++++++++++++++++++++------------------
- autoload/tlib/notify.vim       |  103 ++++++++++++++++++++++
- autoload/tlib/scratch.vim      |   20 ++--
- autoload/tlib/string.vim       |    5 +-
- autoload/tlib/win.vim          |    8 ++-
- doc/tlib.txt                   |   74 ++++++++++++++++-
- plugin/02tlib.vim              |   15 +++-
+ autoload/tlib/World.vim        |   25
+ autoload/tlib/agent.vim        |    5
+ autoload/tlib/autocmdgroup.vim |   27
+ autoload/tlib/input.vim        |  183
+ autoload/tlib/notify.vim       |  103
+ autoload/tlib/scratch.vim      |   20
+ autoload/tlib/string.vim       |    5
+ autoload/tlib/win.vim          |    8
+ doc/tlib.txt                   |   74
+ plugin/02tlib.vim              |   15
  10 files changed, 357 insertions(+), 108 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.24)
@@ -366,16 +366,16 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - s:prototype.SetInitialFilter: accept list as argument
     - Maintain buffer MRU if required
 
- autoload/tlib/Object.vim  |    5 ++-
- autoload/tlib/World.vim   |   11 ++++++--
- autoload/tlib/buffer.vim  |   55 +++++++++++++++++++++++++++++++++++++++++---
- autoload/tlib/input.vim   |   20 ++++++++++-----
- autoload/tlib/rx.vim      |    6 +---
- autoload/tlib/scratch.vim |   31 ++++++++++++++----------
- autoload/tlib/string.vim  |   28 +++++++++++++++++++++-
- autoload/tlib/syntax.vim  |    6 ++--
- autoload/tlib/var.vim     |    6 ++--
- plugin/02tlib.vim         |   15 +++++------
+ autoload/tlib/Object.vim  |    5
+ autoload/tlib/World.vim   |   11
+ autoload/tlib/buffer.vim  |   55
+ autoload/tlib/input.vim   |   20
+ autoload/tlib/rx.vim      |    6
+ autoload/tlib/scratch.vim |   31
+ autoload/tlib/string.vim  |   28
+ autoload/tlib/syntax.vim  |    6
+ autoload/tlib/var.vim     |    6
+ plugin/02tlib.vim         |   15
  10 files changed, 134 insertions(+), 49 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.23)
@@ -393,18 +393,18 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Simplified tlib#url#Decode()
     - tlib#arg#Ex(): use fnameescape() if available
 
- autoload/tlib/World.vim  |   59 +++++++++++++++++++------------
- autoload/tlib/agent.vim  |   11 +++++-
- autoload/tlib/arg.vim    |   22 +++++++----
- autoload/tlib/cmd.vim    |   12 +++++-
- autoload/tlib/file.vim   |    4 +-
- autoload/tlib/input.vim  |   22 ++++++++----
- autoload/tlib/rx.vim     |   15 ++++----
- autoload/tlib/string.vim |   88 +++++++++++++++++++++++++++++++++-------------
- autoload/tlib/url.vim    |   46 ++++++++----------------
- doc/tlib.txt             |   76 ++++++++++++++++++++++++----------------
- plugin/02tlib.vim        |   22 +++++++++---
- test/tlib.vim            |   11 +++++-
+ autoload/tlib/World.vim  |   59
+ autoload/tlib/agent.vim  |   11
+ autoload/tlib/arg.vim    |   22
+ autoload/tlib/cmd.vim    |   12
+ autoload/tlib/file.vim   |    4
+ autoload/tlib/input.vim  |   22
+ autoload/tlib/rx.vim     |   15
+ autoload/tlib/string.vim |   88
+ autoload/tlib/url.vim    |   46
+ doc/tlib.txt             |   76
+ plugin/02tlib.vim        |   22
+ test/tlib.vim            |   11
  12 files changed, 245 insertions(+), 143 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.21)
@@ -417,13 +417,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - tlib#buffer#InsertText(): Respect tabs and (experimental) formatoptions+=or
     - tlib/syntax.vim: Syntax-related functions
 
- autoload/tlib/World.vim    |   31 ++++-
- autoload/tlib/buffer.vim   |   42 +++++-
- autoload/tlib/comments.vim |   57 ++++++++
- autoload/tlib/input.vim    |    9 +-
- autoload/tlib/syntax.vim   |   51 +++++++
- doc/tlib.txt               |  309 ++++++++++++++++++++++++--------------------
- plugin/02tlib.vim          |   10 +-
+ autoload/tlib/World.vim    |   31
+ autoload/tlib/buffer.vim   |   42
+ autoload/tlib/comments.vim |   57
+ autoload/tlib/input.vim    |    9
+ autoload/tlib/syntax.vim   |   51
+ doc/tlib.txt               |  309
+ plugin/02tlib.vim          |   10
  7 files changed, 353 insertions(+), 156 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.20)
@@ -438,12 +438,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - tlib#input#List(): The view can be "suspended" on initial display.
     - tlib#input#List(): Follow/trace cursor functionality
 
- autoload/tlib/World.vim  |   54 +++++--
- autoload/tlib/buffer.vim |    8 +-
- autoload/tlib/input.vim  |   33 ++--
- autoload/tlib/tag.vim    |   46 +++++-
- doc/tlib.txt             |  410 +++++++++++++++++++++++++---------------------
- plugin/02tlib.vim        |   33 ++++-
+ autoload/tlib/World.vim  |   54
+ autoload/tlib/buffer.vim |    8
+ autoload/tlib/input.vim  |   33
+ autoload/tlib/tag.vim    |   46
+ doc/tlib.txt             |  410
+ plugin/02tlib.vim        |   33
  6 files changed, 358 insertions(+), 226 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.19)
@@ -464,17 +464,17 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
         - tlib#input#List(): Don't check if chars are typed when displaying
         the list for the first time.
 
- autoload/tlib/World.vim   |   12 +-
- autoload/tlib/buffer.vim  |    9 +-
- autoload/tlib/cache.vim   |   18 ++-
- autoload/tlib/dir.vim     |   14 +-
- autoload/tlib/file.vim    |   26 ++-
- autoload/tlib/input.vim   |   34 +++-
- autoload/tlib/list.vim    |   26 +++-
- autoload/tlib/scratch.vim |    5 +-
- autoload/tlib/tag.vim     |   89 ++++++++++
- doc/tlib.txt              |  409 ++++++++++++++++++++++++++++-----------------
- plugin/02tlib.vim         |   23 ++-
+ autoload/tlib/World.vim   |   12
+ autoload/tlib/buffer.vim  |    9
+ autoload/tlib/cache.vim   |   18
+ autoload/tlib/dir.vim     |   14
+ autoload/tlib/file.vim    |   26
+ autoload/tlib/input.vim   |   34
+ autoload/tlib/list.vim    |   26
+ autoload/tlib/scratch.vim |    5
+ autoload/tlib/tag.vim     |   89
+ doc/tlib.txt              |  409
+ plugin/02tlib.vim         |   23
  11 files changed, 469 insertions(+), 196 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.18)
@@ -493,12 +493,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
         list.
         - World.vim: Minor changes to how filenames are handled.
 
- autoload/tlib/World.vim |  152 ++++++++++++++++++++++++++++++++++++++---------
- autoload/tlib/char.vim  |   43 ++++++++++----
- autoload/tlib/hook.vim  |    5 +-
- autoload/tlib/input.vim |   73 +++++++----------------
- autoload/tlib/time.vim  |   60 ++++++++++++++++++
- plugin/02tlib.vim       |   21 ++++++-
+ autoload/tlib/World.vim |  152
+ autoload/tlib/char.vim  |   43
+ autoload/tlib/hook.vim  |    5
+ autoload/tlib/input.vim |   73
+ autoload/tlib/time.vim  |   60
+ plugin/02tlib.vim       |   21
  6 files changed, 257 insertions(+), 97 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.17)
@@ -512,11 +512,11 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
         - TBrowseOutput
     - Some minor changes
 
- autoload/tlib/cmd.vim  |   14 +++++++-
- autoload/tlib/file.vim |    8 +++--
- autoload/tlib/rx.vim   |    9 ++++--
- doc/tlib.txt           |   75 +++++++++++++++++++++++++++++++++++++++++++++++-
- plugin/02tlib.vim      |   26 ++++++++++++++--
+ autoload/tlib/cmd.vim  |   14
+ autoload/tlib/file.vim |    8
+ autoload/tlib/rx.vim   |    9
+ doc/tlib.txt           |   75
+ plugin/02tlib.vim      |   26
  5 files changed, 120 insertions(+), 12 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.16)
@@ -526,13 +526,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.16: - tlib#string#Printf1()
 
- autoload/tlib/agent.vim       |    6 ++--
- autoload/tlib/arg.vim         |   30 ++++++++++++++++++++++++++-
- autoload/tlib/input.vim       |    6 ++--
- autoload/tlib/progressbar.vim |    6 ++--
- autoload/tlib/scratch.vim     |    6 +++-
- autoload/tlib/string.vim      |   43 +++++++++++++++++++++++++++++++++++++++-
- plugin/02tlib.vim             |   10 ++++++--
+ autoload/tlib/agent.vim       |    6
+ autoload/tlib/arg.vim         |   30
+ autoload/tlib/input.vim       |    6
+ autoload/tlib/progressbar.vim |    6
+ autoload/tlib/scratch.vim     |    6
+ autoload/tlib/string.vim      |   43
+ plugin/02tlib.vim             |   10
  7 files changed, 89 insertions(+), 18 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
@@ -546,13 +546,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
         - tlib#string#TrimLeft(), tlib#string#TrimRight(), tlib#string#Strip()
         - Progress bar
 
- autoload/tlib/World.vim       |    4 +-
- autoload/tlib/input.vim       |    5 +-
- autoload/tlib/progressbar.vim |   73 ++++++++++++++++++++++++++++++++++
- autoload/tlib/string.vim      |   20 +++++++++-
- autoload/tlib/type.vim        |   34 ++++++++++++++++
- doc/tlib.txt                  |   86 +++++++++++++++++++++++++++++++++++++++++
- plugin/02tlib.vim             |   11 ++++-
+ autoload/tlib/World.vim       |    4
+ autoload/tlib/input.vim       |    5
+ autoload/tlib/progressbar.vim |   73
+ autoload/tlib/string.vim      |   20
+ autoload/tlib/type.vim        |   34
+ doc/tlib.txt                  |   86
+ plugin/02tlib.vim             |   11
  7 files changed, 224 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
@@ -569,32 +569,32 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     FIXES:
         - tlib#input#List(): Wrong order with pre-defined filters.
 
- autoload/tlib.vim           |    6 +-
- autoload/tlib/Object.vim    |    6 +-
- autoload/tlib/Test.vim      |    6 +-
- autoload/tlib/TestChild.vim |    6 +-
- autoload/tlib/World.vim     |    6 +-
- autoload/tlib/agent.vim     |   25 ++-
- autoload/tlib/arg.vim       |   18 ++-
- autoload/tlib/buffer.vim    |   78 +++++++-
- autoload/tlib/cache.vim     |    6 +-
- autoload/tlib/char.vim      |    6 +-
- autoload/tlib/cmd.vim       |    6 +-
- autoload/tlib/dir.vim       |    6 +-
- autoload/tlib/eval.vim      |   55 ++++++
- autoload/tlib/file.vim      |    8 +-
- autoload/tlib/hook.vim      |    6 +-
- autoload/tlib/input.vim     |   17 ++-
- autoload/tlib/list.vim      |    6 +-
- autoload/tlib/rx.vim        |    6 +-
- autoload/tlib/scratch.vim   |    6 +-
- autoload/tlib/string.vim    |   10 +-
- autoload/tlib/tab.vim       |    6 +-
- autoload/tlib/url.vim       |    6 +-
- autoload/tlib/var.vim       |    6 +-
- autoload/tlib/win.vim       |   20 +-
- doc/tlib.txt                |  453 +++++++++++++++++++++++--------------------
- plugin/02tlib.vim           |   26 ++-
+ autoload/tlib.vim           |    6
+ autoload/tlib/Object.vim    |    6
+ autoload/tlib/Test.vim      |    6
+ autoload/tlib/TestChild.vim |    6
+ autoload/tlib/World.vim     |    6
+ autoload/tlib/agent.vim     |   25
+ autoload/tlib/arg.vim       |   18
+ autoload/tlib/buffer.vim    |   78
+ autoload/tlib/cache.vim     |    6
+ autoload/tlib/char.vim      |    6
+ autoload/tlib/cmd.vim       |    6
+ autoload/tlib/dir.vim       |    6
+ autoload/tlib/eval.vim      |   55
+ autoload/tlib/file.vim      |    8
+ autoload/tlib/hook.vim      |    6
+ autoload/tlib/input.vim     |   17
+ autoload/tlib/list.vim      |    6
+ autoload/tlib/rx.vim        |    6
+ autoload/tlib/scratch.vim   |    6
+ autoload/tlib/string.vim    |   10
+ autoload/tlib/tab.vim       |    6
+ autoload/tlib/url.vim       |    6
+ autoload/tlib/var.vim       |    6
+ autoload/tlib/win.vim       |   20
+ doc/tlib.txt                |  453
+ plugin/02tlib.vim           |   26
  26 files changed, 511 insertions(+), 295 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
@@ -612,15 +612,15 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
         - tlib#input#List(): Select the active item per mouse.
         - TLet: simplified
 
- autoload/tlib/World.vim   |   10 ++++++----
- autoload/tlib/agent.vim   |    8 ++++----
- autoload/tlib/buffer.vim  |   31 +++++++++++++++++++++++--------
- autoload/tlib/cache.vim   |   13 ++++++++-----
- autoload/tlib/file.vim    |    4 ++--
- autoload/tlib/input.vim   |   38 +++++++++++++++++++++++++-------------
- autoload/tlib/scratch.vim |    5 +++--
- autoload/tlib/var.vim     |   19 +++++++++++++++++--
- plugin/02tlib.vim         |   26 +++++++++++++++++++-------
+ autoload/tlib/World.vim   |   10
+ autoload/tlib/agent.vim   |    8
+ autoload/tlib/buffer.vim  |   31
+ autoload/tlib/cache.vim   |   13
+ autoload/tlib/file.vim    |    4
+ autoload/tlib/input.vim   |   38
+ autoload/tlib/scratch.vim |    5
+ autoload/tlib/var.vim     |   19
+ plugin/02tlib.vim         |   26
  9 files changed, 107 insertions(+), 47 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
@@ -645,32 +645,32 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
         explicitly given as argument. Avoid double (back)slashes.
         - TLet: simplified
 
- autoload/tlib.vim           |    6 ++--
- autoload/tlib/Object.vim    |   18 +++++++++--
- autoload/tlib/Test.vim      |    6 ++--
- autoload/tlib/TestChild.vim |    6 ++--
- autoload/tlib/World.vim     |   48 +++++++++++++++++++++++-------
- autoload/tlib/agent.vim     |   32 ++++++++++++++------
- autoload/tlib/arg.vim       |    6 ++--
- autoload/tlib/buffer.vim    |   12 ++++++--
- autoload/tlib/cache.vim     |   26 ++++++++++------
- autoload/tlib/char.vim      |    6 ++--
- autoload/tlib/cmd.vim       |   24 +++++++++++++--
- autoload/tlib/dir.vim       |   14 +++++++--
- autoload/tlib/file.vim      |    9 ++++--
- autoload/tlib/hook.vim      |    6 ++--
- autoload/tlib/input.vim     |   53 ++++++++++++++++++++++++++-------
- autoload/tlib/list.vim      |    6 ++--
- autoload/tlib/rx.vim        |    6 ++--
- autoload/tlib/scratch.vim   |    8 ++--
- autoload/tlib/string.vim    |    6 ++--
- autoload/tlib/tab.vim       |   55 ++++++++++++++++++++++++++++++++++
- autoload/tlib/url.vim       |   15 ++++++---
- autoload/tlib/var.vim       |    6 ++--
- autoload/tlib/win.vim       |   28 ++++++++++-------
- doc/tlib.txt                |   68 ++++++++++++++++++++++++++++++++++++++----
- plugin/02tlib.vim           |   39 +++++++++++++++++++------
- test/tlib.vim               |    6 ++--
+ autoload/tlib.vim           |    6
+ autoload/tlib/Object.vim    |   18
+ autoload/tlib/Test.vim      |    6
+ autoload/tlib/TestChild.vim |    6
+ autoload/tlib/World.vim     |   48
+ autoload/tlib/agent.vim     |   32
+ autoload/tlib/arg.vim       |    6
+ autoload/tlib/buffer.vim    |   12
+ autoload/tlib/cache.vim     |   26
+ autoload/tlib/char.vim      |    6
+ autoload/tlib/cmd.vim       |   24
+ autoload/tlib/dir.vim       |   14
+ autoload/tlib/file.vim      |    9
+ autoload/tlib/hook.vim      |    6
+ autoload/tlib/input.vim     |   53
+ autoload/tlib/list.vim      |    6
+ autoload/tlib/rx.vim        |    6
+ autoload/tlib/scratch.vim   |    8
+ autoload/tlib/string.vim    |    6
+ autoload/tlib/tab.vim       |   55
+ autoload/tlib/url.vim       |   15
+ autoload/tlib/var.vim       |    6
+ autoload/tlib/win.vim       |   28
+ doc/tlib.txt                |   68
+ plugin/02tlib.vim           |   39
+ test/tlib.vim               |    6
  26 files changed, 388 insertions(+), 127 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
@@ -707,30 +707,30 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
         number of windows hasn't changed)
         - tlib#arg#Ex(): Don't escape backslashes by default
 
- autoload/tlib/Object.vim    |   67 +++-
- autoload/tlib/Test.vim      |    8 +-
- autoload/tlib/TestChild.vim |    8 +-
- autoload/tlib/World.vim     |  279 ++++++++++--
- autoload/tlib/agent.vim     |  178 +++++++--
- autoload/tlib/arg.vim       |   24 +-
- autoload/tlib/buffer.vim    |  151 ++++++--
- autoload/tlib/cache.vim     |    9 +-
- autoload/tlib/char.vim      |   14 +-
- autoload/tlib/cmd.vim       |   20 +
- autoload/tlib/dir.vim       |   43 ++-
- autoload/tlib/file.vim      |   37 +-
- autoload/tlib/hook.vim      |   32 ++
- autoload/tlib/input.vim     |  368 ++++++++++++----
- autoload/tlib/list.vim      |   96 +++--
- autoload/tlib/rx.vim        |   34 ++
- autoload/tlib/scratch.vim   |   59 ++-
- autoload/tlib/string.vim    |    8 +-
- autoload/tlib/url.vim       |   13 +-
- autoload/tlib/var.vim       |   47 ++-
- autoload/tlib/win.vim       |  104 +++++
- doc/tlib.txt                | 1008 +++++++++++++++++++++++++++++++++++++++++++
- plugin/02tlib.vim           |  295 ++++++++-----
- test/tlib.vim               |   59 ++-
+ autoload/tlib/Object.vim    |   67
+ autoload/tlib/Test.vim      |    8
+ autoload/tlib/TestChild.vim |    8
+ autoload/tlib/World.vim     |  279
+ autoload/tlib/agent.vim     |  178
+ autoload/tlib/arg.vim       |   24
+ autoload/tlib/buffer.vim    |  151
+ autoload/tlib/cache.vim     |    9
+ autoload/tlib/char.vim      |   14
+ autoload/tlib/cmd.vim       |   20
+ autoload/tlib/dir.vim       |   43
+ autoload/tlib/file.vim      |   37
+ autoload/tlib/hook.vim      |   32
+ autoload/tlib/input.vim     |  368
+ autoload/tlib/list.vim      |   96
+ autoload/tlib/rx.vim        |   34
+ autoload/tlib/scratch.vim   |   59
+ autoload/tlib/string.vim    |    8
+ autoload/tlib/url.vim       |   13
+ autoload/tlib/var.vim       |   47
+ autoload/tlib/win.vim       |  104
+ doc/tlib.txt                | 1008
+ plugin/02tlib.vim           |  295
+ test/tlib.vim               |   59
  24 files changed, 2526 insertions(+), 435 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
@@ -747,13 +747,13 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     accessible from other scripts.
     - Configure the list window height via g:tlib_inputlist_pct (1..100%)
 
- autoload/tlib/World.vim   |   68 ++++++++++++---------------------------------
- autoload/tlib/agent.vim   |   31 ++++++++++++++------
- autoload/tlib/file.vim    |    8 +++--
- autoload/tlib/input.vim   |    9 +++--
- autoload/tlib/scratch.vim |   65 +++++++++++++++++++++++++++++++++++++++++++
- plugin/02tlib.vim         |   24 ++++++++++++++--
- test/tlib.vim             |   12 ++++----
+ autoload/tlib/World.vim   |   68
+ autoload/tlib/agent.vim   |   31
+ autoload/tlib/file.vim    |    8
+ autoload/tlib/input.vim   |    9
+ autoload/tlib/scratch.vim |   65
+ plugin/02tlib.vim         |   24
+ test/tlib.vim             |   12
  7 files changed, 141 insertions(+), 76 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
@@ -773,23 +773,23 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - tlib#input#EditList(): Now has cut, copy, paste functionality.
     - Added documentation and examples
 
- autoload/tlib.vim           | 1203 +------------------------------------------
- autoload/tlib/TestChild.vim |   23 +
- autoload/tlib/World.vim     |  174 ++++++-
- autoload/tlib/agent.vim     |  249 +++++++++-
- autoload/tlib/arg.vim       |   52 ++
- autoload/tlib/buffer.vim    |   53 ++
- autoload/tlib/cache.vim     |   50 ++
- autoload/tlib/char.vim      |   39 ++
- autoload/tlib/dir.vim       |   36 ++
- autoload/tlib/file.vim      |   95 ++++
- autoload/tlib/input.vim     |  392 ++++++++++++++
- autoload/tlib/list.vim      |  112 ++++
- autoload/tlib/string.vim    |   20 +
- autoload/tlib/url.vim       |   59 +++
- autoload/tlib/var.vim       |   67 +++
- plugin/02tlib.vim           |  173 ++++++-
- test/tlib.vim               |  118 +++--
+ autoload/tlib.vim           | 1203
+ autoload/tlib/TestChild.vim |   23
+ autoload/tlib/World.vim     |  174
+ autoload/tlib/agent.vim     |  249
+ autoload/tlib/arg.vim       |   52
+ autoload/tlib/buffer.vim    |   53
+ autoload/tlib/cache.vim     |   50
+ autoload/tlib/char.vim      |   39
+ autoload/tlib/dir.vim       |   36
+ autoload/tlib/file.vim      |   95
+ autoload/tlib/input.vim     |  392
+ autoload/tlib/list.vim      |  112
+ autoload/tlib/string.vim    |   20
+ autoload/tlib/url.vim       |   59
+ autoload/tlib/var.vim       |   67
+ plugin/02tlib.vim           |  173
+ test/tlib.vim               |  118
  17 files changed, 1646 insertions(+), 1269 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
@@ -802,9 +802,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - FIX: Return empty cache name for buffers that have no files attached to it
     - Some re-arranging
 
- autoload/tlib.vim       |   53 ++++++++++++++++++++++++++++----------
- autoload/tlib/agent.vim |   64 +++++++++++++++++++++++++++++++++++++++++++++++
- plugin/02tlib.vim       |    6 ++--
+ autoload/tlib.vim       |   53
+ autoload/tlib/agent.vim |   64
+ plugin/02tlib.vim       |    6
  3 files changed, 106 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.7)
@@ -820,9 +820,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - tlib#InputList(): FIX <c-bs> pop OR-patterns properly
     - tlib#InputList(): display_format == filename: don't add '/' to directory names (avoid filesystem access)
 
- autoload/tlib.vim       |  133 +++++++++++++++++++++++++++++++++++-----------
- autoload/tlib/World.vim |   28 +++++++---
- plugin/02tlib.vim       |   10 ++--
+ autoload/tlib.vim       |  133
+ autoload/tlib/World.vim |   28
+ plugin/02tlib.vim       |   10
  3 files changed, 127 insertions(+), 44 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
@@ -841,12 +841,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - tlib#Args(), tlib#GetArg()
     - FIX: tlib#InputList(): Display problem with first item
 
- autoload/tlib.vim        |  131 +++++++++++++++++++++++++++++++++++++++++++---
- autoload/tlib/Object.vim |   45 ++++++++++++++--
- autoload/tlib/Test.vim   |    8 ++-
- autoload/tlib/World.vim  |   16 +++++-
- plugin/02tlib.vim        |    9 ++--
- test/tlib.vim            |   65 +++++++++++++++++++++--
+ autoload/tlib.vim        |  131
+ autoload/tlib/Object.vim |   45
+ autoload/tlib/Test.vim   |    8
+ autoload/tlib/World.vim  |   16
+ plugin/02tlib.vim        |    9
+ test/tlib.vim            |   65
  6 files changed, 249 insertions(+), 25 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
@@ -859,9 +859,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - tlib#InputList(): FIX: Selecting items in filtered view
     - tlib#InputList(): <c-bs>: Remove last AND pattern from filter
 
- autoload/tlib.vim       |  129 ++++++++++++++++++++++++++++++++++------------
- autoload/tlib/World.vim |   13 ++++-
- plugin/02tlib.vim       |   50 +-----------------
+ autoload/tlib.vim       |  129
+ autoload/tlib/World.vim |   13
+ plugin/02tlib.vim       |   50
  3 files changed, 109 insertions(+), 83 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
@@ -884,12 +884,12 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - tlib#DirName(dir)
     - tlib#DecodeURL(url), tlib#EncodeChar(char), tlib#EncodeURL(url)
 
- autoload/tlib.vim        |  501 ++++++++++++++++++++++++----------------------
- autoload/tlib/Object.vim |   55 +++++
- autoload/tlib/Test.vim   |   19 ++
- autoload/tlib/World.vim  |  158 +++++++++++++++
- plugin/02tlib.vim        |   53 +++++-
- test/tlib.vim            |   31 +++-
+ autoload/tlib.vim        |  501
+ autoload/tlib/Object.vim |   55
+ autoload/tlib/Test.vim   |   19
+ autoload/tlib/World.vim  |  158
+ plugin/02tlib.vim        |   53
+ test/tlib.vim            |   31
  6 files changed, 566 insertions(+), 251 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
@@ -902,9 +902,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - Show feedback in statusline instead of the echo area
     - tlib#GetVar(), tlib#GetValue()
 
- autoload/tlib.vim |   85 ++++++++++++++++++++++++++++++++--------------------
- plugin/02tlib.vim |   36 ++++++++++++++++++++--
- test/tlib.vim     |   14 +++++++-
+ autoload/tlib.vim |   85
+ plugin/02tlib.vim |   36
+ test/tlib.vim     |   14
  3 files changed, 97 insertions(+), 38 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
@@ -919,9 +919,9 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     - tlib#InputList(): properly handle duplicate items; it type contains
     'i', the list index + 1 is returned, not the element
 
- autoload/tlib.vim |  759 +++++++++++++++++++++++++++++++++++++++--------------
- plugin/02tlib.vim |   21 +--
- test/tlib.vim     |   34 ++-
+ autoload/tlib.vim |  759
+ plugin/02tlib.vim |   21
+ test/tlib.vim     |   34
  3 files changed, 585 insertions(+), 229 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
@@ -931,8 +931,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README            |   72 +++++++
- autoload/tlib.vim |  547 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- plugin/02tlib.vim |   31 +++
- test/tlib.vim     |   41 ++++
+ README            |   72
+ autoload/tlib.vim |  547
+ plugin/02tlib.vim |   31
+ test/tlib.vim     |   41
  4 files changed, 691 insertions(+), 0 deletions(-)

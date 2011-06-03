@@ -7,8 +7,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * Bugfix: $INDEXER_PROJECT_ROOT wasn't work in .vimprojects file. Thanks to Alexander Pazdnikov for bugreport.
 
- doc/indexer.txt    |  135 +++++++++++++++++++++++---
- plugin/indexer.vim |  271 +++++++++++++++++++++++++++++++++++++++++++++-------
+ doc/indexer.txt    |  135
+ plugin/indexer.vim |  271
  2 files changed, 357 insertions(+), 49 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.12)
@@ -22,7 +22,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * error if no ctags is available in the PATH,
     * warning when ctags returns error.
 
- plugin/indexer.vim |  290 ++++++++++++++++++++++++++++++++++++++++------------
+ plugin/indexer.vim |  290
  1 files changed, 226 insertions(+), 64 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.11)
@@ -35,7 +35,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Bugfix: if "noswapfile" option is set, then tags wasn't generated. Thanks to Thiago Bellini for help and persistence =)
     * Bugfix: :IndexerFiles command didn't work.
 
- plugin/indexer.vim |   20 ++++++++++++++------
+ plugin/indexer.vim |   20
  1 files changed, 14 insertions(+), 6 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
@@ -48,8 +48,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Bugfixes
     * When no servername is present, tags generate in Vim thread, not in background. (because i don't know how to execute remote command in Vim without servername. If anyone know, please contact me)
 
- doc/indexer.txt    |   15 +++++++++
- plugin/indexer.vim |   90 +++++++++++++++++++++++++++++++++++----------------
+ doc/indexer.txt    |   15
+ plugin/indexer.vim |   90
  2 files changed, 77 insertions(+), 28 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
@@ -64,8 +64,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * By default, on Windows tags generates always for whole project, because of bugs in all Windows versions of Sed i have. Actually, now this isn't problem, because of tags generates in background.
     * Tags file is sorted now. In Indexer 2.x it was unsorted because of bugs in Sed, and to make tags unsorted was workaround. As i already said, in Linux Sed works fine, and on Windows Sed doesn't uses by default, so, tags file can be sorted.
 
- doc/indexer.txt    |  104 +++-
- plugin/indexer.vim | 1589 +++++++++++++++++++++++++++++++++++++---------------
+ doc/indexer.txt    |  104
+ plugin/indexer.vim | 1589
  2 files changed, 1200 insertions(+), 493 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.01)
@@ -78,7 +78,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     The only thing changed is that maximum command length on Windows systems decreased from 8186 to 8000, because of on some systems 8186 is too large, i don't know, why. I hope 8000 will work at all Windows systems (XP or later).
     Thanks to Dan Price again.
 
- plugin/indexer.vim |    6 +++---
+ plugin/indexer.vim |    6
  1 files changed, 3 insertions(+), 3 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
@@ -95,8 +95,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * when using append at filesave, old tags removing from tags file by SED. (this is needed to exclude garbage in tags file)
     Thanks to Dan Price for ideas and inspiration :)
 
- doc/indexer.txt    |  471 +++++++++++++++++++++++++++++-----------------------
- plugin/indexer.vim |  424 ++++++++++++++++++++++++++++++++--------------
+ doc/indexer.txt    |  471
+ plugin/indexer.vim |  424
  2 files changed, 555 insertions(+), 340 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.8)
@@ -106,8 +106,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.8: * Fixed some bugs (thanks to Julian Kooij)
 
- doc/indexer.txt    |  438 +++++++++++++++++++++++++---------------------------
- plugin/indexer.vim |   19 ++-
+ doc/indexer.txt    |  438
+ plugin/indexer.vim |   19
  2 files changed, 227 insertions(+), 230 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.7)
@@ -120,7 +120,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Fixed bug that caused not all comments in .vimprojects was parsed correctly (thanks to Alexander Q).
     * Fixed some little bugs.
 
- plugin/indexer.vim |    9 +++++----
+ plugin/indexer.vim |    9
  1 files changed, 5 insertions(+), 4 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
@@ -132,8 +132,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     * For every projects creating unique tags file to avoid conflicts (thanks to Torkve)
 
- doc/indexer.txt    |    8 +++++
- plugin/indexer.vim |   90 ++++++++++++++++++++++++++++++---------------------
+ doc/indexer.txt    |    8
+ plugin/indexer.vim |   90
  2 files changed, 61 insertions(+), 37 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
@@ -146,8 +146,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Fixed bug that caused paths with spaces wasn't parsed correctly.
     * Added PROJECTS_PARENT .indexer_files feature (possibility to define directory with many projects inside).
 
- doc/indexer.txt    |  430 ++++++++++++++++++++++++++-------------------------
- plugin/indexer.vim |  315 ++++++++++++++++++++++++--------------
+ doc/indexer.txt    |  430
+ plugin/indexer.vim |  315
  2 files changed, 421 insertions(+), 324 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
@@ -159,7 +159,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     
     Fixed bug that caused paths with "~" wasn't parsed correctly (thanks Makoto Nokata)
 
- plugin/indexer.vim |   57 ++++++++++++++++-----------------------------------
+ plugin/indexer.vim |   57
  1 files changed, 18 insertions(+), 39 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
@@ -172,8 +172,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     * Fixed some bugs
     * Default name of project settings directory has been changed from ".vim" to ".vimprj" to avoid conflicts with standard ~/.vim directory. If you are using this feature and your project settings dir is ".vim", please rename it.
 
- doc/indexer.txt    |   33 +++++++++++++++++----------------
- plugin/indexer.vim |   20 ++++++++++----------
+ doc/indexer.txt    |   33
+ plugin/indexer.vim |   20
  2 files changed, 27 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
@@ -183,7 +183,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2: Initial upload
 
- README             |   88 ++++++++
- doc/indexer.txt    |  210 +++++++++++++++++++
- plugin/indexer.vim |  574 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README             |   88
+ doc/indexer.txt    |  210
+ plugin/indexer.vim |  574
  3 files changed, 872 insertions(+), 0 deletions(-)
