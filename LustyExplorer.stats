@@ -1,4 +1,19 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.1)
+Author:     Stephen Bach <lusty@sjbach.com>
+AuthorDate: Fri Apr 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.1
+    
+    - Add Ctrl-B and Ctrl-F mappings to move to the next/previous column. (Thanks to lilydjwg)
+    - Allow exploring starting at arbitrary paths - :LustyFilesystemExplorer now accepts a path argument. (Thanks to Donald Curtis)
+    - Prevent unwanted highlighting in the display buffer. (Thanks to Jan Zwiener)
+    - Fix opening files with '%' in their names. (Thanks to lilydjwg)
+
+ plugin/lusty-explorer.vim |   81 +++++++++++++++++++++++++++++----------------
+ 1 files changed, 52 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
 Author:     Stephen Bach <lusty@sjbach.com>
 AuthorDate: Fri Dec 17 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

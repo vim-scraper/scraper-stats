@@ -1,0 +1,76 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0)
+Author:     Yukihiro Nakadaira <yukihiro.nakadaira@gmail.com>
+AuthorDate: Tue Mar 22 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0: Initial upload
+
+ Makefile                            |   14 +
+ README                              |    5 +
+ autoload/iconv.vim                  |  121 +
+ autoload/iconv/bytes.vim            |   84 +
+ autoload/iconv/codecs/_8859_1.vim   |  533 +
+ autoload/iconv/codecs/_8859_10.vim  |  533 +
+ autoload/iconv/codecs/_8859_11.vim  |  517 +
+ autoload/iconv/codecs/_8859_13.vim  |  533 +
+ autoload/iconv/codecs/_8859_14.vim  |  533 +
+ autoload/iconv/codecs/_8859_15.vim  |  533 +
+ autoload/iconv/codecs/_8859_16.vim  |  533 +
+ autoload/iconv/codecs/_8859_2.vim   |  533 +
+ autoload/iconv/codecs/_8859_3.vim   |  519 +
+ autoload/iconv/codecs/_8859_4.vim   |  533 +
+ autoload/iconv/codecs/_8859_5.vim   |  533 +
+ autoload/iconv/codecs/_8859_6.vim   |  443 +
+ autoload/iconv/codecs/_8859_7.vim   |  527 +
+ autoload/iconv/codecs/_8859_8.vim   |  461 +
+ autoload/iconv/codecs/_8859_9.vim   |  533 +
+ autoload/iconv/codecs/_cp037.vim    |  533 +
+ autoload/iconv/codecs/_cp1026.vim   |  533 +
+ autoload/iconv/codecs/_cp1250.vim   |  523 +
+ autoload/iconv/codecs/_cp1251.vim   |  531 +
+ autoload/iconv/codecs/_cp1252.vim   |  523 +
+ autoload/iconv/codecs/_cp1253.vim   |  499 +
+ autoload/iconv/codecs/_cp1254.vim   |  519 +
+ autoload/iconv/codecs/_cp1255.vim   |  487 +
+ autoload/iconv/codecs/_cp1256.vim   |  533 +
+ autoload/iconv/codecs/_cp1257.vim   |  509 +
+ autoload/iconv/codecs/_cp1258.vim   |  515 +
+ autoload/iconv/codecs/_cp437.vim    |  533 +
+ autoload/iconv/codecs/_cp500.vim    |  533 +
+ autoload/iconv/codecs/_cp737.vim    |  533 +
+ autoload/iconv/codecs/_cp775.vim    |  533 +
+ autoload/iconv/codecs/_cp850.vim    |  533 +
+ autoload/iconv/codecs/_cp852.vim    |  533 +
+ autoload/iconv/codecs/_cp855.vim    |  533 +
+ autoload/iconv/codecs/_cp857.vim    |  527 +
+ autoload/iconv/codecs/_cp860.vim    |  533 +
+ autoload/iconv/codecs/_cp861.vim    |  533 +
+ autoload/iconv/codecs/_cp862.vim    |  533 +
+ autoload/iconv/codecs/_cp863.vim    |  533 +
+ autoload/iconv/codecs/_cp864.vim    |  521 +
+ autoload/iconv/codecs/_cp865.vim    |  533 +
+ autoload/iconv/codecs/_cp866.vim    |  533 +
+ autoload/iconv/codecs/_cp869.vim    |  515 +
+ autoload/iconv/codecs/_cp874.vim    |  471 +
+ autoload/iconv/codecs/_cp875.vim    |  527 +
+ autoload/iconv/codecs/_cp932.vim    |15453 ++++++++++++
+ autoload/iconv/codecs/_cp936.vim    |43861 +++++++++++++++++++++++++++++++++++
+ autoload/iconv/codecs/_cp949.vim    |34373 +++++++++++++++++++++++++++
+ autoload/iconv/codecs/_cp950.vim    |27273 ++++++++++++++++++++++
+ autoload/iconv/codecs/_euc_jp.vim   |26293 +++++++++++++++++++++
+ autoload/iconv/codecs/ascii.vim     |   30 +
+ autoload/iconv/codecs/base.vim      |   67 +
+ autoload/iconv/codecs/error.vim     |   66 +
+ autoload/iconv/codecs/tablebase.vim |   45 +
+ autoload/iconv/codecs/utf16.vim     |   76 +
+ autoload/iconv/codecs/utf16be.vim   |   52 +
+ autoload/iconv/codecs/utf16le.vim   |   52 +
+ autoload/iconv/codecs/utf32.vim     |   61 +
+ autoload/iconv/codecs/utf32be.vim   |   36 +
+ autoload/iconv/codecs/utf32le.vim   |   40 +
+ autoload/iconv/codecs/utf8.vim      |  152 +
+ test/all.vim                        |   16 +
+ test/iconv.vim                      |   83 +
+ test/test.vim                       |   41 +
+ tools/maketable.vim                 |  257 +
+ 68 files changed, 171543 insertions(+), 0 deletions(-)

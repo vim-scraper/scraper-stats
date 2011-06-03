@@ -1,0 +1,54 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2)
+Author:     Jan Christoph Ebersbach <jceb@e-jc.de>
+AuthorDate: Tue May 10 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2
+    
+    - fix issue when editing entries without a type by setting the default
+      type to error
+    - make commands overwrite commands with the same name
+    - clear autocommand groups at definition time
+    - change note type from error to info
+
+ README            |   14 ++++++++------
+ doc/editqf.txt    |   17 ++++++++++++-----
+ plugin/editqf.vim |   36 +++++++++++++++++++++++-------------
+ 3 files changed, 43 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Jan Christoph Ebersbach <jceb@e-jc.de>
+AuthorDate: Tue Apr 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1
+    
+    - add support for hier script for highlighting quickfix and location entries
+    - add variable g:editqf_jump_to_error to make jumping to the last selected
+      error optional
+    - add variable g:editqf_store_absolute_filename to let the user decide
+      whether filenames are stored with an absolute or relative path
+    - prefix global variables with the plugin's name
+    - move all functionality from Edit to Read function to allow editing of
+      qf:list and loc:list directly through vim commands (:e, :sp ...)
+    - add support for patterns matching
+    - add description of quickfix/location fields to the editing buffer
+    - allow deleting all entries from quickfix/location list
+    - change command and <Plug> names to start with prefix QF or Loc
+    - general refactoring and cleanup
+
+ README            |   65 ++++++----
+ doc/editqf.txt    |  127 ++++++++++++++++++
+ plugin/editqf.vim |  384 +++++++++++++++++++++++++++++-----------------------
+ 3 files changed, 382 insertions(+), 194 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Jan Christoph Ebersbach <jceb@e-jc.de>
+AuthorDate: Thu Apr 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0: Initial upload
+
+ README            |   54 +++++++++++
+ plugin/editqf.vim |  264 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 318 insertions(+), 0 deletions(-)

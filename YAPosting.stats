@@ -1,4 +1,25 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2)
+Author:     Bernard PRATZ <bernard@pratz.net>
+AuthorDate: Mon Apr 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.2
+    
+    * Added support for utf-8 encoded characters for the justify format feature
+    * Added '<Lead>n' shortcut to add "cut here" marks :
+    -----8<-----8<-----
+    ----->8----->8-----
+    * Verified support for vim >7 (verified with 7.1) but shall work with older vims.
+    TODO
+    * Need to be improved to be more vim script compliant (better use of <Lead>, of function declaration, use of range etc...)
+    * Need to have better support of typographic rules (don't add spaces around quotes for example when justifying the text)
+    * Need to improve OE quote fixing rules...
+
+ README               |   11 +++++++--
+ plugin/yaposting.vim |   58 +++++++++++++++++++++++++++++++++++++++++--------
+ 2 files changed, 56 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
 Author:     Bernard PRATZ <bernard@pratz.net>
 AuthorDate: Wed Apr 7 00:00:00 2004 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

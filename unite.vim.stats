@@ -1,4 +1,222 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0)
+Author:     Shougo Matsushita <Shougo.Matsu@gmail.com>
+AuthorDate: Sun May 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.0
+    
+    - Add '..' directory in unite source.
+    - Add history in kind command.
+    - Added --no-start-insert option.
+    - Added -immediately option.
+    - Added -vertical, -horizontal, -direction options.
+    - Added <Plug>(unite_delete_backward_path) keymapping.
+    - Added <Plug>(unite_restart) keymapping.
+    - Added README.
+    - Added col and completion option.
+    - Added command source.
+    - Added completion kind.
+    - Added default matcher.
+    - Added edit action in command kind.
+    - Added filter help.
+    - Added from field in action.
+    - Added g:unite_cursor_line_highlight and g:unite_abbr_highlight options.
+    - Added g:unite_source_file_rec_ignore_pattern option.
+    - Added ignorecase and smartcase buffer_name options.
+    - Added is_async context flag.
+    - Added matcher_default, sorter_default, converter_default.
+    - Added no-current option in window and tab source.
+    - Added output source.
+    - Added post_filter hook.
+    - Added sorter_word.
+    - Added unite#set_buffer_name_option() help.
+    - Added unite#version().
+    - Added unite-source-attribute-source__ description.
+    - Caching file_rec source.
+    - Changed :UniteWithInputDirectory behavior.
+    - Changed available_xxx API names to get_xxx.
+    - Changed file_rec message format.
+    - Changed input_gather_candidates() to change_candidates().
+    - Changed on_close timing.
+    - Changed unite#loaded_source_names_with_args().
+    - Changed volatile source.
+    - Changed yank action.
+    - Chomp last /.
+    - Deleted :NeoComplCacheCachingBuffer.
+    - Deleted highlight off.
+    - Deleted unused tag.
+    - Don't save directory in file_mru.
+    - Fixed :NeoComplCacheCachingBuffer error.
+    - Fixed :UniteResume bug.
+    - Fixed auto preview bug.
+    - Fixed buffer source.
+    - Fixed choose action.
+    - Fixed choose_action documentation.
+    - Fixed completion kind.
+    - Fixed context bug.
+    - Fixed default action bug.
+    - Fixed escape jump_list.
+    - Fixed file_mru error.
+    - Fixed file_rec index.
+    - Fixed file_rec path problem.
+    - Fixed filtering bug.
+    - Fixed fnamemodify().
+    - Fixed get action table bug.
+    - Fixed help.
+    - Fixed highlight settings.
+    - Fixed highlight.
+    - Fixed hlsearch bug.
+    - Fixed is_insert error.
+    - Fixed is_redraw bug.
+    - Fixed jump_list escape.
+    - Fixed kind completion bug.
+    - Fixed narrowing action.
+    - Fixed narrowing bugs.
+    - Fixed priority sort bug.
+    - Fixed quick match bug.
+    - Fixed quick match error.
+    - Fixed redraw buffer source bug.
+    - Fixed redraw candidates bug.
+    - Fixed set search pattern.
+    - Fixed sidescrolloff problem.
+    - Fixed source file path problem.
+    - Fixed source register max width.
+    - Fixed substitute input.
+    - Fixed unite buffer name.
+    - Fixed unite source.
+    - Fixed unite#custom_filters() bug.
+    - Fixed unite#custom_filters() error.
+    - Fixed unite#get_default_action().
+    - Fixed unite-command.
+    - Fixed unite-register freeze bug.
+    - Fixed version number.
+    - Ignore invalid action.
+    - Implemented -auto-preview option.
+    - Implemented asynchronous get candidates.
+    - Implemented auto mkdir().
+    - Implemented buffer name filters.
+    - Implemented dummy candidates.
+    - Implemented filters.
+    - Implemented input_gather_candidates().
+    - Implemented mapping source.
+    - Implemented mkdir action.
+    - Implemented position restore.
+    - Implemented preview window check.
+    - Implemented sorter and matcher.
+    - Implemented source highlight.
+    - Implemented unite action source.
+    - Implemented unite#clear_message().
+    - Implemented unite#print_message().
+    - Implemented vimfiler and tabvimfiler actions.
+    - Improved args.
+    - Improved auto preview behavior.
+    - Improved auto preview.
+    - Improved buffer abbr.
+    - Improved command action.
+    - Improved command narrow action.
+    - Improved command source.
+    - Improved completion kind.
+    - Improved context.
+    - Improved default substitute pattern.
+    - Improved delete buffer action.
+    - Improved directory_mru source.
+    - Improved documentation.
+    - Improved file source.
+    - Improved file_mru source.
+    - Improved file_rec path.
+    - Improved file_rec source.
+    - Improved highlight off.
+    - Improved initialize sources.
+    - Improved initialize.
+    - Improved insert leave.
+    - Improved jump_list.
+    - Improved loop cursor down/up.
+    - Improved narrowing behavior.
+    - Improved normal mode redraw.
+    - Improved quick match message.
+    - Improved redraw.
+    - Improved rotate sources.
+    - Improved sort.
+    - Improved source arguments description.
+    - Improved source file dummy candidates.
+    - Improved source file.
+    - Improved syntax.
+    - Improved traverse message in file_rec source.
+    - Improved truncate.
+    - Improved unite action.
+    - Improved unite#print_error() and unite#print_message().
+    - Improved unite-command.
+    - Improved unite-output.
+    - Improved unite-register.
+    - Ommitable candidates source name.
+    - Optimized initialization.
+    - Refactored buffer name options.
+    - Renamed unite#custom_filter() to unite#custom_filters().
+    - Set cpoptions.
+    - Supported neocomplcache manual completion.
+    - Supported yanktmp in register source.
+    - Use strdisplaywidth().
+    - gather_candidates attribute is optional.
+
+ README.orig                                  |   83 ++
+ autoload/unite.vim                           | 1196 +++++++++++++++++---------
+ autoload/unite/filters/converter_default.vim |   63 ++
+ autoload/unite/filters/converter_nothing.vim |   47 +
+ autoload/unite/filters/default.vim           |   46 +
+ autoload/unite/filters/matcher_default.vim   |   63 ++
+ autoload/unite/filters/matcher_glob.vim      |   75 ++
+ autoload/unite/filters/sorter_default.vim    |   63 ++
+ autoload/unite/filters/sorter_nothing.vim    |   47 +
+ autoload/unite/filters/sorter_word.vim       |   46 +
+ autoload/unite/kinds/buffer.vim              |   46 +-
+ autoload/unite/kinds/cdable.vim              |   39 +-
+ autoload/unite/kinds/command.vim             |   24 +-
+ autoload/unite/kinds/common.vim              |   29 +-
+ autoload/unite/kinds/completion.vim          |   84 ++
+ autoload/unite/kinds/directory.vim           |    6 +
+ autoload/unite/kinds/file.vim                |   51 +-
+ autoload/unite/kinds/jump_list.vim           |   31 +-
+ autoload/unite/kinds/openable.vim            |    5 +
+ autoload/unite/kinds/tab.vim                 |    6 +
+ autoload/unite/kinds/window.vim              |    8 +-
+ autoload/unite/kinds/word.vim                |    8 +-
+ autoload/unite/mappings.vim                  |  491 ++++++++----
+ autoload/unite/sources/bookmark.vim          |    6 +-
+ autoload/unite/sources/buffer.vim            |   62 +-
+ autoload/unite/sources/command.vim           |  133 +++
+ autoload/unite/sources/directory_mru.vim     |   30 +-
+ autoload/unite/sources/file.vim              |   48 +-
+ autoload/unite/sources/file_mru.vim          |   52 +-
+ autoload/unite/sources/file_rec.vim          |  130 +++-
+ autoload/unite/sources/mapping.vim           |   73 ++
+ autoload/unite/sources/output.vim            |   62 ++
+ autoload/unite/sources/register.vim          |   40 +-
+ autoload/unite/sources/source.vim            |   21 +-
+ autoload/unite/sources/tab.vim               |   15 +-
+ autoload/unite/sources/window.vim            |   23 +-
+ autoload/unite/util.vim                      |  310 ++------
+ autoload/unite/vital.vim                     |   66 ++
+ autoload/vital.vim                           |   12 +
+ autoload/vital/_4181e8.vim                   |  107 +++
+ autoload/vital/_4181e8/data/list.vim         |   71 ++
+ autoload/vital/_4181e8/data/ordered_set.vim  |   75 ++
+ autoload/vital/_4181e8/prelude.vim           |  223 +++++
+ autoload/vital/_4181e8/system/filepath.vim   |   81 ++
+ autoload/vital/unite.vital                   |    1 +
+ doc/unite.jax                                |  490 +++++++++--
+ doc/unite.txt                                |  708 ++++++++++++++--
+ plugin/unite.vim                             |   20 +-
+ plugin/unite/bookmark.vim                    |    6 +
+ plugin/unite/buffer.vim                      |    6 +
+ plugin/unite/directory_mru.vim               |    6 +
+ plugin/unite/file_mru.vim                    |    6 +
+ plugin/unite/tab.vim                         |    6 +
+ plugin/unite/window.vim                      |    8 +-
+ syntax/unite.vim                             |   40 +-
+ test/00-unite-source.vim                     |    2 +-
+ 56 files changed, 4393 insertions(+), 1103 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
 Author:     Shougo Matsushita <Shougo.Matsu@gmail.com>
 AuthorDate: Sun Jan 9 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

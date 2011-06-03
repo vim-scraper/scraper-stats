@@ -1,0 +1,22 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1)
+Author:     Paul McGinnis <paulmcg@aol.com>
+AuthorDate: Tue May 31 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1
+    
+    * Fixed code to allow ' characters in variable names. This'is'crazy is a legitimate JOVIAL variable name!
+    * Added support for floating point data types.
+    * Added support for binary "bead" data types.
+    * Added standard TODO, FIXME, and XXX tags in comments, as in other syntaxes.
+    * Changed code to allow for generic directives instead of specific values such as !COMPOOL.
+    * Added optional rounding parameters R T and Z to integer and floating types.
+    * Split machine specific parameters into constants and functions. For example, BITSINBYTE is a
+    constant, but BYTEPOS() is a function.
+
+ README              |   14 ++++++
+ README.orig         |   43 ++++++++++++++++++
+ ftdetect/jovial.vim |    1 +
+ sample.j73          |   20 ++++++++
+ syntax/jovial.vim   |  121 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 5 files changed, 199 insertions(+), 0 deletions(-)

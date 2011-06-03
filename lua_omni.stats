@@ -1,4 +1,158 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.12)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.165)
+Author:     Radek Kowalski <rk@bixbite.pl>
+AuthorDate: Sun May 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.165
+    
+    + variables defined in for loops should complete now
+    + changed find_assigments function
+    + added the lapg.lua script for auto generating Lua completion list names
+      from documentation (html or text files)
+    + changed licence to MIT
+
+ LICENCE               |   10 +++-
+ README.orig           |   11 +++--
+ TODO                  |    3 +-
+ doc/lua_omni.txt      |    1 +
+ ftplugin/lua_omni.lua |   42 +++++++++++-----
+ ftplugin/lua_omni.vim |   20 ++++----
+ lapg.lua              |  131 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 7 files changed, 189 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.163)
+Author:     Radek Kowalski <rk@bixbite.pl>
+AuthorDate: Wed Apr 27 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.163
+    
+    + new variable completion now can see variables names in function
+      definitions too
+
+ README.orig           |    9 ++++-----
+ ftplugin/lua_omni.lua |   21 ++++++++++++++++-----
+ ftplugin/lua_omni.vim |    4 ++--
+ 3 files changed, 22 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.162)
+Author:     Radek Kowalski <rk@bixbite.pl>
+AuthorDate: Tue Apr 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.162
+    
+    + fixed bug in print_function_list when a buffer doesn&#039t have any
+      functions
+    + added better variable assignments completion
+
+ LICENCE               |   11 ++++++
+ README.lua_omni       |   47 -------------------------
+ README.orig           |   47 +++++++++++++++++++++++++
+ TODO                  |    3 ++
+ ftplugin/lua_omni.lua |   91 ++++++++++++++++++++++++++++++++++--------------
+ ftplugin/lua_omni.vim |    2 +-
+ 6 files changed, 126 insertions(+), 75 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.16)
+Author:     Radek Kowalski <rk@bixbite.pl>
+AuthorDate: Tue Apr 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.16
+    
+    + user can specify files with Lua completions using shell LUA_OMNI and Vim
+      b:lua_omni, g:lua_omni variables
+      (useful when _G context can not have everything loaded)
+
+ README                |   54 ++++++++++++++++++++++++++++++++++++++++--
+ README.lua_omni       |   35 +++++++++++++++------------
+ doc/lua_omni.txt      |   62 ++++++++++++++++++++++++++++++++++--------------
+ ftplugin/lua_omni.lua |   37 ++++++++++++++++++++++++++---
+ ftplugin/lua_omni.vim |    4 +-
+ 5 files changed, 149 insertions(+), 43 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.151)
+Author:     Radek Kowalski <rk@bixbite.pl>
+AuthorDate: Wed Apr 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.151
+    
+    + fixed small (thought irritating) bug in completion_findstart function
+
+ README.lua_omni       |    8 +-
+ ftplugin/lua_omni.lua |  481 +++++++++++++++++++++++++------------------------
+ ftplugin/lua_omni.vim |    2 +-
+ 3 files changed, 248 insertions(+), 243 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.15)
+Author:     Radek Kowalski <rk@bixbite.pl>
+AuthorDate: Tue Apr 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.15
+    
+    + More convenient completion where single words or asterisk less shortcuts
+      will work too.
+
+ README                |   13 +++++++++++++
+ README.lua_omni       |    9 +++++----
+ doc/lua_omni.txt      |   12 ++++++++++++
+ ftplugin/lua_omni.lua |   36 +++++++++++++++++++++++++++++++-----
+ ftplugin/lua_omni.vim |    4 ++--
+ 5 files changed, 63 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.141)
+Author:     Radek Kowalski <rk@bixbite.pl>
+AuthorDate: Tue Mar 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.141
+    
+    + Minor fix in completing function where was a chance to concat table with
+      string.
+
+ README.lua_omni       |    9 ++++-----
+ ftplugin/lua_omni.lua |   16 ++++++++++++----
+ ftplugin/lua_omni.vim |    4 ++--
+ 3 files changed, 18 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.14)
+Author:     Radek Kowalski <rk@bixbite.pl>
+AuthorDate: Mon Mar 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.14
+    
+    + Fixed bug in new completing function so root level names in _G table are
+      actually showed.
+    + Fixed previously introduced bugs in Vim mappings.
+
+ README.lua_omni       |   10 +++++-----
+ ftplugin/lua_omni.lua |    6 +++---
+ ftplugin/lua_omni.vim |   14 ++++++--------
+ 3 files changed, 14 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
+Author:     Radek Kowalski <rk@bixbite.pl>
+AuthorDate: Fri Mar 25 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.13
+    
+        + Changed scanning of _G table to more elaborate way. Now a "globbing" "*"
+    	  and "?" characters may be used when typing.
+        + Few additions to abbreviations.
+
+ README                |   46 +++++++-------------
+ README.lua_omni       |    9 ++--
+ doc/lua_omni.txt      |   25 ++++++++---
+ ftplugin/lua_omni.lua |  115 ++++++++++++++++++++++++++++++++++++++++++++++---
+ ftplugin/lua_omni.vim |   19 +++++---
+ 5 files changed, 159 insertions(+), 55 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
 Author:     Radek Kowalski <rk@bixbite.pl>
 AuthorDate: Mon Nov 29 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

@@ -1,0 +1,156 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Sat Apr 16 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.0
+    
+      * Feature: Add editor mode.
+      * Feature: Add more syntaxes: LaTeX, reStructuredText and Textile.
+      * Feature: Add command *:UBConv* to convert a post/page from one syntax to another.
+      * Feature: Add options *ub_converter_command*, *ub_converter_options*, *ub_converter_option_from*, *ub_converter_option_to* to specify a custom extenal command in place of pandoc as the converter.
+      * Feature: Add option *ub_save_after_opened* to control whether to save posts/pages to database right after they are fetched from blogs.
+      * Feature: Add option *ub_save_after_sent* to control whether to save posts/pages to database right after they are sent to blogs.
+
+ README               |   15 ++--
+ doc/UltraBlog.txt    |  196 ++++++++++++++++++++++++++++++++++++++++----------
+ plugin/UltraBlog.vim |  183 ++++++++++++++++++++++++++++++++++++++++-------
+ 3 files changed, 324 insertions(+), 70 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Tue Apr 12 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4
+    
+    Feature: Add commands :UBThis and :UBPageThis to create a new post or page with content in the current buffer.
+
+ README               |   16 +++++++++++---
+ doc/UltraBlog.txt    |   13 +++++++++++-
+ plugin/UltraBlog.vim |   51 ++++++++++++++++++++++++++++++++++++++++++++-----
+ 3 files changed, 69 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Sat Apr 9 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.3
+    
+    * Feature: Record post statuses, post them in their recorded statuses when omit parameters for :UBSend and :UBPageSend.
+    * Feature: Display post/page status in post/page list, add an option ub_list_col3_width to set its width.
+    * Feature: Extend statuses to support private, pending and draft.
+    * Feature: Change the status 'public' to 'publish'.
+    * Feature: Check prerequesites in every top level functions.
+    * Bugfix: Do not raise an error on startup when sqlalchemy is not installed.
+
+ README               |    4 +-
+ doc/UltraBlog.txt    |   22 +++-
+ plugin/UltraBlog.vim |  334 ++++++++++++++++++++++++++++++++------------------
+ 3 files changed, 232 insertions(+), 128 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Thu Apr 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2
+    
+    * Feature: Column widths can be set to custom values, which keep post or page lists tidy. Two options added: ub_list_col1_width and ub_list_col2_width.
+
+ doc/UltraBlog.txt    |   16 +++++++++++++++-
+ plugin/UltraBlog.vim |   36 +++++++++++++++++++++++++++++-------
+ 2 files changed, 44 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Tue Apr 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1
+    
+    * Feature: Page management.
+    * Feature: Add option ub_append_promotion_link to control whether to append a promotion link of UltraBlog.vim.
+    * Bugfix: Wrong order for parameters of commands :UBOpen and :UBDel in documentation.
+
+ doc/UltraBlog.txt    |   43 +++-
+ plugin/UltraBlog.vim |  526 ++++++++++++++++++++++++++++++++++++++++++--------
+ 2 files changed, 478 insertions(+), 91 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.5)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Mon Apr 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0.5
+    
+    * Feature: Add documentation.
+    * Feature: Use Vimball as the default distribution format.
+    * Feature: Add two options - |ub_local_pagesize| and |ub_remote_pagesize|.
+
+ doc/UltraBlog.txt    |  235 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ plugin/UltraBlog.vim |   56 ++++++++-----
+ 2 files changed, 270 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.4)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Sun Apr 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0.4
+    
+    * Fix the problem that an unexpected type exception is raised when UBList is given some numbers as parameters.
+
+ plugin/UltraBlog.vim |   10 ++++++----
+ 1 files changed, 6 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.3)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Sat Apr 2 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0.3
+    
+    * Add a column in remote post list the same as the one in local post list, which is used to display ids of local copies of corresponding posts.
+    * Fix the problem that buffers can be reverted to what the previous views contain throught the undo action.
+    * Fix the minor problem that text won't wrap automatically in views opened by the command :UBNew.
+
+ plugin/UltraBlog.vim |   72 ++++++++++++++++++++++++++++++++-----------------
+ 1 files changed, 47 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.2)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Sat Apr 2 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0.2
+    
+    * Fix the problem that Post.post_id won't be updated in database after a new post is sent to blog.
+    * Fix the problem that it prompts for confirmation to delete the remote copy when deleting a post whose post_id is 0 from local post list.
+
+ plugin/UltraBlog.vim |    8 +++++---
+ 1 files changed, 5 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Fri Apr 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0.1
+    
+    Do not pop up an exception alert for the first time when Vim starts with UltraBlog.vim installed and no configurations added to the vimrc file.
+
+ plugin/UltraBlog.vim |   18 ++++++++++--------
+ 1 files changed, 10 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Fri Apr 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0: Initial upload
+
+ README               |   27 ++
+ plugin/UltraBlog.vim |  651 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 678 insertions(+), 0 deletions(-)

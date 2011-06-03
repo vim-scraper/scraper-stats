@@ -1,0 +1,226 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/7.0)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Mon May 9 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 7.0
+    
+    New option: g:MessageFormatter_moveArgumentsToStart; if 1 (the default), input arguments are moved to the front for easier expansion. See :help
+    g:MessageFormatter_moveArgumentsToStart for details.
+    
+    More new options: g:MessageFormatter_highlightDirectives and g:MessageFormatter_highlightDirectivesLink; control the highlighting of directives in text to
+    make them stand out.
+    
+    New command: Setcolordirectives: toggles the directive highlighting feature.
+
+ autoload/MessageFormatter.vim |   11 +++-
+ doc/MessageFormatter.txt      |   64 +++++++++++++++++++-
+ plugin/MessageFormatter.vim   |  138 +++++++++++++++++++++++++++++-----------
+ 3 files changed, 173 insertions(+), 40 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6.5)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Sat May 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 6.5
+    
+    New modifier:
+    
+    o: if the value is non-empty, prepends a ", " (a comma and a space); otherwise, leaves it empty
+    P: Just like 'p', but ignores empty strings
+    Q: Just like 'q', but ignores empty strings
+
+ autoload/MessageFormatter.vim |   23 +++++++++++++++++++++--
+ doc/MessageFormatter.txt      |    3 +++
+ plugin/MessageFormatter.vim   |    4 ++--
+ 3 files changed, 26 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6.0)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Thu May 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 6.0
+    
+    Added an option: g:MessageFormatter_autoAddJumpToEnd; if this is 1 (the default) and if a parameter contains !jump! directives, another !jump! is added to the end to allow the user to quickly continue typing beyond the template. See :help g:MessageFormatter_autoAddJumpToEnd.
+
+ autoload/MessageFormatter.vim |    5 +++++
+ doc/MessageFormatter.txt      |   18 ++++++++++++++++++
+ plugin/MessageFormatter.vim   |   23 ++++++++++++++++++++---
+ 3 files changed, 43 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.5)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Wed May 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 5.5
+    
+    Fixed bug in default processing.
+    
+    Improved help and added examples to help (:help MessageFormatter_Examples).
+
+ autoload/MessageFormatter.vim |  139 ++++++++++++++++++++++-------------------
+ doc/MessageFormatter.txt      |  106 ++++++++++++++++++++++++++++++-
+ plugin/MessageFormatter.vim   |  115 ++++++++++++++++++++++++++++-----
+ 3 files changed, 275 insertions(+), 85 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.0)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Tue May 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 5.0
+    
+    Added a default value mechanism: if a template variable is defined like this:
+    
+    {def John::firstName}
+    
+    then, during expansion, if an empty value is passed in for firstName, "John" will be used instead. This value can be recursive and may contain other
+    parameters, as before. (Including other "def" expansions.)
+    
+    Also, parameters with default values may be left out to have their default value used; see :help MessageFormatter_def for more details.
+
+ autoload/MessageFormatter.vim |   15 +++++++-
+ doc/MessageFormatter.txt      |   42 +++++++++++++++++++++-
+ plugin/MessageFormatter.vim   |   78 +++++++++++++++++++++++++++++++++++++----
+ 3 files changed, 125 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.5)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Mon May 2 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.5
+    
+    Bug fixes, mostly, though added one more option:
+    
+    g:MessageFormatter_formatCurrentLineAsFallback (default 1): if attempting to format a template via the <Plug>FormatCurrentTemplate mapping when not actually
+    in a template, will fall back to formatting just the current line as an ad-hoc template if this is 1. If 0, will give an error message instead.
+
+ autoload/MessageFormatter.vim |   53 +++++++++++++-----
+ doc/MessageFormatter.txt      |  123 ++++++++++++++++++++++++-----------------
+ plugin/MessageFormatter.vim   |   45 +++++++++++----
+ 3 files changed, 145 insertions(+), 76 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0@1)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Sat Apr 30 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.0@1: Added a proper help file; no actual functionality changes.
+
+ autoload/MessageFormatter.vim |    2 -
+ doc/MessageFormatter.txt      |  361 +++++++++++++++++++++++++++++++++++++++++
+ plugin/MessageFormatter.vim   |    9 +-
+ 3 files changed, 369 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Fri Apr 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.0
+    
+    Templates can be expanded inline while typing, allowing for macro expansion.
+
+ README                        |  159 ++------
+ autoload/MessageFormatter.vim |  842 +++++++++++++++++++++++++++--------------
+ plugin/MessageFormatter.vim   |  498 +++++++++++++++++-------
+ 3 files changed, 953 insertions(+), 546 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.5)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Wed Apr 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.5
+    
+    Added a command version of FormatContainedMessage called Formatcontainedmessage that passes everything on the command-line as-is to the function and echoes
+    the result.
+    
+    Added a new default value type:
+    
+    If the default value for for a parameter (passed to FormatContainedMessage) is "ask", it defaults to asking the user (via an input). If the value is anything
+    followed by "ask", it will use that as the default value for the input.
+
+ autoload/MessageFormatter.vim |   24 ++++++++++++++++++++++++
+ plugin/MessageFormatter.vim   |   10 +++++++++-
+ 2 files changed, 33 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Tue Apr 19 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.0
+    
+    Fairly big changes. RELIES UPON MY GetVar.vim (http://vim.sourceforge.net/scripts/script.php?script_id=353) script now.
+    
+    New formatting parameter:
+    
+    n: non-displayed value. The return value is suppressed--useful for adding a value to the cache to be used later.
+    
+    New function:
+    
+    FormatContainedMessage: Works like MessageFormatter#FormatMessage except that it's always recursive and that its original text string can contain default
+    values for the parameters (so the second parameter is optional); for example,
+    
+    Some new commands, also.
+
+ README                        |   60 ++++++++
+ autoload/MessageFormatter.vim |  259 +++++++++++++++++++++++++++++++++++
+ plugin/MessageFormatter.vim   |  303 +++++++++++++++--------------------------
+ 3 files changed, 429 insertions(+), 193 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Tue Apr 12 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.0
+    
+    Added new formatting modifier:
+    
+    e: Escapes out quotation marks (") and backslashes, leaving the value suitable for placing in quotes. For example, {e_fName} where fName is Jo\nhn results in
+    Jo\\nhn.
+    
+    If an expansion parameter starts with "eval ", the rest of the value is evaluated and the return value used as the actual parameter value. If recursion is on,
+    that value may contain further parameters.
+    
+    Example:
+    
+    echo MessageFormatter#FormatMessage('public static final {type} {C_variable} = {value};', {'type':'eval input("Type for {variable}: ", "String")', 'variable':'eval input("Variable name: ")', 'value':'eval input("Value: ", "\"{C_variable}\"")'}, 1)
+    
+    Bear in mind that 'type' and 'value' both use the parameter 'variable'. If 'variable' were to refer to either of these, you'd have circular recursion. There
+    is no check in place for that; you'd just end up with a stack overflow.
+    
+    Note, also, that the expression is evaluated only once. After that, its value is stored on the cache--this allows eval parameters to refer to other eval
+    parameters (only useful if recursion is on).
+
+ plugin/MessageFormatter.vim |   57 +++++++++++++++++++++++++++++++-----------
+ 1 files changed, 42 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Mon Apr 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.5
+    
+    Added a cache so repeated expansions of the same variable can be looked up rather than computed (potentially much faster, especially when recursion is on).
+
+ plugin/MessageFormatter.vim |   32 +++++++++++++++++++++++++-------
+ 1 files changed, 25 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Salman Halim <salmanhalim@gmail.com>
+AuthorDate: Mon Apr 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0: Initial upload
+
+ README                      |   60 +++++++++++++++
+ plugin/MessageFormatter.vim |  175 +++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 235 insertions(+), 0 deletions(-)

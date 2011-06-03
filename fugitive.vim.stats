@@ -1,4 +1,26 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2)
+Author:     Tim Pope <vimNOSPAM@tpope.org>
+AuthorDate: Fri Apr 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2
+    
+    Support :Gmove in a directory.
+    Provide :Gbrowse to open code on GitHub or in git-instaweb.
+    Provide :Gwq to :quit after :Gwrite.
+    Provide :Gsdiff to do a horizontal diff.
+    Map ds in :Gstatus to do a horizontal diff.
+    Map <C-N> and <C-P> in :Gstatus to cycle between files.
+    Map `-` on headings in :Gstatus.
+    Map dp in stage conflict to do the right thing.
+    Point 'tags' at .git/tags.
+    Windows fixes. [Michael Geddes]
+
+ doc/fugitive.txt    |   53 +++++-
+ plugin/fugitive.vim |  506 ++++++++++++++++++++++++++++++++++++++++++---------
+ 2 files changed, 467 insertions(+), 92 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
 Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Sun Mar 21 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

@@ -1,4 +1,46 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.14)
+Author:     Dmitry Frank <dimon.frank@gmail.com>
+AuthorDate: Tue Apr 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.14
+    
+    * Bugfix: $INDEXER_PROJECT_ROOT wasn't work in .vimprojects file. Thanks to Alexander Pazdnikov for bugreport.
+
+ README             |   14 ++-
+ doc/indexer.txt    |  135 +++++++++++++++++++++++---
+ plugin/indexer.vim |  271 +++++++++++++++++++++++++++++++++++++++++++++-------
+ 3 files changed, 366 insertions(+), 54 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.12)
+Author:     Dmitry Frank <dimon.frank@gmail.com>
+AuthorDate: Sat Mar 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.12
+    
+    Some improvements in error reporting:
+    * error if no ctags is available in the PATH,
+    * warning when ctags returns error.
+
+ README             |    8 +-
+ plugin/indexer.vim |  290 ++++++++++++++++++++++++++++++++++++++++------------
+ 2 files changed, 231 insertions(+), 67 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.11)
+Author:     Dmitry Frank <dimon.frank@gmail.com>
+AuthorDate: Thu Mar 24 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.11
+    
+    * Bugfix: if "noswapfile" option is set, then tags wasn't generated. Thanks to Thiago Bellini for help and persistence =)
+    * Bugfix: :IndexerFiles command didn't work.
+
+ plugin/indexer.vim |   20 ++++++++++++++------
+ 1 files changed, 14 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
 Author:     Dmitry Frank <dimon.frank@gmail.com>
 AuthorDate: Mon Mar 21 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
