@@ -1,4 +1,76 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8.8)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Jun 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.8
+    
+      Improve documentation notes (thanks to Laurent & SteP):
+       http://github.com/xolox/vim-notes/commit/7a9e923
+    
+      Basic support for @tags (suggested by Jonathan Reeve):
+       http://github.com/xolox/vim-notes/commit/677cd70
+
+ INSTALL.md                             |    2
+ README.md                              |    1
+ autoload/xolox/notes.vim               |   32
+ doc/notes.txt                          |   12
+ misc/notes/shadow/New note             |    2
+ misc/notes/shadow/Note taking commands |   24
+ misc/notes/shadow/Note taking syntax   |    8
+ plugin/notes.vim                       |    6
+ syntax/notes.vim                       |    6
+ 9 files changed, 73 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.7)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun May 22 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.7
+    
+      Call the correct Python interpreter on Python 3 systems:
+       https://github.com/xolox/vim-notes/commit/a721bc2
+    
+      Bug fix: Make <Tab> work on empty lines (reported by Ulrik Sverdrup):
+       https://github.com/xolox/vim-notes/commit/c4f231e
+    
+      Bug fix for completion after typing several words (reported by Ulrik Sverdrup):
+       https://github.com/xolox/vim-notes/commit/d5a11a8
+    
+      Bug fix: Windows compatibility for automatic command patterns:
+       https://github.com/xolox/vim-notes/commit/28514cb
+    
+      Support for non-Unicode encodings (requested by SteP):
+       https://github.com/xolox/vim-notes/commit/6b7566e
+
+ INSTALL.md                           |    3
+ README.md                            |   42
+ TODO.md                              |    6
+ autoload/xolox.vim                   |  110
+ autoload/xolox/escape.vim            |   26
+ autoload/xolox/misc/README.md        |   13
+ autoload/xolox/misc/complete.vim     |   18
+ autoload/xolox/misc/escape.vim       |   26
+ autoload/xolox/misc/list.vim         |   23
+ autoload/xolox/misc/msg.vim          |   83
+ autoload/xolox/misc/option.vim       |   46
+ autoload/xolox/misc/os.vim           |   12
+ autoload/xolox/misc/path.vim         |  158
+ autoload/xolox/misc/str.vim          |   12
+ autoload/xolox/misc/timer.vim        |   85
+ autoload/xolox/notes.vim             |  194
+ autoload/xolox/path.vim              |  158
+ autoload/xolox/timer.vim             |   79
+ doc/notes.txt                        |   51
+ ftplugin/notes.vim                   |   26
+ misc/notes/scanner.py                |   38
+ misc/notes/shadow/Note taking syntax |    6
+ plugin/notes.vim                     |   17
+ syntax/notes.vim                     |   19
+ 24 files changed, 766 insertions(+), 485 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.2)
 Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Fri Jan 7 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

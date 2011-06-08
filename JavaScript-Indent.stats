@@ -1,9 +1,26 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/b3.0@1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0@1)
 Author:     Preston Koprivica <pkopriv2@gmail.com>
-AuthorDate: Fri May 14 00:00:00 2010 +0000
+AuthorDate: Sun May 15 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
-    Version b3.0@1: ~ See: web-indent.tar.gz v b3.0 ~
+    Version 1.0@1:  See: web-indent.tar.gz v 1.0 ~
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Preston Koprivica <pkopriv2@gmail.com>
+AuthorDate: Sun May 15 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0
+    
+    Release 1.0!
+    - Removed indentKeys completely
+    - Removed Logging
+    - Continuation Lines Supported!
+    - Refactored Logic.
+
+ indent/javascript.vim |  438
+ test.js               |  412
+ 2 files changed, 257 insertions(+), 593 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/b3.0)
 Author:     Preston Koprivica <pkopriv2@gmail.com>
@@ -66,8 +83,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Fixed: Determines comment lines by synIDAttr
     Added: Anonymous function handling
 
- README                |  145
+ README                |   90
  indent/html.vim       |  250
  indent/javascript.vim |  337
  test.js               |  296
- 4 files changed, 1028 insertions(+), 0 deletions(-)
+ 4 files changed, 973 insertions(+), 0 deletions(-)

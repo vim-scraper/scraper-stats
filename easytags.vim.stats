@@ -1,4 +1,76 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2.9)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Mon May 23 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2.9
+    
+      Added caveat about Cygwin, updated to-do list:
+       https://github.com/xolox/vim-easytags/commit/ea6efd6
+    
+      Document the highlighting groups used by the plug-in:
+       https://github.com/xolox/vim-easytags/commit/2a2cba0
+    
+      Add g:easytags_suppress_ctags_warning option:
+       https://github.com/xolox/vim-easytags/commit/6e279a3
+    
+      Accept 'Development' as valid version:
+       https://github.com/xolox/vim-easytags/commit/0a49b11
+    
+      Add documentation in vimdoc format:
+       https://github.com/xolox/vim-easytags/commit/6de3e06
+    
+      Enable deferring tags file registration (VimEnter):
+       https://github.com/xolox/vim-easytags/commit/3466f61
+       https://github.com/xolox/vim-easytags/commit/c1635d6
+    
+      Don't use feedkeys() hack for Vim >= 7.3:
+       https://github.com/xolox/vim-easytags/commit/1ee5eff
+    
+      Enable updating of project specific tags files:
+       https://github.com/xolox/vim-easytags/commit/670910e
+    
+      Check that the xolox#misc submodule is available:
+       https://github.com/xolox/vim-easytags/commit/6ddd431
+    
+      Added Python script to manually cleanup tags files:
+       https://github.com/xolox/vim-easytags/commit/18ad44c
+    
+      Added Python script to analyze tags file size:
+       https://github.com/xolox/vim-easytags/commit/f980d5d
+    
+      Dynamic highlighting for Ruby source code (issue #9):
+       https://github.com/xolox/vim-easytags/commit/45e97ff
+    
+      Bug fix for highlighting of C# classes:
+       https://github.com/xolox/vim-easytags/commit/6cf2a35
+
+ INSTALL.md                       |    3
+ README.md                        |  202
+ TODO.md                          |   26
+ autoload/easytags.vim            |  631
+ autoload/xolox.vim               |  110
+ autoload/xolox/easytags.vim      |  658
+ autoload/xolox/escape.vim        |   26
+ autoload/xolox/misc/README.md    |   13
+ autoload/xolox/misc/complete.vim |   18
+ autoload/xolox/misc/escape.vim   |   26
+ autoload/xolox/misc/list.vim     |   23
+ autoload/xolox/misc/msg.vim      |   83
+ autoload/xolox/misc/option.vim   |   46
+ autoload/xolox/misc/os.vim       |   12
+ autoload/xolox/misc/path.vim     |  158
+ autoload/xolox/misc/str.vim      |   12
+ autoload/xolox/misc/timer.vim    |   85
+ autoload/xolox/option.vim        |   46
+ autoload/xolox/timer.vim         |   79
+ doc/easytags.txt                 |  175
+ normalize-tags.py                |   62
+ plugin/easytags.vim              |   57
+ why-so-slow.py                   |   39
+ 23 files changed, 1633 insertions(+), 957 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
 Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Thu Feb 24 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

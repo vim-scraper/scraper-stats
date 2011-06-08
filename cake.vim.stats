@@ -1,11 +1,47 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2)
+Author:     Yuhei Kagaya <yuhei.kagaya@gmail.com>
+AuthorDate: Tue Jun 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2
+    
+    - Fix a few bugs.
+    - g:cakephp_root was removed. g:cakephp_app was added instead.
+    - Add Commands.
+      :Ccontrollerview
+      :Ccontrollerviewsp
+      :Ccontrollerviewvsp
+      :Ccontrollerviewtab
+      :Config
+      :Configsp
+      :Configvsp
+      :Configtab
+      :Ccomponent
+      :Ccomponentsp
+      :Ccomponentvsp
+      :Ccomponenttab
+      :Cshell
+      :Cshellsp
+      :Cshellvsp
+      :Cshelltab
+      :Ctask
+      :Ctasksp
+      :Ctaskvsp
+      :Ctasktab
+      :Clog
+
+ doc/cake.txt    |  254
+ plugin/cake.vim |  633
+ 2 files changed, 713 insertions(+), 174 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.0)
 Author:     Yuhei Kagaya <yuhei.kagaya@gmail.com>
 AuthorDate: Tue May 17 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.1.0: Initial upload
 
- README          |   39
+ README          |   57
  doc/cake.txt    |  158
  plugin/cake.vim |  506
- 3 files changed, 703 insertions(+), 0 deletions(-)
+ 3 files changed, 721 insertions(+), 0 deletions(-)

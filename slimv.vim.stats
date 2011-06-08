@@ -1,4 +1,22 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8.3)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Wed May 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.3
+    
+    Added top/bottom/left/right directions to g:slimv_repl_split, added :Lisp (and an equivalent :Eval) command with completion, added g:slimv_leader and g:paredit_leader options, added g:slimv_echolines to echo only the first few lines of the form being evaluated, added fuzzy completion and option g:slimv_simple_compl (by Philipp Marek), indent macros with &body argument by two spaces when connected to swank (thanks to Philipp Marek and Andreas Fredriksson), special indentation for flet, labels and macrolet, default for Set-Package is current package (thanks to Philipp Marek), bugfixes: REPL output ordering problems, problem with inserting Space into visual block, blinking when g:slimv_repl_syntax is on, entering incomplete form in REPL command line, close form when inside comment, string, or with mixed ([.
+
+ doc/paredit.txt    |   26
+ doc/slimv.txt      |   83
+ doc/swank.txt      |   24
+ ftplugin/slimv.vim |  481
+ ftplugin/swank.py  |   46
+ indent/lisp.vim    |   20
+ plugin/paredit.vim |   53
+ 7 files changed, 503 insertions(+), 230 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.2)
 Author:     Tamas Kovacs <kovisoft@gmail.com>
 AuthorDate: Sun May 1 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

@@ -1,4 +1,121 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9.9)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.4.7)
+Author:     Geir Isene <g@isene.com>
+AuthorDate: Thu Jun 2 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.7
+    
+    Changes:
+     Modified the GotoRef function (fixed a bug and included feed back)
+     Better syntax highlighting for folding in gvim
+     Updating the README_WOIM and documentation files + other cosmetic changes
+     Added the possibility of disabling/overriding the WOIM plugin key mapping
+     Added an ftdetect file into woim.vba
+     (Thanks to Sergey Khorev for the last two improvements)
+
+ INSTALL_WOIM      |   28
+ README_WOIM       |   35
+ doc/woim.txt      |   58
+ ftdetect/woim.vim |    1
+ syntax/woim.vim   |  256
+ 5 files changed, 224 insertions(+), 154 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1,4,6)
+Author:     Geir Isene <g@isene.com>
+AuthorDate: Tue May 31 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1,4,6
+    
+    Perfection:   Minor fixes due to a bout of perfectionism.
+    
+    At this point I have nothing on the todo list - no fixes to be done and no features I want to implement.
+    So, I am looking for your input as inspiration to take this even further :)
+
+ INSTALL_WOIM    |   24
+ README_WOIM     |   14
+ doc/woim.txt    |   16
+ syntax/woim.vim |   17
+ 4 files changed, 32 insertions(+), 39 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.5)
+Author:     Geir Isene <g@isene.com>
+AuthorDate: Mon May 30 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.5
+    
+    Major Update;
+    
+    Overhaul:
+    
+    Created the documentation, includin the whole WOIM definition to make it
+    easily accessible within VIM.  Added the INSTALL and README files.
+    
+    Created a Vimball file ("woim.vba") for easy install. Simply do:
+    
+    vim woim.vba
+    :so %
+    :q
+
+ INSTALL_WOIM      |   34
+ README_WOIM       |   52
+ doc/woim.txt      |  822
+ ftplugin/woim.vim |  216
+ syntax/woim.vim   |  225
+ 5 files changed, 1133 insertions(+), 216 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.2)
+Author:     Geir Isene <g@isene.com>
+AuthorDate: Sun May 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.2
+    
+    Fixes in 1.4.2:
+    
+    Fixed "gr" (Goto Ref) for references with single quotes ('')
+    
+    Added the search pattern from "gr" to the search register ("/) so that "n" can successively be used to test if the referenced destination is unique (which it should be).
+
+ ftplugin/woim.vim |   13
+ 1 files changed, 8 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.1)
+Author:     Geir Isene <g@isene.com>
+AuthorDate: Fri May 27 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.1
+    
+    New feature:
+    
+    Goto Reference: With the cursor at a WOIM reference, press "gr" to jump to that reference in the WOIM list.
+    
+    Now you can navigate more easily in WOIM lists.
+
+ ftplugin/woim.vim |   20
+ 1 files changed, 15 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Geir Isene <g@isene.com>
+AuthorDate: Mon May 23 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4
+    
+    This could have been the long awaited version 1.0 - but instead I decided to synchronize the version numbering of this VIM plugin and the WOIM description itself. From now on the releases will be synchronized, with minor fixes in the VIM plugin released as minor releases (i.e. a fix to 1.4 would be 1.4.1 and would still be on par with the WOIM definition version 1.4). The version 1.4 of the WOIM definition adds time repetition as well as "checking" of todo-list items.
+    
+    This release:
+    
+    New feature: Added the option of checkboxes for items (Thanks to Christopher Truett (VIM script #3584). You can now easily add a checkbox in front of any item by <leader>v and subsequently toggle that checkbox via the same (<leader>v) or <leader>V if you want to add a time stamp to a box that you "check" (this also toggles the timestamp if you "uncheck" the item).
+    
+    Fixes: Some minor cleanup.
+
+ ftplugin/woim.vim |   37
+ 1 files changed, 31 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.9)
 Author:     Geir Isene <g@isene.com>
 AuthorDate: Sun Apr 17 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -218,6 +335,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.4: Initial upload
 
- README            |   27
+ README            |   34
  ftplugin/WOIM.vim |  117
- 2 files changed, 144 insertions(+), 0 deletions(-)
+ 2 files changed, 151 insertions(+), 0 deletions(-)

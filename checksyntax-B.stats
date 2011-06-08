@@ -1,4 +1,18 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.01)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.01@1)
+Author:     Tom Link <micathom@gmail.com>
+AuthorDate: Thu May 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.01@1
+    
+    - checksyntax#Check: Check &modified before anything else- .gitignore- Support for "modified" property- Check executable() when setting the *.auto property.- When eclim is installed: Set g:checksyntax.php.auto, not b:checksyntax.php.auto- Do not map `<F5>` if it is used already.- Use either location list (default) or optionally the quickfix list- CheckSyntaxFail(): call .Open(); fixes #6MD5 checksum: 4425f1434baa8795fbccec38721eef67
+
+ autoload/checksyntax.vim |   99
+ doc/checksyntax.txt      |    7
+ plugin/checksyntax.vim   |   37
+ 3 files changed, 83 insertions(+), 60 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.01)
 Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Thu Nov 11 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

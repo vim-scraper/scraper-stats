@@ -1,4 +1,36 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1)
+Author:     Jan Larres <jan@majutsushi.net>
+AuthorDate: Sun May 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.1
+    
+    This is mostly a bug-fix release.
+    
+    - Make Tagbar work in (hopefully) all cases under Windows
+    
+    - Handle cases where 'encoding' is different from system encoding, for example on a Chinese Windows with 'encoding' set to "utf-8" (see manual for details in case it doesn't work out-of-the-box)
+    
+    - Fixed a bug with the handling of subtypes like "python.django"
+    
+    - If a session got saved with Tagbar open it now gets restored properly
+    
+    - Locally reset foldmethod/foldexpr in case foldexpr got set to something expensive globally
+    
+    - Tagbar now tries hard to go to the correct window when jumping to a tag
+    
+    - Explain some possible issues with the current jsctags version in the manual
+    
+    - Explicitly check for some possible configuration problems to be able to give better feedback
+    
+    - A few other small fixes
+
+ doc/tagbar.txt    |   48
+ plugin/tagbar.vim |  384
+ syntax/tagbar.vim |    2
+ 3 files changed, 354 insertions(+), 80 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0.1)
 Author:     Jan Larres <jan@majutsushi.net>
 AuthorDate: Tue Apr 26 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

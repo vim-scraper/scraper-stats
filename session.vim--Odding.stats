@@ -1,4 +1,104 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.3.8)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.4.6)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Fri Jun 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.6
+    
+      Ignore missing fonts (reported by SteP):
+       http://github.com/xolox/vim-session/commit/d9af5b1
+
+ autoload/xolox/session.vim |    4
+ plugin/session.vim         |    4
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.5)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Wed Jun 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.5
+    
+      Make it possible to disable automatic loading/saving (suggested by Tommi Kivelä):
+       http://github.com/xolox/vim-session/commit/28a1eaf
+
+ README.md                  |    6
+ autoload/xolox/session.vim |   12
+ doc/session.txt            |   22
+ plugin/session.vim         |   18
+ 4 files changed, 35 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.4)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Thu May 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.4
+    
+      Restore NERDTree buffer after :CloseSession (thanks to Brandon Martin for bug report / feature request :-):
+       http://github.com/xolox/vim-session/commit/e6a4ff2
+
+ autoload/xolox/session.vim |   20
+ plugin/session.vim         |    2
+ 2 files changed, 15 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.3)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Thu May 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.3
+    
+      Enable opening last used session when starting Vim (thanks to James Cox for suggestion):
+       http://github.com/xolox/vim-session/commit/6855a81
+    
+      Remember the 'background' setting:
+       http://github.com/xolox/vim-session/commit/3635adb
+
+ INSTALL.md                       |    3
+ README.md                        |  229
+ TODO.md                          |    5
+ autoload/xolox/misc/README.md    |   13
+ autoload/xolox/misc/complete.vim |   18
+ autoload/xolox/misc/escape.vim   |   26
+ autoload/xolox/misc/list.vim     |   23
+ autoload/xolox/misc/option.vim   |   46
+ autoload/xolox/session.vim       |   42
+ doc/session.txt                  |   96
+ plugin/session.vim               |   21
+ 11 files changed, 466 insertions(+), 56 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Thu May 12 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4
+    
+      Make :OpenSession and :CloseSession preserve working directory:
+       https://github.com/xolox/vim-session/commit/ae7ba3a9e99db2f52c7a
+    
+      Make :CloseSession close buffers (or they'll keep piling up):
+       https://github.com/xolox/vim-session/commit/cab03c308b5dabaa6cd8
+    
+    Thanks to Brandon Martin for reporting both issues!
+
+ autoload/session.vim          |  505
+ autoload/xolox.vim            |  110
+ autoload/xolox/escape.vim     |   26
+ autoload/xolox/misc/msg.vim   |   83
+ autoload/xolox/misc/os.vim    |   12
+ autoload/xolox/misc/path.vim  |  158
+ autoload/xolox/misc/str.vim   |   12
+ autoload/xolox/misc/timer.vim |   85
+ autoload/xolox/path.vim       |  158
+ autoload/xolox/session.vim    |  522
+ autoload/xolox/timer.vim      |   79
+ doc/session.txt               |   20
+ plugin/session.vim            |   38
+ 13 files changed, 906 insertions(+), 902 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3.8)
 Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sat Dec 25 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

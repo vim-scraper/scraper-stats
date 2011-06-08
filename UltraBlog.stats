@@ -1,4 +1,51 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2.0)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Mon May 30 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2.0
+    
+    * Change: Merge :UBSave and :UBPageSave to :UBSave, merge :UBSend and :UBPageSend to :UBSend.
+    * Feature: Add an option ub_tmpl_img_url to customize a link template string for the image uploaded by :UBUpload.
+
+ doc/UltraBlog.txt    |   35
+ plugin/UltraBlog.vim |  137
+ 2 files changed, 124 insertions(+), 48 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.0)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Sat May 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.1.0
+    
+    * Change: Increase the requirement to SQLAlchemy to version 0.7 or newer.
+    * Feature: Now posts/pages can be opened in a new tab or splitted window.
+    * Feature: Add options to let users customize hotkeys:
+        * ub_hotkey_open_item_in_current_view
+        * ub_hotkey_open_item_in_splitted_view
+        * ub_hotkey_open_item_in_tabbed_view
+        * ub_hotkey_delete_item
+
+ doc/UltraBlog.txt    |   72
+ plugin/UltraBlog.vim |  141
+ 2 files changed, 151 insertions(+), 62 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0.1)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Thu May 12 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.0.1
+    
+    * Bugfix:  Uploading media files may fail on Windows.
+    * Bugfix:  An exception may be raised when Vim starts with no proper configuration for UltraBlog.vim or some prerequisites are not met.
+
+ doc/UltraBlog.txt    |    8
+ plugin/UltraBlog.vim |   10
+ 2 files changed, 12 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
 Author:     lenin lee <lenin.lee@gmail.com>
 AuthorDate: Sat Apr 16 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -148,6 +195,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README               |   36
+ README               |   34
  plugin/UltraBlog.vim |  651
- 2 files changed, 687 insertions(+), 0 deletions(-)
+ 2 files changed, 685 insertions(+), 0 deletions(-)
