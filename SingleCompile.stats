@@ -1,4 +1,207 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.7.3)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.9.1)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Thu Oct 6 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.9.1
+    
+    Complete document related to compiler priority;
+    add chromium built-in template;
+    fix IE priority bug in the built-in template.
+
+ README                          |    2
+ autoload/SingleCompile.vim      |   14
+ autoload/SingleCompileAsync.vim |    2
+ doc/SingleCompile.txt           |   51
+ plugin/SingleCompile.vim        |    2
+ 5 files changed, 57 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.9beta)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Mon Sep 19 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.9beta
+    
+    Now compiler template contains "priority" field, and each built-in template have been set a priority; this means, when user does not choose one compiler explicitly, SingleCompile will automatically choose the compiler with the highest priority (related document is not available yet);
+    Add clang built-in template for Object-C;
+    some minor improvement of clang built-in template for C and C++.
+
+ README                          |    8
+ autoload/SingleCompile.vim      |   88
+ autoload/SingleCompileAsync.vim |    2
+ doc/SingleCompile.txt           |   22
+ plugin/SingleCompile.vim        |    2
+ 5 files changed, 102 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.9)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Tue Sep 6 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8.9
+    
+    Improve the detection of Microsoft Visual C++ in the built-in template on Windows (Specified version of MSVC could be detected now)
+    ** No need to upgrade to this version if you do not use Microsoft Visual C++
+
+ autoload/SingleCompile.vim      |  177
+ autoload/SingleCompileAsync.vim |    2
+ doc/SingleCompile.txt           |   26
+ plugin/SingleCompile.vim        |    2
+ 4 files changed, 191 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.8)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Sat Sep 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8.8
+    
+    When using :SCChooseCompiler, list compilers ordered alphabetically;
+    Add arora, epiphany built-in template for html and xhtml;
+    Improve the detection of IE on Windows;
+    Remove OS/2 supporting code since they are unable to be tested(send me an email if you have problems on this).
+
+ README                          |   19
+ autoload/SingleCompile.vim      |   45
+ autoload/SingleCompileAsync.vim |    2
+ doc/SingleCompile.txt           |   18
+ plugin/SingleCompile.vim        |    2
+ 5 files changed, 55 insertions(+), 31 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.7)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Sun Jun 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8.7
+    
+    Fix some python asynchronous mode availability detection problem;
+    Add GNAT Ada compiler built-in template.
+
+ README                          |    3
+ autoload/SingleCompile.vim      |    9
+ autoload/SingleCompileAsync.vim |   23
+ doc/SingleCompile.txt           |   10
+ plugin/SingleCompile.vim        |    2
+ 5 files changed, 38 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.6)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Tue Jun 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8.6
+    
+    Add Object-C built-in template (gcc);
+    improve Javascript and idl built-in template.
+
+ README                          |   17
+ autoload/SingleCompile.vim      |   69
+ autoload/SingleCompileAsync.vim |    2
+ doc/SingleCompile.txt           |   24
+ plugin/SingleCompile.vim        |    2
+ 5 files changed, 62 insertions(+), 52 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.5)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Wed May 25 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8.5
+    
+    Add php built-in template;
+    Hide the console window when run asynchronously on Windows.
+
+ autoload/SingleCompile.vim      |    8
+ autoload/SingleCompileAsync.vim |    6
+ doc/SingleCompile.txt           |   53
+ plugin/SingleCompile.vim        |    2
+ 4 files changed, 42 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.4beta)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Sun May 22 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8.4beta: Some message improvements for asynchronous run.
+
+ autoload/SingleCompile.vim      |   29
+ autoload/SingleCompileAsync.vim |   16
+ doc/SingleCompile.txt           |    4
+ plugin/SingleCompile.vim        |    2
+ 4 files changed, 31 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.3beta)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Sat May 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8.3beta
+    
+    Add :SCIsRunningAsync command to check whether there are background process running asynchronously;
+    many improvements on MS-Windows for asynchronous running;
+    add :SCTerminateAsync and :SCViewResultAsync commands to menu;
+    some minor bug fixes.
+
+ autoload/SingleCompile.vim      |   49
+ autoload/SingleCompileAsync.vim |   41
+ doc/SingleCompile.txt           |   19
+ plugin/SingleCompile.vim        |   94
+ 4 files changed, 114 insertions(+), 89 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.2beta)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Mon May 16 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8.2beta
+    
+    Add 'auto' mode for asynchronous running;
+    add :SCTerminateAsync command;
+    some bug fixes and improvements.
+
+ autoload/SingleCompile.vim      |   17
+ autoload/SingleCompileAsync.vim |   17
+ doc/SingleCompile.txt           |   39
+ plugin/SingleCompile.vim        |   10
+ 4 files changed, 70 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.1beta)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Sat May 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8.1beta
+    
+    Make asynchronous run feature also available for interpreting language;
+    some minor bug fixes and improvements for async mode.
+
+ autoload/SingleCompile.vim      |  156
+ autoload/SingleCompileAsync.vim |   28
+ doc/SingleCompile.txt           |   27
+ plugin/SingleCompile.vim        |    2
+ 4 files changed, 141 insertions(+), 72 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8beta)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Sat May 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8beta
+    
+    Now compiled program could be run
+    asynchronously. (Currently this new feature requires vim compiled with python interface
+    2.6+)
+
+ README                          |    7
+ autoload/SingleCompile.vim      | 1021
+ autoload/SingleCompileAsync.vim |  234
+ doc/SingleCompile.txt           |   68
+ plugin/SingleCompile.vim        |   42
+ 5 files changed, 877 insertions(+), 495 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.7.3)
 Author:     H Xu <xuhdev@gmail.com>
 AuthorDate: Mon May 9 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

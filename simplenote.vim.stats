@@ -1,4 +1,36 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.1.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.3.0)
+Author:     Daniel Schauenberg <d@unwiredcouch.com>
+AuthorDate: Sun Jul 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.3.0
+    
+    major changes:
+    
+    - UTF-8 support
+    - create new notes from buffer via :Simplenote -n
+    - update note when buffer is written
+    - support direct deletion of notes via :Simplenote -D
+    - support tagging of notes via :Simplenote -t
+    - distinct buffer for every note
+    - use simplenote.py for API interaction
+    - encapsulate interface methods in Python class
+
+ plugin/simplenote.vim |  676
+ 1 files changed, 431 insertions(+), 245 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.0)
+Author:     Daniel Schauenberg <d@unwiredcouch.com>
+AuthorDate: Tue Jun 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.2.0: UI changes and several general improvements
+
+ README                |   35
+ plugin/simplenote.vim |  299
+ 2 files changed, 228 insertions(+), 106 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.0)
 Author:     Daniel Schauenberg <d@unwiredcouch.com>
 AuthorDate: Tue May 10 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

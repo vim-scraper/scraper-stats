@@ -1,4 +1,34 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.41)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.42)
+Author:     Tom Link <micathom@gmail.com>
+AuthorDate: Thu May 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.42
+    
+    - tlib#input#List: <s-space> inserts a *-like wildcard (represented as "__")- Check if a cache file cannot be created because a directory of the same name exists (display a message if so)- tlib#cache#Filename: Removed check if a directory of the same name exists (due to inconsistent use)- Minor improvements related to buffer handling (scratch_split)- .gitignore- docs (thanks to blueyed)- There is no "edit" answer possibility.- Fix first purge: do nothing if no timestamp file.- g:tlib_pick_single_item- Removed pick_single_item. Changed the default behavour when a list has only 1 item. See doc for g:tlib_pick_last_item.- Updated help for tlib#input#List(); help_extra attribute- EXPERIMENTAL: cache_var, restore_from_cache, on_leave properties; #Initialize(), #Leave()- added tlib#cmd#BrowseOutputWithCallback function and :TBrowseScriptnames command- tlib#cmd#BrowseOutputWithCallback function and :TBrowseScriptnames command documentation- s:prototype.Initialize(): unlet self.cache_var after restoring values- tlib#input#List: filter-specific help- Removed the seq filter (use cnfd or fuzzy instead)- tlib#input#List: temp_prompt (for help message)MD5 checksum: aa8b5a4602235cc1a5bc9ee45d801b81
+
+ README                       |    5
+ autoload/tlib/Filter_cnf.vim |   12
+ autoload/tlib/Filter_seq.vim |   12
+ autoload/tlib/Object.vim     |    8
+ autoload/tlib/World.vim      |   68
+ autoload/tlib/agent.vim      |   20
+ autoload/tlib/cache.vim      |   20
+ autoload/tlib/cmd.vim        |   38
+ autoload/tlib/input.vim      |   34
+ autoload/tlib/list.vim       |    9
+ autoload/tlib/notify.vim     |    6
+ autoload/tlib/paragraph.vim  |   16
+ autoload/tlib/scratch.vim    |   25
+ autoload/tlib/signs.vim      |    6
+ autoload/tlib/tag.vim        |   16
+ autoload/tlib/url.vim        |    6
+ autoload/tlib/win.vim        |    8
+ doc/tlib.txt                 |  111
+ plugin/02tlib.vim            |  329
+ 19 files changed, 335 insertions(+), 414 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.41)
 Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Fri Nov 12 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

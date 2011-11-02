@@ -1,4 +1,18 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.04)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.05)
+Author:     Tom Link <micathom@gmail.com>
+AuthorDate: Thu May 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.05
+    
+    - Explicit support for python (thanks to brendanarnold)- Support for samba (thanks Dominic)- .gitignore- Define new types: debsources and debcontrol- Removed some whitespace as proposed by blueyed- Add config for typoscript filetype.- EXPERIMENTAL commentstring_rx: Support for using regexps to uncomment code- s:ProcessedLine: Don't substitute(rv, '\n', '\\\n', 'g')- Try to handle char-type text objects (disabled by default)- scss (SASS) filetype- Add config for 'nginx' filetype.MD5 checksum: 0e23f194638256fb4fa4a729df645966
+
+ autoload/tcomment.vim |  218
+ doc/tcomment.txt      |   39
+ plugin/tcomment.vim   |   11
+ 3 files changed, 188 insertions(+), 80 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.04)
 Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Thu Jan 20 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

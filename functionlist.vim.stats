@@ -1,0 +1,91 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.6@1)
+Author:     Sandeep CR <sandeepcr2@gmail.com>
+AuthorDate: Thu Sep 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.6@1: Minor bugifx
+
+ plugin/functionlist.vim |    2
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.6)
+Author:     Sandeep CR <sandeepcr2@gmail.com>
+AuthorDate: Mon Aug 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.6
+    
+    Added support for functions with same name in the same file. Shows same names with numbers in brackets appended
+    
+    Added support for javascript style functions. If the script cant figure functions name, then it shows a fixed length of the string from the function line.
+
+ plugin/functionlist.vim |   97
+ 1 files changed, 90 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Sandeep CR <sandeepcr2@gmail.com>
+AuthorDate: Thu Aug 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4
+    
+    Made to work with split window
+    
+    Important Bug fix.(Fixed the disappearing of autocommands the function list window in another tab is closed)
+    
+    Made recent window to update on navigating to a function using it.
+    Fixed a bug where the function list window is still in insert mode, so double click wont take you to the function
+    Added auto update of recent function list while entering or leaving insert mode.
+
+ README                  |   10
+ plugin/functionlist.vim |   47
+ 2 files changed, 39 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Sandeep CR <sandeepcr2@gmail.com>
+AuthorDate: Tue Aug 16 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.3
+    
+    Made recent window to update on navigating to a function using it.
+    Fixed a bug where the function list window is still in insert mode, so double click wont take you to the function
+    Added auto update of recent function list while entering or leaving insert mode.
+
+ plugin/functionlist.vim    |  318
+ plugin/functiontracker.vim |  259
+ 2 files changed, 318 insertions(+), 259 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.21)
+Author:     Sandeep CR <sandeepcr2@gmail.com>
+AuthorDate: Thu Aug 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.21
+    
+    Added auto resize in recent function list
+    Bug fixed where it wont index functions with numbers in the name(!!!)
+
+ plugin/functiontracker.vim |   19
+ 1 files changed, 18 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Sandeep CR <sandeepcr2@gmail.com>
+AuthorDate: Thu Aug 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2: Bug fix where it wouldnt index function names with numbers in it.
+
+ plugin/functiontracker.vim |   35
+ 1 files changed, 30 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Sandeep CR <sandeepcr2@gmail.com>
+AuthorDate: Tue Aug 2 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0: Initial upload
+
+ README                     |   34
+ plugin/functiontracker.vim |  217
+ 2 files changed, 251 insertions(+), 0 deletions(-)

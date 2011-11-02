@@ -1,4 +1,93 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4.7)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4.13)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Sep 25 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.4.13
+    
+      Updated miscellaneous scripts:   http://github.com/xolox/vim-lua-inspect/commit/c8c3405
+
+ autoload/xolox/luainspect.vim |    4
+ autoload/xolox/misc/list.vim  |   15
+ autoload/xolox/misc/path.vim  |   25
+ 3 files changed, 29 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.12)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Sep 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.4.12
+    
+      Updated miscellaneous scripts:   http://github.com/xolox/vim-lua-inspect/commit/fd90005
+
+ autoload/xolox/luainspect.vim  |    4
+ autoload/xolox/misc/buffer.vim |   37
+ autoload/xolox/misc/list.vim   |   37
+ autoload/xolox/misc/option.vim |   27
+ autoload/xolox/misc/path.vim   |   15
+ 5 files changed, 115 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.11)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Aug 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.4.11
+    
+      Define version as variable, include version in messages:   http://github.com/xolox/vim-lua-inspect/commit/b92c629
+
+ README.md                      |    2
+ autoload/xolox/luainspect.vim  |   37
+ autoload/xolox/misc/README.md  |   29
+ autoload/xolox/misc/open.vim   |   15
+ autoload/xolox/misc/option.vim |   15
+ autoload/xolox/misc/str.vim    |    4
+ doc/luainspect.txt             |   45
+ plugin/luainspect.vim          |    6
+ 8 files changed, 84 insertions(+), 69 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.10)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Wed May 25 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.4.10
+    
+      Added example to showcase semantic highlighting:
+       http://github.com/xolox/vim-lua-inspect/commit/0249104
+    
+      Make g:lua_inspect_path default compatible with Pathogen:
+       http://github.com/xolox/vim-lua-inspect/commit/26e6f35
+    
+      Bug fix: Only enable tooltips when supported: (thanks Micheal for the bug report!)
+       http://github.com/xolox/vim-lua-inspect/commit/987eda1
+
+ INSTALL.md                       |    3
+ README.md                        |   87
+ TODO.md                          |   10
+ autoload/luainspect.vim          |  315
+ autoload/xolox.vim               |  110
+ autoload/xolox/escape.vim        |   26
+ autoload/xolox/luainspect.vim    |  317
+ autoload/xolox/misc/README.md    |   13
+ autoload/xolox/misc/complete.vim |   18
+ autoload/xolox/misc/escape.vim   |   26
+ autoload/xolox/misc/list.vim     |   23
+ autoload/xolox/misc/msg.vim      |   83
+ autoload/xolox/misc/open.vim     |   71
+ autoload/xolox/misc/option.vim   |   46
+ autoload/xolox/misc/os.vim       |   12
+ autoload/xolox/misc/path.vim     |  158
+ autoload/xolox/misc/str.vim      |   12
+ autoload/xolox/misc/timer.vim    |   85
+ autoload/xolox/timer.vim         |   79
+ doc/luainspect.txt               |   89
+ example.lua                      |   41
+ plugin/luainspect.vim            |   16
+ 22 files changed, 1066 insertions(+), 574 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.7)
 Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sat Oct 9 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

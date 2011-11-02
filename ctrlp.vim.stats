@@ -1,0 +1,149 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.5.5)
+Author:     Kien Nguyen <info@designtomarkup.com>
+AuthorDate: Sun Oct 23 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.5.5: Update to catch up with github version.
+
+ autoload/ctrlp.vim          |  411
+ autoload/ctrlp/mrufiles.vim |  150
+ autoload/ctrlp/utils.vim    |  148
+ doc/ctrlp.txt               | 1077
+ plugin/ctrlp.vim            |   68
+ 5 files changed, 946 insertions(+), 908 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5.2)
+Author:     Kien Nguyen <info@designtomarkup.com>
+AuthorDate: Mon Oct 10 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.5.2: Some Enhancements.
+
+ autoload/ctrlp.vim          |  548
+ autoload/ctrlp/mrufiles.vim |  150
+ autoload/ctrlp/utils.vim    |  148
+ doc/ctrlp.txt               | 1059
+ plugin/ctrlp.vim            |   67
+ 5 files changed, 1020 insertions(+), 952 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5)
+Author:     Kien Nguyen <info@designtomarkup.com>
+AuthorDate: Mon Oct 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.5: Open Multiple Files
+
+ autoload/ctrlp.vim |  398
+ doc/ctrlp.txt      |   84
+ 2 files changed, 275 insertions(+), 207 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.1)
+Author:     Kien Nguyen <info@designtomarkup.com>
+AuthorDate: Fri Sep 30 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.1: Bugfix: Don't touch 'equalalways' (bug report from reddit).
+
+ autoload/ctrlp.vim |    7
+ 1 files changed, 2 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4)
+Author:     Kien Nguyen <info@designtomarkup.com>
+AuthorDate: Fri Sep 30 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4
+    
+    Updates: Add <c-y> to create a new file and its parent dirs. Add prompt's history and <c-n>, <c-p> to go to next/prev string in history. Some bugfixes.
+
+ README             |   24
+ autoload/ctrlp.vim |  395
+ doc/ctrlp.txt      |   64
+ 3 files changed, 325 insertions(+), 158 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3.2)
+Author:     Kien Nguyen <info@designtomarkup.com>
+AuthorDate: Mon Sep 19 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.3.2
+    
+    Small Updates: Option to disable the update-as-you-type functionality. Don't follow symbolic links. Fixed an issue with `shellslash` and MS-DOS shell. Some refactorings and bugfixes.
+
+ README                      |    2
+ autoload/ctrlp.vim          |  611
+ autoload/ctrlp/mrufiles.vim |   39
+ autoload/ctrlp/utils.vim    |   13
+ doc/ctrlp.txt               |   41
+ plugin/ctrlp.vim            |    5
+ 6 files changed, 398 insertions(+), 313 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3.1)
+Author:     Kien Nguyen <info@designtomarkup.com>
+AuthorDate: Thu Sep 15 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.3.1
+    
+    Small updates: Option to limit the number of files to to scan initially. Corrected the wildignore example: `set wildignore+=*/.git/*,*/.hg/*,*/.svn/*`. Fix arrow keys in terminal. Small sorting change.
+
+ autoload/ctrlp.vim |  122
+ doc/ctrlp.txt      |   38
+ 2 files changed, 106 insertions(+), 54 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3)
+Author:     Kien Nguyen <info@designtomarkup.com>
+AuthorDate: Tue Sep 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.3
+    
+    UPDATES: New '..' input to go backward the dir tree. New option to use external command/tool to index files. Include dotfiles in search. Bugfix: <c-w> correctly deletes inner word, don't sort MRU files. And various other changes, bugfixes and improvements.
+
+ README             |    9
+ autoload/ctrlp.vim |  546
+ doc/ctrlp.txt      |  140
+ plugin/ctrlp.vim   |    4
+ 4 files changed, 485 insertions(+), 214 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
+Author:     Kien Nguyen <info@designtomarkup.com>
+AuthorDate: Fri Sep 9 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2.1
+    
+    Bug Fix : resort the list of files so it's faster to find a match. Added a loading progress indicator.
+
+ autoload/ctrlp.vim |   26
+ 1 files changed, 17 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2)
+Author:     Kien Nguyen <info@designtomarkup.com>
+AuthorDate: Thu Sep 8 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2
+    
+    UPDATES: More consistency in MacVim. Added local statusline indicators. Added refresh capability. Fixed support for wildignore.
+
+ autoload/ctrlp.vim       |  186
+ autoload/ctrlp/utils.vim |    3
+ doc/ctrlp.txt            |   35
+ plugin/ctrlp.vim         |    4
+ 4 files changed, 141 insertions(+), 87 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Kien Nguyen <info@designtomarkup.com>
+AuthorDate: Wed Sep 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1: Initial upload
+
+ README                      |   52
+ autoload/ctrlp.vim          |  786
+ autoload/ctrlp/mrufiles.vim |   72
+ autoload/ctrlp/utils.vim    |   72
+ doc/ctrlp.txt               |  338
+ plugin/ctrlp.vim            |   24
+ 6 files changed, 1344 insertions(+), 0 deletions(-)

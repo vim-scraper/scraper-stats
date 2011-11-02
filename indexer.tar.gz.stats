@@ -1,4 +1,46 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.14)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.18)
+Author:     Dmitry Frank <dimon.frank@gmail.com>
+AuthorDate: Wed Sep 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.18
+    
+    * Added option g:indexer_changeCurDirIfVimprjFound.
+    If anyone wants to make Indexer not to change current dir automatically if .vimprj directory is found, then you can specify in your vimrc:
+    
+    let g:indexer_changeCurDirIfVimprjFound = 0
+
+ doc/indexer.txt    |    8
+ plugin/indexer.vim |   60
+ 2 files changed, 48 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.17)
+Author:     Dmitry Frank <dimon.frank@gmail.com>
+AuthorDate: Sun Aug 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.17
+    
+    * Optimization change: with .indexer_files default value of g:indexer_ctagsDontSpecifyFilesIfPossible is 1, but with .vimprojects default value is 0.
+
+ doc/indexer.txt    |   11
+ plugin/indexer.vim |   39
+ 2 files changed, 35 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.16)
+Author:     Dmitry Frank <dimon.frank@gmail.com>
+AuthorDate: Thu Aug 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.16
+    
+    * Bugfix: on FreeBSD we should check executable 'exctags' before 'ctags', because of 'ctags' is also present, but it is not actually Exuberant ctags. Thanks to Olivier Szika for bugreport.
+
+ README             |   10
+ plugin/indexer.vim |   40
+ 2 files changed, 37 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.14)
 Author:     Dmitry Frank <dimon.frank@gmail.com>
 AuthorDate: Tue Apr 26 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

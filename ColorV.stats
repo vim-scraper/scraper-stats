@@ -1,4 +1,197 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.3.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.5.3)
+Author:     Rykka Krin <rykka.krin@gmail.com>
+AuthorDate: Sun Sep 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.5.3
+    
+    - add 'g:ColorV_global_leader' and 'g:ColorV_no_global_map'.
+
+ README              |    1
+ README.md           |   51
+ autoload/colorv.vim |  122
+ doc/colorv.txt      |  149
+ plugin/colorv.vim   |  202
+ 5 files changed, 247 insertions(+), 278 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5.2.3)
+Author:     Rykka Krin <rykka.krin@gmail.com>
+AuthorDate: Sun Sep 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.5.2.3: - Fix some bugs in mac/windows/terminal.
+
+ README.md           |   13
+ autoload/colorv.vim |   13
+ doc/colorv.txt      |   11
+ 3 files changed, 29 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5.2.2)
+Author:     Rykka Krin <rykka.krin@gmail.com>
+AuthorDate: Sun Sep 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.5.2.2: - Fix some bugs in mac/windows/terminal.
+
+ README.md           |   21
+ autoload/colorv.vim |  178
+ doc/colorv.txt      |   38
+ 3 files changed, 108 insertions(+), 129 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5.2.1)
+Author:     Rykka Krin <rykka.krin@gmail.com>
+AuthorDate: Sat Sep 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.5.2.1: - Bug fixed: open_win() issue.
+
+ autoload/colorv.vim |   38
+ 1 files changed, 10 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5.2)
+Author:     Rykka Krin <rykka.krin@gmail.com>
+AuthorDate: Sat Sep 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.5.2: -Bug fixed: open_win() issue.
+
+ README              |    9
+ README.md           |   21
+ autoload/colorv.vim |  128
+ doc/colorv.txt      |   30
+ plugin/colorv.vim   |    8
+ 5 files changed, 110 insertions(+), 86 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5.1)
+Author:     Rykka Krin <rykka.krin@gmail.com>
+AuthorDate: Fri Sep 2 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.5.1
+    
+    - Bug fixes.
+    + auto preview css files.
+    + preview() faster with coding in python.
+
+ README              |   84
+ README.md           |   41
+ autoload/colorv.vim | 1118
+ doc/colorv.txt      |  111
+ plugin/colorv.vim   |    4
+ 5 files changed, 832 insertions(+), 526 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5.0)
+Author:     Rykka Krin <rykka.krin@gmail.com>
+AuthorDate: Fri Aug 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.5.0
+    
+    + Faster
+        10+ times Faster than previous version.
+    + New Mode
+        Max mode added and show more infos(RGB/HSV/HLS/YIQ).
+    + New Space~
+       HLS colorspace for choosing colors.
+    + With Term~
+       Works under Terminal (both 8/16/256 colors).
+
+ README              |  102
+ README.md           |  177
+ autoload/ColorV.vim | 2379
+ autoload/colorv.vim | 4231
+ doc/ColorV.txt      |  946
+ doc/colorv.txt      | 1000
+ plugin/ColorV.vim   |  149
+ plugin/colorv.vim   |  159
+ 8 files changed, 5553 insertions(+), 3590 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0.2.1)
+Author:     Rykka Krin <rykka.krin@gmail.com>
+AuthorDate: Mon Jun 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.0.2.1
+    
+    " 2.0.2 preivew
+    " DONE: 110620  preview with color names
+    " DONE: 110620  preview files and lines
+    ...
+    " 2.0.1 generator
+    " DONE: 110620  generate with word under cursor
+    " DONE: 110620  generator with types (Analogous,Monochromatic,...)
+    ...
+    " 2.0.0 list window
+    " DONE: 110619  list window of color names.
+    " DONE: 110619  generate list with hue/sat/val
+    ...
+
+ README.md           |   54
+ autoload/ColorV.vim |  905
+ doc/ColorV.txt      |  330
+ plugin/ColorV.vim   |   89
+ 4 files changed, 1041 insertions(+), 337 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7.6)
+Author:     Rykka Krin <rykka.krin@gmail.com>
+AuthorDate: Sat Jun 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.7.6
+    
+    "FIXED: 110611  fix format name "#" which was invalid to 'NS6'.
+    "FIXED: 110611  change2 doesnt unlet with s:changing()
+    "FIXED: 110611  cursor word will include '#' format.
+    ......
+
+ README.md           |    7
+ autoload/ColorV.vim |  245
+ doc/ColorV.txt      |   37
+ plugin/ColorV.vim   |    6
+ 4 files changed, 216 insertions(+), 79 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.7.0)
+Author:     Rykka Krin <rykka.krin@gmail.com>
+AuthorDate: Fri Jun 10 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.7.0
+    
+    " 1.7.0 change 2
+    " DONE: 110609  add mapping c2x c2n c2r c2# c2p
+    " DONE: 110609  add command |:ColorVchange2|
+    " DONE: 110609  add s:tune_colorname() and map nt
+    ......
+
+ README              |   59
+ README.md           |   63
+ autoload/ColorV.vim |  775
+ doc/ColorV.txt      |  193
+ plugin/ColorV.vim   |   59
+ 5 files changed, 686 insertions(+), 463 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.0)
+Author:     Rykka Krin <rykka.krin@gmail.com>
+AuthorDate: Fri Jun 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.0
+    
+    " 1.4.0 'mid' mode
+    " DONE: 110602  fix the pallet. no black line and white column now.
+    " DONE: 110602  add max/mid/min mode. default is mid mode
+    " DONE: 110602  tips only shows in cmdline now
+    " DONE: 110602  change arrow_ptn color to reverse.
+    ......
+
+ README              |   10
+ README.md           |   17
+ autoload/ColorV.vim | 1008
+ doc/ColorV.txt      |   92
+ plugin/ColorV.vim   |   21
+ 5 files changed, 577 insertions(+), 571 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.3.1)
 Author:     Rykka Krin <rykka.krin@gmail.com>
 AuthorDate: Wed Jun 1 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

@@ -1,4 +1,89 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/5.13)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/5.15.1)
+Author:     Fritz Mehner <mehner@fh-swf.de>
+AuthorDate: Sun Sep 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 5.15.1
+    
+    This is the correct version 5.15.
+    The version 5.15 just published) contains a wrong archive. Sorry.
+
+ README.csupport                               |   42
+ c-support/codesnippets/Makefile               |    6
+ c-support/templates/c.cpp.template            |   37
+ c-support/templates/c.preprocessor.template   |    4
+ c-support/templates/cpp.cpp.template          |   23
+ c-support/templates/cpp.preprocessor.template |    4
+ c-support/wordlists/c-c++-keywords.list       |    1
+ doc/ChangeLog                                 |   24
+ doc/c-hotkeys.pdf                             |  Bin 40650 -> 38127 bytes
+ doc/c-hotkeys.tex                             |   68
+ doc/csupport.txt                              |  465
+ ftplugin/c.vim                                |   89
+ ftplugin/make.vim                             |   29
+ hotkeys.latex/c-hotkeys.pdf                   |  Bin 0 -> 38127 bytes
+ hotkeys.latex/c-hotkeys.tex                   |  350
+ plugin/c.vim                                  | 1717
+ 16 files changed, 1711 insertions(+), 1148 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.15)
+Author:     Fritz Mehner <mehner@fh-swf.de>
+AuthorDate: Sun Sep 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 5.15
+    
+    - New hotkey \cx C to C++ comments and vice versa.
+    - Several hotkeys allow a range, e.g. '3\cl' (see help text and c-hotkey.pdf).
+    - Improved prototype picking: \nf, \np picks up a function prototype,
+      \nm picks up a method prototype (see documentation for more).
+    - include-statements will now be inserted in the actual line (before: new line
+      below the actual line).
+    - Several minor improvements.
+
+ README.csupport                         |   33
+ c-support/codesnippets/Makefile         |    6
+ c-support/templates/c.cpp.template      |   37
+ c-support/templates/cpp.cpp.template    |   23
+ c-support/wordlists/c-c++-keywords.list |    1
+ doc/ChangeLog                           |   16
+ doc/c-hotkeys.pdf                       |  Bin 42234 -> 40650 bytes
+ doc/c-hotkeys.tex                       |   33
+ doc/csupport.txt                        |  193
+ ftplugin/c.vim                          |    6
+ ftplugin/make.vim                       |   29
+ hotkeys.latex/c-hotkeys.pdf             |  Bin 42234 -> 0 bytes
+ hotkeys.latex/c-hotkeys.tex             |  347
+ makedist.sh                             |   50
+ plugin/c.vim                            |  423
+ 15 files changed, 306 insertions(+), 891 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.14)
+Author:     Fritz Mehner <mehner@fh-swf.de>
+AuthorDate: Sat Jul 2 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 5.14
+    
+    - A makefile can be run with C-F9
+    - Linking ( Run menu, \rl, \rr ) will be suppressed if buffer contains no main function.
+    - Bugfix: correctly deactivate unwanted compiler messages in a quickfix buffer.
+    - Several minor improvements.
+
+ README.csupport                         |   33
+ c-support/templates/c.cpp.template      |   37
+ c-support/templates/cpp.cpp.template    |   23
+ c-support/wordlists/c-c++-keywords.list |    1
+ doc/ChangeLog                           |    9
+ doc/csupport.txt                        |  103
+ ftplugin/make.vim                       |   11
+ hotkeys.latex/c-hotkeys.pdf             |  Bin 0 -> 42234 bytes
+ hotkeys.latex/c-hotkeys.tex             |  347
+ makedist.sh                             |   50
+ plugin/c.vim                            |  214
+ 11 files changed, 639 insertions(+), 189 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/5.13)
 Author:     Fritz Mehner <mehner@fh-swf.de>
 AuthorDate: Tue Jan 25 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

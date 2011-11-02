@@ -1,4 +1,22 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.13)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.14)
+Author:     Tom Link <micathom@gmail.com>
+AuthorDate: Wed May 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.14
+    
+    - Take more care to run autocommands on the right buffer- vcsdiff: always run the vcs command in the buffer's directory- make last_run buffer-local- make last_run buffer-local- QuickfixsignsBalloon: Error after recent change- .gitignore- Merge branch 'master' of github.com:tomtom/quickfixsigns_vim- Support for git combined diff format- Don't run vcsdiff#GetList() in special buffers (reported by rememberthemer)- Doc review- Do not change directory to current buffer's.- Included the doc fixes by blueyed into the doc template.- Merge git://github.com/blueyed/quickfixsigns_vim- quickfixsigns#vcsdiff#GetList(): Ignore files that are not readable- s:PlaceSign(): E706: Variable type mismatch for: item https://github.com/tomtom/quickfixsigns_vim/issues/#issue/7- s:SetItemId() returns {} if item.bufnr == -1 (fix issue #7?)- quickfixsigns#RelNumbersOnce(): temporarily enable &cul and &cuc- s:ClearBuffer(): Check bufnr(def.bufnr) != -1 (issue #9)- quickfixsigns#RelNumbersOnce(): Remove highlighting also on TabLeave and WinLeave events- Clear*(): duplicate code- always_new: avoid wrong optimizations for certain sign classes (e.g. vcsdiff), fixes #10MD5 checksum: 542b6deeb5a0505f5bd6cfcaaeca9c57
+
+ README                                 |    4
+ autoload/quickfixsigns.vim             |   17
+ autoload/quickfixsigns/breakpoints.vim |    8
+ autoload/quickfixsigns/marks.vim       |   10
+ autoload/quickfixsigns/vcsdiff.vim     |   40
+ doc/quickfixsigns.txt                  |   30
+ plugin/quickfixsigns.vim               |  113
+ 7 files changed, 141 insertions(+), 81 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.13)
 Author:     Tom Link <micathom@gmail.com>
 AuthorDate: Wed Dec 29 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

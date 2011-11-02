@@ -1,4 +1,60 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.16.4)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.6.17)
+Author:     JiuTian Zhang <zhang9tian@gmail.com>
+AuthorDate: Sat Aug 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.6.17
+    
+    Bug fix for smartcase or caseignore option.
+    Fixed by Silver Gibiansky.
+
+ plugin/vjde/vjde_completion.vim                    |    2
+ plugin/vjde/vjde_java_utils.vim                    |   17
+ src/vjde/completion/ActionImpl.class               |  Bin 0 -> 1095 bytes
+ src/vjde/completion/ResultImpl.class               |  Bin 0 -> 921 bytes
+ .../completion/Struts2Configure$MyAction.class     |  Bin 0 -> 1047 bytes
+ src/vjde/completion/Struts2Configure.class         |  Bin 0 -> 10550 bytes
+ src/vjde/completion/Struts2Configure.java          |  992
+ src/vjde/completion/Struts2Configure.java.bak      |  460
+ src/vjde/completion/Struts2ConfigureMain.class     |  Bin 0 -> 688 bytes
+ 9 files changed, 1010 insertions(+), 461 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.6.16)
+Author:     JiuTian Zhang <zhang9tian@gmail.com>
+AuthorDate: Tue Jun 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.6.16
+    
+    add
+    let g:vjde_tab_cfu=1
+    in your _vimrc,
+    then you can use <tab> to finish the completion.
+    System.<tab>
+    System.<c-x><c-u>
+    will show the same result.
+
+ plugin/vjde.vim                 |    7
+ plugin/vjde/vjde_completion.vim |    4
+ 2 files changed, 10 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.16.5)
+Author:     JiuTian Zhang <zhang9tian@gmail.com>
+AuthorDate: Tue Jun 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.16.5
+    
+    add completion for constructor:
+    ArrayList<String> abc = new <c-x><c-u>
+    will completion
+    ArrayList<String> abc = new ArrayList<String>(
+
+ plugin/vjde/vjde_completion.vim |   15
+ src/wspawn.exe                  |  Bin 0 -> 128340 bytes
+ 2 files changed, 14 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.16.4)
 Author:     JiuTian Zhang <zhang9tian@gmail.com>
 AuthorDate: Sun Nov 14 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

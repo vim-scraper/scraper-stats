@@ -1,0 +1,421 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.1.2)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Tue Aug 30 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.1.2
+    
+    Allow overriding the file-language relationship without having to edit the language definitions.  Added support for Matlab (if your version of ctags supports it).  Added support for .hh extension for C/C++ headers.  Fixed bug with highlight priority for non-specified types.
+
+ autoload/TagHighlight/Debug.vim               |    1
+ autoload/TagHighlight/Find.vim                |    1
+ autoload/TagHighlight/Generation.vim          |    1
+ autoload/TagHighlight/Libraries.vim           |    1
+ autoload/TagHighlight/LoadDataFile.vim        |    1
+ autoload/TagHighlight/Option.vim              |    5
+ autoload/TagHighlight/ReadTypes.vim           |   28
+ autoload/TagHighlight/RunPythonScript.vim     |    1
+ autoload/TagHighlight/SpecialHandlers.vim     |    1
+ autoload/TagHighlight/Version.vim             |    1
+ doc/TagHighlight.txt                          |  100
+ plugin/TagHighlight.vim                       |    1
+ plugin/TagHighlight/TagHighlight.py           |    1
+ plugin/TagHighlight/data/kinds.txt            |    2
+ plugin/TagHighlight/data/languages/c.txt      |    4
+ plugin/TagHighlight/data/languages/matlab.txt |    9
+ plugin/TagHighlight/data/options.txt          |   18
+ plugin/TagHighlight/data/release.txt          |    2
+ plugin/TagHighlight/data/version_info.txt     |    4
+ plugin/TagHighlight/module/__init__.py        |    1
+ plugin/TagHighlight/module/cmd.py             |    1
+ plugin/TagHighlight/module/config.py          |    1
+ plugin/TagHighlight/module/ctags_interface.py |    1
+ plugin/TagHighlight/module/debug.py           |    1
+ plugin/TagHighlight/module/generation.py      |    7
+ plugin/TagHighlight/module/languages.py       |    1
+ plugin/TagHighlight/module/loaddata.py        |    1
+ plugin/TagHighlight/module/options.py         |    1
+ plugin/TagHighlight/module/utilities.py       |    1
+ plugin/TagHighlight/module/worker.py          |    1
+ 30 files changed, 149 insertions(+), 50 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.1)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Tue Aug 23 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.1.1
+    
+    Addition of LanguageDetectionMethods option to allow loading of types when FileType or Syntax are set (thanks to Hong Xu for the suggestion).  This also involved addition of syntax and filetype definitions to all languages.  Prevent Vim from repeatedly loading autocmds in plugin development mode.  Don't overwrite Cursor colour definitions with SQL cursor colouring (thanks again to Hong Xu for reporting this bug).
+
+ autoload/TagHighlight/Generation.vim          |    2
+ autoload/TagHighlight/ReadTypes.vim           |  104
+ doc/TagHighlight.txt                          |   80
+ plugin/TagHighlight.vim                       |   28
+ plugin/TagHighlight/data/kinds.txt            |    2
+ plugin/TagHighlight/data/languages/c.txt      |    2
+ plugin/TagHighlight/data/languages/csharp.txt |    2
+ plugin/TagHighlight/data/languages/java.txt   |    2
+ plugin/TagHighlight/data/languages/perl.txt   |    2
+ plugin/TagHighlight/data/languages/php.txt    |    2
+ plugin/TagHighlight/data/languages/python.txt |    2
+ plugin/TagHighlight/data/languages/ruby.txt   |    2
+ plugin/TagHighlight/data/languages/vhdl.txt   |    2
+ plugin/TagHighlight/data/options.txt          |    6
+ plugin/TagHighlight/data/release.txt          |    2
+ plugin/TagHighlight/data/version_info.txt     |    4
+ 16 files changed, 219 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1.0)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Mon Aug 22 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.1.0
+    
+    This is a replacement for the previous "ctags_highlighter" script that I wrote a while ago, with quite a few changes/improvements:
+    
+    * Now works well even if you don't keep the current directory at the root of your project;
+    * Recursive by default (rather than with '!' on command);
+    * Works with any recent python (2.6+, 3.0+), with or without the Vim python interface; alternatively a binary version is available for Linux or Windows if you don't have a recent version of python installed;
+    * MUCH more customisable and project options are easier to set;
+    * Better standard library support (e.g. highlight of tag names for Qt4, JDK, Android, wxWidgets etc) with a separate download from the (new)  website - much easier to create new standard libraries;
+    * Support for user libraries (highlighting of tag names for your own library
+    * Much easier to add support for new programming languages - all defined with a single text file (assuming ctags supports the language);
+    * Uses Vim's autoload mechanism, so should be quicker to load;
+    * Uses a dictionary for settings, so less namespace clutter;
+    * Support for pre- and post- update and read hooks in case you really want to do something clever;
+    * New website (http://www.cgtk.co.uk/taghighlight)
+    
+    This is the first release of the new version.  I would like to extend my gratitude to Aleksey Baibarin, Marcus Martin, Mishail, Prasun Ratn and Yongwei Wu for their help testing all the various pre-releases of the new version.  Without their help, there would be a LOT more bugs in this version than there are now!
+
+ README                                         |   30
+ autoload/TagHighlight/Debug.vim                |  103
+ autoload/TagHighlight/Find.vim                 |  219
+ autoload/TagHighlight/Generation.vim           |  169
+ autoload/TagHighlight/Libraries.vim            |  202
+ autoload/TagHighlight/LoadDataFile.vim         |  100
+ autoload/TagHighlight/Option.vim               |  168
+ autoload/TagHighlight/ReadTypes.vim            |  139
+ autoload/TagHighlight/RunPythonScript.vim      |  361
+ autoload/TagHighlight/SpecialHandlers.vim      |   48
+ autoload/TagHighlight/Version.vim              |   46
+ dist/make_taghighlight_release.py              |  197
+ doc/TagHighlight.txt                           | 1630
+ doc/ctags_highlighting.txt                     |  472
+ extra_source/mktypes/setup.py                  |    5
+ mktypes.py                                     |  883
+ plugin/TagHighlight.vim                        |  130
+ plugin/TagHighlight/TagHighlight.py            |   27
+ plugin/TagHighlight/TagHighlight.spec          |   32
+ plugin/TagHighlight/data/kinds.txt             |  243
+ plugin/TagHighlight/data/language_defaults.txt |   35
+ plugin/TagHighlight/data/languages/c.txt       |    9
+ plugin/TagHighlight/data/languages/csharp.txt  |    7
+ plugin/TagHighlight/data/languages/java.txt    |    8
+ plugin/TagHighlight/data/languages/perl.txt    |    7
+ plugin/TagHighlight/data/languages/php.txt     |    7
+ plugin/TagHighlight/data/languages/python.txt  |    7
+ plugin/TagHighlight/data/languages/ruby.txt    |    7
+ plugin/TagHighlight/data/languages/vhdl.txt    |    7
+ plugin/TagHighlight/data/options.txt           |  334
+ plugin/TagHighlight/data/release.txt           |    4
+ plugin/TagHighlight/data/version_info.txt      |    3
+ plugin/TagHighlight/import_check.py            |    3
+ plugin/TagHighlight/instructions.txt           |    6
+ plugin/TagHighlight/module/__init__.py         |   15
+ plugin/TagHighlight/module/cmd.py              |   58
+ plugin/TagHighlight/module/config.py           |   89
+ plugin/TagHighlight/module/ctags_interface.py  |  175
+ plugin/TagHighlight/module/debug.py            |   47
+ plugin/TagHighlight/module/generation.py       |  177
+ plugin/TagHighlight/module/languages.py        |  130
+ plugin/TagHighlight/module/loaddata.py         |   78
+ plugin/TagHighlight/module/options.py          |   50
+ plugin/TagHighlight/module/utilities.py        |  149
+ plugin/TagHighlight/module/worker.py           |   60
+ plugin/TagHighlight/version_check.py           |   15
+ plugin/ctags_highlighting.vim                  |  467
+ 47 files changed, 5318 insertions(+), 1840 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r458)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Thu Apr 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r458: Inclusion of vim keywords controlled by separate option.
+
+ doc/ctags_highlighting.txt    |   22
+ mktypes.py                    |   16
+ plugin/ctags_highlighting.vim |   11
+ 3 files changed, 39 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r456)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Wed Apr 6 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r456: Fixed accidental change of line-endings.
+
+ doc/ctags_highlighting.txt    |    4
+ mktypes.py                    |    4
+ plugin/ctags_highlighting.vim |    4
+ 3 files changed, 6 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r454)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Wed Apr 6 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r454: Fixed accidental change of file-type.
+
+ doc/ctags_highlighting.txt    |    4
+ mktypes.py                    |    8
+ plugin/ctags_highlighting.vim |    4
+ 3 files changed, 9 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r452)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Wed Apr 6 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r452: Better handling of unknown ctags tag kinds.
+
+ doc/ctags_highlighting.txt    |    4
+ mktypes.py                    |   36
+ plugin/ctags_highlighting.vim |    8
+ 3 files changed, 26 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r443)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Tue Feb 22 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r443
+    
+    Allow customisation of the filenames used for tags and types files (thanks to Sung Pae).
+
+ doc/ctags_highlighting.txt    |   14
+ mktypes.py                    |   33
+ plugin/ctags_highlighting.vim |   37
+ 3 files changed, 56 insertions(+), 28 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r442)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Wed Feb 16 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r442: Improved type prioritisation for object-oriented languages.
+
+ doc/ctags_highlighting.txt |    3
+ mktypes.py                 |   14
+ 2 files changed, 11 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r440)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Wed Feb 16 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r440
+    
+    Added better support for different C++ extensions and to avoid conflicts with C# files.
+
+ doc/ctags_highlighting.txt    |   12
+ mktypes.py                    |    8
+ plugin/ctags_highlighting.vim |   30
+ 3 files changed, 33 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r435)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Wed Jan 12 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r435
+    
+    Changed default to not include syntax matches unless either g:TypesFileIncludeSynMatches or b:TypesFileIncludeSynMatches is set to 1 (this makes the highlighting much faster for large projects).
+
+ doc/ctags_highlighting.txt    |    8
+ plugin/ctags_highlighting.vim |    8
+ 2 files changed, 11 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r431)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Fri Dec 3 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r431
+    
+    Better support for paths with spaces in them.  Added support for Android SDK and Java JDK (requires latest gui_types_and_tags from the website).  Optional local variable highlighting (see caveats on the website) for Java, C# and C++ as well as C.
+
+ doc/ctags_highlighting.txt    |   80
+ mktypes.py                    |   19
+ plugin/ctags_highlighting.vim |   99
+ 3 files changed, 127 insertions(+), 71 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r398)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Tue Mar 30 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r398: Added support for ctags 'import' type in python.
+
+ doc/ctags_highlighting.txt |    4
+ mktypes.py                 |    5
+ 2 files changed, 6 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r396)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Mon Mar 29 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r396
+    
+    Significantly improved support for languages other than C.  Factored out redundant ctags_* intermediate highlight groups.
+
+ doc/ctags_highlighting.txt |    7
+ mktypes.py                 |   40
+ 2 files changed, 29 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r391)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Wed Mar 3 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r391
+    
+    Better support for different languages including support for C# (thanks to Aleksey Baibarin).
+
+ doc/ctags_highlighting.txt    |    7
+ mktypes.py                    |   57
+ plugin/ctags_highlighting.vim |   10
+ 3 files changed, 45 insertions(+), 29 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/387)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Fri Feb 19 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 387: Fixed bug in new vimfiles location operation.
+
+ doc/ctags_highlighting.txt    |    4
+ plugin/ctags_highlighting.vim |    8
+ 2 files changed, 7 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r384)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Fri Feb 19 00:00:00 2010 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r384
+    
+    Improvements to VIMFILESDIR identification.  Re-architecture of type definitions to make them more sensitive to different ctags "kinds" for different languages.  Note that Enumerator has been renamed to EnumerationValue: the latest Bandit Colour Scheme supports this.  Fixed escaping of paths and operation of ReadTypes when not in an autocommand.
+
+ doc/ctags_highlighting.txt    |   16
+ mktypes.py                    |  533
+ plugin/ctags_highlighting.vim |  130
+ 3 files changed, 340 insertions(+), 339 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r340)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Mon Nov 2 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r340
+    
+    Added missing winrestview() call (thanks to Yongwei Wu for reporting this).
+
+ doc/ctags_highlighting.txt    |   33
+ mktypes.py                    |  405
+ plugin/ctags_highlighting.vim |  164
+ 3 files changed, 522 insertions(+), 80 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r309)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Tue Aug 18 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r309: Added experimental PHP support and a lot more documentation.
+
+ doc/ctags_highlighting.txt    |  372
+ mktypes.py                    |   20
+ plugin/ctags_highlighting.vim |    8
+ 3 files changed, 387 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r301)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Fri Aug 7 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r301
+    
+    Added shellescape() to GUI types and tags files and moved them out of the main distribution (see update 7th August 2009 on the website).
+
+ plugin/ctags_highlighting.vim |   24
+ types_qt4.vim                 | 1946
+ types_wx.vim                  |  629
+ types_wxpy.vim                |  596
+ 4 files changed, 15 insertions(+), 3180 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r292)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Mon Aug 3 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r292: Fixed bug with (optional) cscope database generation.
+
+ mktypes.py                    |    4
+ plugin/ctags_highlighting.vim |    6
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r286)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Mon Jul 27 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r286: Fix for Linux spaced paths (Mikhail Stepura).
+
+ mktypes.py                    |    6
+ plugin/ctags_highlighting.vim |    4
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r285)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Mon Jul 27 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r285
+    
+    Added support for ctags being stored in a path with spaces and other odd characters (thanks to Mikhail Stepura).
+
+ mktypes.py                    |   94
+ plugin/ctags_highlighting.vim |   88
+ 2 files changed, 94 insertions(+), 88 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r262)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Sat May 23 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r262
+    
+    Changed some of the defaults to the python script (so fewer options need to be passed by UpdateTypesFile).  It should now be possible to generate the types file simply by running "mktypes.py" or "mktypes.py -r" in the project directory.  Of course, UpdateTypesFile still works too.  Added UpdateTypesFileOnly command for projects in which the tags file is updated externally (e.g. the Linux kernel source).  Removed regular expression matches by default: this is much quicker for large projects.  Also added more screenshots to the website.
+
+ mktypes.py                    |   36
+ plugin/ctags_highlighting.vim |   29
+ 2 files changed, 45 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/r233)
+Author:     Al Budden <abudden@gmail.com>
+AuthorDate: Thu May 21 00:00:00 2009 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version r233: Initial upload
+
+ README                        |   21
+ extra_source/mktypes/setup.py |    5
+ mktypes.py                    |  527
+ plugin/ctags_highlighting.vim |  263
+ types_qt4.vim                 | 1946
+ types_wx.vim                  |  629
+ types_wxpy.vim                |  596
+ 7 files changed, 3987 insertions(+), 0 deletions(-)

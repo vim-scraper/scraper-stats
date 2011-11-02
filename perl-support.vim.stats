@@ -1,4 +1,86 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.11)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.14)
+Author:     Fritz Mehner <mehner@fh-swf.de>
+AuthorDate: Tue Oct 25 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.14
+    
+    - Plugin loads faster: loading the templates is delayed until the first use.
+    - Plugin now works with pathogen.vim.
+    - Menus will always be generated (for the use with :emenu).
+    - Bugfix: no local templates available with a system-wide installation (thanks to Iain Arnell).
+    - Minor improvements.
+
+ README.perlsupport                       |   17
+ autoload/perlsupportregex.vim            |   17
+ doc/ChangeLog                            |    9
+ doc/perl-hot-keys.pdf                    |  Bin 58016 -> 49529 bytes
+ doc/perl-hot-keys.tex                    |    8
+ doc/perlsupport.txt                      |   25
+ perl-support/templates/comments.template |   10
+ plugin/perl-support.vim                  |  202
+ 8 files changed, 154 insertions(+), 134 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.13)
+Author:     Fritz Mehner <mehner@fh-swf.de>
+AuthorDate: Sun Sep 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.13
+    
+    - Several hotkeys allow a range, e.g. '3\cl' (see help text and perl-hot-key.pdf).
+    - perltidy backup files optional.
+    - POD files have no longer filetype 'perl' (preserves proper syntyx highlighting).
+    - Running Perl as debugger (\rd, F9) uses Perl switches set with \rw (thanks to Sébastien Nobili).
+    - Minor improvements.
+
+ README.perlsupport            |   14
+ autoload/perlsupportgui.vim   |   14
+ autoload/perlsupportregex.vim |    6
+ doc/ChangeLog                 |   10
+ doc/perl-hot-keys.pdf         |  Bin 57639 -> 58016 bytes
+ doc/perl-hot-keys.tex         |  137
+ doc/perlsupport.txt           |  269
+ ftplugin/perl.vim             |   90
+ ftplugin/pod.vim              |  122
+ plugin/perl-support.vim       |  124
+ 10 files changed, 492 insertions(+), 294 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.12)
+Author:     Fritz Mehner <mehner@fh-swf.de>
+AuthorDate: Thu Jun 23 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.12
+    
+    - New: folding for the plugin list.
+    - New: hotkey \rpnh (browse NYTProf Html files).
+    - perltidy can be used as standard beautifier (commands "={motion}" ).
+    - perltidy writes backup files.
+    - perltidy error handling improved.
+    - Perl::Tags is disabled by default.
+    - Bugfix: the names of the CSV-files produced by Devel::NYTProf have changed.
+    - Bugfix: ddd not running from Vim under a display manager.
+    - Minor improvements.
+
+ README.perlsupport                       |   34
+ autoload/perlsupportgui.vim              |  242
+ autoload/perlsupportprofiling.vim        |   49
+ doc/ChangeLog                            |    8
+ doc/perl-hot-keys.pdf                    |  Bin 57469 -> 57639 bytes
+ doc/perl-hot-keys.tex                    |   16
+ doc/perlsupport.txt                      |   45
+ ftplugin/perl.vim                        |   11
+ perl-support/modules/perl-modules.list   |    4
+ perl-support/rc/customization.ctags      |    2
+ perl-support/rc/customization.perltidyrc |    5
+ perl-support/rc/customization.vimrc      |    4
+ perl-support/templates/comments.template |  130
+ perl-support/templates/idioms.template   |   16
+ plugin/perl-support.vim                  |  127
+ 15 files changed, 363 insertions(+), 330 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.11)
 Author:     Fritz Mehner <mehner@fh-swf.de>
 AuthorDate: Thu Apr 21 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

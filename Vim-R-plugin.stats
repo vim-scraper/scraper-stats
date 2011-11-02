@@ -1,4 +1,93 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/110222)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/111014@1)
+Author:     Jakson Aquino <jalvesaq@gmail.com>
+AuthorDate: Fri Oct 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 111014@1: Fix bug in function that send commands.
+
+ r-plugin/common_global.vim |    4
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/111014)
+Author:     Jakson Aquino <jalvesaq@gmail.com>
+AuthorDate: Fri Oct 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 111014
+    
+    * Fixed spell check bug in R documentation files (.Rd).
+    * Fixed beep bug when sending commands to R.
+    * New option: vimrplugin_notmuxconf.
+    * Fixed bug when starting tmux before vim: the environment variable VIMRPLUGIN_TMPDIR was not being set. Thanks to Michel Lang for reporting the bug and helping to track its source, and thanks to Eric Dewoestine for explaining how to fix the bug.
+    * Fixed bug in code indentation after unbalanced brackets and parenthesis when r_indent_align_args = 0 (thanks to Chris Neff and Peng Yu for reporting the bugs).
+    * Really make the use of AppleScript the default on OS X (thanks for Jason for reporting the bug).
+
+ README                     |   11
+ doc/r-plugin.txt           |  329
+ ftplugin/rnoweb.vim        |    8
+ indent/r.vim               |   21
+ r-plugin/common_global.vim |  294
+ r-plugin/functions.vim     |  521
+ r-plugin/omniList          |  103
+ r-plugin/screenrc          |    3
+ r-plugin/screenrc.xterm    |    9
+ r-plugin/tmux.conf         |    6
+ r-plugin/vimbrowser.R      |    5
+ r-plugin/windows.py        |    9
+ syntax/rhelp.vim           |    8
+ 13 files changed, 818 insertions(+), 509 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/110805)
+Author:     Jakson Aquino <jalvesaq@gmail.com>
+AuthorDate: Fri Aug 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 110805
+    
+    * New option: vimrplugin_tmux.
+    * Set Tmux as the default instead of either GNU Screen or Conque Shell.
+    * Document Tmux as the preferred way of running the plugin on Linux.
+    * Vim-LaTeX-suite plugin can be used with Rnoweb files without any additional configuration. The necessary code was added to the ftplugin/rnoweb.vim.
+    * Added count argument to normal mode commands gn and gN (thanks to Ivan Bezerra for the suggestion).
+
+ README                     |   11
+ doc/r-plugin.txt           |  684
+ ftplugin/rnoweb.vim        |   62
+ r-plugin/common_global.vim |  153
+ r-plugin/functions.vim     |  547
+ r-plugin/omniList          |  466
+ r-plugin/screenrc          |    8
+ r-plugin/specialfuns.R     |    2
+ r-plugin/tmux.conf         |   14
+ 9 files changed, 858 insertions(+), 1089 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/110614)
+Author:     Jakson Aquino <jalvesaq@gmail.com>
+AuthorDate: Tue Jun 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 110614
+    
+    * When doing the command \rh, the plugin tries to show the help for the method corresponding to the class of the object passed as argument to the function. The same with \rp (thanks to Thomas Scheike for suggesting the feature).
+    * Removed scipt rpager.sh.
+    * Added script global_r_plugin.vim to allow the use of the plugin with any file type.
+
+ README                       |    4
+ doc/r-plugin.txt             |  146
+ ftplugin/rbrowser.vim        |   50
+ ftplugin/rnoweb.vim          |    6
+ r-plugin/common_global.vim   |  136
+ r-plugin/global_r_plugin.vim |    7
+ r-plugin/rpager.sh           |   14
+ r-plugin/specialfuns.R       |   57
+ r-plugin/vimbrowser.R        |   19
+ r-plugin/vimhelp.R           |   75
+ r-plugin/vimprint.R          |   26
+ syntax/rhelp.vim             |    3
+ syntax/rout.vim              |   14
+ 13 files changed, 414 insertions(+), 143 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/110222)
 Author:     Jakson Aquino <jalvesaq@gmail.com>
 AuthorDate: Tue Feb 22 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

@@ -1,0 +1,237 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6.25)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Oct 23 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6.25
+    
+      Bug fix: Don't perform automatic completion in strings/comments:   http://github.com/xolox/vim-lua-ftplugin/commit/5cf57e0
+
+ autoload/xolox/lua.vim |    6
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.24)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Oct 16 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6.24
+    
+      Support Lua modules that don't create a global (omni completion):   http://github.com/xolox/vim-lua-ftplugin/commit/3c49c27
+
+ autoload/xolox/lua.vim             |    4
+ misc/lua-ftplugin/omnicomplete.lua |    7
+ 2 files changed, 7 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.23)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Sep 25 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6.23
+    
+      Updated miscellaneous scripts:   http://github.com/xolox/vim-lua-ftplugin/commit/50a844e
+
+ autoload/xolox/lua.vim       |    4
+ autoload/xolox/misc/list.vim |   15
+ autoload/xolox/misc/path.vim |   25
+ 3 files changed, 29 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.22)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Sep 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6.22
+    
+      Updated miscellaneous scripts:   http://github.com/xolox/vim-lua-ftplugin/commit/048c493
+
+ autoload/xolox/lua.vim         |    4
+ autoload/xolox/misc/buffer.vim |   37
+ autoload/xolox/misc/list.vim   |   37
+ autoload/xolox/misc/option.vim |   27
+ autoload/xolox/misc/path.vim   |   15
+ doc/ft_lua.txt                 |  195
+ 6 files changed, 310 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.21)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Aug 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6.21
+    
+      Option handling with xolox#misc#option#get({name}, {default}) (this one took me some time to get right..):   http://github.com/xolox/vim-lua-ftplugin/commit/e228b0e   http://github.com/xolox/vim-lua-ftplugin/commit/0b1c06e   http://github.com/xolox/vim-lua-ftplugin/commit/dc8a937   http://github.com/xolox/vim-lua-ftplugin/commit/05d45ea  Minor refactoring of omnicomplete.lua:   http://github.com/xolox/vim-lua-ftplugin/commit/5bb59a2  Move version variable to autoload script:   http://github.com/xolox/vim-lua-ftplugin/commit/b01ff5e
+
+ autoload/xolox/lua.vim             |   75
+ autoload/xolox/misc/README.md      |    4
+ autoload/xolox/misc/open.vim       |   15
+ autoload/xolox/misc/option.vim     |   15
+ misc/lua-ftplugin/omnicomplete.lua |   16
+ plugin/lua-ftplugin.vim            |    4
+ 6 files changed, 66 insertions(+), 63 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.17)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Jun 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6.17
+    
+      Completion bug fix: Off by one in prefix selection:   http://github.com/xolox/vim-lua-ftplugin/commit/865c32f
+
+ autoload/xolox/lua.vim  |    8
+ plugin/lua-ftplugin.vim |    2
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.16)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Jun 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6.16
+    
+      Delete old Vim help files (never even noticed them :-S):   http://github.com/xolox/vim-lua-ftplugin/commit/5d0ad12
+
+ doc/lua.txt             |  187
+ doc/luaft.txt           |  195
+ plugin/lua-ftplugin.vim |    2
+ 3 files changed, 1 insertions(+), 383 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.15)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Jun 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6.15
+    
+      F1: Fall back to Lua reference for Vim if it exists, :help otherwise:   http://github.com/xolox/vim-lua-ftplugin/commit/feecf0d  Disable automatic checking of global variables (for now):   http://github.com/xolox/vim-lua-ftplugin/commit/e15b7be  Define version as variable, include version in messages:   http://github.com/xolox/vim-lua-ftplugin/commit/5e40f1c  Enable overriding of compiler arguments:   http://github.com/xolox/vim-lua-ftplugin/commit/3c1ca42  Set quick-fix window title after syntax check:   http://github.com/xolox/vim-lua-ftplugin/commit/b5ea380  Make completion use prefix matching instead of substring matching:   http://github.com/xolox/vim-lua-ftplugin/commit/14d9067  Improve omni completion, add plugin/ script for autocmds:   http://github.com/xolox/vim-lua-ftplugin/commit/63641c8
+
+ README.md                          |    8
+ TODO.md                            |    3
+ autoload/xolox/lua.vim             |   92
+ doc/lua-ftplugin.txt               |  195
+ doc/luaft.txt                      |  195
+ ftplugin/lua.vim                   |   12
+ misc/lua-ftplugin/omnicomplete.lua |   13
+ plugin/lua-ftplugin.vim            |   32
+ 8 files changed, 499 insertions(+), 51 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.8)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Wed Jun 15 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6.8
+    
+      Add signatures of LuaSocket functions:   http://github.com/xolox/vim-lua-ftplugin/commit/972cac7
+
+ TODO.md                     |   13
+ autoload/xolox/lua_data.vim |   51
+ ftplugin/lua.vim            |    2
+ 3 files changed, 63 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.7)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Tue Jun 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6.7
+    
+      Check for undefined global variables (automatically):   http://github.com/xolox/vim-lua-ftplugin/commit/5466b62
+
+ README.md                     |   12
+ autoload/xolox/lua.vim        |   71
+ doc/lua.txt                   |   17
+ ftplugin/lua.vim              |   16
+ misc/lua-ftplugin/globals.lua |   35
+ 5 files changed, 117 insertions(+), 34 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.6)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Tue Jun 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6.6
+    
+      Move static user completion data to separate auto-load script:   http://github.com/xolox/vim-lua-ftplugin/commit/3aafd93  Several bug fixes and support for function signatures:   http://github.com/xolox/vim-lua-ftplugin/commit/79a5476  Highlight syntax errors to make them stand out:   http://github.com/xolox/vim-lua-ftplugin/commit/9e42b06  Improve omni completion: support for keywords, less clutter:   http://github.com/xolox/vim-lua-ftplugin/commit/bfd5701
+
+ autoload/xolox/lua.vim              |  327
+ autoload/xolox/lua_data.vim         |  329
+ ftplugin/lua.vim                    |    8
+ misc/lua-ftplugin/getsignatures.lua |   14
+ misc/lua-ftplugin/omnicomplete.lua  |   26
+ 5 files changed, 456 insertions(+), 248 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.2)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Tue Jun 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6.2
+    
+      Completion of module names after typing require(':   http://github.com/xolox/vim-lua-ftplugin/commit/ffaf36b
+
+ README.md              |    2
+ autoload/xolox/lua.vim |   66
+ doc/lua.txt            |   10
+ ftplugin/lua.vim       |   10
+ 4 files changed, 58 insertions(+), 30 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.1)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Tue Jun 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6.1
+    
+      Refactor search path handling, use Lua Interface for Vim when available:   http://github.com/xolox/vim-lua-ftplugin/commit/6d68f3d
+
+ autoload/xolox/lua.vim        |   60
+ autoload/xolox/misc/README.md |   25
+ autoload/xolox/misc/str.vim   |    4
+ ftplugin/lua.vim              |    2
+ 4 files changed, 46 insertions(+), 45 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Tue Jun 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6
+    
+      Link to release on vim.org, support automatic update using GLVS plug-in:   http://github.com/xolox/vim-lua-ftplugin/commit/9d68e7b  Support for omni completion by searching package.path and package.cpath:   http://github.com/xolox/vim-lua-ftplugin/commit/6ee6a69
+
+ INSTALL.md                         |    3
+ README.md                          |   21
+ autoload/xolox/lua.vim             |  142
+ doc/lua.txt                        |   35
+ ftplugin/lua.vim                   |    9
+ misc/lua-ftplugin/omnicomplete.lua |   65
+ 6 files changed, 254 insertions(+), 21 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.6)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Tue Jun 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.5.6: Initial upload
+
+ README                           |   18
+ README.md                        |   91
+ autoload/xolox/lua.vim           |  465
+ autoload/xolox/misc/README.md    |   13
+ autoload/xolox/misc/complete.vim |   18
+ autoload/xolox/misc/escape.vim   |   26
+ autoload/xolox/misc/list.vim     |   23
+ autoload/xolox/misc/msg.vim      |   83
+ autoload/xolox/misc/open.vim     |   71
+ autoload/xolox/misc/option.vim   |   46
+ autoload/xolox/misc/os.vim       |   12
+ autoload/xolox/misc/path.vim     |  158
+ autoload/xolox/misc/str.vim      |   12
+ autoload/xolox/misc/timer.vim    |   85
+ doc/lua.txt                      |  141
+ ftplugin/lua.vim                 |   81
+ misc/lua-ftplugin/complete.lua   |   75
+ 17 files changed, 1418 insertions(+), 0 deletions(-)

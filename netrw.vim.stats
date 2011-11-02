@@ -1,4 +1,21 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/141)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/142)
+Author:     Charles Campbell <drchip@campbellfamily.biz>
+AuthorDate: Tue May 31 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 142
+    
+    g:netrw_winsize's meaning changed!  Now describes percentage of current netrw buffer window to be used for the new window.
+    Bug fix: NetrwRemoteListing() uses shellescape to handle subdirectories having spaces.
+    Bug fix: NetrwMethod() attempts to issue an error message when given a malformed url
+
+ autoload/netrw.vim     |  146
+ doc/pi_netrw.txt       |   77
+ plugin/netrwPlugin.vim |    2
+ syntax/netrw.vim       |    2
+ 4 files changed, 157 insertions(+), 70 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/141)
 Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Fri Apr 1 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

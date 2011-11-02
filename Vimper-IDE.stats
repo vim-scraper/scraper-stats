@@ -1,0 +1,143 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.1.3b)
+Author:     Subhabrata Ghosh <subhagho@yahoo.com>
+AuthorDate: Sat Jul 9 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.3b: Added typedefs and macros to the Class Explorer.
+
+ plugin/vimper/project/classexplorer.vim |   69
+ plugin/vtreeexplorer.vim                |   15
+ 2 files changed, 77 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.3)
+Author:     Subhabrata Ghosh <subhagho@yahoo.com>
+AuthorDate: Fri Jul 8 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.3
+    
+    Added functionality to create classes.
+    Type "c" in the explorer window on or under the directory the class files should be added. Follow the prompts to create a header and class file.
+
+ README                                  |    2
+ plugin/minibufexpl.vim                  |    2
+ plugin/vimper/project/common.vim        |   19
+ plugin/vimper/project/cpp/functions.vim |   96
+ plugin/vtreeexplorer.vim                |   15
+ scripts/cpp/class.template.cpp          |   12
+ scripts/cpp/class.template.h            |   12
+ 7 files changed, 156 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.2)
+Author:     Subhabrata Ghosh <subhagho@yahoo.com>
+AuthorDate: Thu Jul 7 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.2
+    
+    Modified minibuffer to prevent line wrapping.
+    In case of overflow [...] is shown. Double-click on this to see the whole list.
+    Buffers are sorted based on the order of recently opened/viewed files.
+
+ plugin/minibufexpl.vim |  138
+ 1 files changed, 132 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.1-b@3)
+Author:     Subhabrata Ghosh <subhagho@yahoo.com>
+AuthorDate: Sat Jul 2 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.1-b@3: Added auto-generate tags on save.
+
+ README                                     |    2
+ make/cpp/makedep.mk                        |   15
+ plugin/vimper/project/Utils.vim            |    6
+ plugin/vimper/project/classexplorer.vim    |    2
+ plugin/vimper/project/cpp/class_buffer.vim |    5
+ plugin/vimper/project/cpp/functions.vim    |    5
+ scripts/cpp/template.vimper.vim            |    3
+ scripts/ctags.sh                           |  103
+ 8 files changed, 109 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.1-b@2)
+Author:     Subhabrata Ghosh <subhagho@yahoo.com>
+AuthorDate: Thu Jun 30 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.1-b@2: Fixed some performance issues.
+
+ README                                     |    3
+ plugin/vimper/project/classexplorer.vim    |  374
+ plugin/vimper/project/cpp/class_buffer.vim |  818
+ 3 files changed, 505 insertions(+), 690 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.1-b@1)
+Author:     Subhabrata Ghosh <subhagho@yahoo.com>
+AuthorDate: Sun Jun 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.1-b@1: Updated beta Version with some bug fixes.
+
+ plugin/vimper/cpp/utils.vim                |  136
+ plugin/vimper/project/Utils.vim            |   18
+ plugin/vimper/project/classexplorer.vim    |   31
+ plugin/vimper/project/common.vim           |  847
+ plugin/vimper/project/cpp/class_buffer.vim |   12
+ plugin/vimper/project/cpp/functions.vim    |   31
+ 6 files changed, 537 insertions(+), 538 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.1-b)
+Author:     Subhabrata Ghosh <subhagho@yahoo.com>
+AuthorDate: Sun Jun 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.1-b: Initial (beta) version of Vimper IDE.
+
+ README                                           |   38
+ after/ftplugin/c.vim                             |    2
+ after/ftplugin/cpp.vim                           |    2
+ autoload/omni/common/debug.vim                   |   32
+ autoload/omni/common/utils.vim                   |   67
+ autoload/omni/cpp/complete.vim                   |  569
+ autoload/omni/cpp/includes.vim                   |  126
+ autoload/omni/cpp/items.vim                      |  660
+ autoload/omni/cpp/maycomplete.vim                |   82
+ autoload/omni/cpp/namespaces.vim                 |  838
+ autoload/omni/cpp/settings.vim                   |   96
+ autoload/omni/cpp/tokenizer.vim                  |   93
+ autoload/omni/cpp/utils.vim                      |  587
+ doc/omnicppcomplete.txt                          | 1078
+ doc/vimper.html                                  |  725
+ doc/vimper.txt                                   |  555
+ doc/vtreeexplorer.txt                            |  226
+ ftdetect/makerr.vim                              |    7
+ make/cpp/global.mk                               |   67
+ make/cpp/macros.mk                               |   62
+ make/cpp/project.mk                              |   91
+ make/cpp/rules.mk                                |   32
+ make/cpp/template.subdir.mk                      |   61
+ make/vim/global.mk                               |   31
+ make/vim/project.mk                              |   38
+ make/vim/template.subdir.mk                      |   32
+ plugin/minibufexpl.vim                           | 1838
+ plugin/vimper/Utils.vim                          |  194
+ plugin/vimper/cpp/utils.vim                      |  115
+ plugin/vimper/project/Utils.vim                  |  267
+ plugin/vimper/project/classexplorer.vim          |  645
+ plugin/vimper/project/common.vim                 |  522
+ plugin/vimper/project/cpp/class_buffer.vim       |  722
+ plugin/vimper/project/cpp/error_buffer.vim       |  212
+ plugin/vimper/project/cpp/functions.vim          |  575
+ plugin/vimper/project/search_buffer.vim          |  222
+ plugin/vimper/project/session/SessionManager.vim |   78
+ plugin/vimper/project/vcpp/functions.vim         |  213
+ plugin/vimper/project/vim/functions.vim          |  476
+ plugin/vtreeexplorer.vim                         | 1091
+ scripts/cpp/template.vimper.vim                  |   61
+ scripts/ctags.sh                                 |   37
+ scripts/cygwin.pl                                |   45
+ scripts/search.pl                                |  129
+ scripts/vcpp/template.vimper.vim                 |   51
+ scripts/vim/template.vimper.vim                  |   21
+ syntax/makerr.vim                                |   51
+ 47 files changed, 13762 insertions(+), 0 deletions(-)

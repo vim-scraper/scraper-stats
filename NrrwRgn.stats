@@ -1,4 +1,60 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/18)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/24)
+Author:     Christian Brabandt <cb@256bit.org>
+AuthorDate: Mon Oct 24 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 24
+    
+    (uploaded as release 0.24, as 0.23 was falsly uploaded to vim.org)(automatically uploaded)
+
+ autoload/nrrwrgn.vim |   28
+ doc/NarrowRegion.txt |   69
+ plugin/NrrwRgn.vim   |    6
+ 3 files changed, 87 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/21)
+Author:     Christian Brabandt <cb@256bit.org>
+AuthorDate: Tue Jul 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 21
+    
+    -Fix issue https://github.com/chrisbra/NrrwRgn/issues/5(automatically uploaded)
+
+ autoload/nrrwrgn.vim |   10
+ doc/NarrowRegion.txt |   11
+ plugin/NrrwRgn.vim   |    6
+ 3 files changed, 18 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/20)
+Author:     Christian Brabandt <cb@256bit.org>
+AuthorDate: Mon Jul 25 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 20
+    
+    - allow customization via the g:nrrw_topbot_leftright variable  (Thanks Herbert Sitz!)- allow what options will be applied using the g:nrrw_custom_options dict  (suggested by Herbert Sitz. Thanks!)- NRV didn't hightlight the region that was selected  (reported by Herbert Sitz, Thanks- use the g:nrrw_rgn_protect variable, to prevent that the original buffer  will be protected. This is useful, if you narrow several regions of the  same buffer and want to write those changes indepentently  (reported by kolyuchiy in https://github.com/chrisbra/NrrwRgn/issues/3,  Thanks- fix an error with not correctly deleting the highlighted region, that was  discovered when reporting issue 3 (see above).  (Reported by kolyuchiy, thanks!)- Catch errors, when setting window local options.  (Patch by Sung Pae, Thanks!)(automatically uploaded)
+
+ autoload/nrrwrgn.vim |  225
+ doc/NarrowRegion.txt |   99
+ plugin/NrrwRgn.vim   |   12
+ 3 files changed, 236 insertions(+), 100 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/19)
+Author:     Christian Brabandt <cb@256bit.org>
+AuthorDate: Sun May 22 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 19
+    
+    fix issue 2 from github https://github.com/chrisbra/NrrwRgn/issues/2(Widening does not work, if the narrowed windows have been moved to a new tabspace). Reported by vanschelven, thanks! (automatically uploaded)
+
+ autoload/nrrwrgn.vim |   52
+ doc/NarrowRegion.txt |    7
+ plugin/NrrwRgn.vim   |    6
+ 3 files changed, 45 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/18)
 Author:     Christian Brabandt <cb@256bit.org>
 AuthorDate: Sat Dec 11 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

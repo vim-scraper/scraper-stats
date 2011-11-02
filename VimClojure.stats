@@ -1,4 +1,32 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.3.0)
+Author:     Meikel Brandmeyer <Brandels_Mikesh@web.de>
+AuthorDate: Wed Oct 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.3.0
+    
+    * The nailgun server and port may now be configured.
+    * Rainbow parens may be toggled on or off.
+    * The fuzzy indent option improves indentation based on the form name.
+    * The Repl now always enters a newline on <CR>. <C-CR> submits the expression. This can be easily flipped if desired.
+
+ autoload/vimclojure.vim                         |  420
+ autoload/vimclojure/util.vim                    |   89
+ doc/LICENSE.txt                                 |    2
+ doc/clojure.txt                                 |   53
+ ftplugin/clojure.vim                            |   51
+ ftplugin/clojure/completions-clojure.core.txt   |   36
+ ftplugin/clojure/completions-clojure.data.txt   |    1
+ ftplugin/clojure/completions-clojure.main.txt   |    3
+ ftplugin/clojure/completions-clojure.pprint.txt |    2
+ ftplugin/clojure/completions-clojure.repl.txt   |    8
+ ftplugin/clojure/completions-clojure.test.txt   |    1
+ indent/clojure.vim                              |  125
+ plugin/clojure.vim                              |   49
+ syntax/clojure.vim                              |  139
+ 14 files changed, 665 insertions(+), 314 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.0)
 Author:     Meikel Brandmeyer <Brandels_Mikesh@web.de>
 AuthorDate: Mon Oct 4 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

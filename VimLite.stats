@@ -1,0 +1,613 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8.6.2)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Thu Oct 27 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.6.2
+    
+     - OmniCpp: Fixed TokenizeLines().
+     - OmniCpp: Add some tokens replacement to support gnu c++ header 4.6
+        "_GLIBCXX_BEGIN_NAMESPACE_CONTAINER"
+        "_GLIBCXX_END_NAMESPACE_CONTAINER"
+        "_GLIBCXX_VISIBILITY(%0)="
+
+ VimLite-453/autoload/omnicpp/complete.vim  |  711
+ VimLite-453/autoload/omnicpp/includes.vim  |  242
+ VimLite-453/autoload/omnicpp/resolvers.vim | 2171
+ VimLite-453/autoload/omnicpp/scopes.vim    |  408
+ VimLite-453/autoload/omnicpp/settings.vim  |   52
+ VimLite-453/autoload/omnicpp/tokenizer.vim |  148
+ VimLite-453/autoload/omnicpp/utils.vim     |  730
+ VimLite-455/autoload/omnicpp/complete.vim  |  711
+ VimLite-455/autoload/omnicpp/includes.vim  |  242
+ VimLite-455/autoload/omnicpp/resolvers.vim | 2171
+ VimLite-455/autoload/omnicpp/scopes.vim    |  408
+ VimLite-455/autoload/omnicpp/settings.vim  |   52
+ VimLite-455/autoload/omnicpp/tokenizer.vim |  148
+ VimLite-455/autoload/omnicpp/utils.vim     |  733
+ VimLite.vba                                |   25
+ vimlite/VimLite/CppTokenizer.py            |    7
+ vimlite/VimLite/CppTokenizer.pyc           |  Bin 5974 -> 6041 bytes
+ vimlite/VimLite/Globals.py                 |    2
+ vimlite/VimLite/Globals.pyc                |  Bin 7992 -> 7992 bytes
+ vimlite/VimLite/TagsSettings.py            |  152
+ vimlite/VimLite/TagsSettings.pyc           |  Bin 7845 -> 7954 bytes
+ 21 files changed, 4565 insertions(+), 4548 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.6.1)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Wed Oct 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.6.1
+    
+    - Omnicpp: Rewrite Tokenizer() with python, so currently Omnicpp will faster.
+    - Fixed some bugs.
+
+ README                                     |    8
+ VimLite-442/autoload/omnicpp/complete.vim  |  711
+ VimLite-442/autoload/omnicpp/includes.vim  |  242
+ VimLite-442/autoload/omnicpp/resolvers.vim | 2171
+ VimLite-442/autoload/omnicpp/scopes.vim    |  405
+ VimLite-442/autoload/omnicpp/settings.vim  |   49
+ VimLite-442/autoload/omnicpp/tokenizer.vim |  124
+ VimLite-442/autoload/omnicpp/utils.vim     |  697
+ VimLite-453/autoload/omnicpp/complete.vim  |  711
+ VimLite-453/autoload/omnicpp/includes.vim  |  242
+ VimLite-453/autoload/omnicpp/resolvers.vim | 2171
+ VimLite-453/autoload/omnicpp/scopes.vim    |  408
+ VimLite-453/autoload/omnicpp/settings.vim  |   52
+ VimLite-453/autoload/omnicpp/tokenizer.vim |  148
+ VimLite-453/autoload/omnicpp/utils.vim     |  730
+ VimLite.vba                                |  128
+ doc/VimLite.txt                            |    3
+ plugin/VLWorkspace.vim                     |   16
+ vimlite/VimLite/CppTokenizer.py            |  207
+ vimlite/VimLite/CppTokenizer.pyc           |  Bin 0 -> 5974 bytes
+ vimlite/VimLite/VLWorkspace.py             |   53
+ vimlite/VimLite/VLWorkspace.pyc            |  Bin 40981 -> 41273 bytes
+ vimlite/pyclewn/clewn/debugger.py          |   31
+ vimlite/pyclewn/clewn/debugger.pyc         |  Bin 34448 -> 34585 bytes
+ 24 files changed, 4846 insertions(+), 4461 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.6)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Sat Oct 15 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.6
+    
+    - Debugger: Fixed args issue.
+    - VLWorkspace: Added :VLWFindFiles and :VLWFindFilesNoCase commands.
+    - VLWorkspace: Added 'Import Files From Directroy...' menu operation.
+    - VLWorkspace: Fixed C++ STL type replacement initialization when creating a new workspace.
+    - VLWorkspace: Fixed include paths issue when paring files.
+    - OmniCpp: Improvement.
+    - vimdialog: Improvement.
+
+ VimLite-442/autoload/omnicpp/complete.vim          |  711
+ VimLite-442/autoload/omnicpp/includes.vim          |  242
+ VimLite-442/autoload/omnicpp/resolvers.vim         | 2171
+ VimLite-442/autoload/omnicpp/scopes.vim            |  405
+ VimLite-442/autoload/omnicpp/settings.vim          |   49
+ VimLite-442/autoload/omnicpp/tokenizer.vim         |  124
+ VimLite-442/autoload/omnicpp/utils.vim             |  697
+ VimLite.vba                                        |  316
+ after/syntax/qf.vim                                |   21
+ autoload/pyclewn.vim                               |  231
+ autoload/vlutils.vim                               |  304
+ doc/VimLite.txt                                    |  605
+ doc/pyclewn.txt                                    | 1516
+ plugin/VLCalltips.vim                              |  302
+ plugin/VLClangCodeCompletion.vim                   |  760
+ plugin/VLUtils.vim                                 |  240
+ plugin/VLWorkspace.vim                             | 5352
+ plugin/VimTagsManager.vim                          |  147
+ plugin/pyclewn.vim                                 |   17
+ plugin/vimdialog.vim                               | 3345
+ syntax/dbgvar.vim                                  |   25
+ syntax/vlworkspace.vim                             |   78
+ vimlite/VimLite/Globals.pyc                        |  Bin 7996 -> 7992 bytes
+ vimlite/VimLite/TagsStorageSQLite.py               |    8
+ vimlite/VimLite/TagsStorageSQLite.pyc              |  Bin 35573 -> 35639 bytes
+ vimlite/VimLite/VLWorkspace.py                     |  124
+ vimlite/VimLite/VLWorkspace.pyc                    |  Bin 38188 -> 40981 bytes
+ vimlite/omnicpp/TagsStorageSQLite.py               |    8
+ vimlite/pyclewn/clewn/debugger.pyc                 |  Bin 34448 -> 34448 bytes
+ .../projects/executable-gcc/executable-gcc.project |    2
+ .../projects/executable/executable.project         |    2
+ 31 files changed, 17751 insertions(+), 51 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.5)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Sat Oct 8 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.5
+    
+    NOTE: The '~/.vimlite/config/TagsSettings.conf' file of this version is not compatible with the older one, please backup and delete it.
+    
+    - VLWorkspace: Fixed 'Workspace Build Configuration' refresh issue.
+    - VLWorkspace: Fixed global c compile option issue.
+    - VLWorkspace: Improved popup menu.
+    - VLWorkspace: Add command 'VLWSwapSourceHeader' to toggle editing source and header.
+    - VLWorkspace: Change workspace file suffix to 'vlworkspace' and project file suffix to 'vlproject'.
+    - VLWorkspace: Added 'Batch Build' feature.
+    - Omnicpp: Fixed 'defaule: { p->|'.
+    - Omnicpp: Improved 'Types' replacement.
+    - OmniCpp: Improved class constructor calltips. eg. A::A() : m_data(|) {
+    - Others: Improved OmniCpp and vimdialog, fixed minor bugs.
+
+ VimLite.vba                             | 2113
+ vimlite/VimLite/BuildConfig.py          |    7
+ vimlite/VimLite/BuildConfig.pyc         |  Bin 35469 -> 35439 bytes
+ vimlite/VimLite/Builder.py              |   12
+ vimlite/VimLite/Builder.pyc             |  Bin 4579 -> 4962 bytes
+ vimlite/VimLite/BuilderGnuMake.py       |  454
+ vimlite/VimLite/BuilderGnuMake.pyc      |  Bin 30394 -> 32131 bytes
+ vimlite/VimLite/Globals.py              |   24
+ vimlite/VimLite/Globals.pyc             |  Bin 7222 -> 7996 bytes
+ vimlite/VimLite/Project.py              |   14
+ vimlite/VimLite/Project.pyc             |  Bin 11476 -> 11510 bytes
+ vimlite/VimLite/TagsSettings.py         |   30
+ vimlite/VimLite/TagsSettings.pyc        |  Bin 7744 -> 7845 bytes
+ vimlite/VimLite/VLProject.py            |    2
+ vimlite/VimLite/VLProject.pyc           |  Bin 2452 -> 2482 bytes
+ vimlite/VimLite/VLWorkspace.py          |  121
+ vimlite/VimLite/VLWorkspace.pyc         |  Bin 36358 -> 38188 bytes
+ vimlite/VimLite/VLWorkspaceSettings.py  |   19
+ vimlite/VimLite/VLWorkspaceSettings.pyc |  Bin 4333 -> 5023 bytes
+ 19 files changed, 1932 insertions(+), 864 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.4.1)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Fri Sep 2 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.4.1
+    
+    - OmniCpp: Fix bug: if ( 1 > A.| )
+    - VLWorkspace: Use gui operation for "Add Existing Files..." if possible.
+
+ README      |   10
+ VimLite.vba |  211
+ 2 files changed, 115 insertions(+), 106 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.4)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Tue Aug 16 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.4
+    
+     - OmniCpp: Supported initialization calltips: 1. A<B> a(|); 2. A<B> *p = new A<B>(|);
+     - OmniCpp: Supported macro calltips.
+     - Improved interaction controls.
+
+ README                                         |    2
+ VimLite.vba                                    |  599
+ vimlite/templates/projects/executable/main.cpp |    2
+ 3 files changed, 394 insertions(+), 209 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.3)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Tue Aug 2 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.3
+    
+    VLWorkspace: Supported environment variables.
+    VLWorkspace: Fixed "Worksapce Build Configuration...".
+    Omnicpp: Fixed "using namespace std; map<string, int>::iterator iter; iter->|"
+    Omnicpp: Fixed "using namespace std; for(vector<string>::iterator it;;) it->|"
+    Omnicpp: Fixed synstack() issue.
+    Omnicpp: Supported 64bit.
+
+ README                                  |    2
+ VimLite.vba                             |  400
+ bin/vlctags64                           |  Bin 0 -> 834768 bytes
+ vimlite/VimLite/BuildMatrix.py          |    3
+ vimlite/VimLite/BuildMatrix.pyc         |  Bin 5888 -> 6051 bytes
+ vimlite/VimLite/EnvVarSettings.py       |    5
+ vimlite/VimLite/EnvVarSettings.pyc      |  Bin 7094 -> 7148 bytes
+ vimlite/VimLite/ProjectSettings.py      |   12
+ vimlite/VimLite/ProjectSettings.pyc     |  Bin 5620 -> 5766 bytes
+ vimlite/VimLite/TagsStorageSQLite.py    |    6
+ vimlite/VimLite/TagsStorageSQLite.pyc   |  Bin 35436 -> 35573 bytes
+ vimlite/VimLite/VLWorkspaceSettings.py  |   12
+ vimlite/VimLite/VLWorkspaceSettings.pyc |  Bin 3908 -> 4333 bytes
+ vimlite/omnicpp/TagsStorageSQLite.py    |    6
+ vimlite/vimlite_run                     |   30
+ 15 files changed, 381 insertions(+), 95 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.2)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Thu Jul 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.2
+    
+    Fixed toggle breakpoint issue.
+    Fixed Workspace Build Configuration save issue.
+    Improved interaction controls.
+
+ VimLite.vba                        | 1281
+ vimlite/VimLite/BuilderGnuMake.py  |   54
+ vimlite/VimLite/BuilderGnuMake.pyc |  Bin 29646 -> 30394 bytes
+ vimlite/VimLite/EnvVarSettings.py  |  190
+ vimlite/VimLite/EnvVarSettings.pyc |  Bin 0 -> 7094 bytes
+ vimlite/VimLite/Globals.py         |  183
+ vimlite/VimLite/Globals.pyc        |  Bin 5482 -> 7222 bytes
+ vimlite/VimLite/TagsSettings.py    |    8
+ vimlite/VimLite/TagsSettings.pyc   |  Bin 7721 -> 7744 bytes
+ vimlite/config/BuildSettings.xml   |    2
+ 10 files changed, 1296 insertions(+), 422 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.1)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Thu Jul 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.1
+    
+    - Fixed starting debugger bug.
+    - Fixed 'Add a new file...' menu operation bug.
+
+ VimLite.vba                       |   30
+ vimlite/VimLite/IncludeParser.py  |   36
+ vimlite/VimLite/IncludeParser.pyc |  Bin 3879 -> 4799 bytes
+ 3 files changed, 42 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.0)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Tue Jul 19 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.0
+    
+    - VLWorkspace: Added some keymappings.
+    - VLWorkspace: Changed all keymapping options name.
+    - VLWorkspace: Added command 'VLWBuildAndRunActiveProject'.
+    - VLWorkspace: Added option 'g:VLWorkspaceCscopeContainExternalHeader'.
+    - VLWorkspace: Added option 'g:VLWorkspaceNotParseSourceAfterSave'.
+    - Debugger: Added option 'g:VLWDbgSaveBreakpointsInfo'.
+    - Debugger: Improved 'VLWDbgToggleBp'.
+    - OmniCpp: Removed dependence 'libwxbase2.8-0'.
+
+ VimLite.vba                       | 1202
+ bin/vlctags                       |  Bin 210920 -> 790084 bytes
+ vimlite/VimLite/IncludeParser.py  |   39
+ vimlite/VimLite/IncludeParser.pyc |  Bin 4071 -> 3879 bytes
+ vimlite/VimLite/VLWorkspace.py    |    6
+ vimlite/VimLite/VLWorkspace.pyc   |  Bin 36272 -> 36358 bytes
+ vimlite/tempfile                  |  119
+ 7 files changed, 965 insertions(+), 401 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.8b)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Wed Jul 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.8b
+    
+    - VLOmniCpp: Improved.
+    - VLWorkspace: Added 'Custom Build Targets ' feature.
+    - VLWorkspace: Fixed a workspace tree displaying bug.
+    - VLWorkspace: Improved 'Add a New File...' menu operation.
+    - Debugger: Improved :VLWDbgToggleBp.
+    - Cscope: Added option g:VLWorkspaceCscopeContainExternalHeader.
+
+ VimLite.vba                                        |  729
+ vimlite/VimLite/BuilderGnuMake.py                  |    4
+ vimlite/VimLite/BuilderGnuMake.pyc                 |  Bin 29307 -> 29646 bytes
+ vimlite/VimLite/Globals.py                         |   16
+ vimlite/VimLite/Globals.pyc                        |  Bin 5271 -> 5482 bytes
+ vimlite/VimLite/TagsSettings.py                    |    1
+ vimlite/VimLite/TagsSettings.pyc                   |  Bin 7718 -> 7721 bytes
+ vimlite/VimLite/VLWorkspace.py                     |   20
+ vimlite/VimLite/VLWorkspace.pyc                    |  Bin 36080 -> 36272 bytes
+ .../Linux Device Driver.project                    |    2
+ .../projects/UnitTest++/UnitTest++.project         |    2
+ .../custom-makefile/custom-makefile.project        |    2
+ .../dynamic-library/dynamic-library.project        |    2
+ .../projects/executable-gcc/executable-gcc.project |    2
+ .../projects/executable/executable.project         |    2
+ .../projects/static-library/static-library.project |    2
+ 16 files changed, 615 insertions(+), 169 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.7b)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Wed Jul 6 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.7b
+    
+    - Fixed tag bugs.
+    - Fixed rename and add file bug.
+
+ VimLite.vba                           |   49
+ vimlite/VimLite/TagEntry.py           |   12
+ vimlite/VimLite/TagEntry.pyc          |  Bin 19170 -> 19223 bytes
+ vimlite/VimLite/TagsSettings.py       |    4
+ vimlite/VimLite/TagsStorageSQLite.py  |    1
+ vimlite/VimLite/TagsStorageSQLite.pyc |  Bin 35386 -> 35436 bytes
+ vimlite/VimLite/VLWorkspace.py        |    7
+ vimlite/VimLite/VLWorkspace.pyc       |  Bin 36044 -> 36080 bytes
+ vimlite/VimLite/VimTagsManager.py     |    4
+ vimlite/VimLite/VimTagsManager.pyc    |  Bin 4484 -> 4520 bytes
+ vimlite/omnicpp/TagEntry.py           |   12
+ vimlite/omnicpp/TagsStorageSQLite.py  |    1
+ vimlite/omnicpp/VimTagsManager.py     |    4
+ 13 files changed, 58 insertions(+), 36 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.6b)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Tue Jul 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.6b
+    
+    - Added option: g:VLCalltips_IndicateArgument
+    - Change g:VLCalltips_EnableSyntaxTest default value to 0
+    - Fixed 'Add Existing Files...' menu operation: If there is not zenity in system, VimLite will use gvim browse function which can only add one file each time.
+    - Improved OmniCpp.
+    - Improved quickfix syntax. Yes, VimLite had been supported quickfix, you just open quickfix window, VimLite will update the contents after each building.
+
+ README                                |    1
+ VimLite.vba                           |  255
+ vimlite/VimLite/BuildConfig.py        |    9
+ vimlite/VimLite/BuildConfig.pyc       |  Bin 35347 -> 35469 bytes
+ vimlite/VimLite/Globals.py            |   21
+ vimlite/VimLite/Globals.pyc           |  Bin 4544 -> 5271 bytes
+ vimlite/VimLite/TagsStorageSQLite.py  |   60
+ vimlite/VimLite/TagsStorageSQLite.pyc |  Bin 35784 -> 35386 bytes
+ vimlite/VimLite/VLWorkspace.py        |    2
+ vimlite/VimLite/VLWorkspace.pyc       |  Bin 36044 -> 36044 bytes
+ vimlite/omnicpp/TagsStorageSQLite.py  |   60
+ vimlite/tempfile                      |  119
+ vimlite/vimlite_term                  |    2
+ 13 files changed, 351 insertions(+), 178 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.5b@1)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Sun Jul 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.5b@1: Fixed a debugger issue(Why python os.chdir('') raise exception?).
+
+ VimLite.vba                                        |   50
+ .../executable-console-wx-enabled/main.cpp         |   64
+ .../projects/executable-wx-dialog/main.cpp         |  102
+ .../projects/executable-wx-frame/main.cpp          |   90
+ 4 files changed, 161 insertions(+), 145 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.5b)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Sun Jul 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.5b
+    
+    VLCalltips: Added syntax testing option.
+    VLWorkspace: Improved project settings.
+    Debugger: Supported breakpoints information saving.
+    Debugger: Added run to cursor line command.
+    Added document of VimLite.
+
+ VimLite.vba                     | 2464
+ vimlite/VimLite/VLWorkspace.py  |    4
+ vimlite/VimLite/VLWorkspace.pyc |  Bin 36062 -> 36044 bytes
+ vimlite/bitmaps/runtocursor.gif |  Bin 0 -> 138 bytes
+ 4 files changed, 2011 insertions(+), 457 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.3b)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Fri Jul 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.3b
+    
+    Improved OmniCpp code completion.
+    Fix project settings saving bug.
+
+ README                                |  160
+ VimLite.vba                           |  577
+ vimlite/omnicpp/TagsStorageSQLite.pyc |  Bin 35738 -> 35784 bytes
+ 3 files changed, 366 insertions(+), 371 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.2b)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Thu Jun 30 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.2b: Bugs fix and improvement.
+
+ README      |   19
+ VimLite.vba |  294
+ 2 files changed, 151 insertions(+), 162 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.1b)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Wed Jun 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.1b: Improvement.
+
+ README                              |  128
+ VimLite.vba                         |  194
+ vimlite/VimLite/ProjectSettings.py  |    7
+ vimlite/VimLite/ProjectSettings.pyc |  Bin 5580 -> 5620 bytes
+ 4 files changed, 246 insertions(+), 83 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7b)
+Author:     fanhe <fanhed@163.com>
+AuthorDate: Tue Jun 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7b: Initial upload
+
+ README                                             |   52
+ VimLite.vba                                        |12325
+ bin/pyclewn                                        |    9
+ bin/vlctags                                        |  Bin 0 -> 210920 bytes
+ vimlite/VimLite/BuildConfig.py                     |  936
+ vimlite/VimLite/BuildConfig.pyc                    |  Bin 0 -> 35347 bytes
+ vimlite/VimLite/BuildMatrix.py                     |  144
+ vimlite/VimLite/BuildMatrix.pyc                    |  Bin 0 -> 5888 bytes
+ vimlite/VimLite/BuildSettings.py                   |  218
+ vimlite/VimLite/BuildSettings.pyc                  |  Bin 0 -> 7679 bytes
+ vimlite/VimLite/BuildSystem.py                     |   53
+ vimlite/VimLite/BuildSystem.pyc                    |  Bin 0 -> 2164 bytes
+ vimlite/VimLite/Builder.py                         |  116
+ vimlite/VimLite/Builder.pyc                        |  Bin 0 -> 4579 bytes
+ vimlite/VimLite/BuilderGnuMake.py                  | 1171
+ vimlite/VimLite/BuilderGnuMake.pyc                 |  Bin 0 -> 29307 bytes
+ vimlite/VimLite/Compiler.py                        |  342
+ vimlite/VimLite/Compiler.pyc                       |  Bin 0 -> 11037 bytes
+ vimlite/VimLite/FileEntry.py                       |   29
+ vimlite/VimLite/FileEntry.pyc                      |  Bin 0 -> 1494 bytes
+ vimlite/VimLite/Globals.py                         |  146
+ vimlite/VimLite/Globals.pyc                        |  Bin 0 -> 4544 bytes
+ vimlite/VimLite/ITagsStorage.py                    |   62
+ vimlite/VimLite/ITagsStorage.pyc                   |  Bin 0 -> 2718 bytes
+ vimlite/VimLite/IncludeParser.py                   |  177
+ vimlite/VimLite/IncludeParser.pyc                  |  Bin 0 -> 4071 bytes
+ vimlite/VimLite/Macros.py                          |   42
+ vimlite/VimLite/Macros.pyc                         |  Bin 0 -> 1274 bytes
+ vimlite/VimLite/Project.py                         |  341
+ vimlite/VimLite/Project.pyc                        |  Bin 0 -> 11476 bytes
+ vimlite/VimLite/ProjectSettings.py                 |  154
+ vimlite/VimLite/ProjectSettings.pyc                |  Bin 0 -> 5580 bytes
+ vimlite/VimLite/QuickTest.py                       |   47
+ vimlite/VimLite/TagEntry.py                        |  643
+ vimlite/VimLite/TagEntry.pyc                       |  Bin 0 -> 19170 bytes
+ vimlite/VimLite/TagsSettings.py                    |  252
+ vimlite/VimLite/TagsSettings.pyc                   |  Bin 0 -> 7718 bytes
+ vimlite/VimLite/TagsStorageSQLite.py               | 1393
+ vimlite/VimLite/TagsStorageSQLite.pyc              |  Bin 0 -> 35784 bytes
+ vimlite/VimLite/VLProject.py                       |   70
+ vimlite/VimLite/VLProject.pyc                      |  Bin 0 -> 2452 bytes
+ vimlite/VimLite/VLWorkspace.py                     | 1412
+ vimlite/VimLite/VLWorkspace.pyc                    |  Bin 0 -> 36062 bytes
+ vimlite/VimLite/VLWorkspaceSettings.py             |  125
+ vimlite/VimLite/VLWorkspaceSettings.pyc            |  Bin 0 -> 3908 bytes
+ vimlite/VimLite/VimTagsManager.py                  |  114
+ vimlite/VimLite/VimTagsManager.pyc                 |  Bin 0 -> 4484 bytes
+ vimlite/VimLite/XmlUtils.py                        |  203
+ vimlite/VimLite/XmlUtils.pyc                       |  Bin 0 -> 6741 bytes
+ vimlite/bitmaps/anjuta-step-over-24.png            |  Bin 0 -> 1340 bytes
+ vimlite/bitmaps/breakpoint.png                     |  Bin 0 -> 1396 bytes
+ vimlite/bitmaps/build.png                          |  Bin 0 -> 1024 bytes
+ vimlite/bitmaps/clean.png                          |  Bin 0 -> 1302 bytes
+ vimlite/bitmaps/continue.gif                       |  Bin 0 -> 337 bytes
+ vimlite/bitmaps/execute.png                        |  Bin 0 -> 1565 bytes
+ vimlite/bitmaps/next.gif                           |  Bin 0 -> 211 bytes
+ vimlite/bitmaps/next.png                           |  Bin 0 -> 1340 bytes
+ vimlite/bitmaps/start.gif                          |  Bin 0 -> 348 bytes
+ vimlite/bitmaps/start.png                          |  Bin 0 -> 892 bytes
+ vimlite/bitmaps/stepin.gif                         |  Bin 0 -> 197 bytes
+ vimlite/bitmaps/stepin.png                         |  Bin 0 -> 1285 bytes
+ vimlite/bitmaps/stepout.gif                        |  Bin 0 -> 208 bytes
+ vimlite/bitmaps/stepout.png                        |  Bin 0 -> 1307 bytes
+ vimlite/bitmaps/stop.gif                           |  Bin 0 -> 215 bytes
+ vimlite/bitmaps/stop.png                           |  Bin 0 -> 250 bytes
+ vimlite/config/BuildSettings.xml                   |  172
+ vimlite/omnicpp/FileEntry.py                       |   29
+ vimlite/omnicpp/FileEntry.pyc                      |  Bin 0 -> 1494 bytes
+ vimlite/omnicpp/ITagsStorage.py                    |   62
+ vimlite/omnicpp/ITagsStorage.pyc                   |  Bin 0 -> 2718 bytes
+ vimlite/omnicpp/TagEntry.py                        |  643
+ vimlite/omnicpp/TagEntry.pyc                       |  Bin 0 -> 19170 bytes
+ vimlite/omnicpp/TagsStorageSQLite.py               | 1393
+ vimlite/omnicpp/TagsStorageSQLite.pyc              |  Bin 0 -> 35738 bytes
+ vimlite/omnicpp/VimTagsManager.py                  |  114
+ vimlite/omnicpp/VimTagsManager.pyc                 |  Bin 0 -> 4484 bytes
+ vimlite/pyclewn/clewn/__init__.py                  |   47
+ vimlite/pyclewn/clewn/__init__.pyc                 |  Bin 0 -> 1045 bytes
+ vimlite/pyclewn/clewn/__version__.py               |    3
+ vimlite/pyclewn/clewn/__version__.pyc              |  Bin 0 -> 181 bytes
+ vimlite/pyclewn/clewn/asyncproc.py                 |  456
+ vimlite/pyclewn/clewn/asyncproc.pyc                |  Bin 0 -> 16204 bytes
+ vimlite/pyclewn/clewn/buffer.py                    |  521
+ vimlite/pyclewn/clewn/buffer.pyc                   |  Bin 0 -> 18453 bytes
+ vimlite/pyclewn/clewn/debugger.py                  | 1048
+ vimlite/pyclewn/clewn/debugger.pyc                 |  Bin 0 -> 34448 bytes
+ vimlite/pyclewn/clewn/evtloop.py                   |  164
+ vimlite/pyclewn/clewn/evtloop.pyc                  |  Bin 0 -> 3864 bytes
+ vimlite/pyclewn/clewn/gdb.py                       | 1175
+ vimlite/pyclewn/clewn/gdb.pyc                      |  Bin 0 -> 34970 bytes
+ vimlite/pyclewn/clewn/gdbmi.py                     | 1506
+ vimlite/pyclewn/clewn/gdbmi.pyc                    |  Bin 0 -> 48885 bytes
+ vimlite/pyclewn/clewn/misc.py                      |  492
+ vimlite/pyclewn/clewn/misc.pyc                     |  Bin 0 -> 18518 bytes
+ vimlite/pyclewn/clewn/netbeans.py                  | 1111
+ vimlite/pyclewn/clewn/netbeans.pyc                 |  Bin 0 -> 38247 bytes
+ vimlite/pyclewn/clewn/nt.py                        |   85
+ vimlite/pyclewn/clewn/nt.pyc                       |  Bin 0 -> 2467 bytes
+ vimlite/pyclewn/clewn/posix.py                     |  287
+ vimlite/pyclewn/clewn/posix.pyc                    |  Bin 0 -> 8595 bytes
+ vimlite/pyclewn/clewn/pydb.py                      | 1025
+ vimlite/pyclewn/clewn/pydb.pyc                     |  Bin 0 -> 33653 bytes
+ vimlite/pyclewn/clewn/simple.py                    |  529
+ vimlite/pyclewn/clewn/simple.pyc                   |  Bin 0 -> 17046 bytes
+ vimlite/pyclewn/clewn/tty.py                       |  215
+ vimlite/pyclewn/clewn/tty.pyc                      |  Bin 0 -> 7111 bytes
+ vimlite/pyclewn/clewn/vim.py                       |  770
+ vimlite/pyclewn/clewn/vim.pyc                      |  Bin 0 -> 23159 bytes
+ .../projects/GTK+ project/GTK+ project.project     |   77
+ vimlite/templates/projects/GTK+ project/main.c     |   51
+ .../Linux Device Driver.project                    |   55
+ .../projects/Linux Device Driver/Makefile          |   15
+ .../templates/projects/Linux Device Driver/hello.c |   18
+ .../templates/projects/Linux Device Driver/load.sh |   17
+ .../projects/Linux Device Driver/unload.sh         |    9
+ .../projects/UnitTest++/UnitTest++.project         |   62
+ vimlite/templates/projects/UnitTest++/main.cpp     |   62
+ .../projects/cobra-executableU/build-file          |   13
+ .../cobra-executableU/cobra-executableU.project    |  108
+ .../projects/cobra-library/cobra-library.project   |   95
+ .../projects/cobra-library/lib-build-files         |   13
+ .../templates/projects/cobra-staticU/build-file    |   13
+ .../projects/cobra-staticU/cobra-staticU.project   |  108
+ .../custom-makefile/custom-makefile.project        |   53
+ .../projects/dynamic-library-wx-enabled/defs.h     |   36
+ .../dynamic-library-wx-enabled.project             |  148
+ .../projects/dynamic-library-wx-enabled/main.cpp   |   46
+ .../dynamic-library/dynamic-library.project        |   42
+ .../executable-cobra/executable-cobra.project      |   74
+ .../templates/projects/executable-cobra/main.cobra |    6
+ .../executable-console-wx-enabled.project          |   76
+ .../executable-console-wx-enabled/main.cpp         |   33
+ .../projects/executable-gcc/executable-gcc.project |   74
+ vimlite/templates/projects/executable-gcc/main.c   |    7
+ .../executable-qt-enabled.project                  |   76
+ .../projects/executable-qt-enabled/main.cpp        |   19
+ .../executable-qt-qmake-enabled.project            |   68
+ .../projects/executable-qt-qmake-enabled/main.cpp  |   19
+ .../executable-wx-dialog.project                   |   74
+ .../projects/executable-wx-dialog/gui.cpp          |   50
+ .../projects/executable-wx-dialog/gui.fbp          |  175
+ .../templates/projects/executable-wx-dialog/gui.h  |   53
+ .../projects/executable-wx-dialog/main.cpp         |   58
+ .../templates/projects/executable-wx-dialog/main.h |   52
+ .../executable-wx-enabled.project                  |   64
+ .../projects/executable-wx-enabled/main.cpp        |   43
+ .../executable-wx-frame.project                    |   83
+ .../templates/projects/executable-wx-frame/gui.cpp |   45
+ .../templates/projects/executable-wx-frame/gui.fbp |  204
+ .../templates/projects/executable-wx-frame/gui.h   |   53
+ .../projects/executable-wx-frame/main.cpp          |   52
+ .../templates/projects/executable-wx-frame/main.h  |   51
+ .../projects/executable/executable.project         |   57
+ vimlite/templates/projects/executable/main.cpp     |    7
+ .../projects/non-code-project/non-code.project     |    8
+ .../projects/static-library-wx-enabled/defs.h      |   21
+ .../projects/static-library-wx-enabled/main.cpp    |   46
+ .../static-library-wx-enabled.project              |   74
+ .../projects/static-library/static-library.project |   42
+ .../vc-dynamic-library/vc-dynamic-library.project  |   51
+ .../projects/vc-executable/vc-executable.project   |   50
+ .../projects/vc-static-lib/vc-static-lib.project   |   50
+ vimlite/vimlite_exec                               |   25
+ vimlite/vimlite_term                               |   34
+ 164 files changed, 35438 insertions(+), 0 deletions(-)

@@ -1,0 +1,114 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2.2)
+Author:     Andrew Radev <andrey.radev@gmail.com>
+AuthorDate: Wed Aug 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.2.2
+    
+    Bugfix for repeat.vim regression, thanks to kien (https://github.com/kien)
+
+ README                         |    7
+ autoload/sj/argparser/ruby.vim |    6
+ plugin/splitjoin.vim           |    6
+ 3 files changed, 14 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.1)
+Author:     Andrew Radev <andrey.radev@gmail.com>
+AuthorDate: Sat Aug 6 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.2.1: Bugfix for eruby.
+
+ ftplugin/eruby/splitjoin.vim |   25
+ plugin/splitjoin.vim         |    2
+ 2 files changed, 11 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2.0)
+Author:     Andrew Radev <andrey.radev@gmail.com>
+AuthorDate: Mon Aug 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.2.0
+    
+    - Javascript support
+    - Python support
+    - Option to omit curly braces when splitting ruby option hashes
+    - Refactoring and various bugfixes
+
+ autoload/sj.vim                   |   45
+ autoload/sj/argparser/common.vim  |  127
+ autoload/sj/argparser/js.vim      |   27
+ autoload/sj/argparser/ruby.vim    |  133
+ autoload/sj/html.vim              |    4
+ autoload/sj/js.vim                |   48
+ autoload/sj/python.vim            |   79
+ autoload/sj/ruby.vim              |   79
+ autoload/sj/rubyparse.vim         |  233
+ doc/splitjoin.txt                 |  121
+ ftplugin/javascript/splitjoin.vim |   11
+ ftplugin/python/splitjoin.vim     |   13
+ plugin/splitjoin.vim              |   12
+ 13 files changed, 659 insertions(+), 273 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.3)
+Author:     Andrew Radev <andrey.radev@gmail.com>
+AuthorDate: Thu Jun 30 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.3
+    
+    - Support for auto-aligning ruby hashes and CSS declarations using Tabular (https://github.com/godlygeek/tabular) or Align (vimscript #294)
+    - Support for repeat.vim (vimscript #2136) thanks to kien (https://github.com/kien)
+    - Various bugfixes
+
+ autoload/sj.vim      |   46
+ autoload/sj/css.vim  |    9
+ autoload/sj/ruby.vim |   13
+ doc/splitjoin.txt    |   83
+ plugin/splitjoin.vim |   12
+ 5 files changed, 161 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.2)
+Author:     Andrew Radev <andrey.radev@gmail.com>
+AuthorDate: Sat Jun 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.2
+    
+    - CSS support
+    - Various bugfixes
+
+ README                       |    3
+ autoload/sj.vim              |    9
+ autoload/sj/css.vim          |   78
+ autoload/sj/ruby.vim         |   30
+ autoload/sj/rubyparse.vim    |    9
+ doc/splitjoin.txt            |   28
+ ftplugin/css/splitjoin.vim   |   12
+ ftplugin/eruby/splitjoin.vim |   25
+ ftplugin/html/splitjoin.vim  |    2
+ ftplugin/ruby/splitjoin.vim  |    4
+ ftplugin/scss/splitjoin.vim  |   14
+ plugin/splitjoin.vim         |    2
+ 12 files changed, 180 insertions(+), 36 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.1)
+Author:     Andrew Radev <andrey.radev@gmail.com>
+AuthorDate: Fri Jun 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.1: Initial upload
+
+ README                       |   36
+ autoload/sj.vim              |  177
+ autoload/sj/eruby.vim        |   39
+ autoload/sj/html.vim         |   35
+ autoload/sj/ruby.vim         |  193
+ autoload/sj/rubyparse.vim    |  230
+ doc/splitjoin.txt            |  304
+ ftplugin/eruby/splitjoin.vim |   11
+ ftplugin/html/splitjoin.vim  |   13
+ ftplugin/ruby/splitjoin.vim  |   19
+ ftplugin/xml/splitjoin.vim   |   13
+ plugin/splitjoin.vim         |   57
+ 12 files changed, 1127 insertions(+), 0 deletions(-)

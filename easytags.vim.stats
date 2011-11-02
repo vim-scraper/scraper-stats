@@ -1,4 +1,417 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.7.2)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Oct 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.7.2
+    
+      Make list of ignored syntax groups configurable:   http://github.com/xolox/vim-easytags/commit/e3290ab  Make shell script highlighting compatible with syntax folding (issue #20):   http://github.com/xolox/vim-easytags/commit/4b4cd4d
+
+ README.md                   |    4
+ autoload/xolox/easytags.vim |   13
+ doc/easytags.txt            |    6
+ misc/easytags/highlight.py  |   14
+ plugin/easytags.vim         |    6
+ 5 files changed, 30 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.7)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Oct 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.7
+    
+    Added support for AWK, Shell and Tcl highlighting (contributed by Lorance Stinson):  http://github.com/xolox/vim-easytags/commit/bf32f32  http://github.com/xolox/vim-easytags/commit/3d7e091
+
+ README.md                   |   13
+ autoload/xolox/easytags.vim |   31
+ doc/easytags.txt            |   30
+ 3 files changed, 56 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.6.1)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Tue Sep 27 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.6.1
+    
+      Bug fix for error handling in cache_tagged_files():   http://github.com/xolox/vim-easytags/commit/a380feb
+
+ autoload/xolox/easytags.vim |    6
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.6)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Mon Sep 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.6
+    
+      Search the whole $PATH for Exuberant Ctags (issue #18):   http://github.com/xolox/vim-easytags/commit/fe3f565  Updated miscellaneous scripts:   http://github.com/xolox/vim-easytags/commit/0a9a07e
+
+ autoload/xolox/easytags.vim  |    4
+ autoload/xolox/misc/list.vim |   15
+ autoload/xolox/misc/path.vim |   25
+ plugin/easytags.vim          |   40
+ 4 files changed, 61 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5.8)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Sep 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.5.8
+    
+      New g:easytags_updatetime_autodisable option (issue #17, reported by Strahinja Markovic):   http://github.com/xolox/vim-easytags/commit/100bd8d
+
+ README.md                   |   10
+ autoload/xolox/easytags.vim |   25
+ doc/easytags.txt            |   51
+ 3 files changed, 66 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5.7)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Mon Sep 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.5.7
+    
+      Bug fix: Correct typo in s:canonicalize():   http://github.com/xolox/vim-easytags/commit/1fd6ef5  Make scope of canonical filename cache explicit:   http://github.com/xolox/vim-easytags/commit/ef7c6f8  Improve easytags_dynamic_files implementation (best of both worlds?):   http://github.com/xolox/vim-easytags/commit/fae8ddd
+
+ README.md                   |   11
+ autoload/xolox/easytags.vim |   71
+ doc/easytags.txt            |   30
+ 3 files changed, 61 insertions(+), 51 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5.4)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Sep 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.5.4
+    
+      Updated miscellaneous scripts:   http://github.com/xolox/vim-easytags/commit/bd39218
+
+ autoload/xolox/easytags.vim    |    2
+ autoload/xolox/misc/buffer.vim |   37
+ 2 files changed, 38 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5.3)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Sep 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.5.3
+    
+      normalize-tags.py: Enable normalizing several files at once:   http://github.com/xolox/vim-easytags/commit/8a186f4  Bug fix for "E713: Cannot use empty key for Dictionary" (issue #16 on GitHub, reported by Zhao Cai: http://github.com/xolox/vim-easytags/issues/16):   http://github.com/xolox/vim-easytags/commit/f38bcf6  Warn about unreasonable 'updatetime' values (issue #16, see above):   http://github.com/xolox/vim-easytags/commit/0b47a3c  Write tags files to temporary files, then rename() into place (issue #16, see above):   http://github.com/xolox/vim-easytags/commit/f526e2b
+
+ TODO.md                         |    2
+ autoload/xolox/easytags.vim     |   39
+ misc/easytags/normalize-tags.py |  108
+ plugin/easytags.vim             |    4
+ 4 files changed, 93 insertions(+), 60 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.5)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Wed Aug 31 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.5
+    
+      Make "easytags_dynamic_files" create missing tags files (suggested by Strahinja Markovic):   http://github.com/xolox/vim-easytags/commit/d2a2cb5
+
+ README.md                      |    8
+ autoload/xolox/easytags.vim    |   20
+ autoload/xolox/misc/list.vim   |   37
+ autoload/xolox/misc/option.vim |   27
+ autoload/xolox/misc/path.vim   |   15
+ doc/easytags.txt               |   22
+ 6 files changed, 99 insertions(+), 30 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.12)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Aug 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.12
+    
+      Explain how to setup custom ctags command line options:   http://github.com/xolox/vim-easytags/commit/46d87b3  Move version variable to autoload script:   http://github.com/xolox/vim-easytags/commit/4e1131e
+
+ autoload/xolox/easytags.vim |   38
+ plugin/easytags.vim         |    8
+ 2 files changed, 23 insertions(+), 23 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.11)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Fri Jul 8 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.11
+    
+      Never try to autoload plug-in for unsupported file types:   http://github.com/xolox/vim-easytags/commit/ee0966c  Skip unreadable tags files returned by tagfiles() (reported by Hannes von Haugwitz):   http://github.com/xolox/vim-easytags/commit/ba99f5f  Explain how to setup custom ctags command line options:   http://github.com/xolox/vim-easytags/commit/46d87b3
+
+ README.md                   |    6
+ autoload/xolox/easytags.vim |   42
+ doc/easytags.txt            |   24
+ plugin/easytags.vim         |    4
+ 4 files changed, 51 insertions(+), 25 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.9)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Mon Jun 27 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.9
+    
+      Fix broken link in README:   http://github.com/xolox/vim-easytags/commit/5207365
+
+ README.md           |    2
+ doc/easytags.txt    |    4
+ plugin/easytags.vim |    2
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.8)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Mon Jun 27 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.8
+    
+      Bug fix and improvement for xolox#misc#option#get():   http://github.com/xolox/vim-easytags/commit/0b1c06e  Support for buffer local variants of most options (see http://peterodding.com/code/vim/easytags#options):   http://github.com/xolox/vim-easytags/commit/2e05e0e
+
+ README.md                      |   84
+ TODO.md                        |   12
+ autoload/xolox/easytags.vim    |   33
+ autoload/xolox/misc/option.vim |   17
+ doc/easytags.txt               |   38
+ plugin/easytags.vim            |   24
+ 6 files changed, 114 insertions(+), 94 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.7)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Jun 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.7
+    
+      Add easytags_auto_update/auto_highlight options (makes it possible to disable automatic updating and/or highlighting for all or specific buffers):   http://github.com/xolox/vim-easytags/commit/67616b2
+
+ README.md                      |   20
+ autoload/xolox/easytags.vim    |   38
+ autoload/xolox/misc/README.md  |   29
+ autoload/xolox/misc/open.vim   |   70
+ autoload/xolox/misc/option.vim |   12
+ autoload/xolox/misc/str.vim    |    4
+ doc/easytags.txt               |   28
+ plugin/easytags.vim            |    4
+ 8 files changed, 174 insertions(+), 31 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.6)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Fri Jun 24 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.6
+    
+      Finish support for file type specific tags files (+bug fix):   http://github.com/xolox/vim-easytags/commit/e8db2a2
+
+ autoload/xolox/easytags.vim |   22
+ plugin/easytags.vim         |    2
+ 2 files changed, 15 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.5)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Fri Jun 24 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.5
+    
+      Allow enabling both dynamic and file type specific tags files (thanks to Kenny Stuart):   http://github.com/xolox/vim-easytags/commit/d727ac0  Tolerate corrupt tags files and ctags output:   http://github.com/xolox/vim-easytags/commit/b5e0b6b
+
+ README.md                   |    4
+ autoload/xolox/easytags.vim |   35
+ doc/easytags.txt            |    9
+ plugin/easytags.vim         |    4
+ 4 files changed, 40 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.3)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Jun 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.3
+    
+      Define version as variable, include version in messages:   http://github.com/xolox/vim-easytags/commit/e454233
+
+ autoload/xolox/easytags.vim |   50
+ plugin/easytags.vim         |   16
+ 2 files changed, 31 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.2)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Fri Jun 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.2
+    
+      Remove duplicate tag from Vim help file:   http://github.com/xolox/vim-easytags/commit/27b9aa3
+
+ README.md           |    2
+ doc/easytags.txt    |    3
+ plugin/easytags.vim |    4
+ 3 files changed, 4 insertions(+), 5 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4.1)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Tue Jun 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4.1
+    
+      Documentation bug fix (it's getting late..):   http://github.com/xolox/vim-easytags/commit/08186f0
+
+ README.md           |    2
+ doc/easytags.txt    |    2
+ plugin/easytags.vim |    2
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.4)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Tue Jun 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.4
+    
+      2x faster syntax highlighting using Python Interface to Vim :-)   http://github.com/xolox/vim-easytags/commit/9abe348
+
+ README.md                       |   24
+ TODO.md                         |    2
+ autoload/xolox/easytags.vim     |  155
+ doc/easytags.txt                |   44
+ misc/easytags/highlight.py      |   55
+ misc/easytags/normalize-tags.py |   62
+ misc/easytags/why-so-slow.py    |   39
+ normalize-tags.py               |   62
+ plugin/easytags.vim             |   10
+ why-so-slow.py                  |   39
+ 10 files changed, 331 insertions(+), 161 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3.2)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Mon Jun 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.3.2
+    
+      Fix caching of tagged files (for file type specific tags files):   http://github.com/xolox/vim-easytags/commit/ca9a4d8
+
+ autoload/xolox/easytags.vim |  130
+ plugin/easytags.vim         |    4
+ 2 files changed, 69 insertions(+), 65 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3.1)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Mon Jun 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.3.1
+    
+      Minor bug fix for xolox#easytags#get_tagsfile():   http://github.com/xolox/vim-easytags/commit/dc167e4  Bug fix: Print the right message after :verbose UpdateTags!   http://github.com/xolox/vim-easytags/commit/2094759  Basic support for file type specific tags files:   http://github.com/xolox/vim-easytags/commit/4df41ad  :TagsByFileType command to create file type specific tags files from a global tags file:   http://github.com/xolox/vim-easytags/commit/1194a6b
+
+ README.md                   |    8
+ autoload/xolox/easytags.vim |  120
+ doc/easytags.txt            |   16
+ plugin/easytags.vim         |   43
+ 4 files changed, 144 insertions(+), 43 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.12)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Jun 12 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2.12
+    
+      Automatically run :HighlightTags after using :UpdateTags:   http://github.com/xolox/vim-easytags/commit/6c959d2  Refactor automatic command registration, include more events:   http://github.com/xolox/vim-easytags/commit/1de4f3d
+
+ INSTALL.md                  |    4
+ autoload/xolox/easytags.vim |    7
+ doc/easytags.txt            |  114
+ plugin/easytags.vim         |   43
+ 4 files changed, 77 insertions(+), 91 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.9)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Mon May 23 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2.9
+    
+      Added caveat about Cygwin, updated to-do list:
+       https://github.com/xolox/vim-easytags/commit/ea6efd6
+    
+      Document the highlighting groups used by the plug-in:
+       https://github.com/xolox/vim-easytags/commit/2a2cba0
+    
+      Add g:easytags_suppress_ctags_warning option:
+       https://github.com/xolox/vim-easytags/commit/6e279a3
+    
+      Accept 'Development' as valid version:
+       https://github.com/xolox/vim-easytags/commit/0a49b11
+    
+      Add documentation in vimdoc format:
+       https://github.com/xolox/vim-easytags/commit/6de3e06
+    
+      Enable deferring tags file registration (VimEnter):
+       https://github.com/xolox/vim-easytags/commit/3466f61
+       https://github.com/xolox/vim-easytags/commit/c1635d6
+    
+      Don't use feedkeys() hack for Vim >= 7.3:
+       https://github.com/xolox/vim-easytags/commit/1ee5eff
+    
+      Enable updating of project specific tags files:
+       https://github.com/xolox/vim-easytags/commit/670910e
+    
+      Check that the xolox#misc submodule is available:
+       https://github.com/xolox/vim-easytags/commit/6ddd431
+    
+      Added Python script to manually cleanup tags files:
+       https://github.com/xolox/vim-easytags/commit/18ad44c
+    
+      Added Python script to analyze tags file size:
+       https://github.com/xolox/vim-easytags/commit/f980d5d
+    
+      Dynamic highlighting for Ruby source code (issue #9):
+       https://github.com/xolox/vim-easytags/commit/45e97ff
+    
+      Bug fix for highlighting of C# classes:
+       https://github.com/xolox/vim-easytags/commit/6cf2a35
+
+ INSTALL.md                       |    3
+ README.md                        |  202
+ TODO.md                          |   26
+ autoload/easytags.vim            |  631
+ autoload/xolox.vim               |  110
+ autoload/xolox/easytags.vim      |  658
+ autoload/xolox/escape.vim        |   26
+ autoload/xolox/misc/README.md    |   13
+ autoload/xolox/misc/complete.vim |   18
+ autoload/xolox/misc/escape.vim   |   26
+ autoload/xolox/misc/list.vim     |   23
+ autoload/xolox/misc/msg.vim      |   83
+ autoload/xolox/misc/option.vim   |   46
+ autoload/xolox/misc/os.vim       |   12
+ autoload/xolox/misc/path.vim     |  158
+ autoload/xolox/misc/str.vim      |   12
+ autoload/xolox/misc/timer.vim    |   85
+ autoload/xolox/option.vim        |   46
+ autoload/xolox/timer.vim         |   79
+ doc/easytags.txt                 |  175
+ normalize-tags.py                |   62
+ plugin/easytags.vim              |   57
+ why-so-slow.py                   |   39
+ 23 files changed, 1633 insertions(+), 957 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
 Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Thu Feb 24 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

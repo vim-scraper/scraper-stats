@@ -1,0 +1,238 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.1.14)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Tue Aug 23 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.14: Fixed behavior of the plugin when &wildignore is "*"
+
+ doc/frawor.txt                 |    3
+ plugin/frawor.vim              |    2
+ plugin/frawor/fwc/intfuncs.vim |    4
+ plugin/frawor/os.vim           |   11
+ 4 files changed, 12 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.13)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Sat Aug 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.13
+    
+    Various compatibility improvements (now works on vim-7.2.242)@/decorators/altervars: Added `folds' special setter@/fwc: Made `range' check be aware of -onlystrings option, various fixes
+
+ doc/FWC.txt                            |    6
+ doc/frawor.txt                         |    8
+ plugin/frawor/decorators/altervars.vim |   29
+ plugin/frawor/fwc.vim                  |    2
+ plugin/frawor/fwc/compiler.vim         |   87
+ plugin/frawor/fwc/intfuncs.vim         |  258
+ plugin/frawor/fwc/parser.vim           |  108
+ plugin/frawor/fwc/topconstructs.vim    |  232
+ plugin/frawor/mappings.vim             |   38
+ plugin/frawor/os.vim                   |   15
+ plugin/frawor/table.vim                |    2
+ 11 files changed, 512 insertions(+), 273 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.11)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Wed Jul 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.11: @/os: Made relpath be aware of paths with trailing path separators
+
+ plugin/frawor/os.vim |    5
+ 1 files changed, 3 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.10)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Wed Jul 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.10
+    
+    @/os: Added os.path.relpath function      Made abspath also work for paths like a/b/c where a/ does not exist      Made os.path.normpath also simplify its argument
+
+ plugin/frawor/os.vim |    4
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.9)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Wed Jul 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.9
+    
+    @/os: Added os.path.relpath function      Made abspath also work for paths like a/b/c where a/ does not exist      Made os.path.normpath also simplify its argument
+
+ doc/FWC.txt              |    2
+ doc/frawor.txt           |   19
+ plugin/frawor/lua.vim    |    2
+ plugin/frawor/os.vim     |   34
+ plugin/frawor/perl.vim   |    2
+ plugin/frawor/python.vim |    2
+ plugin/frawor/ruby.vim   |    2
+ plugin/frawor/tcl.vim    |    2
+ 8 files changed, 50 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.8)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Sun Jul 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.8
+    
+    Improved `path pipe and completion\nMade unmap handle «... does not exist» error
+
+ doc/FWC.txt                         |    4
+ doc/frawor.txt                      |    1
+ plugin/frawor.vim                   |    1
+ plugin/frawor/autocommands.vim      |   11
+ plugin/frawor/commands.vim          |   13
+ plugin/frawor/fwc.vim               |    2
+ plugin/frawor/fwc/compiler.vim      |   17
+ plugin/frawor/fwc/intfuncs.vim      |   43
+ plugin/frawor/fwc/topconstructs.vim |    4
+ plugin/frawor/mappings.vim          |   14
+ plugin/frawor/signs.vim             |    2
+ 11 files changed, 66 insertions(+), 46 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.7)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Sun Jun 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.7
+    
+    @/table: Improved stdisplaywidth emulation@/fwc/compiler: Fixed `cur arguments inside {optional} section
+
+ plugin/frawor/fwc/compiler.vim |    3
+ plugin/frawor/mappings.vim     |    1
+ plugin/frawor/table.vim        |   15
+ 3 files changed, 12 insertions(+), 7 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.6)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Sat Jun 25 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.6: Fixed completion and checker for +history altervars special
+
+ plugin/frawor/fwc/compiler.vim      |  271
+ plugin/frawor/fwc/intfuncs.vim      |   22
+ plugin/frawor/fwc/parser.vim        |    2
+ plugin/frawor/fwc/topconstructs.vim |    6
+ plugin/frawor/history.vim           |   11
+ 5 files changed, 183 insertions(+), 129 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.5)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Fri Jun 24 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.5
+    
+    @/fwc changes:- Added `idof check\n- Fixed `either' key: checks in alternatives were effectively ignored
+
+ doc/FWC.txt                    |   13
+ doc/aurum.txt                  |   38
+ doc/chk.txt                    |  456
+ doc/comp.txt                   |  223
+ doc/format.txt                 |  824
+ doc/frawor.txt                 |   26
+ doc/json.rux                   |   72
+ doc/json.txt                   |   65
+ doc/load.txt                   |  661
+ doc/oop.txt                    |   93
+ doc/parinfo.txt                |   38
+ doc/tags                       |  742
+ doc/tags-ru                    |  120
+ doc/translit3.rux              | 1210
+ doc/translit3.txt              | 1108
+ doc/vim-fileutils.txt          |   48
+ doc/yaml.txt                   |  240
+ plugin/frawor/functions.vim    |  136
+ plugin/frawor/fwc.vim          |    2
+ plugin/frawor/fwc/compiler.vim |   91
+ plugin/frawor/fwc/intfuncs.vim |  343
+ plugin/frawor/fwc/parser.vim   |    1
+ 22 files changed, 453 insertions(+), 6097 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.4)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Wed Jun 22 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.4: Added @/history module
+
+ doc/aurum.txt             |   38
+ doc/chk.txt               |  456
+ doc/comp.txt              |  223
+ doc/format.txt            |  824
+ doc/frawor.txt            |  110
+ doc/json.rux              |   72
+ doc/json.txt              |   65
+ doc/load.txt              |  661
+ doc/oop.txt               |   93
+ doc/parinfo.txt           |   38
+ doc/tags                  |  742
+ doc/tags-ru               |  120
+ doc/translit3.rux         | 1210
+ doc/translit3.txt         | 1108
+ doc/vim-fileutils.txt     |   48
+ doc/yaml.txt              |  240
+ plugin/frawor/history.vim |   51
+ 17 files changed, 6054 insertions(+), 45 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1.3)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Wed Jun 22 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1.3
+    
+    @/mappings: Added possibility to specify functions in `strfunc and `func' keys (required for plugin autoloading)\n@/table: Posted strdisplaywidth function (relevant for old vims, for newer ones it is just a reference to built-in strdisplaywidth)
+
+ doc/frawor.txt             |   23
+ plugin/frawor/mappings.vim |   85
+ plugin/frawor/table.vim    |   10
+ 3 files changed, 84 insertions(+), 34 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
+Author:     ZyX ZyX <kp-pav@yandex.ru>
+AuthorDate: Sun Jun 19 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.1: Initial upload
+
+ README                                 |  131
+ README.markdown                        |  126
+ autoload/frawor.vim                    |   68
+ doc/FWC.txt                            |  638
+ doc/frawor.txt                         | 1345
+ plugin/frawor.vim                      |  972
+ plugin/frawor/autocommands.vim         |  251
+ plugin/frawor/base64.vim               |  179
+ plugin/frawor/checks.vim               |  120
+ plugin/frawor/commands.vim             |  512
+ plugin/frawor/decorators.vim           |  105
+ plugin/frawor/decorators/altervars.vim |  502
+ plugin/frawor/functions.vim            |  396
+ plugin/frawor/fwc.vim                  |  148
+ plugin/frawor/fwc/compiler.vim         | 1021
+ plugin/frawor/fwc/constructor.vim      |  253
+ plugin/frawor/fwc/intfuncs.vim         | 1196
+ plugin/frawor/fwc/parser.vim           |  901
+ plugin/frawor/fwc/topconstructs.vim    |  666
+ plugin/frawor/lua.vim                  |   69
+ plugin/frawor/mappings.vim             | 1023
+ plugin/frawor/options.vim              |  272
+ plugin/frawor/os.vim                   |  356
+ plugin/frawor/perl.vim                 |   59
+ plugin/frawor/python.vim               |   81
+ plugin/frawor/resources.vim            |   94
+ plugin/frawor/ruby.vim                 |   59
+ plugin/frawor/signs.vim                |  290
+ plugin/frawor/table.vim                |  132
+ plugin/frawor/tcl.vim                  |   63
+ templates/oneload-frawor-plugin.vim    |   16
+ 31 files changed, 12044 insertions(+), 0 deletions(-)

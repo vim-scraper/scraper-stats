@@ -1,4 +1,35 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.3)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.4)
+Author:     Tim Pope <vim.org@tpope.org>
+AuthorDate: Sat Aug 27 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.4
+    
+    Support Rails 3.1 assets (smarter :Rjavascript and :Rstylesheet).
+    Support RSpec 2 backtrace format in :Rake.
+    Support rename_index in :Rinvert.
+    Support slim template type.
+    Better support for Rails 3 style `:Rails new foo`.
+    Link Gemfile and Gemfile.lock with :A.
+    Add bundler.vim support.
+    Syntax highlight `execute` in migrations.
+    Syntax highlight `attr_readonly` [Adam Vaughan].
+    Syntax highlight `around` in specs [Cássio Marques].
+    Fix Oracle dbext support [Mark Roghelia].
+    Fix singularization of "movies".
+    Fix gf on render :partial => 'foo/bar.html'.
+    Fix gf with Ruby 1.9 hashes.
+    Remove AWS abbreviation.
+    Remove statusline indicator.
+    Remove project.vim support.
+
+ README             |    4
+ autoload/rails.vim | 4744
+ doc/rails.txt      |  142
+ plugin/rails.vim   |    3
+ 4 files changed, 18 insertions(+), 4875 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.3)
 Author:     Tim Pope <vimNOSPAM@tpope.org>
 AuthorDate: Fri Sep 10 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

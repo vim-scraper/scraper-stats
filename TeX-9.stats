@@ -1,0 +1,61 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1.5)
+Author:     Elias Toivanen <elias.toivanen@helsinki.fi>
+AuthorDate: Sun Jul 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1.5: Fixed a bug related to omnicompletion of pictures and fonts.
+
+ ChangeLog                                |   25
+ LICENSE                                  |  674
+ README                                   |   52
+ README.orig                              |   34
+ autoload/tex_nine.vim                    |  334
+ compiler/tex_nine.vim                    |    9
+ doc/tex_nine.txt                         |  284
+ ftplugin/TeX_9/bib.vim                   |    8
+ ftplugin/TeX_9/pymodules/evince_dbus.py  |  132
+ ftplugin/TeX_9/pymodules/evince_dbus.pyc |  Bin 0 -> 4839 bytes
+ ftplugin/TeX_9/skeleton/tex_skeleton.tex |    5
+ ftplugin/TeX_9/tex.vim                   |   46
+ ftplugin/tex_nine.vim                    |   15
+ 13 files changed, 1361 insertions(+), 257 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.05)
+Author:     Elias Toivanen <elias.toivanen@helsinki.fi>
+AuthorDate: Thu May 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.05
+    
+    Fixed a critical bug that caused TeX_9 to crash when upgrading to Ubuntu 11.04 (i.e. Python 2.7, Vim 7.3). Also fixed a couple of minor bugs. Fixed...
+
+ README                 |   11
+ README.orig            |    9
+ autoload/tex_nine.vim  |   13
+ doc/tex_nine.txt       |   20
+ ftplugin/TeX_9/tex.vim |    3
+ 5 files changed, 16 insertions(+), 40 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Elias Toivanen <elias.toivanen@helsinki.fi>
+AuthorDate: Thu Mar 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0: Initial upload
+
+ README                                         |   48
+ README.orig                                    |   59
+ autoload/tex_nine.vim                          |  517
+ compiler/tex_nine.vim                          |   57
+ doc/latexhelp.txt                              | 2430
+ doc/tex_nine.txt                               |  364
+ ftplugin/TeX_9/bib.vim                         |   17
+ ftplugin/TeX_9/dictionaries/tex_dictionary.txt |  675
+ ftplugin/TeX_9/skeleton/tex_skeleton.tex       |   14
+ ftplugin/TeX_9/snippets/bib_snippets.snippets  |  158
+ ftplugin/TeX_9/snippets/tex_snippets.snippets  |   81
+ ftplugin/TeX_9/tex.vim                         |  180
+ ftplugin/tex_nine.vim                          |   44
+ indent/tex.vim                                 |  130
+ plugin/matchit.vim                             |  812
+ 15 files changed, 5586 insertions(+), 0 deletions(-)

@@ -1,4 +1,37 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.02)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.04)
+Author:     Dmitry Frank <dimon.frank@gmail.com>
+AuthorDate: Tue Aug 30 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.04
+    
+    Added another useful shortcut for the universal command can be overridden via
+    specifying:
+    
+          nmap <silent> <C-z> <Plug>QAnotherWin
+    
+    <C-z> is default. This shortcut waits you enter h,j,k,l as much as you want
+    and finish your command with <Space>. The result will be same as :Q <args> but
+    faster.
+    
+    This functionality was added by Ümit Kablan.
+
+ doc/quit_another_window.txt    |    9
+ plugin/quit_another_window.vim |   29
+ 2 files changed, 34 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.03)
+Author:     Dmitry Frank <dimon.frank@gmail.com>
+AuthorDate: Mon Jul 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.03: Added "!" ability to commands.
+
+ doc/tags                       |    3
+ plugin/quit_another_window.vim |   25
+ 2 files changed, 16 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.02)
 Author:     Dmitry Frank <dimon.frank@gmail.com>
 AuthorDate: Mon May 2 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

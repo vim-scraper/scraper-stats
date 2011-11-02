@@ -1,4 +1,186 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9.20)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Fri Oct 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.20
+    
+      Workaround &shellslash option on Windows (issue #6):   http://github.com/xolox/vim-shell/commit/942e75a
+
+ autoload/xolox/shell.vim |   22
+ 1 files changed, 18 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.18)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Fri Oct 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.18
+    
+      Use HTTP HEAD to disambiguate URLs with trailing punctuation (issue #4):   http://github.com/xolox/vim-shell/commit/d530837
+
+ README.md                |    6
+ autoload/xolox/shell.vim |   63
+ doc/shell.txt            |   19
+ plugin/shell.vim         |    9
+ 4 files changed, 93 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.17)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Tue Oct 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.17
+    
+      Bug fix: Restore regex to match e-mail addresses:   http://github.com/xolox/vim-shell/commit/350962b  Workaround for E488 (bug in Vim or my understanding of Vim?):   http://github.com/xolox/vim-shell/commit/32ce59b  Add debugging statements (should make it easier to debug issues like #5):   http://github.com/xolox/vim-shell/commit/7eb0d85  Debugging statements for execution of external commands:   http://github.com/xolox/vim-shell/commit/37dbfc3
+
+ autoload/xolox/shell.vim |   27
+ 1 files changed, 21 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.13)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Sep 25 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.13
+    
+      Updated miscellaneous scripts:   http://github.com/xolox/vim-shell/commit/a97dd83
+
+ autoload/xolox/misc/list.vim |   15
+ autoload/xolox/misc/path.vim |   25
+ autoload/xolox/shell.vim     |    4
+ 3 files changed, 29 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.12)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Sep 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.12
+    
+      Extract :Maximize from :Fullscreen (suggested by Benjamin Bergman):   http://github.com/xolox/vim-shell/commit/665a2b5
+
+ README.md                |   10
+ autoload/xolox/shell.vim |   51
+ doc/shell.txt            |   24
+ plugin/shell.vim         |    9
+ 4 files changed, 61 insertions(+), 33 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.11)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Sep 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.11
+    
+      Updated miscellaneous scripts:   http://github.com/xolox/vim-shell/commit/34ef803
+
+ autoload/xolox/misc/buffer.vim |   37
+ autoload/xolox/shell.vim       |    4
+ 2 files changed, 39 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.10)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Wed Aug 31 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.10
+    
+      Version bump because of miscellaneous scripts:   http://github.com/xolox/vim-shell/commit/c284b38   http://github.com/xolox/vim-shell/commit/8310041
+
+ autoload/xolox/misc/list.vim   |   37
+ autoload/xolox/misc/option.vim |   27
+ autoload/xolox/misc/path.vim   |   15
+ autoload/xolox/shell.vim       |    2
+ 4 files changed, 77 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.9)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Wed Aug 31 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.9
+    
+      Option handling with xolox#misc#option#get({name}, {default}):   http://github.com/xolox/vim-shell/commit/e228b0e   http://github.com/xolox/vim-shell/commit/0b1c06e   http://github.com/xolox/vim-shell/commit/168d0cd  Move version variable to autoload script:   http://github.com/xolox/vim-shell/commit/6cbfe98   http://github.com/xolox/vim-shell/commit/168d0cd  Document xolox#shell#fullscreen(), xolox#shell#is_fullscreen()   http://github.com/xolox/vim-shell/commit/168d0cd
+
+ README.md                      |   14
+ autoload/xolox/misc/option.vim |   15
+ autoload/xolox/shell.vim       |   40
+ doc/shell.txt                  |   63
+ plugin/shell.vim               |   22
+ 5 files changed, 86 insertions(+), 68 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.7)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Jun 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.7
+    
+      Define version as variable, include version in messages:   http://github.com/xolox/vim-shell/commit/a0ed509
+
+ README.md                     |    2
+ autoload/xolox/misc/README.md |   29
+ autoload/xolox/misc/open.vim  |   15
+ autoload/xolox/misc/str.vim   |    4
+ autoload/xolox/shell.vim      |   23
+ doc/shell.txt                 |    2
+ plugin/shell.vim              |   14
+ 7 files changed, 53 insertions(+), 36 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.6)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Fri Jun 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.6
+    
+      Bug fix: Rename xolox#open -> xolox#misc#open (reported by Tim Dahlin):   http://github.com/xolox/vim-shell/commit/73f9744
+
+ README.md                |    2
+ autoload/xolox/shell.vim |   10
+ doc/shell.txt            |    2
+ plugin/shell.vim         |    2
+ 4 files changed, 8 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.5)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Fri Jun 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.5
+    
+      Don't check existence of temporary files, just try to read them:   http://github.com/xolox/vim-shell/commit/d0e682a
+
+ INSTALL.md                       |    3
+ README.md                        |  110
+ TODO.md                          |   12
+ autoload/xolox.vim               |  110
+ autoload/xolox/escape.vim        |   26
+ autoload/xolox/misc/README.md    |   13
+ autoload/xolox/misc/complete.vim |   18
+ autoload/xolox/misc/escape.vim   |   26
+ autoload/xolox/misc/list.vim     |   23
+ autoload/xolox/misc/msg.vim      |   83
+ autoload/xolox/misc/open.vim     |   71
+ autoload/xolox/misc/option.vim   |   46
+ autoload/xolox/misc/os.vim       |   12
+ autoload/xolox/misc/path.vim     |  158
+ autoload/xolox/misc/str.vim      |   12
+ autoload/xolox/misc/timer.vim    |   85
+ autoload/xolox/open.vim          |   75
+ autoload/xolox/shell-x64.dll     |  Bin 41984 -> 0 bytes
+ autoload/xolox/shell-x86.dll     |  Bin 43520 -> 0 bytes
+ autoload/xolox/shell.vim         |   45
+ doc/shell.txt                    |   81
+ misc/shell/Makefile              |   12
+ misc/shell/shell-x64.dll         |  Bin 0 -> 41984 bytes
+ misc/shell/shell-x86.dll         |  Bin 0 -> 43520 bytes
+ misc/shell/shell.c               |  187
+ plugin/shell.vim                 |    4
+ 26 files changed, 941 insertions(+), 271 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.2)
 Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Fri Feb 4 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

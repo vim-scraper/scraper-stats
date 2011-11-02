@@ -1,4 +1,36 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/12.00)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/13.0)
+Author:     Peter Bagyinszki <petike1@gmail.com>
+AuthorDate: Mon Jun 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 13.0
+    
+    Posted by David Fishburn
+    
+    New Features
+    ---------
+    - Added new command, DBDisconnectAll, for DBI/ODBC.
+    - DBDisconnect for DBI/ODBC now can accept an optional parameter for the buffer you wish disconnected.
+    - DBListConnections also includes the buffer filename in it's output to help associate the two more easily.
+    - Updated the default variable_def_regex to include an alphabetic character after a ":" for host variables to avoid false matches with time formats "10:20".
+    - Improved the variable substitution to also check if a variable is preceeded by a single line comment character.  If so, ignore the match.
+            CALL myProc( sl_var1  -- p_var1
+                       , sl_var2  -- p_var2
+                       );
+    
+    Bug Fixes
+    ---------
+    - When clearing the results buffer the default register was updated.
+    - Duplicate tag on MyProjectDir when running helptags (Simon Dambe).
+    - Some of the variable substitution options Skip, Use Blank had off by one errors.
+
+ autoload/dbext.vim     |  281
+ autoload/dbext_dbi.vim |   13
+ doc/dbext.txt          |   59
+ plugin/dbext.vim       |   11
+ 4 files changed, 232 insertions(+), 132 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/12.00)
 Author:     Peter Bagyinszki <petike1@gmail.com>
 AuthorDate: Thu Jul 15 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

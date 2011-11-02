@@ -1,4 +1,113 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.0.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.7)
+Author:     zuopeng chen <chenzuopeng@gmail.com>
+AuthorDate: Mon Aug 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.7
+    
+    Fix the problem about permission on Unix like system, I am sorry about this. You know that permission problem never showed up on windows.
+
+ ftplugin/ccvext.vim |   14
+ 1 files changed, 10 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.6)
+Author:     zuopeng chen <chenzuopeng@gmail.com>
+AuthorDate: Sun Aug 28 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.6
+    
+    Fix the problem the multi cscope connection problem about that connection then disconnection for few times the connection order will confused.
+
+ ftplugin/ccvext.vim |  260
+ 1 files changed, 55 insertions(+), 205 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.5)
+Author:     zuopeng chen <chenzuopeng@gmail.com>
+AuthorDate: Mon Jun 27 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.5: Fix the problem when ccvext work with script bufexplorer.vim
+
+ ftplugin/ccvext.vim |   33
+ 1 files changed, 20 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.4)
+Author:     zuopeng chen <chenzuopeng@gmail.com>
+AuthorDate: Thu Jun 23 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.4
+    
+    - Add C# source code supported (Recently I am working with it)
+    - Fix the problem: Sometimes double click the soruce snippet window will cause a dead loop.
+
+ ftplugin/ccvext.vim |  104
+ 1 files changed, 63 insertions(+), 41 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.3)
+Author:     zuopeng chen <chenzuopeng@gmail.com>
+AuthorDate: Tue Jun 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.3
+    
+    When tags file and cscope file not exist, auto remove it from config list.
+
+ ftplugin/ccvext.vim |   32
+ 1 files changed, 19 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
+Author:     zuopeng chen <chenzuopeng@gmail.com>
+AuthorDate: Fri Jun 10 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.2
+    
+    Descript:
+      - Don't search from tags when the text's lenght is equal to 1
+      - Don't search from tags when the text data is c/c++ key word.
+    BugFix:
+      - Fix the problem about double click in the main source window.
+
+ ftplugin/ccvext.vim |  183
+ 1 files changed, 93 insertions(+), 90 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
+Author:     zuopeng chen <chenzuopeng@gmail.com>
+AuthorDate: Fri Jun 10 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.1: Update the prompt when tags not found.
+
+ README |    8
+ 1 files changed, 6 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.1.0)
+Author:     zuopeng chen <chenzuopeng@gmail.com>
+AuthorDate: Mon Jun 6 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.1.0: Update the prompt when tags not found.
+
+ ftplugin/ccvext.vim |   15
+ 1 files changed, 14 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
+Author:     zuopeng chen <chenzuopeng@gmail.com>
+AuthorDate: Sun Jun 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.0
+    
+    1. Fix some bug in the old script, and add some new function in gvim.
+    2. Add command EnQuickSnippet and DiquickSnippet. This is a better way to use ctags, Now vim is working pretty like sourceinside, specially on windows givm.
+
+ README              |   47
+ ftplugin/ccvext.vim |  922
+ 2 files changed, 618 insertions(+), 351 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0.2)
 Author:     zuopeng chen <chenzuopeng@gmail.com>
 AuthorDate: Thu Dec 23 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

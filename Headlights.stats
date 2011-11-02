@@ -1,4 +1,59 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2)
+Author:     Mohammed Badran <mebadran@gmail.com>
+AuthorDate: Fri Jul 15 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2
+    
+    - major rewrite
+    - added a new buffer-local menu
+    - catered for autoload bundles
+    - performance optimisations
+    - several bug fixes and improvements
+    - dropped autocmds altogether
+    - reintroduced functions as an optional bundle category
+    - cleaned up configuration options
+    - added missing mapping types
+    - removed the 'occurrences' help option
+    - updated reference docs
+
+ README                          |   12
+ README.mkd                      |   83
+ doc/headlights.txt              |  205
+ headlights_ss.png               |  Bin 91451 -> 0 bytes
+ plugin/.ropeproject/config.py   |   85
+ plugin/.ropeproject/globalnames |    3
+ plugin/.ropeproject/history     |    1
+ plugin/.ropeproject/objectdb    |    1
+ plugin/headlights.py            |  983
+ plugin/headlights.vim           |  192
+ 10 files changed, 897 insertions(+), 668 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1)
+Author:     Mohammed Badran <mebadran@gmail.com>
+AuthorDate: Sun Jun 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1
+    
+    - streamlined the menu layout
+    - fixed the debug mode feature
+    - added a debug menu for debug mode
+    - added an 'occurrences' help option (:helpgrep)
+    - moved vim plugins/bundles to their own menu (runtime)
+    - fixed several minor issues
+    - refactored and cleaned up code
+
+ README                |   10
+ README.mkd            |   87
+ headlights/.gitignore |    1
+ headlights/README.mkd |   47
+ headlights_ss.png     |  Bin 0 -> 91451 bytes
+ plugin/headlights.py  |  579
+ plugin/headlights.vim |  138
+ 7 files changed, 460 insertions(+), 402 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
 Author:     Mohammed Badran <mebadran@gmail.com>
 AuthorDate: Thu Feb 17 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

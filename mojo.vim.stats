@@ -1,4 +1,50 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.03@1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.04@1)
+Author:     Yaroslav Korshak <ykorshak@gmail.com>
+AuthorDate: Tue Aug 9 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.04@1: VimBall of 0.04, see below
+
+ Changes                 |   41
+ Makefile                |   26
+ README.orig             |   39
+ t/01_epl.t              |  128
+ t/02_lite.t             |   79
+ t/03_helpers.t          |  169
+ t/04_tag_helpers.t      |  204
+ t/05_javascript.t       |   37
+ t/06_css.t              |   42
+ t/lib/Test/VimSyntax.pm |   71
+ 10 files changed, 0 insertions(+), 836 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.04)
+Author:     Yaroslav Korshak <ykorshak@gmail.com>
+AuthorDate: Tue Aug 9 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.04
+    
+    Highlight default Mojolicious tag helpers
+    Highlight css and js code inside of appropriate tag helpers
+    Snipmate support for .epl files (http://www.vim.org/scripts/script.php?script_id=2540)
+    Some minor bugfixes and tests improvements
+
+ Changes                               |   41
+ Makefile                              |   26
+ README.orig                           |   39
+ after/syntax/perl/MojoliciousLite.vim |   14
+ snippets/epl.snippets                 |   56
+ syntax/epl.vim                        |   42
+ t/01_epl.t                            |  128
+ t/02_lite.t                           |   79
+ t/03_helpers.t                        |  169
+ t/04_tag_helpers.t                    |  204
+ t/05_javascript.t                     |   37
+ t/06_css.t                            |   42
+ t/lib/Test/VimSyntax.pm               |   71
+ 13 files changed, 930 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.03@1)
 Author:     Yaroslav Korshak <ykorshak@gmail.com>
 AuthorDate: Sun Dec 26 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

@@ -1,4 +1,116 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.9.1)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Thu Oct 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.1
+    
+    Improved frame number identification in SLDB buffer. Moved frame source location above frame locals in SLDB. Fold frame source location if more than 2 lines. Inspect-In-Frame: preselect symbol under cursor only in variable lines, open Inspector in the other window. Improved XRef file location parsing. Use current paragraph when no range set for Eval-Region and Compile-Region. Added option g:slimv_sldb_wrap, do not set wrap for source buffers. Added Set-Breakpoint command mapped to <leader>B (thanks to Philipp Marek), changed Profile-By-Substring mapping to <leader>P. Set Lisp keyword characters also in SLDB buffer. Bugfixes: Error messages at Connect-Server. Error message for frame source location without filename. XRef output sometimes cut.
+
+ doc/slimv.txt                      |   27
+ ftplugin/clojure/slimv-clojure.vim |   16
+ ftplugin/slimv.vim                 |  140
+ ftplugin/swank.py                  |  120
+ 4 files changed, 216 insertions(+), 87 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.0)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Wed Oct 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.0
+    
+    Separate buffers for SLDB and Inspector, toggle frame information in SLDB buffer by pressing Enter, look up source when pressing Enter on filename with location in SLDB, added option g:swank_block_size to override Swank output buffer size (thanks to stassats on #lisp and Philipp Marek), removed old non-swank functionality, removed option g:slimv_repl_open, paredit: new mappings [[ and ]] for previous and next defun, bugfixes: various refresh problems (thanks to Philipp Marek), disable debug mode when reconnecting Swank (by Philipp Marek), display multi-line debug condition and frame source location, quote characters in compile (by Philipp Marek), use proper SLDB level when invoking restart (by Philipp Marek), restore all lisp keyword characters in iskeyword, indentation of defgeneric, use proper filename and location when compiling defun or region, buffer corruption when re-triggering timer in insert mode, <End> moved cursor to the right edge of screen in REPL buffer when virtualmode=all.
+
+ README                             |    5
+ doc/paredit.txt                    |   33
+ doc/slimv.txt                      |  872
+ doc/swank.txt                      |  410
+ ftplugin/clojure/slimv-clojure.vim |   29
+ ftplugin/slimv.py                  |  584
+ ftplugin/slimv.vim                 | 1391
+ ftplugin/swank.py                  |  299
+ plugin/paredit.vim                 |   55
+ 9 files changed, 1266 insertions(+), 2412 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.6)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Thu Aug 25 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.6
+    
+    Handle cl:in-package, common-lisp:in-package (thanks to Philipp Marek), added option g:swank_host to allow connecting to remote Swank server, autodetection of Cake for Clojure (thanks to Chris Cahoon), set paredit mode also for .cl and .rkt files, recognise domain reversed package names in form com.gigamonkeys.pathnames (thanks to has2k1), added curly braces rainbow parenthesis for Clojure, added paredit handling of curly braces for Clojure, use SlimvIndent also for Clojure, handle line number returned in :compilation-result, bugfixes: removed double newline in :read-string (text input), when editing with cw in paredit mode, keep ending whitespaces (thanks to Mats Rauhala), compilation error when Swank does not return file name, skip dot character when Swank returns a dotted pair (a . b).
+
+ README                                  |    2
+ doc/paredit.txt                         |   37
+ doc/slimv.txt                           |   44
+ doc/swank.txt                           |   22
+ ftplugin/clojure/slimv-clojure.vim      |    7
+ ftplugin/slimv.vim                      |   70
+ ftplugin/swank.py                       |   39
+ indent/clojure.vim                      |    8
+ plugin/paredit.vim                      |  237
+ syntax/clojure/slimv-syntax-clojure.vim |   19
+ 10 files changed, 327 insertions(+), 158 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.5)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Wed Aug 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.5
+    
+    Switch on indent plugins, do not complete empty string on <Tab>, added Clojure keywords to syntax plugin, use -i option to load swank-clojure, implementation specific REPL initialization, for Clojure it imports source, apropos, javadoc, etc. (thanks to Ömer Sinan Agacan), print Lisp version at REPL startup, added List-Threads, Kill-Thread, Debug-Thread (thanks to Philipp Marek), write prompt after Toggle-Trace, display list of untraced functions for Untrace-All, when in SLDB, Interactive-Eval evaluates expressions in the frame, Inspect inspects objects in the frame, changed g:slimv_echolines logic: set 0 for no lines, -1 for all lines, bugfixes: removed extra linebreak between chunks of long output, indentation problems for symbols with package specification (thanks to Philipp Marek), indentation of Clojure's defn, plist indentation (thanks to Philipp Marek), occasional few seconds delay in swank response, running Swank server on Mac OS X (on behalf of Tobias Pflug).
+
+ doc/slimv.txt                           |   39
+ doc/swank.txt                           |   26
+ ftplugin/clojure/slimv-clojure.vim      |   18
+ ftplugin/slimv.vim                      |  222
+ ftplugin/swank.py                       |  183
+ plugin/paredit.vim                      |    7
+ syntax/clojure/slimv-syntax-clojure.vim |    8
+ 7 files changed, 389 insertions(+), 114 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.4)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Thu Jun 16 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.4
+    
+    Added handling for Unicode characters, truncate arglist output to fit in the status line, added debugger keybindings: ,a for abort ,q for quit ,n for continue, changed keybinding for apropos to ,A, added compiler error messages to quickfix list, map insert mode <Space> and <Tab> only for lisp (and dialects) buffers, bugfixes: wait for the response to :create-repl before calling :swank-require (thanks to Philipp Marek), indentation problems with unbalanced parens in comment, arglist ate the <Space> when virtualedit was off.
+
+ README                             |    8
+ doc/slimv.txt                      |   50
+ doc/swank.txt                      |   25
+ ftplugin/clojure/slimv-clojure.vim |   21
+ ftplugin/lisp/slimv-lisp.vim       |   20
+ ftplugin/scheme/slimv-scheme.vim   |   20
+ ftplugin/slimv.vim                 |   77
+ ftplugin/swank.py                  |   37
+ slime/start-swank.lisp             |    2
+ 9 files changed, 206 insertions(+), 54 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.3)
+Author:     Tamas Kovacs <kovisoft@gmail.com>
+AuthorDate: Wed May 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.3
+    
+    Added top/bottom/left/right directions to g:slimv_repl_split, added :Lisp (and an equivalent :Eval) command with completion, added g:slimv_leader and g:paredit_leader options, added g:slimv_echolines to echo only the first few lines of the form being evaluated, added fuzzy completion and option g:slimv_simple_compl (by Philipp Marek), indent macros with &body argument by two spaces when connected to swank (thanks to Philipp Marek and Andreas Fredriksson), special indentation for flet, labels and macrolet, default for Set-Package is current package (thanks to Philipp Marek), bugfixes: REPL output ordering problems, problem with inserting Space into visual block, blinking when g:slimv_repl_syntax is on, entering incomplete form in REPL command line, close form when inside comment, string, or with mixed ([.
+
+ doc/paredit.txt    |   26
+ doc/slimv.txt      |   83
+ doc/swank.txt      |   24
+ ftplugin/slimv.vim |  481
+ ftplugin/swank.py  |   46
+ indent/lisp.vim    |   20
+ plugin/paredit.vim |   53
+ 7 files changed, 503 insertions(+), 230 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.2)
 Author:     Tamas Kovacs <kovisoft@gmail.com>
 AuthorDate: Sun May 1 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
