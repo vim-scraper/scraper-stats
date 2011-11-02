@@ -1,4 +1,28 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.1@1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0)
+Author:     Zachary Michaels <mikezackles@gmail.com>
+AuthorDate: Wed Oct 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.0
+    
+    Full support for visual mark mode.  User configuration variables.  No register usage.  Paging functions.  Nonstrict bisection.
+
+ plugin/bisect.vim |  438
+ 1 files changed, 336 insertions(+), 102 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0)
+Author:     Zachary Michaels <mikezackles@gmail.com>
+AuthorDate: Fri Oct 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0
+    
+    Fixed inconsistencies between bisecting left/right and up/down.  Attempting to move past a boundary now automatically starts a new bisection.
+
+ plugin/bisect.vim |   53
+ 1 files changed, 34 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.1@1)
 Author:     Zachary Michaels <mikezackles@gmail.com>
 AuthorDate: Thu Feb 4 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -18,7 +42,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
     Version 0.0.1: Initial upload
 
  .gitignore        |    1
- README            |   19
+ README            |   12
  doc/bisect.txt    |   66
  plugin/bisect.vim |  142
- 4 files changed, 228 insertions(+), 0 deletions(-)
+ 4 files changed, 221 insertions(+), 0 deletions(-)

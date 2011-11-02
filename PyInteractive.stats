@@ -1,13 +1,53 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5.3)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6.1)
+Author:     Almaz Karimov <py.cleric@gmail.com>
+AuthorDate: Sun Oct 23 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6.1
+    
+     - Added magic command "?" (analog IPython)
+     - Added magic command "%<" - append intput history to current buffer
+     - Added magic command "%>" - append output history to current buffer
+     - In interpreter namespace added vim and sys modules, and _interpreter object
+     - Fixed error in history output
+     - Bugfixes
+
+ doc/pyinteractive.rux          |  101
+ doc/pyinteractive.txt          |   48
+ plugin/pyinteractive.vim       |    5
+ plugin/python/pyinteractive.py |  144
+ 4 files changed, 229 insertions(+), 69 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.4)
+Author:     Almaz Karimov <py.cleric@gmail.com>
+AuthorDate: Wed Oct 19 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.5.4
+    
+     - Added command PyInteractiveRunBuffer
+     - Added PyInteractive menu (Plugin.PyInteractive) and context menu item "Evaluate" (for selected text)
+     - Added option pyinteractive_add_menu
+     - Added pyinteractive_add_context_menu
+     - Added new option "-o" in PyInteractiveHistory command
+     - Bugfixes
+
+ doc/pyinteractive.rux          |   52
+ doc/pyinteractive.txt          |   54
+ plugin/pyinteractive.vim       |   55
+ plugin/python/pyinteractive.py |   98
+ 4 files changed, 221 insertions(+), 38 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.3)
 Author:     Almaz Karimov <py.cleric@gmail.com>
 AuthorDate: Wed Sep 8 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.5.3: Initial upload
 
- README                         |   62
+ README                         |   67
  doc/pyinteractive.rux          |  152
  doc/pyinteractive.txt          |  147
  plugin/pyinteractive.vim       |   65
  plugin/python/pyinteractive.py |  558
- 5 files changed, 984 insertions(+), 0 deletions(-)
+ 5 files changed, 989 insertions(+), 0 deletions(-)

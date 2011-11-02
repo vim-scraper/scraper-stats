@@ -1,0 +1,111 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0)
+Author:     t9 md <taqumd@gmail.com>
+AuthorDate: Fri Aug 12 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0
+    
+    2011-08-13: v1.0
+            - new finder LWRP.
+            - jump between resources and providers are introduced.
+    2011-08-11:
+    	- improve attribute finder
+
+ README.md                          |  137
+ autoload/chef/controller.vim       |    7
+ autoload/chef/environment.vim      |   15
+ autoload/chef/finder/attribute.vim |   42
+ autoload/chef/finder/lwrp.vim      |   37
+ autoload/chef/finder/recipe.vim    |    8
+ autoload/chef/finder/related.vim   |    2
+ autoload/chef/finder/source.vim    |    5
+ doc/chef.txt                       |   94
+ plugin/chef.vim                    |    8
+ 10 files changed, 166 insertions(+), 189 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9)
+Author:     t9 md <taqumd@gmail.com>
+AuthorDate: Wed Jun 15 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9
+    
+    2011-06-15: v0.9
+    	- now able to find attribute whichever a[:attr] or a['attr']
+    	- bugfix for search order of attribute
+    	- search all attribute files under /attribute/ directory.
+
+ README.md                           |    7
+ autoload/chef/controller.vim        |   13
+ autoload/chef/finder.vim            |    8
+ autoload/chef/finder/attribute.vim  |   48
+ autoload/chef/finder/definition.vim |    2
+ autoload/chef/finder/recipe.vim     |    2
+ autoload/chef/finder/related.vim    |    2
+ autoload/chef/finder/source.vim     |    4
+ doc/chef.txt                        |   24
+ plugin/chef.vim                     |    2
+ 10 files changed, 71 insertions(+), 41 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8)
+Author:     t9 md <taqumd@gmail.com>
+AuthorDate: Mon Jun 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8
+    
+    0.8	2011-06-14
+    	- Deprecated `ChefDoWhatIMean` for naming consistency.
+    	  Now use `ChefFindAny` for this purpose
+    	- Provide new command for each Finder.
+    	- Now order and targets to for `ChefFindAny` is customizable.
+    	- Support definition finding.
+    	- Improve debug capability and code consistency.
+    	- Suport hook function.
+    	- Improve finders information with color highlighted messages.
+
+ README.md                           |  100
+ autoload/chef/controller.vim        |   84
+ autoload/chef/finder.vim            |   65
+ autoload/chef/finder/attribute.vim  |   90
+ autoload/chef/finder/definition.vim |   54
+ autoload/chef/finder/recipe.vim     |   20
+ autoload/chef/finder/related.vim    |   39
+ autoload/chef/finder/source.vim     |   23
+ doc/chef.txt                        |  169
+ plugin/chef.vim                     |   46
+ 10 files changed, 561 insertions(+), 129 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.06)
+Author:     t9 md <taqumd@gmail.com>
+AuthorDate: Sat Jun 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.06
+    
+    make attribute finder more fuzzy to make it possible to find node[:apache][:listen_ports] in recipe `apache2`(not apache).
+
+ autoload/chef/finder/attribute.vim |    4
+ doc/chef.txt                       |    4
+ plugin/chef.vim                    |    2
+ 3 files changed, 8 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.05)
+Author:     t9 md <taqumd@gmail.com>
+AuthorDate: Sat Jun 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.05: Initial upload
+
+ README                             |   26
+ README.md                          |   65
+ autoload/chef/controller.vim       |   48
+ autoload/chef/environment.vim      |   41
+ autoload/chef/finder.vim           |   22
+ autoload/chef/finder/attribute.vim |  100
+ autoload/chef/finder/recipe.vim    |   21
+ autoload/chef/finder/related.vim   |   31
+ autoload/chef/finder/source.vim    |   18
+ doc/chef.txt                       |  118
+ plugin/chef.vim                    |   36
+ 11 files changed, 526 insertions(+), 0 deletions(-)

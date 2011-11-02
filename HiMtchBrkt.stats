@@ -1,58 +1,10 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/22)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/W)
 Author:     Charles Campbell <drchip@campbellfamily.biz>
-AuthorDate: Tue Feb 28 00:00:00 2006 +0000
+AuthorDate: Fri Oct 28 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
-    Version 22
-    
-    HiMtchBrkt is faster (under vim v7) with the ability to restrict searches to only that which is currently visible.  Several bugfixes, too.  (works with both vim v6.0 and v7.0)
+    Version W: withdrawn
 
- doc/HiMtchBrkt.txt    |   18
- plugin/HiMtchBrkt.vim |  129
- 2 files changed, 99 insertions(+), 48 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/21)
-Author:     Charles Campbell <drchip@campbellfamily.biz>
-AuthorDate: Mon Feb 13 00:00:00 2006 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 21
-    
-    If you have vim v7.0 (with snapshot#195 or later), HiMtchBrkt will now take advantage of the new CursorMoved and CursorMovedI events.  More reliable, no need to overload motions with maps, and quicker.
-    HiMtchBrkt's new :HMBsurround command triggers display of containing brackets
-    HiMtchBrkt now comes with menus for gvim which show on/off choices for HMBsurround
-
- doc/HiMtchBrkt.txt    |   43
- plugin/HiMtchBrkt.vim |  314
- 2 files changed, 209 insertions(+), 148 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/20)
-Author:     Charles Campbell <drchip@campbellfamily.biz>
-AuthorDate: Thu Feb 9 00:00:00 2006 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 20
-    
-    * :HMBstart or setting g:HiMtchBrktOn=1 in your .vimrc will have HiMtchBrkt start as enabled.
-    * Messages no longer cleared with vim7.0aa snapshot #185 or later.
-    * :HMBsurround will cause surrounding brackets to be highlighted
-
- doc/HiMtchBrkt.txt    |   55
- plugin/HiMtchBrkt.vim |  185
- plugin/cecutil.vim    |  190
- 3 files changed, 269 insertions(+), 161 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/19)
-Author:     Charles Campbell <drchip@campbellfamily.biz>
-AuthorDate: Tue Jan 17 00:00:00 2006 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 19
-    
-    HiMtchBrkt now appends its maps to any pre-existing maps.  The the help on "Installing HiMtchBrkt" tells you how to get it to start up automatically, if you wish; that way, HiMtchBrkt will work well with matchit and other plugins.  CusorHold timeout is now 2 seconds, implementing a tradeoff between seeing messages and getting CursorHold to call HiMtchBracket().  CursorHold on an empty buffer no longer calls HiMtchBracket().  Finally, various unwanted motions have been worked around (tnx to Mun Johl and Gary Johnson for testing & pointing things out).
-
- README                |   38
- doc/HiMtchBrkt.txt    |  254
- plugin/HiMtchBrkt.vim |  344
- plugin/cecutil.vim    |  401
- 4 files changed, 1037 insertions(+), 0 deletions(-)
+ README               |    5
+ plugin/withdrawn.vim |    1
+ 2 files changed, 6 insertions(+), 0 deletions(-)

@@ -1,4 +1,84 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.6.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0alpha3)
+Author:     Niels Aan de Brugh <nielsadb@gmail.com>
+AuthorDate: Fri Aug 12 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.0alpha3
+    
+    Bugfixes, bugfixes.
+    Provide some nicer user feedback (call done() after each method chain). Show setting value when toggling. Provide functionality to just count results (split up some methods for more control).
+    The help file is not yet updated, but this version should definitely be more usable than the previous one. Still alpha though!
+
+ plugin/filtering2.vim |  241
+ 1 files changed, 158 insertions(+), 83 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0alpha2@1)
+Author:     Niels Aan de Brugh <nielsadb@gmail.com>
+AuthorDate: Thu Aug 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.0alpha2@1: Bugfixes, mainly for using extra patterns.
+
+ plugin/filtering2.vim |   67
+ 1 files changed, 43 insertions(+), 24 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0alpha2)
+Author:     Niels Aan de Brugh <nielsadb@gmail.com>
+AuthorDate: Tue Jul 19 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.0alpha2: Unix line endings.
+
+ plugin/filtering2.vim | 1440
+ 1 files changed, 720 insertions(+), 720 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0alpha)
+Author:     Niels Aan de Brugh <nielsadb@gmail.com>
+AuthorDate: Mon Jul 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.0alpha
+    
+    An alpha release of a complete redesign of the plug-in code. It should be much faster than 1.0.6.1, and about as fast as the 1.0.7 version that I just uploaded.
+    
+    The API of this plug-in is completely different than before.
+    
+    Consult the help file in the ZIP to see the details.
+    
+    This is very much a work in progress! I use my own plug-in mainly for work, and since it's summer I haven't had the chance for some serious dogfooding. In summary I added some functionality that I was missing in the first version, and existing functionality should be more accessible.
+    
+    Some highlights:
+    
+    * More fine-grained filtering: gather results that match one or more alternatives (OR-semantics), if these lines also match zero or more other terms (AND-semantics), until they match zero or more even other terms (AND-NOT).
+    There's no real need any more to filter the results again, you can just use AND.
+    I think weeding out results using AND-NOT can be very useful too, for example you can quickly grep for all logging of a certain component, and quickly remove debug-level logging. This was not possible before (without using fragile tricks as I've been doing myself).
+    
+    * Switch between highlighted line-numbered view (the default) and a "raw" view where you just see the plain text results without any line numbering. (Note that this disable pretty much all of the functionality of the plug-in as well.)
+    Nice for yanking text, for example when writing a problem report where the original line numbers are irrelevant.
+    
+    * Search for an extra pattern (existing functionality), but not just N lines ahead. You can now also specify a stop-pattern. So you can now look for lines matching M if they match pattern E(xtra) before pattern S(top). The default stop pattern is the empty line.
+    I think this will be useful when filtering protocol log files that contain decoded messages separated by a blank line.
+
+ doc/filtering2.txt    |  422
+ plugin/filtering.vim  |  647
+ plugin/filtering2.vim |  720
+ 3 files changed, 1142 insertions(+), 647 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.7)
+Author:     Niels Aan de Brugh <nielsadb@gmail.com>
+AuthorDate: Mon Jul 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0.7
+    
+    A significant speed-up that I copied from the new 2.0 alpha source after doing some profiling on that code.
+    
+    Also ? is no longer mapped to help, since it's used for searching (doh!).
+
+ plugin/filtering.vim |   12
+ 1 files changed, 8 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.6.1)
 Author:     Niels Aan de Brugh <nielsadb@gmail.com>
 AuthorDate: Tue Oct 5 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -92,6 +172,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README               |   43
+ README               |   26
  plugin/filtering.vim |  463
- 2 files changed, 506 insertions(+), 0 deletions(-)
+ 2 files changed, 489 insertions(+), 0 deletions(-)

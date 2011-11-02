@@ -1,0 +1,122 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/v1.0.6)
+Author:     lei fw <fwlei@live.com>
+AuthorDate: Sat Sep 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version v1.0.6
+    
+    1. fixed "#include" clause parsing.
+    2. polish regexp.
+    3. fixed command :SetIncludeList is slow while many files is opened.
+    
+    this is stable version.
+
+ .gitignore               |    4
+ .hgignore                |    4
+ .hgtags                  |    5
+ c_complete.py            |   64
+ ctags_cache/__init__.py  |   10
+ ctags_cache/file_node.py |   54
+ doc/.hg_archival.txt     |    4
+ ftplugin/c_complete.vim  |   21
+ test.py                  |    1
+ 9 files changed, 85 insertions(+), 82 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/v1.0.5)
+Author:     lei fw <fwlei@live.com>
+AuthorDate: Mon Aug 15 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version v1.0.5
+    
+    1. use 'tabstop' instead 'softtabstop' when compute line indent level.
+    2. fixed sometimes delete files failed.
+    3. fixed minor bug of VimEnter callback.
+
+ .hgtags                    |    1
+ c_complete.py              |    2
+ ctags_cache/__init__.py    |  110
+ ctags_cache/ctags_table.py |   33
+ ctags_cache/file_node.py   |   59
+ doc/.hg_archival.txt       |    4
+ ftplugin/c_complete.vim    |    6
+ test.py                    |   30
+ 8 files changed, 109 insertions(+), 136 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/v1.0.4)
+Author:     lei fw <fwlei@live.com>
+AuthorDate: Wed Aug 10 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version v1.0.4
+    
+    fixed bugs:
+    1. now decode all source file as ascii, never care which encoding they are.
+    2. other minor bug.
+
+ .hgtags                  |    1
+ c_complete.py            |   15
+ ctags_cache/__init__.py  |    3
+ ctags_cache/file_node.py |    2
+ doc/.hg_archival.txt     |    4
+ ftplugin/c_complete.vim  |    2
+ 6 files changed, 16 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.3)
+Author:     lei fw <fwlei@live.com>
+AuthorDate: Mon Aug 8 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0.3
+    
+    1. fixed wrong vim autocmd callback event type. BufRead event will affect :lv and other command which read files. Use BufAdd instead.
+    2. fixed kind select of global symbols. Now can complete name of struct, union and typedef.
+
+ .hgtags                 |    1
+ c_complete.py           |   14
+ doc/.hg_archival.txt    |    4
+ ftplugin/c_complete.vim |   21
+ 4 files changed, 24 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.2)
+Author:     lei fw <fwlei@live.com>
+AuthorDate: Fri Aug 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0.2
+    
+    1. implemented anonymous struct completion.
+    2. fixed complete fail of struct member of array type.
+    3. do the runtime environment check.
+
+ .hgtags                 |    1
+ c_complete.py           |   62
+ doc/.hg_archival.txt    |    4
+ ftplugin/c_complete.vim |    9
+ test/test.c             |    5
+ 5 files changed, 63 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.1)
+Author:     lei fw <fwlei@live.com>
+AuthorDate: Thu Aug 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0.1: Initial upload
+
+ .hgignore                  |    4
+ .hgtags                    |    1
+ README                     |   23
+ c_complete.py              |  311
+ ctags_cache/__init__.py    |  154
+ ctags_cache/ctags_table.py |  172
+ ctags_cache/file_node.py   |   98
+ ctags_cache/utils.py       |   77
+ ftplugin/c_complete.vim    |   97
+ test.py                    |   44
+ test/1.h                   |    1
+ test/2.h                   |    1
+ test/3.h                   |    2
+ test/4.h                   |    3
+ test/5.h                   |    4
+ test/test.c                |  293
+ 16 files changed, 1285 insertions(+), 0 deletions(-)

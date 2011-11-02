@@ -1,4 +1,268 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2@1)
+Author:     Shougo Matsushita <Shougo.Matsu@gmail.com>
+AuthorDate: Mon Aug 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2@1: zipped version.
+
+ autoload/vital/unite.vital |    2
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
+Author:     Shougo Matsushita <Shougo.Matsu@gmail.com>
+AuthorDate: Thu Aug 25 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.2
+    
+    - Added -auto-resize option.
+    - Added <Plug>(unite_narrowing_input_history) keymapping.
+    - Added <Plug>(unite_toggle_auto_preview) keymapping.
+    - Added change source.
+    - Added converter_relative_abbr and converter_relative_word.
+    - Added file_point source and uri kind.
+    - Added file_rec/async source.
+    - Added jump source.
+    - Added jump_point source.
+    - Added source kind.
+    - Added unite#custom_max_candidates().
+    - Asynchronous file_rec source(experimental).
+    - Changed default prompt.
+    - Deleted <ESC> default mapping.
+    - Detect command line buffer.
+    - Fixed args problem.
+    - Fixed arguments parse.
+    - Fixed buffer source error.
+    - Fixed change_candidates().
+    - Fixed documentation.
+    - Fixed fatal mru bug.
+    - Fixed file actions.
+    - Fixed file_rec path problem.
+    - Fixed file_rec relative path.
+    - Fixed file_rec/async source.
+    - Fixed filter description.
+    - Fixed for colorcolumn.
+    - Fixed for cursorline.
+    - Fixed jump_list kind.
+    - Fixed narrowing problem.
+    - Fixed on_close call timing.
+    - Fixed preview action in completion kind.
+    - Fixed preview problems.
+    - Fixed recache candidates.
+    - Fixed resource leak in grep source.
+    - Fixed s:print_buffer().
+    - Fixed source args parse.
+    - Fixed unite#clear_message().
+    - Fixed unite#start() description.
+    - Fixed windows restore.
+    - Implemented abbreviation argument.
+    - Implemented default_action syntax sugar.
+    - Improved <Plug>(unite_insert_leave) keymapping.
+    - Improved async.
+    - Improved autocmd.
+    - Improved buffer and file_mru source abbr.
+    - Improved command line buffer detect.
+    - Improved command-line window detection.
+    - Improved context source.
+    - Improved converter_relative.
+    - Improved cursor down/up behavior.
+    - Improved cursor line.
+    - Improved delete backword path keymapping.
+    - Improved documentation.
+    - Improved file_rec source.
+    - Improved file_rec.
+    - Improved g:unite_abbr_highlight default value.
+    - Improved grep source behavior.
+    - Improved matcher.
+    - Improved matcher_regexp filter.
+    - Improved mru filtering.
+    - Improved mru.
+    - Improved on InsertEnter.
+    - Improved quick match.
+    - Improved quit session.
+    - Improved redraw.
+    - Improved relative converters.
+    - Improved restore position.
+    - Improved source action_table description.
+    - Improved substitute pattern.
+    - Improved toggle mark.
+    - Improved unite#print_message() and unite#clear_message() behavior.
+    - Improved unite-grep source.
+    - Initialize ignorecase and smartcase value in files buffer.
+    - Kind file inherited uri kind.
+    - Optimized source line.
+    - Optimized unite-file.
+    - Set max candidates in line source.
+    - Supported null args.
+    - Use new vimproc function.
+
+ autoload/unite.vim                                 |  359
+ autoload/unite/filters/converter_relative_abbr.vim |   68
+ autoload/unite/filters/converter_relative_word.vim |   68
+ autoload/unite/filters/matcher_glob.vim            |   11
+ autoload/unite/filters/matcher_regexp.vim          |   21
+ autoload/unite/kinds/buffer.vim                    |   18
+ autoload/unite/kinds/completion.vim                |   12
+ autoload/unite/kinds/file.vim                      |   76
+ autoload/unite/kinds/jump_list.vim                 |   21
+ autoload/unite/kinds/openable.vim                  |    2
+ autoload/unite/kinds/source.vim                    |   61
+ autoload/unite/kinds/uri.vim                       |   57
+ autoload/unite/mappings.vim                        |  302
+ autoload/unite/sources/buffer.vim                  |   25
+ autoload/unite/sources/change.vim                  |   80
+ autoload/unite/sources/command.vim                 |    4
+ autoload/unite/sources/directory_mru.vim           |   14
+ autoload/unite/sources/file.vim                    |  105
+ autoload/unite/sources/file_mru.vim                |   29
+ autoload/unite/sources/file_point.vim              |   73
+ autoload/unite/sources/file_rec.vim                |  229
+ autoload/unite/sources/grep.vim                    |   44
+ autoload/unite/sources/jump.vim                    |  106
+ autoload/unite/sources/jump_point.vim              |   82
+ autoload/unite/sources/line.vim                    |   60
+ autoload/unite/sources/output.vim                  |    4
+ autoload/unite/sources/source.vim                  |   25
+ autoload/unite/sources/tab.vim                     |    5
+ autoload/unite/sources/window.vim                  |    5
+ autoload/vital/_a11647.vim                         |  114
+ autoload/vital/_a11647/data/list.vim               |   96
+ autoload/vital/_a11647/data/ordered_set.vim        |   91
+ autoload/vital/_a11647/data/string.vim             |  114
+ autoload/vital/_a11647/functor.vim                 |   77
+ autoload/vital/_a11647/mapping.vim                 |  147
+ autoload/vital/_a11647/prelude.vim                 |  336
+ autoload/vital/_a11647/system/file.vim             |  123
+ autoload/vital/_a11647/system/filepath.vim         |   90
+ autoload/vital/_bc73c2.vim                         |  114
+ autoload/vital/_bc73c2/data/list.vim               |   95
+ autoload/vital/_bc73c2/data/ordered_set.vim        |   91
+ autoload/vital/_bc73c2/data/string.vim             |   82
+ autoload/vital/_bc73c2/functor.vim                 |   77
+ autoload/vital/_bc73c2/prelude.vim                 |  332
+ autoload/vital/_bc73c2/system/file.vim             |   87
+ autoload/vital/_bc73c2/system/filepath.vim         |   78
+ autoload/vital/unite.vital                         |    2
+ doc/unite.jax                                      |  198
+ doc/unite.txt                                      |  514
+ plugin/unite.vim                                   |   12
+ syntax/unite.vim                                   |   17
+ 51 files changed, 3306 insertions(+), 1547 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
+Author:     Shougo Matsushita <Shougo.Matsu@gmail.com>
+AuthorDate: Tue Jul 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.1
+    
+    - Added -verbose option.
+    - Added <Plug>(unite_narrowing_path) keymapping.
+    - Added <Plug>(unite_toggle_mark_all_candidates) keymapping.
+    - Added <Plug>(unite_toggle_selected_candidates) keymapping.
+    - Added direction argument in source lines.
+    - Added file action in cdable kind.
+    - Added g:unite_source_file_rec_min_cache_files option.
+    - Added grep source(Thanks Sixeight).
+    - Added line source.
+    - Added matcher_regexp filter.
+    - Added pattern highlight in unite-grep.
+    - Added persist_open action.
+    - Added rename action.
+    - Added replace action in jump_list kind.
+    - Added resume source.
+    - Changed insert mode mappings.
+    - Changed lines and grep filters.
+    - Deleted l default keymapping.
+    - Deleted search pattern.
+    - Don't follow symbolic link in file_rec source.
+    - Fixed :UniteResume error.
+    - Fixed caching bug.
+    - Fixed choose_action.
+    - Fixed directory_mru error.
+    - Fixed example.
+    - Fixed for syntax case.
+    - Fixed hlsearch.
+    - Fixed initialize error.
+    - Fixed initialize unite bug.
+    - Fixed is_redraw flag.
+    - Fixed kind command.
+    - Fixed path separator problem in unite-file.
+    - Fixed preview action.
+    - Fixed quit unite buffer problem.
+    - Fixed recaching.
+    - Fixed switch_unite_buffer().
+    - Fixed syntax error.
+    - Fixed unite-buffer-name problem.
+    - Fixed unite-register freeze.
+    - Improved "e" mapping.
+    - Improved alias in choose action.
+    - Improved autocmd.
+    - Improved cursor move behavior.
+    - Improved detect error in mru.
+    - Improved error highlight.
+    - Improved file source discription.
+    - Improved file_mru.
+    - Improved file_rec source.
+    - Improved g:unite_enable_start_insert option.
+    - Improved insert enter mappings.
+    - Improved kind tab.
+    - Improved matcher.
+    - Improved narrow action.
+    - Improved preview action in jump_list.
+    - Improved redraw flag.
+    - Improved redraw.
+    - Improved s:recache_candidates().
+    - Improved unite -immediately behavior.
+    - Improved unite buffer initialize.
+    - Improved unite#print_error().
+    - Improved unite-grep.
+    - Supported redraw in source lines.
+    - Updated vital.vim.
+
+ README.orig                                 |   83
+ autoload/unite.vim                          |  444
+ autoload/unite/filters/matcher_glob.vim     |   18
+ autoload/unite/filters/matcher_regexp.vim   |   68
+ autoload/unite/kinds/buffer.vim             |   22
+ autoload/unite/kinds/cdable.vim             |    8
+ autoload/unite/kinds/command.vim            |    6
+ autoload/unite/kinds/file.vim               |   16
+ autoload/unite/kinds/jump_list.vim          |   46
+ autoload/unite/kinds/openable.vim           |   25
+ autoload/unite/kinds/tab.vim                |    5
+ autoload/unite/mappings.vim                 |  120
+ autoload/unite/sources/bookmark.vim         |    2
+ autoload/unite/sources/directory_mru.vim    |   18
+ autoload/unite/sources/file.vim             |   25
+ autoload/unite/sources/file_mru.vim         |   18
+ autoload/unite/sources/file_rec.vim         |   61
+ autoload/unite/sources/grep.vim             |  197
+ autoload/unite/sources/line.vim             |  104
+ autoload/unite/sources/register.vim         |    7
+ autoload/unite/sources/resume.vim           |   66
+ autoload/unite/util.vim                     |    8
+ autoload/vital/_4181e8.vim                  |  107
+ autoload/vital/_4181e8/data/list.vim        |   71
+ autoload/vital/_4181e8/data/ordered_set.vim |   75
+ autoload/vital/_4181e8/prelude.vim          |  223
+ autoload/vital/_4181e8/system/filepath.vim  |   81
+ autoload/vital/_bc73c2.vim                  |  114
+ autoload/vital/_bc73c2/data/list.vim        |   95
+ autoload/vital/_bc73c2/data/ordered_set.vim |   91
+ autoload/vital/_bc73c2/data/string.vim      |   82
+ autoload/vital/_bc73c2/functor.vim          |   77
+ autoload/vital/_bc73c2/prelude.vim          |  332
+ autoload/vital/_bc73c2/system/file.vim      |   87
+ autoload/vital/_bc73c2/system/filepath.vim  |   78
+ autoload/vital/unite.vital                  |    2
+ doc/unite.jax                               |  132
+ doc/unite.txt                               |  264
+ plugin/unite.vim                            |    4
+ test/00-unite-source.vim                    |   67
+ 40 files changed, 2339 insertions(+), 1010 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
 Author:     Shougo Matsushita <Shougo.Matsu@gmail.com>
 AuthorDate: Sun May 1 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

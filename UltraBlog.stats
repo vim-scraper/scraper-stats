@@ -1,4 +1,82 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.1.0)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Tue Nov 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.1.0
+    
+    * Change:  The key "xmlrpc" of the settings list is dropped, a new one with the name "url" is added, you should set its value to the blog url.
+    * Change:  Source code refactorings.
+    * Change:  Solve the crash problem existing in MacVim only.
+    * Change:  |:UBConv| can be used in any buffer.
+    * Change:  |:UBThis| now has a third parameter, which enables convertions between syntaxes.
+    * Bugfix:  The second parameter of |:UBThis| cannot take effect.
+
+ doc/UltraBlog.txt              |   75
+ plugin/UltraBlog.vim           |   87
+ plugin/ultrablog/commands.py   | 2109
+ plugin/ultrablog/db.py         |   58
+ plugin/ultrablog/eventqueue.py |   22
+ plugin/ultrablog/listeners.py  |    2
+ plugin/ultrablog/util.py       |  256
+ 7 files changed, 1196 insertions(+), 1413 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0.0)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Sun Jul 24 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.0.0
+    
+    * Feature: Mostly rewritten for implementing an event-driven system.
+    * Feature: Context search comes with keywords highlighting. A new command :UBFind and a new option ub_search_pagesize.
+    * Feature: Refresh every buffer with the new command |:UBRefresh|.
+    * Bugfix: Some.
+
+ doc/UltraBlog.txt              |  127
+ plugin/UltraBlog.vim           | 1795
+ plugin/ultrablog/__init__.py   |    1
+ plugin/ultrablog/commands.py   | 1385
+ plugin/ultrablog/db.py         |  163
+ plugin/ultrablog/eventqueue.py |   24
+ plugin/ultrablog/events.py     |   18
+ plugin/ultrablog/exceptions.py |    5
+ plugin/ultrablog/listeners.py  |  147
+ plugin/ultrablog/util.py       |  383
+ 10 files changed, 2279 insertions(+), 1769 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3.1)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Wed Jun 15 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.3.1
+    
+    * Bugfix: Listing remote posts will complain the error: local variable 'page_no' referenced before assignment.
+    * Bugfix: The editing window will be set as modified after being sent to blog when ub_save_after_sent is 0 and the buffer was in unmodified status.
+
+ doc/UltraBlog.txt    |    9
+ plugin/UltraBlog.vim |   42
+ 2 files changed, 29 insertions(+), 22 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.3.0)
+Author:     lenin lee <lenin.lee@gmail.com>
+AuthorDate: Fri Jun 10 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.3.0
+    
+    * Feature: Preview posts/pages locally with pre-defined templates, template related operations and management.
+    * Feature: Preview posts/pages after sending them to the blog.
+    * Change: Merge :UBPageNew to :UBNew, merge :UBPageOpen to :UBOpen, merge :UBPageList to :UBList, merge :UBPageThis to :UBThis.
+    * Bugfix: The remote page list will raise an error when openned due to a change made in last version.
+    * Bugfix: The post/page list will raise an error when an item is deleted in it, caused by a change made in last version.
+
+ doc/UltraBlog.txt    |  230
+ plugin/UltraBlog.vim |  903
+ 2 files changed, 882 insertions(+), 251 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2.0)
 Author:     lenin lee <lenin.lee@gmail.com>
 AuthorDate: Mon May 30 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -195,6 +273,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README               |   34
+ README               |   43
  plugin/UltraBlog.vim |  651
- 2 files changed, 685 insertions(+), 0 deletions(-)
+ 2 files changed, 694 insertions(+), 0 deletions(-)

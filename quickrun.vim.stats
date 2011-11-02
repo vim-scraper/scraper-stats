@@ -1,4 +1,72 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.4.7)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5.1)
+Author:     thinca <thinca+vim@gmail.com>
+AuthorDate: Fri Oct 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.5.1
+    
+    - Added "srcfile" option.
+    - Added quickrun#get_module().
+    - Module was made unregisterable.
+    - Improved the expanding of "exec".
+
+ autoload/quickrun.vim                  |  339
+ autoload/quickrun/outputter/buffer.vim |   32
+ autoload/quickrun/runner/remote.vim    |    2
+ autoload/quickrun/runner/shell.vim     |    2
+ doc/quickrun.jax                       |  109
+ doc/quickrun.txt                       |  111
+ plugin/quickrun.vim                    |    6
+ 7 files changed, 417 insertions(+), 184 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5.0)
+Author:     thinca <thinca+vim@gmail.com>
+AuthorDate: Tue Jul 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.5.0
+    
+    - Implemented the module system.
+      - Some options are not compatible.
+      - See :help quickrun-module more details.
+    - Moved QuickRun() into quickrun#operator().
+    - Other many changes.
+
+ autoload/quickrun.vim                       | 1308
+ autoload/quickrun/outputter/browser.vim     |   44
+ autoload/quickrun/outputter/buffer.vim      |  102
+ autoload/quickrun/outputter/buffered.vim    |   34
+ autoload/quickrun/outputter/error.vim       |   28
+ autoload/quickrun/outputter/file.vim        |   48
+ autoload/quickrun/outputter/message.vim     |   41
+ autoload/quickrun/outputter/multi.vim       |   37
+ autoload/quickrun/outputter/null.vim        |   19
+ autoload/quickrun/outputter/quickfix.vim    |   37
+ autoload/quickrun/outputter/variable.vim    |   48
+ autoload/quickrun/runner/python.vim         |  106
+ autoload/quickrun/runner/remote.vim         |  106
+ autoload/quickrun/runner/shell.vim          |   69
+ autoload/quickrun/runner/system.vim         |   58
+ autoload/quickrun/runner/vimproc.vim        |   90
+ autoload/vital.vim                          |   12
+ autoload/vital/_c980ec.vim                  |  114
+ autoload/vital/_c980ec/data/list.vim        |   95
+ autoload/vital/_c980ec/data/ordered_set.vim |   91
+ autoload/vital/_c980ec/data/string.vim      |   92
+ autoload/vital/_c980ec/functor.vim          |   77
+ autoload/vital/_c980ec/prelude.vim          |  324
+ autoload/vital/_c980ec/system/file.vim      |   87
+ autoload/vital/_c980ec/system/filepath.vim  |   78
+ autoload/vital/_c980ec/vim.vim              |   20
+ autoload/vital/quickrun.vital               |    1
+ doc/quicklaunch.jax                         |   96
+ doc/quickrun.jax                            |  559
+ doc/quickrun.txt                            |  441
+ plugin/quicklaunch.vim                      |   84
+ plugin/quickrun.vim                         |   12
+ 32 files changed, 3155 insertions(+), 1203 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4.7)
 Author:     thinca <thinca+vim@gmail.com>
 AuthorDate: Mon May 23 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

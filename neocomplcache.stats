@@ -1,4 +1,152 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/6.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/6.1@1)
+Author:     Shougo Matsushita <Shougo.Matsu@gmail.com>
+AuthorDate: Mon Aug 29 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 6.1@1: zipped version.
+
+ README.orig                                        |  110
+ .../sources/snippets_complete/objc.snip            |    2
+ .../sources/snippets_complete/sh.snip              |    2
+ autoload/vital/neocomplcache.vital                 |    2
+ 4 files changed, 3 insertions(+), 113 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6.1)
+Author:     Shougo Matsushita <Shougo.Matsu@gmail.com>
+AuthorDate: Thu Aug 25 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 6.1
+    
+    - Added :NeoComplCacheCachingDictionary in Japanese documentation.
+    - Added :NeoComplCacheCachingSnippets command.
+    - Added :NeoComplCacheLockPlugin and :NeoComplCacheUnlockPlugin commands.
+    - Added g:neocomplcache_dictionary_patterns option.
+    - Added g:neocomplcache_force_overwrite_completefunc option.
+    - Added g:neocomplcache_include_max_processes option.
+    - Added g:neocomplcache_snippets_complete_disable_runtime_snippets option.
+    - Added neocomplcache#sources#filename_complete#get_complete_words().
+    - Changed :NeoComplCacheEditRuntimeSnippets and :NeoComplCacheEditSnippets split behavior.
+    - Changed caching conditions.
+    - Changed caching timing.
+    - Changed g:neocomplcache_enable_cursor_hold_i behavior.
+    - Changed keyword_pattern(experimental).
+    - Deleted obsolute variable.
+    - Deleted underbar completion enhancements.
+    - Disabled auto caching in include_complete when vimproc is not installed.
+    - Don't caching when open buffer in preview window.
+    - Don't split when execute :NeoComplCacheEditRuntimeSnippets and :NeoComplCacheEditSnippets commands.
+    - Don't use swapfile in asyncronous caching.
+    - Enabled auto-preview.
+    - Fixed asyn caching error.
+    - Fixed asyncronous caching bug.
+    - Fixed check uname.
+    - Fixed dictionary_complete.
+    - Fixed doc.
+    - Fixed filename_complete.
+    - Fixed g:snips_author problem.
+    - Fixed get_cur_text error.
+    - Fixed include complete caching.
+    - Fixed include_complete caching.
+    - Fixed include_complete error.
+    - Fixed include_complete freeze in Windows environment.
+    - Fixed is_text_mode.
+    - Fixed keyword pattern.
+    - Fixed load_from_tags() error.
+    - Fixed menu problem.
+    - Fixed neocomplcache snippet sample.
+    - Fixed neocomplcache#check_match_filter() behavior.
+    - Fixed path search.
+    - Fixed php delimiter pattern.
+    - Fixed rails snippet.
+    - Fixed snippet like multi snippet behavior.
+    - Fixed snippets expand behavior.
+    - Fixed tag caching error.
+    - Fixed tags caching error.
+    - Fixed unite source error.
+    - Fixed vim_complete error.
+    - Fixed vim_complete.
+    - Genetate relative path in include_complete.
+    - Implemented asyncronous caching in include_complete.
+    - Implemented asyncronous caching in tags_complete.
+    - Improved :NeoComplCacheToggle, :NeoComplCacheLock, :NeoComplCacheUnlock commands.
+    - Improved async tags.
+    - Improved asyncronous tags caching.
+    - Improved autocmd completion.
+    - Improved cache loading.
+    - Improved default keyword patterns.
+    - Improved execute completion.
+    - Improved features dictionary.
+    - Improved filename_complete.
+    - Improved help include filetype.
+    - Improved include filename complete.
+    - Improved include_complete source caching timing.
+    - Improved mapping completion.
+    - Improved multi snippet description.
+    - Improved neocomplcache documentation.
+    - Improved neocomplcache#get_source_filetypes().
+    - Improved neocomplcache#get_syn_name().
+    - Improved python include filetype.
+    - Improved quick match behavior.
+    - Improved snippet source description.
+    - Improved snippet unite source.
+    - Improved snippet_complete.
+    - Improved snippets action pattern.
+    - Improved snippets_complete highlights.
+    - Improved snippets_complete.
+    - Improved syntax_complete cache.
+    - Improved underbar completion.
+    - Improved variable analyze.
+    - Improved vim_complete.
+    - Improved warning message.
+    - Optimized dictionary filter.
+    - Optimized filename_complete.
+    - Optimized memory usage.
+    - Renamed g:neocomplcache_snippets_complete_disable_runtime_snippets to g:neocomplcache_snippets_disable_runtime_snippets.
+    - Set tabstop in ftplugin/snippet.vim.
+    - Substitute "namespace foobar" to "foobar <namespace>".
+    - Supported coq keyword pattern.
+    - Supported earthquake.
+    - Supported stylus syntax.
+    - Supported vcs.vim.
+    - Vitalized.
+
+ autoload/neocomplcache.vim                         |  373
+ autoload/neocomplcache/async_cache.vim             |  239
+ autoload/neocomplcache/cache.vim                   |  384
+ autoload/neocomplcache/sources/buffer_complete.vim |   82
+ .../neocomplcache/sources/dictionary_complete.vim  |   73
+ .../neocomplcache/sources/filename_complete.vim    |  196
+ .../neocomplcache/sources/include_complete.vim     |  236
+ .../neocomplcache/sources/keyword_complete.vim     |    3
+ .../neocomplcache/sources/snippets_complete.vim    |   82
+ .../sources/snippets_complete/rails.snip           |    6
+ autoload/neocomplcache/sources/syntax_complete.vim |   11
+ autoload/neocomplcache/sources/tags_complete.vim   |   83
+ autoload/neocomplcache/sources/vim_complete.vim    |   42
+ .../sources/vim_complete/command_completions.dict  |    2
+ .../sources/vim_complete/features.dict             |    3
+ .../neocomplcache/sources/vim_complete/helper.vim  |  139
+ autoload/neocomplcache/util.vim                    |   92
+ autoload/unite/sources/neocomplcache.vim           |    8
+ autoload/unite/sources/snippet.vim                 |   16
+ autoload/vital.vim                                 |   12
+ autoload/vital/_bc73c2.vim                         |  114
+ autoload/vital/_bc73c2/data/list.vim               |   95
+ autoload/vital/_bc73c2/data/ordered_set.vim        |   91
+ autoload/vital/_bc73c2/data/string.vim             |   82
+ autoload/vital/_bc73c2/functor.vim                 |   77
+ autoload/vital/_bc73c2/prelude.vim                 |  332
+ autoload/vital/_bc73c2/system/file.vim             |   87
+ autoload/vital/_bc73c2/system/filepath.vim         |   78
+ autoload/vital/neocomplcache.vital                 |    1
+ doc/neocomplcache.jax                              |  102
+ doc/neocomplcache.txt                              |  334
+ ftplugin/snippet.vim                               |    5
+ plugin/neocomplcache.vim                           |   13
+ 33 files changed, 2449 insertions(+), 1044 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/6.0)
 Author:     Shougo Matsushita <Shougo.Matsu@gmail.com>
 AuthorDate: Sun May 1 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

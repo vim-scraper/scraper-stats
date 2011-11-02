@@ -1,4 +1,96 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2)
+Author:     Maxim Kim <habamax@gmail.com>
+AuthorDate: Sat Jun 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2
+    
+    = Note =
+    Remove previous version of vimwiki before install - files in autoload dir is moved/renamed to autoload/vimwiki dir.
+    
+    = Changelog =
+    * Issue 70: Table spanning cell support.
+    * Issue 72: Do not convert again for unchanged file. |:VimwikiAll2HTML|
+      converts only changed wiki files.
+    * Issue 117: |VimwikiDiaryIndex| command that opens diary index wiki page.
+    * Issue 120: Links in headers are not highlighted in vimwiki but are
+      highlighted in HTML.
+    * Issue 138: Added possibility to remap table-column move bindings. See
+      |:VimwikiTableMoveColumnLeft| and |:VimwikiTableMoveColumnRight|
+      commands. For remap instructions see |vimwiki_<A-Left>|
+      and |vimwiki_<A-Right>|.
+    * Issue 125: Problem with 'o' command given while at the of the file.
+    * Issue 131: FileType is not set up when GUIEnter autocommand is used in
+      vimrc. Use 'nested' in 'au GUIEnter * nested VimwikiIndex'
+    * Issue 132: Link to perl (or any non-wiki) file in vimwiki subdirectory
+      doesn't work as intended.
+    * Issue 135: %title and %toc used together cause TOC to appear in an
+      unexpected place in HTML.
+    * Issue 139: |:VimwikiTabnewLink| command is added.
+    * Fix of g:vimwiki_stripsym = '' (i.e. an empty string) -- it removes bad
+      symbols from filenames.
+    * Issue 145: With modeline 'set ft=vimwiki' links are not correctly
+      highlighted when open wiki files.
+    * Issue 146: Filetype difficulty with ".txt" as a vimwiki extension.
+    * Issue 148: There are no mailto links.
+    * Issue 151: Use location list instead of quickfix list for :VimwikiSearch
+      command result. Use :lopen instead of :copen, :lnext instead of :cnext
+      etc.
+    * Issue 152: Add the list of HTML files that would not be deleted after
+      |:VimwikiAll2HTML|.
+    * Issue 153: Delete HTML files that has no corresponding wiki ones with
+      |:VimwikiAll2HTML|.
+    * Issue 156: Add multiple HTML templates. See
+      |vimwiki-option-template_path|. Options html_header and html_footer are
+      no longer exist.
+    * Issue 173: When virtualedit=all option is enabled the 'o' command behave
+      strange.
+    * Issue 178: Problem with alike wikie's paths.
+    * Issue 182: Browser command does not quote url.
+    * Issue 183: Spelling error highlighting is not possible with nested
+      syntaxes.
+    * Issue 184: Wrong foldlevel in some cases.
+    * Issue 195: Page renaming issue.
+    * Issue 196: vim: modeline bug -- syn=vim doesn't work.
+    * Issue 199: Generated HTML for sublists is invalid.
+    * Issue 200: Generated HTML for todo lists does not show completion status
+      the fix relies on CSS, thus your old stylesheets need to be updated!;
+      may not work in obsolete browsers or font-deficient systems.
+    * Issue 205: Block code: highlighting differs from processing. Inline code
+      block {{{ ... }}} is removed. Use `...` instead.
+    * Issue 208: Default highlight colors are problematic in many
+      colorschemes. Headers are highlighted as |hl-Title| by default, use
+      |g:vimwiki_hl_headers| to restore previous default Red, Green, Blue or
+      custom header colors. Some other changes in highlighting.
+    * Issue 209: Wild comments slow down html generation. Comments are
+      changed, use %% to comment out entire line.
+    * Issue 210: HTML: para enclose header.
+    * Issue 214: External links containing Chinese characters get trimmed.
+    * Issue 218: Command to generate HTML file and open it in webbrowser. See
+      |:Vimwiki2HTMLBrowse|(bind to <leader>whh)
+    * NEW: Added <Leader>wh mapping to call |:Vimwiki2HTML|
+
+ autoload/vimwiki.vim         | 1088
+ autoload/vimwiki/base.vim    | 1056
+ autoload/vimwiki/default.tpl |   11
+ autoload/vimwiki/diary.vim   |  286
+ autoload/vimwiki/html.vim    | 1441
+ autoload/vimwiki/lst.vim     |  369
+ autoload/vimwiki/style.css   |   39
+ autoload/vimwiki/tbl.vim     |  510
+ autoload/vimwiki_diary.vim   |  281
+ autoload/vimwiki_html.vim    | 1311
+ autoload/vimwiki_lst.vim     |  359
+ autoload/vimwiki_tbl.vim     |  510
+ doc/vimwiki.txt              |  696
+ ftplugin/vimwiki.vim         |  180
+ plugin/vimwiki.vim           |  133
+ syntax/vimwiki.vim           |  139
+ syntax/vimwiki_default.vim   |    2
+ syntax/vimwiki_media.vim     |    2
+ 18 files changed, 4439 insertions(+), 3974 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.1)
 Author:     Maxim Kim <habamax@gmail.com>
 AuthorDate: Fri Sep 3 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

@@ -1,4 +1,70 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.4.7)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.5.3)
+Author:     Geir Isene <g@isene.com>
+AuthorDate: Sun Sep 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.5.3
+    
+    New feature: LaTeX conversion: Turn your WOIM list into a LaTeX document. Mapped to <leader>L (feature suggested by  Shantanu Kulkarni). Added "set autoindent" to plugin settings (thanks to Shantanu Kulkarni). Minor fixes. Updated documentation.
+
+ README_WOIM       |    2
+ doc/woim.txt      |   26
+ ftdetect/woim.vim |   18
+ syntax/woim.vim   |  121
+ 4 files changed, 147 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5.2)
+Author:     Geir Isene <g@isene.com>
+AuthorDate: Thu Sep 8 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.5.2
+    
+      Changes:
+      Added "presentation mode" where you can traverse a WOIM list with "g<DOWN>" or "g<UP>" to view only the current line and its ancestors.
+      Changed Quotes and Comments to only cover one line (before when it covered several lines, the plugin became very slow for large lists).
+      Added instructions in doc file on using WOIM list in other file types.
+
+ doc/woim.txt    |   39
+ syntax/woim.vim |   22
+ 2 files changed, 45 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5.1)
+Author:     Geir Isene <g@isene.com>
+AuthorDate: Wed Aug 24 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.5.1
+    
+    Changes:
+    Minor updates to the documentation.
+
+ doc/woim.txt |  306
+ 1 files changed, 158 insertions(+), 148 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.5.0)
+Author:     Geir Isene <g@isene.com>
+AuthorDate: Mon Aug 15 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.5.0
+    
+    Added encryption - both manual and automatic via OpenSSL:
+    
+      <leader>z encrypts the current line (including all sublevels if folded)
+      <leader>Z encrypts the current file (all lines)
+      <leader>x decrypts the current line
+      <leader>X decrypts the current file (all lines)
+    
+    A dot file (file name starts with a "." such as .test.woim) is automatically encrypted on save and decrypted on opening. You can now use this plugin for encrypted lists or a very structured password safe.
+
+ README_WOIM       |   21
+ doc/woim.txt      |   50
+ ftdetect/woim.vim |   25
+ syntax/woim.vim   |   34
+ 4 files changed, 117 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.7)
 Author:     Geir Isene <g@isene.com>
 AuthorDate: Thu Jun 2 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -335,6 +401,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.4: Initial upload
 
- README            |   34
+ README            |   71
  ftplugin/WOIM.vim |  117
- 2 files changed, 151 insertions(+), 0 deletions(-)
+ 2 files changed, 188 insertions(+), 0 deletions(-)

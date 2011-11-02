@@ -1,5 +1,19 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.3)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/4.4)
+Author:     Tim Pope <vim.org@tpope.org>
+AuthorDate: Thu Sep 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 4.4
+    
+    Support Rails 3.1 assets (smarter :Rjavascript and :Rstylesheet).Support RSpec 2 backtrace format in :Rake.Support rename_index in :Rinvert.Support slim template type.Better support for Rails 3 style `:Rails new foo`.Link Gemfile and Gemfile.lock with :A.Add bundler.vim support.Syntax highlight `execute` in migrations.Syntax highlight `attr_readonly` [Adam Vaughan].Syntax highlight `around` in specs [CaÌssio Marques].Fix Oracle dbext support [Mark Roghelia].Fix singularization of "movies".Fix gf on render :partial => 'foo/bar.html'.Fix gf with Ruby 1.9 hashes.Remove AWS abbreviation.Remove statusline indicator.Remove project.vim support.
+
+ autoload/rails.vim |  402
+ doc/rails.txt      |  142
+ plugin/rails.vim   |    3
+ 3 files changed, 130 insertions(+), 417 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/4.3)
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Fri Sep 10 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -27,7 +41,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  3 files changed, 281 insertions(+), 222 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.2)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Sat Mar 13 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -57,7 +71,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  3 files changed, 409 insertions(+), 413 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.1)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Fri Dec 18 00:00:00 2009 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -75,7 +89,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  3 files changed, 58 insertions(+), 17 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/4.0)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Sun Oct 4 00:00:00 2009 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -109,7 +123,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  3 files changed, 823 insertions(+), 690 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.4)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Fri Mar 27 00:00:00 2009 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -131,7 +145,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  3 files changed, 289 insertions(+), 186 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.3)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Fri Jan 23 00:00:00 2009 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -153,7 +167,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 139 insertions(+), 118 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.2)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Thu Nov 13 00:00:00 2008 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -173,7 +187,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  3 files changed, 108 insertions(+), 97 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.1)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Fri Oct 24 00:00:00 2008 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -193,7 +207,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  3 files changed, 90 insertions(+), 120 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Fri Oct 17 00:00:00 2008 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -225,7 +239,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  3 files changed, 1205 insertions(+), 1131 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.1)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Thu Oct 9 00:00:00 2008 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -245,7 +259,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  3 files changed, 82 insertions(+), 82 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Mon May 26 00:00:00 2008 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -263,7 +277,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  3 files changed, 54 insertions(+), 122 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/256)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Sun Feb 17 00:00:00 2008 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -280,7 +294,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  3 files changed, 4502 insertions(+), 4421 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/239)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Thu Jan 3 00:00:00 2008 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -295,7 +309,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 67 insertions(+), 63 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/222)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Fri Nov 2 00:00:00 2007 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -309,7 +323,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 90 insertions(+), 67 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/216)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Thu Sep 6 00:00:00 2007 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -324,7 +338,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 620 insertions(+), 577 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/200)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Thu May 31 00:00:00 2007 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -340,7 +354,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 535 insertions(+), 223 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/192)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Thu May 17 00:00:00 2007 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -353,7 +367,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  1 files changed, 19 insertions(+), 11 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/190)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Tue May 15 00:00:00 2007 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -370,7 +384,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 337 insertions(+), 202 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/180)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Tue Apr 17 00:00:00 2007 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -387,7 +401,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 380 insertions(+), 103 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/175)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Fri Mar 30 00:00:00 2007 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -404,7 +418,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 306 insertions(+), 125 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/166)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Tue Feb 27 00:00:00 2007 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -419,7 +433,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 150 insertions(+), 101 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/150)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Sun Jan 28 00:00:00 2007 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -433,7 +447,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  1 files changed, 66 insertions(+), 35 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/144)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Wed Jan 17 00:00:00 2007 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -447,7 +461,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  1 files changed, 38 insertions(+), 26 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/140)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Fri Jan 5 00:00:00 2007 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -463,7 +477,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 339 insertions(+), 147 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/132)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Wed Nov 1 00:00:00 2006 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -478,7 +492,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 105 insertions(+), 35 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/128)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Wed Aug 16 00:00:00 2006 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -493,7 +507,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 342 insertions(+), 174 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/123)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Fri Aug 4 00:00:00 2006 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -508,7 +522,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 1096 insertions(+), 546 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/113)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Wed Jul 19 00:00:00 2006 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -520,7 +534,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  1 files changed, 22 insertions(+), 9 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/111)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Mon Jul 17 00:00:00 2006 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -536,7 +550,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 1657 insertions(+), 848 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/100)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Sun Jul 2 00:00:00 2006 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -556,7 +570,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 1380 insertions(+), 618 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/69)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Fri Jun 16 00:00:00 2006 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -575,7 +589,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 826 insertions(+), 355 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/37)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Tue Jun 6 00:00:00 2006 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
@@ -593,7 +607,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  2 files changed, 1056 insertions(+), 241 deletions(-)
 
 commit SHA1SHA1SHA1 (tag: refs/tags/18)
-Author:     Tim Pope <vimNOSPAM@tpope.org>
+Author:     Tim Pope <vim.org@tpope.org>
 AuthorDate: Wed May 31 00:00:00 2006 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 

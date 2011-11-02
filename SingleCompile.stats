@@ -1,4 +1,104 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.8.5)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.9.1)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Thu Oct 6 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.9.1
+    
+    Complete document related to compiler priority;
+    add chromium built-in template;
+    fix IE priority bug in the built-in template.
+
+ autoload/SingleCompile.vim      |   14
+ autoload/SingleCompileAsync.vim |    2
+ doc/SingleCompile.txt           |   51
+ plugin/SingleCompile.vim        |    2
+ 4 files changed, 55 insertions(+), 14 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.9beta)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Mon Sep 19 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.9beta
+    
+    Now compiler template contains "priority" field, and each built-in template have been set a priority; this means, when user does not choose one compiler explicitly, SingleCompile will automatically choose the compiler with the highest priority (related document is not available yet);
+    Add clang built-in template for Object-C;
+    some minor improvement of clang built-in template for C and C++.
+
+ autoload/SingleCompile.vim      |   88
+ autoload/SingleCompileAsync.vim |    2
+ doc/SingleCompile.txt           |   22
+ plugin/SingleCompile.vim        |    2
+ 4 files changed, 96 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.9)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Tue Sep 6 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8.9
+    
+    Improve the detection of Microsoft Visual C++ in the built-in template on Windows (Specified version of MSVC could be detected now)
+    ** No need to upgrade to this version if you do not use Microsoft Visual C++
+
+ autoload/SingleCompile.vim      |  177
+ autoload/SingleCompileAsync.vim |    2
+ doc/SingleCompile.txt           |   26
+ plugin/SingleCompile.vim        |    2
+ 4 files changed, 191 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.8)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Sat Sep 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8.8
+    
+    When using :SCChooseCompiler, list compilers ordered alphabetically;
+    Add arora, epiphany built-in template for html and xhtml;
+    Improve the detection of IE on Windows;
+    Remove OS/2 supporting code since they are unable to be tested(send me an email if you have problems on this).
+
+ autoload/SingleCompile.vim      |   45
+ autoload/SingleCompileAsync.vim |    2
+ doc/SingleCompile.txt           |   18
+ plugin/SingleCompile.vim        |    2
+ 4 files changed, 40 insertions(+), 27 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.7)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Sun Jun 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8.7
+    
+    Fix some python asynchronous mode availability detection problem;
+    Add GNAT Ada compiler built-in template.
+
+ autoload/SingleCompile.vim      |    9
+ autoload/SingleCompileAsync.vim |   23
+ doc/SingleCompile.txt           |   10
+ plugin/SingleCompile.vim        |    2
+ 4 files changed, 35 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.6)
+Author:     H Xu <xuhdev@gmail.com>
+AuthorDate: Tue Jun 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 2.8.6
+    
+    Add Object-C built-in template (gcc);
+    improve Javascript and idl built-in template.
+
+ autoload/SingleCompile.vim      |   69
+ autoload/SingleCompileAsync.vim |    2
+ doc/SingleCompile.txt           |   24
+ plugin/SingleCompile.vim        |    2
+ 4 files changed, 50 insertions(+), 47 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.8.5)
 Author:     H Xu <xuhdev@gmail.com>
 AuthorDate: Wed May 25 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -394,8 +494,8 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.2.1: Fix a minor document bug.
 
- README                     |  216
+ README                     |  243
  autoload/SingleCompile.vim |  198
  doc/SingleCompile.txt      |  324
  plugin/SingleCompile.vim   |  156
- 4 files changed, 894 insertions(+), 0 deletions(-)
+ 4 files changed, 921 insertions(+), 0 deletions(-)

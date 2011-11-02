@@ -1,4 +1,190 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.8.8)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.12.2)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Oct 23 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.12.2
+    
+      Fold function finally knows to ignore embedded code (thanks to Bart Kroon for the motivation to finally fix this bloody annoying misfeature ;-)):   http://github.com/xolox/vim-notes/commit/9985806  Improved filename <-> title synchronization. Bug fix: Whenever creating a new note the plug-in would complain that the filename and title didn't match :-/... Sorry about that, it was annoying for me as well :-). Anyway should be fixed now, let's hope I didn't break anything else in the process. As I was working on the feature anyway I also added more information to the dialog:   http://github.com/xolox/vim-notes/commit/273aa01
+
+ README.md                |    6
+ autoload/xolox/notes.vim |   30
+ doc/notes.txt            |   13
+ 3 files changed, 41 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.12)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Tue Oct 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.12
+    
+      Bug fix for "E28: No such highlight group name: notesName":   http://github.com/xolox/vim-notes/commit/f6ec550  Enable syncing of filenames <-> titles (suggested by Julien Lancien):   http://github.com/xolox/vim-notes/commit/2349000
+
+ README.md                |    6
+ autoload/xolox/notes.vim |   59
+ doc/notes.txt            |   15
+ ftplugin/notes.vim       |    9
+ plugin/notes.vim         |    8
+ 5 files changed, 91 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11.5)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Mon Sep 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.11.5
+    
+      :DeleteNote {title} support by github.com/bioe007 (pull request #9):   http://github.com/xolox/vim-notes/commit/57b7168 (original change set)   http://github.com/xolox/vim-notes/commit/2f1229f (my modifications)
+
+ README.md                |    2
+ autoload/xolox/notes.vim |   33
+ doc/notes.txt            |    9
+ plugin/notes.vim         |    2
+ 4 files changed, 31 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11.4)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Mon Sep 26 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.11.4
+    
+      TODO: Make F1 show quick reference, add optional command aliases:   http://github.com/xolox/vim-notes/commit/2421490  Updated miscellaneous scripts:   http://github.com/xolox/vim-notes/commit/b9d03be
+
+ TODO.md                      |    2
+ autoload/xolox/misc/list.vim |   15
+ autoload/xolox/misc/path.vim |   25
+ autoload/xolox/notes.vim     |    4
+ 4 files changed, 31 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11.3)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Sep 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.11.3
+    
+      Include untagged notes in :ShowTaggedNotes output (suggested by Jacobo de Vera):   http://github.com/xolox/vim-notes/commit/60526a3
+
+ autoload/xolox/notes.vim      |    4
+ autoload/xolox/notes/tags.vim |   45
+ 2 files changed, 40 insertions(+), 9 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11.2)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Sep 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.11.2
+    
+      Bug fix: Guard against recursive calls to tags#load_index() (issue #8):   http://github.com/xolox/vim-notes/commit/b38f0ee  Minor bug fix: Always save tags index when file doesn't exist:   http://github.com/xolox/vim-notes/commit/1021528
+
+ autoload/xolox/notes.vim      |    4
+ autoload/xolox/notes/tags.vim |   27
+ 2 files changed, 23 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.11)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Sep 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.11
+    
+      README updates:   http://github.com/xolox/vim-notes/commit/16093e8  Properly use Unicode bullets in generated "All tags" note:   http://github.com/xolox/vim-notes/commit/1b928a1  Automatically remove empty list items on Enter:   http://github.com/xolox/vim-notes/commit/b5f4f6e  Hide shadow notes from list of tagged notes:   http://github.com/xolox/vim-notes/commit/de1b170  Bug fix for <CR> mapping: Allow splitting lines in the middle:   http://github.com/xolox/vim-notes/commit/cbc894e  Bug fix: Restore highlighting of note names that end in punctuation:   http://github.com/xolox/vim-notes/commit/56e23b6  Move version variable to autoload script:   http://github.com/xolox/vim-notes/commit/80b6ef5  Incremental tags index, improved :ShowTaggedNotes command:   http://github.com/xolox/vim-notes/commit/528fdcb
+
+ README.md                      |   60
+ TODO.md                        |    1
+ autoload/xolox/misc/README.md  |   29
+ autoload/xolox/misc/buffer.vim |   37
+ autoload/xolox/misc/list.vim   |   37
+ autoload/xolox/misc/open.vim   |   70
+ autoload/xolox/misc/option.vim |   40
+ autoload/xolox/misc/path.vim   |   15
+ autoload/xolox/misc/str.vim    |    4
+ autoload/xolox/notes.vim       |  227
+ autoload/xolox/notes/tags.vim  |  144
+ doc/notes.txt                  |   84
+ ftplugin/notes.vim             |   35
+ plugin/notes.vim               |    7
+ syntax/notes.vim               |    5
+ 15 files changed, 591 insertions(+), 204 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.10)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Jul 9 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.10
+    
+      Don't hang on hit-enter prompt (:SearchNotes):   http://github.com/xolox/vim-notes/commit/215fd1c  Automatic completion of @tags inside notes (suggested by Lukas Muehlethaler):   http://github.com/xolox/vim-notes/commit/74e8455
+
+ README.md                |   10
+ autoload/xolox/notes.vim |   84
+ doc/notes.txt            |   20
+ ftplugin/notes.vim       |   10
+ plugin/notes.vim         |   10
+ 5 files changed, 128 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.4)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Fri Jun 24 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.4
+    
+      Define version as variable, include version in messages:   http://github.com/xolox/vim-notes/commit/23861b0  Make highlighting UTF-8 compatible (suggested by Lukas Muehlethaler):   http://github.com/xolox/vim-notes/commit/5d6dfdb
+
+ autoload/xolox/notes.vim |   36
+ plugin/notes.vim         |    8
+ syntax/notes.vim         |   21
+ 3 files changed, 33 insertions(+), 32 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.2)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Fri Jun 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.2
+    
+      Make :SearchNotes support | without escaping (reported by Avi Yagodnick):   http://github.com/xolox/vim-notes/commit/6468ae9
+
+ plugin/notes.vim |    6
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.9.1)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Tue Jun 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.9.1
+    
+      Finally a proper readme! (used to generate homepage and Vim help file):   http://github.com/xolox/vim-notes/commit/d532ede  Optionally append suffix to note filenames (thanks to Christopher Peplin):   http://github.com/xolox/vim-notes/commit/96a16ed
+
+ README.md                |  102
+ autoload/xolox/notes.vim |   14
+ doc/notes.txt            |  177
+ plugin/notes.vim         |    9
+ 4 files changed, 290 insertions(+), 12 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.12)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Jun 12 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.8.12
+    
+      Add :NoteFromSelectedText command (suggested by Lukas Muehlethaler):   http://github.com/xolox/vim-notes/commit/26ab4f4  Insert mode completion of note titles using C-x C-u (suggested by Lukas Muehlethaler):   http://github.com/xolox/vim-notes/commit/6143437  Sanity check automatic renaming of notes:   http://github.com/xolox/vim-notes/commit/a7a3d26  :RecentNotes command to list (matching) notes by modification date:   http://github.com/xolox/vim-notes/commit/57d1c61
+
+ README.md                              |    4
+ autoload/xolox/notes.vim               |  126
+ doc/notes.txt                          |    9
+ ftplugin/notes.vim                     |    6
+ misc/notes/shadow/Note taking commands |   16
+ plugin/notes.vim                       |    8
+ 6 files changed, 161 insertions(+), 8 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.8.8)
 Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Sat Jun 4 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

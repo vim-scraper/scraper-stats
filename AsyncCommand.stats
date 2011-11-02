@@ -1,4 +1,35 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.1)
+Author:     David Briscoe <pydave+vim@gmail.com>
+AuthorDate: Mon Jul 11 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.1: Re-add AsyncMake command
+
+ plugin/asynccommand.vim |   16
+ 1 files changed, 16 insertions(+), 0 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     David Briscoe <pydave+vim@gmail.com>
+AuthorDate: Fri Jun 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.0
+    
+    Now a zip file.
+    
+    Convert to an autoload script, add help file (big thanks to Peter Rincker!)
+    There are also now more predefined handlers to simplify writing your own AsyncCommands.
+    
+    Fix tcsh shellredir bug (thanks to Chad Moore!)
+
+ README.rst                |   18
+ autoload/asynccommand.vim |  136
+ autoload/asynchandler.vim |   85
+ doc/asynccommand.txt      |  135
+ plugin/asynccommand.vim   |  175
+ 5 files changed, 424 insertions(+), 125 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.2)
 Author:     David Briscoe <pydave+vim@gmail.com>
 AuthorDate: Tue Apr 5 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -42,6 +73,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README                  |   36
+ README                  |   43
  plugin/asynccommand.vim |  189
- 2 files changed, 225 insertions(+), 0 deletions(-)
+ 2 files changed, 232 insertions(+), 0 deletions(-)

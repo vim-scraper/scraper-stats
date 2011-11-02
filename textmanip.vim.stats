@@ -1,11 +1,104 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.1)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7)
+Author:     t9 md <taqumd@gmail.com>
+AuthorDate: Mon Aug 15 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7
+    
+    2011-08-16: v0.7
+            - [bugfix] extend_eol not worked in some situation.
+
+ autoload/textmanip.vim |   29
+ doc/textmanip.txt      |    5
+ plugin/textmanip.vim   |    2
+ 3 files changed, 20 insertions(+), 16 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6)
+Author:     t9 md <taqumd@gmail.com>
+AuthorDate: Mon Aug 15 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.6: - [bugfix] better handling for redraw problem
+
+ README.md              |    2
+ autoload/textmanip.vim |   17
+ doc/textmanip.txt      |    4
+ plugin/textmanip.vim   |   10
+ 4 files changed, 15 insertions(+), 18 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.5)
+Author:     t9 md <taqumd@gmail.com>
+AuthorDate: Sun Aug 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.5
+    
+    - [bugfix] handle left and up movement limit.
+    - [bugfix] more strict check to determine continuous execution.
+    - [bugfix] remove unnecessarily `undojoin` twice, and remove catch clause(E790)
+
+ README.md              |    2
+ autoload/textmanip.vim |  149
+ doc/textmanip.txt      |    9
+ plugin/textmanip.vim   |    2
+ 4 files changed, 77 insertions(+), 85 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.4)
+Author:     t9 md <taqumd@gmail.com>
+AuthorDate: Sun Aug 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.4
+    
+    2011-08-14: v0.4
+            - support count for duplicate and move
+            - bug fix for `undojoin`
+            - refactoring,, support duplicate text to upper direction.
+            - change keymap for consistency, sorry.
+            - autoloadize!
+
+ README.md              |   67
+ autoload/textmanip.vim |  161
+ doc/textmanip.txt      |   91
+ plugin/text_manup.vim  |   66
+ plugin/textmanip.vim   |   35
+ 5 files changed, 257 insertions(+), 163 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.3)
+Author:     t9 md <taqumd@gmail.com>
+AuthorDate: Sat Jul 16 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.3: fix documentation bugs.code re-indent(so no change in code)
+
+ README.md             |    4
+ doc/textmanip.txt     |   29
+ plugin/text_manup.vim |   46
+ 3 files changed, 29 insertions(+), 50 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
+Author:     t9 md <taqumd@gmail.com>
+AuthorDate: Wed Jun 15 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.2
+    
+    0.2	2011-06-13
+    	- Fix document typo
+
+ README.md             |   73
+ doc/textmanip.txt     |   20
+ plugin/text_manup.vim |    2
+ 3 files changed, 85 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
 Author:     t9 md <taqumd@gmail.com>
 AuthorDate: Wed Mar 9 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1: Initial upload
 
- README                |   51
+ README                |   45
  doc/textmanip.txt     |  124
  plugin/text_manup.vim |   66
- 3 files changed, 241 insertions(+), 0 deletions(-)
+ 3 files changed, 235 insertions(+), 0 deletions(-)

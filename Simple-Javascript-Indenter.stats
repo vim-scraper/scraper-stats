@@ -1,4 +1,94 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.4.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.4.6)
+Author:     Miao Jiang <jiangfriend@gmail.com>
+AuthorDate: Tue Oct 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.6
+    
+            New: return indent supported
+    
+                    return a +
+                           b +
+                           c;
+    
+            Fix: failed indent for
+    
+                    var a,
+                        // ca
+                        b,
+                        /* cb */
+                        c;
+
+ ChangeLog             |   16
+ indent/javascript.vim |   53
+ test.js               |   16
+ 3 files changed, 65 insertions(+), 20 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.5)
+Author:     Miao Jiang <jiangfriend@gmail.com>
+AuthorDate: Thu Oct 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.5
+    
+      Fix: float indent level is invalid in vim 7.3
+    
+      Fix: failed indent for
+        var a = /reg/,
+            c = 'bar'
+    
+      Optimize code
+
+ ChangeLog             |    9
+ indent/javascript.vim |   43
+ test.js               |  231
+ 3 files changed, 140 insertions(+), 143 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.4)
+Author:     Miao Jiang <jiangfriend@gmail.com>
+AuthorDate: Thu Oct 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.4
+    
+    	Fix: failed indent for
+    		(a / b); // c (
+    
+    	Fix: failed indent for
+    		'' + "'" + // ' (
+    
+    	Fix: failed indent in Brief Mode for
+    		foo (a(b,
+    			c)) {
+    			aoeu
+    		}
+
+ ChangeLog             |   15
+ README.mdown          |    1
+ indent/javascript.vim |   99
+ test.js               |   45
+ 4 files changed, 103 insertions(+), 57 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.3)
+Author:     Miao Jiang <jiangfriend@gmail.com>
+AuthorDate: Sun Jul 24 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.3
+    
+    	Fix: failed indent in brief mode, and optimize in normal mode for code
+    	{
+    		console.info((function() {
+    		}).something);
+    		next();
+    	}
+
+ ChangeLog             |    8
+ indent/javascript.vim |   19
+ test.js               |   21
+ 3 files changed, 37 insertions(+), 11 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.2)
 Author:     Miao Jiang <jiangfriend@gmail.com>
 AuthorDate: Tue May 17 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

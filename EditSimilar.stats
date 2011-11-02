@@ -1,4 +1,32 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.17)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.19)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Mon Jul 25 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.19
+    
+    Avoid that :SplitPattern usually opens splits in reverse glob order (with default 'nosplitbelow' / 'nosplitright') by forcing :belowright splitting for all splits after the first. I.e. behave more like vim -o {pattern}.
+
+ autoload/EditSimilar.vim |   16
+ doc/EditSimilar.txt      |    5
+ plugin/EditSimilar.vim   |    2
+ 3 files changed, 21 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.18)
+Author:     Ingo Karkat <ingo@karkat.de>
+AuthorDate: Thu Jun 23 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.18
+    
+    ENH: Implement completion of file extensions for EditSimilar-root commands like :EditRoot.
+
+ autoload/escapings.vim |   27
+ doc/EditSimilar.txt    |   14
+ plugin/EditSimilar.vim |   44
+ 3 files changed, 66 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.17)
 Author:     Ingo Karkat <ingo@karkat.de>
 AuthorDate: Thu Feb 25 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

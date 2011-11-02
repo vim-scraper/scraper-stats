@@ -1,4 +1,51 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/2.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.0.3)
+Author:     lilydjwg <lilydjwg@gmail.com>
+AuthorDate: Sat Aug 6 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.0.3: when trying 'locate' command, add '-e' option and read only one line.
+
+ gui2term.py |    6
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0.2)
+Author:     lilydjwg <lilydjwg@gmail.com>
+AuthorDate: Wed Jun 22 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.0.2: when finding rgb.txt, try 'locate' command last.
+
+ gui2term.py |   20
+ 1 files changed, 10 insertions(+), 10 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0.1)
+Author:     lilydjwg <lilydjwg@gmail.com>
+AuthorDate: Fri Jun 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.0.1
+    
+    - use 'NONE' instead of 'none' as the later is reported to be invalid color names sometimes
+    - sorted highlight args so that it is easy to remove what has been added or modified
+
+ gui2term.py |    9
+ 1 files changed, 7 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.0)
+Author:     lilydjwg <lilydjwg@gmail.com>
+AuthorDate: Tue Jun 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.0
+    
+    * try to use `locate' to find rgb.txt
+    * improve color matching algorithm (thanks to Eric Pruitt for the idea)
+    * other small fixes
+
+ gui2term.py |  150
+ 1 files changed, 135 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/2.0)
 Author:     lilydjwg <lilydjwg@gmail.com>
 AuthorDate: Fri Jan 14 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -19,6 +66,6 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0: Initial upload
 
- README      |   14
+ README      |   16
  gui2term.py |  436
- 2 files changed, 450 insertions(+), 0 deletions(-)
+ 2 files changed, 452 insertions(+), 0 deletions(-)

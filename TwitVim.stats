@@ -1,4 +1,36 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.6.3)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.7.1)
+Author:     Po Shan Cheah <morton@mortonfox.com>
+AuthorDate: Wed Sep 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.1
+    
+    * Added trending topics. :TrendTwitter and :SetTrendLocationTwitter
+    * Some fixes for browser-launching issues.
+    * Fix for quoting issue when doing goo.gl URL shortening with cURL network interface under Windows.
+    * Support for HTML hex entities.
+    * Show 'follow request sent' in user profile display if that is the case.
+
+ doc/twitvim.txt    |   66
+ plugin/twitvim.vim |  563
+ 2 files changed, 494 insertions(+), 135 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.7.0)
+Author:     Po Shan Cheah <morton@mortonfox.com>
+AuthorDate: Wed Jul 6 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.7.0
+    
+    * Faster XML parser.
+    * Replaced deprecated Twitter API calls with updated versions.
+    * OAuth multi-login feature. Added :SwitchLoginTwitter command.
+
+ doc/twitvim.txt    |   55
+ plugin/twitvim.vim |  789
+ 2 files changed, 467 insertions(+), 377 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.6.3)
 Author:     Po Shan Cheah <morton@mortonfox.com>
 AuthorDate: Fri May 13 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

@@ -1,4 +1,49 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.5)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/3.7)
+Author:     Fritz Mehner <mehner@fh-swf.de>
+AuthorDate: Tue Oct 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.7
+    
+    - The three hotkeys \cl, \cj, \cc allow a range, e.g. '3\cl' (see help text and
+    	bash-hot-key.pdf).
+    - Plugin loads faster: loading the templates is delayed until the first use.
+    - Plugin now works with pathogen.vim.
+    - Menus will always be generated (for the use with :emenu).
+    - Bugfix: no local templates available with a system-wide installation (thanks to Iain Arnell).
+    - Several improvements.
+
+ README.bashsupport                            |   14
+ bash-support/templates/bash.comments.template |    1
+ doc/ChangeLog                                 |    7
+ doc/bash-hot-keys.pdf                         |  Bin 29176 -> 26602 bytes
+ doc/bash-hot-keys.tex                         |   57
+ doc/bashsupport.txt                           |  186
+ ftplugin/sh.vim                               |   39
+ plugin/bash-support.vim                       |  300
+ 8 files changed, 320 insertions(+), 284 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.6)
+Author:     Fritz Mehner <mehner@fh-swf.de>
+AuthorDate: Sat Jul 2 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 3.6
+    
+    - New hotkey \ssa and menu entry for the selection of a subarray.
+    - Bugfix: detection of a system-wide installation can fail.
+    - Minor improvements.
+
+ README.bashsupport      |   37
+ doc/ChangeLog           |    6
+ doc/bash-hot-keys.pdf   |  Bin 28898 -> 29176 bytes
+ doc/bash-hot-keys.tex   |    7
+ doc/bashsupport.txt     |   48
+ ftplugin/sh.vim         |    6
+ plugin/bash-support.vim |  226
+ 7 files changed, 172 insertions(+), 158 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/3.5)
 Author:     Fritz Mehner <mehner@fh-swf.de>
 AuthorDate: Sat Feb 26 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

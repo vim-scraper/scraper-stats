@@ -1,4 +1,44 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1.1)
+Author:     Miao Jiang <jiangfriend@gmail.com>
+AuthorDate: Mon Sep 5 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1.1
+    
+    Fix auto indent incorrect in CoffeeScript
+    eg:
+      foo:
+        bar: [|]
+    press <CR> at |
+
+ plugin/auto-pairs.vim |   10
+ 1 files changed, 4 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.0)
+Author:     Miao Jiang <jiangfriend@gmail.com>
+AuthorDate: Mon Jun 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1.0
+    
+    fix indent incorrect after {\<CR>}
+    use <expr> instead of <C-R> in map keys
+
+ plugin/auto-pairs.vim |   20
+ 1 files changed, 14 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.3)
+Author:     Miao Jiang <jiangfriend@gmail.com>
+AuthorDate: Thu Jun 9 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.0.3: Add Fast Wrap feature.
+
+ README.md             |   48
+ plugin/auto-pairs.vim |   41
+ 2 files changed, 54 insertions(+), 35 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.0.2)
 Author:     Miao Jiang <jiangfriend@gmail.com>
 AuthorDate: Tue Jun 7 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -26,7 +66,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 1.0.1: Initial upload
 
- README                |  105
+ README                |  119
  README.md             |   60
  plugin/auto-pairs.vim |  121
- 3 files changed, 286 insertions(+), 0 deletions(-)
+ 3 files changed, 300 insertions(+), 0 deletions(-)

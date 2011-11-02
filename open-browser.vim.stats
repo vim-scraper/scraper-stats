@@ -1,4 +1,46 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.3)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.0.5)
+Author:     tyru <tyru.exe@gmail.com>
+AuthorDate: Thu Jun 30 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.0.5
+    
+    (NOTE: Next release will break some backward compatibility, maybe)
+    - Document fix/improvement
+    - Add :command-completion to :OpenBrowserSmartSearch.
+    - :OpenBrowserSmartSearch: allow {search-engine} option
+      like :OpenBrowserSearch
+    - Minor bug fixes
+
+ autoload/openbrowser.vim |   92
+ doc/openbrowser.txt      |   69
+ plugin/openbrowser.vim   |    6
+ 3 files changed, 119 insertions(+), 48 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.4)
+Author:     tyru <tyru.exe@gmail.com>
+AuthorDate: Tue Jun 21 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.0.4
+    
+    - Improve |:OpenBrowserSearch| completion
+    - Add <Plug>(openbrowser-search)
+    - Add <Plug>(openbrowser-smart-search)
+    - Merge Daniel Hahler's branch. thanks!
+    - Spawn a browser in background
+      - This fixes freezing when spawning a browser
+    - Change |g:openbrowser_fix_schemes| default value
+      - Add pair: "ttps" => "https"
+    - etc.
+
+ autoload/openbrowser.vim |  109
+ autoload/urilib.vim      |  108
+ doc/openbrowser.txt      |   79
+ plugin/openbrowser.vim   |   12
+ 4 files changed, 246 insertions(+), 62 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.0.3)
 Author:     tyru <tyru.exe@gmail.com>
 AuthorDate: Wed Mar 9 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -57,7 +99,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.0.0: Initial upload
 
- README                 |   25
+ README                 |   48
  doc/openbrowser.txt    |  197
  plugin/openbrowser.vim |  236
- 3 files changed, 458 insertions(+), 0 deletions(-)
+ 3 files changed, 481 insertions(+), 0 deletions(-)

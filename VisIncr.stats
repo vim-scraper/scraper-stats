@@ -1,4 +1,21 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/19)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/20)
+Author:     Charles Campbell <drchip@campbellfamily.biz>
+AuthorDate: Tue Aug 16 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 20
+    
+    new     : IB and IIB support binary dec/incrementing; restricted incrementing support for :RIB, :RIIB, :RIO, :RIX, and :RIIX (ie. for binary, octal, and hexadecimal dec/incrementing); and optional long-command names.
+    
+    bugfixes: two-argument IIO, IIX commands; when selection with exclusive is used.
+
+ autoload/calutil.vim     |  147
+ autoload/visincr.vim     |  162
+ doc/visincr.txt          |  491
+ plugin/visincrPlugin.vim |  153
+ 4 files changed, 498 insertions(+), 455 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/19)
 Author:     Charles Campbell <drchip@campbellfamily.biz>
 AuthorDate: Wed Dec 19 00:00:00 2007 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

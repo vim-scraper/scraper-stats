@@ -1,4 +1,21 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/11.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/12.0)
+Author:     David Fishburn <dfishburn.vim@gmail.com>
+AuthorDate: Sat Sep 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 12.0
+    
+    NF: Added support for the clipboard option "unnamedplus" which was added after 7.3 (Hong Xu).
+    
+    NF: When displaying the YankRing using YRShow, a new command "R" has been added to display all of Vim's registers [0-9a-z].
+    
+    BF: YRMapsDelete did not remove the normal mode @ map, which interfers with recorded macros (Philippe Vaucher ).
+
+ doc/yankring.txt    |   12
+ plugin/yankring.vim |  211
+ 2 files changed, 138 insertions(+), 85 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/11.0)
 Author:     David Fishburn <dfishburn.vim@gmail.com>
 AuthorDate: Thu Aug 12 00:00:00 2010 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

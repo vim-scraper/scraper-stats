@@ -1,4 +1,33 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.2)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.5)
+Author:     t9 md <taqumd@gmail.com>
+AuthorDate: Sat Aug 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 0.5
+    
+    2011-08-21: v0.5
+    	- update help
+    	- :PhraseList no longer accept argument(for simplicity).
+    	- :PhraseCreate no longer accept argument(for simplicity).
+    	- b:phrase_filetype is renamed as b:phrase_ext.
+    2011-08-04: v0.4
+    	- add sorter_phrase for unite.
+
+ README.md                                |   45
+ autoload/phrase.vim                      |  534
+ autoload/unite/filters/sorter_phrase.vim |   25
+ autoload/unite/sources/phrase.vim        |   81
+ doc/phrase.txt                           |  301
+ phrase_example/phrase.js                 |  128
+ phrase_example/phrase.md                 |   48
+ phrase_example/phrase.py                 |  116
+ phrase_example/phrase.rb                 |   98
+ phrase_example/phrase.sh                 |  135
+ phrase_example/phrase.vim                |  156
+ plugin/phrase.vim                        |  540
+ 12 files changed, 852 insertions(+), 1355 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
 Author:     t9 md <taqumd@gmail.com>
 AuthorDate: Wed Mar 9 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
@@ -26,7 +55,7 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
 
     Version 0.1.1: fix help's url
 
- README                            |  119
+ README                            |   54
  autoload/unite/sources/phrase.vim |   43
  doc/phrase.txt                    |  206
  phrase_example/phrase.js          |  128
@@ -36,4 +65,4 @@ Commit:     Able Scraper <scraper@vim-scripts.org>
  phrase_example/phrase.sh          |  135
  phrase_example/phrase.vim         |  156
  plugin/phrase.vim                 |  193
- 10 files changed, 1242 insertions(+), 0 deletions(-)
+ 10 files changed, 1177 insertions(+), 0 deletions(-)

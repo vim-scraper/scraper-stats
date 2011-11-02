@@ -1,4 +1,167 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.4.6)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.4.20)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Oct 1 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.20
+    
+      Mark session dirty when buffer list changes:   http://github.com/xolox/vim-session/commit/1ed64d2  Make :RestartVim preserve $VIM and $VIMRUNTIME:   http://github.com/xolox/vim-session/commit/f56fe44
+
+ README.md                  |    4
+ autoload/xolox/session.vim |   57
+ doc/session.txt            |    8
+ plugin/session.vim         |   10
+ 4 files changed, 66 insertions(+), 13 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.18)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Sep 25 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.18
+    
+      Updated miscellaneous scripts:   http://github.com/xolox/vim-session/commit/f9888a1
+
+ autoload/xolox/misc/list.vim |   15
+ autoload/xolox/misc/path.vim |   25
+ autoload/xolox/session.vim   |    4
+ 3 files changed, 29 insertions(+), 15 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.17)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Tue Sep 20 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.17
+    
+      Silence "E95: Buffer with this name already exist" messages:   http://github.com/xolox/vim-session/commit/f061ad9
+
+ autoload/xolox/session.vim |    6
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.16)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Sep 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.16
+    
+      Improve support for special windows, specifically NERDTree:   http://github.com/xolox/vim-session/commit/5a4db7c  Separate persistence of &background vs. :colorscheme:   http://github.com/xolox/vim-session/commit/363c40d
+
+ autoload/xolox/session.vim |   13
+ 1 files changed, 7 insertions(+), 6 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.14)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Sep 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.14
+    
+      Support for mirrored NERDTree windows (requested by Sebastian Tramp):   http://github.com/xolox/vim-session/commit/fe58d29
+
+ autoload/xolox/session.vim |   20
+ 1 files changed, 16 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.13)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Sep 17 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.13
+    
+      Switch order of :colorscheme, :set background= commands:   http://github.com/xolox/vim-session/commit/a3ba9f6
+
+ autoload/xolox/session.vim |    6
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.12)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Sep 4 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.12
+    
+      Updated miscellaneous scripts:   http://github.com/xolox/vim-session/commit/cbb9a3b
+
+ autoload/xolox/misc/buffer.vim |   37
+ autoload/xolox/session.vim     |    4
+ 2 files changed, 39 insertions(+), 2 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.11)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Wed Aug 31 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.11
+    
+      Version bump because of miscellaneous scripts:   http://github.com/xolox/vim-session/commit/4c09a02   http://github.com/xolox/vim-session/commit/96e63ff
+
+ autoload/xolox/misc/list.vim   |   37
+ autoload/xolox/misc/option.vim |   27
+ autoload/xolox/misc/path.vim   |   15
+ autoload/xolox/session.vim     |    2
+ 4 files changed, 77 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.10)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Wed Aug 31 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.10
+    
+      Move version variable to autoload script:   http://github.com/xolox/vim-session/commit/93d504a  Updated miscellaneous scripts (https://github.com/xolox/vim-misc):   http://github.com/xolox/vim-session/commit/e374c77
+
+ README.md                      |    2
+ autoload/xolox/misc/README.md  |   29
+ autoload/xolox/misc/open.vim   |   70
+ autoload/xolox/misc/option.vim |   15
+ autoload/xolox/misc/str.vim    |    4
+ autoload/xolox/session.vim     |   38
+ doc/session.txt                |    2
+ plugin/session.vim             |    6
+ 8 files changed, 130 insertions(+), 36 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.9)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sat Jun 18 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.9
+    
+      Define version as variable, include version in messages:   http://github.com/xolox/vim-session/commit/435786b
+
+ autoload/xolox/session.vim |   58
+ plugin/session.vim         |    9
+ 2 files changed, 33 insertions(+), 34 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.8)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Mon Jun 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.8
+    
+      Bug fix: Don't hang during :RestartVim when &verbose >= 1:   http://github.com/xolox/vim-session/commit/1f9c911
+
+ autoload/xolox/session.vim |    4
+ plugin/session.vim         |    4
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.7)
+Author:     Peter Odding <peter@peterodding.com>
+AuthorDate: Sun Jun 12 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.4.7
+    
+      Ignore "No fold found" errors:   http://github.com/xolox/vim-session/commit/13d405d
+
+ autoload/xolox/session.vim |   13
+ plugin/session.vim         |    4
+ 2 files changed, 13 insertions(+), 4 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.4.6)
 Author:     Peter Odding <peter@peterodding.com>
 AuthorDate: Fri Jun 3 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>

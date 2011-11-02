@@ -1,74 +1,17 @@
 commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/0.27)
 Author:     wei ko kao <othree@gmail.com>
-AuthorDate: Tue Feb 1 00:00:00 2011 +0000
+AuthorDate: Wed Jul 27 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
-    Version 0.27
-    
-    add indent file (Thank briangershon https://github.com/briangershon)
-    add bdi element (latest draft)
-    minor bug fix
+    Version 0.27: Update to correct vimball, old vimball files didn't have enough data.
 
- autoload/htmlcomplete.vim |  861
- autoload/xml/aria.vim     |  232
- 2 files changed, 861 insertions(+), 232 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/0.2.6)
-Author:     wei ko kao <othree@gmail.com>
-AuthorDate: Tue Nov 2 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 0.2.6
-    
-    Support multi-value attributes (Most were WAI-ARIA attributes)
-    Bug fix
-
- autoload/xml/aria.vim |    2
- 1 files changed, 1 insertions(+), 1 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/0.25)
-Author:     wei ko kao <othree@gmail.com>
-AuthorDate: Fri Sep 24 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 0.25
-    
-    Fix some WAI-ARIA error.
-    WAI-ARIA complete support all doctypes.
-
- autoload/xml/aria.vim  |  232
- autoload/xml/html5.vim |  922
- 2 files changed, 232 insertions(+), 922 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/0.2)
-Author:     wei ko kao <othree@gmail.com>
-AuthorDate: Thu Sep 9 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 0.2
-    
-    attributes now must match from beginning.
-    fix some attr(\won\w) will use jscomplete for their value.
-    add vim-makefile.
-
- Makefile                  |  330
- README.markdown           |   45
- autoload/htmlcomplete.vim |  803
- autoload/xml/html5.vim    |    4
- syntax/html.vim           |   89
- 5 files changed, 2 insertions(+), 1269 deletions(-)
-
-commit SHA1SHA1SHA1 (tag: refs/tags/0.1)
-Author:     wei ko kao <othree@gmail.com>
-AuthorDate: Thu Sep 9 00:00:00 2010 +0000
-Commit:     Able Scraper <scraper@vim-scripts.org>
-
-    Version 0.1: Initial upload
-
- Makefile                  |  330
- README                    |   13
- README.markdown           |   45
- autoload/htmlcomplete.vim |  803
- autoload/xml/html5.vim    |  922
- syntax/html.vim           |   89
- 6 files changed, 2202 insertions(+), 0 deletions(-)
+ README                      |   13
+ autoload/htmlcomplete.vim   |  861
+ autoload/xml/aria.vim       |  232
+ autoload/xml/html5.vim      |  791
+ indent/html.vim             |  281
+ syntax/html/aria.vim        |   35
+ syntax/html/html5.vim       |   59
+ syntax/html/rdfa.vim        |   11
+ syntax/javascript/html5.vim |   40
+ 9 files changed, 2323 insertions(+), 0 deletions(-)

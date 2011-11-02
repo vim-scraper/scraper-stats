@@ -1,0 +1,28 @@
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.1)
+Author:     Bruno Silva <b.silva@live.com>
+AuthorDate: Mon Oct 31 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1
+    
+    FIX: url's relative to domain such as <link href='/styles/test.css'/> weren't working
+    
+    added support in filetype detection for url's with query string such as http://adomain.com/styles/main.css?rand=123456
+
+ doc/tags                        |   11
+ plugin/html-source-explorer.vim |   26
+ 2 files changed, 18 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1)
+Author:     Bruno Silva <b.silva@live.com>
+AuthorDate: Mon Oct 31 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1: Initial upload
+
+ README                          |   13
+ README.orig                     |   12
+ doc/html-source-explorer.txt    |  142
+ doc/tags                        |   11
+ plugin/html-source-explorer.vim |   79
+ 5 files changed, 257 insertions(+), 0 deletions(-)

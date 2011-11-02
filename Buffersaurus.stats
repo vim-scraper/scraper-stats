@@ -1,12 +1,55 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.0.0)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.2.3)
 Author:     Jeet Sukumaran <jeetsukumaran@gmail.com>
-AuthorDate: Tue Jun 7 00:00:00 2011 +0000
+AuthorDate: Wed Jul 6 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
 
-    Version 1.0.0: Initial upload
+    Version 1.2.3
+    
+    - Do not clobber default register when rendering buffer.
+    - Fixed bug in window splitting policy.
+
+ doc/.gitignore          |    1
+ doc/buffersaurus.txt    |   24
+ plugin/buffersaurus.vim |   14
+ 3 files changed, 22 insertions(+), 17 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.1)
+Author:     Jeet Sukumaran <jeetsukumaran@gmail.com>
+AuthorDate: Tue Jun 14 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2.1
+    
+    - added (redundant) key-mapping for 'go', 'gi', 'gs' for NERDTree compatibility
+
+ doc/buffersaurus.txt    |   22
+ plugin/buffersaurus.vim |    3
+ 2 files changed, 6 insertions(+), 19 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.2.0)
+Author:     Jeet Sukumaran <jeetsukumaran@gmail.com>
+AuthorDate: Mon Jun 13 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.2.0
+    
+    - switched catalog viewer key mappings to be more consistent with NERDTree: e.g. "o/O", "s/S", "i/I", "t/T" to open/preview in previous window, vertical split, horizontal split, or tab page respectively; (if you prefer the old key-maps, set "g:buffersaurus_use_new_keymap=0" in your $VIMRUNTIME).
+
+ doc/buffersaurus.txt    |   98
+ plugin/buffersaurus.vim |  144
+ 2 files changed, 139 insertions(+), 103 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.1.0)
+Author:     Jeet Sukumaran <jeetsukumaran@gmail.com>
+AuthorDate: Sun Jun 12 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.1.0
+    
+     - Added key mappings to open tabs and splits 'silently' (in the background, keeping focus in catalog window)
 
  README                  |   41
  doc/.gitignore          |    1
- doc/buffersaurus.txt    |  328
- plugin/buffersaurus.vim | 1899
- 4 files changed, 2269 insertions(+), 0 deletions(-)
+ doc/buffersaurus.txt    |  339
+ plugin/buffersaurus.vim | 1906
+ 4 files changed, 2287 insertions(+), 0 deletions(-)

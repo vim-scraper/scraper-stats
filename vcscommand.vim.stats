@@ -1,4 +1,44 @@
-commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.99.43)
+commit SHA1SHA1SHA1 (HEAD, tag: refs/tags/1.99.45)
+Author:     Bob Hiestand <bob.hiestand@gmail.com>
+AuthorDate: Wed Oct 19 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.99.45
+    
+    Identify files under svn 1.7.
+    Don&#039t check repo status for svn buffer info.
+    Fix HG :VCSAnnotate in VCSAnnotate buffer.
+    Handle &sel of &#039exclusive&#039 in split annotation.
+    Use case-insensitive tests for VCS file types.
+
+ plugin/vcsbzr.vim     |    6
+ plugin/vcscommand.vim |   10
+ plugin/vcscvs.vim     |    6
+ plugin/vcsgit.vim     |    4
+ plugin/vcshg.vim      |   10
+ plugin/vcssvk.vim     |    6
+ plugin/vcssvn.vim     |   35
+ 7 files changed, 46 insertions(+), 31 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.99.44)
+Author:     Bob Hiestand <bob.hiestand@gmail.com>
+AuthorDate: Mon Oct 3 00:00:00 2011 +0000
+Commit:     Able Scraper <scraper@vim-scripts.org>
+
+    Version 1.99.44
+    
+    Protect against versions of VIM that don't have fnameescape().
+    Added option 'VCSCommandVCSTypeOveride'
+    Added option 'VCSCommandVCSTypePreference'
+    Protect against systems without +mbyte.
+    Respect fenc when reviewing, annotating, or diffing.
+    Encode commit messages as &tenc.
+
+ doc/vcscommand.txt    |    8
+ plugin/vcscommand.vim |  257
+ 2 files changed, 175 insertions(+), 90 deletions(-)
+
+commit SHA1SHA1SHA1 (tag: refs/tags/1.99.43)
 Author:     Bob Hiestand <bob.hiestand@gmail.com>
 AuthorDate: Thu Jun 2 00:00:00 2011 +0000
 Commit:     Able Scraper <scraper@vim-scripts.org>
